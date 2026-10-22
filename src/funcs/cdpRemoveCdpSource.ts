@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a source
+ *
+ * @remarks
+ * Deletes the CdpSource identified by `id`.
  */
 export function cdpRemoveCdpSource(
   client: UnifiedToCore,

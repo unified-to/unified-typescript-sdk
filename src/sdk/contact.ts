@@ -28,6 +28,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Contact extends ClientSDK {
   /**
    * Create a contact
+   *
+   * @remarks
+   * Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
    */
   async createAccountingContact(
     request: operations.CreateAccountingContactRequest,
@@ -42,6 +45,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Create a contact
+   *
+   * @remarks
+   * Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
    */
   async createCrmContact(
     request: operations.CreateCrmContactRequest,
@@ -56,6 +62,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Create a contact
+   *
+   * @remarks
+   * Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
    */
   async createUcContact(
     request: operations.CreateUcContactRequest,
@@ -70,6 +79,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Retrieve a contact
+   *
+   * @remarks
+   * Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingContact(
     request: operations.GetAccountingContactRequest,
@@ -84,6 +96,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Retrieve a contact
+   *
+   * @remarks
+   * Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmContact(
     request: operations.GetCrmContactRequest,
@@ -98,6 +113,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Retrieve a contact
+   *
+   * @remarks
+   * Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcContact(
     request: operations.GetUcContactRequest,
@@ -112,6 +130,9 @@ export class Contact extends ClientSDK {
 
   /**
    * List all contacts
+   *
+   * @remarks
+   * Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingContacts(
     request: operations.ListAccountingContactsRequest,
@@ -126,6 +147,9 @@ export class Contact extends ClientSDK {
 
   /**
    * List all contacts
+   *
+   * @remarks
+   * Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmContacts(
     request: operations.ListCrmContactsRequest,
@@ -140,6 +164,9 @@ export class Contact extends ClientSDK {
 
   /**
    * List all contacts
+   *
+   * @remarks
+   * Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcContacts(
     request: operations.ListUcContactsRequest,
@@ -154,6 +181,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
    */
   async patchAccountingContact(
     request: operations.PatchAccountingContactRequest,
@@ -168,6 +198,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
    */
   async patchCrmContact(
     request: operations.PatchCrmContactRequest,
@@ -182,6 +215,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
    */
   async patchUcContact(
     request: operations.PatchUcContactRequest,
@@ -196,6 +232,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Remove a contact
+   *
+   * @remarks
+   * Deletes the AccountingContact identified by `id`.
    */
   async removeAccountingContact(
     request: operations.RemoveAccountingContactRequest,
@@ -210,6 +249,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Remove a contact
+   *
+   * @remarks
+   * Deletes the CrmContact identified by `id`.
    */
   async removeCrmContact(
     request: operations.RemoveCrmContactRequest,
@@ -224,6 +266,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Remove a contact
+   *
+   * @remarks
+   * Deletes the UcContact identified by `id`.
    */
   async removeUcContact(
     request: operations.RemoveUcContactRequest,
@@ -238,6 +283,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
    */
   async updateAccountingContact(
     request: operations.UpdateAccountingContactRequest,
@@ -252,6 +300,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
    */
   async updateCrmContact(
     request: operations.UpdateCrmContactRequest,
@@ -266,6 +317,9 @@ export class Contact extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
    */
   async updateUcContact(
     request: operations.UpdateUcContactRequest,

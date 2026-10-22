@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a pipeline
+ *
+ * @remarks
+ * Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
  */
 export function crmPatchCrmPipeline(
   client: UnifiedToCore,

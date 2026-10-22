@@ -30,6 +30,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Organization extends ClientSDK {
   /**
    * Create an organization
+   *
+   * @remarks
+   * Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
    */
   async createAdsOrganization(
     request: operations.CreateAdsOrganizationRequest,
@@ -44,6 +47,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Create an organization
+   *
+   * @remarks
+   * Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
    */
   async createGenaiOrganization(
     request: operations.CreateGenaiOrganizationRequest,
@@ -58,6 +64,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Create an organization
+   *
+   * @remarks
+   * Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
    */
   async createRepoOrganization(
     request: operations.CreateRepoOrganizationRequest,
@@ -72,6 +81,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Retrieve an organization
+   *
+   * @remarks
+   * Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingOrganization(
     request: operations.GetAccountingOrganizationRequest,
@@ -86,6 +98,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Retrieve an organization
+   *
+   * @remarks
+   * Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsOrganization(
     request: operations.GetAdsOrganizationRequest,
@@ -100,6 +115,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Retrieve an organization
+   *
+   * @remarks
+   * Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiOrganization(
     request: operations.GetGenaiOrganizationRequest,
@@ -114,6 +132,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Retrieve an organization
+   *
+   * @remarks
+   * Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoOrganization(
     request: operations.GetRepoOrganizationRequest,
@@ -128,6 +149,9 @@ export class Organization extends ClientSDK {
 
   /**
    * List all organizations
+   *
+   * @remarks
+   * Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingOrganizations(
     request: operations.ListAccountingOrganizationsRequest,
@@ -142,6 +166,9 @@ export class Organization extends ClientSDK {
 
   /**
    * List all organizations
+   *
+   * @remarks
+   * Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsOrganizations(
     request: operations.ListAdsOrganizationsRequest,
@@ -156,6 +183,9 @@ export class Organization extends ClientSDK {
 
   /**
    * List all organizations
+   *
+   * @remarks
+   * Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiOrganizations(
     request: operations.ListGenaiOrganizationsRequest,
@@ -170,6 +200,9 @@ export class Organization extends ClientSDK {
 
   /**
    * List all organizations
+   *
+   * @remarks
+   * Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoOrganizations(
     request: operations.ListRepoOrganizationsRequest,
@@ -184,6 +217,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
    */
   async patchAdsOrganization(
     request: operations.PatchAdsOrganizationRequest,
@@ -198,6 +234,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
    */
   async patchGenaiOrganization(
     request: operations.PatchGenaiOrganizationRequest,
@@ -212,6 +251,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
    */
   async patchRepoOrganization(
     request: operations.PatchRepoOrganizationRequest,
@@ -226,6 +268,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Remove an organization
+   *
+   * @remarks
+   * Deletes the AdsOrganization identified by `id`.
    */
   async removeAdsOrganization(
     request: operations.RemoveAdsOrganizationRequest,
@@ -240,6 +285,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Remove an organization
+   *
+   * @remarks
+   * Deletes the GenaiOrganization identified by `id`.
    */
   async removeGenaiOrganization(
     request: operations.RemoveGenaiOrganizationRequest,
@@ -254,6 +302,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Remove an organization
+   *
+   * @remarks
+   * Deletes the RepoOrganization identified by `id`.
    */
   async removeRepoOrganization(
     request: operations.RemoveRepoOrganizationRequest,
@@ -268,6 +319,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
    */
   async updateAdsOrganization(
     request: operations.UpdateAdsOrganizationRequest,
@@ -282,6 +336,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
    */
   async updateGenaiOrganization(
     request: operations.UpdateGenaiOrganizationRequest,
@@ -296,6 +353,9 @@ export class Organization extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
    */
   async updateRepoOrganization(
     request: operations.UpdateRepoOrganizationRequest,

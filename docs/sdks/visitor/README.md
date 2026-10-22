@@ -13,7 +13,7 @@
 
 ## createAnalyticsVisitor
 
-Create a visitor
+Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
 
 ### Example Usage
 
@@ -33,13 +33,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "b93ae59b-b9e9-4657-afe1-a8c565c6ea6a",
-      lastSeenAt: new Date("2025-01-11T07:56:20.538Z"),
+      id: "62fd38e7-a0e9-422f-bdca-3717166da592",
+      lastSeenAt: new Date("2025-01-12T01:25:45.978Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.425Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.920Z"),
     },
     connectionId: "<id>",
   });
@@ -72,13 +72,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "b93ae59b-b9e9-4657-afe1-a8c565c6ea6a",
-      lastSeenAt: new Date("2025-01-11T07:56:20.538Z"),
+      id: "62fd38e7-a0e9-422f-bdca-3717166da592",
+      lastSeenAt: new Date("2025-01-12T01:25:45.978Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.425Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.920Z"),
     },
     connectionId: "<id>",
   });
@@ -114,7 +114,7 @@ run();
 
 ## getAnalyticsVisitor
 
-Retrieve a visitor
+Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -193,7 +193,7 @@ run();
 
 ## listAnalyticsVisitors
 
-List all visitors
+Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -270,7 +270,7 @@ run();
 
 ## patchAnalyticsVisitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -290,13 +290,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "30b1442d-9b9f-466d-9ca3-9b35e0dba1b9",
-      lastSeenAt: new Date("2025-01-11T07:56:20.546Z"),
+      id: "a5e97b47-a6d7-4510-8c8b-0a9e2df2cd12",
+      lastSeenAt: new Date("2025-01-12T01:25:45.985Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.434Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.928Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -330,13 +330,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "30b1442d-9b9f-466d-9ca3-9b35e0dba1b9",
-      lastSeenAt: new Date("2025-01-11T07:56:20.546Z"),
+      id: "a5e97b47-a6d7-4510-8c8b-0a9e2df2cd12",
+      lastSeenAt: new Date("2025-01-12T01:25:45.985Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.434Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.928Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -373,7 +373,7 @@ run();
 
 ## removeAnalyticsVisitor
 
-Remove a visitor
+Deletes the AnalyticsVisitor identified by `id`.
 
 ### Example Usage
 
@@ -452,7 +452,7 @@ run();
 
 ## updateAnalyticsVisitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -472,13 +472,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "30b1442d-9b9f-466d-9ca3-9b35e0dba1b9",
-      lastSeenAt: new Date("2025-01-11T07:56:20.546Z"),
+      id: "a5e97b47-a6d7-4510-8c8b-0a9e2df2cd12",
+      lastSeenAt: new Date("2025-01-12T01:25:45.985Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.434Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.928Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -512,13 +512,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "30b1442d-9b9f-466d-9ca3-9b35e0dba1b9",
-      lastSeenAt: new Date("2025-01-11T07:56:20.546Z"),
+      id: "a5e97b47-a6d7-4510-8c8b-0a9e2df2cd12",
+      lastSeenAt: new Date("2025-01-12T01:25:45.985Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.434Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.928Z"),
     },
     connectionId: "<id>",
     id: "<id>",

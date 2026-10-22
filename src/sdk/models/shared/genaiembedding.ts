@@ -27,6 +27,9 @@ export const EncondingFormat = {
 export type EncondingFormat = OpenEnum<typeof EncondingFormat>;
 
 export type GenaiEmbedding = {
+  /**
+   * The texts to create embeddings for
+   */
   content?: Array<GenaiEmbeddingContent> | undefined;
   /**
    * 256, 512, 1024, and 1536

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Subscription extends ClientSDK {
   /**
    * Create a subscription
+   *
+   * @remarks
+   * Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
    */
   async createPaymentSubscription(
     request: operations.CreatePaymentSubscriptionRequest,
@@ -30,6 +33,9 @@ export class Subscription extends ClientSDK {
 
   /**
    * Retrieve a subscription
+   *
+   * @remarks
+   * Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPaymentSubscription(
     request: operations.GetPaymentSubscriptionRequest,
@@ -44,6 +50,9 @@ export class Subscription extends ClientSDK {
 
   /**
    * List all subscriptions
+   *
+   * @remarks
+   * Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPaymentSubscriptions(
     request: operations.ListPaymentSubscriptionsRequest,
@@ -58,6 +67,9 @@ export class Subscription extends ClientSDK {
 
   /**
    * Update a subscription
+   *
+   * @remarks
+   * Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
    */
   async patchPaymentSubscription(
     request: operations.PatchPaymentSubscriptionRequest,
@@ -72,6 +84,9 @@ export class Subscription extends ClientSDK {
 
   /**
    * Remove a subscription
+   *
+   * @remarks
+   * Deletes the PaymentSubscription identified by `id`.
    */
   async removePaymentSubscription(
     request: operations.RemovePaymentSubscriptionRequest,
@@ -86,6 +101,9 @@ export class Subscription extends ClientSDK {
 
   /**
    * Update a subscription
+   *
+   * @remarks
+   * Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
    */
   async updatePaymentSubscription(
     request: operations.UpdatePaymentSubscriptionRequest,

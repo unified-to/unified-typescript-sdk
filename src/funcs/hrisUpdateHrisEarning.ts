@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an earning
+ *
+ * @remarks
+ * Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
  */
 export function hrisUpdateHrisEarning(
   client: UnifiedToCore,

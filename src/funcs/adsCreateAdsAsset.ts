@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an asset
+ *
+ * @remarks
+ * Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
  */
 export function adsCreateAdsAsset(
   client: UnifiedToCore,

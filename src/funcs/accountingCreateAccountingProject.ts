@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a project
+ *
+ * @remarks
+ * Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
  */
 export function accountingCreateAccountingProject(
   client: UnifiedToCore,

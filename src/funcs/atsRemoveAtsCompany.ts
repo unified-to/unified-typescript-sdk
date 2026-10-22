@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a company
+ *
+ * @remarks
+ * Deletes the AtsCompany identified by `id`.
  */
 export function atsRemoveAtsCompany(
   client: UnifiedToCore,

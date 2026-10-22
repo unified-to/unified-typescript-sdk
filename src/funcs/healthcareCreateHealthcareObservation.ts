@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an observation
+ *
+ * @remarks
+ * Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
  */
 export function healthcareCreateHealthcareObservation(
   client: UnifiedToCore,

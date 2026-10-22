@@ -40,6 +40,9 @@ export type KmsPage = {
    * (reference to KmsSpace)
    */
   spaceId?: string | undefined;
+  /**
+   * The page's title
+   */
   title?: string | undefined;
   type: KmsPageType;
   /**

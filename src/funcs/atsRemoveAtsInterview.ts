@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an interview
+ *
+ * @remarks
+ * Deletes the AtsInterview identified by `id`.
  */
 export function atsRemoveAtsInterview(
   client: UnifiedToCore,

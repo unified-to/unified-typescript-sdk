@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a review
+ *
+ * @remarks
+ * Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
  */
 export function commercePatchCommerceReview(
   client: UnifiedToCore,

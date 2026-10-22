@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an activity
+ *
+ * @remarks
+ * Deletes the LmsActivity identified by `id`.
  */
 export function activityRemoveLmsActivity(
   client: UnifiedToCore,

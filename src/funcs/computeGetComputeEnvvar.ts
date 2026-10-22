@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Retrieve an envvar
+ *
+ * @remarks
+ * Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
  */
 export function computeGetComputeEnvvar(
   client: UnifiedToCore,

@@ -13,7 +13,7 @@
 
 ## createAccountingJournal
 
-Create a journal
+Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
 
 ### Example Usage
 
@@ -35,16 +35,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "68d4935c-5c97-4670-902b-504d167e6cb4",
+      id: "cb1adc18-08ae-49ef-965d-f8b06e3d22da",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.438Z"),
+      postedAt: new Date("2023-11-07T00:22:13.311Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.006Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.281Z"),
     },
     connectionId: "<id>",
   });
@@ -79,16 +79,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "68d4935c-5c97-4670-902b-504d167e6cb4",
+      id: "cb1adc18-08ae-49ef-965d-f8b06e3d22da",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.438Z"),
+      postedAt: new Date("2023-11-07T00:22:13.311Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.006Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.281Z"),
     },
     connectionId: "<id>",
   });
@@ -124,7 +124,7 @@ run();
 
 ## getAccountingJournal
 
-Retrieve a journal
+Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -203,7 +203,7 @@ run();
 
 ## listAccountingJournals
 
-List all journals
+Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ run();
 
 ## patchAccountingJournal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -302,16 +302,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "36290f97-6fc9-4afe-9b1b-9e3ea9b9c53c",
+      id: "9f81c2b7-f004-490b-9bc7-83b3bf298716",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.463Z"),
+      postedAt: new Date("2023-11-07T00:22:13.323Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.018Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -347,16 +347,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "36290f97-6fc9-4afe-9b1b-9e3ea9b9c53c",
+      id: "9f81c2b7-f004-490b-9bc7-83b3bf298716",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.463Z"),
+      postedAt: new Date("2023-11-07T00:22:13.323Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.018Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -393,7 +393,7 @@ run();
 
 ## removeAccountingJournal
 
-Remove a journal
+Deletes the AccountingJournal identified by `id`.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ run();
 
 ## updateAccountingJournal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -494,16 +494,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "36290f97-6fc9-4afe-9b1b-9e3ea9b9c53c",
+      id: "9f81c2b7-f004-490b-9bc7-83b3bf298716",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.463Z"),
+      postedAt: new Date("2023-11-07T00:22:13.323Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.018Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -539,16 +539,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "36290f97-6fc9-4afe-9b1b-9e3ea9b9c53c",
+      id: "9f81c2b7-f004-490b-9bc7-83b3bf298716",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.463Z"),
+      postedAt: new Date("2023-11-07T00:22:13.323Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.018Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",

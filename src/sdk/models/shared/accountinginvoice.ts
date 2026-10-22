@@ -154,6 +154,9 @@ export type AccountingInvoice = {
    * True when the document amounts already include tax
    */
   isInclusiveOfTax?: boolean | undefined;
+  /**
+   * The invoice's line items: what is billed, with the quantity, price and amount of each
+   */
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   notes?: string | undefined;

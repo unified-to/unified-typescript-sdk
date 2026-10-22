@@ -13,7 +13,7 @@
 
 ## createHrisBenefit
 
-Create a benefit
+Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
 
 ### Example Usage
 
@@ -38,13 +38,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f668a8c6-4553-4322-8936-b84f34f645aa",
+      id: "b6c5d031-1635-4833-a72d-efdb52a29f38",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.175Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.107Z"),
     },
     connectionId: "<id>",
   });
@@ -82,13 +82,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f668a8c6-4553-4322-8936-b84f34f645aa",
+      id: "b6c5d031-1635-4833-a72d-efdb52a29f38",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.175Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.107Z"),
     },
     connectionId: "<id>",
   });
@@ -124,7 +124,7 @@ run();
 
 ## getHrisBenefit
 
-Retrieve a benefit
+Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -203,7 +203,7 @@ run();
 
 ## listHrisBenefits
 
-List all benefits
+Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ run();
 
 ## patchHrisBenefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -305,13 +305,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f719b08b-d8ca-48d1-93d6-c7914a4532ad",
+      id: "eeb2841a-b500-4629-a717-75c6446b7b7a",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.186Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.115Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -350,13 +350,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f719b08b-d8ca-48d1-93d6-c7914a4532ad",
+      id: "eeb2841a-b500-4629-a717-75c6446b7b7a",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.186Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.115Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -393,7 +393,7 @@ run();
 
 ## removeHrisBenefit
 
-Remove a benefit
+Deletes the HrisBenefit identified by `id`.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ run();
 
 ## updateHrisBenefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -497,13 +497,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f719b08b-d8ca-48d1-93d6-c7914a4532ad",
+      id: "eeb2841a-b500-4629-a717-75c6446b7b7a",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.186Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.115Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -542,13 +542,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f719b08b-d8ca-48d1-93d6-c7914a4532ad",
+      id: "eeb2841a-b500-4629-a717-75c6446b7b7a",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.186Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.115Z"),
     },
     connectionId: "<id>",
     id: "<id>",

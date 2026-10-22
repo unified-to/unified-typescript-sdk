@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a patient
+ *
+ * @remarks
+ * Creates a HealthcarePatient. Provide the unified HealthcarePatient fields in the request body; they are mapped to the provider's API. Returns the created HealthcarePatient.
  */
 export function healthcareCreateHealthcarePatient(
   client: UnifiedToCore,

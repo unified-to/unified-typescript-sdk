@@ -64,7 +64,7 @@
 
 ## createComputeDeployment
 
-Create a deployment
+Creates a ComputeDeployment. Provide the unified ComputeDeployment fields in the request body; they are mapped to the provider's API. Returns the created ComputeDeployment.
 
 ### Example Usage
 
@@ -86,13 +86,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.275Z"),
-      id: "964e6820-e80b-40f6-b7a7-bd2b515f2ef6",
+      finishedAt: new Date("2025-08-30T09:15:55.475Z"),
+      id: "d82ea629-0da0-48fd-a8dc-5b11d41e3ec0",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.864Z"),
+      startedAt: new Date("2025-04-10T23:29:40.146Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.185Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.803Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -128,13 +128,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.275Z"),
-      id: "964e6820-e80b-40f6-b7a7-bd2b515f2ef6",
+      finishedAt: new Date("2025-08-30T09:15:55.475Z"),
+      id: "d82ea629-0da0-48fd-a8dc-5b11d41e3ec0",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.864Z"),
+      startedAt: new Date("2025-04-10T23:29:40.146Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.185Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.803Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -171,7 +171,7 @@ run();
 
 ## createComputeDomain
 
-Create a domain
+Creates a ComputeDomain. Provide the unified ComputeDomain fields in the request body; they are mapped to the provider's API. Returns the created ComputeDomain.
 
 ### Example Usage
 
@@ -189,12 +189,12 @@ async function run() {
   const result = await unifiedTo.compute.createComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "2fcf15b8-cc42-4d26-9d19-e37c86fbd886",
+      id: "7508278b-13ce-4255-a170-28771fc1dd63",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.734Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.833Z"),
     },
     connectionId: "<id>",
   });
@@ -225,12 +225,12 @@ async function run() {
   const res = await computeCreateComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "2fcf15b8-cc42-4d26-9d19-e37c86fbd886",
+      id: "7508278b-13ce-4255-a170-28771fc1dd63",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.734Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.833Z"),
     },
     connectionId: "<id>",
   });
@@ -266,7 +266,7 @@ run();
 
 ## createComputeEnvvar
 
-Create an envvar
+Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
 
 ### Example Usage
 
@@ -287,11 +287,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "a339af3f-e45c-4b8c-83d6-fcee216daae2",
+      id: "920e3420-5c5e-413b-a51f-1ead20c277fc",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.141Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.531Z"),
     },
     connectionId: "<id>",
   });
@@ -325,11 +325,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "a339af3f-e45c-4b8c-83d6-fcee216daae2",
+      id: "920e3420-5c5e-413b-a51f-1ead20c277fc",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.141Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.531Z"),
     },
     connectionId: "<id>",
   });
@@ -365,7 +365,7 @@ run();
 
 ## createComputeInstance
 
-Create an instance
+Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
 
 ### Example Usage
 
@@ -400,7 +400,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "a2755e75-c4aa-4bb7-8e27-164fbf16948f",
+      id: "2004bfb0-7911-469b-a80a-e1c3f4cc270b",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -415,11 +415,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.031Z"),
+      startedAt: new Date("2025-03-24T14:17:24.572Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.822Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.872Z"),
     },
     connectionId: "<id>",
   });
@@ -467,7 +467,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "a2755e75-c4aa-4bb7-8e27-164fbf16948f",
+      id: "2004bfb0-7911-469b-a80a-e1c3f4cc270b",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -482,11 +482,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.031Z"),
+      startedAt: new Date("2025-03-24T14:17:24.572Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.822Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.872Z"),
     },
     connectionId: "<id>",
   });
@@ -522,7 +522,7 @@ run();
 
 ## createComputeKey
 
-Create a key
+Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
 
 ### Example Usage
 
@@ -540,11 +540,11 @@ async function run() {
   const result = await unifiedTo.compute.createComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "1359328b-f6ab-4c34-9050-ade5963698d0",
+      id: "f96522a6-eb4d-4110-82c1-3fdde3cadcfa",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.101Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.595Z"),
     },
     connectionId: "<id>",
   });
@@ -575,11 +575,11 @@ async function run() {
   const res = await computeCreateComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "1359328b-f6ab-4c34-9050-ade5963698d0",
+      id: "f96522a6-eb4d-4110-82c1-3fdde3cadcfa",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.101Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.595Z"),
     },
     connectionId: "<id>",
   });
@@ -615,7 +615,7 @@ run();
 
 ## createComputeService
 
-Create a service
+Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
 
 ### Example Usage
 
@@ -635,7 +635,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "de4f6b03-0dca-4753-a0ef-65d980b31c89",
+      id: "d1a7c3d4-c3ea-4b03-bcf1-68097fd87d3a",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -646,7 +646,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.518Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.085Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -680,7 +680,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "de4f6b03-0dca-4753-a0ef-65d980b31c89",
+      id: "d1a7c3d4-c3ea-4b03-bcf1-68097fd87d3a",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -691,7 +691,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.518Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.085Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -728,7 +728,7 @@ run();
 
 ## createComputeSnapshot
 
-Create a snapshot
+Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
 
 ### Example Usage
 
@@ -746,13 +746,13 @@ async function run() {
   const result = await unifiedTo.compute.createComputeSnapshot({
     computeSnapshot: {
       createdAt: new Date("2021-09-24T14:40:06.110Z"),
-      id: "41ee9622-0360-4273-8d15-f3b47f86ee65",
+      id: "b8bed45c-3ebc-496c-a375-419cff1a8f10",
       metadata: [],
       name: "snap-alius",
       sizeMb: 169984,
       status: "DELETING",
       type: "DISK",
-      updatedAt: new Date("2026-03-30T21:54:19.468Z"),
+      updatedAt: new Date("2026-03-31T19:17:37.191Z"),
     },
     connectionId: "<id>",
   });
@@ -783,13 +783,13 @@ async function run() {
   const res = await computeCreateComputeSnapshot(unifiedTo, {
     computeSnapshot: {
       createdAt: new Date("2021-09-24T14:40:06.110Z"),
-      id: "41ee9622-0360-4273-8d15-f3b47f86ee65",
+      id: "b8bed45c-3ebc-496c-a375-419cff1a8f10",
       metadata: [],
       name: "snap-alius",
       sizeMb: 169984,
       status: "DELETING",
       type: "DISK",
-      updatedAt: new Date("2026-03-30T21:54:19.468Z"),
+      updatedAt: new Date("2026-03-31T19:17:37.191Z"),
     },
     connectionId: "<id>",
   });
@@ -825,7 +825,7 @@ run();
 
 ## createComputeTemplate
 
-Create a template
+Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
 
 ### Example Usage
 
@@ -848,10 +848,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "61e9cc82-81c2-4ee0-8f32-d5e22edcefdd",
+      id: "ada776b2-0f0d-4268-81aa-e5ed05086b80",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.858Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.049Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -859,7 +859,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.587Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.980Z"),
     },
     connectionId: "<id>",
   });
@@ -895,10 +895,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "61e9cc82-81c2-4ee0-8f32-d5e22edcefdd",
+      id: "ada776b2-0f0d-4268-81aa-e5ed05086b80",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.858Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.049Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -906,7 +906,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.587Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.980Z"),
     },
     connectionId: "<id>",
   });
@@ -942,7 +942,7 @@ run();
 
 ## createComputeVolume
 
-Create a volume
+Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
 
 ### Example Usage
 
@@ -960,14 +960,14 @@ async function run() {
   const result = await unifiedTo.compute.createComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "78b52a7e-1782-4c1f-8192-cc62cc2bb718",
+      id: "620fa135-b803-4f59-bbf1-7368b12ac769",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.527Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.237Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -999,14 +999,14 @@ async function run() {
   const res = await computeCreateComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "78b52a7e-1782-4c1f-8192-cc62cc2bb718",
+      id: "620fa135-b803-4f59-bbf1-7368b12ac769",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.527Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.237Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -1043,7 +1043,7 @@ run();
 
 ## getComputeDeployment
 
-Retrieve a deployment
+Retrieves a single ComputeDeployment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1122,7 +1122,7 @@ run();
 
 ## getComputeDomain
 
-Retrieve a domain
+Retrieves a single ComputeDomain by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1201,7 +1201,7 @@ run();
 
 ## getComputeEnvvar
 
-Retrieve an envvar
+Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1280,7 +1280,7 @@ run();
 
 ## getComputeGputype
 
-Retrieve a gputype
+Retrieves a single ComputeGputype by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1359,7 +1359,7 @@ run();
 
 ## getComputeInstance
 
-Retrieve an instance
+Retrieves a single ComputeInstance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1438,7 +1438,7 @@ run();
 
 ## getComputeKey
 
-Retrieve a key
+Retrieves a single ComputeKey by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1517,7 +1517,7 @@ run();
 
 ## getComputeRegion
 
-Retrieve a region
+Retrieves a single ComputeRegion by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1596,7 +1596,7 @@ run();
 
 ## getComputeService
 
-Retrieve a service
+Retrieves a single ComputeService by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1675,7 +1675,7 @@ run();
 
 ## getComputeSnapshot
 
-Retrieve a snapshot
+Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1754,7 +1754,7 @@ run();
 
 ## getComputeTemplate
 
-Retrieve a template
+Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1833,7 +1833,7 @@ run();
 
 ## getComputeVolume
 
-Retrieve a volume
+Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1912,7 +1912,7 @@ run();
 
 ## listComputeDeployments
 
-List all deployments
+Returns a list of ComputeDeployments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1989,7 +1989,7 @@ run();
 
 ## listComputeDomains
 
-List all domains
+Returns a list of ComputeDomains. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2066,7 +2066,7 @@ run();
 
 ## listComputeEnvvars
 
-List all envvars
+Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2143,7 +2143,7 @@ run();
 
 ## listComputeGputypes
 
-List all gputypes
+Returns a list of ComputeGputypes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2220,7 +2220,7 @@ run();
 
 ## listComputeInstances
 
-List all instances
+Returns a list of ComputeInstances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2297,7 +2297,7 @@ run();
 
 ## listComputeKeys
 
-List all keys
+Returns a list of ComputeKeys. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2374,7 +2374,7 @@ run();
 
 ## listComputeRegions
 
-List all regions
+Returns a list of ComputeRegions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2451,7 +2451,7 @@ run();
 
 ## listComputeServices
 
-List all services
+Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2528,7 +2528,7 @@ run();
 
 ## listComputeSnapshots
 
-List all snapshots
+Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2605,7 +2605,7 @@ run();
 
 ## listComputeTemplates
 
-List all templates
+Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2682,7 +2682,7 @@ run();
 
 ## listComputeUsages
 
-List all usages
+Returns a list of ComputeUsages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2759,7 +2759,7 @@ run();
 
 ## listComputeVolumes
 
-List all volumes
+Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2836,7 +2836,7 @@ run();
 
 ## patchComputeDeployment
 
-Update a deployment
+Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
 
 ### Example Usage
 
@@ -2858,13 +2858,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.292Z"),
-      id: "3729802a-f030-4b53-b75e-2470636c06ad",
+      finishedAt: new Date("2025-08-30T09:15:55.485Z"),
+      id: "e6f8fc21-873d-4dbb-b58b-7d83f07c3933",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.878Z"),
+      startedAt: new Date("2025-04-10T23:29:40.155Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.204Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.815Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -2901,13 +2901,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.292Z"),
-      id: "3729802a-f030-4b53-b75e-2470636c06ad",
+      finishedAt: new Date("2025-08-30T09:15:55.485Z"),
+      id: "e6f8fc21-873d-4dbb-b58b-7d83f07c3933",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.878Z"),
+      startedAt: new Date("2025-04-10T23:29:40.155Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.204Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.815Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -2945,7 +2945,7 @@ run();
 
 ## patchComputeDomain
 
-Update a domain
+Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
 
 ### Example Usage
 
@@ -2963,12 +2963,12 @@ async function run() {
   const result = await unifiedTo.compute.patchComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "661d4c7c-1299-495e-a6d4-7a527dc69e02",
+      id: "5a5ba8f4-0489-4ddb-8624-c332305f40b3",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.743Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.838Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3000,12 +3000,12 @@ async function run() {
   const res = await computePatchComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "661d4c7c-1299-495e-a6d4-7a527dc69e02",
+      id: "5a5ba8f4-0489-4ddb-8624-c332305f40b3",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.743Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.838Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3042,7 +3042,7 @@ run();
 
 ## patchComputeEnvvar
 
-Update an envvar
+Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
 
 ### Example Usage
 
@@ -3063,11 +3063,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "ff06f67c-db5c-43e6-9c82-2421ff0f3c11",
+      id: "a81e78f7-91f9-45d1-a227-61e28ddd3fe5",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.152Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.540Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3102,11 +3102,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "ff06f67c-db5c-43e6-9c82-2421ff0f3c11",
+      id: "a81e78f7-91f9-45d1-a227-61e28ddd3fe5",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.152Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.540Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3143,7 +3143,7 @@ run();
 
 ## patchComputeInstance
 
-Update an instance
+Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
 
 ### Example Usage
 
@@ -3178,7 +3178,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "7ad1a995-a32a-4f65-a287-08135613e367",
+      id: "49941be6-8f52-4185-82db-9465052398ca",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -3193,11 +3193,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.052Z"),
+      startedAt: new Date("2025-03-24T14:17:24.591Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.845Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.892Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3246,7 +3246,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "7ad1a995-a32a-4f65-a287-08135613e367",
+      id: "49941be6-8f52-4185-82db-9465052398ca",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -3261,11 +3261,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.052Z"),
+      startedAt: new Date("2025-03-24T14:17:24.591Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.845Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.892Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3302,7 +3302,7 @@ run();
 
 ## patchComputeKey
 
-Update a key
+Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
 
 ### Example Usage
 
@@ -3320,11 +3320,11 @@ async function run() {
   const result = await unifiedTo.compute.patchComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "5476220f-c68d-4c3a-8b5b-911a0aff8b6c",
+      id: "6718f4ba-c53e-4ca0-9f3b-fc010cdc9951",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.107Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.599Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3356,11 +3356,11 @@ async function run() {
   const res = await computePatchComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "5476220f-c68d-4c3a-8b5b-911a0aff8b6c",
+      id: "6718f4ba-c53e-4ca0-9f3b-fc010cdc9951",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.107Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.599Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3397,7 +3397,7 @@ run();
 
 ## patchComputeService
 
-Update a service
+Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
 
 ### Example Usage
 
@@ -3417,7 +3417,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "83670f26-9f40-4c1d-b3b5-dbb33aece020",
+      id: "433f3f18-8eae-4cbb-95a7-46a5dfcbc109",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -3428,7 +3428,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.534Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.097Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -3463,7 +3463,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "83670f26-9f40-4c1d-b3b5-dbb33aece020",
+      id: "433f3f18-8eae-4cbb-95a7-46a5dfcbc109",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -3474,7 +3474,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.534Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.097Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -3512,7 +3512,7 @@ run();
 
 ## patchComputeTemplate
 
-Update a template
+Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
 
 ### Example Usage
 
@@ -3535,10 +3535,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "d5102df8-a912-433a-9c99-f1fe20b6cc8b",
+      id: "e2f18d3d-cfc9-4e6f-b320-80f0cdd72995",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.873Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.062Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -3546,7 +3546,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.597Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.988Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3583,10 +3583,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "d5102df8-a912-433a-9c99-f1fe20b6cc8b",
+      id: "e2f18d3d-cfc9-4e6f-b320-80f0cdd72995",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.873Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.062Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -3594,7 +3594,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.597Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.988Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3631,7 +3631,7 @@ run();
 
 ## patchComputeVolume
 
-Update a volume
+Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
 
 ### Example Usage
 
@@ -3649,14 +3649,14 @@ async function run() {
   const result = await unifiedTo.compute.patchComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "0880fbb7-70b3-4ad4-b83f-72316e68bade",
+      id: "08c5dc74-edc2-451f-94e4-4b863eeec932",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.533Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.240Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -3689,14 +3689,14 @@ async function run() {
   const res = await computePatchComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "0880fbb7-70b3-4ad4-b83f-72316e68bade",
+      id: "08c5dc74-edc2-451f-94e4-4b863eeec932",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.533Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.240Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -3734,7 +3734,7 @@ run();
 
 ## removeComputeDeployment
 
-Remove a deployment
+Deletes the ComputeDeployment identified by `id`.
 
 ### Example Usage
 
@@ -3813,7 +3813,7 @@ run();
 
 ## removeComputeDomain
 
-Remove a domain
+Deletes the ComputeDomain identified by `id`.
 
 ### Example Usage
 
@@ -3892,7 +3892,7 @@ run();
 
 ## removeComputeEnvvar
 
-Remove an envvar
+Deletes the ComputeEnvvar identified by `id`.
 
 ### Example Usage
 
@@ -3971,7 +3971,7 @@ run();
 
 ## removeComputeInstance
 
-Remove an instance
+Deletes the ComputeInstance identified by `id`.
 
 ### Example Usage
 
@@ -4050,7 +4050,7 @@ run();
 
 ## removeComputeKey
 
-Remove a key
+Deletes the ComputeKey identified by `id`.
 
 ### Example Usage
 
@@ -4129,7 +4129,7 @@ run();
 
 ## removeComputeService
 
-Remove a service
+Deletes the ComputeService identified by `id`.
 
 ### Example Usage
 
@@ -4208,7 +4208,7 @@ run();
 
 ## removeComputeSnapshot
 
-Remove a snapshot
+Deletes the ComputeSnapshot identified by `id`.
 
 ### Example Usage
 
@@ -4287,7 +4287,7 @@ run();
 
 ## removeComputeTemplate
 
-Remove a template
+Deletes the ComputeTemplate identified by `id`.
 
 ### Example Usage
 
@@ -4366,7 +4366,7 @@ run();
 
 ## removeComputeVolume
 
-Remove a volume
+Deletes the ComputeVolume identified by `id`.
 
 ### Example Usage
 
@@ -4445,7 +4445,7 @@ run();
 
 ## updateComputeDeployment
 
-Update a deployment
+Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
 
 ### Example Usage
 
@@ -4467,13 +4467,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.292Z"),
-      id: "3729802a-f030-4b53-b75e-2470636c06ad",
+      finishedAt: new Date("2025-08-30T09:15:55.485Z"),
+      id: "e6f8fc21-873d-4dbb-b58b-7d83f07c3933",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.878Z"),
+      startedAt: new Date("2025-04-10T23:29:40.155Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.204Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.815Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -4510,13 +4510,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.292Z"),
-      id: "3729802a-f030-4b53-b75e-2470636c06ad",
+      finishedAt: new Date("2025-08-30T09:15:55.485Z"),
+      id: "e6f8fc21-873d-4dbb-b58b-7d83f07c3933",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.878Z"),
+      startedAt: new Date("2025-04-10T23:29:40.155Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.204Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.815Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -4554,7 +4554,7 @@ run();
 
 ## updateComputeDomain
 
-Update a domain
+Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
 
 ### Example Usage
 
@@ -4572,12 +4572,12 @@ async function run() {
   const result = await unifiedTo.compute.updateComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "661d4c7c-1299-495e-a6d4-7a527dc69e02",
+      id: "5a5ba8f4-0489-4ddb-8624-c332305f40b3",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.743Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.838Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4609,12 +4609,12 @@ async function run() {
   const res = await computeUpdateComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "661d4c7c-1299-495e-a6d4-7a527dc69e02",
+      id: "5a5ba8f4-0489-4ddb-8624-c332305f40b3",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.743Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.838Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4651,7 +4651,7 @@ run();
 
 ## updateComputeEnvvar
 
-Update an envvar
+Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
 
 ### Example Usage
 
@@ -4672,11 +4672,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "ff06f67c-db5c-43e6-9c82-2421ff0f3c11",
+      id: "a81e78f7-91f9-45d1-a227-61e28ddd3fe5",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.152Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.540Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4711,11 +4711,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "ff06f67c-db5c-43e6-9c82-2421ff0f3c11",
+      id: "a81e78f7-91f9-45d1-a227-61e28ddd3fe5",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.152Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.540Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4752,7 +4752,7 @@ run();
 
 ## updateComputeInstance
 
-Update an instance
+Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
 
 ### Example Usage
 
@@ -4787,7 +4787,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "7ad1a995-a32a-4f65-a287-08135613e367",
+      id: "49941be6-8f52-4185-82db-9465052398ca",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -4802,11 +4802,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.052Z"),
+      startedAt: new Date("2025-03-24T14:17:24.591Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.845Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.892Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4855,7 +4855,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "7ad1a995-a32a-4f65-a287-08135613e367",
+      id: "49941be6-8f52-4185-82db-9465052398ca",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -4870,11 +4870,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.052Z"),
+      startedAt: new Date("2025-03-24T14:17:24.591Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.845Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.892Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4911,7 +4911,7 @@ run();
 
 ## updateComputeKey
 
-Update a key
+Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
 
 ### Example Usage
 
@@ -4929,11 +4929,11 @@ async function run() {
   const result = await unifiedTo.compute.updateComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "5476220f-c68d-4c3a-8b5b-911a0aff8b6c",
+      id: "6718f4ba-c53e-4ca0-9f3b-fc010cdc9951",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.107Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.599Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4965,11 +4965,11 @@ async function run() {
   const res = await computeUpdateComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "5476220f-c68d-4c3a-8b5b-911a0aff8b6c",
+      id: "6718f4ba-c53e-4ca0-9f3b-fc010cdc9951",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.107Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.599Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5006,7 +5006,7 @@ run();
 
 ## updateComputeService
 
-Update a service
+Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
 
 ### Example Usage
 
@@ -5026,7 +5026,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "83670f26-9f40-4c1d-b3b5-dbb33aece020",
+      id: "433f3f18-8eae-4cbb-95a7-46a5dfcbc109",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -5037,7 +5037,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.534Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.097Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -5072,7 +5072,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "83670f26-9f40-4c1d-b3b5-dbb33aece020",
+      id: "433f3f18-8eae-4cbb-95a7-46a5dfcbc109",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -5083,7 +5083,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.534Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.097Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -5121,7 +5121,7 @@ run();
 
 ## updateComputeTemplate
 
-Update a template
+Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
 
 ### Example Usage
 
@@ -5144,10 +5144,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "d5102df8-a912-433a-9c99-f1fe20b6cc8b",
+      id: "e2f18d3d-cfc9-4e6f-b320-80f0cdd72995",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.873Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.062Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -5155,7 +5155,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.597Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.988Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5192,10 +5192,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "d5102df8-a912-433a-9c99-f1fe20b6cc8b",
+      id: "e2f18d3d-cfc9-4e6f-b320-80f0cdd72995",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.873Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.062Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -5203,7 +5203,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.597Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.988Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5240,7 +5240,7 @@ run();
 
 ## updateComputeVolume
 
-Update a volume
+Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
 
 ### Example Usage
 
@@ -5258,14 +5258,14 @@ async function run() {
   const result = await unifiedTo.compute.updateComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "0880fbb7-70b3-4ad4-b83f-72316e68bade",
+      id: "08c5dc74-edc2-451f-94e4-4b863eeec932",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.533Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.240Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -5298,14 +5298,14 @@ async function run() {
   const res = await computeUpdateComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "0880fbb7-70b3-4ad4-b83f-72316e68bade",
+      id: "08c5dc74-edc2-451f-94e4-4b863eeec932",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.533Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.240Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",

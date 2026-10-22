@@ -13,7 +13,7 @@
 
 ## createLegalTimeentry
 
-Create a timeentry
+Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
 
 ### Example Usage
 
@@ -34,13 +34,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "9bb8b325-a60e-46e0-b56c-f2fed4c5e146",
+      id: "5b2d24ba-1e1b-4d6e-bbd1-9e959388c009",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -75,13 +75,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "9bb8b325-a60e-46e0-b56c-f2fed4c5e146",
+      id: "5b2d24ba-1e1b-4d6e-bbd1-9e959388c009",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -118,7 +118,7 @@ run();
 
 ## getLegalTimeentry
 
-Retrieve a timeentry
+Retrieves a single LegalTimeentry by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -197,7 +197,7 @@ run();
 
 ## listLegalTimeentries
 
-List all timeentries
+Returns a list of LegalTimeentries. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -274,7 +274,7 @@ run();
 
 ## patchLegalTimeentry
 
-Update a timeentry
+Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
 
 ### Example Usage
 
@@ -295,13 +295,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "7b2f3a6e-9402-4831-9274-2e34d121defd",
+      id: "897447cf-949b-4c1a-a71c-343838ab5191",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -337,13 +337,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "7b2f3a6e-9402-4831-9274-2e34d121defd",
+      id: "897447cf-949b-4c1a-a71c-343838ab5191",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -381,7 +381,7 @@ run();
 
 ## removeLegalTimeentry
 
-Remove a timeentry
+Deletes the LegalTimeentry identified by `id`.
 
 ### Example Usage
 
@@ -460,7 +460,7 @@ run();
 
 ## updateLegalTimeentry
 
-Update a timeentry
+Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
 
 ### Example Usage
 
@@ -481,13 +481,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "7b2f3a6e-9402-4831-9274-2e34d121defd",
+      id: "897447cf-949b-4c1a-a71c-343838ab5191",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -523,13 +523,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "7b2f3a6e-9402-4831-9274-2e34d121defd",
+      id: "897447cf-949b-4c1a-a71c-343838ab5191",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",

@@ -13,7 +13,7 @@
 
 ## createTicketingNote
 
-Create a note
+Creates a TicketingNote. Provide the unified TicketingNote fields in the request body; they are mapped to the provider's API. Returns the created TicketingNote.
 
 ### Example Usage
 
@@ -32,9 +32,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "173d86ea-b9f4-43b6-a25c-430fb3f0b0cd",
+      id: "6f52b882-e869-4a93-a4a7-05c496afe084",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.336Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.221Z"),
     },
     connectionId: "<id>",
   });
@@ -66,9 +66,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "173d86ea-b9f4-43b6-a25c-430fb3f0b0cd",
+      id: "6f52b882-e869-4a93-a4a7-05c496afe084",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.336Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.221Z"),
     },
     connectionId: "<id>",
   });
@@ -104,7 +104,7 @@ run();
 
 ## getTicketingNote
 
-Retrieve a note
+Retrieves a single TicketingNote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -183,7 +183,7 @@ run();
 
 ## listTicketingNotes
 
-List all notes
+Returns a list of TicketingNotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -260,7 +260,7 @@ run();
 
 ## patchTicketingNote
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -279,9 +279,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "ade108bd-2a2f-4e44-850f-5de51df39810",
+      id: "8124cee1-89ae-4787-9cc3-ead9f1a33226",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.346Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -314,9 +314,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "ade108bd-2a2f-4e44-850f-5de51df39810",
+      id: "8124cee1-89ae-4787-9cc3-ead9f1a33226",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.346Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -353,7 +353,7 @@ run();
 
 ## removeTicketingNote
 
-Remove a note
+Deletes the TicketingNote identified by `id`.
 
 ### Example Usage
 
@@ -432,7 +432,7 @@ run();
 
 ## updateTicketingNote
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -451,9 +451,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "ade108bd-2a2f-4e44-850f-5de51df39810",
+      id: "8124cee1-89ae-4787-9cc3-ead9f1a33226",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.346Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -486,9 +486,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "ade108bd-2a2f-4e44-850f-5de51df39810",
+      id: "8124cee1-89ae-4787-9cc3-ead9f1a33226",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.346Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",

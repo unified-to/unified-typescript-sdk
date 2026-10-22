@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a deal
+ *
+ * @remarks
+ * Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
  */
 export function crmCreateCrmDeal(
   client: UnifiedToCore,

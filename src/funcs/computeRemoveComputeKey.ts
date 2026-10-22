@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a key
+ *
+ * @remarks
+ * Deletes the ComputeKey identified by `id`.
  */
 export function computeRemoveComputeKey(
   client: UnifiedToCore,

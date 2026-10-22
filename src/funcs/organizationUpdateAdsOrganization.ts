@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an organization
+ *
+ * @remarks
+ * Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
  */
 export function organizationUpdateAdsOrganization(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an expense
+ *
+ * @remarks
+ * Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
  */
 export function accountingCreateAccountingExpense(
   client: UnifiedToCore,

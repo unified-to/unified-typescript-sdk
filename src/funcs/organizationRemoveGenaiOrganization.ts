@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an organization
+ *
+ * @remarks
+ * Deletes the GenaiOrganization identified by `id`.
  */
 export function organizationRemoveGenaiOrganization(
   client: UnifiedToCore,

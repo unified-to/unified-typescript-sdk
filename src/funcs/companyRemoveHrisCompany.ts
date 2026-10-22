@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a company
+ *
+ * @remarks
+ * Deletes the HrisCompany identified by `id`.
  */
 export function companyRemoveHrisCompany(
   client: UnifiedToCore,

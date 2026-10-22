@@ -51,7 +51,7 @@
 
 ## createAdsAd
 
-Create an ad
+Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
 
 ### Example Usage
 
@@ -75,11 +75,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "4b534b21-7da8-47a7-917a-065380789041",
+      id: "4f92b6f3-396b-4769-8d94-21381f1246f3",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.267Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.017Z"),
     },
     connectionId: "<id>",
   });
@@ -116,11 +116,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "4b534b21-7da8-47a7-917a-065380789041",
+      id: "4f92b6f3-396b-4769-8d94-21381f1246f3",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.267Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.017Z"),
     },
     connectionId: "<id>",
   });
@@ -156,7 +156,7 @@ run();
 
 ## createAdsAsset
 
-Create an asset
+Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
 
 ### Example Usage
 
@@ -175,12 +175,12 @@ async function run() {
     adsAsset: {
       createdAt: new Date("2020-03-27T20:14:38.603Z"),
       height: 400,
-      id: "88709fa0-ea4b-4e9b-aa91-f7d9b8b36deb",
+      id: "d963ea2c-d294-44e8-a9ef-a54fa587e03b",
       metadata: [],
       mimeType: "IMAGE_PNG",
       name: "Lockman - DuBuque",
       type: "IMAGE",
-      updatedAt: new Date("2022-03-25T04:49:15.126Z"),
+      updatedAt: new Date("2022-03-25T12:06:40.299Z"),
       url: "https://informal-perfection.com/",
       width: 600,
     },
@@ -214,12 +214,12 @@ async function run() {
     adsAsset: {
       createdAt: new Date("2020-03-27T20:14:38.603Z"),
       height: 400,
-      id: "88709fa0-ea4b-4e9b-aa91-f7d9b8b36deb",
+      id: "d963ea2c-d294-44e8-a9ef-a54fa587e03b",
       metadata: [],
       mimeType: "IMAGE_PNG",
       name: "Lockman - DuBuque",
       type: "IMAGE",
-      updatedAt: new Date("2022-03-25T04:49:15.126Z"),
+      updatedAt: new Date("2022-03-25T12:06:40.299Z"),
       url: "https://informal-perfection.com/",
       width: 600,
     },
@@ -257,7 +257,7 @@ run();
 
 ## createAdsCampaign
 
-Create a campaign
+Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
 
 ### Example Usage
 
@@ -280,18 +280,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.400Z"),
-      id: "1d2a7558-1e29-4c71-a344-da34e3272604",
+      endAt: new Date("2025-06-01T16:22:29.316Z"),
+      id: "a0a1700b-62b2-41a7-87bf-6b9d83a2d314",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.607Z"),
+      startAt: new Date("2022-07-21T11:46:13.258Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.623Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.341Z"),
     },
     connectionId: "<id>",
   });
@@ -327,18 +327,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.400Z"),
-      id: "1d2a7558-1e29-4c71-a344-da34e3272604",
+      endAt: new Date("2025-06-01T16:22:29.316Z"),
+      id: "a0a1700b-62b2-41a7-87bf-6b9d83a2d314",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.607Z"),
+      startAt: new Date("2022-07-21T11:46:13.258Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.623Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.341Z"),
     },
     connectionId: "<id>",
   });
@@ -374,7 +374,7 @@ run();
 
 ## createAdsCreative
 
-Create a creative
+Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
 
 ### Example Usage
 
@@ -392,7 +392,7 @@ async function run() {
   const result = await unifiedTo.ads.createAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "2bf33d5a-bc0d-4afd-bad9-fa2b52172d75",
+      id: "875bca39-124a-41e5-9777-9c64d5916ae1",
       labels: [
         "coma",
         "accedo",
@@ -401,7 +401,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.715Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.144Z"),
     },
     connectionId: "<id>",
   });
@@ -432,7 +432,7 @@ async function run() {
   const res = await adsCreateAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "2bf33d5a-bc0d-4afd-bad9-fa2b52172d75",
+      id: "875bca39-124a-41e5-9777-9c64d5916ae1",
       labels: [
         "coma",
         "accedo",
@@ -441,7 +441,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.715Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.144Z"),
     },
     connectionId: "<id>",
   });
@@ -477,7 +477,7 @@ run();
 
 ## createAdsGroup
 
-Create a group
+Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
 
 ### Example Usage
 
@@ -500,15 +500,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.063Z"),
-      id: "e45039fb-3efb-44b6-829f-459257cb7d8b",
+      endAt: new Date("2026-06-26T01:03:58.071Z"),
+      id: "03f5f8ee-91e2-4648-b9f7-6c2c9fe29bb2",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.616Z"),
+      startAt: new Date("2026-01-10T04:43:57.475Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.418Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.337Z"),
     },
     connectionId: "<id>",
   });
@@ -544,15 +544,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.063Z"),
-      id: "e45039fb-3efb-44b6-829f-459257cb7d8b",
+      endAt: new Date("2026-06-26T01:03:58.071Z"),
+      id: "03f5f8ee-91e2-4648-b9f7-6c2c9fe29bb2",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.616Z"),
+      startAt: new Date("2026-01-10T04:43:57.475Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.418Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.337Z"),
     },
     connectionId: "<id>",
   });
@@ -588,7 +588,7 @@ run();
 
 ## createAdsInsertionorder
 
-Create an insertionorder
+Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
 
 ### Example Usage
 
@@ -606,11 +606,11 @@ async function run() {
   const result = await unifiedTo.ads.createAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "9a7ad053-8d4c-43db-98e3-e00a42aa678a",
+      id: "21a8b1f0-ec5a-48e4-9609-01f38e5de899",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
   });
@@ -641,11 +641,11 @@ async function run() {
   const res = await adsCreateAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "9a7ad053-8d4c-43db-98e3-e00a42aa678a",
+      id: "21a8b1f0-ec5a-48e4-9609-01f38e5de899",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
   });
@@ -681,7 +681,7 @@ run();
 
 ## createAdsOrganization
 
-Create an organization
+Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
 
 ### Example Usage
 
@@ -701,13 +701,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "e1289eeb-482a-4b29-accc-57241630399d",
+      id: "3c24e27f-1705-4e9e-b22e-8b7e9cc923d4",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:19.972Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.388Z"),
     },
     connectionId: "<id>",
   });
@@ -740,13 +740,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "e1289eeb-482a-4b29-accc-57241630399d",
+      id: "3c24e27f-1705-4e9e-b22e-8b7e9cc923d4",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:19.972Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.388Z"),
     },
     connectionId: "<id>",
   });
@@ -782,7 +782,7 @@ run();
 
 ## getAdsAd
 
-Retrieve an ad
+Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -861,7 +861,7 @@ run();
 
 ## getAdsAsset
 
-Retrieve an asset
+Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -940,7 +940,7 @@ run();
 
 ## getAdsCampaign
 
-Retrieve a campaign
+Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1019,7 +1019,7 @@ run();
 
 ## getAdsCreative
 
-Retrieve a creative
+Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1098,7 +1098,7 @@ run();
 
 ## getAdsGroup
 
-Retrieve a group
+Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1177,7 +1177,7 @@ run();
 
 ## getAdsInsertionorder
 
-Retrieve an insertionorder
+Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1256,7 +1256,7 @@ run();
 
 ## getAdsOrganization
 
-Retrieve an organization
+Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1335,7 +1335,7 @@ run();
 
 ## getAdsPromoted
 
-Retrieve a promoted
+Retrieves a single AdsPromoted by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1414,7 +1414,7 @@ run();
 
 ## getAdsTarget
 
-Retrieve a target
+Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1493,7 +1493,7 @@ run();
 
 ## listAdsAds
 
-List all ads
+Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1570,7 +1570,7 @@ run();
 
 ## listAdsAssets
 
-List all assets
+Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1647,7 +1647,7 @@ run();
 
 ## listAdsCampaigns
 
-List all campaigns
+Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1724,7 +1724,7 @@ run();
 
 ## listAdsCreatives
 
-List all creatives
+Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1801,7 +1801,7 @@ run();
 
 ## listAdsGroups
 
-List all groups
+Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1878,7 +1878,7 @@ run();
 
 ## listAdsInsertionorders
 
-List all insertionorders
+Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1955,7 +1955,7 @@ run();
 
 ## listAdsOrganizations
 
-List all organizations
+Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2032,7 +2032,7 @@ run();
 
 ## listAdsPromoteds
 
-List all promoteds
+Returns a list of AdsPromoteds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2109,7 +2109,7 @@ run();
 
 ## listAdsReports
 
-List all reports
+Returns a list of AdsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2186,7 +2186,7 @@ run();
 
 ## listAdsTargets
 
-List all targets
+Returns a list of AdsTargets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2263,7 +2263,7 @@ run();
 
 ## patchAdsAd
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -2287,11 +2287,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "1196bfd5-1545-4e96-9a72-31d34607c800",
+      id: "340f3891-edd2-40e8-8698-6c92e466f32f",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.287Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2329,11 +2329,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "1196bfd5-1545-4e96-9a72-31d34607c800",
+      id: "340f3891-edd2-40e8-8698-6c92e466f32f",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.287Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2370,7 +2370,7 @@ run();
 
 ## patchAdsCampaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -2393,18 +2393,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.537Z"),
-      id: "ea75df51-4596-4b16-a92a-b8bdd8ac7c2f",
+      endAt: new Date("2025-06-01T16:22:29.391Z"),
+      id: "bc099ef5-1be0-47aa-8133-2ac4fdc8d111",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.614Z"),
+      startAt: new Date("2022-07-21T11:46:13.262Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.786Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.431Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2441,18 +2441,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.537Z"),
-      id: "ea75df51-4596-4b16-a92a-b8bdd8ac7c2f",
+      endAt: new Date("2025-06-01T16:22:29.391Z"),
+      id: "bc099ef5-1be0-47aa-8133-2ac4fdc8d111",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.614Z"),
+      startAt: new Date("2022-07-21T11:46:13.262Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.786Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.431Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2489,7 +2489,7 @@ run();
 
 ## patchAdsCreative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -2507,7 +2507,7 @@ async function run() {
   const result = await unifiedTo.ads.patchAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "b0578ec8-b142-4ed4-bdbf-aa8bbb23cf1e",
+      id: "fc90fb66-ed1e-4097-9cd4-0cd559c216cd",
       labels: [
         "coma",
         "accedo",
@@ -2516,7 +2516,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.730Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.150Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2548,7 +2548,7 @@ async function run() {
   const res = await adsPatchAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "b0578ec8-b142-4ed4-bdbf-aa8bbb23cf1e",
+      id: "fc90fb66-ed1e-4097-9cd4-0cd559c216cd",
       labels: [
         "coma",
         "accedo",
@@ -2557,7 +2557,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.730Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.150Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2594,7 +2594,7 @@ run();
 
 ## patchAdsGroup
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -2617,15 +2617,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.283Z"),
-      id: "7b7c62f4-58bd-4fc0-a784-f550e20caaf4",
+      endAt: new Date("2026-06-26T01:03:58.192Z"),
+      id: "9b64b0d7-ba3a-47f2-8330-9a76a58aa377",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.821Z"),
+      startAt: new Date("2026-01-10T04:43:57.588Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.494Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.379Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2662,15 +2662,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.283Z"),
-      id: "7b7c62f4-58bd-4fc0-a784-f550e20caaf4",
+      endAt: new Date("2026-06-26T01:03:58.192Z"),
+      id: "9b64b0d7-ba3a-47f2-8330-9a76a58aa377",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.821Z"),
+      startAt: new Date("2026-01-10T04:43:57.588Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.494Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.379Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2707,7 +2707,7 @@ run();
 
 ## patchAdsInsertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -2725,11 +2725,11 @@ async function run() {
   const result = await unifiedTo.ads.patchAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "0eabd822-20eb-411a-b2c5-fe70c96a6c14",
+      id: "f59870d8-32d4-46bd-ae9d-248377b094ee",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2761,11 +2761,11 @@ async function run() {
   const res = await adsPatchAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "0eabd822-20eb-411a-b2c5-fe70c96a6c14",
+      id: "f59870d8-32d4-46bd-ae9d-248377b094ee",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2802,7 +2802,7 @@ run();
 
 ## patchAdsOrganization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -2822,13 +2822,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f882ec0d-d908-448e-a7b2-6d10848ba4fc",
+      id: "2f4c954e-5c2f-4773-a76b-287aa807d5f0",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:20.003Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.399Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2862,13 +2862,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f882ec0d-d908-448e-a7b2-6d10848ba4fc",
+      id: "2f4c954e-5c2f-4773-a76b-287aa807d5f0",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:20.003Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.399Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2905,7 +2905,7 @@ run();
 
 ## removeAdsAd
 
-Remove an ad
+Deletes the AdsAd identified by `id`.
 
 ### Example Usage
 
@@ -2984,7 +2984,7 @@ run();
 
 ## removeAdsCampaign
 
-Remove a campaign
+Deletes the AdsCampaign identified by `id`.
 
 ### Example Usage
 
@@ -3063,7 +3063,7 @@ run();
 
 ## removeAdsCreative
 
-Remove a creative
+Deletes the AdsCreative identified by `id`.
 
 ### Example Usage
 
@@ -3142,7 +3142,7 @@ run();
 
 ## removeAdsGroup
 
-Remove a group
+Deletes the AdsGroup identified by `id`.
 
 ### Example Usage
 
@@ -3221,7 +3221,7 @@ run();
 
 ## removeAdsInsertionorder
 
-Remove an insertionorder
+Deletes the AdsInsertionorder identified by `id`.
 
 ### Example Usage
 
@@ -3300,7 +3300,7 @@ run();
 
 ## removeAdsOrganization
 
-Remove an organization
+Deletes the AdsOrganization identified by `id`.
 
 ### Example Usage
 
@@ -3379,7 +3379,7 @@ run();
 
 ## updateAdsAd
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -3403,11 +3403,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "1196bfd5-1545-4e96-9a72-31d34607c800",
+      id: "340f3891-edd2-40e8-8698-6c92e466f32f",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.287Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3445,11 +3445,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "1196bfd5-1545-4e96-9a72-31d34607c800",
+      id: "340f3891-edd2-40e8-8698-6c92e466f32f",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.287Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3486,7 +3486,7 @@ run();
 
 ## updateAdsCampaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -3509,18 +3509,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.537Z"),
-      id: "ea75df51-4596-4b16-a92a-b8bdd8ac7c2f",
+      endAt: new Date("2025-06-01T16:22:29.391Z"),
+      id: "bc099ef5-1be0-47aa-8133-2ac4fdc8d111",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.614Z"),
+      startAt: new Date("2022-07-21T11:46:13.262Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.786Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.431Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3557,18 +3557,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.537Z"),
-      id: "ea75df51-4596-4b16-a92a-b8bdd8ac7c2f",
+      endAt: new Date("2025-06-01T16:22:29.391Z"),
+      id: "bc099ef5-1be0-47aa-8133-2ac4fdc8d111",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.614Z"),
+      startAt: new Date("2022-07-21T11:46:13.262Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.786Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.431Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3605,7 +3605,7 @@ run();
 
 ## updateAdsCreative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -3623,7 +3623,7 @@ async function run() {
   const result = await unifiedTo.ads.updateAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "b0578ec8-b142-4ed4-bdbf-aa8bbb23cf1e",
+      id: "fc90fb66-ed1e-4097-9cd4-0cd559c216cd",
       labels: [
         "coma",
         "accedo",
@@ -3632,7 +3632,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.730Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.150Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3664,7 +3664,7 @@ async function run() {
   const res = await adsUpdateAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "b0578ec8-b142-4ed4-bdbf-aa8bbb23cf1e",
+      id: "fc90fb66-ed1e-4097-9cd4-0cd559c216cd",
       labels: [
         "coma",
         "accedo",
@@ -3673,7 +3673,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.730Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.150Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3710,7 +3710,7 @@ run();
 
 ## updateAdsGroup
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -3733,15 +3733,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.283Z"),
-      id: "7b7c62f4-58bd-4fc0-a784-f550e20caaf4",
+      endAt: new Date("2026-06-26T01:03:58.192Z"),
+      id: "9b64b0d7-ba3a-47f2-8330-9a76a58aa377",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.821Z"),
+      startAt: new Date("2026-01-10T04:43:57.588Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.494Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.379Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3778,15 +3778,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.283Z"),
-      id: "7b7c62f4-58bd-4fc0-a784-f550e20caaf4",
+      endAt: new Date("2026-06-26T01:03:58.192Z"),
+      id: "9b64b0d7-ba3a-47f2-8330-9a76a58aa377",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.821Z"),
+      startAt: new Date("2026-01-10T04:43:57.588Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.494Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.379Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3823,7 +3823,7 @@ run();
 
 ## updateAdsInsertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -3841,11 +3841,11 @@ async function run() {
   const result = await unifiedTo.ads.updateAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "0eabd822-20eb-411a-b2c5-fe70c96a6c14",
+      id: "f59870d8-32d4-46bd-ae9d-248377b094ee",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3877,11 +3877,11 @@ async function run() {
   const res = await adsUpdateAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "0eabd822-20eb-411a-b2c5-fe70c96a6c14",
+      id: "f59870d8-32d4-46bd-ae9d-248377b094ee",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3918,7 +3918,7 @@ run();
 
 ## updateAdsOrganization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -3938,13 +3938,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f882ec0d-d908-448e-a7b2-6d10848ba4fc",
+      id: "2f4c954e-5c2f-4773-a76b-287aa807d5f0",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:20.003Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.399Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3978,13 +3978,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f882ec0d-d908-448e-a7b2-6d10848ba4fc",
+      id: "2f4c954e-5c2f-4773-a76b-287aa807d5f0",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:20.003Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.399Z"),
     },
     connectionId: "<id>",
     id: "<id>",

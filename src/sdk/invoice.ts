@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Invoice extends ClientSDK {
   /**
    * Create an invoice
+   *
+   * @remarks
+   * Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
    */
   async createAccountingInvoice(
     request: operations.CreateAccountingInvoiceRequest,
@@ -30,6 +33,9 @@ export class Invoice extends ClientSDK {
 
   /**
    * Retrieve an invoice
+   *
+   * @remarks
+   * Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingInvoice(
     request: operations.GetAccountingInvoiceRequest,
@@ -44,6 +50,9 @@ export class Invoice extends ClientSDK {
 
   /**
    * List all invoices
+   *
+   * @remarks
+   * Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingInvoices(
     request: operations.ListAccountingInvoicesRequest,
@@ -58,6 +67,9 @@ export class Invoice extends ClientSDK {
 
   /**
    * Update an invoice
+   *
+   * @remarks
+   * Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
    */
   async patchAccountingInvoice(
     request: operations.PatchAccountingInvoiceRequest,
@@ -72,6 +84,9 @@ export class Invoice extends ClientSDK {
 
   /**
    * Remove an invoice
+   *
+   * @remarks
+   * Deletes the AccountingInvoice identified by `id`.
    */
   async removeAccountingInvoice(
     request: operations.RemoveAccountingInvoiceRequest,
@@ -86,6 +101,9 @@ export class Invoice extends ClientSDK {
 
   /**
    * Update an invoice
+   *
+   * @remarks
+   * Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
    */
   async updateAccountingInvoice(
     request: operations.UpdateAccountingInvoiceRequest,

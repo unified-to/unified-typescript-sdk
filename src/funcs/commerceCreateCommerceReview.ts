@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a review
+ *
+ * @remarks
+ * Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
  */
 export function commerceCreateCommerceReview(
   client: UnifiedToCore,

@@ -18,6 +18,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Member extends ClientSDK {
   /**
    * Create a member
+   *
+   * @remarks
+   * Creates a MarketingMember. Provide the unified MarketingMember fields in the request body; they are mapped to the provider's API. Returns the created MarketingMember.
    */
   async createMartechMember(
     request: operations.CreateMartechMemberRequest,
@@ -32,6 +35,9 @@ export class Member extends ClientSDK {
 
   /**
    * Retrieve a member
+   *
+   * @remarks
+   * Retrieves a single ClubsMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsMember(
     request: operations.GetClubsMemberRequest,
@@ -46,6 +52,9 @@ export class Member extends ClientSDK {
 
   /**
    * Retrieve a member
+   *
+   * @remarks
+   * Retrieves a single MarketingMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMartechMember(
     request: operations.GetMartechMemberRequest,
@@ -60,6 +69,9 @@ export class Member extends ClientSDK {
 
   /**
    * List all members
+   *
+   * @remarks
+   * Returns a list of ClubsMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsMembers(
     request: operations.ListClubsMembersRequest,
@@ -74,6 +86,9 @@ export class Member extends ClientSDK {
 
   /**
    * List all members
+   *
+   * @remarks
+   * Returns a list of MarketingMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMartechMembers(
     request: operations.ListMartechMembersRequest,
@@ -88,6 +103,9 @@ export class Member extends ClientSDK {
 
   /**
    * Update a member
+   *
+   * @remarks
+   * Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
    */
   async patchMartechMember(
     request: operations.PatchMartechMemberRequest,
@@ -102,6 +120,9 @@ export class Member extends ClientSDK {
 
   /**
    * Remove a member
+   *
+   * @remarks
+   * Deletes the MarketingMember identified by `id`.
    */
   async removeMartechMember(
     request: operations.RemoveMartechMemberRequest,
@@ -116,6 +137,9 @@ export class Member extends ClientSDK {
 
   /**
    * Update a member
+   *
+   * @remarks
+   * Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
    */
   async updateMartechMember(
     request: operations.UpdateMartechMemberRequest,

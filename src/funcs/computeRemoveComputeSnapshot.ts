@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a snapshot
+ *
+ * @remarks
+ * Deletes the ComputeSnapshot identified by `id`.
  */
 export function computeRemoveComputeSnapshot(
   client: UnifiedToCore,

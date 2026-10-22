@@ -24,7 +24,7 @@
 
 ## createShippingLabel
 
-Create a label
+Creates a ShippingLabel. Provide the unified ShippingLabel fields in the request body; they are mapped to the provider's API. Returns the created ShippingLabel.
 
 ### Example Usage
 
@@ -42,17 +42,17 @@ async function run() {
   const result = await unifiedTo.shipping.createShippingLabel({
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "d880b2ff-2d39-4854-876a-84d546c13571",
+      id: "62d6e737-8768-424f-8371-42a87e43566e",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/d880b2ff-2d39-4854-876a-84d546c13571.pdf",
+      labelUrl: "https://labels.example.com/62d6e737-8768-424f-8371-42a87e43566e.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.636Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.423Z"),
     },
     connectionId: "<id>",
   });
@@ -83,17 +83,17 @@ async function run() {
   const res = await shippingCreateShippingLabel(unifiedTo, {
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "d880b2ff-2d39-4854-876a-84d546c13571",
+      id: "62d6e737-8768-424f-8371-42a87e43566e",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/d880b2ff-2d39-4854-876a-84d546c13571.pdf",
+      labelUrl: "https://labels.example.com/62d6e737-8768-424f-8371-42a87e43566e.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.636Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.423Z"),
     },
     connectionId: "<id>",
   });
@@ -129,7 +129,7 @@ run();
 
 ## createShippingRate
 
-Create a rate
+Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
 
 ### Example Usage
 
@@ -147,7 +147,7 @@ async function run() {
   const result = await unifiedTo.shipping.createShippingRate({
     shippingRate: {
       currency: "USD",
-      id: "b37699a9-6d36-4e76-ac85-8fd864a6ee5b",
+      id: "d7245719-ae1a-4ace-a3d4-3a1ce210b8c4",
       metadata: [],
       rates: [
         {
@@ -194,7 +194,7 @@ async function run() {
   const res = await shippingCreateShippingRate(unifiedTo, {
     shippingRate: {
       currency: "USD",
-      id: "b37699a9-6d36-4e76-ac85-8fd864a6ee5b",
+      id: "d7245719-ae1a-4ace-a3d4-3a1ce210b8c4",
       metadata: [],
       rates: [
         {
@@ -246,7 +246,7 @@ run();
 
 ## createShippingShipment
 
-Create a shipment
+Creates a ShippingShipment. Provide the unified ShippingShipment fields in the request body; they are mapped to the provider's API. Returns the created ShippingShipment.
 
 ### Example Usage
 
@@ -264,7 +264,7 @@ async function run() {
   const result = await unifiedTo.shipping.createShippingShipment({
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "89a3a992-ff59-4b1b-841f-d99f1e463a52",
+      id: "54e2e03d-f6a9-45ac-8bcb-c8571479f206",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -274,7 +274,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T06:47:47.072Z"),
+      updatedAt: new Date("2022-11-15T07:49:28.081Z"),
     },
     connectionId: "<id>",
   });
@@ -305,7 +305,7 @@ async function run() {
   const res = await shippingCreateShippingShipment(unifiedTo, {
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "89a3a992-ff59-4b1b-841f-d99f1e463a52",
+      id: "54e2e03d-f6a9-45ac-8bcb-c8571479f206",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -315,7 +315,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T06:47:47.072Z"),
+      updatedAt: new Date("2022-11-15T07:49:28.081Z"),
     },
     connectionId: "<id>",
   });
@@ -351,7 +351,7 @@ run();
 
 ## getShippingCarrier
 
-Retrieve a carrier
+Retrieves a single ShippingCarrier by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -430,7 +430,7 @@ run();
 
 ## getShippingLabel
 
-Retrieve a label
+Retrieves a single ShippingLabel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -509,7 +509,7 @@ run();
 
 ## getShippingShipment
 
-Retrieve a shipment
+Retrieves a single ShippingShipment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -588,7 +588,7 @@ run();
 
 ## getShippingTracking
 
-Retrieve a tracking
+Retrieves a single ShippingTracking by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -667,7 +667,7 @@ run();
 
 ## listShippingCarriers
 
-List all carriers
+Returns a list of ShippingCarriers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -744,7 +744,7 @@ run();
 
 ## listShippingLabels
 
-List all labels
+Returns a list of ShippingLabels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -821,7 +821,7 @@ run();
 
 ## listShippingShipments
 
-List all shipments
+Returns a list of ShippingShipments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -898,7 +898,7 @@ run();
 
 ## listShippingTrackings
 
-List all trackings
+Returns a list of ShippingTrackings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -975,7 +975,7 @@ run();
 
 ## patchShippingLabel
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -993,17 +993,17 @@ async function run() {
   const result = await unifiedTo.shipping.patchShippingLabel({
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "65b24979-4e20-49bd-8733-ff515d56e08d",
+      id: "6ea31591-2439-4e3e-a205-684e5c207d80",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/65b24979-4e20-49bd-8733-ff515d56e08d.pdf",
+      labelUrl: "https://labels.example.com/6ea31591-2439-4e3e-a205-684e5c207d80.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.641Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.428Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1035,17 +1035,17 @@ async function run() {
   const res = await shippingPatchShippingLabel(unifiedTo, {
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "65b24979-4e20-49bd-8733-ff515d56e08d",
+      id: "6ea31591-2439-4e3e-a205-684e5c207d80",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/65b24979-4e20-49bd-8733-ff515d56e08d.pdf",
+      labelUrl: "https://labels.example.com/6ea31591-2439-4e3e-a205-684e5c207d80.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.641Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.428Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1082,7 +1082,7 @@ run();
 
 ## patchShippingShipment
 
-Update a shipment
+Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
 
 ### Example Usage
 
@@ -1100,7 +1100,7 @@ async function run() {
   const result = await unifiedTo.shipping.patchShippingShipment({
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "0888ca1a-a323-4492-89be-9d0310db6279",
+      id: "a58f9ffb-df7d-489a-b918-d8be21e36b43",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -1110,7 +1110,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T06:47:47.078Z"),
+      updatedAt: new Date("2022-11-15T07:49:28.083Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1142,7 +1142,7 @@ async function run() {
   const res = await shippingPatchShippingShipment(unifiedTo, {
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "0888ca1a-a323-4492-89be-9d0310db6279",
+      id: "a58f9ffb-df7d-489a-b918-d8be21e36b43",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -1152,7 +1152,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T06:47:47.078Z"),
+      updatedAt: new Date("2022-11-15T07:49:28.083Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1189,7 +1189,7 @@ run();
 
 ## removeShippingLabel
 
-Remove a label
+Deletes the ShippingLabel identified by `id`.
 
 ### Example Usage
 
@@ -1268,7 +1268,7 @@ run();
 
 ## removeShippingShipment
 
-Remove a shipment
+Deletes the ShippingShipment identified by `id`.
 
 ### Example Usage
 
@@ -1347,7 +1347,7 @@ run();
 
 ## updateShippingLabel
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -1365,17 +1365,17 @@ async function run() {
   const result = await unifiedTo.shipping.updateShippingLabel({
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "65b24979-4e20-49bd-8733-ff515d56e08d",
+      id: "6ea31591-2439-4e3e-a205-684e5c207d80",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/65b24979-4e20-49bd-8733-ff515d56e08d.pdf",
+      labelUrl: "https://labels.example.com/6ea31591-2439-4e3e-a205-684e5c207d80.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.641Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.428Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1407,17 +1407,17 @@ async function run() {
   const res = await shippingUpdateShippingLabel(unifiedTo, {
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "65b24979-4e20-49bd-8733-ff515d56e08d",
+      id: "6ea31591-2439-4e3e-a205-684e5c207d80",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/65b24979-4e20-49bd-8733-ff515d56e08d.pdf",
+      labelUrl: "https://labels.example.com/6ea31591-2439-4e3e-a205-684e5c207d80.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.641Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.428Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1454,7 +1454,7 @@ run();
 
 ## updateShippingShipment
 
-Update a shipment
+Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
 
 ### Example Usage
 
@@ -1472,7 +1472,7 @@ async function run() {
   const result = await unifiedTo.shipping.updateShippingShipment({
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "0888ca1a-a323-4492-89be-9d0310db6279",
+      id: "a58f9ffb-df7d-489a-b918-d8be21e36b43",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -1482,7 +1482,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T06:47:47.078Z"),
+      updatedAt: new Date("2022-11-15T07:49:28.083Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1514,7 +1514,7 @@ async function run() {
   const res = await shippingUpdateShippingShipment(unifiedTo, {
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "0888ca1a-a323-4492-89be-9d0310db6279",
+      id: "a58f9ffb-df7d-489a-b918-d8be21e36b43",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -1524,7 +1524,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T06:47:47.078Z"),
+      updatedAt: new Date("2022-11-15T07:49:28.083Z"),
     },
     connectionId: "<id>",
     id: "<id>",

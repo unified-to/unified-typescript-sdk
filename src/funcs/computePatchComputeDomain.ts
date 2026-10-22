@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a domain
+ *
+ * @remarks
+ * Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
  */
 export function computePatchComputeDomain(
   client: UnifiedToCore,

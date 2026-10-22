@@ -100,7 +100,7 @@
 
 ## createHrisAttendance
 
-Create an attendance
+Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
 
 ### Example Usage
 
@@ -125,32 +125,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.827Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.515Z"),
-          id: "2164c5a0-2a59-4809-b3fb-0dd8055e1944",
+          endAt: new Date("2024-02-15T01:09:54.739Z"),
+          id: "0a843d35-ca2a-4e6e-b71d-e028909c8160",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.196Z"),
+          startAt: new Date("2023-10-30T09:33:12.838Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.810Z"),
+      endAt: new Date("2024-04-23T20:35:35.929Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "fa0e3e7c-0441-4562-bbaa-e8b7b48b1a86",
+      id: "24129ec9-813a-40b6-b47a-e007dfc2c405",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.703Z"),
+      startAt: new Date("2021-11-11T02:07:45.981Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.798Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.636Z"),
     },
     connectionId: "<id>",
   });
@@ -188,32 +188,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.827Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.515Z"),
-          id: "2164c5a0-2a59-4809-b3fb-0dd8055e1944",
+          endAt: new Date("2024-02-15T01:09:54.739Z"),
+          id: "0a843d35-ca2a-4e6e-b71d-e028909c8160",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.196Z"),
+          startAt: new Date("2023-10-30T09:33:12.838Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.810Z"),
+      endAt: new Date("2024-04-23T20:35:35.929Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "fa0e3e7c-0441-4562-bbaa-e8b7b48b1a86",
+      id: "24129ec9-813a-40b6-b47a-e007dfc2c405",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.703Z"),
+      startAt: new Date("2021-11-11T02:07:45.981Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.798Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.636Z"),
     },
     connectionId: "<id>",
   });
@@ -249,7 +249,7 @@ run();
 
 ## createHrisBankaccount
 
-Create a bankaccount
+Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
 
 ### Example Usage
 
@@ -273,7 +273,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "4624713e-adf0-4a5a-8f91-4ec7f8c4279c",
+      id: "82bd4b07-a36a-49c2-a7c3-97dce9228954",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -281,7 +281,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.525Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.671Z"),
     },
     connectionId: "<id>",
   });
@@ -318,7 +318,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "4624713e-adf0-4a5a-8f91-4ec7f8c4279c",
+      id: "82bd4b07-a36a-49c2-a7c3-97dce9228954",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -326,7 +326,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.525Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.671Z"),
     },
     connectionId: "<id>",
   });
@@ -362,7 +362,7 @@ run();
 
 ## createHrisBenefit
 
-Create a benefit
+Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
 
 ### Example Usage
 
@@ -387,13 +387,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f668a8c6-4553-4322-8936-b84f34f645aa",
+      id: "b6c5d031-1635-4833-a72d-efdb52a29f38",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.175Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.107Z"),
     },
     connectionId: "<id>",
   });
@@ -431,13 +431,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f668a8c6-4553-4322-8936-b84f34f645aa",
+      id: "b6c5d031-1635-4833-a72d-efdb52a29f38",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.175Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.107Z"),
     },
     connectionId: "<id>",
   });
@@ -473,7 +473,7 @@ run();
 
 ## createHrisCompany
 
-Create a company
+Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
 
 ### Example Usage
 
@@ -499,11 +499,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "59ba5732-4821-428d-ad2d-96b3d92cc10b",
+      id: "35212cf4-7227-4de8-9378-19b1282e6f6a",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.231Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.309Z"),
     },
     connectionId: "<id>",
   });
@@ -542,11 +542,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "59ba5732-4821-428d-ad2d-96b3d92cc10b",
+      id: "35212cf4-7227-4de8-9378-19b1282e6f6a",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.231Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.309Z"),
     },
     connectionId: "<id>",
   });
@@ -582,7 +582,7 @@ run();
 
 ## createHrisDeduction
 
-Create a deduction
+Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
 
 ### Example Usage
 
@@ -606,14 +606,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "a08f6d9e-6bba-4281-ac7e-6d9777793c0a",
+      id: "3f71da63-77a4-4497-9729-4a4349cb2889",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.436Z"),
+      startAt: new Date("2025-03-16T02:24:23.920Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.822Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.160Z"),
     },
     connectionId: "<id>",
   });
@@ -650,14 +650,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "a08f6d9e-6bba-4281-ac7e-6d9777793c0a",
+      id: "3f71da63-77a4-4497-9729-4a4349cb2889",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.436Z"),
+      startAt: new Date("2025-03-16T02:24:23.920Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.822Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.160Z"),
     },
     connectionId: "<id>",
   });
@@ -693,7 +693,7 @@ run();
 
 ## createHrisDevice
 
-Create a device
+Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
 
 ### Example Usage
 
@@ -718,7 +718,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "7ed72e5e-7170-44c6-934a-b5a538ca0571",
+      id: "96f1d8eb-0e07-418c-92ec-bb30ca2c130d",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -726,7 +726,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.254Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.149Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -765,7 +765,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "7ed72e5e-7170-44c6-934a-b5a538ca0571",
+      id: "96f1d8eb-0e07-418c-92ec-bb30ca2c130d",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -773,7 +773,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.254Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.149Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -810,7 +810,7 @@ run();
 
 ## createHrisDocument
 
-Create a document
+Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
 
 ### Example Usage
 
@@ -830,10 +830,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "bf2e839d-704d-4f9b-8788-ba2566312aaa",
+      id: "fd89f40c-fe24-4b10-967d-5dc48a301b62",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.774Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.821Z"),
     },
     connectionId: "<id>",
   });
@@ -866,10 +866,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "bf2e839d-704d-4f9b-8788-ba2566312aaa",
+      id: "fd89f40c-fe24-4b10-967d-5dc48a301b62",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.774Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.821Z"),
     },
     connectionId: "<id>",
   });
@@ -905,7 +905,7 @@ run();
 
 ## createHrisEarning
 
-Create an earning
+Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
 
 ### Example Usage
 
@@ -926,12 +926,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "18d6c7a7-e9e9-4f13-b51a-20e4107d4510",
+      id: "021f7404-05e0-42e8-a378-30ca1c3f02b9",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.969Z"),
+      startAt: new Date("2022-07-25T22:55:30.534Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.032Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.055Z"),
     },
     connectionId: "<id>",
   });
@@ -965,12 +965,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "18d6c7a7-e9e9-4f13-b51a-20e4107d4510",
+      id: "021f7404-05e0-42e8-a378-30ca1c3f02b9",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.969Z"),
+      startAt: new Date("2022-07-25T22:55:30.534Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.032Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.055Z"),
     },
     connectionId: "<id>",
   });
@@ -1006,7 +1006,7 @@ run();
 
 ## createHrisEmployee
 
-Create an employee
+Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
 
 ### Example Usage
 
@@ -1059,7 +1059,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "08747908-2fa0-4022-be78-848278e13d75",
+      id: "d5085793-f534-40e6-a5a3-56443831619b",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -1071,7 +1071,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed515727-40f9-4f50-8aa3-d72847f28430",
+          id: "27ffc873-02ff-440e-893f-7bd729565c02",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -1119,7 +1119,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.745Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.432Z"),
     },
     connectionId: "<id>",
   });
@@ -1185,7 +1185,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "08747908-2fa0-4022-be78-848278e13d75",
+      id: "d5085793-f534-40e6-a5a3-56443831619b",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -1197,7 +1197,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed515727-40f9-4f50-8aa3-d72847f28430",
+          id: "27ffc873-02ff-440e-893f-7bd729565c02",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -1245,7 +1245,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.745Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.432Z"),
     },
     connectionId: "<id>",
   });
@@ -1281,7 +1281,7 @@ run();
 
 ## createHrisGroup
 
-Create a group
+Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
 
 ### Example Usage
 
@@ -1300,12 +1300,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "084e308d-cc1a-4501-b864-8e39fb68afa5",
+      id: "ca5facde-b483-4fd5-97f8-6b4e1c9c41d6",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.166Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.439Z"),
     },
     connectionId: "<id>",
   });
@@ -1337,12 +1337,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "084e308d-cc1a-4501-b864-8e39fb68afa5",
+      id: "ca5facde-b483-4fd5-97f8-6b4e1c9c41d6",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.166Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.439Z"),
     },
     connectionId: "<id>",
   });
@@ -1378,7 +1378,7 @@ run();
 
 ## createHrisJob
 
-Create a job
+Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
 
 ### Example Usage
 
@@ -1399,11 +1399,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "da424560-4918-47de-94f0-31e905739006",
+      id: "4d8136ef-6d0a-4f77-945f-003f71e8f046",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.518Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.019Z"),
     },
     connectionId: "<id>",
   });
@@ -1437,11 +1437,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "da424560-4918-47de-94f0-31e905739006",
+      id: "4d8136ef-6d0a-4f77-945f-003f71e8f046",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.518Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.019Z"),
     },
     connectionId: "<id>",
   });
@@ -1477,7 +1477,7 @@ run();
 
 ## createHrisLocation
 
-Create a location
+Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
 
 ### Example Usage
 
@@ -1506,7 +1506,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "85d821c7-e106-4e81-a07c-75f7b458e9d4",
+      id: "f40bf2b7-5544-4ca3-adbd-9d216755ef90",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1527,7 +1527,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.595Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.913Z"),
     },
     connectionId: "<id>",
   });
@@ -1569,7 +1569,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "85d821c7-e106-4e81-a07c-75f7b458e9d4",
+      id: "f40bf2b7-5544-4ca3-adbd-9d216755ef90",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1590,7 +1590,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.595Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.913Z"),
     },
     connectionId: "<id>",
   });
@@ -1626,7 +1626,7 @@ run();
 
 ## createHrisTaxonomy
 
-Create a taxonomy
+Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
 
 ### Example Usage
 
@@ -1650,13 +1650,13 @@ async function run() {
       createdAt: new Date("2022-06-23T02:10:00.789Z"),
       description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
       domain: "Health",
-      id: "f6d34768-5be7-4be1-b997-f243b838891a",
+      id: "10733e29-5d65-412b-b90b-281f45fcc7ef",
       isActive: false,
       metadata: [],
       name: "International Functionality Architect",
       subcategory: "Marble",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-05-29T07:32:16.854Z"),
+      updatedAt: new Date("2023-05-29T12:42:39.690Z"),
       url: "https://fixed-membership.biz/",
     },
     connectionId: "<id>",
@@ -1694,13 +1694,13 @@ async function run() {
       createdAt: new Date("2022-06-23T02:10:00.789Z"),
       description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
       domain: "Health",
-      id: "f6d34768-5be7-4be1-b997-f243b838891a",
+      id: "10733e29-5d65-412b-b90b-281f45fcc7ef",
       isActive: false,
       metadata: [],
       name: "International Functionality Architect",
       subcategory: "Marble",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-05-29T07:32:16.854Z"),
+      updatedAt: new Date("2023-05-29T12:42:39.690Z"),
       url: "https://fixed-membership.biz/",
     },
     connectionId: "<id>",
@@ -1737,7 +1737,7 @@ run();
 
 ## createHrisTimeoff
 
-Create a timeoff
+Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
 
 ### Example Usage
 
@@ -1754,21 +1754,21 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.513Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.489Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.434Z"),
-      id: "0cd3fe71-92fc-4662-992f-5a30322554ab",
+      endAt: new Date("2024-12-29T09:03:47.185Z"),
+      id: "873e9256-ded4-4a37-ad63-478a1756b9a5",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.797Z"),
+      startAt: new Date("2023-09-05T04:44:11.191Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.824Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.799Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -1799,21 +1799,21 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.513Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.489Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.434Z"),
-      id: "0cd3fe71-92fc-4662-992f-5a30322554ab",
+      endAt: new Date("2024-12-29T09:03:47.185Z"),
+      id: "873e9256-ded4-4a37-ad63-478a1756b9a5",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.797Z"),
+      startAt: new Date("2023-09-05T04:44:11.191Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.824Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.799Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -1850,7 +1850,7 @@ run();
 
 ## createHrisTimeshift
 
-Create a timeshift
+Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
 
 ### Example Usage
 
@@ -1867,7 +1867,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.722Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.511Z"),
       compensation: [
         {
           amount: 76761,
@@ -1879,13 +1879,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.346Z"),
+      endAt: new Date("2026-09-28T01:49:22.202Z"),
       hours: 6,
-      id: "50d867b1-3b62-4386-b6b5-028c4d9ba526",
+      id: "48df2de5-64a7-4591-b3a3-9d2488b27968",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.189Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.718Z"),
+      startAt: new Date("2023-07-13T14:04:51.576Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.610Z"),
     },
     connectionId: "<id>",
   });
@@ -1915,7 +1915,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.722Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.511Z"),
       compensation: [
         {
           amount: 76761,
@@ -1927,13 +1927,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.346Z"),
+      endAt: new Date("2026-09-28T01:49:22.202Z"),
       hours: 6,
-      id: "50d867b1-3b62-4386-b6b5-028c4d9ba526",
+      id: "48df2de5-64a7-4591-b3a3-9d2488b27968",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.189Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.718Z"),
+      startAt: new Date("2023-07-13T14:04:51.576Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.610Z"),
     },
     connectionId: "<id>",
   });
@@ -1969,7 +1969,7 @@ run();
 
 ## getHrisAttendance
 
-Retrieve an attendance
+Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2048,7 +2048,7 @@ run();
 
 ## getHrisBankaccount
 
-Retrieve a bankaccount
+Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2127,7 +2127,7 @@ run();
 
 ## getHrisBenefit
 
-Retrieve a benefit
+Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2206,7 +2206,7 @@ run();
 
 ## getHrisCompany
 
-Retrieve a company
+Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2285,7 +2285,7 @@ run();
 
 ## getHrisDeduction
 
-Retrieve a deduction
+Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2364,7 +2364,7 @@ run();
 
 ## getHrisDevice
 
-Retrieve a device
+Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2443,7 +2443,7 @@ run();
 
 ## getHrisDocument
 
-Retrieve a document
+Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2522,7 +2522,7 @@ run();
 
 ## getHrisEarning
 
-Retrieve an earning
+Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2601,7 +2601,7 @@ run();
 
 ## getHrisEmployee
 
-Retrieve an employee
+Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2680,7 +2680,7 @@ run();
 
 ## getHrisGroup
 
-Retrieve a group
+Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2759,7 +2759,7 @@ run();
 
 ## getHrisJob
 
-Retrieve a job
+Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2838,7 +2838,7 @@ run();
 
 ## getHrisLocation
 
-Retrieve a location
+Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2917,7 +2917,7 @@ run();
 
 ## getHrisPaycode
 
-Retrieve a paycode
+Retrieves a single HrisPaycode by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2996,7 +2996,7 @@ run();
 
 ## getHrisPayroll
 
-Retrieve a payroll
+Retrieves a single HrisPayroll by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3075,7 +3075,7 @@ run();
 
 ## getHrisPayslip
 
-Retrieve a payslip
+Retrieves a single HrisPayslip by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3154,7 +3154,7 @@ run();
 
 ## getHrisTaxonomy
 
-Retrieve a taxonomy
+Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3233,7 +3233,7 @@ run();
 
 ## getHrisTimeoff
 
-Retrieve a timeoff
+Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3312,7 +3312,7 @@ run();
 
 ## getHrisTimeshift
 
-Retrieve a timeshift
+Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3391,7 +3391,7 @@ run();
 
 ## listHrisAttendances
 
-List all attendances
+Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3468,7 +3468,7 @@ run();
 
 ## listHrisBankaccounts
 
-List all bankaccounts
+Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3545,7 +3545,7 @@ run();
 
 ## listHrisBenefits
 
-List all benefits
+Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3622,7 +3622,7 @@ run();
 
 ## listHrisCompanies
 
-List all companies
+Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3699,7 +3699,7 @@ run();
 
 ## listHrisDeductions
 
-List all deductions
+Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3776,7 +3776,7 @@ run();
 
 ## listHrisDevices
 
-List all devices
+Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3853,7 +3853,7 @@ run();
 
 ## listHrisDocuments
 
-List all documents
+Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3930,7 +3930,7 @@ run();
 
 ## listHrisEarnings
 
-List all earnings
+Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4007,7 +4007,7 @@ run();
 
 ## listHrisEmployees
 
-List all employees
+Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4084,7 +4084,7 @@ run();
 
 ## listHrisGroups
 
-List all groups
+Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4161,7 +4161,7 @@ run();
 
 ## listHrisJobs
 
-List all jobs
+Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4238,7 +4238,7 @@ run();
 
 ## listHrisLocations
 
-List all locations
+Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4315,7 +4315,7 @@ run();
 
 ## listHrisPaycodes
 
-List all paycodes
+Returns a list of HrisPaycodes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4392,7 +4392,7 @@ run();
 
 ## listHrisPayrolls
 
-List all payrolls
+Returns a list of HrisPayrolls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4469,7 +4469,7 @@ run();
 
 ## listHrisPayslips
 
-List all payslips
+Returns a list of HrisPayslips. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4546,7 +4546,7 @@ run();
 
 ## listHrisTaxonomies
 
-List all taxonomies
+Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4623,7 +4623,7 @@ run();
 
 ## listHrisTimeoffs
 
-List all timeoffs
+Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4700,7 +4700,7 @@ run();
 
 ## listHrisTimeshifts
 
-List all timeshifts
+Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -4777,7 +4777,7 @@ run();
 
 ## patchHrisAttendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -4802,32 +4802,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.828Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.531Z"),
-          id: "fe1936a2-7681-40a1-948c-5d50879b18b8",
+          endAt: new Date("2024-02-15T01:09:54.751Z"),
+          id: "e111fb99-852f-4d40-90f8-d79c72854fc3",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.210Z"),
+          startAt: new Date("2023-10-30T09:33:12.849Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.827Z"),
+      endAt: new Date("2024-04-23T20:35:35.943Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "54e4177f-8c89-4743-9cac-4c151dd71d6f",
+      id: "8bc6f6f7-1357-4a74-a8c3-527805ed61b6",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.705Z"),
+      startAt: new Date("2021-11-11T02:07:45.982Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.801Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.638Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4866,32 +4866,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.828Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.531Z"),
-          id: "fe1936a2-7681-40a1-948c-5d50879b18b8",
+          endAt: new Date("2024-02-15T01:09:54.751Z"),
+          id: "e111fb99-852f-4d40-90f8-d79c72854fc3",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.210Z"),
+          startAt: new Date("2023-10-30T09:33:12.849Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.827Z"),
+      endAt: new Date("2024-04-23T20:35:35.943Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "54e4177f-8c89-4743-9cac-4c151dd71d6f",
+      id: "8bc6f6f7-1357-4a74-a8c3-527805ed61b6",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.705Z"),
+      startAt: new Date("2021-11-11T02:07:45.982Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.801Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.638Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4928,7 +4928,7 @@ run();
 
 ## patchHrisBankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -4952,7 +4952,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "055e688a-9297-4360-85d0-400da027fa26",
+      id: "47ece0fe-1192-426c-9903-652eafd2c868",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -4960,7 +4960,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.541Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.680Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4998,7 +4998,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "055e688a-9297-4360-85d0-400da027fa26",
+      id: "47ece0fe-1192-426c-9903-652eafd2c868",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -5006,7 +5006,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.541Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.680Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5043,7 +5043,7 @@ run();
 
 ## patchHrisBenefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -5068,13 +5068,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f719b08b-d8ca-48d1-93d6-c7914a4532ad",
+      id: "eeb2841a-b500-4629-a717-75c6446b7b7a",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.186Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.115Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5113,13 +5113,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f719b08b-d8ca-48d1-93d6-c7914a4532ad",
+      id: "eeb2841a-b500-4629-a717-75c6446b7b7a",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.186Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.115Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5156,7 +5156,7 @@ run();
 
 ## patchHrisCompany
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -5182,11 +5182,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "faaa5f44-155c-43b6-ab0e-084ac04a2674",
+      id: "693b7c21-4b09-4b44-a9c6-cf43c13200ed",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.253Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.326Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5226,11 +5226,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "faaa5f44-155c-43b6-ab0e-084ac04a2674",
+      id: "693b7c21-4b09-4b44-a9c6-cf43c13200ed",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.253Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.326Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5267,7 +5267,7 @@ run();
 
 ## patchHrisDeduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -5291,14 +5291,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "0fcce65c-ee0d-4155-b35d-1911dbfa6513",
+      id: "65778c94-dd64-4184-a206-51e8f2ecb816",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.454Z"),
+      startAt: new Date("2025-03-16T02:24:23.935Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.837Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5336,14 +5336,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "0fcce65c-ee0d-4155-b35d-1911dbfa6513",
+      id: "65778c94-dd64-4184-a206-51e8f2ecb816",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.454Z"),
+      startAt: new Date("2025-03-16T02:24:23.935Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.837Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5380,7 +5380,7 @@ run();
 
 ## patchHrisDevice
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -5405,7 +5405,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "b55a1d4b-ebce-4f34-b22f-08531cc140ce",
+      id: "00802c67-3627-453e-a080-d918e6f6e92a",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -5413,7 +5413,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.265Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.159Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -5453,7 +5453,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "b55a1d4b-ebce-4f34-b22f-08531cc140ce",
+      id: "00802c67-3627-453e-a080-d918e6f6e92a",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -5461,7 +5461,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.265Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.159Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -5499,7 +5499,7 @@ run();
 
 ## patchHrisDocument
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -5519,10 +5519,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "9c3734b2-aea6-40b0-a422-8000fdd92a90",
+      id: "ce23070f-b1b9-439c-91ac-d8a2d9e1f982",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.787Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.833Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5556,10 +5556,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "9c3734b2-aea6-40b0-a422-8000fdd92a90",
+      id: "ce23070f-b1b9-439c-91ac-d8a2d9e1f982",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.787Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.833Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5596,7 +5596,7 @@ run();
 
 ## patchHrisEarning
 
-Update an earning
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
 
 ### Example Usage
 
@@ -5617,12 +5617,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "029e9935-f421-418d-9176-0c9f4e253621",
+      id: "a7df4f76-6dc1-4a5f-932f-793ebcc0fd23",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.979Z"),
+      startAt: new Date("2022-07-25T22:55:30.539Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.035Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.057Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5657,12 +5657,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "029e9935-f421-418d-9176-0c9f4e253621",
+      id: "a7df4f76-6dc1-4a5f-932f-793ebcc0fd23",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.979Z"),
+      startAt: new Date("2022-07-25T22:55:30.539Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.035Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.057Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5699,7 +5699,7 @@ run();
 
 ## patchHrisEmployee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -5752,7 +5752,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "94a78e51-421e-4782-a58c-ad850209a790",
+      id: "81c12ce9-f173-49b8-9eaa-452600865ef9",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -5764,7 +5764,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "407d49ff-0451-4dfb-a4dc-4f1ec350b21c",
+          id: "7698ff95-0c7d-4994-8b21-932825542642",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -5812,7 +5812,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.759Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5879,7 +5879,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "94a78e51-421e-4782-a58c-ad850209a790",
+      id: "81c12ce9-f173-49b8-9eaa-452600865ef9",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -5891,7 +5891,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "407d49ff-0451-4dfb-a4dc-4f1ec350b21c",
+          id: "7698ff95-0c7d-4994-8b21-932825542642",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -5939,7 +5939,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.759Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5976,7 +5976,7 @@ run();
 
 ## patchHrisGroup
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -5995,12 +5995,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ab26d290-27a7-4355-a563-a595c6c5899b",
+      id: "113ceed8-ead0-40e2-a306-2a700f355907",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.180Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6033,12 +6033,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ab26d290-27a7-4355-a563-a595c6c5899b",
+      id: "113ceed8-ead0-40e2-a306-2a700f355907",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.180Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6075,7 +6075,7 @@ run();
 
 ## patchHrisJob
 
-Update a job
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
 
 ### Example Usage
 
@@ -6096,11 +6096,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "6bf8ff07-fef1-418a-a211-a0e78efe0047",
+      id: "6023c15b-8530-441f-80b1-5d1a30720540",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.583Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6135,11 +6135,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "6bf8ff07-fef1-418a-a211-a0e78efe0047",
+      id: "6023c15b-8530-441f-80b1-5d1a30720540",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.583Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6176,7 +6176,7 @@ run();
 
 ## patchHrisLocation
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -6205,7 +6205,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "326ab9e5-8180-4f72-80a1-d068b97e09e4",
+      id: "1e86056e-46eb-4044-a51c-daff3fb4ad8d",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -6226,7 +6226,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.609Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.921Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6269,7 +6269,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "326ab9e5-8180-4f72-80a1-d068b97e09e4",
+      id: "1e86056e-46eb-4044-a51c-daff3fb4ad8d",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -6290,7 +6290,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.609Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.921Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6327,7 +6327,7 @@ run();
 
 ## patchHrisTimeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -6344,21 +6344,21 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.514Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.490Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.447Z"),
-      id: "06f6f5f2-2b65-47c2-87da-66ddee03d9d5",
+      endAt: new Date("2024-12-29T09:03:47.193Z"),
+      id: "36d1d016-c875-49dc-85b0-b8757493e8f2",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.805Z"),
+      startAt: new Date("2023-09-05T04:44:11.196Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.827Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.801Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -6390,21 +6390,21 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.514Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.490Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.447Z"),
-      id: "06f6f5f2-2b65-47c2-87da-66ddee03d9d5",
+      endAt: new Date("2024-12-29T09:03:47.193Z"),
+      id: "36d1d016-c875-49dc-85b0-b8757493e8f2",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.805Z"),
+      startAt: new Date("2023-09-05T04:44:11.196Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.827Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.801Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -6442,7 +6442,7 @@ run();
 
 ## patchHrisTimeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -6459,7 +6459,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.731Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.517Z"),
       compensation: [
         {
           amount: 76761,
@@ -6471,13 +6471,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.369Z"),
+      endAt: new Date("2026-09-28T01:49:22.217Z"),
       hours: 6,
-      id: "196f13eb-f755-4b39-8395-114df46aa73d",
+      id: "b82c9d33-62ea-43bc-9735-89837bdd2eb1",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.202Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.724Z"),
+      startAt: new Date("2023-07-13T14:04:51.584Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.614Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6508,7 +6508,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.731Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.517Z"),
       compensation: [
         {
           amount: 76761,
@@ -6520,13 +6520,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.369Z"),
+      endAt: new Date("2026-09-28T01:49:22.217Z"),
       hours: 6,
-      id: "196f13eb-f755-4b39-8395-114df46aa73d",
+      id: "b82c9d33-62ea-43bc-9735-89837bdd2eb1",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.202Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.724Z"),
+      startAt: new Date("2023-07-13T14:04:51.584Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.614Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6563,7 +6563,7 @@ run();
 
 ## removeHrisAttendance
 
-Remove an attendance
+Deletes the HrisAttendance identified by `id`.
 
 ### Example Usage
 
@@ -6642,7 +6642,7 @@ run();
 
 ## removeHrisBankaccount
 
-Remove a bankaccount
+Deletes the HrisBankaccount identified by `id`.
 
 ### Example Usage
 
@@ -6721,7 +6721,7 @@ run();
 
 ## removeHrisBenefit
 
-Remove a benefit
+Deletes the HrisBenefit identified by `id`.
 
 ### Example Usage
 
@@ -6800,7 +6800,7 @@ run();
 
 ## removeHrisCompany
 
-Remove a company
+Deletes the HrisCompany identified by `id`.
 
 ### Example Usage
 
@@ -6879,7 +6879,7 @@ run();
 
 ## removeHrisDeduction
 
-Remove a deduction
+Deletes the HrisDeduction identified by `id`.
 
 ### Example Usage
 
@@ -6958,7 +6958,7 @@ run();
 
 ## removeHrisDevice
 
-Remove a device
+Deletes the HrisDevice identified by `id`.
 
 ### Example Usage
 
@@ -7037,7 +7037,7 @@ run();
 
 ## removeHrisDocument
 
-Remove a document
+Deletes the HrisDocument identified by `id`.
 
 ### Example Usage
 
@@ -7116,7 +7116,7 @@ run();
 
 ## removeHrisEarning
 
-Remove an earning
+Deletes the HrisEarning identified by `id`.
 
 ### Example Usage
 
@@ -7195,7 +7195,7 @@ run();
 
 ## removeHrisEmployee
 
-Remove an employee
+Deletes the HrisEmployee identified by `id`.
 
 ### Example Usage
 
@@ -7274,7 +7274,7 @@ run();
 
 ## removeHrisGroup
 
-Remove a group
+Deletes the HrisGroup identified by `id`.
 
 ### Example Usage
 
@@ -7353,7 +7353,7 @@ run();
 
 ## removeHrisJob
 
-Remove a job
+Deletes the HrisJob identified by `id`.
 
 ### Example Usage
 
@@ -7432,7 +7432,7 @@ run();
 
 ## removeHrisLocation
 
-Remove a location
+Deletes the HrisLocation identified by `id`.
 
 ### Example Usage
 
@@ -7511,7 +7511,7 @@ run();
 
 ## removeHrisTimeoff
 
-Remove a timeoff
+Deletes the HrisTimeoff identified by `id`.
 
 ### Example Usage
 
@@ -7590,7 +7590,7 @@ run();
 
 ## removeHrisTimeshift
 
-Remove a timeshift
+Deletes the HrisTimeshift identified by `id`.
 
 ### Example Usage
 
@@ -7669,7 +7669,7 @@ run();
 
 ## updateHrisAttendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -7694,32 +7694,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.828Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.531Z"),
-          id: "fe1936a2-7681-40a1-948c-5d50879b18b8",
+          endAt: new Date("2024-02-15T01:09:54.751Z"),
+          id: "e111fb99-852f-4d40-90f8-d79c72854fc3",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.210Z"),
+          startAt: new Date("2023-10-30T09:33:12.849Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.827Z"),
+      endAt: new Date("2024-04-23T20:35:35.943Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "54e4177f-8c89-4743-9cac-4c151dd71d6f",
+      id: "8bc6f6f7-1357-4a74-a8c3-527805ed61b6",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.705Z"),
+      startAt: new Date("2021-11-11T02:07:45.982Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.801Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.638Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7758,32 +7758,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.828Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.531Z"),
-          id: "fe1936a2-7681-40a1-948c-5d50879b18b8",
+          endAt: new Date("2024-02-15T01:09:54.751Z"),
+          id: "e111fb99-852f-4d40-90f8-d79c72854fc3",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.210Z"),
+          startAt: new Date("2023-10-30T09:33:12.849Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.827Z"),
+      endAt: new Date("2024-04-23T20:35:35.943Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "54e4177f-8c89-4743-9cac-4c151dd71d6f",
+      id: "8bc6f6f7-1357-4a74-a8c3-527805ed61b6",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.705Z"),
+      startAt: new Date("2021-11-11T02:07:45.982Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.801Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.638Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7820,7 +7820,7 @@ run();
 
 ## updateHrisBankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -7844,7 +7844,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "055e688a-9297-4360-85d0-400da027fa26",
+      id: "47ece0fe-1192-426c-9903-652eafd2c868",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -7852,7 +7852,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.541Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.680Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7890,7 +7890,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "055e688a-9297-4360-85d0-400da027fa26",
+      id: "47ece0fe-1192-426c-9903-652eafd2c868",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -7898,7 +7898,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.541Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.680Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7935,7 +7935,7 @@ run();
 
 ## updateHrisBenefit
 
-Update a benefit
+Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
 
 ### Example Usage
 
@@ -7960,13 +7960,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f719b08b-d8ca-48d1-93d6-c7914a4532ad",
+      id: "eeb2841a-b500-4629-a717-75c6446b7b7a",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.186Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.115Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8005,13 +8005,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "f719b08b-d8ca-48d1-93d6-c7914a4532ad",
+      id: "eeb2841a-b500-4629-a717-75c6446b7b7a",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-20T20:35:39.186Z"),
+      updatedAt: new Date("2023-03-21T07:04:28.115Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8048,7 +8048,7 @@ run();
 
 ## updateHrisCompany
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -8074,11 +8074,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "faaa5f44-155c-43b6-ab0e-084ac04a2674",
+      id: "693b7c21-4b09-4b44-a9c6-cf43c13200ed",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.253Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.326Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8118,11 +8118,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "faaa5f44-155c-43b6-ab0e-084ac04a2674",
+      id: "693b7c21-4b09-4b44-a9c6-cf43c13200ed",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.253Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.326Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8159,7 +8159,7 @@ run();
 
 ## updateHrisDeduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -8183,14 +8183,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "0fcce65c-ee0d-4155-b35d-1911dbfa6513",
+      id: "65778c94-dd64-4184-a206-51e8f2ecb816",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.454Z"),
+      startAt: new Date("2025-03-16T02:24:23.935Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.837Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8228,14 +8228,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "0fcce65c-ee0d-4155-b35d-1911dbfa6513",
+      id: "65778c94-dd64-4184-a206-51e8f2ecb816",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.454Z"),
+      startAt: new Date("2025-03-16T02:24:23.935Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.837Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8272,7 +8272,7 @@ run();
 
 ## updateHrisDevice
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -8297,7 +8297,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "b55a1d4b-ebce-4f34-b22f-08531cc140ce",
+      id: "00802c67-3627-453e-a080-d918e6f6e92a",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -8305,7 +8305,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.265Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.159Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -8345,7 +8345,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "b55a1d4b-ebce-4f34-b22f-08531cc140ce",
+      id: "00802c67-3627-453e-a080-d918e6f6e92a",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -8353,7 +8353,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.265Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.159Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -8391,7 +8391,7 @@ run();
 
 ## updateHrisDocument
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -8411,10 +8411,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "9c3734b2-aea6-40b0-a422-8000fdd92a90",
+      id: "ce23070f-b1b9-439c-91ac-d8a2d9e1f982",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.787Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.833Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8448,10 +8448,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "9c3734b2-aea6-40b0-a422-8000fdd92a90",
+      id: "ce23070f-b1b9-439c-91ac-d8a2d9e1f982",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.787Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.833Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8488,7 +8488,7 @@ run();
 
 ## updateHrisEarning
 
-Update an earning
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
 
 ### Example Usage
 
@@ -8509,12 +8509,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "029e9935-f421-418d-9176-0c9f4e253621",
+      id: "a7df4f76-6dc1-4a5f-932f-793ebcc0fd23",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.979Z"),
+      startAt: new Date("2022-07-25T22:55:30.539Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.035Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.057Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8549,12 +8549,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "029e9935-f421-418d-9176-0c9f4e253621",
+      id: "a7df4f76-6dc1-4a5f-932f-793ebcc0fd23",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.979Z"),
+      startAt: new Date("2022-07-25T22:55:30.539Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.035Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.057Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8591,7 +8591,7 @@ run();
 
 ## updateHrisEmployee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -8644,7 +8644,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "94a78e51-421e-4782-a58c-ad850209a790",
+      id: "81c12ce9-f173-49b8-9eaa-452600865ef9",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -8656,7 +8656,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "407d49ff-0451-4dfb-a4dc-4f1ec350b21c",
+          id: "7698ff95-0c7d-4994-8b21-932825542642",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -8704,7 +8704,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.759Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8771,7 +8771,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "94a78e51-421e-4782-a58c-ad850209a790",
+      id: "81c12ce9-f173-49b8-9eaa-452600865ef9",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -8783,7 +8783,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "407d49ff-0451-4dfb-a4dc-4f1ec350b21c",
+          id: "7698ff95-0c7d-4994-8b21-932825542642",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -8831,7 +8831,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.759Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8868,7 +8868,7 @@ run();
 
 ## updateHrisGroup
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -8887,12 +8887,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ab26d290-27a7-4355-a563-a595c6c5899b",
+      id: "113ceed8-ead0-40e2-a306-2a700f355907",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.180Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8925,12 +8925,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ab26d290-27a7-4355-a563-a595c6c5899b",
+      id: "113ceed8-ead0-40e2-a306-2a700f355907",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.180Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8967,7 +8967,7 @@ run();
 
 ## updateHrisJob
 
-Update a job
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
 
 ### Example Usage
 
@@ -8988,11 +8988,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "6bf8ff07-fef1-418a-a211-a0e78efe0047",
+      id: "6023c15b-8530-441f-80b1-5d1a30720540",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.583Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9027,11 +9027,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "6bf8ff07-fef1-418a-a211-a0e78efe0047",
+      id: "6023c15b-8530-441f-80b1-5d1a30720540",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.583Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9068,7 +9068,7 @@ run();
 
 ## updateHrisLocation
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -9097,7 +9097,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "326ab9e5-8180-4f72-80a1-d068b97e09e4",
+      id: "1e86056e-46eb-4044-a51c-daff3fb4ad8d",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -9118,7 +9118,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.609Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.921Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9161,7 +9161,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "326ab9e5-8180-4f72-80a1-d068b97e09e4",
+      id: "1e86056e-46eb-4044-a51c-daff3fb4ad8d",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -9182,7 +9182,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.609Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.921Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9219,7 +9219,7 @@ run();
 
 ## updateHrisTimeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -9236,21 +9236,21 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.514Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.490Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.447Z"),
-      id: "06f6f5f2-2b65-47c2-87da-66ddee03d9d5",
+      endAt: new Date("2024-12-29T09:03:47.193Z"),
+      id: "36d1d016-c875-49dc-85b0-b8757493e8f2",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.805Z"),
+      startAt: new Date("2023-09-05T04:44:11.196Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.827Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.801Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -9282,21 +9282,21 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.514Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.490Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.447Z"),
-      id: "06f6f5f2-2b65-47c2-87da-66ddee03d9d5",
+      endAt: new Date("2024-12-29T09:03:47.193Z"),
+      id: "36d1d016-c875-49dc-85b0-b8757493e8f2",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.805Z"),
+      startAt: new Date("2023-09-05T04:44:11.196Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.827Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.801Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -9334,7 +9334,7 @@ run();
 
 ## updateHrisTimeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -9351,7 +9351,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.731Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.517Z"),
       compensation: [
         {
           amount: 76761,
@@ -9363,13 +9363,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.369Z"),
+      endAt: new Date("2026-09-28T01:49:22.217Z"),
       hours: 6,
-      id: "196f13eb-f755-4b39-8395-114df46aa73d",
+      id: "b82c9d33-62ea-43bc-9735-89837bdd2eb1",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.202Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.724Z"),
+      startAt: new Date("2023-07-13T14:04:51.584Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.614Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9400,7 +9400,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.731Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.517Z"),
       compensation: [
         {
           amount: 76761,
@@ -9412,13 +9412,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.369Z"),
+      endAt: new Date("2026-09-28T01:49:22.217Z"),
       hours: 6,
-      id: "196f13eb-f755-4b39-8395-114df46aa73d",
+      id: "b82c9d33-62ea-43bc-9735-89837bdd2eb1",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.202Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.724Z"),
+      startAt: new Date("2023-07-13T14:04:51.584Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.614Z"),
     },
     connectionId: "<id>",
     id: "<id>",

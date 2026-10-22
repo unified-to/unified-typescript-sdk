@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a practicearea
+ *
+ * @remarks
+ * Deletes the LegalPracticearea identified by `id`.
  */
 export function legalRemoveLegalPracticearea(
   client: UnifiedToCore,

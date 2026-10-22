@@ -14,6 +14,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Taxonomy extends ClientSDK {
   /**
    * Create a taxonomy
+   *
+   * @remarks
+   * Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
    */
   async createHrisTaxonomy(
     request: operations.CreateHrisTaxonomyRequest,
@@ -28,6 +31,9 @@ export class Taxonomy extends ClientSDK {
 
   /**
    * Retrieve a taxonomy
+   *
+   * @remarks
+   * Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisTaxonomy(
     request: operations.GetHrisTaxonomyRequest,
@@ -42,6 +48,9 @@ export class Taxonomy extends ClientSDK {
 
   /**
    * List all taxonomies
+   *
+   * @remarks
+   * Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmTaxonomies(
     request: operations.ListCrmTaxonomiesRequest,
@@ -56,6 +65,9 @@ export class Taxonomy extends ClientSDK {
 
   /**
    * List all taxonomies
+   *
+   * @remarks
+   * Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisTaxonomies(
     request: operations.ListHrisTaxonomiesRequest,

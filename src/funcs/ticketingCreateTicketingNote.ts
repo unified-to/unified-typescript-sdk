@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a note
+ *
+ * @remarks
+ * Creates a TicketingNote. Provide the unified TicketingNote fields in the request body; they are mapped to the provider's API. Returns the created TicketingNote.
  */
 export function ticketingCreateTicketingNote(
   client: UnifiedToCore,

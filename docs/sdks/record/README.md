@@ -13,7 +13,7 @@
 
 ## createDatastoreRecord
 
-Create a record
+Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
 
 ### Example Usage
 
@@ -34,10 +34,10 @@ async function run() {
       fields: {
 
       },
-      id: "3ac2269a-d063-488b-ac0f-ab75cae09284",
+      id: "8bb8da98-ee7c-4e19-8c4d-f08a58a1f3fd",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-05T03:31:15.092Z"),
+      updatedAt: new Date("2025-03-05T18:24:51.100Z"),
     },
     connectionId: "<id>",
   });
@@ -71,10 +71,10 @@ async function run() {
       fields: {
   
       },
-      id: "3ac2269a-d063-488b-ac0f-ab75cae09284",
+      id: "8bb8da98-ee7c-4e19-8c4d-f08a58a1f3fd",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-05T03:31:15.092Z"),
+      updatedAt: new Date("2025-03-05T18:24:51.100Z"),
     },
     connectionId: "<id>",
   });
@@ -110,7 +110,7 @@ run();
 
 ## getDatastoreRecord
 
-Retrieve a record
+Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -189,7 +189,7 @@ run();
 
 ## listDatastoreRecords
 
-List all records
+Returns a list of DatastoreRecords. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -266,7 +266,7 @@ run();
 
 ## patchDatastoreRecord
 
-Update a record
+Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
 
 ### Example Usage
 
@@ -287,10 +287,10 @@ async function run() {
       fields: {
 
       },
-      id: "ed424055-c53d-40f1-897c-bc59f600861f",
+      id: "06667a15-bcb7-458d-bd39-83cb22f3a667",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-05T03:31:15.101Z"),
+      updatedAt: new Date("2025-03-05T18:24:51.107Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -325,10 +325,10 @@ async function run() {
       fields: {
   
       },
-      id: "ed424055-c53d-40f1-897c-bc59f600861f",
+      id: "06667a15-bcb7-458d-bd39-83cb22f3a667",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-05T03:31:15.101Z"),
+      updatedAt: new Date("2025-03-05T18:24:51.107Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -365,7 +365,7 @@ run();
 
 ## removeDatastoreRecord
 
-Remove a record
+Deletes the DatastoreRecord identified by `id`.
 
 ### Example Usage
 
@@ -444,7 +444,7 @@ run();
 
 ## updateDatastoreRecord
 
-Update a record
+Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
 
 ### Example Usage
 
@@ -465,10 +465,10 @@ async function run() {
       fields: {
 
       },
-      id: "ed424055-c53d-40f1-897c-bc59f600861f",
+      id: "06667a15-bcb7-458d-bd39-83cb22f3a667",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-05T03:31:15.101Z"),
+      updatedAt: new Date("2025-03-05T18:24:51.107Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -503,10 +503,10 @@ async function run() {
       fields: {
   
       },
-      id: "ed424055-c53d-40f1-897c-bc59f600861f",
+      id: "06667a15-bcb7-458d-bd39-83cb22f3a667",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-05T03:31:15.101Z"),
+      updatedAt: new Date("2025-03-05T18:24:51.107Z"),
     },
     connectionId: "<id>",
     id: "<id>",

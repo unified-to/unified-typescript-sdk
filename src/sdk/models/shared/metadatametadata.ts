@@ -10,6 +10,9 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+/**
+ * The data type of the custom field's values
+ */
 export const MetadataMetadataFormat = {
   Text: "TEXT",
   Number: "NUMBER",
@@ -25,6 +28,9 @@ export const MetadataMetadataFormat = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
+/**
+ * The data type of the custom field's values
+ */
 export type MetadataMetadataFormat = OpenEnum<typeof MetadataMetadataFormat>;
 
 export type MetadataMetadata = {
@@ -32,12 +38,18 @@ export type MetadataMetadata = {
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
+  /**
+   * The data type of the custom field's values
+   */
   format?: MetadataMetadataFormat | undefined;
   id?: string | undefined;
   /**
    * When true, this metadata slug is required for create for this integration.
    */
   isRequired?: boolean | undefined;
+  /**
+   * The display name of the custom field
+   */
   name: string;
   /**
    * This is the unified object type that this metadata is associated with. eg. crm_contact or commerce_item

@@ -18,6 +18,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Template extends ClientSDK {
   /**
    * Create a template
+   *
+   * @remarks
+   * Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
    */
   async createComputeTemplate(
     request: operations.CreateComputeTemplateRequest,
@@ -32,6 +35,9 @@ export class Template extends ClientSDK {
 
   /**
    * Retrieve a template
+   *
+   * @remarks
+   * Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeTemplate(
     request: operations.GetComputeTemplateRequest,
@@ -46,6 +52,9 @@ export class Template extends ClientSDK {
 
   /**
    * Retrieve a template
+   *
+   * @remarks
+   * Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSigningTemplate(
     request: operations.GetSigningTemplateRequest,
@@ -60,6 +69,9 @@ export class Template extends ClientSDK {
 
   /**
    * List all templates
+   *
+   * @remarks
+   * Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeTemplates(
     request: operations.ListComputeTemplatesRequest,
@@ -74,6 +86,9 @@ export class Template extends ClientSDK {
 
   /**
    * List all templates
+   *
+   * @remarks
+   * Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listSigningTemplates(
     request: operations.ListSigningTemplatesRequest,
@@ -88,6 +103,9 @@ export class Template extends ClientSDK {
 
   /**
    * Update a template
+   *
+   * @remarks
+   * Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
    */
   async patchComputeTemplate(
     request: operations.PatchComputeTemplateRequest,
@@ -102,6 +120,9 @@ export class Template extends ClientSDK {
 
   /**
    * Remove a template
+   *
+   * @remarks
+   * Deletes the ComputeTemplate identified by `id`.
    */
   async removeComputeTemplate(
     request: operations.RemoveComputeTemplateRequest,
@@ -116,6 +137,9 @@ export class Template extends ClientSDK {
 
   /**
    * Update a template
+   *
+   * @remarks
+   * Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
    */
   async updateComputeTemplate(
     request: operations.UpdateComputeTemplateRequest,

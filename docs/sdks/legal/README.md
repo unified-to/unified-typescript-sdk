@@ -31,7 +31,7 @@
 
 ## createLegalExpense
 
-Create an expense
+Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
 
 ### Example Usage
 
@@ -52,7 +52,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "cefa9fac-bb59-4ea3-9b34-76e523d93c3b",
+      id: "2e544370-b132-4901-ad67-317a263e7922",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -60,7 +60,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.107Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.536Z"),
     },
     connectionId: "<id>",
   });
@@ -94,7 +94,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "cefa9fac-bb59-4ea3-9b34-76e523d93c3b",
+      id: "2e544370-b132-4901-ad67-317a263e7922",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -102,7 +102,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.107Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.536Z"),
     },
     connectionId: "<id>",
   });
@@ -138,7 +138,7 @@ run();
 
 ## createLegalMatter
 
-Create a matter
+Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
 
 ### Example Usage
 
@@ -162,11 +162,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "727594a2-956a-4119-ab36-871138467dc1",
+      id: "5d04419c-d329-4119-a06b-b318c524e3d4",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.538Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -175,8 +175,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.608Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.489Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.085Z"),
     },
     connectionId: "<id>",
   });
@@ -213,11 +213,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "727594a2-956a-4119-ab36-871138467dc1",
+      id: "5d04419c-d329-4119-a06b-b318c524e3d4",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.538Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -226,8 +226,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.608Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.489Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.085Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ run();
 
 ## createLegalPracticearea
 
-Create a practicearea
+Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
 
 ### Example Usage
 
@@ -282,11 +282,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "dcfa0dfb-4025-4ee9-b911-274fe7eac40d",
+      id: "3a7714e5-ac59-44ac-9370-3cb46b735194",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.079Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.968Z"),
     },
     connectionId: "<id>",
   });
@@ -318,11 +318,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "dcfa0dfb-4025-4ee9-b911-274fe7eac40d",
+      id: "3a7714e5-ac59-44ac-9370-3cb46b735194",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.079Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.968Z"),
     },
     connectionId: "<id>",
   });
@@ -358,7 +358,7 @@ run();
 
 ## createLegalTimeentry
 
-Create a timeentry
+Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
 
 ### Example Usage
 
@@ -379,13 +379,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "9bb8b325-a60e-46e0-b56c-f2fed4c5e146",
+      id: "5b2d24ba-1e1b-4d6e-bbd1-9e959388c009",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -420,13 +420,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "9bb8b325-a60e-46e0-b56c-f2fed4c5e146",
+      id: "5b2d24ba-1e1b-4d6e-bbd1-9e959388c009",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -463,7 +463,7 @@ run();
 
 ## getLegalExpense
 
-Retrieve an expense
+Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -542,7 +542,7 @@ run();
 
 ## getLegalMatter
 
-Retrieve a matter
+Retrieves a single LegalMatter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -621,7 +621,7 @@ run();
 
 ## getLegalPracticearea
 
-Retrieve a practicearea
+Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -700,7 +700,7 @@ run();
 
 ## getLegalTimeentry
 
-Retrieve a timeentry
+Retrieves a single LegalTimeentry by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -779,7 +779,7 @@ run();
 
 ## listLegalExpenses
 
-List all expenses
+Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -856,7 +856,7 @@ run();
 
 ## listLegalMatters
 
-List all matters
+Returns a list of LegalMatters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -933,7 +933,7 @@ run();
 
 ## listLegalPracticeareas
 
-List all practiceareas
+Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1010,7 +1010,7 @@ run();
 
 ## listLegalTimeentries
 
-List all timeentries
+Returns a list of LegalTimeentries. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1087,7 +1087,7 @@ run();
 
 ## patchLegalExpense
 
-Update an expense
+Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -1108,7 +1108,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "3fc90bf9-2d8b-4448-b0f1-c50cccc341cf",
+      id: "aa99872e-e44f-40ea-ab70-60f7a313a0c1",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -1116,7 +1116,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.116Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.542Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1151,7 +1151,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "3fc90bf9-2d8b-4448-b0f1-c50cccc341cf",
+      id: "aa99872e-e44f-40ea-ab70-60f7a313a0c1",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -1159,7 +1159,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.116Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.542Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1196,7 +1196,7 @@ run();
 
 ## patchLegalMatter
 
-Update a matter
+Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
 
 ### Example Usage
 
@@ -1220,11 +1220,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "cd2ea8e9-9758-4a5e-8ffd-7804a9400f1a",
+      id: "394614ee-2c55-4f2e-92b1-2fa5d6fafb42",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.539Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -1233,8 +1233,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.637Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.508Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1272,11 +1272,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "cd2ea8e9-9758-4a5e-8ffd-7804a9400f1a",
+      id: "394614ee-2c55-4f2e-92b1-2fa5d6fafb42",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.539Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -1285,8 +1285,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.637Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.508Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1323,7 +1323,7 @@ run();
 
 ## patchLegalPracticearea
 
-Update a practicearea
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
 
 ### Example Usage
 
@@ -1342,11 +1342,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "89b5b586-2be5-4e19-9c0c-c995e0069ced",
+      id: "2bc03224-79ad-4569-9bc9-e71104a32bd6",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.091Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.977Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1379,11 +1379,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "89b5b586-2be5-4e19-9c0c-c995e0069ced",
+      id: "2bc03224-79ad-4569-9bc9-e71104a32bd6",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.091Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.977Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1420,7 +1420,7 @@ run();
 
 ## patchLegalTimeentry
 
-Update a timeentry
+Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
 
 ### Example Usage
 
@@ -1441,13 +1441,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "7b2f3a6e-9402-4831-9274-2e34d121defd",
+      id: "897447cf-949b-4c1a-a71c-343838ab5191",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -1483,13 +1483,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "7b2f3a6e-9402-4831-9274-2e34d121defd",
+      id: "897447cf-949b-4c1a-a71c-343838ab5191",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -1527,7 +1527,7 @@ run();
 
 ## removeLegalExpense
 
-Remove an expense
+Deletes the LegalExpense identified by `id`.
 
 ### Example Usage
 
@@ -1606,7 +1606,7 @@ run();
 
 ## removeLegalMatter
 
-Remove a matter
+Deletes the LegalMatter identified by `id`.
 
 ### Example Usage
 
@@ -1685,7 +1685,7 @@ run();
 
 ## removeLegalPracticearea
 
-Remove a practicearea
+Deletes the LegalPracticearea identified by `id`.
 
 ### Example Usage
 
@@ -1764,7 +1764,7 @@ run();
 
 ## removeLegalTimeentry
 
-Remove a timeentry
+Deletes the LegalTimeentry identified by `id`.
 
 ### Example Usage
 
@@ -1843,7 +1843,7 @@ run();
 
 ## updateLegalExpense
 
-Update an expense
+Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -1864,7 +1864,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "3fc90bf9-2d8b-4448-b0f1-c50cccc341cf",
+      id: "aa99872e-e44f-40ea-ab70-60f7a313a0c1",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -1872,7 +1872,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.116Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.542Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1907,7 +1907,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "3fc90bf9-2d8b-4448-b0f1-c50cccc341cf",
+      id: "aa99872e-e44f-40ea-ab70-60f7a313a0c1",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -1915,7 +1915,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.116Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.542Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1952,7 +1952,7 @@ run();
 
 ## updateLegalMatter
 
-Update a matter
+Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
 
 ### Example Usage
 
@@ -1976,11 +1976,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "cd2ea8e9-9758-4a5e-8ffd-7804a9400f1a",
+      id: "394614ee-2c55-4f2e-92b1-2fa5d6fafb42",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.539Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -1989,8 +1989,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.637Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.508Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2028,11 +2028,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "cd2ea8e9-9758-4a5e-8ffd-7804a9400f1a",
+      id: "394614ee-2c55-4f2e-92b1-2fa5d6fafb42",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.539Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -2041,8 +2041,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.637Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.508Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2079,7 +2079,7 @@ run();
 
 ## updateLegalPracticearea
 
-Update a practicearea
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
 
 ### Example Usage
 
@@ -2098,11 +2098,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "89b5b586-2be5-4e19-9c0c-c995e0069ced",
+      id: "2bc03224-79ad-4569-9bc9-e71104a32bd6",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.091Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.977Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2135,11 +2135,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "89b5b586-2be5-4e19-9c0c-c995e0069ced",
+      id: "2bc03224-79ad-4569-9bc9-e71104a32bd6",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.091Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.977Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2176,7 +2176,7 @@ run();
 
 ## updateLegalTimeentry
 
-Update a timeentry
+Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
 
 ### Example Usage
 
@@ -2197,13 +2197,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "7b2f3a6e-9402-4831-9274-2e34d121defd",
+      id: "897447cf-949b-4c1a-a71c-343838ab5191",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",
@@ -2239,13 +2239,13 @@ async function run() {
       createdAt: new Date("2022-05-06T03:26:03.756Z"),
       currency: "ZAR",
       description: "Ea derideo adulatio torrens.",
-      id: "7b2f3a6e-9402-4831-9274-2e34d121defd",
+      id: "897447cf-949b-4c1a-a71c-343838ab5191",
       isBillable: true,
       metadata: [],
       minutes: 390,
       rateAmount: 637,
       totalAmount: 4140.5,
-      updatedAt: new Date("2022-06-30T01:50:34.545Z"),
+      updatedAt: new Date("2022-06-30T02:39:12.841Z"),
       workedAt: new Date("2022-05-06T03:26:03.756Z"),
     },
     connectionId: "<id>",

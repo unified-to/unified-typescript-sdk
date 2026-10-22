@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an expense
+ *
+ * @remarks
+ * Deletes the LegalExpense identified by `id`.
  */
 export function expenseRemoveLegalExpense(
   client: UnifiedToCore,

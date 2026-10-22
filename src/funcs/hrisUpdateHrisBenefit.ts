@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a benefit
+ *
+ * @remarks
+ * Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
  */
 export function hrisUpdateHrisBenefit(
   client: UnifiedToCore,

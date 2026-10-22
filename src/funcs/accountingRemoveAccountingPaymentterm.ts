@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a paymentterm
+ *
+ * @remarks
+ * Deletes the AccountingPaymentterm identified by `id`.
  */
 export function accountingRemoveAccountingPaymentterm(
   client: UnifiedToCore,

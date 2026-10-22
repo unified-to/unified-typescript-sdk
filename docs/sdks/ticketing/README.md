@@ -31,7 +31,7 @@
 
 ## createTicketingCategory
 
-Create a category
+Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
 
 ### Example Usage
 
@@ -50,11 +50,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "8fc3cee2-36f5-4263-88a5-1cf3d23e09df",
+      id: "3aae5273-36c6-4e87-bad7-88eeffa92cdf",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.471Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.336Z"),
     },
     connectionId: "<id>",
   });
@@ -86,11 +86,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "8fc3cee2-36f5-4263-88a5-1cf3d23e09df",
+      id: "3aae5273-36c6-4e87-bad7-88eeffa92cdf",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.471Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.336Z"),
     },
     connectionId: "<id>",
   });
@@ -126,7 +126,7 @@ run();
 
 ## createTicketingCustomer
 
-Create a customer
+Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider's API. Returns the created TicketingCustomer.
 
 ### Example Usage
 
@@ -150,7 +150,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "889b2097-c4f0-4f90-99c0-51b15b5b507c",
+      id: "607dd186-9b78-40aa-a8d2-0955cb7702ec",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -171,7 +171,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.961Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.011Z"),
     },
     connectionId: "<id>",
   });
@@ -208,7 +208,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "889b2097-c4f0-4f90-99c0-51b15b5b507c",
+      id: "607dd186-9b78-40aa-a8d2-0955cb7702ec",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -229,7 +229,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.961Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.011Z"),
     },
     connectionId: "<id>",
   });
@@ -265,7 +265,7 @@ run();
 
 ## createTicketingNote
 
-Create a note
+Creates a TicketingNote. Provide the unified TicketingNote fields in the request body; they are mapped to the provider's API. Returns the created TicketingNote.
 
 ### Example Usage
 
@@ -284,9 +284,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "173d86ea-b9f4-43b6-a25c-430fb3f0b0cd",
+      id: "6f52b882-e869-4a93-a4a7-05c496afe084",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.336Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.221Z"),
     },
     connectionId: "<id>",
   });
@@ -318,9 +318,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "173d86ea-b9f4-43b6-a25c-430fb3f0b0cd",
+      id: "6f52b882-e869-4a93-a4a7-05c496afe084",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.336Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.221Z"),
     },
     connectionId: "<id>",
   });
@@ -356,7 +356,7 @@ run();
 
 ## createTicketingTicket
 
-Create a ticket
+Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
 
 ### Example Usage
 
@@ -377,7 +377,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "de47741d-2fea-4b9d-b3e2-8ddbd23df2e9",
+      id: "2b205253-ef92-4cec-86ce-608c756f0e6b",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -386,7 +386,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -421,7 +421,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "de47741d-2fea-4b9d-b3e2-8ddbd23df2e9",
+      id: "2b205253-ef92-4cec-86ce-608c756f0e6b",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -430,7 +430,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -467,7 +467,7 @@ run();
 
 ## getTicketingCategory
 
-Retrieve a category
+Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -546,7 +546,7 @@ run();
 
 ## getTicketingCustomer
 
-Retrieve a customer
+Retrieves a single TicketingCustomer by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -625,7 +625,7 @@ run();
 
 ## getTicketingNote
 
-Retrieve a note
+Retrieves a single TicketingNote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -704,7 +704,7 @@ run();
 
 ## getTicketingTicket
 
-Retrieve a ticket
+Retrieves a single TicketingTicket by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -783,7 +783,7 @@ run();
 
 ## listTicketingCategories
 
-List all categories
+Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -860,7 +860,7 @@ run();
 
 ## listTicketingCustomers
 
-List all customers
+Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -937,7 +937,7 @@ run();
 
 ## listTicketingNotes
 
-List all notes
+Returns a list of TicketingNotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1014,7 +1014,7 @@ run();
 
 ## listTicketingTickets
 
-List all tickets
+Returns a list of TicketingTickets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1091,7 +1091,7 @@ run();
 
 ## patchTicketingCategory
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -1110,11 +1110,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "664f1491-4ac7-4ad3-8733-cb1822ea85f9",
+      id: "ea11f844-dea5-4df2-946d-21c55cc56db1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.482Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.345Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1147,11 +1147,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "664f1491-4ac7-4ad3-8733-cb1822ea85f9",
+      id: "ea11f844-dea5-4df2-946d-21c55cc56db1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.482Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.345Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1188,7 +1188,7 @@ run();
 
 ## patchTicketingCustomer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -1212,7 +1212,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "4c7c2df4-86c2-4c15-a036-8803e36c55bb",
+      id: "e81799f8-f641-4a11-b580-0a763577793a",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -1233,7 +1233,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.977Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1271,7 +1271,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "4c7c2df4-86c2-4c15-a036-8803e36c55bb",
+      id: "e81799f8-f641-4a11-b580-0a763577793a",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -1292,7 +1292,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.977Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1329,7 +1329,7 @@ run();
 
 ## patchTicketingNote
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -1348,9 +1348,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "ade108bd-2a2f-4e44-850f-5de51df39810",
+      id: "8124cee1-89ae-4787-9cc3-ead9f1a33226",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.346Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1383,9 +1383,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "ade108bd-2a2f-4e44-850f-5de51df39810",
+      id: "8124cee1-89ae-4787-9cc3-ead9f1a33226",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.346Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1422,7 +1422,7 @@ run();
 
 ## patchTicketingTicket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -1443,7 +1443,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "ba2aad4d-1148-48f1-8c6e-bf55904a8aba",
+      id: "b04109e4-4d2e-4482-9950-1457ab61b278",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -1452,7 +1452,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -1488,7 +1488,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "ba2aad4d-1148-48f1-8c6e-bf55904a8aba",
+      id: "b04109e4-4d2e-4482-9950-1457ab61b278",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -1497,7 +1497,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -1535,7 +1535,7 @@ run();
 
 ## removeTicketingCategory
 
-Remove a category
+Deletes the TicketingCategory identified by `id`.
 
 ### Example Usage
 
@@ -1614,7 +1614,7 @@ run();
 
 ## removeTicketingCustomer
 
-Remove a customer
+Deletes the TicketingCustomer identified by `id`.
 
 ### Example Usage
 
@@ -1693,7 +1693,7 @@ run();
 
 ## removeTicketingNote
 
-Remove a note
+Deletes the TicketingNote identified by `id`.
 
 ### Example Usage
 
@@ -1772,7 +1772,7 @@ run();
 
 ## removeTicketingTicket
 
-Remove a ticket
+Deletes the TicketingTicket identified by `id`.
 
 ### Example Usage
 
@@ -1851,7 +1851,7 @@ run();
 
 ## updateTicketingCategory
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -1870,11 +1870,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "664f1491-4ac7-4ad3-8733-cb1822ea85f9",
+      id: "ea11f844-dea5-4df2-946d-21c55cc56db1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.482Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.345Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1907,11 +1907,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "664f1491-4ac7-4ad3-8733-cb1822ea85f9",
+      id: "ea11f844-dea5-4df2-946d-21c55cc56db1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.482Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.345Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1948,7 +1948,7 @@ run();
 
 ## updateTicketingCustomer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -1972,7 +1972,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "4c7c2df4-86c2-4c15-a036-8803e36c55bb",
+      id: "e81799f8-f641-4a11-b580-0a763577793a",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -1993,7 +1993,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.977Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2031,7 +2031,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "4c7c2df4-86c2-4c15-a036-8803e36c55bb",
+      id: "e81799f8-f641-4a11-b580-0a763577793a",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -2052,7 +2052,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.977Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2089,7 +2089,7 @@ run();
 
 ## updateTicketingNote
 
-Update a note
+Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
 
 ### Example Usage
 
@@ -2108,9 +2108,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "ade108bd-2a2f-4e44-850f-5de51df39810",
+      id: "8124cee1-89ae-4787-9cc3-ead9f1a33226",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.346Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2143,9 +2143,9 @@ async function run() {
     ticketingNote: {
       createdAt: new Date("2019-07-23T15:05:03.241Z"),
       description: "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-      id: "ade108bd-2a2f-4e44-850f-5de51df39810",
+      id: "8124cee1-89ae-4787-9cc3-ead9f1a33226",
       metadata: [],
-      updatedAt: new Date("2024-09-29T07:07:22.346Z"),
+      updatedAt: new Date("2024-09-30T00:19:57.228Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2182,7 +2182,7 @@ run();
 
 ## updateTicketingTicket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -2203,7 +2203,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "ba2aad4d-1148-48f1-8c6e-bf55904a8aba",
+      id: "b04109e4-4d2e-4482-9950-1457ab61b278",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -2212,7 +2212,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -2248,7 +2248,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "ba2aad4d-1148-48f1-8c6e-bf55904a8aba",
+      id: "b04109e4-4d2e-4482-9950-1457ab61b278",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -2257,7 +2257,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",

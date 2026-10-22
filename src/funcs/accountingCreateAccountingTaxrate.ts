@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a taxrate
+ *
+ * @remarks
+ * Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
  */
 export function accountingCreateAccountingTaxrate(
   client: UnifiedToCore,

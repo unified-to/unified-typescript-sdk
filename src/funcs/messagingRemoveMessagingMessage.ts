@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a message
+ *
+ * @remarks
+ * Deletes the MessagingMessage identified by `id`.
  */
 export function messagingRemoveMessagingMessage(
   client: UnifiedToCore,

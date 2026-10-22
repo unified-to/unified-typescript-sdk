@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a task
+ *
+ * @remarks
+ * Deletes the TaskTask identified by `id`.
  */
 export function taskRemoveTaskTask(
   client: UnifiedToCore,

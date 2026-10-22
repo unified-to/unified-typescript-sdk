@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a company
+ *
+ * @remarks
+ * Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
  */
 export function companyCreateHrisCompany(
   client: UnifiedToCore,

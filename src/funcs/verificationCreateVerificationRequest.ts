@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a request
+ *
+ * @remarks
+ * Creates a VerificationRequest. Provide the unified VerificationRequest fields in the request body; they are mapped to the provider's API. Returns the created VerificationRequest.
  */
 export function verificationCreateVerificationRequest(
   client: UnifiedToCore,

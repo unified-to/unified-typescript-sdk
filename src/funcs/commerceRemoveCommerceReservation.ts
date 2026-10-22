@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a reservation
+ *
+ * @remarks
+ * Deletes the CommerceReservation identified by `id`.
  */
 export function commerceRemoveCommerceReservation(
   client: UnifiedToCore,

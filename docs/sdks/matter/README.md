@@ -13,7 +13,7 @@
 
 ## createLegalMatter
 
-Create a matter
+Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
 
 ### Example Usage
 
@@ -37,11 +37,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "727594a2-956a-4119-ab36-871138467dc1",
+      id: "5d04419c-d329-4119-a06b-b318c524e3d4",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.538Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -50,8 +50,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.608Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.489Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.085Z"),
     },
     connectionId: "<id>",
   });
@@ -88,11 +88,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "727594a2-956a-4119-ab36-871138467dc1",
+      id: "5d04419c-d329-4119-a06b-b318c524e3d4",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.538Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -101,8 +101,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.608Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.489Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.085Z"),
     },
     connectionId: "<id>",
   });
@@ -138,7 +138,7 @@ run();
 
 ## getLegalMatter
 
-Retrieve a matter
+Retrieves a single LegalMatter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -217,7 +217,7 @@ run();
 
 ## listLegalMatters
 
-List all matters
+Returns a list of LegalMatters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -294,7 +294,7 @@ run();
 
 ## patchLegalMatter
 
-Update a matter
+Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
 
 ### Example Usage
 
@@ -318,11 +318,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "cd2ea8e9-9758-4a5e-8ffd-7804a9400f1a",
+      id: "394614ee-2c55-4f2e-92b1-2fa5d6fafb42",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.539Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -331,8 +331,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.637Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.508Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -370,11 +370,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "cd2ea8e9-9758-4a5e-8ffd-7804a9400f1a",
+      id: "394614ee-2c55-4f2e-92b1-2fa5d6fafb42",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.539Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -383,8 +383,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.637Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.508Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -421,7 +421,7 @@ run();
 
 ## removeLegalMatter
 
-Remove a matter
+Deletes the LegalMatter identified by `id`.
 
 ### Example Usage
 
@@ -500,7 +500,7 @@ run();
 
 ## updateLegalMatter
 
-Update a matter
+Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
 
 ### Example Usage
 
@@ -524,11 +524,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "cd2ea8e9-9758-4a5e-8ffd-7804a9400f1a",
+      id: "394614ee-2c55-4f2e-92b1-2fa5d6fafb42",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.539Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -537,8 +537,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.637Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.508Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -576,11 +576,11 @@ async function run() {
       createdAt: new Date("2023-05-28T04:10:42.375Z"),
       currency: "BOB",
       description: "Speciosus cresco aut cotidie temeritas arma.",
-      id: "cd2ea8e9-9758-4a5e-8ffd-7804a9400f1a",
+      id: "394614ee-2c55-4f2e-92b1-2fa5d6fafb42",
       metadata: [],
       name: "Walter v. Franecki - Spinka",
       number: "2023-3062",
-      openedAt: new Date("2023-07-05T06:19:45.430Z"),
+      openedAt: new Date("2023-07-05T07:03:59.539Z"),
       parties: [
         {
           description: "Urban Walter",
@@ -589,8 +589,8 @@ async function run() {
       ],
       stage: "currus",
       status: "OPEN",
-      statuteOfLimitationsAt: new Date("2027-06-28T21:45:41.637Z"),
-      updatedAt: new Date("2023-07-17T10:06:45.825Z"),
+      statuteOfLimitationsAt: new Date("2027-06-29T21:47:53.508Z"),
+      updatedAt: new Date("2023-07-17T11:05:07.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",

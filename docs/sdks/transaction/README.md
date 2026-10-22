@@ -13,7 +13,7 @@
 
 ## createAccountingTransaction
 
-Create a transaction
+Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
 
 ### Example Usage
 
@@ -31,12 +31,12 @@ async function run() {
   const result = await unifiedTo.transaction.createAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "ae9d8bc9-57e9-429d-a23a-d1b00d0d63b2",
+      id: "8e16c29e-f451-4f10-9a41-1c3a74d2ac2e",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "c2eb9367-4b1b-4a91-9ec6-0b7c25169809",
+          id: "b636091c-447a-4ad5-a8f3-99fcb9814f95",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -48,7 +48,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.968Z"),
     },
     connectionId: "<id>",
   });
@@ -79,12 +79,12 @@ async function run() {
   const res = await accountingCreateAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "ae9d8bc9-57e9-429d-a23a-d1b00d0d63b2",
+      id: "8e16c29e-f451-4f10-9a41-1c3a74d2ac2e",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "c2eb9367-4b1b-4a91-9ec6-0b7c25169809",
+          id: "b636091c-447a-4ad5-a8f3-99fcb9814f95",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -96,7 +96,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.968Z"),
     },
     connectionId: "<id>",
   });
@@ -132,7 +132,7 @@ run();
 
 ## getAccountingTransaction
 
-Retrieve a transaction
+Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -211,7 +211,7 @@ run();
 
 ## listAccountingTransactions
 
-List all transactions
+Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ run();
 
 ## patchAccountingTransaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -306,12 +306,12 @@ async function run() {
   const result = await unifiedTo.transaction.patchAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "91a71625-270a-4193-a86a-bf214979900d",
+      id: "ca0c1a97-86a3-4b5d-8ae2-06fc783b6432",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "f7767067-82d9-4808-8e1c-d78070c9472f",
+          id: "58f3b3e2-e5a3-49dd-b49e-1fe9315ff36c",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -323,7 +323,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.969Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -355,12 +355,12 @@ async function run() {
   const res = await accountingPatchAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "91a71625-270a-4193-a86a-bf214979900d",
+      id: "ca0c1a97-86a3-4b5d-8ae2-06fc783b6432",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "f7767067-82d9-4808-8e1c-d78070c9472f",
+          id: "58f3b3e2-e5a3-49dd-b49e-1fe9315ff36c",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -372,7 +372,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.969Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -409,7 +409,7 @@ run();
 
 ## removeAccountingTransaction
 
-Remove a transaction
+Deletes the AccountingTransaction identified by `id`.
 
 ### Example Usage
 
@@ -488,7 +488,7 @@ run();
 
 ## updateAccountingTransaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -506,12 +506,12 @@ async function run() {
   const result = await unifiedTo.transaction.updateAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "91a71625-270a-4193-a86a-bf214979900d",
+      id: "ca0c1a97-86a3-4b5d-8ae2-06fc783b6432",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "f7767067-82d9-4808-8e1c-d78070c9472f",
+          id: "58f3b3e2-e5a3-49dd-b49e-1fe9315ff36c",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -523,7 +523,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.969Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -555,12 +555,12 @@ async function run() {
   const res = await accountingUpdateAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "91a71625-270a-4193-a86a-bf214979900d",
+      id: "ca0c1a97-86a3-4b5d-8ae2-06fc783b6432",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "f7767067-82d9-4808-8e1c-d78070c9472f",
+          id: "58f3b3e2-e5a3-49dd-b49e-1fe9315ff36c",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -572,7 +572,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.969Z"),
     },
     connectionId: "<id>",
     id: "<id>",

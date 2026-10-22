@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Device extends ClientSDK {
   /**
    * Create a device
+   *
+   * @remarks
+   * Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
    */
   async createHrisDevice(
     request: operations.CreateHrisDeviceRequest,
@@ -30,6 +33,9 @@ export class Device extends ClientSDK {
 
   /**
    * Retrieve a device
+   *
+   * @remarks
+   * Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisDevice(
     request: operations.GetHrisDeviceRequest,
@@ -44,6 +50,9 @@ export class Device extends ClientSDK {
 
   /**
    * List all devices
+   *
+   * @remarks
+   * Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisDevices(
     request: operations.ListHrisDevicesRequest,
@@ -58,6 +67,9 @@ export class Device extends ClientSDK {
 
   /**
    * Update a device
+   *
+   * @remarks
+   * Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
    */
   async patchHrisDevice(
     request: operations.PatchHrisDeviceRequest,
@@ -72,6 +84,9 @@ export class Device extends ClientSDK {
 
   /**
    * Remove a device
+   *
+   * @remarks
+   * Deletes the HrisDevice identified by `id`.
    */
   async removeHrisDevice(
     request: operations.RemoveHrisDeviceRequest,
@@ -86,6 +101,9 @@ export class Device extends ClientSDK {
 
   /**
    * Update a device
+   *
+   * @remarks
+   * Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
    */
   async updateHrisDevice(
     request: operations.UpdateHrisDeviceRequest,

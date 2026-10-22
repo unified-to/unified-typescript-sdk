@@ -13,7 +13,7 @@
 
 ## createCrmLead
 
-Create a lead
+Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
 
 ### Example Usage
 
@@ -47,7 +47,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "4e0e0d6f-0216-475a-962c-0906d26f9707",
+      id: "b3fd4f86-dea8-48bd-bdf9-cd4268c58a88",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -59,7 +59,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "80ccd8d9-7e5e-4d92-a958-630c088e5f00",
+          id: "a6bc138d-e8f6-45c0-9ab7-c765cf69dbaf",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -83,7 +83,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.530Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.979Z"),
     },
     connectionId: "<id>",
   });
@@ -130,7 +130,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "4e0e0d6f-0216-475a-962c-0906d26f9707",
+      id: "b3fd4f86-dea8-48bd-bdf9-cd4268c58a88",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -142,7 +142,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "80ccd8d9-7e5e-4d92-a958-630c088e5f00",
+          id: "a6bc138d-e8f6-45c0-9ab7-c765cf69dbaf",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -166,7 +166,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.530Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.979Z"),
     },
     connectionId: "<id>",
   });
@@ -202,7 +202,7 @@ run();
 
 ## getCrmLead
 
-Retrieve a lead
+Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -281,7 +281,7 @@ run();
 
 ## listCrmLeads
 
-List all leads
+Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -358,7 +358,7 @@ run();
 
 ## patchCrmLead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -392,7 +392,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "5f5dbc45-00a1-4b55-88dd-f9c3768f6230",
+      id: "426a1cf6-5a34-4df1-be10-c53160213789",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -404,7 +404,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed437371-5efe-42ee-a52a-b7a92b809b2d",
+          id: "5fa1a066-4d20-4697-b336-700e8e463d3e",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -428,7 +428,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.534Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.981Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -476,7 +476,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "5f5dbc45-00a1-4b55-88dd-f9c3768f6230",
+      id: "426a1cf6-5a34-4df1-be10-c53160213789",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -488,7 +488,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed437371-5efe-42ee-a52a-b7a92b809b2d",
+          id: "5fa1a066-4d20-4697-b336-700e8e463d3e",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -512,7 +512,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.534Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.981Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -549,7 +549,7 @@ run();
 
 ## removeCrmLead
 
-Remove a lead
+Deletes the CrmLead identified by `id`.
 
 ### Example Usage
 
@@ -628,7 +628,7 @@ run();
 
 ## updateCrmLead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -662,7 +662,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "5f5dbc45-00a1-4b55-88dd-f9c3768f6230",
+      id: "426a1cf6-5a34-4df1-be10-c53160213789",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -674,7 +674,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed437371-5efe-42ee-a52a-b7a92b809b2d",
+          id: "5fa1a066-4d20-4697-b336-700e8e463d3e",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -698,7 +698,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.534Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.981Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -746,7 +746,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "5f5dbc45-00a1-4b55-88dd-f9c3768f6230",
+      id: "426a1cf6-5a34-4df1-be10-c53160213789",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -758,7 +758,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed437371-5efe-42ee-a52a-b7a92b809b2d",
+          id: "5fa1a066-4d20-4697-b336-700e8e463d3e",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -782,7 +782,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.534Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.981Z"),
     },
     connectionId: "<id>",
     id: "<id>",

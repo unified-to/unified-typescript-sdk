@@ -28,6 +28,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Document extends ClientSDK {
   /**
    * Create a document
+   *
+   * @remarks
+   * Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
    */
   async createAtsDocument(
     request: operations.CreateAtsDocumentRequest,
@@ -42,6 +45,9 @@ export class Document extends ClientSDK {
 
   /**
    * Create a document
+   *
+   * @remarks
+   * Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
    */
   async createHrisDocument(
     request: operations.CreateHrisDocumentRequest,
@@ -56,6 +62,9 @@ export class Document extends ClientSDK {
 
   /**
    * Create a document
+   *
+   * @remarks
+   * Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
    */
   async createSigningDocument(
     request: operations.CreateSigningDocumentRequest,
@@ -70,6 +79,9 @@ export class Document extends ClientSDK {
 
   /**
    * Retrieve a document
+   *
+   * @remarks
+   * Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsDocument(
     request: operations.GetAtsDocumentRequest,
@@ -84,6 +96,9 @@ export class Document extends ClientSDK {
 
   /**
    * Retrieve a document
+   *
+   * @remarks
+   * Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisDocument(
     request: operations.GetHrisDocumentRequest,
@@ -98,6 +113,9 @@ export class Document extends ClientSDK {
 
   /**
    * Retrieve a document
+   *
+   * @remarks
+   * Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSigningDocument(
     request: operations.GetSigningDocumentRequest,
@@ -112,6 +130,9 @@ export class Document extends ClientSDK {
 
   /**
    * List all documents
+   *
+   * @remarks
+   * Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsDocuments(
     request: operations.ListAtsDocumentsRequest,
@@ -126,6 +147,9 @@ export class Document extends ClientSDK {
 
   /**
    * List all documents
+   *
+   * @remarks
+   * Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisDocuments(
     request: operations.ListHrisDocumentsRequest,
@@ -140,6 +164,9 @@ export class Document extends ClientSDK {
 
   /**
    * List all documents
+   *
+   * @remarks
+   * Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listSigningDocuments(
     request: operations.ListSigningDocumentsRequest,
@@ -154,6 +181,9 @@ export class Document extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
    */
   async patchAtsDocument(
     request: operations.PatchAtsDocumentRequest,
@@ -168,6 +198,9 @@ export class Document extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
    */
   async patchHrisDocument(
     request: operations.PatchHrisDocumentRequest,
@@ -182,6 +215,9 @@ export class Document extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
    */
   async patchSigningDocument(
     request: operations.PatchSigningDocumentRequest,
@@ -196,6 +232,9 @@ export class Document extends ClientSDK {
 
   /**
    * Remove a document
+   *
+   * @remarks
+   * Deletes the AtsDocument identified by `id`.
    */
   async removeAtsDocument(
     request: operations.RemoveAtsDocumentRequest,
@@ -210,6 +249,9 @@ export class Document extends ClientSDK {
 
   /**
    * Remove a document
+   *
+   * @remarks
+   * Deletes the HrisDocument identified by `id`.
    */
   async removeHrisDocument(
     request: operations.RemoveHrisDocumentRequest,
@@ -224,6 +266,9 @@ export class Document extends ClientSDK {
 
   /**
    * Remove a document
+   *
+   * @remarks
+   * Deletes the SigningDocument identified by `id`.
    */
   async removeSigningDocument(
     request: operations.RemoveSigningDocumentRequest,
@@ -238,6 +283,9 @@ export class Document extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
    */
   async updateAtsDocument(
     request: operations.UpdateAtsDocumentRequest,
@@ -252,6 +300,9 @@ export class Document extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
    */
   async updateHrisDocument(
     request: operations.UpdateHrisDocumentRequest,
@@ -266,6 +317,9 @@ export class Document extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
    */
   async updateSigningDocument(
     request: operations.UpdateSigningDocumentRequest,

@@ -34,6 +34,9 @@ export const SortOrder = {
 } as const;
 export type SortOrder = OpenEnum<typeof SortOrder>;
 
+/**
+ * What to run: a raw `sql` statement, or a structured query (select, filter, sort, limit/offset, aggregate)
+ */
 export type PropertyDatastoreQueryQuery = {
   aggregate?: PropertyDatastoreQueryQueryAggregate | undefined;
   expand?: { [k: string]: DatastoreQueryExpand } | undefined;

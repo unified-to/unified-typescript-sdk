@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Instance extends ClientSDK {
   /**
    * Create an instance
+   *
+   * @remarks
+   * Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
    */
   async createComputeInstance(
     request: operations.CreateComputeInstanceRequest,
@@ -30,6 +33,9 @@ export class Instance extends ClientSDK {
 
   /**
    * Retrieve an instance
+   *
+   * @remarks
+   * Retrieves a single ComputeInstance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeInstance(
     request: operations.GetComputeInstanceRequest,
@@ -44,6 +50,9 @@ export class Instance extends ClientSDK {
 
   /**
    * List all instances
+   *
+   * @remarks
+   * Returns a list of ComputeInstances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeInstances(
     request: operations.ListComputeInstancesRequest,
@@ -58,6 +67,9 @@ export class Instance extends ClientSDK {
 
   /**
    * Update an instance
+   *
+   * @remarks
+   * Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
    */
   async patchComputeInstance(
     request: operations.PatchComputeInstanceRequest,
@@ -72,6 +84,9 @@ export class Instance extends ClientSDK {
 
   /**
    * Remove an instance
+   *
+   * @remarks
+   * Deletes the ComputeInstance identified by `id`.
    */
   async removeComputeInstance(
     request: operations.RemoveComputeInstanceRequest,
@@ -86,6 +101,9 @@ export class Instance extends ClientSDK {
 
   /**
    * Update an instance
+   *
+   * @remarks
+   * Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
    */
   async updateComputeInstance(
     request: operations.UpdateComputeInstanceRequest,

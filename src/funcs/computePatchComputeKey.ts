@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a key
+ *
+ * @remarks
+ * Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
  */
 export function computePatchComputeKey(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a pullrequest
+ *
+ * @remarks
+ * Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
  */
 export function repoUpdateRepoPullrequest(
   client: UnifiedToCore,

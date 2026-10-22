@@ -1,5 +1,7 @@
 # MetadataMetadataFormat
 
+The data type of the custom field's values
+
 ## Example Usage
 
 ```typescript

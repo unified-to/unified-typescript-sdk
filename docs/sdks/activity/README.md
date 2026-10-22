@@ -21,7 +21,7 @@
 
 ## createAtsActivity
 
-Create an activity
+Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
 
 ### Example Usage
 
@@ -40,7 +40,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "b4770847-8a32-4df1-99f3-2d8108ec4114",
+      id: "1f254f68-a02c-4569-8459-03b6a4eeb63c",
       isPrivate: false,
       metadata: [
         {
@@ -48,7 +48,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "4c50f706-2b88-4bb9-a554-e6a785a6a180",
+          id: "3a89fb7b-dccc-4d66-9cbc-0aa7a7a5fb5d",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -57,7 +57,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.682Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.780Z"),
     },
     connectionId: "<id>",
   });
@@ -89,7 +89,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "b4770847-8a32-4df1-99f3-2d8108ec4114",
+      id: "1f254f68-a02c-4569-8459-03b6a4eeb63c",
       isPrivate: false,
       metadata: [
         {
@@ -97,7 +97,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "4c50f706-2b88-4bb9-a554-e6a785a6a180",
+          id: "3a89fb7b-dccc-4d66-9cbc-0aa7a7a5fb5d",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -106,7 +106,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.682Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.780Z"),
     },
     connectionId: "<id>",
   });
@@ -142,7 +142,7 @@ run();
 
 ## createLmsActivity
 
-Create an activity
+Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
 
 ### Example Usage
 
@@ -160,15 +160,15 @@ async function run() {
   const result = await unifiedTo.activity.createLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.006Z"),
+      completedAt: new Date("2023-12-06T12:30:29.345Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "4ba3b302-525a-43ac-9bbe-13b0dfbc7b5f",
+      id: "97844196-f86e-41da-b953-157e43e3dcf5",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.363Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.701Z"),
+      startedAt: new Date("2021-04-25T06:31:22.756Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.444Z"),
     },
     connectionId: "<id>",
   });
@@ -199,15 +199,15 @@ async function run() {
   const res = await activityCreateLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.006Z"),
+      completedAt: new Date("2023-12-06T12:30:29.345Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "4ba3b302-525a-43ac-9bbe-13b0dfbc7b5f",
+      id: "97844196-f86e-41da-b953-157e43e3dcf5",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.363Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.701Z"),
+      startedAt: new Date("2021-04-25T06:31:22.756Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.444Z"),
     },
     connectionId: "<id>",
   });
@@ -243,7 +243,7 @@ run();
 
 ## getAtsActivity
 
-Retrieve an activity
+Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -322,7 +322,7 @@ run();
 
 ## getClubsActivity
 
-Retrieve an activity
+Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -401,7 +401,7 @@ run();
 
 ## getLmsActivity
 
-Retrieve an activity
+Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -480,7 +480,7 @@ run();
 
 ## listAtsActivities
 
-List all activities
+Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -557,7 +557,7 @@ run();
 
 ## listClubsActivities
 
-List all activities
+Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -634,7 +634,7 @@ run();
 
 ## listLmsActivities
 
-List all activities
+Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -711,7 +711,7 @@ run();
 
 ## patchAtsActivity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -730,7 +730,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "ff7c2c16-b1be-47e7-b292-cbb3100a26f7",
+      id: "64481c61-39fb-4e59-8d7c-b0763e9c89fa",
       isPrivate: false,
       metadata: [
         {
@@ -738,7 +738,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "2836076e-6dfc-4fd0-bea5-31439de689b3",
+          id: "82348f78-ae56-4fbb-9d6c-7dffadadad03",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -747,7 +747,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.713Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -780,7 +780,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "ff7c2c16-b1be-47e7-b292-cbb3100a26f7",
+      id: "64481c61-39fb-4e59-8d7c-b0763e9c89fa",
       isPrivate: false,
       metadata: [
         {
@@ -788,7 +788,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "2836076e-6dfc-4fd0-bea5-31439de689b3",
+          id: "82348f78-ae56-4fbb-9d6c-7dffadadad03",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -797,7 +797,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.713Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -834,7 +834,7 @@ run();
 
 ## patchLmsActivity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -852,15 +852,15 @@ async function run() {
   const result = await unifiedTo.activity.patchLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.012Z"),
+      completedAt: new Date("2023-12-06T12:30:29.351Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "68ceb71a-5e6a-429d-b90c-0cd646cd4937",
+      id: "c20e2f40-d01a-488a-8f9a-4fc697b52e94",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.364Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.704Z"),
+      startedAt: new Date("2021-04-25T06:31:22.757Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.447Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -892,15 +892,15 @@ async function run() {
   const res = await activityPatchLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.012Z"),
+      completedAt: new Date("2023-12-06T12:30:29.351Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "68ceb71a-5e6a-429d-b90c-0cd646cd4937",
+      id: "c20e2f40-d01a-488a-8f9a-4fc697b52e94",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.364Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.704Z"),
+      startedAt: new Date("2021-04-25T06:31:22.757Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.447Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -937,7 +937,7 @@ run();
 
 ## removeAtsActivity
 
-Remove an activity
+Deletes the AtsActivity identified by `id`.
 
 ### Example Usage
 
@@ -1016,7 +1016,7 @@ run();
 
 ## removeLmsActivity
 
-Remove an activity
+Deletes the LmsActivity identified by `id`.
 
 ### Example Usage
 
@@ -1095,7 +1095,7 @@ run();
 
 ## updateAtsActivity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -1114,7 +1114,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "ff7c2c16-b1be-47e7-b292-cbb3100a26f7",
+      id: "64481c61-39fb-4e59-8d7c-b0763e9c89fa",
       isPrivate: false,
       metadata: [
         {
@@ -1122,7 +1122,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "2836076e-6dfc-4fd0-bea5-31439de689b3",
+          id: "82348f78-ae56-4fbb-9d6c-7dffadadad03",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -1131,7 +1131,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.713Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1164,7 +1164,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "ff7c2c16-b1be-47e7-b292-cbb3100a26f7",
+      id: "64481c61-39fb-4e59-8d7c-b0763e9c89fa",
       isPrivate: false,
       metadata: [
         {
@@ -1172,7 +1172,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "2836076e-6dfc-4fd0-bea5-31439de689b3",
+          id: "82348f78-ae56-4fbb-9d6c-7dffadadad03",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -1181,7 +1181,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.713Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1218,7 +1218,7 @@ run();
 
 ## updateLmsActivity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -1236,15 +1236,15 @@ async function run() {
   const result = await unifiedTo.activity.updateLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.012Z"),
+      completedAt: new Date("2023-12-06T12:30:29.351Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "68ceb71a-5e6a-429d-b90c-0cd646cd4937",
+      id: "c20e2f40-d01a-488a-8f9a-4fc697b52e94",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.364Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.704Z"),
+      startedAt: new Date("2021-04-25T06:31:22.757Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.447Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1276,15 +1276,15 @@ async function run() {
   const res = await activityUpdateLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.012Z"),
+      completedAt: new Date("2023-12-06T12:30:29.351Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "68ceb71a-5e6a-429d-b90c-0cd646cd4937",
+      id: "c20e2f40-d01a-488a-8f9a-4fc697b52e94",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.364Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.704Z"),
+      startedAt: new Date("2021-04-25T06:31:22.757Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.447Z"),
     },
     connectionId: "<id>",
     id: "<id>",

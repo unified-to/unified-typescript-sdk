@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a deployment
+ *
+ * @remarks
+ * Deletes the ComputeDeployment identified by `id`.
  */
 export function computeRemoveComputeDeployment(
   client: UnifiedToCore,

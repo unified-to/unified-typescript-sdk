@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Segment extends ClientSDK {
   /**
    * Create a segment
+   *
+   * @remarks
+   * Creates a CdpSegment. Provide the unified CdpSegment fields in the request body; they are mapped to the provider's API. Returns the created CdpSegment.
    */
   async createCdpSegment(
     request: operations.CreateCdpSegmentRequest,
@@ -30,6 +33,9 @@ export class Segment extends ClientSDK {
 
   /**
    * Retrieve a segment
+   *
+   * @remarks
+   * Retrieves a single CdpSegment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpSegment(
     request: operations.GetCdpSegmentRequest,
@@ -44,6 +50,9 @@ export class Segment extends ClientSDK {
 
   /**
    * List all segments
+   *
+   * @remarks
+   * Returns a list of CdpSegments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpSegments(
     request: operations.ListCdpSegmentsRequest,
@@ -58,6 +67,9 @@ export class Segment extends ClientSDK {
 
   /**
    * Update a segment
+   *
+   * @remarks
+   * Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
    */
   async patchCdpSegment(
     request: operations.PatchCdpSegmentRequest,
@@ -72,6 +84,9 @@ export class Segment extends ClientSDK {
 
   /**
    * Remove a segment
+   *
+   * @remarks
+   * Deletes the CdpSegment identified by `id`.
    */
   async removeCdpSegment(
     request: operations.RemoveCdpSegmentRequest,
@@ -86,6 +101,9 @@ export class Segment extends ClientSDK {
 
   /**
    * Update a segment
+   *
+   * @remarks
+   * Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
    */
   async updateCdpSegment(
     request: operations.UpdateCdpSegmentRequest,

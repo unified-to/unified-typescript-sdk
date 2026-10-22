@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Metadata extends ClientSDK {
   /**
    * Create a metadata
+   *
+   * @remarks
+   * Creates a MetadataMetadata. Provide the unified MetadataMetadata fields in the request body; they are mapped to the provider's API. Returns the created MetadataMetadata.
    */
   async createMetadataMetadata(
     request: operations.CreateMetadataMetadataRequest,
@@ -30,6 +33,9 @@ export class Metadata extends ClientSDK {
 
   /**
    * Retrieve a metadata
+   *
+   * @remarks
+   * Retrieves a single MetadataMetadata by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMetadataMetadata(
     request: operations.GetMetadataMetadataRequest,
@@ -44,6 +50,9 @@ export class Metadata extends ClientSDK {
 
   /**
    * List all metadatas
+   *
+   * @remarks
+   * Returns a list of MetadataMetadatas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMetadataMetadatas(
     request: operations.ListMetadataMetadatasRequest,
@@ -58,6 +67,9 @@ export class Metadata extends ClientSDK {
 
   /**
    * Update a metadata
+   *
+   * @remarks
+   * Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
    */
   async patchMetadataMetadata(
     request: operations.PatchMetadataMetadataRequest,
@@ -72,6 +84,9 @@ export class Metadata extends ClientSDK {
 
   /**
    * Remove a metadata
+   *
+   * @remarks
+   * Deletes the MetadataMetadata identified by `id`.
    */
   async removeMetadataMetadata(
     request: operations.RemoveMetadataMetadataRequest,
@@ -86,6 +101,9 @@ export class Metadata extends ClientSDK {
 
   /**
    * Update a metadata
+   *
+   * @remarks
+   * Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
    */
   async updateMetadataMetadata(
     request: operations.UpdateMetadataMetadataRequest,

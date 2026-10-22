@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a comment
+ *
+ * @remarks
+ * Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
  */
 export function taskPatchTaskComment(
   client: UnifiedToCore,

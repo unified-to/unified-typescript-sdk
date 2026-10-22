@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a snapshot
+ *
+ * @remarks
+ * Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
  */
 export function computeCreateComputeSnapshot(
   client: UnifiedToCore,

@@ -13,7 +13,7 @@
 
 ## createCommerceInventory
 
-Create an inventory
+Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
 
 ### Example Usage
 
@@ -31,9 +31,9 @@ async function run() {
   const result = await unifiedTo.inventory.createCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "fdb72cc1-ba21-48be-ad4f-7fbb1a705f66",
+      id: "4e1128e1-588e-454e-8495-1e3344b617a8",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.057Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.669Z"),
     },
     connectionId: "<id>",
   });
@@ -64,9 +64,9 @@ async function run() {
   const res = await commerceCreateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "fdb72cc1-ba21-48be-ad4f-7fbb1a705f66",
+      id: "4e1128e1-588e-454e-8495-1e3344b617a8",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.057Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.669Z"),
     },
     connectionId: "<id>",
   });
@@ -102,7 +102,7 @@ run();
 
 ## getCommerceInventory
 
-Retrieve an inventory
+Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -181,7 +181,7 @@ run();
 
 ## listCommerceInventories
 
-List all inventories
+Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -258,7 +258,7 @@ run();
 
 ## patchCommerceInventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -276,9 +276,9 @@ async function run() {
   const result = await unifiedTo.inventory.patchCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "a140d61f-3299-46a8-a588-e2ceee987df5",
+      id: "9ec7d6fe-51f5-4957-94cd-e6bd8c352610",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.071Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -310,9 +310,9 @@ async function run() {
   const res = await commercePatchCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "a140d61f-3299-46a8-a588-e2ceee987df5",
+      id: "9ec7d6fe-51f5-4957-94cd-e6bd8c352610",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.071Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -349,7 +349,7 @@ run();
 
 ## removeCommerceInventory
 
-Remove an inventory
+Deletes the CommerceInventory identified by `id`.
 
 ### Example Usage
 
@@ -428,7 +428,7 @@ run();
 
 ## updateCommerceInventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -446,9 +446,9 @@ async function run() {
   const result = await unifiedTo.inventory.updateCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "a140d61f-3299-46a8-a588-e2ceee987df5",
+      id: "9ec7d6fe-51f5-4957-94cd-e6bd8c352610",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.071Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -480,9 +480,9 @@ async function run() {
   const res = await commerceUpdateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "a140d61f-3299-46a8-a588-e2ceee987df5",
+      id: "9ec7d6fe-51f5-4957-94cd-e6bd8c352610",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.071Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",

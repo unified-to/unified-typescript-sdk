@@ -134,6 +134,9 @@ export type PaymentPayment = {
    */
   tenderType?: TenderType | undefined;
   tipAmount?: number | undefined;
+  /**
+   * The amount paid, in the payment's currency
+   */
   totalAmount?: number | undefined;
   type?: PaymentPaymentType | undefined;
   /**

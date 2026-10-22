@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a branch
+ *
+ * @remarks
+ * Deletes the RepoBranch identified by `id`.
  */
 export function repoRemoveRepoBranch(
   client: UnifiedToCore,

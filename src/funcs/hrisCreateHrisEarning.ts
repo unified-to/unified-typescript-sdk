@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an earning
+ *
+ * @remarks
+ * Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
  */
 export function hrisCreateHrisEarning(
   client: UnifiedToCore,

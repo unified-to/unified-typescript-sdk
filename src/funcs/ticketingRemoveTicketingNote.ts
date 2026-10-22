@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a note
+ *
+ * @remarks
+ * Deletes the TicketingNote identified by `id`.
  */
 export function ticketingRemoveTicketingNote(
   client: UnifiedToCore,

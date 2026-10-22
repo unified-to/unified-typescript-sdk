@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an insertionorder
+ *
+ * @remarks
+ * Deletes the AdsInsertionorder identified by `id`.
  */
 export function adsRemoveAdsInsertionorder(
   client: UnifiedToCore,

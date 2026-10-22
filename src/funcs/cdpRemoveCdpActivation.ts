@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an activation
+ *
+ * @remarks
+ * Deletes the CdpActivation identified by `id`.
  */
 export function cdpRemoveCdpActivation(
   client: UnifiedToCore,

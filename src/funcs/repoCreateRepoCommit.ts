@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a commit
+ *
+ * @remarks
+ * Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
  */
 export function repoCreateRepoCommit(
   client: UnifiedToCore,

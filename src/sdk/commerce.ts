@@ -59,6 +59,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Commerce extends ClientSDK {
   /**
    * Create a collection
+   *
+   * @remarks
+   * Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
    */
   async createCommerceCollection(
     request: operations.CreateCommerceCollectionRequest,
@@ -73,6 +76,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Create an inventory
+   *
+   * @remarks
+   * Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
    */
   async createCommerceInventory(
     request: operations.CreateCommerceInventoryRequest,
@@ -87,6 +93,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Create an item
+   *
+   * @remarks
+   * Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
    */
   async createCommerceItem(
     request: operations.CreateCommerceItemRequest,
@@ -101,6 +110,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Create an itemvariant
+   *
+   * @remarks
+   * Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
    */
   async createCommerceItemvariant(
     request: operations.CreateCommerceItemvariantRequest,
@@ -115,6 +127,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Create a location
+   *
+   * @remarks
+   * Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
    */
   async createCommerceLocation(
     request: operations.CreateCommerceLocationRequest,
@@ -129,6 +144,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Create a reservation
+   *
+   * @remarks
+   * Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
    */
   async createCommerceReservation(
     request: operations.CreateCommerceReservationRequest,
@@ -143,6 +161,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Create a review
+   *
+   * @remarks
+   * Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
    */
   async createCommerceReview(
     request: operations.CreateCommerceReviewRequest,
@@ -157,6 +178,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Create a saleschannel
+   *
+   * @remarks
+   * Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
    */
   async createCommerceSaleschannel(
     request: operations.CreateCommerceSaleschannelRequest,
@@ -171,6 +195,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Retrieve a collection
+   *
+   * @remarks
+   * Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceCollection(
     request: operations.GetCommerceCollectionRequest,
@@ -185,6 +212,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Retrieve an inventory
+   *
+   * @remarks
+   * Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceInventory(
     request: operations.GetCommerceInventoryRequest,
@@ -199,6 +229,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Retrieve an item
+   *
+   * @remarks
+   * Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceItem(
     request: operations.GetCommerceItemRequest,
@@ -213,6 +246,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Retrieve an itemvariant
+   *
+   * @remarks
+   * Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceItemvariant(
     request: operations.GetCommerceItemvariantRequest,
@@ -227,6 +263,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceLocation(
     request: operations.GetCommerceLocationRequest,
@@ -241,6 +280,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Retrieve a reservation
+   *
+   * @remarks
+   * Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceReservation(
     request: operations.GetCommerceReservationRequest,
@@ -255,6 +297,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Retrieve a review
+   *
+   * @remarks
+   * Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceReview(
     request: operations.GetCommerceReviewRequest,
@@ -269,6 +314,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Retrieve a saleschannel
+   *
+   * @remarks
+   * Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceSaleschannel(
     request: operations.GetCommerceSaleschannelRequest,
@@ -283,6 +331,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all availabilities
+   *
+   * @remarks
+   * Returns a list of CommerceAvailabilities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceAvailabilities(
     request: operations.ListCommerceAvailabilitiesRequest,
@@ -297,6 +348,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all collections
+   *
+   * @remarks
+   * Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceCollections(
     request: operations.ListCommerceCollectionsRequest,
@@ -311,6 +365,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all inventories
+   *
+   * @remarks
+   * Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceInventories(
     request: operations.ListCommerceInventoriesRequest,
@@ -325,6 +382,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all items
+   *
+   * @remarks
+   * Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceItems(
     request: operations.ListCommerceItemsRequest,
@@ -339,6 +399,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all itemvariants
+   *
+   * @remarks
+   * Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceItemvariants(
     request: operations.ListCommerceItemvariantsRequest,
@@ -353,6 +416,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all locations
+   *
+   * @remarks
+   * Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceLocations(
     request: operations.ListCommerceLocationsRequest,
@@ -367,6 +433,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all reservations
+   *
+   * @remarks
+   * Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceReservations(
     request: operations.ListCommerceReservationsRequest,
@@ -381,6 +450,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all reviews
+   *
+   * @remarks
+   * Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceReviews(
     request: operations.ListCommerceReviewsRequest,
@@ -395,6 +467,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * List all saleschannels
+   *
+   * @remarks
+   * Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceSaleschannels(
     request: operations.ListCommerceSaleschannelsRequest,
@@ -409,6 +484,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a collection
+   *
+   * @remarks
+   * Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
    */
   async patchCommerceCollection(
     request: operations.PatchCommerceCollectionRequest,
@@ -423,6 +501,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update an inventory
+   *
+   * @remarks
+   * Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
    */
   async patchCommerceInventory(
     request: operations.PatchCommerceInventoryRequest,
@@ -437,6 +518,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update an item
+   *
+   * @remarks
+   * Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
    */
   async patchCommerceItem(
     request: operations.PatchCommerceItemRequest,
@@ -451,6 +535,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update an itemvariant
+   *
+   * @remarks
+   * Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
    */
   async patchCommerceItemvariant(
     request: operations.PatchCommerceItemvariantRequest,
@@ -465,6 +552,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a location
+   *
+   * @remarks
+   * Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
    */
   async patchCommerceLocation(
     request: operations.PatchCommerceLocationRequest,
@@ -479,6 +569,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a reservation
+   *
+   * @remarks
+   * Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
    */
   async patchCommerceReservation(
     request: operations.PatchCommerceReservationRequest,
@@ -493,6 +586,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a review
+   *
+   * @remarks
+   * Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
    */
   async patchCommerceReview(
     request: operations.PatchCommerceReviewRequest,
@@ -507,6 +603,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a saleschannel
+   *
+   * @remarks
+   * Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
    */
   async patchCommerceSaleschannel(
     request: operations.PatchCommerceSaleschannelRequest,
@@ -521,6 +620,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Remove a collection
+   *
+   * @remarks
+   * Deletes the CommerceCollection identified by `id`.
    */
   async removeCommerceCollection(
     request: operations.RemoveCommerceCollectionRequest,
@@ -535,6 +637,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Remove an inventory
+   *
+   * @remarks
+   * Deletes the CommerceInventory identified by `id`.
    */
   async removeCommerceInventory(
     request: operations.RemoveCommerceInventoryRequest,
@@ -549,6 +654,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Remove an item
+   *
+   * @remarks
+   * Deletes the CommerceItem identified by `id`.
    */
   async removeCommerceItem(
     request: operations.RemoveCommerceItemRequest,
@@ -563,6 +671,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Remove an itemvariant
+   *
+   * @remarks
+   * Deletes the CommerceItemvariant identified by `id`.
    */
   async removeCommerceItemvariant(
     request: operations.RemoveCommerceItemvariantRequest,
@@ -577,6 +688,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Remove a location
+   *
+   * @remarks
+   * Deletes the CommerceLocation identified by `id`.
    */
   async removeCommerceLocation(
     request: operations.RemoveCommerceLocationRequest,
@@ -591,6 +705,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Remove a reservation
+   *
+   * @remarks
+   * Deletes the CommerceReservation identified by `id`.
    */
   async removeCommerceReservation(
     request: operations.RemoveCommerceReservationRequest,
@@ -605,6 +722,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Remove a review
+   *
+   * @remarks
+   * Deletes the CommerceReview identified by `id`.
    */
   async removeCommerceReview(
     request: operations.RemoveCommerceReviewRequest,
@@ -619,6 +739,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Remove a saleschannel
+   *
+   * @remarks
+   * Deletes the CommerceSaleschannel identified by `id`.
    */
   async removeCommerceSaleschannel(
     request: operations.RemoveCommerceSaleschannelRequest,
@@ -633,6 +756,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a collection
+   *
+   * @remarks
+   * Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
    */
   async updateCommerceCollection(
     request: operations.UpdateCommerceCollectionRequest,
@@ -647,6 +773,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update an inventory
+   *
+   * @remarks
+   * Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
    */
   async updateCommerceInventory(
     request: operations.UpdateCommerceInventoryRequest,
@@ -661,6 +790,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update an item
+   *
+   * @remarks
+   * Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
    */
   async updateCommerceItem(
     request: operations.UpdateCommerceItemRequest,
@@ -675,6 +807,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update an itemvariant
+   *
+   * @remarks
+   * Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
    */
   async updateCommerceItemvariant(
     request: operations.UpdateCommerceItemvariantRequest,
@@ -689,6 +824,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a location
+   *
+   * @remarks
+   * Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
    */
   async updateCommerceLocation(
     request: operations.UpdateCommerceLocationRequest,
@@ -703,6 +841,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a reservation
+   *
+   * @remarks
+   * Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
    */
   async updateCommerceReservation(
     request: operations.UpdateCommerceReservationRequest,
@@ -717,6 +858,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a review
+   *
+   * @remarks
+   * Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
    */
   async updateCommerceReview(
     request: operations.UpdateCommerceReviewRequest,
@@ -731,6 +875,9 @@ export class Commerce extends ClientSDK {
 
   /**
    * Update a saleschannel
+   *
+   * @remarks
+   * Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
    */
   async updateCommerceSaleschannel(
     request: operations.UpdateCommerceSaleschannelRequest,

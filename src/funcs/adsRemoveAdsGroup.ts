@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a group
+ *
+ * @remarks
+ * Deletes the AdsGroup identified by `id`.
  */
 export function adsRemoveAdsGroup(
   client: UnifiedToCore,

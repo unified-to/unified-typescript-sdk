@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an invoice
+ *
+ * @remarks
+ * Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
  */
 export function accountingCreateAccountingInvoice(
   client: UnifiedToCore,

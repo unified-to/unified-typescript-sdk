@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an envvar
+ *
+ * @remarks
+ * Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
  */
 export function computeUpdateComputeEnvvar(
   client: UnifiedToCore,

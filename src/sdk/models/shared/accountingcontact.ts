@@ -97,6 +97,9 @@ export type AccountingContact = {
    */
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * The contact's email addresses
+   */
   emails?: Array<AccountingEmail> | undefined;
   firstName?: string | undefined;
   id?: string | undefined;
@@ -109,6 +112,9 @@ export type AccountingContact = {
   isSupplier?: boolean | undefined;
   lastName?: string | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
+  /**
+   * The contact's display name: the company name for a business, or the person's full name
+   */
   name?: string | undefined;
   notes?: string | undefined;
   organizationId?: string | undefined;

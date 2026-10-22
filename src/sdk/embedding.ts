@@ -11,6 +11,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Embedding extends ClientSDK {
   /**
    * Create an embedding
+   *
+   * @remarks
+   * Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
    */
   async createGenaiEmbedding(
     request: operations.CreateGenaiEmbeddingRequest,

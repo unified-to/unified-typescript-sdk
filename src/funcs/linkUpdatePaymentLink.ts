@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a link
+ *
+ * @remarks
+ * Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
  */
 export function linkUpdatePaymentLink(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an activation
+ *
+ * @remarks
+ * Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
  */
 export function cdpPatchCdpActivation(
   client: UnifiedToCore,

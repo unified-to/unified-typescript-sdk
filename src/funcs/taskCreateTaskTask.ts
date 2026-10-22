@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a task
+ *
+ * @remarks
+ * Creates a TaskTask. Provide the unified TaskTask fields in the request body; they are mapped to the provider's API. Returns the created TaskTask.
  */
 export function taskCreateTaskTask(
   client: UnifiedToCore,

@@ -201,6 +201,7 @@ export * from "./datastoredatabase.js";
 export * from "./datastorefield.js";
 export * from "./datastorefieldvalue.js";
 export * from "./datastorefilter.js";
+export * from "./datastorefiltergroup.js";
 export * from "./datastoremetadata.js";
 export * from "./datastorequery.js";
 export * from "./datastorequeryexpand.js";

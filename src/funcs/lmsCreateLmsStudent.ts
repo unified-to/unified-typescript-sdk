@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a student
+ *
+ * @remarks
+ * Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
  */
 export function lmsCreateLmsStudent(
   client: UnifiedToCore,

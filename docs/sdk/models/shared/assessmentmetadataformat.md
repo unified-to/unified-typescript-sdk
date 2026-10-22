@@ -1,5 +1,7 @@
 # AssessmentMetadataFormat
 
+The data type of the custom field, which determines how `value` is formatted.
+
 ## Example Usage
 
 ```typescript

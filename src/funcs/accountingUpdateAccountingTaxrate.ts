@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a taxrate
+ *
+ * @remarks
+ * Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
  */
 export function accountingUpdateAccountingTaxrate(
   client: UnifiedToCore,

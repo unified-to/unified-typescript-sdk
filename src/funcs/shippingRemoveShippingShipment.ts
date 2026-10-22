@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a shipment
+ *
+ * @remarks
+ * Deletes the ShippingShipment identified by `id`.
  */
 export function shippingRemoveShippingShipment(
   client: UnifiedToCore,

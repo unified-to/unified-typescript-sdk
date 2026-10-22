@@ -20,10 +20,16 @@ export type TicketingNote = {
    */
   createdAt?: Date | undefined;
   customerId?: string | undefined;
+  /**
+   * The note's text
+   */
   description?: string | undefined;
   id?: string | undefined;
   metadata?: Array<TicketingMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The ID of the ticket the note is added to (a TicketingTicket ID)
+   */
   ticketId?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)

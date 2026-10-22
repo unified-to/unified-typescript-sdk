@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a volume
+ *
+ * @remarks
+ * Deletes the ComputeVolume identified by `id`.
  */
 export function computeRemoveComputeVolume(
   client: UnifiedToCore,

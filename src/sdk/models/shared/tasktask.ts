@@ -54,6 +54,9 @@ export type TaskTask = {
   hasChildren?: boolean | undefined;
   id?: string | undefined;
   metadata?: Array<TaskMetadata> | undefined;
+  /**
+   * The task's title
+   */
   name?: string | undefined;
   notes?: string | undefined;
   parentId?: string | undefined;

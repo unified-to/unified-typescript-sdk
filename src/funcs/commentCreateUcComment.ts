@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a comment
+ *
+ * @remarks
+ * Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
  */
 export function commentCreateUcComment(
   client: UnifiedToCore,

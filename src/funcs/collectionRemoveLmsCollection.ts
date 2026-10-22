@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a collection
+ *
+ * @remarks
+ * Deletes the LmsCollection identified by `id`.
  */
 export function collectionRemoveLmsCollection(
   client: UnifiedToCore,

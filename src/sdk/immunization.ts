@@ -12,6 +12,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Immunization extends ClientSDK {
   /**
    * Retrieve an immunization
+   *
+   * @remarks
+   * Retrieves a single HealthcareImmunization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareImmunization(
     request: operations.GetHealthcareImmunizationRequest,
@@ -26,6 +29,9 @@ export class Immunization extends ClientSDK {
 
   /**
    * List all immunizations
+   *
+   * @remarks
+   * Returns a list of HealthcareImmunizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareImmunizations(
     request: operations.ListHealthcareImmunizationsRequest,

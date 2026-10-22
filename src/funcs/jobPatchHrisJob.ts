@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a job
+ *
+ * @remarks
+ * Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
  */
 export function jobPatchHrisJob(
   client: UnifiedToCore,

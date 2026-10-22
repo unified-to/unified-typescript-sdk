@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Envvar extends ClientSDK {
   /**
    * Create an envvar
+   *
+   * @remarks
+   * Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
    */
   async createComputeEnvvar(
     request: operations.CreateComputeEnvvarRequest,
@@ -30,6 +33,9 @@ export class Envvar extends ClientSDK {
 
   /**
    * Retrieve an envvar
+   *
+   * @remarks
+   * Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeEnvvar(
     request: operations.GetComputeEnvvarRequest,
@@ -44,6 +50,9 @@ export class Envvar extends ClientSDK {
 
   /**
    * List all envvars
+   *
+   * @remarks
+   * Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeEnvvars(
     request: operations.ListComputeEnvvarsRequest,
@@ -58,6 +67,9 @@ export class Envvar extends ClientSDK {
 
   /**
    * Update an envvar
+   *
+   * @remarks
+   * Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
    */
   async patchComputeEnvvar(
     request: operations.PatchComputeEnvvarRequest,
@@ -72,6 +84,9 @@ export class Envvar extends ClientSDK {
 
   /**
    * Remove an envvar
+   *
+   * @remarks
+   * Deletes the ComputeEnvvar identified by `id`.
    */
   async removeComputeEnvvar(
     request: operations.RemoveComputeEnvvarRequest,
@@ -86,6 +101,9 @@ export class Envvar extends ClientSDK {
 
   /**
    * Update an envvar
+   *
+   * @remarks
+   * Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
    */
   async updateComputeEnvvar(
     request: operations.UpdateComputeEnvvarRequest,

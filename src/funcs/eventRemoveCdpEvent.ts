@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an event
+ *
+ * @remarks
+ * Deletes the CdpEvent identified by `id`.
  */
 export function eventRemoveCdpEvent(
   client: UnifiedToCore,

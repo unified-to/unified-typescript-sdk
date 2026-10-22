@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Message extends ClientSDK {
   /**
    * Create a message
+   *
+   * @remarks
+   * Creates a MessagingMessage. Provide the unified MessagingMessage fields in the request body; they are mapped to the provider's API. Returns the created MessagingMessage.
    */
   async createMessagingMessage(
     request: operations.CreateMessagingMessageRequest,
@@ -30,6 +33,9 @@ export class Message extends ClientSDK {
 
   /**
    * Retrieve a message
+   *
+   * @remarks
+   * Retrieves a single MessagingMessage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMessagingMessage(
     request: operations.GetMessagingMessageRequest,
@@ -44,6 +50,9 @@ export class Message extends ClientSDK {
 
   /**
    * List all messages
+   *
+   * @remarks
+   * Returns a list of MessagingMessages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMessagingMessages(
     request: operations.ListMessagingMessagesRequest,
@@ -58,6 +67,9 @@ export class Message extends ClientSDK {
 
   /**
    * Update a message
+   *
+   * @remarks
+   * Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
    */
   async patchMessagingMessage(
     request: operations.PatchMessagingMessageRequest,
@@ -72,6 +84,9 @@ export class Message extends ClientSDK {
 
   /**
    * Remove a message
+   *
+   * @remarks
+   * Deletes the MessagingMessage identified by `id`.
    */
   async removeMessagingMessage(
     request: operations.RemoveMessagingMessageRequest,
@@ -86,6 +101,9 @@ export class Message extends ClientSDK {
 
   /**
    * Update a message
+   *
+   * @remarks
+   * Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
    */
   async updateMessagingMessage(
     request: operations.UpdateMessagingMessageRequest,

@@ -28,6 +28,11 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an order
+ *
+ * @remarks
+ * Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+ *
+ * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
  */
 export function accountingCreateAccountingOrder(
   client: UnifiedToCore,

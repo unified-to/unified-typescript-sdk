@@ -22,6 +22,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Job extends ClientSDK {
   /**
    * Create a job
+   *
+   * @remarks
+   * Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
    */
   async createAtsJob(
     request: operations.CreateAtsJobRequest,
@@ -36,6 +39,9 @@ export class Job extends ClientSDK {
 
   /**
    * Create a job
+   *
+   * @remarks
+   * Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
    */
   async createHrisJob(
     request: operations.CreateHrisJobRequest,
@@ -50,6 +56,9 @@ export class Job extends ClientSDK {
 
   /**
    * Retrieve a job
+   *
+   * @remarks
+   * Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsJob(
     request: operations.GetAtsJobRequest,
@@ -64,6 +73,9 @@ export class Job extends ClientSDK {
 
   /**
    * Retrieve a job
+   *
+   * @remarks
+   * Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisJob(
     request: operations.GetHrisJobRequest,
@@ -78,6 +90,9 @@ export class Job extends ClientSDK {
 
   /**
    * List all jobs
+   *
+   * @remarks
+   * Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsJobs(
     request: operations.ListAtsJobsRequest,
@@ -92,6 +107,9 @@ export class Job extends ClientSDK {
 
   /**
    * List all jobs
+   *
+   * @remarks
+   * Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisJobs(
     request: operations.ListHrisJobsRequest,
@@ -106,6 +124,9 @@ export class Job extends ClientSDK {
 
   /**
    * Update a job
+   *
+   * @remarks
+   * Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
    */
   async patchAtsJob(
     request: operations.PatchAtsJobRequest,
@@ -120,6 +141,9 @@ export class Job extends ClientSDK {
 
   /**
    * Update a job
+   *
+   * @remarks
+   * Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
    */
   async patchHrisJob(
     request: operations.PatchHrisJobRequest,
@@ -134,6 +158,9 @@ export class Job extends ClientSDK {
 
   /**
    * Remove a job
+   *
+   * @remarks
+   * Deletes the AtsJob identified by `id`.
    */
   async removeAtsJob(
     request: operations.RemoveAtsJobRequest,
@@ -148,6 +175,9 @@ export class Job extends ClientSDK {
 
   /**
    * Remove a job
+   *
+   * @remarks
+   * Deletes the HrisJob identified by `id`.
    */
   async removeHrisJob(
     request: operations.RemoveHrisJobRequest,
@@ -162,6 +192,9 @@ export class Job extends ClientSDK {
 
   /**
    * Update a job
+   *
+   * @remarks
+   * Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
    */
   async updateAtsJob(
     request: operations.UpdateAtsJobRequest,
@@ -176,6 +209,9 @@ export class Job extends ClientSDK {
 
   /**
    * Update a job
+   *
+   * @remarks
+   * Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
    */
   async updateHrisJob(
     request: operations.UpdateHrisJobRequest,

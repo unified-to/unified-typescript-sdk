@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a request
+ *
+ * @remarks
+ * Deletes the VerificationRequest identified by `id`.
  */
 export function verificationRemoveVerificationRequest(
   client: UnifiedToCore,

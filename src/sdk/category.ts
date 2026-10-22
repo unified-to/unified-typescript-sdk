@@ -22,6 +22,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Category extends ClientSDK {
   /**
    * Create a category
+   *
+   * @remarks
+   * Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
    */
   async createAccountingCategory(
     request: operations.CreateAccountingCategoryRequest,
@@ -36,6 +39,9 @@ export class Category extends ClientSDK {
 
   /**
    * Create a category
+   *
+   * @remarks
+   * Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
    */
   async createTicketingCategory(
     request: operations.CreateTicketingCategoryRequest,
@@ -50,6 +56,9 @@ export class Category extends ClientSDK {
 
   /**
    * Retrieve a category
+   *
+   * @remarks
+   * Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingCategory(
     request: operations.GetAccountingCategoryRequest,
@@ -64,6 +73,9 @@ export class Category extends ClientSDK {
 
   /**
    * Retrieve a category
+   *
+   * @remarks
+   * Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTicketingCategory(
     request: operations.GetTicketingCategoryRequest,
@@ -78,6 +90,9 @@ export class Category extends ClientSDK {
 
   /**
    * List all categories
+   *
+   * @remarks
+   * Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingCategories(
     request: operations.ListAccountingCategoriesRequest,
@@ -92,6 +107,9 @@ export class Category extends ClientSDK {
 
   /**
    * List all categories
+   *
+   * @remarks
+   * Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTicketingCategories(
     request: operations.ListTicketingCategoriesRequest,
@@ -106,6 +124,9 @@ export class Category extends ClientSDK {
 
   /**
    * Update a category
+   *
+   * @remarks
+   * Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
    */
   async patchAccountingCategory(
     request: operations.PatchAccountingCategoryRequest,
@@ -120,6 +141,9 @@ export class Category extends ClientSDK {
 
   /**
    * Update a category
+   *
+   * @remarks
+   * Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
    */
   async patchTicketingCategory(
     request: operations.PatchTicketingCategoryRequest,
@@ -134,6 +158,9 @@ export class Category extends ClientSDK {
 
   /**
    * Remove a category
+   *
+   * @remarks
+   * Deletes the AccountingCategory identified by `id`.
    */
   async removeAccountingCategory(
     request: operations.RemoveAccountingCategoryRequest,
@@ -148,6 +175,9 @@ export class Category extends ClientSDK {
 
   /**
    * Remove a category
+   *
+   * @remarks
+   * Deletes the TicketingCategory identified by `id`.
    */
   async removeTicketingCategory(
     request: operations.RemoveTicketingCategoryRequest,
@@ -162,6 +192,9 @@ export class Category extends ClientSDK {
 
   /**
    * Update a category
+   *
+   * @remarks
+   * Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
    */
   async updateAccountingCategory(
     request: operations.UpdateAccountingCategoryRequest,
@@ -176,6 +209,9 @@ export class Category extends ClientSDK {
 
   /**
    * Update a category
+   *
+   * @remarks
+   * Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
    */
   async updateTicketingCategory(
     request: operations.UpdateTicketingCategoryRequest,

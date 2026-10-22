@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a quote
+ *
+ * @remarks
+ * Deletes the AccountingQuote identified by `id`.
  */
 export function accountingRemoveAccountingQuote(
   client: UnifiedToCore,

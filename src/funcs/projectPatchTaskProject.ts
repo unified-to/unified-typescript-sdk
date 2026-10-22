@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a project
+ *
+ * @remarks
+ * Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
  */
 export function projectPatchTaskProject(
   client: UnifiedToCore,

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Pipeline extends ClientSDK {
   /**
    * Create a pipeline
+   *
+   * @remarks
+   * Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
    */
   async createCrmPipeline(
     request: operations.CreateCrmPipelineRequest,
@@ -30,6 +33,9 @@ export class Pipeline extends ClientSDK {
 
   /**
    * Retrieve a pipeline
+   *
+   * @remarks
+   * Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmPipeline(
     request: operations.GetCrmPipelineRequest,
@@ -44,6 +50,9 @@ export class Pipeline extends ClientSDK {
 
   /**
    * List all pipelines
+   *
+   * @remarks
+   * Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmPipelines(
     request: operations.ListCrmPipelinesRequest,
@@ -58,6 +67,9 @@ export class Pipeline extends ClientSDK {
 
   /**
    * Update a pipeline
+   *
+   * @remarks
+   * Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
    */
   async patchCrmPipeline(
     request: operations.PatchCrmPipelineRequest,
@@ -72,6 +84,9 @@ export class Pipeline extends ClientSDK {
 
   /**
    * Remove a pipeline
+   *
+   * @remarks
+   * Deletes the CrmPipeline identified by `id`.
    */
   async removeCrmPipeline(
     request: operations.RemoveCrmPipelineRequest,
@@ -86,6 +101,9 @@ export class Pipeline extends ClientSDK {
 
   /**
    * Update a pipeline
+   *
+   * @remarks
+   * Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
    */
   async updateCrmPipeline(
     request: operations.UpdateCrmPipelineRequest,

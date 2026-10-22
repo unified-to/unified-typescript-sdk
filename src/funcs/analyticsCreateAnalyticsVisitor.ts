@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a visitor
+ *
+ * @remarks
+ * Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
  */
 export function analyticsCreateAnalyticsVisitor(
   client: UnifiedToCore,

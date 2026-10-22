@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a task
+ *
+ * @remarks
+ * Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
  */
 export function genaiUpdateGenaiTask(
   client: UnifiedToCore,

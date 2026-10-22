@@ -46,6 +46,9 @@ export class Package extends ClientSDK {
 
   /**
    * Retrieve a package
+   *
+   * @remarks
+   * Retrieves a single VerificationPackage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getVerificationPackage(
     request: operations.GetVerificationPackageRequest,
@@ -74,6 +77,9 @@ export class Package extends ClientSDK {
 
   /**
    * List all packages
+   *
+   * @remarks
+   * Returns a list of VerificationPackages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listVerificationPackages(
     request: operations.ListVerificationPackagesRequest,

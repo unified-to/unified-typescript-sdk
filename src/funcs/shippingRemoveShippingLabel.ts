@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a label
+ *
+ * @remarks
+ * Deletes the ShippingLabel identified by `id`.
  */
 export function shippingRemoveShippingLabel(
   client: UnifiedToCore,

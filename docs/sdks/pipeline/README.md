@@ -13,7 +13,7 @@
 
 ## createCrmPipeline
 
-Create a pipeline
+Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
 
 ### Example Usage
 
@@ -33,7 +33,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "77a542b7-0690-4562-a759-2f61305f5b36",
+      id: "dd55bb76-04f9-4985-b5ff-1db0b8e29acc",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -43,13 +43,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "d9467cb6-529a-4691-9e55-80922ca05925",
+          id: "65551e8c-ade5-4ab5-b5fe-aeeb7f4a28e3",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.171Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.361Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.233Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.689Z"),
     },
     connectionId: "<id>",
   });
@@ -82,7 +82,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "77a542b7-0690-4562-a759-2f61305f5b36",
+      id: "dd55bb76-04f9-4985-b5ff-1db0b8e29acc",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -92,13 +92,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "d9467cb6-529a-4691-9e55-80922ca05925",
+          id: "65551e8c-ade5-4ab5-b5fe-aeeb7f4a28e3",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.171Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.361Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.233Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.689Z"),
     },
     connectionId: "<id>",
   });
@@ -134,7 +134,7 @@ run();
 
 ## getCrmPipeline
 
-Retrieve a pipeline
+Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -213,7 +213,7 @@ run();
 
 ## listCrmPipelines
 
-List all pipelines
+Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -290,7 +290,7 @@ run();
 
 ## patchCrmPipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -310,7 +310,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "a8125f4f-eb64-439d-9bee-983ea6ed9c93",
+      id: "3ef2320f-7e8f-4b65-8997-b88da6350472",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -320,13 +320,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "2368bbac-62c5-4871-86f6-0a2c11d70aa1",
+          id: "ae85134d-6504-44e1-aaba-c42404c8b6f8",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.184Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.370Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.245Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.698Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -360,7 +360,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "a8125f4f-eb64-439d-9bee-983ea6ed9c93",
+      id: "3ef2320f-7e8f-4b65-8997-b88da6350472",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -370,13 +370,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "2368bbac-62c5-4871-86f6-0a2c11d70aa1",
+          id: "ae85134d-6504-44e1-aaba-c42404c8b6f8",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.184Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.370Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.245Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.698Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -413,7 +413,7 @@ run();
 
 ## removeCrmPipeline
 
-Remove a pipeline
+Deletes the CrmPipeline identified by `id`.
 
 ### Example Usage
 
@@ -492,7 +492,7 @@ run();
 
 ## updateCrmPipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -512,7 +512,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "a8125f4f-eb64-439d-9bee-983ea6ed9c93",
+      id: "3ef2320f-7e8f-4b65-8997-b88da6350472",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -522,13 +522,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "2368bbac-62c5-4871-86f6-0a2c11d70aa1",
+          id: "ae85134d-6504-44e1-aaba-c42404c8b6f8",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.184Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.370Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.245Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.698Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -562,7 +562,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "a8125f4f-eb64-439d-9bee-983ea6ed9c93",
+      id: "3ef2320f-7e8f-4b65-8997-b88da6350472",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -572,13 +572,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "2368bbac-62c5-4871-86f6-0a2c11d70aa1",
+          id: "ae85134d-6504-44e1-aaba-c42404c8b6f8",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.184Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.370Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.245Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.698Z"),
     },
     connectionId: "<id>",
     id: "<id>",

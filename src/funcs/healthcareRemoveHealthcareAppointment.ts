@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an appointment
+ *
+ * @remarks
+ * Deletes the HealthcareAppointment identified by `id`.
  */
 export function healthcareRemoveHealthcareAppointment(
   client: UnifiedToCore,

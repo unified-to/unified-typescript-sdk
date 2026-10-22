@@ -16,6 +16,9 @@ import {
   AtsMetadata$outboundSchema,
 } from "./atsmetadata.js";
 
+/**
+ * The kind of document
+ */
 export const AtsDocumentType = {
   Resume: "RESUME",
   CoverLetter: "COVER_LETTER",
@@ -24,10 +27,16 @@ export const AtsDocumentType = {
   TakeHomeTest: "TAKE_HOME_TEST",
   Other: "OTHER",
 } as const;
+/**
+ * The kind of document
+ */
 export type AtsDocumentType = OpenEnum<typeof AtsDocumentType>;
 
 export type AtsDocument = {
   applicationId?: string | undefined;
+  /**
+   * The ID of the candidate the document belongs to (an AtsCandidate ID)
+   */
   candidateId?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -41,11 +50,17 @@ export type AtsDocument = {
    * This link expires after 1 hour.
    */
   documentUrl?: string | undefined;
+  /**
+   * The document's file name, including its extension (e.g. resume.pdf)
+   */
   filename?: string | undefined;
   id?: string | undefined;
   jobId?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The kind of document
+   */
   type?: AtsDocumentType | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)

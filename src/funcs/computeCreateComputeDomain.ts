@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a domain
+ *
+ * @remarks
+ * Creates a ComputeDomain. Provide the unified ComputeDomain fields in the request body; they are mapped to the provider's API. Returns the created ComputeDomain.
  */
 export function computeCreateComputeDomain(
   client: UnifiedToCore,

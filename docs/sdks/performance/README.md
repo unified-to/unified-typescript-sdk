@@ -20,7 +20,7 @@
 
 ## createPerformanceFeedback
 
-Create a feedback
+Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
 
 ### Example Usage
 
@@ -38,7 +38,7 @@ async function run() {
   const result = await unifiedTo.performance.createPerformanceFeedback({
     performanceFeedback: {
       createdAt: new Date("2023-04-11T16:21:53.862Z"),
-      id: "abbec415-bf04-4133-9d69-aa35b5bf83be",
+      id: "6066b0b4-0c37-45ee-a318-6709b4b48d12",
       isVisible: true,
       message: "Tabernus corpus voluptate aestus.",
       metadata: [],
@@ -47,7 +47,7 @@ async function run() {
         "hexagon",
       ],
       type: "PRAISE",
-      updatedAt: new Date("2025-09-04T02:50:54.227Z"),
+      updatedAt: new Date("2025-09-04T19:12:01.043Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -79,7 +79,7 @@ async function run() {
   const res = await performanceCreatePerformanceFeedback(unifiedTo, {
     performanceFeedback: {
       createdAt: new Date("2023-04-11T16:21:53.862Z"),
-      id: "abbec415-bf04-4133-9d69-aa35b5bf83be",
+      id: "6066b0b4-0c37-45ee-a318-6709b4b48d12",
       isVisible: true,
       message: "Tabernus corpus voluptate aestus.",
       metadata: [],
@@ -88,7 +88,7 @@ async function run() {
         "hexagon",
       ],
       type: "PRAISE",
-      updatedAt: new Date("2025-09-04T02:50:54.227Z"),
+      updatedAt: new Date("2025-09-04T19:12:01.043Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -125,7 +125,7 @@ run();
 
 ## createPerformanceGoal
 
-Create a goal
+Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
 
 ### Example Usage
 
@@ -144,14 +144,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-07-29T18:57:14.812Z"),
-      id: "c9f9d9c4-2623-4aee-a0e8-a35be6a2de55",
+      dueAt: new Date("2026-07-30T18:10:58.528Z"),
+      id: "cc841359-26d3-4906-abc5-a6c109297f69",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-03T21:38:19.833Z"),
-          id: "3fee426b-57c7-4bb6-9293-ccdb793da79f",
+          dueAt: new Date("2026-06-04T20:19:30.469Z"),
+          id: "52af2224-a125-4a9b-819e-0c0425ea3589",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -160,8 +160,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-08T11:48:10.966Z"),
-          id: "f1436b4a-47a8-4220-b6ed-83d6b7b4b02a",
+          dueAt: new Date("2026-08-09T11:07:33.730Z"),
+          id: "ac6ec030-3238-4e7c-bf69-a47cdef9d616",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -170,8 +170,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-10T10:39:02.380Z"),
-          id: "97ba8e6e-9ca8-4b52-a18b-afe3e1c61a51",
+          dueAt: new Date("2026-10-11T10:35:05.078Z"),
+          id: "30b9f672-cdff-4a2f-9599-b785146629cc",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -180,10 +180,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-23T09:39:19.342Z"),
+      startAt: new Date("2025-07-24T05:16:44.473Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-13T01:42:20.972Z"),
+      updatedAt: new Date("2022-09-13T11:11:30.683Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -216,14 +216,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-07-29T18:57:14.812Z"),
-      id: "c9f9d9c4-2623-4aee-a0e8-a35be6a2de55",
+      dueAt: new Date("2026-07-30T18:10:58.528Z"),
+      id: "cc841359-26d3-4906-abc5-a6c109297f69",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-03T21:38:19.833Z"),
-          id: "3fee426b-57c7-4bb6-9293-ccdb793da79f",
+          dueAt: new Date("2026-06-04T20:19:30.469Z"),
+          id: "52af2224-a125-4a9b-819e-0c0425ea3589",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -232,8 +232,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-08T11:48:10.966Z"),
-          id: "f1436b4a-47a8-4220-b6ed-83d6b7b4b02a",
+          dueAt: new Date("2026-08-09T11:07:33.730Z"),
+          id: "ac6ec030-3238-4e7c-bf69-a47cdef9d616",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -242,8 +242,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-10T10:39:02.380Z"),
-          id: "97ba8e6e-9ca8-4b52-a18b-afe3e1c61a51",
+          dueAt: new Date("2026-10-11T10:35:05.078Z"),
+          id: "30b9f672-cdff-4a2f-9599-b785146629cc",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -252,10 +252,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-23T09:39:19.342Z"),
+      startAt: new Date("2025-07-24T05:16:44.473Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-13T01:42:20.972Z"),
+      updatedAt: new Date("2022-09-13T11:11:30.683Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -292,7 +292,7 @@ run();
 
 ## getPerformanceCycle
 
-Retrieve a cycle
+Retrieves a single PerformanceCycle by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -371,7 +371,7 @@ run();
 
 ## getPerformanceFeedback
 
-Retrieve a feedback
+Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -450,7 +450,7 @@ run();
 
 ## getPerformanceGoal
 
-Retrieve a goal
+Retrieves a single PerformanceGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -529,7 +529,7 @@ run();
 
 ## getPerformanceReview
 
-Retrieve a review
+Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -608,7 +608,7 @@ run();
 
 ## listPerformanceCycles
 
-List all cycles
+Returns a list of PerformanceCycles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -685,7 +685,7 @@ run();
 
 ## listPerformanceFeedbacks
 
-List all feedbacks
+Returns a list of PerformanceFeedbacks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -762,7 +762,7 @@ run();
 
 ## listPerformanceGoals
 
-List all goals
+Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -839,7 +839,7 @@ run();
 
 ## listPerformanceReviews
 
-List all reviews
+Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -916,7 +916,7 @@ run();
 
 ## patchPerformanceGoal
 
-Update a goal
+Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
 
 ### Example Usage
 
@@ -935,14 +935,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-07-29T18:57:14.838Z"),
-      id: "d40a0d6e-fcb4-4e72-b058-270441c367c8",
+      dueAt: new Date("2026-07-30T18:10:58.545Z"),
+      id: "f1cf2344-b0b1-467f-83a9-24a8ac77b9c8",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-03T21:38:19.857Z"),
-          id: "f1462a3d-8467-4e6a-9d32-11e9cd553e75",
+          dueAt: new Date("2026-06-04T20:19:30.486Z"),
+          id: "0e918ba5-d9e2-47bd-a38a-32b018f70a29",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -951,8 +951,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-08T11:48:10.991Z"),
-          id: "8be5e758-c417-4d00-89a4-b22a8f5044ef",
+          dueAt: new Date("2026-08-09T11:07:33.748Z"),
+          id: "ea1f28be-a4cf-48a3-b33a-5456b01d3b84",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -961,8 +961,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-10T10:39:02.406Z"),
-          id: "57c4c83c-76cd-42ea-8e54-043ba23dc218",
+          dueAt: new Date("2026-10-11T10:35:05.095Z"),
+          id: "3d4fd565-9cdb-4ffc-92cc-508b7f41f3dc",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -971,10 +971,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-23T09:39:19.363Z"),
+      startAt: new Date("2025-07-24T05:16:44.488Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-13T01:42:20.983Z"),
+      updatedAt: new Date("2022-09-13T11:11:30.690Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -1008,14 +1008,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-07-29T18:57:14.838Z"),
-      id: "d40a0d6e-fcb4-4e72-b058-270441c367c8",
+      dueAt: new Date("2026-07-30T18:10:58.545Z"),
+      id: "f1cf2344-b0b1-467f-83a9-24a8ac77b9c8",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-03T21:38:19.857Z"),
-          id: "f1462a3d-8467-4e6a-9d32-11e9cd553e75",
+          dueAt: new Date("2026-06-04T20:19:30.486Z"),
+          id: "0e918ba5-d9e2-47bd-a38a-32b018f70a29",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -1024,8 +1024,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-08T11:48:10.991Z"),
-          id: "8be5e758-c417-4d00-89a4-b22a8f5044ef",
+          dueAt: new Date("2026-08-09T11:07:33.748Z"),
+          id: "ea1f28be-a4cf-48a3-b33a-5456b01d3b84",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -1034,8 +1034,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-10T10:39:02.406Z"),
-          id: "57c4c83c-76cd-42ea-8e54-043ba23dc218",
+          dueAt: new Date("2026-10-11T10:35:05.095Z"),
+          id: "3d4fd565-9cdb-4ffc-92cc-508b7f41f3dc",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -1044,10 +1044,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-23T09:39:19.363Z"),
+      startAt: new Date("2025-07-24T05:16:44.488Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-13T01:42:20.983Z"),
+      updatedAt: new Date("2022-09-13T11:11:30.690Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -1085,7 +1085,7 @@ run();
 
 ## removePerformanceGoal
 
-Remove a goal
+Deletes the PerformanceGoal identified by `id`.
 
 ### Example Usage
 
@@ -1164,7 +1164,7 @@ run();
 
 ## updatePerformanceGoal
 
-Update a goal
+Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
 
 ### Example Usage
 
@@ -1183,14 +1183,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-07-29T18:57:14.838Z"),
-      id: "d40a0d6e-fcb4-4e72-b058-270441c367c8",
+      dueAt: new Date("2026-07-30T18:10:58.545Z"),
+      id: "f1cf2344-b0b1-467f-83a9-24a8ac77b9c8",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-03T21:38:19.857Z"),
-          id: "f1462a3d-8467-4e6a-9d32-11e9cd553e75",
+          dueAt: new Date("2026-06-04T20:19:30.486Z"),
+          id: "0e918ba5-d9e2-47bd-a38a-32b018f70a29",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -1199,8 +1199,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-08T11:48:10.991Z"),
-          id: "8be5e758-c417-4d00-89a4-b22a8f5044ef",
+          dueAt: new Date("2026-08-09T11:07:33.748Z"),
+          id: "ea1f28be-a4cf-48a3-b33a-5456b01d3b84",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -1209,8 +1209,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-10T10:39:02.406Z"),
-          id: "57c4c83c-76cd-42ea-8e54-043ba23dc218",
+          dueAt: new Date("2026-10-11T10:35:05.095Z"),
+          id: "3d4fd565-9cdb-4ffc-92cc-508b7f41f3dc",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -1219,10 +1219,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-23T09:39:19.363Z"),
+      startAt: new Date("2025-07-24T05:16:44.488Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-13T01:42:20.983Z"),
+      updatedAt: new Date("2022-09-13T11:11:30.690Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -1256,14 +1256,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-07-29T18:57:14.838Z"),
-      id: "d40a0d6e-fcb4-4e72-b058-270441c367c8",
+      dueAt: new Date("2026-07-30T18:10:58.545Z"),
+      id: "f1cf2344-b0b1-467f-83a9-24a8ac77b9c8",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-03T21:38:19.857Z"),
-          id: "f1462a3d-8467-4e6a-9d32-11e9cd553e75",
+          dueAt: new Date("2026-06-04T20:19:30.486Z"),
+          id: "0e918ba5-d9e2-47bd-a38a-32b018f70a29",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -1272,8 +1272,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-08T11:48:10.991Z"),
-          id: "8be5e758-c417-4d00-89a4-b22a8f5044ef",
+          dueAt: new Date("2026-08-09T11:07:33.748Z"),
+          id: "ea1f28be-a4cf-48a3-b33a-5456b01d3b84",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -1282,8 +1282,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-10T10:39:02.406Z"),
-          id: "57c4c83c-76cd-42ea-8e54-043ba23dc218",
+          dueAt: new Date("2026-10-11T10:35:05.095Z"),
+          id: "3d4fd565-9cdb-4ffc-92cc-508b7f41f3dc",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -1292,10 +1292,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-23T09:39:19.363Z"),
+      startAt: new Date("2025-07-24T05:16:44.488Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-13T01:42:20.983Z"),
+      updatedAt: new Date("2022-09-13T11:11:30.690Z"),
       weight: 5,
     },
     connectionId: "<id>",

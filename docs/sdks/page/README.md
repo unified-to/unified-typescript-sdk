@@ -13,7 +13,7 @@
 
 ## createKmsPage
 
-Create a page
+Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider's API. Returns the created KmsPage.
 
 ### Example Usage
 
@@ -33,12 +33,12 @@ async function run() {
       createdAt: new Date("2019-05-20T18:06:50.749Z"),
       downloadUrl: "https://agitated-validity.info",
       hasChildren: true,
-      id: "9718c49c-baa3-4a20-a100-97c07caa09b4",
+      id: "f132c984-fdfd-4e26-b559-5d8cc03c5412",
       isActive: true,
       metadata: [],
       title: "even minister extract",
       type: "HTML",
-      updatedAt: new Date("2025-10-09T04:51:31.314Z"),
+      updatedAt: new Date("2025-10-10T01:33:13.889Z"),
       webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
@@ -72,12 +72,12 @@ async function run() {
       createdAt: new Date("2019-05-20T18:06:50.749Z"),
       downloadUrl: "https://agitated-validity.info",
       hasChildren: true,
-      id: "9718c49c-baa3-4a20-a100-97c07caa09b4",
+      id: "f132c984-fdfd-4e26-b559-5d8cc03c5412",
       isActive: true,
       metadata: [],
       title: "even minister extract",
       type: "HTML",
-      updatedAt: new Date("2025-10-09T04:51:31.314Z"),
+      updatedAt: new Date("2025-10-10T01:33:13.889Z"),
       webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
@@ -114,7 +114,7 @@ run();
 
 ## getKmsPage
 
-Retrieve a page
+Retrieves a single KmsPage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -193,7 +193,7 @@ run();
 
 ## listKmsPages
 
-List all pages
+Returns a list of KmsPages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -270,7 +270,7 @@ run();
 
 ## patchKmsPage
 
-Update a page
+Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
 
 ### Example Usage
 
@@ -290,12 +290,12 @@ async function run() {
       createdAt: new Date("2019-05-20T18:06:50.749Z"),
       downloadUrl: "https://agitated-validity.info",
       hasChildren: true,
-      id: "43cd35f8-3cb1-4afb-9c33-4f23f18acba1",
+      id: "da13d4ca-2719-4520-8bfa-a399feedf4c6",
       isActive: true,
       metadata: [],
       title: "even minister extract",
       type: "HTML",
-      updatedAt: new Date("2025-10-09T04:51:31.330Z"),
+      updatedAt: new Date("2025-10-10T01:33:13.900Z"),
       webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
@@ -330,12 +330,12 @@ async function run() {
       createdAt: new Date("2019-05-20T18:06:50.749Z"),
       downloadUrl: "https://agitated-validity.info",
       hasChildren: true,
-      id: "43cd35f8-3cb1-4afb-9c33-4f23f18acba1",
+      id: "da13d4ca-2719-4520-8bfa-a399feedf4c6",
       isActive: true,
       metadata: [],
       title: "even minister extract",
       type: "HTML",
-      updatedAt: new Date("2025-10-09T04:51:31.330Z"),
+      updatedAt: new Date("2025-10-10T01:33:13.900Z"),
       webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
@@ -373,7 +373,7 @@ run();
 
 ## removeKmsPage
 
-Remove a page
+Deletes the KmsPage identified by `id`.
 
 ### Example Usage
 
@@ -452,7 +452,7 @@ run();
 
 ## updateKmsPage
 
-Update a page
+Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
 
 ### Example Usage
 
@@ -472,12 +472,12 @@ async function run() {
       createdAt: new Date("2019-05-20T18:06:50.749Z"),
       downloadUrl: "https://agitated-validity.info",
       hasChildren: true,
-      id: "43cd35f8-3cb1-4afb-9c33-4f23f18acba1",
+      id: "da13d4ca-2719-4520-8bfa-a399feedf4c6",
       isActive: true,
       metadata: [],
       title: "even minister extract",
       type: "HTML",
-      updatedAt: new Date("2025-10-09T04:51:31.330Z"),
+      updatedAt: new Date("2025-10-10T01:33:13.900Z"),
       webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",
@@ -512,12 +512,12 @@ async function run() {
       createdAt: new Date("2019-05-20T18:06:50.749Z"),
       downloadUrl: "https://agitated-validity.info",
       hasChildren: true,
-      id: "43cd35f8-3cb1-4afb-9c33-4f23f18acba1",
+      id: "da13d4ca-2719-4520-8bfa-a399feedf4c6",
       isActive: true,
       metadata: [],
       title: "even minister extract",
       type: "HTML",
-      updatedAt: new Date("2025-10-09T04:51:31.330Z"),
+      updatedAt: new Date("2025-10-10T01:33:13.900Z"),
       webUrl: "https://another-petticoat.info",
     },
     connectionId: "<id>",

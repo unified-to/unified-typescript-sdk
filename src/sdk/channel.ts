@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Channel extends ClientSDK {
   /**
    * Create a channel
+   *
+   * @remarks
+   * Creates a MessagingChannel. Provide the unified MessagingChannel fields in the request body; they are mapped to the provider's API. Returns the created MessagingChannel.
    */
   async createMessagingChannel(
     request: operations.CreateMessagingChannelRequest,
@@ -30,6 +33,9 @@ export class Channel extends ClientSDK {
 
   /**
    * Retrieve a channel
+   *
+   * @remarks
+   * Retrieves a single MessagingChannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMessagingChannel(
     request: operations.GetMessagingChannelRequest,
@@ -44,6 +50,9 @@ export class Channel extends ClientSDK {
 
   /**
    * List all channels
+   *
+   * @remarks
+   * Returns a list of MessagingChannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMessagingChannels(
     request: operations.ListMessagingChannelsRequest,
@@ -58,6 +67,9 @@ export class Channel extends ClientSDK {
 
   /**
    * Update a channel
+   *
+   * @remarks
+   * Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
    */
   async patchMessagingChannel(
     request: operations.PatchMessagingChannelRequest,
@@ -72,6 +84,9 @@ export class Channel extends ClientSDK {
 
   /**
    * Remove a channel
+   *
+   * @remarks
+   * Deletes the MessagingChannel identified by `id`.
    */
   async removeMessagingChannel(
     request: operations.RemoveMessagingChannelRequest,
@@ -86,6 +101,9 @@ export class Channel extends ClientSDK {
 
   /**
    * Update a channel
+   *
+   * @remarks
+   * Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
    */
   async updateMessagingChannel(
     request: operations.UpdateMessagingChannelRequest,

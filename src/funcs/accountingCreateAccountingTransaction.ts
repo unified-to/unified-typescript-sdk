@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a transaction
+ *
+ * @remarks
+ * Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
  */
 export function accountingCreateAccountingTransaction(
   client: UnifiedToCore,

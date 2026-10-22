@@ -22,6 +22,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Expense extends ClientSDK {
   /**
    * Create an expense
+   *
+   * @remarks
+   * Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
    */
   async createAccountingExpense(
     request: operations.CreateAccountingExpenseRequest,
@@ -36,6 +39,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Create an expense
+   *
+   * @remarks
+   * Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
    */
   async createLegalExpense(
     request: operations.CreateLegalExpenseRequest,
@@ -50,6 +56,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Retrieve an expense
+   *
+   * @remarks
+   * Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingExpense(
     request: operations.GetAccountingExpenseRequest,
@@ -64,6 +73,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Retrieve an expense
+   *
+   * @remarks
+   * Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLegalExpense(
     request: operations.GetLegalExpenseRequest,
@@ -78,6 +90,9 @@ export class Expense extends ClientSDK {
 
   /**
    * List all expenses
+   *
+   * @remarks
+   * Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingExpenses(
     request: operations.ListAccountingExpensesRequest,
@@ -92,6 +107,9 @@ export class Expense extends ClientSDK {
 
   /**
    * List all expenses
+   *
+   * @remarks
+   * Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLegalExpenses(
     request: operations.ListLegalExpensesRequest,
@@ -106,6 +124,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Update an expense
+   *
+   * @remarks
+   * Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
    */
   async patchAccountingExpense(
     request: operations.PatchAccountingExpenseRequest,
@@ -120,6 +141,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Update an expense
+   *
+   * @remarks
+   * Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
    */
   async patchLegalExpense(
     request: operations.PatchLegalExpenseRequest,
@@ -134,6 +158,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Remove an expense
+   *
+   * @remarks
+   * Deletes the AccountingExpense identified by `id`.
    */
   async removeAccountingExpense(
     request: operations.RemoveAccountingExpenseRequest,
@@ -148,6 +175,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Remove an expense
+   *
+   * @remarks
+   * Deletes the LegalExpense identified by `id`.
    */
   async removeLegalExpense(
     request: operations.RemoveLegalExpenseRequest,
@@ -162,6 +192,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Update an expense
+   *
+   * @remarks
+   * Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
    */
   async updateAccountingExpense(
     request: operations.UpdateAccountingExpenseRequest,
@@ -176,6 +209,9 @@ export class Expense extends ClientSDK {
 
   /**
    * Update an expense
+   *
+   * @remarks
+   * Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
    */
   async updateLegalExpense(
     request: operations.UpdateLegalExpenseRequest,

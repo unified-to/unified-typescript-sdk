@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Repository extends ClientSDK {
   /**
    * Create a repository
+   *
+   * @remarks
+   * Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
    */
   async createRepoRepository(
     request: operations.CreateRepoRepositoryRequest,
@@ -30,6 +33,9 @@ export class Repository extends ClientSDK {
 
   /**
    * Retrieve a repository
+   *
+   * @remarks
+   * Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoRepository(
     request: operations.GetRepoRepositoryRequest,
@@ -44,6 +50,9 @@ export class Repository extends ClientSDK {
 
   /**
    * List all repositories
+   *
+   * @remarks
+   * Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoRepositories(
     request: operations.ListRepoRepositoriesRequest,
@@ -58,6 +67,9 @@ export class Repository extends ClientSDK {
 
   /**
    * Update a repository
+   *
+   * @remarks
+   * Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
    */
   async patchRepoRepository(
     request: operations.PatchRepoRepositoryRequest,
@@ -72,6 +84,9 @@ export class Repository extends ClientSDK {
 
   /**
    * Remove a repository
+   *
+   * @remarks
+   * Deletes the RepoRepository identified by `id`.
    */
   async removeRepoRepository(
     request: operations.RemoveRepoRepositoryRequest,
@@ -86,6 +101,9 @@ export class Repository extends ClientSDK {
 
   /**
    * Update a repository
+   *
+   * @remarks
+   * Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
    */
   async updateRepoRepository(
     request: operations.UpdateRepoRepositoryRequest,

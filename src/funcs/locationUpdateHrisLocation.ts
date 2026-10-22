@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a location
+ *
+ * @remarks
+ * Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
  */
 export function locationUpdateHrisLocation(
   client: UnifiedToCore,

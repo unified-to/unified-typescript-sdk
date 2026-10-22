@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a form
+ *
+ * @remarks
+ * Updates the FormsForm identified by `id`. Provide the unified FormsForm fields to change in the request body.
  */
 export function formsUpdateFormsForm(
   client: UnifiedToCore,

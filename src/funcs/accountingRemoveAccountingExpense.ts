@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an expense
+ *
+ * @remarks
+ * Deletes the AccountingExpense identified by `id`.
  */
 export function accountingRemoveAccountingExpense(
   client: UnifiedToCore,

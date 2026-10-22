@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a bill
+ *
+ * @remarks
+ * Deletes the AccountingBill identified by `id`.
  */
 export function accountingRemoveAccountingBill(
   client: UnifiedToCore,

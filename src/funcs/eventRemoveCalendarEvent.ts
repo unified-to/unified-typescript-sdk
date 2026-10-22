@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an event
+ *
+ * @remarks
+ * Deletes the CalendarEvent identified by `id`.
  */
 export function eventRemoveCalendarEvent(
   client: UnifiedToCore,

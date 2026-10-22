@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a lead
+ *
+ * @remarks
+ * Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
  */
 export function crmPatchCrmLead(
   client: UnifiedToCore,

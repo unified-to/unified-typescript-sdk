@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Retrieve a paymentterm
+ *
+ * @remarks
+ * Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
  */
 export function accountingGetAccountingPaymentterm(
   client: UnifiedToCore,

@@ -22,6 +22,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Collection extends ClientSDK {
   /**
    * Create a collection
+   *
+   * @remarks
+   * Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
    */
   async createCommerceCollection(
     request: operations.CreateCommerceCollectionRequest,
@@ -36,6 +39,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Create a collection
+   *
+   * @remarks
+   * Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
    */
   async createLmsCollection(
     request: operations.CreateLmsCollectionRequest,
@@ -50,6 +56,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Retrieve a collection
+   *
+   * @remarks
+   * Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceCollection(
     request: operations.GetCommerceCollectionRequest,
@@ -64,6 +73,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Retrieve a collection
+   *
+   * @remarks
+   * Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsCollection(
     request: operations.GetLmsCollectionRequest,
@@ -78,6 +90,9 @@ export class Collection extends ClientSDK {
 
   /**
    * List all collections
+   *
+   * @remarks
+   * Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceCollections(
     request: operations.ListCommerceCollectionsRequest,
@@ -92,6 +107,9 @@ export class Collection extends ClientSDK {
 
   /**
    * List all collections
+   *
+   * @remarks
+   * Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsCollections(
     request: operations.ListLmsCollectionsRequest,
@@ -106,6 +124,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Update a collection
+   *
+   * @remarks
+   * Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
    */
   async patchCommerceCollection(
     request: operations.PatchCommerceCollectionRequest,
@@ -120,6 +141,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Update a collection
+   *
+   * @remarks
+   * Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
    */
   async patchLmsCollection(
     request: operations.PatchLmsCollectionRequest,
@@ -134,6 +158,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Remove a collection
+   *
+   * @remarks
+   * Deletes the CommerceCollection identified by `id`.
    */
   async removeCommerceCollection(
     request: operations.RemoveCommerceCollectionRequest,
@@ -148,6 +175,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Remove a collection
+   *
+   * @remarks
+   * Deletes the LmsCollection identified by `id`.
    */
   async removeLmsCollection(
     request: operations.RemoveLmsCollectionRequest,
@@ -162,6 +192,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Update a collection
+   *
+   * @remarks
+   * Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
    */
   async updateCommerceCollection(
     request: operations.UpdateCommerceCollectionRequest,
@@ -176,6 +209,9 @@ export class Collection extends ClientSDK {
 
   /**
    * Update a collection
+   *
+   * @remarks
+   * Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
    */
   async updateLmsCollection(
     request: operations.UpdateLmsCollectionRequest,

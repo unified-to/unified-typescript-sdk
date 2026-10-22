@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a page
+ *
+ * @remarks
+ * Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
  */
 export function kmsPatchKmsPage(
   client: UnifiedToCore,

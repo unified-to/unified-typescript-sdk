@@ -28,6 +28,11 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an order
+ *
+ * @remarks
+ * Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+ *
+ * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
  */
 export function accountingUpdateAccountingOrder(
   client: UnifiedToCore,

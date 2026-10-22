@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Salesorder extends ClientSDK {
   /**
    * Create a salesorder
+   *
+   * @remarks
+   * Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
    */
   async createAccountingSalesorder(
     request: operations.CreateAccountingSalesorderRequest,
@@ -30,6 +33,9 @@ export class Salesorder extends ClientSDK {
 
   /**
    * Retrieve a salesorder
+   *
+   * @remarks
+   * Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingSalesorder(
     request: operations.GetAccountingSalesorderRequest,
@@ -44,6 +50,9 @@ export class Salesorder extends ClientSDK {
 
   /**
    * List all salesorders
+   *
+   * @remarks
+   * Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingSalesorders(
     request: operations.ListAccountingSalesordersRequest,
@@ -58,6 +67,9 @@ export class Salesorder extends ClientSDK {
 
   /**
    * Update a salesorder
+   *
+   * @remarks
+   * Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
    */
   async patchAccountingSalesorder(
     request: operations.PatchAccountingSalesorderRequest,
@@ -72,6 +84,9 @@ export class Salesorder extends ClientSDK {
 
   /**
    * Remove a salesorder
+   *
+   * @remarks
+   * Deletes the AccountingSalesorder identified by `id`.
    */
   async removeAccountingSalesorder(
     request: operations.RemoveAccountingSalesorderRequest,
@@ -86,6 +101,9 @@ export class Salesorder extends ClientSDK {
 
   /**
    * Update a salesorder
+   *
+   * @remarks
+   * Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
    */
   async updateAccountingSalesorder(
     request: operations.UpdateAccountingSalesorderRequest,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a bankaccount
+ *
+ * @remarks
+ * Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
  */
 export function hrisCreateHrisBankaccount(
   client: UnifiedToCore,

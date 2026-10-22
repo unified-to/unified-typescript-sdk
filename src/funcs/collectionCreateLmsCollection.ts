@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a collection
+ *
+ * @remarks
+ * Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
  */
 export function collectionCreateLmsCollection(
   client: UnifiedToCore,

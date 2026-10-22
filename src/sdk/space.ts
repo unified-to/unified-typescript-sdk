@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Space extends ClientSDK {
   /**
    * Create a space
+   *
+   * @remarks
+   * Creates a KmsSpace. Provide the unified KmsSpace fields in the request body; they are mapped to the provider's API. Returns the created KmsSpace.
    */
   async createKmsSpace(
     request: operations.CreateKmsSpaceRequest,
@@ -30,6 +33,9 @@ export class Space extends ClientSDK {
 
   /**
    * Retrieve a space
+   *
+   * @remarks
+   * Retrieves a single KmsSpace by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getKmsSpace(
     request: operations.GetKmsSpaceRequest,
@@ -44,6 +50,9 @@ export class Space extends ClientSDK {
 
   /**
    * List all spaces
+   *
+   * @remarks
+   * Returns a list of KmsSpaces. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listKmsSpaces(
     request: operations.ListKmsSpacesRequest,
@@ -58,6 +67,9 @@ export class Space extends ClientSDK {
 
   /**
    * Update a space
+   *
+   * @remarks
+   * Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
    */
   async patchKmsSpace(
     request: operations.PatchKmsSpaceRequest,
@@ -72,6 +84,9 @@ export class Space extends ClientSDK {
 
   /**
    * Remove a space
+   *
+   * @remarks
+   * Deletes the KmsSpace identified by `id`.
    */
   async removeKmsSpace(
     request: operations.RemoveKmsSpaceRequest,
@@ -86,6 +101,9 @@ export class Space extends ClientSDK {
 
   /**
    * Update a space
+   *
+   * @remarks
+   * Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
    */
   async updateKmsSpace(
     request: operations.UpdateKmsSpaceRequest,

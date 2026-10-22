@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a taxrate
+ *
+ * @remarks
+ * Deletes the AccountingTaxrate identified by `id`.
  */
 export function accountingRemoveAccountingTaxrate(
   client: UnifiedToCore,

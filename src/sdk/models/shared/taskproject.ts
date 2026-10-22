@@ -31,6 +31,9 @@ export type TaskProject = {
   hasTasks?: boolean | undefined;
   id?: string | undefined;
   metadata?: Array<TaskMetadata> | undefined;
+  /**
+   * The project's name
+   */
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Employee extends ClientSDK {
   /**
    * Create an employee
+   *
+   * @remarks
+   * Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
    */
   async createHrisEmployee(
     request: operations.CreateHrisEmployeeRequest,
@@ -30,6 +33,9 @@ export class Employee extends ClientSDK {
 
   /**
    * Retrieve an employee
+   *
+   * @remarks
+   * Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisEmployee(
     request: operations.GetHrisEmployeeRequest,
@@ -44,6 +50,9 @@ export class Employee extends ClientSDK {
 
   /**
    * List all employees
+   *
+   * @remarks
+   * Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisEmployees(
     request: operations.ListHrisEmployeesRequest,
@@ -58,6 +67,9 @@ export class Employee extends ClientSDK {
 
   /**
    * Update an employee
+   *
+   * @remarks
+   * Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
    */
   async patchHrisEmployee(
     request: operations.PatchHrisEmployeeRequest,
@@ -72,6 +84,9 @@ export class Employee extends ClientSDK {
 
   /**
    * Remove an employee
+   *
+   * @remarks
+   * Deletes the HrisEmployee identified by `id`.
    */
   async removeHrisEmployee(
     request: operations.RemoveHrisEmployeeRequest,
@@ -86,6 +101,9 @@ export class Employee extends ClientSDK {
 
   /**
    * Update an employee
+   *
+   * @remarks
+   * Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
    */
   async updateHrisEmployee(
     request: operations.UpdateHrisEmployeeRequest,

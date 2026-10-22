@@ -25,7 +25,7 @@
 
 ## createAtsDocument
 
-Create a document
+Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
 
 ### Example Usage
 
@@ -45,10 +45,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "deea26fa-0ec9-4ff8-b06c-ddb17f1c4de3",
+      id: "c71f3393-325c-4ce7-920d-09a6c5244c78",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.534Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.290Z"),
     },
     connectionId: "<id>",
   });
@@ -81,10 +81,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "deea26fa-0ec9-4ff8-b06c-ddb17f1c4de3",
+      id: "c71f3393-325c-4ce7-920d-09a6c5244c78",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.534Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.290Z"),
     },
     connectionId: "<id>",
   });
@@ -120,7 +120,7 @@ run();
 
 ## createHrisDocument
 
-Create a document
+Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
 
 ### Example Usage
 
@@ -140,10 +140,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "bf2e839d-704d-4f9b-8788-ba2566312aaa",
+      id: "fd89f40c-fe24-4b10-967d-5dc48a301b62",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.774Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.821Z"),
     },
     connectionId: "<id>",
   });
@@ -176,10 +176,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "bf2e839d-704d-4f9b-8788-ba2566312aaa",
+      id: "fd89f40c-fe24-4b10-967d-5dc48a301b62",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.774Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.821Z"),
     },
     connectionId: "<id>",
   });
@@ -215,7 +215,7 @@ run();
 
 ## createSigningDocument
 
-Create a document
+Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
 
 ### Example Usage
 
@@ -235,12 +235,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "e05fbc60-ad67-4e77-87f9-e7d53af4b706",
+      id: "879e695c-0288-4b10-b700-965f79030908",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.379Z"),
+      sentAt: new Date("2022-06-29T17:18:33.548Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.960Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.407Z"),
     },
     connectionId: "<id>",
   });
@@ -273,12 +273,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "e05fbc60-ad67-4e77-87f9-e7d53af4b706",
+      id: "879e695c-0288-4b10-b700-965f79030908",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.379Z"),
+      sentAt: new Date("2022-06-29T17:18:33.548Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.960Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.407Z"),
     },
     connectionId: "<id>",
   });
@@ -314,7 +314,7 @@ run();
 
 ## getAtsDocument
 
-Retrieve a document
+Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -393,7 +393,7 @@ run();
 
 ## getHrisDocument
 
-Retrieve a document
+Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ run();
 
 ## getSigningDocument
 
-Retrieve a document
+Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -551,7 +551,7 @@ run();
 
 ## listAtsDocuments
 
-List all documents
+Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -628,7 +628,7 @@ run();
 
 ## listHrisDocuments
 
-List all documents
+Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -705,7 +705,7 @@ run();
 
 ## listSigningDocuments
 
-List all documents
+Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -782,7 +782,7 @@ run();
 
 ## patchAtsDocument
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -802,10 +802,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0a37dac3-f773-4345-9380-6e2fea948df4",
+      id: "1f8f95dc-1316-4aff-aa7a-b730fc6d8991",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.540Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.294Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -839,10 +839,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0a37dac3-f773-4345-9380-6e2fea948df4",
+      id: "1f8f95dc-1316-4aff-aa7a-b730fc6d8991",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.540Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.294Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -879,7 +879,7 @@ run();
 
 ## patchHrisDocument
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -899,10 +899,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "9c3734b2-aea6-40b0-a422-8000fdd92a90",
+      id: "ce23070f-b1b9-439c-91ac-d8a2d9e1f982",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.787Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.833Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -936,10 +936,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "9c3734b2-aea6-40b0-a422-8000fdd92a90",
+      id: "ce23070f-b1b9-439c-91ac-d8a2d9e1f982",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.787Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.833Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -976,7 +976,7 @@ run();
 
 ## patchSigningDocument
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -996,12 +996,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "df145df4-5c25-48b3-a23d-bbc2f399d2ca",
+      id: "c7946ab4-217f-4227-b84d-5d6ea0457c21",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.384Z"),
+      sentAt: new Date("2022-06-29T17:18:33.551Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.978Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.418Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1035,12 +1035,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "df145df4-5c25-48b3-a23d-bbc2f399d2ca",
+      id: "c7946ab4-217f-4227-b84d-5d6ea0457c21",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.384Z"),
+      sentAt: new Date("2022-06-29T17:18:33.551Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.978Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.418Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1077,7 +1077,7 @@ run();
 
 ## removeAtsDocument
 
-Remove a document
+Deletes the AtsDocument identified by `id`.
 
 ### Example Usage
 
@@ -1156,7 +1156,7 @@ run();
 
 ## removeHrisDocument
 
-Remove a document
+Deletes the HrisDocument identified by `id`.
 
 ### Example Usage
 
@@ -1235,7 +1235,7 @@ run();
 
 ## removeSigningDocument
 
-Remove a document
+Deletes the SigningDocument identified by `id`.
 
 ### Example Usage
 
@@ -1314,7 +1314,7 @@ run();
 
 ## updateAtsDocument
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -1334,10 +1334,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0a37dac3-f773-4345-9380-6e2fea948df4",
+      id: "1f8f95dc-1316-4aff-aa7a-b730fc6d8991",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.540Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.294Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1371,10 +1371,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0a37dac3-f773-4345-9380-6e2fea948df4",
+      id: "1f8f95dc-1316-4aff-aa7a-b730fc6d8991",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.540Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.294Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1411,7 +1411,7 @@ run();
 
 ## updateHrisDocument
 
-Update a document
+Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -1431,10 +1431,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "9c3734b2-aea6-40b0-a422-8000fdd92a90",
+      id: "ce23070f-b1b9-439c-91ac-d8a2d9e1f982",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.787Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.833Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1468,10 +1468,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "9c3734b2-aea6-40b0-a422-8000fdd92a90",
+      id: "ce23070f-b1b9-439c-91ac-d8a2d9e1f982",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-11T14:31:00.787Z"),
+      updatedAt: new Date("2025-10-12T08:22:00.833Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1508,7 +1508,7 @@ run();
 
 ## updateSigningDocument
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -1528,12 +1528,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "df145df4-5c25-48b3-a23d-bbc2f399d2ca",
+      id: "c7946ab4-217f-4227-b84d-5d6ea0457c21",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.384Z"),
+      sentAt: new Date("2022-06-29T17:18:33.551Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.978Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.418Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1567,12 +1567,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "df145df4-5c25-48b3-a23d-bbc2f399d2ca",
+      id: "c7946ab4-217f-4227-b84d-5d6ea0457c21",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.384Z"),
+      sentAt: new Date("2022-06-29T17:18:33.551Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.978Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.418Z"),
     },
     connectionId: "<id>",
     id: "<id>",

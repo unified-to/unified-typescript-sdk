@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an organization
+ *
+ * @remarks
+ * Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
  */
 export function organizationCreateAdsOrganization(
   client: UnifiedToCore,

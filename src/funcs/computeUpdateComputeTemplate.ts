@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a template
+ *
+ * @remarks
+ * Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
  */
 export function computeUpdateComputeTemplate(
   client: UnifiedToCore,

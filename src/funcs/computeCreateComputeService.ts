@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a service
+ *
+ * @remarks
+ * Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
  */
 export function computeCreateComputeService(
   client: UnifiedToCore,

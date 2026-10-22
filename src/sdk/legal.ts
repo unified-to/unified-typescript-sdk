@@ -34,6 +34,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Legal extends ClientSDK {
   /**
    * Create an expense
+   *
+   * @remarks
+   * Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
    */
   async createLegalExpense(
     request: operations.CreateLegalExpenseRequest,
@@ -48,6 +51,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Create a matter
+   *
+   * @remarks
+   * Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
    */
   async createLegalMatter(
     request: operations.CreateLegalMatterRequest,
@@ -62,6 +68,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Create a practicearea
+   *
+   * @remarks
+   * Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
    */
   async createLegalPracticearea(
     request: operations.CreateLegalPracticeareaRequest,
@@ -76,6 +85,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Create a timeentry
+   *
+   * @remarks
+   * Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
    */
   async createLegalTimeentry(
     request: operations.CreateLegalTimeentryRequest,
@@ -90,6 +102,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Retrieve an expense
+   *
+   * @remarks
+   * Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLegalExpense(
     request: operations.GetLegalExpenseRequest,
@@ -104,6 +119,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Retrieve a matter
+   *
+   * @remarks
+   * Retrieves a single LegalMatter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLegalMatter(
     request: operations.GetLegalMatterRequest,
@@ -118,6 +136,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Retrieve a practicearea
+   *
+   * @remarks
+   * Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLegalPracticearea(
     request: operations.GetLegalPracticeareaRequest,
@@ -132,6 +153,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Retrieve a timeentry
+   *
+   * @remarks
+   * Retrieves a single LegalTimeentry by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLegalTimeentry(
     request: operations.GetLegalTimeentryRequest,
@@ -146,6 +170,9 @@ export class Legal extends ClientSDK {
 
   /**
    * List all expenses
+   *
+   * @remarks
+   * Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLegalExpenses(
     request: operations.ListLegalExpensesRequest,
@@ -160,6 +187,9 @@ export class Legal extends ClientSDK {
 
   /**
    * List all matters
+   *
+   * @remarks
+   * Returns a list of LegalMatters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLegalMatters(
     request: operations.ListLegalMattersRequest,
@@ -174,6 +204,9 @@ export class Legal extends ClientSDK {
 
   /**
    * List all practiceareas
+   *
+   * @remarks
+   * Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLegalPracticeareas(
     request: operations.ListLegalPracticeareasRequest,
@@ -188,6 +221,9 @@ export class Legal extends ClientSDK {
 
   /**
    * List all timeentries
+   *
+   * @remarks
+   * Returns a list of LegalTimeentries. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLegalTimeentries(
     request: operations.ListLegalTimeentriesRequest,
@@ -202,6 +238,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Update an expense
+   *
+   * @remarks
+   * Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
    */
   async patchLegalExpense(
     request: operations.PatchLegalExpenseRequest,
@@ -216,6 +255,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Update a matter
+   *
+   * @remarks
+   * Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
    */
   async patchLegalMatter(
     request: operations.PatchLegalMatterRequest,
@@ -230,6 +272,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Update a practicearea
+   *
+   * @remarks
+   * Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
    */
   async patchLegalPracticearea(
     request: operations.PatchLegalPracticeareaRequest,
@@ -244,6 +289,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Update a timeentry
+   *
+   * @remarks
+   * Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
    */
   async patchLegalTimeentry(
     request: operations.PatchLegalTimeentryRequest,
@@ -258,6 +306,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Remove an expense
+   *
+   * @remarks
+   * Deletes the LegalExpense identified by `id`.
    */
   async removeLegalExpense(
     request: operations.RemoveLegalExpenseRequest,
@@ -272,6 +323,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Remove a matter
+   *
+   * @remarks
+   * Deletes the LegalMatter identified by `id`.
    */
   async removeLegalMatter(
     request: operations.RemoveLegalMatterRequest,
@@ -286,6 +340,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Remove a practicearea
+   *
+   * @remarks
+   * Deletes the LegalPracticearea identified by `id`.
    */
   async removeLegalPracticearea(
     request: operations.RemoveLegalPracticeareaRequest,
@@ -300,6 +357,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Remove a timeentry
+   *
+   * @remarks
+   * Deletes the LegalTimeentry identified by `id`.
    */
   async removeLegalTimeentry(
     request: operations.RemoveLegalTimeentryRequest,
@@ -314,6 +374,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Update an expense
+   *
+   * @remarks
+   * Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
    */
   async updateLegalExpense(
     request: operations.UpdateLegalExpenseRequest,
@@ -328,6 +391,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Update a matter
+   *
+   * @remarks
+   * Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
    */
   async updateLegalMatter(
     request: operations.UpdateLegalMatterRequest,
@@ -342,6 +408,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Update a practicearea
+   *
+   * @remarks
+   * Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
    */
   async updateLegalPracticearea(
     request: operations.UpdateLegalPracticeareaRequest,
@@ -356,6 +425,9 @@ export class Legal extends ClientSDK {
 
   /**
    * Update a timeentry
+   *
+   * @remarks
+   * Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
    */
   async updateLegalTimeentry(
     request: operations.UpdateLegalTimeentryRequest,

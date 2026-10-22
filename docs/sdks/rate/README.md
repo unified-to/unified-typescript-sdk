@@ -8,7 +8,7 @@
 
 ## createShippingRate
 
-Create a rate
+Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
 
 ### Example Usage
 
@@ -26,7 +26,7 @@ async function run() {
   const result = await unifiedTo.rate.createShippingRate({
     shippingRate: {
       currency: "USD",
-      id: "b37699a9-6d36-4e76-ac85-8fd864a6ee5b",
+      id: "d7245719-ae1a-4ace-a3d4-3a1ce210b8c4",
       metadata: [],
       rates: [
         {
@@ -73,7 +73,7 @@ async function run() {
   const res = await shippingCreateShippingRate(unifiedTo, {
     shippingRate: {
       currency: "USD",
-      id: "b37699a9-6d36-4e76-ac85-8fd864a6ee5b",
+      id: "d7245719-ae1a-4ace-a3d4-3a1ce210b8c4",
       metadata: [],
       rates: [
         {

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a ticket
+ *
+ * @remarks
+ * Deletes the TicketingTicket identified by `id`.
  */
 export function ticketingRemoveTicketingTicket(
   client: UnifiedToCore,

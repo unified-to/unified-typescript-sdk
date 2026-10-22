@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a form
+ *
+ * @remarks
+ * Deletes the FormsForm identified by `id`.
  */
 export function formsRemoveFormsForm(
   client: UnifiedToCore,

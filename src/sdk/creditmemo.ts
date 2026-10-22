@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Creditmemo extends ClientSDK {
   /**
    * Create a creditmemo
+   *
+   * @remarks
+   * Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
    */
   async createAccountingCreditmemo(
     request: operations.CreateAccountingCreditmemoRequest,
@@ -30,6 +33,9 @@ export class Creditmemo extends ClientSDK {
 
   /**
    * Retrieve a creditmemo
+   *
+   * @remarks
+   * Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingCreditmemo(
     request: operations.GetAccountingCreditmemoRequest,
@@ -44,6 +50,9 @@ export class Creditmemo extends ClientSDK {
 
   /**
    * List all creditmemoes
+   *
+   * @remarks
+   * Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingCreditmemoes(
     request: operations.ListAccountingCreditmemoesRequest,
@@ -58,6 +67,9 @@ export class Creditmemo extends ClientSDK {
 
   /**
    * Update a creditmemo
+   *
+   * @remarks
+   * Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
    */
   async patchAccountingCreditmemo(
     request: operations.PatchAccountingCreditmemoRequest,
@@ -72,6 +84,9 @@ export class Creditmemo extends ClientSDK {
 
   /**
    * Remove a creditmemo
+   *
+   * @remarks
+   * Deletes the AccountingCreditmemo identified by `id`.
    */
   async removeAccountingCreditmemo(
     request: operations.RemoveAccountingCreditmemoRequest,
@@ -86,6 +101,9 @@ export class Creditmemo extends ClientSDK {
 
   /**
    * Update a creditmemo
+   *
+   * @remarks
+   * Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
    */
   async updateAccountingCreditmemo(
     request: operations.UpdateAccountingCreditmemoRequest,

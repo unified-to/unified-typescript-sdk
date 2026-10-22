@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a database
+ *
+ * @remarks
+ * Deletes the DatastoreDatabase identified by `id`.
  */
 export function datastoreRemoveDatastoreDatabase(
   client: UnifiedToCore,

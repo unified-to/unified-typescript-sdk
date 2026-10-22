@@ -38,6 +38,9 @@ export type AtsActivityType = OpenEnum<typeof AtsActivityType>;
 export type AtsActivity = {
   applicationId?: string | undefined;
   bcc?: Array<AtsEmail> | undefined;
+  /**
+   * The ID of the candidate the activity is about (an AtsCandidate ID)
+   */
   candidateId?: string | undefined;
   cc?: Array<AtsEmail> | undefined;
   /**
@@ -48,6 +51,9 @@ export type AtsActivity = {
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
+  /**
+   * The activity's content, such as the text of a note or the body of an email
+   */
   description?: string | undefined;
   /**
    * IDs for AtsDocument.get

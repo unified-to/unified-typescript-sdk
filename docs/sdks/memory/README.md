@@ -13,7 +13,7 @@
 
 ## createGenaiMemory
 
-Create a memory
+Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
 
 ### Example Usage
 
@@ -32,7 +32,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "db66691d-31fa-4cfe-b5a6-213d20386f8e",
+      id: "dd935a2e-005f-4347-bc9c-03ae2a921276",
       metadata: [
         {
           extraData: {
@@ -47,7 +47,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.331Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.656Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -80,7 +80,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "db66691d-31fa-4cfe-b5a6-213d20386f8e",
+      id: "dd935a2e-005f-4347-bc9c-03ae2a921276",
       metadata: [
         {
           extraData: {
@@ -95,7 +95,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.331Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.656Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -132,7 +132,7 @@ run();
 
 ## getGenaiMemory
 
-Retrieve a memory
+Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -211,7 +211,7 @@ run();
 
 ## listGenaiMemories
 
-List all memories
+Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ run();
 
 ## patchGenaiMemory
 
-Update a memory
+Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
 
 ### Example Usage
 
@@ -307,7 +307,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "909ed601-7d23-4cf4-be20-c6abdbbea8c0",
+      id: "97c810c0-d55a-418f-adaf-5de3d1fc117e",
       metadata: [
         {
           extraData: {
@@ -322,7 +322,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.336Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.659Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -356,7 +356,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "909ed601-7d23-4cf4-be20-c6abdbbea8c0",
+      id: "97c810c0-d55a-418f-adaf-5de3d1fc117e",
       metadata: [
         {
           extraData: {
@@ -371,7 +371,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.336Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.659Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -409,7 +409,7 @@ run();
 
 ## removeGenaiMemory
 
-Remove a memory
+Deletes the GenaiMemory identified by `id`.
 
 ### Example Usage
 
@@ -488,7 +488,7 @@ run();
 
 ## updateGenaiMemory
 
-Update a memory
+Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
 
 ### Example Usage
 
@@ -507,7 +507,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "909ed601-7d23-4cf4-be20-c6abdbbea8c0",
+      id: "97c810c0-d55a-418f-adaf-5de3d1fc117e",
       metadata: [
         {
           extraData: {
@@ -522,7 +522,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.336Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.659Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -556,7 +556,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "909ed601-7d23-4cf4-be20-c6abdbbea8c0",
+      id: "97c810c0-d55a-418f-adaf-5de3d1fc117e",
       metadata: [
         {
           extraData: {
@@ -571,7 +571,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.336Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.659Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",

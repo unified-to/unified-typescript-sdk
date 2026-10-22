@@ -13,7 +13,7 @@
 
 ## createHrisTimeshift
 
-Create a timeshift
+Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
 
 ### Example Usage
 
@@ -30,7 +30,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.createHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.722Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.511Z"),
       compensation: [
         {
           amount: 76761,
@@ -42,13 +42,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.346Z"),
+      endAt: new Date("2026-09-28T01:49:22.202Z"),
       hours: 6,
-      id: "50d867b1-3b62-4386-b6b5-028c4d9ba526",
+      id: "48df2de5-64a7-4591-b3a3-9d2488b27968",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.189Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.718Z"),
+      startAt: new Date("2023-07-13T14:04:51.576Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.610Z"),
     },
     connectionId: "<id>",
   });
@@ -78,7 +78,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.722Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.511Z"),
       compensation: [
         {
           amount: 76761,
@@ -90,13 +90,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.346Z"),
+      endAt: new Date("2026-09-28T01:49:22.202Z"),
       hours: 6,
-      id: "50d867b1-3b62-4386-b6b5-028c4d9ba526",
+      id: "48df2de5-64a7-4591-b3a3-9d2488b27968",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.189Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.718Z"),
+      startAt: new Date("2023-07-13T14:04:51.576Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.610Z"),
     },
     connectionId: "<id>",
   });
@@ -132,7 +132,7 @@ run();
 
 ## getHrisTimeshift
 
-Retrieve a timeshift
+Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -211,7 +211,7 @@ run();
 
 ## listHrisTimeshifts
 
-List all timeshifts
+Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ run();
 
 ## patchHrisTimeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -305,7 +305,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.patchHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.731Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.517Z"),
       compensation: [
         {
           amount: 76761,
@@ -317,13 +317,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.369Z"),
+      endAt: new Date("2026-09-28T01:49:22.217Z"),
       hours: 6,
-      id: "196f13eb-f755-4b39-8395-114df46aa73d",
+      id: "b82c9d33-62ea-43bc-9735-89837bdd2eb1",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.202Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.724Z"),
+      startAt: new Date("2023-07-13T14:04:51.584Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.614Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -354,7 +354,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.731Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.517Z"),
       compensation: [
         {
           amount: 76761,
@@ -366,13 +366,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.369Z"),
+      endAt: new Date("2026-09-28T01:49:22.217Z"),
       hours: 6,
-      id: "196f13eb-f755-4b39-8395-114df46aa73d",
+      id: "b82c9d33-62ea-43bc-9735-89837bdd2eb1",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.202Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.724Z"),
+      startAt: new Date("2023-07-13T14:04:51.584Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.614Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -409,7 +409,7 @@ run();
 
 ## removeHrisTimeshift
 
-Remove a timeshift
+Deletes the HrisTimeshift identified by `id`.
 
 ### Example Usage
 
@@ -488,7 +488,7 @@ run();
 
 ## updateHrisTimeshift
 
-Update a timeshift
+Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
 
 ### Example Usage
 
@@ -505,7 +505,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.updateHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.731Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.517Z"),
       compensation: [
         {
           amount: 76761,
@@ -517,13 +517,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.369Z"),
+      endAt: new Date("2026-09-28T01:49:22.217Z"),
       hours: 6,
-      id: "196f13eb-f755-4b39-8395-114df46aa73d",
+      id: "b82c9d33-62ea-43bc-9735-89837bdd2eb1",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.202Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.724Z"),
+      startAt: new Date("2023-07-13T14:04:51.584Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.614Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -554,7 +554,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-18T02:05:05.731Z"),
+      approvedAt: new Date("2022-07-18T12:06:15.517Z"),
       compensation: [
         {
           amount: 76761,
@@ -566,13 +566,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-09-27T02:00:03.369Z"),
+      endAt: new Date("2026-09-28T01:49:22.217Z"),
       hours: 6,
-      id: "196f13eb-f755-4b39-8395-114df46aa73d",
+      id: "b82c9d33-62ea-43bc-9735-89837bdd2eb1",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-13T00:49:07.202Z"),
-      updatedAt: new Date("2021-07-01T22:02:12.724Z"),
+      startAt: new Date("2023-07-13T14:04:51.584Z"),
+      updatedAt: new Date("2021-07-02T04:37:19.614Z"),
     },
     connectionId: "<id>",
     id: "<id>",

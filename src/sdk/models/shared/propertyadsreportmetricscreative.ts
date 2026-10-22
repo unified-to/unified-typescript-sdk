@@ -97,6 +97,9 @@ export type PropertyAdsReportMetricsCreative = {
    */
   linkUrl?: string | undefined;
   metadata?: Array<AdsMetadata> | undefined;
+  /**
+   * The creative's name
+   */
   name?: string | undefined;
   organizationId?: string | undefined;
   /**

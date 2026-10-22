@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a record
+ *
+ * @remarks
+ * Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
  */
 export function datastorePatchDatastoreRecord(
   client: UnifiedToCore,

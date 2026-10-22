@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an organization
+ *
+ * @remarks
+ * Deletes the AdsOrganization identified by `id`.
  */
 export function organizationRemoveAdsOrganization(
   client: UnifiedToCore,

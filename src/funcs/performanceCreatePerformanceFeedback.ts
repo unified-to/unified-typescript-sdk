@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a feedback
+ *
+ * @remarks
+ * Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
  */
 export function performanceCreatePerformanceFeedback(
   client: UnifiedToCore,

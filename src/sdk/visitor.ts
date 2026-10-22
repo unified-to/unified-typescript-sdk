@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Visitor extends ClientSDK {
   /**
    * Create a visitor
+   *
+   * @remarks
+   * Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
    */
   async createAnalyticsVisitor(
     request: operations.CreateAnalyticsVisitorRequest,
@@ -30,6 +33,9 @@ export class Visitor extends ClientSDK {
 
   /**
    * Retrieve a visitor
+   *
+   * @remarks
+   * Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAnalyticsVisitor(
     request: operations.GetAnalyticsVisitorRequest,
@@ -44,6 +50,9 @@ export class Visitor extends ClientSDK {
 
   /**
    * List all visitors
+   *
+   * @remarks
+   * Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAnalyticsVisitors(
     request: operations.ListAnalyticsVisitorsRequest,
@@ -58,6 +67,9 @@ export class Visitor extends ClientSDK {
 
   /**
    * Update a visitor
+   *
+   * @remarks
+   * Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
    */
   async patchAnalyticsVisitor(
     request: operations.PatchAnalyticsVisitorRequest,
@@ -72,6 +84,9 @@ export class Visitor extends ClientSDK {
 
   /**
    * Remove a visitor
+   *
+   * @remarks
+   * Deletes the AnalyticsVisitor identified by `id`.
    */
   async removeAnalyticsVisitor(
     request: operations.RemoveAnalyticsVisitorRequest,
@@ -86,6 +101,9 @@ export class Visitor extends ClientSDK {
 
   /**
    * Update a visitor
+   *
+   * @remarks
+   * Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
    */
   async updateAnalyticsVisitor(
     request: operations.UpdateAnalyticsVisitorRequest,

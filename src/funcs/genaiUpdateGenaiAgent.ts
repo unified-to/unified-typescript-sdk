@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an agent
+ *
+ * @remarks
+ * Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
  */
 export function genaiUpdateGenaiAgent(
   client: UnifiedToCore,

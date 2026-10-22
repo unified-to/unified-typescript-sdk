@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a review
+ *
+ * @remarks
+ * Deletes the CommerceReview identified by `id`.
  */
 export function commerceRemoveCommerceReview(
   client: UnifiedToCore,

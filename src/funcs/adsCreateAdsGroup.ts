@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a group
+ *
+ * @remarks
+ * Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
  */
 export function adsCreateAdsGroup(
   client: UnifiedToCore,

@@ -13,7 +13,7 @@
 
 ## createStorageFile
 
-Create a file
+Creates a StorageFile. Provide the unified StorageFile fields in the request body; they are mapped to the provider's API. Returns the created StorageFile.
 
 ### Example Usage
 
@@ -34,7 +34,7 @@ async function run() {
       description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
       downloadUrl: "https://clueless-laughter.biz",
       hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "a8cdb5db-823b-4689-a202-14e205f85bc4",
+      id: "a150aeb3-0e4f-4952-b80f-44bfea828881",
       metadata: [],
       mimeType: "application/pdf",
       name: "softly.pdf",
@@ -43,7 +43,7 @@ async function run() {
         "suasoria",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-05T13:09:30.798Z"),
+      updatedAt: new Date("2023-02-05T19:44:42.324Z"),
       version: "1",
       webUrl: "https://faraway-inspection.org",
     },
@@ -79,7 +79,7 @@ async function run() {
       description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
       downloadUrl: "https://clueless-laughter.biz",
       hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "a8cdb5db-823b-4689-a202-14e205f85bc4",
+      id: "a150aeb3-0e4f-4952-b80f-44bfea828881",
       metadata: [],
       mimeType: "application/pdf",
       name: "softly.pdf",
@@ -88,7 +88,7 @@ async function run() {
         "suasoria",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-05T13:09:30.798Z"),
+      updatedAt: new Date("2023-02-05T19:44:42.324Z"),
       version: "1",
       webUrl: "https://faraway-inspection.org",
     },
@@ -126,7 +126,7 @@ run();
 
 ## getStorageFile
 
-Retrieve a file
+Retrieves a single StorageFile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -205,7 +205,7 @@ run();
 
 ## listStorageFiles
 
-List all files
+Returns a list of StorageFiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -282,7 +282,7 @@ run();
 
 ## patchStorageFile
 
-Update a file
+Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
 
 ### Example Usage
 
@@ -303,7 +303,7 @@ async function run() {
       description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
       downloadUrl: "https://clueless-laughter.biz",
       hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "d780f6bb-3763-4d22-a75f-5f862367f01d",
+      id: "26abb5b3-a476-4f59-b8c4-b557dcb49efc",
       metadata: [],
       mimeType: "application/pdf",
       name: "softly.pdf",
@@ -312,7 +312,7 @@ async function run() {
         "suasoria",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-05T13:09:30.805Z"),
+      updatedAt: new Date("2023-02-05T19:44:42.329Z"),
       version: "1",
       webUrl: "https://faraway-inspection.org",
     },
@@ -349,7 +349,7 @@ async function run() {
       description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
       downloadUrl: "https://clueless-laughter.biz",
       hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "d780f6bb-3763-4d22-a75f-5f862367f01d",
+      id: "26abb5b3-a476-4f59-b8c4-b557dcb49efc",
       metadata: [],
       mimeType: "application/pdf",
       name: "softly.pdf",
@@ -358,7 +358,7 @@ async function run() {
         "suasoria",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-05T13:09:30.805Z"),
+      updatedAt: new Date("2023-02-05T19:44:42.329Z"),
       version: "1",
       webUrl: "https://faraway-inspection.org",
     },
@@ -397,7 +397,7 @@ run();
 
 ## removeStorageFile
 
-Remove a file
+Deletes the StorageFile identified by `id`.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ run();
 
 ## updateStorageFile
 
-Update a file
+Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
 
 ### Example Usage
 
@@ -497,7 +497,7 @@ async function run() {
       description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
       downloadUrl: "https://clueless-laughter.biz",
       hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "d780f6bb-3763-4d22-a75f-5f862367f01d",
+      id: "26abb5b3-a476-4f59-b8c4-b557dcb49efc",
       metadata: [],
       mimeType: "application/pdf",
       name: "softly.pdf",
@@ -506,7 +506,7 @@ async function run() {
         "suasoria",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-05T13:09:30.805Z"),
+      updatedAt: new Date("2023-02-05T19:44:42.329Z"),
       version: "1",
       webUrl: "https://faraway-inspection.org",
     },
@@ -543,7 +543,7 @@ async function run() {
       description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
       downloadUrl: "https://clueless-laughter.biz",
       hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "d780f6bb-3763-4d22-a75f-5f862367f01d",
+      id: "26abb5b3-a476-4f59-b8c4-b557dcb49efc",
       metadata: [],
       mimeType: "application/pdf",
       name: "softly.pdf",
@@ -552,7 +552,7 @@ async function run() {
         "suasoria",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-05T13:09:30.805Z"),
+      updatedAt: new Date("2023-02-05T19:44:42.329Z"),
       version: "1",
       webUrl: "https://faraway-inspection.org",
     },

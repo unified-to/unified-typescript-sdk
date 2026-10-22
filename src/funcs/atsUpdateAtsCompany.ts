@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a company
+ *
+ * @remarks
+ * Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
  */
 export function atsUpdateAtsCompany(
   client: UnifiedToCore,

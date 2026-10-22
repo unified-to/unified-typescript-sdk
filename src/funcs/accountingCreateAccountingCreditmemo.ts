@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a creditmemo
+ *
+ * @remarks
+ * Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
  */
 export function accountingCreateAccountingCreditmemo(
   client: UnifiedToCore,

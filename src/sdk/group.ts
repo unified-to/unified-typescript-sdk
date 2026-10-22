@@ -30,6 +30,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Group extends ClientSDK {
   /**
    * Create a group
+   *
+   * @remarks
+   * Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
    */
   async createAdsGroup(
     request: operations.CreateAdsGroupRequest,
@@ -44,6 +47,9 @@ export class Group extends ClientSDK {
 
   /**
    * Create a group
+   *
+   * @remarks
+   * Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
    */
   async createHrisGroup(
     request: operations.CreateHrisGroupRequest,
@@ -72,6 +78,9 @@ export class Group extends ClientSDK {
 
   /**
    * Retrieve a group
+   *
+   * @remarks
+   * Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsGroup(
     request: operations.GetAdsGroupRequest,
@@ -86,6 +95,9 @@ export class Group extends ClientSDK {
 
   /**
    * Retrieve a group
+   *
+   * @remarks
+   * Retrieves a single ClubsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsGroup(
     request: operations.GetClubsGroupRequest,
@@ -100,6 +112,9 @@ export class Group extends ClientSDK {
 
   /**
    * Retrieve a group
+   *
+   * @remarks
+   * Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisGroup(
     request: operations.GetHrisGroupRequest,
@@ -128,6 +143,9 @@ export class Group extends ClientSDK {
 
   /**
    * List all groups
+   *
+   * @remarks
+   * Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsGroups(
     request: operations.ListAdsGroupsRequest,
@@ -142,6 +160,9 @@ export class Group extends ClientSDK {
 
   /**
    * List all groups
+   *
+   * @remarks
+   * Returns a list of ClubsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsGroups(
     request: operations.ListClubsGroupsRequest,
@@ -156,6 +177,9 @@ export class Group extends ClientSDK {
 
   /**
    * List all groups
+   *
+   * @remarks
+   * Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisGroups(
     request: operations.ListHrisGroupsRequest,
@@ -184,6 +208,9 @@ export class Group extends ClientSDK {
 
   /**
    * Update a group
+   *
+   * @remarks
+   * Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
    */
   async patchAdsGroup(
     request: operations.PatchAdsGroupRequest,
@@ -198,6 +225,9 @@ export class Group extends ClientSDK {
 
   /**
    * Update a group
+   *
+   * @remarks
+   * Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
    */
   async patchHrisGroup(
     request: operations.PatchHrisGroupRequest,
@@ -226,6 +256,9 @@ export class Group extends ClientSDK {
 
   /**
    * Remove a group
+   *
+   * @remarks
+   * Deletes the AdsGroup identified by `id`.
    */
   async removeAdsGroup(
     request: operations.RemoveAdsGroupRequest,
@@ -240,6 +273,9 @@ export class Group extends ClientSDK {
 
   /**
    * Remove a group
+   *
+   * @remarks
+   * Deletes the HrisGroup identified by `id`.
    */
   async removeHrisGroup(
     request: operations.RemoveHrisGroupRequest,
@@ -268,6 +304,9 @@ export class Group extends ClientSDK {
 
   /**
    * Update a group
+   *
+   * @remarks
+   * Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
    */
   async updateAdsGroup(
     request: operations.UpdateAdsGroupRequest,
@@ -282,6 +321,9 @@ export class Group extends ClientSDK {
 
   /**
    * Update a group
+   *
+   * @remarks
+   * Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
    */
   async updateHrisGroup(
     request: operations.UpdateHrisGroupRequest,

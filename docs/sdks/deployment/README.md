@@ -13,7 +13,7 @@
 
 ## createComputeDeployment
 
-Create a deployment
+Creates a ComputeDeployment. Provide the unified ComputeDeployment fields in the request body; they are mapped to the provider's API. Returns the created ComputeDeployment.
 
 ### Example Usage
 
@@ -35,13 +35,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.275Z"),
-      id: "964e6820-e80b-40f6-b7a7-bd2b515f2ef6",
+      finishedAt: new Date("2025-08-30T09:15:55.475Z"),
+      id: "d82ea629-0da0-48fd-a8dc-5b11d41e3ec0",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.864Z"),
+      startedAt: new Date("2025-04-10T23:29:40.146Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.185Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.803Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -77,13 +77,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.275Z"),
-      id: "964e6820-e80b-40f6-b7a7-bd2b515f2ef6",
+      finishedAt: new Date("2025-08-30T09:15:55.475Z"),
+      id: "d82ea629-0da0-48fd-a8dc-5b11d41e3ec0",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.864Z"),
+      startedAt: new Date("2025-04-10T23:29:40.146Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.185Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.803Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -120,7 +120,7 @@ run();
 
 ## getComputeDeployment
 
-Retrieve a deployment
+Retrieves a single ComputeDeployment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -199,7 +199,7 @@ run();
 
 ## listComputeDeployments
 
-List all deployments
+Returns a list of ComputeDeployments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -276,7 +276,7 @@ run();
 
 ## patchComputeDeployment
 
-Update a deployment
+Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
 
 ### Example Usage
 
@@ -298,13 +298,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.292Z"),
-      id: "3729802a-f030-4b53-b75e-2470636c06ad",
+      finishedAt: new Date("2025-08-30T09:15:55.485Z"),
+      id: "e6f8fc21-873d-4dbb-b58b-7d83f07c3933",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.878Z"),
+      startedAt: new Date("2025-04-10T23:29:40.155Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.204Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.815Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -341,13 +341,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.292Z"),
-      id: "3729802a-f030-4b53-b75e-2470636c06ad",
+      finishedAt: new Date("2025-08-30T09:15:55.485Z"),
+      id: "e6f8fc21-873d-4dbb-b58b-7d83f07c3933",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.878Z"),
+      startedAt: new Date("2025-04-10T23:29:40.155Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.204Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.815Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -385,7 +385,7 @@ run();
 
 ## removeComputeDeployment
 
-Remove a deployment
+Deletes the ComputeDeployment identified by `id`.
 
 ### Example Usage
 
@@ -464,7 +464,7 @@ run();
 
 ## updateComputeDeployment
 
-Update a deployment
+Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
 
 ### Example Usage
 
@@ -486,13 +486,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.292Z"),
-      id: "3729802a-f030-4b53-b75e-2470636c06ad",
+      finishedAt: new Date("2025-08-30T09:15:55.485Z"),
+      id: "e6f8fc21-873d-4dbb-b58b-7d83f07c3933",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.878Z"),
+      startedAt: new Date("2025-04-10T23:29:40.155Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.204Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.815Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -529,13 +529,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-08-29T15:30:40.292Z"),
-      id: "3729802a-f030-4b53-b75e-2470636c06ad",
+      finishedAt: new Date("2025-08-30T09:15:55.485Z"),
+      id: "e6f8fc21-873d-4dbb-b58b-7d83f07c3933",
       metadata: [],
-      startedAt: new Date("2025-04-10T07:52:02.878Z"),
+      startedAt: new Date("2025-04-10T23:29:40.155Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-02-28T18:31:53.204Z"),
+      updatedAt: new Date("2026-03-01T15:02:31.815Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",

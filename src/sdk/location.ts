@@ -26,6 +26,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Location extends ClientSDK {
   /**
    * Create a location
+   *
+   * @remarks
+   * Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
    */
   async createCommerceLocation(
     request: operations.CreateCommerceLocationRequest,
@@ -40,6 +43,9 @@ export class Location extends ClientSDK {
 
   /**
    * Create a location
+   *
+   * @remarks
+   * Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
    */
   async createHrisLocation(
     request: operations.CreateHrisLocationRequest,
@@ -54,6 +60,9 @@ export class Location extends ClientSDK {
 
   /**
    * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsLocation(
     request: operations.GetClubsLocationRequest,
@@ -68,6 +77,9 @@ export class Location extends ClientSDK {
 
   /**
    * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceLocation(
     request: operations.GetCommerceLocationRequest,
@@ -82,6 +94,9 @@ export class Location extends ClientSDK {
 
   /**
    * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareLocation(
     request: operations.GetHealthcareLocationRequest,
@@ -96,6 +111,9 @@ export class Location extends ClientSDK {
 
   /**
    * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisLocation(
     request: operations.GetHrisLocationRequest,
@@ -110,6 +128,9 @@ export class Location extends ClientSDK {
 
   /**
    * List all locations
+   *
+   * @remarks
+   * Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsLocations(
     request: operations.ListClubsLocationsRequest,
@@ -124,6 +145,9 @@ export class Location extends ClientSDK {
 
   /**
    * List all locations
+   *
+   * @remarks
+   * Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceLocations(
     request: operations.ListCommerceLocationsRequest,
@@ -138,6 +162,9 @@ export class Location extends ClientSDK {
 
   /**
    * List all locations
+   *
+   * @remarks
+   * Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareLocations(
     request: operations.ListHealthcareLocationsRequest,
@@ -152,6 +179,9 @@ export class Location extends ClientSDK {
 
   /**
    * List all locations
+   *
+   * @remarks
+   * Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisLocations(
     request: operations.ListHrisLocationsRequest,
@@ -166,6 +196,9 @@ export class Location extends ClientSDK {
 
   /**
    * Update a location
+   *
+   * @remarks
+   * Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
    */
   async patchCommerceLocation(
     request: operations.PatchCommerceLocationRequest,
@@ -180,6 +213,9 @@ export class Location extends ClientSDK {
 
   /**
    * Update a location
+   *
+   * @remarks
+   * Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
    */
   async patchHrisLocation(
     request: operations.PatchHrisLocationRequest,
@@ -194,6 +230,9 @@ export class Location extends ClientSDK {
 
   /**
    * Remove a location
+   *
+   * @remarks
+   * Deletes the CommerceLocation identified by `id`.
    */
   async removeCommerceLocation(
     request: operations.RemoveCommerceLocationRequest,
@@ -208,6 +247,9 @@ export class Location extends ClientSDK {
 
   /**
    * Remove a location
+   *
+   * @remarks
+   * Deletes the HrisLocation identified by `id`.
    */
   async removeHrisLocation(
     request: operations.RemoveHrisLocationRequest,
@@ -222,6 +264,9 @@ export class Location extends ClientSDK {
 
   /**
    * Update a location
+   *
+   * @remarks
+   * Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
    */
   async updateCommerceLocation(
     request: operations.UpdateCommerceLocationRequest,
@@ -236,6 +281,9 @@ export class Location extends ClientSDK {
 
   /**
    * Update a location
+   *
+   * @remarks
+   * Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
    */
   async updateHrisLocation(
     request: operations.UpdateHrisLocationRequest,

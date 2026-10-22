@@ -13,7 +13,7 @@
 
 ## createMessagingChannel
 
-Create a channel
+Creates a MessagingChannel. Provide the unified MessagingChannel fields in the request body; they are mapped to the provider's API. Returns the created MessagingChannel.
 
 ### Example Usage
 
@@ -33,13 +33,13 @@ async function run() {
       createdAt: new Date("2023-10-05T02:09:22.795Z"),
       description: "Dolores tutis.",
       hasSubchannels: true,
-      id: "80978ab5-fb61-44b3-bf21-6ec5e9892c64",
+      id: "e7ce3c09-0747-4c25-932f-f938519933f3",
       isActive: false,
       isPrivate: true,
       members: [],
       metadata: [],
       name: "tego",
-      updatedAt: new Date("2026-05-21T14:22:33.576Z"),
+      updatedAt: new Date("2026-05-22T11:07:08.025Z"),
       webUrl: "https://svelte-rule.name/",
     },
     connectionId: "<id>",
@@ -73,13 +73,13 @@ async function run() {
       createdAt: new Date("2023-10-05T02:09:22.795Z"),
       description: "Dolores tutis.",
       hasSubchannels: true,
-      id: "80978ab5-fb61-44b3-bf21-6ec5e9892c64",
+      id: "e7ce3c09-0747-4c25-932f-f938519933f3",
       isActive: false,
       isPrivate: true,
       members: [],
       metadata: [],
       name: "tego",
-      updatedAt: new Date("2026-05-21T14:22:33.576Z"),
+      updatedAt: new Date("2026-05-22T11:07:08.025Z"),
       webUrl: "https://svelte-rule.name/",
     },
     connectionId: "<id>",
@@ -116,7 +116,7 @@ run();
 
 ## getMessagingChannel
 
-Retrieve a channel
+Retrieves a single MessagingChannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -195,7 +195,7 @@ run();
 
 ## listMessagingChannels
 
-List all channels
+Returns a list of MessagingChannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -272,7 +272,7 @@ run();
 
 ## patchMessagingChannel
 
-Update a channel
+Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
 
 ### Example Usage
 
@@ -292,13 +292,13 @@ async function run() {
       createdAt: new Date("2023-10-05T02:09:22.795Z"),
       description: "Dolores tutis.",
       hasSubchannels: true,
-      id: "f78c8c06-8f6f-4f5c-99af-1faa805e0306",
+      id: "f2a9539b-137e-41f3-a383-fd53e3b7e817",
       isActive: false,
       isPrivate: true,
       members: [],
       metadata: [],
       name: "tego",
-      updatedAt: new Date("2026-05-21T14:22:33.591Z"),
+      updatedAt: new Date("2026-05-22T11:07:08.034Z"),
       webUrl: "https://svelte-rule.name/",
     },
     connectionId: "<id>",
@@ -333,13 +333,13 @@ async function run() {
       createdAt: new Date("2023-10-05T02:09:22.795Z"),
       description: "Dolores tutis.",
       hasSubchannels: true,
-      id: "f78c8c06-8f6f-4f5c-99af-1faa805e0306",
+      id: "f2a9539b-137e-41f3-a383-fd53e3b7e817",
       isActive: false,
       isPrivate: true,
       members: [],
       metadata: [],
       name: "tego",
-      updatedAt: new Date("2026-05-21T14:22:33.591Z"),
+      updatedAt: new Date("2026-05-22T11:07:08.034Z"),
       webUrl: "https://svelte-rule.name/",
     },
     connectionId: "<id>",
@@ -377,7 +377,7 @@ run();
 
 ## removeMessagingChannel
 
-Remove a channel
+Deletes the MessagingChannel identified by `id`.
 
 ### Example Usage
 
@@ -456,7 +456,7 @@ run();
 
 ## updateMessagingChannel
 
-Update a channel
+Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
 
 ### Example Usage
 
@@ -476,13 +476,13 @@ async function run() {
       createdAt: new Date("2023-10-05T02:09:22.795Z"),
       description: "Dolores tutis.",
       hasSubchannels: true,
-      id: "f78c8c06-8f6f-4f5c-99af-1faa805e0306",
+      id: "f2a9539b-137e-41f3-a383-fd53e3b7e817",
       isActive: false,
       isPrivate: true,
       members: [],
       metadata: [],
       name: "tego",
-      updatedAt: new Date("2026-05-21T14:22:33.591Z"),
+      updatedAt: new Date("2026-05-22T11:07:08.034Z"),
       webUrl: "https://svelte-rule.name/",
     },
     connectionId: "<id>",
@@ -517,13 +517,13 @@ async function run() {
       createdAt: new Date("2023-10-05T02:09:22.795Z"),
       description: "Dolores tutis.",
       hasSubchannels: true,
-      id: "f78c8c06-8f6f-4f5c-99af-1faa805e0306",
+      id: "f2a9539b-137e-41f3-a383-fd53e3b7e817",
       isActive: false,
       isPrivate: true,
       members: [],
       metadata: [],
       name: "tego",
-      updatedAt: new Date("2026-05-21T14:22:33.591Z"),
+      updatedAt: new Date("2026-05-22T11:07:08.034Z"),
       webUrl: "https://svelte-rule.name/",
     },
     connectionId: "<id>",

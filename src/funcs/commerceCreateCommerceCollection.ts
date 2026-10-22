@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a collection
+ *
+ * @remarks
+ * Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
  */
 export function commerceCreateCommerceCollection(
   client: UnifiedToCore,

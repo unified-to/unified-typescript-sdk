@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a creative
+ *
+ * @remarks
+ * Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
  */
 export function adsPatchAdsCreative(
   client: UnifiedToCore,

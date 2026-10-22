@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a channel
+ *
+ * @remarks
+ * Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
  */
 export function messagingUpdateMessagingChannel(
   client: UnifiedToCore,

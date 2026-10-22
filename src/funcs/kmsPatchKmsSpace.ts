@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a space
+ *
+ * @remarks
+ * Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
  */
 export function kmsPatchKmsSpace(
   client: UnifiedToCore,

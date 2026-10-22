@@ -37,6 +37,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Calendar extends ClientSDK {
   /**
    * Create a calendar
+   *
+   * @remarks
+   * Creates a CalendarCalendar. Provide the unified CalendarCalendar fields in the request body; they are mapped to the provider's API. Returns the created CalendarCalendar.
    */
   async createCalendarCalendar(
     request: operations.CreateCalendarCalendarRequest,
@@ -51,6 +54,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Create an event
+   *
+   * @remarks
+   * Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
    */
   async createCalendarEvent(
     request: operations.CreateCalendarEventRequest,
@@ -65,6 +71,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Create a link
+   *
+   * @remarks
+   * Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
    */
   async createCalendarLink(
     request: operations.CreateCalendarLinkRequest,
@@ -79,6 +88,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Create a webinar
+   *
+   * @remarks
+   * Creates a CalendarWebinar. Provide the unified CalendarWebinar fields in the request body; they are mapped to the provider's API. Returns the created CalendarWebinar.
    */
   async createCalendarWebinar(
     request: operations.CreateCalendarWebinarRequest,
@@ -93,6 +105,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Retrieve a calendar
+   *
+   * @remarks
+   * Retrieves a single CalendarCalendar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCalendarCalendar(
     request: operations.GetCalendarCalendarRequest,
@@ -107,6 +122,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCalendarEvent(
     request: operations.GetCalendarEventRequest,
@@ -121,6 +139,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Retrieve a link
+   *
+   * @remarks
+   * Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCalendarLink(
     request: operations.GetCalendarLinkRequest,
@@ -135,6 +156,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Retrieve a recording
+   *
+   * @remarks
+   * Retrieves a single CalendarRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCalendarRecording(
     request: operations.GetCalendarRecordingRequest,
@@ -149,6 +173,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Retrieve a webinar
+   *
+   * @remarks
+   * Retrieves a single CalendarWebinar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCalendarWebinar(
     request: operations.GetCalendarWebinarRequest,
@@ -163,6 +190,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * List all busies
+   *
+   * @remarks
+   * Returns a list of CalendarBusies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarBusies(
     request: operations.ListCalendarBusiesRequest,
@@ -177,6 +207,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * List all calendars
+   *
+   * @remarks
+   * Returns a list of CalendarCalendars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarCalendars(
     request: operations.ListCalendarCalendarsRequest,
@@ -191,6 +224,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarEvents(
     request: operations.ListCalendarEventsRequest,
@@ -205,6 +241,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * List all links
+   *
+   * @remarks
+   * Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarLinks(
     request: operations.ListCalendarLinksRequest,
@@ -219,6 +258,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * List all recordings
+   *
+   * @remarks
+   * Returns a list of CalendarRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarRecordings(
     request: operations.ListCalendarRecordingsRequest,
@@ -233,6 +275,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * List all webinars
+   *
+   * @remarks
+   * Returns a list of CalendarWebinars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarWebinars(
     request: operations.ListCalendarWebinarsRequest,
@@ -247,6 +292,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Update a calendar
+   *
+   * @remarks
+   * Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
    */
   async patchCalendarCalendar(
     request: operations.PatchCalendarCalendarRequest,
@@ -261,6 +309,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
    */
   async patchCalendarEvent(
     request: operations.PatchCalendarEventRequest,
@@ -275,6 +326,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Update a link
+   *
+   * @remarks
+   * Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
    */
   async patchCalendarLink(
     request: operations.PatchCalendarLinkRequest,
@@ -289,6 +343,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Update a webinar
+   *
+   * @remarks
+   * Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
    */
   async patchCalendarWebinar(
     request: operations.PatchCalendarWebinarRequest,
@@ -303,6 +360,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Remove a calendar
+   *
+   * @remarks
+   * Deletes the CalendarCalendar identified by `id`.
    */
   async removeCalendarCalendar(
     request: operations.RemoveCalendarCalendarRequest,
@@ -317,6 +377,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Remove an event
+   *
+   * @remarks
+   * Deletes the CalendarEvent identified by `id`.
    */
   async removeCalendarEvent(
     request: operations.RemoveCalendarEventRequest,
@@ -331,6 +394,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Remove a link
+   *
+   * @remarks
+   * Deletes the CalendarLink identified by `id`.
    */
   async removeCalendarLink(
     request: operations.RemoveCalendarLinkRequest,
@@ -345,6 +411,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Remove a webinar
+   *
+   * @remarks
+   * Deletes the CalendarWebinar identified by `id`.
    */
   async removeCalendarWebinar(
     request: operations.RemoveCalendarWebinarRequest,
@@ -359,6 +428,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Update a calendar
+   *
+   * @remarks
+   * Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
    */
   async updateCalendarCalendar(
     request: operations.UpdateCalendarCalendarRequest,
@@ -373,6 +445,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
    */
   async updateCalendarEvent(
     request: operations.UpdateCalendarEventRequest,
@@ -387,6 +462,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Update a link
+   *
+   * @remarks
+   * Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
    */
   async updateCalendarLink(
     request: operations.UpdateCalendarLinkRequest,
@@ -401,6 +479,9 @@ export class Calendar extends ClientSDK {
 
   /**
    * Update a webinar
+   *
+   * @remarks
+   * Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
    */
   async updateCalendarWebinar(
     request: operations.UpdateCalendarWebinarRequest,

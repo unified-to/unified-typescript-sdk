@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class FileT extends ClientSDK {
   /**
    * Create a file
+   *
+   * @remarks
+   * Creates a StorageFile. Provide the unified StorageFile fields in the request body; they are mapped to the provider's API. Returns the created StorageFile.
    */
   async createStorageFile(
     request: operations.CreateStorageFileRequest,
@@ -30,6 +33,9 @@ export class FileT extends ClientSDK {
 
   /**
    * Retrieve a file
+   *
+   * @remarks
+   * Retrieves a single StorageFile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getStorageFile(
     request: operations.GetStorageFileRequest,
@@ -44,6 +50,9 @@ export class FileT extends ClientSDK {
 
   /**
    * List all files
+   *
+   * @remarks
+   * Returns a list of StorageFiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listStorageFiles(
     request: operations.ListStorageFilesRequest,
@@ -58,6 +67,9 @@ export class FileT extends ClientSDK {
 
   /**
    * Update a file
+   *
+   * @remarks
+   * Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
    */
   async patchStorageFile(
     request: operations.PatchStorageFileRequest,
@@ -72,6 +84,9 @@ export class FileT extends ClientSDK {
 
   /**
    * Remove a file
+   *
+   * @remarks
+   * Deletes the StorageFile identified by `id`.
    */
   async removeStorageFile(
     request: operations.RemoveStorageFileRequest,
@@ -86,6 +101,9 @@ export class FileT extends ClientSDK {
 
   /**
    * Update a file
+   *
+   * @remarks
+   * Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
    */
   async updateStorageFile(
     request: operations.UpdateStorageFileRequest,

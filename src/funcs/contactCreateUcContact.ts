@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a contact
+ *
+ * @remarks
+ * Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
  */
 export function contactCreateUcContact(
   client: UnifiedToCore,

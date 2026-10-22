@@ -19,7 +19,7 @@
 
 ## createAdsCampaign
 
-Create a campaign
+Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
 
 ### Example Usage
 
@@ -42,18 +42,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.400Z"),
-      id: "1d2a7558-1e29-4c71-a344-da34e3272604",
+      endAt: new Date("2025-06-01T16:22:29.316Z"),
+      id: "a0a1700b-62b2-41a7-87bf-6b9d83a2d314",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.607Z"),
+      startAt: new Date("2022-07-21T11:46:13.258Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.623Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.341Z"),
     },
     connectionId: "<id>",
   });
@@ -89,18 +89,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.400Z"),
-      id: "1d2a7558-1e29-4c71-a344-da34e3272604",
+      endAt: new Date("2025-06-01T16:22:29.316Z"),
+      id: "a0a1700b-62b2-41a7-87bf-6b9d83a2d314",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.607Z"),
+      startAt: new Date("2022-07-21T11:46:13.258Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.623Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.341Z"),
     },
     connectionId: "<id>",
   });
@@ -136,7 +136,7 @@ run();
 
 ## createMartechCampaign
 
-Create a campaign
+Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
 
 ### Example Usage
 
@@ -156,7 +156,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "b2a82a7f-2ba6-483c-a11f-9d7ec66cec40",
+      id: "4200902f-f3d5-443f-8854-db4132eb39d6",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -165,7 +165,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.373Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.081Z"),
     },
     connectionId: "<id>",
   });
@@ -198,7 +198,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "b2a82a7f-2ba6-483c-a11f-9d7ec66cec40",
+      id: "4200902f-f3d5-443f-8854-db4132eb39d6",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -207,7 +207,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.373Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.081Z"),
     },
     connectionId: "<id>",
   });
@@ -243,7 +243,7 @@ run();
 
 ## getAdsCampaign
 
-Retrieve a campaign
+Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -322,7 +322,7 @@ run();
 
 ## getMartechCampaign
 
-Retrieve a campaign
+Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -401,7 +401,7 @@ run();
 
 ## listAdsCampaigns
 
-List all campaigns
+Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -478,7 +478,7 @@ run();
 
 ## listMartechCampaigns
 
-List all campaigns
+Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -555,7 +555,7 @@ run();
 
 ## patchAdsCampaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -578,18 +578,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.537Z"),
-      id: "ea75df51-4596-4b16-a92a-b8bdd8ac7c2f",
+      endAt: new Date("2025-06-01T16:22:29.391Z"),
+      id: "bc099ef5-1be0-47aa-8133-2ac4fdc8d111",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.614Z"),
+      startAt: new Date("2022-07-21T11:46:13.262Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.786Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.431Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -626,18 +626,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.537Z"),
-      id: "ea75df51-4596-4b16-a92a-b8bdd8ac7c2f",
+      endAt: new Date("2025-06-01T16:22:29.391Z"),
+      id: "bc099ef5-1be0-47aa-8133-2ac4fdc8d111",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.614Z"),
+      startAt: new Date("2022-07-21T11:46:13.262Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.786Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.431Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -674,7 +674,7 @@ run();
 
 ## patchMartechCampaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -694,7 +694,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "7931c8ca-955f-4461-9501-0f4809df9350",
+      id: "c35a3288-f0dd-497c-807e-04905eb0a0e7",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -703,7 +703,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.384Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -737,7 +737,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "7931c8ca-955f-4461-9501-0f4809df9350",
+      id: "c35a3288-f0dd-497c-807e-04905eb0a0e7",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -746,7 +746,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.384Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -783,7 +783,7 @@ run();
 
 ## removeAdsCampaign
 
-Remove a campaign
+Deletes the AdsCampaign identified by `id`.
 
 ### Example Usage
 
@@ -862,7 +862,7 @@ run();
 
 ## removeMartechCampaign
 
-Remove a campaign
+Deletes the MarketingCampaign identified by `id`.
 
 ### Example Usage
 
@@ -941,7 +941,7 @@ run();
 
 ## updateAdsCampaign
 
-Update a campaign
+Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -964,18 +964,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.537Z"),
-      id: "ea75df51-4596-4b16-a92a-b8bdd8ac7c2f",
+      endAt: new Date("2025-06-01T16:22:29.391Z"),
+      id: "bc099ef5-1be0-47aa-8133-2ac4fdc8d111",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.614Z"),
+      startAt: new Date("2022-07-21T11:46:13.262Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.786Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.431Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1012,18 +1012,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-05-31T23:53:25.537Z"),
-      id: "ea75df51-4596-4b16-a92a-b8bdd8ac7c2f",
+      endAt: new Date("2025-06-01T16:22:29.391Z"),
+      id: "bc099ef5-1be0-47aa-8133-2ac4fdc8d111",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-21T10:51:37.614Z"),
+      startAt: new Date("2022-07-21T11:46:13.262Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-01T14:35:19.786Z"),
+      updatedAt: new Date("2026-01-02T10:16:12.431Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1060,7 +1060,7 @@ run();
 
 ## updateMartechCampaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -1080,7 +1080,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "7931c8ca-955f-4461-9501-0f4809df9350",
+      id: "c35a3288-f0dd-497c-807e-04905eb0a0e7",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -1089,7 +1089,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.384Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1123,7 +1123,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "7931c8ca-955f-4461-9501-0f4809df9350",
+      id: "c35a3288-f0dd-497c-807e-04905eb0a0e7",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -1132,7 +1132,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.384Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",

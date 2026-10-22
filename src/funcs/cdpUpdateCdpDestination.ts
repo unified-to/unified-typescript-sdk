@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a destination
+ *
+ * @remarks
+ * Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
  */
 export function cdpUpdateCdpDestination(
   client: UnifiedToCore,

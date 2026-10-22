@@ -23,6 +23,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Performance extends ClientSDK {
   /**
    * Create a feedback
+   *
+   * @remarks
+   * Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
    */
   async createPerformanceFeedback(
     request: operations.CreatePerformanceFeedbackRequest,
@@ -37,6 +40,9 @@ export class Performance extends ClientSDK {
 
   /**
    * Create a goal
+   *
+   * @remarks
+   * Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
    */
   async createPerformanceGoal(
     request: operations.CreatePerformanceGoalRequest,
@@ -51,6 +57,9 @@ export class Performance extends ClientSDK {
 
   /**
    * Retrieve a cycle
+   *
+   * @remarks
+   * Retrieves a single PerformanceCycle by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPerformanceCycle(
     request: operations.GetPerformanceCycleRequest,
@@ -65,6 +74,9 @@ export class Performance extends ClientSDK {
 
   /**
    * Retrieve a feedback
+   *
+   * @remarks
+   * Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPerformanceFeedback(
     request: operations.GetPerformanceFeedbackRequest,
@@ -79,6 +91,9 @@ export class Performance extends ClientSDK {
 
   /**
    * Retrieve a goal
+   *
+   * @remarks
+   * Retrieves a single PerformanceGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPerformanceGoal(
     request: operations.GetPerformanceGoalRequest,
@@ -93,6 +108,9 @@ export class Performance extends ClientSDK {
 
   /**
    * Retrieve a review
+   *
+   * @remarks
+   * Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPerformanceReview(
     request: operations.GetPerformanceReviewRequest,
@@ -107,6 +125,9 @@ export class Performance extends ClientSDK {
 
   /**
    * List all cycles
+   *
+   * @remarks
+   * Returns a list of PerformanceCycles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPerformanceCycles(
     request: operations.ListPerformanceCyclesRequest,
@@ -121,6 +142,9 @@ export class Performance extends ClientSDK {
 
   /**
    * List all feedbacks
+   *
+   * @remarks
+   * Returns a list of PerformanceFeedbacks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPerformanceFeedbacks(
     request: operations.ListPerformanceFeedbacksRequest,
@@ -135,6 +159,9 @@ export class Performance extends ClientSDK {
 
   /**
    * List all goals
+   *
+   * @remarks
+   * Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPerformanceGoals(
     request: operations.ListPerformanceGoalsRequest,
@@ -149,6 +176,9 @@ export class Performance extends ClientSDK {
 
   /**
    * List all reviews
+   *
+   * @remarks
+   * Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPerformanceReviews(
     request: operations.ListPerformanceReviewsRequest,
@@ -163,6 +193,9 @@ export class Performance extends ClientSDK {
 
   /**
    * Update a goal
+   *
+   * @remarks
+   * Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
    */
   async patchPerformanceGoal(
     request: operations.PatchPerformanceGoalRequest,
@@ -177,6 +210,9 @@ export class Performance extends ClientSDK {
 
   /**
    * Remove a goal
+   *
+   * @remarks
+   * Deletes the PerformanceGoal identified by `id`.
    */
   async removePerformanceGoal(
     request: operations.RemovePerformanceGoalRequest,
@@ -191,6 +227,9 @@ export class Performance extends ClientSDK {
 
   /**
    * Update a goal
+   *
+   * @remarks
+   * Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
    */
   async updatePerformanceGoal(
     request: operations.UpdatePerformanceGoalRequest,

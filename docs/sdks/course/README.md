@@ -13,7 +13,7 @@
 
 ## createLmsCourse
 
-Create a course
+Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
 
 ### Example Usage
 
@@ -38,7 +38,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "95e99d4e-1745-4dce-925f-b2301ae668e4",
+      id: "47f3b183-ec6f-4663-b22c-bd4ed4a1f3d4",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -65,14 +65,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.598Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.281Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.756Z"),
     },
     connectionId: "<id>",
   });
@@ -110,7 +110,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "95e99d4e-1745-4dce-925f-b2301ae668e4",
+      id: "47f3b183-ec6f-4663-b22c-bd4ed4a1f3d4",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -137,14 +137,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.598Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.281Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.756Z"),
     },
     connectionId: "<id>",
   });
@@ -180,7 +180,7 @@ run();
 
 ## getLmsCourse
 
-Retrieve a course
+Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -259,7 +259,7 @@ run();
 
 ## listLmsCourses
 
-List all courses
+Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -336,7 +336,7 @@ run();
 
 ## patchLmsCourse
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -361,7 +361,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "f7e597d0-3122-4eed-8fe7-476b00812df6",
+      id: "736b47ae-de88-4559-b404-80e554d81fa5",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -388,14 +388,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.599Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.283Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.758Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -434,7 +434,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "f7e597d0-3122-4eed-8fe7-476b00812df6",
+      id: "736b47ae-de88-4559-b404-80e554d81fa5",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -461,14 +461,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.599Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.283Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.758Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -505,7 +505,7 @@ run();
 
 ## removeLmsCourse
 
-Remove a course
+Deletes the LmsCourse identified by `id`.
 
 ### Example Usage
 
@@ -584,7 +584,7 @@ run();
 
 ## updateLmsCourse
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -609,7 +609,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "f7e597d0-3122-4eed-8fe7-476b00812df6",
+      id: "736b47ae-de88-4559-b404-80e554d81fa5",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -636,14 +636,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.599Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.283Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.758Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -682,7 +682,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "f7e597d0-3122-4eed-8fe7-476b00812df6",
+      id: "736b47ae-de88-4559-b404-80e554d81fa5",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -709,14 +709,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.599Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.283Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.758Z"),
     },
     connectionId: "<id>",
     id: "<id>",

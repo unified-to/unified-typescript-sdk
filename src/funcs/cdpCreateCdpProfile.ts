@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a profile
+ *
+ * @remarks
+ * Creates a CdpProfile. Provide the unified CdpProfile fields in the request body; they are mapped to the provider's API. Returns the created CdpProfile.
  */
 export function cdpCreateCdpProfile(
   client: UnifiedToCore,

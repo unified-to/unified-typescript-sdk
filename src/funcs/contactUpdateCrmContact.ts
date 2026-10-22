@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a contact
+ *
+ * @remarks
+ * Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
  */
 export function contactUpdateCrmContact(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an event
+ *
+ * @remarks
+ * Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
  */
 export function eventUpdateCalendarEvent(
   client: UnifiedToCore,

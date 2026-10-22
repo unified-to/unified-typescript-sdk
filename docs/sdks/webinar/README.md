@@ -13,7 +13,7 @@
 
 ## createCalendarWebinar
 
-Create a webinar
+Creates a CalendarWebinar. Provide the unified CalendarWebinar fields in the request body; they are mapped to the provider's API. Returns the created CalendarWebinar.
 
 ### Example Usage
 
@@ -32,10 +32,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.462Z"),
+      endAt: new Date("2025-10-29T12:21:12.024Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "e8985118-f711-406d-8c42-b5a5313d38bb",
+      id: "18872dd7-e2c2-4732-b68a-8d8284f0843b",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -45,13 +45,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.142Z"),
+          endAt: new Date("2023-08-31T21:24:58.336Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.361Z",
+            "2025-02-13T15:32:50.765Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.525Z",
+            "2024-04-28T17:10:28.604Z",
           ],
           interval: 8,
           onDays: [
@@ -442,16 +442,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.356Z"),
+          endAt: new Date("2022-09-30T17:34:48.249Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.766Z",
-            "2024-08-17T05:24:51.537Z",
+            "2024-09-02T06:28:29.663Z",
+            "2024-08-17T17:15:49.536Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.176Z",
-            "2026-01-13T10:08:34.117Z",
-            "2023-08-14T06:30:59.238Z",
+            "2024-03-25T14:03:15.350Z",
+            "2026-01-14T05:52:37.776Z",
+            "2023-08-14T12:42:29.548Z",
           ],
           interval: 1,
           onDays: [
@@ -595,16 +595,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.704Z"),
+          endAt: new Date("2026-07-27T12:03:51.294Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.365Z",
-            "2023-06-07T15:27:11.264Z",
+            "2023-06-18T19:56:18.685Z",
+            "2023-06-07T20:36:28.269Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.419Z",
-            "2023-08-20T01:56:44.404Z",
-            "2024-09-26T23:10:42.233Z",
+            "2024-04-02T15:03:08.235Z",
+            "2023-08-20T08:13:35.425Z",
+            "2024-09-27T11:39:09.247Z",
           ],
           interval: 8,
           onDays: [
@@ -757,11 +757,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.153Z"),
+      startAt: new Date("2025-05-01T05:57:46.507Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.405Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.824Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -794,10 +794,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.462Z"),
+      endAt: new Date("2025-10-29T12:21:12.024Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "e8985118-f711-406d-8c42-b5a5313d38bb",
+      id: "18872dd7-e2c2-4732-b68a-8d8284f0843b",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -807,13 +807,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.142Z"),
+          endAt: new Date("2023-08-31T21:24:58.336Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.361Z",
+            "2025-02-13T15:32:50.765Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.525Z",
+            "2024-04-28T17:10:28.604Z",
           ],
           interval: 8,
           onDays: [
@@ -1204,16 +1204,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.356Z"),
+          endAt: new Date("2022-09-30T17:34:48.249Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.766Z",
-            "2024-08-17T05:24:51.537Z",
+            "2024-09-02T06:28:29.663Z",
+            "2024-08-17T17:15:49.536Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.176Z",
-            "2026-01-13T10:08:34.117Z",
-            "2023-08-14T06:30:59.238Z",
+            "2024-03-25T14:03:15.350Z",
+            "2026-01-14T05:52:37.776Z",
+            "2023-08-14T12:42:29.548Z",
           ],
           interval: 1,
           onDays: [
@@ -1357,16 +1357,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.704Z"),
+          endAt: new Date("2026-07-27T12:03:51.294Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.365Z",
-            "2023-06-07T15:27:11.264Z",
+            "2023-06-18T19:56:18.685Z",
+            "2023-06-07T20:36:28.269Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.419Z",
-            "2023-08-20T01:56:44.404Z",
-            "2024-09-26T23:10:42.233Z",
+            "2024-04-02T15:03:08.235Z",
+            "2023-08-20T08:13:35.425Z",
+            "2024-09-27T11:39:09.247Z",
           ],
           interval: 8,
           onDays: [
@@ -1519,11 +1519,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.153Z"),
+      startAt: new Date("2025-05-01T05:57:46.507Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.405Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.824Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -1560,7 +1560,7 @@ run();
 
 ## getCalendarWebinar
 
-Retrieve a webinar
+Retrieves a single CalendarWebinar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1639,7 +1639,7 @@ run();
 
 ## listCalendarWebinars
 
-List all webinars
+Returns a list of CalendarWebinars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1716,7 +1716,7 @@ run();
 
 ## patchCalendarWebinar
 
-Update a webinar
+Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
 
 ### Example Usage
 
@@ -1735,10 +1735,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.518Z"),
+      endAt: new Date("2025-10-29T12:21:12.054Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "2337346d-a87e-40d6-bff6-6d364cd3acbb",
+      id: "3bef1a90-265a-4396-af04-f545a6ab5ca0",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -1748,13 +1748,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.161Z"),
+          endAt: new Date("2023-08-31T21:24:58.347Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.405Z",
+            "2025-02-13T15:32:50.788Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.556Z",
+            "2024-04-28T17:10:28.621Z",
           ],
           interval: 8,
           onDays: [
@@ -2145,16 +2145,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.360Z"),
+          endAt: new Date("2022-09-30T17:34:48.251Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.803Z",
-            "2024-08-17T05:24:51.572Z",
+            "2024-09-02T06:28:29.682Z",
+            "2024-08-17T17:15:49.555Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.206Z",
-            "2026-01-13T10:08:34.177Z",
-            "2023-08-14T06:30:59.256Z",
+            "2024-03-25T14:03:15.366Z",
+            "2026-01-14T05:52:37.808Z",
+            "2023-08-14T12:42:29.558Z",
           ],
           interval: 1,
           onDays: [
@@ -2298,16 +2298,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.772Z"),
+          endAt: new Date("2026-07-27T12:03:51.331Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.381Z",
-            "2023-06-07T15:27:11.280Z",
+            "2023-06-18T19:56:18.694Z",
+            "2023-06-07T20:36:28.277Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.448Z",
-            "2023-08-20T01:56:44.423Z",
-            "2024-09-26T23:10:42.271Z",
+            "2024-04-02T15:03:08.251Z",
+            "2023-08-20T08:13:35.435Z",
+            "2024-09-27T11:39:09.267Z",
           ],
           interval: 8,
           onDays: [
@@ -2460,11 +2460,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.200Z"),
+      startAt: new Date("2025-05-01T05:57:46.533Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.477Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.864Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -2498,10 +2498,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.518Z"),
+      endAt: new Date("2025-10-29T12:21:12.054Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "2337346d-a87e-40d6-bff6-6d364cd3acbb",
+      id: "3bef1a90-265a-4396-af04-f545a6ab5ca0",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -2511,13 +2511,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.161Z"),
+          endAt: new Date("2023-08-31T21:24:58.347Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.405Z",
+            "2025-02-13T15:32:50.788Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.556Z",
+            "2024-04-28T17:10:28.621Z",
           ],
           interval: 8,
           onDays: [
@@ -2908,16 +2908,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.360Z"),
+          endAt: new Date("2022-09-30T17:34:48.251Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.803Z",
-            "2024-08-17T05:24:51.572Z",
+            "2024-09-02T06:28:29.682Z",
+            "2024-08-17T17:15:49.555Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.206Z",
-            "2026-01-13T10:08:34.177Z",
-            "2023-08-14T06:30:59.256Z",
+            "2024-03-25T14:03:15.366Z",
+            "2026-01-14T05:52:37.808Z",
+            "2023-08-14T12:42:29.558Z",
           ],
           interval: 1,
           onDays: [
@@ -3061,16 +3061,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.772Z"),
+          endAt: new Date("2026-07-27T12:03:51.331Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.381Z",
-            "2023-06-07T15:27:11.280Z",
+            "2023-06-18T19:56:18.694Z",
+            "2023-06-07T20:36:28.277Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.448Z",
-            "2023-08-20T01:56:44.423Z",
-            "2024-09-26T23:10:42.271Z",
+            "2024-04-02T15:03:08.251Z",
+            "2023-08-20T08:13:35.435Z",
+            "2024-09-27T11:39:09.267Z",
           ],
           interval: 8,
           onDays: [
@@ -3223,11 +3223,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.200Z"),
+      startAt: new Date("2025-05-01T05:57:46.533Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.477Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.864Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -3265,7 +3265,7 @@ run();
 
 ## removeCalendarWebinar
 
-Remove a webinar
+Deletes the CalendarWebinar identified by `id`.
 
 ### Example Usage
 
@@ -3344,7 +3344,7 @@ run();
 
 ## updateCalendarWebinar
 
-Update a webinar
+Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
 
 ### Example Usage
 
@@ -3363,10 +3363,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.518Z"),
+      endAt: new Date("2025-10-29T12:21:12.054Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "2337346d-a87e-40d6-bff6-6d364cd3acbb",
+      id: "3bef1a90-265a-4396-af04-f545a6ab5ca0",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -3376,13 +3376,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.161Z"),
+          endAt: new Date("2023-08-31T21:24:58.347Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.405Z",
+            "2025-02-13T15:32:50.788Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.556Z",
+            "2024-04-28T17:10:28.621Z",
           ],
           interval: 8,
           onDays: [
@@ -3773,16 +3773,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.360Z"),
+          endAt: new Date("2022-09-30T17:34:48.251Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.803Z",
-            "2024-08-17T05:24:51.572Z",
+            "2024-09-02T06:28:29.682Z",
+            "2024-08-17T17:15:49.555Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.206Z",
-            "2026-01-13T10:08:34.177Z",
-            "2023-08-14T06:30:59.256Z",
+            "2024-03-25T14:03:15.366Z",
+            "2026-01-14T05:52:37.808Z",
+            "2023-08-14T12:42:29.558Z",
           ],
           interval: 1,
           onDays: [
@@ -3926,16 +3926,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.772Z"),
+          endAt: new Date("2026-07-27T12:03:51.331Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.381Z",
-            "2023-06-07T15:27:11.280Z",
+            "2023-06-18T19:56:18.694Z",
+            "2023-06-07T20:36:28.277Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.448Z",
-            "2023-08-20T01:56:44.423Z",
-            "2024-09-26T23:10:42.271Z",
+            "2024-04-02T15:03:08.251Z",
+            "2023-08-20T08:13:35.435Z",
+            "2024-09-27T11:39:09.267Z",
           ],
           interval: 8,
           onDays: [
@@ -4088,11 +4088,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.200Z"),
+      startAt: new Date("2025-05-01T05:57:46.533Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.477Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.864Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -4126,10 +4126,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.518Z"),
+      endAt: new Date("2025-10-29T12:21:12.054Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "2337346d-a87e-40d6-bff6-6d364cd3acbb",
+      id: "3bef1a90-265a-4396-af04-f545a6ab5ca0",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -4139,13 +4139,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.161Z"),
+          endAt: new Date("2023-08-31T21:24:58.347Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.405Z",
+            "2025-02-13T15:32:50.788Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.556Z",
+            "2024-04-28T17:10:28.621Z",
           ],
           interval: 8,
           onDays: [
@@ -4536,16 +4536,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.360Z"),
+          endAt: new Date("2022-09-30T17:34:48.251Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.803Z",
-            "2024-08-17T05:24:51.572Z",
+            "2024-09-02T06:28:29.682Z",
+            "2024-08-17T17:15:49.555Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.206Z",
-            "2026-01-13T10:08:34.177Z",
-            "2023-08-14T06:30:59.256Z",
+            "2024-03-25T14:03:15.366Z",
+            "2026-01-14T05:52:37.808Z",
+            "2023-08-14T12:42:29.558Z",
           ],
           interval: 1,
           onDays: [
@@ -4689,16 +4689,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.772Z"),
+          endAt: new Date("2026-07-27T12:03:51.331Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.381Z",
-            "2023-06-07T15:27:11.280Z",
+            "2023-06-18T19:56:18.694Z",
+            "2023-06-07T20:36:28.277Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.448Z",
-            "2023-08-20T01:56:44.423Z",
-            "2024-09-26T23:10:42.271Z",
+            "2024-04-02T15:03:08.251Z",
+            "2023-08-20T08:13:35.435Z",
+            "2024-09-27T11:39:09.267Z",
           ],
           interval: 8,
           onDays: [
@@ -4851,11 +4851,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.200Z"),
+      startAt: new Date("2025-05-01T05:57:46.533Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.477Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.864Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",

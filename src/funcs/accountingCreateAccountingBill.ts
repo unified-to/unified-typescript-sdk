@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a bill
+ *
+ * @remarks
+ * Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
  */
 export function accountingCreateAccountingBill(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an inventory
+ *
+ * @remarks
+ * Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
  */
 export function commercePatchCommerceInventory(
   client: UnifiedToCore,

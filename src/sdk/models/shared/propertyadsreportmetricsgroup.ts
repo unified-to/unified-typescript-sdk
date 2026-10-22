@@ -188,6 +188,9 @@ export type PropertyAdsReportMetricsGroup = {
   budgetMaxAmount?: number | undefined;
   budgetPeriod?: PropertyAdsReportMetricsGroupBudgetPeriod | undefined;
   budgetUnit?: PropertyAdsReportMetricsGroupBudgetUnit | undefined;
+  /**
+   * The ID of the campaign the ad group belongs to (an AdsCampaign ID)
+   */
   campaignId?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -215,6 +218,9 @@ export type PropertyAdsReportMetricsGroup = {
    */
   languageLocale?: string | undefined;
   metadata?: Array<AdsMetadata> | undefined;
+  /**
+   * The ad group's name
+   */
   name?: string | undefined;
   /**
    * Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through)

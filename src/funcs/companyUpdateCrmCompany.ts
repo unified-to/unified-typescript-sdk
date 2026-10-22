@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a company
+ *
+ * @remarks
+ * Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
  */
 export function companyUpdateCrmCompany(
   client: UnifiedToCore,

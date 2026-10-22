@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a purchaseorder
+ *
+ * @remarks
+ * Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
  */
 export function accountingUpdateAccountingPurchaseorder(
   client: UnifiedToCore,

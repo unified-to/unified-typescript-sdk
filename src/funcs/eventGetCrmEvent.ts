@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Retrieve an event
+ *
+ * @remarks
+ * Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
  */
 export function eventGetCrmEvent(
   client: UnifiedToCore,

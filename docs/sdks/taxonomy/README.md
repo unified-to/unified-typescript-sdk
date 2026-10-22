@@ -11,7 +11,7 @@
 
 ## createHrisTaxonomy
 
-Create a taxonomy
+Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
 
 ### Example Usage
 
@@ -35,13 +35,13 @@ async function run() {
       createdAt: new Date("2022-06-23T02:10:00.789Z"),
       description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
       domain: "Health",
-      id: "f6d34768-5be7-4be1-b997-f243b838891a",
+      id: "10733e29-5d65-412b-b90b-281f45fcc7ef",
       isActive: false,
       metadata: [],
       name: "International Functionality Architect",
       subcategory: "Marble",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-05-29T07:32:16.854Z"),
+      updatedAt: new Date("2023-05-29T12:42:39.690Z"),
       url: "https://fixed-membership.biz/",
     },
     connectionId: "<id>",
@@ -79,13 +79,13 @@ async function run() {
       createdAt: new Date("2022-06-23T02:10:00.789Z"),
       description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
       domain: "Health",
-      id: "f6d34768-5be7-4be1-b997-f243b838891a",
+      id: "10733e29-5d65-412b-b90b-281f45fcc7ef",
       isActive: false,
       metadata: [],
       name: "International Functionality Architect",
       subcategory: "Marble",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-05-29T07:32:16.854Z"),
+      updatedAt: new Date("2023-05-29T12:42:39.690Z"),
       url: "https://fixed-membership.biz/",
     },
     connectionId: "<id>",
@@ -122,7 +122,7 @@ run();
 
 ## getHrisTaxonomy
 
-Retrieve a taxonomy
+Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -201,7 +201,7 @@ run();
 
 ## listCrmTaxonomies
 
-List all taxonomies
+Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -278,7 +278,7 @@ run();
 
 ## listHrisTaxonomies
 
-List all taxonomies
+Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

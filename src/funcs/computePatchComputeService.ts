@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a service
+ *
+ * @remarks
+ * Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
  */
 export function computePatchComputeService(
   client: UnifiedToCore,

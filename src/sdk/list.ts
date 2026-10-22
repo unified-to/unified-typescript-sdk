@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class List extends ClientSDK {
   /**
    * Create a list
+   *
+   * @remarks
+   * Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider's API. Returns the created MarketingList.
    */
   async createMartechList(
     request: operations.CreateMartechListRequest,
@@ -30,6 +33,9 @@ export class List extends ClientSDK {
 
   /**
    * Retrieve a list
+   *
+   * @remarks
+   * Retrieves a single MarketingList by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMartechList(
     request: operations.GetMartechListRequest,
@@ -44,6 +50,9 @@ export class List extends ClientSDK {
 
   /**
    * List all lists
+   *
+   * @remarks
+   * Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMartechLists(
     request: operations.ListMartechListsRequest,
@@ -58,6 +67,9 @@ export class List extends ClientSDK {
 
   /**
    * Update a list
+   *
+   * @remarks
+   * Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
    */
   async patchMartechList(
     request: operations.PatchMartechListRequest,
@@ -72,6 +84,9 @@ export class List extends ClientSDK {
 
   /**
    * Remove a list
+   *
+   * @remarks
+   * Deletes the MarketingList identified by `id`.
    */
   async removeMartechList(
     request: operations.RemoveMartechListRequest,
@@ -86,6 +101,9 @@ export class List extends ClientSDK {
 
   /**
    * Update a list
+   *
+   * @remarks
+   * Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
    */
   async updateMartechList(
     request: operations.UpdateMartechListRequest,

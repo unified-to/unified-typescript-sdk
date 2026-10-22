@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an invoice
+ *
+ * @remarks
+ * Deletes the AccountingInvoice identified by `id`.
  */
 export function accountingRemoveAccountingInvoice(
   client: UnifiedToCore,

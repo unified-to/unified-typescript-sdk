@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a transaction
+ *
+ * @remarks
+ * Deletes the AccountingTransaction identified by `id`.
  */
 export function accountingRemoveAccountingTransaction(
   client: UnifiedToCore,

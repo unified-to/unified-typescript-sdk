@@ -13,7 +13,7 @@
 
 ## createCommerceReservation
 
-Create a reservation
+Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
 
 ### Example Usage
 
@@ -35,13 +35,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "d1d2a8af-2b3f-41aa-b32e-c291588efce9",
+      id: "810d9026-e277-4372-acdd-284c475ef8ac",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.033Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.157Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -77,13 +77,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "d1d2a8af-2b3f-41aa-b32e-c291588efce9",
+      id: "810d9026-e277-4372-acdd-284c475ef8ac",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.033Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.157Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -120,7 +120,7 @@ run();
 
 ## getCommerceReservation
 
-Retrieve a reservation
+Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -199,7 +199,7 @@ run();
 
 ## listCommerceReservations
 
-List all reservations
+Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -276,7 +276,7 @@ run();
 
 ## patchCommerceReservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -298,13 +298,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "be9d1223-a54d-4214-a6c4-c2e661223da0",
+      id: "258f6478-e053-44cd-ace8-50c0b5210c62",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.038Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.160Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -341,13 +341,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "be9d1223-a54d-4214-a6c4-c2e661223da0",
+      id: "258f6478-e053-44cd-ace8-50c0b5210c62",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.038Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.160Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -385,7 +385,7 @@ run();
 
 ## removeCommerceReservation
 
-Remove a reservation
+Deletes the CommerceReservation identified by `id`.
 
 ### Example Usage
 
@@ -464,7 +464,7 @@ run();
 
 ## updateCommerceReservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -486,13 +486,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "be9d1223-a54d-4214-a6c4-c2e661223da0",
+      id: "258f6478-e053-44cd-ace8-50c0b5210c62",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.038Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.160Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -529,13 +529,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "be9d1223-a54d-4214-a6c4-c2e661223da0",
+      id: "258f6478-e053-44cd-ace8-50c0b5210c62",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.038Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.160Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",

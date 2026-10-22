@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a commit
+ *
+ * @remarks
+ * Deletes the RepoCommit identified by `id`.
  */
 export function repoRemoveRepoCommit(
   client: UnifiedToCore,

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Pullrequest extends ClientSDK {
   /**
    * Create a pullrequest
+   *
+   * @remarks
+   * Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
    */
   async createRepoPullrequest(
     request: operations.CreateRepoPullrequestRequest,
@@ -30,6 +33,9 @@ export class Pullrequest extends ClientSDK {
 
   /**
    * Retrieve a pullrequest
+   *
+   * @remarks
+   * Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoPullrequest(
     request: operations.GetRepoPullrequestRequest,
@@ -44,6 +50,9 @@ export class Pullrequest extends ClientSDK {
 
   /**
    * List all pullrequests
+   *
+   * @remarks
+   * Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoPullrequests(
     request: operations.ListRepoPullrequestsRequest,
@@ -58,6 +67,9 @@ export class Pullrequest extends ClientSDK {
 
   /**
    * Update a pullrequest
+   *
+   * @remarks
+   * Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
    */
   async patchRepoPullrequest(
     request: operations.PatchRepoPullrequestRequest,
@@ -72,6 +84,9 @@ export class Pullrequest extends ClientSDK {
 
   /**
    * Remove a pullrequest
+   *
+   * @remarks
+   * Deletes the RepoPullrequest identified by `id`.
    */
   async removeRepoPullrequest(
     request: operations.RemoveRepoPullrequestRequest,
@@ -86,6 +101,9 @@ export class Pullrequest extends ClientSDK {
 
   /**
    * Update a pullrequest
+   *
+   * @remarks
+   * Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
    */
   async updateRepoPullrequest(
     request: operations.UpdateRepoPullrequestRequest,

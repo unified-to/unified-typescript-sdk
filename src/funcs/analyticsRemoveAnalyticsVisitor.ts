@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a visitor
+ *
+ * @remarks
+ * Deletes the AnalyticsVisitor identified by `id`.
  */
 export function analyticsRemoveAnalyticsVisitor(
   client: UnifiedToCore,

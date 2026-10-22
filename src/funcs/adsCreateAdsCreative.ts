@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a creative
+ *
+ * @remarks
+ * Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
  */
 export function adsCreateAdsCreative(
   client: UnifiedToCore,

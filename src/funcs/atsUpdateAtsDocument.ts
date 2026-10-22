@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a document
+ *
+ * @remarks
+ * Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
  */
 export function atsUpdateAtsDocument(
   client: UnifiedToCore,

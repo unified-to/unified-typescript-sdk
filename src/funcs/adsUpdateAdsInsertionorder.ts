@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an insertionorder
+ *
+ * @remarks
+ * Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
  */
 export function adsUpdateAdsInsertionorder(
   client: UnifiedToCore,

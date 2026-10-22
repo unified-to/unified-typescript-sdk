@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a timeoff
+ *
+ * @remarks
+ * Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
  */
 export function hrisPatchHrisTimeoff(
   client: UnifiedToCore,

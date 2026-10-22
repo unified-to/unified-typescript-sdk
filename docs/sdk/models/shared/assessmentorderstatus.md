@@ -1,5 +1,7 @@
 # AssessmentOrderStatus
 
+The current state of the assessment order
+
 ## Example Usage
 
 ```typescript

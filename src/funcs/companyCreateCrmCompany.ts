@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a company
+ *
+ * @remarks
+ * Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
  */
 export function companyCreateCrmCompany(
   client: UnifiedToCore,

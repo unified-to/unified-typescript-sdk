@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an instructor
+ *
+ * @remarks
+ * Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
  */
 export function lmsUpdateLmsInstructor(
   client: UnifiedToCore,

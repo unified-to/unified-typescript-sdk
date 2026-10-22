@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Note extends ClientSDK {
   /**
    * Create a note
+   *
+   * @remarks
+   * Creates a TicketingNote. Provide the unified TicketingNote fields in the request body; they are mapped to the provider's API. Returns the created TicketingNote.
    */
   async createTicketingNote(
     request: operations.CreateTicketingNoteRequest,
@@ -30,6 +33,9 @@ export class Note extends ClientSDK {
 
   /**
    * Retrieve a note
+   *
+   * @remarks
+   * Retrieves a single TicketingNote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTicketingNote(
     request: operations.GetTicketingNoteRequest,
@@ -44,6 +50,9 @@ export class Note extends ClientSDK {
 
   /**
    * List all notes
+   *
+   * @remarks
+   * Returns a list of TicketingNotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTicketingNotes(
     request: operations.ListTicketingNotesRequest,
@@ -58,6 +67,9 @@ export class Note extends ClientSDK {
 
   /**
    * Update a note
+   *
+   * @remarks
+   * Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
    */
   async patchTicketingNote(
     request: operations.PatchTicketingNoteRequest,
@@ -72,6 +84,9 @@ export class Note extends ClientSDK {
 
   /**
    * Remove a note
+   *
+   * @remarks
+   * Deletes the TicketingNote identified by `id`.
    */
   async removeTicketingNote(
     request: operations.RemoveTicketingNoteRequest,
@@ -86,6 +101,9 @@ export class Note extends ClientSDK {
 
   /**
    * Update a note
+   *
+   * @remarks
+   * Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
    */
   async updateTicketingNote(
     request: operations.UpdateTicketingNoteRequest,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a goal
+ *
+ * @remarks
+ * Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
  */
 export function performancePatchPerformanceGoal(
   client: UnifiedToCore,

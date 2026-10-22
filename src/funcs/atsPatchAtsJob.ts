@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a job
+ *
+ * @remarks
+ * Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
  */
 export function atsPatchAtsJob(
   client: UnifiedToCore,

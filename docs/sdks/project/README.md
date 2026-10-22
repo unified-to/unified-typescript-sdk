@@ -19,7 +19,7 @@
 
 ## createAccountingProject
 
-Create a project
+Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
 
 ### Example Usage
 
@@ -98,7 +98,7 @@ run();
 
 ## createTaskProject
 
-Create a project
+Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
 
 ### Example Usage
 
@@ -119,14 +119,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "5dad43cf-fc54-4c01-8a6c-a8969643e3e6",
+      id: "39233abe-8dbc-4c77-b0fe-3935457d3afc",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "786f9c03-2e0a-447e-afd7-cf056ee00349",
+          id: "735a1713-4149-41e1-9911-71f7a8edd370",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -136,14 +136,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "ddba8b0b-da67-4bd3-9425-3f3fbdb1ee7f",
+          id: "ce2e6cdb-deb7-4042-8f4e-fcf24256b591",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.360Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.383Z"),
     },
     connectionId: "<id>",
   });
@@ -177,14 +177,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "5dad43cf-fc54-4c01-8a6c-a8969643e3e6",
+      id: "39233abe-8dbc-4c77-b0fe-3935457d3afc",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "786f9c03-2e0a-447e-afd7-cf056ee00349",
+          id: "735a1713-4149-41e1-9911-71f7a8edd370",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -194,14 +194,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "ddba8b0b-da67-4bd3-9425-3f3fbdb1ee7f",
+          id: "ce2e6cdb-deb7-4042-8f4e-fcf24256b591",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.360Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.383Z"),
     },
     connectionId: "<id>",
   });
@@ -237,7 +237,7 @@ run();
 
 ## getAccountingProject
 
-Retrieve a project
+Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -316,7 +316,7 @@ run();
 
 ## getTaskProject
 
-Retrieve a project
+Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -395,7 +395,7 @@ run();
 
 ## listAccountingProjects
 
-List all projects
+Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ run();
 
 ## listTaskProjects
 
-List all projects
+Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -549,7 +549,7 @@ run();
 
 ## patchAccountingProject
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -630,7 +630,7 @@ run();
 
 ## patchTaskProject
 
-Update a project
+Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
 
 ### Example Usage
 
@@ -651,14 +651,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "80767758-9c50-412b-b690-5063dd8415ca",
+      id: "421912ec-bb5d-4252-847d-0a7d08925cbd",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "6e55ac49-2389-4b90-b3ac-fd2e86487962",
+          id: "1e49efa8-d5f6-445c-977b-1412a3a3de22",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -668,14 +668,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "d1370b01-4633-452c-a15b-9501501177f3",
+          id: "b4b619fc-64fe-4231-ae22-47c2e4d98523",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.362Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -710,14 +710,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "80767758-9c50-412b-b690-5063dd8415ca",
+      id: "421912ec-bb5d-4252-847d-0a7d08925cbd",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "6e55ac49-2389-4b90-b3ac-fd2e86487962",
+          id: "1e49efa8-d5f6-445c-977b-1412a3a3de22",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -727,14 +727,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "d1370b01-4633-452c-a15b-9501501177f3",
+          id: "b4b619fc-64fe-4231-ae22-47c2e4d98523",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.362Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -771,7 +771,7 @@ run();
 
 ## removeAccountingProject
 
-Remove a project
+Deletes the AccountingProject identified by `id`.
 
 ### Example Usage
 
@@ -850,7 +850,7 @@ run();
 
 ## removeTaskProject
 
-Remove a project
+Deletes the TaskProject identified by `id`.
 
 ### Example Usage
 
@@ -929,7 +929,7 @@ run();
 
 ## updateAccountingProject
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -1010,7 +1010,7 @@ run();
 
 ## updateTaskProject
 
-Update a project
+Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
 
 ### Example Usage
 
@@ -1031,14 +1031,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "80767758-9c50-412b-b690-5063dd8415ca",
+      id: "421912ec-bb5d-4252-847d-0a7d08925cbd",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "6e55ac49-2389-4b90-b3ac-fd2e86487962",
+          id: "1e49efa8-d5f6-445c-977b-1412a3a3de22",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1048,14 +1048,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "d1370b01-4633-452c-a15b-9501501177f3",
+          id: "b4b619fc-64fe-4231-ae22-47c2e4d98523",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.362Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1090,14 +1090,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "80767758-9c50-412b-b690-5063dd8415ca",
+      id: "421912ec-bb5d-4252-847d-0a7d08925cbd",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "6e55ac49-2389-4b90-b3ac-fd2e86487962",
+          id: "1e49efa8-d5f6-445c-977b-1412a3a3de22",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1107,14 +1107,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "d1370b01-4633-452c-a15b-9501501177f3",
+          id: "b4b619fc-64fe-4231-ae22-47c2e4d98523",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.362Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",

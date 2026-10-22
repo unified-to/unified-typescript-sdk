@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a pipeline
+ *
+ * @remarks
+ * Deletes the CrmPipeline identified by `id`.
  */
 export function crmRemoveCrmPipeline(
   client: UnifiedToCore,

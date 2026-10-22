@@ -1,5 +1,7 @@
 # PropertyDatastoreQueryQuery
 
+What to run: a raw `sql` statement, or a structured query (select, filter, sort, limit/offset, aggregate)
+
 ## Example Usage
 
 ```typescript

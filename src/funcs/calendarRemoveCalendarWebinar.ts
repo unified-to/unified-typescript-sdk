@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a webinar
+ *
+ * @remarks
+ * Deletes the CalendarWebinar identified by `id`.
  */
 export function calendarRemoveCalendarWebinar(
   client: UnifiedToCore,

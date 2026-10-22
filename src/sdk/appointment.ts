@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Appointment extends ClientSDK {
   /**
    * Create an appointment
+   *
+   * @remarks
+   * Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
    */
   async createHealthcareAppointment(
     request: operations.CreateHealthcareAppointmentRequest,
@@ -30,6 +33,9 @@ export class Appointment extends ClientSDK {
 
   /**
    * Retrieve an appointment
+   *
+   * @remarks
+   * Retrieves a single HealthcareAppointment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareAppointment(
     request: operations.GetHealthcareAppointmentRequest,
@@ -44,6 +50,9 @@ export class Appointment extends ClientSDK {
 
   /**
    * List all appointments
+   *
+   * @remarks
+   * Returns a list of HealthcareAppointments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareAppointments(
     request: operations.ListHealthcareAppointmentsRequest,
@@ -58,6 +67,9 @@ export class Appointment extends ClientSDK {
 
   /**
    * Update an appointment
+   *
+   * @remarks
+   * Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
    */
   async patchHealthcareAppointment(
     request: operations.PatchHealthcareAppointmentRequest,
@@ -72,6 +84,9 @@ export class Appointment extends ClientSDK {
 
   /**
    * Remove an appointment
+   *
+   * @remarks
+   * Deletes the HealthcareAppointment identified by `id`.
    */
   async removeHealthcareAppointment(
     request: operations.RemoveHealthcareAppointmentRequest,
@@ -86,6 +101,9 @@ export class Appointment extends ClientSDK {
 
   /**
    * Update an appointment
+   *
+   * @remarks
+   * Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
    */
   async updateHealthcareAppointment(
     request: operations.UpdateHealthcareAppointmentRequest,

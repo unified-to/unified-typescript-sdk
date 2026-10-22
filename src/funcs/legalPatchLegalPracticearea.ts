@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a practicearea
+ *
+ * @remarks
+ * Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
  */
 export function legalPatchLegalPracticearea(
   client: UnifiedToCore,

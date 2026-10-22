@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a rate
+ *
+ * @remarks
+ * Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
  */
 export function shippingCreateShippingRate(
   client: UnifiedToCore,

@@ -44,7 +44,7 @@
 
 ## createCrmCompany
 
-Create a company
+Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
 
 ### Example Usage
 
@@ -90,7 +90,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "a6cd6267-1e6b-47c1-a3a0-24d795be63e6",
+      id: "aca9dce1-225c-4d1b-b007-aae054619b2c",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -102,7 +102,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "20a77477-7f7d-4c13-9ec2-31d44be0b00d",
+          id: "869d2830-3770-4d63-b383-9d393257a773",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -121,7 +121,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.520Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.844Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -183,7 +183,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "a6cd6267-1e6b-47c1-a3a0-24d795be63e6",
+      id: "aca9dce1-225c-4d1b-b007-aae054619b2c",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -195,7 +195,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "20a77477-7f7d-4c13-9ec2-31d44be0b00d",
+          id: "869d2830-3770-4d63-b383-9d393257a773",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -214,7 +214,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.520Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.844Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -253,7 +253,7 @@ run();
 
 ## createCrmContact
 
-Create a contact
+Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "e9aacd0c-5f0f-4178-bd04-2bf9a4ce7543",
+      id: "29da1daa-a9c1-4bbb-8366-2b3ed00cc7f4",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -300,7 +300,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b89e632c-44b4-4448-b159-bc4da8e09da3",
+          id: "a0206d09-0e03-4cb9-bdd6-40a0299b817e",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -318,7 +318,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.801Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
   });
@@ -366,7 +366,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "e9aacd0c-5f0f-4178-bd04-2bf9a4ce7543",
+      id: "29da1daa-a9c1-4bbb-8366-2b3ed00cc7f4",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -378,7 +378,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b89e632c-44b4-4448-b159-bc4da8e09da3",
+          id: "a0206d09-0e03-4cb9-bdd6-40a0299b817e",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -396,7 +396,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.801Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
   });
@@ -432,7 +432,7 @@ run();
 
 ## createCrmDeal
 
-Create a deal
+Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
 
 ### Example Usage
 
@@ -450,19 +450,19 @@ async function run() {
   const result = await unifiedTo.crm.createCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-10T10:13:33.690Z"),
-      closingAt: new Date("2025-08-31T12:59:53.257Z"),
+      closedAt: new Date("2024-03-10T15:12:47.259Z"),
+      closingAt: new Date("2025-09-01T04:44:39.717Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "778eebd9-f220-45a8-ba61-8c2b1f6dff87",
+      id: "979623ac-a54e-4e28-b5b6-c5157c4d891b",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "95506155-6ed5-4a7f-a94d-f20167d14a62",
+          id: "c6b9f850-8eb4-4944-b162-485084534c60",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -475,7 +475,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-11T21:25:56.721Z"),
+      updatedAt: new Date("2024-10-12T06:43:10.566Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -507,19 +507,19 @@ async function run() {
   const res = await crmCreateCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-10T10:13:33.690Z"),
-      closingAt: new Date("2025-08-31T12:59:53.257Z"),
+      closedAt: new Date("2024-03-10T15:12:47.259Z"),
+      closingAt: new Date("2025-09-01T04:44:39.717Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "778eebd9-f220-45a8-ba61-8c2b1f6dff87",
+      id: "979623ac-a54e-4e28-b5b6-c5157c4d891b",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "95506155-6ed5-4a7f-a94d-f20167d14a62",
+          id: "c6b9f850-8eb4-4944-b162-485084534c60",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -532,7 +532,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-11T21:25:56.721Z"),
+      updatedAt: new Date("2024-10-12T06:43:10.566Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -569,7 +569,7 @@ run();
 
 ## createCrmEvent
 
-Create an event
+Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
 
 ### Example Usage
 
@@ -589,13 +589,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.151Z"),
+        startAt: new Date("2024-12-11T18:06:33.851Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "10345886-7e0d-473d-9aa7-95b5df57d2bc",
+      id: "a19ed138-fa1a-4480-92b0-ff1b48e84284",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.031Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.761Z"),
     },
     connectionId: "<id>",
   });
@@ -628,13 +628,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.151Z"),
+        startAt: new Date("2024-12-11T18:06:33.851Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "10345886-7e0d-473d-9aa7-95b5df57d2bc",
+      id: "a19ed138-fa1a-4480-92b0-ff1b48e84284",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.031Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.761Z"),
     },
     connectionId: "<id>",
   });
@@ -670,7 +670,7 @@ run();
 
 ## createCrmLead
 
-Create a lead
+Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
 
 ### Example Usage
 
@@ -704,7 +704,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "4e0e0d6f-0216-475a-962c-0906d26f9707",
+      id: "b3fd4f86-dea8-48bd-bdf9-cd4268c58a88",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -716,7 +716,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "80ccd8d9-7e5e-4d92-a958-630c088e5f00",
+          id: "a6bc138d-e8f6-45c0-9ab7-c765cf69dbaf",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -740,7 +740,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.530Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.979Z"),
     },
     connectionId: "<id>",
   });
@@ -787,7 +787,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "4e0e0d6f-0216-475a-962c-0906d26f9707",
+      id: "b3fd4f86-dea8-48bd-bdf9-cd4268c58a88",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -799,7 +799,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "80ccd8d9-7e5e-4d92-a958-630c088e5f00",
+          id: "a6bc138d-e8f6-45c0-9ab7-c765cf69dbaf",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -823,7 +823,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.530Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.979Z"),
     },
     connectionId: "<id>",
   });
@@ -859,7 +859,7 @@ run();
 
 ## createCrmPipeline
 
-Create a pipeline
+Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
 
 ### Example Usage
 
@@ -879,7 +879,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "77a542b7-0690-4562-a759-2f61305f5b36",
+      id: "dd55bb76-04f9-4985-b5ff-1db0b8e29acc",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -889,13 +889,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "d9467cb6-529a-4691-9e55-80922ca05925",
+          id: "65551e8c-ade5-4ab5-b5fe-aeeb7f4a28e3",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.171Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.361Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.233Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.689Z"),
     },
     connectionId: "<id>",
   });
@@ -928,7 +928,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "77a542b7-0690-4562-a759-2f61305f5b36",
+      id: "dd55bb76-04f9-4985-b5ff-1db0b8e29acc",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -938,13 +938,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "d9467cb6-529a-4691-9e55-80922ca05925",
+          id: "65551e8c-ade5-4ab5-b5fe-aeeb7f4a28e3",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.171Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.361Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.233Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.689Z"),
     },
     connectionId: "<id>",
   });
@@ -980,7 +980,7 @@ run();
 
 ## getCrmCompany
 
-Retrieve a company
+Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1059,7 +1059,7 @@ run();
 
 ## getCrmContact
 
-Retrieve a contact
+Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1138,7 +1138,7 @@ run();
 
 ## getCrmDeal
 
-Retrieve a deal
+Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1217,7 +1217,7 @@ run();
 
 ## getCrmEvent
 
-Retrieve an event
+Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1296,7 +1296,7 @@ run();
 
 ## getCrmLead
 
-Retrieve a lead
+Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1375,7 +1375,7 @@ run();
 
 ## getCrmPipeline
 
-Retrieve a pipeline
+Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1454,7 +1454,7 @@ run();
 
 ## listCrmCompanies
 
-List all companies
+Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1531,7 +1531,7 @@ run();
 
 ## listCrmContacts
 
-List all contacts
+Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1608,7 +1608,7 @@ run();
 
 ## listCrmDeals
 
-List all deals
+Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1685,7 +1685,7 @@ run();
 
 ## listCrmEvents
 
-List all events
+Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1762,7 +1762,7 @@ run();
 
 ## listCrmLeads
 
-List all leads
+Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1839,7 +1839,7 @@ run();
 
 ## listCrmPipelines
 
-List all pipelines
+Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1916,7 +1916,7 @@ run();
 
 ## listCrmTaxonomies
 
-List all taxonomies
+Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1993,7 +1993,7 @@ run();
 
 ## patchCrmCompany
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -2039,7 +2039,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "d3e8c045-28f2-41a5-b372-af6ac8922d79",
+      id: "8129d5c0-295e-4363-8211-b6e24ad789de",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -2051,7 +2051,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "2fdfde50-27c8-41f2-8287-282d970e5ef9",
+          id: "d5f5c279-5f04-43c2-8dd7-7c605347fb4a",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -2070,7 +2070,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.540Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.857Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -2133,7 +2133,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "d3e8c045-28f2-41a5-b372-af6ac8922d79",
+      id: "8129d5c0-295e-4363-8211-b6e24ad789de",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -2145,7 +2145,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "2fdfde50-27c8-41f2-8287-282d970e5ef9",
+          id: "d5f5c279-5f04-43c2-8dd7-7c605347fb4a",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -2164,7 +2164,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.540Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.857Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -2204,7 +2204,7 @@ run();
 
 ## patchCrmContact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -2239,7 +2239,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "5de3b057-57f5-4e82-9d3d-6431bc8abd5b",
+      id: "8c193bd4-df89-4a12-8de9-0784f9b98778",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -2251,7 +2251,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "75077228-f8f0-43fb-8419-fb11ee24516e",
+          id: "b4e64a9b-4fe8-4d3b-95c8-f9186ad07848",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -2269,7 +2269,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.802Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2318,7 +2318,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "5de3b057-57f5-4e82-9d3d-6431bc8abd5b",
+      id: "8c193bd4-df89-4a12-8de9-0784f9b98778",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -2330,7 +2330,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "75077228-f8f0-43fb-8419-fb11ee24516e",
+          id: "b4e64a9b-4fe8-4d3b-95c8-f9186ad07848",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -2348,7 +2348,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.802Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2385,7 +2385,7 @@ run();
 
 ## patchCrmDeal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -2403,19 +2403,19 @@ async function run() {
   const result = await unifiedTo.crm.patchCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-10T10:13:33.695Z"),
-      closingAt: new Date("2025-08-31T12:59:53.271Z"),
+      closedAt: new Date("2024-03-10T15:12:47.262Z"),
+      closingAt: new Date("2025-09-01T04:44:39.727Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "caf867bb-bed8-453a-bcfc-84f4726e0baf",
+      id: "958ee874-88f2-47a2-a144-cb8f24466316",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a2b0f23d-48fd-46d9-a35a-1a405e6ea13e",
+          id: "a65f6848-933a-48ac-9162-6321d3551db8",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -2428,7 +2428,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-11T21:25:56.729Z"),
+      updatedAt: new Date("2024-10-12T06:43:10.572Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -2461,19 +2461,19 @@ async function run() {
   const res = await crmPatchCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-10T10:13:33.695Z"),
-      closingAt: new Date("2025-08-31T12:59:53.271Z"),
+      closedAt: new Date("2024-03-10T15:12:47.262Z"),
+      closingAt: new Date("2025-09-01T04:44:39.727Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "caf867bb-bed8-453a-bcfc-84f4726e0baf",
+      id: "958ee874-88f2-47a2-a144-cb8f24466316",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a2b0f23d-48fd-46d9-a35a-1a405e6ea13e",
+          id: "a65f6848-933a-48ac-9162-6321d3551db8",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -2486,7 +2486,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-11T21:25:56.729Z"),
+      updatedAt: new Date("2024-10-12T06:43:10.572Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -2524,7 +2524,7 @@ run();
 
 ## patchCrmEvent
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2544,13 +2544,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.192Z"),
+        startAt: new Date("2024-12-11T18:06:33.872Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "fd4628e1-dbbb-4a81-8592-787c824b6d52",
+      id: "b16dce89-4ac1-4cba-bf87-6a373ed9d0f0",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.090Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.791Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2584,13 +2584,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.192Z"),
+        startAt: new Date("2024-12-11T18:06:33.872Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "fd4628e1-dbbb-4a81-8592-787c824b6d52",
+      id: "b16dce89-4ac1-4cba-bf87-6a373ed9d0f0",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.090Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.791Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2627,7 +2627,7 @@ run();
 
 ## patchCrmLead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -2661,7 +2661,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "5f5dbc45-00a1-4b55-88dd-f9c3768f6230",
+      id: "426a1cf6-5a34-4df1-be10-c53160213789",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -2673,7 +2673,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed437371-5efe-42ee-a52a-b7a92b809b2d",
+          id: "5fa1a066-4d20-4697-b336-700e8e463d3e",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -2697,7 +2697,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.534Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.981Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2745,7 +2745,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "5f5dbc45-00a1-4b55-88dd-f9c3768f6230",
+      id: "426a1cf6-5a34-4df1-be10-c53160213789",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -2757,7 +2757,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed437371-5efe-42ee-a52a-b7a92b809b2d",
+          id: "5fa1a066-4d20-4697-b336-700e8e463d3e",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -2781,7 +2781,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.534Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.981Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2818,7 +2818,7 @@ run();
 
 ## patchCrmPipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -2838,7 +2838,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "a8125f4f-eb64-439d-9bee-983ea6ed9c93",
+      id: "3ef2320f-7e8f-4b65-8997-b88da6350472",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -2848,13 +2848,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "2368bbac-62c5-4871-86f6-0a2c11d70aa1",
+          id: "ae85134d-6504-44e1-aaba-c42404c8b6f8",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.184Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.370Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.245Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.698Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2888,7 +2888,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "a8125f4f-eb64-439d-9bee-983ea6ed9c93",
+      id: "3ef2320f-7e8f-4b65-8997-b88da6350472",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -2898,13 +2898,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "2368bbac-62c5-4871-86f6-0a2c11d70aa1",
+          id: "ae85134d-6504-44e1-aaba-c42404c8b6f8",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.184Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.370Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.245Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.698Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2941,7 +2941,7 @@ run();
 
 ## removeCrmCompany
 
-Remove a company
+Deletes the CrmCompany identified by `id`.
 
 ### Example Usage
 
@@ -3020,7 +3020,7 @@ run();
 
 ## removeCrmContact
 
-Remove a contact
+Deletes the CrmContact identified by `id`.
 
 ### Example Usage
 
@@ -3099,7 +3099,7 @@ run();
 
 ## removeCrmDeal
 
-Remove a deal
+Deletes the CrmDeal identified by `id`.
 
 ### Example Usage
 
@@ -3178,7 +3178,7 @@ run();
 
 ## removeCrmEvent
 
-Remove an event
+Deletes the CrmEvent identified by `id`.
 
 ### Example Usage
 
@@ -3257,7 +3257,7 @@ run();
 
 ## removeCrmLead
 
-Remove a lead
+Deletes the CrmLead identified by `id`.
 
 ### Example Usage
 
@@ -3336,7 +3336,7 @@ run();
 
 ## removeCrmPipeline
 
-Remove a pipeline
+Deletes the CrmPipeline identified by `id`.
 
 ### Example Usage
 
@@ -3415,7 +3415,7 @@ run();
 
 ## updateCrmCompany
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -3461,7 +3461,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "d3e8c045-28f2-41a5-b372-af6ac8922d79",
+      id: "8129d5c0-295e-4363-8211-b6e24ad789de",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -3473,7 +3473,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "2fdfde50-27c8-41f2-8287-282d970e5ef9",
+          id: "d5f5c279-5f04-43c2-8dd7-7c605347fb4a",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -3492,7 +3492,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.540Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.857Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -3555,7 +3555,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "d3e8c045-28f2-41a5-b372-af6ac8922d79",
+      id: "8129d5c0-295e-4363-8211-b6e24ad789de",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -3567,7 +3567,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "2fdfde50-27c8-41f2-8287-282d970e5ef9",
+          id: "d5f5c279-5f04-43c2-8dd7-7c605347fb4a",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -3586,7 +3586,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.540Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.857Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -3626,7 +3626,7 @@ run();
 
 ## updateCrmContact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -3661,7 +3661,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "5de3b057-57f5-4e82-9d3d-6431bc8abd5b",
+      id: "8c193bd4-df89-4a12-8de9-0784f9b98778",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -3673,7 +3673,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "75077228-f8f0-43fb-8419-fb11ee24516e",
+          id: "b4e64a9b-4fe8-4d3b-95c8-f9186ad07848",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -3691,7 +3691,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.802Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3740,7 +3740,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "5de3b057-57f5-4e82-9d3d-6431bc8abd5b",
+      id: "8c193bd4-df89-4a12-8de9-0784f9b98778",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -3752,7 +3752,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "75077228-f8f0-43fb-8419-fb11ee24516e",
+          id: "b4e64a9b-4fe8-4d3b-95c8-f9186ad07848",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -3770,7 +3770,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.802Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3807,7 +3807,7 @@ run();
 
 ## updateCrmDeal
 
-Update a deal
+Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
 
 ### Example Usage
 
@@ -3825,19 +3825,19 @@ async function run() {
   const result = await unifiedTo.crm.updateCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-10T10:13:33.695Z"),
-      closingAt: new Date("2025-08-31T12:59:53.271Z"),
+      closedAt: new Date("2024-03-10T15:12:47.262Z"),
+      closingAt: new Date("2025-09-01T04:44:39.727Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "caf867bb-bed8-453a-bcfc-84f4726e0baf",
+      id: "958ee874-88f2-47a2-a144-cb8f24466316",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a2b0f23d-48fd-46d9-a35a-1a405e6ea13e",
+          id: "a65f6848-933a-48ac-9162-6321d3551db8",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -3850,7 +3850,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-11T21:25:56.729Z"),
+      updatedAt: new Date("2024-10-12T06:43:10.572Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -3883,19 +3883,19 @@ async function run() {
   const res = await crmUpdateCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-10T10:13:33.695Z"),
-      closingAt: new Date("2025-08-31T12:59:53.271Z"),
+      closedAt: new Date("2024-03-10T15:12:47.262Z"),
+      closingAt: new Date("2025-09-01T04:44:39.727Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "caf867bb-bed8-453a-bcfc-84f4726e0baf",
+      id: "958ee874-88f2-47a2-a144-cb8f24466316",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a2b0f23d-48fd-46d9-a35a-1a405e6ea13e",
+          id: "a65f6848-933a-48ac-9162-6321d3551db8",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -3908,7 +3908,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-11T21:25:56.729Z"),
+      updatedAt: new Date("2024-10-12T06:43:10.572Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -3946,7 +3946,7 @@ run();
 
 ## updateCrmEvent
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -3966,13 +3966,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.192Z"),
+        startAt: new Date("2024-12-11T18:06:33.872Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "fd4628e1-dbbb-4a81-8592-787c824b6d52",
+      id: "b16dce89-4ac1-4cba-bf87-6a373ed9d0f0",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.090Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.791Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4006,13 +4006,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.192Z"),
+        startAt: new Date("2024-12-11T18:06:33.872Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "fd4628e1-dbbb-4a81-8592-787c824b6d52",
+      id: "b16dce89-4ac1-4cba-bf87-6a373ed9d0f0",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.090Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.791Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4049,7 +4049,7 @@ run();
 
 ## updateCrmLead
 
-Update a lead
+Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
 
 ### Example Usage
 
@@ -4083,7 +4083,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "5f5dbc45-00a1-4b55-88dd-f9c3768f6230",
+      id: "426a1cf6-5a34-4df1-be10-c53160213789",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -4095,7 +4095,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed437371-5efe-42ee-a52a-b7a92b809b2d",
+          id: "5fa1a066-4d20-4697-b336-700e8e463d3e",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -4119,7 +4119,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.534Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.981Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4167,7 +4167,7 @@ async function run() {
         },
       ],
       firstName: "Velda",
-      id: "5f5dbc45-00a1-4b55-88dd-f9c3768f6230",
+      id: "426a1cf6-5a34-4df1-be10-c53160213789",
       isActive: true,
       lastName: "Sporer",
       linkUrls: [
@@ -4179,7 +4179,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed437371-5efe-42ee-a52a-b7a92b809b2d",
+          id: "5fa1a066-4d20-4697-b336-700e8e463d3e",
           namespace: "custom",
           slug: "custom_property",
           value: "vitiosus",
@@ -4203,7 +4203,7 @@ async function run() {
         },
       ],
       title: "International Factors Administrator",
-      updatedAt: new Date("2020-05-17T21:37:41.534Z"),
+      updatedAt: new Date("2020-05-17T23:40:28.981Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4240,7 +4240,7 @@ run();
 
 ## updateCrmPipeline
 
-Update a pipeline
+Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
 
 ### Example Usage
 
@@ -4260,7 +4260,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "a8125f4f-eb64-439d-9bee-983ea6ed9c93",
+      id: "3ef2320f-7e8f-4b65-8997-b88da6350472",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -4270,13 +4270,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "2368bbac-62c5-4871-86f6-0a2c11d70aa1",
+          id: "ae85134d-6504-44e1-aaba-c42404c8b6f8",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.184Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.370Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.245Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.698Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4310,7 +4310,7 @@ async function run() {
       createdAt: new Date("2022-12-28T13:45:38.446Z"),
       dealProbability: 99,
       displayOrder: 8,
-      id: "a8125f4f-eb64-439d-9bee-983ea6ed9c93",
+      id: "3ef2320f-7e8f-4b65-8997-b88da6350472",
       isActive: true,
       metadata: [],
       name: "Small Steel Bacon",
@@ -4320,13 +4320,13 @@ async function run() {
           createdAt: new Date("2022-12-28T13:45:38.446Z"),
           dealProbability: 84,
           displayOrder: 72,
-          id: "2368bbac-62c5-4871-86f6-0a2c11d70aa1",
+          id: "ae85134d-6504-44e1-aaba-c42404c8b6f8",
           isClosed: true,
           name: "Veniam.",
-          updatedAt: new Date("2025-10-10T12:53:03.184Z"),
+          updatedAt: new Date("2025-10-11T06:26:24.370Z"),
         },
       ],
-      updatedAt: new Date("2025-11-01T06:19:54.245Z"),
+      updatedAt: new Date("2025-11-02T00:15:45.698Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an account
+ *
+ * @remarks
+ * Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
  */
 export function accountingUpdateAccountingAccount(
   client: UnifiedToCore,

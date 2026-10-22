@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an agent
+ *
+ * @remarks
+ * Deletes the GenaiAgent identified by `id`.
  */
 export function genaiRemoveGenaiAgent(
   client: UnifiedToCore,

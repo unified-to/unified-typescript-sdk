@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Reservation extends ClientSDK {
   /**
    * Create a reservation
+   *
+   * @remarks
+   * Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
    */
   async createCommerceReservation(
     request: operations.CreateCommerceReservationRequest,
@@ -30,6 +33,9 @@ export class Reservation extends ClientSDK {
 
   /**
    * Retrieve a reservation
+   *
+   * @remarks
+   * Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceReservation(
     request: operations.GetCommerceReservationRequest,
@@ -44,6 +50,9 @@ export class Reservation extends ClientSDK {
 
   /**
    * List all reservations
+   *
+   * @remarks
+   * Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceReservations(
     request: operations.ListCommerceReservationsRequest,
@@ -58,6 +67,9 @@ export class Reservation extends ClientSDK {
 
   /**
    * Update a reservation
+   *
+   * @remarks
+   * Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
    */
   async patchCommerceReservation(
     request: operations.PatchCommerceReservationRequest,
@@ -72,6 +84,9 @@ export class Reservation extends ClientSDK {
 
   /**
    * Remove a reservation
+   *
+   * @remarks
+   * Deletes the CommerceReservation identified by `id`.
    */
   async removeCommerceReservation(
     request: operations.RemoveCommerceReservationRequest,
@@ -86,6 +101,9 @@ export class Reservation extends ClientSDK {
 
   /**
    * Update a reservation
+   *
+   * @remarks
+   * Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
    */
   async updateCommerceReservation(
     request: operations.UpdateCommerceReservationRequest,

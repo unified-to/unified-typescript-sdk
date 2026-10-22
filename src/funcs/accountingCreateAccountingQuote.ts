@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a quote
+ *
+ * @remarks
+ * Creates a AccountingQuote. Provide the unified AccountingQuote fields in the request body; they are mapped to the provider's API. Returns the created AccountingQuote.
  */
 export function accountingCreateAccountingQuote(
   client: UnifiedToCore,

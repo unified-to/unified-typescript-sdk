@@ -26,7 +26,7 @@
 
 ## createAtsCompany
 
-Create a company
+Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
 
 ### Example Usage
 
@@ -44,10 +44,10 @@ async function run() {
   const result = await unifiedTo.company.createAtsCompany({
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "f6c317fc-5fc7-436c-a4fc-fde93f9931f1",
+      id: "4a1f08b4-ba81-4d6d-b512-a2f7af9eac8f",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.845Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.893Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -79,10 +79,10 @@ async function run() {
   const res = await atsCreateAtsCompany(unifiedTo, {
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "f6c317fc-5fc7-436c-a4fc-fde93f9931f1",
+      id: "4a1f08b4-ba81-4d6d-b512-a2f7af9eac8f",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.845Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.893Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -119,7 +119,7 @@ run();
 
 ## createCrmCompany
 
-Create a company
+Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
 
 ### Example Usage
 
@@ -165,7 +165,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "a6cd6267-1e6b-47c1-a3a0-24d795be63e6",
+      id: "aca9dce1-225c-4d1b-b007-aae054619b2c",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -177,7 +177,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "20a77477-7f7d-4c13-9ec2-31d44be0b00d",
+          id: "869d2830-3770-4d63-b383-9d393257a773",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -196,7 +196,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.520Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.844Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -258,7 +258,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "a6cd6267-1e6b-47c1-a3a0-24d795be63e6",
+      id: "aca9dce1-225c-4d1b-b007-aae054619b2c",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -270,7 +270,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "20a77477-7f7d-4c13-9ec2-31d44be0b00d",
+          id: "869d2830-3770-4d63-b383-9d393257a773",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -289,7 +289,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.520Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.844Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -328,7 +328,7 @@ run();
 
 ## createHrisCompany
 
-Create a company
+Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
 
 ### Example Usage
 
@@ -354,11 +354,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "59ba5732-4821-428d-ad2d-96b3d92cc10b",
+      id: "35212cf4-7227-4de8-9378-19b1282e6f6a",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.231Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.309Z"),
     },
     connectionId: "<id>",
   });
@@ -397,11 +397,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "59ba5732-4821-428d-ad2d-96b3d92cc10b",
+      id: "35212cf4-7227-4de8-9378-19b1282e6f6a",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.231Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.309Z"),
     },
     connectionId: "<id>",
   });
@@ -437,7 +437,7 @@ run();
 
 ## getAtsCompany
 
-Retrieve a company
+Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -516,7 +516,7 @@ run();
 
 ## getCrmCompany
 
-Retrieve a company
+Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -595,7 +595,7 @@ run();
 
 ## getHrisCompany
 
-Retrieve a company
+Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -674,7 +674,7 @@ run();
 
 ## listAtsCompanies
 
-List all companies
+Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -751,7 +751,7 @@ run();
 
 ## listCrmCompanies
 
-List all companies
+Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -905,7 +905,7 @@ run();
 
 ## listHrisCompanies
 
-List all companies
+Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -982,7 +982,7 @@ run();
 
 ## patchAtsCompany
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1000,10 +1000,10 @@ async function run() {
   const result = await unifiedTo.company.patchAtsCompany({
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "d81ad760-e6c8-4024-b1d0-7598b6b7bca9",
+      id: "c2f714c4-e0a2-4a2d-a531-4a58d8413510",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.849Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.895Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -1036,10 +1036,10 @@ async function run() {
   const res = await atsPatchAtsCompany(unifiedTo, {
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "d81ad760-e6c8-4024-b1d0-7598b6b7bca9",
+      id: "c2f714c4-e0a2-4a2d-a531-4a58d8413510",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.849Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.895Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -1077,7 +1077,7 @@ run();
 
 ## patchCrmCompany
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1123,7 +1123,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "d3e8c045-28f2-41a5-b372-af6ac8922d79",
+      id: "8129d5c0-295e-4363-8211-b6e24ad789de",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -1135,7 +1135,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "2fdfde50-27c8-41f2-8287-282d970e5ef9",
+          id: "d5f5c279-5f04-43c2-8dd7-7c605347fb4a",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -1154,7 +1154,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.540Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.857Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -1217,7 +1217,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "d3e8c045-28f2-41a5-b372-af6ac8922d79",
+      id: "8129d5c0-295e-4363-8211-b6e24ad789de",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -1229,7 +1229,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "2fdfde50-27c8-41f2-8287-282d970e5ef9",
+          id: "d5f5c279-5f04-43c2-8dd7-7c605347fb4a",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -1248,7 +1248,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.540Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.857Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -1288,7 +1288,7 @@ run();
 
 ## patchHrisCompany
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1314,11 +1314,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "faaa5f44-155c-43b6-ab0e-084ac04a2674",
+      id: "693b7c21-4b09-4b44-a9c6-cf43c13200ed",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.253Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.326Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1358,11 +1358,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "faaa5f44-155c-43b6-ab0e-084ac04a2674",
+      id: "693b7c21-4b09-4b44-a9c6-cf43c13200ed",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.253Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.326Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1399,7 +1399,7 @@ run();
 
 ## removeAtsCompany
 
-Remove a company
+Deletes the AtsCompany identified by `id`.
 
 ### Example Usage
 
@@ -1478,7 +1478,7 @@ run();
 
 ## removeCrmCompany
 
-Remove a company
+Deletes the CrmCompany identified by `id`.
 
 ### Example Usage
 
@@ -1557,7 +1557,7 @@ run();
 
 ## removeHrisCompany
 
-Remove a company
+Deletes the HrisCompany identified by `id`.
 
 ### Example Usage
 
@@ -1636,7 +1636,7 @@ run();
 
 ## updateAtsCompany
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1654,10 +1654,10 @@ async function run() {
   const result = await unifiedTo.company.updateAtsCompany({
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "d81ad760-e6c8-4024-b1d0-7598b6b7bca9",
+      id: "c2f714c4-e0a2-4a2d-a531-4a58d8413510",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.849Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.895Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -1690,10 +1690,10 @@ async function run() {
   const res = await atsUpdateAtsCompany(unifiedTo, {
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "d81ad760-e6c8-4024-b1d0-7598b6b7bca9",
+      id: "c2f714c4-e0a2-4a2d-a531-4a58d8413510",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.849Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.895Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -1731,7 +1731,7 @@ run();
 
 ## updateCrmCompany
 
-Update a company
+Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1777,7 +1777,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "d3e8c045-28f2-41a5-b372-af6ac8922d79",
+      id: "8129d5c0-295e-4363-8211-b6e24ad789de",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -1789,7 +1789,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "2fdfde50-27c8-41f2-8287-282d970e5ef9",
+          id: "d5f5c279-5f04-43c2-8dd7-7c605347fb4a",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -1808,7 +1808,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.540Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.857Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -1871,7 +1871,7 @@ async function run() {
         },
       ],
       employees: 4177,
-      id: "d3e8c045-28f2-41a5-b372-af6ac8922d79",
+      id: "8129d5c0-295e-4363-8211-b6e24ad789de",
       industry: "Metrics",
       isActive: true,
       linkUrls: [
@@ -1883,7 +1883,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "2fdfde50-27c8-41f2-8287-282d970e5ef9",
+          id: "d5f5c279-5f04-43c2-8dd7-7c605347fb4a",
           namespace: "custom",
           slug: "custom_property",
           value: "unde",
@@ -1902,7 +1902,7 @@ async function run() {
         },
       ],
       timezone: "Atlantic/Azores",
-      updatedAt: new Date("2025-03-03T04:09:28.540Z"),
+      updatedAt: new Date("2025-03-03T22:05:56.857Z"),
       websites: [
         "https://www.goodwinsons.com",
       ],
@@ -1942,7 +1942,7 @@ run();
 
 ## updateHrisCompany
 
-Update a company
+Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -1968,11 +1968,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "faaa5f44-155c-43b6-ab0e-084ac04a2674",
+      id: "693b7c21-4b09-4b44-a9c6-cf43c13200ed",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.253Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.326Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2012,11 +2012,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "faaa5f44-155c-43b6-ab0e-084ac04a2674",
+      id: "693b7c21-4b09-4b44-a9c6-cf43c13200ed",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-10-08T16:56:17.253Z"),
+      updatedAt: new Date("2026-10-09T16:49:39.326Z"),
     },
     connectionId: "<id>",
     id: "<id>",

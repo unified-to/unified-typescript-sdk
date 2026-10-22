@@ -13,7 +13,7 @@
 
 ## createMetadataMetadata
 
-Create a metadata
+Creates a MetadataMetadata. Provide the unified MetadataMetadata fields in the request body; they are mapped to the provider's API. Returns the created MetadataMetadata.
 
 ### Example Usage
 
@@ -32,7 +32,7 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "82800882-dff9-4641-bf77-8ffe9a751488",
+      id: "9ea8a42f-5d3c-4d18-b5f4-025160874d7b",
       isRequired: false,
       name: "autem",
       objectType: "social_review",
@@ -42,7 +42,7 @@ async function run() {
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-21T23:35:40.972Z"),
+      updatedAt: new Date("2025-03-22T16:48:25.044Z"),
     },
     connectionId: "<id>",
   });
@@ -74,7 +74,7 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "82800882-dff9-4641-bf77-8ffe9a751488",
+      id: "9ea8a42f-5d3c-4d18-b5f4-025160874d7b",
       isRequired: false,
       name: "autem",
       objectType: "social_review",
@@ -84,7 +84,7 @@ async function run() {
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-21T23:35:40.972Z"),
+      updatedAt: new Date("2025-03-22T16:48:25.044Z"),
     },
     connectionId: "<id>",
   });
@@ -120,7 +120,7 @@ run();
 
 ## getMetadataMetadata
 
-Retrieve a metadata
+Retrieves a single MetadataMetadata by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -199,7 +199,7 @@ run();
 
 ## listMetadataMetadatas
 
-List all metadatas
+Returns a list of MetadataMetadatas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -276,7 +276,7 @@ run();
 
 ## patchMetadataMetadata
 
-Update a metadata
+Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
 
 ### Example Usage
 
@@ -295,7 +295,7 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "c05f9230-f0bc-4482-b302-cea6fea9df02",
+      id: "9e9bfc37-e4e2-461b-95e5-4a88d019a620",
       isRequired: false,
       name: "autem",
       objectType: "social_review",
@@ -305,7 +305,7 @@ async function run() {
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-21T23:35:40.978Z"),
+      updatedAt: new Date("2025-03-22T16:48:25.051Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -338,7 +338,7 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "c05f9230-f0bc-4482-b302-cea6fea9df02",
+      id: "9e9bfc37-e4e2-461b-95e5-4a88d019a620",
       isRequired: false,
       name: "autem",
       objectType: "social_review",
@@ -348,7 +348,7 @@ async function run() {
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-21T23:35:40.978Z"),
+      updatedAt: new Date("2025-03-22T16:48:25.051Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -385,7 +385,7 @@ run();
 
 ## removeMetadataMetadata
 
-Remove a metadata
+Deletes the MetadataMetadata identified by `id`.
 
 ### Example Usage
 
@@ -464,7 +464,7 @@ run();
 
 ## updateMetadataMetadata
 
-Update a metadata
+Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
 
 ### Example Usage
 
@@ -483,7 +483,7 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "c05f9230-f0bc-4482-b302-cea6fea9df02",
+      id: "9e9bfc37-e4e2-461b-95e5-4a88d019a620",
       isRequired: false,
       name: "autem",
       objectType: "social_review",
@@ -493,7 +493,7 @@ async function run() {
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-21T23:35:40.978Z"),
+      updatedAt: new Date("2025-03-22T16:48:25.051Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -526,7 +526,7 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "c05f9230-f0bc-4482-b302-cea6fea9df02",
+      id: "9e9bfc37-e4e2-461b-95e5-4a88d019a620",
       isRequired: false,
       name: "autem",
       objectType: "social_review",
@@ -536,7 +536,7 @@ async function run() {
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-21T23:35:40.978Z"),
+      updatedAt: new Date("2025-03-22T16:48:25.051Z"),
     },
     connectionId: "<id>",
     id: "<id>",

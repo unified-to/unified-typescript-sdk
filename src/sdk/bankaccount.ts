@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Bankaccount extends ClientSDK {
   /**
    * Create a bankaccount
+   *
+   * @remarks
+   * Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
    */
   async createHrisBankaccount(
     request: operations.CreateHrisBankaccountRequest,
@@ -30,6 +33,9 @@ export class Bankaccount extends ClientSDK {
 
   /**
    * Retrieve a bankaccount
+   *
+   * @remarks
+   * Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisBankaccount(
     request: operations.GetHrisBankaccountRequest,
@@ -44,6 +50,9 @@ export class Bankaccount extends ClientSDK {
 
   /**
    * List all bankaccounts
+   *
+   * @remarks
+   * Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisBankaccounts(
     request: operations.ListHrisBankaccountsRequest,
@@ -58,6 +67,9 @@ export class Bankaccount extends ClientSDK {
 
   /**
    * Update a bankaccount
+   *
+   * @remarks
+   * Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
    */
   async patchHrisBankaccount(
     request: operations.PatchHrisBankaccountRequest,
@@ -72,6 +84,9 @@ export class Bankaccount extends ClientSDK {
 
   /**
    * Remove a bankaccount
+   *
+   * @remarks
+   * Deletes the HrisBankaccount identified by `id`.
    */
   async removeHrisBankaccount(
     request: operations.RemoveHrisBankaccountRequest,
@@ -86,6 +101,9 @@ export class Bankaccount extends ClientSDK {
 
   /**
    * Update a bankaccount
+   *
+   * @remarks
+   * Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
    */
   async updateHrisBankaccount(
     request: operations.UpdateHrisBankaccountRequest,

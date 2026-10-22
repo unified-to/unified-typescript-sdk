@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a timeshift
+ *
+ * @remarks
+ * Deletes the HrisTimeshift identified by `id`.
  */
 export function hrisRemoveHrisTimeshift(
   client: UnifiedToCore,

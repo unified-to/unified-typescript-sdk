@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Agent extends ClientSDK {
   /**
    * Create an agent
+   *
+   * @remarks
+   * Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
    */
   async createGenaiAgent(
     request: operations.CreateGenaiAgentRequest,
@@ -30,6 +33,9 @@ export class Agent extends ClientSDK {
 
   /**
    * Retrieve an agent
+   *
+   * @remarks
+   * Retrieves a single GenaiAgent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiAgent(
     request: operations.GetGenaiAgentRequest,
@@ -44,6 +50,9 @@ export class Agent extends ClientSDK {
 
   /**
    * List all agents
+   *
+   * @remarks
+   * Returns a list of GenaiAgents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiAgents(
     request: operations.ListGenaiAgentsRequest,
@@ -58,6 +67,9 @@ export class Agent extends ClientSDK {
 
   /**
    * Update an agent
+   *
+   * @remarks
+   * Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
    */
   async patchGenaiAgent(
     request: operations.PatchGenaiAgentRequest,
@@ -72,6 +84,9 @@ export class Agent extends ClientSDK {
 
   /**
    * Remove an agent
+   *
+   * @remarks
+   * Deletes the GenaiAgent identified by `id`.
    */
   async removeGenaiAgent(
     request: operations.RemoveGenaiAgentRequest,
@@ -86,6 +101,9 @@ export class Agent extends ClientSDK {
 
   /**
    * Update an agent
+   *
+   * @remarks
+   * Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
    */
   async updateGenaiAgent(
     request: operations.UpdateGenaiAgentRequest,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a payment
+ *
+ * @remarks
+ * Creates a PaymentPayment. Provide the unified PaymentPayment fields in the request body; they are mapped to the provider's API. Returns the created PaymentPayment.
  */
 export function paymentCreatePaymentPayment(
   client: UnifiedToCore,

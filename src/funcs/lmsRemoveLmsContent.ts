@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a content
+ *
+ * @remarks
+ * Deletes the LmsContent identified by `id`.
  */
 export function lmsRemoveLmsContent(
   client: UnifiedToCore,

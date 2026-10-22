@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a skill
+ *
+ * @remarks
+ * Deletes the GenaiSkill identified by `id`.
  */
 export function genaiRemoveGenaiSkill(
   client: UnifiedToCore,

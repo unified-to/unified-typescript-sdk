@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a property
+ *
+ * @remarks
+ * Deletes the AnalyticsProperty identified by `id`.
  */
 export function analyticsRemoveAnalyticsProperty(
   client: UnifiedToCore,

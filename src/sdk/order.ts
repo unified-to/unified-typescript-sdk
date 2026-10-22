@@ -20,6 +20,11 @@ import { unwrapAsync } from "./types/fp.js";
 export class Order extends ClientSDK {
   /**
    * Create an order
+   *
+   * @remarks
+   * Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async createAccountingOrder(
     request: operations.CreateAccountingOrderRequest,
@@ -34,6 +39,9 @@ export class Order extends ClientSDK {
 
   /**
    * Create an order
+   *
+   * @remarks
+   * Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
    */
   async createAssessmentOrder(
     request: operations.CreateAssessmentOrderRequest,
@@ -48,6 +56,11 @@ export class Order extends ClientSDK {
 
   /**
    * Retrieve an order
+   *
+   * @remarks
+   * Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async getAccountingOrder(
     request: operations.GetAccountingOrderRequest,
@@ -62,6 +75,9 @@ export class Order extends ClientSDK {
 
   /**
    * Retrieve an order
+   *
+   * @remarks
+   * Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAssessmentOrder(
     request: operations.GetAssessmentOrderRequest,
@@ -76,6 +92,11 @@ export class Order extends ClientSDK {
 
   /**
    * List all orders
+   *
+   * @remarks
+   * Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async listAccountingOrders(
     request: operations.ListAccountingOrdersRequest,
@@ -90,6 +111,11 @@ export class Order extends ClientSDK {
 
   /**
    * Update an order
+   *
+   * @remarks
+   * Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async patchAccountingOrder(
     request: operations.PatchAccountingOrderRequest,
@@ -104,6 +130,9 @@ export class Order extends ClientSDK {
 
   /**
    * Update an order
+   *
+   * @remarks
+   * Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
    */
   async patchAssessmentOrder(
     request: operations.PatchAssessmentOrderRequest,
@@ -118,6 +147,11 @@ export class Order extends ClientSDK {
 
   /**
    * Remove an order
+   *
+   * @remarks
+   * Deletes the AccountingOrder identified by `id`.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async removeAccountingOrder(
     request: operations.RemoveAccountingOrderRequest,
@@ -132,6 +166,11 @@ export class Order extends ClientSDK {
 
   /**
    * Update an order
+   *
+   * @remarks
+   * Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async updateAccountingOrder(
     request: operations.UpdateAccountingOrderRequest,
@@ -146,6 +185,9 @@ export class Order extends ClientSDK {
 
   /**
    * Update an order
+   *
+   * @remarks
+   * Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
    */
   async updateAssessmentOrder(
     request: operations.UpdateAssessmentOrderRequest,

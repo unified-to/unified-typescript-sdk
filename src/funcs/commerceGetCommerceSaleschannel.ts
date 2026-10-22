@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Retrieve a saleschannel
+ *
+ * @remarks
+ * Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
  */
 export function commerceGetCommerceSaleschannel(
   client: UnifiedToCore,

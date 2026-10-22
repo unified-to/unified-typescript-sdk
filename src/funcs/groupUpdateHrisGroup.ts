@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a group
+ *
+ * @remarks
+ * Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
  */
 export function groupUpdateHrisGroup(
   client: UnifiedToCore,

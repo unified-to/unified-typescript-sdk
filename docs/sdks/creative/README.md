@@ -13,7 +13,7 @@
 
 ## createAdsCreative
 
-Create a creative
+Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
 
 ### Example Usage
 
@@ -31,7 +31,7 @@ async function run() {
   const result = await unifiedTo.creative.createAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "2bf33d5a-bc0d-4afd-bad9-fa2b52172d75",
+      id: "875bca39-124a-41e5-9777-9c64d5916ae1",
       labels: [
         "coma",
         "accedo",
@@ -40,7 +40,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.715Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.144Z"),
     },
     connectionId: "<id>",
   });
@@ -71,7 +71,7 @@ async function run() {
   const res = await adsCreateAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "2bf33d5a-bc0d-4afd-bad9-fa2b52172d75",
+      id: "875bca39-124a-41e5-9777-9c64d5916ae1",
       labels: [
         "coma",
         "accedo",
@@ -80,7 +80,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.715Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.144Z"),
     },
     connectionId: "<id>",
   });
@@ -116,7 +116,7 @@ run();
 
 ## getAdsCreative
 
-Retrieve a creative
+Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -195,7 +195,7 @@ run();
 
 ## listAdsCreatives
 
-List all creatives
+Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -272,7 +272,7 @@ run();
 
 ## patchAdsCreative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -290,7 +290,7 @@ async function run() {
   const result = await unifiedTo.creative.patchAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "b0578ec8-b142-4ed4-bdbf-aa8bbb23cf1e",
+      id: "fc90fb66-ed1e-4097-9cd4-0cd559c216cd",
       labels: [
         "coma",
         "accedo",
@@ -299,7 +299,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.730Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.150Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -331,7 +331,7 @@ async function run() {
   const res = await adsPatchAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "b0578ec8-b142-4ed4-bdbf-aa8bbb23cf1e",
+      id: "fc90fb66-ed1e-4097-9cd4-0cd559c216cd",
       labels: [
         "coma",
         "accedo",
@@ -340,7 +340,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.730Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.150Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -377,7 +377,7 @@ run();
 
 ## removeAdsCreative
 
-Remove a creative
+Deletes the AdsCreative identified by `id`.
 
 ### Example Usage
 
@@ -456,7 +456,7 @@ run();
 
 ## updateAdsCreative
 
-Update a creative
+Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
 
 ### Example Usage
 
@@ -474,7 +474,7 @@ async function run() {
   const result = await unifiedTo.creative.updateAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "b0578ec8-b142-4ed4-bdbf-aa8bbb23cf1e",
+      id: "fc90fb66-ed1e-4097-9cd4-0cd559c216cd",
       labels: [
         "coma",
         "accedo",
@@ -483,7 +483,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.730Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.150Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -515,7 +515,7 @@ async function run() {
   const res = await adsUpdateAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "b0578ec8-b142-4ed4-bdbf-aa8bbb23cf1e",
+      id: "fc90fb66-ed1e-4097-9cd4-0cd559c216cd",
       labels: [
         "coma",
         "accedo",
@@ -524,7 +524,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-06-27T18:24:22.730Z"),
+      updatedAt: new Date("2021-06-27T23:18:01.150Z"),
     },
     connectionId: "<id>",
     id: "<id>",

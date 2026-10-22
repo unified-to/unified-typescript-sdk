@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Form extends ClientSDK {
   /**
    * Create a form
+   *
+   * @remarks
+   * Creates a FormsForm. Provide the unified FormsForm fields in the request body; they are mapped to the provider's API. Returns the created FormsForm.
    */
   async createFormsForm(
     request: operations.CreateFormsFormRequest,
@@ -30,6 +33,9 @@ export class Form extends ClientSDK {
 
   /**
    * Retrieve a form
+   *
+   * @remarks
+   * Retrieves a single FormsForm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getFormsForm(
     request: operations.GetFormsFormRequest,
@@ -44,6 +50,9 @@ export class Form extends ClientSDK {
 
   /**
    * List all forms
+   *
+   * @remarks
+   * Returns a list of FormsForms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listFormsForms(
     request: operations.ListFormsFormsRequest,
@@ -58,6 +67,9 @@ export class Form extends ClientSDK {
 
   /**
    * Update a form
+   *
+   * @remarks
+   * Updates the FormsForm identified by `id`. Provide the unified FormsForm fields to change in the request body.
    */
   async patchFormsForm(
     request: operations.PatchFormsFormRequest,
@@ -72,6 +84,9 @@ export class Form extends ClientSDK {
 
   /**
    * Remove a form
+   *
+   * @remarks
+   * Deletes the FormsForm identified by `id`.
    */
   async removeFormsForm(
     request: operations.RemoveFormsFormRequest,
@@ -86,6 +101,9 @@ export class Form extends ClientSDK {
 
   /**
    * Update a form
+   *
+   * @remarks
+   * Updates the FormsForm identified by `id`. Provide the unified FormsForm fields to change in the request body.
    */
   async updateFormsForm(
     request: operations.UpdateFormsFormRequest,

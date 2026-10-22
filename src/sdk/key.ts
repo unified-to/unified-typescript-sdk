@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Key extends ClientSDK {
   /**
    * Create a key
+   *
+   * @remarks
+   * Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
    */
   async createComputeKey(
     request: operations.CreateComputeKeyRequest,
@@ -30,6 +33,9 @@ export class Key extends ClientSDK {
 
   /**
    * Retrieve a key
+   *
+   * @remarks
+   * Retrieves a single ComputeKey by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeKey(
     request: operations.GetComputeKeyRequest,
@@ -44,6 +50,9 @@ export class Key extends ClientSDK {
 
   /**
    * List all keys
+   *
+   * @remarks
+   * Returns a list of ComputeKeys. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeKeys(
     request: operations.ListComputeKeysRequest,
@@ -58,6 +67,9 @@ export class Key extends ClientSDK {
 
   /**
    * Update a key
+   *
+   * @remarks
+   * Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
    */
   async patchComputeKey(
     request: operations.PatchComputeKeyRequest,
@@ -72,6 +84,9 @@ export class Key extends ClientSDK {
 
   /**
    * Remove a key
+   *
+   * @remarks
+   * Deletes the ComputeKey identified by `id`.
    */
   async removeComputeKey(
     request: operations.RemoveComputeKeyRequest,
@@ -86,6 +101,9 @@ export class Key extends ClientSDK {
 
   /**
    * Update a key
+   *
+   * @remarks
+   * Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
    */
   async updateComputeKey(
     request: operations.UpdateComputeKeyRequest,

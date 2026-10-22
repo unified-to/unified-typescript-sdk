@@ -37,7 +37,7 @@
 
 ## createRepoBranch
 
-Create a branch
+Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
 
 ### Example Usage
 
@@ -55,11 +55,11 @@ async function run() {
   const result = await unifiedTo.repo.createRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "9ab7e295-a5cd-40b0-9f61-0b08cb8bf01b",
+      id: "52cc43c2-5cae-44fa-9644-c745d2331414",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.477Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.675Z"),
     },
     connectionId: "<id>",
   });
@@ -90,11 +90,11 @@ async function run() {
   const res = await repoCreateRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "9ab7e295-a5cd-40b0-9f61-0b08cb8bf01b",
+      id: "52cc43c2-5cae-44fa-9644-c745d2331414",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.477Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.675Z"),
     },
     connectionId: "<id>",
   });
@@ -130,7 +130,7 @@ run();
 
 ## createRepoCommit
 
-Create a commit
+Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
 
 ### Example Usage
 
@@ -148,14 +148,14 @@ async function run() {
   const result = await unifiedTo.repo.createRepoCommit({
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "00672e77-ca43-4746-97d5-7633f9f2ab72",
+      id: "fdd9c536-688f-4aef-82b4-a83d6cb64ab2",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.744Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.876Z"),
     },
     connectionId: "<id>",
   });
@@ -186,14 +186,14 @@ async function run() {
   const res = await repoCreateRepoCommit(unifiedTo, {
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "00672e77-ca43-4746-97d5-7633f9f2ab72",
+      id: "fdd9c536-688f-4aef-82b4-a83d6cb64ab2",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.744Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.876Z"),
     },
     connectionId: "<id>",
   });
@@ -229,7 +229,7 @@ run();
 
 ## createRepoOrganization
 
-Create an organization
+Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
 
 ### Example Usage
 
@@ -249,10 +249,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "c29e54e9-8e0e-4481-b4e3-2c4dbcd43933",
+      id: "6db738ca-1719-4698-bf87-592727b1ea03",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.268Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.635Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -286,10 +286,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "c29e54e9-8e0e-4481-b4e3-2c4dbcd43933",
+      id: "6db738ca-1719-4698-bf87-592727b1ea03",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.268Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.635Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -326,7 +326,7 @@ run();
 
 ## createRepoPullrequest
 
-Create a pullrequest
+Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
 
 ### Example Usage
 
@@ -343,9 +343,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.createRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.611Z"),
+      closedAt: new Date("2025-05-02T04:33:07.750Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "fce9da2b-9de3-4819-8663-ccf451fffda9",
+      id: "d359a4dd-dda3-45db-8407-1e8a6243ba88",
       labels: [
         "creptio",
         "tutamen",
@@ -354,7 +354,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.950Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.651Z"),
     },
     connectionId: "<id>",
   });
@@ -384,9 +384,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.611Z"),
+      closedAt: new Date("2025-05-02T04:33:07.750Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "fce9da2b-9de3-4819-8663-ccf451fffda9",
+      id: "d359a4dd-dda3-45db-8407-1e8a6243ba88",
       labels: [
         "creptio",
         "tutamen",
@@ -395,7 +395,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.950Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.651Z"),
     },
     connectionId: "<id>",
   });
@@ -431,7 +431,7 @@ run();
 
 ## createRepoRepository
 
-Create a repository
+Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
 
 ### Example Usage
 
@@ -450,11 +450,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "085e88fa-abfa-422e-af9e-573f164b193f",
+      id: "e82667a2-abcf-437f-bdfd-cbe3b7a1a652",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.471Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.075Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -487,11 +487,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "085e88fa-abfa-422e-af9e-573f164b193f",
+      id: "e82667a2-abcf-437f-bdfd-cbe3b7a1a652",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.471Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.075Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -528,7 +528,7 @@ run();
 
 ## getRepoBranch
 
-Retrieve a branch
+Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -607,7 +607,7 @@ run();
 
 ## getRepoCommit
 
-Retrieve a commit
+Retrieves a single RepoCommit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -686,7 +686,7 @@ run();
 
 ## getRepoOrganization
 
-Retrieve an organization
+Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -765,7 +765,7 @@ run();
 
 ## getRepoPullrequest
 
-Retrieve a pullrequest
+Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -844,7 +844,7 @@ run();
 
 ## getRepoRepository
 
-Retrieve a repository
+Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -923,7 +923,7 @@ run();
 
 ## listRepoBranches
 
-List all branches
+Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1000,7 +1000,7 @@ run();
 
 ## listRepoCommits
 
-List all commits
+Returns a list of RepoCommits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1077,7 +1077,7 @@ run();
 
 ## listRepoOrganizations
 
-List all organizations
+Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1154,7 +1154,7 @@ run();
 
 ## listRepoPullrequests
 
-List all pullrequests
+Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1231,7 +1231,7 @@ run();
 
 ## listRepoRepositories
 
-List all repositories
+Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1308,7 +1308,7 @@ run();
 
 ## patchRepoBranch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -1326,11 +1326,11 @@ async function run() {
   const result = await unifiedTo.repo.patchRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "75566790-ea20-430c-abce-6d184d7c6e40",
+      id: "f563fa65-f563-4f61-9b66-eb9977f25165",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.478Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.676Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1362,11 +1362,11 @@ async function run() {
   const res = await repoPatchRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "75566790-ea20-430c-abce-6d184d7c6e40",
+      id: "f563fa65-f563-4f61-9b66-eb9977f25165",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.478Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.676Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1403,7 +1403,7 @@ run();
 
 ## patchRepoCommit
 
-Update a commit
+Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
 
 ### Example Usage
 
@@ -1421,14 +1421,14 @@ async function run() {
   const result = await unifiedTo.repo.patchRepoCommit({
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "e14cc0b1-b597-4b8f-8b27-40deb6f6b459",
+      id: "7bd91cb2-2925-4820-8141-992ae2914de5",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.755Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1460,14 +1460,14 @@ async function run() {
   const res = await repoPatchRepoCommit(unifiedTo, {
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "e14cc0b1-b597-4b8f-8b27-40deb6f6b459",
+      id: "7bd91cb2-2925-4820-8141-992ae2914de5",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.755Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1504,7 +1504,7 @@ run();
 
 ## patchRepoOrganization
 
-Update an organization
+Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1524,10 +1524,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "bfa8793e-94cf-4fbb-8d78-e9d99cd797ad",
+      id: "24fc13c1-09e0-44cb-9121-5030953a4858",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.271Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.639Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -1562,10 +1562,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "bfa8793e-94cf-4fbb-8d78-e9d99cd797ad",
+      id: "24fc13c1-09e0-44cb-9121-5030953a4858",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.271Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.639Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -1603,7 +1603,7 @@ run();
 
 ## patchRepoPullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -1620,9 +1620,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.patchRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.618Z"),
+      closedAt: new Date("2025-05-02T04:33:07.758Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "891e200f-ab2a-4cbd-bee2-c07d245cfcff",
+      id: "03d246b7-5b5e-46e5-b070-4ef459e46ee4",
       labels: [
         "creptio",
         "tutamen",
@@ -1631,7 +1631,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.959Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.662Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1662,9 +1662,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.618Z"),
+      closedAt: new Date("2025-05-02T04:33:07.758Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "891e200f-ab2a-4cbd-bee2-c07d245cfcff",
+      id: "03d246b7-5b5e-46e5-b070-4ef459e46ee4",
       labels: [
         "creptio",
         "tutamen",
@@ -1673,7 +1673,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.959Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.662Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1710,7 +1710,7 @@ run();
 
 ## patchRepoRepository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -1729,11 +1729,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "221107eb-5749-46e3-ba98-642ac13c09e8",
+      id: "f9ab2b04-9121-4c67-978c-051cf9e86e81",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.474Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.077Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -1767,11 +1767,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "221107eb-5749-46e3-ba98-642ac13c09e8",
+      id: "f9ab2b04-9121-4c67-978c-051cf9e86e81",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.474Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.077Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -1809,7 +1809,7 @@ run();
 
 ## removeRepoBranch
 
-Remove a branch
+Deletes the RepoBranch identified by `id`.
 
 ### Example Usage
 
@@ -1888,7 +1888,7 @@ run();
 
 ## removeRepoCommit
 
-Remove a commit
+Deletes the RepoCommit identified by `id`.
 
 ### Example Usage
 
@@ -1967,7 +1967,7 @@ run();
 
 ## removeRepoOrganization
 
-Remove an organization
+Deletes the RepoOrganization identified by `id`.
 
 ### Example Usage
 
@@ -2046,7 +2046,7 @@ run();
 
 ## removeRepoPullrequest
 
-Remove a pullrequest
+Deletes the RepoPullrequest identified by `id`.
 
 ### Example Usage
 
@@ -2125,7 +2125,7 @@ run();
 
 ## removeRepoRepository
 
-Remove a repository
+Deletes the RepoRepository identified by `id`.
 
 ### Example Usage
 
@@ -2204,7 +2204,7 @@ run();
 
 ## updateRepoBranch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -2222,11 +2222,11 @@ async function run() {
   const result = await unifiedTo.repo.updateRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "75566790-ea20-430c-abce-6d184d7c6e40",
+      id: "f563fa65-f563-4f61-9b66-eb9977f25165",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.478Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.676Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2258,11 +2258,11 @@ async function run() {
   const res = await repoUpdateRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "75566790-ea20-430c-abce-6d184d7c6e40",
+      id: "f563fa65-f563-4f61-9b66-eb9977f25165",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.478Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.676Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2299,7 +2299,7 @@ run();
 
 ## updateRepoCommit
 
-Update a commit
+Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
 
 ### Example Usage
 
@@ -2317,14 +2317,14 @@ async function run() {
   const result = await unifiedTo.repo.updateRepoCommit({
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "e14cc0b1-b597-4b8f-8b27-40deb6f6b459",
+      id: "7bd91cb2-2925-4820-8141-992ae2914de5",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.755Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2356,14 +2356,14 @@ async function run() {
   const res = await repoUpdateRepoCommit(unifiedTo, {
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "e14cc0b1-b597-4b8f-8b27-40deb6f6b459",
+      id: "7bd91cb2-2925-4820-8141-992ae2914de5",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.755Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2400,7 +2400,7 @@ run();
 
 ## updateRepoOrganization
 
-Update an organization
+Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -2420,10 +2420,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "bfa8793e-94cf-4fbb-8d78-e9d99cd797ad",
+      id: "24fc13c1-09e0-44cb-9121-5030953a4858",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.271Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.639Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -2458,10 +2458,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "bfa8793e-94cf-4fbb-8d78-e9d99cd797ad",
+      id: "24fc13c1-09e0-44cb-9121-5030953a4858",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.271Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.639Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -2499,7 +2499,7 @@ run();
 
 ## updateRepoPullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -2516,9 +2516,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.repo.updateRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.618Z"),
+      closedAt: new Date("2025-05-02T04:33:07.758Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "891e200f-ab2a-4cbd-bee2-c07d245cfcff",
+      id: "03d246b7-5b5e-46e5-b070-4ef459e46ee4",
       labels: [
         "creptio",
         "tutamen",
@@ -2527,7 +2527,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.959Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.662Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2558,9 +2558,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.618Z"),
+      closedAt: new Date("2025-05-02T04:33:07.758Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "891e200f-ab2a-4cbd-bee2-c07d245cfcff",
+      id: "03d246b7-5b5e-46e5-b070-4ef459e46ee4",
       labels: [
         "creptio",
         "tutamen",
@@ -2569,7 +2569,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.959Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.662Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2606,7 +2606,7 @@ run();
 
 ## updateRepoRepository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -2625,11 +2625,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "221107eb-5749-46e3-ba98-642ac13c09e8",
+      id: "f9ab2b04-9121-4c67-978c-051cf9e86e81",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.474Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.077Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -2663,11 +2663,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "221107eb-5749-46e3-ba98-642ac13c09e8",
+      id: "f9ab2b04-9121-4c67-978c-051cf9e86e81",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.474Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.077Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",

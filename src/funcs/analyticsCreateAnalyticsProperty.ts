@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a property
+ *
+ * @remarks
+ * Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
  */
 export function analyticsCreateAnalyticsProperty(
   client: UnifiedToCore,

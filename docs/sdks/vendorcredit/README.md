@@ -13,7 +13,7 @@
 
 ## createAccountingVendorcredit
 
-Create a vendorcredit
+Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
 
 ### Example Usage
 
@@ -34,14 +34,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "57dbfa00-1c58-4900-ab42-040c4f8ee901",
+      id: "d2481637-696b-4cdf-955f-d10302c01d29",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.291Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.979Z"),
     },
     connectionId: "<id>",
   });
@@ -75,14 +75,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "57dbfa00-1c58-4900-ab42-040c4f8ee901",
+      id: "d2481637-696b-4cdf-955f-d10302c01d29",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.291Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.979Z"),
     },
     connectionId: "<id>",
   });
@@ -118,7 +118,7 @@ run();
 
 ## getAccountingVendorcredit
 
-Retrieve a vendorcredit
+Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -197,7 +197,7 @@ run();
 
 ## listAccountingVendorcredits
 
-List all vendorcredits
+Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -274,7 +274,7 @@ run();
 
 ## patchAccountingVendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -295,14 +295,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "48aecdf1-5525-4304-8378-4e16ae76eb35",
+      id: "3598b540-345b-4f23-98a3-a9d4fd98d8c6",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.296Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -337,14 +337,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "48aecdf1-5525-4304-8378-4e16ae76eb35",
+      id: "3598b540-345b-4f23-98a3-a9d4fd98d8c6",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.296Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -381,7 +381,7 @@ run();
 
 ## removeAccountingVendorcredit
 
-Remove a vendorcredit
+Deletes the AccountingVendorcredit identified by `id`.
 
 ### Example Usage
 
@@ -460,7 +460,7 @@ run();
 
 ## updateAccountingVendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -481,14 +481,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "48aecdf1-5525-4304-8378-4e16ae76eb35",
+      id: "3598b540-345b-4f23-98a3-a9d4fd98d8c6",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.296Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -523,14 +523,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "48aecdf1-5525-4304-8378-4e16ae76eb35",
+      id: "3598b540-345b-4f23-98a3-a9d4fd98d8c6",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.296Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",

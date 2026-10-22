@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an application
+ *
+ * @remarks
+ * Deletes the AtsApplication identified by `id`.
  */
 export function atsRemoveAtsApplication(
   client: UnifiedToCore,

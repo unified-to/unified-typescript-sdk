@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+        id: "60e19987-105c-46f3-9e70-772e20dd712d",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+        updatedAt: new Date("2023-08-07T03:56:03.109Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   });
@@ -590,8 +590,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingCreateAccountingInvoice`](docs/sdks/invoice/README.md#createaccountinginvoice) - Create an invoice
 - [`accountingCreateAccountingJournal`](docs/sdks/accounting/README.md#createaccountingjournal) - Create a journal
 - [`accountingCreateAccountingJournal`](docs/sdks/journal/README.md#createaccountingjournal) - Create a journal
-- [`accountingCreateAccountingOrder`](docs/sdks/accounting/README.md#createaccountingorder) - Create an order
-- [`accountingCreateAccountingOrder`](docs/sdks/order/README.md#createaccountingorder) - Create an order
 - [`accountingCreateAccountingPaymentterm`](docs/sdks/accounting/README.md#createaccountingpaymentterm) - Create a paymentterm
 - [`accountingCreateAccountingPaymentterm`](docs/sdks/paymentterm/README.md#createaccountingpaymentterm) - Create a paymentterm
 - [`accountingCreateAccountingProject`](docs/sdks/accounting/README.md#createaccountingproject) - Create a project
@@ -638,8 +636,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingInvoice`](docs/sdks/invoice/README.md#getaccountinginvoice) - Retrieve an invoice
 - [`accountingGetAccountingJournal`](docs/sdks/accounting/README.md#getaccountingjournal) - Retrieve a journal
 - [`accountingGetAccountingJournal`](docs/sdks/journal/README.md#getaccountingjournal) - Retrieve a journal
-- [`accountingGetAccountingOrder`](docs/sdks/accounting/README.md#getaccountingorder) - Retrieve an order
-- [`accountingGetAccountingOrder`](docs/sdks/order/README.md#getaccountingorder) - Retrieve an order
 - [`accountingGetAccountingOrganization`](docs/sdks/accounting/README.md#getaccountingorganization) - Retrieve an organization
 - [`accountingGetAccountingOrganization`](docs/sdks/organization/README.md#getaccountingorganization) - Retrieve an organization
 - [`accountingGetAccountingPaymentterm`](docs/sdks/accounting/README.md#getaccountingpaymentterm) - Retrieve a paymentterm
@@ -696,8 +692,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingInvoices`](docs/sdks/invoice/README.md#listaccountinginvoices) - List all invoices
 - [`accountingListAccountingJournals`](docs/sdks/accounting/README.md#listaccountingjournals) - List all journals
 - [`accountingListAccountingJournals`](docs/sdks/journal/README.md#listaccountingjournals) - List all journals
-- [`accountingListAccountingOrders`](docs/sdks/accounting/README.md#listaccountingorders) - List all orders
-- [`accountingListAccountingOrders`](docs/sdks/order/README.md#listaccountingorders) - List all orders
 - [`accountingListAccountingOrganizations`](docs/sdks/accounting/README.md#listaccountingorganizations) - List all organizations
 - [`accountingListAccountingOrganizations`](docs/sdks/organization/README.md#listaccountingorganizations) - List all organizations
 - [`accountingListAccountingPaymentterms`](docs/sdks/accounting/README.md#listaccountingpaymentterms) - List all paymentterms
@@ -746,8 +740,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingPatchAccountingInvoice`](docs/sdks/invoice/README.md#patchaccountinginvoice) - Update an invoice
 - [`accountingPatchAccountingJournal`](docs/sdks/accounting/README.md#patchaccountingjournal) - Update a journal
 - [`accountingPatchAccountingJournal`](docs/sdks/journal/README.md#patchaccountingjournal) - Update a journal
-- [`accountingPatchAccountingOrder`](docs/sdks/accounting/README.md#patchaccountingorder) - Update an order
-- [`accountingPatchAccountingOrder`](docs/sdks/order/README.md#patchaccountingorder) - Update an order
 - [`accountingPatchAccountingPaymentterm`](docs/sdks/accounting/README.md#patchaccountingpaymentterm) - Update a paymentterm
 - [`accountingPatchAccountingPaymentterm`](docs/sdks/paymentterm/README.md#patchaccountingpaymentterm) - Update a paymentterm
 - [`accountingPatchAccountingProject`](docs/sdks/accounting/README.md#patchaccountingproject) - Update a project
@@ -786,8 +778,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingRemoveAccountingInvoice`](docs/sdks/invoice/README.md#removeaccountinginvoice) - Remove an invoice
 - [`accountingRemoveAccountingJournal`](docs/sdks/accounting/README.md#removeaccountingjournal) - Remove a journal
 - [`accountingRemoveAccountingJournal`](docs/sdks/journal/README.md#removeaccountingjournal) - Remove a journal
-- [`accountingRemoveAccountingOrder`](docs/sdks/accounting/README.md#removeaccountingorder) - Remove an order
-- [`accountingRemoveAccountingOrder`](docs/sdks/order/README.md#removeaccountingorder) - Remove an order
 - [`accountingRemoveAccountingPaymentterm`](docs/sdks/accounting/README.md#removeaccountingpaymentterm) - Remove a paymentterm
 - [`accountingRemoveAccountingPaymentterm`](docs/sdks/paymentterm/README.md#removeaccountingpaymentterm) - Remove a paymentterm
 - [`accountingRemoveAccountingProject`](docs/sdks/accounting/README.md#removeaccountingproject) - Remove a project
@@ -826,8 +816,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingUpdateAccountingInvoice`](docs/sdks/invoice/README.md#updateaccountinginvoice) - Update an invoice
 - [`accountingUpdateAccountingJournal`](docs/sdks/accounting/README.md#updateaccountingjournal) - Update a journal
 - [`accountingUpdateAccountingJournal`](docs/sdks/journal/README.md#updateaccountingjournal) - Update a journal
-- [`accountingUpdateAccountingOrder`](docs/sdks/accounting/README.md#updateaccountingorder) - Update an order
-- [`accountingUpdateAccountingOrder`](docs/sdks/order/README.md#updateaccountingorder) - Update an order
 - [`accountingUpdateAccountingPaymentterm`](docs/sdks/accounting/README.md#updateaccountingpaymentterm) - Update a paymentterm
 - [`accountingUpdateAccountingPaymentterm`](docs/sdks/paymentterm/README.md#updateaccountingpaymentterm) - Update a paymentterm
 - [`accountingUpdateAccountingProject`](docs/sdks/accounting/README.md#updateaccountingproject) - Update a project
@@ -2593,6 +2581,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`verificationRemoveVerificationRequest`](docs/sdks/verification/README.md#removeverificationrequest) - Remove a request
 - [`verificationUpdateVerificationRequest`](docs/sdks/request/README.md#updateverificationrequest) - Update a request
 - [`verificationUpdateVerificationRequest`](docs/sdks/verification/README.md#updateverificationrequest) - Update a request
+- ~~[`accountingCreateAccountingOrder`](docs/sdks/accounting/README.md#createaccountingorder)~~ - Create an order :warning: **Deprecated**
+- ~~[`accountingCreateAccountingOrder`](docs/sdks/order/README.md#createaccountingorder)~~ - Create an order :warning: **Deprecated**
+- ~~[`accountingGetAccountingOrder`](docs/sdks/accounting/README.md#getaccountingorder)~~ - Retrieve an order :warning: **Deprecated**
+- ~~[`accountingGetAccountingOrder`](docs/sdks/order/README.md#getaccountingorder)~~ - Retrieve an order :warning: **Deprecated**
+- ~~[`accountingListAccountingOrders`](docs/sdks/accounting/README.md#listaccountingorders)~~ - List all orders :warning: **Deprecated**
+- ~~[`accountingListAccountingOrders`](docs/sdks/order/README.md#listaccountingorders)~~ - List all orders :warning: **Deprecated**
+- ~~[`accountingPatchAccountingOrder`](docs/sdks/accounting/README.md#patchaccountingorder)~~ - Update an order :warning: **Deprecated**
+- ~~[`accountingPatchAccountingOrder`](docs/sdks/order/README.md#patchaccountingorder)~~ - Update an order :warning: **Deprecated**
+- ~~[`accountingRemoveAccountingOrder`](docs/sdks/accounting/README.md#removeaccountingorder)~~ - Remove an order :warning: **Deprecated**
+- ~~[`accountingRemoveAccountingOrder`](docs/sdks/order/README.md#removeaccountingorder)~~ - Remove an order :warning: **Deprecated**
+- ~~[`accountingUpdateAccountingOrder`](docs/sdks/accounting/README.md#updateaccountingorder)~~ - Update an order :warning: **Deprecated**
+- ~~[`accountingUpdateAccountingOrder`](docs/sdks/order/README.md#updateaccountingorder)~~ - Update an order :warning: **Deprecated**
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

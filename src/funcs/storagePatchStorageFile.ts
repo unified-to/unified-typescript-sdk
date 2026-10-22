@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a file
+ *
+ * @remarks
+ * Updates the StorageFile identified by `id`. Provide the unified StorageFile fields to change in the request body.
  */
 export function storagePatchStorageFile(
   client: UnifiedToCore,

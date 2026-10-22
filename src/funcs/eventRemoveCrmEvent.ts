@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an event
+ *
+ * @remarks
+ * Deletes the CrmEvent identified by `id`.
  */
 export function eventRemoveCrmEvent(
   client: UnifiedToCore,

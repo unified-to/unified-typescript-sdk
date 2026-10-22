@@ -22,6 +22,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Campaign extends ClientSDK {
   /**
    * Create a campaign
+   *
+   * @remarks
+   * Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
    */
   async createAdsCampaign(
     request: operations.CreateAdsCampaignRequest,
@@ -36,6 +39,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Create a campaign
+   *
+   * @remarks
+   * Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
    */
   async createMartechCampaign(
     request: operations.CreateMartechCampaignRequest,
@@ -50,6 +56,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Retrieve a campaign
+   *
+   * @remarks
+   * Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsCampaign(
     request: operations.GetAdsCampaignRequest,
@@ -64,6 +73,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Retrieve a campaign
+   *
+   * @remarks
+   * Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMartechCampaign(
     request: operations.GetMartechCampaignRequest,
@@ -78,6 +90,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * List all campaigns
+   *
+   * @remarks
+   * Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsCampaigns(
     request: operations.ListAdsCampaignsRequest,
@@ -92,6 +107,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * List all campaigns
+   *
+   * @remarks
+   * Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMartechCampaigns(
     request: operations.ListMartechCampaignsRequest,
@@ -106,6 +124,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Update a campaign
+   *
+   * @remarks
+   * Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
    */
   async patchAdsCampaign(
     request: operations.PatchAdsCampaignRequest,
@@ -120,6 +141,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Update a campaign
+   *
+   * @remarks
+   * Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
    */
   async patchMartechCampaign(
     request: operations.PatchMartechCampaignRequest,
@@ -134,6 +158,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Remove a campaign
+   *
+   * @remarks
+   * Deletes the AdsCampaign identified by `id`.
    */
   async removeAdsCampaign(
     request: operations.RemoveAdsCampaignRequest,
@@ -148,6 +175,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Remove a campaign
+   *
+   * @remarks
+   * Deletes the MarketingCampaign identified by `id`.
    */
   async removeMartechCampaign(
     request: operations.RemoveMartechCampaignRequest,
@@ -162,6 +192,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Update a campaign
+   *
+   * @remarks
+   * Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
    */
   async updateAdsCampaign(
     request: operations.UpdateAdsCampaignRequest,
@@ -176,6 +209,9 @@ export class Campaign extends ClientSDK {
 
   /**
    * Update a campaign
+   *
+   * @remarks
+   * Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
    */
   async updateMartechCampaign(
     request: operations.UpdateMartechCampaignRequest,

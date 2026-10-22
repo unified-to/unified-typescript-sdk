@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a purchaseorder
+ *
+ * @remarks
+ * Deletes the AccountingPurchaseorder identified by `id`.
  */
 export function accountingRemoveAccountingPurchaseorder(
   client: UnifiedToCore,

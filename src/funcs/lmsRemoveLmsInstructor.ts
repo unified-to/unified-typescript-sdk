@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an instructor
+ *
+ * @remarks
+ * Deletes the LmsInstructor identified by `id`.
  */
 export function lmsRemoveLmsInstructor(
   client: UnifiedToCore,

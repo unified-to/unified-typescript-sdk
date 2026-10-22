@@ -35,6 +35,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Event extends ClientSDK {
   /**
    * Create an event
+   *
+   * @remarks
+   * Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
    */
   async createAnalyticsEvent(
     request: operations.CreateAnalyticsEventRequest,
@@ -49,6 +52,9 @@ export class Event extends ClientSDK {
 
   /**
    * Create an event
+   *
+   * @remarks
+   * Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
    */
   async createCalendarEvent(
     request: operations.CreateCalendarEventRequest,
@@ -63,6 +69,9 @@ export class Event extends ClientSDK {
 
   /**
    * Create an event
+   *
+   * @remarks
+   * Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
    */
   async createCdpEvent(
     request: operations.CreateCdpEventRequest,
@@ -77,6 +86,9 @@ export class Event extends ClientSDK {
 
   /**
    * Create an event
+   *
+   * @remarks
+   * Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
    */
   async createCrmEvent(
     request: operations.CreateCrmEventRequest,
@@ -91,6 +103,9 @@ export class Event extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAnalyticsEvent(
     request: operations.GetAnalyticsEventRequest,
@@ -105,6 +120,9 @@ export class Event extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCalendarEvent(
     request: operations.GetCalendarEventRequest,
@@ -119,6 +137,9 @@ export class Event extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpEvent(
     request: operations.GetCdpEventRequest,
@@ -133,6 +154,9 @@ export class Event extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single ClubsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsEvent(
     request: operations.GetClubsEventRequest,
@@ -147,6 +171,9 @@ export class Event extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmEvent(
     request: operations.GetCrmEventRequest,
@@ -161,6 +188,9 @@ export class Event extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAnalyticsEvents(
     request: operations.ListAnalyticsEventsRequest,
@@ -175,6 +205,9 @@ export class Event extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarEvents(
     request: operations.ListCalendarEventsRequest,
@@ -189,6 +222,9 @@ export class Event extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpEvents(
     request: operations.ListCdpEventsRequest,
@@ -203,6 +239,9 @@ export class Event extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of ClubsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsEvents(
     request: operations.ListClubsEventsRequest,
@@ -217,6 +256,9 @@ export class Event extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmEvents(
     request: operations.ListCrmEventsRequest,
@@ -231,6 +273,9 @@ export class Event extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
    */
   async patchCalendarEvent(
     request: operations.PatchCalendarEventRequest,
@@ -245,6 +290,9 @@ export class Event extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
    */
   async patchCdpEvent(
     request: operations.PatchCdpEventRequest,
@@ -259,6 +307,9 @@ export class Event extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
    */
   async patchCrmEvent(
     request: operations.PatchCrmEventRequest,
@@ -273,6 +324,9 @@ export class Event extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
    */
   async patchMessagingEvent(
     request: operations.PatchMessagingEventRequest,
@@ -287,6 +341,9 @@ export class Event extends ClientSDK {
 
   /**
    * Remove an event
+   *
+   * @remarks
+   * Deletes the CalendarEvent identified by `id`.
    */
   async removeCalendarEvent(
     request: operations.RemoveCalendarEventRequest,
@@ -301,6 +358,9 @@ export class Event extends ClientSDK {
 
   /**
    * Remove an event
+   *
+   * @remarks
+   * Deletes the CdpEvent identified by `id`.
    */
   async removeCdpEvent(
     request: operations.RemoveCdpEventRequest,
@@ -315,6 +375,9 @@ export class Event extends ClientSDK {
 
   /**
    * Remove an event
+   *
+   * @remarks
+   * Deletes the CrmEvent identified by `id`.
    */
   async removeCrmEvent(
     request: operations.RemoveCrmEventRequest,
@@ -329,6 +392,9 @@ export class Event extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
    */
   async updateCalendarEvent(
     request: operations.UpdateCalendarEventRequest,
@@ -343,6 +409,9 @@ export class Event extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
    */
   async updateCdpEvent(
     request: operations.UpdateCdpEventRequest,
@@ -357,6 +426,9 @@ export class Event extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
    */
   async updateCrmEvent(
     request: operations.UpdateCrmEventRequest,
@@ -371,6 +443,9 @@ export class Event extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
    */
   async updateMessagingEvent(
     request: operations.UpdateMessagingEventRequest,

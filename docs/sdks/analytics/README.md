@@ -25,7 +25,7 @@
 
 ## createAnalyticsEvent
 
-Create an event
+Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
 
 ### Example Usage
 
@@ -44,13 +44,13 @@ async function run() {
     analyticsEvent: {
       createdAt: new Date("2023-06-21T03:13:22.954Z"),
       eventType: "SCREEN_VIEW",
-      id: "c16f69fb-c662-4ca0-a31e-09ce99cc4065",
+      id: "c2704186-eb91-4a3c-8a9a-5417e1746f6c",
       metadata: {
         "key": {},
       },
       name: "page_view",
       pageUrl: "https://golden-carboxyl.biz",
-      updatedAt: new Date("2023-09-24T16:25:41.865Z"),
+      updatedAt: new Date("2023-09-24T18:18:50.861Z"),
     },
     connectionId: "<id>",
   });
@@ -82,13 +82,13 @@ async function run() {
     analyticsEvent: {
       createdAt: new Date("2023-06-21T03:13:22.954Z"),
       eventType: "SCREEN_VIEW",
-      id: "c16f69fb-c662-4ca0-a31e-09ce99cc4065",
+      id: "c2704186-eb91-4a3c-8a9a-5417e1746f6c",
       metadata: {
         "key": {},
       },
       name: "page_view",
       pageUrl: "https://golden-carboxyl.biz",
-      updatedAt: new Date("2023-09-24T16:25:41.865Z"),
+      updatedAt: new Date("2023-09-24T18:18:50.861Z"),
     },
     connectionId: "<id>",
   });
@@ -124,7 +124,7 @@ run();
 
 ## createAnalyticsProperty
 
-Create a property
+Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
 
 ### Example Usage
 
@@ -143,10 +143,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "3d468c12-6d65-4fe3-be5d-7529bacd77ed",
+      id: "85a09f14-631b-4da8-8556-1fc6ac17b312",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
   });
@@ -178,10 +178,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "3d468c12-6d65-4fe3-be5d-7529bacd77ed",
+      id: "85a09f14-631b-4da8-8556-1fc6ac17b312",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
   });
@@ -217,7 +217,7 @@ run();
 
 ## createAnalyticsVisitor
 
-Create a visitor
+Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
 
 ### Example Usage
 
@@ -237,13 +237,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "b93ae59b-b9e9-4657-afe1-a8c565c6ea6a",
-      lastSeenAt: new Date("2025-01-11T07:56:20.538Z"),
+      id: "62fd38e7-a0e9-422f-bdca-3717166da592",
+      lastSeenAt: new Date("2025-01-12T01:25:45.978Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.425Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.920Z"),
     },
     connectionId: "<id>",
   });
@@ -276,13 +276,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "b93ae59b-b9e9-4657-afe1-a8c565c6ea6a",
-      lastSeenAt: new Date("2025-01-11T07:56:20.538Z"),
+      id: "62fd38e7-a0e9-422f-bdca-3717166da592",
+      lastSeenAt: new Date("2025-01-12T01:25:45.978Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.425Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.920Z"),
     },
     connectionId: "<id>",
   });
@@ -318,7 +318,7 @@ run();
 
 ## getAnalyticsEvent
 
-Retrieve an event
+Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -397,7 +397,7 @@ run();
 
 ## getAnalyticsProperty
 
-Retrieve a property
+Retrieves a single AnalyticsProperty by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ run();
 
 ## getAnalyticsSession
 
-Retrieve a session
+Retrieves a single AnalyticsSession by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -555,7 +555,7 @@ run();
 
 ## getAnalyticsVisitor
 
-Retrieve a visitor
+Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -634,7 +634,7 @@ run();
 
 ## listAnalyticsEvents
 
-List all events
+Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -711,7 +711,7 @@ run();
 
 ## listAnalyticsProperties
 
-List all properties
+Returns a list of AnalyticsProperties. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -788,7 +788,7 @@ run();
 
 ## listAnalyticsReports
 
-List all reports
+Returns a list of AnalyticsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -865,7 +865,7 @@ run();
 
 ## listAnalyticsSessions
 
-List all sessions
+Returns a list of AnalyticsSessions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -942,7 +942,7 @@ run();
 
 ## listAnalyticsVisitors
 
-List all visitors
+Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1019,7 +1019,7 @@ run();
 
 ## patchAnalyticsProperty
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -1038,10 +1038,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "e48e825e-95ce-4f28-b442-2375b181a258",
+      id: "0065c65a-ee44-4637-8205-0f027827d35f",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1074,10 +1074,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "e48e825e-95ce-4f28-b442-2375b181a258",
+      id: "0065c65a-ee44-4637-8205-0f027827d35f",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1114,7 +1114,7 @@ run();
 
 ## patchAnalyticsVisitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -1134,13 +1134,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "30b1442d-9b9f-466d-9ca3-9b35e0dba1b9",
-      lastSeenAt: new Date("2025-01-11T07:56:20.546Z"),
+      id: "a5e97b47-a6d7-4510-8c8b-0a9e2df2cd12",
+      lastSeenAt: new Date("2025-01-12T01:25:45.985Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.434Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.928Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1174,13 +1174,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "30b1442d-9b9f-466d-9ca3-9b35e0dba1b9",
-      lastSeenAt: new Date("2025-01-11T07:56:20.546Z"),
+      id: "a5e97b47-a6d7-4510-8c8b-0a9e2df2cd12",
+      lastSeenAt: new Date("2025-01-12T01:25:45.985Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.434Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.928Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1217,7 +1217,7 @@ run();
 
 ## removeAnalyticsProperty
 
-Remove a property
+Deletes the AnalyticsProperty identified by `id`.
 
 ### Example Usage
 
@@ -1296,7 +1296,7 @@ run();
 
 ## removeAnalyticsVisitor
 
-Remove a visitor
+Deletes the AnalyticsVisitor identified by `id`.
 
 ### Example Usage
 
@@ -1375,7 +1375,7 @@ run();
 
 ## updateAnalyticsProperty
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -1394,10 +1394,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "e48e825e-95ce-4f28-b442-2375b181a258",
+      id: "0065c65a-ee44-4637-8205-0f027827d35f",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1430,10 +1430,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "e48e825e-95ce-4f28-b442-2375b181a258",
+      id: "0065c65a-ee44-4637-8205-0f027827d35f",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1470,7 +1470,7 @@ run();
 
 ## updateAnalyticsVisitor
 
-Update a visitor
+Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
 
 ### Example Usage
 
@@ -1490,13 +1490,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "30b1442d-9b9f-466d-9ca3-9b35e0dba1b9",
-      lastSeenAt: new Date("2025-01-11T07:56:20.546Z"),
+      id: "a5e97b47-a6d7-4510-8c8b-0a9e2df2cd12",
+      lastSeenAt: new Date("2025-01-12T01:25:45.985Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.434Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.928Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1530,13 +1530,13 @@ async function run() {
       createdAt: new Date("2020-04-16T20:29:48.281Z"),
       email: "desiree.o.hara@icloud.com",
       firstSeenAt: new Date("2020-04-16T20:29:48.281Z"),
-      id: "30b1442d-9b9f-466d-9ca3-9b35e0dba1b9",
-      lastSeenAt: new Date("2025-01-11T07:56:20.546Z"),
+      id: "a5e97b47-a6d7-4510-8c8b-0a9e2df2cd12",
+      lastSeenAt: new Date("2025-01-12T01:25:45.985Z"),
       metadata: {
         "segment": {},
       },
       totalEvents: 2916,
-      updatedAt: new Date("2025-06-29T17:41:42.434Z"),
+      updatedAt: new Date("2025-06-30T12:53:51.928Z"),
     },
     connectionId: "<id>",
     id: "<id>",

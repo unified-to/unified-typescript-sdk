@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a contact
+ *
+ * @remarks
+ * Deletes the AccountingContact identified by `id`.
  */
 export function accountingRemoveAccountingContact(
   client: UnifiedToCore,

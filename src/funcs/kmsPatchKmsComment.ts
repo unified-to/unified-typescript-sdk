@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a comment
+ *
+ * @remarks
+ * Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
  */
 export function kmsPatchKmsComment(
   client: UnifiedToCore,

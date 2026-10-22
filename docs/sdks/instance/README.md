@@ -13,7 +13,7 @@
 
 ## createComputeInstance
 
-Create an instance
+Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
 
 ### Example Usage
 
@@ -48,7 +48,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "a2755e75-c4aa-4bb7-8e27-164fbf16948f",
+      id: "2004bfb0-7911-469b-a80a-e1c3f4cc270b",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -63,11 +63,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.031Z"),
+      startedAt: new Date("2025-03-24T14:17:24.572Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.822Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.872Z"),
     },
     connectionId: "<id>",
   });
@@ -115,7 +115,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "a2755e75-c4aa-4bb7-8e27-164fbf16948f",
+      id: "2004bfb0-7911-469b-a80a-e1c3f4cc270b",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -130,11 +130,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.031Z"),
+      startedAt: new Date("2025-03-24T14:17:24.572Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.822Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.872Z"),
     },
     connectionId: "<id>",
   });
@@ -170,7 +170,7 @@ run();
 
 ## getComputeInstance
 
-Retrieve an instance
+Retrieves a single ComputeInstance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -249,7 +249,7 @@ run();
 
 ## listComputeInstances
 
-List all instances
+Returns a list of ComputeInstances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -326,7 +326,7 @@ run();
 
 ## patchComputeInstance
 
-Update an instance
+Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
 
 ### Example Usage
 
@@ -361,7 +361,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "7ad1a995-a32a-4f65-a287-08135613e367",
+      id: "49941be6-8f52-4185-82db-9465052398ca",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -376,11 +376,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.052Z"),
+      startedAt: new Date("2025-03-24T14:17:24.591Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.845Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.892Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -429,7 +429,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "7ad1a995-a32a-4f65-a287-08135613e367",
+      id: "49941be6-8f52-4185-82db-9465052398ca",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -444,11 +444,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.052Z"),
+      startedAt: new Date("2025-03-24T14:17:24.591Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.845Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.892Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -485,7 +485,7 @@ run();
 
 ## removeComputeInstance
 
-Remove an instance
+Deletes the ComputeInstance identified by `id`.
 
 ### Example Usage
 
@@ -564,7 +564,7 @@ run();
 
 ## updateComputeInstance
 
-Update an instance
+Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
 
 ### Example Usage
 
@@ -599,7 +599,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "7ad1a995-a32a-4f65-a287-08135613e367",
+      id: "49941be6-8f52-4185-82db-9465052398ca",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -614,11 +614,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.052Z"),
+      startedAt: new Date("2025-03-24T14:17:24.591Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.845Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.892Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -667,7 +667,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "7ad1a995-a32a-4f65-a287-08135613e367",
+      id: "49941be6-8f52-4185-82db-9465052398ca",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -682,11 +682,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-03-23T23:38:39.052Z"),
+      startedAt: new Date("2025-03-24T14:17:24.591Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-06-16T05:13:07.845Z"),
+      updatedAt: new Date("2025-06-16T21:14:16.892Z"),
     },
     connectionId: "<id>",
     id: "<id>",

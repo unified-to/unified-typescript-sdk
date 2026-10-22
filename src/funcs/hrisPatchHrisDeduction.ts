@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a deduction
+ *
+ * @remarks
+ * Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
  */
 export function hrisPatchHrisDeduction(
   client: UnifiedToCore,

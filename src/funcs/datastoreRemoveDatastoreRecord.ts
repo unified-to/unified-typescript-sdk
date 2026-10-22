@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a record
+ *
+ * @remarks
+ * Deletes the DatastoreRecord identified by `id`.
  */
 export function datastoreRemoveDatastoreRecord(
   client: UnifiedToCore,

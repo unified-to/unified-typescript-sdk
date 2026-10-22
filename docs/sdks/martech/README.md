@@ -26,7 +26,7 @@
 
 ## createMartechCampaign
 
-Create a campaign
+Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
 
 ### Example Usage
 
@@ -46,7 +46,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "b2a82a7f-2ba6-483c-a11f-9d7ec66cec40",
+      id: "4200902f-f3d5-443f-8854-db4132eb39d6",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -55,7 +55,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.373Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.081Z"),
     },
     connectionId: "<id>",
   });
@@ -88,7 +88,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "b2a82a7f-2ba6-483c-a11f-9d7ec66cec40",
+      id: "4200902f-f3d5-443f-8854-db4132eb39d6",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -97,7 +97,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.373Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.081Z"),
     },
     connectionId: "<id>",
   });
@@ -133,7 +133,7 @@ run();
 
 ## createMartechList
 
-Create a list
+Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider's API. Returns the created MarketingList.
 
 ### Example Usage
 
@@ -160,7 +160,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "69fcf7a6-4cf5-4490-9f28-65ca78d8bcd4",
+      id: "5c9b8b9a-9c2d-4a03-833c-3c654f68511f",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -170,7 +170,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.608Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.184Z"),
     },
     connectionId: "<id>",
   });
@@ -210,7 +210,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "69fcf7a6-4cf5-4490-9f28-65ca78d8bcd4",
+      id: "5c9b8b9a-9c2d-4a03-833c-3c654f68511f",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -220,7 +220,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.608Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.184Z"),
     },
     connectionId: "<id>",
   });
@@ -256,7 +256,7 @@ run();
 
 ## createMartechMember
 
-Create a member
+Creates a MarketingMember. Provide the unified MarketingMember fields in the request body; they are mapped to the provider's API. Returns the created MarketingMember.
 
 ### Example Usage
 
@@ -282,7 +282,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "8f874409-ec3a-4239-8d4f-c4c60507e2a0",
+      id: "ab25ef77-460f-4655-a2f2-10e06f0f48b7",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -291,7 +291,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.365Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.746Z"),
     },
     connectionId: "<id>",
   });
@@ -330,7 +330,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "8f874409-ec3a-4239-8d4f-c4c60507e2a0",
+      id: "ab25ef77-460f-4655-a2f2-10e06f0f48b7",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -339,7 +339,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.365Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.746Z"),
     },
     connectionId: "<id>",
   });
@@ -375,7 +375,7 @@ run();
 
 ## getMartechCampaign
 
-Retrieve a campaign
+Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -454,7 +454,7 @@ run();
 
 ## getMartechList
 
-Retrieve a list
+Retrieves a single MarketingList by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -533,7 +533,7 @@ run();
 
 ## getMartechMember
 
-Retrieve a member
+Retrieves a single MarketingMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -612,7 +612,7 @@ run();
 
 ## listMartechCampaigns
 
-List all campaigns
+Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -689,7 +689,7 @@ run();
 
 ## listMartechLists
 
-List all lists
+Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -766,7 +766,7 @@ run();
 
 ## listMartechMembers
 
-List all members
+Returns a list of MarketingMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -843,7 +843,7 @@ run();
 
 ## listMartechReports
 
-List all reports
+Returns a list of MarketingReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -920,7 +920,7 @@ run();
 
 ## patchMartechCampaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -940,7 +940,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "7931c8ca-955f-4461-9501-0f4809df9350",
+      id: "c35a3288-f0dd-497c-807e-04905eb0a0e7",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -949,7 +949,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.384Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -983,7 +983,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "7931c8ca-955f-4461-9501-0f4809df9350",
+      id: "c35a3288-f0dd-497c-807e-04905eb0a0e7",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -992,7 +992,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.384Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1029,7 +1029,7 @@ run();
 
 ## patchMartechList
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -1056,7 +1056,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "754f9f29-9935-4d6e-a42b-77dc54e6f570",
+      id: "e529ee25-96fc-4536-b1be-a31351a09852",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -1066,7 +1066,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.617Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.190Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1107,7 +1107,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "754f9f29-9935-4d6e-a42b-77dc54e6f570",
+      id: "e529ee25-96fc-4536-b1be-a31351a09852",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -1117,7 +1117,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.617Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.190Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1154,7 +1154,7 @@ run();
 
 ## patchMartechMember
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -1180,7 +1180,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "2e7fa2f3-29d6-40f0-985e-28843ae06d5c",
+      id: "b8e7131c-9edb-4ca1-9b7d-416ef32d1cf2",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -1189,7 +1189,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.374Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.754Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1229,7 +1229,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "2e7fa2f3-29d6-40f0-985e-28843ae06d5c",
+      id: "b8e7131c-9edb-4ca1-9b7d-416ef32d1cf2",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -1238,7 +1238,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.374Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.754Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1275,7 +1275,7 @@ run();
 
 ## removeMartechCampaign
 
-Remove a campaign
+Deletes the MarketingCampaign identified by `id`.
 
 ### Example Usage
 
@@ -1354,7 +1354,7 @@ run();
 
 ## removeMartechList
 
-Remove a list
+Deletes the MarketingList identified by `id`.
 
 ### Example Usage
 
@@ -1433,7 +1433,7 @@ run();
 
 ## removeMartechMember
 
-Remove a member
+Deletes the MarketingMember identified by `id`.
 
 ### Example Usage
 
@@ -1512,7 +1512,7 @@ run();
 
 ## updateMartechCampaign
 
-Update a campaign
+Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
 
 ### Example Usage
 
@@ -1532,7 +1532,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "7931c8ca-955f-4461-9501-0f4809df9350",
+      id: "c35a3288-f0dd-497c-807e-04905eb0a0e7",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -1541,7 +1541,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.384Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1575,7 +1575,7 @@ async function run() {
       createdAt: new Date("2019-05-19T11:18:15.589Z"),
       fromEmail: "graham.mertz@gmail.com",
       fromName: "Graham Mertz",
-      id: "7931c8ca-955f-4461-9501-0f4809df9350",
+      id: "c35a3288-f0dd-497c-807e-04905eb0a0e7",
       metadata: [],
       name: "Consequatur atqui sustineo.",
       previewText: "Auctus votum ver umbra corroboro turpis spoliatio tamen strues auxilium benigne tempus error eaque suasoria.",
@@ -1584,7 +1584,7 @@ async function run() {
       status: "SCHEDULED",
       subjectLine: "Trepide utpote conculco tibi solio supplanto peior tibi.",
       type: "absplit",
-      updatedAt: new Date("2022-06-22T03:04:22.384Z"),
+      updatedAt: new Date("2022-06-22T13:05:14.086Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1621,7 +1621,7 @@ run();
 
 ## updateMartechList
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -1648,7 +1648,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "754f9f29-9935-4d6e-a42b-77dc54e6f570",
+      id: "e529ee25-96fc-4536-b1be-a31351a09852",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -1658,7 +1658,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.617Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.190Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1699,7 +1699,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "754f9f29-9935-4d6e-a42b-77dc54e6f570",
+      id: "e529ee25-96fc-4536-b1be-a31351a09852",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -1709,7 +1709,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.617Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.190Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1746,7 +1746,7 @@ run();
 
 ## updateMartechMember
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -1772,7 +1772,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "2e7fa2f3-29d6-40f0-985e-28843ae06d5c",
+      id: "b8e7131c-9edb-4ca1-9b7d-416ef32d1cf2",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -1781,7 +1781,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.374Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.754Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1821,7 +1821,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "2e7fa2f3-29d6-40f0-985e-28843ae06d5c",
+      id: "b8e7131c-9edb-4ca1-9b7d-416ef32d1cf2",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -1830,7 +1830,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.374Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.754Z"),
     },
     connectionId: "<id>",
     id: "<id>",

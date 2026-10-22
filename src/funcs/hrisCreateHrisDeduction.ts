@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a deduction
+ *
+ * @remarks
+ * Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
  */
 export function hrisCreateHrisDeduction(
   client: UnifiedToCore,

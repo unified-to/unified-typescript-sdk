@@ -61,6 +61,9 @@ export type HrisGroup = {
   isActive?: boolean | undefined;
   managerIds?: Array<string> | undefined;
   metadata?: Array<HrisMetadata> | undefined;
+  /**
+   * The name of the group (e.g. a team or department)
+   */
   name?: string | undefined;
   /**
    * next pay date when type is PAY_GROUP (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)

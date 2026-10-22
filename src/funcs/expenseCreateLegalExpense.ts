@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an expense
+ *
+ * @remarks
+ * Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
  */
 export function expenseCreateLegalExpense(
   client: UnifiedToCore,

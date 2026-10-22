@@ -134,6 +134,9 @@ export type AccountingBill = {
   exchangeRate?: number | undefined;
   extendedNotes?: Array<AccountingExtendedNote> | undefined;
   id?: string | undefined;
+  /**
+   * The bill's line items: what is billed, with the quantity, price and amount of each
+   */
   lineitems?: Array<AccountingLineitem> | undefined;
   metadata?: Array<AccountingMetadata> | undefined;
   notes?: string | undefined;

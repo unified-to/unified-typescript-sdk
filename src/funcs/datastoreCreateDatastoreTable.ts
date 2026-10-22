@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a table
+ *
+ * @remarks
+ * Creates a DatastoreTable. Provide the unified DatastoreTable fields in the request body; they are mapped to the provider's API. Returns the created DatastoreTable.
  */
 export function datastoreCreateDatastoreTable(
   client: UnifiedToCore,

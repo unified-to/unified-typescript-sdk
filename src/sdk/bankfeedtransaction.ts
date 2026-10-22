@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Bankfeedtransaction extends ClientSDK {
   /**
    * Create a bankfeedtransaction
+   *
+   * @remarks
+   * Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
    */
   async createAccountingBankfeedtransaction(
     request: operations.CreateAccountingBankfeedtransactionRequest,
@@ -30,6 +33,9 @@ export class Bankfeedtransaction extends ClientSDK {
 
   /**
    * Retrieve a bankfeedtransaction
+   *
+   * @remarks
+   * Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingBankfeedtransaction(
     request: operations.GetAccountingBankfeedtransactionRequest,
@@ -44,6 +50,9 @@ export class Bankfeedtransaction extends ClientSDK {
 
   /**
    * List all bankfeedtransactions
+   *
+   * @remarks
+   * Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingBankfeedtransactions(
     request: operations.ListAccountingBankfeedtransactionsRequest,
@@ -58,6 +67,9 @@ export class Bankfeedtransaction extends ClientSDK {
 
   /**
    * Update a bankfeedtransaction
+   *
+   * @remarks
+   * Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
    */
   async patchAccountingBankfeedtransaction(
     request: operations.PatchAccountingBankfeedtransactionRequest,
@@ -72,6 +84,9 @@ export class Bankfeedtransaction extends ClientSDK {
 
   /**
    * Remove a bankfeedtransaction
+   *
+   * @remarks
+   * Deletes the AccountingBankfeedtransaction identified by `id`.
    */
   async removeAccountingBankfeedtransaction(
     request: operations.RemoveAccountingBankfeedtransactionRequest,
@@ -88,6 +103,9 @@ export class Bankfeedtransaction extends ClientSDK {
 
   /**
    * Update a bankfeedtransaction
+   *
+   * @remarks
+   * Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
    */
   async updateAccountingBankfeedtransaction(
     request: operations.UpdateAccountingBankfeedtransactionRequest,

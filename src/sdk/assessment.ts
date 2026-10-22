@@ -20,6 +20,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Assessment extends ClientSDK {
   /**
    * Create an order
+   *
+   * @remarks
+   * Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
    */
   async createAssessmentOrder(
     request: operations.CreateAssessmentOrderRequest,
@@ -48,6 +51,9 @@ export class Assessment extends ClientSDK {
 
   /**
    * Retrieve an order
+   *
+   * @remarks
+   * Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAssessmentOrder(
     request: operations.GetAssessmentOrderRequest,
@@ -90,6 +96,9 @@ export class Assessment extends ClientSDK {
 
   /**
    * Update an order
+   *
+   * @remarks
+   * Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
    */
   async patchAssessmentOrder(
     request: operations.PatchAssessmentOrderRequest,
@@ -132,6 +141,9 @@ export class Assessment extends ClientSDK {
 
   /**
    * Update an order
+   *
+   * @remarks
+   * Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
    */
   async updateAssessmentOrder(
     request: operations.UpdateAssessmentOrderRequest,

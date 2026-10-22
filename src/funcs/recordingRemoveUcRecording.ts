@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a recording
+ *
+ * @remarks
+ * Deletes the UcRecording identified by `id`.
  */
 export function recordingRemoveUcRecording(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an event
+ *
+ * @remarks
+ * Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
  */
 export function eventUpdateCrmEvent(
   client: UnifiedToCore,

@@ -13,7 +13,7 @@
 
 ## createHrisDevice
 
-Create a device
+Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
 
 ### Example Usage
 
@@ -38,7 +38,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "7ed72e5e-7170-44c6-934a-b5a538ca0571",
+      id: "96f1d8eb-0e07-418c-92ec-bb30ca2c130d",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -46,7 +46,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.254Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.149Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -85,7 +85,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "7ed72e5e-7170-44c6-934a-b5a538ca0571",
+      id: "96f1d8eb-0e07-418c-92ec-bb30ca2c130d",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -93,7 +93,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.254Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.149Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -130,7 +130,7 @@ run();
 
 ## getHrisDevice
 
-Retrieve a device
+Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -209,7 +209,7 @@ run();
 
 ## listHrisDevices
 
-List all devices
+Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -286,7 +286,7 @@ run();
 
 ## patchHrisDevice
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -311,7 +311,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "b55a1d4b-ebce-4f34-b22f-08531cc140ce",
+      id: "00802c67-3627-453e-a080-d918e6f6e92a",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -319,7 +319,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.265Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.159Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -359,7 +359,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "b55a1d4b-ebce-4f34-b22f-08531cc140ce",
+      id: "00802c67-3627-453e-a080-d918e6f6e92a",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -367,7 +367,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.265Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.159Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -405,7 +405,7 @@ run();
 
 ## removeHrisDevice
 
-Remove a device
+Deletes the HrisDevice identified by `id`.
 
 ### Example Usage
 
@@ -484,7 +484,7 @@ run();
 
 ## updateHrisDevice
 
-Update a device
+Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
 
 ### Example Usage
 
@@ -509,7 +509,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "b55a1d4b-ebce-4f34-b22f-08531cc140ce",
+      id: "00802c67-3627-453e-a080-d918e6f6e92a",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -517,7 +517,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.265Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.159Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -557,7 +557,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "b55a1d4b-ebce-4f34-b22f-08531cc140ce",
+      id: "00802c67-3627-453e-a080-d918e6f6e92a",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -565,7 +565,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-08T07:39:32.265Z"),
+      updatedAt: new Date("2023-06-08T20:57:49.159Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",

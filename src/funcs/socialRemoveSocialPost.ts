@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a post
+ *
+ * @remarks
+ * Deletes the SocialPost identified by `id`.
  */
 export function socialRemoveSocialPost(
   client: UnifiedToCore,

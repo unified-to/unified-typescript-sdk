@@ -1,5 +1,7 @@
 # StorageFileType
 
+Whether this is a file or a folder
+
 ## Example Usage
 
 ```typescript

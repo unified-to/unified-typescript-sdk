@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a quote
+ *
+ * @remarks
+ * Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
  */
 export function accountingPatchAccountingQuote(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a message
+ *
+ * @remarks
+ * Creates a MessagingMessage. Provide the unified MessagingMessage fields in the request body; they are mapped to the provider's API. Returns the created MessagingMessage.
  */
 export function messagingCreateMessagingMessage(
   client: UnifiedToCore,

@@ -13,7 +13,7 @@
 
 ## createAccountingBankfeedtransaction
 
-Create a bankfeedtransaction
+Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
 
 ### Example Usage
 
@@ -36,15 +36,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "b92e4300-463a-43c7-9aec-1dbe1dfea5a1",
+      id: "deb064e6-3d01-41ca-8168-a69bbba5d1d9",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.252Z"),
+      postedAt: new Date("2025-04-15T12:24:22.824Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.634Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.722Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.008Z"),
     },
     connectionId: "<id>",
   });
@@ -80,15 +80,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "b92e4300-463a-43c7-9aec-1dbe1dfea5a1",
+      id: "deb064e6-3d01-41ca-8168-a69bbba5d1d9",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.252Z"),
+      postedAt: new Date("2025-04-15T12:24:22.824Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.634Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.722Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.008Z"),
     },
     connectionId: "<id>",
   });
@@ -124,7 +124,7 @@ run();
 
 ## getAccountingBankfeedtransaction
 
-Retrieve a bankfeedtransaction
+Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -203,7 +203,7 @@ run();
 
 ## listAccountingBankfeedtransactions
 
-List all bankfeedtransactions
+Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ run();
 
 ## patchAccountingBankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -303,15 +303,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "393c8418-1734-44d9-a3d3-3779ae529590",
+      id: "0177d5cb-d66b-435b-8f03-12f4f770a4a8",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.270Z"),
+      postedAt: new Date("2025-04-15T12:24:22.834Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.636Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.723Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -348,15 +348,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "393c8418-1734-44d9-a3d3-3779ae529590",
+      id: "0177d5cb-d66b-435b-8f03-12f4f770a4a8",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.270Z"),
+      postedAt: new Date("2025-04-15T12:24:22.834Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.636Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.723Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -393,7 +393,7 @@ run();
 
 ## removeAccountingBankfeedtransaction
 
-Remove a bankfeedtransaction
+Deletes the AccountingBankfeedtransaction identified by `id`.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ run();
 
 ## updateAccountingBankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -495,15 +495,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "393c8418-1734-44d9-a3d3-3779ae529590",
+      id: "0177d5cb-d66b-435b-8f03-12f4f770a4a8",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.270Z"),
+      postedAt: new Date("2025-04-15T12:24:22.834Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.636Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.723Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -540,15 +540,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "393c8418-1734-44d9-a3d3-3779ae529590",
+      id: "0177d5cb-d66b-435b-8f03-12f4f770a4a8",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.270Z"),
+      postedAt: new Date("2025-04-15T12:24:22.834Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.636Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.723Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",

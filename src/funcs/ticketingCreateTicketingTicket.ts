@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a ticket
+ *
+ * @remarks
+ * Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
  */
 export function ticketingCreateTicketingTicket(
   client: UnifiedToCore,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a comment
+ *
+ * @remarks
+ * Deletes the KmsComment identified by `id`.
  */
 export function kmsRemoveKmsComment(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a bankfeedaccount
+ *
+ * @remarks
+ * Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
  */
 export function accountingPatchAccountingBankfeedaccount(
   client: UnifiedToCore,

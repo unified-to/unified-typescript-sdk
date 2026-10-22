@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a class
+ *
+ * @remarks
+ * Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
  */
 export function lmsCreateLmsClass(
   client: UnifiedToCore,

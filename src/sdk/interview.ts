@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Interview extends ClientSDK {
   /**
    * Create an interview
+   *
+   * @remarks
+   * Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
    */
   async createAtsInterview(
     request: operations.CreateAtsInterviewRequest,
@@ -30,6 +33,9 @@ export class Interview extends ClientSDK {
 
   /**
    * Retrieve an interview
+   *
+   * @remarks
+   * Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsInterview(
     request: operations.GetAtsInterviewRequest,
@@ -44,6 +50,9 @@ export class Interview extends ClientSDK {
 
   /**
    * List all interviews
+   *
+   * @remarks
+   * Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsInterviews(
     request: operations.ListAtsInterviewsRequest,
@@ -58,6 +67,9 @@ export class Interview extends ClientSDK {
 
   /**
    * Update an interview
+   *
+   * @remarks
+   * Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
    */
   async patchAtsInterview(
     request: operations.PatchAtsInterviewRequest,
@@ -72,6 +84,9 @@ export class Interview extends ClientSDK {
 
   /**
    * Remove an interview
+   *
+   * @remarks
+   * Deletes the AtsInterview identified by `id`.
    */
   async removeAtsInterview(
     request: operations.RemoveAtsInterviewRequest,
@@ -86,6 +101,9 @@ export class Interview extends ClientSDK {
 
   /**
    * Update an interview
+   *
+   * @remarks
+   * Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
    */
   async updateAtsInterview(
     request: operations.UpdateAtsInterviewRequest,

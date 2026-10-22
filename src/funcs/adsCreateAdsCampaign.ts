@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a campaign
+ *
+ * @remarks
+ * Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
  */
 export function adsCreateAdsCampaign(
   client: UnifiedToCore,

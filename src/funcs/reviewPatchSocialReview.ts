@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a review
+ *
+ * @remarks
+ * Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
  */
 export function reviewPatchSocialReview(
   client: UnifiedToCore,

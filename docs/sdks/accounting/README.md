@@ -15,7 +15,7 @@
 * [createAccountingExpensereport](#createaccountingexpensereport) - Create an expensereport
 * [createAccountingInvoice](#createaccountinginvoice) - Create an invoice
 * [createAccountingJournal](#createaccountingjournal) - Create a journal
-* [createAccountingOrder](#createaccountingorder) - Create an order
+* [~~createAccountingOrder~~](#createaccountingorder) - Create an order :warning: **Deprecated**
 * [createAccountingPaymentterm](#createaccountingpaymentterm) - Create a paymentterm
 * [createAccountingProject](#createaccountingproject) - Create a project
 * [createAccountingPurchaseorder](#createaccountingpurchaseorder) - Create a purchaseorder
@@ -39,7 +39,7 @@
 * [getAccountingExpensereport](#getaccountingexpensereport) - Retrieve an expensereport
 * [getAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
 * [getAccountingJournal](#getaccountingjournal) - Retrieve a journal
-* [getAccountingOrder](#getaccountingorder) - Retrieve an order
+* [~~getAccountingOrder~~](#getaccountingorder) - Retrieve an order :warning: **Deprecated**
 * [getAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [getAccountingPaymentterm](#getaccountingpaymentterm) - Retrieve a paymentterm
 * [getAccountingProfitloss](#getaccountingprofitloss) - Retrieve a profitloss
@@ -68,7 +68,7 @@
 * [listAccountingExpenses](#listaccountingexpenses) - List all expenses
 * [listAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [listAccountingJournals](#listaccountingjournals) - List all journals
-* [listAccountingOrders](#listaccountingorders) - List all orders
+* [~~listAccountingOrders~~](#listaccountingorders) - List all orders :warning: **Deprecated**
 * [listAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [listAccountingPaymentterms](#listaccountingpaymentterms) - List all paymentterms
 * [listAccountingProfitlosses](#listaccountingprofitlosses) - List all profitlosses
@@ -93,7 +93,7 @@
 * [patchAccountingExpensereport](#patchaccountingexpensereport) - Update an expensereport
 * [patchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
 * [patchAccountingJournal](#patchaccountingjournal) - Update a journal
-* [patchAccountingOrder](#patchaccountingorder) - Update an order
+* [~~patchAccountingOrder~~](#patchaccountingorder) - Update an order :warning: **Deprecated**
 * [patchAccountingPaymentterm](#patchaccountingpaymentterm) - Update a paymentterm
 * [patchAccountingProject](#patchaccountingproject) - Update a project
 * [patchAccountingPurchaseorder](#patchaccountingpurchaseorder) - Update a purchaseorder
@@ -113,7 +113,7 @@
 * [removeAccountingExpensereport](#removeaccountingexpensereport) - Remove an expensereport
 * [removeAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
 * [removeAccountingJournal](#removeaccountingjournal) - Remove a journal
-* [removeAccountingOrder](#removeaccountingorder) - Remove an order
+* [~~removeAccountingOrder~~](#removeaccountingorder) - Remove an order :warning: **Deprecated**
 * [removeAccountingPaymentterm](#removeaccountingpaymentterm) - Remove a paymentterm
 * [removeAccountingProject](#removeaccountingproject) - Remove a project
 * [removeAccountingPurchaseorder](#removeaccountingpurchaseorder) - Remove a purchaseorder
@@ -133,7 +133,7 @@
 * [updateAccountingExpensereport](#updateaccountingexpensereport) - Update an expensereport
 * [updateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 * [updateAccountingJournal](#updateaccountingjournal) - Update a journal
-* [updateAccountingOrder](#updateaccountingorder) - Update an order
+* [~~updateAccountingOrder~~](#updateaccountingorder) - Update an order :warning: **Deprecated**
 * [updateAccountingPaymentterm](#updateaccountingpaymentterm) - Update a paymentterm
 * [updateAccountingProject](#updateaccountingproject) - Update a project
 * [updateAccountingPurchaseorder](#updateaccountingpurchaseorder) - Update a purchaseorder
@@ -145,7 +145,7 @@
 
 ## createAccountingAccount
 
-Create an account
+Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
 
 ### Example Usage
 
@@ -167,7 +167,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -180,7 +180,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   });
@@ -215,7 +215,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -228,7 +228,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   });
@@ -264,7 +264,7 @@ run();
 
 ## createAccountingBankfeedaccount
 
-Create a bankfeedaccount
+Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
 
 ### Example Usage
 
@@ -289,12 +289,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "d7f70a5f-4c6a-43ee-b205-4e6fa8be3083",
+      id: "1d921e12-9a93-429e-98b7-998d2f892b05",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.409Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.401Z"),
     },
     connectionId: "<id>",
   });
@@ -332,12 +332,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "d7f70a5f-4c6a-43ee-b205-4e6fa8be3083",
+      id: "1d921e12-9a93-429e-98b7-998d2f892b05",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.409Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.401Z"),
     },
     connectionId: "<id>",
   });
@@ -373,7 +373,7 @@ run();
 
 ## createAccountingBankfeedtransaction
 
-Create a bankfeedtransaction
+Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
 
 ### Example Usage
 
@@ -396,15 +396,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "b92e4300-463a-43c7-9aec-1dbe1dfea5a1",
+      id: "deb064e6-3d01-41ca-8168-a69bbba5d1d9",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.252Z"),
+      postedAt: new Date("2025-04-15T12:24:22.824Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.634Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.722Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.008Z"),
     },
     connectionId: "<id>",
   });
@@ -440,15 +440,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "b92e4300-463a-43c7-9aec-1dbe1dfea5a1",
+      id: "deb064e6-3d01-41ca-8168-a69bbba5d1d9",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.252Z"),
+      postedAt: new Date("2025-04-15T12:24:22.824Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.634Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.722Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.008Z"),
     },
     connectionId: "<id>",
   });
@@ -484,7 +484,7 @@ run();
 
 ## createAccountingBill
 
-Create a bill
+Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
 
 ### Example Usage
 
@@ -504,13 +504,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "62532020-9f27-45c6-8699-06d387b6b45a",
+          id: "26e991be-0a36-487c-b891-47f981469a5f",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "d5b5bb77-5847-460b-a358-db9e625a834a",
+          id: "fbe7727c-b3e9-43d4-aa47-25777f8de3d2",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -523,7 +523,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "b5b60824-2c2d-4598-a990-3a82670151a7",
+      id: "a2fabca2-080d-479e-8591-c2f15ad27532",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -539,7 +539,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.630Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.004Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -573,13 +573,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "62532020-9f27-45c6-8699-06d387b6b45a",
+          id: "26e991be-0a36-487c-b891-47f981469a5f",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "d5b5bb77-5847-460b-a358-db9e625a834a",
+          id: "fbe7727c-b3e9-43d4-aa47-25777f8de3d2",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -592,7 +592,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "b5b60824-2c2d-4598-a990-3a82670151a7",
+      id: "a2fabca2-080d-479e-8591-c2f15ad27532",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -608,7 +608,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.630Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.004Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -645,7 +645,7 @@ run();
 
 ## createAccountingCategory
 
-Create a category
+Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
 
 ### Example Usage
 
@@ -664,11 +664,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "7b090004-e388-4fb5-a819-49b7c1aac467",
+      id: "797f92a3-97da-4805-bed6-1a76f90e5a1c",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.331Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.494Z"),
     },
     connectionId: "<id>",
   });
@@ -700,11 +700,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "7b090004-e388-4fb5-a819-49b7c1aac467",
+      id: "797f92a3-97da-4805-bed6-1a76f90e5a1c",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.331Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.494Z"),
     },
     connectionId: "<id>",
   });
@@ -740,7 +740,7 @@ run();
 
 ## createAccountingContact
 
-Create a contact
+Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
 
 ### Example Usage
 
@@ -781,7 +781,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "60167fe4-b465-4319-8377-feee9193a7e8",
+      id: "e86cdea0-4e51-476a-bf79-4b4778b63dc7",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -792,7 +792,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "994576d5-353f-4e0a-9341-d9fb68715c1f",
+          id: "10f7ba12-83d1-41b9-8569-092d8a10a909",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -814,7 +814,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.472Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.177Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -869,7 +869,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "60167fe4-b465-4319-8377-feee9193a7e8",
+      id: "e86cdea0-4e51-476a-bf79-4b4778b63dc7",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -880,7 +880,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "994576d5-353f-4e0a-9341-d9fb68715c1f",
+          id: "10f7ba12-83d1-41b9-8569-092d8a10a909",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -902,7 +902,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.472Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.177Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -939,7 +939,7 @@ run();
 
 ## createAccountingCreditmemo
 
-Create a creditmemo
+Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
 
 ### Example Usage
 
@@ -963,7 +963,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "6e82e164-1397-4c5f-a6ce-0921ed71fb72",
+      id: "fce48a90-d160-41f6-b9a5-df1681f10dc5",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -972,7 +972,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.489Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.902Z"),
     },
     connectionId: "<id>",
   });
@@ -1009,7 +1009,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "6e82e164-1397-4c5f-a6ce-0921ed71fb72",
+      id: "fce48a90-d160-41f6-b9a5-df1681f10dc5",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -1018,7 +1018,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.489Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.902Z"),
     },
     connectionId: "<id>",
   });
@@ -1054,7 +1054,7 @@ run();
 
 ## createAccountingExpense
 
-Create an expense
+Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
 
 ### Example Usage
 
@@ -1074,13 +1074,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "5385bee4-22ed-480e-bd34-ebdbda0540f5",
+          id: "fc662f22-b5ff-4e86-b24f-07d5e575d4fb",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "f1166735-eeed-45c6-857a-146bc375faf5",
+          id: "26255b8c-271f-4d26-8d1b-6318a8df7cf6",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -1089,10 +1089,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "86781ed4-1ebc-4056-a7ea-be0b4699c28b",
+      id: "59bbe708-ccbe-4dcf-9921-17b30542229d",
       lineitems: [
         {
-          id: "efb58bee-323b-4e9e-8dab-e80c6dd9ae9e",
+          id: "6b779044-5de3-411d-b803-5a853c001e58",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -1100,7 +1100,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "5cbd2ee7-41c0-4f0f-9134-2b045ea229f3",
+          id: "2ea1466e-8b07-4711-ae42-212b6f6bf469",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -1108,7 +1108,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "08a8b664-f362-47b7-84a9-5cd0026e20b6",
+          id: "99ad5fb2-fcfc-4aba-a300-a0579d64c33e",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -1117,7 +1117,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7e85f4bb-ce5a-44b9-a7b4-c83dd6457c1a",
+          id: "fc78f20f-295b-428d-bb2a-98a1f204000c",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -1125,7 +1125,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7c383768-2b34-4b93-aa24-959667b409cb",
+          id: "212f74c8-825a-4ef1-b76d-1424b89afdd5",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -1141,7 +1141,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.229Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.912Z"),
     },
     connectionId: "<id>",
   });
@@ -1174,13 +1174,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "5385bee4-22ed-480e-bd34-ebdbda0540f5",
+          id: "fc662f22-b5ff-4e86-b24f-07d5e575d4fb",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "f1166735-eeed-45c6-857a-146bc375faf5",
+          id: "26255b8c-271f-4d26-8d1b-6318a8df7cf6",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -1189,10 +1189,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "86781ed4-1ebc-4056-a7ea-be0b4699c28b",
+      id: "59bbe708-ccbe-4dcf-9921-17b30542229d",
       lineitems: [
         {
-          id: "efb58bee-323b-4e9e-8dab-e80c6dd9ae9e",
+          id: "6b779044-5de3-411d-b803-5a853c001e58",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -1200,7 +1200,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "5cbd2ee7-41c0-4f0f-9134-2b045ea229f3",
+          id: "2ea1466e-8b07-4711-ae42-212b6f6bf469",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -1208,7 +1208,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "08a8b664-f362-47b7-84a9-5cd0026e20b6",
+          id: "99ad5fb2-fcfc-4aba-a300-a0579d64c33e",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -1217,7 +1217,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7e85f4bb-ce5a-44b9-a7b4-c83dd6457c1a",
+          id: "fc78f20f-295b-428d-bb2a-98a1f204000c",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -1225,7 +1225,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7c383768-2b34-4b93-aa24-959667b409cb",
+          id: "212f74c8-825a-4ef1-b76d-1424b89afdd5",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -1241,7 +1241,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.229Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.912Z"),
     },
     connectionId: "<id>",
   });
@@ -1277,7 +1277,7 @@ run();
 
 ## createAccountingExpensereport
 
-Create an expensereport
+Creates a AccountingExpensereport. Provide the unified AccountingExpensereport fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpensereport.
 
 ### Example Usage
 
@@ -1294,16 +1294,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.createAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-19T11:33:54.330Z"),
+      approvedAt: new Date("2021-04-19T14:54:48.557Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "ddc9e8c2-4f2d-42cb-b609-0e67fba7423f",
+      id: "e58ab8d9-8f66-4b29-9186-26c48ffe7429",
       lineitems: [
         {
-          id: "3fd22cb5-4807-4b12-9067-87deb78b3bdf",
+          id: "101e0ee7-441e-4764-be71-39004ff740c1",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -1311,7 +1311,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "2e4aeaf8-7dc3-4649-bfb2-1687749d8592",
+          id: "1965d274-dba7-499b-8089-5f0113580fc5",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -1320,7 +1320,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "b0cfa1f1-c584-4bfd-b485-bc941ada0c3a",
+          id: "ba1591e9-51cc-4a8f-b9bb-bfd4a56dc813",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -1329,7 +1329,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "e832e421-2ae0-44f5-b286-2cdddfe12b3b",
+          id: "4816c9ee-04d6-479c-bd54-47cd7d86a3da",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -1341,11 +1341,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-19T11:33:54.330Z"),
+      reimbursedAt: new Date("2021-04-19T14:54:48.557Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-19T11:33:54.330Z"),
+      updatedAt: new Date("2021-04-19T14:54:48.557Z"),
     },
     connectionId: "<id>",
   });
@@ -1375,16 +1375,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-19T11:33:54.330Z"),
+      approvedAt: new Date("2021-04-19T14:54:48.557Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "ddc9e8c2-4f2d-42cb-b609-0e67fba7423f",
+      id: "e58ab8d9-8f66-4b29-9186-26c48ffe7429",
       lineitems: [
         {
-          id: "3fd22cb5-4807-4b12-9067-87deb78b3bdf",
+          id: "101e0ee7-441e-4764-be71-39004ff740c1",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -1392,7 +1392,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "2e4aeaf8-7dc3-4649-bfb2-1687749d8592",
+          id: "1965d274-dba7-499b-8089-5f0113580fc5",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -1401,7 +1401,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "b0cfa1f1-c584-4bfd-b485-bc941ada0c3a",
+          id: "ba1591e9-51cc-4a8f-b9bb-bfd4a56dc813",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -1410,7 +1410,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "e832e421-2ae0-44f5-b286-2cdddfe12b3b",
+          id: "4816c9ee-04d6-479c-bd54-47cd7d86a3da",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -1422,11 +1422,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-19T11:33:54.330Z"),
+      reimbursedAt: new Date("2021-04-19T14:54:48.557Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-19T11:33:54.330Z"),
+      updatedAt: new Date("2021-04-19T14:54:48.557Z"),
     },
     connectionId: "<id>",
   });
@@ -1462,7 +1462,7 @@ run();
 
 ## createAccountingInvoice
 
-Create an invoice
+Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
 
 ### Example Usage
 
@@ -1482,13 +1482,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "07e89019-b050-433d-82b5-479bf4f10682",
+          id: "6177b5ba-aed9-4783-b8db-14d21438029e",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "49440b66-cdba-4c5e-b08c-5d5d5bc4e697",
+          id: "e0b66afc-cbaf-4a56-9ea6-73595f872dec",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -1500,7 +1500,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "0a6b9f6c-792f-493d-97ea-7c3a22a756ca",
+      id: "0d872405-006d-46bd-9663-f6c54339e10b",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -1518,7 +1518,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.671Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.306Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -1552,13 +1552,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "07e89019-b050-433d-82b5-479bf4f10682",
+          id: "6177b5ba-aed9-4783-b8db-14d21438029e",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "49440b66-cdba-4c5e-b08c-5d5d5bc4e697",
+          id: "e0b66afc-cbaf-4a56-9ea6-73595f872dec",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -1570,7 +1570,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "0a6b9f6c-792f-493d-97ea-7c3a22a756ca",
+      id: "0d872405-006d-46bd-9663-f6c54339e10b",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -1588,7 +1588,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.671Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.306Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -1625,7 +1625,7 @@ run();
 
 ## createAccountingJournal
 
-Create a journal
+Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
 
 ### Example Usage
 
@@ -1647,16 +1647,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "68d4935c-5c97-4670-902b-504d167e6cb4",
+      id: "cb1adc18-08ae-49ef-965d-f8b06e3d22da",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.438Z"),
+      postedAt: new Date("2023-11-07T00:22:13.311Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.006Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.281Z"),
     },
     connectionId: "<id>",
   });
@@ -1691,16 +1691,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "68d4935c-5c97-4670-902b-504d167e6cb4",
+      id: "cb1adc18-08ae-49ef-965d-f8b06e3d22da",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.438Z"),
+      postedAt: new Date("2023-11-07T00:22:13.311Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.006Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.281Z"),
     },
     connectionId: "<id>",
   });
@@ -1734,9 +1734,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## createAccountingOrder
+## ~~createAccountingOrder~~
 
-Create an order
+Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -1763,7 +1765,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "19d2ad08-c9f2-4dd1-8b42-eb3447581fb4",
+      id: "b0104cf4-3bee-417d-848d-a8ffca6fb0e3",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -1778,7 +1780,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.631Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.364Z"),
     },
     connectionId: "<id>",
   });
@@ -1818,7 +1820,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "19d2ad08-c9f2-4dd1-8b42-eb3447581fb4",
+      id: "b0104cf4-3bee-417d-848d-a8ffca6fb0e3",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -1833,7 +1835,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.631Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.364Z"),
     },
     connectionId: "<id>",
   });
@@ -1869,7 +1871,7 @@ run();
 
 ## createAccountingPaymentterm
 
-Create a paymentterm
+Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
 
 ### Example Usage
 
@@ -1895,12 +1897,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "73858011-750b-4a1c-9794-c02d08464996",
+      id: "9ae335a8-dabc-45e5-b1d1-ffabdb4b3419",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.854Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.223Z"),
     },
     connectionId: "<id>",
   });
@@ -1939,12 +1941,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "73858011-750b-4a1c-9794-c02d08464996",
+      id: "9ae335a8-dabc-45e5-b1d1-ffabdb4b3419",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.854Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.223Z"),
     },
     connectionId: "<id>",
   });
@@ -1980,7 +1982,7 @@ run();
 
 ## createAccountingProject
 
-Create a project
+Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
 
 ### Example Usage
 
@@ -2059,7 +2061,7 @@ run();
 
 ## createAccountingPurchaseorder
 
-Create a purchaseorder
+Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
 
 ### Example Usage
 
@@ -2089,7 +2091,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "fa379fb8-af26-49b2-8af7-94e331623eae",
+      id: "e8e7fea4-eae6-42cd-8d7a-7e37afc0d963",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -2103,7 +2105,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.718Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.225Z"),
     },
     connectionId: "<id>",
   });
@@ -2146,7 +2148,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "fa379fb8-af26-49b2-8af7-94e331623eae",
+      id: "e8e7fea4-eae6-42cd-8d7a-7e37afc0d963",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -2160,7 +2162,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.718Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.225Z"),
     },
     connectionId: "<id>",
   });
@@ -2196,7 +2198,7 @@ run();
 
 ## createAccountingQuote
 
-Create a quote
+Creates a AccountingQuote. Provide the unified AccountingQuote fields in the request body; they are mapped to the provider's API. Returns the created AccountingQuote.
 
 ### Example Usage
 
@@ -2275,7 +2277,7 @@ run();
 
 ## createAccountingSalesorder
 
-Create a salesorder
+Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
 
 ### Example Usage
 
@@ -2302,13 +2304,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.756Z"),
+      closedAt: new Date("2023-03-25T19:04:14.637Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "2f5cfb1a-4a57-4e29-985c-33ce859c10e0",
+      id: "0b9c1aac-ea1d-4734-a644-0472d9fcd2cd",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -2330,7 +2332,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.756Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.637Z"),
     },
     connectionId: "<id>",
   });
@@ -2370,13 +2372,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.756Z"),
+      closedAt: new Date("2023-03-25T19:04:14.637Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "2f5cfb1a-4a57-4e29-985c-33ce859c10e0",
+      id: "0b9c1aac-ea1d-4734-a644-0472d9fcd2cd",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -2398,7 +2400,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.756Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.637Z"),
     },
     connectionId: "<id>",
   });
@@ -2434,7 +2436,7 @@ run();
 
 ## createAccountingTaxrate
 
-Create a taxrate
+Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
 
 ### Example Usage
 
@@ -2462,7 +2464,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "868d5ce5-4dce-4cd0-9bfa-7917edd1ca2b",
+      id: "8497a839-d90c-468d-a393-ef035ed00c1f",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -2471,7 +2473,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.447Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
   });
@@ -2512,7 +2514,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "868d5ce5-4dce-4cd0-9bfa-7917edd1ca2b",
+      id: "8497a839-d90c-468d-a393-ef035ed00c1f",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -2521,7 +2523,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.447Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
   });
@@ -2557,7 +2559,7 @@ run();
 
 ## createAccountingTransaction
 
-Create a transaction
+Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
 
 ### Example Usage
 
@@ -2575,12 +2577,12 @@ async function run() {
   const result = await unifiedTo.accounting.createAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "ae9d8bc9-57e9-429d-a23a-d1b00d0d63b2",
+      id: "8e16c29e-f451-4f10-9a41-1c3a74d2ac2e",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "c2eb9367-4b1b-4a91-9ec6-0b7c25169809",
+          id: "b636091c-447a-4ad5-a8f3-99fcb9814f95",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -2592,7 +2594,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.968Z"),
     },
     connectionId: "<id>",
   });
@@ -2623,12 +2625,12 @@ async function run() {
   const res = await accountingCreateAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "ae9d8bc9-57e9-429d-a23a-d1b00d0d63b2",
+      id: "8e16c29e-f451-4f10-9a41-1c3a74d2ac2e",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "c2eb9367-4b1b-4a91-9ec6-0b7c25169809",
+          id: "b636091c-447a-4ad5-a8f3-99fcb9814f95",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -2640,7 +2642,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.968Z"),
     },
     connectionId: "<id>",
   });
@@ -2676,7 +2678,7 @@ run();
 
 ## createAccountingVendorcredit
 
-Create a vendorcredit
+Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
 
 ### Example Usage
 
@@ -2697,14 +2699,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "57dbfa00-1c58-4900-ab42-040c4f8ee901",
+      id: "d2481637-696b-4cdf-955f-d10302c01d29",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.291Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.979Z"),
     },
     connectionId: "<id>",
   });
@@ -2738,14 +2740,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "57dbfa00-1c58-4900-ab42-040c4f8ee901",
+      id: "d2481637-696b-4cdf-955f-d10302c01d29",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.291Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.979Z"),
     },
     connectionId: "<id>",
   });
@@ -2781,7 +2783,7 @@ run();
 
 ## getAccountingAccount
 
-Retrieve an account
+Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2860,7 +2862,7 @@ run();
 
 ## getAccountingAgedpayable
 
-Retrieve an agedpayable
+Retrieves a single AccountingAgedpayable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2939,7 +2941,7 @@ run();
 
 ## getAccountingAgedreceivable
 
-Retrieve an agedreceivable
+Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3018,7 +3020,7 @@ run();
 
 ## getAccountingBalancesheet
 
-Retrieve a balancesheet
+Retrieves a single AccountingBalancesheet by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3097,7 +3099,7 @@ run();
 
 ## getAccountingBankfeedaccount
 
-Retrieve a bankfeedaccount
+Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3176,7 +3178,7 @@ run();
 
 ## getAccountingBankfeedtransaction
 
-Retrieve a bankfeedtransaction
+Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3255,7 +3257,7 @@ run();
 
 ## getAccountingBill
 
-Retrieve a bill
+Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3334,7 +3336,7 @@ run();
 
 ## getAccountingCashflow
 
-Retrieve a cashflow
+Retrieves a single AccountingCashflow by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3413,7 +3415,7 @@ run();
 
 ## getAccountingCategory
 
-Retrieve a category
+Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3492,7 +3494,7 @@ run();
 
 ## getAccountingContact
 
-Retrieve a contact
+Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3571,7 +3573,7 @@ run();
 
 ## getAccountingCreditmemo
 
-Retrieve a creditmemo
+Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3650,7 +3652,7 @@ run();
 
 ## getAccountingExpense
 
-Retrieve an expense
+Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3729,7 +3731,7 @@ run();
 
 ## getAccountingExpensereport
 
-Retrieve an expensereport
+Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3808,7 +3810,7 @@ run();
 
 ## getAccountingInvoice
 
-Retrieve an invoice
+Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3887,7 +3889,7 @@ run();
 
 ## getAccountingJournal
 
-Retrieve a journal
+Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -3964,9 +3966,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAccountingOrder
+## ~~getAccountingOrder~~
 
-Retrieve an order
+Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -4045,7 +4049,7 @@ run();
 
 ## getAccountingOrganization
 
-Retrieve an organization
+Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4124,7 +4128,7 @@ run();
 
 ## getAccountingPaymentterm
 
-Retrieve a paymentterm
+Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4203,7 +4207,7 @@ run();
 
 ## getAccountingProfitloss
 
-Retrieve a profitloss
+Retrieves a single AccountingProfitloss by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4282,7 +4286,7 @@ run();
 
 ## getAccountingProject
 
-Retrieve a project
+Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4361,7 +4365,7 @@ run();
 
 ## getAccountingPurchaseorder
 
-Retrieve a purchaseorder
+Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4440,7 +4444,7 @@ run();
 
 ## getAccountingPurchasereceipt
 
-Retrieve a purchasereceipt
+Retrieves a single AccountingPurchasereceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4519,7 +4523,7 @@ run();
 
 ## getAccountingQuote
 
-Retrieve a quote
+Retrieves a single AccountingQuote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4598,7 +4602,7 @@ run();
 
 ## getAccountingSalesorder
 
-Retrieve a salesorder
+Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4677,7 +4681,7 @@ run();
 
 ## getAccountingSalesreceipt
 
-Retrieve a salesreceipt
+Retrieves a single AccountingSalesreceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4756,7 +4760,7 @@ run();
 
 ## getAccountingTaxrate
 
-Retrieve a taxrate
+Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4835,7 +4839,7 @@ run();
 
 ## getAccountingTransaction
 
-Retrieve a transaction
+Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4914,7 +4918,7 @@ run();
 
 ## getAccountingTrialbalance
 
-Retrieve a trialbalance
+Retrieves a single AccountingTrialbalance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -4993,7 +4997,7 @@ run();
 
 ## getAccountingVendorcredit
 
-Retrieve a vendorcredit
+Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -5072,7 +5076,7 @@ run();
 
 ## listAccountingAccounts
 
-List all accounts
+Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5149,7 +5153,7 @@ run();
 
 ## listAccountingAgedpayables
 
-List all agedpayables
+Returns a list of AccountingAgedpayables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5226,7 +5230,7 @@ run();
 
 ## listAccountingAgedreceivables
 
-List all agedreceivables
+Returns a list of AccountingAgedreceivables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5303,7 +5307,7 @@ run();
 
 ## listAccountingBalancesheets
 
-List all balancesheets
+Returns a list of AccountingBalancesheets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5380,7 +5384,7 @@ run();
 
 ## listAccountingBankfeedaccounts
 
-List all bankfeedaccounts
+Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5457,7 +5461,7 @@ run();
 
 ## listAccountingBankfeedtransactions
 
-List all bankfeedtransactions
+Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5534,7 +5538,7 @@ run();
 
 ## listAccountingBills
 
-List all bills
+Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5611,7 +5615,7 @@ run();
 
 ## listAccountingCashflows
 
-List all cashflows
+Returns a list of AccountingCashflows. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5688,7 +5692,7 @@ run();
 
 ## listAccountingCategories
 
-List all categories
+Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5765,7 +5769,7 @@ run();
 
 ## listAccountingContacts
 
-List all contacts
+Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5842,7 +5846,7 @@ run();
 
 ## listAccountingCreditmemoes
 
-List all creditmemoes
+Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5919,7 +5923,7 @@ run();
 
 ## listAccountingExpensereports
 
-List all expensereports
+Returns a list of AccountingExpensereports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -5996,7 +6000,7 @@ run();
 
 ## listAccountingExpenses
 
-List all expenses
+Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6073,7 +6077,7 @@ run();
 
 ## listAccountingInvoices
 
-List all invoices
+Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6150,7 +6154,7 @@ run();
 
 ## listAccountingJournals
 
-List all journals
+Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6225,9 +6229,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAccountingOrders
+## ~~listAccountingOrders~~
 
-List all orders
+Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -6304,7 +6310,7 @@ run();
 
 ## listAccountingOrganizations
 
-List all organizations
+Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6381,7 +6387,7 @@ run();
 
 ## listAccountingPaymentterms
 
-List all paymentterms
+Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6458,7 +6464,7 @@ run();
 
 ## listAccountingProfitlosses
 
-List all profitlosses
+Returns a list of AccountingProfitlosses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6535,7 +6541,7 @@ run();
 
 ## listAccountingProjects
 
-List all projects
+Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6612,7 +6618,7 @@ run();
 
 ## listAccountingPurchaseorders
 
-List all purchaseorders
+Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6689,7 +6695,7 @@ run();
 
 ## listAccountingPurchasereceipts
 
-List all purchasereceipts
+Returns a list of AccountingPurchasereceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6766,7 +6772,7 @@ run();
 
 ## listAccountingQuotes
 
-List all quotes
+Returns a list of AccountingQuotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6843,7 +6849,7 @@ run();
 
 ## listAccountingSalesorders
 
-List all salesorders
+Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6920,7 +6926,7 @@ run();
 
 ## listAccountingSalesreceipts
 
-List all salesreceipts
+Returns a list of AccountingSalesreceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -6997,7 +7003,7 @@ run();
 
 ## listAccountingTaxrates
 
-List all taxrates
+Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -7074,7 +7080,7 @@ run();
 
 ## listAccountingTransactions
 
-List all transactions
+Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -7151,7 +7157,7 @@ run();
 
 ## listAccountingTrialbalances
 
-List all trialbalances
+Returns a list of AccountingTrialbalances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -7228,7 +7234,7 @@ run();
 
 ## listAccountingVendorcredits
 
-List all vendorcredits
+Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -7305,7 +7311,7 @@ run();
 
 ## patchAccountingAccount
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -7327,7 +7333,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "e498d5bd-be04-46a2-8f23-7eab27caa0a3",
+      id: "723af009-d9e1-4428-8f78-4c7a449da4a2",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -7340,7 +7346,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.946Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.113Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7376,7 +7382,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "e498d5bd-be04-46a2-8f23-7eab27caa0a3",
+      id: "723af009-d9e1-4428-8f78-4c7a449da4a2",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -7389,7 +7395,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.946Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.113Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7426,7 +7432,7 @@ run();
 
 ## patchAccountingBankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -7451,12 +7457,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "39362873-785a-448e-89fe-677112022aea",
+      id: "0110f8e8-c27f-42b3-b02c-d4a344f9383a",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.420Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.405Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7495,12 +7501,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "39362873-785a-448e-89fe-677112022aea",
+      id: "0110f8e8-c27f-42b3-b02c-d4a344f9383a",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.420Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.405Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7537,7 +7543,7 @@ run();
 
 ## patchAccountingBankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -7560,15 +7566,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "393c8418-1734-44d9-a3d3-3779ae529590",
+      id: "0177d5cb-d66b-435b-8f03-12f4f770a4a8",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.270Z"),
+      postedAt: new Date("2025-04-15T12:24:22.834Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.636Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.723Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7605,15 +7611,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "393c8418-1734-44d9-a3d3-3779ae529590",
+      id: "0177d5cb-d66b-435b-8f03-12f4f770a4a8",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.270Z"),
+      postedAt: new Date("2025-04-15T12:24:22.834Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.636Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.723Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7650,7 +7656,7 @@ run();
 
 ## patchAccountingBill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -7670,13 +7676,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "8e3f23c4-3c24-49f5-914d-348e3aabbe41",
+          id: "ea56e58c-c1b0-480a-9308-8ab39e1b1665",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "6bbcc1b7-f507-4572-86b4-511cc7b8faf2",
+          id: "e74b1949-5eb7-41f8-8228-7eccc4cdc6fe",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -7689,7 +7695,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "7b440529-f3ca-4830-8889-5ad1e27b860d",
+      id: "dd2db6e4-8aed-4f04-a52b-6157edb26a88",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -7705,7 +7711,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.637Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.009Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -7740,13 +7746,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "8e3f23c4-3c24-49f5-914d-348e3aabbe41",
+          id: "ea56e58c-c1b0-480a-9308-8ab39e1b1665",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "6bbcc1b7-f507-4572-86b4-511cc7b8faf2",
+          id: "e74b1949-5eb7-41f8-8228-7eccc4cdc6fe",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -7759,7 +7765,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "7b440529-f3ca-4830-8889-5ad1e27b860d",
+      id: "dd2db6e4-8aed-4f04-a52b-6157edb26a88",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -7775,7 +7781,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.637Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.009Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -7813,7 +7819,7 @@ run();
 
 ## patchAccountingCategory
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -7832,11 +7838,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "4c1f191f-ccb5-4aa5-9c1d-e7fce4925aeb",
+      id: "5456c482-4617-4a1a-bc78-7dc09f329c6d",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.343Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.501Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7869,11 +7875,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "4c1f191f-ccb5-4aa5-9c1d-e7fce4925aeb",
+      id: "5456c482-4617-4a1a-bc78-7dc09f329c6d",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.343Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.501Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7910,7 +7916,7 @@ run();
 
 ## patchAccountingContact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -7951,7 +7957,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "79da20bd-30fe-45ec-945d-aab5f0152839",
+      id: "6ab9cb6d-95fd-442c-b961-5ed7c6c4dcb3",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -7962,7 +7968,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "3969c650-dd65-4fc3-aabd-b88621b54cb8",
+          id: "1cac51c4-8bd3-4ecf-a06d-87908c0078cb",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -7984,7 +7990,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.506Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.192Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -8040,7 +8046,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "79da20bd-30fe-45ec-945d-aab5f0152839",
+      id: "6ab9cb6d-95fd-442c-b961-5ed7c6c4dcb3",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -8051,7 +8057,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "3969c650-dd65-4fc3-aabd-b88621b54cb8",
+          id: "1cac51c4-8bd3-4ecf-a06d-87908c0078cb",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -8073,7 +8079,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.506Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.192Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -8111,7 +8117,7 @@ run();
 
 ## patchAccountingCreditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -8135,7 +8141,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "b5a6ed42-4635-4616-9b7e-b8bfadbfad47",
+      id: "c0459e23-be53-4a57-9778-8b2245322a5e",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -8144,7 +8150,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.521Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8182,7 +8188,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "b5a6ed42-4635-4616-9b7e-b8bfadbfad47",
+      id: "c0459e23-be53-4a57-9778-8b2245322a5e",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -8191,7 +8197,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.521Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8228,7 +8234,7 @@ run();
 
 ## patchAccountingExpense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -8248,13 +8254,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "81a7dae5-8771-4aa2-bcf0-84875bbc2770",
+          id: "28b01e0f-afe4-4831-8ffb-5b74b066d9a1",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "265d556a-da66-4224-ae17-6b9d80ffe1a7",
+          id: "2907d6b1-b74c-47bc-9b59-aca0d0aeecaa",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -8263,10 +8269,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "ccfbf340-431a-4b33-b4be-25f8e395de3b",
+      id: "2fa39f98-9f21-467f-ba2c-954392980f2d",
       lineitems: [
         {
-          id: "5e0c796a-0815-4019-9447-453810cc1a56",
+          id: "90e2a96f-208e-4d2e-b360-5ef3bcc45efc",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -8274,7 +8280,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "848125e2-cc30-4ff1-853b-4cd2a8061999",
+          id: "8ade7ef9-7ead-4165-82be-73a94c2da564",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -8282,7 +8288,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7f9b26a9-e680-4024-a89c-03a7fdfc6ac8",
+          id: "13af1a5b-fcbc-4b00-9036-1d4983ee8843",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -8291,7 +8297,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "d2be378b-c80b-424d-88c0-40d37776c01b",
+          id: "a6cbef52-f457-41c1-87db-ce3d852c95f3",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -8299,7 +8305,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4bbe22ac-d68b-4a3c-ae62-694e91f810cb",
+          id: "79a9e7ad-e1d2-48c4-854c-42f7a0f382ea",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -8315,7 +8321,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.231Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.913Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8349,13 +8355,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "81a7dae5-8771-4aa2-bcf0-84875bbc2770",
+          id: "28b01e0f-afe4-4831-8ffb-5b74b066d9a1",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "265d556a-da66-4224-ae17-6b9d80ffe1a7",
+          id: "2907d6b1-b74c-47bc-9b59-aca0d0aeecaa",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -8364,10 +8370,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "ccfbf340-431a-4b33-b4be-25f8e395de3b",
+      id: "2fa39f98-9f21-467f-ba2c-954392980f2d",
       lineitems: [
         {
-          id: "5e0c796a-0815-4019-9447-453810cc1a56",
+          id: "90e2a96f-208e-4d2e-b360-5ef3bcc45efc",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -8375,7 +8381,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "848125e2-cc30-4ff1-853b-4cd2a8061999",
+          id: "8ade7ef9-7ead-4165-82be-73a94c2da564",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -8383,7 +8389,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7f9b26a9-e680-4024-a89c-03a7fdfc6ac8",
+          id: "13af1a5b-fcbc-4b00-9036-1d4983ee8843",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -8392,7 +8398,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "d2be378b-c80b-424d-88c0-40d37776c01b",
+          id: "a6cbef52-f457-41c1-87db-ce3d852c95f3",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -8400,7 +8406,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4bbe22ac-d68b-4a3c-ae62-694e91f810cb",
+          id: "79a9e7ad-e1d2-48c4-854c-42f7a0f382ea",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -8416,7 +8422,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.231Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.913Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8453,7 +8459,7 @@ run();
 
 ## patchAccountingExpensereport
 
-Update an expensereport
+Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
 
 ### Example Usage
 
@@ -8470,16 +8476,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.patchAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-19T11:33:54.337Z"),
+      approvedAt: new Date("2021-04-19T14:54:48.561Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "004e3dfd-d249-440f-b0ae-a6b53381ed5d",
+      id: "50a85c62-0ed0-475f-b73f-358f4394423c",
       lineitems: [
         {
-          id: "1eb168b0-2991-4b9f-9e3c-e0f7f0873637",
+          id: "8009e8d8-a957-4445-9209-bec6fd33653b",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -8487,7 +8493,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "cc2bbf8d-28b2-4d69-b4a9-d8722aed945e",
+          id: "d69d413d-d1c8-4919-903d-1062ac651415",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -8496,7 +8502,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "e6439f0e-d59f-464a-a0a7-b89bea3dcbd0",
+          id: "de14dc02-13eb-4d21-9b74-09e7a7fd16c8",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -8505,7 +8511,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "fbdac375-9660-4a8d-9f3c-219badca69af",
+          id: "f2a791aa-6c1d-44b5-b0f1-377b45ef41ad",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -8517,11 +8523,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-19T11:33:54.337Z"),
+      reimbursedAt: new Date("2021-04-19T14:54:48.561Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-19T11:33:54.337Z"),
+      updatedAt: new Date("2021-04-19T14:54:48.561Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8552,16 +8558,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-19T11:33:54.337Z"),
+      approvedAt: new Date("2021-04-19T14:54:48.561Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "004e3dfd-d249-440f-b0ae-a6b53381ed5d",
+      id: "50a85c62-0ed0-475f-b73f-358f4394423c",
       lineitems: [
         {
-          id: "1eb168b0-2991-4b9f-9e3c-e0f7f0873637",
+          id: "8009e8d8-a957-4445-9209-bec6fd33653b",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -8569,7 +8575,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "cc2bbf8d-28b2-4d69-b4a9-d8722aed945e",
+          id: "d69d413d-d1c8-4919-903d-1062ac651415",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -8578,7 +8584,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "e6439f0e-d59f-464a-a0a7-b89bea3dcbd0",
+          id: "de14dc02-13eb-4d21-9b74-09e7a7fd16c8",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -8587,7 +8593,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "fbdac375-9660-4a8d-9f3c-219badca69af",
+          id: "f2a791aa-6c1d-44b5-b0f1-377b45ef41ad",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -8599,11 +8605,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-19T11:33:54.337Z"),
+      reimbursedAt: new Date("2021-04-19T14:54:48.561Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-19T11:33:54.337Z"),
+      updatedAt: new Date("2021-04-19T14:54:48.561Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8640,7 +8646,7 @@ run();
 
 ## patchAccountingInvoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -8660,13 +8666,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "1ae1bfb4-4280-4891-9021-531ba9201dde",
+          id: "93adc358-ef9b-4c97-81da-2670d33a4e49",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "241135c1-bbbe-4eed-9883-54ac8c473d21",
+          id: "a1c56d44-e08c-4c4a-901a-1262f2b63dc7",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -8678,7 +8684,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "3f2214cc-3623-4852-a478-7595ea510721",
+      id: "1666fb94-7303-4d36-a2fd-69a193932335",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -8696,7 +8702,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.728Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.339Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -8731,13 +8737,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "1ae1bfb4-4280-4891-9021-531ba9201dde",
+          id: "93adc358-ef9b-4c97-81da-2670d33a4e49",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "241135c1-bbbe-4eed-9883-54ac8c473d21",
+          id: "a1c56d44-e08c-4c4a-901a-1262f2b63dc7",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -8749,7 +8755,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "3f2214cc-3623-4852-a478-7595ea510721",
+      id: "1666fb94-7303-4d36-a2fd-69a193932335",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -8767,7 +8773,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.728Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.339Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -8805,7 +8811,7 @@ run();
 
 ## patchAccountingJournal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -8827,16 +8833,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "36290f97-6fc9-4afe-9b1b-9e3ea9b9c53c",
+      id: "9f81c2b7-f004-490b-9bc7-83b3bf298716",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.463Z"),
+      postedAt: new Date("2023-11-07T00:22:13.323Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.018Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8872,16 +8878,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "36290f97-6fc9-4afe-9b1b-9e3ea9b9c53c",
+      id: "9f81c2b7-f004-490b-9bc7-83b3bf298716",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.463Z"),
+      postedAt: new Date("2023-11-07T00:22:13.323Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.018Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8916,9 +8922,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAccountingOrder
+## ~~patchAccountingOrder~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -8945,7 +8953,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "89f3691b-dc71-46eb-9de1-38e4bf45eaa5",
+      id: "a2c961ce-8788-4938-8393-5ee0093ea648",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -8960,7 +8968,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.643Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.373Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9001,7 +9009,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "89f3691b-dc71-46eb-9de1-38e4bf45eaa5",
+      id: "a2c961ce-8788-4938-8393-5ee0093ea648",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -9016,7 +9024,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.643Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.373Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9053,7 +9061,7 @@ run();
 
 ## patchAccountingPaymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -9079,12 +9087,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "02fe03ad-cc26-4037-b8fa-d4c5e51c9d4b",
+      id: "385fc269-7d7e-4aec-ba8f-3fe285ea77e5",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.873Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.234Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9124,12 +9132,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "02fe03ad-cc26-4037-b8fa-d4c5e51c9d4b",
+      id: "385fc269-7d7e-4aec-ba8f-3fe285ea77e5",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.873Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.234Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9166,7 +9174,7 @@ run();
 
 ## patchAccountingProject
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -9247,7 +9255,7 @@ run();
 
 ## patchAccountingPurchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -9277,7 +9285,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "633b3b69-943b-4ffd-9f8b-bff28eb95f0f",
+      id: "63fc74d0-07c7-4d62-928f-6c84b729e544",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -9291,7 +9299,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.726Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.230Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9335,7 +9343,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "633b3b69-943b-4ffd-9f8b-bff28eb95f0f",
+      id: "63fc74d0-07c7-4d62-928f-6c84b729e544",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -9349,7 +9357,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.726Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.230Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9386,7 +9394,7 @@ run();
 
 ## patchAccountingQuote
 
-Update a quote
+Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
 
 ### Example Usage
 
@@ -9467,7 +9475,7 @@ run();
 
 ## patchAccountingSalesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -9494,13 +9502,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.777Z"),
+      closedAt: new Date("2023-03-25T19:04:14.648Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "afde1e01-e01b-4ed3-8235-4466ee266aca",
+      id: "720fd437-216c-4905-8188-42a5623beefb",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -9522,7 +9530,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.777Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.648Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9563,13 +9571,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.777Z"),
+      closedAt: new Date("2023-03-25T19:04:14.648Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "afde1e01-e01b-4ed3-8235-4466ee266aca",
+      id: "720fd437-216c-4905-8188-42a5623beefb",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -9591,7 +9599,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.777Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.648Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9628,7 +9636,7 @@ run();
 
 ## patchAccountingTaxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -9656,7 +9664,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "41f2d648-a5fd-4bf2-8a48-9f0740b08d1a",
+      id: "9b5cdf18-ee07-4ba8-a63e-1dd007623ad9",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -9665,7 +9673,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.448Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9707,7 +9715,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "41f2d648-a5fd-4bf2-8a48-9f0740b08d1a",
+      id: "9b5cdf18-ee07-4ba8-a63e-1dd007623ad9",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -9716,7 +9724,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.448Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9753,7 +9761,7 @@ run();
 
 ## patchAccountingTransaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -9771,12 +9779,12 @@ async function run() {
   const result = await unifiedTo.accounting.patchAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "91a71625-270a-4193-a86a-bf214979900d",
+      id: "ca0c1a97-86a3-4b5d-8ae2-06fc783b6432",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "f7767067-82d9-4808-8e1c-d78070c9472f",
+          id: "58f3b3e2-e5a3-49dd-b49e-1fe9315ff36c",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -9788,7 +9796,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.969Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9820,12 +9828,12 @@ async function run() {
   const res = await accountingPatchAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "91a71625-270a-4193-a86a-bf214979900d",
+      id: "ca0c1a97-86a3-4b5d-8ae2-06fc783b6432",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "f7767067-82d9-4808-8e1c-d78070c9472f",
+          id: "58f3b3e2-e5a3-49dd-b49e-1fe9315ff36c",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -9837,7 +9845,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.969Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9874,7 +9882,7 @@ run();
 
 ## patchAccountingVendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -9895,14 +9903,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "48aecdf1-5525-4304-8378-4e16ae76eb35",
+      id: "3598b540-345b-4f23-98a3-a9d4fd98d8c6",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.296Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9937,14 +9945,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "48aecdf1-5525-4304-8378-4e16ae76eb35",
+      id: "3598b540-345b-4f23-98a3-a9d4fd98d8c6",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.296Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9981,7 +9989,7 @@ run();
 
 ## removeAccountingAccount
 
-Remove an account
+Deletes the AccountingAccount identified by `id`.
 
 ### Example Usage
 
@@ -10060,7 +10068,7 @@ run();
 
 ## removeAccountingBankfeedaccount
 
-Remove a bankfeedaccount
+Deletes the AccountingBankfeedaccount identified by `id`.
 
 ### Example Usage
 
@@ -10139,7 +10147,7 @@ run();
 
 ## removeAccountingBankfeedtransaction
 
-Remove a bankfeedtransaction
+Deletes the AccountingBankfeedtransaction identified by `id`.
 
 ### Example Usage
 
@@ -10218,7 +10226,7 @@ run();
 
 ## removeAccountingBill
 
-Remove a bill
+Deletes the AccountingBill identified by `id`.
 
 ### Example Usage
 
@@ -10297,7 +10305,7 @@ run();
 
 ## removeAccountingCategory
 
-Remove a category
+Deletes the AccountingCategory identified by `id`.
 
 ### Example Usage
 
@@ -10376,7 +10384,7 @@ run();
 
 ## removeAccountingContact
 
-Remove a contact
+Deletes the AccountingContact identified by `id`.
 
 ### Example Usage
 
@@ -10455,7 +10463,7 @@ run();
 
 ## removeAccountingCreditmemo
 
-Remove a creditmemo
+Deletes the AccountingCreditmemo identified by `id`.
 
 ### Example Usage
 
@@ -10534,7 +10542,7 @@ run();
 
 ## removeAccountingExpense
 
-Remove an expense
+Deletes the AccountingExpense identified by `id`.
 
 ### Example Usage
 
@@ -10613,7 +10621,7 @@ run();
 
 ## removeAccountingExpensereport
 
-Remove an expensereport
+Deletes the AccountingExpensereport identified by `id`.
 
 ### Example Usage
 
@@ -10692,7 +10700,7 @@ run();
 
 ## removeAccountingInvoice
 
-Remove an invoice
+Deletes the AccountingInvoice identified by `id`.
 
 ### Example Usage
 
@@ -10771,7 +10779,7 @@ run();
 
 ## removeAccountingJournal
 
-Remove a journal
+Deletes the AccountingJournal identified by `id`.
 
 ### Example Usage
 
@@ -10848,9 +10856,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAccountingOrder
+## ~~removeAccountingOrder~~
 
-Remove an order
+Deletes the AccountingOrder identified by `id`.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -10929,7 +10939,7 @@ run();
 
 ## removeAccountingPaymentterm
 
-Remove a paymentterm
+Deletes the AccountingPaymentterm identified by `id`.
 
 ### Example Usage
 
@@ -11008,7 +11018,7 @@ run();
 
 ## removeAccountingProject
 
-Remove a project
+Deletes the AccountingProject identified by `id`.
 
 ### Example Usage
 
@@ -11087,7 +11097,7 @@ run();
 
 ## removeAccountingPurchaseorder
 
-Remove a purchaseorder
+Deletes the AccountingPurchaseorder identified by `id`.
 
 ### Example Usage
 
@@ -11166,7 +11176,7 @@ run();
 
 ## removeAccountingQuote
 
-Remove a quote
+Deletes the AccountingQuote identified by `id`.
 
 ### Example Usage
 
@@ -11245,7 +11255,7 @@ run();
 
 ## removeAccountingSalesorder
 
-Remove a salesorder
+Deletes the AccountingSalesorder identified by `id`.
 
 ### Example Usage
 
@@ -11324,7 +11334,7 @@ run();
 
 ## removeAccountingTaxrate
 
-Remove a taxrate
+Deletes the AccountingTaxrate identified by `id`.
 
 ### Example Usage
 
@@ -11403,7 +11413,7 @@ run();
 
 ## removeAccountingTransaction
 
-Remove a transaction
+Deletes the AccountingTransaction identified by `id`.
 
 ### Example Usage
 
@@ -11482,7 +11492,7 @@ run();
 
 ## removeAccountingVendorcredit
 
-Remove a vendorcredit
+Deletes the AccountingVendorcredit identified by `id`.
 
 ### Example Usage
 
@@ -11561,7 +11571,7 @@ run();
 
 ## updateAccountingAccount
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -11583,7 +11593,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "e498d5bd-be04-46a2-8f23-7eab27caa0a3",
+      id: "723af009-d9e1-4428-8f78-4c7a449da4a2",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -11596,7 +11606,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.946Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.113Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11632,7 +11642,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "e498d5bd-be04-46a2-8f23-7eab27caa0a3",
+      id: "723af009-d9e1-4428-8f78-4c7a449da4a2",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -11645,7 +11655,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.946Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.113Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11682,7 +11692,7 @@ run();
 
 ## updateAccountingBankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -11707,12 +11717,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "39362873-785a-448e-89fe-677112022aea",
+      id: "0110f8e8-c27f-42b3-b02c-d4a344f9383a",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.420Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.405Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11751,12 +11761,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "39362873-785a-448e-89fe-677112022aea",
+      id: "0110f8e8-c27f-42b3-b02c-d4a344f9383a",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.420Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.405Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11793,7 +11803,7 @@ run();
 
 ## updateAccountingBankfeedtransaction
 
-Update a bankfeedtransaction
+Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -11816,15 +11826,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "393c8418-1734-44d9-a3d3-3779ae529590",
+      id: "0177d5cb-d66b-435b-8f03-12f4f770a4a8",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.270Z"),
+      postedAt: new Date("2025-04-15T12:24:22.834Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.636Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.723Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11861,15 +11871,15 @@ async function run() {
       createdAt: new Date("2022-03-24T23:41:08.374Z"),
       currency: "CAD",
       description: "Payment of SRD 92.72 for withdrawal at Halvorson - Ziemann, processed with card ending ****3731 linked to account ***7781.",
-      id: "393c8418-1734-44d9-a3d3-3779ae529590",
+      id: "0177d5cb-d66b-435b-8f03-12f4f770a4a8",
       isPending: true,
       merchantName: "Buckridge - Feest",
       metadata: [],
-      postedAt: new Date("2025-04-14T20:20:26.270Z"),
+      postedAt: new Date("2025-04-15T12:24:22.834Z"),
       reference: "79574105",
-      transactionAt: new Date("2022-07-30T08:12:45.636Z"),
+      transactionAt: new Date("2022-07-30T10:02:40.723Z"),
       type: "CREDIT",
-      updatedAt: new Date("2022-05-25T01:45:52.641Z"),
+      updatedAt: new Date("2022-05-25T02:38:36.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -11906,7 +11916,7 @@ run();
 
 ## updateAccountingBill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -11926,13 +11936,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "8e3f23c4-3c24-49f5-914d-348e3aabbe41",
+          id: "ea56e58c-c1b0-480a-9308-8ab39e1b1665",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "6bbcc1b7-f507-4572-86b4-511cc7b8faf2",
+          id: "e74b1949-5eb7-41f8-8228-7eccc4cdc6fe",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -11945,7 +11955,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "7b440529-f3ca-4830-8889-5ad1e27b860d",
+      id: "dd2db6e4-8aed-4f04-a52b-6157edb26a88",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -11961,7 +11971,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.637Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.009Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -11996,13 +12006,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "8e3f23c4-3c24-49f5-914d-348e3aabbe41",
+          id: "ea56e58c-c1b0-480a-9308-8ab39e1b1665",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "6bbcc1b7-f507-4572-86b4-511cc7b8faf2",
+          id: "e74b1949-5eb7-41f8-8228-7eccc4cdc6fe",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -12015,7 +12025,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "7b440529-f3ca-4830-8889-5ad1e27b860d",
+      id: "dd2db6e4-8aed-4f04-a52b-6157edb26a88",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -12031,7 +12041,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.637Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.009Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -12069,7 +12079,7 @@ run();
 
 ## updateAccountingCategory
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -12088,11 +12098,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "4c1f191f-ccb5-4aa5-9c1d-e7fce4925aeb",
+      id: "5456c482-4617-4a1a-bc78-7dc09f329c6d",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.343Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.501Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12125,11 +12135,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "4c1f191f-ccb5-4aa5-9c1d-e7fce4925aeb",
+      id: "5456c482-4617-4a1a-bc78-7dc09f329c6d",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.343Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.501Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12166,7 +12176,7 @@ run();
 
 ## updateAccountingContact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -12207,7 +12217,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "79da20bd-30fe-45ec-945d-aab5f0152839",
+      id: "6ab9cb6d-95fd-442c-b961-5ed7c6c4dcb3",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -12218,7 +12228,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "3969c650-dd65-4fc3-aabd-b88621b54cb8",
+          id: "1cac51c4-8bd3-4ecf-a06d-87908c0078cb",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -12240,7 +12250,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.506Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.192Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -12296,7 +12306,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "79da20bd-30fe-45ec-945d-aab5f0152839",
+      id: "6ab9cb6d-95fd-442c-b961-5ed7c6c4dcb3",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -12307,7 +12317,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "3969c650-dd65-4fc3-aabd-b88621b54cb8",
+          id: "1cac51c4-8bd3-4ecf-a06d-87908c0078cb",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -12329,7 +12339,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.506Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.192Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -12367,7 +12377,7 @@ run();
 
 ## updateAccountingCreditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -12391,7 +12401,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "b5a6ed42-4635-4616-9b7e-b8bfadbfad47",
+      id: "c0459e23-be53-4a57-9778-8b2245322a5e",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -12400,7 +12410,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.521Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12438,7 +12448,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "b5a6ed42-4635-4616-9b7e-b8bfadbfad47",
+      id: "c0459e23-be53-4a57-9778-8b2245322a5e",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -12447,7 +12457,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.521Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12484,7 +12494,7 @@ run();
 
 ## updateAccountingExpense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -12504,13 +12514,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "81a7dae5-8771-4aa2-bcf0-84875bbc2770",
+          id: "28b01e0f-afe4-4831-8ffb-5b74b066d9a1",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "265d556a-da66-4224-ae17-6b9d80ffe1a7",
+          id: "2907d6b1-b74c-47bc-9b59-aca0d0aeecaa",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -12519,10 +12529,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "ccfbf340-431a-4b33-b4be-25f8e395de3b",
+      id: "2fa39f98-9f21-467f-ba2c-954392980f2d",
       lineitems: [
         {
-          id: "5e0c796a-0815-4019-9447-453810cc1a56",
+          id: "90e2a96f-208e-4d2e-b360-5ef3bcc45efc",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -12530,7 +12540,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "848125e2-cc30-4ff1-853b-4cd2a8061999",
+          id: "8ade7ef9-7ead-4165-82be-73a94c2da564",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -12538,7 +12548,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7f9b26a9-e680-4024-a89c-03a7fdfc6ac8",
+          id: "13af1a5b-fcbc-4b00-9036-1d4983ee8843",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -12547,7 +12557,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "d2be378b-c80b-424d-88c0-40d37776c01b",
+          id: "a6cbef52-f457-41c1-87db-ce3d852c95f3",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -12555,7 +12565,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4bbe22ac-d68b-4a3c-ae62-694e91f810cb",
+          id: "79a9e7ad-e1d2-48c4-854c-42f7a0f382ea",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -12571,7 +12581,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.231Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.913Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12605,13 +12615,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "81a7dae5-8771-4aa2-bcf0-84875bbc2770",
+          id: "28b01e0f-afe4-4831-8ffb-5b74b066d9a1",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "265d556a-da66-4224-ae17-6b9d80ffe1a7",
+          id: "2907d6b1-b74c-47bc-9b59-aca0d0aeecaa",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -12620,10 +12630,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "ccfbf340-431a-4b33-b4be-25f8e395de3b",
+      id: "2fa39f98-9f21-467f-ba2c-954392980f2d",
       lineitems: [
         {
-          id: "5e0c796a-0815-4019-9447-453810cc1a56",
+          id: "90e2a96f-208e-4d2e-b360-5ef3bcc45efc",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -12631,7 +12641,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "848125e2-cc30-4ff1-853b-4cd2a8061999",
+          id: "8ade7ef9-7ead-4165-82be-73a94c2da564",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -12639,7 +12649,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7f9b26a9-e680-4024-a89c-03a7fdfc6ac8",
+          id: "13af1a5b-fcbc-4b00-9036-1d4983ee8843",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -12648,7 +12658,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "d2be378b-c80b-424d-88c0-40d37776c01b",
+          id: "a6cbef52-f457-41c1-87db-ce3d852c95f3",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -12656,7 +12666,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4bbe22ac-d68b-4a3c-ae62-694e91f810cb",
+          id: "79a9e7ad-e1d2-48c4-854c-42f7a0f382ea",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -12672,7 +12682,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.231Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.913Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12709,7 +12719,7 @@ run();
 
 ## updateAccountingExpensereport
 
-Update an expensereport
+Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
 
 ### Example Usage
 
@@ -12726,16 +12736,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.accounting.updateAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-19T11:33:54.337Z"),
+      approvedAt: new Date("2021-04-19T14:54:48.561Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "004e3dfd-d249-440f-b0ae-a6b53381ed5d",
+      id: "50a85c62-0ed0-475f-b73f-358f4394423c",
       lineitems: [
         {
-          id: "1eb168b0-2991-4b9f-9e3c-e0f7f0873637",
+          id: "8009e8d8-a957-4445-9209-bec6fd33653b",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -12743,7 +12753,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "cc2bbf8d-28b2-4d69-b4a9-d8722aed945e",
+          id: "d69d413d-d1c8-4919-903d-1062ac651415",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -12752,7 +12762,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "e6439f0e-d59f-464a-a0a7-b89bea3dcbd0",
+          id: "de14dc02-13eb-4d21-9b74-09e7a7fd16c8",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -12761,7 +12771,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "fbdac375-9660-4a8d-9f3c-219badca69af",
+          id: "f2a791aa-6c1d-44b5-b0f1-377b45ef41ad",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -12773,11 +12783,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-19T11:33:54.337Z"),
+      reimbursedAt: new Date("2021-04-19T14:54:48.561Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-19T11:33:54.337Z"),
+      updatedAt: new Date("2021-04-19T14:54:48.561Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12808,16 +12818,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-19T11:33:54.337Z"),
+      approvedAt: new Date("2021-04-19T14:54:48.561Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "004e3dfd-d249-440f-b0ae-a6b53381ed5d",
+      id: "50a85c62-0ed0-475f-b73f-358f4394423c",
       lineitems: [
         {
-          id: "1eb168b0-2991-4b9f-9e3c-e0f7f0873637",
+          id: "8009e8d8-a957-4445-9209-bec6fd33653b",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -12825,7 +12835,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "cc2bbf8d-28b2-4d69-b4a9-d8722aed945e",
+          id: "d69d413d-d1c8-4919-903d-1062ac651415",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -12834,7 +12844,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "e6439f0e-d59f-464a-a0a7-b89bea3dcbd0",
+          id: "de14dc02-13eb-4d21-9b74-09e7a7fd16c8",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -12843,7 +12853,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "fbdac375-9660-4a8d-9f3c-219badca69af",
+          id: "f2a791aa-6c1d-44b5-b0f1-377b45ef41ad",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -12855,11 +12865,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-19T11:33:54.337Z"),
+      reimbursedAt: new Date("2021-04-19T14:54:48.561Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-19T11:33:54.337Z"),
+      updatedAt: new Date("2021-04-19T14:54:48.561Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -12896,7 +12906,7 @@ run();
 
 ## updateAccountingInvoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -12916,13 +12926,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "1ae1bfb4-4280-4891-9021-531ba9201dde",
+          id: "93adc358-ef9b-4c97-81da-2670d33a4e49",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "241135c1-bbbe-4eed-9883-54ac8c473d21",
+          id: "a1c56d44-e08c-4c4a-901a-1262f2b63dc7",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -12934,7 +12944,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "3f2214cc-3623-4852-a478-7595ea510721",
+      id: "1666fb94-7303-4d36-a2fd-69a193932335",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -12952,7 +12962,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.728Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.339Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -12987,13 +12997,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "1ae1bfb4-4280-4891-9021-531ba9201dde",
+          id: "93adc358-ef9b-4c97-81da-2670d33a4e49",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "241135c1-bbbe-4eed-9883-54ac8c473d21",
+          id: "a1c56d44-e08c-4c4a-901a-1262f2b63dc7",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -13005,7 +13015,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "3f2214cc-3623-4852-a478-7595ea510721",
+      id: "1666fb94-7303-4d36-a2fd-69a193932335",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -13023,7 +13033,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.728Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.339Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -13061,7 +13071,7 @@ run();
 
 ## updateAccountingJournal
 
-Update a journal
+Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
 
 ### Example Usage
 
@@ -13083,16 +13093,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "36290f97-6fc9-4afe-9b1b-9e3ea9b9c53c",
+      id: "9f81c2b7-f004-490b-9bc7-83b3bf298716",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.463Z"),
+      postedAt: new Date("2023-11-07T00:22:13.323Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.018Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13128,16 +13138,16 @@ async function run() {
       createdAt: new Date("2020-02-20T15:14:55.881Z"),
       currency: "CAD",
       description: "Cilicium minima calco constans adipisci.",
-      id: "36290f97-6fc9-4afe-9b1b-9e3ea9b9c53c",
+      id: "9f81c2b7-f004-490b-9bc7-83b3bf298716",
       isInclusiveOfTax: true,
       lineitems: [],
       metadata: [],
-      postedAt: new Date("2023-11-06T10:59:33.463Z"),
+      postedAt: new Date("2023-11-07T00:22:13.323Z"),
       reference: "JE-78884",
       source: "crustulum",
       status: "VOID",
       totalAmount: 0,
-      updatedAt: new Date("2022-01-10T19:52:23.018Z"),
+      updatedAt: new Date("2022-01-11T02:41:17.287Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13172,9 +13182,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAccountingOrder
+## ~~updateAccountingOrder~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -13201,7 +13213,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "89f3691b-dc71-46eb-9de1-38e4bf45eaa5",
+      id: "a2c961ce-8788-4938-8393-5ee0093ea648",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -13216,7 +13228,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.643Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.373Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13257,7 +13269,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "89f3691b-dc71-46eb-9de1-38e4bf45eaa5",
+      id: "a2c961ce-8788-4938-8393-5ee0093ea648",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -13272,7 +13284,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.643Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.373Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13309,7 +13321,7 @@ run();
 
 ## updateAccountingPaymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -13335,12 +13347,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "02fe03ad-cc26-4037-b8fa-d4c5e51c9d4b",
+      id: "385fc269-7d7e-4aec-ba8f-3fe285ea77e5",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.873Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.234Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13380,12 +13392,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "02fe03ad-cc26-4037-b8fa-d4c5e51c9d4b",
+      id: "385fc269-7d7e-4aec-ba8f-3fe285ea77e5",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.873Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.234Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13422,7 +13434,7 @@ run();
 
 ## updateAccountingProject
 
-Update a project
+Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
 
 ### Example Usage
 
@@ -13503,7 +13515,7 @@ run();
 
 ## updateAccountingPurchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -13533,7 +13545,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "633b3b69-943b-4ffd-9f8b-bff28eb95f0f",
+      id: "63fc74d0-07c7-4d62-928f-6c84b729e544",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -13547,7 +13559,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.726Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.230Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13591,7 +13603,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "633b3b69-943b-4ffd-9f8b-bff28eb95f0f",
+      id: "63fc74d0-07c7-4d62-928f-6c84b729e544",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -13605,7 +13617,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.726Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.230Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13642,7 +13654,7 @@ run();
 
 ## updateAccountingQuote
 
-Update a quote
+Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
 
 ### Example Usage
 
@@ -13723,7 +13735,7 @@ run();
 
 ## updateAccountingSalesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -13750,13 +13762,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.777Z"),
+      closedAt: new Date("2023-03-25T19:04:14.648Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "afde1e01-e01b-4ed3-8235-4466ee266aca",
+      id: "720fd437-216c-4905-8188-42a5623beefb",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -13778,7 +13790,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.777Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.648Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13819,13 +13831,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.777Z"),
+      closedAt: new Date("2023-03-25T19:04:14.648Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "afde1e01-e01b-4ed3-8235-4466ee266aca",
+      id: "720fd437-216c-4905-8188-42a5623beefb",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -13847,7 +13859,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.777Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.648Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13884,7 +13896,7 @@ run();
 
 ## updateAccountingTaxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -13912,7 +13924,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "41f2d648-a5fd-4bf2-8a48-9f0740b08d1a",
+      id: "9b5cdf18-ee07-4ba8-a63e-1dd007623ad9",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -13921,7 +13933,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.448Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -13963,7 +13975,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "41f2d648-a5fd-4bf2-8a48-9f0740b08d1a",
+      id: "9b5cdf18-ee07-4ba8-a63e-1dd007623ad9",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -13972,7 +13984,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.448Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -14009,7 +14021,7 @@ run();
 
 ## updateAccountingTransaction
 
-Update a transaction
+Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
 
 ### Example Usage
 
@@ -14027,12 +14039,12 @@ async function run() {
   const result = await unifiedTo.accounting.updateAccountingTransaction({
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "91a71625-270a-4193-a86a-bf214979900d",
+      id: "ca0c1a97-86a3-4b5d-8ae2-06fc783b6432",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "f7767067-82d9-4808-8e1c-d78070c9472f",
+          id: "58f3b3e2-e5a3-49dd-b49e-1fe9315ff36c",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -14044,7 +14056,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.969Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -14076,12 +14088,12 @@ async function run() {
   const res = await accountingUpdateAccountingTransaction(unifiedTo, {
     accountingTransaction: {
       createdAt: new Date("2019-09-25T11:40:42.574Z"),
-      id: "91a71625-270a-4193-a86a-bf214979900d",
+      id: "ca0c1a97-86a3-4b5d-8ae2-06fc783b6432",
       lineitems: [
         {
           categoryIds: [],
           description: "The turquoise Hat combines Wallis and Futuna aesthetics with Potassium-based durability",
-          id: "f7767067-82d9-4808-8e1c-d78070c9472f",
+          id: "58f3b3e2-e5a3-49dd-b49e-1fe9315ff36c",
           name: "Shirt",
           totalAmount: 10184,
           unitAmount: 536,
@@ -14093,7 +14105,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 10184,
       transactionAt: new Date("2019-09-25T11:40:42.574Z"),
-      updatedAt: new Date("2019-10-14T06:08:44.045Z"),
+      updatedAt: new Date("2019-10-14T06:19:12.969Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -14130,7 +14142,7 @@ run();
 
 ## updateAccountingVendorcredit
 
-Update a vendorcredit
+Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
 
 ### Example Usage
 
@@ -14151,14 +14163,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "48aecdf1-5525-4304-8378-4e16ae76eb35",
+      id: "3598b540-345b-4f23-98a3-a9d4fd98d8c6",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.296Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -14193,14 +14205,14 @@ async function run() {
       balanceAmount: 0,
       createdAt: new Date("2023-04-15T21:14:08.197Z"),
       currency: "USD",
-      id: "48aecdf1-5525-4304-8378-4e16ae76eb35",
+      id: "3598b540-345b-4f23-98a3-a9d4fd98d8c6",
       lineitems: [],
       metadata: [],
       notes: "Volup conatus cruciamentum decor avaritia.",
       postedAt: new Date("2023-04-15T21:14:08.197Z"),
       status: "AUTHORIZED",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-03T01:46:39.296Z"),
+      updatedAt: new Date("2023-10-03T04:57:47.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",

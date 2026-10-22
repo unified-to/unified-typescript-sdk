@@ -13,7 +13,7 @@
 
 ## createRepoCommit
 
-Create a commit
+Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
 
 ### Example Usage
 
@@ -31,14 +31,14 @@ async function run() {
   const result = await unifiedTo.commit.createRepoCommit({
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "00672e77-ca43-4746-97d5-7633f9f2ab72",
+      id: "fdd9c536-688f-4aef-82b4-a83d6cb64ab2",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.744Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.876Z"),
     },
     connectionId: "<id>",
   });
@@ -69,14 +69,14 @@ async function run() {
   const res = await repoCreateRepoCommit(unifiedTo, {
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "00672e77-ca43-4746-97d5-7633f9f2ab72",
+      id: "fdd9c536-688f-4aef-82b4-a83d6cb64ab2",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.744Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.876Z"),
     },
     connectionId: "<id>",
   });
@@ -112,7 +112,7 @@ run();
 
 ## getRepoCommit
 
-Retrieve a commit
+Retrieves a single RepoCommit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -191,7 +191,7 @@ run();
 
 ## listRepoCommits
 
-List all commits
+Returns a list of RepoCommits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -268,7 +268,7 @@ run();
 
 ## patchRepoCommit
 
-Update a commit
+Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
 
 ### Example Usage
 
@@ -286,14 +286,14 @@ async function run() {
   const result = await unifiedTo.commit.patchRepoCommit({
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "e14cc0b1-b597-4b8f-8b27-40deb6f6b459",
+      id: "7bd91cb2-2925-4820-8141-992ae2914de5",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.755Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -325,14 +325,14 @@ async function run() {
   const res = await repoPatchRepoCommit(unifiedTo, {
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "e14cc0b1-b597-4b8f-8b27-40deb6f6b459",
+      id: "7bd91cb2-2925-4820-8141-992ae2914de5",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.755Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -369,7 +369,7 @@ run();
 
 ## removeRepoCommit
 
-Remove a commit
+Deletes the RepoCommit identified by `id`.
 
 ### Example Usage
 
@@ -448,7 +448,7 @@ run();
 
 ## updateRepoCommit
 
-Update a commit
+Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
 
 ### Example Usage
 
@@ -466,14 +466,14 @@ async function run() {
   const result = await unifiedTo.commit.updateRepoCommit({
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "e14cc0b1-b597-4b8f-8b27-40deb6f6b459",
+      id: "7bd91cb2-2925-4820-8141-992ae2914de5",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.755Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -505,14 +505,14 @@ async function run() {
   const res = await repoUpdateRepoCommit(unifiedTo, {
     repoCommit: {
       createdAt: new Date("2020-07-12T16:20:42.520Z"),
-      id: "e14cc0b1-b597-4b8f-8b27-40deb6f6b459",
+      id: "7bd91cb2-2925-4820-8141-992ae2914de5",
       linesAdded: 313,
       linesChanged: 659,
       linesDeleted: 482,
       message: "quantify bluetooth bandwidth",
       metadata: [],
       repoId: "<id>",
-      updatedAt: new Date("2023-05-31T07:06:53.755Z"),
+      updatedAt: new Date("2023-05-31T18:09:25.881Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a subscription
+ *
+ * @remarks
+ * Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
  */
 export function paymentCreatePaymentSubscription(
   client: UnifiedToCore,

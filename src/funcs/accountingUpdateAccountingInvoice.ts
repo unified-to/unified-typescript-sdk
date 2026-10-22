@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an invoice
+ *
+ * @remarks
+ * Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
  */
 export function accountingUpdateAccountingInvoice(
   client: UnifiedToCore,

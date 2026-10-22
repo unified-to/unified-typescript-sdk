@@ -13,7 +13,7 @@
 
 ## createAccountingSalesorder
 
-Create a salesorder
+Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
 
 ### Example Usage
 
@@ -40,13 +40,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.756Z"),
+      closedAt: new Date("2023-03-25T19:04:14.637Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "2f5cfb1a-4a57-4e29-985c-33ce859c10e0",
+      id: "0b9c1aac-ea1d-4734-a644-0472d9fcd2cd",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -68,7 +68,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.756Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.637Z"),
     },
     connectionId: "<id>",
   });
@@ -108,13 +108,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.756Z"),
+      closedAt: new Date("2023-03-25T19:04:14.637Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "2f5cfb1a-4a57-4e29-985c-33ce859c10e0",
+      id: "0b9c1aac-ea1d-4734-a644-0472d9fcd2cd",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -136,7 +136,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.756Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.637Z"),
     },
     connectionId: "<id>",
   });
@@ -172,7 +172,7 @@ run();
 
 ## getAccountingSalesorder
 
-Retrieve a salesorder
+Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -251,7 +251,7 @@ run();
 
 ## listAccountingSalesorders
 
-List all salesorders
+Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -328,7 +328,7 @@ run();
 
 ## patchAccountingSalesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -355,13 +355,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.777Z"),
+      closedAt: new Date("2023-03-25T19:04:14.648Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "afde1e01-e01b-4ed3-8235-4466ee266aca",
+      id: "720fd437-216c-4905-8188-42a5623beefb",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -383,7 +383,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.777Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.648Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -424,13 +424,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.777Z"),
+      closedAt: new Date("2023-03-25T19:04:14.648Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "afde1e01-e01b-4ed3-8235-4466ee266aca",
+      id: "720fd437-216c-4905-8188-42a5623beefb",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -452,7 +452,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.777Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.648Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -489,7 +489,7 @@ run();
 
 ## removeAccountingSalesorder
 
-Remove a salesorder
+Deletes the AccountingSalesorder identified by `id`.
 
 ### Example Usage
 
@@ -568,7 +568,7 @@ run();
 
 ## updateAccountingSalesorder
 
-Update a salesorder
+Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
 
 ### Example Usage
 
@@ -595,13 +595,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.777Z"),
+      closedAt: new Date("2023-03-25T19:04:14.648Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "afde1e01-e01b-4ed3-8235-4466ee266aca",
+      id: "720fd437-216c-4905-8188-42a5623beefb",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -623,7 +623,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.777Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.648Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -664,13 +664,13 @@ async function run() {
         regionCode: "MO",
       },
       categoryIds: [],
-      closedAt: new Date("2023-03-25T13:05:43.777Z"),
+      closedAt: new Date("2023-03-25T19:04:14.648Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "afde1e01-e01b-4ed3-8235-4466ee266aca",
+      id: "720fd437-216c-4905-8188-42a5623beefb",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -692,7 +692,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-03-25T13:05:43.777Z"),
+      updatedAt: new Date("2023-03-25T19:04:14.648Z"),
     },
     connectionId: "<id>",
     id: "<id>",

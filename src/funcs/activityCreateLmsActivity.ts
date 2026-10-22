@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an activity
+ *
+ * @remarks
+ * Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
  */
 export function activityCreateLmsActivity(
   client: UnifiedToCore,

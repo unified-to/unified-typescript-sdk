@@ -13,7 +13,7 @@
 
 ## createHealthcareAppointment
 
-Create an appointment
+Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
 
 ### Example Usage
 
@@ -33,7 +33,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0e0bbcf1-3b05-4354-9cfe-9692192ac3cb",
+      id: "783efd94-67e0-404c-8bcf-b3616072850f",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -53,7 +53,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.538Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.751Z"),
     },
     connectionId: "<id>",
   });
@@ -86,7 +86,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0e0bbcf1-3b05-4354-9cfe-9692192ac3cb",
+      id: "783efd94-67e0-404c-8bcf-b3616072850f",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -106,7 +106,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.538Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.751Z"),
     },
     connectionId: "<id>",
   });
@@ -142,7 +142,7 @@ run();
 
 ## getHealthcareAppointment
 
-Retrieve an appointment
+Retrieves a single HealthcareAppointment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -221,7 +221,7 @@ run();
 
 ## listHealthcareAppointments
 
-List all appointments
+Returns a list of HealthcareAppointments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -298,7 +298,7 @@ run();
 
 ## patchHealthcareAppointment
 
-Update an appointment
+Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
 
 ### Example Usage
 
@@ -318,7 +318,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0994fd9a-8fe8-49b0-86f2-7fc8d796cec5",
+      id: "44327027-8e66-4e24-9162-147bbd3e7922",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -338,7 +338,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.558Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.762Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -372,7 +372,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0994fd9a-8fe8-49b0-86f2-7fc8d796cec5",
+      id: "44327027-8e66-4e24-9162-147bbd3e7922",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -392,7 +392,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.558Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.762Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -429,7 +429,7 @@ run();
 
 ## removeHealthcareAppointment
 
-Remove an appointment
+Deletes the HealthcareAppointment identified by `id`.
 
 ### Example Usage
 
@@ -508,7 +508,7 @@ run();
 
 ## updateHealthcareAppointment
 
-Update an appointment
+Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
 
 ### Example Usage
 
@@ -528,7 +528,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0994fd9a-8fe8-49b0-86f2-7fc8d796cec5",
+      id: "44327027-8e66-4e24-9162-147bbd3e7922",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -548,7 +548,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.558Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.762Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -582,7 +582,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0994fd9a-8fe8-49b0-86f2-7fc8d796cec5",
+      id: "44327027-8e66-4e24-9162-147bbd3e7922",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -602,7 +602,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.558Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.762Z"),
     },
     connectionId: "<id>",
     id: "<id>",

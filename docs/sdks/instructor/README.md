@@ -13,7 +13,7 @@
 
 ## createLmsInstructor
 
-Create an instructor
+Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
 
 ### Example Usage
 
@@ -35,7 +35,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "07b71bf1-5de9-4d24-b04f-2f8350ca3f4e",
+      id: "5d7008f1-d792-413c-9822-466ff9f88296",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -51,7 +51,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.926Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.872Z"),
     },
     connectionId: "<id>",
   });
@@ -86,7 +86,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "07b71bf1-5de9-4d24-b04f-2f8350ca3f4e",
+      id: "5d7008f1-d792-413c-9822-466ff9f88296",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -102,7 +102,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.926Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.872Z"),
     },
     connectionId: "<id>",
   });
@@ -138,7 +138,7 @@ run();
 
 ## getLmsInstructor
 
-Retrieve an instructor
+Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -217,7 +217,7 @@ run();
 
 ## listLmsInstructors
 
-List all instructors
+Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -294,7 +294,7 @@ run();
 
 ## patchLmsInstructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -316,7 +316,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "b2742410-e4b8-424d-954a-67d050c0a2c4",
+      id: "a7a76f57-951d-4878-8134-eca585f7acb1",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -332,7 +332,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.942Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.879Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -368,7 +368,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "b2742410-e4b8-424d-954a-67d050c0a2c4",
+      id: "a7a76f57-951d-4878-8134-eca585f7acb1",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -384,7 +384,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.942Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.879Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -421,7 +421,7 @@ run();
 
 ## removeLmsInstructor
 
-Remove an instructor
+Deletes the LmsInstructor identified by `id`.
 
 ### Example Usage
 
@@ -500,7 +500,7 @@ run();
 
 ## updateLmsInstructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -522,7 +522,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "b2742410-e4b8-424d-954a-67d050c0a2c4",
+      id: "a7a76f57-951d-4878-8134-eca585f7acb1",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -538,7 +538,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.942Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.879Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -574,7 +574,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "b2742410-e4b8-424d-954a-67d050c0a2c4",
+      id: "a7a76f57-951d-4878-8134-eca585f7acb1",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -590,7 +590,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.942Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.879Z"),
     },
     connectionId: "<id>",
     id: "<id>",

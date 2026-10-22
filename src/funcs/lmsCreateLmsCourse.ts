@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a course
+ *
+ * @remarks
+ * Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
  */
 export function lmsCreateLmsCourse(
   client: UnifiedToCore,

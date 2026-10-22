@@ -40,6 +40,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Repo extends ClientSDK {
   /**
    * Create a branch
+   *
+   * @remarks
+   * Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
    */
   async createRepoBranch(
     request: operations.CreateRepoBranchRequest,
@@ -54,6 +57,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Create a commit
+   *
+   * @remarks
+   * Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
    */
   async createRepoCommit(
     request: operations.CreateRepoCommitRequest,
@@ -68,6 +74,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Create an organization
+   *
+   * @remarks
+   * Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
    */
   async createRepoOrganization(
     request: operations.CreateRepoOrganizationRequest,
@@ -82,6 +91,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Create a pullrequest
+   *
+   * @remarks
+   * Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
    */
   async createRepoPullrequest(
     request: operations.CreateRepoPullrequestRequest,
@@ -96,6 +108,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Create a repository
+   *
+   * @remarks
+   * Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
    */
   async createRepoRepository(
     request: operations.CreateRepoRepositoryRequest,
@@ -110,6 +125,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Retrieve a branch
+   *
+   * @remarks
+   * Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoBranch(
     request: operations.GetRepoBranchRequest,
@@ -124,6 +142,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Retrieve a commit
+   *
+   * @remarks
+   * Retrieves a single RepoCommit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoCommit(
     request: operations.GetRepoCommitRequest,
@@ -138,6 +159,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Retrieve an organization
+   *
+   * @remarks
+   * Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoOrganization(
     request: operations.GetRepoOrganizationRequest,
@@ -152,6 +176,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Retrieve a pullrequest
+   *
+   * @remarks
+   * Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoPullrequest(
     request: operations.GetRepoPullrequestRequest,
@@ -166,6 +193,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Retrieve a repository
+   *
+   * @remarks
+   * Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoRepository(
     request: operations.GetRepoRepositoryRequest,
@@ -180,6 +210,9 @@ export class Repo extends ClientSDK {
 
   /**
    * List all branches
+   *
+   * @remarks
+   * Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoBranches(
     request: operations.ListRepoBranchesRequest,
@@ -194,6 +227,9 @@ export class Repo extends ClientSDK {
 
   /**
    * List all commits
+   *
+   * @remarks
+   * Returns a list of RepoCommits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoCommits(
     request: operations.ListRepoCommitsRequest,
@@ -208,6 +244,9 @@ export class Repo extends ClientSDK {
 
   /**
    * List all organizations
+   *
+   * @remarks
+   * Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoOrganizations(
     request: operations.ListRepoOrganizationsRequest,
@@ -222,6 +261,9 @@ export class Repo extends ClientSDK {
 
   /**
    * List all pullrequests
+   *
+   * @remarks
+   * Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoPullrequests(
     request: operations.ListRepoPullrequestsRequest,
@@ -236,6 +278,9 @@ export class Repo extends ClientSDK {
 
   /**
    * List all repositories
+   *
+   * @remarks
+   * Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoRepositories(
     request: operations.ListRepoRepositoriesRequest,
@@ -250,6 +295,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update a branch
+   *
+   * @remarks
+   * Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
    */
   async patchRepoBranch(
     request: operations.PatchRepoBranchRequest,
@@ -264,6 +312,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update a commit
+   *
+   * @remarks
+   * Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
    */
   async patchRepoCommit(
     request: operations.PatchRepoCommitRequest,
@@ -278,6 +329,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
    */
   async patchRepoOrganization(
     request: operations.PatchRepoOrganizationRequest,
@@ -292,6 +346,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update a pullrequest
+   *
+   * @remarks
+   * Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
    */
   async patchRepoPullrequest(
     request: operations.PatchRepoPullrequestRequest,
@@ -306,6 +363,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update a repository
+   *
+   * @remarks
+   * Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
    */
   async patchRepoRepository(
     request: operations.PatchRepoRepositoryRequest,
@@ -320,6 +380,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Remove a branch
+   *
+   * @remarks
+   * Deletes the RepoBranch identified by `id`.
    */
   async removeRepoBranch(
     request: operations.RemoveRepoBranchRequest,
@@ -334,6 +397,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Remove a commit
+   *
+   * @remarks
+   * Deletes the RepoCommit identified by `id`.
    */
   async removeRepoCommit(
     request: operations.RemoveRepoCommitRequest,
@@ -348,6 +414,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Remove an organization
+   *
+   * @remarks
+   * Deletes the RepoOrganization identified by `id`.
    */
   async removeRepoOrganization(
     request: operations.RemoveRepoOrganizationRequest,
@@ -362,6 +431,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Remove a pullrequest
+   *
+   * @remarks
+   * Deletes the RepoPullrequest identified by `id`.
    */
   async removeRepoPullrequest(
     request: operations.RemoveRepoPullrequestRequest,
@@ -376,6 +448,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Remove a repository
+   *
+   * @remarks
+   * Deletes the RepoRepository identified by `id`.
    */
   async removeRepoRepository(
     request: operations.RemoveRepoRepositoryRequest,
@@ -390,6 +465,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update a branch
+   *
+   * @remarks
+   * Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
    */
   async updateRepoBranch(
     request: operations.UpdateRepoBranchRequest,
@@ -404,6 +482,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update a commit
+   *
+   * @remarks
+   * Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
    */
   async updateRepoCommit(
     request: operations.UpdateRepoCommitRequest,
@@ -418,6 +499,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
    */
   async updateRepoOrganization(
     request: operations.UpdateRepoOrganizationRequest,
@@ -432,6 +516,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update a pullrequest
+   *
+   * @remarks
+   * Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
    */
   async updateRepoPullrequest(
     request: operations.UpdateRepoPullrequestRequest,
@@ -446,6 +533,9 @@ export class Repo extends ClientSDK {
 
   /**
    * Update a repository
+   *
+   * @remarks
+   * Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
    */
   async updateRepoRepository(
     request: operations.UpdateRepoRepositoryRequest,

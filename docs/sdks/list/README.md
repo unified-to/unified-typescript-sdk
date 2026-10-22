@@ -13,7 +13,7 @@
 
 ## createMartechList
 
-Create a list
+Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider's API. Returns the created MarketingList.
 
 ### Example Usage
 
@@ -40,7 +40,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "69fcf7a6-4cf5-4490-9f28-65ca78d8bcd4",
+      id: "5c9b8b9a-9c2d-4a03-833c-3c654f68511f",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -50,7 +50,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.608Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.184Z"),
     },
     connectionId: "<id>",
   });
@@ -90,7 +90,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "69fcf7a6-4cf5-4490-9f28-65ca78d8bcd4",
+      id: "5c9b8b9a-9c2d-4a03-833c-3c654f68511f",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -100,7 +100,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.608Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.184Z"),
     },
     connectionId: "<id>",
   });
@@ -136,7 +136,7 @@ run();
 
 ## getMartechList
 
-Retrieve a list
+Retrieves a single MarketingList by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -215,7 +215,7 @@ run();
 
 ## listMartechLists
 
-List all lists
+Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -292,7 +292,7 @@ run();
 
 ## patchMartechList
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -319,7 +319,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "754f9f29-9935-4d6e-a42b-77dc54e6f570",
+      id: "e529ee25-96fc-4536-b1be-a31351a09852",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -329,7 +329,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.617Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.190Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -370,7 +370,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "754f9f29-9935-4d6e-a42b-77dc54e6f570",
+      id: "e529ee25-96fc-4536-b1be-a31351a09852",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -380,7 +380,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.617Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.190Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -417,7 +417,7 @@ run();
 
 ## removeMartechList
 
-Remove a list
+Deletes the MarketingList identified by `id`.
 
 ### Example Usage
 
@@ -496,7 +496,7 @@ run();
 
 ## updateMartechList
 
-Update a list
+Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
 
 ### Example Usage
 
@@ -523,7 +523,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "754f9f29-9935-4d6e-a42b-77dc54e6f570",
+      id: "e529ee25-96fc-4536-b1be-a31351a09852",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -533,7 +533,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.617Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.190Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -574,7 +574,7 @@ async function run() {
       },
       createdAt: new Date("2019-09-18T02:01:36.950Z"),
       description: "Vilis.",
-      id: "754f9f29-9935-4d6e-a42b-77dc54e6f570",
+      id: "e529ee25-96fc-4536-b1be-a31351a09852",
       isActive: true,
       language: "ru",
       metadata: [],
@@ -584,7 +584,7 @@ async function run() {
       senderName: "Blake Kuhn",
       senderPhone: "359.305.7962 x28115",
       subject: "Theca caecus copia crebro valeo ulciscor.",
-      updatedAt: new Date("2022-09-13T10:22:51.617Z"),
+      updatedAt: new Date("2022-09-13T20:30:36.190Z"),
     },
     connectionId: "<id>",
     id: "<id>",

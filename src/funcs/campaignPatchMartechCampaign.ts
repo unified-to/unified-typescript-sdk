@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a campaign
+ *
+ * @remarks
+ * Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
  */
 export function campaignPatchMartechCampaign(
   client: UnifiedToCore,

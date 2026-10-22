@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an application
+ *
+ * @remarks
+ * Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
  */
 export function atsPatchAtsApplication(
   client: UnifiedToCore,

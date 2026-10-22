@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a course
+ *
+ * @remarks
+ * Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
  */
 export function lmsUpdateLmsCourse(
   client: UnifiedToCore,

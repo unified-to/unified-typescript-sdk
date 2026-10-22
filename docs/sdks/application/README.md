@@ -13,7 +13,7 @@
 
 ## createAtsApplication
 
-Create an application
+Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
 
 ### Example Usage
 
@@ -31,17 +31,17 @@ async function run() {
   const result = await unifiedTo.application.createAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.905Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.081Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.504Z"),
-      id: "77eb647d-49c6-42dc-a487-ec866819cdfd",
+      hiredAt: new Date("2026-05-13T15:30:02.617Z"),
+      id: "44119be0-35e5-4307-830b-52f7cb3eccef",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "05c81d90-119f-4b09-b328-b2715fc8a820",
+          id: "5fd9a652-acf3-4d2c-a808-7c70eec5a436",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -50,12 +50,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.636Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.151Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.488Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.507Z"),
     },
     connectionId: "<id>",
   });
@@ -86,17 +86,17 @@ async function run() {
   const res = await atsCreateAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.905Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.081Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.504Z"),
-      id: "77eb647d-49c6-42dc-a487-ec866819cdfd",
+      hiredAt: new Date("2026-05-13T15:30:02.617Z"),
+      id: "44119be0-35e5-4307-830b-52f7cb3eccef",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "05c81d90-119f-4b09-b328-b2715fc8a820",
+          id: "5fd9a652-acf3-4d2c-a808-7c70eec5a436",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -105,12 +105,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.636Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.151Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.488Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.507Z"),
     },
     connectionId: "<id>",
   });
@@ -146,7 +146,7 @@ run();
 
 ## getAtsApplication
 
-Retrieve an application
+Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -225,7 +225,7 @@ run();
 
 ## listAtsApplications
 
-List all applications
+Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -302,7 +302,7 @@ run();
 
 ## patchAtsApplication
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -320,17 +320,17 @@ async function run() {
   const result = await unifiedTo.application.patchAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.927Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.095Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.533Z"),
-      id: "f89016af-8e76-4386-a5f8-f52875827780",
+      hiredAt: new Date("2026-05-13T15:30:02.636Z"),
+      id: "de098674-afa5-44dd-b025-a8d4db6ebbd3",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "1d7d9983-f327-453b-9925-f3aadef0edbc",
+          id: "48f4e589-48e9-465f-b808-a423ec5ce9b1",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -339,12 +339,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.670Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.173Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.522Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.529Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -376,17 +376,17 @@ async function run() {
   const res = await atsPatchAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.927Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.095Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.533Z"),
-      id: "f89016af-8e76-4386-a5f8-f52875827780",
+      hiredAt: new Date("2026-05-13T15:30:02.636Z"),
+      id: "de098674-afa5-44dd-b025-a8d4db6ebbd3",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "1d7d9983-f327-453b-9925-f3aadef0edbc",
+          id: "48f4e589-48e9-465f-b808-a423ec5ce9b1",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -395,12 +395,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.670Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.173Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.522Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.529Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -437,7 +437,7 @@ run();
 
 ## removeAtsApplication
 
-Remove an application
+Deletes the AtsApplication identified by `id`.
 
 ### Example Usage
 
@@ -516,7 +516,7 @@ run();
 
 ## updateAtsApplication
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -534,17 +534,17 @@ async function run() {
   const result = await unifiedTo.application.updateAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.927Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.095Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.533Z"),
-      id: "f89016af-8e76-4386-a5f8-f52875827780",
+      hiredAt: new Date("2026-05-13T15:30:02.636Z"),
+      id: "de098674-afa5-44dd-b025-a8d4db6ebbd3",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "1d7d9983-f327-453b-9925-f3aadef0edbc",
+          id: "48f4e589-48e9-465f-b808-a423ec5ce9b1",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -553,12 +553,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.670Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.173Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.522Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.529Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -590,17 +590,17 @@ async function run() {
   const res = await atsUpdateAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.927Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.095Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.533Z"),
-      id: "f89016af-8e76-4386-a5f8-f52875827780",
+      hiredAt: new Date("2026-05-13T15:30:02.636Z"),
+      id: "de098674-afa5-44dd-b025-a8d4db6ebbd3",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "1d7d9983-f327-453b-9925-f3aadef0edbc",
+          id: "48f4e589-48e9-465f-b808-a423ec5ce9b1",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -609,12 +609,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.670Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.173Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.522Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.529Z"),
     },
     connectionId: "<id>",
     id: "<id>",

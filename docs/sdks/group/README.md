@@ -27,7 +27,7 @@
 
 ## createAdsGroup
 
-Create a group
+Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
 
 ### Example Usage
 
@@ -50,15 +50,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.063Z"),
-      id: "e45039fb-3efb-44b6-829f-459257cb7d8b",
+      endAt: new Date("2026-06-26T01:03:58.071Z"),
+      id: "03f5f8ee-91e2-4648-b9f7-6c2c9fe29bb2",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.616Z"),
+      startAt: new Date("2026-01-10T04:43:57.475Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.418Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.337Z"),
     },
     connectionId: "<id>",
   });
@@ -94,15 +94,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.063Z"),
-      id: "e45039fb-3efb-44b6-829f-459257cb7d8b",
+      endAt: new Date("2026-06-26T01:03:58.071Z"),
+      id: "03f5f8ee-91e2-4648-b9f7-6c2c9fe29bb2",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.616Z"),
+      startAt: new Date("2026-01-10T04:43:57.475Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.418Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.337Z"),
     },
     connectionId: "<id>",
   });
@@ -138,7 +138,7 @@ run();
 
 ## createHrisGroup
 
-Create a group
+Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
 
 ### Example Usage
 
@@ -157,12 +157,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "084e308d-cc1a-4501-b864-8e39fb68afa5",
+      id: "ca5facde-b483-4fd5-97f8-6b4e1c9c41d6",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.166Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.439Z"),
     },
     connectionId: "<id>",
   });
@@ -194,12 +194,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "084e308d-cc1a-4501-b864-8e39fb68afa5",
+      id: "ca5facde-b483-4fd5-97f8-6b4e1c9c41d6",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.166Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.439Z"),
     },
     connectionId: "<id>",
   });
@@ -318,7 +318,7 @@ run();
 
 ## getAdsGroup
 
-Retrieve a group
+Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -397,7 +397,7 @@ run();
 
 ## getClubsGroup
 
-Retrieve a group
+Retrieves a single ClubsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ run();
 
 ## getHrisGroup
 
-Retrieve a group
+Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -634,7 +634,7 @@ run();
 
 ## listAdsGroups
 
-List all groups
+Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -711,7 +711,7 @@ run();
 
 ## listClubsGroups
 
-List all groups
+Returns a list of ClubsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -788,7 +788,7 @@ run();
 
 ## listHrisGroups
 
-List all groups
+Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -942,7 +942,7 @@ run();
 
 ## patchAdsGroup
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -965,15 +965,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.283Z"),
-      id: "7b7c62f4-58bd-4fc0-a784-f550e20caaf4",
+      endAt: new Date("2026-06-26T01:03:58.192Z"),
+      id: "9b64b0d7-ba3a-47f2-8330-9a76a58aa377",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.821Z"),
+      startAt: new Date("2026-01-10T04:43:57.588Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.494Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.379Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1010,15 +1010,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.283Z"),
-      id: "7b7c62f4-58bd-4fc0-a784-f550e20caaf4",
+      endAt: new Date("2026-06-26T01:03:58.192Z"),
+      id: "9b64b0d7-ba3a-47f2-8330-9a76a58aa377",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.821Z"),
+      startAt: new Date("2026-01-10T04:43:57.588Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.494Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.379Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1055,7 +1055,7 @@ run();
 
 ## patchHrisGroup
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -1074,12 +1074,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ab26d290-27a7-4355-a563-a595c6c5899b",
+      id: "113ceed8-ead0-40e2-a306-2a700f355907",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.180Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1112,12 +1112,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ab26d290-27a7-4355-a563-a595c6c5899b",
+      id: "113ceed8-ead0-40e2-a306-2a700f355907",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.180Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1239,7 +1239,7 @@ run();
 
 ## removeAdsGroup
 
-Remove a group
+Deletes the AdsGroup identified by `id`.
 
 ### Example Usage
 
@@ -1318,7 +1318,7 @@ run();
 
 ## removeHrisGroup
 
-Remove a group
+Deletes the HrisGroup identified by `id`.
 
 ### Example Usage
 
@@ -1476,7 +1476,7 @@ run();
 
 ## updateAdsGroup
 
-Update a group
+Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -1499,15 +1499,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.283Z"),
-      id: "7b7c62f4-58bd-4fc0-a784-f550e20caaf4",
+      endAt: new Date("2026-06-26T01:03:58.192Z"),
+      id: "9b64b0d7-ba3a-47f2-8330-9a76a58aa377",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.821Z"),
+      startAt: new Date("2026-01-10T04:43:57.588Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.494Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.379Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1544,15 +1544,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-06-25T02:06:56.283Z"),
-      id: "7b7c62f4-58bd-4fc0-a784-f550e20caaf4",
+      endAt: new Date("2026-06-26T01:03:58.192Z"),
+      id: "9b64b0d7-ba3a-47f2-8330-9a76a58aa377",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-09T07:19:06.821Z"),
+      startAt: new Date("2026-01-10T04:43:57.588Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-13T16:25:11.494Z"),
+      updatedAt: new Date("2022-01-14T00:24:55.379Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1589,7 +1589,7 @@ run();
 
 ## updateHrisGroup
 
-Update a group
+Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
 
 ### Example Usage
 
@@ -1608,12 +1608,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ab26d290-27a7-4355-a563-a595c6c5899b",
+      id: "113ceed8-ead0-40e2-a306-2a700f355907",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.180Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1646,12 +1646,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ab26d290-27a7-4355-a563-a595c6c5899b",
+      id: "113ceed8-ead0-40e2-a306-2a700f355907",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-05-21T23:56:33.180Z"),
+      updatedAt: new Date("2026-05-22T20:36:38.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Timeentry extends ClientSDK {
   /**
    * Create a timeentry
+   *
+   * @remarks
+   * Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
    */
   async createLegalTimeentry(
     request: operations.CreateLegalTimeentryRequest,
@@ -30,6 +33,9 @@ export class Timeentry extends ClientSDK {
 
   /**
    * Retrieve a timeentry
+   *
+   * @remarks
+   * Retrieves a single LegalTimeentry by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLegalTimeentry(
     request: operations.GetLegalTimeentryRequest,
@@ -44,6 +50,9 @@ export class Timeentry extends ClientSDK {
 
   /**
    * List all timeentries
+   *
+   * @remarks
+   * Returns a list of LegalTimeentries. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLegalTimeentries(
     request: operations.ListLegalTimeentriesRequest,
@@ -58,6 +67,9 @@ export class Timeentry extends ClientSDK {
 
   /**
    * Update a timeentry
+   *
+   * @remarks
+   * Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
    */
   async patchLegalTimeentry(
     request: operations.PatchLegalTimeentryRequest,
@@ -72,6 +84,9 @@ export class Timeentry extends ClientSDK {
 
   /**
    * Remove a timeentry
+   *
+   * @remarks
+   * Deletes the LegalTimeentry identified by `id`.
    */
   async removeLegalTimeentry(
     request: operations.RemoveLegalTimeentryRequest,
@@ -86,6 +101,9 @@ export class Timeentry extends ClientSDK {
 
   /**
    * Update a timeentry
+   *
+   * @remarks
+   * Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
    */
   async updateLegalTimeentry(
     request: operations.UpdateLegalTimeentryRequest,

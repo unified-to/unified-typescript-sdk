@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a salesorder
+ *
+ * @remarks
+ * Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
  */
 export function accountingUpdateAccountingSalesorder(
   client: UnifiedToCore,

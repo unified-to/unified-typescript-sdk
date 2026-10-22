@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a note
+ *
+ * @remarks
+ * Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
  */
 export function ticketingUpdateTicketingNote(
   client: UnifiedToCore,

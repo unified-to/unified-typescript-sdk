@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a scorecard
+ *
+ * @remarks
+ * Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
  */
 export function atsPatchAtsScorecard(
   client: UnifiedToCore,

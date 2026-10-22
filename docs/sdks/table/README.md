@@ -13,7 +13,7 @@
 
 ## createDatastoreTable
 
-Create a table
+Creates a DatastoreTable. Provide the unified DatastoreTable fields in the request body; they are mapped to the provider's API. Returns the created DatastoreTable.
 
 ### Example Usage
 
@@ -35,7 +35,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "fdbf7e81-c73e-4eec-8ca0-2d0f5c64ad02",
+          id: "a687b0db-1291-47b4-8daf-0f9e329674f4",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -45,7 +45,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "f4343447-1576-4708-82fa-500836768409",
+          id: "f713f824-d371-470b-ab6e-eb4bbd4dfb22",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -55,7 +55,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "4ef75da0-be86-4dad-a523-54f343d969e7",
+          id: "28db2a2c-7907-485f-9139-f09f124558ec",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -67,7 +67,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "61ca44bd-01c7-4560-be34-2df4762dd3a0",
+          id: "42152577-4f4d-431a-92c4-5f1e757d0d01",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -76,7 +76,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "49619a58-7225-4be6-8c76-e264af24707a",
+          id: "bde44333-291a-472a-8f30-1e822258ff77",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -86,18 +86,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "c51f8ee9-1d81-42d6-9609-0173473bc241",
+      id: "50fde3cf-5316-42a9-a0d2-1c6158bb2689",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "c51f8ee9-1d81-42d6-9609-0173473bc241",
+          tableId: "50fde3cf-5316-42a9-a0d2-1c6158bb2689",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-12T20:27:33.190Z"),
+      updatedAt: new Date("2022-08-12T21:41:27.715Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -133,7 +133,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "fdbf7e81-c73e-4eec-8ca0-2d0f5c64ad02",
+          id: "a687b0db-1291-47b4-8daf-0f9e329674f4",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -143,7 +143,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "f4343447-1576-4708-82fa-500836768409",
+          id: "f713f824-d371-470b-ab6e-eb4bbd4dfb22",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -153,7 +153,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "4ef75da0-be86-4dad-a523-54f343d969e7",
+          id: "28db2a2c-7907-485f-9139-f09f124558ec",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -165,7 +165,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "61ca44bd-01c7-4560-be34-2df4762dd3a0",
+          id: "42152577-4f4d-431a-92c4-5f1e757d0d01",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -174,7 +174,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "49619a58-7225-4be6-8c76-e264af24707a",
+          id: "bde44333-291a-472a-8f30-1e822258ff77",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -184,18 +184,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "c51f8ee9-1d81-42d6-9609-0173473bc241",
+      id: "50fde3cf-5316-42a9-a0d2-1c6158bb2689",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "c51f8ee9-1d81-42d6-9609-0173473bc241",
+          tableId: "50fde3cf-5316-42a9-a0d2-1c6158bb2689",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-12T20:27:33.190Z"),
+      updatedAt: new Date("2022-08-12T21:41:27.715Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -232,7 +232,7 @@ run();
 
 ## getDatastoreTable
 
-Retrieve a table
+Retrieves a single DatastoreTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -311,7 +311,7 @@ run();
 
 ## listDatastoreTables
 
-List all tables
+Returns a list of DatastoreTables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -388,7 +388,7 @@ run();
 
 ## patchDatastoreTable
 
-Update a table
+Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
 
 ### Example Usage
 
@@ -410,7 +410,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "3145a024-2822-4e0f-916f-c7f2bb60f79d",
+          id: "2d215244-ab2a-49ea-9ebe-b72c0551d1d4",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -420,7 +420,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "09409438-8440-411c-9bc3-ad13052ebca8",
+          id: "9b7d1797-d287-4681-a39c-75a7e558afe0",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -430,7 +430,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "aaf8d9cc-6202-4d52-ba44-eb4c0db5f735",
+          id: "ca268808-b819-42e4-bd17-1d924a3a0ef6",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -442,7 +442,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "623cf627-22af-416e-b79d-91c2de303453",
+          id: "5e7ff3e3-c62e-4b05-bd1d-2394f2e35b35",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -451,7 +451,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "e6e967ac-7554-4594-b807-6159465ba0f3",
+          id: "2367c526-ce85-4fba-86b7-732f4512c485",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -461,18 +461,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "23180496-a93e-4b3e-a2b5-3f8251b8dc52",
+      id: "18845516-469c-4881-80f2-61362039deed",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "23180496-a93e-4b3e-a2b5-3f8251b8dc52",
+          tableId: "18845516-469c-4881-80f2-61362039deed",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-12T20:27:33.192Z"),
+      updatedAt: new Date("2022-08-12T21:41:27.716Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -509,7 +509,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "3145a024-2822-4e0f-916f-c7f2bb60f79d",
+          id: "2d215244-ab2a-49ea-9ebe-b72c0551d1d4",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -519,7 +519,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "09409438-8440-411c-9bc3-ad13052ebca8",
+          id: "9b7d1797-d287-4681-a39c-75a7e558afe0",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -529,7 +529,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "aaf8d9cc-6202-4d52-ba44-eb4c0db5f735",
+          id: "ca268808-b819-42e4-bd17-1d924a3a0ef6",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -541,7 +541,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "623cf627-22af-416e-b79d-91c2de303453",
+          id: "5e7ff3e3-c62e-4b05-bd1d-2394f2e35b35",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -550,7 +550,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "e6e967ac-7554-4594-b807-6159465ba0f3",
+          id: "2367c526-ce85-4fba-86b7-732f4512c485",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -560,18 +560,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "23180496-a93e-4b3e-a2b5-3f8251b8dc52",
+      id: "18845516-469c-4881-80f2-61362039deed",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "23180496-a93e-4b3e-a2b5-3f8251b8dc52",
+          tableId: "18845516-469c-4881-80f2-61362039deed",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-12T20:27:33.192Z"),
+      updatedAt: new Date("2022-08-12T21:41:27.716Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -609,7 +609,7 @@ run();
 
 ## removeDatastoreTable
 
-Remove a table
+Deletes the DatastoreTable identified by `id`.
 
 ### Example Usage
 
@@ -688,7 +688,7 @@ run();
 
 ## updateDatastoreTable
 
-Update a table
+Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
 
 ### Example Usage
 
@@ -710,7 +710,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "3145a024-2822-4e0f-916f-c7f2bb60f79d",
+          id: "2d215244-ab2a-49ea-9ebe-b72c0551d1d4",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -720,7 +720,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "09409438-8440-411c-9bc3-ad13052ebca8",
+          id: "9b7d1797-d287-4681-a39c-75a7e558afe0",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -730,7 +730,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "aaf8d9cc-6202-4d52-ba44-eb4c0db5f735",
+          id: "ca268808-b819-42e4-bd17-1d924a3a0ef6",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -742,7 +742,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "623cf627-22af-416e-b79d-91c2de303453",
+          id: "5e7ff3e3-c62e-4b05-bd1d-2394f2e35b35",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -751,7 +751,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "e6e967ac-7554-4594-b807-6159465ba0f3",
+          id: "2367c526-ce85-4fba-86b7-732f4512c485",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -761,18 +761,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "23180496-a93e-4b3e-a2b5-3f8251b8dc52",
+      id: "18845516-469c-4881-80f2-61362039deed",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "23180496-a93e-4b3e-a2b5-3f8251b8dc52",
+          tableId: "18845516-469c-4881-80f2-61362039deed",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-12T20:27:33.192Z"),
+      updatedAt: new Date("2022-08-12T21:41:27.716Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -809,7 +809,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "3145a024-2822-4e0f-916f-c7f2bb60f79d",
+          id: "2d215244-ab2a-49ea-9ebe-b72c0551d1d4",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -819,7 +819,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "09409438-8440-411c-9bc3-ad13052ebca8",
+          id: "9b7d1797-d287-4681-a39c-75a7e558afe0",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -829,7 +829,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "aaf8d9cc-6202-4d52-ba44-eb4c0db5f735",
+          id: "ca268808-b819-42e4-bd17-1d924a3a0ef6",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -841,7 +841,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "623cf627-22af-416e-b79d-91c2de303453",
+          id: "5e7ff3e3-c62e-4b05-bd1d-2394f2e35b35",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -850,7 +850,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "e6e967ac-7554-4594-b807-6159465ba0f3",
+          id: "2367c526-ce85-4fba-86b7-732f4512c485",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -860,18 +860,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "23180496-a93e-4b3e-a2b5-3f8251b8dc52",
+      id: "18845516-469c-4881-80f2-61362039deed",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "23180496-a93e-4b3e-a2b5-3f8251b8dc52",
+          tableId: "18845516-469c-4881-80f2-61362039deed",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-12T20:27:33.192Z"),
+      updatedAt: new Date("2022-08-12T21:41:27.716Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",

@@ -13,7 +13,7 @@
 
 ## createHrisDeduction
 
-Create a deduction
+Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
 
 ### Example Usage
 
@@ -37,14 +37,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "a08f6d9e-6bba-4281-ac7e-6d9777793c0a",
+      id: "3f71da63-77a4-4497-9729-4a4349cb2889",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.436Z"),
+      startAt: new Date("2025-03-16T02:24:23.920Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.822Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.160Z"),
     },
     connectionId: "<id>",
   });
@@ -81,14 +81,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "a08f6d9e-6bba-4281-ac7e-6d9777793c0a",
+      id: "3f71da63-77a4-4497-9729-4a4349cb2889",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.436Z"),
+      startAt: new Date("2025-03-16T02:24:23.920Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.822Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.160Z"),
     },
     connectionId: "<id>",
   });
@@ -124,7 +124,7 @@ run();
 
 ## getHrisDeduction
 
-Retrieve a deduction
+Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -203,7 +203,7 @@ run();
 
 ## listHrisDeductions
 
-List all deductions
+Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ run();
 
 ## patchHrisDeduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -304,14 +304,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "0fcce65c-ee0d-4155-b35d-1911dbfa6513",
+      id: "65778c94-dd64-4184-a206-51e8f2ecb816",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.454Z"),
+      startAt: new Date("2025-03-16T02:24:23.935Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.837Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -349,14 +349,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "0fcce65c-ee0d-4155-b35d-1911dbfa6513",
+      id: "65778c94-dd64-4184-a206-51e8f2ecb816",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.454Z"),
+      startAt: new Date("2025-03-16T02:24:23.935Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.837Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -393,7 +393,7 @@ run();
 
 ## removeHrisDeduction
 
-Remove a deduction
+Deletes the HrisDeduction identified by `id`.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ run();
 
 ## updateHrisDeduction
 
-Update a deduction
+Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
 
 ### Example Usage
 
@@ -496,14 +496,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "0fcce65c-ee0d-4155-b35d-1911dbfa6513",
+      id: "65778c94-dd64-4184-a206-51e8f2ecb816",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.454Z"),
+      startAt: new Date("2025-03-16T02:24:23.935Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.837Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -541,14 +541,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "0fcce65c-ee0d-4155-b35d-1911dbfa6513",
+      id: "65778c94-dd64-4184-a206-51e8f2ecb816",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-03-15T08:06:20.454Z"),
+      startAt: new Date("2025-03-16T02:24:23.935Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-03-22T07:20:11.837Z"),
+      updatedAt: new Date("2024-03-22T22:07:29.172Z"),
     },
     connectionId: "<id>",
     id: "<id>",

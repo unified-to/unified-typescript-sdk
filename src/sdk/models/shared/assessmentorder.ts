@@ -58,6 +58,9 @@ export const ResponseStatus = {
 } as const;
 export type ResponseStatus = OpenEnum<typeof ResponseStatus>;
 
+/**
+ * The current state of the assessment order
+ */
 export const AssessmentOrderStatus = {
   Open: "OPEN",
   InProgress: "IN_PROGRESS",
@@ -65,6 +68,9 @@ export const AssessmentOrderStatus = {
   Failed: "FAILED",
   Rejected: "REJECTED",
 } as const;
+/**
+ * The current state of the assessment order
+ */
 export type AssessmentOrderStatus = OpenEnum<typeof AssessmentOrderStatus>;
 
 export type AssessmentOrder = {
@@ -168,6 +174,9 @@ export type AssessmentOrder = {
    * URL to view detailed results
    */
   responseUrl?: string | undefined;
+  /**
+   * The current state of the assessment order
+   */
   status?: AssessmentOrderStatus | undefined;
   /**
    * URL to redirect user to after assessment

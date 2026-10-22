@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a journal
+ *
+ * @remarks
+ * Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
  */
 export function accountingUpdateAccountingJournal(
   client: UnifiedToCore,

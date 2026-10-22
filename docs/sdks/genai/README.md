@@ -38,7 +38,7 @@
 
 ## createGenaiAgent
 
-Create an agent
+Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
 
 ### Example Usage
 
@@ -57,11 +57,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "7fb2beaf-0881-4193-9c48-b3fc0bdf03e3",
+      id: "180d61f5-bb66-476c-b484-ea325ddb7e49",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.469Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.794Z"),
     },
     connectionId: "<id>",
   });
@@ -93,11 +93,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "7fb2beaf-0881-4193-9c48-b3fc0bdf03e3",
+      id: "180d61f5-bb66-476c-b484-ea325ddb7e49",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.469Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.794Z"),
     },
     connectionId: "<id>",
   });
@@ -133,7 +133,7 @@ run();
 
 ## createGenaiEmbedding
 
-Create an embedding
+Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
 
 ### Example Usage
 
@@ -158,7 +158,7 @@ async function run() {
       dimension: 423,
       embeddings: "Est.",
       encondingFormat: "FLOAT",
-      id: "6006c2ac-8382-44f1-96a4-19ba3ab88856",
+      id: "291fbdc1-d017-4ff1-891e-497612668c7c",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -199,7 +199,7 @@ async function run() {
       dimension: 423,
       embeddings: "Est.",
       encondingFormat: "FLOAT",
-      id: "6006c2ac-8382-44f1-96a4-19ba3ab88856",
+      id: "291fbdc1-d017-4ff1-891e-497612668c7c",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -238,7 +238,7 @@ run();
 
 ## createGenaiMemory
 
-Create a memory
+Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
 
 ### Example Usage
 
@@ -257,7 +257,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "db66691d-31fa-4cfe-b5a6-213d20386f8e",
+      id: "dd935a2e-005f-4347-bc9c-03ae2a921276",
       metadata: [
         {
           extraData: {
@@ -272,7 +272,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.331Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.656Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -305,7 +305,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "db66691d-31fa-4cfe-b5a6-213d20386f8e",
+      id: "dd935a2e-005f-4347-bc9c-03ae2a921276",
       metadata: [
         {
           extraData: {
@@ -320,7 +320,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.331Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.656Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -357,7 +357,7 @@ run();
 
 ## createGenaiOrganization
 
-Create an organization
+Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
 
 ### Example Usage
 
@@ -376,10 +376,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "1e6a202a-7a3e-468b-bd3f-61f9028a8e40",
+      id: "2c064f77-5b01-43a2-a9a2-fae6d41838e2",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.827Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.411Z"),
     },
     connectionId: "<id>",
   });
@@ -411,10 +411,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "1e6a202a-7a3e-468b-bd3f-61f9028a8e40",
+      id: "2c064f77-5b01-43a2-a9a2-fae6d41838e2",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.827Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.411Z"),
     },
     connectionId: "<id>",
   });
@@ -450,7 +450,7 @@ run();
 
 ## createGenaiPrompt
 
-Create a prompt
+Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
 
 ### Example Usage
 
@@ -675,7 +675,7 @@ run();
 
 ## createGenaiTask
 
-Create a task
+Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
 
 ### Example Usage
 
@@ -692,10 +692,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.createGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.491Z"),
+      completedAt: new Date("2025-10-02T02:56:27.080Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "fc2c6dad-a331-4471-b707-e6be100c7f19",
+      id: "ad66429e-c368-4e40-90e4-a7054187ea51",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -710,12 +710,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.479Z"),
+      startedAt: new Date("2024-05-22T01:09:56.171Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.019Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.123Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -746,10 +746,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiCreateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.491Z"),
+      completedAt: new Date("2025-10-02T02:56:27.080Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "fc2c6dad-a331-4471-b707-e6be100c7f19",
+      id: "ad66429e-c368-4e40-90e4-a7054187ea51",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -764,12 +764,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.479Z"),
+      startedAt: new Date("2024-05-22T01:09:56.171Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.019Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.123Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -806,7 +806,7 @@ run();
 
 ## getGenaiAgent
 
-Retrieve an agent
+Retrieves a single GenaiAgent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -885,7 +885,7 @@ run();
 
 ## getGenaiMemory
 
-Retrieve a memory
+Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -964,7 +964,7 @@ run();
 
 ## getGenaiModel
 
-Retrieve a model
+Retrieves a single GenaiModel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1043,7 +1043,7 @@ run();
 
 ## getGenaiOrganization
 
-Retrieve an organization
+Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1122,7 +1122,7 @@ run();
 
 ## getGenaiSkill
 
-Retrieve a skill
+Retrieves a single GenaiSkill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1201,7 +1201,7 @@ run();
 
 ## getGenaiTask
 
-Retrieve a task
+Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1280,7 +1280,7 @@ run();
 
 ## listGenaiAgents
 
-List all agents
+Returns a list of GenaiAgents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1357,7 +1357,7 @@ run();
 
 ## listGenaiMemories
 
-List all memories
+Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1434,7 +1434,7 @@ run();
 
 ## listGenaiModels
 
-List all models
+Returns a list of GenaiModels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1511,7 +1511,7 @@ run();
 
 ## listGenaiOrganizations
 
-List all organizations
+Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1588,7 +1588,7 @@ run();
 
 ## listGenaiSkills
 
-List all skills
+Returns a list of GenaiSkills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1665,7 +1665,7 @@ run();
 
 ## listGenaiTasks
 
-List all tasks
+Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1742,7 +1742,7 @@ run();
 
 ## patchGenaiAgent
 
-Update an agent
+Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
 
 ### Example Usage
 
@@ -1761,11 +1761,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c3763d0c-c3df-47b6-bbb0-61f6ee977c40",
+      id: "794b00a6-ee5f-4091-a92b-b2a4e701c89e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.477Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1798,11 +1798,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c3763d0c-c3df-47b6-bbb0-61f6ee977c40",
+      id: "794b00a6-ee5f-4091-a92b-b2a4e701c89e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.477Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1839,7 +1839,7 @@ run();
 
 ## patchGenaiMemory
 
-Update a memory
+Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
 
 ### Example Usage
 
@@ -1858,7 +1858,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "909ed601-7d23-4cf4-be20-c6abdbbea8c0",
+      id: "97c810c0-d55a-418f-adaf-5de3d1fc117e",
       metadata: [
         {
           extraData: {
@@ -1873,7 +1873,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.336Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.659Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -1907,7 +1907,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "909ed601-7d23-4cf4-be20-c6abdbbea8c0",
+      id: "97c810c0-d55a-418f-adaf-5de3d1fc117e",
       metadata: [
         {
           extraData: {
@@ -1922,7 +1922,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.336Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.659Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -1960,7 +1960,7 @@ run();
 
 ## patchGenaiOrganization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1979,10 +1979,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "4670c118-90f4-4b44-9ee6-e5bb28b6db80",
+      id: "dba4e5a8-5133-4dfe-a14c-a6931fa88295",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.830Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.412Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2015,10 +2015,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "4670c118-90f4-4b44-9ee6-e5bb28b6db80",
+      id: "dba4e5a8-5133-4dfe-a14c-a6931fa88295",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.830Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.412Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2055,7 +2055,7 @@ run();
 
 ## patchGenaiTask
 
-Update a task
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
 
 ### Example Usage
 
@@ -2072,10 +2072,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.patchGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.524Z"),
+      completedAt: new Date("2025-10-02T02:56:27.090Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "75af7f27-40ea-437d-b9e4-15c13a30fdb3",
+      id: "631c9b1c-859d-48fd-b399-b29770d739c3",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2090,12 +2090,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.503Z"),
+      startedAt: new Date("2024-05-22T01:09:56.179Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.035Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.128Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -2127,10 +2127,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiPatchGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.524Z"),
+      completedAt: new Date("2025-10-02T02:56:27.090Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "75af7f27-40ea-437d-b9e4-15c13a30fdb3",
+      id: "631c9b1c-859d-48fd-b399-b29770d739c3",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2145,12 +2145,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.503Z"),
+      startedAt: new Date("2024-05-22T01:09:56.179Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.035Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.128Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -2188,7 +2188,7 @@ run();
 
 ## removeGenaiAgent
 
-Remove an agent
+Deletes the GenaiAgent identified by `id`.
 
 ### Example Usage
 
@@ -2267,7 +2267,7 @@ run();
 
 ## removeGenaiMemory
 
-Remove a memory
+Deletes the GenaiMemory identified by `id`.
 
 ### Example Usage
 
@@ -2346,7 +2346,7 @@ run();
 
 ## removeGenaiOrganization
 
-Remove an organization
+Deletes the GenaiOrganization identified by `id`.
 
 ### Example Usage
 
@@ -2425,7 +2425,7 @@ run();
 
 ## removeGenaiSkill
 
-Remove a skill
+Deletes the GenaiSkill identified by `id`.
 
 ### Example Usage
 
@@ -2504,7 +2504,7 @@ run();
 
 ## removeGenaiTask
 
-Remove a task
+Deletes the GenaiTask identified by `id`.
 
 ### Example Usage
 
@@ -2583,7 +2583,7 @@ run();
 
 ## updateGenaiAgent
 
-Update an agent
+Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
 
 ### Example Usage
 
@@ -2602,11 +2602,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c3763d0c-c3df-47b6-bbb0-61f6ee977c40",
+      id: "794b00a6-ee5f-4091-a92b-b2a4e701c89e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.477Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2639,11 +2639,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c3763d0c-c3df-47b6-bbb0-61f6ee977c40",
+      id: "794b00a6-ee5f-4091-a92b-b2a4e701c89e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.477Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2680,7 +2680,7 @@ run();
 
 ## updateGenaiMemory
 
-Update a memory
+Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
 
 ### Example Usage
 
@@ -2699,7 +2699,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "909ed601-7d23-4cf4-be20-c6abdbbea8c0",
+      id: "97c810c0-d55a-418f-adaf-5de3d1fc117e",
       metadata: [
         {
           extraData: {
@@ -2714,7 +2714,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.336Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.659Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -2748,7 +2748,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "909ed601-7d23-4cf4-be20-c6abdbbea8c0",
+      id: "97c810c0-d55a-418f-adaf-5de3d1fc117e",
       metadata: [
         {
           extraData: {
@@ -2763,7 +2763,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-25T21:39:05.336Z"),
+      updatedAt: new Date("2023-04-26T04:54:20.659Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -2801,7 +2801,7 @@ run();
 
 ## updateGenaiOrganization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -2820,10 +2820,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "4670c118-90f4-4b44-9ee6-e5bb28b6db80",
+      id: "dba4e5a8-5133-4dfe-a14c-a6931fa88295",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.830Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.412Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2856,10 +2856,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "4670c118-90f4-4b44-9ee6-e5bb28b6db80",
+      id: "dba4e5a8-5133-4dfe-a14c-a6931fa88295",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.830Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.412Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2896,7 +2896,7 @@ run();
 
 ## updateGenaiTask
 
-Update a task
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
 
 ### Example Usage
 
@@ -2913,10 +2913,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.updateGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.524Z"),
+      completedAt: new Date("2025-10-02T02:56:27.090Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "75af7f27-40ea-437d-b9e4-15c13a30fdb3",
+      id: "631c9b1c-859d-48fd-b399-b29770d739c3",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2931,12 +2931,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.503Z"),
+      startedAt: new Date("2024-05-22T01:09:56.179Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.035Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.128Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -2968,10 +2968,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiUpdateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.524Z"),
+      completedAt: new Date("2025-10-02T02:56:27.090Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "75af7f27-40ea-437d-b9e4-15c13a30fdb3",
+      id: "631c9b1c-859d-48fd-b399-b29770d739c3",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2986,12 +2986,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.503Z"),
+      startedAt: new Date("2024-05-22T01:09:56.179Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.035Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.128Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",

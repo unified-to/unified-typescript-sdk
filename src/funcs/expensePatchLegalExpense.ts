@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an expense
+ *
+ * @remarks
+ * Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
  */
 export function expensePatchLegalExpense(
   client: UnifiedToCore,

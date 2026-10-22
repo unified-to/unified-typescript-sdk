@@ -72,6 +72,9 @@ export type VerificationRequest = {
   createdAt?: Date | undefined;
   id?: string | undefined;
   metadata?: Array<VerificationMetadata> | undefined;
+  /**
+   * The ID of the verification package (the check) to run (a VerificationPackage ID)
+   */
   packageId?: string | undefined;
   parameters?: Array<VerificationParameterInput> | undefined;
   profileAddresses?: Array<VerificationAddress> | undefined;
@@ -79,12 +82,18 @@ export type VerificationRequest = {
    * YYYY-MM-DD
    */
   profileDateOfBirth?: string | undefined;
+  /**
+   * The email addresses of the person being verified
+   */
   profileEmails?: Array<string> | undefined;
   profileGender?: VerificationRequestProfileGender | undefined;
   /**
    * XXX.XXX.XXX.XXX
    */
   profileIpAddress?: string | undefined;
+  /**
+   * The full name of the person being verified
+   */
   profileName?: string | undefined;
   profileNationalIdentifier?: string | undefined;
   profileTelephones?: Array<string> | undefined;

@@ -13,7 +13,7 @@
 
 ## createComputeKey
 
-Create a key
+Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
 
 ### Example Usage
 
@@ -31,11 +31,11 @@ async function run() {
   const result = await unifiedTo.key.createComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "1359328b-f6ab-4c34-9050-ade5963698d0",
+      id: "f96522a6-eb4d-4110-82c1-3fdde3cadcfa",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.101Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.595Z"),
     },
     connectionId: "<id>",
   });
@@ -66,11 +66,11 @@ async function run() {
   const res = await computeCreateComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "1359328b-f6ab-4c34-9050-ade5963698d0",
+      id: "f96522a6-eb4d-4110-82c1-3fdde3cadcfa",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.101Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.595Z"),
     },
     connectionId: "<id>",
   });
@@ -106,7 +106,7 @@ run();
 
 ## getComputeKey
 
-Retrieve a key
+Retrieves a single ComputeKey by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -185,7 +185,7 @@ run();
 
 ## listComputeKeys
 
-List all keys
+Returns a list of ComputeKeys. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -262,7 +262,7 @@ run();
 
 ## patchComputeKey
 
-Update a key
+Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
 
 ### Example Usage
 
@@ -280,11 +280,11 @@ async function run() {
   const result = await unifiedTo.key.patchComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "5476220f-c68d-4c3a-8b5b-911a0aff8b6c",
+      id: "6718f4ba-c53e-4ca0-9f3b-fc010cdc9951",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.107Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.599Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -316,11 +316,11 @@ async function run() {
   const res = await computePatchComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "5476220f-c68d-4c3a-8b5b-911a0aff8b6c",
+      id: "6718f4ba-c53e-4ca0-9f3b-fc010cdc9951",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.107Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.599Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -357,7 +357,7 @@ run();
 
 ## removeComputeKey
 
-Remove a key
+Deletes the ComputeKey identified by `id`.
 
 ### Example Usage
 
@@ -436,7 +436,7 @@ run();
 
 ## updateComputeKey
 
-Update a key
+Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
 
 ### Example Usage
 
@@ -454,11 +454,11 @@ async function run() {
   const result = await unifiedTo.key.updateComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "5476220f-c68d-4c3a-8b5b-911a0aff8b6c",
+      id: "6718f4ba-c53e-4ca0-9f3b-fc010cdc9951",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.107Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.599Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -490,11 +490,11 @@ async function run() {
   const res = await computeUpdateComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "5476220f-c68d-4c3a-8b5b-911a0aff8b6c",
+      id: "6718f4ba-c53e-4ca0-9f3b-fc010cdc9951",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-06T23:32:45.107Z"),
+      updatedAt: new Date("2024-10-07T08:08:38.599Z"),
     },
     connectionId: "<id>",
     id: "<id>",

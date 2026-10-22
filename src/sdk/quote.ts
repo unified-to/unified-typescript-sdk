@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Quote extends ClientSDK {
   /**
    * Create a quote
+   *
+   * @remarks
+   * Creates a AccountingQuote. Provide the unified AccountingQuote fields in the request body; they are mapped to the provider's API. Returns the created AccountingQuote.
    */
   async createAccountingQuote(
     request: operations.CreateAccountingQuoteRequest,
@@ -30,6 +33,9 @@ export class Quote extends ClientSDK {
 
   /**
    * Retrieve a quote
+   *
+   * @remarks
+   * Retrieves a single AccountingQuote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingQuote(
     request: operations.GetAccountingQuoteRequest,
@@ -44,6 +50,9 @@ export class Quote extends ClientSDK {
 
   /**
    * List all quotes
+   *
+   * @remarks
+   * Returns a list of AccountingQuotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingQuotes(
     request: operations.ListAccountingQuotesRequest,
@@ -58,6 +67,9 @@ export class Quote extends ClientSDK {
 
   /**
    * Update a quote
+   *
+   * @remarks
+   * Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
    */
   async patchAccountingQuote(
     request: operations.PatchAccountingQuoteRequest,
@@ -72,6 +84,9 @@ export class Quote extends ClientSDK {
 
   /**
    * Remove a quote
+   *
+   * @remarks
+   * Deletes the AccountingQuote identified by `id`.
    */
   async removeAccountingQuote(
     request: operations.RemoveAccountingQuoteRequest,
@@ -86,6 +101,9 @@ export class Quote extends ClientSDK {
 
   /**
    * Update a quote
+   *
+   * @remarks
+   * Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
    */
   async updateAccountingQuote(
     request: operations.UpdateAccountingQuoteRequest,

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Inventory extends ClientSDK {
   /**
    * Create an inventory
+   *
+   * @remarks
+   * Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
    */
   async createCommerceInventory(
     request: operations.CreateCommerceInventoryRequest,
@@ -30,6 +33,9 @@ export class Inventory extends ClientSDK {
 
   /**
    * Retrieve an inventory
+   *
+   * @remarks
+   * Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceInventory(
     request: operations.GetCommerceInventoryRequest,
@@ -44,6 +50,9 @@ export class Inventory extends ClientSDK {
 
   /**
    * List all inventories
+   *
+   * @remarks
+   * Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceInventories(
     request: operations.ListCommerceInventoriesRequest,
@@ -58,6 +67,9 @@ export class Inventory extends ClientSDK {
 
   /**
    * Update an inventory
+   *
+   * @remarks
+   * Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
    */
   async patchCommerceInventory(
     request: operations.PatchCommerceInventoryRequest,
@@ -72,6 +84,9 @@ export class Inventory extends ClientSDK {
 
   /**
    * Remove an inventory
+   *
+   * @remarks
+   * Deletes the CommerceInventory identified by `id`.
    */
   async removeCommerceInventory(
     request: operations.RemoveCommerceInventoryRequest,
@@ -86,6 +101,9 @@ export class Inventory extends ClientSDK {
 
   /**
    * Update an inventory
+   *
+   * @remarks
+   * Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
    */
   async updateCommerceInventory(
     request: operations.UpdateCommerceInventoryRequest,

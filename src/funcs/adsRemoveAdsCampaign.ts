@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a campaign
+ *
+ * @remarks
+ * Deletes the AdsCampaign identified by `id`.
  */
 export function adsRemoveAdsCampaign(
   client: UnifiedToCore,

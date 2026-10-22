@@ -13,7 +13,7 @@
 
 ## createRepoPullrequest
 
-Create a pullrequest
+Creates a RepoPullrequest. Provide the unified RepoPullrequest fields in the request body; they are mapped to the provider's API. Returns the created RepoPullrequest.
 
 ### Example Usage
 
@@ -30,9 +30,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.pullrequest.createRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.611Z"),
+      closedAt: new Date("2025-05-02T04:33:07.750Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "fce9da2b-9de3-4819-8663-ccf451fffda9",
+      id: "d359a4dd-dda3-45db-8407-1e8a6243ba88",
       labels: [
         "creptio",
         "tutamen",
@@ -41,7 +41,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.950Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.651Z"),
     },
     connectionId: "<id>",
   });
@@ -71,9 +71,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoCreateRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.611Z"),
+      closedAt: new Date("2025-05-02T04:33:07.750Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "fce9da2b-9de3-4819-8663-ccf451fffda9",
+      id: "d359a4dd-dda3-45db-8407-1e8a6243ba88",
       labels: [
         "creptio",
         "tutamen",
@@ -82,7 +82,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.950Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.651Z"),
     },
     connectionId: "<id>",
   });
@@ -118,7 +118,7 @@ run();
 
 ## getRepoPullrequest
 
-Retrieve a pullrequest
+Retrieves a single RepoPullrequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -197,7 +197,7 @@ run();
 
 ## listRepoPullrequests
 
-List all pullrequests
+Returns a list of RepoPullrequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -274,7 +274,7 @@ run();
 
 ## patchRepoPullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -291,9 +291,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.pullrequest.patchRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.618Z"),
+      closedAt: new Date("2025-05-02T04:33:07.758Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "891e200f-ab2a-4cbd-bee2-c07d245cfcff",
+      id: "03d246b7-5b5e-46e5-b070-4ef459e46ee4",
       labels: [
         "creptio",
         "tutamen",
@@ -302,7 +302,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.959Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.662Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -333,9 +333,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoPatchRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.618Z"),
+      closedAt: new Date("2025-05-02T04:33:07.758Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "891e200f-ab2a-4cbd-bee2-c07d245cfcff",
+      id: "03d246b7-5b5e-46e5-b070-4ef459e46ee4",
       labels: [
         "creptio",
         "tutamen",
@@ -344,7 +344,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.959Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.662Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -381,7 +381,7 @@ run();
 
 ## removeRepoPullrequest
 
-Remove a pullrequest
+Deletes the RepoPullrequest identified by `id`.
 
 ### Example Usage
 
@@ -460,7 +460,7 @@ run();
 
 ## updateRepoPullrequest
 
-Update a pullrequest
+Updates the RepoPullrequest identified by `id`. Provide the unified RepoPullrequest fields to change in the request body.
 
 ### Example Usage
 
@@ -477,9 +477,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.pullrequest.updateRepoPullrequest({
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.618Z"),
+      closedAt: new Date("2025-05-02T04:33:07.758Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "891e200f-ab2a-4cbd-bee2-c07d245cfcff",
+      id: "03d246b7-5b5e-46e5-b070-4ef459e46ee4",
       labels: [
         "creptio",
         "tutamen",
@@ -488,7 +488,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.959Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.662Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -519,9 +519,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await repoUpdateRepoPullrequest(unifiedTo, {
     repoPullrequest: {
-      closedAt: new Date("2025-05-01T14:12:58.618Z"),
+      closedAt: new Date("2025-05-02T04:33:07.758Z"),
       createdAt: new Date("2023-02-27T09:37:13.663Z"),
-      id: "891e200f-ab2a-4cbd-bee2-c07d245cfcff",
+      id: "03d246b7-5b5e-46e5-b070-4ef459e46ee4",
       labels: [
         "creptio",
         "tutamen",
@@ -530,7 +530,7 @@ async function run() {
       notes: "Texo advoco bibo amet. Defero coadunatio turbo curtus. Consuasor aggero veritatis suggero adeo.",
       status: "APPROVED",
       title: "reboot mobile application",
-      updatedAt: new Date("2026-01-17T07:32:40.959Z"),
+      updatedAt: new Date("2026-01-18T02:35:12.662Z"),
     },
     connectionId: "<id>",
     id: "<id>",

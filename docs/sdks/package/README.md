@@ -39,7 +39,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "2c11a1dc-385c-4458-bd00-cdb135bca327",
+      id: "6a0978b3-4ca4-498d-9044-04833ce8a18e",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -54,7 +54,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-09-25T09:21:50.281Z"),
+      updatedAt: new Date("2023-09-25T14:34:35.330Z"),
     },
     connectionId: "<id>",
   });
@@ -91,7 +91,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "2c11a1dc-385c-4458-bd00-cdb135bca327",
+      id: "6a0978b3-4ca4-498d-9044-04833ce8a18e",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -106,7 +106,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-09-25T09:21:50.281Z"),
+      updatedAt: new Date("2023-09-25T14:34:35.330Z"),
     },
     connectionId: "<id>",
   });
@@ -221,7 +221,7 @@ run();
 
 ## getVerificationPackage
 
-Retrieve a package
+Retrieves a single VerificationPackage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -377,7 +377,7 @@ run();
 
 ## listVerificationPackages
 
-List all packages
+Returns a list of VerificationPackages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -478,7 +478,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "2405b732-67de-42f2-bba5-af6fa2fde956",
+      id: "c2ae41d8-da93-449a-a424-68609feae18e",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -493,7 +493,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-09-25T09:21:50.287Z"),
+      updatedAt: new Date("2023-09-25T14:34:35.333Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -531,7 +531,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "2405b732-67de-42f2-bba5-af6fa2fde956",
+      id: "c2ae41d8-da93-449a-a424-68609feae18e",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -546,7 +546,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-09-25T09:21:50.287Z"),
+      updatedAt: new Date("2023-09-25T14:34:35.333Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -686,7 +686,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "2405b732-67de-42f2-bba5-af6fa2fde956",
+      id: "c2ae41d8-da93-449a-a424-68609feae18e",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -701,7 +701,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-09-25T09:21:50.287Z"),
+      updatedAt: new Date("2023-09-25T14:34:35.333Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -739,7 +739,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "2405b732-67de-42f2-bba5-af6fa2fde956",
+      id: "c2ae41d8-da93-449a-a424-68609feae18e",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -754,7 +754,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-09-25T09:21:50.287Z"),
+      updatedAt: new Date("2023-09-25T14:34:35.333Z"),
     },
     connectionId: "<id>",
     id: "<id>",

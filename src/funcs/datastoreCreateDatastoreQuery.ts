@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a query
+ *
+ * @remarks
+ * Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
  */
 export function datastoreCreateDatastoreQuery(
   client: UnifiedToCore,

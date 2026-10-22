@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a shipment
+ *
+ * @remarks
+ * Creates a ShippingShipment. Provide the unified ShippingShipment fields in the request body; they are mapped to the provider's API. Returns the created ShippingShipment.
  */
 export function shippingCreateShippingShipment(
   client: UnifiedToCore,

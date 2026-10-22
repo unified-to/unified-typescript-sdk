@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a space
+ *
+ * @remarks
+ * Creates a KmsSpace. Provide the unified KmsSpace fields in the request body; they are mapped to the provider's API. Returns the created KmsSpace.
  */
 export function kmsCreateKmsSpace(
   client: UnifiedToCore,

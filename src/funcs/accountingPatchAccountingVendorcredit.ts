@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a vendorcredit
+ *
+ * @remarks
+ * Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
  */
 export function accountingPatchAccountingVendorcredit(
   client: UnifiedToCore,

@@ -148,7 +148,13 @@ export type AdsCampaign = {
   kpi?: PropertyAdsCampaignKpi | undefined;
   labels?: Array<string> | undefined;
   metadata?: Array<AdsMetadata> | undefined;
+  /**
+   * The campaign's name
+   */
   name?: string | undefined;
+  /**
+   * The ID of the ad account the campaign belongs to (an AdsOrganization ID)
+   */
   organizationId?: string | undefined;
   plannedSpendAmount?: number | undefined;
   raw?: { [k: string]: any } | undefined;

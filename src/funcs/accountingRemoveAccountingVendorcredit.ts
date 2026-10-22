@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a vendorcredit
+ *
+ * @remarks
+ * Deletes the AccountingVendorcredit identified by `id`.
  */
 export function accountingRemoveAccountingVendorcredit(
   client: UnifiedToCore,

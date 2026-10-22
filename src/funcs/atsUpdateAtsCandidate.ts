@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a candidate
+ *
+ * @remarks
+ * Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
  */
 export function atsUpdateAtsCandidate(
   client: UnifiedToCore,

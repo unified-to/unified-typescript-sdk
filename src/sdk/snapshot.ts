@@ -14,6 +14,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Snapshot extends ClientSDK {
   /**
    * Create a snapshot
+   *
+   * @remarks
+   * Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
    */
   async createComputeSnapshot(
     request: operations.CreateComputeSnapshotRequest,
@@ -28,6 +31,9 @@ export class Snapshot extends ClientSDK {
 
   /**
    * Retrieve a snapshot
+   *
+   * @remarks
+   * Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeSnapshot(
     request: operations.GetComputeSnapshotRequest,
@@ -42,6 +48,9 @@ export class Snapshot extends ClientSDK {
 
   /**
    * List all snapshots
+   *
+   * @remarks
+   * Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeSnapshots(
     request: operations.ListComputeSnapshotsRequest,
@@ -56,6 +65,9 @@ export class Snapshot extends ClientSDK {
 
   /**
    * Remove a snapshot
+   *
+   * @remarks
+   * Deletes the ComputeSnapshot identified by `id`.
    */
   async removeComputeSnapshot(
     request: operations.RemoveComputeSnapshotRequest,

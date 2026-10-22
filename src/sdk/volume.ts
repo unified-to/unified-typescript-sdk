@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Volume extends ClientSDK {
   /**
    * Create a volume
+   *
+   * @remarks
+   * Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
    */
   async createComputeVolume(
     request: operations.CreateComputeVolumeRequest,
@@ -30,6 +33,9 @@ export class Volume extends ClientSDK {
 
   /**
    * Retrieve a volume
+   *
+   * @remarks
+   * Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeVolume(
     request: operations.GetComputeVolumeRequest,
@@ -44,6 +50,9 @@ export class Volume extends ClientSDK {
 
   /**
    * List all volumes
+   *
+   * @remarks
+   * Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeVolumes(
     request: operations.ListComputeVolumesRequest,
@@ -58,6 +67,9 @@ export class Volume extends ClientSDK {
 
   /**
    * Update a volume
+   *
+   * @remarks
+   * Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
    */
   async patchComputeVolume(
     request: operations.PatchComputeVolumeRequest,
@@ -72,6 +84,9 @@ export class Volume extends ClientSDK {
 
   /**
    * Remove a volume
+   *
+   * @remarks
+   * Deletes the ComputeVolume identified by `id`.
    */
   async removeComputeVolume(
     request: operations.RemoveComputeVolumeRequest,
@@ -86,6 +101,9 @@ export class Volume extends ClientSDK {
 
   /**
    * Update a volume
+   *
+   * @remarks
+   * Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
    */
   async updateComputeVolume(
     request: operations.UpdateComputeVolumeRequest,

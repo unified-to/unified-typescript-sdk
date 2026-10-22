@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a page
+ *
+ * @remarks
+ * Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider's API. Returns the created KmsPage.
  */
 export function kmsCreateKmsPage(
   client: UnifiedToCore,

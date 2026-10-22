@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a content
+ *
+ * @remarks
+ * Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
  */
 export function lmsCreateLmsContent(
   client: UnifiedToCore,

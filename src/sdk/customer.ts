@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Customer extends ClientSDK {
   /**
    * Create a customer
+   *
+   * @remarks
+   * Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider's API. Returns the created TicketingCustomer.
    */
   async createTicketingCustomer(
     request: operations.CreateTicketingCustomerRequest,
@@ -30,6 +33,9 @@ export class Customer extends ClientSDK {
 
   /**
    * Retrieve a customer
+   *
+   * @remarks
+   * Retrieves a single TicketingCustomer by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTicketingCustomer(
     request: operations.GetTicketingCustomerRequest,
@@ -44,6 +50,9 @@ export class Customer extends ClientSDK {
 
   /**
    * List all customers
+   *
+   * @remarks
+   * Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTicketingCustomers(
     request: operations.ListTicketingCustomersRequest,
@@ -58,6 +67,9 @@ export class Customer extends ClientSDK {
 
   /**
    * Update a customer
+   *
+   * @remarks
+   * Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
    */
   async patchTicketingCustomer(
     request: operations.PatchTicketingCustomerRequest,
@@ -72,6 +84,9 @@ export class Customer extends ClientSDK {
 
   /**
    * Remove a customer
+   *
+   * @remarks
+   * Deletes the TicketingCustomer identified by `id`.
    */
   async removeTicketingCustomer(
     request: operations.RemoveTicketingCustomerRequest,
@@ -86,6 +101,9 @@ export class Customer extends ClientSDK {
 
   /**
    * Update a customer
+   *
+   * @remarks
+   * Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
    */
   async updateTicketingCustomer(
     request: operations.UpdateTicketingCustomerRequest,

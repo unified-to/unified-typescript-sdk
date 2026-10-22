@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a comment
+ *
+ * @remarks
+ * Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
  */
 export function kmsCreateKmsComment(
   client: UnifiedToCore,

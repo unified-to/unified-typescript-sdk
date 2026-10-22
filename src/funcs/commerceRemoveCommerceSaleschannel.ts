@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a saleschannel
+ *
+ * @remarks
+ * Deletes the CommerceSaleschannel identified by `id`.
  */
 export function commerceRemoveCommerceSaleschannel(
   client: UnifiedToCore,

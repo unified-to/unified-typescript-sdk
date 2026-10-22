@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an instance
+ *
+ * @remarks
+ * Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
  */
 export function computePatchComputeInstance(
   client: UnifiedToCore,

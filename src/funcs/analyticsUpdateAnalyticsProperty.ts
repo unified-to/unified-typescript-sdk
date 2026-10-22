@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a property
+ *
+ * @remarks
+ * Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
  */
 export function analyticsUpdateAnalyticsProperty(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an ad
+ *
+ * @remarks
+ * Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
  */
 export function adsUpdateAdsAd(
   client: UnifiedToCore,

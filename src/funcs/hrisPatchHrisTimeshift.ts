@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a timeshift
+ *
+ * @remarks
+ * Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
  */
 export function hrisPatchHrisTimeshift(
   client: UnifiedToCore,

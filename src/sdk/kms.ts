@@ -28,6 +28,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Kms extends ClientSDK {
   /**
    * Create a comment
+   *
+   * @remarks
+   * Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
    */
   async createKmsComment(
     request: operations.CreateKmsCommentRequest,
@@ -42,6 +45,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Create a page
+   *
+   * @remarks
+   * Creates a KmsPage. Provide the unified KmsPage fields in the request body; they are mapped to the provider's API. Returns the created KmsPage.
    */
   async createKmsPage(
     request: operations.CreateKmsPageRequest,
@@ -56,6 +62,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Create a space
+   *
+   * @remarks
+   * Creates a KmsSpace. Provide the unified KmsSpace fields in the request body; they are mapped to the provider's API. Returns the created KmsSpace.
    */
   async createKmsSpace(
     request: operations.CreateKmsSpaceRequest,
@@ -70,6 +79,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Retrieve a comment
+   *
+   * @remarks
+   * Retrieves a single KmsComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getKmsComment(
     request: operations.GetKmsCommentRequest,
@@ -84,6 +96,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Retrieve a page
+   *
+   * @remarks
+   * Retrieves a single KmsPage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getKmsPage(
     request: operations.GetKmsPageRequest,
@@ -98,6 +113,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Retrieve a space
+   *
+   * @remarks
+   * Retrieves a single KmsSpace by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getKmsSpace(
     request: operations.GetKmsSpaceRequest,
@@ -112,6 +130,9 @@ export class Kms extends ClientSDK {
 
   /**
    * List all comments
+   *
+   * @remarks
+   * Returns a list of KmsComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listKmsComments(
     request: operations.ListKmsCommentsRequest,
@@ -126,6 +147,9 @@ export class Kms extends ClientSDK {
 
   /**
    * List all pages
+   *
+   * @remarks
+   * Returns a list of KmsPages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listKmsPages(
     request: operations.ListKmsPagesRequest,
@@ -140,6 +164,9 @@ export class Kms extends ClientSDK {
 
   /**
    * List all spaces
+   *
+   * @remarks
+   * Returns a list of KmsSpaces. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listKmsSpaces(
     request: operations.ListKmsSpacesRequest,
@@ -154,6 +181,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
    */
   async patchKmsComment(
     request: operations.PatchKmsCommentRequest,
@@ -168,6 +198,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Update a page
+   *
+   * @remarks
+   * Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
    */
   async patchKmsPage(
     request: operations.PatchKmsPageRequest,
@@ -182,6 +215,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Update a space
+   *
+   * @remarks
+   * Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
    */
   async patchKmsSpace(
     request: operations.PatchKmsSpaceRequest,
@@ -196,6 +232,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Remove a comment
+   *
+   * @remarks
+   * Deletes the KmsComment identified by `id`.
    */
   async removeKmsComment(
     request: operations.RemoveKmsCommentRequest,
@@ -210,6 +249,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Remove a page
+   *
+   * @remarks
+   * Deletes the KmsPage identified by `id`.
    */
   async removeKmsPage(
     request: operations.RemoveKmsPageRequest,
@@ -224,6 +266,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Remove a space
+   *
+   * @remarks
+   * Deletes the KmsSpace identified by `id`.
    */
   async removeKmsSpace(
     request: operations.RemoveKmsSpaceRequest,
@@ -238,6 +283,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
    */
   async updateKmsComment(
     request: operations.UpdateKmsCommentRequest,
@@ -252,6 +300,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Update a page
+   *
+   * @remarks
+   * Updates the KmsPage identified by `id`. Provide the unified KmsPage fields to change in the request body.
    */
   async updateKmsPage(
     request: operations.UpdateKmsPageRequest,
@@ -266,6 +317,9 @@ export class Kms extends ClientSDK {
 
   /**
    * Update a space
+   *
+   * @remarks
+   * Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
    */
   async updateKmsSpace(
     request: operations.UpdateKmsSpaceRequest,

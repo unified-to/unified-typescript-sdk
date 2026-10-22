@@ -37,7 +37,7 @@
 
 ## createHealthcareAppointment
 
-Create an appointment
+Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
 
 ### Example Usage
 
@@ -57,7 +57,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0e0bbcf1-3b05-4354-9cfe-9692192ac3cb",
+      id: "783efd94-67e0-404c-8bcf-b3616072850f",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -77,7 +77,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.538Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.751Z"),
     },
     connectionId: "<id>",
   });
@@ -110,7 +110,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0e0bbcf1-3b05-4354-9cfe-9692192ac3cb",
+      id: "783efd94-67e0-404c-8bcf-b3616072850f",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -130,7 +130,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.538Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.751Z"),
     },
     connectionId: "<id>",
   });
@@ -166,7 +166,7 @@ run();
 
 ## createHealthcareObservation
 
-Create an observation
+Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
 
 ### Example Usage
 
@@ -215,15 +215,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "5418e9c9-7d43-4c10-9029-1c7ffcf8fdde",
+      id: "4fb3119c-a8b4-49f7-ab50-43ef675437db",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-11T10:50:35.743Z"),
+      issuedAt: new Date("2025-05-12T01:54:45.239Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-01-20T04:18:44.821Z"),
+      observedAt: new Date("2025-01-20T17:29:25.412Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-03-24T06:53:18.074Z"),
+      updatedAt: new Date("2026-03-25T03:20:35.183Z"),
     },
     connectionId: "<id>",
   });
@@ -285,15 +285,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "5418e9c9-7d43-4c10-9029-1c7ffcf8fdde",
+      id: "4fb3119c-a8b4-49f7-ab50-43ef675437db",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-11T10:50:35.743Z"),
+      issuedAt: new Date("2025-05-12T01:54:45.239Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-01-20T04:18:44.821Z"),
+      observedAt: new Date("2025-01-20T17:29:25.412Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-03-24T06:53:18.074Z"),
+      updatedAt: new Date("2026-03-25T03:20:35.183Z"),
     },
     connectionId: "<id>",
   });
@@ -329,7 +329,7 @@ run();
 
 ## createHealthcarePatient
 
-Create a patient
+Creates a HealthcarePatient. Provide the unified HealthcarePatient fields in the request body; they are mapped to the provider's API. Returns the created HealthcarePatient.
 
 ### Example Usage
 
@@ -353,7 +353,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -363,7 +363,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "fbc2f0c4-c95b-4f9f-9b3a-638eea47434c",
+      id: "27f5d17b-3850-4d9c-9bd8-64beb08115f4",
       identifiers: [
         {
           type: "MRN",
@@ -383,7 +383,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.813Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.849Z"),
     },
     connectionId: "<id>",
   });
@@ -420,7 +420,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -430,7 +430,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "fbc2f0c4-c95b-4f9f-9b3a-638eea47434c",
+      id: "27f5d17b-3850-4d9c-9bd8-64beb08115f4",
       identifiers: [
         {
           type: "MRN",
@@ -450,7 +450,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.813Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.849Z"),
     },
     connectionId: "<id>",
   });
@@ -486,7 +486,7 @@ run();
 
 ## getHealthcareAllergy
 
-Retrieve an allergy
+Retrieves a single HealthcareAllergy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -565,7 +565,7 @@ run();
 
 ## getHealthcareAppointment
 
-Retrieve an appointment
+Retrieves a single HealthcareAppointment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -644,7 +644,7 @@ run();
 
 ## getHealthcareCondition
 
-Retrieve a condition
+Retrieves a single HealthcareCondition by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -723,7 +723,7 @@ run();
 
 ## getHealthcareEncounter
 
-Retrieve an encounter
+Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -802,7 +802,7 @@ run();
 
 ## getHealthcareImmunization
 
-Retrieve an immunization
+Retrieves a single HealthcareImmunization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -881,7 +881,7 @@ run();
 
 ## getHealthcareLocation
 
-Retrieve a location
+Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -960,7 +960,7 @@ run();
 
 ## getHealthcareMedication
 
-Retrieve a medication
+Retrieves a single HealthcareMedication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1039,7 +1039,7 @@ run();
 
 ## getHealthcareObservation
 
-Retrieve an observation
+Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1118,7 +1118,7 @@ run();
 
 ## getHealthcarePatient
 
-Retrieve a patient
+Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1197,7 +1197,7 @@ run();
 
 ## getHealthcarePractitioner
 
-Retrieve a practitioner
+Retrieves a single HealthcarePractitioner by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1276,7 +1276,7 @@ run();
 
 ## getHealthcareSlot
 
-Retrieve a slot
+Retrieves a single HealthcareSlot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1355,7 +1355,7 @@ run();
 
 ## listHealthcareAllergies
 
-List all allergies
+Returns a list of HealthcareAllergies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1432,7 +1432,7 @@ run();
 
 ## listHealthcareAppointments
 
-List all appointments
+Returns a list of HealthcareAppointments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1509,7 +1509,7 @@ run();
 
 ## listHealthcareConditions
 
-List all conditions
+Returns a list of HealthcareConditions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1586,7 +1586,7 @@ run();
 
 ## listHealthcareEncounters
 
-List all encounters
+Returns a list of HealthcareEncounters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1663,7 +1663,7 @@ run();
 
 ## listHealthcareImmunizations
 
-List all immunizations
+Returns a list of HealthcareImmunizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1740,7 +1740,7 @@ run();
 
 ## listHealthcareLocations
 
-List all locations
+Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1817,7 +1817,7 @@ run();
 
 ## listHealthcareMedications
 
-List all medications
+Returns a list of HealthcareMedications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1894,7 +1894,7 @@ run();
 
 ## listHealthcareObservations
 
-List all observations
+Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1971,7 +1971,7 @@ run();
 
 ## listHealthcarePatients
 
-List all patients
+Returns a list of HealthcarePatients. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2048,7 +2048,7 @@ run();
 
 ## listHealthcarePractitioners
 
-List all practitioners
+Returns a list of HealthcarePractitioners. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2125,7 +2125,7 @@ run();
 
 ## listHealthcareSlots
 
-List all slots
+Returns a list of HealthcareSlots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2202,7 +2202,7 @@ run();
 
 ## patchHealthcareAppointment
 
-Update an appointment
+Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
 
 ### Example Usage
 
@@ -2222,7 +2222,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0994fd9a-8fe8-49b0-86f2-7fc8d796cec5",
+      id: "44327027-8e66-4e24-9162-147bbd3e7922",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -2242,7 +2242,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.558Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.762Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2276,7 +2276,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0994fd9a-8fe8-49b0-86f2-7fc8d796cec5",
+      id: "44327027-8e66-4e24-9162-147bbd3e7922",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -2296,7 +2296,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.558Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.762Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2333,7 +2333,7 @@ run();
 
 ## patchHealthcarePatient
 
-Update a patient
+Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
 
 ### Example Usage
 
@@ -2357,7 +2357,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -2367,7 +2367,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "130625ce-7a7f-4b05-adc1-01aa6ebf074a",
+      id: "6eaf30cc-59d6-4bc5-8c55-6e395d72aa52",
       identifiers: [
         {
           type: "MRN",
@@ -2387,7 +2387,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.851Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.866Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2425,7 +2425,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -2435,7 +2435,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "130625ce-7a7f-4b05-adc1-01aa6ebf074a",
+      id: "6eaf30cc-59d6-4bc5-8c55-6e395d72aa52",
       identifiers: [
         {
           type: "MRN",
@@ -2455,7 +2455,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.851Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.866Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2492,7 +2492,7 @@ run();
 
 ## removeHealthcareAppointment
 
-Remove an appointment
+Deletes the HealthcareAppointment identified by `id`.
 
 ### Example Usage
 
@@ -2571,7 +2571,7 @@ run();
 
 ## updateHealthcareAppointment
 
-Update an appointment
+Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
 
 ### Example Usage
 
@@ -2591,7 +2591,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0994fd9a-8fe8-49b0-86f2-7fc8d796cec5",
+      id: "44327027-8e66-4e24-9162-147bbd3e7922",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -2611,7 +2611,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.558Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.762Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2645,7 +2645,7 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "0994fd9a-8fe8-49b0-86f2-7fc8d796cec5",
+      id: "44327027-8e66-4e24-9162-147bbd3e7922",
       metadata: [],
       practitionerIds: [],
       reasons: [
@@ -2665,7 +2665,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-19T11:06:10.558Z"),
+      updatedAt: new Date("2025-11-20T04:52:50.762Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2702,7 +2702,7 @@ run();
 
 ## updateHealthcarePatient
 
-Update a patient
+Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
 
 ### Example Usage
 
@@ -2726,7 +2726,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -2736,7 +2736,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "130625ce-7a7f-4b05-adc1-01aa6ebf074a",
+      id: "6eaf30cc-59d6-4bc5-8c55-6e395d72aa52",
       identifiers: [
         {
           type: "MRN",
@@ -2756,7 +2756,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.851Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.866Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2794,7 +2794,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -2804,7 +2804,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "130625ce-7a7f-4b05-adc1-01aa6ebf074a",
+      id: "6eaf30cc-59d6-4bc5-8c55-6e395d72aa52",
       identifiers: [
         {
           type: "MRN",
@@ -2824,7 +2824,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.851Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.866Z"),
     },
     connectionId: "<id>",
     id: "<id>",

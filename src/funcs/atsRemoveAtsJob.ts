@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a job
+ *
+ * @remarks
+ * Deletes the AtsJob identified by `id`.
  */
 export function atsRemoveAtsJob(
   client: UnifiedToCore,

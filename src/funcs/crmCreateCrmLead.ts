@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a lead
+ *
+ * @remarks
+ * Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
  */
 export function crmCreateCrmLead(
   client: UnifiedToCore,

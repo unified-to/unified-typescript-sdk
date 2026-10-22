@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a template
+ *
+ * @remarks
+ * Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
  */
 export function computeCreateComputeTemplate(
   client: UnifiedToCore,

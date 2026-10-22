@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a file
+ *
+ * @remarks
+ * Creates a StorageFile. Provide the unified StorageFile fields in the request body; they are mapped to the provider's API. Returns the created StorageFile.
  */
 export function storageCreateStorageFile(
   client: UnifiedToCore,

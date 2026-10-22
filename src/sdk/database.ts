@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Database extends ClientSDK {
   /**
    * Create a database
+   *
+   * @remarks
+   * Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
    */
   async createDatastoreDatabase(
     request: operations.CreateDatastoreDatabaseRequest,
@@ -30,6 +33,9 @@ export class Database extends ClientSDK {
 
   /**
    * Retrieve a database
+   *
+   * @remarks
+   * Retrieves a single DatastoreDatabase by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getDatastoreDatabase(
     request: operations.GetDatastoreDatabaseRequest,
@@ -44,6 +50,9 @@ export class Database extends ClientSDK {
 
   /**
    * List all databases
+   *
+   * @remarks
+   * Returns a list of DatastoreDatabases. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listDatastoreDatabases(
     request: operations.ListDatastoreDatabasesRequest,
@@ -58,6 +67,9 @@ export class Database extends ClientSDK {
 
   /**
    * Update a database
+   *
+   * @remarks
+   * Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
    */
   async patchDatastoreDatabase(
     request: operations.PatchDatastoreDatabaseRequest,
@@ -72,6 +84,9 @@ export class Database extends ClientSDK {
 
   /**
    * Remove a database
+   *
+   * @remarks
+   * Deletes the DatastoreDatabase identified by `id`.
    */
   async removeDatastoreDatabase(
     request: operations.RemoveDatastoreDatabaseRequest,
@@ -86,6 +101,9 @@ export class Database extends ClientSDK {
 
   /**
    * Update a database
+   *
+   * @remarks
+   * Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
    */
   async updateDatastoreDatabase(
     request: operations.UpdateDatastoreDatabaseRequest,

@@ -19,7 +19,7 @@
 
 ## createAccountingCategory
 
-Create a category
+Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
 
 ### Example Usage
 
@@ -38,11 +38,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "7b090004-e388-4fb5-a819-49b7c1aac467",
+      id: "797f92a3-97da-4805-bed6-1a76f90e5a1c",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.331Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.494Z"),
     },
     connectionId: "<id>",
   });
@@ -74,11 +74,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "7b090004-e388-4fb5-a819-49b7c1aac467",
+      id: "797f92a3-97da-4805-bed6-1a76f90e5a1c",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.331Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.494Z"),
     },
     connectionId: "<id>",
   });
@@ -114,7 +114,7 @@ run();
 
 ## createTicketingCategory
 
-Create a category
+Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
 
 ### Example Usage
 
@@ -133,11 +133,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "8fc3cee2-36f5-4263-88a5-1cf3d23e09df",
+      id: "3aae5273-36c6-4e87-bad7-88eeffa92cdf",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.471Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.336Z"),
     },
     connectionId: "<id>",
   });
@@ -169,11 +169,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "8fc3cee2-36f5-4263-88a5-1cf3d23e09df",
+      id: "3aae5273-36c6-4e87-bad7-88eeffa92cdf",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.471Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.336Z"),
     },
     connectionId: "<id>",
   });
@@ -209,7 +209,7 @@ run();
 
 ## getAccountingCategory
 
-Retrieve a category
+Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ run();
 
 ## getTicketingCategory
 
-Retrieve a category
+Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -367,7 +367,7 @@ run();
 
 ## listAccountingCategories
 
-List all categories
+Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -444,7 +444,7 @@ run();
 
 ## listTicketingCategories
 
-List all categories
+Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -521,7 +521,7 @@ run();
 
 ## patchAccountingCategory
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -540,11 +540,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "4c1f191f-ccb5-4aa5-9c1d-e7fce4925aeb",
+      id: "5456c482-4617-4a1a-bc78-7dc09f329c6d",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.343Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.501Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -577,11 +577,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "4c1f191f-ccb5-4aa5-9c1d-e7fce4925aeb",
+      id: "5456c482-4617-4a1a-bc78-7dc09f329c6d",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.343Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.501Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -618,7 +618,7 @@ run();
 
 ## patchTicketingCategory
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -637,11 +637,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "664f1491-4ac7-4ad3-8733-cb1822ea85f9",
+      id: "ea11f844-dea5-4df2-946d-21c55cc56db1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.482Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.345Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -674,11 +674,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "664f1491-4ac7-4ad3-8733-cb1822ea85f9",
+      id: "ea11f844-dea5-4df2-946d-21c55cc56db1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.482Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.345Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -715,7 +715,7 @@ run();
 
 ## removeAccountingCategory
 
-Remove a category
+Deletes the AccountingCategory identified by `id`.
 
 ### Example Usage
 
@@ -794,7 +794,7 @@ run();
 
 ## removeTicketingCategory
 
-Remove a category
+Deletes the TicketingCategory identified by `id`.
 
 ### Example Usage
 
@@ -873,7 +873,7 @@ run();
 
 ## updateAccountingCategory
 
-Update a category
+Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -892,11 +892,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "4c1f191f-ccb5-4aa5-9c1d-e7fce4925aeb",
+      id: "5456c482-4617-4a1a-bc78-7dc09f329c6d",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.343Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.501Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -929,11 +929,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "4c1f191f-ccb5-4aa5-9c1d-e7fce4925aeb",
+      id: "5456c482-4617-4a1a-bc78-7dc09f329c6d",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-11T12:33:39.343Z"),
+      updatedAt: new Date("2025-09-12T04:45:14.501Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -970,7 +970,7 @@ run();
 
 ## updateTicketingCategory
 
-Update a category
+Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
 
 ### Example Usage
 
@@ -989,11 +989,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "664f1491-4ac7-4ad3-8733-cb1822ea85f9",
+      id: "ea11f844-dea5-4df2-946d-21c55cc56db1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.482Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.345Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1026,11 +1026,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "664f1491-4ac7-4ad3-8733-cb1822ea85f9",
+      id: "ea11f844-dea5-4df2-946d-21c55cc56db1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-14T01:03:55.482Z"),
+      updatedAt: new Date("2026-01-14T22:28:20.345Z"),
     },
     connectionId: "<id>",
     id: "<id>",

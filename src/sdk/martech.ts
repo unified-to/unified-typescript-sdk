@@ -29,6 +29,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Martech extends ClientSDK {
   /**
    * Create a campaign
+   *
+   * @remarks
+   * Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
    */
   async createMartechCampaign(
     request: operations.CreateMartechCampaignRequest,
@@ -43,6 +46,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Create a list
+   *
+   * @remarks
+   * Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider's API. Returns the created MarketingList.
    */
   async createMartechList(
     request: operations.CreateMartechListRequest,
@@ -57,6 +63,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Create a member
+   *
+   * @remarks
+   * Creates a MarketingMember. Provide the unified MarketingMember fields in the request body; they are mapped to the provider's API. Returns the created MarketingMember.
    */
   async createMartechMember(
     request: operations.CreateMartechMemberRequest,
@@ -71,6 +80,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Retrieve a campaign
+   *
+   * @remarks
+   * Retrieves a single MarketingCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMartechCampaign(
     request: operations.GetMartechCampaignRequest,
@@ -85,6 +97,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Retrieve a list
+   *
+   * @remarks
+   * Retrieves a single MarketingList by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMartechList(
     request: operations.GetMartechListRequest,
@@ -99,6 +114,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Retrieve a member
+   *
+   * @remarks
+   * Retrieves a single MarketingMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMartechMember(
     request: operations.GetMartechMemberRequest,
@@ -113,6 +131,9 @@ export class Martech extends ClientSDK {
 
   /**
    * List all campaigns
+   *
+   * @remarks
+   * Returns a list of MarketingCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMartechCampaigns(
     request: operations.ListMartechCampaignsRequest,
@@ -127,6 +148,9 @@ export class Martech extends ClientSDK {
 
   /**
    * List all lists
+   *
+   * @remarks
+   * Returns a list of MarketingLists. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMartechLists(
     request: operations.ListMartechListsRequest,
@@ -141,6 +165,9 @@ export class Martech extends ClientSDK {
 
   /**
    * List all members
+   *
+   * @remarks
+   * Returns a list of MarketingMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMartechMembers(
     request: operations.ListMartechMembersRequest,
@@ -155,6 +182,9 @@ export class Martech extends ClientSDK {
 
   /**
    * List all reports
+   *
+   * @remarks
+   * Returns a list of MarketingReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMartechReports(
     request: operations.ListMartechReportsRequest,
@@ -169,6 +199,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Update a campaign
+   *
+   * @remarks
+   * Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
    */
   async patchMartechCampaign(
     request: operations.PatchMartechCampaignRequest,
@@ -183,6 +216,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Update a list
+   *
+   * @remarks
+   * Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
    */
   async patchMartechList(
     request: operations.PatchMartechListRequest,
@@ -197,6 +233,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Update a member
+   *
+   * @remarks
+   * Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
    */
   async patchMartechMember(
     request: operations.PatchMartechMemberRequest,
@@ -211,6 +250,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Remove a campaign
+   *
+   * @remarks
+   * Deletes the MarketingCampaign identified by `id`.
    */
   async removeMartechCampaign(
     request: operations.RemoveMartechCampaignRequest,
@@ -225,6 +267,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Remove a list
+   *
+   * @remarks
+   * Deletes the MarketingList identified by `id`.
    */
   async removeMartechList(
     request: operations.RemoveMartechListRequest,
@@ -239,6 +284,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Remove a member
+   *
+   * @remarks
+   * Deletes the MarketingMember identified by `id`.
    */
   async removeMartechMember(
     request: operations.RemoveMartechMemberRequest,
@@ -253,6 +301,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Update a campaign
+   *
+   * @remarks
+   * Updates the MarketingCampaign identified by `id`. Provide the unified MarketingCampaign fields to change in the request body.
    */
   async updateMartechCampaign(
     request: operations.UpdateMartechCampaignRequest,
@@ -267,6 +318,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Update a list
+   *
+   * @remarks
+   * Updates the MarketingList identified by `id`. Provide the unified MarketingList fields to change in the request body.
    */
   async updateMartechList(
     request: operations.UpdateMartechListRequest,
@@ -281,6 +335,9 @@ export class Martech extends ClientSDK {
 
   /**
    * Update a member
+   *
+   * @remarks
+   * Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
    */
   async updateMartechMember(
     request: operations.UpdateMartechMemberRequest,

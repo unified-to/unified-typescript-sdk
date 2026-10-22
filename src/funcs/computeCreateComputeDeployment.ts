@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a deployment
+ *
+ * @remarks
+ * Creates a ComputeDeployment. Provide the unified ComputeDeployment fields in the request body; they are mapped to the provider's API. Returns the created ComputeDeployment.
  */
 export function computeCreateComputeDeployment(
   client: UnifiedToCore,

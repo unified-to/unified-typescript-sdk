@@ -31,7 +31,7 @@
 
 ## createUcComment
 
-Create a comment
+Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
 
 ### Example Usage
 
@@ -50,9 +50,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "7a832f3f-6932-49b5-9b91-dd064965315e",
+      id: "53dedb1c-07dd-4d5f-9f48-e8f78df64741",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.291Z",
+      updatedAt: "2024-02-10T00:25:58.127Z",
     },
     connectionId: "<id>",
   });
@@ -84,9 +84,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "7a832f3f-6932-49b5-9b91-dd064965315e",
+      id: "53dedb1c-07dd-4d5f-9f48-e8f78df64741",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.291Z",
+      updatedAt: "2024-02-10T00:25:58.127Z",
     },
     connectionId: "<id>",
   });
@@ -122,7 +122,7 @@ run();
 
 ## createUcContact
 
-Create a contact
+Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
 
 ### Example Usage
 
@@ -148,7 +148,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "933d0263-b43e-4d6b-ab96-6d6f73087e0e",
+      id: "004b0771-b3c7-4191-91eb-6761c6826781",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -167,7 +167,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.674Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.512Z"),
     },
     connectionId: "<id>",
   });
@@ -206,7 +206,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "933d0263-b43e-4d6b-ab96-6d6f73087e0e",
+      id: "004b0771-b3c7-4191-91eb-6761c6826781",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -225,7 +225,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.674Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.512Z"),
     },
     connectionId: "<id>",
   });
@@ -261,7 +261,7 @@ run();
 
 ## createUcRecording
 
-Create a recording
+Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
 
 ### Example Usage
 
@@ -279,36 +279,36 @@ async function run() {
   const result = await unifiedTo.uc.createUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "389fcd11-b9b4-46ec-ab41-7d616f8c504c",
+      conversationIdentifier: "61f34343-c6f3-473a-b9e6-a93ec94f63bc",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.978Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.274Z"),
-      id: "389fcd11-b9b4-46ec-ab41-7d616f8c504c",
+      endAt: new Date("2024-05-05T09:43:38.990Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.217Z"),
+      id: "61f34343-c6f3-473a-b9e6-a93ec94f63bc",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.105Z"),
+          endAt: new Date("2024-04-02T04:50:58.448Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.690Z"),
+          startAt: new Date("2026-05-16T08:31:57.883Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.051Z"),
-              startAt: new Date("2024-06-02T06:18:20.299Z"),
+              endAt: new Date("2026-02-25T08:58:27.233Z"),
+              startAt: new Date("2024-06-02T16:20:06.772Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.260Z"),
-              startAt: new Date("2026-08-02T21:39:16.849Z"),
+              endAt: new Date("2024-10-13T01:39:00.818Z"),
+              startAt: new Date("2026-08-03T20:25:10.904Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.263Z"),
+      startAt: new Date("2023-04-27T21:43:30.611Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.790Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.273Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -341,36 +341,36 @@ async function run() {
   const res = await recordingCreateUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "389fcd11-b9b4-46ec-ab41-7d616f8c504c",
+      conversationIdentifier: "61f34343-c6f3-473a-b9e6-a93ec94f63bc",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.978Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.274Z"),
-      id: "389fcd11-b9b4-46ec-ab41-7d616f8c504c",
+      endAt: new Date("2024-05-05T09:43:38.990Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.217Z"),
+      id: "61f34343-c6f3-473a-b9e6-a93ec94f63bc",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.105Z"),
+          endAt: new Date("2024-04-02T04:50:58.448Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.690Z"),
+          startAt: new Date("2026-05-16T08:31:57.883Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.051Z"),
-              startAt: new Date("2024-06-02T06:18:20.299Z"),
+              endAt: new Date("2026-02-25T08:58:27.233Z"),
+              startAt: new Date("2024-06-02T16:20:06.772Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.260Z"),
-              startAt: new Date("2026-08-02T21:39:16.849Z"),
+              endAt: new Date("2024-10-13T01:39:00.818Z"),
+              startAt: new Date("2026-08-03T20:25:10.904Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.263Z"),
+      startAt: new Date("2023-04-27T21:43:30.611Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.790Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.273Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -408,7 +408,7 @@ run();
 
 ## getUcCall
 
-Retrieve a call
+Retrieves a single UcCall by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -487,7 +487,7 @@ run();
 
 ## getUcComment
 
-Retrieve a comment
+Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -566,7 +566,7 @@ run();
 
 ## getUcContact
 
-Retrieve a contact
+Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -645,7 +645,7 @@ run();
 
 ## getUcRecording
 
-Retrieve a recording
+Retrieves a single UcRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -724,7 +724,7 @@ run();
 
 ## getUcScorecard
 
-Retrieve a scorecard
+Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -803,7 +803,7 @@ run();
 
 ## getUcScorecardtemplate
 
-Retrieve a scorecardtemplate
+Retrieves a single UcScorecardtemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -882,7 +882,7 @@ run();
 
 ## listUcCalls
 
-List all calls
+Returns a list of UcCalls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -959,7 +959,7 @@ run();
 
 ## listUcComments
 
-List all comments
+Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1036,7 +1036,7 @@ run();
 
 ## listUcContacts
 
-List all contacts
+Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1113,7 +1113,7 @@ run();
 
 ## listUcRecordings
 
-List all recordings
+Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1190,7 +1190,7 @@ run();
 
 ## listUcScorecards
 
-List all scorecards
+Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1267,7 +1267,7 @@ run();
 
 ## listUcScorecardtemplates
 
-List all scorecardtemplates
+Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1344,7 +1344,7 @@ run();
 
 ## patchUcComment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -1363,9 +1363,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "cd4b6cc0-b005-4730-83b6-87d4bd23cf7c",
+      id: "20b8ce98-09af-4198-9ded-eb97cd945d2c",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.294Z",
+      updatedAt: "2024-02-10T00:25:58.129Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1398,9 +1398,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "cd4b6cc0-b005-4730-83b6-87d4bd23cf7c",
+      id: "20b8ce98-09af-4198-9ded-eb97cd945d2c",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.294Z",
+      updatedAt: "2024-02-10T00:25:58.129Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1437,7 +1437,7 @@ run();
 
 ## patchUcContact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1463,7 +1463,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "0bfd88e5-b1db-4297-9275-fc5bc8338163",
+      id: "c0a8450b-d790-49c3-908e-0846ba0cada2",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -1482,7 +1482,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.688Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.519Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1522,7 +1522,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "0bfd88e5-b1db-4297-9275-fc5bc8338163",
+      id: "c0a8450b-d790-49c3-908e-0846ba0cada2",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -1541,7 +1541,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.688Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.519Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1578,7 +1578,7 @@ run();
 
 ## patchUcRecording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -1596,36 +1596,36 @@ async function run() {
   const result = await unifiedTo.uc.patchUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      conversationIdentifier: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.998Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.317Z"),
-      id: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      endAt: new Date("2024-05-05T09:43:39.003Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.246Z"),
+      id: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.124Z"),
+          endAt: new Date("2024-04-02T04:50:58.460Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.735Z"),
+          startAt: new Date("2026-05-16T08:31:57.911Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.092Z"),
-              startAt: new Date("2024-06-02T06:18:20.320Z"),
+              endAt: new Date("2026-02-25T08:58:27.260Z"),
+              startAt: new Date("2024-06-02T16:20:06.785Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.285Z"),
-              startAt: new Date("2026-08-02T21:39:16.896Z"),
+              endAt: new Date("2024-10-13T01:39:00.834Z"),
+              startAt: new Date("2026-08-03T20:25:10.935Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.270Z"),
+      startAt: new Date("2023-04-27T21:43:30.615Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.820Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.292Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -1659,36 +1659,36 @@ async function run() {
   const res = await recordingPatchUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      conversationIdentifier: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.998Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.317Z"),
-      id: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      endAt: new Date("2024-05-05T09:43:39.003Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.246Z"),
+      id: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.124Z"),
+          endAt: new Date("2024-04-02T04:50:58.460Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.735Z"),
+          startAt: new Date("2026-05-16T08:31:57.911Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.092Z"),
-              startAt: new Date("2024-06-02T06:18:20.320Z"),
+              endAt: new Date("2026-02-25T08:58:27.260Z"),
+              startAt: new Date("2024-06-02T16:20:06.785Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.285Z"),
-              startAt: new Date("2026-08-02T21:39:16.896Z"),
+              endAt: new Date("2024-10-13T01:39:00.834Z"),
+              startAt: new Date("2026-08-03T20:25:10.935Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.270Z"),
+      startAt: new Date("2023-04-27T21:43:30.615Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.820Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.292Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -1727,7 +1727,7 @@ run();
 
 ## removeUcComment
 
-Remove a comment
+Deletes the UcComment identified by `id`.
 
 ### Example Usage
 
@@ -1806,7 +1806,7 @@ run();
 
 ## removeUcContact
 
-Remove a contact
+Deletes the UcContact identified by `id`.
 
 ### Example Usage
 
@@ -1885,7 +1885,7 @@ run();
 
 ## removeUcRecording
 
-Remove a recording
+Deletes the UcRecording identified by `id`.
 
 ### Example Usage
 
@@ -1964,7 +1964,7 @@ run();
 
 ## updateUcComment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -1983,9 +1983,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "cd4b6cc0-b005-4730-83b6-87d4bd23cf7c",
+      id: "20b8ce98-09af-4198-9ded-eb97cd945d2c",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.294Z",
+      updatedAt: "2024-02-10T00:25:58.129Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2018,9 +2018,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "cd4b6cc0-b005-4730-83b6-87d4bd23cf7c",
+      id: "20b8ce98-09af-4198-9ded-eb97cd945d2c",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.294Z",
+      updatedAt: "2024-02-10T00:25:58.129Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2057,7 +2057,7 @@ run();
 
 ## updateUcContact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -2083,7 +2083,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "0bfd88e5-b1db-4297-9275-fc5bc8338163",
+      id: "c0a8450b-d790-49c3-908e-0846ba0cada2",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -2102,7 +2102,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.688Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.519Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2142,7 +2142,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "0bfd88e5-b1db-4297-9275-fc5bc8338163",
+      id: "c0a8450b-d790-49c3-908e-0846ba0cada2",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -2161,7 +2161,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.688Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.519Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2198,7 +2198,7 @@ run();
 
 ## updateUcRecording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -2216,36 +2216,36 @@ async function run() {
   const result = await unifiedTo.uc.updateUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      conversationIdentifier: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.998Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.317Z"),
-      id: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      endAt: new Date("2024-05-05T09:43:39.003Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.246Z"),
+      id: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.124Z"),
+          endAt: new Date("2024-04-02T04:50:58.460Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.735Z"),
+          startAt: new Date("2026-05-16T08:31:57.911Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.092Z"),
-              startAt: new Date("2024-06-02T06:18:20.320Z"),
+              endAt: new Date("2026-02-25T08:58:27.260Z"),
+              startAt: new Date("2024-06-02T16:20:06.785Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.285Z"),
-              startAt: new Date("2026-08-02T21:39:16.896Z"),
+              endAt: new Date("2024-10-13T01:39:00.834Z"),
+              startAt: new Date("2026-08-03T20:25:10.935Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.270Z"),
+      startAt: new Date("2023-04-27T21:43:30.615Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.820Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.292Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -2279,36 +2279,36 @@ async function run() {
   const res = await recordingUpdateUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      conversationIdentifier: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.998Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.317Z"),
-      id: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      endAt: new Date("2024-05-05T09:43:39.003Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.246Z"),
+      id: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.124Z"),
+          endAt: new Date("2024-04-02T04:50:58.460Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.735Z"),
+          startAt: new Date("2026-05-16T08:31:57.911Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.092Z"),
-              startAt: new Date("2024-06-02T06:18:20.320Z"),
+              endAt: new Date("2026-02-25T08:58:27.260Z"),
+              startAt: new Date("2024-06-02T16:20:06.785Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.285Z"),
-              startAt: new Date("2026-08-02T21:39:16.896Z"),
+              endAt: new Date("2024-10-13T01:39:00.834Z"),
+              startAt: new Date("2026-08-03T20:25:10.935Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.270Z"),
+      startAt: new Date("2023-04-27T21:43:30.615Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.820Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.292Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },

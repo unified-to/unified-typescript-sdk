@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a page
+ *
+ * @remarks
+ * Deletes the KmsPage identified by `id`.
  */
 export function kmsRemoveKmsPage(
   client: UnifiedToCore,

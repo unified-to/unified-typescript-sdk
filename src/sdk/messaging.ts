@@ -24,6 +24,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Messaging extends ClientSDK {
   /**
    * Create a channel
+   *
+   * @remarks
+   * Creates a MessagingChannel. Provide the unified MessagingChannel fields in the request body; they are mapped to the provider's API. Returns the created MessagingChannel.
    */
   async createMessagingChannel(
     request: operations.CreateMessagingChannelRequest,
@@ -38,6 +41,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Create a message
+   *
+   * @remarks
+   * Creates a MessagingMessage. Provide the unified MessagingMessage fields in the request body; they are mapped to the provider's API. Returns the created MessagingMessage.
    */
   async createMessagingMessage(
     request: operations.CreateMessagingMessageRequest,
@@ -52,6 +58,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Retrieve a channel
+   *
+   * @remarks
+   * Retrieves a single MessagingChannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMessagingChannel(
     request: operations.GetMessagingChannelRequest,
@@ -66,6 +75,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Retrieve a message
+   *
+   * @remarks
+   * Retrieves a single MessagingMessage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getMessagingMessage(
     request: operations.GetMessagingMessageRequest,
@@ -80,6 +92,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * List all channels
+   *
+   * @remarks
+   * Returns a list of MessagingChannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMessagingChannels(
     request: operations.ListMessagingChannelsRequest,
@@ -94,6 +109,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * List all messages
+   *
+   * @remarks
+   * Returns a list of MessagingMessages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listMessagingMessages(
     request: operations.ListMessagingMessagesRequest,
@@ -108,6 +126,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Update a channel
+   *
+   * @remarks
+   * Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
    */
   async patchMessagingChannel(
     request: operations.PatchMessagingChannelRequest,
@@ -122,6 +143,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
    */
   async patchMessagingEvent(
     request: operations.PatchMessagingEventRequest,
@@ -136,6 +160,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Update a message
+   *
+   * @remarks
+   * Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
    */
   async patchMessagingMessage(
     request: operations.PatchMessagingMessageRequest,
@@ -150,6 +177,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Remove a channel
+   *
+   * @remarks
+   * Deletes the MessagingChannel identified by `id`.
    */
   async removeMessagingChannel(
     request: operations.RemoveMessagingChannelRequest,
@@ -164,6 +194,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Remove a message
+   *
+   * @remarks
+   * Deletes the MessagingMessage identified by `id`.
    */
   async removeMessagingMessage(
     request: operations.RemoveMessagingMessageRequest,
@@ -178,6 +211,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Update a channel
+   *
+   * @remarks
+   * Updates the MessagingChannel identified by `id`. Provide the unified MessagingChannel fields to change in the request body.
    */
   async updateMessagingChannel(
     request: operations.UpdateMessagingChannelRequest,
@@ -192,6 +228,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
    */
   async updateMessagingEvent(
     request: operations.UpdateMessagingEventRequest,
@@ -206,6 +245,9 @@ export class Messaging extends ClientSDK {
 
   /**
    * Update a message
+   *
+   * @remarks
+   * Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
    */
   async updateMessagingMessage(
     request: operations.UpdateMessagingMessageRequest,

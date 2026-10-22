@@ -29,6 +29,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Company extends ClientSDK {
   /**
    * Create a company
+   *
+   * @remarks
+   * Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
    */
   async createAtsCompany(
     request: operations.CreateAtsCompanyRequest,
@@ -43,6 +46,9 @@ export class Company extends ClientSDK {
 
   /**
    * Create a company
+   *
+   * @remarks
+   * Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
    */
   async createCrmCompany(
     request: operations.CreateCrmCompanyRequest,
@@ -57,6 +63,9 @@ export class Company extends ClientSDK {
 
   /**
    * Create a company
+   *
+   * @remarks
+   * Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
    */
   async createHrisCompany(
     request: operations.CreateHrisCompanyRequest,
@@ -71,6 +80,9 @@ export class Company extends ClientSDK {
 
   /**
    * Retrieve a company
+   *
+   * @remarks
+   * Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsCompany(
     request: operations.GetAtsCompanyRequest,
@@ -85,6 +97,9 @@ export class Company extends ClientSDK {
 
   /**
    * Retrieve a company
+   *
+   * @remarks
+   * Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmCompany(
     request: operations.GetCrmCompanyRequest,
@@ -99,6 +114,9 @@ export class Company extends ClientSDK {
 
   /**
    * Retrieve a company
+   *
+   * @remarks
+   * Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisCompany(
     request: operations.GetHrisCompanyRequest,
@@ -113,6 +131,9 @@ export class Company extends ClientSDK {
 
   /**
    * List all companies
+   *
+   * @remarks
+   * Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsCompanies(
     request: operations.ListAtsCompaniesRequest,
@@ -127,6 +148,9 @@ export class Company extends ClientSDK {
 
   /**
    * List all companies
+   *
+   * @remarks
+   * Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmCompanies(
     request: operations.ListCrmCompaniesRequest,
@@ -155,6 +179,9 @@ export class Company extends ClientSDK {
 
   /**
    * List all companies
+   *
+   * @remarks
+   * Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisCompanies(
     request: operations.ListHrisCompaniesRequest,
@@ -169,6 +196,9 @@ export class Company extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
    */
   async patchAtsCompany(
     request: operations.PatchAtsCompanyRequest,
@@ -183,6 +213,9 @@ export class Company extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
    */
   async patchCrmCompany(
     request: operations.PatchCrmCompanyRequest,
@@ -197,6 +230,9 @@ export class Company extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
    */
   async patchHrisCompany(
     request: operations.PatchHrisCompanyRequest,
@@ -211,6 +247,9 @@ export class Company extends ClientSDK {
 
   /**
    * Remove a company
+   *
+   * @remarks
+   * Deletes the AtsCompany identified by `id`.
    */
   async removeAtsCompany(
     request: operations.RemoveAtsCompanyRequest,
@@ -225,6 +264,9 @@ export class Company extends ClientSDK {
 
   /**
    * Remove a company
+   *
+   * @remarks
+   * Deletes the CrmCompany identified by `id`.
    */
   async removeCrmCompany(
     request: operations.RemoveCrmCompanyRequest,
@@ -239,6 +281,9 @@ export class Company extends ClientSDK {
 
   /**
    * Remove a company
+   *
+   * @remarks
+   * Deletes the HrisCompany identified by `id`.
    */
   async removeHrisCompany(
     request: operations.RemoveHrisCompanyRequest,
@@ -253,6 +298,9 @@ export class Company extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
    */
   async updateAtsCompany(
     request: operations.UpdateAtsCompanyRequest,
@@ -267,6 +315,9 @@ export class Company extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
    */
   async updateCrmCompany(
     request: operations.UpdateCrmCompanyRequest,
@@ -281,6 +332,9 @@ export class Company extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
    */
   async updateHrisCompany(
     request: operations.UpdateHrisCompanyRequest,

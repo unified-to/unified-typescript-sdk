@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a commit
+ *
+ * @remarks
+ * Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
  */
 export function repoUpdateRepoCommit(
   client: UnifiedToCore,

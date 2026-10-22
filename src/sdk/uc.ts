@@ -34,6 +34,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Uc extends ClientSDK {
   /**
    * Create a comment
+   *
+   * @remarks
+   * Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
    */
   async createUcComment(
     request: operations.CreateUcCommentRequest,
@@ -48,6 +51,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Create a contact
+   *
+   * @remarks
+   * Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
    */
   async createUcContact(
     request: operations.CreateUcContactRequest,
@@ -62,6 +68,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Create a recording
+   *
+   * @remarks
+   * Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
    */
   async createUcRecording(
     request: operations.CreateUcRecordingRequest,
@@ -76,6 +85,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Retrieve a call
+   *
+   * @remarks
+   * Retrieves a single UcCall by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcCall(
     request: operations.GetUcCallRequest,
@@ -90,6 +102,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Retrieve a comment
+   *
+   * @remarks
+   * Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcComment(
     request: operations.GetUcCommentRequest,
@@ -104,6 +119,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Retrieve a contact
+   *
+   * @remarks
+   * Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcContact(
     request: operations.GetUcContactRequest,
@@ -118,6 +136,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Retrieve a recording
+   *
+   * @remarks
+   * Retrieves a single UcRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcRecording(
     request: operations.GetUcRecordingRequest,
@@ -132,6 +153,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Retrieve a scorecard
+   *
+   * @remarks
+   * Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcScorecard(
     request: operations.GetUcScorecardRequest,
@@ -146,6 +170,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Retrieve a scorecardtemplate
+   *
+   * @remarks
+   * Retrieves a single UcScorecardtemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcScorecardtemplate(
     request: operations.GetUcScorecardtemplateRequest,
@@ -160,6 +187,9 @@ export class Uc extends ClientSDK {
 
   /**
    * List all calls
+   *
+   * @remarks
+   * Returns a list of UcCalls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcCalls(
     request: operations.ListUcCallsRequest,
@@ -174,6 +204,9 @@ export class Uc extends ClientSDK {
 
   /**
    * List all comments
+   *
+   * @remarks
+   * Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcComments(
     request: operations.ListUcCommentsRequest,
@@ -188,6 +221,9 @@ export class Uc extends ClientSDK {
 
   /**
    * List all contacts
+   *
+   * @remarks
+   * Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcContacts(
     request: operations.ListUcContactsRequest,
@@ -202,6 +238,9 @@ export class Uc extends ClientSDK {
 
   /**
    * List all recordings
+   *
+   * @remarks
+   * Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcRecordings(
     request: operations.ListUcRecordingsRequest,
@@ -216,6 +255,9 @@ export class Uc extends ClientSDK {
 
   /**
    * List all scorecards
+   *
+   * @remarks
+   * Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcScorecards(
     request: operations.ListUcScorecardsRequest,
@@ -230,6 +272,9 @@ export class Uc extends ClientSDK {
 
   /**
    * List all scorecardtemplates
+   *
+   * @remarks
+   * Returns a list of UcScorecardtemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcScorecardtemplates(
     request: operations.ListUcScorecardtemplatesRequest,
@@ -244,6 +289,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
    */
   async patchUcComment(
     request: operations.PatchUcCommentRequest,
@@ -258,6 +306,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
    */
   async patchUcContact(
     request: operations.PatchUcContactRequest,
@@ -272,6 +323,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Update a recording
+   *
+   * @remarks
+   * Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
    */
   async patchUcRecording(
     request: operations.PatchUcRecordingRequest,
@@ -286,6 +340,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Remove a comment
+   *
+   * @remarks
+   * Deletes the UcComment identified by `id`.
    */
   async removeUcComment(
     request: operations.RemoveUcCommentRequest,
@@ -300,6 +357,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Remove a contact
+   *
+   * @remarks
+   * Deletes the UcContact identified by `id`.
    */
   async removeUcContact(
     request: operations.RemoveUcContactRequest,
@@ -314,6 +374,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Remove a recording
+   *
+   * @remarks
+   * Deletes the UcRecording identified by `id`.
    */
   async removeUcRecording(
     request: operations.RemoveUcRecordingRequest,
@@ -328,6 +391,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
    */
   async updateUcComment(
     request: operations.UpdateUcCommentRequest,
@@ -342,6 +408,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
    */
   async updateUcContact(
     request: operations.UpdateUcContactRequest,
@@ -356,6 +425,9 @@ export class Uc extends ClientSDK {
 
   /**
    * Update a recording
+   *
+   * @remarks
+   * Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
    */
   async updateUcRecording(
     request: operations.UpdateUcRecordingRequest,

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Earning extends ClientSDK {
   /**
    * Create an earning
+   *
+   * @remarks
+   * Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
    */
   async createHrisEarning(
     request: operations.CreateHrisEarningRequest,
@@ -30,6 +33,9 @@ export class Earning extends ClientSDK {
 
   /**
    * Retrieve an earning
+   *
+   * @remarks
+   * Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisEarning(
     request: operations.GetHrisEarningRequest,
@@ -44,6 +50,9 @@ export class Earning extends ClientSDK {
 
   /**
    * List all earnings
+   *
+   * @remarks
+   * Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisEarnings(
     request: operations.ListHrisEarningsRequest,
@@ -58,6 +67,9 @@ export class Earning extends ClientSDK {
 
   /**
    * Update an earning
+   *
+   * @remarks
+   * Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
    */
   async patchHrisEarning(
     request: operations.PatchHrisEarningRequest,
@@ -72,6 +84,9 @@ export class Earning extends ClientSDK {
 
   /**
    * Remove an earning
+   *
+   * @remarks
+   * Deletes the HrisEarning identified by `id`.
    */
   async removeHrisEarning(
     request: operations.RemoveHrisEarningRequest,
@@ -86,6 +101,9 @@ export class Earning extends ClientSDK {
 
   /**
    * Update an earning
+   *
+   * @remarks
+   * Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
    */
   async updateHrisEarning(
     request: operations.UpdateHrisEarningRequest,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a webinar
+ *
+ * @remarks
+ * Creates a CalendarWebinar. Provide the unified CalendarWebinar fields in the request body; they are mapped to the provider's API. Returns the created CalendarWebinar.
  */
 export function calendarCreateCalendarWebinar(
   client: UnifiedToCore,

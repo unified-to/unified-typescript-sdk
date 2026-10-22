@@ -24,6 +24,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Signing extends ClientSDK {
   /**
    * Create a document
+   *
+   * @remarks
+   * Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
    */
   async createSigningDocument(
     request: operations.CreateSigningDocumentRequest,
@@ -38,6 +41,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Create a signatory
+   *
+   * @remarks
+   * Creates a SigningSignatory. Provide the unified SigningSignatory fields in the request body; they are mapped to the provider's API. Returns the created SigningSignatory.
    */
   async createSigningSignatory(
     request: operations.CreateSigningSignatoryRequest,
@@ -52,6 +58,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Retrieve a document
+   *
+   * @remarks
+   * Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSigningDocument(
     request: operations.GetSigningDocumentRequest,
@@ -66,6 +75,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Retrieve a signatory
+   *
+   * @remarks
+   * Retrieves a single SigningSignatory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSigningSignatory(
     request: operations.GetSigningSignatoryRequest,
@@ -80,6 +92,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Retrieve a template
+   *
+   * @remarks
+   * Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSigningTemplate(
     request: operations.GetSigningTemplateRequest,
@@ -94,6 +109,9 @@ export class Signing extends ClientSDK {
 
   /**
    * List all documents
+   *
+   * @remarks
+   * Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listSigningDocuments(
     request: operations.ListSigningDocumentsRequest,
@@ -108,6 +126,9 @@ export class Signing extends ClientSDK {
 
   /**
    * List all signatories
+   *
+   * @remarks
+   * Returns a list of SigningSignatories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listSigningSignatories(
     request: operations.ListSigningSignatoriesRequest,
@@ -122,6 +143,9 @@ export class Signing extends ClientSDK {
 
   /**
    * List all templates
+   *
+   * @remarks
+   * Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listSigningTemplates(
     request: operations.ListSigningTemplatesRequest,
@@ -136,6 +160,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
    */
   async patchSigningDocument(
     request: operations.PatchSigningDocumentRequest,
@@ -150,6 +177,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Update a signatory
+   *
+   * @remarks
+   * Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
    */
   async patchSigningSignatory(
     request: operations.PatchSigningSignatoryRequest,
@@ -164,6 +194,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Remove a document
+   *
+   * @remarks
+   * Deletes the SigningDocument identified by `id`.
    */
   async removeSigningDocument(
     request: operations.RemoveSigningDocumentRequest,
@@ -178,6 +211,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Remove a signatory
+   *
+   * @remarks
+   * Deletes the SigningSignatory identified by `id`.
    */
   async removeSigningSignatory(
     request: operations.RemoveSigningSignatoryRequest,
@@ -192,6 +228,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
    */
   async updateSigningDocument(
     request: operations.UpdateSigningDocumentRequest,
@@ -206,6 +245,9 @@ export class Signing extends ClientSDK {
 
   /**
    * Update a signatory
+   *
+   * @remarks
+   * Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
    */
   async updateSigningSignatory(
     request: operations.UpdateSigningSignatoryRequest,

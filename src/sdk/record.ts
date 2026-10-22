@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class RecordT extends ClientSDK {
   /**
    * Create a record
+   *
+   * @remarks
+   * Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
    */
   async createDatastoreRecord(
     request: operations.CreateDatastoreRecordRequest,
@@ -30,6 +33,9 @@ export class RecordT extends ClientSDK {
 
   /**
    * Retrieve a record
+   *
+   * @remarks
+   * Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getDatastoreRecord(
     request: operations.GetDatastoreRecordRequest,
@@ -44,6 +50,9 @@ export class RecordT extends ClientSDK {
 
   /**
    * List all records
+   *
+   * @remarks
+   * Returns a list of DatastoreRecords. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listDatastoreRecords(
     request: operations.ListDatastoreRecordsRequest,
@@ -58,6 +67,9 @@ export class RecordT extends ClientSDK {
 
   /**
    * Update a record
+   *
+   * @remarks
+   * Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
    */
   async patchDatastoreRecord(
     request: operations.PatchDatastoreRecordRequest,
@@ -72,6 +84,9 @@ export class RecordT extends ClientSDK {
 
   /**
    * Remove a record
+   *
+   * @remarks
+   * Deletes the DatastoreRecord identified by `id`.
    */
   async removeDatastoreRecord(
     request: operations.RemoveDatastoreRecordRequest,
@@ -86,6 +101,9 @@ export class RecordT extends ClientSDK {
 
   /**
    * Update a record
+   *
+   * @remarks
+   * Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
    */
   async updateDatastoreRecord(
     request: operations.UpdateDatastoreRecordRequest,

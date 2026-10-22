@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a pullrequest
+ *
+ * @remarks
+ * Deletes the RepoPullrequest identified by `id`.
  */
 export function repoRemoveRepoPullrequest(
   client: UnifiedToCore,

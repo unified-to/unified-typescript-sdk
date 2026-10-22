@@ -19,7 +19,7 @@
 
 ## createAtsJob
 
-Create a job
+Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "95ce445e-a626-4b88-b64d-d6704c73f2bf",
+      id: "b2eb3fac-ac5b-4697-b47a-b488f982ea1f",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -75,7 +75,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "e7372a13-10dc-492f-a5cb-89665b779c57",
+          id: "114a0631-9ed6-45a1-8a6a-f68ee96d814c",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -88,7 +88,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.580Z"),
+          openedAt: new Date("2026-06-08T19:20:51.046Z"),
           status: "OPEN",
         },
       ],
@@ -102,14 +102,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.682Z"),
+          createdAt: new Date("2026-08-02T23:28:42.426Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "9f0f844f-abf1-4c95-8f5b-6f2de3afa34f",
+          id: "3168d699-2717-4a38-9a1e-f2542608a75b",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.524Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.546Z"),
         },
       ],
       publicJobUrls: [
@@ -119,7 +119,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "2f56a998-835d-4279-9015-b7639ec61657",
+          id: "93f08a91-8c8a-4a92-aa13-77020cbde856",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -132,7 +132,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "5c1aa0f4-25fe-4462-816c-d897cb4f39b6",
+          id: "f7d6720a-c5b6-46cb-bbb7-e9ff3ff042b5",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -145,7 +145,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "28ea6ae3-1758-40ba-8f16-86797a16224e",
+          id: "53ae3885-fb7f-4286-ab8e-f1468e8a37c7",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -163,7 +163,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.331Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.496Z"),
     },
     connectionId: "<id>",
   });
@@ -223,7 +223,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "95ce445e-a626-4b88-b64d-d6704c73f2bf",
+      id: "b2eb3fac-ac5b-4697-b47a-b488f982ea1f",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -232,7 +232,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "e7372a13-10dc-492f-a5cb-89665b779c57",
+          id: "114a0631-9ed6-45a1-8a6a-f68ee96d814c",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -245,7 +245,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.580Z"),
+          openedAt: new Date("2026-06-08T19:20:51.046Z"),
           status: "OPEN",
         },
       ],
@@ -259,14 +259,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.682Z"),
+          createdAt: new Date("2026-08-02T23:28:42.426Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "9f0f844f-abf1-4c95-8f5b-6f2de3afa34f",
+          id: "3168d699-2717-4a38-9a1e-f2542608a75b",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.524Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.546Z"),
         },
       ],
       publicJobUrls: [
@@ -276,7 +276,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "2f56a998-835d-4279-9015-b7639ec61657",
+          id: "93f08a91-8c8a-4a92-aa13-77020cbde856",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -289,7 +289,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "5c1aa0f4-25fe-4462-816c-d897cb4f39b6",
+          id: "f7d6720a-c5b6-46cb-bbb7-e9ff3ff042b5",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -302,7 +302,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "28ea6ae3-1758-40ba-8f16-86797a16224e",
+          id: "53ae3885-fb7f-4286-ab8e-f1468e8a37c7",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -320,7 +320,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.331Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.496Z"),
     },
     connectionId: "<id>",
   });
@@ -356,7 +356,7 @@ run();
 
 ## createHrisJob
 
-Create a job
+Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
 
 ### Example Usage
 
@@ -377,11 +377,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "da424560-4918-47de-94f0-31e905739006",
+      id: "4d8136ef-6d0a-4f77-945f-003f71e8f046",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.518Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.019Z"),
     },
     connectionId: "<id>",
   });
@@ -415,11 +415,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "da424560-4918-47de-94f0-31e905739006",
+      id: "4d8136ef-6d0a-4f77-945f-003f71e8f046",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.518Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.019Z"),
     },
     connectionId: "<id>",
   });
@@ -455,7 +455,7 @@ run();
 
 ## getAtsJob
 
-Retrieve a job
+Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -534,7 +534,7 @@ run();
 
 ## getHrisJob
 
-Retrieve a job
+Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -613,7 +613,7 @@ run();
 
 ## listAtsJobs
 
-List all jobs
+Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -690,7 +690,7 @@ run();
 
 ## listHrisJobs
 
-List all jobs
+Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -767,7 +767,7 @@ run();
 
 ## patchAtsJob
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -814,7 +814,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "462617f1-e60a-4e09-bc12-20ed887a4ca8",
+      id: "b35e4e37-24ae-48fb-92de-a4c50c950c09",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -823,7 +823,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a28e2b6f-a4ff-4f8d-b9f8-fadcf6d9ccfb",
+          id: "d9aacb97-9c57-4ae0-bf48-05013d2ada25",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -836,7 +836,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.649Z"),
+          openedAt: new Date("2026-06-08T19:20:51.088Z"),
           status: "OPEN",
         },
       ],
@@ -850,14 +850,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.754Z"),
+          createdAt: new Date("2026-08-02T23:28:42.470Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "6717cc71-03e1-4515-aff4-34645fca864c",
+          id: "e21a413d-43b5-45ae-8aed-a4c57c96e20a",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.599Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.591Z"),
         },
       ],
       publicJobUrls: [
@@ -867,7 +867,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "c0b961aa-23cd-4add-99de-ededac11b675",
+          id: "39c01b8a-7a19-4804-bb40-cd98c6c5ed1d",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -880,7 +880,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "78d6d497-4f7e-453a-99af-6f60b1254112",
+          id: "8ae7b8c4-b8e9-491b-9bd9-e195b6ca663d",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -893,7 +893,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "eee2b62c-2ec4-442d-86af-49094d775495",
+          id: "983eaac7-b246-4d9a-8e92-824699a1e9d5",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -911,7 +911,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.394Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.534Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -972,7 +972,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "462617f1-e60a-4e09-bc12-20ed887a4ca8",
+      id: "b35e4e37-24ae-48fb-92de-a4c50c950c09",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -981,7 +981,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a28e2b6f-a4ff-4f8d-b9f8-fadcf6d9ccfb",
+          id: "d9aacb97-9c57-4ae0-bf48-05013d2ada25",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -994,7 +994,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.649Z"),
+          openedAt: new Date("2026-06-08T19:20:51.088Z"),
           status: "OPEN",
         },
       ],
@@ -1008,14 +1008,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.754Z"),
+          createdAt: new Date("2026-08-02T23:28:42.470Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "6717cc71-03e1-4515-aff4-34645fca864c",
+          id: "e21a413d-43b5-45ae-8aed-a4c57c96e20a",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.599Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.591Z"),
         },
       ],
       publicJobUrls: [
@@ -1025,7 +1025,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "c0b961aa-23cd-4add-99de-ededac11b675",
+          id: "39c01b8a-7a19-4804-bb40-cd98c6c5ed1d",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -1038,7 +1038,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "78d6d497-4f7e-453a-99af-6f60b1254112",
+          id: "8ae7b8c4-b8e9-491b-9bd9-e195b6ca663d",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -1051,7 +1051,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "eee2b62c-2ec4-442d-86af-49094d775495",
+          id: "983eaac7-b246-4d9a-8e92-824699a1e9d5",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -1069,7 +1069,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.394Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.534Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1106,7 +1106,7 @@ run();
 
 ## patchHrisJob
 
-Update a job
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
 
 ### Example Usage
 
@@ -1127,11 +1127,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "6bf8ff07-fef1-418a-a211-a0e78efe0047",
+      id: "6023c15b-8530-441f-80b1-5d1a30720540",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.583Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1166,11 +1166,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "6bf8ff07-fef1-418a-a211-a0e78efe0047",
+      id: "6023c15b-8530-441f-80b1-5d1a30720540",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.583Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1207,7 +1207,7 @@ run();
 
 ## removeAtsJob
 
-Remove a job
+Deletes the AtsJob identified by `id`.
 
 ### Example Usage
 
@@ -1286,7 +1286,7 @@ run();
 
 ## removeHrisJob
 
-Remove a job
+Deletes the HrisJob identified by `id`.
 
 ### Example Usage
 
@@ -1365,7 +1365,7 @@ run();
 
 ## updateAtsJob
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -1412,7 +1412,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "462617f1-e60a-4e09-bc12-20ed887a4ca8",
+      id: "b35e4e37-24ae-48fb-92de-a4c50c950c09",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -1421,7 +1421,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a28e2b6f-a4ff-4f8d-b9f8-fadcf6d9ccfb",
+          id: "d9aacb97-9c57-4ae0-bf48-05013d2ada25",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -1434,7 +1434,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.649Z"),
+          openedAt: new Date("2026-06-08T19:20:51.088Z"),
           status: "OPEN",
         },
       ],
@@ -1448,14 +1448,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.754Z"),
+          createdAt: new Date("2026-08-02T23:28:42.470Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "6717cc71-03e1-4515-aff4-34645fca864c",
+          id: "e21a413d-43b5-45ae-8aed-a4c57c96e20a",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.599Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.591Z"),
         },
       ],
       publicJobUrls: [
@@ -1465,7 +1465,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "c0b961aa-23cd-4add-99de-ededac11b675",
+          id: "39c01b8a-7a19-4804-bb40-cd98c6c5ed1d",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -1478,7 +1478,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "78d6d497-4f7e-453a-99af-6f60b1254112",
+          id: "8ae7b8c4-b8e9-491b-9bd9-e195b6ca663d",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -1491,7 +1491,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "eee2b62c-2ec4-442d-86af-49094d775495",
+          id: "983eaac7-b246-4d9a-8e92-824699a1e9d5",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -1509,7 +1509,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.394Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.534Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1570,7 +1570,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "462617f1-e60a-4e09-bc12-20ed887a4ca8",
+      id: "b35e4e37-24ae-48fb-92de-a4c50c950c09",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -1579,7 +1579,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a28e2b6f-a4ff-4f8d-b9f8-fadcf6d9ccfb",
+          id: "d9aacb97-9c57-4ae0-bf48-05013d2ada25",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -1592,7 +1592,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.649Z"),
+          openedAt: new Date("2026-06-08T19:20:51.088Z"),
           status: "OPEN",
         },
       ],
@@ -1606,14 +1606,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.754Z"),
+          createdAt: new Date("2026-08-02T23:28:42.470Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "6717cc71-03e1-4515-aff4-34645fca864c",
+          id: "e21a413d-43b5-45ae-8aed-a4c57c96e20a",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.599Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.591Z"),
         },
       ],
       publicJobUrls: [
@@ -1623,7 +1623,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "c0b961aa-23cd-4add-99de-ededac11b675",
+          id: "39c01b8a-7a19-4804-bb40-cd98c6c5ed1d",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -1636,7 +1636,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "78d6d497-4f7e-453a-99af-6f60b1254112",
+          id: "8ae7b8c4-b8e9-491b-9bd9-e195b6ca663d",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -1649,7 +1649,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "eee2b62c-2ec4-442d-86af-49094d775495",
+          id: "983eaac7-b246-4d9a-8e92-824699a1e9d5",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -1667,7 +1667,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.394Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.534Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1704,7 +1704,7 @@ run();
 
 ## updateHrisJob
 
-Update a job
+Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
 
 ### Example Usage
 
@@ -1725,11 +1725,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "6bf8ff07-fef1-418a-a211-a0e78efe0047",
+      id: "6023c15b-8530-441f-80b1-5d1a30720540",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.583Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1764,11 +1764,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "6bf8ff07-fef1-418a-a211-a0e78efe0047",
+      id: "6023c15b-8530-441f-80b1-5d1a30720540",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-01-30T05:31:20.583Z"),
+      updatedAt: new Date("2023-01-30T14:35:37.060Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an ad
+ *
+ * @remarks
+ * Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
  */
 export function adsCreateAdsAd(
   client: UnifiedToCore,

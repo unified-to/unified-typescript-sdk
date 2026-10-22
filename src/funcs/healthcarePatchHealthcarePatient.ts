@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a patient
+ *
+ * @remarks
+ * Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
  */
 export function healthcarePatchHealthcarePatient(
   client: UnifiedToCore,

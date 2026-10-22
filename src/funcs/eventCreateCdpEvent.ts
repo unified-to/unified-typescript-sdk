@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an event
+ *
+ * @remarks
+ * Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
  */
 export function eventCreateCdpEvent(
   client: UnifiedToCore,

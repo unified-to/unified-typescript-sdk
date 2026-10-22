@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an organization
+ *
+ * @remarks
+ * Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
  */
 export function organizationCreateRepoOrganization(
   client: UnifiedToCore,

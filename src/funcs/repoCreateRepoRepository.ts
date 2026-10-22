@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a repository
+ *
+ * @remarks
+ * Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
  */
 export function repoCreateRepoRepository(
   client: UnifiedToCore,

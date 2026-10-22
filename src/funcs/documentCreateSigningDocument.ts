@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a document
+ *
+ * @remarks
+ * Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
  */
 export function documentCreateSigningDocument(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a label
+ *
+ * @remarks
+ * Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
  */
 export function shippingPatchShippingLabel(
   client: UnifiedToCore,

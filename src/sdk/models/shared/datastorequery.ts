@@ -29,6 +29,9 @@ import {
 export type DatastoreQuery = {
   databaseId?: string | undefined;
   metadata?: Array<DatastoreMetadata> | undefined;
+  /**
+   * What to run: a raw `sql` statement, or a structured query (select, filter, sort, limit/offset, aggregate)
+   */
   query?: PropertyDatastoreQueryQuery | undefined;
   raw?: { [k: string]: any } | undefined;
   response?: PropertyDatastoreQueryResponse | undefined;

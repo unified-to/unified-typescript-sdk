@@ -38,6 +38,9 @@ export type CrmLead = {
    * (reference to CrmCompany)
    */
   companyId?: string | undefined;
+  /**
+   * The name of the company the lead works for
+   */
   companyName?: string | undefined;
   /**
    * (reference to CrmContact)
@@ -57,7 +60,13 @@ export type CrmLead = {
   isActive?: boolean | undefined;
   lastName?: string | undefined;
   linkUrls?: Array<string> | undefined;
+  /**
+   * Custom field values. Include only existing custom fields and only the ones being set; omit to leave them unchanged.
+   */
   metadata?: Array<CrmMetadata> | undefined;
+  /**
+   * The lead's full name
+   */
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   source?: string | undefined;

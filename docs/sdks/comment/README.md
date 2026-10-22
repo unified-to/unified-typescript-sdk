@@ -25,7 +25,7 @@
 
 ## createKmsComment
 
-Create a comment
+Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
 
 ### Example Usage
 
@@ -45,10 +45,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "eb83afe5-808b-4cb3-b62e-4500e31fd260",
+      id: "3fd02177-30ea-4dbc-82ef-6313e9256105",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-11-26T06:57:46.604Z"),
+      updatedAt: new Date("2023-11-26T14:12:06.975Z"),
     },
     connectionId: "<id>",
   });
@@ -81,10 +81,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "eb83afe5-808b-4cb3-b62e-4500e31fd260",
+      id: "3fd02177-30ea-4dbc-82ef-6313e9256105",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-11-26T06:57:46.604Z"),
+      updatedAt: new Date("2023-11-26T14:12:06.975Z"),
     },
     connectionId: "<id>",
   });
@@ -120,7 +120,7 @@ run();
 
 ## createTaskComment
 
-Create a comment
+Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
 
 ### Example Usage
 
@@ -139,10 +139,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "043e5d0b-a5a7-4407-8551-48d1def552e5",
+      id: "003d0864-d469-44d4-af50-4c193acfa9aa",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.205Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.818Z"),
     },
     connectionId: "<id>",
   });
@@ -174,10 +174,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "043e5d0b-a5a7-4407-8551-48d1def552e5",
+      id: "003d0864-d469-44d4-af50-4c193acfa9aa",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.205Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.818Z"),
     },
     connectionId: "<id>",
   });
@@ -213,7 +213,7 @@ run();
 
 ## createUcComment
 
-Create a comment
+Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
 
 ### Example Usage
 
@@ -232,9 +232,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "7a832f3f-6932-49b5-9b91-dd064965315e",
+      id: "53dedb1c-07dd-4d5f-9f48-e8f78df64741",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.291Z",
+      updatedAt: "2024-02-10T00:25:58.127Z",
     },
     connectionId: "<id>",
   });
@@ -266,9 +266,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "7a832f3f-6932-49b5-9b91-dd064965315e",
+      id: "53dedb1c-07dd-4d5f-9f48-e8f78df64741",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.291Z",
+      updatedAt: "2024-02-10T00:25:58.127Z",
     },
     connectionId: "<id>",
   });
@@ -304,7 +304,7 @@ run();
 
 ## getKmsComment
 
-Retrieve a comment
+Retrieves a single KmsComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -383,7 +383,7 @@ run();
 
 ## getTaskComment
 
-Retrieve a comment
+Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -462,7 +462,7 @@ run();
 
 ## getUcComment
 
-Retrieve a comment
+Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -541,7 +541,7 @@ run();
 
 ## listKmsComments
 
-List all comments
+Returns a list of KmsComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -618,7 +618,7 @@ run();
 
 ## listTaskComments
 
-List all comments
+Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -695,7 +695,7 @@ run();
 
 ## listUcComments
 
-List all comments
+Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -772,7 +772,7 @@ run();
 
 ## patchKmsComment
 
-Update a comment
+Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
 
 ### Example Usage
 
@@ -792,10 +792,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "ad9fef5d-f0a6-45fb-985b-8b281400e677",
+      id: "e6979a2c-1739-4975-a350-88f946285a78",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-11-26T06:57:46.609Z"),
+      updatedAt: new Date("2023-11-26T14:12:06.978Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -829,10 +829,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "ad9fef5d-f0a6-45fb-985b-8b281400e677",
+      id: "e6979a2c-1739-4975-a350-88f946285a78",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-11-26T06:57:46.609Z"),
+      updatedAt: new Date("2023-11-26T14:12:06.978Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -869,7 +869,7 @@ run();
 
 ## patchTaskComment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -888,10 +888,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1b65ff5b-8104-416e-bb7b-b0b09457161e",
+      id: "83290ea9-5b6f-4ea3-82fa-162b720fdf71",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.209Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -924,10 +924,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1b65ff5b-8104-416e-bb7b-b0b09457161e",
+      id: "83290ea9-5b6f-4ea3-82fa-162b720fdf71",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.209Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -964,7 +964,7 @@ run();
 
 ## patchUcComment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -983,9 +983,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "cd4b6cc0-b005-4730-83b6-87d4bd23cf7c",
+      id: "20b8ce98-09af-4198-9ded-eb97cd945d2c",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.294Z",
+      updatedAt: "2024-02-10T00:25:58.129Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1018,9 +1018,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "cd4b6cc0-b005-4730-83b6-87d4bd23cf7c",
+      id: "20b8ce98-09af-4198-9ded-eb97cd945d2c",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.294Z",
+      updatedAt: "2024-02-10T00:25:58.129Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1057,7 +1057,7 @@ run();
 
 ## removeKmsComment
 
-Remove a comment
+Deletes the KmsComment identified by `id`.
 
 ### Example Usage
 
@@ -1136,7 +1136,7 @@ run();
 
 ## removeTaskComment
 
-Remove a comment
+Deletes the TaskComment identified by `id`.
 
 ### Example Usage
 
@@ -1215,7 +1215,7 @@ run();
 
 ## removeUcComment
 
-Remove a comment
+Deletes the UcComment identified by `id`.
 
 ### Example Usage
 
@@ -1294,7 +1294,7 @@ run();
 
 ## updateKmsComment
 
-Update a comment
+Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
 
 ### Example Usage
 
@@ -1314,10 +1314,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "ad9fef5d-f0a6-45fb-985b-8b281400e677",
+      id: "e6979a2c-1739-4975-a350-88f946285a78",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-11-26T06:57:46.609Z"),
+      updatedAt: new Date("2023-11-26T14:12:06.978Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1351,10 +1351,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "ad9fef5d-f0a6-45fb-985b-8b281400e677",
+      id: "e6979a2c-1739-4975-a350-88f946285a78",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-11-26T06:57:46.609Z"),
+      updatedAt: new Date("2023-11-26T14:12:06.978Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1391,7 +1391,7 @@ run();
 
 ## updateTaskComment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -1410,10 +1410,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1b65ff5b-8104-416e-bb7b-b0b09457161e",
+      id: "83290ea9-5b6f-4ea3-82fa-162b720fdf71",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.209Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1446,10 +1446,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1b65ff5b-8104-416e-bb7b-b0b09457161e",
+      id: "83290ea9-5b6f-4ea3-82fa-162b720fdf71",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.209Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1486,7 +1486,7 @@ run();
 
 ## updateUcComment
 
-Update a comment
+Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
 
 ### Example Usage
 
@@ -1505,9 +1505,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "cd4b6cc0-b005-4730-83b6-87d4bd23cf7c",
+      id: "20b8ce98-09af-4198-9ded-eb97cd945d2c",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.294Z",
+      updatedAt: "2024-02-10T00:25:58.129Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1540,9 +1540,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "cd4b6cc0-b005-4730-83b6-87d4bd23cf7c",
+      id: "20b8ce98-09af-4198-9ded-eb97cd945d2c",
       metadata: [],
-      updatedAt: "2024-02-09T18:38:09.294Z",
+      updatedAt: "2024-02-10T00:25:58.129Z",
     },
     connectionId: "<id>",
     id: "<id>",

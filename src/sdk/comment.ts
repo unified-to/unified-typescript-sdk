@@ -28,6 +28,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Comment extends ClientSDK {
   /**
    * Create a comment
+   *
+   * @remarks
+   * Creates a KmsComment. Provide the unified KmsComment fields in the request body; they are mapped to the provider's API. Returns the created KmsComment.
    */
   async createKmsComment(
     request: operations.CreateKmsCommentRequest,
@@ -42,6 +45,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Create a comment
+   *
+   * @remarks
+   * Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
    */
   async createTaskComment(
     request: operations.CreateTaskCommentRequest,
@@ -56,6 +62,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Create a comment
+   *
+   * @remarks
+   * Creates a UcComment. Provide the unified UcComment fields in the request body; they are mapped to the provider's API. Returns the created UcComment.
    */
   async createUcComment(
     request: operations.CreateUcCommentRequest,
@@ -70,6 +79,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Retrieve a comment
+   *
+   * @remarks
+   * Retrieves a single KmsComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getKmsComment(
     request: operations.GetKmsCommentRequest,
@@ -84,6 +96,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Retrieve a comment
+   *
+   * @remarks
+   * Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTaskComment(
     request: operations.GetTaskCommentRequest,
@@ -98,6 +113,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Retrieve a comment
+   *
+   * @remarks
+   * Retrieves a single UcComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcComment(
     request: operations.GetUcCommentRequest,
@@ -112,6 +130,9 @@ export class Comment extends ClientSDK {
 
   /**
    * List all comments
+   *
+   * @remarks
+   * Returns a list of KmsComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listKmsComments(
     request: operations.ListKmsCommentsRequest,
@@ -126,6 +147,9 @@ export class Comment extends ClientSDK {
 
   /**
    * List all comments
+   *
+   * @remarks
+   * Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTaskComments(
     request: operations.ListTaskCommentsRequest,
@@ -140,6 +164,9 @@ export class Comment extends ClientSDK {
 
   /**
    * List all comments
+   *
+   * @remarks
+   * Returns a list of UcComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcComments(
     request: operations.ListUcCommentsRequest,
@@ -154,6 +181,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
    */
   async patchKmsComment(
     request: operations.PatchKmsCommentRequest,
@@ -168,6 +198,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
    */
   async patchTaskComment(
     request: operations.PatchTaskCommentRequest,
@@ -182,6 +215,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
    */
   async patchUcComment(
     request: operations.PatchUcCommentRequest,
@@ -196,6 +232,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Remove a comment
+   *
+   * @remarks
+   * Deletes the KmsComment identified by `id`.
    */
   async removeKmsComment(
     request: operations.RemoveKmsCommentRequest,
@@ -210,6 +249,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Remove a comment
+   *
+   * @remarks
+   * Deletes the TaskComment identified by `id`.
    */
   async removeTaskComment(
     request: operations.RemoveTaskCommentRequest,
@@ -224,6 +266,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Remove a comment
+   *
+   * @remarks
+   * Deletes the UcComment identified by `id`.
    */
   async removeUcComment(
     request: operations.RemoveUcCommentRequest,
@@ -238,6 +283,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the KmsComment identified by `id`. Provide the unified KmsComment fields to change in the request body.
    */
   async updateKmsComment(
     request: operations.UpdateKmsCommentRequest,
@@ -252,6 +300,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
    */
   async updateTaskComment(
     request: operations.UpdateTaskCommentRequest,
@@ -266,6 +317,9 @@ export class Comment extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
    */
   async updateUcComment(
     request: operations.UpdateUcCommentRequest,

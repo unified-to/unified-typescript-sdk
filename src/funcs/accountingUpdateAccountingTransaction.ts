@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a transaction
+ *
+ * @remarks
+ * Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
  */
 export function accountingUpdateAccountingTransaction(
   client: UnifiedToCore,

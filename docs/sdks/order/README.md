@@ -4,20 +4,22 @@
 
 ### Available Operations
 
-* [createAccountingOrder](#createaccountingorder) - Create an order
+* [~~createAccountingOrder~~](#createaccountingorder) - Create an order :warning: **Deprecated**
 * [createAssessmentOrder](#createassessmentorder) - Create an order
-* [getAccountingOrder](#getaccountingorder) - Retrieve an order
+* [~~getAccountingOrder~~](#getaccountingorder) - Retrieve an order :warning: **Deprecated**
 * [getAssessmentOrder](#getassessmentorder) - Retrieve an order
-* [listAccountingOrders](#listaccountingorders) - List all orders
-* [patchAccountingOrder](#patchaccountingorder) - Update an order
+* [~~listAccountingOrders~~](#listaccountingorders) - List all orders :warning: **Deprecated**
+* [~~patchAccountingOrder~~](#patchaccountingorder) - Update an order :warning: **Deprecated**
 * [patchAssessmentOrder](#patchassessmentorder) - Update an order
-* [removeAccountingOrder](#removeaccountingorder) - Remove an order
-* [updateAccountingOrder](#updateaccountingorder) - Update an order
+* [~~removeAccountingOrder~~](#removeaccountingorder) - Remove an order :warning: **Deprecated**
+* [~~updateAccountingOrder~~](#updateaccountingorder) - Update an order :warning: **Deprecated**
 * [updateAssessmentOrder](#updateassessmentorder) - Update an order
 
-## createAccountingOrder
+## ~~createAccountingOrder~~
 
-Create an order
+Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -44,7 +46,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "19d2ad08-c9f2-4dd1-8b42-eb3447581fb4",
+      id: "b0104cf4-3bee-417d-848d-a8ffca6fb0e3",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -59,7 +61,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.631Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.364Z"),
     },
     connectionId: "<id>",
   });
@@ -99,7 +101,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "19d2ad08-c9f2-4dd1-8b42-eb3447581fb4",
+      id: "b0104cf4-3bee-417d-848d-a8ffca6fb0e3",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -114,7 +116,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.631Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.364Z"),
     },
     connectionId: "<id>",
   });
@@ -150,7 +152,7 @@ run();
 
 ## createAssessmentOrder
 
-Create an order
+Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
 
 ### Example Usage
 
@@ -169,7 +171,7 @@ async function run() {
     assessmentOrder: {
       connectionId: "<id>",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "9592fffc-9bea-466e-8686-6d66ed428365",
+      id: "e84661cf-424c-4cad-ade2-5e12b97fdab2",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -196,7 +198,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-01-25T20:43:41.460Z"),
+      updatedAt: new Date("2023-01-26T03:07:22.061Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -229,7 +231,7 @@ async function run() {
     assessmentOrder: {
       connectionId: "<id>",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "9592fffc-9bea-466e-8686-6d66ed428365",
+      id: "e84661cf-424c-4cad-ade2-5e12b97fdab2",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -256,7 +258,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-01-25T20:43:41.460Z"),
+      updatedAt: new Date("2023-01-26T03:07:22.061Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -291,9 +293,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getAccountingOrder
+## ~~getAccountingOrder~~
 
-Retrieve an order
+Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -372,7 +376,7 @@ run();
 
 ## getAssessmentOrder
 
-Retrieve an order
+Retrieves a single AssessmentOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -449,9 +453,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## listAccountingOrders
+## ~~listAccountingOrders~~
 
-List all orders
+Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -526,9 +532,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchAccountingOrder
+## ~~patchAccountingOrder~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -555,7 +563,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "89f3691b-dc71-46eb-9de1-38e4bf45eaa5",
+      id: "a2c961ce-8788-4938-8393-5ee0093ea648",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -570,7 +578,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.643Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.373Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -611,7 +619,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "89f3691b-dc71-46eb-9de1-38e4bf45eaa5",
+      id: "a2c961ce-8788-4938-8393-5ee0093ea648",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -626,7 +634,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.643Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.373Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -663,7 +671,7 @@ run();
 
 ## patchAssessmentOrder
 
-Update an order
+Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
 
 ### Example Usage
 
@@ -682,7 +690,7 @@ async function run() {
     assessmentOrder: {
       connectionId: "<id>",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "bec971ae-3f0f-4f82-818c-a23a6e111307",
+      id: "6341bbdd-76de-4def-a8e4-e1265e459926",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -709,7 +717,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-01-25T20:43:41.471Z"),
+      updatedAt: new Date("2023-01-26T03:07:22.069Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -743,7 +751,7 @@ async function run() {
     assessmentOrder: {
       connectionId: "<id>",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "bec971ae-3f0f-4f82-818c-a23a6e111307",
+      id: "6341bbdd-76de-4def-a8e4-e1265e459926",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -770,7 +778,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-01-25T20:43:41.471Z"),
+      updatedAt: new Date("2023-01-26T03:07:22.069Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -806,9 +814,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeAccountingOrder
+## ~~removeAccountingOrder~~
 
-Remove an order
+Deletes the AccountingOrder identified by `id`.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -885,9 +895,11 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## updateAccountingOrder
+## ~~updateAccountingOrder~~
 
-Update an order
+Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -914,7 +926,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "89f3691b-dc71-46eb-9de1-38e4bf45eaa5",
+      id: "a2c961ce-8788-4938-8393-5ee0093ea648",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -929,7 +941,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.643Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.373Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -970,7 +982,7 @@ async function run() {
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "89f3691b-dc71-46eb-9de1-38e4bf45eaa5",
+      id: "a2c961ce-8788-4938-8393-5ee0093ea648",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
@@ -985,7 +997,7 @@ async function run() {
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-08T07:25:47.643Z"),
+      updatedAt: new Date("2022-02-08T12:22:54.373Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1022,7 +1034,7 @@ run();
 
 ## updateAssessmentOrder
 
-Update an order
+Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
 
 ### Example Usage
 
@@ -1041,7 +1053,7 @@ async function run() {
     assessmentOrder: {
       connectionId: "<id>",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "bec971ae-3f0f-4f82-818c-a23a6e111307",
+      id: "6341bbdd-76de-4def-a8e4-e1265e459926",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -1068,7 +1080,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-01-25T20:43:41.471Z"),
+      updatedAt: new Date("2023-01-26T03:07:22.069Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -1102,7 +1114,7 @@ async function run() {
     assessmentOrder: {
       connectionId: "<id>",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "bec971ae-3f0f-4f82-818c-a23a6e111307",
+      id: "6341bbdd-76de-4def-a8e4-e1265e459926",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -1129,7 +1141,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-01-25T20:43:41.471Z"),
+      updatedAt: new Date("2023-01-26T03:07:22.069Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",

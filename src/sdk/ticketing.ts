@@ -34,6 +34,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Ticketing extends ClientSDK {
   /**
    * Create a category
+   *
+   * @remarks
+   * Creates a TicketingCategory. Provide the unified TicketingCategory fields in the request body; they are mapped to the provider's API. Returns the created TicketingCategory.
    */
   async createTicketingCategory(
     request: operations.CreateTicketingCategoryRequest,
@@ -48,6 +51,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Create a customer
+   *
+   * @remarks
+   * Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider's API. Returns the created TicketingCustomer.
    */
   async createTicketingCustomer(
     request: operations.CreateTicketingCustomerRequest,
@@ -62,6 +68,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Create a note
+   *
+   * @remarks
+   * Creates a TicketingNote. Provide the unified TicketingNote fields in the request body; they are mapped to the provider's API. Returns the created TicketingNote.
    */
   async createTicketingNote(
     request: operations.CreateTicketingNoteRequest,
@@ -76,6 +85,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Create a ticket
+   *
+   * @remarks
+   * Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
    */
   async createTicketingTicket(
     request: operations.CreateTicketingTicketRequest,
@@ -90,6 +102,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Retrieve a category
+   *
+   * @remarks
+   * Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTicketingCategory(
     request: operations.GetTicketingCategoryRequest,
@@ -104,6 +119,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Retrieve a customer
+   *
+   * @remarks
+   * Retrieves a single TicketingCustomer by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTicketingCustomer(
     request: operations.GetTicketingCustomerRequest,
@@ -118,6 +136,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Retrieve a note
+   *
+   * @remarks
+   * Retrieves a single TicketingNote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTicketingNote(
     request: operations.GetTicketingNoteRequest,
@@ -132,6 +153,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Retrieve a ticket
+   *
+   * @remarks
+   * Retrieves a single TicketingTicket by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTicketingTicket(
     request: operations.GetTicketingTicketRequest,
@@ -146,6 +170,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * List all categories
+   *
+   * @remarks
+   * Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTicketingCategories(
     request: operations.ListTicketingCategoriesRequest,
@@ -160,6 +187,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * List all customers
+   *
+   * @remarks
+   * Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTicketingCustomers(
     request: operations.ListTicketingCustomersRequest,
@@ -174,6 +204,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * List all notes
+   *
+   * @remarks
+   * Returns a list of TicketingNotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTicketingNotes(
     request: operations.ListTicketingNotesRequest,
@@ -188,6 +221,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * List all tickets
+   *
+   * @remarks
+   * Returns a list of TicketingTickets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTicketingTickets(
     request: operations.ListTicketingTicketsRequest,
@@ -202,6 +238,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Update a category
+   *
+   * @remarks
+   * Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
    */
   async patchTicketingCategory(
     request: operations.PatchTicketingCategoryRequest,
@@ -216,6 +255,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Update a customer
+   *
+   * @remarks
+   * Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
    */
   async patchTicketingCustomer(
     request: operations.PatchTicketingCustomerRequest,
@@ -230,6 +272,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Update a note
+   *
+   * @remarks
+   * Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
    */
   async patchTicketingNote(
     request: operations.PatchTicketingNoteRequest,
@@ -244,6 +289,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Update a ticket
+   *
+   * @remarks
+   * Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
    */
   async patchTicketingTicket(
     request: operations.PatchTicketingTicketRequest,
@@ -258,6 +306,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Remove a category
+   *
+   * @remarks
+   * Deletes the TicketingCategory identified by `id`.
    */
   async removeTicketingCategory(
     request: operations.RemoveTicketingCategoryRequest,
@@ -272,6 +323,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Remove a customer
+   *
+   * @remarks
+   * Deletes the TicketingCustomer identified by `id`.
    */
   async removeTicketingCustomer(
     request: operations.RemoveTicketingCustomerRequest,
@@ -286,6 +340,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Remove a note
+   *
+   * @remarks
+   * Deletes the TicketingNote identified by `id`.
    */
   async removeTicketingNote(
     request: operations.RemoveTicketingNoteRequest,
@@ -300,6 +357,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Remove a ticket
+   *
+   * @remarks
+   * Deletes the TicketingTicket identified by `id`.
    */
   async removeTicketingTicket(
     request: operations.RemoveTicketingTicketRequest,
@@ -314,6 +374,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Update a category
+   *
+   * @remarks
+   * Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
    */
   async updateTicketingCategory(
     request: operations.UpdateTicketingCategoryRequest,
@@ -328,6 +391,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Update a customer
+   *
+   * @remarks
+   * Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
    */
   async updateTicketingCustomer(
     request: operations.UpdateTicketingCustomerRequest,
@@ -342,6 +408,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Update a note
+   *
+   * @remarks
+   * Updates the TicketingNote identified by `id`. Provide the unified TicketingNote fields to change in the request body.
    */
   async updateTicketingNote(
     request: operations.UpdateTicketingNoteRequest,
@@ -356,6 +425,9 @@ export class Ticketing extends ClientSDK {
 
   /**
    * Update a ticket
+   *
+   * @remarks
+   * Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
    */
   async updateTicketingTicket(
     request: operations.UpdateTicketingTicketRequest,

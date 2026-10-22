@@ -13,7 +13,7 @@
 
 ## createVerificationRequest
 
-Create a request
+Creates a VerificationRequest. Provide the unified VerificationRequest fields in the request body; they are mapped to the provider's API. Returns the created VerificationRequest.
 
 ### Example Usage
 
@@ -31,7 +31,7 @@ async function run() {
   const result = await unifiedTo.request.createVerificationRequest({
     verificationRequest: {
       createdAt: new Date("2023-11-20T08:17:29.950Z"),
-      id: "60828b70-06b6-43b1-afec-398080da016b",
+      id: "53cdb6ed-cc6a-44f5-a166-13a03117112d",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -41,7 +41,7 @@ async function run() {
       responseDownloadUrls: [],
       responseSource: "Implemented regional protocol",
       responseStatus: "PENDING",
-      updatedAt: new Date("2023-12-27T07:02:18.015Z"),
+      updatedAt: new Date("2023-12-27T07:52:18.274Z"),
     },
     connectionId: "<id>",
   });
@@ -72,7 +72,7 @@ async function run() {
   const res = await verificationCreateVerificationRequest(unifiedTo, {
     verificationRequest: {
       createdAt: new Date("2023-11-20T08:17:29.950Z"),
-      id: "60828b70-06b6-43b1-afec-398080da016b",
+      id: "53cdb6ed-cc6a-44f5-a166-13a03117112d",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -82,7 +82,7 @@ async function run() {
       responseDownloadUrls: [],
       responseSource: "Implemented regional protocol",
       responseStatus: "PENDING",
-      updatedAt: new Date("2023-12-27T07:02:18.015Z"),
+      updatedAt: new Date("2023-12-27T07:52:18.274Z"),
     },
     connectionId: "<id>",
   });
@@ -118,7 +118,7 @@ run();
 
 ## getVerificationRequest
 
-Retrieve a request
+Retrieves a single VerificationRequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -197,7 +197,7 @@ run();
 
 ## listVerificationRequests
 
-List all requests
+Returns a list of VerificationRequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -274,7 +274,7 @@ run();
 
 ## patchVerificationRequest
 
-Update a request
+Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
 
 ### Example Usage
 
@@ -292,7 +292,7 @@ async function run() {
   const result = await unifiedTo.request.patchVerificationRequest({
     verificationRequest: {
       createdAt: new Date("2023-11-20T08:17:29.950Z"),
-      id: "fc8a10cc-46ed-45b9-a6dd-f12ca433507c",
+      id: "214f0b1d-82b5-462b-9451-14d5dc50f081",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -302,7 +302,7 @@ async function run() {
       responseDownloadUrls: [],
       responseSource: "Implemented regional protocol",
       responseStatus: "PENDING",
-      updatedAt: new Date("2023-12-27T07:02:18.017Z"),
+      updatedAt: new Date("2023-12-27T07:52:18.275Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -334,7 +334,7 @@ async function run() {
   const res = await verificationPatchVerificationRequest(unifiedTo, {
     verificationRequest: {
       createdAt: new Date("2023-11-20T08:17:29.950Z"),
-      id: "fc8a10cc-46ed-45b9-a6dd-f12ca433507c",
+      id: "214f0b1d-82b5-462b-9451-14d5dc50f081",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -344,7 +344,7 @@ async function run() {
       responseDownloadUrls: [],
       responseSource: "Implemented regional protocol",
       responseStatus: "PENDING",
-      updatedAt: new Date("2023-12-27T07:02:18.017Z"),
+      updatedAt: new Date("2023-12-27T07:52:18.275Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -381,7 +381,7 @@ run();
 
 ## removeVerificationRequest
 
-Remove a request
+Deletes the VerificationRequest identified by `id`.
 
 ### Example Usage
 
@@ -460,7 +460,7 @@ run();
 
 ## updateVerificationRequest
 
-Update a request
+Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
 
 ### Example Usage
 
@@ -478,7 +478,7 @@ async function run() {
   const result = await unifiedTo.request.updateVerificationRequest({
     verificationRequest: {
       createdAt: new Date("2023-11-20T08:17:29.950Z"),
-      id: "fc8a10cc-46ed-45b9-a6dd-f12ca433507c",
+      id: "214f0b1d-82b5-462b-9451-14d5dc50f081",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -488,7 +488,7 @@ async function run() {
       responseDownloadUrls: [],
       responseSource: "Implemented regional protocol",
       responseStatus: "PENDING",
-      updatedAt: new Date("2023-12-27T07:02:18.017Z"),
+      updatedAt: new Date("2023-12-27T07:52:18.275Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -520,7 +520,7 @@ async function run() {
   const res = await verificationUpdateVerificationRequest(unifiedTo, {
     verificationRequest: {
       createdAt: new Date("2023-11-20T08:17:29.950Z"),
-      id: "fc8a10cc-46ed-45b9-a6dd-f12ca433507c",
+      id: "214f0b1d-82b5-462b-9451-14d5dc50f081",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -530,7 +530,7 @@ async function run() {
       responseDownloadUrls: [],
       responseSource: "Implemented regional protocol",
       responseStatus: "PENDING",
-      updatedAt: new Date("2023-12-27T07:02:18.017Z"),
+      updatedAt: new Date("2023-12-27T07:52:18.275Z"),
     },
     connectionId: "<id>",
     id: "<id>",

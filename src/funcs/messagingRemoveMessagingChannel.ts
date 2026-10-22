@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a channel
+ *
+ * @remarks
+ * Deletes the MessagingChannel identified by `id`.
  */
 export function messagingRemoveMessagingChannel(
   client: UnifiedToCore,

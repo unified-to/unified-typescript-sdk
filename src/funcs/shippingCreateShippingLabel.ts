@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a label
+ *
+ * @remarks
+ * Creates a ShippingLabel. Provide the unified ShippingLabel fields in the request body; they are mapped to the provider's API. Returns the created ShippingLabel.
  */
 export function shippingCreateShippingLabel(
   client: UnifiedToCore,

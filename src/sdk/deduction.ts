@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Deduction extends ClientSDK {
   /**
    * Create a deduction
+   *
+   * @remarks
+   * Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
    */
   async createHrisDeduction(
     request: operations.CreateHrisDeductionRequest,
@@ -30,6 +33,9 @@ export class Deduction extends ClientSDK {
 
   /**
    * Retrieve a deduction
+   *
+   * @remarks
+   * Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisDeduction(
     request: operations.GetHrisDeductionRequest,
@@ -44,6 +50,9 @@ export class Deduction extends ClientSDK {
 
   /**
    * List all deductions
+   *
+   * @remarks
+   * Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisDeductions(
     request: operations.ListHrisDeductionsRequest,
@@ -58,6 +67,9 @@ export class Deduction extends ClientSDK {
 
   /**
    * Update a deduction
+   *
+   * @remarks
+   * Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
    */
   async patchHrisDeduction(
     request: operations.PatchHrisDeductionRequest,
@@ -72,6 +84,9 @@ export class Deduction extends ClientSDK {
 
   /**
    * Remove a deduction
+   *
+   * @remarks
+   * Deletes the HrisDeduction identified by `id`.
    */
   async removeHrisDeduction(
     request: operations.RemoveHrisDeductionRequest,
@@ -86,6 +101,9 @@ export class Deduction extends ClientSDK {
 
   /**
    * Update a deduction
+   *
+   * @remarks
+   * Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
    */
   async updateHrisDeduction(
     request: operations.UpdateHrisDeductionRequest,

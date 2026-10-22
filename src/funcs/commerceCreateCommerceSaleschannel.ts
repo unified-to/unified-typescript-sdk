@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a saleschannel
+ *
+ * @remarks
+ * Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
  */
 export function commerceCreateCommerceSaleschannel(
   client: UnifiedToCore,

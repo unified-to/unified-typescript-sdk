@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a contact
+ *
+ * @remarks
+ * Deletes the CrmContact identified by `id`.
  */
 export function contactRemoveCrmContact(
   client: UnifiedToCore,

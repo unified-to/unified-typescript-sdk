@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a device
+ *
+ * @remarks
+ * Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
  */
 export function hrisUpdateHrisDevice(
   client: UnifiedToCore,

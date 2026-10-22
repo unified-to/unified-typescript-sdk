@@ -24,6 +24,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Activity extends ClientSDK {
   /**
    * Create an activity
+   *
+   * @remarks
+   * Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
    */
   async createAtsActivity(
     request: operations.CreateAtsActivityRequest,
@@ -38,6 +41,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Create an activity
+   *
+   * @remarks
+   * Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
    */
   async createLmsActivity(
     request: operations.CreateLmsActivityRequest,
@@ -52,6 +58,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Retrieve an activity
+   *
+   * @remarks
+   * Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsActivity(
     request: operations.GetAtsActivityRequest,
@@ -66,6 +75,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Retrieve an activity
+   *
+   * @remarks
+   * Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsActivity(
     request: operations.GetClubsActivityRequest,
@@ -80,6 +92,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Retrieve an activity
+   *
+   * @remarks
+   * Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsActivity(
     request: operations.GetLmsActivityRequest,
@@ -94,6 +109,9 @@ export class Activity extends ClientSDK {
 
   /**
    * List all activities
+   *
+   * @remarks
+   * Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsActivities(
     request: operations.ListAtsActivitiesRequest,
@@ -108,6 +126,9 @@ export class Activity extends ClientSDK {
 
   /**
    * List all activities
+   *
+   * @remarks
+   * Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsActivities(
     request: operations.ListClubsActivitiesRequest,
@@ -122,6 +143,9 @@ export class Activity extends ClientSDK {
 
   /**
    * List all activities
+   *
+   * @remarks
+   * Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsActivities(
     request: operations.ListLmsActivitiesRequest,
@@ -136,6 +160,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Update an activity
+   *
+   * @remarks
+   * Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
    */
   async patchAtsActivity(
     request: operations.PatchAtsActivityRequest,
@@ -150,6 +177,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Update an activity
+   *
+   * @remarks
+   * Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
    */
   async patchLmsActivity(
     request: operations.PatchLmsActivityRequest,
@@ -164,6 +194,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Remove an activity
+   *
+   * @remarks
+   * Deletes the AtsActivity identified by `id`.
    */
   async removeAtsActivity(
     request: operations.RemoveAtsActivityRequest,
@@ -178,6 +211,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Remove an activity
+   *
+   * @remarks
+   * Deletes the LmsActivity identified by `id`.
    */
   async removeLmsActivity(
     request: operations.RemoveLmsActivityRequest,
@@ -192,6 +228,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Update an activity
+   *
+   * @remarks
+   * Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
    */
   async updateAtsActivity(
     request: operations.UpdateAtsActivityRequest,
@@ -206,6 +245,9 @@ export class Activity extends ClientSDK {
 
   /**
    * Update an activity
+   *
+   * @remarks
+   * Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
    */
   async updateLmsActivity(
     request: operations.UpdateLmsActivityRequest,

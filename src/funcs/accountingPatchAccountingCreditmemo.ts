@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a creditmemo
+ *
+ * @remarks
+ * Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
  */
 export function accountingPatchAccountingCreditmemo(
   client: UnifiedToCore,

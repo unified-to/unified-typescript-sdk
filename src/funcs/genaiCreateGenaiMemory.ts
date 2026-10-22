@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a memory
+ *
+ * @remarks
+ * Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
  */
 export function genaiCreateGenaiMemory(
   client: UnifiedToCore,

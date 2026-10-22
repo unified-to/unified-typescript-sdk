@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a domain
+ *
+ * @remarks
+ * Deletes the ComputeDomain identified by `id`.
  */
 export function computeRemoveComputeDomain(
   client: UnifiedToCore,

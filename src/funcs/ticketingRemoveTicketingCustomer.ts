@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a customer
+ *
+ * @remarks
+ * Deletes the TicketingCustomer identified by `id`.
  */
 export function ticketingRemoveTicketingCustomer(
   client: UnifiedToCore,

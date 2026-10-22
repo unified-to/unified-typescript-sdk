@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a task
+ *
+ * @remarks
+ * Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
  */
 export function taskUpdateTaskTask(
   client: UnifiedToCore,

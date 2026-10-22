@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a device
+ *
+ * @remarks
+ * Deletes the HrisDevice identified by `id`.
  */
 export function hrisRemoveHrisDevice(
   client: UnifiedToCore,

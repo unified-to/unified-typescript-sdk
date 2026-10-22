@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Commit extends ClientSDK {
   /**
    * Create a commit
+   *
+   * @remarks
+   * Creates a RepoCommit. Provide the unified RepoCommit fields in the request body; they are mapped to the provider's API. Returns the created RepoCommit.
    */
   async createRepoCommit(
     request: operations.CreateRepoCommitRequest,
@@ -30,6 +33,9 @@ export class Commit extends ClientSDK {
 
   /**
    * Retrieve a commit
+   *
+   * @remarks
+   * Retrieves a single RepoCommit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoCommit(
     request: operations.GetRepoCommitRequest,
@@ -44,6 +50,9 @@ export class Commit extends ClientSDK {
 
   /**
    * List all commits
+   *
+   * @remarks
+   * Returns a list of RepoCommits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoCommits(
     request: operations.ListRepoCommitsRequest,
@@ -58,6 +67,9 @@ export class Commit extends ClientSDK {
 
   /**
    * Update a commit
+   *
+   * @remarks
+   * Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
    */
   async patchRepoCommit(
     request: operations.PatchRepoCommitRequest,
@@ -72,6 +84,9 @@ export class Commit extends ClientSDK {
 
   /**
    * Remove a commit
+   *
+   * @remarks
+   * Deletes the RepoCommit identified by `id`.
    */
   async removeRepoCommit(
     request: operations.RemoveRepoCommitRequest,
@@ -86,6 +101,9 @@ export class Commit extends ClientSDK {
 
   /**
    * Update a commit
+   *
+   * @remarks
+   * Updates the RepoCommit identified by `id`. Provide the unified RepoCommit fields to change in the request body.
    */
   async updateRepoCommit(
     request: operations.UpdateRepoCommitRequest,

@@ -28,10 +28,16 @@ import {
   StorageReference$outboundSchema,
 } from "./storagereference.js";
 
+/**
+ * Whether this is a file or a folder
+ */
 export const StorageFileType = {
   File: "FILE",
   Folder: "FOLDER",
 } as const;
+/**
+ * Whether this is a file or a folder
+ */
 export type StorageFileType = OpenEnum<typeof StorageFileType>;
 
 export type StorageFile = {
@@ -52,16 +58,25 @@ export type StorageFile = {
   id?: string | undefined;
   metadata?: Array<StorageMetadata> | undefined;
   mimeType?: string | undefined;
+  /**
+   * The file or folder name, including the file's extension
+   */
   name?: string | undefined;
   parentId?: string | undefined;
   permissions?: Array<StoragePermission> | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * The records the file is attached to (e.g. an invoice or a candidate), each by its id and type
+   */
   references?: Array<StorageReference> | undefined;
   size?: number | undefined;
   /**
    * labels
    */
   tags?: Array<string> | undefined;
+  /**
+   * Whether this is a file or a folder
+   */
   type?: StorageFileType | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)

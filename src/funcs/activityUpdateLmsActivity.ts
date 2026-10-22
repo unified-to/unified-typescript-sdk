@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an activity
+ *
+ * @remarks
+ * Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
  */
 export function activityUpdateLmsActivity(
   client: UnifiedToCore,

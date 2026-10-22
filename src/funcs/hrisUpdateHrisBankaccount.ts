@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a bankaccount
+ *
+ * @remarks
+ * Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
  */
 export function hrisUpdateHrisBankaccount(
   client: UnifiedToCore,

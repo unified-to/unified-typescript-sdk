@@ -12,6 +12,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Cycle extends ClientSDK {
   /**
    * Retrieve a cycle
+   *
+   * @remarks
+   * Retrieves a single PerformanceCycle by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPerformanceCycle(
     request: operations.GetPerformanceCycleRequest,
@@ -26,6 +29,9 @@ export class Cycle extends ClientSDK {
 
   /**
    * List all cycles
+   *
+   * @remarks
+   * Returns a list of PerformanceCycles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPerformanceCycles(
     request: operations.ListPerformanceCyclesRequest,

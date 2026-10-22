@@ -13,7 +13,7 @@
 
 ## createHrisAttendance
 
-Create an attendance
+Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
 
 ### Example Usage
 
@@ -38,32 +38,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.827Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.515Z"),
-          id: "2164c5a0-2a59-4809-b3fb-0dd8055e1944",
+          endAt: new Date("2024-02-15T01:09:54.739Z"),
+          id: "0a843d35-ca2a-4e6e-b71d-e028909c8160",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.196Z"),
+          startAt: new Date("2023-10-30T09:33:12.838Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.810Z"),
+      endAt: new Date("2024-04-23T20:35:35.929Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "fa0e3e7c-0441-4562-bbaa-e8b7b48b1a86",
+      id: "24129ec9-813a-40b6-b47a-e007dfc2c405",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.703Z"),
+      startAt: new Date("2021-11-11T02:07:45.981Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.798Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.636Z"),
     },
     connectionId: "<id>",
   });
@@ -101,32 +101,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.827Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.515Z"),
-          id: "2164c5a0-2a59-4809-b3fb-0dd8055e1944",
+          endAt: new Date("2024-02-15T01:09:54.739Z"),
+          id: "0a843d35-ca2a-4e6e-b71d-e028909c8160",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.196Z"),
+          startAt: new Date("2023-10-30T09:33:12.838Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.810Z"),
+      endAt: new Date("2024-04-23T20:35:35.929Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "fa0e3e7c-0441-4562-bbaa-e8b7b48b1a86",
+      id: "24129ec9-813a-40b6-b47a-e007dfc2c405",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.703Z"),
+      startAt: new Date("2021-11-11T02:07:45.981Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.798Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.636Z"),
     },
     connectionId: "<id>",
   });
@@ -162,7 +162,7 @@ run();
 
 ## getHrisAttendance
 
-Retrieve an attendance
+Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -241,7 +241,7 @@ run();
 
 ## listHrisAttendances
 
-List all attendances
+Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -318,7 +318,7 @@ run();
 
 ## patchHrisAttendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -343,32 +343,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.828Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.531Z"),
-          id: "fe1936a2-7681-40a1-948c-5d50879b18b8",
+          endAt: new Date("2024-02-15T01:09:54.751Z"),
+          id: "e111fb99-852f-4d40-90f8-d79c72854fc3",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.210Z"),
+          startAt: new Date("2023-10-30T09:33:12.849Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.827Z"),
+      endAt: new Date("2024-04-23T20:35:35.943Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "54e4177f-8c89-4743-9cac-4c151dd71d6f",
+      id: "8bc6f6f7-1357-4a74-a8c3-527805ed61b6",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.705Z"),
+      startAt: new Date("2021-11-11T02:07:45.982Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.801Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.638Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -407,32 +407,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.828Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.531Z"),
-          id: "fe1936a2-7681-40a1-948c-5d50879b18b8",
+          endAt: new Date("2024-02-15T01:09:54.751Z"),
+          id: "e111fb99-852f-4d40-90f8-d79c72854fc3",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.210Z"),
+          startAt: new Date("2023-10-30T09:33:12.849Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.827Z"),
+      endAt: new Date("2024-04-23T20:35:35.943Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "54e4177f-8c89-4743-9cac-4c151dd71d6f",
+      id: "8bc6f6f7-1357-4a74-a8c3-527805ed61b6",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.705Z"),
+      startAt: new Date("2021-11-11T02:07:45.982Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.801Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.638Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -469,7 +469,7 @@ run();
 
 ## removeHrisAttendance
 
-Remove an attendance
+Deletes the HrisAttendance identified by `id`.
 
 ### Example Usage
 
@@ -548,7 +548,7 @@ run();
 
 ## updateHrisAttendance
 
-Update an attendance
+Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
 
 ### Example Usage
 
@@ -573,32 +573,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.828Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.531Z"),
-          id: "fe1936a2-7681-40a1-948c-5d50879b18b8",
+          endAt: new Date("2024-02-15T01:09:54.751Z"),
+          id: "e111fb99-852f-4d40-90f8-d79c72854fc3",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.210Z"),
+          startAt: new Date("2023-10-30T09:33:12.849Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.827Z"),
+      endAt: new Date("2024-04-23T20:35:35.943Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "54e4177f-8c89-4743-9cac-4c151dd71d6f",
+      id: "8bc6f6f7-1357-4a74-a8c3-527805ed61b6",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.705Z"),
+      startAt: new Date("2021-11-11T02:07:45.982Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.801Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.638Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -637,32 +637,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-19T14:07:12.828Z"),
+      approvedAt: new Date("2021-09-19T14:37:26.669Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-14T13:32:14.531Z"),
-          id: "fe1936a2-7681-40a1-948c-5d50879b18b8",
+          endAt: new Date("2024-02-15T01:09:54.751Z"),
+          id: "e111fb99-852f-4d40-90f8-d79c72854fc3",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-10-29T23:17:20.210Z"),
+          startAt: new Date("2023-10-30T09:33:12.849Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-04-23T08:05:38.827Z"),
+      endAt: new Date("2024-04-23T20:35:35.943Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "54e4177f-8c89-4743-9cac-4c151dd71d6f",
+      id: "8bc6f6f7-1357-4a74-a8c3-527805ed61b6",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-11T00:57:39.705Z"),
+      startAt: new Date("2021-11-11T02:07:45.982Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-19T21:07:26.801Z"),
+      updatedAt: new Date("2022-01-19T23:10:38.638Z"),
     },
     connectionId: "<id>",
     id: "<id>",

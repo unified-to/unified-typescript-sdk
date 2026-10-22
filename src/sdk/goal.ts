@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Goal extends ClientSDK {
   /**
    * Create a goal
+   *
+   * @remarks
+   * Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
    */
   async createPerformanceGoal(
     request: operations.CreatePerformanceGoalRequest,
@@ -30,6 +33,9 @@ export class Goal extends ClientSDK {
 
   /**
    * Retrieve a goal
+   *
+   * @remarks
+   * Retrieves a single PerformanceGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPerformanceGoal(
     request: operations.GetPerformanceGoalRequest,
@@ -44,6 +50,9 @@ export class Goal extends ClientSDK {
 
   /**
    * List all goals
+   *
+   * @remarks
+   * Returns a list of PerformanceGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPerformanceGoals(
     request: operations.ListPerformanceGoalsRequest,
@@ -58,6 +67,9 @@ export class Goal extends ClientSDK {
 
   /**
    * Update a goal
+   *
+   * @remarks
+   * Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
    */
   async patchPerformanceGoal(
     request: operations.PatchPerformanceGoalRequest,
@@ -72,6 +84,9 @@ export class Goal extends ClientSDK {
 
   /**
    * Remove a goal
+   *
+   * @remarks
+   * Deletes the PerformanceGoal identified by `id`.
    */
   async removePerformanceGoal(
     request: operations.RemovePerformanceGoalRequest,
@@ -86,6 +101,9 @@ export class Goal extends ClientSDK {
 
   /**
    * Update a goal
+   *
+   * @remarks
+   * Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
    */
   async updatePerformanceGoal(
     request: operations.UpdatePerformanceGoalRequest,

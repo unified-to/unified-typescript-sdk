@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an instructor
+ *
+ * @remarks
+ * Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
  */
 export function lmsCreateLmsInstructor(
   client: UnifiedToCore,

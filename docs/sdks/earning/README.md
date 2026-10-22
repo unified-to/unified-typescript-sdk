@@ -13,7 +13,7 @@
 
 ## createHrisEarning
 
-Create an earning
+Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
 
 ### Example Usage
 
@@ -34,12 +34,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "18d6c7a7-e9e9-4f13-b51a-20e4107d4510",
+      id: "021f7404-05e0-42e8-a378-30ca1c3f02b9",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.969Z"),
+      startAt: new Date("2022-07-25T22:55:30.534Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.032Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.055Z"),
     },
     connectionId: "<id>",
   });
@@ -73,12 +73,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "18d6c7a7-e9e9-4f13-b51a-20e4107d4510",
+      id: "021f7404-05e0-42e8-a378-30ca1c3f02b9",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.969Z"),
+      startAt: new Date("2022-07-25T22:55:30.534Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.032Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.055Z"),
     },
     connectionId: "<id>",
   });
@@ -114,7 +114,7 @@ run();
 
 ## getHrisEarning
 
-Retrieve an earning
+Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -193,7 +193,7 @@ run();
 
 ## listHrisEarnings
 
-List all earnings
+Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -270,7 +270,7 @@ run();
 
 ## patchHrisEarning
 
-Update an earning
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
 
 ### Example Usage
 
@@ -291,12 +291,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "029e9935-f421-418d-9176-0c9f4e253621",
+      id: "a7df4f76-6dc1-4a5f-932f-793ebcc0fd23",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.979Z"),
+      startAt: new Date("2022-07-25T22:55:30.539Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.035Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.057Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -331,12 +331,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "029e9935-f421-418d-9176-0c9f4e253621",
+      id: "a7df4f76-6dc1-4a5f-932f-793ebcc0fd23",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.979Z"),
+      startAt: new Date("2022-07-25T22:55:30.539Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.035Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.057Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -373,7 +373,7 @@ run();
 
 ## removeHrisEarning
 
-Remove an earning
+Deletes the HrisEarning identified by `id`.
 
 ### Example Usage
 
@@ -452,7 +452,7 @@ run();
 
 ## updateHrisEarning
 
-Update an earning
+Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
 
 ### Example Usage
 
@@ -473,12 +473,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "029e9935-f421-418d-9176-0c9f4e253621",
+      id: "a7df4f76-6dc1-4a5f-932f-793ebcc0fd23",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.979Z"),
+      startAt: new Date("2022-07-25T22:55:30.539Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.035Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.057Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -513,12 +513,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "029e9935-f421-418d-9176-0c9f4e253621",
+      id: "a7df4f76-6dc1-4a5f-932f-793ebcc0fd23",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-07-25T12:03:57.979Z"),
+      startAt: new Date("2022-07-25T22:55:30.539Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-08T20:37:22.035Z"),
+      updatedAt: new Date("2020-02-08T23:50:33.057Z"),
     },
     connectionId: "<id>",
     id: "<id>",

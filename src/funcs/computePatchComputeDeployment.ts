@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a deployment
+ *
+ * @remarks
+ * Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
  */
 export function computePatchComputeDeployment(
   client: UnifiedToCore,

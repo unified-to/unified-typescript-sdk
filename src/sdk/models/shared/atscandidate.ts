@@ -72,6 +72,9 @@ export type AtsCandidate = {
   createdAt?: Date | undefined;
   dateOfBirth?: Date | undefined;
   education?: Array<AtsCandidateEducation> | undefined;
+  /**
+   * The candidate's email addresses
+   */
   emails?: Array<AtsEmail> | undefined;
   experiences?: Array<AtsCandidateExperience> | undefined;
   externalIdentifier?: string | undefined;
@@ -85,6 +88,9 @@ export type AtsCandidate = {
    */
   linkUrls?: Array<string> | undefined;
   metadata?: Array<AtsMetadata> | undefined;
+  /**
+   * The candidate's full name
+   */
   name?: string | undefined;
   origin?: Origin | undefined;
   raw?: { [k: string]: any } | undefined;

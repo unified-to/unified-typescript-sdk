@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a recording
+ *
+ * @remarks
+ * Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
  */
 export function recordingPatchUcRecording(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a scorecard
+ *
+ * @remarks
+ * Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
  */
 export function atsCreateAtsScorecard(
   client: UnifiedToCore,

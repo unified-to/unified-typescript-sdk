@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Service extends ClientSDK {
   /**
    * Create a service
+   *
+   * @remarks
+   * Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
    */
   async createComputeService(
     request: operations.CreateComputeServiceRequest,
@@ -30,6 +33,9 @@ export class Service extends ClientSDK {
 
   /**
    * Retrieve a service
+   *
+   * @remarks
+   * Retrieves a single ComputeService by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeService(
     request: operations.GetComputeServiceRequest,
@@ -44,6 +50,9 @@ export class Service extends ClientSDK {
 
   /**
    * List all services
+   *
+   * @remarks
+   * Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeServices(
     request: operations.ListComputeServicesRequest,
@@ -58,6 +67,9 @@ export class Service extends ClientSDK {
 
   /**
    * Update a service
+   *
+   * @remarks
+   * Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
    */
   async patchComputeService(
     request: operations.PatchComputeServiceRequest,
@@ -72,6 +84,9 @@ export class Service extends ClientSDK {
 
   /**
    * Remove a service
+   *
+   * @remarks
+   * Deletes the ComputeService identified by `id`.
    */
   async removeComputeService(
     request: operations.RemoveComputeServiceRequest,
@@ -86,6 +101,9 @@ export class Service extends ClientSDK {
 
   /**
    * Update a service
+   *
+   * @remarks
+   * Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
    */
   async updateComputeService(
     request: operations.UpdateComputeServiceRequest,

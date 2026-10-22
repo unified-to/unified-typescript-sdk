@@ -13,7 +13,7 @@
 
 ## createLegalPracticearea
 
-Create a practicearea
+Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
 
 ### Example Usage
 
@@ -32,11 +32,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "dcfa0dfb-4025-4ee9-b911-274fe7eac40d",
+      id: "3a7714e5-ac59-44ac-9370-3cb46b735194",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.079Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.968Z"),
     },
     connectionId: "<id>",
   });
@@ -68,11 +68,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "dcfa0dfb-4025-4ee9-b911-274fe7eac40d",
+      id: "3a7714e5-ac59-44ac-9370-3cb46b735194",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.079Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.968Z"),
     },
     connectionId: "<id>",
   });
@@ -108,7 +108,7 @@ run();
 
 ## getLegalPracticearea
 
-Retrieve a practicearea
+Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -187,7 +187,7 @@ run();
 
 ## listLegalPracticeareas
 
-List all practiceareas
+Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -264,7 +264,7 @@ run();
 
 ## patchLegalPracticearea
 
-Update a practicearea
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
 
 ### Example Usage
 
@@ -283,11 +283,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "89b5b586-2be5-4e19-9c0c-c995e0069ced",
+      id: "2bc03224-79ad-4569-9bc9-e71104a32bd6",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.091Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.977Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -320,11 +320,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "89b5b586-2be5-4e19-9c0c-c995e0069ced",
+      id: "2bc03224-79ad-4569-9bc9-e71104a32bd6",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.091Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.977Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -361,7 +361,7 @@ run();
 
 ## removeLegalPracticearea
 
-Remove a practicearea
+Deletes the LegalPracticearea identified by `id`.
 
 ### Example Usage
 
@@ -440,7 +440,7 @@ run();
 
 ## updateLegalPracticearea
 
-Update a practicearea
+Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
 
 ### Example Usage
 
@@ -459,11 +459,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "89b5b586-2be5-4e19-9c0c-c995e0069ced",
+      id: "2bc03224-79ad-4569-9bc9-e71104a32bd6",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.091Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.977Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -496,11 +496,11 @@ async function run() {
     legalPracticearea: {
       code: "QCA",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "89b5b586-2be5-4e19-9c0c-c995e0069ced",
+      id: "2bc03224-79ad-4569-9bc9-e71104a32bd6",
       metadata: [],
       name: "witty Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-08-27T17:31:58.091Z"),
+      updatedAt: new Date("2025-08-28T10:09:54.977Z"),
     },
     connectionId: "<id>",
     id: "<id>",

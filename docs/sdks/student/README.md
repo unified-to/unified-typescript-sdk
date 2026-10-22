@@ -13,7 +13,7 @@
 
 ## createLmsStudent
 
-Create a student
+Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
 
 ### Example Usage
 
@@ -43,7 +43,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "1d5ec01a-2819-4894-905a-20cc05d63881",
+      id: "b7ca34f9-21f1-471c-9dbc-b1229c026a78",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -62,7 +62,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.970Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.857Z"),
     },
     connectionId: "<id>",
   });
@@ -105,7 +105,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "1d5ec01a-2819-4894-905a-20cc05d63881",
+      id: "b7ca34f9-21f1-471c-9dbc-b1229c026a78",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -124,7 +124,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.970Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.857Z"),
     },
     connectionId: "<id>",
   });
@@ -160,7 +160,7 @@ run();
 
 ## getLmsStudent
 
-Retrieve a student
+Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -239,7 +239,7 @@ run();
 
 ## listLmsStudents
 
-List all students
+Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -316,7 +316,7 @@ run();
 
 ## patchLmsStudent
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -346,7 +346,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "16fcf44d-f782-4677-94dd-905e73d12d5a",
+      id: "402f3079-ec00-47f2-92bb-ea88ac7ceefe",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -365,7 +365,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.978Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.864Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -409,7 +409,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "16fcf44d-f782-4677-94dd-905e73d12d5a",
+      id: "402f3079-ec00-47f2-92bb-ea88ac7ceefe",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -428,7 +428,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.978Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.864Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -465,7 +465,7 @@ run();
 
 ## removeLmsStudent
 
-Remove a student
+Deletes the LmsStudent identified by `id`.
 
 ### Example Usage
 
@@ -544,7 +544,7 @@ run();
 
 ## updateLmsStudent
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -574,7 +574,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "16fcf44d-f782-4677-94dd-905e73d12d5a",
+      id: "402f3079-ec00-47f2-92bb-ea88ac7ceefe",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -593,7 +593,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.978Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.864Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -637,7 +637,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "16fcf44d-f782-4677-94dd-905e73d12d5a",
+      id: "402f3079-ec00-47f2-92bb-ea88ac7ceefe",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -656,7 +656,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.978Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.864Z"),
     },
     connectionId: "<id>",
     id: "<id>",

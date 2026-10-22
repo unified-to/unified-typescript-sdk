@@ -72,6 +72,9 @@ export type PropertyAdsReportMetricsAd = {
   id?: string | undefined;
   logoCreativeId?: string | undefined;
   metadata?: Array<AdsMetadata> | undefined;
+  /**
+   * The ad's name
+   */
   name?: string | undefined;
   organizationId?: string | undefined;
   path1?: string | undefined;

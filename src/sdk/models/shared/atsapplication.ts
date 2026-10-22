@@ -52,6 +52,9 @@ export type AtsApplication = {
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   appliedAt?: Date | undefined;
+  /**
+   * The ID of the candidate who is applying (an AtsCandidate ID)
+   */
   candidateId?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -62,6 +65,9 @@ export type AtsApplication = {
    */
   hiredAt?: Date | undefined;
   id?: string | undefined;
+  /**
+   * The ID of the job being applied to (an AtsJob ID)
+   */
   jobId?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
   offers?: Array<AtsOffer> | undefined;

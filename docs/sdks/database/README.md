@@ -13,7 +13,7 @@
 
 ## createDatastoreDatabase
 
-Create a database
+Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
 
 ### Example Usage
 
@@ -32,13 +32,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "a806928d-0a23-435d-8fd0-2d33d35a88cc",
+      id: "f6cca05f-71a1-435f-88e0-87645d420553",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-06-30T20:07:46.387Z"),
+      updatedAt: new Date("2023-07-01T09:44:38.684Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -71,13 +71,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "a806928d-0a23-435d-8fd0-2d33d35a88cc",
+      id: "f6cca05f-71a1-435f-88e0-87645d420553",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-06-30T20:07:46.387Z"),
+      updatedAt: new Date("2023-07-01T09:44:38.684Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -114,7 +114,7 @@ run();
 
 ## getDatastoreDatabase
 
-Retrieve a database
+Retrieves a single DatastoreDatabase by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -193,7 +193,7 @@ run();
 
 ## listDatastoreDatabases
 
-List all databases
+Returns a list of DatastoreDatabases. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -270,7 +270,7 @@ run();
 
 ## patchDatastoreDatabase
 
-Update a database
+Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
 
 ### Example Usage
 
@@ -289,13 +289,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "e849720d-7e50-479a-984d-260357591601",
+      id: "f0d5c312-5f3f-44f7-b703-77ba798bb93c",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-06-30T20:07:46.394Z"),
+      updatedAt: new Date("2023-07-01T09:44:38.690Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -329,13 +329,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "e849720d-7e50-479a-984d-260357591601",
+      id: "f0d5c312-5f3f-44f7-b703-77ba798bb93c",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-06-30T20:07:46.394Z"),
+      updatedAt: new Date("2023-07-01T09:44:38.690Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -373,7 +373,7 @@ run();
 
 ## removeDatastoreDatabase
 
-Remove a database
+Deletes the DatastoreDatabase identified by `id`.
 
 ### Example Usage
 
@@ -452,7 +452,7 @@ run();
 
 ## updateDatastoreDatabase
 
-Update a database
+Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
 
 ### Example Usage
 
@@ -471,13 +471,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "e849720d-7e50-479a-984d-260357591601",
+      id: "f0d5c312-5f3f-44f7-b703-77ba798bb93c",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-06-30T20:07:46.394Z"),
+      updatedAt: new Date("2023-07-01T09:44:38.690Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -511,13 +511,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "e849720d-7e50-479a-984d-260357591601",
+      id: "f0d5c312-5f3f-44f7-b703-77ba798bb93c",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-06-30T20:07:46.394Z"),
+      updatedAt: new Date("2023-07-01T09:44:38.690Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",

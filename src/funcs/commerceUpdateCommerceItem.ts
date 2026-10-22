@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an item
+ *
+ * @remarks
+ * Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
  */
 export function commerceUpdateCommerceItem(
   client: UnifiedToCore,

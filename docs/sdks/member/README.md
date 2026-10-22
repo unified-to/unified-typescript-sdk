@@ -15,7 +15,7 @@
 
 ## createMartechMember
 
-Create a member
+Creates a MarketingMember. Provide the unified MarketingMember fields in the request body; they are mapped to the provider's API. Returns the created MarketingMember.
 
 ### Example Usage
 
@@ -41,7 +41,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "8f874409-ec3a-4239-8d4f-c4c60507e2a0",
+      id: "ab25ef77-460f-4655-a2f2-10e06f0f48b7",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -50,7 +50,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.365Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.746Z"),
     },
     connectionId: "<id>",
   });
@@ -89,7 +89,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "8f874409-ec3a-4239-8d4f-c4c60507e2a0",
+      id: "ab25ef77-460f-4655-a2f2-10e06f0f48b7",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -98,7 +98,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.365Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.746Z"),
     },
     connectionId: "<id>",
   });
@@ -134,7 +134,7 @@ run();
 
 ## getClubsMember
 
-Retrieve a member
+Retrieves a single ClubsMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -213,7 +213,7 @@ run();
 
 ## getMartechMember
 
-Retrieve a member
+Retrieves a single MarketingMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -292,7 +292,7 @@ run();
 
 ## listClubsMembers
 
-List all members
+Returns a list of ClubsMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -369,7 +369,7 @@ run();
 
 ## listMartechMembers
 
-List all members
+Returns a list of MarketingMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -446,7 +446,7 @@ run();
 
 ## patchMartechMember
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "2e7fa2f3-29d6-40f0-985e-28843ae06d5c",
+      id: "b8e7131c-9edb-4ca1-9b7d-416ef32d1cf2",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -481,7 +481,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.374Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.754Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -521,7 +521,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "2e7fa2f3-29d6-40f0-985e-28843ae06d5c",
+      id: "b8e7131c-9edb-4ca1-9b7d-416ef32d1cf2",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -530,7 +530,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.374Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.754Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -567,7 +567,7 @@ run();
 
 ## removeMartechMember
 
-Remove a member
+Deletes the MarketingMember identified by `id`.
 
 ### Example Usage
 
@@ -646,7 +646,7 @@ run();
 
 ## updateMartechMember
 
-Update a member
+Updates the MarketingMember identified by `id`. Provide the unified MarketingMember fields to change in the request body.
 
 ### Example Usage
 
@@ -672,7 +672,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "2e7fa2f3-29d6-40f0-985e-28843ae06d5c",
+      id: "b8e7131c-9edb-4ca1-9b7d-416ef32d1cf2",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -681,7 +681,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.374Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.754Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -721,7 +721,7 @@ async function run() {
         },
       ],
       firstName: "Jude",
-      id: "2e7fa2f3-29d6-40f0-985e-28843ae06d5c",
+      id: "b8e7131c-9edb-4ca1-9b7d-416ef32d1cf2",
       lastName: "Leffler",
       metadata: [],
       name: "Jude Leffler",
@@ -730,7 +730,7 @@ async function run() {
         "adnuo",
         "verumtamen",
       ],
-      updatedAt: new Date("2025-07-08T20:16:28.374Z"),
+      updatedAt: new Date("2025-07-09T13:28:28.754Z"),
     },
     connectionId: "<id>",
     id: "<id>",

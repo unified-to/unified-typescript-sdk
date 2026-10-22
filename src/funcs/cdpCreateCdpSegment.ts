@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a segment
+ *
+ * @remarks
+ * Creates a CdpSegment. Provide the unified CdpSegment fields in the request body; they are mapped to the provider's API. Returns the created CdpSegment.
  */
 export function cdpCreateCdpSegment(
   client: UnifiedToCore,

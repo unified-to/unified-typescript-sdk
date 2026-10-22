@@ -13,7 +13,7 @@
 
 ## createHrisEmployee
 
-Create an employee
+Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "08747908-2fa0-4022-be78-848278e13d75",
+      id: "d5085793-f534-40e6-a5a3-56443831619b",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -78,7 +78,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed515727-40f9-4f50-8aa3-d72847f28430",
+          id: "27ffc873-02ff-440e-893f-7bd729565c02",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -126,7 +126,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.745Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.432Z"),
     },
     connectionId: "<id>",
   });
@@ -192,7 +192,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "08747908-2fa0-4022-be78-848278e13d75",
+      id: "d5085793-f534-40e6-a5a3-56443831619b",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -204,7 +204,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "ed515727-40f9-4f50-8aa3-d72847f28430",
+          id: "27ffc873-02ff-440e-893f-7bd729565c02",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -252,7 +252,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.745Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.432Z"),
     },
     connectionId: "<id>",
   });
@@ -288,7 +288,7 @@ run();
 
 ## getHrisEmployee
 
-Retrieve an employee
+Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -367,7 +367,7 @@ run();
 
 ## listHrisEmployees
 
-List all employees
+Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -444,7 +444,7 @@ run();
 
 ## patchHrisEmployee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -497,7 +497,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "94a78e51-421e-4782-a58c-ad850209a790",
+      id: "81c12ce9-f173-49b8-9eaa-452600865ef9",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -509,7 +509,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "407d49ff-0451-4dfb-a4dc-4f1ec350b21c",
+          id: "7698ff95-0c7d-4994-8b21-932825542642",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -557,7 +557,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.759Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -624,7 +624,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "94a78e51-421e-4782-a58c-ad850209a790",
+      id: "81c12ce9-f173-49b8-9eaa-452600865ef9",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -636,7 +636,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "407d49ff-0451-4dfb-a4dc-4f1ec350b21c",
+          id: "7698ff95-0c7d-4994-8b21-932825542642",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -684,7 +684,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.759Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -721,7 +721,7 @@ run();
 
 ## removeHrisEmployee
 
-Remove an employee
+Deletes the HrisEmployee identified by `id`.
 
 ### Example Usage
 
@@ -800,7 +800,7 @@ run();
 
 ## updateHrisEmployee
 
-Update an employee
+Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
 
 ### Example Usage
 
@@ -853,7 +853,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "94a78e51-421e-4782-a58c-ad850209a790",
+      id: "81c12ce9-f173-49b8-9eaa-452600865ef9",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -865,7 +865,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "407d49ff-0451-4dfb-a4dc-4f1ec350b21c",
+          id: "7698ff95-0c7d-4994-8b21-932825542642",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -913,7 +913,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.759Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -980,7 +980,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "94a78e51-421e-4782-a58c-ad850209a790",
+      id: "81c12ce9-f173-49b8-9eaa-452600865ef9",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -992,7 +992,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "407d49ff-0451-4dfb-a4dc-4f1ec350b21c",
+          id: "7698ff95-0c7d-4994-8b21-932825542642",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -1040,7 +1040,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-19T04:16:41.759Z"),
+      updatedAt: new Date("2020-07-19T07:07:18.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",

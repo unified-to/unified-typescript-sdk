@@ -47,6 +47,9 @@ export type HrisLocation = {
   isHq?: boolean | undefined;
   languageLocale?: string | undefined;
   metadata?: Array<HrisMetadata> | undefined;
+  /**
+   * The name of the location
+   */
   name?: string | undefined;
   parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;

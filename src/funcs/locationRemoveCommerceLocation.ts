@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a location
+ *
+ * @remarks
+ * Deletes the CommerceLocation identified by `id`.
  */
 export function locationRemoveCommerceLocation(
   client: UnifiedToCore,

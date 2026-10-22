@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an earning
+ *
+ * @remarks
+ * Deletes the HrisEarning identified by `id`.
  */
 export function hrisRemoveHrisEarning(
   client: UnifiedToCore,

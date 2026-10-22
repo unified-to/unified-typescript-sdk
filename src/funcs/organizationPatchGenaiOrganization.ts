@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an organization
+ *
+ * @remarks
+ * Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
  */
 export function organizationPatchGenaiOrganization(
   client: UnifiedToCore,

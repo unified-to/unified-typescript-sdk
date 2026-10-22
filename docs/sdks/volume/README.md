@@ -13,7 +13,7 @@
 
 ## createComputeVolume
 
-Create a volume
+Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
 
 ### Example Usage
 
@@ -31,14 +31,14 @@ async function run() {
   const result = await unifiedTo.volume.createComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "78b52a7e-1782-4c1f-8192-cc62cc2bb718",
+      id: "620fa135-b803-4f59-bbf1-7368b12ac769",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.527Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.237Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -70,14 +70,14 @@ async function run() {
   const res = await computeCreateComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "78b52a7e-1782-4c1f-8192-cc62cc2bb718",
+      id: "620fa135-b803-4f59-bbf1-7368b12ac769",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.527Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.237Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -114,7 +114,7 @@ run();
 
 ## getComputeVolume
 
-Retrieve a volume
+Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -193,7 +193,7 @@ run();
 
 ## listComputeVolumes
 
-List all volumes
+Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -270,7 +270,7 @@ run();
 
 ## patchComputeVolume
 
-Update a volume
+Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
 
 ### Example Usage
 
@@ -288,14 +288,14 @@ async function run() {
   const result = await unifiedTo.volume.patchComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "0880fbb7-70b3-4ad4-b83f-72316e68bade",
+      id: "08c5dc74-edc2-451f-94e4-4b863eeec932",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.533Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.240Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -328,14 +328,14 @@ async function run() {
   const res = await computePatchComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "0880fbb7-70b3-4ad4-b83f-72316e68bade",
+      id: "08c5dc74-edc2-451f-94e4-4b863eeec932",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.533Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.240Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -373,7 +373,7 @@ run();
 
 ## removeComputeVolume
 
-Remove a volume
+Deletes the ComputeVolume identified by `id`.
 
 ### Example Usage
 
@@ -452,7 +452,7 @@ run();
 
 ## updateComputeVolume
 
-Update a volume
+Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
 
 ### Example Usage
 
@@ -470,14 +470,14 @@ async function run() {
   const result = await unifiedTo.volume.updateComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "0880fbb7-70b3-4ad4-b83f-72316e68bade",
+      id: "08c5dc74-edc2-451f-94e4-4b863eeec932",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.533Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.240Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -510,14 +510,14 @@ async function run() {
   const res = await computeUpdateComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "0880fbb7-70b3-4ad4-b83f-72316e68bade",
+      id: "08c5dc74-edc2-451f-94e4-4b863eeec932",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-09T22:01:46.533Z"),
+      updatedAt: new Date("2024-02-10T05:35:12.240Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",

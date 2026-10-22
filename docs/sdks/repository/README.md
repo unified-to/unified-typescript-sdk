@@ -13,7 +13,7 @@
 
 ## createRepoRepository
 
-Create a repository
+Creates a RepoRepository. Provide the unified RepoRepository fields in the request body; they are mapped to the provider's API. Returns the created RepoRepository.
 
 ### Example Usage
 
@@ -32,11 +32,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "085e88fa-abfa-422e-af9e-573f164b193f",
+      id: "e82667a2-abcf-437f-bdfd-cbe3b7a1a652",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.471Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.075Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -69,11 +69,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "085e88fa-abfa-422e-af9e-573f164b193f",
+      id: "e82667a2-abcf-437f-bdfd-cbe3b7a1a652",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.471Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.075Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -110,7 +110,7 @@ run();
 
 ## getRepoRepository
 
-Retrieve a repository
+Retrieves a single RepoRepository by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -189,7 +189,7 @@ run();
 
 ## listRepoRepositories
 
-List all repositories
+Returns a list of RepoRepositories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -266,7 +266,7 @@ run();
 
 ## patchRepoRepository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -285,11 +285,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "221107eb-5749-46e3-ba98-642ac13c09e8",
+      id: "f9ab2b04-9121-4c67-978c-051cf9e86e81",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.474Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.077Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -323,11 +323,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "221107eb-5749-46e3-ba98-642ac13c09e8",
+      id: "f9ab2b04-9121-4c67-978c-051cf9e86e81",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.474Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.077Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -365,7 +365,7 @@ run();
 
 ## removeRepoRepository
 
-Remove a repository
+Deletes the RepoRepository identified by `id`.
 
 ### Example Usage
 
@@ -444,7 +444,7 @@ run();
 
 ## updateRepoRepository
 
-Update a repository
+Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
 
 ### Example Usage
 
@@ -463,11 +463,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "221107eb-5749-46e3-ba98-642ac13c09e8",
+      id: "f9ab2b04-9121-4c67-978c-051cf9e86e81",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.474Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.077Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",
@@ -501,11 +501,11 @@ async function run() {
     repoRepository: {
       createdAt: new Date("2023-06-12T09:42:00.080Z"),
       description: "Sed somnus crastinus armarium.",
-      id: "221107eb-5749-46e3-ba98-642ac13c09e8",
+      id: "f9ab2b04-9121-4c67-978c-051cf9e86e81",
       isPrivate: false,
       metadata: [],
       name: "bah-bogus",
-      updatedAt: new Date("2024-03-01T02:12:17.474Z"),
+      updatedAt: new Date("2024-03-01T07:21:09.077Z"),
       webUrl: "https://neat-birdbath.org",
     },
     connectionId: "<id>",

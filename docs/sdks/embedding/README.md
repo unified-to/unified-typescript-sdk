@@ -8,7 +8,7 @@
 
 ## createGenaiEmbedding
 
-Create an embedding
+Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
 
 ### Example Usage
 
@@ -33,7 +33,7 @@ async function run() {
       dimension: 423,
       embeddings: "Est.",
       encondingFormat: "FLOAT",
-      id: "6006c2ac-8382-44f1-96a4-19ba3ab88856",
+      id: "291fbdc1-d017-4ff1-891e-497612668c7c",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -74,7 +74,7 @@ async function run() {
       dimension: 423,
       embeddings: "Est.",
       encondingFormat: "FLOAT",
-      id: "6006c2ac-8382-44f1-96a4-19ba3ab88856",
+      id: "291fbdc1-d017-4ff1-891e-497612668c7c",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",

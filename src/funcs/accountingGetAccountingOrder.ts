@@ -28,6 +28,11 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Retrieve an order
+ *
+ * @remarks
+ * Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+ *
+ * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
  */
 export function accountingGetAccountingOrder(
   client: UnifiedToCore,

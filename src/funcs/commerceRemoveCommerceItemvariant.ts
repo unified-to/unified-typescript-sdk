@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an itemvariant
+ *
+ * @remarks
+ * Deletes the CommerceItemvariant identified by `id`.
  */
 export function commerceRemoveCommerceItemvariant(
   client: UnifiedToCore,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a lead
+ *
+ * @remarks
+ * Deletes the CrmLead identified by `id`.
  */
 export function crmRemoveCrmLead(
   client: UnifiedToCore,

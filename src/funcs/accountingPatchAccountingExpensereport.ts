@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an expensereport
+ *
+ * @remarks
+ * Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
  */
 export function accountingPatchAccountingExpensereport(
   client: UnifiedToCore,

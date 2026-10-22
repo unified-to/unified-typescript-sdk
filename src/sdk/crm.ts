@@ -47,6 +47,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Crm extends ClientSDK {
   /**
    * Create a company
+   *
+   * @remarks
+   * Creates a CrmCompany. Provide the unified CrmCompany fields in the request body; they are mapped to the provider's API. Returns the created CrmCompany.
    */
   async createCrmCompany(
     request: operations.CreateCrmCompanyRequest,
@@ -61,6 +64,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Create a contact
+   *
+   * @remarks
+   * Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
    */
   async createCrmContact(
     request: operations.CreateCrmContactRequest,
@@ -75,6 +81,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Create a deal
+   *
+   * @remarks
+   * Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
    */
   async createCrmDeal(
     request: operations.CreateCrmDealRequest,
@@ -89,6 +98,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Create an event
+   *
+   * @remarks
+   * Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
    */
   async createCrmEvent(
     request: operations.CreateCrmEventRequest,
@@ -103,6 +115,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Create a lead
+   *
+   * @remarks
+   * Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
    */
   async createCrmLead(
     request: operations.CreateCrmLeadRequest,
@@ -117,6 +132,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Create a pipeline
+   *
+   * @remarks
+   * Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
    */
   async createCrmPipeline(
     request: operations.CreateCrmPipelineRequest,
@@ -131,6 +149,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Retrieve a company
+   *
+   * @remarks
+   * Retrieves a single CrmCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmCompany(
     request: operations.GetCrmCompanyRequest,
@@ -145,6 +166,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Retrieve a contact
+   *
+   * @remarks
+   * Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmContact(
     request: operations.GetCrmContactRequest,
@@ -159,6 +183,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Retrieve a deal
+   *
+   * @remarks
+   * Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmDeal(
     request: operations.GetCrmDealRequest,
@@ -173,6 +200,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmEvent(
     request: operations.GetCrmEventRequest,
@@ -187,6 +217,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Retrieve a lead
+   *
+   * @remarks
+   * Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmLead(
     request: operations.GetCrmLeadRequest,
@@ -201,6 +234,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Retrieve a pipeline
+   *
+   * @remarks
+   * Retrieves a single CrmPipeline by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmPipeline(
     request: operations.GetCrmPipelineRequest,
@@ -215,6 +251,9 @@ export class Crm extends ClientSDK {
 
   /**
    * List all companies
+   *
+   * @remarks
+   * Returns a list of CrmCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmCompanies(
     request: operations.ListCrmCompaniesRequest,
@@ -229,6 +268,9 @@ export class Crm extends ClientSDK {
 
   /**
    * List all contacts
+   *
+   * @remarks
+   * Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmContacts(
     request: operations.ListCrmContactsRequest,
@@ -243,6 +285,9 @@ export class Crm extends ClientSDK {
 
   /**
    * List all deals
+   *
+   * @remarks
+   * Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmDeals(
     request: operations.ListCrmDealsRequest,
@@ -257,6 +302,9 @@ export class Crm extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmEvents(
     request: operations.ListCrmEventsRequest,
@@ -271,6 +319,9 @@ export class Crm extends ClientSDK {
 
   /**
    * List all leads
+   *
+   * @remarks
+   * Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmLeads(
     request: operations.ListCrmLeadsRequest,
@@ -285,6 +336,9 @@ export class Crm extends ClientSDK {
 
   /**
    * List all pipelines
+   *
+   * @remarks
+   * Returns a list of CrmPipelines. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmPipelines(
     request: operations.ListCrmPipelinesRequest,
@@ -299,6 +353,9 @@ export class Crm extends ClientSDK {
 
   /**
    * List all taxonomies
+   *
+   * @remarks
+   * Returns a list of CrmTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmTaxonomies(
     request: operations.ListCrmTaxonomiesRequest,
@@ -313,6 +370,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
    */
   async patchCrmCompany(
     request: operations.PatchCrmCompanyRequest,
@@ -327,6 +387,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
    */
   async patchCrmContact(
     request: operations.PatchCrmContactRequest,
@@ -341,6 +404,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a deal
+   *
+   * @remarks
+   * Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
    */
   async patchCrmDeal(
     request: operations.PatchCrmDealRequest,
@@ -355,6 +421,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
    */
   async patchCrmEvent(
     request: operations.PatchCrmEventRequest,
@@ -369,6 +438,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a lead
+   *
+   * @remarks
+   * Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
    */
   async patchCrmLead(
     request: operations.PatchCrmLeadRequest,
@@ -383,6 +455,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a pipeline
+   *
+   * @remarks
+   * Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
    */
   async patchCrmPipeline(
     request: operations.PatchCrmPipelineRequest,
@@ -397,6 +472,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Remove a company
+   *
+   * @remarks
+   * Deletes the CrmCompany identified by `id`.
    */
   async removeCrmCompany(
     request: operations.RemoveCrmCompanyRequest,
@@ -411,6 +489,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Remove a contact
+   *
+   * @remarks
+   * Deletes the CrmContact identified by `id`.
    */
   async removeCrmContact(
     request: operations.RemoveCrmContactRequest,
@@ -425,6 +506,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Remove a deal
+   *
+   * @remarks
+   * Deletes the CrmDeal identified by `id`.
    */
   async removeCrmDeal(
     request: operations.RemoveCrmDealRequest,
@@ -439,6 +523,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Remove an event
+   *
+   * @remarks
+   * Deletes the CrmEvent identified by `id`.
    */
   async removeCrmEvent(
     request: operations.RemoveCrmEventRequest,
@@ -453,6 +540,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Remove a lead
+   *
+   * @remarks
+   * Deletes the CrmLead identified by `id`.
    */
   async removeCrmLead(
     request: operations.RemoveCrmLeadRequest,
@@ -467,6 +557,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Remove a pipeline
+   *
+   * @remarks
+   * Deletes the CrmPipeline identified by `id`.
    */
   async removeCrmPipeline(
     request: operations.RemoveCrmPipelineRequest,
@@ -481,6 +574,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the CrmCompany identified by `id`. Provide the unified CrmCompany fields to change in the request body.
    */
   async updateCrmCompany(
     request: operations.UpdateCrmCompanyRequest,
@@ -495,6 +591,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
    */
   async updateCrmContact(
     request: operations.UpdateCrmContactRequest,
@@ -509,6 +608,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a deal
+   *
+   * @remarks
+   * Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
    */
   async updateCrmDeal(
     request: operations.UpdateCrmDealRequest,
@@ -523,6 +625,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
    */
   async updateCrmEvent(
     request: operations.UpdateCrmEventRequest,
@@ -537,6 +642,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a lead
+   *
+   * @remarks
+   * Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
    */
   async updateCrmLead(
     request: operations.UpdateCrmLeadRequest,
@@ -551,6 +659,9 @@ export class Crm extends ClientSDK {
 
   /**
    * Update a pipeline
+   *
+   * @remarks
+   * Updates the CrmPipeline identified by `id`. Provide the unified CrmPipeline fields to change in the request body.
    */
   async updateCrmPipeline(
     request: operations.UpdateCrmPipelineRequest,

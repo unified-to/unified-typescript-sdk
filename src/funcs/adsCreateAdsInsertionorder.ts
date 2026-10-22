@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an insertionorder
+ *
+ * @remarks
+ * Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
  */
 export function adsCreateAdsInsertionorder(
   client: UnifiedToCore,

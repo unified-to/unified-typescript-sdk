@@ -113,6 +113,9 @@ export type AtsJob = {
   metadata?: Array<AtsMetadata> | undefined;
   minimumDegree?: string | undefined;
   minimumExperienceYears?: number | undefined;
+  /**
+   * The job's title
+   */
   name?: string | undefined;
   /**
    * Number of openings for the job

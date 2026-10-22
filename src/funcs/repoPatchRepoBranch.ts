@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a branch
+ *
+ * @remarks
+ * Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
  */
 export function repoPatchRepoBranch(
   client: UnifiedToCore,

@@ -56,7 +56,7 @@
 
 ## createCommerceCollection
 
-Create a collection
+Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
 
 ### Example Usage
 
@@ -75,7 +75,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "99359e53-4c46-42ee-93b3-3c2bc8c71916",
+      id: "e8a687e1-3738-4925-8992-12950e53da27",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -84,10 +84,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "bfdb60d2-90e8-40ba-a755-fdbb9f27d1ae",
+          id: "36cf79b8-0b16-4a66-98d8-bc0d70694cb9",
           metadata: [
             {
-              id: "8b45eb74-0d4e-42f4-9a92-983cb52ffcac",
+              id: "d7af85db-31cc-4be6-9621-8ae1d5a1ac3e",
               slug: "censura",
               value: "toties",
             },
@@ -100,7 +100,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "7e73742e-ff1a-4cde-a763-d888def2243d",
+          id: "1d085b98-86d6-47b8-b8d2-9ddccd45c8f3",
           slug: "aetas",
           value: "consuasor",
         },
@@ -114,7 +114,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.687Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.105Z"),
     },
     connectionId: "<id>",
   });
@@ -146,7 +146,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "99359e53-4c46-42ee-93b3-3c2bc8c71916",
+      id: "e8a687e1-3738-4925-8992-12950e53da27",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -155,10 +155,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "bfdb60d2-90e8-40ba-a755-fdbb9f27d1ae",
+          id: "36cf79b8-0b16-4a66-98d8-bc0d70694cb9",
           metadata: [
             {
-              id: "8b45eb74-0d4e-42f4-9a92-983cb52ffcac",
+              id: "d7af85db-31cc-4be6-9621-8ae1d5a1ac3e",
               slug: "censura",
               value: "toties",
             },
@@ -171,7 +171,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "7e73742e-ff1a-4cde-a763-d888def2243d",
+          id: "1d085b98-86d6-47b8-b8d2-9ddccd45c8f3",
           slug: "aetas",
           value: "consuasor",
         },
@@ -185,7 +185,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.687Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.105Z"),
     },
     connectionId: "<id>",
   });
@@ -221,7 +221,7 @@ run();
 
 ## createCommerceInventory
 
-Create an inventory
+Creates a CommerceInventory. Provide the unified CommerceInventory fields in the request body; they are mapped to the provider's API. Returns the created CommerceInventory.
 
 ### Example Usage
 
@@ -239,9 +239,9 @@ async function run() {
   const result = await unifiedTo.commerce.createCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "fdb72cc1-ba21-48be-ad4f-7fbb1a705f66",
+      id: "4e1128e1-588e-454e-8495-1e3344b617a8",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.057Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.669Z"),
     },
     connectionId: "<id>",
   });
@@ -272,9 +272,9 @@ async function run() {
   const res = await commerceCreateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "fdb72cc1-ba21-48be-ad4f-7fbb1a705f66",
+      id: "4e1128e1-588e-454e-8495-1e3344b617a8",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.057Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.669Z"),
     },
     connectionId: "<id>",
   });
@@ -310,7 +310,7 @@ run();
 
 ## createCommerceItem
 
-Create an item
+Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
 
 ### Example Usage
 
@@ -332,7 +332,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "0361df0e-71b0-4979-b39c-66847aea7da9",
+      id: "695ac003-35dc-4d6c-9425-8f1fac973b13",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -341,10 +341,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "c0305edf-4a3f-4bbc-beab-170a083257e6",
+          id: "6d351a43-aa52-4d19-a8d0-647057ed6a21",
           metadata: [
             {
-              id: "534108b9-9ec1-499f-bb36-a5bf9622fe43",
+              id: "82272d4a-b181-491c-87e5-2d639a520c1e",
               slug: "doloremque",
               value: "allatus",
             },
@@ -357,10 +357,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "b503b47d-5e78-4edd-a361-143adf0596be",
+          id: "a702594a-ad01-448d-8205-48d1705b5290",
           metadata: [
             {
-              id: "7f711836-2d98-427b-81be-307a44837ba5",
+              id: "d64ad30c-823a-4063-a36e-c1f44f20a047",
               slug: "bis",
               value: "somniculosus",
             },
@@ -377,7 +377,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "650c582c-e779-4882-90b5-2111858ad2f2",
+          id: "64abd67b-2872-43d3-909e-7db02582b544",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -400,7 +400,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.752Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.041Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -438,7 +438,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "0361df0e-71b0-4979-b39c-66847aea7da9",
+      id: "695ac003-35dc-4d6c-9425-8f1fac973b13",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -447,10 +447,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "c0305edf-4a3f-4bbc-beab-170a083257e6",
+          id: "6d351a43-aa52-4d19-a8d0-647057ed6a21",
           metadata: [
             {
-              id: "534108b9-9ec1-499f-bb36-a5bf9622fe43",
+              id: "82272d4a-b181-491c-87e5-2d639a520c1e",
               slug: "doloremque",
               value: "allatus",
             },
@@ -463,10 +463,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "b503b47d-5e78-4edd-a361-143adf0596be",
+          id: "a702594a-ad01-448d-8205-48d1705b5290",
           metadata: [
             {
-              id: "7f711836-2d98-427b-81be-307a44837ba5",
+              id: "d64ad30c-823a-4063-a36e-c1f44f20a047",
               slug: "bis",
               value: "somniculosus",
             },
@@ -483,7 +483,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "650c582c-e779-4882-90b5-2111858ad2f2",
+          id: "64abd67b-2872-43d3-909e-7db02582b544",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -506,7 +506,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.752Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.041Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -545,7 +545,7 @@ run();
 
 ## createCommerceItemvariant
 
-Create an itemvariant
+Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
 
 ### Example Usage
 
@@ -566,7 +566,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "ec3aeb0a-aa8b-4889-ae26-7d5e0dd5e933",
+      id: "781a5b28-e4e5-4444-807f-0a772e3c4e68",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -575,10 +575,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "157886ea-37bd-4920-8da6-064b70878331",
+          id: "19ae9d3c-6baf-42e4-ae34-d730ed5c5bfd",
           metadata: [
             {
-              id: "aa0f96bf-da6e-4d71-8a54-0a6d7383cc64",
+              id: "0cfeeca6-6d84-40be-947b-393106f4dd3b",
               slug: "ubi",
               value: "textus",
             },
@@ -595,7 +595,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "806c340b-02ab-4aed-973f-f11d07d5dff6",
+          id: "48c3158c-d0f9-4f2a-9219-494c02877e74",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -604,7 +604,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "64de38a7-cc01-48ca-b6f3-8ad28b058c67",
+          id: "6802b8d2-935d-46a9-93b0-76665ae27a88",
           name: "Color",
           position: 1,
           values: [
@@ -612,7 +612,7 @@ async function run() {
           ],
         },
         {
-          id: "7ab66a35-2ab9-47cc-b3f0-a53c112616bf",
+          id: "3fd53921-65a2-48fa-ac77-fb1146df9210",
           name: "Size",
           position: 2,
           values: [
@@ -635,7 +635,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.751Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.342Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -672,7 +672,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "ec3aeb0a-aa8b-4889-ae26-7d5e0dd5e933",
+      id: "781a5b28-e4e5-4444-807f-0a772e3c4e68",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -681,10 +681,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "157886ea-37bd-4920-8da6-064b70878331",
+          id: "19ae9d3c-6baf-42e4-ae34-d730ed5c5bfd",
           metadata: [
             {
-              id: "aa0f96bf-da6e-4d71-8a54-0a6d7383cc64",
+              id: "0cfeeca6-6d84-40be-947b-393106f4dd3b",
               slug: "ubi",
               value: "textus",
             },
@@ -701,7 +701,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "806c340b-02ab-4aed-973f-f11d07d5dff6",
+          id: "48c3158c-d0f9-4f2a-9219-494c02877e74",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -710,7 +710,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "64de38a7-cc01-48ca-b6f3-8ad28b058c67",
+          id: "6802b8d2-935d-46a9-93b0-76665ae27a88",
           name: "Color",
           position: 1,
           values: [
@@ -718,7 +718,7 @@ async function run() {
           ],
         },
         {
-          id: "7ab66a35-2ab9-47cc-b3f0-a53c112616bf",
+          id: "3fd53921-65a2-48fa-ac77-fb1146df9210",
           name: "Size",
           position: 2,
           values: [
@@ -741,7 +741,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.751Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.342Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -780,7 +780,7 @@ run();
 
 ## createCommerceLocation
 
-Create a location
+Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
 
 ### Example Usage
 
@@ -809,7 +809,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "0f82fe67-07eb-4020-a3d4-8f3036464ecf",
+      id: "e5da0198-00b0-466f-8b15-98d49dd8db47",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -820,10 +820,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "a449032f-202f-4aa8-93f8-1643e6bef0e6",
+          id: "f49db14d-495e-4b85-a189-cef2d443c877",
           metadata: [
             {
-              id: "4721439b-41cf-4787-ba37-0a24963d0fb0",
+              id: "97471719-7152-4c6c-b47b-43e4b05573e2",
               slug: "abutor",
               value: "damno",
             },
@@ -849,7 +849,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.267Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.683Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -892,7 +892,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "0f82fe67-07eb-4020-a3d4-8f3036464ecf",
+      id: "e5da0198-00b0-466f-8b15-98d49dd8db47",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -903,10 +903,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "a449032f-202f-4aa8-93f8-1643e6bef0e6",
+          id: "f49db14d-495e-4b85-a189-cef2d443c877",
           metadata: [
             {
-              id: "4721439b-41cf-4787-ba37-0a24963d0fb0",
+              id: "97471719-7152-4c6c-b47b-43e4b05573e2",
               slug: "abutor",
               value: "damno",
             },
@@ -932,7 +932,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.267Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.683Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -969,7 +969,7 @@ run();
 
 ## createCommerceReservation
 
-Create a reservation
+Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
 
 ### Example Usage
 
@@ -991,13 +991,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "d1d2a8af-2b3f-41aa-b32e-c291588efce9",
+      id: "810d9026-e277-4372-acdd-284c475ef8ac",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.033Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.157Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -1033,13 +1033,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "d1d2a8af-2b3f-41aa-b32e-c291588efce9",
+      id: "810d9026-e277-4372-acdd-284c475ef8ac",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.033Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.157Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -1076,7 +1076,7 @@ run();
 
 ## createCommerceReview
 
-Create a review
+Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
 
 ### Example Usage
 
@@ -1101,7 +1101,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "0b561561-6c9e-40ee-b6c2-8e610ec09396",
+      id: "52920ad0-c708-4fb6-afaf-bc6a6a22afe1",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -1109,10 +1109,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "4f263c6e-79ec-41e8-a9f8-a4188ff30ab2",
+          id: "cc2533f3-062b-41f3-b4ad-5c90a733f437",
           metadata: [
             {
-              id: "4fd1fa5b-653f-49fe-8edd-a22c7ddd5499",
+              id: "dbc5d23c-d331-40a2-947e-d6d1c6f199a2",
               slug: "textor",
               value: "quos",
             },
@@ -1125,10 +1125,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "0dcd72d6-f95b-4f3e-b287-a0f24911c8c7",
+          id: "4ef04e48-4e60-4b2d-b997-7fb2a525861f",
           metadata: [
             {
-              id: "7a58dfb6-07b9-43eb-94b8-b8aa45059725",
+              id: "e18fb206-5a44-44ae-8e5f-7c74bb8848ed",
               slug: "bos",
               value: "casso",
             },
@@ -1144,7 +1144,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.565Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.797Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -1184,7 +1184,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "0b561561-6c9e-40ee-b6c2-8e610ec09396",
+      id: "52920ad0-c708-4fb6-afaf-bc6a6a22afe1",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -1192,10 +1192,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "4f263c6e-79ec-41e8-a9f8-a4188ff30ab2",
+          id: "cc2533f3-062b-41f3-b4ad-5c90a733f437",
           metadata: [
             {
-              id: "4fd1fa5b-653f-49fe-8edd-a22c7ddd5499",
+              id: "dbc5d23c-d331-40a2-947e-d6d1c6f199a2",
               slug: "textor",
               value: "quos",
             },
@@ -1208,10 +1208,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "0dcd72d6-f95b-4f3e-b287-a0f24911c8c7",
+          id: "4ef04e48-4e60-4b2d-b997-7fb2a525861f",
           metadata: [
             {
-              id: "7a58dfb6-07b9-43eb-94b8-b8aa45059725",
+              id: "e18fb206-5a44-44ae-8e5f-7c74bb8848ed",
               slug: "bos",
               value: "casso",
             },
@@ -1227,7 +1227,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.565Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.797Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -1265,7 +1265,7 @@ run();
 
 ## createCommerceSaleschannel
 
-Create a saleschannel
+Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
 
 ### Example Usage
 
@@ -1285,11 +1285,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "513b1ce5-f82b-4fdc-bf95-44411966f171",
+      id: "927daffd-fb45-4f23-8b3e-ba067e4b8505",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.264Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.345Z"),
     },
     connectionId: "<id>",
   });
@@ -1322,11 +1322,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "513b1ce5-f82b-4fdc-bf95-44411966f171",
+      id: "927daffd-fb45-4f23-8b3e-ba067e4b8505",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.264Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.345Z"),
     },
     connectionId: "<id>",
   });
@@ -1362,7 +1362,7 @@ run();
 
 ## getCommerceCollection
 
-Retrieve a collection
+Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1441,7 +1441,7 @@ run();
 
 ## getCommerceInventory
 
-Retrieve an inventory
+Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1520,7 +1520,7 @@ run();
 
 ## getCommerceItem
 
-Retrieve an item
+Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1599,7 +1599,7 @@ run();
 
 ## getCommerceItemvariant
 
-Retrieve an itemvariant
+Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1678,7 +1678,7 @@ run();
 
 ## getCommerceLocation
 
-Retrieve a location
+Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1757,7 +1757,7 @@ run();
 
 ## getCommerceReservation
 
-Retrieve a reservation
+Retrieves a single CommerceReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1836,7 +1836,7 @@ run();
 
 ## getCommerceReview
 
-Retrieve a review
+Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1915,7 +1915,7 @@ run();
 
 ## getCommerceSaleschannel
 
-Retrieve a saleschannel
+Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1994,7 +1994,7 @@ run();
 
 ## listCommerceAvailabilities
 
-List all availabilities
+Returns a list of CommerceAvailabilities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2071,7 +2071,7 @@ run();
 
 ## listCommerceCollections
 
-List all collections
+Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2148,7 +2148,7 @@ run();
 
 ## listCommerceInventories
 
-List all inventories
+Returns a list of CommerceInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2225,7 +2225,7 @@ run();
 
 ## listCommerceItems
 
-List all items
+Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2302,7 +2302,7 @@ run();
 
 ## listCommerceItemvariants
 
-List all itemvariants
+Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2379,7 +2379,7 @@ run();
 
 ## listCommerceLocations
 
-List all locations
+Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2456,7 +2456,7 @@ run();
 
 ## listCommerceReservations
 
-List all reservations
+Returns a list of CommerceReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2533,7 +2533,7 @@ run();
 
 ## listCommerceReviews
 
-List all reviews
+Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2610,7 +2610,7 @@ run();
 
 ## listCommerceSaleschannels
 
-List all saleschannels
+Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2687,7 +2687,7 @@ run();
 
 ## patchCommerceCollection
 
-Update a collection
+Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -2706,7 +2706,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "f7f85d33-4b20-4312-9de9-a59cfccada34",
+      id: "c9bbd4db-a6cd-4bd1-988c-efd24eca83a9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -2715,10 +2715,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "a9d470be-a733-47f0-b1fe-5ba1ee2ec98c",
+          id: "749e04bf-a34e-4449-a598-b09feaa46c61",
           metadata: [
             {
-              id: "b74c2a90-8e7f-4aa1-ba4f-e4160f3a86a9",
+              id: "335fa85b-f37a-4ef1-97a2-5e7422e6abb3",
               slug: "censura",
               value: "toties",
             },
@@ -2731,7 +2731,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "bda54747-3682-4288-88ec-227c120edcc0",
+          id: "57fa6d79-2eae-406d-bd99-0b82f5c03e1c",
           slug: "aetas",
           value: "consuasor",
         },
@@ -2745,7 +2745,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.709Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.117Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2778,7 +2778,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "f7f85d33-4b20-4312-9de9-a59cfccada34",
+      id: "c9bbd4db-a6cd-4bd1-988c-efd24eca83a9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -2787,10 +2787,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "a9d470be-a733-47f0-b1fe-5ba1ee2ec98c",
+          id: "749e04bf-a34e-4449-a598-b09feaa46c61",
           metadata: [
             {
-              id: "b74c2a90-8e7f-4aa1-ba4f-e4160f3a86a9",
+              id: "335fa85b-f37a-4ef1-97a2-5e7422e6abb3",
               slug: "censura",
               value: "toties",
             },
@@ -2803,7 +2803,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "bda54747-3682-4288-88ec-227c120edcc0",
+          id: "57fa6d79-2eae-406d-bd99-0b82f5c03e1c",
           slug: "aetas",
           value: "consuasor",
         },
@@ -2817,7 +2817,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.709Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.117Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2854,7 +2854,7 @@ run();
 
 ## patchCommerceInventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -2872,9 +2872,9 @@ async function run() {
   const result = await unifiedTo.commerce.patchCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "a140d61f-3299-46a8-a588-e2ceee987df5",
+      id: "9ec7d6fe-51f5-4957-94cd-e6bd8c352610",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.071Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2906,9 +2906,9 @@ async function run() {
   const res = await commercePatchCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "a140d61f-3299-46a8-a588-e2ceee987df5",
+      id: "9ec7d6fe-51f5-4957-94cd-e6bd8c352610",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.071Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2945,7 +2945,7 @@ run();
 
 ## patchCommerceItem
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -2967,7 +2967,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "a579b665-02a9-4f2f-be36-5e1fa8dcc0e4",
+      id: "3b6fefc0-4700-484f-93fd-b07686719c3a",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -2976,10 +2976,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "a65cfe11-e0de-4a63-8f37-c20ba8fb15ac",
+          id: "508171d1-55c7-4d2e-bdaf-7ab4e6075c8e",
           metadata: [
             {
-              id: "7ecce540-e560-4d98-a71a-73416af84aed",
+              id: "1c89a01d-ac84-45e6-82b8-01841ccf66b1",
               slug: "doloremque",
               value: "allatus",
             },
@@ -2992,10 +2992,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "f3a298c2-2312-4e4e-a316-dd02017636ae",
+          id: "3bb634ee-ddc2-4f2f-ad86-cabd79927282",
           metadata: [
             {
-              id: "fce0a92a-e15f-4ea1-b897-08c6888e95d2",
+              id: "bbb1c17d-0452-4993-8a80-09c6ad304164",
               slug: "bis",
               value: "somniculosus",
             },
@@ -3012,7 +3012,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "99465958-ed89-4d23-b613-905b640c2fe3",
+          id: "8bebd272-166f-4928-a27b-79974121179c",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -3035,7 +3035,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.771Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.052Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -3074,7 +3074,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "a579b665-02a9-4f2f-be36-5e1fa8dcc0e4",
+      id: "3b6fefc0-4700-484f-93fd-b07686719c3a",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -3083,10 +3083,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "a65cfe11-e0de-4a63-8f37-c20ba8fb15ac",
+          id: "508171d1-55c7-4d2e-bdaf-7ab4e6075c8e",
           metadata: [
             {
-              id: "7ecce540-e560-4d98-a71a-73416af84aed",
+              id: "1c89a01d-ac84-45e6-82b8-01841ccf66b1",
               slug: "doloremque",
               value: "allatus",
             },
@@ -3099,10 +3099,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "f3a298c2-2312-4e4e-a316-dd02017636ae",
+          id: "3bb634ee-ddc2-4f2f-ad86-cabd79927282",
           metadata: [
             {
-              id: "fce0a92a-e15f-4ea1-b897-08c6888e95d2",
+              id: "bbb1c17d-0452-4993-8a80-09c6ad304164",
               slug: "bis",
               value: "somniculosus",
             },
@@ -3119,7 +3119,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "99465958-ed89-4d23-b613-905b640c2fe3",
+          id: "8bebd272-166f-4928-a27b-79974121179c",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -3142,7 +3142,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.771Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.052Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -3182,7 +3182,7 @@ run();
 
 ## patchCommerceItemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -3203,7 +3203,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "282896f9-f071-4f41-9368-b7d3e1b5e2af",
+      id: "fa899bbf-00e1-4d41-bb10-27a370d8f1b9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -3212,10 +3212,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "da3f60a8-26cd-4762-893e-3c714b9e6e04",
+          id: "d23052da-ae28-4646-99f1-ad80184ef3eb",
           metadata: [
             {
-              id: "0a02fd43-1486-4883-8e06-d49f7766a039",
+              id: "6c6538d9-4ddd-4e31-9c89-a74665b680d6",
               slug: "ubi",
               value: "textus",
             },
@@ -3232,7 +3232,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "079edbdf-9612-41a9-909e-b0f8b097066d",
+          id: "6335982f-9553-4ad7-a06c-36e9c68db2dd",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -3241,7 +3241,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "156e2c16-1313-425d-8098-0091370a779d",
+          id: "bb498fb4-d06a-4254-a61d-39d84c77f0a6",
           name: "Color",
           position: 1,
           values: [
@@ -3249,7 +3249,7 @@ async function run() {
           ],
         },
         {
-          id: "537058de-9c4d-49a9-9ccd-7144ed5aa05d",
+          id: "e3d213a3-0bb7-4c53-a0f1-e1a46621682f",
           name: "Size",
           position: 2,
           values: [
@@ -3272,7 +3272,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.803Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.368Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -3310,7 +3310,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "282896f9-f071-4f41-9368-b7d3e1b5e2af",
+      id: "fa899bbf-00e1-4d41-bb10-27a370d8f1b9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -3319,10 +3319,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "da3f60a8-26cd-4762-893e-3c714b9e6e04",
+          id: "d23052da-ae28-4646-99f1-ad80184ef3eb",
           metadata: [
             {
-              id: "0a02fd43-1486-4883-8e06-d49f7766a039",
+              id: "6c6538d9-4ddd-4e31-9c89-a74665b680d6",
               slug: "ubi",
               value: "textus",
             },
@@ -3339,7 +3339,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "079edbdf-9612-41a9-909e-b0f8b097066d",
+          id: "6335982f-9553-4ad7-a06c-36e9c68db2dd",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -3348,7 +3348,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "156e2c16-1313-425d-8098-0091370a779d",
+          id: "bb498fb4-d06a-4254-a61d-39d84c77f0a6",
           name: "Color",
           position: 1,
           values: [
@@ -3356,7 +3356,7 @@ async function run() {
           ],
         },
         {
-          id: "537058de-9c4d-49a9-9ccd-7144ed5aa05d",
+          id: "e3d213a3-0bb7-4c53-a0f1-e1a46621682f",
           name: "Size",
           position: 2,
           values: [
@@ -3379,7 +3379,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.803Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.368Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -3419,7 +3419,7 @@ run();
 
 ## patchCommerceLocation
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -3448,7 +3448,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "410f8147-74d9-4a7d-9eba-d5b90a41e9eb",
+      id: "a832098c-7c0e-4525-866a-ffe01f1162d1",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -3459,10 +3459,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "9325e2bf-3064-48e8-86c1-22e4d6f45f84",
+          id: "df89a2b2-1f06-43eb-8fb6-0bb040d74422",
           metadata: [
             {
-              id: "b8477dc8-5770-4411-8767-3817dbdd43a6",
+              id: "dc9139bf-156a-40c8-bc1f-33bb13fb86a1",
               slug: "abutor",
               value: "damno",
             },
@@ -3488,7 +3488,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.282Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.693Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -3532,7 +3532,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "410f8147-74d9-4a7d-9eba-d5b90a41e9eb",
+      id: "a832098c-7c0e-4525-866a-ffe01f1162d1",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -3543,10 +3543,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "9325e2bf-3064-48e8-86c1-22e4d6f45f84",
+          id: "df89a2b2-1f06-43eb-8fb6-0bb040d74422",
           metadata: [
             {
-              id: "b8477dc8-5770-4411-8767-3817dbdd43a6",
+              id: "dc9139bf-156a-40c8-bc1f-33bb13fb86a1",
               slug: "abutor",
               value: "damno",
             },
@@ -3572,7 +3572,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.282Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.693Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -3610,7 +3610,7 @@ run();
 
 ## patchCommerceReservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -3632,13 +3632,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "be9d1223-a54d-4214-a6c4-c2e661223da0",
+      id: "258f6478-e053-44cd-ace8-50c0b5210c62",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.038Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.160Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -3675,13 +3675,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "be9d1223-a54d-4214-a6c4-c2e661223da0",
+      id: "258f6478-e053-44cd-ace8-50c0b5210c62",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.038Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.160Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -3719,7 +3719,7 @@ run();
 
 ## patchCommerceReview
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -3744,7 +3744,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "46c76e7b-2a36-41cc-9445-e367f9fd4240",
+      id: "cc2d7e9b-383c-4deb-a8ec-41c6e8943350",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -3752,10 +3752,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "19d36e7e-fc5a-46ad-ae41-6764285279fa",
+          id: "b6c116f2-ad25-4f34-a8c3-df3ceadd5a70",
           metadata: [
             {
-              id: "14b20cf9-a150-4c42-a737-326c6cc00f8f",
+              id: "b8c51f97-5092-4626-a98b-082f601801ca",
               slug: "textor",
               value: "quos",
             },
@@ -3768,10 +3768,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "cae9779f-85e6-47dd-b2d7-39d1bd116222",
+          id: "82140e19-5ac8-441b-be7c-1409272cf462",
           metadata: [
             {
-              id: "6a5081d4-682f-4210-a0d2-e05df6bbe0a7",
+              id: "56b93e13-c498-44e3-9395-9a685514c647",
               slug: "bos",
               value: "casso",
             },
@@ -3787,7 +3787,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.613Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.821Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -3828,7 +3828,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "46c76e7b-2a36-41cc-9445-e367f9fd4240",
+      id: "cc2d7e9b-383c-4deb-a8ec-41c6e8943350",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -3836,10 +3836,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "19d36e7e-fc5a-46ad-ae41-6764285279fa",
+          id: "b6c116f2-ad25-4f34-a8c3-df3ceadd5a70",
           metadata: [
             {
-              id: "14b20cf9-a150-4c42-a737-326c6cc00f8f",
+              id: "b8c51f97-5092-4626-a98b-082f601801ca",
               slug: "textor",
               value: "quos",
             },
@@ -3852,10 +3852,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "cae9779f-85e6-47dd-b2d7-39d1bd116222",
+          id: "82140e19-5ac8-441b-be7c-1409272cf462",
           metadata: [
             {
-              id: "6a5081d4-682f-4210-a0d2-e05df6bbe0a7",
+              id: "56b93e13-c498-44e3-9395-9a685514c647",
               slug: "bos",
               value: "casso",
             },
@@ -3871,7 +3871,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.613Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.821Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -3910,7 +3910,7 @@ run();
 
 ## patchCommerceSaleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -3930,11 +3930,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "c6d5a63d-9d3a-4c19-82c0-6b339207f5e8",
+      id: "e2b9a722-55e3-48c0-8244-61813d4ee6fa",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.275Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.352Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3968,11 +3968,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "c6d5a63d-9d3a-4c19-82c0-6b339207f5e8",
+      id: "e2b9a722-55e3-48c0-8244-61813d4ee6fa",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.275Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.352Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4009,7 +4009,7 @@ run();
 
 ## removeCommerceCollection
 
-Remove a collection
+Deletes the CommerceCollection identified by `id`.
 
 ### Example Usage
 
@@ -4088,7 +4088,7 @@ run();
 
 ## removeCommerceInventory
 
-Remove an inventory
+Deletes the CommerceInventory identified by `id`.
 
 ### Example Usage
 
@@ -4167,7 +4167,7 @@ run();
 
 ## removeCommerceItem
 
-Remove an item
+Deletes the CommerceItem identified by `id`.
 
 ### Example Usage
 
@@ -4246,7 +4246,7 @@ run();
 
 ## removeCommerceItemvariant
 
-Remove an itemvariant
+Deletes the CommerceItemvariant identified by `id`.
 
 ### Example Usage
 
@@ -4325,7 +4325,7 @@ run();
 
 ## removeCommerceLocation
 
-Remove a location
+Deletes the CommerceLocation identified by `id`.
 
 ### Example Usage
 
@@ -4404,7 +4404,7 @@ run();
 
 ## removeCommerceReservation
 
-Remove a reservation
+Deletes the CommerceReservation identified by `id`.
 
 ### Example Usage
 
@@ -4483,7 +4483,7 @@ run();
 
 ## removeCommerceReview
 
-Remove a review
+Deletes the CommerceReview identified by `id`.
 
 ### Example Usage
 
@@ -4562,7 +4562,7 @@ run();
 
 ## removeCommerceSaleschannel
 
-Remove a saleschannel
+Deletes the CommerceSaleschannel identified by `id`.
 
 ### Example Usage
 
@@ -4641,7 +4641,7 @@ run();
 
 ## updateCommerceCollection
 
-Update a collection
+Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -4660,7 +4660,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "f7f85d33-4b20-4312-9de9-a59cfccada34",
+      id: "c9bbd4db-a6cd-4bd1-988c-efd24eca83a9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -4669,10 +4669,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "a9d470be-a733-47f0-b1fe-5ba1ee2ec98c",
+          id: "749e04bf-a34e-4449-a598-b09feaa46c61",
           metadata: [
             {
-              id: "b74c2a90-8e7f-4aa1-ba4f-e4160f3a86a9",
+              id: "335fa85b-f37a-4ef1-97a2-5e7422e6abb3",
               slug: "censura",
               value: "toties",
             },
@@ -4685,7 +4685,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "bda54747-3682-4288-88ec-227c120edcc0",
+          id: "57fa6d79-2eae-406d-bd99-0b82f5c03e1c",
           slug: "aetas",
           value: "consuasor",
         },
@@ -4699,7 +4699,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.709Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.117Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4732,7 +4732,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "f7f85d33-4b20-4312-9de9-a59cfccada34",
+      id: "c9bbd4db-a6cd-4bd1-988c-efd24eca83a9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -4741,10 +4741,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "a9d470be-a733-47f0-b1fe-5ba1ee2ec98c",
+          id: "749e04bf-a34e-4449-a598-b09feaa46c61",
           metadata: [
             {
-              id: "b74c2a90-8e7f-4aa1-ba4f-e4160f3a86a9",
+              id: "335fa85b-f37a-4ef1-97a2-5e7422e6abb3",
               slug: "censura",
               value: "toties",
             },
@@ -4757,7 +4757,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "bda54747-3682-4288-88ec-227c120edcc0",
+          id: "57fa6d79-2eae-406d-bd99-0b82f5c03e1c",
           slug: "aetas",
           value: "consuasor",
         },
@@ -4771,7 +4771,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.709Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.117Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4808,7 +4808,7 @@ run();
 
 ## updateCommerceInventory
 
-Update an inventory
+Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
 
 ### Example Usage
 
@@ -4826,9 +4826,9 @@ async function run() {
   const result = await unifiedTo.commerce.updateCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "a140d61f-3299-46a8-a588-e2ceee987df5",
+      id: "9ec7d6fe-51f5-4957-94cd-e6bd8c352610",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.071Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4860,9 +4860,9 @@ async function run() {
   const res = await commerceUpdateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "a140d61f-3299-46a8-a588-e2ceee987df5",
+      id: "9ec7d6fe-51f5-4957-94cd-e6bd8c352610",
       metadata: [],
-      updatedAt: new Date("2025-11-20T10:15:42.071Z"),
+      updatedAt: new Date("2025-11-21T05:37:45.679Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4899,7 +4899,7 @@ run();
 
 ## updateCommerceItem
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -4921,7 +4921,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "a579b665-02a9-4f2f-be36-5e1fa8dcc0e4",
+      id: "3b6fefc0-4700-484f-93fd-b07686719c3a",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -4930,10 +4930,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "a65cfe11-e0de-4a63-8f37-c20ba8fb15ac",
+          id: "508171d1-55c7-4d2e-bdaf-7ab4e6075c8e",
           metadata: [
             {
-              id: "7ecce540-e560-4d98-a71a-73416af84aed",
+              id: "1c89a01d-ac84-45e6-82b8-01841ccf66b1",
               slug: "doloremque",
               value: "allatus",
             },
@@ -4946,10 +4946,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "f3a298c2-2312-4e4e-a316-dd02017636ae",
+          id: "3bb634ee-ddc2-4f2f-ad86-cabd79927282",
           metadata: [
             {
-              id: "fce0a92a-e15f-4ea1-b897-08c6888e95d2",
+              id: "bbb1c17d-0452-4993-8a80-09c6ad304164",
               slug: "bis",
               value: "somniculosus",
             },
@@ -4966,7 +4966,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "99465958-ed89-4d23-b613-905b640c2fe3",
+          id: "8bebd272-166f-4928-a27b-79974121179c",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -4989,7 +4989,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.771Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.052Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -5028,7 +5028,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "a579b665-02a9-4f2f-be36-5e1fa8dcc0e4",
+      id: "3b6fefc0-4700-484f-93fd-b07686719c3a",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -5037,10 +5037,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "a65cfe11-e0de-4a63-8f37-c20ba8fb15ac",
+          id: "508171d1-55c7-4d2e-bdaf-7ab4e6075c8e",
           metadata: [
             {
-              id: "7ecce540-e560-4d98-a71a-73416af84aed",
+              id: "1c89a01d-ac84-45e6-82b8-01841ccf66b1",
               slug: "doloremque",
               value: "allatus",
             },
@@ -5053,10 +5053,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "f3a298c2-2312-4e4e-a316-dd02017636ae",
+          id: "3bb634ee-ddc2-4f2f-ad86-cabd79927282",
           metadata: [
             {
-              id: "fce0a92a-e15f-4ea1-b897-08c6888e95d2",
+              id: "bbb1c17d-0452-4993-8a80-09c6ad304164",
               slug: "bis",
               value: "somniculosus",
             },
@@ -5073,7 +5073,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "99465958-ed89-4d23-b613-905b640c2fe3",
+          id: "8bebd272-166f-4928-a27b-79974121179c",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -5096,7 +5096,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.771Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.052Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -5136,7 +5136,7 @@ run();
 
 ## updateCommerceItemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -5157,7 +5157,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "282896f9-f071-4f41-9368-b7d3e1b5e2af",
+      id: "fa899bbf-00e1-4d41-bb10-27a370d8f1b9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -5166,10 +5166,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "da3f60a8-26cd-4762-893e-3c714b9e6e04",
+          id: "d23052da-ae28-4646-99f1-ad80184ef3eb",
           metadata: [
             {
-              id: "0a02fd43-1486-4883-8e06-d49f7766a039",
+              id: "6c6538d9-4ddd-4e31-9c89-a74665b680d6",
               slug: "ubi",
               value: "textus",
             },
@@ -5186,7 +5186,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "079edbdf-9612-41a9-909e-b0f8b097066d",
+          id: "6335982f-9553-4ad7-a06c-36e9c68db2dd",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -5195,7 +5195,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "156e2c16-1313-425d-8098-0091370a779d",
+          id: "bb498fb4-d06a-4254-a61d-39d84c77f0a6",
           name: "Color",
           position: 1,
           values: [
@@ -5203,7 +5203,7 @@ async function run() {
           ],
         },
         {
-          id: "537058de-9c4d-49a9-9ccd-7144ed5aa05d",
+          id: "e3d213a3-0bb7-4c53-a0f1-e1a46621682f",
           name: "Size",
           position: 2,
           values: [
@@ -5226,7 +5226,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.803Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.368Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -5264,7 +5264,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "282896f9-f071-4f41-9368-b7d3e1b5e2af",
+      id: "fa899bbf-00e1-4d41-bb10-27a370d8f1b9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -5273,10 +5273,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "da3f60a8-26cd-4762-893e-3c714b9e6e04",
+          id: "d23052da-ae28-4646-99f1-ad80184ef3eb",
           metadata: [
             {
-              id: "0a02fd43-1486-4883-8e06-d49f7766a039",
+              id: "6c6538d9-4ddd-4e31-9c89-a74665b680d6",
               slug: "ubi",
               value: "textus",
             },
@@ -5293,7 +5293,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "079edbdf-9612-41a9-909e-b0f8b097066d",
+          id: "6335982f-9553-4ad7-a06c-36e9c68db2dd",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -5302,7 +5302,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "156e2c16-1313-425d-8098-0091370a779d",
+          id: "bb498fb4-d06a-4254-a61d-39d84c77f0a6",
           name: "Color",
           position: 1,
           values: [
@@ -5310,7 +5310,7 @@ async function run() {
           ],
         },
         {
-          id: "537058de-9c4d-49a9-9ccd-7144ed5aa05d",
+          id: "e3d213a3-0bb7-4c53-a0f1-e1a46621682f",
           name: "Size",
           position: 2,
           values: [
@@ -5333,7 +5333,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.803Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.368Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -5373,7 +5373,7 @@ run();
 
 ## updateCommerceLocation
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -5402,7 +5402,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "410f8147-74d9-4a7d-9eba-d5b90a41e9eb",
+      id: "a832098c-7c0e-4525-866a-ffe01f1162d1",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -5413,10 +5413,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "9325e2bf-3064-48e8-86c1-22e4d6f45f84",
+          id: "df89a2b2-1f06-43eb-8fb6-0bb040d74422",
           metadata: [
             {
-              id: "b8477dc8-5770-4411-8767-3817dbdd43a6",
+              id: "dc9139bf-156a-40c8-bc1f-33bb13fb86a1",
               slug: "abutor",
               value: "damno",
             },
@@ -5442,7 +5442,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.282Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.693Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -5486,7 +5486,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "410f8147-74d9-4a7d-9eba-d5b90a41e9eb",
+      id: "a832098c-7c0e-4525-866a-ffe01f1162d1",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -5497,10 +5497,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "9325e2bf-3064-48e8-86c1-22e4d6f45f84",
+          id: "df89a2b2-1f06-43eb-8fb6-0bb040d74422",
           metadata: [
             {
-              id: "b8477dc8-5770-4411-8767-3817dbdd43a6",
+              id: "dc9139bf-156a-40c8-bc1f-33bb13fb86a1",
               slug: "abutor",
               value: "damno",
             },
@@ -5526,7 +5526,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.282Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.693Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -5564,7 +5564,7 @@ run();
 
 ## updateCommerceReservation
 
-Update a reservation
+Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
 
 ### Example Usage
 
@@ -5586,13 +5586,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "be9d1223-a54d-4214-a6c4-c2e661223da0",
+      id: "258f6478-e053-44cd-ace8-50c0b5210c62",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.038Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.160Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -5629,13 +5629,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "be9d1223-a54d-4214-a6c4-c2e661223da0",
+      id: "258f6478-e053-44cd-ace8-50c0b5210c62",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-03T21:31:08.038Z"),
+      updatedAt: new Date("2023-01-04T02:44:41.160Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -5673,7 +5673,7 @@ run();
 
 ## updateCommerceReview
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -5698,7 +5698,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "46c76e7b-2a36-41cc-9445-e367f9fd4240",
+      id: "cc2d7e9b-383c-4deb-a8ec-41c6e8943350",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -5706,10 +5706,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "19d36e7e-fc5a-46ad-ae41-6764285279fa",
+          id: "b6c116f2-ad25-4f34-a8c3-df3ceadd5a70",
           metadata: [
             {
-              id: "14b20cf9-a150-4c42-a737-326c6cc00f8f",
+              id: "b8c51f97-5092-4626-a98b-082f601801ca",
               slug: "textor",
               value: "quos",
             },
@@ -5722,10 +5722,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "cae9779f-85e6-47dd-b2d7-39d1bd116222",
+          id: "82140e19-5ac8-441b-be7c-1409272cf462",
           metadata: [
             {
-              id: "6a5081d4-682f-4210-a0d2-e05df6bbe0a7",
+              id: "56b93e13-c498-44e3-9395-9a685514c647",
               slug: "bos",
               value: "casso",
             },
@@ -5741,7 +5741,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.613Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.821Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -5782,7 +5782,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "46c76e7b-2a36-41cc-9445-e367f9fd4240",
+      id: "cc2d7e9b-383c-4deb-a8ec-41c6e8943350",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -5790,10 +5790,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "19d36e7e-fc5a-46ad-ae41-6764285279fa",
+          id: "b6c116f2-ad25-4f34-a8c3-df3ceadd5a70",
           metadata: [
             {
-              id: "14b20cf9-a150-4c42-a737-326c6cc00f8f",
+              id: "b8c51f97-5092-4626-a98b-082f601801ca",
               slug: "textor",
               value: "quos",
             },
@@ -5806,10 +5806,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "cae9779f-85e6-47dd-b2d7-39d1bd116222",
+          id: "82140e19-5ac8-441b-be7c-1409272cf462",
           metadata: [
             {
-              id: "6a5081d4-682f-4210-a0d2-e05df6bbe0a7",
+              id: "56b93e13-c498-44e3-9395-9a685514c647",
               slug: "bos",
               value: "casso",
             },
@@ -5825,7 +5825,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.613Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.821Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -5864,7 +5864,7 @@ run();
 
 ## updateCommerceSaleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -5884,11 +5884,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "c6d5a63d-9d3a-4c19-82c0-6b339207f5e8",
+      id: "e2b9a722-55e3-48c0-8244-61813d4ee6fa",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.275Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.352Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5922,11 +5922,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "c6d5a63d-9d3a-4c19-82c0-6b339207f5e8",
+      id: "e2b9a722-55e3-48c0-8244-61813d4ee6fa",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.275Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.352Z"),
     },
     connectionId: "<id>",
     id: "<id>",

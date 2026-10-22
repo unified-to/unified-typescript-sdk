@@ -52,6 +52,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Lms extends ClientSDK {
   /**
    * Create an activity
+   *
+   * @remarks
+   * Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
    */
   async createLmsActivity(
     request: operations.CreateLmsActivityRequest,
@@ -66,6 +69,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Create a class
+   *
+   * @remarks
+   * Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
    */
   async createLmsClass(
     request: operations.CreateLmsClassRequest,
@@ -80,6 +86,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Create a collection
+   *
+   * @remarks
+   * Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
    */
   async createLmsCollection(
     request: operations.CreateLmsCollectionRequest,
@@ -94,6 +103,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Create a content
+   *
+   * @remarks
+   * Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
    */
   async createLmsContent(
     request: operations.CreateLmsContentRequest,
@@ -108,6 +120,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Create a course
+   *
+   * @remarks
+   * Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
    */
   async createLmsCourse(
     request: operations.CreateLmsCourseRequest,
@@ -122,6 +137,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Create an instructor
+   *
+   * @remarks
+   * Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
    */
   async createLmsInstructor(
     request: operations.CreateLmsInstructorRequest,
@@ -136,6 +154,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Create a student
+   *
+   * @remarks
+   * Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
    */
   async createLmsStudent(
     request: operations.CreateLmsStudentRequest,
@@ -150,6 +171,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Retrieve an activity
+   *
+   * @remarks
+   * Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsActivity(
     request: operations.GetLmsActivityRequest,
@@ -164,6 +188,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Retrieve a class
+   *
+   * @remarks
+   * Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsClass(
     request: operations.GetLmsClassRequest,
@@ -178,6 +205,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Retrieve a collection
+   *
+   * @remarks
+   * Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsCollection(
     request: operations.GetLmsCollectionRequest,
@@ -192,6 +222,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Retrieve a content
+   *
+   * @remarks
+   * Retrieves a single LmsContent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsContent(
     request: operations.GetLmsContentRequest,
@@ -206,6 +239,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Retrieve a course
+   *
+   * @remarks
+   * Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsCourse(
     request: operations.GetLmsCourseRequest,
@@ -220,6 +256,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Retrieve an instructor
+   *
+   * @remarks
+   * Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsInstructor(
     request: operations.GetLmsInstructorRequest,
@@ -234,6 +273,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Retrieve a student
+   *
+   * @remarks
+   * Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsStudent(
     request: operations.GetLmsStudentRequest,
@@ -248,6 +290,9 @@ export class Lms extends ClientSDK {
 
   /**
    * List all activities
+   *
+   * @remarks
+   * Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsActivities(
     request: operations.ListLmsActivitiesRequest,
@@ -262,6 +307,9 @@ export class Lms extends ClientSDK {
 
   /**
    * List all classes
+   *
+   * @remarks
+   * Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsClasses(
     request: operations.ListLmsClassesRequest,
@@ -276,6 +324,9 @@ export class Lms extends ClientSDK {
 
   /**
    * List all collections
+   *
+   * @remarks
+   * Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsCollections(
     request: operations.ListLmsCollectionsRequest,
@@ -290,6 +341,9 @@ export class Lms extends ClientSDK {
 
   /**
    * List all contents
+   *
+   * @remarks
+   * Returns a list of LmsContents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsContents(
     request: operations.ListLmsContentsRequest,
@@ -304,6 +358,9 @@ export class Lms extends ClientSDK {
 
   /**
    * List all courses
+   *
+   * @remarks
+   * Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsCourses(
     request: operations.ListLmsCoursesRequest,
@@ -318,6 +375,9 @@ export class Lms extends ClientSDK {
 
   /**
    * List all instructors
+   *
+   * @remarks
+   * Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsInstructors(
     request: operations.ListLmsInstructorsRequest,
@@ -332,6 +392,9 @@ export class Lms extends ClientSDK {
 
   /**
    * List all students
+   *
+   * @remarks
+   * Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsStudents(
     request: operations.ListLmsStudentsRequest,
@@ -346,6 +409,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update an activity
+   *
+   * @remarks
+   * Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
    */
   async patchLmsActivity(
     request: operations.PatchLmsActivityRequest,
@@ -360,6 +426,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a class
+   *
+   * @remarks
+   * Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
    */
   async patchLmsClass(
     request: operations.PatchLmsClassRequest,
@@ -374,6 +443,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a collection
+   *
+   * @remarks
+   * Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
    */
   async patchLmsCollection(
     request: operations.PatchLmsCollectionRequest,
@@ -388,6 +460,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a content
+   *
+   * @remarks
+   * Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
    */
   async patchLmsContent(
     request: operations.PatchLmsContentRequest,
@@ -402,6 +477,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a course
+   *
+   * @remarks
+   * Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
    */
   async patchLmsCourse(
     request: operations.PatchLmsCourseRequest,
@@ -416,6 +494,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update an instructor
+   *
+   * @remarks
+   * Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
    */
   async patchLmsInstructor(
     request: operations.PatchLmsInstructorRequest,
@@ -430,6 +511,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a student
+   *
+   * @remarks
+   * Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
    */
   async patchLmsStudent(
     request: operations.PatchLmsStudentRequest,
@@ -444,6 +528,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Remove an activity
+   *
+   * @remarks
+   * Deletes the LmsActivity identified by `id`.
    */
   async removeLmsActivity(
     request: operations.RemoveLmsActivityRequest,
@@ -458,6 +545,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Remove a class
+   *
+   * @remarks
+   * Deletes the LmsClass identified by `id`.
    */
   async removeLmsClass(
     request: operations.RemoveLmsClassRequest,
@@ -472,6 +562,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Remove a collection
+   *
+   * @remarks
+   * Deletes the LmsCollection identified by `id`.
    */
   async removeLmsCollection(
     request: operations.RemoveLmsCollectionRequest,
@@ -486,6 +579,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Remove a content
+   *
+   * @remarks
+   * Deletes the LmsContent identified by `id`.
    */
   async removeLmsContent(
     request: operations.RemoveLmsContentRequest,
@@ -500,6 +596,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Remove a course
+   *
+   * @remarks
+   * Deletes the LmsCourse identified by `id`.
    */
   async removeLmsCourse(
     request: operations.RemoveLmsCourseRequest,
@@ -514,6 +613,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Remove an instructor
+   *
+   * @remarks
+   * Deletes the LmsInstructor identified by `id`.
    */
   async removeLmsInstructor(
     request: operations.RemoveLmsInstructorRequest,
@@ -528,6 +630,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Remove a student
+   *
+   * @remarks
+   * Deletes the LmsStudent identified by `id`.
    */
   async removeLmsStudent(
     request: operations.RemoveLmsStudentRequest,
@@ -542,6 +647,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update an activity
+   *
+   * @remarks
+   * Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
    */
   async updateLmsActivity(
     request: operations.UpdateLmsActivityRequest,
@@ -556,6 +664,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a class
+   *
+   * @remarks
+   * Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
    */
   async updateLmsClass(
     request: operations.UpdateLmsClassRequest,
@@ -570,6 +681,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a collection
+   *
+   * @remarks
+   * Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
    */
   async updateLmsCollection(
     request: operations.UpdateLmsCollectionRequest,
@@ -584,6 +698,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a content
+   *
+   * @remarks
+   * Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
    */
   async updateLmsContent(
     request: operations.UpdateLmsContentRequest,
@@ -598,6 +715,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a course
+   *
+   * @remarks
+   * Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
    */
   async updateLmsCourse(
     request: operations.UpdateLmsCourseRequest,
@@ -612,6 +732,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update an instructor
+   *
+   * @remarks
+   * Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
    */
   async updateLmsInstructor(
     request: operations.UpdateLmsInstructorRequest,
@@ -626,6 +749,9 @@ export class Lms extends ClientSDK {
 
   /**
    * Update a student
+   *
+   * @remarks
+   * Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
    */
   async updateLmsStudent(
     request: operations.UpdateLmsStudentRequest,

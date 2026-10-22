@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a job
+ *
+ * @remarks
+ * Deletes the HrisJob identified by `id`.
  */
 export function jobRemoveHrisJob(
   client: UnifiedToCore,

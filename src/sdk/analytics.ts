@@ -28,6 +28,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Analytics extends ClientSDK {
   /**
    * Create an event
+   *
+   * @remarks
+   * Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
    */
   async createAnalyticsEvent(
     request: operations.CreateAnalyticsEventRequest,
@@ -42,6 +45,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Create a property
+   *
+   * @remarks
+   * Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
    */
   async createAnalyticsProperty(
     request: operations.CreateAnalyticsPropertyRequest,
@@ -56,6 +62,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Create a visitor
+   *
+   * @remarks
+   * Creates a AnalyticsVisitor. Provide the unified AnalyticsVisitor fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsVisitor.
    */
   async createAnalyticsVisitor(
     request: operations.CreateAnalyticsVisitorRequest,
@@ -70,6 +79,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAnalyticsEvent(
     request: operations.GetAnalyticsEventRequest,
@@ -84,6 +96,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Retrieve a property
+   *
+   * @remarks
+   * Retrieves a single AnalyticsProperty by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAnalyticsProperty(
     request: operations.GetAnalyticsPropertyRequest,
@@ -98,6 +113,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Retrieve a session
+   *
+   * @remarks
+   * Retrieves a single AnalyticsSession by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAnalyticsSession(
     request: operations.GetAnalyticsSessionRequest,
@@ -112,6 +130,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Retrieve a visitor
+   *
+   * @remarks
+   * Retrieves a single AnalyticsVisitor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAnalyticsVisitor(
     request: operations.GetAnalyticsVisitorRequest,
@@ -126,6 +147,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAnalyticsEvents(
     request: operations.ListAnalyticsEventsRequest,
@@ -140,6 +164,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * List all properties
+   *
+   * @remarks
+   * Returns a list of AnalyticsProperties. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAnalyticsProperties(
     request: operations.ListAnalyticsPropertiesRequest,
@@ -154,6 +181,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * List all reports
+   *
+   * @remarks
+   * Returns a list of AnalyticsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAnalyticsReports(
     request: operations.ListAnalyticsReportsRequest,
@@ -168,6 +198,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * List all sessions
+   *
+   * @remarks
+   * Returns a list of AnalyticsSessions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAnalyticsSessions(
     request: operations.ListAnalyticsSessionsRequest,
@@ -182,6 +215,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * List all visitors
+   *
+   * @remarks
+   * Returns a list of AnalyticsVisitors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAnalyticsVisitors(
     request: operations.ListAnalyticsVisitorsRequest,
@@ -196,6 +232,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Update a property
+   *
+   * @remarks
+   * Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
    */
   async patchAnalyticsProperty(
     request: operations.PatchAnalyticsPropertyRequest,
@@ -210,6 +249,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Update a visitor
+   *
+   * @remarks
+   * Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
    */
   async patchAnalyticsVisitor(
     request: operations.PatchAnalyticsVisitorRequest,
@@ -224,6 +266,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Remove a property
+   *
+   * @remarks
+   * Deletes the AnalyticsProperty identified by `id`.
    */
   async removeAnalyticsProperty(
     request: operations.RemoveAnalyticsPropertyRequest,
@@ -238,6 +283,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Remove a visitor
+   *
+   * @remarks
+   * Deletes the AnalyticsVisitor identified by `id`.
    */
   async removeAnalyticsVisitor(
     request: operations.RemoveAnalyticsVisitorRequest,
@@ -252,6 +300,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Update a property
+   *
+   * @remarks
+   * Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
    */
   async updateAnalyticsProperty(
     request: operations.UpdateAnalyticsPropertyRequest,
@@ -266,6 +317,9 @@ export class Analytics extends ClientSDK {
 
   /**
    * Update a visitor
+   *
+   * @remarks
+   * Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
    */
   async updateAnalyticsVisitor(
     request: operations.UpdateAnalyticsVisitorRequest,

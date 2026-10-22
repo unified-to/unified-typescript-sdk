@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a form
+ *
+ * @remarks
+ * Creates a FormsForm. Provide the unified FormsForm fields in the request body; they are mapped to the provider's API. Returns the created FormsForm.
  */
 export function formsCreateFormsForm(
   client: UnifiedToCore,

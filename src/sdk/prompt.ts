@@ -11,6 +11,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Prompt extends ClientSDK {
   /**
    * Create a prompt
+   *
+   * @remarks
+   * Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
    */
   async createGenaiPrompt(
     request: operations.CreateGenaiPromptRequest,

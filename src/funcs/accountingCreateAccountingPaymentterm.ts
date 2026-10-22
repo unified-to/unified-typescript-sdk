@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a paymentterm
+ *
+ * @remarks
+ * Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
  */
 export function accountingCreateAccountingPaymentterm(
   client: UnifiedToCore,

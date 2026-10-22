@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Shipment extends ClientSDK {
   /**
    * Create a shipment
+   *
+   * @remarks
+   * Creates a ShippingShipment. Provide the unified ShippingShipment fields in the request body; they are mapped to the provider's API. Returns the created ShippingShipment.
    */
   async createShippingShipment(
     request: operations.CreateShippingShipmentRequest,
@@ -30,6 +33,9 @@ export class Shipment extends ClientSDK {
 
   /**
    * Retrieve a shipment
+   *
+   * @remarks
+   * Retrieves a single ShippingShipment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getShippingShipment(
     request: operations.GetShippingShipmentRequest,
@@ -44,6 +50,9 @@ export class Shipment extends ClientSDK {
 
   /**
    * List all shipments
+   *
+   * @remarks
+   * Returns a list of ShippingShipments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listShippingShipments(
     request: operations.ListShippingShipmentsRequest,
@@ -58,6 +67,9 @@ export class Shipment extends ClientSDK {
 
   /**
    * Update a shipment
+   *
+   * @remarks
+   * Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
    */
   async patchShippingShipment(
     request: operations.PatchShippingShipmentRequest,
@@ -72,6 +84,9 @@ export class Shipment extends ClientSDK {
 
   /**
    * Remove a shipment
+   *
+   * @remarks
+   * Deletes the ShippingShipment identified by `id`.
    */
   async removeShippingShipment(
     request: operations.RemoveShippingShipmentRequest,
@@ -86,6 +101,9 @@ export class Shipment extends ClientSDK {
 
   /**
    * Update a shipment
+   *
+   * @remarks
+   * Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
    */
   async updateShippingShipment(
     request: operations.UpdateShippingShipmentRequest,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a project
+ *
+ * @remarks
+ * Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
  */
 export function projectCreateTaskProject(
   client: UnifiedToCore,

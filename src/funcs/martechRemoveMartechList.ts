@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a list
+ *
+ * @remarks
+ * Deletes the MarketingList identified by `id`.
  */
 export function martechRemoveMartechList(
   client: UnifiedToCore,

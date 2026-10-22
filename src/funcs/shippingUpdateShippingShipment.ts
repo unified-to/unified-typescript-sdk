@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a shipment
+ *
+ * @remarks
+ * Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
  */
 export function shippingUpdateShippingShipment(
   client: UnifiedToCore,

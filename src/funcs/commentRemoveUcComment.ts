@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a comment
+ *
+ * @remarks
+ * Deletes the UcComment identified by `id`.
  */
 export function commentRemoveUcComment(
   client: UnifiedToCore,

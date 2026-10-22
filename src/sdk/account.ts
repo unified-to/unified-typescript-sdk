@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Account extends ClientSDK {
   /**
    * Create an account
+   *
+   * @remarks
+   * Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
    */
   async createAccountingAccount(
     request: operations.CreateAccountingAccountRequest,
@@ -30,6 +33,9 @@ export class Account extends ClientSDK {
 
   /**
    * Retrieve an account
+   *
+   * @remarks
+   * Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingAccount(
     request: operations.GetAccountingAccountRequest,
@@ -44,6 +50,9 @@ export class Account extends ClientSDK {
 
   /**
    * List all accounts
+   *
+   * @remarks
+   * Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingAccounts(
     request: operations.ListAccountingAccountsRequest,
@@ -58,6 +67,9 @@ export class Account extends ClientSDK {
 
   /**
    * Update an account
+   *
+   * @remarks
+   * Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
    */
   async patchAccountingAccount(
     request: operations.PatchAccountingAccountRequest,
@@ -72,6 +84,9 @@ export class Account extends ClientSDK {
 
   /**
    * Remove an account
+   *
+   * @remarks
+   * Deletes the AccountingAccount identified by `id`.
    */
   async removeAccountingAccount(
     request: operations.RemoveAccountingAccountRequest,
@@ -86,6 +101,9 @@ export class Account extends ClientSDK {
 
   /**
    * Update an account
+   *
+   * @remarks
+   * Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
    */
   async updateAccountingAccount(
     request: operations.UpdateAccountingAccountRequest,

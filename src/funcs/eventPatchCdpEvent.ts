@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an event
+ *
+ * @remarks
+ * Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
  */
 export function eventPatchCdpEvent(
   client: UnifiedToCore,

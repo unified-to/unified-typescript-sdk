@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a job
+ *
+ * @remarks
+ * Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
  */
 export function jobCreateHrisJob(
   client: UnifiedToCore,

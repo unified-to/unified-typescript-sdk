@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an application
+ *
+ * @remarks
+ * Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
  */
 export function atsCreateAtsApplication(
   client: UnifiedToCore,

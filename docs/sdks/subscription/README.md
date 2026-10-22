@@ -13,7 +13,7 @@
 
 ## createPaymentSubscription
 
-Create a subscription
+Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
 
 ### Example Usage
 
@@ -36,7 +36,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "09978b35-93ba-4d78-9e1a-a8dafd8e00b2",
+      id: "f20ff1d8-b426-49aa-80a8-426d8fe35584",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -45,7 +45,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.479Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.440Z"),
     },
     connectionId: "<id>",
   });
@@ -81,7 +81,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "09978b35-93ba-4d78-9e1a-a8dafd8e00b2",
+      id: "f20ff1d8-b426-49aa-80a8-426d8fe35584",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -90,7 +90,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.479Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.440Z"),
     },
     connectionId: "<id>",
   });
@@ -126,7 +126,7 @@ run();
 
 ## getPaymentSubscription
 
-Retrieve a subscription
+Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -205,7 +205,7 @@ run();
 
 ## listPaymentSubscriptions
 
-List all subscriptions
+Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -282,7 +282,7 @@ run();
 
 ## patchPaymentSubscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -305,7 +305,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "6fdc396e-6c49-46ec-96c0-84a737c2ba93",
+      id: "fe5a0c2a-57d1-408f-be15-00337c4070bc",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -314,7 +314,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.483Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -351,7 +351,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "6fdc396e-6c49-46ec-96c0-84a737c2ba93",
+      id: "fe5a0c2a-57d1-408f-be15-00337c4070bc",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -360,7 +360,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.483Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -397,7 +397,7 @@ run();
 
 ## removePaymentSubscription
 
-Remove a subscription
+Deletes the PaymentSubscription identified by `id`.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ run();
 
 ## updatePaymentSubscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -499,7 +499,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "6fdc396e-6c49-46ec-96c0-84a737c2ba93",
+      id: "fe5a0c2a-57d1-408f-be15-00337c4070bc",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -508,7 +508,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.483Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -545,7 +545,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "6fdc396e-6c49-46ec-96c0-84a737c2ba93",
+      id: "fe5a0c2a-57d1-408f-be15-00337c4070bc",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -554,7 +554,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.483Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",

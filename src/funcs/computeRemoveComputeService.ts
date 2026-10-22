@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a service
+ *
+ * @remarks
+ * Deletes the ComputeService identified by `id`.
  */
 export function computeRemoveComputeService(
   client: UnifiedToCore,

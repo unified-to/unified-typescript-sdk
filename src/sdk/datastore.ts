@@ -29,6 +29,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Datastore extends ClientSDK {
   /**
    * Create a database
+   *
+   * @remarks
+   * Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
    */
   async createDatastoreDatabase(
     request: operations.CreateDatastoreDatabaseRequest,
@@ -43,6 +46,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Create a query
+   *
+   * @remarks
+   * Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
    */
   async createDatastoreQuery(
     request: operations.CreateDatastoreQueryRequest,
@@ -57,6 +63,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Create a record
+   *
+   * @remarks
+   * Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
    */
   async createDatastoreRecord(
     request: operations.CreateDatastoreRecordRequest,
@@ -71,6 +80,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Create a table
+   *
+   * @remarks
+   * Creates a DatastoreTable. Provide the unified DatastoreTable fields in the request body; they are mapped to the provider's API. Returns the created DatastoreTable.
    */
   async createDatastoreTable(
     request: operations.CreateDatastoreTableRequest,
@@ -85,6 +97,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Retrieve a database
+   *
+   * @remarks
+   * Retrieves a single DatastoreDatabase by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getDatastoreDatabase(
     request: operations.GetDatastoreDatabaseRequest,
@@ -99,6 +114,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Retrieve a record
+   *
+   * @remarks
+   * Retrieves a single DatastoreRecord by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getDatastoreRecord(
     request: operations.GetDatastoreRecordRequest,
@@ -113,6 +131,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Retrieve a table
+   *
+   * @remarks
+   * Retrieves a single DatastoreTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getDatastoreTable(
     request: operations.GetDatastoreTableRequest,
@@ -127,6 +148,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * List all databases
+   *
+   * @remarks
+   * Returns a list of DatastoreDatabases. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listDatastoreDatabases(
     request: operations.ListDatastoreDatabasesRequest,
@@ -141,6 +165,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * List all records
+   *
+   * @remarks
+   * Returns a list of DatastoreRecords. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listDatastoreRecords(
     request: operations.ListDatastoreRecordsRequest,
@@ -155,6 +182,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * List all tables
+   *
+   * @remarks
+   * Returns a list of DatastoreTables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listDatastoreTables(
     request: operations.ListDatastoreTablesRequest,
@@ -169,6 +199,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Update a database
+   *
+   * @remarks
+   * Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
    */
   async patchDatastoreDatabase(
     request: operations.PatchDatastoreDatabaseRequest,
@@ -183,6 +216,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Update a record
+   *
+   * @remarks
+   * Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
    */
   async patchDatastoreRecord(
     request: operations.PatchDatastoreRecordRequest,
@@ -197,6 +233,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Update a table
+   *
+   * @remarks
+   * Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
    */
   async patchDatastoreTable(
     request: operations.PatchDatastoreTableRequest,
@@ -211,6 +250,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Remove a database
+   *
+   * @remarks
+   * Deletes the DatastoreDatabase identified by `id`.
    */
   async removeDatastoreDatabase(
     request: operations.RemoveDatastoreDatabaseRequest,
@@ -225,6 +267,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Remove a record
+   *
+   * @remarks
+   * Deletes the DatastoreRecord identified by `id`.
    */
   async removeDatastoreRecord(
     request: operations.RemoveDatastoreRecordRequest,
@@ -239,6 +284,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Remove a table
+   *
+   * @remarks
+   * Deletes the DatastoreTable identified by `id`.
    */
   async removeDatastoreTable(
     request: operations.RemoveDatastoreTableRequest,
@@ -253,6 +301,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Update a database
+   *
+   * @remarks
+   * Updates the DatastoreDatabase identified by `id`. Provide the unified DatastoreDatabase fields to change in the request body.
    */
   async updateDatastoreDatabase(
     request: operations.UpdateDatastoreDatabaseRequest,
@@ -267,6 +318,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Update a record
+   *
+   * @remarks
+   * Updates the DatastoreRecord identified by `id`. Provide the unified DatastoreRecord fields to change in the request body.
    */
   async updateDatastoreRecord(
     request: operations.UpdateDatastoreRecordRequest,
@@ -281,6 +335,9 @@ export class Datastore extends ClientSDK {
 
   /**
    * Update a table
+   *
+   * @remarks
+   * Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
    */
   async updateDatastoreTable(
     request: operations.UpdateDatastoreTableRequest,

@@ -13,7 +13,7 @@
 
 ## createComputeEnvvar
 
-Create an envvar
+Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
 
 ### Example Usage
 
@@ -34,11 +34,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "a339af3f-e45c-4b8c-83d6-fcee216daae2",
+      id: "920e3420-5c5e-413b-a51f-1ead20c277fc",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.141Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.531Z"),
     },
     connectionId: "<id>",
   });
@@ -72,11 +72,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "a339af3f-e45c-4b8c-83d6-fcee216daae2",
+      id: "920e3420-5c5e-413b-a51f-1ead20c277fc",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.141Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.531Z"),
     },
     connectionId: "<id>",
   });
@@ -112,7 +112,7 @@ run();
 
 ## getComputeEnvvar
 
-Retrieve an envvar
+Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -191,7 +191,7 @@ run();
 
 ## listComputeEnvvars
 
-List all envvars
+Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -268,7 +268,7 @@ run();
 
 ## patchComputeEnvvar
 
-Update an envvar
+Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
 
 ### Example Usage
 
@@ -289,11 +289,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "ff06f67c-db5c-43e6-9c82-2421ff0f3c11",
+      id: "a81e78f7-91f9-45d1-a227-61e28ddd3fe5",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.152Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.540Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -328,11 +328,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "ff06f67c-db5c-43e6-9c82-2421ff0f3c11",
+      id: "a81e78f7-91f9-45d1-a227-61e28ddd3fe5",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.152Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.540Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -369,7 +369,7 @@ run();
 
 ## removeComputeEnvvar
 
-Remove an envvar
+Deletes the ComputeEnvvar identified by `id`.
 
 ### Example Usage
 
@@ -448,7 +448,7 @@ run();
 
 ## updateComputeEnvvar
 
-Update an envvar
+Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
 
 ### Example Usage
 
@@ -469,11 +469,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "ff06f67c-db5c-43e6-9c82-2421ff0f3c11",
+      id: "a81e78f7-91f9-45d1-a227-61e28ddd3fe5",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.152Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.540Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -508,11 +508,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "ff06f67c-db5c-43e6-9c82-2421ff0f3c11",
+      id: "a81e78f7-91f9-45d1-a227-61e28ddd3fe5",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-03T14:47:17.152Z"),
+      updatedAt: new Date("2025-07-04T08:47:48.540Z"),
     },
     connectionId: "<id>",
     id: "<id>",

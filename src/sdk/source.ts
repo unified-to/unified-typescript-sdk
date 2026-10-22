@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Source extends ClientSDK {
   /**
    * Create a source
+   *
+   * @remarks
+   * Creates a CdpSource. Provide the unified CdpSource fields in the request body; they are mapped to the provider's API. Returns the created CdpSource.
    */
   async createCdpSource(
     request: operations.CreateCdpSourceRequest,
@@ -30,6 +33,9 @@ export class Source extends ClientSDK {
 
   /**
    * Retrieve a source
+   *
+   * @remarks
+   * Retrieves a single CdpSource by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpSource(
     request: operations.GetCdpSourceRequest,
@@ -44,6 +50,9 @@ export class Source extends ClientSDK {
 
   /**
    * List all sources
+   *
+   * @remarks
+   * Returns a list of CdpSources. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpSources(
     request: operations.ListCdpSourcesRequest,
@@ -58,6 +67,9 @@ export class Source extends ClientSDK {
 
   /**
    * Update a source
+   *
+   * @remarks
+   * Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
    */
   async patchCdpSource(
     request: operations.PatchCdpSourceRequest,
@@ -72,6 +84,9 @@ export class Source extends ClientSDK {
 
   /**
    * Remove a source
+   *
+   * @remarks
+   * Deletes the CdpSource identified by `id`.
    */
   async removeCdpSource(
     request: operations.RemoveCdpSourceRequest,
@@ -86,6 +101,9 @@ export class Source extends ClientSDK {
 
   /**
    * Update a source
+   *
+   * @remarks
+   * Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
    */
   async updateCdpSource(
     request: operations.UpdateCdpSourceRequest,

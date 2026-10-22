@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a deduction
+ *
+ * @remarks
+ * Deletes the HrisDeduction identified by `id`.
  */
 export function hrisRemoveHrisDeduction(
   client: UnifiedToCore,

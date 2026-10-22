@@ -13,7 +13,7 @@
 
 ## createFormsForm
 
-Create a form
+Creates a FormsForm. Provide the unified FormsForm fields in the request body; they are mapped to the provider's API. Returns the created FormsForm.
 
 ### Example Usage
 
@@ -36,24 +36,24 @@ async function run() {
       fields: [
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "d9ad636c-e690-4b77-831e-d92a0e3e6702",
+          id: "3161efa8-f480-4116-87aa-faa28c5de1d9",
           isActive: true,
           isRequired: true,
           maxLength: 146,
           name: "cornu creta confugo",
           order: 0,
           type: "TEXTAREA",
-          updatedAt: new Date("2025-04-28T16:28:02.596Z"),
+          updatedAt: new Date("2025-04-29T04:48:54.963Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "f9f166a4-7507-4f1c-ab05-b22fd06171a3",
+          id: "05f0de0d-72a3-4392-a72a-02820b50d563",
           isActive: true,
           isRequired: false,
           name: "tracto nostrum desidero",
           order: 1,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-09-02T04:12:07.812Z"),
+          updatedAt: new Date("2024-09-02T11:23:25.163Z"),
         },
         {
           choices: [
@@ -65,36 +65,36 @@ async function run() {
           ],
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           defaultValue: "somniculosus",
-          id: "880c4b6a-e58c-4136-b31f-d2b3cd154cce",
+          id: "c7dd86fb-d1ec-4dd8-88eb-4d50381964f7",
           isActive: true,
           isRequired: false,
           name: "officia supra consequatur",
           order: 2,
           type: "MULTIPLE_SELECT",
-          updatedAt: new Date("2024-02-26T08:34:45.974Z"),
+          updatedAt: new Date("2024-02-26T11:40:58.388Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           description: "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-          id: "566b9cef-eff5-4707-a621-ded8320dd08b",
+          id: "9862f124-1883-4618-a783-ffd188a66d1e",
           isActive: true,
           isRequired: false,
           name: "curtus fugiat audentia",
           order: 3,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-11-27T10:17:11.707Z"),
+          updatedAt: new Date("2024-11-27T19:20:26.401Z"),
         },
       ],
       hasMultipleSubmissions: false,
       hasProgressBar: false,
       hasShuffleQuestions: true,
-      id: "74013215-9591-4fa0-9df9-4d88b82f9a08",
+      id: "077ca80a-39ee-4fec-8aa8-2bb53e9f11cf",
       isActive: false,
       metadata: [],
       name: "tandem tracto vivo Form",
       publishedUrl: "https://massive-blowgun.info",
       responseCount: 423,
-      updatedAt: new Date("2024-08-24T19:27:31.595Z"),
+      updatedAt: new Date("2024-08-25T02:27:57.542Z"),
     },
     connectionId: "<id>",
   });
@@ -130,24 +130,24 @@ async function run() {
       fields: [
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "d9ad636c-e690-4b77-831e-d92a0e3e6702",
+          id: "3161efa8-f480-4116-87aa-faa28c5de1d9",
           isActive: true,
           isRequired: true,
           maxLength: 146,
           name: "cornu creta confugo",
           order: 0,
           type: "TEXTAREA",
-          updatedAt: new Date("2025-04-28T16:28:02.596Z"),
+          updatedAt: new Date("2025-04-29T04:48:54.963Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "f9f166a4-7507-4f1c-ab05-b22fd06171a3",
+          id: "05f0de0d-72a3-4392-a72a-02820b50d563",
           isActive: true,
           isRequired: false,
           name: "tracto nostrum desidero",
           order: 1,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-09-02T04:12:07.812Z"),
+          updatedAt: new Date("2024-09-02T11:23:25.163Z"),
         },
         {
           choices: [
@@ -159,36 +159,36 @@ async function run() {
           ],
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           defaultValue: "somniculosus",
-          id: "880c4b6a-e58c-4136-b31f-d2b3cd154cce",
+          id: "c7dd86fb-d1ec-4dd8-88eb-4d50381964f7",
           isActive: true,
           isRequired: false,
           name: "officia supra consequatur",
           order: 2,
           type: "MULTIPLE_SELECT",
-          updatedAt: new Date("2024-02-26T08:34:45.974Z"),
+          updatedAt: new Date("2024-02-26T11:40:58.388Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           description: "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-          id: "566b9cef-eff5-4707-a621-ded8320dd08b",
+          id: "9862f124-1883-4618-a783-ffd188a66d1e",
           isActive: true,
           isRequired: false,
           name: "curtus fugiat audentia",
           order: 3,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-11-27T10:17:11.707Z"),
+          updatedAt: new Date("2024-11-27T19:20:26.401Z"),
         },
       ],
       hasMultipleSubmissions: false,
       hasProgressBar: false,
       hasShuffleQuestions: true,
-      id: "74013215-9591-4fa0-9df9-4d88b82f9a08",
+      id: "077ca80a-39ee-4fec-8aa8-2bb53e9f11cf",
       isActive: false,
       metadata: [],
       name: "tandem tracto vivo Form",
       publishedUrl: "https://massive-blowgun.info",
       responseCount: 423,
-      updatedAt: new Date("2024-08-24T19:27:31.595Z"),
+      updatedAt: new Date("2024-08-25T02:27:57.542Z"),
     },
     connectionId: "<id>",
   });
@@ -224,7 +224,7 @@ run();
 
 ## getFormsForm
 
-Retrieve a form
+Retrieves a single FormsForm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -303,7 +303,7 @@ run();
 
 ## listFormsForms
 
-List all forms
+Returns a list of FormsForms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -380,7 +380,7 @@ run();
 
 ## patchFormsForm
 
-Update a form
+Updates the FormsForm identified by `id`. Provide the unified FormsForm fields to change in the request body.
 
 ### Example Usage
 
@@ -403,24 +403,24 @@ async function run() {
       fields: [
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "55ddfd65-c57f-41fd-ab0e-c4253e7b6b14",
+          id: "449f1453-4bbf-4c51-9254-37858ef92249",
           isActive: true,
           isRequired: true,
           maxLength: 146,
           name: "cornu creta confugo",
           order: 0,
           type: "TEXTAREA",
-          updatedAt: new Date("2025-04-28T16:28:02.609Z"),
+          updatedAt: new Date("2025-04-29T04:48:54.973Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "88f12a8f-2d8f-4db7-9b9d-f3c0d571a478",
+          id: "3c11fe4f-869e-409d-a23a-b3fc87d50ad1",
           isActive: true,
           isRequired: false,
           name: "tracto nostrum desidero",
           order: 1,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-09-02T04:12:07.819Z"),
+          updatedAt: new Date("2024-09-02T11:23:25.169Z"),
         },
         {
           choices: [
@@ -432,36 +432,36 @@ async function run() {
           ],
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           defaultValue: "somniculosus",
-          id: "e2cc4686-d93c-4f5d-9da1-eddb510fbb5d",
+          id: "a9913aa4-67c8-433e-9e1a-f9b3389ea5c2",
           isActive: true,
           isRequired: false,
           name: "officia supra consequatur",
           order: 2,
           type: "MULTIPLE_SELECT",
-          updatedAt: new Date("2024-02-26T08:34:45.977Z"),
+          updatedAt: new Date("2024-02-26T11:40:58.391Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           description: "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-          id: "6de27450-8bd0-4ab3-a530-c7eaf2d87447",
+          id: "95a7d630-6436-4fae-87f5-b9ae7b5bd36a",
           isActive: true,
           isRequired: false,
           name: "curtus fugiat audentia",
           order: 3,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-11-27T10:17:11.716Z"),
+          updatedAt: new Date("2024-11-27T19:20:26.408Z"),
         },
       ],
       hasMultipleSubmissions: false,
       hasProgressBar: false,
       hasShuffleQuestions: true,
-      id: "ce3171d2-b6db-41a9-aad3-2730eaa1c06e",
+      id: "76e855f6-1f9d-4b55-9483-2692ca8cb004",
       isActive: false,
       metadata: [],
       name: "tandem tracto vivo Form",
       publishedUrl: "https://massive-blowgun.info",
       responseCount: 423,
-      updatedAt: new Date("2024-08-24T19:27:31.602Z"),
+      updatedAt: new Date("2024-08-25T02:27:57.548Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -498,24 +498,24 @@ async function run() {
       fields: [
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "55ddfd65-c57f-41fd-ab0e-c4253e7b6b14",
+          id: "449f1453-4bbf-4c51-9254-37858ef92249",
           isActive: true,
           isRequired: true,
           maxLength: 146,
           name: "cornu creta confugo",
           order: 0,
           type: "TEXTAREA",
-          updatedAt: new Date("2025-04-28T16:28:02.609Z"),
+          updatedAt: new Date("2025-04-29T04:48:54.973Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "88f12a8f-2d8f-4db7-9b9d-f3c0d571a478",
+          id: "3c11fe4f-869e-409d-a23a-b3fc87d50ad1",
           isActive: true,
           isRequired: false,
           name: "tracto nostrum desidero",
           order: 1,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-09-02T04:12:07.819Z"),
+          updatedAt: new Date("2024-09-02T11:23:25.169Z"),
         },
         {
           choices: [
@@ -527,36 +527,36 @@ async function run() {
           ],
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           defaultValue: "somniculosus",
-          id: "e2cc4686-d93c-4f5d-9da1-eddb510fbb5d",
+          id: "a9913aa4-67c8-433e-9e1a-f9b3389ea5c2",
           isActive: true,
           isRequired: false,
           name: "officia supra consequatur",
           order: 2,
           type: "MULTIPLE_SELECT",
-          updatedAt: new Date("2024-02-26T08:34:45.977Z"),
+          updatedAt: new Date("2024-02-26T11:40:58.391Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           description: "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-          id: "6de27450-8bd0-4ab3-a530-c7eaf2d87447",
+          id: "95a7d630-6436-4fae-87f5-b9ae7b5bd36a",
           isActive: true,
           isRequired: false,
           name: "curtus fugiat audentia",
           order: 3,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-11-27T10:17:11.716Z"),
+          updatedAt: new Date("2024-11-27T19:20:26.408Z"),
         },
       ],
       hasMultipleSubmissions: false,
       hasProgressBar: false,
       hasShuffleQuestions: true,
-      id: "ce3171d2-b6db-41a9-aad3-2730eaa1c06e",
+      id: "76e855f6-1f9d-4b55-9483-2692ca8cb004",
       isActive: false,
       metadata: [],
       name: "tandem tracto vivo Form",
       publishedUrl: "https://massive-blowgun.info",
       responseCount: 423,
-      updatedAt: new Date("2024-08-24T19:27:31.602Z"),
+      updatedAt: new Date("2024-08-25T02:27:57.548Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -593,7 +593,7 @@ run();
 
 ## removeFormsForm
 
-Remove a form
+Deletes the FormsForm identified by `id`.
 
 ### Example Usage
 
@@ -672,7 +672,7 @@ run();
 
 ## updateFormsForm
 
-Update a form
+Updates the FormsForm identified by `id`. Provide the unified FormsForm fields to change in the request body.
 
 ### Example Usage
 
@@ -695,24 +695,24 @@ async function run() {
       fields: [
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "55ddfd65-c57f-41fd-ab0e-c4253e7b6b14",
+          id: "449f1453-4bbf-4c51-9254-37858ef92249",
           isActive: true,
           isRequired: true,
           maxLength: 146,
           name: "cornu creta confugo",
           order: 0,
           type: "TEXTAREA",
-          updatedAt: new Date("2025-04-28T16:28:02.609Z"),
+          updatedAt: new Date("2025-04-29T04:48:54.973Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "88f12a8f-2d8f-4db7-9b9d-f3c0d571a478",
+          id: "3c11fe4f-869e-409d-a23a-b3fc87d50ad1",
           isActive: true,
           isRequired: false,
           name: "tracto nostrum desidero",
           order: 1,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-09-02T04:12:07.819Z"),
+          updatedAt: new Date("2024-09-02T11:23:25.169Z"),
         },
         {
           choices: [
@@ -724,36 +724,36 @@ async function run() {
           ],
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           defaultValue: "somniculosus",
-          id: "e2cc4686-d93c-4f5d-9da1-eddb510fbb5d",
+          id: "a9913aa4-67c8-433e-9e1a-f9b3389ea5c2",
           isActive: true,
           isRequired: false,
           name: "officia supra consequatur",
           order: 2,
           type: "MULTIPLE_SELECT",
-          updatedAt: new Date("2024-02-26T08:34:45.977Z"),
+          updatedAt: new Date("2024-02-26T11:40:58.391Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           description: "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-          id: "6de27450-8bd0-4ab3-a530-c7eaf2d87447",
+          id: "95a7d630-6436-4fae-87f5-b9ae7b5bd36a",
           isActive: true,
           isRequired: false,
           name: "curtus fugiat audentia",
           order: 3,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-11-27T10:17:11.716Z"),
+          updatedAt: new Date("2024-11-27T19:20:26.408Z"),
         },
       ],
       hasMultipleSubmissions: false,
       hasProgressBar: false,
       hasShuffleQuestions: true,
-      id: "ce3171d2-b6db-41a9-aad3-2730eaa1c06e",
+      id: "76e855f6-1f9d-4b55-9483-2692ca8cb004",
       isActive: false,
       metadata: [],
       name: "tandem tracto vivo Form",
       publishedUrl: "https://massive-blowgun.info",
       responseCount: 423,
-      updatedAt: new Date("2024-08-24T19:27:31.602Z"),
+      updatedAt: new Date("2024-08-25T02:27:57.548Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -790,24 +790,24 @@ async function run() {
       fields: [
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "55ddfd65-c57f-41fd-ab0e-c4253e7b6b14",
+          id: "449f1453-4bbf-4c51-9254-37858ef92249",
           isActive: true,
           isRequired: true,
           maxLength: 146,
           name: "cornu creta confugo",
           order: 0,
           type: "TEXTAREA",
-          updatedAt: new Date("2025-04-28T16:28:02.609Z"),
+          updatedAt: new Date("2025-04-29T04:48:54.973Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
-          id: "88f12a8f-2d8f-4db7-9b9d-f3c0d571a478",
+          id: "3c11fe4f-869e-409d-a23a-b3fc87d50ad1",
           isActive: true,
           isRequired: false,
           name: "tracto nostrum desidero",
           order: 1,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-09-02T04:12:07.819Z"),
+          updatedAt: new Date("2024-09-02T11:23:25.169Z"),
         },
         {
           choices: [
@@ -819,36 +819,36 @@ async function run() {
           ],
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           defaultValue: "somniculosus",
-          id: "e2cc4686-d93c-4f5d-9da1-eddb510fbb5d",
+          id: "a9913aa4-67c8-433e-9e1a-f9b3389ea5c2",
           isActive: true,
           isRequired: false,
           name: "officia supra consequatur",
           order: 2,
           type: "MULTIPLE_SELECT",
-          updatedAt: new Date("2024-02-26T08:34:45.977Z"),
+          updatedAt: new Date("2024-02-26T11:40:58.391Z"),
         },
         {
           createdAt: new Date("2023-10-05T21:34:29.094Z"),
           description: "Antepono cursim aurum voluptatum placeat audax tripudio amo.",
-          id: "6de27450-8bd0-4ab3-a530-c7eaf2d87447",
+          id: "95a7d630-6436-4fae-87f5-b9ae7b5bd36a",
           isActive: true,
           isRequired: false,
           name: "curtus fugiat audentia",
           order: 3,
           type: "TEXTAREA",
-          updatedAt: new Date("2024-11-27T10:17:11.716Z"),
+          updatedAt: new Date("2024-11-27T19:20:26.408Z"),
         },
       ],
       hasMultipleSubmissions: false,
       hasProgressBar: false,
       hasShuffleQuestions: true,
-      id: "ce3171d2-b6db-41a9-aad3-2730eaa1c06e",
+      id: "76e855f6-1f9d-4b55-9483-2692ca8cb004",
       isActive: false,
       metadata: [],
       name: "tandem tracto vivo Form",
       publishedUrl: "https://massive-blowgun.info",
       responseCount: 423,
-      updatedAt: new Date("2024-08-24T19:27:31.602Z"),
+      updatedAt: new Date("2024-08-25T02:27:57.548Z"),
     },
     connectionId: "<id>",
     id: "<id>",

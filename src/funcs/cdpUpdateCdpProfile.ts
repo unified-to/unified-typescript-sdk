@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a profile
+ *
+ * @remarks
+ * Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
  */
 export function cdpUpdateCdpProfile(
   client: UnifiedToCore,

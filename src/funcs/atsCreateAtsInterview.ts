@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an interview
+ *
+ * @remarks
+ * Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
  */
 export function atsCreateAtsInterview(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a student
+ *
+ * @remarks
+ * Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
  */
 export function lmsUpdateLmsStudent(
   client: UnifiedToCore,

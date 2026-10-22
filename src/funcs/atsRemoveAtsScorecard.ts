@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a scorecard
+ *
+ * @remarks
+ * Deletes the AtsScorecard identified by `id`.
  */
 export function atsRemoveAtsScorecard(
   client: UnifiedToCore,

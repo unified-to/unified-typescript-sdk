@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Course extends ClientSDK {
   /**
    * Create a course
+   *
+   * @remarks
+   * Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
    */
   async createLmsCourse(
     request: operations.CreateLmsCourseRequest,
@@ -30,6 +33,9 @@ export class Course extends ClientSDK {
 
   /**
    * Retrieve a course
+   *
+   * @remarks
+   * Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsCourse(
     request: operations.GetLmsCourseRequest,
@@ -44,6 +50,9 @@ export class Course extends ClientSDK {
 
   /**
    * List all courses
+   *
+   * @remarks
+   * Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsCourses(
     request: operations.ListLmsCoursesRequest,
@@ -58,6 +67,9 @@ export class Course extends ClientSDK {
 
   /**
    * Update a course
+   *
+   * @remarks
+   * Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
    */
   async patchLmsCourse(
     request: operations.PatchLmsCourseRequest,
@@ -72,6 +84,9 @@ export class Course extends ClientSDK {
 
   /**
    * Remove a course
+   *
+   * @remarks
+   * Deletes the LmsCourse identified by `id`.
    */
   async removeLmsCourse(
     request: operations.RemoveLmsCourseRequest,
@@ -86,6 +101,9 @@ export class Course extends ClientSDK {
 
   /**
    * Update a course
+   *
+   * @remarks
+   * Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
    */
   async updateLmsCourse(
     request: operations.UpdateLmsCourseRequest,

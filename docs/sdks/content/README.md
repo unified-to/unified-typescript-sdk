@@ -13,7 +13,7 @@
 
 ## createLmsContent
 
-Create a content
+Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
 
 ### Example Usage
 
@@ -37,7 +37,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "8b31b9b6-afd5-4677-8bb3-01cc19d15267",
+      id: "326a2add-4814-475e-b630-4fb2fbe2d9d4",
       instructors: [],
       isActive: true,
       languages: [
@@ -97,7 +97,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.933Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.936Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -112,7 +112,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.533Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.108Z"),
     },
     connectionId: "<id>",
   });
@@ -149,7 +149,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "8b31b9b6-afd5-4677-8bb3-01cc19d15267",
+      id: "326a2add-4814-475e-b630-4fb2fbe2d9d4",
       instructors: [],
       isActive: true,
       languages: [
@@ -209,7 +209,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.933Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.936Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -224,7 +224,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.533Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.108Z"),
     },
     connectionId: "<id>",
   });
@@ -260,7 +260,7 @@ run();
 
 ## getLmsContent
 
-Retrieve a content
+Retrieves a single LmsContent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -339,7 +339,7 @@ run();
 
 ## listLmsContents
 
-List all contents
+Returns a list of LmsContents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -416,7 +416,7 @@ run();
 
 ## patchLmsContent
 
-Update a content
+Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
 
 ### Example Usage
 
@@ -440,7 +440,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "1a6f7006-921c-4ad1-8690-0bd249ebdf8a",
+      id: "39a76e92-10ec-4d98-836f-6dc457118afc",
       instructors: [],
       isActive: true,
       languages: [
@@ -500,7 +500,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.946Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.944Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -515,7 +515,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.546Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.116Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -553,7 +553,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "1a6f7006-921c-4ad1-8690-0bd249ebdf8a",
+      id: "39a76e92-10ec-4d98-836f-6dc457118afc",
       instructors: [],
       isActive: true,
       languages: [
@@ -613,7 +613,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.946Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.944Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -628,7 +628,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.546Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.116Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -665,7 +665,7 @@ run();
 
 ## removeLmsContent
 
-Remove a content
+Deletes the LmsContent identified by `id`.
 
 ### Example Usage
 
@@ -744,7 +744,7 @@ run();
 
 ## updateLmsContent
 
-Update a content
+Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
 
 ### Example Usage
 
@@ -768,7 +768,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "1a6f7006-921c-4ad1-8690-0bd249ebdf8a",
+      id: "39a76e92-10ec-4d98-836f-6dc457118afc",
       instructors: [],
       isActive: true,
       languages: [
@@ -828,7 +828,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.946Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.944Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -843,7 +843,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.546Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.116Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -881,7 +881,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "1a6f7006-921c-4ad1-8690-0bd249ebdf8a",
+      id: "39a76e92-10ec-4d98-836f-6dc457118afc",
       instructors: [],
       isActive: true,
       languages: [
@@ -941,7 +941,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.946Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.944Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -956,7 +956,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.546Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.116Z"),
     },
     connectionId: "<id>",
     id: "<id>",

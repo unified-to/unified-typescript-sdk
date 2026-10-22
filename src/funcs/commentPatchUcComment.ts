@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a comment
+ *
+ * @remarks
+ * Updates the UcComment identified by `id`. Provide the unified UcComment fields to change in the request body.
  */
 export function commentPatchUcComment(
   client: UnifiedToCore,

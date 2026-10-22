@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Expensereport extends ClientSDK {
   /**
    * Create an expensereport
+   *
+   * @remarks
+   * Creates a AccountingExpensereport. Provide the unified AccountingExpensereport fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpensereport.
    */
   async createAccountingExpensereport(
     request: operations.CreateAccountingExpensereportRequest,
@@ -30,6 +33,9 @@ export class Expensereport extends ClientSDK {
 
   /**
    * Retrieve an expensereport
+   *
+   * @remarks
+   * Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingExpensereport(
     request: operations.GetAccountingExpensereportRequest,
@@ -44,6 +50,9 @@ export class Expensereport extends ClientSDK {
 
   /**
    * List all expensereports
+   *
+   * @remarks
+   * Returns a list of AccountingExpensereports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingExpensereports(
     request: operations.ListAccountingExpensereportsRequest,
@@ -58,6 +67,9 @@ export class Expensereport extends ClientSDK {
 
   /**
    * Update an expensereport
+   *
+   * @remarks
+   * Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
    */
   async patchAccountingExpensereport(
     request: operations.PatchAccountingExpensereportRequest,
@@ -72,6 +84,9 @@ export class Expensereport extends ClientSDK {
 
   /**
    * Remove an expensereport
+   *
+   * @remarks
+   * Deletes the AccountingExpensereport identified by `id`.
    */
   async removeAccountingExpensereport(
     request: operations.RemoveAccountingExpensereportRequest,
@@ -86,6 +101,9 @@ export class Expensereport extends ClientSDK {
 
   /**
    * Update an expensereport
+   *
+   * @remarks
+   * Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
    */
   async updateAccountingExpensereport(
     request: operations.UpdateAccountingExpensereportRequest,

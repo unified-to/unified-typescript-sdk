@@ -33,7 +33,7 @@
 
 ## createGenaiTask
 
-Create a task
+Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
 
 ### Example Usage
 
@@ -50,10 +50,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.task.createGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.491Z"),
+      completedAt: new Date("2025-10-02T02:56:27.080Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "fc2c6dad-a331-4471-b707-e6be100c7f19",
+      id: "ad66429e-c368-4e40-90e4-a7054187ea51",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -68,12 +68,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.479Z"),
+      startedAt: new Date("2024-05-22T01:09:56.171Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.019Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.123Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -104,10 +104,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiCreateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.491Z"),
+      completedAt: new Date("2025-10-02T02:56:27.080Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "fc2c6dad-a331-4471-b707-e6be100c7f19",
+      id: "ad66429e-c368-4e40-90e4-a7054187ea51",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -122,12 +122,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.479Z"),
+      startedAt: new Date("2024-05-22T01:09:56.171Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.019Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.123Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -164,7 +164,7 @@ run();
 
 ## createTaskComment
 
-Create a comment
+Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
 
 ### Example Usage
 
@@ -183,10 +183,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "043e5d0b-a5a7-4407-8551-48d1def552e5",
+      id: "003d0864-d469-44d4-af50-4c193acfa9aa",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.205Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.818Z"),
     },
     connectionId: "<id>",
   });
@@ -218,10 +218,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "043e5d0b-a5a7-4407-8551-48d1def552e5",
+      id: "003d0864-d469-44d4-af50-4c193acfa9aa",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.205Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.818Z"),
     },
     connectionId: "<id>",
   });
@@ -257,7 +257,7 @@ run();
 
 ## createTaskProject
 
-Create a project
+Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
 
 ### Example Usage
 
@@ -278,14 +278,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "5dad43cf-fc54-4c01-8a6c-a8969643e3e6",
+      id: "39233abe-8dbc-4c77-b0fe-3935457d3afc",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "786f9c03-2e0a-447e-afd7-cf056ee00349",
+          id: "735a1713-4149-41e1-9911-71f7a8edd370",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -295,14 +295,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "ddba8b0b-da67-4bd3-9425-3f3fbdb1ee7f",
+          id: "ce2e6cdb-deb7-4042-8f4e-fcf24256b591",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.360Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.383Z"),
     },
     connectionId: "<id>",
   });
@@ -336,14 +336,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "5dad43cf-fc54-4c01-8a6c-a8969643e3e6",
+      id: "39233abe-8dbc-4c77-b0fe-3935457d3afc",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "786f9c03-2e0a-447e-afd7-cf056ee00349",
+          id: "735a1713-4149-41e1-9911-71f7a8edd370",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -353,14 +353,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "ddba8b0b-da67-4bd3-9425-3f3fbdb1ee7f",
+          id: "ce2e6cdb-deb7-4042-8f4e-fcf24256b591",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.360Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.383Z"),
     },
     connectionId: "<id>",
   });
@@ -396,7 +396,7 @@ run();
 
 ## createTaskTask
 
-Create a task
+Creates a TaskTask. Provide the unified TaskTask fields in the request body; they are mapped to the provider's API. Returns the created TaskTask.
 
 ### Example Usage
 
@@ -415,15 +415,15 @@ async function run() {
     taskTask: {
       attachmentIds: [],
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2025-09-11T18:36:14.114Z"),
+      dueAt: new Date("2025-09-12T14:57:09.789Z"),
       hasChildren: true,
-      id: "d60e21b0-8ec7-4316-a6b3-52161df3c07d",
+      id: "41faa63d-4433-4bdb-ad06-9b63b456862d",
       metadata: [],
       name: "I'll compress the optical IB interface, that should capacitor the JBOD system!",
       notes: "Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.",
       priority: "MEDIUM",
       progress: 33,
-      startAt: new Date("2025-08-14T08:44:45.152Z"),
+      startAt: new Date("2025-08-15T05:05:40.827Z"),
       status: "OPENED",
       storyPoints: 0,
       tags: [
@@ -433,7 +433,7 @@ async function run() {
       timeSpent: 5359,
       timeSpentUnit: "SECONDS",
       type: "magni",
-      updatedAt: new Date("2022-04-07T02:25:48.676Z"),
+      updatedAt: new Date("2022-04-07T12:20:01.828Z"),
       url: "https://elementary-utilization.net/",
     },
     connectionId: "<id>",
@@ -466,15 +466,15 @@ async function run() {
     taskTask: {
       attachmentIds: [],
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2025-09-11T18:36:14.114Z"),
+      dueAt: new Date("2025-09-12T14:57:09.789Z"),
       hasChildren: true,
-      id: "d60e21b0-8ec7-4316-a6b3-52161df3c07d",
+      id: "41faa63d-4433-4bdb-ad06-9b63b456862d",
       metadata: [],
       name: "I'll compress the optical IB interface, that should capacitor the JBOD system!",
       notes: "Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.",
       priority: "MEDIUM",
       progress: 33,
-      startAt: new Date("2025-08-14T08:44:45.152Z"),
+      startAt: new Date("2025-08-15T05:05:40.827Z"),
       status: "OPENED",
       storyPoints: 0,
       tags: [
@@ -484,7 +484,7 @@ async function run() {
       timeSpent: 5359,
       timeSpentUnit: "SECONDS",
       type: "magni",
-      updatedAt: new Date("2022-04-07T02:25:48.676Z"),
+      updatedAt: new Date("2022-04-07T12:20:01.828Z"),
       url: "https://elementary-utilization.net/",
     },
     connectionId: "<id>",
@@ -521,7 +521,7 @@ run();
 
 ## getGenaiTask
 
-Retrieve a task
+Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -600,7 +600,7 @@ run();
 
 ## getTaskChange
 
-Retrieve a change
+Retrieves a single TaskChange by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -679,7 +679,7 @@ run();
 
 ## getTaskComment
 
-Retrieve a comment
+Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -758,7 +758,7 @@ run();
 
 ## getTaskProject
 
-Retrieve a project
+Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -837,7 +837,7 @@ run();
 
 ## getTaskTask
 
-Retrieve a task
+Retrieves a single TaskTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -916,7 +916,7 @@ run();
 
 ## listGenaiTasks
 
-List all tasks
+Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -993,7 +993,7 @@ run();
 
 ## listTaskChanges
 
-List all changes
+Returns a list of TaskChanges. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1070,7 +1070,7 @@ run();
 
 ## listTaskComments
 
-List all comments
+Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1147,7 +1147,7 @@ run();
 
 ## listTaskProjects
 
-List all projects
+Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1224,7 +1224,7 @@ run();
 
 ## listTaskTasks
 
-List all tasks
+Returns a list of TaskTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1301,7 +1301,7 @@ run();
 
 ## patchGenaiTask
 
-Update a task
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
 
 ### Example Usage
 
@@ -1318,10 +1318,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.task.patchGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.524Z"),
+      completedAt: new Date("2025-10-02T02:56:27.090Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "75af7f27-40ea-437d-b9e4-15c13a30fdb3",
+      id: "631c9b1c-859d-48fd-b399-b29770d739c3",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -1336,12 +1336,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.503Z"),
+      startedAt: new Date("2024-05-22T01:09:56.179Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.035Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.128Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -1373,10 +1373,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiPatchGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.524Z"),
+      completedAt: new Date("2025-10-02T02:56:27.090Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "75af7f27-40ea-437d-b9e4-15c13a30fdb3",
+      id: "631c9b1c-859d-48fd-b399-b29770d739c3",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -1391,12 +1391,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.503Z"),
+      startedAt: new Date("2024-05-22T01:09:56.179Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.035Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.128Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -1434,7 +1434,7 @@ run();
 
 ## patchTaskComment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -1453,10 +1453,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1b65ff5b-8104-416e-bb7b-b0b09457161e",
+      id: "83290ea9-5b6f-4ea3-82fa-162b720fdf71",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.209Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1489,10 +1489,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1b65ff5b-8104-416e-bb7b-b0b09457161e",
+      id: "83290ea9-5b6f-4ea3-82fa-162b720fdf71",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.209Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1529,7 +1529,7 @@ run();
 
 ## patchTaskProject
 
-Update a project
+Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
 
 ### Example Usage
 
@@ -1550,14 +1550,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "80767758-9c50-412b-b690-5063dd8415ca",
+      id: "421912ec-bb5d-4252-847d-0a7d08925cbd",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "6e55ac49-2389-4b90-b3ac-fd2e86487962",
+          id: "1e49efa8-d5f6-445c-977b-1412a3a3de22",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1567,14 +1567,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "d1370b01-4633-452c-a15b-9501501177f3",
+          id: "b4b619fc-64fe-4231-ae22-47c2e4d98523",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.362Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1609,14 +1609,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "80767758-9c50-412b-b690-5063dd8415ca",
+      id: "421912ec-bb5d-4252-847d-0a7d08925cbd",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "6e55ac49-2389-4b90-b3ac-fd2e86487962",
+          id: "1e49efa8-d5f6-445c-977b-1412a3a3de22",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -1626,14 +1626,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "d1370b01-4633-452c-a15b-9501501177f3",
+          id: "b4b619fc-64fe-4231-ae22-47c2e4d98523",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.362Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1670,7 +1670,7 @@ run();
 
 ## patchTaskTask
 
-Update a task
+Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
 
 ### Example Usage
 
@@ -1689,15 +1689,15 @@ async function run() {
     taskTask: {
       attachmentIds: [],
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2025-09-11T18:36:14.137Z"),
+      dueAt: new Date("2025-09-12T14:57:09.802Z"),
       hasChildren: true,
-      id: "dc7af5db-34c7-445c-855c-1134b41b92a7",
+      id: "5ae7d1f9-6e93-408e-8f2b-baf5ba0a9699",
       metadata: [],
       name: "I'll compress the optical IB interface, that should capacitor the JBOD system!",
       notes: "Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.",
       priority: "MEDIUM",
       progress: 33,
-      startAt: new Date("2025-08-14T08:44:45.175Z"),
+      startAt: new Date("2025-08-15T05:05:40.840Z"),
       status: "OPENED",
       storyPoints: 0,
       tags: [
@@ -1707,7 +1707,7 @@ async function run() {
       timeSpent: 5359,
       timeSpentUnit: "SECONDS",
       type: "magni",
-      updatedAt: new Date("2022-04-07T02:25:48.687Z"),
+      updatedAt: new Date("2022-04-07T12:20:01.834Z"),
       url: "https://elementary-utilization.net/",
     },
     connectionId: "<id>",
@@ -1741,15 +1741,15 @@ async function run() {
     taskTask: {
       attachmentIds: [],
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2025-09-11T18:36:14.137Z"),
+      dueAt: new Date("2025-09-12T14:57:09.802Z"),
       hasChildren: true,
-      id: "dc7af5db-34c7-445c-855c-1134b41b92a7",
+      id: "5ae7d1f9-6e93-408e-8f2b-baf5ba0a9699",
       metadata: [],
       name: "I'll compress the optical IB interface, that should capacitor the JBOD system!",
       notes: "Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.",
       priority: "MEDIUM",
       progress: 33,
-      startAt: new Date("2025-08-14T08:44:45.175Z"),
+      startAt: new Date("2025-08-15T05:05:40.840Z"),
       status: "OPENED",
       storyPoints: 0,
       tags: [
@@ -1759,7 +1759,7 @@ async function run() {
       timeSpent: 5359,
       timeSpentUnit: "SECONDS",
       type: "magni",
-      updatedAt: new Date("2022-04-07T02:25:48.687Z"),
+      updatedAt: new Date("2022-04-07T12:20:01.834Z"),
       url: "https://elementary-utilization.net/",
     },
     connectionId: "<id>",
@@ -1797,7 +1797,7 @@ run();
 
 ## removeGenaiTask
 
-Remove a task
+Deletes the GenaiTask identified by `id`.
 
 ### Example Usage
 
@@ -1876,7 +1876,7 @@ run();
 
 ## removeTaskComment
 
-Remove a comment
+Deletes the TaskComment identified by `id`.
 
 ### Example Usage
 
@@ -1955,7 +1955,7 @@ run();
 
 ## removeTaskProject
 
-Remove a project
+Deletes the TaskProject identified by `id`.
 
 ### Example Usage
 
@@ -2034,7 +2034,7 @@ run();
 
 ## removeTaskTask
 
-Remove a task
+Deletes the TaskTask identified by `id`.
 
 ### Example Usage
 
@@ -2113,7 +2113,7 @@ run();
 
 ## updateGenaiTask
 
-Update a task
+Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
 
 ### Example Usage
 
@@ -2130,10 +2130,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.task.updateGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.524Z"),
+      completedAt: new Date("2025-10-02T02:56:27.090Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "75af7f27-40ea-437d-b9e4-15c13a30fdb3",
+      id: "631c9b1c-859d-48fd-b399-b29770d739c3",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2148,12 +2148,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.503Z"),
+      startedAt: new Date("2024-05-22T01:09:56.179Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.035Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.128Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -2185,10 +2185,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiUpdateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-01T07:08:01.524Z"),
+      completedAt: new Date("2025-10-02T02:56:27.090Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "75af7f27-40ea-437d-b9e4-15c13a30fdb3",
+      id: "631c9b1c-859d-48fd-b399-b29770d739c3",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2203,12 +2203,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-21T10:49:56.503Z"),
+      startedAt: new Date("2024-05-22T01:09:56.179Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-02-26T07:28:18.035Z"),
+      updatedAt: new Date("2023-02-26T16:51:20.128Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -2246,7 +2246,7 @@ run();
 
 ## updateTaskComment
 
-Update a comment
+Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
 
 ### Example Usage
 
@@ -2265,10 +2265,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1b65ff5b-8104-416e-bb7b-b0b09457161e",
+      id: "83290ea9-5b6f-4ea3-82fa-162b720fdf71",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.209Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2301,10 +2301,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1b65ff5b-8104-416e-bb7b-b0b09457161e",
+      id: "83290ea9-5b6f-4ea3-82fa-162b720fdf71",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-03T08:09:02.209Z"),
+      updatedAt: new Date("2021-10-03T14:54:40.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2341,7 +2341,7 @@ run();
 
 ## updateTaskProject
 
-Update a project
+Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
 
 ### Example Usage
 
@@ -2362,14 +2362,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "80767758-9c50-412b-b690-5063dd8415ca",
+      id: "421912ec-bb5d-4252-847d-0a7d08925cbd",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "6e55ac49-2389-4b90-b3ac-fd2e86487962",
+          id: "1e49efa8-d5f6-445c-977b-1412a3a3de22",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -2379,14 +2379,14 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "d1370b01-4633-452c-a15b-9501501177f3",
+          id: "b4b619fc-64fe-4231-ae22-47c2e4d98523",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.362Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2421,14 +2421,14 @@ async function run() {
       description: "Valetudo aggredior accommodo curiositas vox.",
       hasChildren: false,
       hasTasks: false,
-      id: "80767758-9c50-412b-b690-5063dd8415ca",
+      id: "421912ec-bb5d-4252-847d-0a7d08925cbd",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "6e55ac49-2389-4b90-b3ac-fd2e86487962",
+          id: "1e49efa8-d5f6-445c-977b-1412a3a3de22",
           namespace: "custom",
           slug: "decens",
           value: "uterque",
@@ -2438,14 +2438,14 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "d1370b01-4633-452c-a15b-9501501177f3",
+          id: "b4b619fc-64fe-4231-ae22-47c2e4d98523",
           namespace: "custom",
           slug: "benevolentia",
           value: "pariatur",
         },
       ],
       name: "Garden",
-      updatedAt: new Date("2023-10-11T14:33:35.362Z"),
+      updatedAt: new Date("2023-10-11T16:44:01.384Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2482,7 +2482,7 @@ run();
 
 ## updateTaskTask
 
-Update a task
+Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
 
 ### Example Usage
 
@@ -2501,15 +2501,15 @@ async function run() {
     taskTask: {
       attachmentIds: [],
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2025-09-11T18:36:14.137Z"),
+      dueAt: new Date("2025-09-12T14:57:09.802Z"),
       hasChildren: true,
-      id: "dc7af5db-34c7-445c-855c-1134b41b92a7",
+      id: "5ae7d1f9-6e93-408e-8f2b-baf5ba0a9699",
       metadata: [],
       name: "I'll compress the optical IB interface, that should capacitor the JBOD system!",
       notes: "Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.",
       priority: "MEDIUM",
       progress: 33,
-      startAt: new Date("2025-08-14T08:44:45.175Z"),
+      startAt: new Date("2025-08-15T05:05:40.840Z"),
       status: "OPENED",
       storyPoints: 0,
       tags: [
@@ -2519,7 +2519,7 @@ async function run() {
       timeSpent: 5359,
       timeSpentUnit: "SECONDS",
       type: "magni",
-      updatedAt: new Date("2022-04-07T02:25:48.687Z"),
+      updatedAt: new Date("2022-04-07T12:20:01.834Z"),
       url: "https://elementary-utilization.net/",
     },
     connectionId: "<id>",
@@ -2553,15 +2553,15 @@ async function run() {
     taskTask: {
       attachmentIds: [],
       createdAt: new Date("2019-01-31T08:34:55.626Z"),
-      dueAt: new Date("2025-09-11T18:36:14.137Z"),
+      dueAt: new Date("2025-09-12T14:57:09.802Z"),
       hasChildren: true,
-      id: "dc7af5db-34c7-445c-855c-1134b41b92a7",
+      id: "5ae7d1f9-6e93-408e-8f2b-baf5ba0a9699",
       metadata: [],
       name: "I'll compress the optical IB interface, that should capacitor the JBOD system!",
       notes: "Argentum ventosus rem talis neque thymbra. Absconditus peccatus crustulum tollo cometes volva vacuus eos cedo. Somnus utpote coadunatio denuncio adopto autus sono atrocitas. Concido rerum cura aveho torqueo tempore tubineus vomer tempore suscipit. Clibanus valetudo vulnero pauper caput absorbeo correptius vir deduco.",
       priority: "MEDIUM",
       progress: 33,
-      startAt: new Date("2025-08-14T08:44:45.175Z"),
+      startAt: new Date("2025-08-15T05:05:40.840Z"),
       status: "OPENED",
       storyPoints: 0,
       tags: [
@@ -2571,7 +2571,7 @@ async function run() {
       timeSpent: 5359,
       timeSpentUnit: "SECONDS",
       type: "magni",
-      updatedAt: new Date("2022-04-07T02:25:48.687Z"),
+      updatedAt: new Date("2022-04-07T12:20:01.834Z"),
       url: "https://elementary-utilization.net/",
     },
     connectionId: "<id>",

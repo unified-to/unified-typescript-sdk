@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a location
+ *
+ * @remarks
+ * Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
  */
 export function locationCreateHrisLocation(
   client: UnifiedToCore,

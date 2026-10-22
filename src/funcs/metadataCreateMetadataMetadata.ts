@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a metadata
+ *
+ * @remarks
+ * Creates a MetadataMetadata. Provide the unified MetadataMetadata fields in the request body; they are mapped to the provider's API. Returns the created MetadataMetadata.
  */
 export function metadataCreateMetadataMetadata(
   client: UnifiedToCore,

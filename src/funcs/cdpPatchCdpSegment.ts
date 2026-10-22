@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a segment
+ *
+ * @remarks
+ * Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
  */
 export function cdpPatchCdpSegment(
   client: UnifiedToCore,

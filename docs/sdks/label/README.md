@@ -13,7 +13,7 @@
 
 ## createShippingLabel
 
-Create a label
+Creates a ShippingLabel. Provide the unified ShippingLabel fields in the request body; they are mapped to the provider's API. Returns the created ShippingLabel.
 
 ### Example Usage
 
@@ -31,17 +31,17 @@ async function run() {
   const result = await unifiedTo.label.createShippingLabel({
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "d880b2ff-2d39-4854-876a-84d546c13571",
+      id: "62d6e737-8768-424f-8371-42a87e43566e",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/d880b2ff-2d39-4854-876a-84d546c13571.pdf",
+      labelUrl: "https://labels.example.com/62d6e737-8768-424f-8371-42a87e43566e.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.636Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.423Z"),
     },
     connectionId: "<id>",
   });
@@ -72,17 +72,17 @@ async function run() {
   const res = await shippingCreateShippingLabel(unifiedTo, {
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "d880b2ff-2d39-4854-876a-84d546c13571",
+      id: "62d6e737-8768-424f-8371-42a87e43566e",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/d880b2ff-2d39-4854-876a-84d546c13571.pdf",
+      labelUrl: "https://labels.example.com/62d6e737-8768-424f-8371-42a87e43566e.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.636Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.423Z"),
     },
     connectionId: "<id>",
   });
@@ -118,7 +118,7 @@ run();
 
 ## getShippingLabel
 
-Retrieve a label
+Retrieves a single ShippingLabel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -197,7 +197,7 @@ run();
 
 ## listShippingLabels
 
-List all labels
+Returns a list of ShippingLabels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -274,7 +274,7 @@ run();
 
 ## patchShippingLabel
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -292,17 +292,17 @@ async function run() {
   const result = await unifiedTo.label.patchShippingLabel({
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "65b24979-4e20-49bd-8733-ff515d56e08d",
+      id: "6ea31591-2439-4e3e-a205-684e5c207d80",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/65b24979-4e20-49bd-8733-ff515d56e08d.pdf",
+      labelUrl: "https://labels.example.com/6ea31591-2439-4e3e-a205-684e5c207d80.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.641Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.428Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -334,17 +334,17 @@ async function run() {
   const res = await shippingPatchShippingLabel(unifiedTo, {
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "65b24979-4e20-49bd-8733-ff515d56e08d",
+      id: "6ea31591-2439-4e3e-a205-684e5c207d80",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/65b24979-4e20-49bd-8733-ff515d56e08d.pdf",
+      labelUrl: "https://labels.example.com/6ea31591-2439-4e3e-a205-684e5c207d80.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.641Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.428Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -381,7 +381,7 @@ run();
 
 ## removeShippingLabel
 
-Remove a label
+Deletes the ShippingLabel identified by `id`.
 
 ### Example Usage
 
@@ -460,7 +460,7 @@ run();
 
 ## updateShippingLabel
 
-Update a label
+Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
 
 ### Example Usage
 
@@ -478,17 +478,17 @@ async function run() {
   const result = await unifiedTo.label.updateShippingLabel({
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "65b24979-4e20-49bd-8733-ff515d56e08d",
+      id: "6ea31591-2439-4e3e-a205-684e5c207d80",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/65b24979-4e20-49bd-8733-ff515d56e08d.pdf",
+      labelUrl: "https://labels.example.com/6ea31591-2439-4e3e-a205-684e5c207d80.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.641Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.428Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -520,17 +520,17 @@ async function run() {
   const res = await shippingUpdateShippingLabel(unifiedTo, {
     shippingLabel: {
       createdAt: new Date("2022-11-18T16:45:38.067Z"),
-      id: "65b24979-4e20-49bd-8733-ff515d56e08d",
+      id: "6ea31591-2439-4e3e-a205-684e5c207d80",
       isVoided: false,
       labelCost: 40.83653403213248,
       labelCostCurrency: "USD",
       labelFormat: "PNG",
-      labelUrl: "https://labels.example.com/65b24979-4e20-49bd-8733-ff515d56e08d.pdf",
+      labelUrl: "https://labels.example.com/6ea31591-2439-4e3e-a205-684e5c207d80.pdf",
       metadata: [],
       serviceCode: "Dzy",
       status: "EXCEPTION",
       trackingNumber: "ZYV60FOIBUJ6",
-      updatedAt: new Date("2024-04-28T22:06:12.641Z"),
+      updatedAt: new Date("2024-04-29T06:57:04.428Z"),
     },
     connectionId: "<id>",
     id: "<id>",

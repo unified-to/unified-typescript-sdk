@@ -1,5 +1,7 @@
 # AtsDocumentType
 
+The kind of document
+
 ## Example Usage
 
 ```typescript

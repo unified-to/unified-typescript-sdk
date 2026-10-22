@@ -67,6 +67,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Compute extends ClientSDK {
   /**
    * Create a deployment
+   *
+   * @remarks
+   * Creates a ComputeDeployment. Provide the unified ComputeDeployment fields in the request body; they are mapped to the provider's API. Returns the created ComputeDeployment.
    */
   async createComputeDeployment(
     request: operations.CreateComputeDeploymentRequest,
@@ -81,6 +84,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Create a domain
+   *
+   * @remarks
+   * Creates a ComputeDomain. Provide the unified ComputeDomain fields in the request body; they are mapped to the provider's API. Returns the created ComputeDomain.
    */
   async createComputeDomain(
     request: operations.CreateComputeDomainRequest,
@@ -95,6 +101,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Create an envvar
+   *
+   * @remarks
+   * Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
    */
   async createComputeEnvvar(
     request: operations.CreateComputeEnvvarRequest,
@@ -109,6 +118,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Create an instance
+   *
+   * @remarks
+   * Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
    */
   async createComputeInstance(
     request: operations.CreateComputeInstanceRequest,
@@ -123,6 +135,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Create a key
+   *
+   * @remarks
+   * Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
    */
   async createComputeKey(
     request: operations.CreateComputeKeyRequest,
@@ -137,6 +152,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Create a service
+   *
+   * @remarks
+   * Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
    */
   async createComputeService(
     request: operations.CreateComputeServiceRequest,
@@ -151,6 +169,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Create a snapshot
+   *
+   * @remarks
+   * Creates a ComputeSnapshot. Provide the unified ComputeSnapshot fields in the request body; they are mapped to the provider's API. Returns the created ComputeSnapshot.
    */
   async createComputeSnapshot(
     request: operations.CreateComputeSnapshotRequest,
@@ -165,6 +186,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Create a template
+   *
+   * @remarks
+   * Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
    */
   async createComputeTemplate(
     request: operations.CreateComputeTemplateRequest,
@@ -179,6 +203,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Create a volume
+   *
+   * @remarks
+   * Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
    */
   async createComputeVolume(
     request: operations.CreateComputeVolumeRequest,
@@ -193,6 +220,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a deployment
+   *
+   * @remarks
+   * Retrieves a single ComputeDeployment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeDeployment(
     request: operations.GetComputeDeploymentRequest,
@@ -207,6 +237,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a domain
+   *
+   * @remarks
+   * Retrieves a single ComputeDomain by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeDomain(
     request: operations.GetComputeDomainRequest,
@@ -221,6 +254,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve an envvar
+   *
+   * @remarks
+   * Retrieves a single ComputeEnvvar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeEnvvar(
     request: operations.GetComputeEnvvarRequest,
@@ -235,6 +271,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a gputype
+   *
+   * @remarks
+   * Retrieves a single ComputeGputype by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeGputype(
     request: operations.GetComputeGputypeRequest,
@@ -249,6 +288,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve an instance
+   *
+   * @remarks
+   * Retrieves a single ComputeInstance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeInstance(
     request: operations.GetComputeInstanceRequest,
@@ -263,6 +305,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a key
+   *
+   * @remarks
+   * Retrieves a single ComputeKey by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeKey(
     request: operations.GetComputeKeyRequest,
@@ -277,6 +322,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a region
+   *
+   * @remarks
+   * Retrieves a single ComputeRegion by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeRegion(
     request: operations.GetComputeRegionRequest,
@@ -291,6 +339,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a service
+   *
+   * @remarks
+   * Retrieves a single ComputeService by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeService(
     request: operations.GetComputeServiceRequest,
@@ -305,6 +356,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a snapshot
+   *
+   * @remarks
+   * Retrieves a single ComputeSnapshot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeSnapshot(
     request: operations.GetComputeSnapshotRequest,
@@ -319,6 +373,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a template
+   *
+   * @remarks
+   * Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeTemplate(
     request: operations.GetComputeTemplateRequest,
@@ -333,6 +390,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Retrieve a volume
+   *
+   * @remarks
+   * Retrieves a single ComputeVolume by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getComputeVolume(
     request: operations.GetComputeVolumeRequest,
@@ -347,6 +407,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all deployments
+   *
+   * @remarks
+   * Returns a list of ComputeDeployments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeDeployments(
     request: operations.ListComputeDeploymentsRequest,
@@ -361,6 +424,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all domains
+   *
+   * @remarks
+   * Returns a list of ComputeDomains. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeDomains(
     request: operations.ListComputeDomainsRequest,
@@ -375,6 +441,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all envvars
+   *
+   * @remarks
+   * Returns a list of ComputeEnvvars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeEnvvars(
     request: operations.ListComputeEnvvarsRequest,
@@ -389,6 +458,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all gputypes
+   *
+   * @remarks
+   * Returns a list of ComputeGputypes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeGputypes(
     request: operations.ListComputeGputypesRequest,
@@ -403,6 +475,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all instances
+   *
+   * @remarks
+   * Returns a list of ComputeInstances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeInstances(
     request: operations.ListComputeInstancesRequest,
@@ -417,6 +492,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all keys
+   *
+   * @remarks
+   * Returns a list of ComputeKeys. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeKeys(
     request: operations.ListComputeKeysRequest,
@@ -431,6 +509,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all regions
+   *
+   * @remarks
+   * Returns a list of ComputeRegions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeRegions(
     request: operations.ListComputeRegionsRequest,
@@ -445,6 +526,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all services
+   *
+   * @remarks
+   * Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeServices(
     request: operations.ListComputeServicesRequest,
@@ -459,6 +543,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all snapshots
+   *
+   * @remarks
+   * Returns a list of ComputeSnapshots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeSnapshots(
     request: operations.ListComputeSnapshotsRequest,
@@ -473,6 +560,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all templates
+   *
+   * @remarks
+   * Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeTemplates(
     request: operations.ListComputeTemplatesRequest,
@@ -487,6 +577,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all usages
+   *
+   * @remarks
+   * Returns a list of ComputeUsages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeUsages(
     request: operations.ListComputeUsagesRequest,
@@ -501,6 +594,9 @@ export class Compute extends ClientSDK {
 
   /**
    * List all volumes
+   *
+   * @remarks
+   * Returns a list of ComputeVolumes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listComputeVolumes(
     request: operations.ListComputeVolumesRequest,
@@ -515,6 +611,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a deployment
+   *
+   * @remarks
+   * Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
    */
   async patchComputeDeployment(
     request: operations.PatchComputeDeploymentRequest,
@@ -529,6 +628,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a domain
+   *
+   * @remarks
+   * Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
    */
   async patchComputeDomain(
     request: operations.PatchComputeDomainRequest,
@@ -543,6 +645,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update an envvar
+   *
+   * @remarks
+   * Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
    */
   async patchComputeEnvvar(
     request: operations.PatchComputeEnvvarRequest,
@@ -557,6 +662,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update an instance
+   *
+   * @remarks
+   * Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
    */
   async patchComputeInstance(
     request: operations.PatchComputeInstanceRequest,
@@ -571,6 +679,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a key
+   *
+   * @remarks
+   * Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
    */
   async patchComputeKey(
     request: operations.PatchComputeKeyRequest,
@@ -585,6 +696,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a service
+   *
+   * @remarks
+   * Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
    */
   async patchComputeService(
     request: operations.PatchComputeServiceRequest,
@@ -599,6 +713,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a template
+   *
+   * @remarks
+   * Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
    */
   async patchComputeTemplate(
     request: operations.PatchComputeTemplateRequest,
@@ -613,6 +730,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a volume
+   *
+   * @remarks
+   * Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
    */
   async patchComputeVolume(
     request: operations.PatchComputeVolumeRequest,
@@ -627,6 +747,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove a deployment
+   *
+   * @remarks
+   * Deletes the ComputeDeployment identified by `id`.
    */
   async removeComputeDeployment(
     request: operations.RemoveComputeDeploymentRequest,
@@ -641,6 +764,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove a domain
+   *
+   * @remarks
+   * Deletes the ComputeDomain identified by `id`.
    */
   async removeComputeDomain(
     request: operations.RemoveComputeDomainRequest,
@@ -655,6 +781,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove an envvar
+   *
+   * @remarks
+   * Deletes the ComputeEnvvar identified by `id`.
    */
   async removeComputeEnvvar(
     request: operations.RemoveComputeEnvvarRequest,
@@ -669,6 +798,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove an instance
+   *
+   * @remarks
+   * Deletes the ComputeInstance identified by `id`.
    */
   async removeComputeInstance(
     request: operations.RemoveComputeInstanceRequest,
@@ -683,6 +815,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove a key
+   *
+   * @remarks
+   * Deletes the ComputeKey identified by `id`.
    */
   async removeComputeKey(
     request: operations.RemoveComputeKeyRequest,
@@ -697,6 +832,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove a service
+   *
+   * @remarks
+   * Deletes the ComputeService identified by `id`.
    */
   async removeComputeService(
     request: operations.RemoveComputeServiceRequest,
@@ -711,6 +849,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove a snapshot
+   *
+   * @remarks
+   * Deletes the ComputeSnapshot identified by `id`.
    */
   async removeComputeSnapshot(
     request: operations.RemoveComputeSnapshotRequest,
@@ -725,6 +866,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove a template
+   *
+   * @remarks
+   * Deletes the ComputeTemplate identified by `id`.
    */
   async removeComputeTemplate(
     request: operations.RemoveComputeTemplateRequest,
@@ -739,6 +883,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Remove a volume
+   *
+   * @remarks
+   * Deletes the ComputeVolume identified by `id`.
    */
   async removeComputeVolume(
     request: operations.RemoveComputeVolumeRequest,
@@ -753,6 +900,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a deployment
+   *
+   * @remarks
+   * Updates the ComputeDeployment identified by `id`. Provide the unified ComputeDeployment fields to change in the request body.
    */
   async updateComputeDeployment(
     request: operations.UpdateComputeDeploymentRequest,
@@ -767,6 +917,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a domain
+   *
+   * @remarks
+   * Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
    */
   async updateComputeDomain(
     request: operations.UpdateComputeDomainRequest,
@@ -781,6 +934,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update an envvar
+   *
+   * @remarks
+   * Updates the ComputeEnvvar identified by `id`. Provide the unified ComputeEnvvar fields to change in the request body.
    */
   async updateComputeEnvvar(
     request: operations.UpdateComputeEnvvarRequest,
@@ -795,6 +951,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update an instance
+   *
+   * @remarks
+   * Updates the ComputeInstance identified by `id`. Provide the unified ComputeInstance fields to change in the request body.
    */
   async updateComputeInstance(
     request: operations.UpdateComputeInstanceRequest,
@@ -809,6 +968,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a key
+   *
+   * @remarks
+   * Updates the ComputeKey identified by `id`. Provide the unified ComputeKey fields to change in the request body.
    */
   async updateComputeKey(
     request: operations.UpdateComputeKeyRequest,
@@ -823,6 +985,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a service
+   *
+   * @remarks
+   * Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
    */
   async updateComputeService(
     request: operations.UpdateComputeServiceRequest,
@@ -837,6 +1002,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a template
+   *
+   * @remarks
+   * Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
    */
   async updateComputeTemplate(
     request: operations.UpdateComputeTemplateRequest,
@@ -851,6 +1019,9 @@ export class Compute extends ClientSDK {
 
   /**
    * Update a volume
+   *
+   * @remarks
+   * Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
    */
   async updateComputeVolume(
     request: operations.UpdateComputeVolumeRequest,

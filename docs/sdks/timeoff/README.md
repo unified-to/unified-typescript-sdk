@@ -13,7 +13,7 @@
 
 ## createHrisTimeoff
 
-Create a timeoff
+Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
 
 ### Example Usage
 
@@ -30,21 +30,21 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.createHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.513Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.489Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.434Z"),
-      id: "0cd3fe71-92fc-4662-992f-5a30322554ab",
+      endAt: new Date("2024-12-29T09:03:47.185Z"),
+      id: "873e9256-ded4-4a37-ad63-478a1756b9a5",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.797Z"),
+      startAt: new Date("2023-09-05T04:44:11.191Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.824Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.799Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -75,21 +75,21 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.513Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.489Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.434Z"),
-      id: "0cd3fe71-92fc-4662-992f-5a30322554ab",
+      endAt: new Date("2024-12-29T09:03:47.185Z"),
+      id: "873e9256-ded4-4a37-ad63-478a1756b9a5",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.797Z"),
+      startAt: new Date("2023-09-05T04:44:11.191Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.824Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.799Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -126,7 +126,7 @@ run();
 
 ## getHrisTimeoff
 
-Retrieve a timeoff
+Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -205,7 +205,7 @@ run();
 
 ## listHrisTimeoffs
 
-List all timeoffs
+Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -282,7 +282,7 @@ run();
 
 ## patchHrisTimeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -299,21 +299,21 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.patchHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.514Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.490Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.447Z"),
-      id: "06f6f5f2-2b65-47c2-87da-66ddee03d9d5",
+      endAt: new Date("2024-12-29T09:03:47.193Z"),
+      id: "36d1d016-c875-49dc-85b0-b8757493e8f2",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.805Z"),
+      startAt: new Date("2023-09-05T04:44:11.196Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.827Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.801Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -345,21 +345,21 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.514Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.490Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.447Z"),
-      id: "06f6f5f2-2b65-47c2-87da-66ddee03d9d5",
+      endAt: new Date("2024-12-29T09:03:47.193Z"),
+      id: "36d1d016-c875-49dc-85b0-b8757493e8f2",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.805Z"),
+      startAt: new Date("2023-09-05T04:44:11.196Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.827Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.801Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -397,7 +397,7 @@ run();
 
 ## removeHrisTimeoff
 
-Remove a timeoff
+Deletes the HrisTimeoff identified by `id`.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ run();
 
 ## updateHrisTimeoff
 
-Update a timeoff
+Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
 
 ### Example Usage
 
@@ -493,21 +493,21 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.updateHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.514Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.490Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.447Z"),
-      id: "06f6f5f2-2b65-47c2-87da-66ddee03d9d5",
+      endAt: new Date("2024-12-29T09:03:47.193Z"),
+      id: "36d1d016-c875-49dc-85b0-b8757493e8f2",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.805Z"),
+      startAt: new Date("2023-09-05T04:44:11.196Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.827Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.801Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -539,21 +539,21 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-23T09:11:11.514Z"),
+      approvedAt: new Date("2022-02-23T11:00:37.490Z"),
       comments: "Blandior ventus curiositas amplitudo.",
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2024-12-28T17:39:47.447Z"),
-      id: "06f6f5f2-2b65-47c2-87da-66ddee03d9d5",
+      endAt: new Date("2024-12-29T09:03:47.193Z"),
+      id: "36d1d016-c875-49dc-85b0-b8757493e8f2",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-04T19:37:05.805Z"),
+      startAt: new Date("2023-09-05T04:44:11.196Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-12T19:47:05.827Z"),
+      updatedAt: new Date("2022-07-12T23:25:48.801Z"),
       userId: "<id>",
     },
     connectionId: "<id>",

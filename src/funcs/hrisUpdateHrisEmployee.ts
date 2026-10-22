@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an employee
+ *
+ * @remarks
+ * Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
  */
 export function hrisUpdateHrisEmployee(
   client: UnifiedToCore,

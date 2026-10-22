@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a record
+ *
+ * @remarks
+ * Creates a DatastoreRecord. Provide the unified DatastoreRecord fields in the request body; they are mapped to the provider's API. Returns the created DatastoreRecord.
  */
 export function datastoreCreateDatastoreRecord(
   client: UnifiedToCore,

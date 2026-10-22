@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a recording
+ *
+ * @remarks
+ * Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
  */
 export function recordingCreateUcRecording(
   client: UnifiedToCore,

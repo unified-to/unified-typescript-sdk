@@ -21,6 +21,9 @@ export type ExtraData =
   | boolean
   | Array<One | string | number | boolean>;
 
+/**
+ * The data type of the custom field, which determines how `value` is formatted.
+ */
 export const Format = {
   Text: "TEXT",
   Number: "NUMBER",
@@ -36,6 +39,9 @@ export const Format = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
+/**
+ * The data type of the custom field, which determines how `value` is formatted.
+ */
 export type Format = OpenEnum<typeof Format>;
 
 export type AccountingMetadata1 = {};
@@ -46,6 +52,9 @@ export type AccountingMetadata5 =
   | number
   | boolean;
 
+/**
+ * The field's value, typed by `format`: DATE as ISO-8601 (`YYYY-MM-DD`, or `YYYY-MM-DDTHH:MM:SSZ` for date-times); NUMBER, PRICE and CURRENCY as a number; BOOLEAN and YES_NO as true/false; MULTIPLE_SELECT as an array of option values; otherwise a string.
+ */
 export type Value =
   | { [k: string]: any }
   | string
@@ -61,10 +70,22 @@ export type AccountingMetadata = {
     | boolean
     | Array<One | string | number | boolean>
     | undefined;
+  /**
+   * The data type of the custom field, which determines how `value` is formatted.
+   */
   format?: Format | undefined;
+  /**
+   * The ID of the custom field definition (from the metadata/metadata endpoint).
+   */
   id?: string | undefined;
   namespace?: string | undefined;
+  /**
+   * The integration's API name (key) of an existing custom field. List valid slugs for this object with the metadata/metadata endpoint; unknown slugs are rejected by the integration.
+   */
   slug?: string | undefined;
+  /**
+   * The field's value, typed by `format`: DATE as ISO-8601 (`YYYY-MM-DD`, or `YYYY-MM-DDTHH:MM:SSZ` for date-times); NUMBER, PRICE and CURRENCY as a number; BOOLEAN and YES_NO as true/false; MULTIPLE_SELECT as an array of option values; otherwise a string.
+   */
   value?:
     | { [k: string]: any }
     | string

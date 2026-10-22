@@ -8,7 +8,7 @@
 
 ## createDatastoreQuery
 
-Create a query
+Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
 
 ### Example Usage
 

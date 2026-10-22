@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an attendance
+ *
+ * @remarks
+ * Deletes the HrisAttendance identified by `id`.
  */
 export function hrisRemoveHrisAttendance(
   client: UnifiedToCore,

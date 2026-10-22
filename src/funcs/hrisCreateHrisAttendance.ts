@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an attendance
+ *
+ * @remarks
+ * Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
  */
 export function hrisCreateHrisAttendance(
   client: UnifiedToCore,

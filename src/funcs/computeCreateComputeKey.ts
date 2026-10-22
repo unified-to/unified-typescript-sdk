@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a key
+ *
+ * @remarks
+ * Creates a ComputeKey. Provide the unified ComputeKey fields in the request body; they are mapped to the provider's API. Returns the created ComputeKey.
  */
 export function computeCreateComputeKey(
   client: UnifiedToCore,

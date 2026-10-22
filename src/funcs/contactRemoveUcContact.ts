@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a contact
+ *
+ * @remarks
+ * Deletes the UcContact identified by `id`.
  */
 export function contactRemoveUcContact(
   client: UnifiedToCore,

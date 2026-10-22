@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a metadata
+ *
+ * @remarks
+ * Deletes the MetadataMetadata identified by `id`.
  */
 export function metadataRemoveMetadataMetadata(
   client: UnifiedToCore,

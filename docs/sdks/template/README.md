@@ -15,7 +15,7 @@
 
 ## createComputeTemplate
 
-Create a template
+Creates a ComputeTemplate. Provide the unified ComputeTemplate fields in the request body; they are mapped to the provider's API. Returns the created ComputeTemplate.
 
 ### Example Usage
 
@@ -38,10 +38,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "61e9cc82-81c2-4ee0-8f32-d5e22edcefdd",
+      id: "ada776b2-0f0d-4268-81aa-e5ed05086b80",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.858Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.049Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -49,7 +49,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.587Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.980Z"),
     },
     connectionId: "<id>",
   });
@@ -85,10 +85,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "61e9cc82-81c2-4ee0-8f32-d5e22edcefdd",
+      id: "ada776b2-0f0d-4268-81aa-e5ed05086b80",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.858Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.049Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -96,7 +96,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.587Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.980Z"),
     },
     connectionId: "<id>",
   });
@@ -132,7 +132,7 @@ run();
 
 ## getComputeTemplate
 
-Retrieve a template
+Retrieves a single ComputeTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -211,7 +211,7 @@ run();
 
 ## getSigningTemplate
 
-Retrieve a template
+Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -290,7 +290,7 @@ run();
 
 ## listComputeTemplates
 
-List all templates
+Returns a list of ComputeTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -367,7 +367,7 @@ run();
 
 ## listSigningTemplates
 
-List all templates
+Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -444,7 +444,7 @@ run();
 
 ## patchComputeTemplate
 
-Update a template
+Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
 
 ### Example Usage
 
@@ -467,10 +467,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "d5102df8-a912-433a-9c99-f1fe20b6cc8b",
+      id: "e2f18d3d-cfc9-4e6f-b320-80f0cdd72995",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.873Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.062Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -478,7 +478,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.597Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.988Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -515,10 +515,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "d5102df8-a912-433a-9c99-f1fe20b6cc8b",
+      id: "e2f18d3d-cfc9-4e6f-b320-80f0cdd72995",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.873Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.062Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -526,7 +526,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.597Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.988Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -563,7 +563,7 @@ run();
 
 ## removeComputeTemplate
 
-Remove a template
+Deletes the ComputeTemplate identified by `id`.
 
 ### Example Usage
 
@@ -642,7 +642,7 @@ run();
 
 ## updateComputeTemplate
 
-Update a template
+Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
 
 ### Example Usage
 
@@ -665,10 +665,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "d5102df8-a912-433a-9c99-f1fe20b6cc8b",
+      id: "e2f18d3d-cfc9-4e6f-b320-80f0cdd72995",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.873Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.062Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -676,7 +676,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.597Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.988Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -713,10 +713,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "d5102df8-a912-433a-9c99-f1fe20b6cc8b",
+      id: "e2f18d3d-cfc9-4e6f-b320-80f0cdd72995",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-03-23T20:55:32.873Z"),
+      lastUsedAt: new Date("2026-03-24T17:09:48.062Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -724,7 +724,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-12T18:56:58.597Z"),
+      updatedAt: new Date("2025-02-13T07:54:58.988Z"),
     },
     connectionId: "<id>",
     id: "<id>",

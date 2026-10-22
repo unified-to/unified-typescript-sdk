@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a company
+ *
+ * @remarks
+ * Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
  */
 export function atsCreateAtsCompany(
   client: UnifiedToCore,

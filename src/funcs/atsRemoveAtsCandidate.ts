@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a candidate
+ *
+ * @remarks
+ * Deletes the AtsCandidate identified by `id`.
  */
 export function atsRemoveAtsCandidate(
   client: UnifiedToCore,

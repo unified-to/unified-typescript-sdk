@@ -57,7 +57,7 @@
 
 ## createAtsActivity
 
-Create an activity
+Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
 
 ### Example Usage
 
@@ -76,7 +76,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "b4770847-8a32-4df1-99f3-2d8108ec4114",
+      id: "1f254f68-a02c-4569-8459-03b6a4eeb63c",
       isPrivate: false,
       metadata: [
         {
@@ -84,7 +84,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "4c50f706-2b88-4bb9-a554-e6a785a6a180",
+          id: "3a89fb7b-dccc-4d66-9cbc-0aa7a7a5fb5d",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -93,7 +93,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.682Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.780Z"),
     },
     connectionId: "<id>",
   });
@@ -125,7 +125,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "b4770847-8a32-4df1-99f3-2d8108ec4114",
+      id: "1f254f68-a02c-4569-8459-03b6a4eeb63c",
       isPrivate: false,
       metadata: [
         {
@@ -133,7 +133,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "4c50f706-2b88-4bb9-a554-e6a785a6a180",
+          id: "3a89fb7b-dccc-4d66-9cbc-0aa7a7a5fb5d",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -142,7 +142,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.682Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.780Z"),
     },
     connectionId: "<id>",
   });
@@ -178,7 +178,7 @@ run();
 
 ## createAtsApplication
 
-Create an application
+Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
 
 ### Example Usage
 
@@ -196,17 +196,17 @@ async function run() {
   const result = await unifiedTo.ats.createAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.905Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.081Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.504Z"),
-      id: "77eb647d-49c6-42dc-a487-ec866819cdfd",
+      hiredAt: new Date("2026-05-13T15:30:02.617Z"),
+      id: "44119be0-35e5-4307-830b-52f7cb3eccef",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "05c81d90-119f-4b09-b328-b2715fc8a820",
+          id: "5fd9a652-acf3-4d2c-a808-7c70eec5a436",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -215,12 +215,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.636Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.151Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.488Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.507Z"),
     },
     connectionId: "<id>",
   });
@@ -251,17 +251,17 @@ async function run() {
   const res = await atsCreateAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.905Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.081Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.504Z"),
-      id: "77eb647d-49c6-42dc-a487-ec866819cdfd",
+      hiredAt: new Date("2026-05-13T15:30:02.617Z"),
+      id: "44119be0-35e5-4307-830b-52f7cb3eccef",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "05c81d90-119f-4b09-b328-b2715fc8a820",
+          id: "5fd9a652-acf3-4d2c-a808-7c70eec5a436",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -270,12 +270,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.636Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.151Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.488Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.507Z"),
     },
     connectionId: "<id>",
   });
@@ -311,7 +311,7 @@ run();
 
 ## createAtsCandidate
 
-Create a candidate
+Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
 
 ### Example Usage
 
@@ -379,7 +379,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "bca3ab81-ed3a-4b76-afe3-78afbb2b1dad",
+      id: "9ee92fcf-afa7-4acd-abb1-c72c5af14fb5",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -392,7 +392,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "587c7316-a29a-430b-acb0-b09d0c0598eb",
+          id: "a35a7d4b-b8d5-4565-90aa-6e262c44ba29",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -419,7 +419,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:29.995Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.504Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -501,7 +501,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "bca3ab81-ed3a-4b76-afe3-78afbb2b1dad",
+      id: "9ee92fcf-afa7-4acd-abb1-c72c5af14fb5",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -514,7 +514,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "587c7316-a29a-430b-acb0-b09d0c0598eb",
+          id: "a35a7d4b-b8d5-4565-90aa-6e262c44ba29",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -541,7 +541,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:29.995Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.504Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -578,7 +578,7 @@ run();
 
 ## createAtsCompany
 
-Create a company
+Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
 
 ### Example Usage
 
@@ -596,10 +596,10 @@ async function run() {
   const result = await unifiedTo.ats.createAtsCompany({
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "f6c317fc-5fc7-436c-a4fc-fde93f9931f1",
+      id: "4a1f08b4-ba81-4d6d-b512-a2f7af9eac8f",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.845Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.893Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -631,10 +631,10 @@ async function run() {
   const res = await atsCreateAtsCompany(unifiedTo, {
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "f6c317fc-5fc7-436c-a4fc-fde93f9931f1",
+      id: "4a1f08b4-ba81-4d6d-b512-a2f7af9eac8f",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.845Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.893Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -671,7 +671,7 @@ run();
 
 ## createAtsDocument
 
-Create a document
+Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
 
 ### Example Usage
 
@@ -691,10 +691,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "deea26fa-0ec9-4ff8-b06c-ddb17f1c4de3",
+      id: "c71f3393-325c-4ce7-920d-09a6c5244c78",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.534Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.290Z"),
     },
     connectionId: "<id>",
   });
@@ -727,10 +727,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "deea26fa-0ec9-4ff8-b06c-ddb17f1c4de3",
+      id: "c71f3393-325c-4ce7-920d-09a6c5244c78",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.534Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.290Z"),
     },
     connectionId: "<id>",
   });
@@ -766,7 +766,7 @@ run();
 
 ## createAtsInterview
 
-Create an interview
+Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
 
 ### Example Usage
 
@@ -785,13 +785,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "f7984ff9-7d37-40d5-b2e8-79a8fa4553d1",
+      id: "4ad86b3e-59c2-4df0-ac76-e99b5b3b78c3",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.043Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.930Z"),
     },
     connectionId: "<id>",
   });
@@ -823,13 +823,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "f7984ff9-7d37-40d5-b2e8-79a8fa4553d1",
+      id: "4ad86b3e-59c2-4df0-ac76-e99b5b3b78c3",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.043Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.930Z"),
     },
     connectionId: "<id>",
   });
@@ -865,7 +865,7 @@ run();
 
 ## createAtsJob
 
-Create a job
+Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
 
 ### Example Usage
 
@@ -912,7 +912,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "95ce445e-a626-4b88-b64d-d6704c73f2bf",
+      id: "b2eb3fac-ac5b-4697-b47a-b488f982ea1f",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -921,7 +921,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "e7372a13-10dc-492f-a5cb-89665b779c57",
+          id: "114a0631-9ed6-45a1-8a6a-f68ee96d814c",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -934,7 +934,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.580Z"),
+          openedAt: new Date("2026-06-08T19:20:51.046Z"),
           status: "OPEN",
         },
       ],
@@ -948,14 +948,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.682Z"),
+          createdAt: new Date("2026-08-02T23:28:42.426Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "9f0f844f-abf1-4c95-8f5b-6f2de3afa34f",
+          id: "3168d699-2717-4a38-9a1e-f2542608a75b",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.524Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.546Z"),
         },
       ],
       publicJobUrls: [
@@ -965,7 +965,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "2f56a998-835d-4279-9015-b7639ec61657",
+          id: "93f08a91-8c8a-4a92-aa13-77020cbde856",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -978,7 +978,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "5c1aa0f4-25fe-4462-816c-d897cb4f39b6",
+          id: "f7d6720a-c5b6-46cb-bbb7-e9ff3ff042b5",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -991,7 +991,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "28ea6ae3-1758-40ba-8f16-86797a16224e",
+          id: "53ae3885-fb7f-4286-ab8e-f1468e8a37c7",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -1009,7 +1009,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.331Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.496Z"),
     },
     connectionId: "<id>",
   });
@@ -1069,7 +1069,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "95ce445e-a626-4b88-b64d-d6704c73f2bf",
+      id: "b2eb3fac-ac5b-4697-b47a-b488f982ea1f",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -1078,7 +1078,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "e7372a13-10dc-492f-a5cb-89665b779c57",
+          id: "114a0631-9ed6-45a1-8a6a-f68ee96d814c",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -1091,7 +1091,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.580Z"),
+          openedAt: new Date("2026-06-08T19:20:51.046Z"),
           status: "OPEN",
         },
       ],
@@ -1105,14 +1105,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.682Z"),
+          createdAt: new Date("2026-08-02T23:28:42.426Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "9f0f844f-abf1-4c95-8f5b-6f2de3afa34f",
+          id: "3168d699-2717-4a38-9a1e-f2542608a75b",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.524Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.546Z"),
         },
       ],
       publicJobUrls: [
@@ -1122,7 +1122,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "2f56a998-835d-4279-9015-b7639ec61657",
+          id: "93f08a91-8c8a-4a92-aa13-77020cbde856",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -1135,7 +1135,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "5c1aa0f4-25fe-4462-816c-d897cb4f39b6",
+          id: "f7d6720a-c5b6-46cb-bbb7-e9ff3ff042b5",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -1148,7 +1148,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "28ea6ae3-1758-40ba-8f16-86797a16224e",
+          id: "53ae3885-fb7f-4286-ab8e-f1468e8a37c7",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -1166,7 +1166,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.331Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.496Z"),
     },
     connectionId: "<id>",
   });
@@ -1202,7 +1202,7 @@ run();
 
 ## createAtsScorecard
 
-Create a scorecard
+Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
 
 ### Example Usage
 
@@ -1221,7 +1221,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "9b480cd7-a3dd-4ac8-8d0f-8adc838e5701",
+      id: "c72c66fb-5f35-4b57-b0cd-27fba11dfa6d",
       metadata: [],
       questions: [
         {
@@ -1235,7 +1235,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-05T13:49:19.765Z"),
+      updatedAt: new Date("2023-06-05T20:27:10.885Z"),
     },
     connectionId: "<id>",
   });
@@ -1267,7 +1267,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "9b480cd7-a3dd-4ac8-8d0f-8adc838e5701",
+      id: "c72c66fb-5f35-4b57-b0cd-27fba11dfa6d",
       metadata: [],
       questions: [
         {
@@ -1281,7 +1281,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-05T13:49:19.765Z"),
+      updatedAt: new Date("2023-06-05T20:27:10.885Z"),
     },
     connectionId: "<id>",
   });
@@ -1317,7 +1317,7 @@ run();
 
 ## getAtsActivity
 
-Retrieve an activity
+Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1396,7 +1396,7 @@ run();
 
 ## getAtsApplication
 
-Retrieve an application
+Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1475,7 +1475,7 @@ run();
 
 ## getAtsApplicationstatus
 
-Retrieve an applicationstatus
+Retrieves a single AtsStatus by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1554,7 +1554,7 @@ run();
 
 ## getAtsCandidate
 
-Retrieve a candidate
+Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1633,7 +1633,7 @@ run();
 
 ## getAtsCompany
 
-Retrieve a company
+Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1712,7 +1712,7 @@ run();
 
 ## getAtsDocument
 
-Retrieve a document
+Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1791,7 +1791,7 @@ run();
 
 ## getAtsInterview
 
-Retrieve an interview
+Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1870,7 +1870,7 @@ run();
 
 ## getAtsJob
 
-Retrieve a job
+Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1949,7 +1949,7 @@ run();
 
 ## getAtsScorecard
 
-Retrieve a scorecard
+Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2028,7 +2028,7 @@ run();
 
 ## listAtsActivities
 
-List all activities
+Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2105,7 +2105,7 @@ run();
 
 ## listAtsApplications
 
-List all applications
+Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2182,7 +2182,7 @@ run();
 
 ## listAtsApplicationstatuses
 
-List all applicationstatuses
+Returns a list of AtsStatuses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2259,7 +2259,7 @@ run();
 
 ## listAtsCandidates
 
-List all candidates
+Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2336,7 +2336,7 @@ run();
 
 ## listAtsCompanies
 
-List all companies
+Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2413,7 +2413,7 @@ run();
 
 ## listAtsDocuments
 
-List all documents
+Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2490,7 +2490,7 @@ run();
 
 ## listAtsInterviews
 
-List all interviews
+Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2567,7 +2567,7 @@ run();
 
 ## listAtsJobs
 
-List all jobs
+Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2644,7 +2644,7 @@ run();
 
 ## listAtsScorecards
 
-List all scorecards
+Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2721,7 +2721,7 @@ run();
 
 ## patchAtsActivity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -2740,7 +2740,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "ff7c2c16-b1be-47e7-b292-cbb3100a26f7",
+      id: "64481c61-39fb-4e59-8d7c-b0763e9c89fa",
       isPrivate: false,
       metadata: [
         {
@@ -2748,7 +2748,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "2836076e-6dfc-4fd0-bea5-31439de689b3",
+          id: "82348f78-ae56-4fbb-9d6c-7dffadadad03",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -2757,7 +2757,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.713Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2790,7 +2790,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "ff7c2c16-b1be-47e7-b292-cbb3100a26f7",
+      id: "64481c61-39fb-4e59-8d7c-b0763e9c89fa",
       isPrivate: false,
       metadata: [
         {
@@ -2798,7 +2798,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "2836076e-6dfc-4fd0-bea5-31439de689b3",
+          id: "82348f78-ae56-4fbb-9d6c-7dffadadad03",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -2807,7 +2807,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.713Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2844,7 +2844,7 @@ run();
 
 ## patchAtsApplication
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -2862,17 +2862,17 @@ async function run() {
   const result = await unifiedTo.ats.patchAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.927Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.095Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.533Z"),
-      id: "f89016af-8e76-4386-a5f8-f52875827780",
+      hiredAt: new Date("2026-05-13T15:30:02.636Z"),
+      id: "de098674-afa5-44dd-b025-a8d4db6ebbd3",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "1d7d9983-f327-453b-9925-f3aadef0edbc",
+          id: "48f4e589-48e9-465f-b808-a423ec5ce9b1",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -2881,12 +2881,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.670Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.173Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.522Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.529Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2918,17 +2918,17 @@ async function run() {
   const res = await atsPatchAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.927Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.095Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.533Z"),
-      id: "f89016af-8e76-4386-a5f8-f52875827780",
+      hiredAt: new Date("2026-05-13T15:30:02.636Z"),
+      id: "de098674-afa5-44dd-b025-a8d4db6ebbd3",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "1d7d9983-f327-453b-9925-f3aadef0edbc",
+          id: "48f4e589-48e9-465f-b808-a423ec5ce9b1",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -2937,12 +2937,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.670Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.173Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.522Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.529Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2979,7 +2979,7 @@ run();
 
 ## patchAtsCandidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -3047,7 +3047,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "88777c66-46ba-415c-ba8e-16bf603d9518",
+      id: "76541c45-f66e-4aed-98cc-7b149a4553e6",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -3060,7 +3060,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "be4aa2c3-6458-4652-b561-48fb38190de8",
+          id: "69d12fed-7b26-4be3-9133-9dfe8211e339",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -3087,7 +3087,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:30.003Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.510Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -3170,7 +3170,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "88777c66-46ba-415c-ba8e-16bf603d9518",
+      id: "76541c45-f66e-4aed-98cc-7b149a4553e6",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -3183,7 +3183,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "be4aa2c3-6458-4652-b561-48fb38190de8",
+          id: "69d12fed-7b26-4be3-9133-9dfe8211e339",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -3210,7 +3210,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:30.003Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.510Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -3248,7 +3248,7 @@ run();
 
 ## patchAtsCompany
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -3266,10 +3266,10 @@ async function run() {
   const result = await unifiedTo.ats.patchAtsCompany({
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "d81ad760-e6c8-4024-b1d0-7598b6b7bca9",
+      id: "c2f714c4-e0a2-4a2d-a531-4a58d8413510",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.849Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.895Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -3302,10 +3302,10 @@ async function run() {
   const res = await atsPatchAtsCompany(unifiedTo, {
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "d81ad760-e6c8-4024-b1d0-7598b6b7bca9",
+      id: "c2f714c4-e0a2-4a2d-a531-4a58d8413510",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.849Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.895Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -3343,7 +3343,7 @@ run();
 
 ## patchAtsDocument
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -3363,10 +3363,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0a37dac3-f773-4345-9380-6e2fea948df4",
+      id: "1f8f95dc-1316-4aff-aa7a-b730fc6d8991",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.540Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.294Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3400,10 +3400,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0a37dac3-f773-4345-9380-6e2fea948df4",
+      id: "1f8f95dc-1316-4aff-aa7a-b730fc6d8991",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.540Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.294Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3440,7 +3440,7 @@ run();
 
 ## patchAtsInterview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -3459,13 +3459,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "4582db8a-b78b-4d8e-a4c2-c0087a69cdd3",
+      id: "cbe672bd-271e-492e-b605-0e425aafd6ac",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.049Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.934Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3498,13 +3498,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "4582db8a-b78b-4d8e-a4c2-c0087a69cdd3",
+      id: "cbe672bd-271e-492e-b605-0e425aafd6ac",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.049Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.934Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3541,7 +3541,7 @@ run();
 
 ## patchAtsJob
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -3588,7 +3588,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "462617f1-e60a-4e09-bc12-20ed887a4ca8",
+      id: "b35e4e37-24ae-48fb-92de-a4c50c950c09",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -3597,7 +3597,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a28e2b6f-a4ff-4f8d-b9f8-fadcf6d9ccfb",
+          id: "d9aacb97-9c57-4ae0-bf48-05013d2ada25",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -3610,7 +3610,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.649Z"),
+          openedAt: new Date("2026-06-08T19:20:51.088Z"),
           status: "OPEN",
         },
       ],
@@ -3624,14 +3624,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.754Z"),
+          createdAt: new Date("2026-08-02T23:28:42.470Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "6717cc71-03e1-4515-aff4-34645fca864c",
+          id: "e21a413d-43b5-45ae-8aed-a4c57c96e20a",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.599Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.591Z"),
         },
       ],
       publicJobUrls: [
@@ -3641,7 +3641,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "c0b961aa-23cd-4add-99de-ededac11b675",
+          id: "39c01b8a-7a19-4804-bb40-cd98c6c5ed1d",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -3654,7 +3654,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "78d6d497-4f7e-453a-99af-6f60b1254112",
+          id: "8ae7b8c4-b8e9-491b-9bd9-e195b6ca663d",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -3667,7 +3667,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "eee2b62c-2ec4-442d-86af-49094d775495",
+          id: "983eaac7-b246-4d9a-8e92-824699a1e9d5",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -3685,7 +3685,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.394Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.534Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3746,7 +3746,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "462617f1-e60a-4e09-bc12-20ed887a4ca8",
+      id: "b35e4e37-24ae-48fb-92de-a4c50c950c09",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -3755,7 +3755,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a28e2b6f-a4ff-4f8d-b9f8-fadcf6d9ccfb",
+          id: "d9aacb97-9c57-4ae0-bf48-05013d2ada25",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -3768,7 +3768,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.649Z"),
+          openedAt: new Date("2026-06-08T19:20:51.088Z"),
           status: "OPEN",
         },
       ],
@@ -3782,14 +3782,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.754Z"),
+          createdAt: new Date("2026-08-02T23:28:42.470Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "6717cc71-03e1-4515-aff4-34645fca864c",
+          id: "e21a413d-43b5-45ae-8aed-a4c57c96e20a",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.599Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.591Z"),
         },
       ],
       publicJobUrls: [
@@ -3799,7 +3799,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "c0b961aa-23cd-4add-99de-ededac11b675",
+          id: "39c01b8a-7a19-4804-bb40-cd98c6c5ed1d",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -3812,7 +3812,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "78d6d497-4f7e-453a-99af-6f60b1254112",
+          id: "8ae7b8c4-b8e9-491b-9bd9-e195b6ca663d",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -3825,7 +3825,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "eee2b62c-2ec4-442d-86af-49094d775495",
+          id: "983eaac7-b246-4d9a-8e92-824699a1e9d5",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -3843,7 +3843,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.394Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.534Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3880,7 +3880,7 @@ run();
 
 ## patchAtsScorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -3899,7 +3899,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "a2292097-afc8-4db6-a06e-888c515318a7",
+      id: "d8b24e08-8b0e-49aa-8467-cba7d0639281",
       metadata: [],
       questions: [
         {
@@ -3913,7 +3913,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-05T13:49:19.770Z"),
+      updatedAt: new Date("2023-06-05T20:27:10.889Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3946,7 +3946,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "a2292097-afc8-4db6-a06e-888c515318a7",
+      id: "d8b24e08-8b0e-49aa-8467-cba7d0639281",
       metadata: [],
       questions: [
         {
@@ -3960,7 +3960,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-05T13:49:19.770Z"),
+      updatedAt: new Date("2023-06-05T20:27:10.889Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3997,7 +3997,7 @@ run();
 
 ## removeAtsActivity
 
-Remove an activity
+Deletes the AtsActivity identified by `id`.
 
 ### Example Usage
 
@@ -4076,7 +4076,7 @@ run();
 
 ## removeAtsApplication
 
-Remove an application
+Deletes the AtsApplication identified by `id`.
 
 ### Example Usage
 
@@ -4155,7 +4155,7 @@ run();
 
 ## removeAtsCandidate
 
-Remove a candidate
+Deletes the AtsCandidate identified by `id`.
 
 ### Example Usage
 
@@ -4234,7 +4234,7 @@ run();
 
 ## removeAtsCompany
 
-Remove a company
+Deletes the AtsCompany identified by `id`.
 
 ### Example Usage
 
@@ -4313,7 +4313,7 @@ run();
 
 ## removeAtsDocument
 
-Remove a document
+Deletes the AtsDocument identified by `id`.
 
 ### Example Usage
 
@@ -4392,7 +4392,7 @@ run();
 
 ## removeAtsInterview
 
-Remove an interview
+Deletes the AtsInterview identified by `id`.
 
 ### Example Usage
 
@@ -4471,7 +4471,7 @@ run();
 
 ## removeAtsJob
 
-Remove a job
+Deletes the AtsJob identified by `id`.
 
 ### Example Usage
 
@@ -4550,7 +4550,7 @@ run();
 
 ## removeAtsScorecard
 
-Remove a scorecard
+Deletes the AtsScorecard identified by `id`.
 
 ### Example Usage
 
@@ -4629,7 +4629,7 @@ run();
 
 ## updateAtsActivity
 
-Update an activity
+Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -4648,7 +4648,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "ff7c2c16-b1be-47e7-b292-cbb3100a26f7",
+      id: "64481c61-39fb-4e59-8d7c-b0763e9c89fa",
       isPrivate: false,
       metadata: [
         {
@@ -4656,7 +4656,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "2836076e-6dfc-4fd0-bea5-31439de689b3",
+          id: "82348f78-ae56-4fbb-9d6c-7dffadadad03",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -4665,7 +4665,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.713Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4698,7 +4698,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "ff7c2c16-b1be-47e7-b292-cbb3100a26f7",
+      id: "64481c61-39fb-4e59-8d7c-b0763e9c89fa",
       isPrivate: false,
       metadata: [
         {
@@ -4706,7 +4706,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "2836076e-6dfc-4fd0-bea5-31439de689b3",
+          id: "82348f78-ae56-4fbb-9d6c-7dffadadad03",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -4715,7 +4715,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-04T07:07:26.713Z"),
+      updatedAt: new Date("2026-04-05T04:02:09.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4752,7 +4752,7 @@ run();
 
 ## updateAtsApplication
 
-Update an application
+Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
 
 ### Example Usage
 
@@ -4770,17 +4770,17 @@ async function run() {
   const result = await unifiedTo.ats.updateAtsApplication({
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.927Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.095Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.533Z"),
-      id: "f89016af-8e76-4386-a5f8-f52875827780",
+      hiredAt: new Date("2026-05-13T15:30:02.636Z"),
+      id: "de098674-afa5-44dd-b025-a8d4db6ebbd3",
       metadata: [
         {
           extraData: {
 
           },
           format: "TEXT",
-          id: "1d7d9983-f327-453b-9925-f3aadef0edbc",
+          id: "48f4e589-48e9-465f-b808-a423ec5ce9b1",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -4789,12 +4789,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.670Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.173Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.522Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.529Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4826,17 +4826,17 @@ async function run() {
   const res = await atsUpdateAtsApplication(unifiedTo, {
     atsApplication: {
       answers: [],
-      appliedAt: new Date("2025-09-29T19:03:30.927Z"),
+      appliedAt: new Date("2025-09-30T10:39:15.095Z"),
       createdAt: new Date("2023-10-17T07:19:48.787Z"),
-      hiredAt: new Date("2026-05-12T18:59:13.533Z"),
-      id: "f89016af-8e76-4386-a5f8-f52875827780",
+      hiredAt: new Date("2026-05-13T15:30:02.636Z"),
+      id: "de098674-afa5-44dd-b025-a8d4db6ebbd3",
       metadata: [
         {
           extraData: {
   
           },
           format: "TEXT",
-          id: "1d7d9983-f327-453b-9925-f3aadef0edbc",
+          id: "48f4e589-48e9-465f-b808-a423ec5ce9b1",
           namespace: "application",
           slug: "stella",
           value: "Caput.",
@@ -4845,12 +4845,12 @@ async function run() {
       offers: [],
       originalStatus: "vomica",
       originalSubstatus: "allatus",
-      rejectedAt: new Date("2026-10-11T13:40:21.670Z"),
+      rejectedAt: new Date("2026-10-12T13:30:14.173Z"),
       rejectedReason: "Cometes amplitudo videlicet talio.",
       source: "credo",
       status: "REVIEWING",
       summary: "Arguo repudiandae defessus. Adflicto caecus claustrum annus addo vere crebro. Alias sponte turbo sopor vergo surculus nam.",
-      updatedAt: new Date("2026-10-18T09:54:50.522Z"),
+      updatedAt: new Date("2026-10-19T09:53:41.529Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4887,7 +4887,7 @@ run();
 
 ## updateAtsCandidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -4955,7 +4955,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "88777c66-46ba-415c-ba8e-16bf603d9518",
+      id: "76541c45-f66e-4aed-98cc-7b149a4553e6",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -4968,7 +4968,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "be4aa2c3-6458-4652-b561-48fb38190de8",
+          id: "69d12fed-7b26-4be3-9133-9dfe8211e339",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -4995,7 +4995,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:30.003Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.510Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -5078,7 +5078,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "88777c66-46ba-415c-ba8e-16bf603d9518",
+      id: "76541c45-f66e-4aed-98cc-7b149a4553e6",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -5091,7 +5091,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "be4aa2c3-6458-4652-b561-48fb38190de8",
+          id: "69d12fed-7b26-4be3-9133-9dfe8211e339",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -5118,7 +5118,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:30.003Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.510Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -5156,7 +5156,7 @@ run();
 
 ## updateAtsCompany
 
-Update a company
+Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
 
 ### Example Usage
 
@@ -5174,10 +5174,10 @@ async function run() {
   const result = await unifiedTo.ats.updateAtsCompany({
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "d81ad760-e6c8-4024-b1d0-7598b6b7bca9",
+      id: "c2f714c4-e0a2-4a2d-a531-4a58d8413510",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.849Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.895Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -5210,10 +5210,10 @@ async function run() {
   const res = await atsUpdateAtsCompany(unifiedTo, {
     atsCompany: {
       createdAt: new Date("2019-04-22T03:50:02.920Z"),
-      id: "d81ad760-e6c8-4024-b1d0-7598b6b7bca9",
+      id: "c2f714c4-e0a2-4a2d-a531-4a58d8413510",
       name: "Gulgowski, Dibbert and Wilderman",
       phone: "1-882-360-2010",
-      updatedAt: new Date("2020-10-01T04:18:51.849Z"),
+      updatedAt: new Date("2020-10-01T08:56:54.895Z"),
       websiteUrl: "https://www.gulgowskidibbert.com",
     },
     connectionId: "<id>",
@@ -5251,7 +5251,7 @@ run();
 
 ## updateAtsDocument
 
-Update a document
+Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -5271,10 +5271,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0a37dac3-f773-4345-9380-6e2fea948df4",
+      id: "1f8f95dc-1316-4aff-aa7a-b730fc6d8991",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.540Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.294Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5308,10 +5308,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0a37dac3-f773-4345-9380-6e2fea948df4",
+      id: "1f8f95dc-1316-4aff-aa7a-b730fc6d8991",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-07T05:08:20.540Z"),
+      updatedAt: new Date("2022-12-07T11:10:24.294Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5348,7 +5348,7 @@ run();
 
 ## updateAtsInterview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -5367,13 +5367,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "4582db8a-b78b-4d8e-a4c2-c0087a69cdd3",
+      id: "cbe672bd-271e-492e-b605-0e425aafd6ac",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.049Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.934Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5406,13 +5406,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "4582db8a-b78b-4d8e-a4c2-c0087a69cdd3",
+      id: "cbe672bd-271e-492e-b605-0e425aafd6ac",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.049Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.934Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5449,7 +5449,7 @@ run();
 
 ## updateAtsJob
 
-Update a job
+Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
 
 ### Example Usage
 
@@ -5496,7 +5496,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "462617f1-e60a-4e09-bc12-20ed887a4ca8",
+      id: "b35e4e37-24ae-48fb-92de-a4c50c950c09",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -5505,7 +5505,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a28e2b6f-a4ff-4f8d-b9f8-fadcf6d9ccfb",
+          id: "d9aacb97-9c57-4ae0-bf48-05013d2ada25",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -5518,7 +5518,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.649Z"),
+          openedAt: new Date("2026-06-08T19:20:51.088Z"),
           status: "OPEN",
         },
       ],
@@ -5532,14 +5532,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.754Z"),
+          createdAt: new Date("2026-08-02T23:28:42.470Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "6717cc71-03e1-4515-aff4-34645fca864c",
+          id: "e21a413d-43b5-45ae-8aed-a4c57c96e20a",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.599Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.591Z"),
         },
       ],
       publicJobUrls: [
@@ -5549,7 +5549,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "c0b961aa-23cd-4add-99de-ededac11b675",
+          id: "39c01b8a-7a19-4804-bb40-cd98c6c5ed1d",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -5562,7 +5562,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "78d6d497-4f7e-453a-99af-6f60b1254112",
+          id: "8ae7b8c4-b8e9-491b-9bd9-e195b6ca663d",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -5575,7 +5575,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "eee2b62c-2ec4-442d-86af-49094d775495",
+          id: "983eaac7-b246-4d9a-8e92-824699a1e9d5",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -5593,7 +5593,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.394Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.534Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5654,7 +5654,7 @@ async function run() {
       description: "Global",
       employmentType: "FREELANCE",
       hiringManagers: [],
-      id: "462617f1-e60a-4e09-bc12-20ed887a4ca8",
+      id: "b35e4e37-24ae-48fb-92de-a4c50c950c09",
       industry: "Handcrafted Bamboo Soap",
       languageLocale: "en",
       metadata: [
@@ -5663,7 +5663,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "a28e2b6f-a4ff-4f8d-b9f8-fadcf6d9ccfb",
+          id: "d9aacb97-9c57-4ae0-bf48-05013d2ada25",
           namespace: "custom",
           slug: "custom_property",
           value: "desolo",
@@ -5676,7 +5676,7 @@ async function run() {
       openings: [
         {
           closeReason: "Admoveo trado textilis.",
-          openedAt: new Date("2026-06-07T21:57:58.649Z"),
+          openedAt: new Date("2026-06-08T19:20:51.088Z"),
           status: "OPEN",
         },
       ],
@@ -5690,14 +5690,14 @@ async function run() {
             region: "Wisconsin",
             regionCode: "CO",
           },
-          createdAt: new Date("2026-08-02T01:00:47.754Z"),
+          createdAt: new Date("2026-08-02T23:28:42.470Z"),
           description: "Beatus eum volutabrum balbus victus ipsa tubineus claustrum.",
-          id: "6717cc71-03e1-4515-aff4-34645fca864c",
+          id: "e21a413d-43b5-45ae-8aed-a4c57c96e20a",
           isActive: false,
           location: "1725 Hessel Keys",
           name: "International Identity Manager",
           postingUrl: "https://obedient-yak.com",
-          updatedAt: new Date("2026-08-28T08:24:30.599Z"),
+          updatedAt: new Date("2026-08-29T07:23:27.591Z"),
         },
       ],
       publicJobUrls: [
@@ -5707,7 +5707,7 @@ async function run() {
       questions: [
         {
           description: "Auctus deporto tolero administratio capitulus animi agnosco tendo aetas vado.",
-          id: "c0b961aa-23cd-4add-99de-ededac11b675",
+          id: "39c01b8a-7a19-4804-bb40-cd98c6c5ed1d",
           maxLength: 117,
           minLength: 1,
           options: [
@@ -5720,7 +5720,7 @@ async function run() {
           type: "TEXT",
         },
         {
-          id: "78d6d497-4f7e-453a-99af-6f60b1254112",
+          id: "8ae7b8c4-b8e9-491b-9bd9-e195b6ca663d",
           maxLength: 453,
           minLength: 1,
           options: [
@@ -5733,7 +5733,7 @@ async function run() {
         },
         {
           description: "Taceo rem compello spectaculum mollitia arcus compello.",
-          id: "eee2b62c-2ec4-442d-86af-49094d775495",
+          id: "983eaac7-b246-4d9a-8e92-824699a1e9d5",
           maxLength: 66,
           minLength: 1,
           options: [
@@ -5751,7 +5751,7 @@ async function run() {
       ],
       status: "ARCHIVED",
       summary: "Crepusculum adsuesco vere.",
-      updatedAt: new Date("2026-02-27T10:14:23.394Z"),
+      updatedAt: new Date("2026-02-28T05:38:42.534Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5788,7 +5788,7 @@ run();
 
 ## updateAtsScorecard
 
-Update a scorecard
+Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
 
 ### Example Usage
 
@@ -5807,7 +5807,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "a2292097-afc8-4db6-a06e-888c515318a7",
+      id: "d8b24e08-8b0e-49aa-8467-cba7d0639281",
       metadata: [],
       questions: [
         {
@@ -5821,7 +5821,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-05T13:49:19.770Z"),
+      updatedAt: new Date("2023-06-05T20:27:10.889Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5854,7 +5854,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "a2292097-afc8-4db6-a06e-888c515318a7",
+      id: "d8b24e08-8b0e-49aa-8467-cba7d0639281",
       metadata: [],
       questions: [
         {
@@ -5868,7 +5868,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-05T13:49:19.770Z"),
+      updatedAt: new Date("2023-06-05T20:27:10.889Z"),
     },
     connectionId: "<id>",
     id: "<id>",

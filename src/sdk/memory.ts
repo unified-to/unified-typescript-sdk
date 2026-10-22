@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Memory extends ClientSDK {
   /**
    * Create a memory
+   *
+   * @remarks
+   * Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
    */
   async createGenaiMemory(
     request: operations.CreateGenaiMemoryRequest,
@@ -30,6 +33,9 @@ export class Memory extends ClientSDK {
 
   /**
    * Retrieve a memory
+   *
+   * @remarks
+   * Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiMemory(
     request: operations.GetGenaiMemoryRequest,
@@ -44,6 +50,9 @@ export class Memory extends ClientSDK {
 
   /**
    * List all memories
+   *
+   * @remarks
+   * Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiMemories(
     request: operations.ListGenaiMemoriesRequest,
@@ -58,6 +67,9 @@ export class Memory extends ClientSDK {
 
   /**
    * Update a memory
+   *
+   * @remarks
+   * Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
    */
   async patchGenaiMemory(
     request: operations.PatchGenaiMemoryRequest,
@@ -72,6 +84,9 @@ export class Memory extends ClientSDK {
 
   /**
    * Remove a memory
+   *
+   * @remarks
+   * Deletes the GenaiMemory identified by `id`.
    */
   async removeGenaiMemory(
     request: operations.RemoveGenaiMemoryRequest,
@@ -86,6 +101,9 @@ export class Memory extends ClientSDK {
 
   /**
    * Update a memory
+   *
+   * @remarks
+   * Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
    */
   async updateGenaiMemory(
     request: operations.UpdateGenaiMemoryRequest,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a timeoff
+ *
+ * @remarks
+ * Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
  */
 export function hrisCreateHrisTimeoff(
   client: UnifiedToCore,

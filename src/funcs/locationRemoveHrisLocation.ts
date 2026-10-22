@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a location
+ *
+ * @remarks
+ * Deletes the HrisLocation identified by `id`.
  */
 export function locationRemoveHrisLocation(
   client: UnifiedToCore,

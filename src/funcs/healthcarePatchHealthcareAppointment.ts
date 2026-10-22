@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an appointment
+ *
+ * @remarks
+ * Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
  */
 export function healthcarePatchHealthcareAppointment(
   client: UnifiedToCore,

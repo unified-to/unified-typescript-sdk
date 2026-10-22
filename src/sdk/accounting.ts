@@ -148,6 +148,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Accounting extends ClientSDK {
   /**
    * Create an account
+   *
+   * @remarks
+   * Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
    */
   async createAccountingAccount(
     request: operations.CreateAccountingAccountRequest,
@@ -162,6 +165,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a bankfeedaccount
+   *
+   * @remarks
+   * Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
    */
   async createAccountingBankfeedaccount(
     request: operations.CreateAccountingBankfeedaccountRequest,
@@ -176,6 +182,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a bankfeedtransaction
+   *
+   * @remarks
+   * Creates a AccountingBankfeedtransaction. Provide the unified AccountingBankfeedtransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedtransaction.
    */
   async createAccountingBankfeedtransaction(
     request: operations.CreateAccountingBankfeedtransactionRequest,
@@ -190,6 +199,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a bill
+   *
+   * @remarks
+   * Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
    */
   async createAccountingBill(
     request: operations.CreateAccountingBillRequest,
@@ -204,6 +216,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a category
+   *
+   * @remarks
+   * Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
    */
   async createAccountingCategory(
     request: operations.CreateAccountingCategoryRequest,
@@ -218,6 +233,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a contact
+   *
+   * @remarks
+   * Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
    */
   async createAccountingContact(
     request: operations.CreateAccountingContactRequest,
@@ -232,6 +250,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a creditmemo
+   *
+   * @remarks
+   * Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
    */
   async createAccountingCreditmemo(
     request: operations.CreateAccountingCreditmemoRequest,
@@ -246,6 +267,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create an expense
+   *
+   * @remarks
+   * Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
    */
   async createAccountingExpense(
     request: operations.CreateAccountingExpenseRequest,
@@ -260,6 +284,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create an expensereport
+   *
+   * @remarks
+   * Creates a AccountingExpensereport. Provide the unified AccountingExpensereport fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpensereport.
    */
   async createAccountingExpensereport(
     request: operations.CreateAccountingExpensereportRequest,
@@ -274,6 +301,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create an invoice
+   *
+   * @remarks
+   * Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
    */
   async createAccountingInvoice(
     request: operations.CreateAccountingInvoiceRequest,
@@ -288,6 +318,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a journal
+   *
+   * @remarks
+   * Creates a AccountingJournal. Provide the unified AccountingJournal fields in the request body; they are mapped to the provider's API. Returns the created AccountingJournal.
    */
   async createAccountingJournal(
     request: operations.CreateAccountingJournalRequest,
@@ -302,6 +335,11 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create an order
+   *
+   * @remarks
+   * Creates a AccountingOrder. Provide the unified AccountingOrder fields in the request body; they are mapped to the provider's API. Returns the created AccountingOrder.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async createAccountingOrder(
     request: operations.CreateAccountingOrderRequest,
@@ -316,6 +354,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a paymentterm
+   *
+   * @remarks
+   * Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
    */
   async createAccountingPaymentterm(
     request: operations.CreateAccountingPaymenttermRequest,
@@ -330,6 +371,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a project
+   *
+   * @remarks
+   * Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
    */
   async createAccountingProject(
     request: operations.CreateAccountingProjectRequest,
@@ -344,6 +388,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a purchaseorder
+   *
+   * @remarks
+   * Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
    */
   async createAccountingPurchaseorder(
     request: operations.CreateAccountingPurchaseorderRequest,
@@ -358,6 +405,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a quote
+   *
+   * @remarks
+   * Creates a AccountingQuote. Provide the unified AccountingQuote fields in the request body; they are mapped to the provider's API. Returns the created AccountingQuote.
    */
   async createAccountingQuote(
     request: operations.CreateAccountingQuoteRequest,
@@ -372,6 +422,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a salesorder
+   *
+   * @remarks
+   * Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
    */
   async createAccountingSalesorder(
     request: operations.CreateAccountingSalesorderRequest,
@@ -386,6 +439,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a taxrate
+   *
+   * @remarks
+   * Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
    */
   async createAccountingTaxrate(
     request: operations.CreateAccountingTaxrateRequest,
@@ -400,6 +456,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a transaction
+   *
+   * @remarks
+   * Creates a AccountingTransaction. Provide the unified AccountingTransaction fields in the request body; they are mapped to the provider's API. Returns the created AccountingTransaction.
    */
   async createAccountingTransaction(
     request: operations.CreateAccountingTransactionRequest,
@@ -414,6 +473,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Create a vendorcredit
+   *
+   * @remarks
+   * Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
    */
   async createAccountingVendorcredit(
     request: operations.CreateAccountingVendorcreditRequest,
@@ -428,6 +490,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve an account
+   *
+   * @remarks
+   * Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingAccount(
     request: operations.GetAccountingAccountRequest,
@@ -442,6 +507,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve an agedpayable
+   *
+   * @remarks
+   * Retrieves a single AccountingAgedpayable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingAgedpayable(
     request: operations.GetAccountingAgedpayableRequest,
@@ -456,6 +524,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve an agedreceivable
+   *
+   * @remarks
+   * Retrieves a single AccountingAgedreceivable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingAgedreceivable(
     request: operations.GetAccountingAgedreceivableRequest,
@@ -470,6 +541,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a balancesheet
+   *
+   * @remarks
+   * Retrieves a single AccountingBalancesheet by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingBalancesheet(
     request: operations.GetAccountingBalancesheetRequest,
@@ -484,6 +558,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a bankfeedaccount
+   *
+   * @remarks
+   * Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingBankfeedaccount(
     request: operations.GetAccountingBankfeedaccountRequest,
@@ -498,6 +575,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a bankfeedtransaction
+   *
+   * @remarks
+   * Retrieves a single AccountingBankfeedtransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingBankfeedtransaction(
     request: operations.GetAccountingBankfeedtransactionRequest,
@@ -512,6 +592,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a bill
+   *
+   * @remarks
+   * Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingBill(
     request: operations.GetAccountingBillRequest,
@@ -526,6 +609,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a cashflow
+   *
+   * @remarks
+   * Retrieves a single AccountingCashflow by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingCashflow(
     request: operations.GetAccountingCashflowRequest,
@@ -540,6 +626,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a category
+   *
+   * @remarks
+   * Retrieves a single AccountingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingCategory(
     request: operations.GetAccountingCategoryRequest,
@@ -554,6 +643,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a contact
+   *
+   * @remarks
+   * Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingContact(
     request: operations.GetAccountingContactRequest,
@@ -568,6 +660,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a creditmemo
+   *
+   * @remarks
+   * Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingCreditmemo(
     request: operations.GetAccountingCreditmemoRequest,
@@ -582,6 +677,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve an expense
+   *
+   * @remarks
+   * Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingExpense(
     request: operations.GetAccountingExpenseRequest,
@@ -596,6 +694,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve an expensereport
+   *
+   * @remarks
+   * Retrieves a single AccountingExpensereport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingExpensereport(
     request: operations.GetAccountingExpensereportRequest,
@@ -610,6 +711,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve an invoice
+   *
+   * @remarks
+   * Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingInvoice(
     request: operations.GetAccountingInvoiceRequest,
@@ -624,6 +728,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a journal
+   *
+   * @remarks
+   * Retrieves a single AccountingJournal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingJournal(
     request: operations.GetAccountingJournalRequest,
@@ -638,6 +745,11 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve an order
+   *
+   * @remarks
+   * Retrieves a single AccountingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async getAccountingOrder(
     request: operations.GetAccountingOrderRequest,
@@ -652,6 +764,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve an organization
+   *
+   * @remarks
+   * Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingOrganization(
     request: operations.GetAccountingOrganizationRequest,
@@ -666,6 +781,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a paymentterm
+   *
+   * @remarks
+   * Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingPaymentterm(
     request: operations.GetAccountingPaymenttermRequest,
@@ -680,6 +798,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a profitloss
+   *
+   * @remarks
+   * Retrieves a single AccountingProfitloss by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingProfitloss(
     request: operations.GetAccountingProfitlossRequest,
@@ -694,6 +815,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a project
+   *
+   * @remarks
+   * Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingProject(
     request: operations.GetAccountingProjectRequest,
@@ -708,6 +832,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a purchaseorder
+   *
+   * @remarks
+   * Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingPurchaseorder(
     request: operations.GetAccountingPurchaseorderRequest,
@@ -722,6 +849,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a purchasereceipt
+   *
+   * @remarks
+   * Retrieves a single AccountingPurchasereceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingPurchasereceipt(
     request: operations.GetAccountingPurchasereceiptRequest,
@@ -736,6 +866,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a quote
+   *
+   * @remarks
+   * Retrieves a single AccountingQuote by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingQuote(
     request: operations.GetAccountingQuoteRequest,
@@ -750,6 +883,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a salesorder
+   *
+   * @remarks
+   * Retrieves a single AccountingSalesorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingSalesorder(
     request: operations.GetAccountingSalesorderRequest,
@@ -764,6 +900,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a salesreceipt
+   *
+   * @remarks
+   * Retrieves a single AccountingSalesreceipt by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingSalesreceipt(
     request: operations.GetAccountingSalesreceiptRequest,
@@ -778,6 +917,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a taxrate
+   *
+   * @remarks
+   * Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingTaxrate(
     request: operations.GetAccountingTaxrateRequest,
@@ -792,6 +934,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a transaction
+   *
+   * @remarks
+   * Retrieves a single AccountingTransaction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingTransaction(
     request: operations.GetAccountingTransactionRequest,
@@ -806,6 +951,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a trialbalance
+   *
+   * @remarks
+   * Retrieves a single AccountingTrialbalance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingTrialbalance(
     request: operations.GetAccountingTrialbalanceRequest,
@@ -820,6 +968,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Retrieve a vendorcredit
+   *
+   * @remarks
+   * Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingVendorcredit(
     request: operations.GetAccountingVendorcreditRequest,
@@ -834,6 +985,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all accounts
+   *
+   * @remarks
+   * Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingAccounts(
     request: operations.ListAccountingAccountsRequest,
@@ -848,6 +1002,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all agedpayables
+   *
+   * @remarks
+   * Returns a list of AccountingAgedpayables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingAgedpayables(
     request: operations.ListAccountingAgedpayablesRequest,
@@ -862,6 +1019,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all agedreceivables
+   *
+   * @remarks
+   * Returns a list of AccountingAgedreceivables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingAgedreceivables(
     request: operations.ListAccountingAgedreceivablesRequest,
@@ -876,6 +1036,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all balancesheets
+   *
+   * @remarks
+   * Returns a list of AccountingBalancesheets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingBalancesheets(
     request: operations.ListAccountingBalancesheetsRequest,
@@ -890,6 +1053,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all bankfeedaccounts
+   *
+   * @remarks
+   * Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingBankfeedaccounts(
     request: operations.ListAccountingBankfeedaccountsRequest,
@@ -904,6 +1070,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all bankfeedtransactions
+   *
+   * @remarks
+   * Returns a list of AccountingBankfeedtransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingBankfeedtransactions(
     request: operations.ListAccountingBankfeedtransactionsRequest,
@@ -918,6 +1087,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all bills
+   *
+   * @remarks
+   * Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingBills(
     request: operations.ListAccountingBillsRequest,
@@ -932,6 +1104,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all cashflows
+   *
+   * @remarks
+   * Returns a list of AccountingCashflows. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingCashflows(
     request: operations.ListAccountingCashflowsRequest,
@@ -946,6 +1121,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all categories
+   *
+   * @remarks
+   * Returns a list of AccountingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingCategories(
     request: operations.ListAccountingCategoriesRequest,
@@ -960,6 +1138,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all contacts
+   *
+   * @remarks
+   * Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingContacts(
     request: operations.ListAccountingContactsRequest,
@@ -974,6 +1155,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all creditmemoes
+   *
+   * @remarks
+   * Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingCreditmemoes(
     request: operations.ListAccountingCreditmemoesRequest,
@@ -988,6 +1172,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all expensereports
+   *
+   * @remarks
+   * Returns a list of AccountingExpensereports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingExpensereports(
     request: operations.ListAccountingExpensereportsRequest,
@@ -1002,6 +1189,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all expenses
+   *
+   * @remarks
+   * Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingExpenses(
     request: operations.ListAccountingExpensesRequest,
@@ -1016,6 +1206,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all invoices
+   *
+   * @remarks
+   * Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingInvoices(
     request: operations.ListAccountingInvoicesRequest,
@@ -1030,6 +1223,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all journals
+   *
+   * @remarks
+   * Returns a list of AccountingJournals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingJournals(
     request: operations.ListAccountingJournalsRequest,
@@ -1044,6 +1240,11 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all orders
+   *
+   * @remarks
+   * Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async listAccountingOrders(
     request: operations.ListAccountingOrdersRequest,
@@ -1058,6 +1259,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all organizations
+   *
+   * @remarks
+   * Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingOrganizations(
     request: operations.ListAccountingOrganizationsRequest,
@@ -1072,6 +1276,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all paymentterms
+   *
+   * @remarks
+   * Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingPaymentterms(
     request: operations.ListAccountingPaymenttermsRequest,
@@ -1086,6 +1293,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all profitlosses
+   *
+   * @remarks
+   * Returns a list of AccountingProfitlosses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingProfitlosses(
     request: operations.ListAccountingProfitlossesRequest,
@@ -1100,6 +1310,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all projects
+   *
+   * @remarks
+   * Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingProjects(
     request: operations.ListAccountingProjectsRequest,
@@ -1114,6 +1327,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all purchaseorders
+   *
+   * @remarks
+   * Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingPurchaseorders(
     request: operations.ListAccountingPurchaseordersRequest,
@@ -1128,6 +1344,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all purchasereceipts
+   *
+   * @remarks
+   * Returns a list of AccountingPurchasereceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingPurchasereceipts(
     request: operations.ListAccountingPurchasereceiptsRequest,
@@ -1142,6 +1361,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all quotes
+   *
+   * @remarks
+   * Returns a list of AccountingQuotes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingQuotes(
     request: operations.ListAccountingQuotesRequest,
@@ -1156,6 +1378,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all salesorders
+   *
+   * @remarks
+   * Returns a list of AccountingSalesorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingSalesorders(
     request: operations.ListAccountingSalesordersRequest,
@@ -1170,6 +1395,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all salesreceipts
+   *
+   * @remarks
+   * Returns a list of AccountingSalesreceipts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingSalesreceipts(
     request: operations.ListAccountingSalesreceiptsRequest,
@@ -1184,6 +1412,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all taxrates
+   *
+   * @remarks
+   * Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingTaxrates(
     request: operations.ListAccountingTaxratesRequest,
@@ -1198,6 +1429,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all transactions
+   *
+   * @remarks
+   * Returns a list of AccountingTransactions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingTransactions(
     request: operations.ListAccountingTransactionsRequest,
@@ -1212,6 +1446,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all trialbalances
+   *
+   * @remarks
+   * Returns a list of AccountingTrialbalances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingTrialbalances(
     request: operations.ListAccountingTrialbalancesRequest,
@@ -1226,6 +1463,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * List all vendorcredits
+   *
+   * @remarks
+   * Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingVendorcredits(
     request: operations.ListAccountingVendorcreditsRequest,
@@ -1240,6 +1480,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an account
+   *
+   * @remarks
+   * Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
    */
   async patchAccountingAccount(
     request: operations.PatchAccountingAccountRequest,
@@ -1254,6 +1497,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a bankfeedaccount
+   *
+   * @remarks
+   * Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
    */
   async patchAccountingBankfeedaccount(
     request: operations.PatchAccountingBankfeedaccountRequest,
@@ -1268,6 +1514,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a bankfeedtransaction
+   *
+   * @remarks
+   * Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
    */
   async patchAccountingBankfeedtransaction(
     request: operations.PatchAccountingBankfeedtransactionRequest,
@@ -1282,6 +1531,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a bill
+   *
+   * @remarks
+   * Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
    */
   async patchAccountingBill(
     request: operations.PatchAccountingBillRequest,
@@ -1296,6 +1548,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a category
+   *
+   * @remarks
+   * Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
    */
   async patchAccountingCategory(
     request: operations.PatchAccountingCategoryRequest,
@@ -1310,6 +1565,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
    */
   async patchAccountingContact(
     request: operations.PatchAccountingContactRequest,
@@ -1324,6 +1582,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a creditmemo
+   *
+   * @remarks
+   * Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
    */
   async patchAccountingCreditmemo(
     request: operations.PatchAccountingCreditmemoRequest,
@@ -1338,6 +1599,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an expense
+   *
+   * @remarks
+   * Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
    */
   async patchAccountingExpense(
     request: operations.PatchAccountingExpenseRequest,
@@ -1352,6 +1616,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an expensereport
+   *
+   * @remarks
+   * Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
    */
   async patchAccountingExpensereport(
     request: operations.PatchAccountingExpensereportRequest,
@@ -1366,6 +1633,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an invoice
+   *
+   * @remarks
+   * Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
    */
   async patchAccountingInvoice(
     request: operations.PatchAccountingInvoiceRequest,
@@ -1380,6 +1650,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a journal
+   *
+   * @remarks
+   * Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
    */
   async patchAccountingJournal(
     request: operations.PatchAccountingJournalRequest,
@@ -1394,6 +1667,11 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an order
+   *
+   * @remarks
+   * Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async patchAccountingOrder(
     request: operations.PatchAccountingOrderRequest,
@@ -1408,6 +1686,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a paymentterm
+   *
+   * @remarks
+   * Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
    */
   async patchAccountingPaymentterm(
     request: operations.PatchAccountingPaymenttermRequest,
@@ -1422,6 +1703,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a project
+   *
+   * @remarks
+   * Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
    */
   async patchAccountingProject(
     request: operations.PatchAccountingProjectRequest,
@@ -1436,6 +1720,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a purchaseorder
+   *
+   * @remarks
+   * Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
    */
   async patchAccountingPurchaseorder(
     request: operations.PatchAccountingPurchaseorderRequest,
@@ -1450,6 +1737,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a quote
+   *
+   * @remarks
+   * Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
    */
   async patchAccountingQuote(
     request: operations.PatchAccountingQuoteRequest,
@@ -1464,6 +1754,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a salesorder
+   *
+   * @remarks
+   * Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
    */
   async patchAccountingSalesorder(
     request: operations.PatchAccountingSalesorderRequest,
@@ -1478,6 +1771,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a taxrate
+   *
+   * @remarks
+   * Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
    */
   async patchAccountingTaxrate(
     request: operations.PatchAccountingTaxrateRequest,
@@ -1492,6 +1788,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a transaction
+   *
+   * @remarks
+   * Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
    */
   async patchAccountingTransaction(
     request: operations.PatchAccountingTransactionRequest,
@@ -1506,6 +1805,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a vendorcredit
+   *
+   * @remarks
+   * Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
    */
   async patchAccountingVendorcredit(
     request: operations.PatchAccountingVendorcreditRequest,
@@ -1520,6 +1822,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove an account
+   *
+   * @remarks
+   * Deletes the AccountingAccount identified by `id`.
    */
   async removeAccountingAccount(
     request: operations.RemoveAccountingAccountRequest,
@@ -1534,6 +1839,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a bankfeedaccount
+   *
+   * @remarks
+   * Deletes the AccountingBankfeedaccount identified by `id`.
    */
   async removeAccountingBankfeedaccount(
     request: operations.RemoveAccountingBankfeedaccountRequest,
@@ -1548,6 +1856,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a bankfeedtransaction
+   *
+   * @remarks
+   * Deletes the AccountingBankfeedtransaction identified by `id`.
    */
   async removeAccountingBankfeedtransaction(
     request: operations.RemoveAccountingBankfeedtransactionRequest,
@@ -1564,6 +1875,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a bill
+   *
+   * @remarks
+   * Deletes the AccountingBill identified by `id`.
    */
   async removeAccountingBill(
     request: operations.RemoveAccountingBillRequest,
@@ -1578,6 +1892,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a category
+   *
+   * @remarks
+   * Deletes the AccountingCategory identified by `id`.
    */
   async removeAccountingCategory(
     request: operations.RemoveAccountingCategoryRequest,
@@ -1592,6 +1909,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a contact
+   *
+   * @remarks
+   * Deletes the AccountingContact identified by `id`.
    */
   async removeAccountingContact(
     request: operations.RemoveAccountingContactRequest,
@@ -1606,6 +1926,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a creditmemo
+   *
+   * @remarks
+   * Deletes the AccountingCreditmemo identified by `id`.
    */
   async removeAccountingCreditmemo(
     request: operations.RemoveAccountingCreditmemoRequest,
@@ -1620,6 +1943,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove an expense
+   *
+   * @remarks
+   * Deletes the AccountingExpense identified by `id`.
    */
   async removeAccountingExpense(
     request: operations.RemoveAccountingExpenseRequest,
@@ -1634,6 +1960,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove an expensereport
+   *
+   * @remarks
+   * Deletes the AccountingExpensereport identified by `id`.
    */
   async removeAccountingExpensereport(
     request: operations.RemoveAccountingExpensereportRequest,
@@ -1648,6 +1977,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove an invoice
+   *
+   * @remarks
+   * Deletes the AccountingInvoice identified by `id`.
    */
   async removeAccountingInvoice(
     request: operations.RemoveAccountingInvoiceRequest,
@@ -1662,6 +1994,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a journal
+   *
+   * @remarks
+   * Deletes the AccountingJournal identified by `id`.
    */
   async removeAccountingJournal(
     request: operations.RemoveAccountingJournalRequest,
@@ -1676,6 +2011,11 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove an order
+   *
+   * @remarks
+   * Deletes the AccountingOrder identified by `id`.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async removeAccountingOrder(
     request: operations.RemoveAccountingOrderRequest,
@@ -1690,6 +2030,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a paymentterm
+   *
+   * @remarks
+   * Deletes the AccountingPaymentterm identified by `id`.
    */
   async removeAccountingPaymentterm(
     request: operations.RemoveAccountingPaymenttermRequest,
@@ -1704,6 +2047,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a project
+   *
+   * @remarks
+   * Deletes the AccountingProject identified by `id`.
    */
   async removeAccountingProject(
     request: operations.RemoveAccountingProjectRequest,
@@ -1718,6 +2064,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a purchaseorder
+   *
+   * @remarks
+   * Deletes the AccountingPurchaseorder identified by `id`.
    */
   async removeAccountingPurchaseorder(
     request: operations.RemoveAccountingPurchaseorderRequest,
@@ -1732,6 +2081,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a quote
+   *
+   * @remarks
+   * Deletes the AccountingQuote identified by `id`.
    */
   async removeAccountingQuote(
     request: operations.RemoveAccountingQuoteRequest,
@@ -1746,6 +2098,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a salesorder
+   *
+   * @remarks
+   * Deletes the AccountingSalesorder identified by `id`.
    */
   async removeAccountingSalesorder(
     request: operations.RemoveAccountingSalesorderRequest,
@@ -1760,6 +2115,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a taxrate
+   *
+   * @remarks
+   * Deletes the AccountingTaxrate identified by `id`.
    */
   async removeAccountingTaxrate(
     request: operations.RemoveAccountingTaxrateRequest,
@@ -1774,6 +2132,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a transaction
+   *
+   * @remarks
+   * Deletes the AccountingTransaction identified by `id`.
    */
   async removeAccountingTransaction(
     request: operations.RemoveAccountingTransactionRequest,
@@ -1788,6 +2149,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Remove a vendorcredit
+   *
+   * @remarks
+   * Deletes the AccountingVendorcredit identified by `id`.
    */
   async removeAccountingVendorcredit(
     request: operations.RemoveAccountingVendorcreditRequest,
@@ -1802,6 +2166,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an account
+   *
+   * @remarks
+   * Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
    */
   async updateAccountingAccount(
     request: operations.UpdateAccountingAccountRequest,
@@ -1816,6 +2183,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a bankfeedaccount
+   *
+   * @remarks
+   * Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
    */
   async updateAccountingBankfeedaccount(
     request: operations.UpdateAccountingBankfeedaccountRequest,
@@ -1830,6 +2200,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a bankfeedtransaction
+   *
+   * @remarks
+   * Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
    */
   async updateAccountingBankfeedtransaction(
     request: operations.UpdateAccountingBankfeedtransactionRequest,
@@ -1844,6 +2217,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a bill
+   *
+   * @remarks
+   * Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
    */
   async updateAccountingBill(
     request: operations.UpdateAccountingBillRequest,
@@ -1858,6 +2234,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a category
+   *
+   * @remarks
+   * Updates the AccountingCategory identified by `id`. Provide the unified AccountingCategory fields to change in the request body.
    */
   async updateAccountingCategory(
     request: operations.UpdateAccountingCategoryRequest,
@@ -1872,6 +2251,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a contact
+   *
+   * @remarks
+   * Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
    */
   async updateAccountingContact(
     request: operations.UpdateAccountingContactRequest,
@@ -1886,6 +2268,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a creditmemo
+   *
+   * @remarks
+   * Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
    */
   async updateAccountingCreditmemo(
     request: operations.UpdateAccountingCreditmemoRequest,
@@ -1900,6 +2285,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an expense
+   *
+   * @remarks
+   * Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
    */
   async updateAccountingExpense(
     request: operations.UpdateAccountingExpenseRequest,
@@ -1914,6 +2302,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an expensereport
+   *
+   * @remarks
+   * Updates the AccountingExpensereport identified by `id`. Provide the unified AccountingExpensereport fields to change in the request body.
    */
   async updateAccountingExpensereport(
     request: operations.UpdateAccountingExpensereportRequest,
@@ -1928,6 +2319,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an invoice
+   *
+   * @remarks
+   * Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
    */
   async updateAccountingInvoice(
     request: operations.UpdateAccountingInvoiceRequest,
@@ -1942,6 +2336,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a journal
+   *
+   * @remarks
+   * Updates the AccountingJournal identified by `id`. Provide the unified AccountingJournal fields to change in the request body.
    */
   async updateAccountingJournal(
     request: operations.UpdateAccountingJournalRequest,
@@ -1956,6 +2353,11 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update an order
+   *
+   * @remarks
+   * Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
+   *
+   * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
    */
   async updateAccountingOrder(
     request: operations.UpdateAccountingOrderRequest,
@@ -1970,6 +2372,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a paymentterm
+   *
+   * @remarks
+   * Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
    */
   async updateAccountingPaymentterm(
     request: operations.UpdateAccountingPaymenttermRequest,
@@ -1984,6 +2389,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a project
+   *
+   * @remarks
+   * Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
    */
   async updateAccountingProject(
     request: operations.UpdateAccountingProjectRequest,
@@ -1998,6 +2406,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a purchaseorder
+   *
+   * @remarks
+   * Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
    */
   async updateAccountingPurchaseorder(
     request: operations.UpdateAccountingPurchaseorderRequest,
@@ -2012,6 +2423,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a quote
+   *
+   * @remarks
+   * Updates the AccountingQuote identified by `id`. Provide the unified AccountingQuote fields to change in the request body.
    */
   async updateAccountingQuote(
     request: operations.UpdateAccountingQuoteRequest,
@@ -2026,6 +2440,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a salesorder
+   *
+   * @remarks
+   * Updates the AccountingSalesorder identified by `id`. Provide the unified AccountingSalesorder fields to change in the request body.
    */
   async updateAccountingSalesorder(
     request: operations.UpdateAccountingSalesorderRequest,
@@ -2040,6 +2457,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a taxrate
+   *
+   * @remarks
+   * Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
    */
   async updateAccountingTaxrate(
     request: operations.UpdateAccountingTaxrateRequest,
@@ -2054,6 +2474,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a transaction
+   *
+   * @remarks
+   * Updates the AccountingTransaction identified by `id`. Provide the unified AccountingTransaction fields to change in the request body.
    */
   async updateAccountingTransaction(
     request: operations.UpdateAccountingTransactionRequest,
@@ -2068,6 +2491,9 @@ export class Accounting extends ClientSDK {
 
   /**
    * Update a vendorcredit
+   *
+   * @remarks
+   * Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
    */
   async updateAccountingVendorcredit(
     request: operations.UpdateAccountingVendorcreditRequest,

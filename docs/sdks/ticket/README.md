@@ -13,7 +13,7 @@
 
 ## createTicketingTicket
 
-Create a ticket
+Creates a TicketingTicket. Provide the unified TicketingTicket fields in the request body; they are mapped to the provider's API. Returns the created TicketingTicket.
 
 ### Example Usage
 
@@ -34,7 +34,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "de47741d-2fea-4b9d-b3e2-8ddbd23df2e9",
+      id: "2b205253-ef92-4cec-86ce-608c756f0e6b",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -43,7 +43,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -78,7 +78,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "de47741d-2fea-4b9d-b3e2-8ddbd23df2e9",
+      id: "2b205253-ef92-4cec-86ce-608c756f0e6b",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -87,7 +87,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -124,7 +124,7 @@ run();
 
 ## getTicketingTicket
 
-Retrieve a ticket
+Retrieves a single TicketingTicket by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -203,7 +203,7 @@ run();
 
 ## listTicketingTickets
 
-List all tickets
+Returns a list of TicketingTickets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ run();
 
 ## patchTicketingTicket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -301,7 +301,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "ba2aad4d-1148-48f1-8c6e-bf55904a8aba",
+      id: "b04109e4-4d2e-4482-9950-1457ab61b278",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -310,7 +310,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -346,7 +346,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "ba2aad4d-1148-48f1-8c6e-bf55904a8aba",
+      id: "b04109e4-4d2e-4482-9950-1457ab61b278",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -355,7 +355,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -393,7 +393,7 @@ run();
 
 ## removeTicketingTicket
 
-Remove a ticket
+Deletes the TicketingTicket identified by `id`.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ run();
 
 ## updateTicketingTicket
 
-Update a ticket
+Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
 
 ### Example Usage
 
@@ -493,7 +493,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "ba2aad4d-1148-48f1-8c6e-bf55904a8aba",
+      id: "b04109e4-4d2e-4482-9950-1457ab61b278",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -502,7 +502,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",
@@ -538,7 +538,7 @@ async function run() {
       createdAt: new Date("2021-06-25T19:19:31.279Z"),
       description: "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
       dueAt: new Date("2021-07-07T17:39:49.813Z"),
-      id: "ba2aad4d-1148-48f1-8c6e-bf55904a8aba",
+      id: "b04109e4-4d2e-4482-9950-1457ab61b278",
       metadata: [],
       priority: "MEDIUM",
       source: "email",
@@ -547,7 +547,7 @@ async function run() {
       tags: [
         "vilicus",
       ],
-      updatedAt: new Date("2021-07-03T18:29:05.010Z"),
+      updatedAt: new Date("2021-07-03T18:34:59.710Z"),
       url: "https://similar-velocity.net/",
     },
     connectionId: "<id>",

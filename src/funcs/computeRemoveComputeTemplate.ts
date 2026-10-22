@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a template
+ *
+ * @remarks
+ * Deletes the ComputeTemplate identified by `id`.
  */
 export function computeRemoveComputeTemplate(
   client: UnifiedToCore,

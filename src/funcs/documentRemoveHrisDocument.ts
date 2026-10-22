@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a document
+ *
+ * @remarks
+ * Deletes the HrisDocument identified by `id`.
  */
 export function documentRemoveHrisDocument(
   client: UnifiedToCore,

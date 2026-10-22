@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a company
+ *
+ * @remarks
+ * Deletes the CrmCompany identified by `id`.
  */
 export function companyRemoveCrmCompany(
   client: UnifiedToCore,

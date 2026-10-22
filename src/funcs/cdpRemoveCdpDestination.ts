@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a destination
+ *
+ * @remarks
+ * Deletes the CdpDestination identified by `id`.
  */
 export function cdpRemoveCdpDestination(
   client: UnifiedToCore,

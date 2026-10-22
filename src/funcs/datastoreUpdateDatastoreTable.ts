@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a table
+ *
+ * @remarks
+ * Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
  */
 export function datastoreUpdateDatastoreTable(
   client: UnifiedToCore,

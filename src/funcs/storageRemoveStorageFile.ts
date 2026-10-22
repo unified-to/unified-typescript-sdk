@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a file
+ *
+ * @remarks
+ * Deletes the StorageFile identified by `id`.
  */
 export function storageRemoveStorageFile(
   client: UnifiedToCore,

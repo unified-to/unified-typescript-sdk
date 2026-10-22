@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a member
+ *
+ * @remarks
+ * Deletes the MarketingMember identified by `id`.
  */
 export function memberRemoveMartechMember(
   client: UnifiedToCore,

@@ -11,6 +11,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Query extends ClientSDK {
   /**
    * Create a query
+   *
+   * @remarks
+   * Creates a DatastoreQuery. Provide the unified DatastoreQuery fields in the request body; they are mapped to the provider's API. Returns the created DatastoreQuery.
    */
   async createDatastoreQuery(
     request: operations.CreateDatastoreQueryRequest,

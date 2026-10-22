@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a repository
+ *
+ * @remarks
+ * Updates the RepoRepository identified by `id`. Provide the unified RepoRepository fields to change in the request body.
  */
 export function repoUpdateRepoRepository(
   client: UnifiedToCore,

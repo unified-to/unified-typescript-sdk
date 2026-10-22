@@ -20,6 +20,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Clubs extends ClientSDK {
   /**
    * Retrieve an activity
+   *
+   * @remarks
+   * Retrieves a single ClubsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsActivity(
     request: operations.GetClubsActivityRequest,
@@ -34,6 +37,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single ClubsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsEvent(
     request: operations.GetClubsEventRequest,
@@ -48,6 +54,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * Retrieve a group
+   *
+   * @remarks
+   * Retrieves a single ClubsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsGroup(
     request: operations.GetClubsGroupRequest,
@@ -62,6 +71,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsLocation(
     request: operations.GetClubsLocationRequest,
@@ -76,6 +88,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * Retrieve a member
+   *
+   * @remarks
+   * Retrieves a single ClubsMember by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getClubsMember(
     request: operations.GetClubsMemberRequest,
@@ -90,6 +105,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * List all activities
+   *
+   * @remarks
+   * Returns a list of ClubsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsActivities(
     request: operations.ListClubsActivitiesRequest,
@@ -104,6 +122,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of ClubsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsEvents(
     request: operations.ListClubsEventsRequest,
@@ -118,6 +139,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * List all groups
+   *
+   * @remarks
+   * Returns a list of ClubsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsGroups(
     request: operations.ListClubsGroupsRequest,
@@ -132,6 +156,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * List all locations
+   *
+   * @remarks
+   * Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsLocations(
     request: operations.ListClubsLocationsRequest,
@@ -146,6 +173,9 @@ export class Clubs extends ClientSDK {
 
   /**
    * List all members
+   *
+   * @remarks
+   * Returns a list of ClubsMembers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listClubsMembers(
     request: operations.ListClubsMembersRequest,

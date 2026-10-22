@@ -54,6 +54,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Ads extends ClientSDK {
   /**
    * Create an ad
+   *
+   * @remarks
+   * Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
    */
   async createAdsAd(
     request: operations.CreateAdsAdRequest,
@@ -68,6 +71,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Create an asset
+   *
+   * @remarks
+   * Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
    */
   async createAdsAsset(
     request: operations.CreateAdsAssetRequest,
@@ -82,6 +88,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Create a campaign
+   *
+   * @remarks
+   * Creates a AdsCampaign. Provide the unified AdsCampaign fields in the request body; they are mapped to the provider's API. Returns the created AdsCampaign.
    */
   async createAdsCampaign(
     request: operations.CreateAdsCampaignRequest,
@@ -96,6 +105,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Create a creative
+   *
+   * @remarks
+   * Creates a AdsCreative. Provide the unified AdsCreative fields in the request body; they are mapped to the provider's API. Returns the created AdsCreative.
    */
   async createAdsCreative(
     request: operations.CreateAdsCreativeRequest,
@@ -110,6 +122,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Create a group
+   *
+   * @remarks
+   * Creates a AdsGroup. Provide the unified AdsGroup fields in the request body; they are mapped to the provider's API. Returns the created AdsGroup.
    */
   async createAdsGroup(
     request: operations.CreateAdsGroupRequest,
@@ -124,6 +139,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Create an insertionorder
+   *
+   * @remarks
+   * Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
    */
   async createAdsInsertionorder(
     request: operations.CreateAdsInsertionorderRequest,
@@ -138,6 +156,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Create an organization
+   *
+   * @remarks
+   * Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
    */
   async createAdsOrganization(
     request: operations.CreateAdsOrganizationRequest,
@@ -152,6 +173,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve an ad
+   *
+   * @remarks
+   * Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsAd(
     request: operations.GetAdsAdRequest,
@@ -166,6 +190,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve an asset
+   *
+   * @remarks
+   * Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsAsset(
     request: operations.GetAdsAssetRequest,
@@ -180,6 +207,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve a campaign
+   *
+   * @remarks
+   * Retrieves a single AdsCampaign by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsCampaign(
     request: operations.GetAdsCampaignRequest,
@@ -194,6 +224,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve a creative
+   *
+   * @remarks
+   * Retrieves a single AdsCreative by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsCreative(
     request: operations.GetAdsCreativeRequest,
@@ -208,6 +241,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve a group
+   *
+   * @remarks
+   * Retrieves a single AdsGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsGroup(
     request: operations.GetAdsGroupRequest,
@@ -222,6 +258,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve an insertionorder
+   *
+   * @remarks
+   * Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsInsertionorder(
     request: operations.GetAdsInsertionorderRequest,
@@ -236,6 +275,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve an organization
+   *
+   * @remarks
+   * Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsOrganization(
     request: operations.GetAdsOrganizationRequest,
@@ -250,6 +292,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve a promoted
+   *
+   * @remarks
+   * Retrieves a single AdsPromoted by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsPromoted(
     request: operations.GetAdsPromotedRequest,
@@ -264,6 +309,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Retrieve a target
+   *
+   * @remarks
+   * Retrieves a single AdsTarget by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsTarget(
     request: operations.GetAdsTargetRequest,
@@ -278,6 +326,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all ads
+   *
+   * @remarks
+   * Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsAds(
     request: operations.ListAdsAdsRequest,
@@ -292,6 +343,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all assets
+   *
+   * @remarks
+   * Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsAssets(
     request: operations.ListAdsAssetsRequest,
@@ -306,6 +360,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all campaigns
+   *
+   * @remarks
+   * Returns a list of AdsCampaigns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsCampaigns(
     request: operations.ListAdsCampaignsRequest,
@@ -320,6 +377,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all creatives
+   *
+   * @remarks
+   * Returns a list of AdsCreatives. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsCreatives(
     request: operations.ListAdsCreativesRequest,
@@ -334,6 +394,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all groups
+   *
+   * @remarks
+   * Returns a list of AdsGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsGroups(
     request: operations.ListAdsGroupsRequest,
@@ -348,6 +411,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all insertionorders
+   *
+   * @remarks
+   * Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsInsertionorders(
     request: operations.ListAdsInsertionordersRequest,
@@ -362,6 +428,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all organizations
+   *
+   * @remarks
+   * Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsOrganizations(
     request: operations.ListAdsOrganizationsRequest,
@@ -376,6 +445,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all promoteds
+   *
+   * @remarks
+   * Returns a list of AdsPromoteds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsPromoteds(
     request: operations.ListAdsPromotedsRequest,
@@ -390,6 +462,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all reports
+   *
+   * @remarks
+   * Returns a list of AdsReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsReports(
     request: operations.ListAdsReportsRequest,
@@ -404,6 +479,9 @@ export class Ads extends ClientSDK {
 
   /**
    * List all targets
+   *
+   * @remarks
+   * Returns a list of AdsTargets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsTargets(
     request: operations.ListAdsTargetsRequest,
@@ -418,6 +496,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update an ad
+   *
+   * @remarks
+   * Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
    */
   async patchAdsAd(
     request: operations.PatchAdsAdRequest,
@@ -432,6 +513,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update a campaign
+   *
+   * @remarks
+   * Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
    */
   async patchAdsCampaign(
     request: operations.PatchAdsCampaignRequest,
@@ -446,6 +530,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update a creative
+   *
+   * @remarks
+   * Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
    */
   async patchAdsCreative(
     request: operations.PatchAdsCreativeRequest,
@@ -460,6 +547,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update a group
+   *
+   * @remarks
+   * Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
    */
   async patchAdsGroup(
     request: operations.PatchAdsGroupRequest,
@@ -474,6 +564,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update an insertionorder
+   *
+   * @remarks
+   * Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
    */
   async patchAdsInsertionorder(
     request: operations.PatchAdsInsertionorderRequest,
@@ -488,6 +581,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
    */
   async patchAdsOrganization(
     request: operations.PatchAdsOrganizationRequest,
@@ -502,6 +598,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Remove an ad
+   *
+   * @remarks
+   * Deletes the AdsAd identified by `id`.
    */
   async removeAdsAd(
     request: operations.RemoveAdsAdRequest,
@@ -516,6 +615,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Remove a campaign
+   *
+   * @remarks
+   * Deletes the AdsCampaign identified by `id`.
    */
   async removeAdsCampaign(
     request: operations.RemoveAdsCampaignRequest,
@@ -530,6 +632,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Remove a creative
+   *
+   * @remarks
+   * Deletes the AdsCreative identified by `id`.
    */
   async removeAdsCreative(
     request: operations.RemoveAdsCreativeRequest,
@@ -544,6 +649,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Remove a group
+   *
+   * @remarks
+   * Deletes the AdsGroup identified by `id`.
    */
   async removeAdsGroup(
     request: operations.RemoveAdsGroupRequest,
@@ -558,6 +666,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Remove an insertionorder
+   *
+   * @remarks
+   * Deletes the AdsInsertionorder identified by `id`.
    */
   async removeAdsInsertionorder(
     request: operations.RemoveAdsInsertionorderRequest,
@@ -572,6 +683,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Remove an organization
+   *
+   * @remarks
+   * Deletes the AdsOrganization identified by `id`.
    */
   async removeAdsOrganization(
     request: operations.RemoveAdsOrganizationRequest,
@@ -586,6 +700,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update an ad
+   *
+   * @remarks
+   * Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
    */
   async updateAdsAd(
     request: operations.UpdateAdsAdRequest,
@@ -600,6 +717,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update a campaign
+   *
+   * @remarks
+   * Updates the AdsCampaign identified by `id`. Provide the unified AdsCampaign fields to change in the request body.
    */
   async updateAdsCampaign(
     request: operations.UpdateAdsCampaignRequest,
@@ -614,6 +734,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update a creative
+   *
+   * @remarks
+   * Updates the AdsCreative identified by `id`. Provide the unified AdsCreative fields to change in the request body.
    */
   async updateAdsCreative(
     request: operations.UpdateAdsCreativeRequest,
@@ -628,6 +751,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update a group
+   *
+   * @remarks
+   * Updates the AdsGroup identified by `id`. Provide the unified AdsGroup fields to change in the request body.
    */
   async updateAdsGroup(
     request: operations.UpdateAdsGroupRequest,
@@ -642,6 +768,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update an insertionorder
+   *
+   * @remarks
+   * Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
    */
   async updateAdsInsertionorder(
     request: operations.UpdateAdsInsertionorderRequest,
@@ -656,6 +785,9 @@ export class Ads extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
    */
   async updateAdsOrganization(
     request: operations.UpdateAdsOrganizationRequest,

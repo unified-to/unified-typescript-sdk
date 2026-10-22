@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a bankfeedtransaction
+ *
+ * @remarks
+ * Updates the AccountingBankfeedtransaction identified by `id`. Provide the unified AccountingBankfeedtransaction fields to change in the request body.
  */
 export function accountingUpdateAccountingBankfeedtransaction(
   client: UnifiedToCore,

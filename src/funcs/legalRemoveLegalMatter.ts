@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a matter
+ *
+ * @remarks
+ * Deletes the LegalMatter identified by `id`.
  */
 export function legalRemoveLegalMatter(
   client: UnifiedToCore,

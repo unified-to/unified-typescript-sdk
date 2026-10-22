@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a contact
+ *
+ * @remarks
+ * Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
  */
 export function contactCreateCrmContact(
   client: UnifiedToCore,

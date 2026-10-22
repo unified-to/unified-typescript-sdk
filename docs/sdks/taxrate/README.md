@@ -13,7 +13,7 @@
 
 ## createAccountingTaxrate
 
-Create a taxrate
+Creates a AccountingTaxrate. Provide the unified AccountingTaxrate fields in the request body; they are mapped to the provider's API. Returns the created AccountingTaxrate.
 
 ### Example Usage
 
@@ -41,7 +41,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "868d5ce5-4dce-4cd0-9bfa-7917edd1ca2b",
+      id: "8497a839-d90c-468d-a393-ef035ed00c1f",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -50,7 +50,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.447Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
   });
@@ -91,7 +91,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "868d5ce5-4dce-4cd0-9bfa-7917edd1ca2b",
+      id: "8497a839-d90c-468d-a393-ef035ed00c1f",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -100,7 +100,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.447Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
   });
@@ -136,7 +136,7 @@ run();
 
 ## getAccountingTaxrate
 
-Retrieve a taxrate
+Retrieves a single AccountingTaxrate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -215,7 +215,7 @@ run();
 
 ## listAccountingTaxrates
 
-List all taxrates
+Returns a list of AccountingTaxrates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -292,7 +292,7 @@ run();
 
 ## patchAccountingTaxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -320,7 +320,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "41f2d648-a5fd-4bf2-8a48-9f0740b08d1a",
+      id: "9b5cdf18-ee07-4ba8-a63e-1dd007623ad9",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -329,7 +329,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.448Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -371,7 +371,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "41f2d648-a5fd-4bf2-8a48-9f0740b08d1a",
+      id: "9b5cdf18-ee07-4ba8-a63e-1dd007623ad9",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -380,7 +380,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.448Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -417,7 +417,7 @@ run();
 
 ## removeAccountingTaxrate
 
-Remove a taxrate
+Deletes the AccountingTaxrate identified by `id`.
 
 ### Example Usage
 
@@ -496,7 +496,7 @@ run();
 
 ## updateAccountingTaxrate
 
-Update a taxrate
+Updates the AccountingTaxrate identified by `id`. Provide the unified AccountingTaxrate fields to change in the request body.
 
 ### Example Usage
 
@@ -524,7 +524,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "41f2d648-a5fd-4bf2-8a48-9f0740b08d1a",
+      id: "9b5cdf18-ee07-4ba8-a63e-1dd007623ad9",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -533,7 +533,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.448Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -575,7 +575,7 @@ async function run() {
       createdAt: new Date("2020-01-04T10:37:56.894Z"),
       description: "Exempt (0%)",
       effectiveRate: 0,
-      id: "41f2d648-a5fd-4bf2-8a48-9f0740b08d1a",
+      id: "9b5cdf18-ee07-4ba8-a63e-1dd007623ad9",
       isActive: false,
       isCompound: false,
       metadata: [],
@@ -584,7 +584,7 @@ async function run() {
       region: "KS",
       totalRate: 0,
       type: "SALES",
-      updatedAt: new Date("2020-02-13T05:10:23.448Z"),
+      updatedAt: new Date("2020-02-13T05:33:30.350Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -13,7 +13,7 @@
 
 ## createAccountingBill
 
-Create a bill
+Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
 
 ### Example Usage
 
@@ -33,13 +33,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "62532020-9f27-45c6-8699-06d387b6b45a",
+          id: "26e991be-0a36-487c-b891-47f981469a5f",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "d5b5bb77-5847-460b-a358-db9e625a834a",
+          id: "fbe7727c-b3e9-43d4-aa47-25777f8de3d2",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -52,7 +52,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "b5b60824-2c2d-4598-a990-3a82670151a7",
+      id: "a2fabca2-080d-479e-8591-c2f15ad27532",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -68,7 +68,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.630Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.004Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -102,13 +102,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "62532020-9f27-45c6-8699-06d387b6b45a",
+          id: "26e991be-0a36-487c-b891-47f981469a5f",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "d5b5bb77-5847-460b-a358-db9e625a834a",
+          id: "fbe7727c-b3e9-43d4-aa47-25777f8de3d2",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -121,7 +121,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "b5b60824-2c2d-4598-a990-3a82670151a7",
+      id: "a2fabca2-080d-479e-8591-c2f15ad27532",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -137,7 +137,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.630Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.004Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -174,7 +174,7 @@ run();
 
 ## getAccountingBill
 
-Retrieve a bill
+Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -253,7 +253,7 @@ run();
 
 ## listAccountingBills
 
-List all bills
+Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -330,7 +330,7 @@ run();
 
 ## patchAccountingBill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -350,13 +350,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "8e3f23c4-3c24-49f5-914d-348e3aabbe41",
+          id: "ea56e58c-c1b0-480a-9308-8ab39e1b1665",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "6bbcc1b7-f507-4572-86b4-511cc7b8faf2",
+          id: "e74b1949-5eb7-41f8-8228-7eccc4cdc6fe",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -369,7 +369,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "7b440529-f3ca-4830-8889-5ad1e27b860d",
+      id: "dd2db6e4-8aed-4f04-a52b-6157edb26a88",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -385,7 +385,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.637Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.009Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -420,13 +420,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "8e3f23c4-3c24-49f5-914d-348e3aabbe41",
+          id: "ea56e58c-c1b0-480a-9308-8ab39e1b1665",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "6bbcc1b7-f507-4572-86b4-511cc7b8faf2",
+          id: "e74b1949-5eb7-41f8-8228-7eccc4cdc6fe",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -439,7 +439,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "7b440529-f3ca-4830-8889-5ad1e27b860d",
+      id: "dd2db6e4-8aed-4f04-a52b-6157edb26a88",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -455,7 +455,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.637Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.009Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -493,7 +493,7 @@ run();
 
 ## removeAccountingBill
 
-Remove a bill
+Deletes the AccountingBill identified by `id`.
 
 ### Example Usage
 
@@ -572,7 +572,7 @@ run();
 
 ## updateAccountingBill
 
-Update a bill
+Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
 
 ### Example Usage
 
@@ -592,13 +592,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "8e3f23c4-3c24-49f5-914d-348e3aabbe41",
+          id: "ea56e58c-c1b0-480a-9308-8ab39e1b1665",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "6bbcc1b7-f507-4572-86b4-511cc7b8faf2",
+          id: "e74b1949-5eb7-41f8-8228-7eccc4cdc6fe",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -611,7 +611,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "7b440529-f3ca-4830-8889-5ad1e27b860d",
+      id: "dd2db6e4-8aed-4f04-a52b-6157edb26a88",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -627,7 +627,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.637Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.009Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",
@@ -662,13 +662,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://puny-foodstuffs.name",
-          id: "8e3f23c4-3c24-49f5-914d-348e3aabbe41",
+          id: "ea56e58c-c1b0-480a-9308-8ab39e1b1665",
           mimeType: "application/pdf",
           name: "BILL-2466.pdf",
         },
         {
           downloadUrl: "https://grimy-characterization.net",
-          id: "6bbcc1b7-f507-4572-86b4-511cc7b8faf2",
+          id: "e74b1949-5eb7-41f8-8228-7eccc4cdc6fe",
           mimeType: "application/pdf",
           name: "BILL-2466-1.pdf",
         },
@@ -681,7 +681,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2019-09-07T23:03:14.104Z"),
       extendedNotes: [],
-      id: "7b440529-f3ca-4830-8889-5ad1e27b860d",
+      id: "dd2db6e4-8aed-4f04-a52b-6157edb26a88",
       lineitems: [],
       metadata: [],
       notes: "Admiratio deporto tutamen cilicium infit amissio ante demulceo.",
@@ -697,7 +697,7 @@ async function run() {
       taxAmount: 0,
       term: "NET_90",
       totalAmount: 0,
-      updatedAt: new Date("2020-06-01T05:51:53.637Z"),
+      updatedAt: new Date("2020-06-01T08:31:37.009Z"),
       url: "https://cluttered-importance.org/bills/BILL-2466",
     },
     connectionId: "<id>",

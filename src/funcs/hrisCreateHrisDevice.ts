@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a device
+ *
+ * @remarks
+ * Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
  */
 export function hrisCreateHrisDevice(
   client: UnifiedToCore,

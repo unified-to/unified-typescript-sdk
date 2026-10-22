@@ -13,7 +13,7 @@
 
 ## createAdsAd
 
-Create an ad
+Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
 
 ### Example Usage
 
@@ -37,11 +37,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "4b534b21-7da8-47a7-917a-065380789041",
+      id: "4f92b6f3-396b-4769-8d94-21381f1246f3",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.267Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.017Z"),
     },
     connectionId: "<id>",
   });
@@ -78,11 +78,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "4b534b21-7da8-47a7-917a-065380789041",
+      id: "4f92b6f3-396b-4769-8d94-21381f1246f3",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.267Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.017Z"),
     },
     connectionId: "<id>",
   });
@@ -118,7 +118,7 @@ run();
 
 ## getAdsAd
 
-Retrieve an ad
+Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -197,7 +197,7 @@ run();
 
 ## listAdsAds
 
-List all ads
+Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -274,7 +274,7 @@ run();
 
 ## patchAdsAd
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -298,11 +298,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "1196bfd5-1545-4e96-9a72-31d34607c800",
+      id: "340f3891-edd2-40e8-8698-6c92e466f32f",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.287Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -340,11 +340,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "1196bfd5-1545-4e96-9a72-31d34607c800",
+      id: "340f3891-edd2-40e8-8698-6c92e466f32f",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.287Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -381,7 +381,7 @@ run();
 
 ## removeAdsAd
 
-Remove an ad
+Deletes the AdsAd identified by `id`.
 
 ### Example Usage
 
@@ -460,7 +460,7 @@ run();
 
 ## updateAdsAd
 
-Update an ad
+Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
 
 ### Example Usage
 
@@ -484,11 +484,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "1196bfd5-1545-4e96-9a72-31d34607c800",
+      id: "340f3891-edd2-40e8-8698-6c92e466f32f",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.287Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -526,11 +526,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "1196bfd5-1545-4e96-9a72-31d34607c800",
+      id: "340f3891-edd2-40e8-8698-6c92e466f32f",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-18T13:53:19.287Z"),
+      updatedAt: new Date("2024-06-18T23:41:29.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",

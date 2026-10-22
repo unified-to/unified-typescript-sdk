@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Bill extends ClientSDK {
   /**
    * Create a bill
+   *
+   * @remarks
+   * Creates a AccountingBill. Provide the unified AccountingBill fields in the request body; they are mapped to the provider's API. Returns the created AccountingBill.
    */
   async createAccountingBill(
     request: operations.CreateAccountingBillRequest,
@@ -30,6 +33,9 @@ export class Bill extends ClientSDK {
 
   /**
    * Retrieve a bill
+   *
+   * @remarks
+   * Retrieves a single AccountingBill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingBill(
     request: operations.GetAccountingBillRequest,
@@ -44,6 +50,9 @@ export class Bill extends ClientSDK {
 
   /**
    * List all bills
+   *
+   * @remarks
+   * Returns a list of AccountingBills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingBills(
     request: operations.ListAccountingBillsRequest,
@@ -58,6 +67,9 @@ export class Bill extends ClientSDK {
 
   /**
    * Update a bill
+   *
+   * @remarks
+   * Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
    */
   async patchAccountingBill(
     request: operations.PatchAccountingBillRequest,
@@ -72,6 +84,9 @@ export class Bill extends ClientSDK {
 
   /**
    * Remove a bill
+   *
+   * @remarks
+   * Deletes the AccountingBill identified by `id`.
    */
   async removeAccountingBill(
     request: operations.RemoveAccountingBillRequest,
@@ -86,6 +101,9 @@ export class Bill extends ClientSDK {
 
   /**
    * Update a bill
+   *
+   * @remarks
+   * Updates the AccountingBill identified by `id`. Provide the unified AccountingBill fields to change in the request body.
    */
   async updateAccountingBill(
     request: operations.UpdateAccountingBillRequest,

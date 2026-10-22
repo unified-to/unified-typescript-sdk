@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a volume
+ *
+ * @remarks
+ * Creates a ComputeVolume. Provide the unified ComputeVolume fields in the request body; they are mapped to the provider's API. Returns the created ComputeVolume.
  */
 export function computeCreateComputeVolume(
   client: UnifiedToCore,

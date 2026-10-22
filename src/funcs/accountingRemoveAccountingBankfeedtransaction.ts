@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a bankfeedtransaction
+ *
+ * @remarks
+ * Deletes the AccountingBankfeedtransaction identified by `id`.
  */
 export function accountingRemoveAccountingBankfeedtransaction(
   client: UnifiedToCore,

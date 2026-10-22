@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a document
+ *
+ * @remarks
+ * Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
  */
 export function documentPatchHrisDocument(
   client: UnifiedToCore,

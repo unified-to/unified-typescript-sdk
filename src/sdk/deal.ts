@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Deal extends ClientSDK {
   /**
    * Create a deal
+   *
+   * @remarks
+   * Creates a CrmDeal. Provide the unified CrmDeal fields in the request body; they are mapped to the provider's API. Returns the created CrmDeal.
    */
   async createCrmDeal(
     request: operations.CreateCrmDealRequest,
@@ -30,6 +33,9 @@ export class Deal extends ClientSDK {
 
   /**
    * Retrieve a deal
+   *
+   * @remarks
+   * Retrieves a single CrmDeal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmDeal(
     request: operations.GetCrmDealRequest,
@@ -44,6 +50,9 @@ export class Deal extends ClientSDK {
 
   /**
    * List all deals
+   *
+   * @remarks
+   * Returns a list of CrmDeals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmDeals(
     request: operations.ListCrmDealsRequest,
@@ -58,6 +67,9 @@ export class Deal extends ClientSDK {
 
   /**
    * Update a deal
+   *
+   * @remarks
+   * Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
    */
   async patchCrmDeal(
     request: operations.PatchCrmDealRequest,
@@ -72,6 +84,9 @@ export class Deal extends ClientSDK {
 
   /**
    * Remove a deal
+   *
+   * @remarks
+   * Deletes the CrmDeal identified by `id`.
    */
   async removeCrmDeal(
     request: operations.RemoveCrmDealRequest,
@@ -86,6 +101,9 @@ export class Deal extends ClientSDK {
 
   /**
    * Update a deal
+   *
+   * @remarks
+   * Updates the CrmDeal identified by `id`. Provide the unified CrmDeal fields to change in the request body.
    */
   async updateCrmDeal(
     request: operations.UpdateCrmDealRequest,

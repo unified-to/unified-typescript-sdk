@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an order
+ *
+ * @remarks
+ * Creates a AssessmentOrder. Provide the unified AssessmentOrder fields in the request body; they are mapped to the provider's API. Returns the created AssessmentOrder.
  */
 export function orderCreateAssessmentOrder(
   client: UnifiedToCore,

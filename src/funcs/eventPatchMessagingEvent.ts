@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an event
+ *
+ * @remarks
+ * Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
  */
 export function eventPatchMessagingEvent(
   client: UnifiedToCore,

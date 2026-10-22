@@ -44,7 +44,13 @@ export type GenaiPrompt = {
    * Supply a remote MCP URL to send to the LLM API for it to call its tools.  Note: Some LLM APIs do not yet support remote MCP URLs.
    */
   mcpUrl?: string | undefined;
+  /**
+   * The conversation to send to the model, in order; each message has a role and its content
+   */
   messages?: Array<GenaiContent> | undefined;
+  /**
+   * The ID of the model to use (a GenaiModel ID)
+   */
   modelId?: string | undefined;
   /**
    * Typed questions to evaluate against the messages (for decision models such as TypeSafe Jev).

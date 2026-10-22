@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a payment
+ *
+ * @remarks
+ * Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
  */
 export function paymentPatchPaymentPayment(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a salesorder
+ *
+ * @remarks
+ * Creates a AccountingSalesorder. Provide the unified AccountingSalesorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingSalesorder.
  */
 export function accountingCreateAccountingSalesorder(
   client: UnifiedToCore,

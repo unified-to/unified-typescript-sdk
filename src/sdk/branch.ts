@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Branch extends ClientSDK {
   /**
    * Create a branch
+   *
+   * @remarks
+   * Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
    */
   async createRepoBranch(
     request: operations.CreateRepoBranchRequest,
@@ -30,6 +33,9 @@ export class Branch extends ClientSDK {
 
   /**
    * Retrieve a branch
+   *
+   * @remarks
+   * Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getRepoBranch(
     request: operations.GetRepoBranchRequest,
@@ -44,6 +50,9 @@ export class Branch extends ClientSDK {
 
   /**
    * List all branches
+   *
+   * @remarks
+   * Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listRepoBranches(
     request: operations.ListRepoBranchesRequest,
@@ -58,6 +67,9 @@ export class Branch extends ClientSDK {
 
   /**
    * Update a branch
+   *
+   * @remarks
+   * Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
    */
   async patchRepoBranch(
     request: operations.PatchRepoBranchRequest,
@@ -72,6 +84,9 @@ export class Branch extends ClientSDK {
 
   /**
    * Remove a branch
+   *
+   * @remarks
+   * Deletes the RepoBranch identified by `id`.
    */
   async removeRepoBranch(
     request: operations.RemoveRepoBranchRequest,
@@ -86,6 +101,9 @@ export class Branch extends ClientSDK {
 
   /**
    * Update a branch
+   *
+   * @remarks
+   * Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
    */
   async updateRepoBranch(
     request: operations.UpdateRepoBranchRequest,

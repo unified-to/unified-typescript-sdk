@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an appointment
+ *
+ * @remarks
+ * Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
  */
 export function healthcareCreateHealthcareAppointment(
   client: UnifiedToCore,

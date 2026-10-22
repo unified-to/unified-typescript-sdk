@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an activity
+ *
+ * @remarks
+ * Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
  */
 export function atsCreateAtsActivity(
   client: UnifiedToCore,

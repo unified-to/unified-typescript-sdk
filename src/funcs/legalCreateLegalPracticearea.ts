@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a practicearea
+ *
+ * @remarks
+ * Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
  */
 export function legalCreateLegalPracticearea(
   client: UnifiedToCore,

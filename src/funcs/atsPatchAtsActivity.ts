@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an activity
+ *
+ * @remarks
+ * Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
  */
 export function atsPatchAtsActivity(
   client: UnifiedToCore,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a timeentry
+ *
+ * @remarks
+ * Deletes the LegalTimeentry identified by `id`.
  */
 export function legalRemoveLegalTimeentry(
   client: UnifiedToCore,

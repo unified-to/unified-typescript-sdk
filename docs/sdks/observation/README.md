@@ -10,7 +10,7 @@
 
 ## createHealthcareObservation
 
-Create an observation
+Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
 
 ### Example Usage
 
@@ -59,15 +59,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "5418e9c9-7d43-4c10-9029-1c7ffcf8fdde",
+      id: "4fb3119c-a8b4-49f7-ab50-43ef675437db",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-11T10:50:35.743Z"),
+      issuedAt: new Date("2025-05-12T01:54:45.239Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-01-20T04:18:44.821Z"),
+      observedAt: new Date("2025-01-20T17:29:25.412Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-03-24T06:53:18.074Z"),
+      updatedAt: new Date("2026-03-25T03:20:35.183Z"),
     },
     connectionId: "<id>",
   });
@@ -129,15 +129,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "5418e9c9-7d43-4c10-9029-1c7ffcf8fdde",
+      id: "4fb3119c-a8b4-49f7-ab50-43ef675437db",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-11T10:50:35.743Z"),
+      issuedAt: new Date("2025-05-12T01:54:45.239Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-01-20T04:18:44.821Z"),
+      observedAt: new Date("2025-01-20T17:29:25.412Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-03-24T06:53:18.074Z"),
+      updatedAt: new Date("2026-03-25T03:20:35.183Z"),
     },
     connectionId: "<id>",
   });
@@ -173,7 +173,7 @@ run();
 
 ## getHealthcareObservation
 
-Retrieve an observation
+Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -252,7 +252,7 @@ run();
 
 ## listHealthcareObservations
 
-List all observations
+Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

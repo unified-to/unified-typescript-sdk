@@ -13,7 +13,7 @@
 
 ## createAtsCandidate
 
-Create a candidate
+Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
 
 ### Example Usage
 
@@ -81,7 +81,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "bca3ab81-ed3a-4b76-afe3-78afbb2b1dad",
+      id: "9ee92fcf-afa7-4acd-abb1-c72c5af14fb5",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -94,7 +94,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "587c7316-a29a-430b-acb0-b09d0c0598eb",
+          id: "a35a7d4b-b8d5-4565-90aa-6e262c44ba29",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -121,7 +121,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:29.995Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.504Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -203,7 +203,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "bca3ab81-ed3a-4b76-afe3-78afbb2b1dad",
+      id: "9ee92fcf-afa7-4acd-abb1-c72c5af14fb5",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -216,7 +216,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "587c7316-a29a-430b-acb0-b09d0c0598eb",
+          id: "a35a7d4b-b8d5-4565-90aa-6e262c44ba29",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -243,7 +243,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:29.995Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.504Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -280,7 +280,7 @@ run();
 
 ## getAtsCandidate
 
-Retrieve a candidate
+Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -359,7 +359,7 @@ run();
 
 ## listAtsCandidates
 
-List all candidates
+Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -436,7 +436,7 @@ run();
 
 ## patchAtsCandidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -504,7 +504,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "88777c66-46ba-415c-ba8e-16bf603d9518",
+      id: "76541c45-f66e-4aed-98cc-7b149a4553e6",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -517,7 +517,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "be4aa2c3-6458-4652-b561-48fb38190de8",
+          id: "69d12fed-7b26-4be3-9133-9dfe8211e339",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -544,7 +544,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:30.003Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.510Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -627,7 +627,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "88777c66-46ba-415c-ba8e-16bf603d9518",
+      id: "76541c45-f66e-4aed-98cc-7b149a4553e6",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -640,7 +640,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "be4aa2c3-6458-4652-b561-48fb38190de8",
+          id: "69d12fed-7b26-4be3-9133-9dfe8211e339",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -667,7 +667,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:30.003Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.510Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -705,7 +705,7 @@ run();
 
 ## removeAtsCandidate
 
-Remove a candidate
+Deletes the AtsCandidate identified by `id`.
 
 ### Example Usage
 
@@ -784,7 +784,7 @@ run();
 
 ## updateAtsCandidate
 
-Update a candidate
+Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
 
 ### Example Usage
 
@@ -852,7 +852,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "88777c66-46ba-415c-ba8e-16bf603d9518",
+      id: "76541c45-f66e-4aed-98cc-7b149a4553e6",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -865,7 +865,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "be4aa2c3-6458-4652-b561-48fb38190de8",
+          id: "69d12fed-7b26-4be3-9133-9dfe8211e339",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -892,7 +892,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:30.003Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.510Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",
@@ -975,7 +975,7 @@ async function run() {
         },
       ],
       firstName: "Ardith",
-      id: "88777c66-46ba-415c-ba8e-16bf603d9518",
+      id: "76541c45-f66e-4aed-98cc-7b149a4553e6",
       imageUrl: "https://avatars.githubusercontent.com/u/27464445",
       jobIds: [],
       lastName: "Beatty",
@@ -988,7 +988,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "be4aa2c3-6458-4652-b561-48fb38190de8",
+          id: "69d12fed-7b26-4be3-9133-9dfe8211e339",
           namespace: "custom",
           slug: "custom_field",
           value: "officia",
@@ -1015,7 +1015,7 @@ async function run() {
         },
       ],
       title: "Customer Division Producer",
-      updatedAt: new Date("2024-04-28T17:53:30.003Z"),
+      updatedAt: new Date("2024-04-28T22:09:39.510Z"),
       webUrl: "https://fragrant-husband.net/",
     },
     connectionId: "<id>",

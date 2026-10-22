@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Webinar extends ClientSDK {
   /**
    * Create a webinar
+   *
+   * @remarks
+   * Creates a CalendarWebinar. Provide the unified CalendarWebinar fields in the request body; they are mapped to the provider's API. Returns the created CalendarWebinar.
    */
   async createCalendarWebinar(
     request: operations.CreateCalendarWebinarRequest,
@@ -30,6 +33,9 @@ export class Webinar extends ClientSDK {
 
   /**
    * Retrieve a webinar
+   *
+   * @remarks
+   * Retrieves a single CalendarWebinar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCalendarWebinar(
     request: operations.GetCalendarWebinarRequest,
@@ -44,6 +50,9 @@ export class Webinar extends ClientSDK {
 
   /**
    * List all webinars
+   *
+   * @remarks
+   * Returns a list of CalendarWebinars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarWebinars(
     request: operations.ListCalendarWebinarsRequest,
@@ -58,6 +67,9 @@ export class Webinar extends ClientSDK {
 
   /**
    * Update a webinar
+   *
+   * @remarks
+   * Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
    */
   async patchCalendarWebinar(
     request: operations.PatchCalendarWebinarRequest,
@@ -72,6 +84,9 @@ export class Webinar extends ClientSDK {
 
   /**
    * Remove a webinar
+   *
+   * @remarks
+   * Deletes the CalendarWebinar identified by `id`.
    */
   async removeCalendarWebinar(
     request: operations.RemoveCalendarWebinarRequest,
@@ -86,6 +101,9 @@ export class Webinar extends ClientSDK {
 
   /**
    * Update a webinar
+   *
+   * @remarks
+   * Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
    */
   async updateCalendarWebinar(
     request: operations.UpdateCalendarWebinarRequest,

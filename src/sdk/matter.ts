@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Matter extends ClientSDK {
   /**
    * Create a matter
+   *
+   * @remarks
+   * Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
    */
   async createLegalMatter(
     request: operations.CreateLegalMatterRequest,
@@ -30,6 +33,9 @@ export class Matter extends ClientSDK {
 
   /**
    * Retrieve a matter
+   *
+   * @remarks
+   * Retrieves a single LegalMatter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLegalMatter(
     request: operations.GetLegalMatterRequest,
@@ -44,6 +50,9 @@ export class Matter extends ClientSDK {
 
   /**
    * List all matters
+   *
+   * @remarks
+   * Returns a list of LegalMatters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLegalMatters(
     request: operations.ListLegalMattersRequest,
@@ -58,6 +67,9 @@ export class Matter extends ClientSDK {
 
   /**
    * Update a matter
+   *
+   * @remarks
+   * Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
    */
   async patchLegalMatter(
     request: operations.PatchLegalMatterRequest,
@@ -72,6 +84,9 @@ export class Matter extends ClientSDK {
 
   /**
    * Remove a matter
+   *
+   * @remarks
+   * Deletes the LegalMatter identified by `id`.
    */
   async removeLegalMatter(
     request: operations.RemoveLegalMatterRequest,
@@ -86,6 +101,9 @@ export class Matter extends ClientSDK {
 
   /**
    * Update a matter
+   *
+   * @remarks
+   * Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
    */
   async updateLegalMatter(
     request: operations.UpdateLegalMatterRequest,

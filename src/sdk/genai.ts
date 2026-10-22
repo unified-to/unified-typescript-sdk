@@ -41,6 +41,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Genai extends ClientSDK {
   /**
    * Create an agent
+   *
+   * @remarks
+   * Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
    */
   async createGenaiAgent(
     request: operations.CreateGenaiAgentRequest,
@@ -55,6 +58,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Create an embedding
+   *
+   * @remarks
+   * Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
    */
   async createGenaiEmbedding(
     request: operations.CreateGenaiEmbeddingRequest,
@@ -69,6 +75,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Create a memory
+   *
+   * @remarks
+   * Creates a GenaiMemory. Provide the unified GenaiMemory fields in the request body; they are mapped to the provider's API. Returns the created GenaiMemory.
    */
   async createGenaiMemory(
     request: operations.CreateGenaiMemoryRequest,
@@ -83,6 +92,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Create an organization
+   *
+   * @remarks
+   * Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
    */
   async createGenaiOrganization(
     request: operations.CreateGenaiOrganizationRequest,
@@ -97,6 +109,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Create a prompt
+   *
+   * @remarks
+   * Creates a GenaiPrompt. Provide the unified GenaiPrompt fields in the request body; they are mapped to the provider's API. Returns the created GenaiPrompt.
    */
   async createGenaiPrompt(
     request: operations.CreateGenaiPromptRequest,
@@ -111,6 +126,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Create a task
+   *
+   * @remarks
+   * Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
    */
   async createGenaiTask(
     request: operations.CreateGenaiTaskRequest,
@@ -125,6 +143,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Retrieve an agent
+   *
+   * @remarks
+   * Retrieves a single GenaiAgent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiAgent(
     request: operations.GetGenaiAgentRequest,
@@ -139,6 +160,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Retrieve a memory
+   *
+   * @remarks
+   * Retrieves a single GenaiMemory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiMemory(
     request: operations.GetGenaiMemoryRequest,
@@ -153,6 +177,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Retrieve a model
+   *
+   * @remarks
+   * Retrieves a single GenaiModel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiModel(
     request: operations.GetGenaiModelRequest,
@@ -167,6 +194,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Retrieve an organization
+   *
+   * @remarks
+   * Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiOrganization(
     request: operations.GetGenaiOrganizationRequest,
@@ -181,6 +211,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Retrieve a skill
+   *
+   * @remarks
+   * Retrieves a single GenaiSkill by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiSkill(
     request: operations.GetGenaiSkillRequest,
@@ -195,6 +228,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Retrieve a task
+   *
+   * @remarks
+   * Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiTask(
     request: operations.GetGenaiTaskRequest,
@@ -209,6 +245,9 @@ export class Genai extends ClientSDK {
 
   /**
    * List all agents
+   *
+   * @remarks
+   * Returns a list of GenaiAgents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiAgents(
     request: operations.ListGenaiAgentsRequest,
@@ -223,6 +262,9 @@ export class Genai extends ClientSDK {
 
   /**
    * List all memories
+   *
+   * @remarks
+   * Returns a list of GenaiMemories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiMemories(
     request: operations.ListGenaiMemoriesRequest,
@@ -237,6 +279,9 @@ export class Genai extends ClientSDK {
 
   /**
    * List all models
+   *
+   * @remarks
+   * Returns a list of GenaiModels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiModels(
     request: operations.ListGenaiModelsRequest,
@@ -251,6 +296,9 @@ export class Genai extends ClientSDK {
 
   /**
    * List all organizations
+   *
+   * @remarks
+   * Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiOrganizations(
     request: operations.ListGenaiOrganizationsRequest,
@@ -265,6 +313,9 @@ export class Genai extends ClientSDK {
 
   /**
    * List all skills
+   *
+   * @remarks
+   * Returns a list of GenaiSkills. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiSkills(
     request: operations.ListGenaiSkillsRequest,
@@ -279,6 +330,9 @@ export class Genai extends ClientSDK {
 
   /**
    * List all tasks
+   *
+   * @remarks
+   * Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiTasks(
     request: operations.ListGenaiTasksRequest,
@@ -293,6 +347,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Update an agent
+   *
+   * @remarks
+   * Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
    */
   async patchGenaiAgent(
     request: operations.PatchGenaiAgentRequest,
@@ -307,6 +364,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Update a memory
+   *
+   * @remarks
+   * Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
    */
   async patchGenaiMemory(
     request: operations.PatchGenaiMemoryRequest,
@@ -321,6 +381,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
    */
   async patchGenaiOrganization(
     request: operations.PatchGenaiOrganizationRequest,
@@ -335,6 +398,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Update a task
+   *
+   * @remarks
+   * Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
    */
   async patchGenaiTask(
     request: operations.PatchGenaiTaskRequest,
@@ -349,6 +415,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Remove an agent
+   *
+   * @remarks
+   * Deletes the GenaiAgent identified by `id`.
    */
   async removeGenaiAgent(
     request: operations.RemoveGenaiAgentRequest,
@@ -363,6 +432,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Remove a memory
+   *
+   * @remarks
+   * Deletes the GenaiMemory identified by `id`.
    */
   async removeGenaiMemory(
     request: operations.RemoveGenaiMemoryRequest,
@@ -377,6 +449,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Remove an organization
+   *
+   * @remarks
+   * Deletes the GenaiOrganization identified by `id`.
    */
   async removeGenaiOrganization(
     request: operations.RemoveGenaiOrganizationRequest,
@@ -391,6 +466,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Remove a skill
+   *
+   * @remarks
+   * Deletes the GenaiSkill identified by `id`.
    */
   async removeGenaiSkill(
     request: operations.RemoveGenaiSkillRequest,
@@ -405,6 +483,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Remove a task
+   *
+   * @remarks
+   * Deletes the GenaiTask identified by `id`.
    */
   async removeGenaiTask(
     request: operations.RemoveGenaiTaskRequest,
@@ -419,6 +500,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Update an agent
+   *
+   * @remarks
+   * Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
    */
   async updateGenaiAgent(
     request: operations.UpdateGenaiAgentRequest,
@@ -433,6 +517,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Update a memory
+   *
+   * @remarks
+   * Updates the GenaiMemory identified by `id`. Provide the unified GenaiMemory fields to change in the request body.
    */
   async updateGenaiMemory(
     request: operations.UpdateGenaiMemoryRequest,
@@ -447,6 +534,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Update an organization
+   *
+   * @remarks
+   * Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
    */
   async updateGenaiOrganization(
     request: operations.UpdateGenaiOrganizationRequest,
@@ -461,6 +551,9 @@ export class Genai extends ClientSDK {
 
   /**
    * Update a task
+   *
+   * @remarks
+   * Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
    */
   async updateGenaiTask(
     request: operations.UpdateGenaiTaskRequest,

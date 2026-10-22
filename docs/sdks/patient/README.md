@@ -12,7 +12,7 @@
 
 ## createHealthcarePatient
 
-Create a patient
+Creates a HealthcarePatient. Provide the unified HealthcarePatient fields in the request body; they are mapped to the provider's API. Returns the created HealthcarePatient.
 
 ### Example Usage
 
@@ -36,7 +36,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -46,7 +46,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "fbc2f0c4-c95b-4f9f-9b3a-638eea47434c",
+      id: "27f5d17b-3850-4d9c-9bd8-64beb08115f4",
       identifiers: [
         {
           type: "MRN",
@@ -66,7 +66,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.813Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.849Z"),
     },
     connectionId: "<id>",
   });
@@ -103,7 +103,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -113,7 +113,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "fbc2f0c4-c95b-4f9f-9b3a-638eea47434c",
+      id: "27f5d17b-3850-4d9c-9bd8-64beb08115f4",
       identifiers: [
         {
           type: "MRN",
@@ -133,7 +133,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.813Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.849Z"),
     },
     connectionId: "<id>",
   });
@@ -169,7 +169,7 @@ run();
 
 ## getHealthcarePatient
 
-Retrieve a patient
+Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -248,7 +248,7 @@ run();
 
 ## listHealthcarePatients
 
-List all patients
+Returns a list of HealthcarePatients. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -325,7 +325,7 @@ run();
 
 ## patchHealthcarePatient
 
-Update a patient
+Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
 
 ### Example Usage
 
@@ -349,7 +349,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -359,7 +359,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "130625ce-7a7f-4b05-adc1-01aa6ebf074a",
+      id: "6eaf30cc-59d6-4bc5-8c55-6e395d72aa52",
       identifiers: [
         {
           type: "MRN",
@@ -379,7 +379,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.851Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.866Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -417,7 +417,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -427,7 +427,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "130625ce-7a7f-4b05-adc1-01aa6ebf074a",
+      id: "6eaf30cc-59d6-4bc5-8c55-6e395d72aa52",
       identifiers: [
         {
           type: "MRN",
@@ -447,7 +447,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.851Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.866Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -484,7 +484,7 @@ run();
 
 ## updateHealthcarePatient
 
-Update a patient
+Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
 
 ### Example Usage
 
@@ -508,7 +508,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -518,7 +518,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "130625ce-7a7f-4b05-adc1-01aa6ebf074a",
+      id: "6eaf30cc-59d6-4bc5-8c55-6e395d72aa52",
       identifiers: [
         {
           type: "MRN",
@@ -538,7 +538,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.851Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.866Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -576,7 +576,7 @@ async function run() {
         postalCode: "54031",
         region: "Nebraska",
       },
-      birthdate: "2025-02-12",
+      birthdate: "2025-02-13",
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -586,7 +586,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "130625ce-7a7f-4b05-adc1-01aa6ebf074a",
+      id: "6eaf30cc-59d6-4bc5-8c55-6e395d72aa52",
       identifiers: [
         {
           type: "MRN",
@@ -606,7 +606,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-22T20:50:05.851Z"),
+      updatedAt: new Date("2026-06-23T19:24:01.866Z"),
     },
     connectionId: "<id>",
     id: "<id>",

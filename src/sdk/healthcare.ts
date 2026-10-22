@@ -40,6 +40,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Healthcare extends ClientSDK {
   /**
    * Create an appointment
+   *
+   * @remarks
+   * Creates a HealthcareAppointment. Provide the unified HealthcareAppointment fields in the request body; they are mapped to the provider's API. Returns the created HealthcareAppointment.
    */
   async createHealthcareAppointment(
     request: operations.CreateHealthcareAppointmentRequest,
@@ -54,6 +57,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Create an observation
+   *
+   * @remarks
+   * Creates a HealthcareObservation. Provide the unified HealthcareObservation fields in the request body; they are mapped to the provider's API. Returns the created HealthcareObservation.
    */
   async createHealthcareObservation(
     request: operations.CreateHealthcareObservationRequest,
@@ -68,6 +74,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Create a patient
+   *
+   * @remarks
+   * Creates a HealthcarePatient. Provide the unified HealthcarePatient fields in the request body; they are mapped to the provider's API. Returns the created HealthcarePatient.
    */
   async createHealthcarePatient(
     request: operations.CreateHealthcarePatientRequest,
@@ -82,6 +91,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve an allergy
+   *
+   * @remarks
+   * Retrieves a single HealthcareAllergy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareAllergy(
     request: operations.GetHealthcareAllergyRequest,
@@ -96,6 +108,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve an appointment
+   *
+   * @remarks
+   * Retrieves a single HealthcareAppointment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareAppointment(
     request: operations.GetHealthcareAppointmentRequest,
@@ -110,6 +125,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve a condition
+   *
+   * @remarks
+   * Retrieves a single HealthcareCondition by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareCondition(
     request: operations.GetHealthcareConditionRequest,
@@ -124,6 +142,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve an encounter
+   *
+   * @remarks
+   * Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareEncounter(
     request: operations.GetHealthcareEncounterRequest,
@@ -138,6 +159,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve an immunization
+   *
+   * @remarks
+   * Retrieves a single HealthcareImmunization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareImmunization(
     request: operations.GetHealthcareImmunizationRequest,
@@ -152,6 +176,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareLocation(
     request: operations.GetHealthcareLocationRequest,
@@ -166,6 +193,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve a medication
+   *
+   * @remarks
+   * Retrieves a single HealthcareMedication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareMedication(
     request: operations.GetHealthcareMedicationRequest,
@@ -180,6 +210,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve an observation
+   *
+   * @remarks
+   * Retrieves a single HealthcareObservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareObservation(
     request: operations.GetHealthcareObservationRequest,
@@ -194,6 +227,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve a patient
+   *
+   * @remarks
+   * Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcarePatient(
     request: operations.GetHealthcarePatientRequest,
@@ -208,6 +244,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve a practitioner
+   *
+   * @remarks
+   * Retrieves a single HealthcarePractitioner by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcarePractitioner(
     request: operations.GetHealthcarePractitionerRequest,
@@ -222,6 +261,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Retrieve a slot
+   *
+   * @remarks
+   * Retrieves a single HealthcareSlot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcareSlot(
     request: operations.GetHealthcareSlotRequest,
@@ -236,6 +278,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all allergies
+   *
+   * @remarks
+   * Returns a list of HealthcareAllergies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareAllergies(
     request: operations.ListHealthcareAllergiesRequest,
@@ -250,6 +295,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all appointments
+   *
+   * @remarks
+   * Returns a list of HealthcareAppointments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareAppointments(
     request: operations.ListHealthcareAppointmentsRequest,
@@ -264,6 +312,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all conditions
+   *
+   * @remarks
+   * Returns a list of HealthcareConditions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareConditions(
     request: operations.ListHealthcareConditionsRequest,
@@ -278,6 +329,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all encounters
+   *
+   * @remarks
+   * Returns a list of HealthcareEncounters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareEncounters(
     request: operations.ListHealthcareEncountersRequest,
@@ -292,6 +346,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all immunizations
+   *
+   * @remarks
+   * Returns a list of HealthcareImmunizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareImmunizations(
     request: operations.ListHealthcareImmunizationsRequest,
@@ -306,6 +363,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all locations
+   *
+   * @remarks
+   * Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareLocations(
     request: operations.ListHealthcareLocationsRequest,
@@ -320,6 +380,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all medications
+   *
+   * @remarks
+   * Returns a list of HealthcareMedications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareMedications(
     request: operations.ListHealthcareMedicationsRequest,
@@ -334,6 +397,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all observations
+   *
+   * @remarks
+   * Returns a list of HealthcareObservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareObservations(
     request: operations.ListHealthcareObservationsRequest,
@@ -348,6 +414,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all patients
+   *
+   * @remarks
+   * Returns a list of HealthcarePatients. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcarePatients(
     request: operations.ListHealthcarePatientsRequest,
@@ -362,6 +431,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all practitioners
+   *
+   * @remarks
+   * Returns a list of HealthcarePractitioners. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcarePractitioners(
     request: operations.ListHealthcarePractitionersRequest,
@@ -376,6 +448,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * List all slots
+   *
+   * @remarks
+   * Returns a list of HealthcareSlots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcareSlots(
     request: operations.ListHealthcareSlotsRequest,
@@ -390,6 +465,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Update an appointment
+   *
+   * @remarks
+   * Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
    */
   async patchHealthcareAppointment(
     request: operations.PatchHealthcareAppointmentRequest,
@@ -404,6 +482,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Update a patient
+   *
+   * @remarks
+   * Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
    */
   async patchHealthcarePatient(
     request: operations.PatchHealthcarePatientRequest,
@@ -418,6 +499,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Remove an appointment
+   *
+   * @remarks
+   * Deletes the HealthcareAppointment identified by `id`.
    */
   async removeHealthcareAppointment(
     request: operations.RemoveHealthcareAppointmentRequest,
@@ -432,6 +516,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Update an appointment
+   *
+   * @remarks
+   * Updates the HealthcareAppointment identified by `id`. Provide the unified HealthcareAppointment fields to change in the request body.
    */
   async updateHealthcareAppointment(
     request: operations.UpdateHealthcareAppointmentRequest,
@@ -446,6 +533,9 @@ export class Healthcare extends ClientSDK {
 
   /**
    * Update a patient
+   *
+   * @remarks
+   * Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
    */
   async updateHealthcarePatient(
     request: operations.UpdateHealthcarePatientRequest,

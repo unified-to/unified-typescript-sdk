@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a category
+ *
+ * @remarks
+ * Deletes the AccountingCategory identified by `id`.
  */
 export function accountingRemoveAccountingCategory(
   client: UnifiedToCore,

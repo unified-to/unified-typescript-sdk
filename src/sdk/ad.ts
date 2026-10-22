@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Ad extends ClientSDK {
   /**
    * Create an ad
+   *
+   * @remarks
+   * Creates a AdsAd. Provide the unified AdsAd fields in the request body; they are mapped to the provider's API. Returns the created AdsAd.
    */
   async createAdsAd(
     request: operations.CreateAdsAdRequest,
@@ -30,6 +33,9 @@ export class Ad extends ClientSDK {
 
   /**
    * Retrieve an ad
+   *
+   * @remarks
+   * Retrieves a single AdsAd by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsAd(
     request: operations.GetAdsAdRequest,
@@ -44,6 +50,9 @@ export class Ad extends ClientSDK {
 
   /**
    * List all ads
+   *
+   * @remarks
+   * Returns a list of AdsAds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsAds(
     request: operations.ListAdsAdsRequest,
@@ -58,6 +67,9 @@ export class Ad extends ClientSDK {
 
   /**
    * Update an ad
+   *
+   * @remarks
+   * Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
    */
   async patchAdsAd(
     request: operations.PatchAdsAdRequest,
@@ -72,6 +84,9 @@ export class Ad extends ClientSDK {
 
   /**
    * Remove an ad
+   *
+   * @remarks
+   * Deletes the AdsAd identified by `id`.
    */
   async removeAdsAd(
     request: operations.RemoveAdsAdRequest,
@@ -86,6 +101,9 @@ export class Ad extends ClientSDK {
 
   /**
    * Update an ad
+   *
+   * @remarks
+   * Updates the AdsAd identified by `id`. Provide the unified AdsAd fields to change in the request body.
    */
   async updateAdsAd(
     request: operations.UpdateAdsAdRequest,

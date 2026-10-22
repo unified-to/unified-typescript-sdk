@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an account
+ *
+ * @remarks
+ * Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
  */
 export function accountingCreateAccountingAccount(
   client: UnifiedToCore,

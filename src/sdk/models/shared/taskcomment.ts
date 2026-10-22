@@ -28,6 +28,9 @@ export type TaskComment = {
    * (reference to TaskTask)
    */
   taskId?: string | undefined;
+  /**
+   * The comment's text
+   */
   text?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)

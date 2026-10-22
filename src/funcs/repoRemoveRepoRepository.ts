@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a repository
+ *
+ * @remarks
+ * Deletes the RepoRepository identified by `id`.
  */
 export function repoRemoveRepoRepository(
   client: UnifiedToCore,

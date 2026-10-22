@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an agent
+ *
+ * @remarks
+ * Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
  */
 export function genaiCreateGenaiAgent(
   client: UnifiedToCore,

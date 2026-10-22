@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an inventory
+ *
+ * @remarks
+ * Deletes the CommerceInventory identified by `id`.
  */
 export function commerceRemoveCommerceInventory(
   client: UnifiedToCore,

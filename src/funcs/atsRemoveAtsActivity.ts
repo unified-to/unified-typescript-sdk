@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an activity
+ *
+ * @remarks
+ * Deletes the AtsActivity identified by `id`.
  */
 export function atsRemoveAtsActivity(
   client: UnifiedToCore,

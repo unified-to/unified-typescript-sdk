@@ -13,7 +13,7 @@
 
 ## createAccountingInvoice
 
-Create an invoice
+Creates a AccountingInvoice. Provide the unified AccountingInvoice fields in the request body; they are mapped to the provider's API. Returns the created AccountingInvoice.
 
 ### Example Usage
 
@@ -33,13 +33,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "07e89019-b050-433d-82b5-479bf4f10682",
+          id: "6177b5ba-aed9-4783-b8db-14d21438029e",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "49440b66-cdba-4c5e-b08c-5d5d5bc4e697",
+          id: "e0b66afc-cbaf-4a56-9ea6-73595f872dec",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -51,7 +51,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "0a6b9f6c-792f-493d-97ea-7c3a22a756ca",
+      id: "0d872405-006d-46bd-9663-f6c54339e10b",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -69,7 +69,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.671Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.306Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -103,13 +103,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "07e89019-b050-433d-82b5-479bf4f10682",
+          id: "6177b5ba-aed9-4783-b8db-14d21438029e",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "49440b66-cdba-4c5e-b08c-5d5d5bc4e697",
+          id: "e0b66afc-cbaf-4a56-9ea6-73595f872dec",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -121,7 +121,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "0a6b9f6c-792f-493d-97ea-7c3a22a756ca",
+      id: "0d872405-006d-46bd-9663-f6c54339e10b",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -139,7 +139,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.671Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.306Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -176,7 +176,7 @@ run();
 
 ## getAccountingInvoice
 
-Retrieve an invoice
+Retrieves a single AccountingInvoice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -255,7 +255,7 @@ run();
 
 ## listAccountingInvoices
 
-List all invoices
+Returns a list of AccountingInvoices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -332,7 +332,7 @@ run();
 
 ## patchAccountingInvoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -352,13 +352,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "1ae1bfb4-4280-4891-9021-531ba9201dde",
+          id: "93adc358-ef9b-4c97-81da-2670d33a4e49",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "241135c1-bbbe-4eed-9883-54ac8c473d21",
+          id: "a1c56d44-e08c-4c4a-901a-1262f2b63dc7",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -370,7 +370,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "3f2214cc-3623-4852-a478-7595ea510721",
+      id: "1666fb94-7303-4d36-a2fd-69a193932335",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -388,7 +388,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.728Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.339Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -423,13 +423,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "1ae1bfb4-4280-4891-9021-531ba9201dde",
+          id: "93adc358-ef9b-4c97-81da-2670d33a4e49",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "241135c1-bbbe-4eed-9883-54ac8c473d21",
+          id: "a1c56d44-e08c-4c4a-901a-1262f2b63dc7",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -441,7 +441,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "3f2214cc-3623-4852-a478-7595ea510721",
+      id: "1666fb94-7303-4d36-a2fd-69a193932335",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -459,7 +459,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.728Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.339Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -497,7 +497,7 @@ run();
 
 ## removeAccountingInvoice
 
-Remove an invoice
+Deletes the AccountingInvoice identified by `id`.
 
 ### Example Usage
 
@@ -576,7 +576,7 @@ run();
 
 ## updateAccountingInvoice
 
-Update an invoice
+Updates the AccountingInvoice identified by `id`. Provide the unified AccountingInvoice fields to change in the request body.
 
 ### Example Usage
 
@@ -596,13 +596,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "1ae1bfb4-4280-4891-9021-531ba9201dde",
+          id: "93adc358-ef9b-4c97-81da-2670d33a4e49",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "241135c1-bbbe-4eed-9883-54ac8c473d21",
+          id: "a1c56d44-e08c-4c4a-901a-1262f2b63dc7",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -614,7 +614,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "3f2214cc-3623-4852-a478-7595ea510721",
+      id: "1666fb94-7303-4d36-a2fd-69a193932335",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -632,7 +632,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.728Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.339Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",
@@ -667,13 +667,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://glossy-markup.net/",
-          id: "1ae1bfb4-4280-4891-9021-531ba9201dde",
+          id: "93adc358-ef9b-4c97-81da-2670d33a4e49",
           mimeType: "application/pdf",
           name: "INV-77705.pdf",
         },
         {
           downloadUrl: "https://earnest-giggle.net",
-          id: "241135c1-bbbe-4eed-9883-54ac8c473d21",
+          id: "a1c56d44-e08c-4c4a-901a-1262f2b63dc7",
           mimeType: "application/pdf",
           name: "INV-77705-1.pdf",
         },
@@ -685,7 +685,7 @@ async function run() {
       discountAmount: 0,
       dueAt: new Date("2022-12-07T14:17:29.587Z"),
       extendedNotes: [],
-      id: "3f2214cc-3623-4852-a478-7595ea510721",
+      id: "1666fb94-7303-4d36-a2fd-69a193932335",
       invoiceNumber: "INV-77705",
       isInclusiveOfTax: false,
       lineitems: [],
@@ -703,7 +703,7 @@ async function run() {
       term: "NET_25",
       totalAmount: 0,
       type: "INVOICE",
-      updatedAt: new Date("2026-04-23T13:33:04.728Z"),
+      updatedAt: new Date("2026-04-24T10:35:01.339Z"),
       url: "https://gifted-yarmulke.info/invoices/INV-77705",
     },
     connectionId: "<id>",

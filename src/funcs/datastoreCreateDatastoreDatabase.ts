@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a database
+ *
+ * @remarks
+ * Creates a DatastoreDatabase. Provide the unified DatastoreDatabase fields in the request body; they are mapped to the provider's API. Returns the created DatastoreDatabase.
  */
 export function datastoreCreateDatastoreDatabase(
   client: UnifiedToCore,

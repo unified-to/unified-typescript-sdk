@@ -13,7 +13,7 @@
 
 ## createComputeDomain
 
-Create a domain
+Creates a ComputeDomain. Provide the unified ComputeDomain fields in the request body; they are mapped to the provider's API. Returns the created ComputeDomain.
 
 ### Example Usage
 
@@ -31,12 +31,12 @@ async function run() {
   const result = await unifiedTo.domain.createComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "2fcf15b8-cc42-4d26-9d19-e37c86fbd886",
+      id: "7508278b-13ce-4255-a170-28771fc1dd63",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.734Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.833Z"),
     },
     connectionId: "<id>",
   });
@@ -67,12 +67,12 @@ async function run() {
   const res = await computeCreateComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "2fcf15b8-cc42-4d26-9d19-e37c86fbd886",
+      id: "7508278b-13ce-4255-a170-28771fc1dd63",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.734Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.833Z"),
     },
     connectionId: "<id>",
   });
@@ -108,7 +108,7 @@ run();
 
 ## getComputeDomain
 
-Retrieve a domain
+Retrieves a single ComputeDomain by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -187,7 +187,7 @@ run();
 
 ## listComputeDomains
 
-List all domains
+Returns a list of ComputeDomains. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -264,7 +264,7 @@ run();
 
 ## patchComputeDomain
 
-Update a domain
+Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
 
 ### Example Usage
 
@@ -282,12 +282,12 @@ async function run() {
   const result = await unifiedTo.domain.patchComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "661d4c7c-1299-495e-a6d4-7a527dc69e02",
+      id: "5a5ba8f4-0489-4ddb-8624-c332305f40b3",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.743Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.838Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -319,12 +319,12 @@ async function run() {
   const res = await computePatchComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "661d4c7c-1299-495e-a6d4-7a527dc69e02",
+      id: "5a5ba8f4-0489-4ddb-8624-c332305f40b3",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.743Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.838Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -361,7 +361,7 @@ run();
 
 ## removeComputeDomain
 
-Remove a domain
+Deletes the ComputeDomain identified by `id`.
 
 ### Example Usage
 
@@ -440,7 +440,7 @@ run();
 
 ## updateComputeDomain
 
-Update a domain
+Updates the ComputeDomain identified by `id`. Provide the unified ComputeDomain fields to change in the request body.
 
 ### Example Usage
 
@@ -458,12 +458,12 @@ async function run() {
   const result = await unifiedTo.domain.updateComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "661d4c7c-1299-495e-a6d4-7a527dc69e02",
+      id: "5a5ba8f4-0489-4ddb-8624-c332305f40b3",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.743Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.838Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -495,12 +495,12 @@ async function run() {
   const res = await computeUpdateComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "661d4c7c-1299-495e-a6d4-7a527dc69e02",
+      id: "5a5ba8f4-0489-4ddb-8624-c332305f40b3",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-03T15:31:01.743Z"),
+      updatedAt: new Date("2023-11-04T05:14:50.838Z"),
     },
     connectionId: "<id>",
     id: "<id>",

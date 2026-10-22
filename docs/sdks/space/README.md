@@ -13,7 +13,7 @@
 
 ## createKmsSpace
 
-Create a space
+Creates a KmsSpace. Provide the unified KmsSpace fields in the request body; they are mapped to the provider's API. Returns the created KmsSpace.
 
 ### Example Usage
 
@@ -32,11 +32,11 @@ async function run() {
     kmsSpace: {
       createdAt: new Date("2022-10-31T00:56:54.246Z"),
       description: "Acer.",
-      id: "33c1a986-05cf-40fe-a96f-62cdb8f0d4d7",
+      id: "27c3cd29-1fee-4e53-9fae-8cb8eacbeb8b",
       isActive: false,
       metadata: [],
       name: "into nor afore",
-      updatedAt: new Date("2025-12-29T23:19:17.918Z"),
+      updatedAt: new Date("2025-12-30T18:28:15.707Z"),
     },
     connectionId: "<id>",
   });
@@ -68,11 +68,11 @@ async function run() {
     kmsSpace: {
       createdAt: new Date("2022-10-31T00:56:54.246Z"),
       description: "Acer.",
-      id: "33c1a986-05cf-40fe-a96f-62cdb8f0d4d7",
+      id: "27c3cd29-1fee-4e53-9fae-8cb8eacbeb8b",
       isActive: false,
       metadata: [],
       name: "into nor afore",
-      updatedAt: new Date("2025-12-29T23:19:17.918Z"),
+      updatedAt: new Date("2025-12-30T18:28:15.707Z"),
     },
     connectionId: "<id>",
   });
@@ -108,7 +108,7 @@ run();
 
 ## getKmsSpace
 
-Retrieve a space
+Retrieves a single KmsSpace by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -187,7 +187,7 @@ run();
 
 ## listKmsSpaces
 
-List all spaces
+Returns a list of KmsSpaces. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -264,7 +264,7 @@ run();
 
 ## patchKmsSpace
 
-Update a space
+Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
 
 ### Example Usage
 
@@ -283,11 +283,11 @@ async function run() {
     kmsSpace: {
       createdAt: new Date("2022-10-31T00:56:54.246Z"),
       description: "Acer.",
-      id: "079d445b-0e95-4107-b8ad-e050c673d089",
+      id: "2d678ee7-b91d-4d77-8fe6-9adfa1deafac",
       isActive: false,
       metadata: [],
       name: "into nor afore",
-      updatedAt: new Date("2025-12-29T23:19:17.931Z"),
+      updatedAt: new Date("2025-12-30T18:28:15.718Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -320,11 +320,11 @@ async function run() {
     kmsSpace: {
       createdAt: new Date("2022-10-31T00:56:54.246Z"),
       description: "Acer.",
-      id: "079d445b-0e95-4107-b8ad-e050c673d089",
+      id: "2d678ee7-b91d-4d77-8fe6-9adfa1deafac",
       isActive: false,
       metadata: [],
       name: "into nor afore",
-      updatedAt: new Date("2025-12-29T23:19:17.931Z"),
+      updatedAt: new Date("2025-12-30T18:28:15.718Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -361,7 +361,7 @@ run();
 
 ## removeKmsSpace
 
-Remove a space
+Deletes the KmsSpace identified by `id`.
 
 ### Example Usage
 
@@ -440,7 +440,7 @@ run();
 
 ## updateKmsSpace
 
-Update a space
+Updates the KmsSpace identified by `id`. Provide the unified KmsSpace fields to change in the request body.
 
 ### Example Usage
 
@@ -459,11 +459,11 @@ async function run() {
     kmsSpace: {
       createdAt: new Date("2022-10-31T00:56:54.246Z"),
       description: "Acer.",
-      id: "079d445b-0e95-4107-b8ad-e050c673d089",
+      id: "2d678ee7-b91d-4d77-8fe6-9adfa1deafac",
       isActive: false,
       metadata: [],
       name: "into nor afore",
-      updatedAt: new Date("2025-12-29T23:19:17.931Z"),
+      updatedAt: new Date("2025-12-30T18:28:15.718Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -496,11 +496,11 @@ async function run() {
     kmsSpace: {
       createdAt: new Date("2022-10-31T00:56:54.246Z"),
       description: "Acer.",
-      id: "079d445b-0e95-4107-b8ad-e050c673d089",
+      id: "2d678ee7-b91d-4d77-8fe6-9adfa1deafac",
       isActive: false,
       metadata: [],
       name: "into nor afore",
-      updatedAt: new Date("2025-12-29T23:19:17.931Z"),
+      updatedAt: new Date("2025-12-30T18:28:15.718Z"),
     },
     connectionId: "<id>",
     id: "<id>",

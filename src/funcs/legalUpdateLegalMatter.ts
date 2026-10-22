@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a matter
+ *
+ * @remarks
+ * Updates the LegalMatter identified by `id`. Provide the unified LegalMatter fields to change in the request body.
  */
 export function legalUpdateLegalMatter(
   client: UnifiedToCore,

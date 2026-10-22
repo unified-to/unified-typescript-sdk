@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an event
+ *
+ * @remarks
+ * Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
  */
 export function analyticsCreateAnalyticsEvent(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a collection
+ *
+ * @remarks
+ * Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
  */
 export function collectionUpdateLmsCollection(
   client: UnifiedToCore,

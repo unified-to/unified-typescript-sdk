@@ -46,6 +46,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Cdp extends ClientSDK {
   /**
    * Create an activation
+   *
+   * @remarks
+   * Creates a CdpActivation. Provide the unified CdpActivation fields in the request body; they are mapped to the provider's API. Returns the created CdpActivation.
    */
   async createCdpActivation(
     request: operations.CreateCdpActivationRequest,
@@ -60,6 +63,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Create a destination
+   *
+   * @remarks
+   * Creates a CdpDestination. Provide the unified CdpDestination fields in the request body; they are mapped to the provider's API. Returns the created CdpDestination.
    */
   async createCdpDestination(
     request: operations.CreateCdpDestinationRequest,
@@ -74,6 +80,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Create an event
+   *
+   * @remarks
+   * Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
    */
   async createCdpEvent(
     request: operations.CreateCdpEventRequest,
@@ -88,6 +97,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Create a profile
+   *
+   * @remarks
+   * Creates a CdpProfile. Provide the unified CdpProfile fields in the request body; they are mapped to the provider's API. Returns the created CdpProfile.
    */
   async createCdpProfile(
     request: operations.CreateCdpProfileRequest,
@@ -102,6 +114,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Create a segment
+   *
+   * @remarks
+   * Creates a CdpSegment. Provide the unified CdpSegment fields in the request body; they are mapped to the provider's API. Returns the created CdpSegment.
    */
   async createCdpSegment(
     request: operations.CreateCdpSegmentRequest,
@@ -116,6 +131,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Create a source
+   *
+   * @remarks
+   * Creates a CdpSource. Provide the unified CdpSource fields in the request body; they are mapped to the provider's API. Returns the created CdpSource.
    */
   async createCdpSource(
     request: operations.CreateCdpSourceRequest,
@@ -130,6 +148,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Retrieve an activation
+   *
+   * @remarks
+   * Retrieves a single CdpActivation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpActivation(
     request: operations.GetCdpActivationRequest,
@@ -144,6 +165,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Retrieve a destination
+   *
+   * @remarks
+   * Retrieves a single CdpDestination by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpDestination(
     request: operations.GetCdpDestinationRequest,
@@ -158,6 +182,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Retrieve an event
+   *
+   * @remarks
+   * Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpEvent(
     request: operations.GetCdpEventRequest,
@@ -172,6 +199,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Retrieve a profile
+   *
+   * @remarks
+   * Retrieves a single CdpProfile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpProfile(
     request: operations.GetCdpProfileRequest,
@@ -186,6 +216,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Retrieve a segment
+   *
+   * @remarks
+   * Retrieves a single CdpSegment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpSegment(
     request: operations.GetCdpSegmentRequest,
@@ -200,6 +233,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Retrieve a source
+   *
+   * @remarks
+   * Retrieves a single CdpSource by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpSource(
     request: operations.GetCdpSourceRequest,
@@ -214,6 +250,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * List all activations
+   *
+   * @remarks
+   * Returns a list of CdpActivations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpActivations(
     request: operations.ListCdpActivationsRequest,
@@ -228,6 +267,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * List all destinations
+   *
+   * @remarks
+   * Returns a list of CdpDestinations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpDestinations(
     request: operations.ListCdpDestinationsRequest,
@@ -242,6 +284,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * List all events
+   *
+   * @remarks
+   * Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpEvents(
     request: operations.ListCdpEventsRequest,
@@ -256,6 +301,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * List all profiles
+   *
+   * @remarks
+   * Returns a list of CdpProfiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpProfiles(
     request: operations.ListCdpProfilesRequest,
@@ -270,6 +318,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * List all segments
+   *
+   * @remarks
+   * Returns a list of CdpSegments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpSegments(
     request: operations.ListCdpSegmentsRequest,
@@ -284,6 +335,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * List all sources
+   *
+   * @remarks
+   * Returns a list of CdpSources. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpSources(
     request: operations.ListCdpSourcesRequest,
@@ -298,6 +352,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update an activation
+   *
+   * @remarks
+   * Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
    */
   async patchCdpActivation(
     request: operations.PatchCdpActivationRequest,
@@ -312,6 +369,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update a destination
+   *
+   * @remarks
+   * Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
    */
   async patchCdpDestination(
     request: operations.PatchCdpDestinationRequest,
@@ -326,6 +386,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
    */
   async patchCdpEvent(
     request: operations.PatchCdpEventRequest,
@@ -340,6 +403,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update a profile
+   *
+   * @remarks
+   * Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
    */
   async patchCdpProfile(
     request: operations.PatchCdpProfileRequest,
@@ -354,6 +420,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update a segment
+   *
+   * @remarks
+   * Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
    */
   async patchCdpSegment(
     request: operations.PatchCdpSegmentRequest,
@@ -368,6 +437,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update a source
+   *
+   * @remarks
+   * Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
    */
   async patchCdpSource(
     request: operations.PatchCdpSourceRequest,
@@ -382,6 +454,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Remove an activation
+   *
+   * @remarks
+   * Deletes the CdpActivation identified by `id`.
    */
   async removeCdpActivation(
     request: operations.RemoveCdpActivationRequest,
@@ -396,6 +471,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Remove a destination
+   *
+   * @remarks
+   * Deletes the CdpDestination identified by `id`.
    */
   async removeCdpDestination(
     request: operations.RemoveCdpDestinationRequest,
@@ -410,6 +488,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Remove an event
+   *
+   * @remarks
+   * Deletes the CdpEvent identified by `id`.
    */
   async removeCdpEvent(
     request: operations.RemoveCdpEventRequest,
@@ -424,6 +505,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Remove a profile
+   *
+   * @remarks
+   * Deletes the CdpProfile identified by `id`.
    */
   async removeCdpProfile(
     request: operations.RemoveCdpProfileRequest,
@@ -438,6 +522,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Remove a segment
+   *
+   * @remarks
+   * Deletes the CdpSegment identified by `id`.
    */
   async removeCdpSegment(
     request: operations.RemoveCdpSegmentRequest,
@@ -452,6 +539,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Remove a source
+   *
+   * @remarks
+   * Deletes the CdpSource identified by `id`.
    */
   async removeCdpSource(
     request: operations.RemoveCdpSourceRequest,
@@ -466,6 +556,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update an activation
+   *
+   * @remarks
+   * Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
    */
   async updateCdpActivation(
     request: operations.UpdateCdpActivationRequest,
@@ -480,6 +573,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update a destination
+   *
+   * @remarks
+   * Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
    */
   async updateCdpDestination(
     request: operations.UpdateCdpDestinationRequest,
@@ -494,6 +590,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update an event
+   *
+   * @remarks
+   * Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
    */
   async updateCdpEvent(
     request: operations.UpdateCdpEventRequest,
@@ -508,6 +607,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update a profile
+   *
+   * @remarks
+   * Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
    */
   async updateCdpProfile(
     request: operations.UpdateCdpProfileRequest,
@@ -522,6 +624,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update a segment
+   *
+   * @remarks
+   * Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
    */
   async updateCdpSegment(
     request: operations.UpdateCdpSegmentRequest,
@@ -536,6 +641,9 @@ export class Cdp extends ClientSDK {
 
   /**
    * Update a source
+   *
+   * @remarks
+   * Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
    */
   async updateCdpSource(
     request: operations.UpdateCdpSourceRequest,

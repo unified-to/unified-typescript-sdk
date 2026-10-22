@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a vendorcredit
+ *
+ * @remarks
+ * Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
  */
 export function accountingCreateAccountingVendorcredit(
   client: UnifiedToCore,

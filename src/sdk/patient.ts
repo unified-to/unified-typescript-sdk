@@ -15,6 +15,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Patient extends ClientSDK {
   /**
    * Create a patient
+   *
+   * @remarks
+   * Creates a HealthcarePatient. Provide the unified HealthcarePatient fields in the request body; they are mapped to the provider's API. Returns the created HealthcarePatient.
    */
   async createHealthcarePatient(
     request: operations.CreateHealthcarePatientRequest,
@@ -29,6 +32,9 @@ export class Patient extends ClientSDK {
 
   /**
    * Retrieve a patient
+   *
+   * @remarks
+   * Retrieves a single HealthcarePatient by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHealthcarePatient(
     request: operations.GetHealthcarePatientRequest,
@@ -43,6 +49,9 @@ export class Patient extends ClientSDK {
 
   /**
    * List all patients
+   *
+   * @remarks
+   * Returns a list of HealthcarePatients. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHealthcarePatients(
     request: operations.ListHealthcarePatientsRequest,
@@ -57,6 +66,9 @@ export class Patient extends ClientSDK {
 
   /**
    * Update a patient
+   *
+   * @remarks
+   * Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
    */
   async patchHealthcarePatient(
     request: operations.PatchHealthcarePatientRequest,
@@ -71,6 +83,9 @@ export class Patient extends ClientSDK {
 
   /**
    * Update a patient
+   *
+   * @remarks
+   * Updates the HealthcarePatient identified by `id`. Provide the unified HealthcarePatient fields to change in the request body.
    */
   async updateHealthcarePatient(
     request: operations.UpdateHealthcarePatientRequest,

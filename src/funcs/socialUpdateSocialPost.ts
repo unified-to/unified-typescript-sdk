@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a post
+ *
+ * @remarks
+ * Updates the SocialPost identified by `id`. Provide the unified SocialPost fields to change in the request body.
  */
 export function socialUpdateSocialPost(
   client: UnifiedToCore,

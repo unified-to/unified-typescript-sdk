@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a link
+ *
+ * @remarks
+ * Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
  */
 export function linkCreatePaymentLink(
   client: UnifiedToCore,

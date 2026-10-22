@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a ticket
+ *
+ * @remarks
+ * Updates the TicketingTicket identified by `id`. Provide the unified TicketingTicket fields to change in the request body.
  */
 export function ticketingUpdateTicketingTicket(
   client: UnifiedToCore,

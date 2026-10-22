@@ -10,7 +10,7 @@
 
 ## createPerformanceFeedback
 
-Create a feedback
+Creates a PerformanceFeedback. Provide the unified PerformanceFeedback fields in the request body; they are mapped to the provider's API. Returns the created PerformanceFeedback.
 
 ### Example Usage
 
@@ -28,7 +28,7 @@ async function run() {
   const result = await unifiedTo.feedback.createPerformanceFeedback({
     performanceFeedback: {
       createdAt: new Date("2023-04-11T16:21:53.862Z"),
-      id: "abbec415-bf04-4133-9d69-aa35b5bf83be",
+      id: "6066b0b4-0c37-45ee-a318-6709b4b48d12",
       isVisible: true,
       message: "Tabernus corpus voluptate aestus.",
       metadata: [],
@@ -37,7 +37,7 @@ async function run() {
         "hexagon",
       ],
       type: "PRAISE",
-      updatedAt: new Date("2025-09-04T02:50:54.227Z"),
+      updatedAt: new Date("2025-09-04T19:12:01.043Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -69,7 +69,7 @@ async function run() {
   const res = await performanceCreatePerformanceFeedback(unifiedTo, {
     performanceFeedback: {
       createdAt: new Date("2023-04-11T16:21:53.862Z"),
-      id: "abbec415-bf04-4133-9d69-aa35b5bf83be",
+      id: "6066b0b4-0c37-45ee-a318-6709b4b48d12",
       isVisible: true,
       message: "Tabernus corpus voluptate aestus.",
       metadata: [],
@@ -78,7 +78,7 @@ async function run() {
         "hexagon",
       ],
       type: "PRAISE",
-      updatedAt: new Date("2025-09-04T02:50:54.227Z"),
+      updatedAt: new Date("2025-09-04T19:12:01.043Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -115,7 +115,7 @@ run();
 
 ## getPerformanceFeedback
 
-Retrieve a feedback
+Retrieves a single PerformanceFeedback by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -194,7 +194,7 @@ run();
 
 ## listPerformanceFeedbacks
 
-List all feedbacks
+Returns a list of PerformanceFeedbacks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

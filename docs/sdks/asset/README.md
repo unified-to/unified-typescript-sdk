@@ -10,7 +10,7 @@
 
 ## createAdsAsset
 
-Create an asset
+Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
 
 ### Example Usage
 
@@ -29,12 +29,12 @@ async function run() {
     adsAsset: {
       createdAt: new Date("2020-03-27T20:14:38.603Z"),
       height: 400,
-      id: "88709fa0-ea4b-4e9b-aa91-f7d9b8b36deb",
+      id: "d963ea2c-d294-44e8-a9ef-a54fa587e03b",
       metadata: [],
       mimeType: "IMAGE_PNG",
       name: "Lockman - DuBuque",
       type: "IMAGE",
-      updatedAt: new Date("2022-03-25T04:49:15.126Z"),
+      updatedAt: new Date("2022-03-25T12:06:40.299Z"),
       url: "https://informal-perfection.com/",
       width: 600,
     },
@@ -68,12 +68,12 @@ async function run() {
     adsAsset: {
       createdAt: new Date("2020-03-27T20:14:38.603Z"),
       height: 400,
-      id: "88709fa0-ea4b-4e9b-aa91-f7d9b8b36deb",
+      id: "d963ea2c-d294-44e8-a9ef-a54fa587e03b",
       metadata: [],
       mimeType: "IMAGE_PNG",
       name: "Lockman - DuBuque",
       type: "IMAGE",
-      updatedAt: new Date("2022-03-25T04:49:15.126Z"),
+      updatedAt: new Date("2022-03-25T12:06:40.299Z"),
       url: "https://informal-perfection.com/",
       width: 600,
     },
@@ -111,7 +111,7 @@ run();
 
 ## getAdsAsset
 
-Retrieve an asset
+Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -190,7 +190,7 @@ run();
 
 ## listAdsAssets
 
-List all assets
+Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 

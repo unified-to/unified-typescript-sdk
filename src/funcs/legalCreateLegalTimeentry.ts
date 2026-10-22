@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a timeentry
+ *
+ * @remarks
+ * Creates a LegalTimeentry. Provide the unified LegalTimeentry fields in the request body; they are mapped to the provider's API. Returns the created LegalTimeentry.
  */
 export function legalCreateLegalTimeentry(
   client: UnifiedToCore,

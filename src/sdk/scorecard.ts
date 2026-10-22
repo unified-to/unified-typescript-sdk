@@ -18,6 +18,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Scorecard extends ClientSDK {
   /**
    * Create a scorecard
+   *
+   * @remarks
+   * Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
    */
   async createAtsScorecard(
     request: operations.CreateAtsScorecardRequest,
@@ -32,6 +35,9 @@ export class Scorecard extends ClientSDK {
 
   /**
    * Retrieve a scorecard
+   *
+   * @remarks
+   * Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsScorecard(
     request: operations.GetAtsScorecardRequest,
@@ -46,6 +52,9 @@ export class Scorecard extends ClientSDK {
 
   /**
    * Retrieve a scorecard
+   *
+   * @remarks
+   * Retrieves a single UcScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getUcScorecard(
     request: operations.GetUcScorecardRequest,
@@ -60,6 +69,9 @@ export class Scorecard extends ClientSDK {
 
   /**
    * List all scorecards
+   *
+   * @remarks
+   * Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsScorecards(
     request: operations.ListAtsScorecardsRequest,
@@ -74,6 +86,9 @@ export class Scorecard extends ClientSDK {
 
   /**
    * List all scorecards
+   *
+   * @remarks
+   * Returns a list of UcScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listUcScorecards(
     request: operations.ListUcScorecardsRequest,
@@ -88,6 +103,9 @@ export class Scorecard extends ClientSDK {
 
   /**
    * Update a scorecard
+   *
+   * @remarks
+   * Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
    */
   async patchAtsScorecard(
     request: operations.PatchAtsScorecardRequest,
@@ -102,6 +120,9 @@ export class Scorecard extends ClientSDK {
 
   /**
    * Remove a scorecard
+   *
+   * @remarks
+   * Deletes the AtsScorecard identified by `id`.
    */
   async removeAtsScorecard(
     request: operations.RemoveAtsScorecardRequest,
@@ -116,6 +137,9 @@ export class Scorecard extends ClientSDK {
 
   /**
    * Update a scorecard
+   *
+   * @remarks
+   * Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
    */
   async updateAtsScorecard(
     request: operations.UpdateAtsScorecardRequest,

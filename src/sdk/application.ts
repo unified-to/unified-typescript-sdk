@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Application extends ClientSDK {
   /**
    * Create an application
+   *
+   * @remarks
+   * Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
    */
   async createAtsApplication(
     request: operations.CreateAtsApplicationRequest,
@@ -30,6 +33,9 @@ export class Application extends ClientSDK {
 
   /**
    * Retrieve an application
+   *
+   * @remarks
+   * Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsApplication(
     request: operations.GetAtsApplicationRequest,
@@ -44,6 +50,9 @@ export class Application extends ClientSDK {
 
   /**
    * List all applications
+   *
+   * @remarks
+   * Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsApplications(
     request: operations.ListAtsApplicationsRequest,
@@ -58,6 +67,9 @@ export class Application extends ClientSDK {
 
   /**
    * Update an application
+   *
+   * @remarks
+   * Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
    */
   async patchAtsApplication(
     request: operations.PatchAtsApplicationRequest,
@@ -72,6 +84,9 @@ export class Application extends ClientSDK {
 
   /**
    * Remove an application
+   *
+   * @remarks
+   * Deletes the AtsApplication identified by `id`.
    */
   async removeAtsApplication(
     request: operations.RemoveAtsApplicationRequest,
@@ -86,6 +101,9 @@ export class Application extends ClientSDK {
 
   /**
    * Update an application
+   *
+   * @remarks
+   * Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
    */
   async updateAtsApplication(
     request: operations.UpdateAtsApplicationRequest,

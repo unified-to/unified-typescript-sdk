@@ -32,7 +32,7 @@
 
 ## createAnalyticsEvent
 
-Create an event
+Creates a AnalyticsEvent. Provide the unified AnalyticsEvent fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsEvent.
 
 ### Example Usage
 
@@ -51,13 +51,13 @@ async function run() {
     analyticsEvent: {
       createdAt: new Date("2023-06-21T03:13:22.954Z"),
       eventType: "SCREEN_VIEW",
-      id: "c16f69fb-c662-4ca0-a31e-09ce99cc4065",
+      id: "c2704186-eb91-4a3c-8a9a-5417e1746f6c",
       metadata: {
         "key": {},
       },
       name: "page_view",
       pageUrl: "https://golden-carboxyl.biz",
-      updatedAt: new Date("2023-09-24T16:25:41.865Z"),
+      updatedAt: new Date("2023-09-24T18:18:50.861Z"),
     },
     connectionId: "<id>",
   });
@@ -89,13 +89,13 @@ async function run() {
     analyticsEvent: {
       createdAt: new Date("2023-06-21T03:13:22.954Z"),
       eventType: "SCREEN_VIEW",
-      id: "c16f69fb-c662-4ca0-a31e-09ce99cc4065",
+      id: "c2704186-eb91-4a3c-8a9a-5417e1746f6c",
       metadata: {
         "key": {},
       },
       name: "page_view",
       pageUrl: "https://golden-carboxyl.biz",
-      updatedAt: new Date("2023-09-24T16:25:41.865Z"),
+      updatedAt: new Date("2023-09-24T18:18:50.861Z"),
     },
     connectionId: "<id>",
   });
@@ -131,7 +131,7 @@ run();
 
 ## createCalendarEvent
 
-Create an event
+Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
 
 ### Example Usage
 
@@ -151,9 +151,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.824Z",
+      endAt: "2020-05-24T09:45:40.711Z",
       hasConference: false,
-      id: "4aec450d-26d8-453c-8045-2fa4ad4d7d38",
+      id: "cff0cb34-1422-4415-90ba-550302bb1f68",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -163,15 +163,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.684Z"),
+          endAt: new Date("2025-03-25T10:54:34.563Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.826Z",
+            "2024-02-03T10:06:08.285Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.340Z",
-            "2025-01-23T22:05:54.724Z",
-            "2024-04-02T00:02:54.904Z",
+            "2023-07-07T14:50:38.123Z",
+            "2025-01-24T16:20:26.940Z",
+            "2024-04-02T15:34:54.118Z",
           ],
           interval: 7,
           onDays: [
@@ -508,11 +508,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.303Z",
+      startAt: "2020-05-24T00:31:50.561Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.571Z",
+      updatedAt: "2020-06-30T08:28:58.600Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -546,9 +546,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.824Z",
+      endAt: "2020-05-24T09:45:40.711Z",
       hasConference: false,
-      id: "4aec450d-26d8-453c-8045-2fa4ad4d7d38",
+      id: "cff0cb34-1422-4415-90ba-550302bb1f68",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -558,15 +558,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.684Z"),
+          endAt: new Date("2025-03-25T10:54:34.563Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.826Z",
+            "2024-02-03T10:06:08.285Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.340Z",
-            "2025-01-23T22:05:54.724Z",
-            "2024-04-02T00:02:54.904Z",
+            "2023-07-07T14:50:38.123Z",
+            "2025-01-24T16:20:26.940Z",
+            "2024-04-02T15:34:54.118Z",
           ],
           interval: 7,
           onDays: [
@@ -903,11 +903,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.303Z",
+      startAt: "2020-05-24T00:31:50.561Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.571Z",
+      updatedAt: "2020-06-30T08:28:58.600Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -944,7 +944,7 @@ run();
 
 ## createCdpEvent
 
-Create an event
+Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
 
 ### Example Usage
 
@@ -1023,7 +1023,7 @@ run();
 
 ## createCrmEvent
 
-Create an event
+Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
 
 ### Example Usage
 
@@ -1043,13 +1043,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.151Z"),
+        startAt: new Date("2024-12-11T18:06:33.851Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "10345886-7e0d-473d-9aa7-95b5df57d2bc",
+      id: "a19ed138-fa1a-4480-92b0-ff1b48e84284",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.031Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.761Z"),
     },
     connectionId: "<id>",
   });
@@ -1082,13 +1082,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.151Z"),
+        startAt: new Date("2024-12-11T18:06:33.851Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "10345886-7e0d-473d-9aa7-95b5df57d2bc",
+      id: "a19ed138-fa1a-4480-92b0-ff1b48e84284",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.031Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.761Z"),
     },
     connectionId: "<id>",
   });
@@ -1124,7 +1124,7 @@ run();
 
 ## getAnalyticsEvent
 
-Retrieve an event
+Retrieves a single AnalyticsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1203,7 +1203,7 @@ run();
 
 ## getCalendarEvent
 
-Retrieve an event
+Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1282,7 +1282,7 @@ run();
 
 ## getCdpEvent
 
-Retrieve an event
+Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1361,7 +1361,7 @@ run();
 
 ## getClubsEvent
 
-Retrieve an event
+Retrieves a single ClubsEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1440,7 +1440,7 @@ run();
 
 ## getCrmEvent
 
-Retrieve an event
+Retrieves a single CrmEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1519,7 +1519,7 @@ run();
 
 ## listAnalyticsEvents
 
-List all events
+Returns a list of AnalyticsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1596,7 +1596,7 @@ run();
 
 ## listCalendarEvents
 
-List all events
+Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1673,7 +1673,7 @@ run();
 
 ## listCdpEvents
 
-List all events
+Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1750,7 +1750,7 @@ run();
 
 ## listClubsEvents
 
-List all events
+Returns a list of ClubsEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1827,7 +1827,7 @@ run();
 
 ## listCrmEvents
 
-List all events
+Returns a list of CrmEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1904,7 +1904,7 @@ run();
 
 ## patchCalendarEvent
 
-Update an event
+Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1924,9 +1924,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.831Z",
+      endAt: "2020-05-24T09:45:40.715Z",
       hasConference: false,
-      id: "eb50bfa8-0bf5-4dbe-ad5c-42a1965feb61",
+      id: "761e485e-1849-47ee-bbd6-717a147b3791",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -1936,15 +1936,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.733Z"),
+          endAt: new Date("2025-03-25T10:54:34.590Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.865Z",
+            "2024-02-03T10:06:08.307Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.374Z",
-            "2025-01-23T22:05:54.772Z",
-            "2024-04-02T00:02:54.944Z",
+            "2023-07-07T14:50:38.143Z",
+            "2025-01-24T16:20:26.967Z",
+            "2024-04-02T15:34:54.140Z",
           ],
           interval: 7,
           onDays: [
@@ -2281,11 +2281,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.310Z",
+      startAt: "2020-05-24T00:31:50.565Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.579Z",
+      updatedAt: "2020-06-30T08:28:58.605Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -2320,9 +2320,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.831Z",
+      endAt: "2020-05-24T09:45:40.715Z",
       hasConference: false,
-      id: "eb50bfa8-0bf5-4dbe-ad5c-42a1965feb61",
+      id: "761e485e-1849-47ee-bbd6-717a147b3791",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -2332,15 +2332,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.733Z"),
+          endAt: new Date("2025-03-25T10:54:34.590Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.865Z",
+            "2024-02-03T10:06:08.307Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.374Z",
-            "2025-01-23T22:05:54.772Z",
-            "2024-04-02T00:02:54.944Z",
+            "2023-07-07T14:50:38.143Z",
+            "2025-01-24T16:20:26.967Z",
+            "2024-04-02T15:34:54.140Z",
           ],
           interval: 7,
           onDays: [
@@ -2677,11 +2677,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.310Z",
+      startAt: "2020-05-24T00:31:50.565Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.579Z",
+      updatedAt: "2020-06-30T08:28:58.605Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -2719,7 +2719,7 @@ run();
 
 ## patchCdpEvent
 
-Update an event
+Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2800,7 +2800,7 @@ run();
 
 ## patchCrmEvent
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2820,13 +2820,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.192Z"),
+        startAt: new Date("2024-12-11T18:06:33.872Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "fd4628e1-dbbb-4a81-8592-787c824b6d52",
+      id: "b16dce89-4ac1-4cba-bf87-6a373ed9d0f0",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.090Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.791Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2860,13 +2860,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.192Z"),
+        startAt: new Date("2024-12-11T18:06:33.872Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "fd4628e1-dbbb-4a81-8592-787c824b6d52",
+      id: "b16dce89-4ac1-4cba-bf87-6a373ed9d0f0",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.090Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.791Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2903,7 +2903,7 @@ run();
 
 ## patchMessagingEvent
 
-Update an event
+Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2925,7 +2925,7 @@ async function run() {
         name: "",
       },
       createdAt: new Date("2019-05-30T19:44:46.461Z"),
-      id: "8b3f67c4-c954-4a13-baa1-31b37c58b56d",
+      id: "cbe9e2dc-7812-4d8d-b1fc-492993ad3afe",
       isReplacingOriginal: false,
       metadata: [],
       type: "BUTTON_CLICK",
@@ -2964,7 +2964,7 @@ async function run() {
         name: "",
       },
       createdAt: new Date("2019-05-30T19:44:46.461Z"),
-      id: "8b3f67c4-c954-4a13-baa1-31b37c58b56d",
+      id: "cbe9e2dc-7812-4d8d-b1fc-492993ad3afe",
       isReplacingOriginal: false,
       metadata: [],
       type: "BUTTON_CLICK",
@@ -3004,7 +3004,7 @@ run();
 
 ## removeCalendarEvent
 
-Remove an event
+Deletes the CalendarEvent identified by `id`.
 
 ### Example Usage
 
@@ -3083,7 +3083,7 @@ run();
 
 ## removeCdpEvent
 
-Remove an event
+Deletes the CdpEvent identified by `id`.
 
 ### Example Usage
 
@@ -3162,7 +3162,7 @@ run();
 
 ## removeCrmEvent
 
-Remove an event
+Deletes the CrmEvent identified by `id`.
 
 ### Example Usage
 
@@ -3241,7 +3241,7 @@ run();
 
 ## updateCalendarEvent
 
-Update an event
+Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -3261,9 +3261,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.831Z",
+      endAt: "2020-05-24T09:45:40.715Z",
       hasConference: false,
-      id: "eb50bfa8-0bf5-4dbe-ad5c-42a1965feb61",
+      id: "761e485e-1849-47ee-bbd6-717a147b3791",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -3273,15 +3273,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.733Z"),
+          endAt: new Date("2025-03-25T10:54:34.590Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.865Z",
+            "2024-02-03T10:06:08.307Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.374Z",
-            "2025-01-23T22:05:54.772Z",
-            "2024-04-02T00:02:54.944Z",
+            "2023-07-07T14:50:38.143Z",
+            "2025-01-24T16:20:26.967Z",
+            "2024-04-02T15:34:54.140Z",
           ],
           interval: 7,
           onDays: [
@@ -3618,11 +3618,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.310Z",
+      startAt: "2020-05-24T00:31:50.565Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.579Z",
+      updatedAt: "2020-06-30T08:28:58.605Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -3657,9 +3657,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.831Z",
+      endAt: "2020-05-24T09:45:40.715Z",
       hasConference: false,
-      id: "eb50bfa8-0bf5-4dbe-ad5c-42a1965feb61",
+      id: "761e485e-1849-47ee-bbd6-717a147b3791",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -3669,15 +3669,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.733Z"),
+          endAt: new Date("2025-03-25T10:54:34.590Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.865Z",
+            "2024-02-03T10:06:08.307Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.374Z",
-            "2025-01-23T22:05:54.772Z",
-            "2024-04-02T00:02:54.944Z",
+            "2023-07-07T14:50:38.143Z",
+            "2025-01-24T16:20:26.967Z",
+            "2024-04-02T15:34:54.140Z",
           ],
           interval: 7,
           onDays: [
@@ -4014,11 +4014,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.310Z",
+      startAt: "2020-05-24T00:31:50.565Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.579Z",
+      updatedAt: "2020-06-30T08:28:58.605Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -4056,7 +4056,7 @@ run();
 
 ## updateCdpEvent
 
-Update an event
+Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -4137,7 +4137,7 @@ run();
 
 ## updateCrmEvent
 
-Update an event
+Updates the CrmEvent identified by `id`. Provide the unified CrmEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -4157,13 +4157,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.192Z"),
+        startAt: new Date("2024-12-11T18:06:33.872Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "fd4628e1-dbbb-4a81-8592-787c824b6d52",
+      id: "b16dce89-4ac1-4cba-bf87-6a373ed9d0f0",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.090Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.791Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4197,13 +4197,13 @@ async function run() {
       call: {
         description: "Arbitro aptus.",
         duration: 64,
-        startAt: new Date("2024-12-11T01:11:57.192Z"),
+        startAt: new Date("2024-12-11T18:06:33.872Z"),
       },
       createdAt: new Date("2020-07-14T04:53:23.784Z"),
-      id: "fd4628e1-dbbb-4a81-8592-787c824b6d52",
+      id: "b16dce89-4ac1-4cba-bf87-6a373ed9d0f0",
       metadata: [],
       type: "CALL",
-      updatedAt: new Date("2026-10-11T13:29:10.090Z"),
+      updatedAt: new Date("2026-10-12T13:25:28.791Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4240,7 +4240,7 @@ run();
 
 ## updateMessagingEvent
 
-Update an event
+Updates the MessagingEvent identified by `id`. Provide the unified MessagingEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -4262,7 +4262,7 @@ async function run() {
         name: "",
       },
       createdAt: new Date("2019-05-30T19:44:46.461Z"),
-      id: "8b3f67c4-c954-4a13-baa1-31b37c58b56d",
+      id: "cbe9e2dc-7812-4d8d-b1fc-492993ad3afe",
       isReplacingOriginal: false,
       metadata: [],
       type: "BUTTON_CLICK",
@@ -4301,7 +4301,7 @@ async function run() {
         name: "",
       },
       createdAt: new Date("2019-05-30T19:44:46.461Z"),
-      id: "8b3f67c4-c954-4a13-baa1-31b37c58b56d",
+      id: "cbe9e2dc-7812-4d8d-b1fc-492993ad3afe",
       isReplacingOriginal: false,
       metadata: [],
       type: "BUTTON_CLICK",

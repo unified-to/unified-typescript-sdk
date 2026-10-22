@@ -23,7 +23,7 @@
 
 ## createCommerceLocation
 
-Create a location
+Creates a CommerceLocation. Provide the unified CommerceLocation fields in the request body; they are mapped to the provider's API. Returns the created CommerceLocation.
 
 ### Example Usage
 
@@ -52,7 +52,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "0f82fe67-07eb-4020-a3d4-8f3036464ecf",
+      id: "e5da0198-00b0-466f-8b15-98d49dd8db47",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -63,10 +63,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "a449032f-202f-4aa8-93f8-1643e6bef0e6",
+          id: "f49db14d-495e-4b85-a189-cef2d443c877",
           metadata: [
             {
-              id: "4721439b-41cf-4787-ba37-0a24963d0fb0",
+              id: "97471719-7152-4c6c-b47b-43e4b05573e2",
               slug: "abutor",
               value: "damno",
             },
@@ -92,7 +92,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.267Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.683Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -135,7 +135,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "0f82fe67-07eb-4020-a3d4-8f3036464ecf",
+      id: "e5da0198-00b0-466f-8b15-98d49dd8db47",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -146,10 +146,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "a449032f-202f-4aa8-93f8-1643e6bef0e6",
+          id: "f49db14d-495e-4b85-a189-cef2d443c877",
           metadata: [
             {
-              id: "4721439b-41cf-4787-ba37-0a24963d0fb0",
+              id: "97471719-7152-4c6c-b47b-43e4b05573e2",
               slug: "abutor",
               value: "damno",
             },
@@ -175,7 +175,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.267Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.683Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -212,7 +212,7 @@ run();
 
 ## createHrisLocation
 
-Create a location
+Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
 
 ### Example Usage
 
@@ -241,7 +241,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "85d821c7-e106-4e81-a07c-75f7b458e9d4",
+      id: "f40bf2b7-5544-4ca3-adbd-9d216755ef90",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -262,7 +262,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.595Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.913Z"),
     },
     connectionId: "<id>",
   });
@@ -304,7 +304,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "85d821c7-e106-4e81-a07c-75f7b458e9d4",
+      id: "f40bf2b7-5544-4ca3-adbd-9d216755ef90",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -325,7 +325,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.595Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.913Z"),
     },
     connectionId: "<id>",
   });
@@ -361,7 +361,7 @@ run();
 
 ## getClubsLocation
 
-Retrieve a location
+Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -440,7 +440,7 @@ run();
 
 ## getCommerceLocation
 
-Retrieve a location
+Retrieves a single CommerceLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -519,7 +519,7 @@ run();
 
 ## getHealthcareLocation
 
-Retrieve a location
+Retrieves a single HealthcareLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -598,7 +598,7 @@ run();
 
 ## getHrisLocation
 
-Retrieve a location
+Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -677,7 +677,7 @@ run();
 
 ## listClubsLocations
 
-List all locations
+Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -754,7 +754,7 @@ run();
 
 ## listCommerceLocations
 
-List all locations
+Returns a list of CommerceLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -831,7 +831,7 @@ run();
 
 ## listHealthcareLocations
 
-List all locations
+Returns a list of HealthcareLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -908,7 +908,7 @@ run();
 
 ## listHrisLocations
 
-List all locations
+Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -985,7 +985,7 @@ run();
 
 ## patchCommerceLocation
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -1014,7 +1014,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "410f8147-74d9-4a7d-9eba-d5b90a41e9eb",
+      id: "a832098c-7c0e-4525-866a-ffe01f1162d1",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1025,10 +1025,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "9325e2bf-3064-48e8-86c1-22e4d6f45f84",
+          id: "df89a2b2-1f06-43eb-8fb6-0bb040d74422",
           metadata: [
             {
-              id: "b8477dc8-5770-4411-8767-3817dbdd43a6",
+              id: "dc9139bf-156a-40c8-bc1f-33bb13fb86a1",
               slug: "abutor",
               value: "damno",
             },
@@ -1054,7 +1054,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.282Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.693Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1098,7 +1098,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "410f8147-74d9-4a7d-9eba-d5b90a41e9eb",
+      id: "a832098c-7c0e-4525-866a-ffe01f1162d1",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1109,10 +1109,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "9325e2bf-3064-48e8-86c1-22e4d6f45f84",
+          id: "df89a2b2-1f06-43eb-8fb6-0bb040d74422",
           metadata: [
             {
-              id: "b8477dc8-5770-4411-8767-3817dbdd43a6",
+              id: "dc9139bf-156a-40c8-bc1f-33bb13fb86a1",
               slug: "abutor",
               value: "damno",
             },
@@ -1138,7 +1138,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.282Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.693Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1176,7 +1176,7 @@ run();
 
 ## patchHrisLocation
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -1205,7 +1205,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "326ab9e5-8180-4f72-80a1-d068b97e09e4",
+      id: "1e86056e-46eb-4044-a51c-daff3fb4ad8d",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1226,7 +1226,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.609Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.921Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1269,7 +1269,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "326ab9e5-8180-4f72-80a1-d068b97e09e4",
+      id: "1e86056e-46eb-4044-a51c-daff3fb4ad8d",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1290,7 +1290,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.609Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.921Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1327,7 +1327,7 @@ run();
 
 ## removeCommerceLocation
 
-Remove a location
+Deletes the CommerceLocation identified by `id`.
 
 ### Example Usage
 
@@ -1406,7 +1406,7 @@ run();
 
 ## removeHrisLocation
 
-Remove a location
+Deletes the HrisLocation identified by `id`.
 
 ### Example Usage
 
@@ -1485,7 +1485,7 @@ run();
 
 ## updateCommerceLocation
 
-Update a location
+Updates the CommerceLocation identified by `id`. Provide the unified CommerceLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -1514,7 +1514,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "410f8147-74d9-4a7d-9eba-d5b90a41e9eb",
+      id: "a832098c-7c0e-4525-866a-ffe01f1162d1",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1525,10 +1525,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "9325e2bf-3064-48e8-86c1-22e4d6f45f84",
+          id: "df89a2b2-1f06-43eb-8fb6-0bb040d74422",
           metadata: [
             {
-              id: "b8477dc8-5770-4411-8767-3817dbdd43a6",
+              id: "dc9139bf-156a-40c8-bc1f-33bb13fb86a1",
               slug: "abutor",
               value: "damno",
             },
@@ -1554,7 +1554,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.282Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.693Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1598,7 +1598,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "410f8147-74d9-4a7d-9eba-d5b90a41e9eb",
+      id: "a832098c-7c0e-4525-866a-ffe01f1162d1",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1609,10 +1609,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "9325e2bf-3064-48e8-86c1-22e4d6f45f84",
+          id: "df89a2b2-1f06-43eb-8fb6-0bb040d74422",
           metadata: [
             {
-              id: "b8477dc8-5770-4411-8767-3817dbdd43a6",
+              id: "dc9139bf-156a-40c8-bc1f-33bb13fb86a1",
               slug: "abutor",
               value: "damno",
             },
@@ -1638,7 +1638,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-20T18:08:23.282Z"),
+      updatedAt: new Date("2024-04-21T02:24:17.693Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1676,7 +1676,7 @@ run();
 
 ## updateHrisLocation
 
-Update a location
+Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
 
 ### Example Usage
 
@@ -1705,7 +1705,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "326ab9e5-8180-4f72-80a1-d068b97e09e4",
+      id: "1e86056e-46eb-4044-a51c-daff3fb4ad8d",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1726,7 +1726,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.609Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.921Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1769,7 +1769,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "326ab9e5-8180-4f72-80a1-d068b97e09e4",
+      id: "1e86056e-46eb-4044-a51c-daff3fb4ad8d",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1790,7 +1790,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-21T02:39:51.609Z"),
+      updatedAt: new Date("2023-06-21T11:27:31.921Z"),
     },
     connectionId: "<id>",
     id: "<id>",

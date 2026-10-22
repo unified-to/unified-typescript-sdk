@@ -13,7 +13,7 @@
 
 ## createAnalyticsProperty
 
-Create a property
+Creates a AnalyticsProperty. Provide the unified AnalyticsProperty fields in the request body; they are mapped to the provider's API. Returns the created AnalyticsProperty.
 
 ### Example Usage
 
@@ -32,10 +32,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "3d468c12-6d65-4fe3-be5d-7529bacd77ed",
+      id: "85a09f14-631b-4da8-8556-1fc6ac17b312",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
   });
@@ -67,10 +67,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "3d468c12-6d65-4fe3-be5d-7529bacd77ed",
+      id: "85a09f14-631b-4da8-8556-1fc6ac17b312",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
   });
@@ -106,7 +106,7 @@ run();
 
 ## getAnalyticsProperty
 
-Retrieve a property
+Retrieves a single AnalyticsProperty by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -185,7 +185,7 @@ run();
 
 ## listAnalyticsProperties
 
-List all properties
+Returns a list of AnalyticsProperties. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -262,7 +262,7 @@ run();
 
 ## patchAnalyticsProperty
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -281,10 +281,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "e48e825e-95ce-4f28-b442-2375b181a258",
+      id: "0065c65a-ee44-4637-8205-0f027827d35f",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -317,10 +317,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "e48e825e-95ce-4f28-b442-2375b181a258",
+      id: "0065c65a-ee44-4637-8205-0f027827d35f",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -357,7 +357,7 @@ run();
 
 ## removeAnalyticsProperty
 
-Remove a property
+Deletes the AnalyticsProperty identified by `id`.
 
 ### Example Usage
 
@@ -436,7 +436,7 @@ run();
 
 ## updateAnalyticsProperty
 
-Update a property
+Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
 
 ### Example Usage
 
@@ -455,10 +455,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "e48e825e-95ce-4f28-b442-2375b181a258",
+      id: "0065c65a-ee44-4637-8205-0f027827d35f",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -491,10 +491,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "e48e825e-95ce-4f28-b442-2375b181a258",
+      id: "0065c65a-ee44-4637-8205-0f027827d35f",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T20:26:28.061Z"),
+      updatedAt: new Date("2021-09-14T20:33:26.872Z"),
     },
     connectionId: "<id>",
     id: "<id>",

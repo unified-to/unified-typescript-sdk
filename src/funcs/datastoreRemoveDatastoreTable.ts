@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a table
+ *
+ * @remarks
+ * Deletes the DatastoreTable identified by `id`.
  */
 export function datastoreRemoveDatastoreTable(
   client: UnifiedToCore,

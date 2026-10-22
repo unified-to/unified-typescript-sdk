@@ -28,6 +28,9 @@ export type AtsCompany = {
   createdAt?: Date | undefined;
   id?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
+  /**
+   * The company's name
+   */
   name?: string | undefined;
   parentId?: string | undefined;
   phone?: string | undefined;

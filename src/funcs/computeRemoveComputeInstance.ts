@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an instance
+ *
+ * @remarks
+ * Deletes the ComputeInstance identified by `id`.
  */
 export function computeRemoveComputeInstance(
   client: UnifiedToCore,

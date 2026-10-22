@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a calendar
+ *
+ * @remarks
+ * Creates a CalendarCalendar. Provide the unified CalendarCalendar fields in the request body; they are mapped to the provider's API. Returns the created CalendarCalendar.
  */
 export function calendarCreateCalendarCalendar(
   client: UnifiedToCore,

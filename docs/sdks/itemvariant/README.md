@@ -13,7 +13,7 @@
 
 ## createCommerceItemvariant
 
-Create an itemvariant
+Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
 
 ### Example Usage
 
@@ -34,7 +34,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "ec3aeb0a-aa8b-4889-ae26-7d5e0dd5e933",
+      id: "781a5b28-e4e5-4444-807f-0a772e3c4e68",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -43,10 +43,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "157886ea-37bd-4920-8da6-064b70878331",
+          id: "19ae9d3c-6baf-42e4-ae34-d730ed5c5bfd",
           metadata: [
             {
-              id: "aa0f96bf-da6e-4d71-8a54-0a6d7383cc64",
+              id: "0cfeeca6-6d84-40be-947b-393106f4dd3b",
               slug: "ubi",
               value: "textus",
             },
@@ -63,7 +63,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "806c340b-02ab-4aed-973f-f11d07d5dff6",
+          id: "48c3158c-d0f9-4f2a-9219-494c02877e74",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -72,7 +72,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "64de38a7-cc01-48ca-b6f3-8ad28b058c67",
+          id: "6802b8d2-935d-46a9-93b0-76665ae27a88",
           name: "Color",
           position: 1,
           values: [
@@ -80,7 +80,7 @@ async function run() {
           ],
         },
         {
-          id: "7ab66a35-2ab9-47cc-b3f0-a53c112616bf",
+          id: "3fd53921-65a2-48fa-ac77-fb1146df9210",
           name: "Size",
           position: 2,
           values: [
@@ -103,7 +103,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.751Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.342Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -140,7 +140,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "ec3aeb0a-aa8b-4889-ae26-7d5e0dd5e933",
+      id: "781a5b28-e4e5-4444-807f-0a772e3c4e68",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -149,10 +149,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "157886ea-37bd-4920-8da6-064b70878331",
+          id: "19ae9d3c-6baf-42e4-ae34-d730ed5c5bfd",
           metadata: [
             {
-              id: "aa0f96bf-da6e-4d71-8a54-0a6d7383cc64",
+              id: "0cfeeca6-6d84-40be-947b-393106f4dd3b",
               slug: "ubi",
               value: "textus",
             },
@@ -169,7 +169,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "806c340b-02ab-4aed-973f-f11d07d5dff6",
+          id: "48c3158c-d0f9-4f2a-9219-494c02877e74",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -178,7 +178,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "64de38a7-cc01-48ca-b6f3-8ad28b058c67",
+          id: "6802b8d2-935d-46a9-93b0-76665ae27a88",
           name: "Color",
           position: 1,
           values: [
@@ -186,7 +186,7 @@ async function run() {
           ],
         },
         {
-          id: "7ab66a35-2ab9-47cc-b3f0-a53c112616bf",
+          id: "3fd53921-65a2-48fa-ac77-fb1146df9210",
           name: "Size",
           position: 2,
           values: [
@@ -209,7 +209,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.751Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.342Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -248,7 +248,7 @@ run();
 
 ## getCommerceItemvariant
 
-Retrieve an itemvariant
+Retrieves a single CommerceItemvariant by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -327,7 +327,7 @@ run();
 
 ## listCommerceItemvariants
 
-List all itemvariants
+Returns a list of CommerceItemvariants. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -404,7 +404,7 @@ run();
 
 ## patchCommerceItemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -425,7 +425,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "282896f9-f071-4f41-9368-b7d3e1b5e2af",
+      id: "fa899bbf-00e1-4d41-bb10-27a370d8f1b9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -434,10 +434,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "da3f60a8-26cd-4762-893e-3c714b9e6e04",
+          id: "d23052da-ae28-4646-99f1-ad80184ef3eb",
           metadata: [
             {
-              id: "0a02fd43-1486-4883-8e06-d49f7766a039",
+              id: "6c6538d9-4ddd-4e31-9c89-a74665b680d6",
               slug: "ubi",
               value: "textus",
             },
@@ -454,7 +454,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "079edbdf-9612-41a9-909e-b0f8b097066d",
+          id: "6335982f-9553-4ad7-a06c-36e9c68db2dd",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -463,7 +463,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "156e2c16-1313-425d-8098-0091370a779d",
+          id: "bb498fb4-d06a-4254-a61d-39d84c77f0a6",
           name: "Color",
           position: 1,
           values: [
@@ -471,7 +471,7 @@ async function run() {
           ],
         },
         {
-          id: "537058de-9c4d-49a9-9ccd-7144ed5aa05d",
+          id: "e3d213a3-0bb7-4c53-a0f1-e1a46621682f",
           name: "Size",
           position: 2,
           values: [
@@ -494,7 +494,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.803Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.368Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -532,7 +532,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "282896f9-f071-4f41-9368-b7d3e1b5e2af",
+      id: "fa899bbf-00e1-4d41-bb10-27a370d8f1b9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -541,10 +541,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "da3f60a8-26cd-4762-893e-3c714b9e6e04",
+          id: "d23052da-ae28-4646-99f1-ad80184ef3eb",
           metadata: [
             {
-              id: "0a02fd43-1486-4883-8e06-d49f7766a039",
+              id: "6c6538d9-4ddd-4e31-9c89-a74665b680d6",
               slug: "ubi",
               value: "textus",
             },
@@ -561,7 +561,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "079edbdf-9612-41a9-909e-b0f8b097066d",
+          id: "6335982f-9553-4ad7-a06c-36e9c68db2dd",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -570,7 +570,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "156e2c16-1313-425d-8098-0091370a779d",
+          id: "bb498fb4-d06a-4254-a61d-39d84c77f0a6",
           name: "Color",
           position: 1,
           values: [
@@ -578,7 +578,7 @@ async function run() {
           ],
         },
         {
-          id: "537058de-9c4d-49a9-9ccd-7144ed5aa05d",
+          id: "e3d213a3-0bb7-4c53-a0f1-e1a46621682f",
           name: "Size",
           position: 2,
           values: [
@@ -601,7 +601,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.803Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.368Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -641,7 +641,7 @@ run();
 
 ## removeCommerceItemvariant
 
-Remove an itemvariant
+Deletes the CommerceItemvariant identified by `id`.
 
 ### Example Usage
 
@@ -720,7 +720,7 @@ run();
 
 ## updateCommerceItemvariant
 
-Update an itemvariant
+Updates the CommerceItemvariant identified by `id`. Provide the unified CommerceItemvariant fields to change in the request body.
 
 ### Example Usage
 
@@ -741,7 +741,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "282896f9-f071-4f41-9368-b7d3e1b5e2af",
+      id: "fa899bbf-00e1-4d41-bb10-27a370d8f1b9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -750,10 +750,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "da3f60a8-26cd-4762-893e-3c714b9e6e04",
+          id: "d23052da-ae28-4646-99f1-ad80184ef3eb",
           metadata: [
             {
-              id: "0a02fd43-1486-4883-8e06-d49f7766a039",
+              id: "6c6538d9-4ddd-4e31-9c89-a74665b680d6",
               slug: "ubi",
               value: "textus",
             },
@@ -770,7 +770,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "079edbdf-9612-41a9-909e-b0f8b097066d",
+          id: "6335982f-9553-4ad7-a06c-36e9c68db2dd",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -779,7 +779,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "156e2c16-1313-425d-8098-0091370a779d",
+          id: "bb498fb4-d06a-4254-a61d-39d84c77f0a6",
           name: "Color",
           position: 1,
           values: [
@@ -787,7 +787,7 @@ async function run() {
           ],
         },
         {
-          id: "537058de-9c4d-49a9-9ccd-7144ed5aa05d",
+          id: "e3d213a3-0bb7-4c53-a0f1-e1a46621682f",
           name: "Size",
           position: 2,
           values: [
@@ -810,7 +810,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.803Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.368Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -848,7 +848,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "282896f9-f071-4f41-9368-b7d3e1b5e2af",
+      id: "fa899bbf-00e1-4d41-bb10-27a370d8f1b9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -857,10 +857,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "da3f60a8-26cd-4762-893e-3c714b9e6e04",
+          id: "d23052da-ae28-4646-99f1-ad80184ef3eb",
           metadata: [
             {
-              id: "0a02fd43-1486-4883-8e06-d49f7766a039",
+              id: "6c6538d9-4ddd-4e31-9c89-a74665b680d6",
               slug: "ubi",
               value: "textus",
             },
@@ -877,7 +877,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "079edbdf-9612-41a9-909e-b0f8b097066d",
+          id: "6335982f-9553-4ad7-a06c-36e9c68db2dd",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -886,7 +886,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "156e2c16-1313-425d-8098-0091370a779d",
+          id: "bb498fb4-d06a-4254-a61d-39d84c77f0a6",
           name: "Color",
           position: 1,
           values: [
@@ -894,7 +894,7 @@ async function run() {
           ],
         },
         {
-          id: "537058de-9c4d-49a9-9ccd-7144ed5aa05d",
+          id: "e3d213a3-0bb7-4c53-a0f1-e1a46621682f",
           name: "Size",
           position: 2,
           values: [
@@ -917,7 +917,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-09T16:49:56.803Z"),
+      updatedAt: new Date("2026-03-10T13:44:49.368Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,

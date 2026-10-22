@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a link
+ *
+ * @remarks
+ * Deletes the PaymentLink identified by `id`.
  */
 export function linkRemovePaymentLink(
   client: UnifiedToCore,

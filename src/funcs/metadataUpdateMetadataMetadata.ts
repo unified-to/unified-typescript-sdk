@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a metadata
+ *
+ * @remarks
+ * Updates the MetadataMetadata identified by `id`. Provide the unified MetadataMetadata fields to change in the request body.
  */
 export function metadataUpdateMetadataMetadata(
   client: UnifiedToCore,

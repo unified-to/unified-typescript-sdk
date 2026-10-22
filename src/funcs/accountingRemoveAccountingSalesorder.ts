@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a salesorder
+ *
+ * @remarks
+ * Deletes the AccountingSalesorder identified by `id`.
  */
 export function accountingRemoveAccountingSalesorder(
   client: UnifiedToCore,

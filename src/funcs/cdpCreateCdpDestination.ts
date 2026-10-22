@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a destination
+ *
+ * @remarks
+ * Creates a CdpDestination. Provide the unified CdpDestination fields in the request body; they are mapped to the provider's API. Returns the created CdpDestination.
  */
 export function cdpCreateCdpDestination(
   client: UnifiedToCore,

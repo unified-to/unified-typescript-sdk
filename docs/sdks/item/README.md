@@ -13,7 +13,7 @@
 
 ## createCommerceItem
 
-Create an item
+Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
 
 ### Example Usage
 
@@ -35,7 +35,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "0361df0e-71b0-4979-b39c-66847aea7da9",
+      id: "695ac003-35dc-4d6c-9425-8f1fac973b13",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -44,10 +44,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "c0305edf-4a3f-4bbc-beab-170a083257e6",
+          id: "6d351a43-aa52-4d19-a8d0-647057ed6a21",
           metadata: [
             {
-              id: "534108b9-9ec1-499f-bb36-a5bf9622fe43",
+              id: "82272d4a-b181-491c-87e5-2d639a520c1e",
               slug: "doloremque",
               value: "allatus",
             },
@@ -60,10 +60,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "b503b47d-5e78-4edd-a361-143adf0596be",
+          id: "a702594a-ad01-448d-8205-48d1705b5290",
           metadata: [
             {
-              id: "7f711836-2d98-427b-81be-307a44837ba5",
+              id: "d64ad30c-823a-4063-a36e-c1f44f20a047",
               slug: "bis",
               value: "somniculosus",
             },
@@ -80,7 +80,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "650c582c-e779-4882-90b5-2111858ad2f2",
+          id: "64abd67b-2872-43d3-909e-7db02582b544",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -103,7 +103,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.752Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.041Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -141,7 +141,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "0361df0e-71b0-4979-b39c-66847aea7da9",
+      id: "695ac003-35dc-4d6c-9425-8f1fac973b13",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -150,10 +150,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "c0305edf-4a3f-4bbc-beab-170a083257e6",
+          id: "6d351a43-aa52-4d19-a8d0-647057ed6a21",
           metadata: [
             {
-              id: "534108b9-9ec1-499f-bb36-a5bf9622fe43",
+              id: "82272d4a-b181-491c-87e5-2d639a520c1e",
               slug: "doloremque",
               value: "allatus",
             },
@@ -166,10 +166,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "b503b47d-5e78-4edd-a361-143adf0596be",
+          id: "a702594a-ad01-448d-8205-48d1705b5290",
           metadata: [
             {
-              id: "7f711836-2d98-427b-81be-307a44837ba5",
+              id: "d64ad30c-823a-4063-a36e-c1f44f20a047",
               slug: "bis",
               value: "somniculosus",
             },
@@ -186,7 +186,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "650c582c-e779-4882-90b5-2111858ad2f2",
+          id: "64abd67b-2872-43d3-909e-7db02582b544",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -209,7 +209,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.752Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.041Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -248,7 +248,7 @@ run();
 
 ## getCommerceItem
 
-Retrieve an item
+Retrieves a single CommerceItem by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -327,7 +327,7 @@ run();
 
 ## listCommerceItems
 
-List all items
+Returns a list of CommerceItems. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -404,7 +404,7 @@ run();
 
 ## patchCommerceItem
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -426,7 +426,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "a579b665-02a9-4f2f-be36-5e1fa8dcc0e4",
+      id: "3b6fefc0-4700-484f-93fd-b07686719c3a",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -435,10 +435,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "a65cfe11-e0de-4a63-8f37-c20ba8fb15ac",
+          id: "508171d1-55c7-4d2e-bdaf-7ab4e6075c8e",
           metadata: [
             {
-              id: "7ecce540-e560-4d98-a71a-73416af84aed",
+              id: "1c89a01d-ac84-45e6-82b8-01841ccf66b1",
               slug: "doloremque",
               value: "allatus",
             },
@@ -451,10 +451,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "f3a298c2-2312-4e4e-a316-dd02017636ae",
+          id: "3bb634ee-ddc2-4f2f-ad86-cabd79927282",
           metadata: [
             {
-              id: "fce0a92a-e15f-4ea1-b897-08c6888e95d2",
+              id: "bbb1c17d-0452-4993-8a80-09c6ad304164",
               slug: "bis",
               value: "somniculosus",
             },
@@ -471,7 +471,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "99465958-ed89-4d23-b613-905b640c2fe3",
+          id: "8bebd272-166f-4928-a27b-79974121179c",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -494,7 +494,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.771Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.052Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -533,7 +533,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "a579b665-02a9-4f2f-be36-5e1fa8dcc0e4",
+      id: "3b6fefc0-4700-484f-93fd-b07686719c3a",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -542,10 +542,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "a65cfe11-e0de-4a63-8f37-c20ba8fb15ac",
+          id: "508171d1-55c7-4d2e-bdaf-7ab4e6075c8e",
           metadata: [
             {
-              id: "7ecce540-e560-4d98-a71a-73416af84aed",
+              id: "1c89a01d-ac84-45e6-82b8-01841ccf66b1",
               slug: "doloremque",
               value: "allatus",
             },
@@ -558,10 +558,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "f3a298c2-2312-4e4e-a316-dd02017636ae",
+          id: "3bb634ee-ddc2-4f2f-ad86-cabd79927282",
           metadata: [
             {
-              id: "fce0a92a-e15f-4ea1-b897-08c6888e95d2",
+              id: "bbb1c17d-0452-4993-8a80-09c6ad304164",
               slug: "bis",
               value: "somniculosus",
             },
@@ -578,7 +578,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "99465958-ed89-4d23-b613-905b640c2fe3",
+          id: "8bebd272-166f-4928-a27b-79974121179c",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -601,7 +601,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.771Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.052Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -641,7 +641,7 @@ run();
 
 ## removeCommerceItem
 
-Remove an item
+Deletes the CommerceItem identified by `id`.
 
 ### Example Usage
 
@@ -720,7 +720,7 @@ run();
 
 ## updateCommerceItem
 
-Update an item
+Updates the CommerceItem identified by `id`. Provide the unified CommerceItem fields to change in the request body.
 
 ### Example Usage
 
@@ -742,7 +742,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "a579b665-02a9-4f2f-be36-5e1fa8dcc0e4",
+      id: "3b6fefc0-4700-484f-93fd-b07686719c3a",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -751,10 +751,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "a65cfe11-e0de-4a63-8f37-c20ba8fb15ac",
+          id: "508171d1-55c7-4d2e-bdaf-7ab4e6075c8e",
           metadata: [
             {
-              id: "7ecce540-e560-4d98-a71a-73416af84aed",
+              id: "1c89a01d-ac84-45e6-82b8-01841ccf66b1",
               slug: "doloremque",
               value: "allatus",
             },
@@ -767,10 +767,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "f3a298c2-2312-4e4e-a316-dd02017636ae",
+          id: "3bb634ee-ddc2-4f2f-ad86-cabd79927282",
           metadata: [
             {
-              id: "fce0a92a-e15f-4ea1-b897-08c6888e95d2",
+              id: "bbb1c17d-0452-4993-8a80-09c6ad304164",
               slug: "bis",
               value: "somniculosus",
             },
@@ -787,7 +787,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "99465958-ed89-4d23-b613-905b640c2fe3",
+          id: "8bebd272-166f-4928-a27b-79974121179c",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -810,7 +810,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.771Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.052Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -849,7 +849,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "a579b665-02a9-4f2f-be36-5e1fa8dcc0e4",
+      id: "3b6fefc0-4700-484f-93fd-b07686719c3a",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -858,10 +858,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "a65cfe11-e0de-4a63-8f37-c20ba8fb15ac",
+          id: "508171d1-55c7-4d2e-bdaf-7ab4e6075c8e",
           metadata: [
             {
-              id: "7ecce540-e560-4d98-a71a-73416af84aed",
+              id: "1c89a01d-ac84-45e6-82b8-01841ccf66b1",
               slug: "doloremque",
               value: "allatus",
             },
@@ -874,10 +874,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "f3a298c2-2312-4e4e-a316-dd02017636ae",
+          id: "3bb634ee-ddc2-4f2f-ad86-cabd79927282",
           metadata: [
             {
-              id: "fce0a92a-e15f-4ea1-b897-08c6888e95d2",
+              id: "bbb1c17d-0452-4993-8a80-09c6ad304164",
               slug: "bis",
               value: "somniculosus",
             },
@@ -894,7 +894,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "99465958-ed89-4d23-b613-905b640c2fe3",
+          id: "8bebd272-166f-4928-a27b-79974121179c",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -917,7 +917,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-19T12:14:29.771Z"),
+      updatedAt: new Date("2022-04-19T21:30:36.052Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",

@@ -60,6 +60,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Ats extends ClientSDK {
   /**
    * Create an activity
+   *
+   * @remarks
+   * Creates a AtsActivity. Provide the unified AtsActivity fields in the request body; they are mapped to the provider's API. Returns the created AtsActivity.
    */
   async createAtsActivity(
     request: operations.CreateAtsActivityRequest,
@@ -74,6 +77,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Create an application
+   *
+   * @remarks
+   * Creates a AtsApplication. Provide the unified AtsApplication fields in the request body; they are mapped to the provider's API. Returns the created AtsApplication.
    */
   async createAtsApplication(
     request: operations.CreateAtsApplicationRequest,
@@ -88,6 +94,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Create a candidate
+   *
+   * @remarks
+   * Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
    */
   async createAtsCandidate(
     request: operations.CreateAtsCandidateRequest,
@@ -102,6 +111,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Create a company
+   *
+   * @remarks
+   * Creates a AtsCompany. Provide the unified AtsCompany fields in the request body; they are mapped to the provider's API. Returns the created AtsCompany.
    */
   async createAtsCompany(
     request: operations.CreateAtsCompanyRequest,
@@ -116,6 +128,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Create a document
+   *
+   * @remarks
+   * Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
    */
   async createAtsDocument(
     request: operations.CreateAtsDocumentRequest,
@@ -130,6 +145,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Create an interview
+   *
+   * @remarks
+   * Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
    */
   async createAtsInterview(
     request: operations.CreateAtsInterviewRequest,
@@ -144,6 +162,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Create a job
+   *
+   * @remarks
+   * Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
    */
   async createAtsJob(
     request: operations.CreateAtsJobRequest,
@@ -158,6 +179,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Create a scorecard
+   *
+   * @remarks
+   * Creates a AtsScorecard. Provide the unified AtsScorecard fields in the request body; they are mapped to the provider's API. Returns the created AtsScorecard.
    */
   async createAtsScorecard(
     request: operations.CreateAtsScorecardRequest,
@@ -172,6 +196,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve an activity
+   *
+   * @remarks
+   * Retrieves a single AtsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsActivity(
     request: operations.GetAtsActivityRequest,
@@ -186,6 +213,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve an application
+   *
+   * @remarks
+   * Retrieves a single AtsApplication by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsApplication(
     request: operations.GetAtsApplicationRequest,
@@ -200,6 +230,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve an applicationstatus
+   *
+   * @remarks
+   * Retrieves a single AtsStatus by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsApplicationstatus(
     request: operations.GetAtsApplicationstatusRequest,
@@ -214,6 +247,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve a candidate
+   *
+   * @remarks
+   * Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsCandidate(
     request: operations.GetAtsCandidateRequest,
@@ -228,6 +264,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve a company
+   *
+   * @remarks
+   * Retrieves a single AtsCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsCompany(
     request: operations.GetAtsCompanyRequest,
@@ -242,6 +281,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve a document
+   *
+   * @remarks
+   * Retrieves a single AtsDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsDocument(
     request: operations.GetAtsDocumentRequest,
@@ -256,6 +298,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve an interview
+   *
+   * @remarks
+   * Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsInterview(
     request: operations.GetAtsInterviewRequest,
@@ -270,6 +315,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve a job
+   *
+   * @remarks
+   * Retrieves a single AtsJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsJob(
     request: operations.GetAtsJobRequest,
@@ -284,6 +332,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Retrieve a scorecard
+   *
+   * @remarks
+   * Retrieves a single AtsScorecard by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsScorecard(
     request: operations.GetAtsScorecardRequest,
@@ -298,6 +349,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all activities
+   *
+   * @remarks
+   * Returns a list of AtsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsActivities(
     request: operations.ListAtsActivitiesRequest,
@@ -312,6 +366,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all applications
+   *
+   * @remarks
+   * Returns a list of AtsApplications. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsApplications(
     request: operations.ListAtsApplicationsRequest,
@@ -326,6 +383,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all applicationstatuses
+   *
+   * @remarks
+   * Returns a list of AtsStatuses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsApplicationstatuses(
     request: operations.ListAtsApplicationstatusesRequest,
@@ -340,6 +400,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all candidates
+   *
+   * @remarks
+   * Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsCandidates(
     request: operations.ListAtsCandidatesRequest,
@@ -354,6 +417,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all companies
+   *
+   * @remarks
+   * Returns a list of AtsCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsCompanies(
     request: operations.ListAtsCompaniesRequest,
@@ -368,6 +434,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all documents
+   *
+   * @remarks
+   * Returns a list of AtsDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsDocuments(
     request: operations.ListAtsDocumentsRequest,
@@ -382,6 +451,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all interviews
+   *
+   * @remarks
+   * Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsInterviews(
     request: operations.ListAtsInterviewsRequest,
@@ -396,6 +468,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all jobs
+   *
+   * @remarks
+   * Returns a list of AtsJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsJobs(
     request: operations.ListAtsJobsRequest,
@@ -410,6 +485,9 @@ export class Ats extends ClientSDK {
 
   /**
    * List all scorecards
+   *
+   * @remarks
+   * Returns a list of AtsScorecards. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsScorecards(
     request: operations.ListAtsScorecardsRequest,
@@ -424,6 +502,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update an activity
+   *
+   * @remarks
+   * Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
    */
   async patchAtsActivity(
     request: operations.PatchAtsActivityRequest,
@@ -438,6 +519,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update an application
+   *
+   * @remarks
+   * Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
    */
   async patchAtsApplication(
     request: operations.PatchAtsApplicationRequest,
@@ -452,6 +536,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a candidate
+   *
+   * @remarks
+   * Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
    */
   async patchAtsCandidate(
     request: operations.PatchAtsCandidateRequest,
@@ -466,6 +553,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
    */
   async patchAtsCompany(
     request: operations.PatchAtsCompanyRequest,
@@ -480,6 +570,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
    */
   async patchAtsDocument(
     request: operations.PatchAtsDocumentRequest,
@@ -494,6 +587,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update an interview
+   *
+   * @remarks
+   * Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
    */
   async patchAtsInterview(
     request: operations.PatchAtsInterviewRequest,
@@ -508,6 +604,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a job
+   *
+   * @remarks
+   * Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
    */
   async patchAtsJob(
     request: operations.PatchAtsJobRequest,
@@ -522,6 +621,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a scorecard
+   *
+   * @remarks
+   * Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
    */
   async patchAtsScorecard(
     request: operations.PatchAtsScorecardRequest,
@@ -536,6 +638,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Remove an activity
+   *
+   * @remarks
+   * Deletes the AtsActivity identified by `id`.
    */
   async removeAtsActivity(
     request: operations.RemoveAtsActivityRequest,
@@ -550,6 +655,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Remove an application
+   *
+   * @remarks
+   * Deletes the AtsApplication identified by `id`.
    */
   async removeAtsApplication(
     request: operations.RemoveAtsApplicationRequest,
@@ -564,6 +672,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Remove a candidate
+   *
+   * @remarks
+   * Deletes the AtsCandidate identified by `id`.
    */
   async removeAtsCandidate(
     request: operations.RemoveAtsCandidateRequest,
@@ -578,6 +689,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Remove a company
+   *
+   * @remarks
+   * Deletes the AtsCompany identified by `id`.
    */
   async removeAtsCompany(
     request: operations.RemoveAtsCompanyRequest,
@@ -592,6 +706,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Remove a document
+   *
+   * @remarks
+   * Deletes the AtsDocument identified by `id`.
    */
   async removeAtsDocument(
     request: operations.RemoveAtsDocumentRequest,
@@ -606,6 +723,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Remove an interview
+   *
+   * @remarks
+   * Deletes the AtsInterview identified by `id`.
    */
   async removeAtsInterview(
     request: operations.RemoveAtsInterviewRequest,
@@ -620,6 +740,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Remove a job
+   *
+   * @remarks
+   * Deletes the AtsJob identified by `id`.
    */
   async removeAtsJob(
     request: operations.RemoveAtsJobRequest,
@@ -634,6 +757,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Remove a scorecard
+   *
+   * @remarks
+   * Deletes the AtsScorecard identified by `id`.
    */
   async removeAtsScorecard(
     request: operations.RemoveAtsScorecardRequest,
@@ -648,6 +774,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update an activity
+   *
+   * @remarks
+   * Updates the AtsActivity identified by `id`. Provide the unified AtsActivity fields to change in the request body.
    */
   async updateAtsActivity(
     request: operations.UpdateAtsActivityRequest,
@@ -662,6 +791,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update an application
+   *
+   * @remarks
+   * Updates the AtsApplication identified by `id`. Provide the unified AtsApplication fields to change in the request body.
    */
   async updateAtsApplication(
     request: operations.UpdateAtsApplicationRequest,
@@ -676,6 +808,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a candidate
+   *
+   * @remarks
+   * Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
    */
   async updateAtsCandidate(
     request: operations.UpdateAtsCandidateRequest,
@@ -690,6 +825,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the AtsCompany identified by `id`. Provide the unified AtsCompany fields to change in the request body.
    */
   async updateAtsCompany(
     request: operations.UpdateAtsCompanyRequest,
@@ -704,6 +842,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the AtsDocument identified by `id`. Provide the unified AtsDocument fields to change in the request body.
    */
   async updateAtsDocument(
     request: operations.UpdateAtsDocumentRequest,
@@ -718,6 +859,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update an interview
+   *
+   * @remarks
+   * Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
    */
   async updateAtsInterview(
     request: operations.UpdateAtsInterviewRequest,
@@ -732,6 +876,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a job
+   *
+   * @remarks
+   * Updates the AtsJob identified by `id`. Provide the unified AtsJob fields to change in the request body.
    */
   async updateAtsJob(
     request: operations.UpdateAtsJobRequest,
@@ -746,6 +893,9 @@ export class Ats extends ClientSDK {
 
   /**
    * Update a scorecard
+   *
+   * @remarks
+   * Updates the AtsScorecard identified by `id`. Provide the unified AtsScorecard fields to change in the request body.
    */
   async updateAtsScorecard(
     request: operations.UpdateAtsScorecardRequest,

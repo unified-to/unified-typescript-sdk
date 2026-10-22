@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an account
+ *
+ * @remarks
+ * Deletes the AccountingAccount identified by `id`.
  */
 export function accountingRemoveAccountingAccount(
   client: UnifiedToCore,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a signatory
+ *
+ * @remarks
+ * Deletes the SigningSignatory identified by `id`.
  */
 export function signingRemoveSigningSignatory(
   client: UnifiedToCore,

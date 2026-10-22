@@ -22,6 +22,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Review extends ClientSDK {
   /**
    * Create a review
+   *
+   * @remarks
+   * Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
    */
   async createCommerceReview(
     request: operations.CreateCommerceReviewRequest,
@@ -36,6 +39,9 @@ export class Review extends ClientSDK {
 
   /**
    * Retrieve a review
+   *
+   * @remarks
+   * Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceReview(
     request: operations.GetCommerceReviewRequest,
@@ -50,6 +56,9 @@ export class Review extends ClientSDK {
 
   /**
    * Retrieve a review
+   *
+   * @remarks
+   * Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPerformanceReview(
     request: operations.GetPerformanceReviewRequest,
@@ -64,6 +73,9 @@ export class Review extends ClientSDK {
 
   /**
    * Retrieve a review
+   *
+   * @remarks
+   * Retrieves a single SocialReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSocialReview(
     request: operations.GetSocialReviewRequest,
@@ -78,6 +90,9 @@ export class Review extends ClientSDK {
 
   /**
    * List all reviews
+   *
+   * @remarks
+   * Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceReviews(
     request: operations.ListCommerceReviewsRequest,
@@ -92,6 +107,9 @@ export class Review extends ClientSDK {
 
   /**
    * List all reviews
+   *
+   * @remarks
+   * Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPerformanceReviews(
     request: operations.ListPerformanceReviewsRequest,
@@ -106,6 +124,9 @@ export class Review extends ClientSDK {
 
   /**
    * List all reviews
+   *
+   * @remarks
+   * Returns a list of SocialReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listSocialReviews(
     request: operations.ListSocialReviewsRequest,
@@ -120,6 +141,9 @@ export class Review extends ClientSDK {
 
   /**
    * Update a review
+   *
+   * @remarks
+   * Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
    */
   async patchCommerceReview(
     request: operations.PatchCommerceReviewRequest,
@@ -134,6 +158,9 @@ export class Review extends ClientSDK {
 
   /**
    * Update a review
+   *
+   * @remarks
+   * Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
    */
   async patchSocialReview(
     request: operations.PatchSocialReviewRequest,
@@ -148,6 +175,9 @@ export class Review extends ClientSDK {
 
   /**
    * Remove a review
+   *
+   * @remarks
+   * Deletes the CommerceReview identified by `id`.
    */
   async removeCommerceReview(
     request: operations.RemoveCommerceReviewRequest,
@@ -162,6 +192,9 @@ export class Review extends ClientSDK {
 
   /**
    * Update a review
+   *
+   * @remarks
+   * Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
    */
   async updateCommerceReview(
     request: operations.UpdateCommerceReviewRequest,
@@ -176,6 +209,9 @@ export class Review extends ClientSDK {
 
   /**
    * Update a review
+   *
+   * @remarks
+   * Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
    */
   async updateSocialReview(
     request: operations.UpdateSocialReviewRequest,

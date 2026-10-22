@@ -36,6 +36,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Task extends ClientSDK {
   /**
    * Create a task
+   *
+   * @remarks
+   * Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
    */
   async createGenaiTask(
     request: operations.CreateGenaiTaskRequest,
@@ -50,6 +53,9 @@ export class Task extends ClientSDK {
 
   /**
    * Create a comment
+   *
+   * @remarks
+   * Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
    */
   async createTaskComment(
     request: operations.CreateTaskCommentRequest,
@@ -64,6 +70,9 @@ export class Task extends ClientSDK {
 
   /**
    * Create a project
+   *
+   * @remarks
+   * Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
    */
   async createTaskProject(
     request: operations.CreateTaskProjectRequest,
@@ -78,6 +87,9 @@ export class Task extends ClientSDK {
 
   /**
    * Create a task
+   *
+   * @remarks
+   * Creates a TaskTask. Provide the unified TaskTask fields in the request body; they are mapped to the provider's API. Returns the created TaskTask.
    */
   async createTaskTask(
     request: operations.CreateTaskTaskRequest,
@@ -92,6 +104,9 @@ export class Task extends ClientSDK {
 
   /**
    * Retrieve a task
+   *
+   * @remarks
+   * Retrieves a single GenaiTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getGenaiTask(
     request: operations.GetGenaiTaskRequest,
@@ -106,6 +121,9 @@ export class Task extends ClientSDK {
 
   /**
    * Retrieve a change
+   *
+   * @remarks
+   * Retrieves a single TaskChange by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTaskChange(
     request: operations.GetTaskChangeRequest,
@@ -120,6 +138,9 @@ export class Task extends ClientSDK {
 
   /**
    * Retrieve a comment
+   *
+   * @remarks
+   * Retrieves a single TaskComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTaskComment(
     request: operations.GetTaskCommentRequest,
@@ -134,6 +155,9 @@ export class Task extends ClientSDK {
 
   /**
    * Retrieve a project
+   *
+   * @remarks
+   * Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTaskProject(
     request: operations.GetTaskProjectRequest,
@@ -148,6 +172,9 @@ export class Task extends ClientSDK {
 
   /**
    * Retrieve a task
+   *
+   * @remarks
+   * Retrieves a single TaskTask by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTaskTask(
     request: operations.GetTaskTaskRequest,
@@ -162,6 +189,9 @@ export class Task extends ClientSDK {
 
   /**
    * List all tasks
+   *
+   * @remarks
+   * Returns a list of GenaiTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listGenaiTasks(
     request: operations.ListGenaiTasksRequest,
@@ -176,6 +206,9 @@ export class Task extends ClientSDK {
 
   /**
    * List all changes
+   *
+   * @remarks
+   * Returns a list of TaskChanges. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTaskChanges(
     request: operations.ListTaskChangesRequest,
@@ -190,6 +223,9 @@ export class Task extends ClientSDK {
 
   /**
    * List all comments
+   *
+   * @remarks
+   * Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTaskComments(
     request: operations.ListTaskCommentsRequest,
@@ -204,6 +240,9 @@ export class Task extends ClientSDK {
 
   /**
    * List all projects
+   *
+   * @remarks
+   * Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTaskProjects(
     request: operations.ListTaskProjectsRequest,
@@ -218,6 +257,9 @@ export class Task extends ClientSDK {
 
   /**
    * List all tasks
+   *
+   * @remarks
+   * Returns a list of TaskTasks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTaskTasks(
     request: operations.ListTaskTasksRequest,
@@ -232,6 +274,9 @@ export class Task extends ClientSDK {
 
   /**
    * Update a task
+   *
+   * @remarks
+   * Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
    */
   async patchGenaiTask(
     request: operations.PatchGenaiTaskRequest,
@@ -246,6 +291,9 @@ export class Task extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
    */
   async patchTaskComment(
     request: operations.PatchTaskCommentRequest,
@@ -260,6 +308,9 @@ export class Task extends ClientSDK {
 
   /**
    * Update a project
+   *
+   * @remarks
+   * Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
    */
   async patchTaskProject(
     request: operations.PatchTaskProjectRequest,
@@ -274,6 +325,9 @@ export class Task extends ClientSDK {
 
   /**
    * Update a task
+   *
+   * @remarks
+   * Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
    */
   async patchTaskTask(
     request: operations.PatchTaskTaskRequest,
@@ -288,6 +342,9 @@ export class Task extends ClientSDK {
 
   /**
    * Remove a task
+   *
+   * @remarks
+   * Deletes the GenaiTask identified by `id`.
    */
   async removeGenaiTask(
     request: operations.RemoveGenaiTaskRequest,
@@ -302,6 +359,9 @@ export class Task extends ClientSDK {
 
   /**
    * Remove a comment
+   *
+   * @remarks
+   * Deletes the TaskComment identified by `id`.
    */
   async removeTaskComment(
     request: operations.RemoveTaskCommentRequest,
@@ -316,6 +376,9 @@ export class Task extends ClientSDK {
 
   /**
    * Remove a project
+   *
+   * @remarks
+   * Deletes the TaskProject identified by `id`.
    */
   async removeTaskProject(
     request: operations.RemoveTaskProjectRequest,
@@ -330,6 +393,9 @@ export class Task extends ClientSDK {
 
   /**
    * Remove a task
+   *
+   * @remarks
+   * Deletes the TaskTask identified by `id`.
    */
   async removeTaskTask(
     request: operations.RemoveTaskTaskRequest,
@@ -344,6 +410,9 @@ export class Task extends ClientSDK {
 
   /**
    * Update a task
+   *
+   * @remarks
+   * Updates the GenaiTask identified by `id`. Provide the unified GenaiTask fields to change in the request body.
    */
   async updateGenaiTask(
     request: operations.UpdateGenaiTaskRequest,
@@ -358,6 +427,9 @@ export class Task extends ClientSDK {
 
   /**
    * Update a comment
+   *
+   * @remarks
+   * Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
    */
   async updateTaskComment(
     request: operations.UpdateTaskCommentRequest,
@@ -372,6 +444,9 @@ export class Task extends ClientSDK {
 
   /**
    * Update a project
+   *
+   * @remarks
+   * Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
    */
   async updateTaskProject(
     request: operations.UpdateTaskProjectRequest,
@@ -386,6 +461,9 @@ export class Task extends ClientSDK {
 
   /**
    * Update a task
+   *
+   * @remarks
+   * Updates the TaskTask identified by `id`. Provide the unified TaskTask fields to change in the request body.
    */
   async updateTaskTask(
     request: operations.UpdateTaskTaskRequest,

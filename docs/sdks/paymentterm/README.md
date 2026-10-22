@@ -13,7 +13,7 @@
 
 ## createAccountingPaymentterm
 
-Create a paymentterm
+Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
 
 ### Example Usage
 
@@ -39,12 +39,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "73858011-750b-4a1c-9794-c02d08464996",
+      id: "9ae335a8-dabc-45e5-b1d1-ffabdb4b3419",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.854Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.223Z"),
     },
     connectionId: "<id>",
   });
@@ -83,12 +83,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "73858011-750b-4a1c-9794-c02d08464996",
+      id: "9ae335a8-dabc-45e5-b1d1-ffabdb4b3419",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.854Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.223Z"),
     },
     connectionId: "<id>",
   });
@@ -124,7 +124,7 @@ run();
 
 ## getAccountingPaymentterm
 
-Retrieve a paymentterm
+Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -203,7 +203,7 @@ run();
 
 ## listAccountingPaymentterms
 
-List all paymentterms
+Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ run();
 
 ## patchAccountingPaymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -306,12 +306,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "02fe03ad-cc26-4037-b8fa-d4c5e51c9d4b",
+      id: "385fc269-7d7e-4aec-ba8f-3fe285ea77e5",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.873Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.234Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -351,12 +351,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "02fe03ad-cc26-4037-b8fa-d4c5e51c9d4b",
+      id: "385fc269-7d7e-4aec-ba8f-3fe285ea77e5",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.873Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.234Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -393,7 +393,7 @@ run();
 
 ## removeAccountingPaymentterm
 
-Remove a paymentterm
+Deletes the AccountingPaymentterm identified by `id`.
 
 ### Example Usage
 
@@ -472,7 +472,7 @@ run();
 
 ## updateAccountingPaymentterm
 
-Update a paymentterm
+Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
 
 ### Example Usage
 
@@ -498,12 +498,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "02fe03ad-cc26-4037-b8fa-d4c5e51c9d4b",
+      id: "385fc269-7d7e-4aec-ba8f-3fe285ea77e5",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.873Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.234Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -543,12 +543,12 @@ async function run() {
       discountPercent: 5,
       dueDays: 57,
       dueNextMonthDays: 9,
-      id: "02fe03ad-cc26-4037-b8fa-d4c5e51c9d4b",
+      id: "385fc269-7d7e-4aec-ba8f-3fe285ea77e5",
       isActive: false,
       metadata: [],
       name: "Net 30",
       type: "NET_15",
-      updatedAt: new Date("2026-01-08T11:41:14.873Z"),
+      updatedAt: new Date("2026-01-09T08:05:02.234Z"),
     },
     connectionId: "<id>",
     id: "<id>",

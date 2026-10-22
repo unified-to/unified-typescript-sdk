@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a request
+ *
+ * @remarks
+ * Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
  */
 export function verificationUpdateVerificationRequest(
   client: UnifiedToCore,

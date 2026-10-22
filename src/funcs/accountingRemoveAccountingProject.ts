@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a project
+ *
+ * @remarks
+ * Deletes the AccountingProject identified by `id`.
  */
 export function accountingRemoveAccountingProject(
   client: UnifiedToCore,

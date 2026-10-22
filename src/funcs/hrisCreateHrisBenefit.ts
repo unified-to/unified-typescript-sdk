@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a benefit
+ *
+ * @remarks
+ * Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
  */
 export function hrisCreateHrisBenefit(
   client: UnifiedToCore,

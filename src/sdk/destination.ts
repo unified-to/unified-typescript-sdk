@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Destination extends ClientSDK {
   /**
    * Create a destination
+   *
+   * @remarks
+   * Creates a CdpDestination. Provide the unified CdpDestination fields in the request body; they are mapped to the provider's API. Returns the created CdpDestination.
    */
   async createCdpDestination(
     request: operations.CreateCdpDestinationRequest,
@@ -30,6 +33,9 @@ export class Destination extends ClientSDK {
 
   /**
    * Retrieve a destination
+   *
+   * @remarks
+   * Retrieves a single CdpDestination by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpDestination(
     request: operations.GetCdpDestinationRequest,
@@ -44,6 +50,9 @@ export class Destination extends ClientSDK {
 
   /**
    * List all destinations
+   *
+   * @remarks
+   * Returns a list of CdpDestinations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpDestinations(
     request: operations.ListCdpDestinationsRequest,
@@ -58,6 +67,9 @@ export class Destination extends ClientSDK {
 
   /**
    * Update a destination
+   *
+   * @remarks
+   * Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
    */
   async patchCdpDestination(
     request: operations.PatchCdpDestinationRequest,
@@ -72,6 +84,9 @@ export class Destination extends ClientSDK {
 
   /**
    * Remove a destination
+   *
+   * @remarks
+   * Deletes the CdpDestination identified by `id`.
    */
   async removeCdpDestination(
     request: operations.RemoveCdpDestinationRequest,
@@ -86,6 +101,9 @@ export class Destination extends ClientSDK {
 
   /**
    * Update a destination
+   *
+   * @remarks
+   * Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
    */
   async updateCdpDestination(
     request: operations.UpdateCdpDestinationRequest,

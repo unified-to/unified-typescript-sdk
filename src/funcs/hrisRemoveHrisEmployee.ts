@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an employee
+ *
+ * @remarks
+ * Deletes the HrisEmployee identified by `id`.
  */
 export function hrisRemoveHrisEmployee(
   client: UnifiedToCore,

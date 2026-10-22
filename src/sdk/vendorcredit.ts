@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Vendorcredit extends ClientSDK {
   /**
    * Create a vendorcredit
+   *
+   * @remarks
+   * Creates a AccountingVendorcredit. Provide the unified AccountingVendorcredit fields in the request body; they are mapped to the provider's API. Returns the created AccountingVendorcredit.
    */
   async createAccountingVendorcredit(
     request: operations.CreateAccountingVendorcreditRequest,
@@ -30,6 +33,9 @@ export class Vendorcredit extends ClientSDK {
 
   /**
    * Retrieve a vendorcredit
+   *
+   * @remarks
+   * Retrieves a single AccountingVendorcredit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingVendorcredit(
     request: operations.GetAccountingVendorcreditRequest,
@@ -44,6 +50,9 @@ export class Vendorcredit extends ClientSDK {
 
   /**
    * List all vendorcredits
+   *
+   * @remarks
+   * Returns a list of AccountingVendorcredits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingVendorcredits(
     request: operations.ListAccountingVendorcreditsRequest,
@@ -58,6 +67,9 @@ export class Vendorcredit extends ClientSDK {
 
   /**
    * Update a vendorcredit
+   *
+   * @remarks
+   * Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
    */
   async patchAccountingVendorcredit(
     request: operations.PatchAccountingVendorcreditRequest,
@@ -72,6 +84,9 @@ export class Vendorcredit extends ClientSDK {
 
   /**
    * Remove a vendorcredit
+   *
+   * @remarks
+   * Deletes the AccountingVendorcredit identified by `id`.
    */
   async removeAccountingVendorcredit(
     request: operations.RemoveAccountingVendorcreditRequest,
@@ -86,6 +101,9 @@ export class Vendorcredit extends ClientSDK {
 
   /**
    * Update a vendorcredit
+   *
+   * @remarks
+   * Updates the AccountingVendorcredit identified by `id`. Provide the unified AccountingVendorcredit fields to change in the request body.
    */
   async updateAccountingVendorcredit(
     request: operations.UpdateAccountingVendorcreditRequest,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a goal
+ *
+ * @remarks
+ * Deletes the PerformanceGoal identified by `id`.
  */
 export function performanceRemovePerformanceGoal(
   client: UnifiedToCore,

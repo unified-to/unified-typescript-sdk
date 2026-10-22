@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Saleschannel extends ClientSDK {
   /**
    * Create a saleschannel
+   *
+   * @remarks
+   * Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
    */
   async createCommerceSaleschannel(
     request: operations.CreateCommerceSaleschannelRequest,
@@ -30,6 +33,9 @@ export class Saleschannel extends ClientSDK {
 
   /**
    * Retrieve a saleschannel
+   *
+   * @remarks
+   * Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCommerceSaleschannel(
     request: operations.GetCommerceSaleschannelRequest,
@@ -44,6 +50,9 @@ export class Saleschannel extends ClientSDK {
 
   /**
    * List all saleschannels
+   *
+   * @remarks
+   * Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCommerceSaleschannels(
     request: operations.ListCommerceSaleschannelsRequest,
@@ -58,6 +67,9 @@ export class Saleschannel extends ClientSDK {
 
   /**
    * Update a saleschannel
+   *
+   * @remarks
+   * Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
    */
   async patchCommerceSaleschannel(
     request: operations.PatchCommerceSaleschannelRequest,
@@ -72,6 +84,9 @@ export class Saleschannel extends ClientSDK {
 
   /**
    * Remove a saleschannel
+   *
+   * @remarks
+   * Deletes the CommerceSaleschannel identified by `id`.
    */
   async removeCommerceSaleschannel(
     request: operations.RemoveCommerceSaleschannelRequest,
@@ -86,6 +101,9 @@ export class Saleschannel extends ClientSDK {
 
   /**
    * Update a saleschannel
+   *
+   * @remarks
+   * Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
    */
   async updateCommerceSaleschannel(
     request: operations.UpdateCommerceSaleschannelRequest,

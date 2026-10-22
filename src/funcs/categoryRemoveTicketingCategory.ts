@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a category
+ *
+ * @remarks
+ * Deletes the TicketingCategory identified by `id`.
  */
 export function categoryRemoveTicketingCategory(
   client: UnifiedToCore,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a benefit
+ *
+ * @remarks
+ * Deletes the HrisBenefit identified by `id`.
  */
 export function hrisRemoveHrisBenefit(
   client: UnifiedToCore,

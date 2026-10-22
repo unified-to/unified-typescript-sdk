@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a source
+ *
+ * @remarks
+ * Creates a CdpSource. Provide the unified CdpSource fields in the request body; they are mapped to the provider's API. Returns the created CdpSource.
  */
 export function cdpCreateCdpSource(
   client: UnifiedToCore,

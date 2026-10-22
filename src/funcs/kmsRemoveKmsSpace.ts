@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a space
+ *
+ * @remarks
+ * Deletes the KmsSpace identified by `id`.
  */
 export function kmsRemoveKmsSpace(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a contact
+ *
+ * @remarks
+ * Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
  */
 export function contactPatchUcContact(
   client: UnifiedToCore,

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Timeoff extends ClientSDK {
   /**
    * Create a timeoff
+   *
+   * @remarks
+   * Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
    */
   async createHrisTimeoff(
     request: operations.CreateHrisTimeoffRequest,
@@ -30,6 +33,9 @@ export class Timeoff extends ClientSDK {
 
   /**
    * Retrieve a timeoff
+   *
+   * @remarks
+   * Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisTimeoff(
     request: operations.GetHrisTimeoffRequest,
@@ -44,6 +50,9 @@ export class Timeoff extends ClientSDK {
 
   /**
    * List all timeoffs
+   *
+   * @remarks
+   * Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisTimeoffs(
     request: operations.ListHrisTimeoffsRequest,
@@ -58,6 +67,9 @@ export class Timeoff extends ClientSDK {
 
   /**
    * Update a timeoff
+   *
+   * @remarks
+   * Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
    */
   async patchHrisTimeoff(
     request: operations.PatchHrisTimeoffRequest,
@@ -72,6 +84,9 @@ export class Timeoff extends ClientSDK {
 
   /**
    * Remove a timeoff
+   *
+   * @remarks
+   * Deletes the HrisTimeoff identified by `id`.
    */
   async removeHrisTimeoff(
     request: operations.RemoveHrisTimeoffRequest,
@@ -86,6 +101,9 @@ export class Timeoff extends ClientSDK {
 
   /**
    * Update a timeoff
+   *
+   * @remarks
+   * Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
    */
   async updateHrisTimeoff(
     request: operations.UpdateHrisTimeoffRequest,

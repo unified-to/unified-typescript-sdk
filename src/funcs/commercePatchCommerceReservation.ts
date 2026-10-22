@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a reservation
+ *
+ * @remarks
+ * Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
  */
 export function commercePatchCommerceReservation(
   client: UnifiedToCore,

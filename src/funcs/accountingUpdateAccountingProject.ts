@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a project
+ *
+ * @remarks
+ * Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
  */
 export function accountingUpdateAccountingProject(
   client: UnifiedToCore,

@@ -19,7 +19,7 @@
 
 ## createAccountingExpense
 
-Create an expense
+Creates a AccountingExpense. Provide the unified AccountingExpense fields in the request body; they are mapped to the provider's API. Returns the created AccountingExpense.
 
 ### Example Usage
 
@@ -39,13 +39,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "5385bee4-22ed-480e-bd34-ebdbda0540f5",
+          id: "fc662f22-b5ff-4e86-b24f-07d5e575d4fb",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "f1166735-eeed-45c6-857a-146bc375faf5",
+          id: "26255b8c-271f-4d26-8d1b-6318a8df7cf6",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -54,10 +54,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "86781ed4-1ebc-4056-a7ea-be0b4699c28b",
+      id: "59bbe708-ccbe-4dcf-9921-17b30542229d",
       lineitems: [
         {
-          id: "efb58bee-323b-4e9e-8dab-e80c6dd9ae9e",
+          id: "6b779044-5de3-411d-b803-5a853c001e58",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -65,7 +65,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "5cbd2ee7-41c0-4f0f-9134-2b045ea229f3",
+          id: "2ea1466e-8b07-4711-ae42-212b6f6bf469",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -73,7 +73,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "08a8b664-f362-47b7-84a9-5cd0026e20b6",
+          id: "99ad5fb2-fcfc-4aba-a300-a0579d64c33e",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -82,7 +82,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7e85f4bb-ce5a-44b9-a7b4-c83dd6457c1a",
+          id: "fc78f20f-295b-428d-bb2a-98a1f204000c",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -90,7 +90,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7c383768-2b34-4b93-aa24-959667b409cb",
+          id: "212f74c8-825a-4ef1-b76d-1424b89afdd5",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -106,7 +106,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.229Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.912Z"),
     },
     connectionId: "<id>",
   });
@@ -139,13 +139,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "5385bee4-22ed-480e-bd34-ebdbda0540f5",
+          id: "fc662f22-b5ff-4e86-b24f-07d5e575d4fb",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "f1166735-eeed-45c6-857a-146bc375faf5",
+          id: "26255b8c-271f-4d26-8d1b-6318a8df7cf6",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -154,10 +154,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "86781ed4-1ebc-4056-a7ea-be0b4699c28b",
+      id: "59bbe708-ccbe-4dcf-9921-17b30542229d",
       lineitems: [
         {
-          id: "efb58bee-323b-4e9e-8dab-e80c6dd9ae9e",
+          id: "6b779044-5de3-411d-b803-5a853c001e58",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -165,7 +165,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "5cbd2ee7-41c0-4f0f-9134-2b045ea229f3",
+          id: "2ea1466e-8b07-4711-ae42-212b6f6bf469",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -173,7 +173,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "08a8b664-f362-47b7-84a9-5cd0026e20b6",
+          id: "99ad5fb2-fcfc-4aba-a300-a0579d64c33e",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -182,7 +182,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7e85f4bb-ce5a-44b9-a7b4-c83dd6457c1a",
+          id: "fc78f20f-295b-428d-bb2a-98a1f204000c",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -190,7 +190,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7c383768-2b34-4b93-aa24-959667b409cb",
+          id: "212f74c8-825a-4ef1-b76d-1424b89afdd5",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -206,7 +206,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.229Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.912Z"),
     },
     connectionId: "<id>",
   });
@@ -242,7 +242,7 @@ run();
 
 ## createLegalExpense
 
-Create an expense
+Creates a LegalExpense. Provide the unified LegalExpense fields in the request body; they are mapped to the provider's API. Returns the created LegalExpense.
 
 ### Example Usage
 
@@ -263,7 +263,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "cefa9fac-bb59-4ea3-9b34-76e523d93c3b",
+      id: "2e544370-b132-4901-ad67-317a263e7922",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -271,7 +271,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.107Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.536Z"),
     },
     connectionId: "<id>",
   });
@@ -305,7 +305,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "cefa9fac-bb59-4ea3-9b34-76e523d93c3b",
+      id: "2e544370-b132-4901-ad67-317a263e7922",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -313,7 +313,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.107Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.536Z"),
     },
     connectionId: "<id>",
   });
@@ -349,7 +349,7 @@ run();
 
 ## getAccountingExpense
 
-Retrieve an expense
+Retrieves a single AccountingExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -428,7 +428,7 @@ run();
 
 ## getLegalExpense
 
-Retrieve an expense
+Retrieves a single LegalExpense by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -507,7 +507,7 @@ run();
 
 ## listAccountingExpenses
 
-List all expenses
+Returns a list of AccountingExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -584,7 +584,7 @@ run();
 
 ## listLegalExpenses
 
-List all expenses
+Returns a list of LegalExpenses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -661,7 +661,7 @@ run();
 
 ## patchAccountingExpense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -681,13 +681,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "81a7dae5-8771-4aa2-bcf0-84875bbc2770",
+          id: "28b01e0f-afe4-4831-8ffb-5b74b066d9a1",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "265d556a-da66-4224-ae17-6b9d80ffe1a7",
+          id: "2907d6b1-b74c-47bc-9b59-aca0d0aeecaa",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -696,10 +696,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "ccfbf340-431a-4b33-b4be-25f8e395de3b",
+      id: "2fa39f98-9f21-467f-ba2c-954392980f2d",
       lineitems: [
         {
-          id: "5e0c796a-0815-4019-9447-453810cc1a56",
+          id: "90e2a96f-208e-4d2e-b360-5ef3bcc45efc",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -707,7 +707,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "848125e2-cc30-4ff1-853b-4cd2a8061999",
+          id: "8ade7ef9-7ead-4165-82be-73a94c2da564",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -715,7 +715,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7f9b26a9-e680-4024-a89c-03a7fdfc6ac8",
+          id: "13af1a5b-fcbc-4b00-9036-1d4983ee8843",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -724,7 +724,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "d2be378b-c80b-424d-88c0-40d37776c01b",
+          id: "a6cbef52-f457-41c1-87db-ce3d852c95f3",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -732,7 +732,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4bbe22ac-d68b-4a3c-ae62-694e91f810cb",
+          id: "79a9e7ad-e1d2-48c4-854c-42f7a0f382ea",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -748,7 +748,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.231Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.913Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -782,13 +782,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "81a7dae5-8771-4aa2-bcf0-84875bbc2770",
+          id: "28b01e0f-afe4-4831-8ffb-5b74b066d9a1",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "265d556a-da66-4224-ae17-6b9d80ffe1a7",
+          id: "2907d6b1-b74c-47bc-9b59-aca0d0aeecaa",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -797,10 +797,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "ccfbf340-431a-4b33-b4be-25f8e395de3b",
+      id: "2fa39f98-9f21-467f-ba2c-954392980f2d",
       lineitems: [
         {
-          id: "5e0c796a-0815-4019-9447-453810cc1a56",
+          id: "90e2a96f-208e-4d2e-b360-5ef3bcc45efc",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -808,7 +808,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "848125e2-cc30-4ff1-853b-4cd2a8061999",
+          id: "8ade7ef9-7ead-4165-82be-73a94c2da564",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -816,7 +816,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7f9b26a9-e680-4024-a89c-03a7fdfc6ac8",
+          id: "13af1a5b-fcbc-4b00-9036-1d4983ee8843",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -825,7 +825,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "d2be378b-c80b-424d-88c0-40d37776c01b",
+          id: "a6cbef52-f457-41c1-87db-ce3d852c95f3",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -833,7 +833,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4bbe22ac-d68b-4a3c-ae62-694e91f810cb",
+          id: "79a9e7ad-e1d2-48c4-854c-42f7a0f382ea",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -849,7 +849,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.231Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.913Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -886,7 +886,7 @@ run();
 
 ## patchLegalExpense
 
-Update an expense
+Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -907,7 +907,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "3fc90bf9-2d8b-4448-b0f1-c50cccc341cf",
+      id: "aa99872e-e44f-40ea-ab70-60f7a313a0c1",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -915,7 +915,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.116Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.542Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -950,7 +950,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "3fc90bf9-2d8b-4448-b0f1-c50cccc341cf",
+      id: "aa99872e-e44f-40ea-ab70-60f7a313a0c1",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -958,7 +958,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.116Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.542Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -995,7 +995,7 @@ run();
 
 ## removeAccountingExpense
 
-Remove an expense
+Deletes the AccountingExpense identified by `id`.
 
 ### Example Usage
 
@@ -1074,7 +1074,7 @@ run();
 
 ## removeLegalExpense
 
-Remove an expense
+Deletes the LegalExpense identified by `id`.
 
 ### Example Usage
 
@@ -1153,7 +1153,7 @@ run();
 
 ## updateAccountingExpense
 
-Update an expense
+Updates the AccountingExpense identified by `id`. Provide the unified AccountingExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -1173,13 +1173,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "81a7dae5-8771-4aa2-bcf0-84875bbc2770",
+          id: "28b01e0f-afe4-4831-8ffb-5b74b066d9a1",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "265d556a-da66-4224-ae17-6b9d80ffe1a7",
+          id: "2907d6b1-b74c-47bc-9b59-aca0d0aeecaa",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -1188,10 +1188,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "ccfbf340-431a-4b33-b4be-25f8e395de3b",
+      id: "2fa39f98-9f21-467f-ba2c-954392980f2d",
       lineitems: [
         {
-          id: "5e0c796a-0815-4019-9447-453810cc1a56",
+          id: "90e2a96f-208e-4d2e-b360-5ef3bcc45efc",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -1199,7 +1199,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "848125e2-cc30-4ff1-853b-4cd2a8061999",
+          id: "8ade7ef9-7ead-4165-82be-73a94c2da564",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -1207,7 +1207,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7f9b26a9-e680-4024-a89c-03a7fdfc6ac8",
+          id: "13af1a5b-fcbc-4b00-9036-1d4983ee8843",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -1216,7 +1216,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "d2be378b-c80b-424d-88c0-40d37776c01b",
+          id: "a6cbef52-f457-41c1-87db-ce3d852c95f3",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -1224,7 +1224,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4bbe22ac-d68b-4a3c-ae62-694e91f810cb",
+          id: "79a9e7ad-e1d2-48c4-854c-42f7a0f382ea",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -1240,7 +1240,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.231Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.913Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1274,13 +1274,13 @@ async function run() {
       attachments: [
         {
           downloadUrl: "https://rubbery-couch.biz/",
-          id: "81a7dae5-8771-4aa2-bcf0-84875bbc2770",
+          id: "28b01e0f-afe4-4831-8ffb-5b74b066d9a1",
           mimeType: "application/pdf",
           name: "receipt-9696.pdf",
         },
         {
           downloadUrl: "https://appropriate-smog.biz/",
-          id: "265d556a-da66-4224-ae17-6b9d80ffe1a7",
+          id: "2907d6b1-b74c-47bc-9b59-aca0d0aeecaa",
           mimeType: "application/pdf",
           name: "receipt-9696-1.pdf",
         },
@@ -1289,10 +1289,10 @@ async function run() {
       createdAt: new Date("2020-06-11T03:39:37.305Z"),
       currency: "GBP",
       externalNumber: "EXP-38303",
-      id: "ccfbf340-431a-4b33-b4be-25f8e395de3b",
+      id: "2fa39f98-9f21-467f-ba2c-954392980f2d",
       lineitems: [
         {
-          id: "5e0c796a-0815-4019-9447-453810cc1a56",
+          id: "90e2a96f-208e-4d2e-b360-5ef3bcc45efc",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 364.74,
@@ -1300,7 +1300,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "848125e2-cc30-4ff1-853b-4cd2a8061999",
+          id: "8ade7ef9-7ead-4165-82be-73a94c2da564",
           itemName: "Client dinner",
           taxAmount: 0,
           totalAmount: 258.35,
@@ -1308,7 +1308,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7f9b26a9-e680-4024-a89c-03a7fdfc6ac8",
+          id: "13af1a5b-fcbc-4b00-9036-1d4983ee8843",
           itemName: "Conference ticket",
           notes: "Casus umquam conicio cinis demitto sint.",
           taxAmount: 0,
@@ -1317,7 +1317,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "d2be378b-c80b-424d-88c0-40d37776c01b",
+          id: "a6cbef52-f457-41c1-87db-ce3d852c95f3",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 157.04,
@@ -1325,7 +1325,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4bbe22ac-d68b-4a3c-ae62-694e91f810cb",
+          id: "79a9e7ad-e1d2-48c4-854c-42f7a0f382ea",
           itemName: "Hotel",
           taxAmount: 0,
           totalAmount: 164.02,
@@ -1341,7 +1341,7 @@ async function run() {
       taxAmount: 0,
       totalAmount: 972.29,
       type: "COMPANY",
-      updatedAt: new Date("2020-09-02T07:18:24.231Z"),
+      updatedAt: new Date("2020-09-02T08:10:01.913Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1378,7 +1378,7 @@ run();
 
 ## updateLegalExpense
 
-Update an expense
+Updates the LegalExpense identified by `id`. Provide the unified LegalExpense fields to change in the request body.
 
 ### Example Usage
 
@@ -1399,7 +1399,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "3fc90bf9-2d8b-4448-b0f1-c50cccc341cf",
+      id: "aa99872e-e44f-40ea-ab70-60f7a313a0c1",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -1407,7 +1407,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.116Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.542Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1442,7 +1442,7 @@ async function run() {
       createdAt: new Date("2020-11-08T00:41:42.356Z"),
       currency: "MVR",
       description: "Temporibus agnitio sui.",
-      id: "3fc90bf9-2d8b-4448-b0f1-c50cccc341cf",
+      id: "aa99872e-e44f-40ea-ab70-60f7a313a0c1",
       incurredAt: new Date("2020-11-08T00:41:42.356Z"),
       isBilled: false,
       metadata: [],
@@ -1450,7 +1450,7 @@ async function run() {
       quantity: 3,
       totalAmount: 300,
       type: "OTHER",
-      updatedAt: new Date("2024-03-30T23:40:22.116Z"),
+      updatedAt: new Date("2024-03-31T13:22:39.542Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an event
+ *
+ * @remarks
+ * Creates a CrmEvent. Provide the unified CrmEvent fields in the request body; they are mapped to the provider's API. Returns the created CrmEvent.
  */
 export function eventCreateCrmEvent(
   client: UnifiedToCore,

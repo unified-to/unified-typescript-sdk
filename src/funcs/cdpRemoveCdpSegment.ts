@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a segment
+ *
+ * @remarks
+ * Deletes the CdpSegment identified by `id`.
  */
 export function cdpRemoveCdpSegment(
   client: UnifiedToCore,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an envvar
+ *
+ * @remarks
+ * Deletes the ComputeEnvvar identified by `id`.
  */
 export function computeRemoveComputeEnvvar(
   client: UnifiedToCore,

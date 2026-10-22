@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a link
+ *
+ * @remarks
+ * Deletes the CalendarLink identified by `id`.
  */
 export function calendarRemoveCalendarLink(
   client: UnifiedToCore,

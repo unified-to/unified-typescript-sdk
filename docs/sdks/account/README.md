@@ -13,7 +13,7 @@
 
 ## createAccountingAccount
 
-Create an account
+Creates a AccountingAccount. Provide the unified AccountingAccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingAccount.
 
 ### Example Usage
 
@@ -35,7 +35,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -48,7 +48,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   });
@@ -83,7 +83,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "dd29a6e3-fa31-4aac-b08d-dcd18ca8023c",
+      id: "60e19987-105c-46f3-9e70-772e20dd712d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -96,7 +96,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.940Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.109Z"),
     },
     connectionId: "<id>",
   });
@@ -132,7 +132,7 @@ run();
 
 ## getAccountingAccount
 
-Retrieve an account
+Retrieves a single AccountingAccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -211,7 +211,7 @@ run();
 
 ## listAccountingAccounts
 
-List all accounts
+Returns a list of AccountingAccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -288,7 +288,7 @@ run();
 
 ## patchAccountingAccount
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -310,7 +310,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "e498d5bd-be04-46a2-8f23-7eab27caa0a3",
+      id: "723af009-d9e1-4428-8f78-4c7a449da4a2",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -323,7 +323,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.946Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.113Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -359,7 +359,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "e498d5bd-be04-46a2-8f23-7eab27caa0a3",
+      id: "723af009-d9e1-4428-8f78-4c7a449da4a2",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -372,7 +372,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.946Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.113Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -409,7 +409,7 @@ run();
 
 ## removeAccountingAccount
 
-Remove an account
+Deletes the AccountingAccount identified by `id`.
 
 ### Example Usage
 
@@ -488,7 +488,7 @@ run();
 
 ## updateAccountingAccount
 
-Update an account
+Updates the AccountingAccount identified by `id`. Provide the unified AccountingAccount fields to change in the request body.
 
 ### Example Usage
 
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "e498d5bd-be04-46a2-8f23-7eab27caa0a3",
+      id: "723af009-d9e1-4428-8f78-4c7a449da4a2",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.946Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.113Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -559,7 +559,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "e498d5bd-be04-46a2-8f23-7eab27caa0a3",
+      id: "723af009-d9e1-4428-8f78-4c7a449da4a2",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -572,7 +572,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-06T21:49:25.946Z"),
+      updatedAt: new Date("2023-08-07T03:56:03.113Z"),
     },
     connectionId: "<id>",
     id: "<id>",

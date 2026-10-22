@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a profile
+ *
+ * @remarks
+ * Deletes the CdpProfile identified by `id`.
  */
 export function cdpRemoveCdpProfile(
   client: UnifiedToCore,

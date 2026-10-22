@@ -103,6 +103,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Hris extends ClientSDK {
   /**
    * Create an attendance
+   *
+   * @remarks
+   * Creates a HrisAttendance. Provide the unified HrisAttendance fields in the request body; they are mapped to the provider's API. Returns the created HrisAttendance.
    */
   async createHrisAttendance(
     request: operations.CreateHrisAttendanceRequest,
@@ -117,6 +120,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a bankaccount
+   *
+   * @remarks
+   * Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
    */
   async createHrisBankaccount(
     request: operations.CreateHrisBankaccountRequest,
@@ -131,6 +137,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a benefit
+   *
+   * @remarks
+   * Creates a HrisBenefit. Provide the unified HrisBenefit fields in the request body; they are mapped to the provider's API. Returns the created HrisBenefit.
    */
   async createHrisBenefit(
     request: operations.CreateHrisBenefitRequest,
@@ -145,6 +154,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a company
+   *
+   * @remarks
+   * Creates a HrisCompany. Provide the unified HrisCompany fields in the request body; they are mapped to the provider's API. Returns the created HrisCompany.
    */
   async createHrisCompany(
     request: operations.CreateHrisCompanyRequest,
@@ -159,6 +171,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a deduction
+   *
+   * @remarks
+   * Creates a HrisDeduction. Provide the unified HrisDeduction fields in the request body; they are mapped to the provider's API. Returns the created HrisDeduction.
    */
   async createHrisDeduction(
     request: operations.CreateHrisDeductionRequest,
@@ -173,6 +188,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a device
+   *
+   * @remarks
+   * Creates a HrisDevice. Provide the unified HrisDevice fields in the request body; they are mapped to the provider's API. Returns the created HrisDevice.
    */
   async createHrisDevice(
     request: operations.CreateHrisDeviceRequest,
@@ -187,6 +205,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a document
+   *
+   * @remarks
+   * Creates a HrisDocument. Provide the unified HrisDocument fields in the request body; they are mapped to the provider's API. Returns the created HrisDocument.
    */
   async createHrisDocument(
     request: operations.CreateHrisDocumentRequest,
@@ -201,6 +222,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create an earning
+   *
+   * @remarks
+   * Creates a HrisEarning. Provide the unified HrisEarning fields in the request body; they are mapped to the provider's API. Returns the created HrisEarning.
    */
   async createHrisEarning(
     request: operations.CreateHrisEarningRequest,
@@ -215,6 +239,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create an employee
+   *
+   * @remarks
+   * Creates a HrisEmployee. Provide the unified HrisEmployee fields in the request body; they are mapped to the provider's API. Returns the created HrisEmployee.
    */
   async createHrisEmployee(
     request: operations.CreateHrisEmployeeRequest,
@@ -229,6 +256,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a group
+   *
+   * @remarks
+   * Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
    */
   async createHrisGroup(
     request: operations.CreateHrisGroupRequest,
@@ -243,6 +273,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a job
+   *
+   * @remarks
+   * Creates a HrisJob. Provide the unified HrisJob fields in the request body; they are mapped to the provider's API. Returns the created HrisJob.
    */
   async createHrisJob(
     request: operations.CreateHrisJobRequest,
@@ -257,6 +290,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a location
+   *
+   * @remarks
+   * Creates a HrisLocation. Provide the unified HrisLocation fields in the request body; they are mapped to the provider's API. Returns the created HrisLocation.
    */
   async createHrisLocation(
     request: operations.CreateHrisLocationRequest,
@@ -271,6 +307,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a taxonomy
+   *
+   * @remarks
+   * Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
    */
   async createHrisTaxonomy(
     request: operations.CreateHrisTaxonomyRequest,
@@ -285,6 +324,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a timeoff
+   *
+   * @remarks
+   * Creates a HrisTimeoff. Provide the unified HrisTimeoff fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeoff.
    */
   async createHrisTimeoff(
     request: operations.CreateHrisTimeoffRequest,
@@ -299,6 +341,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Create a timeshift
+   *
+   * @remarks
+   * Creates a HrisTimeshift. Provide the unified HrisTimeshift fields in the request body; they are mapped to the provider's API. Returns the created HrisTimeshift.
    */
   async createHrisTimeshift(
     request: operations.CreateHrisTimeshiftRequest,
@@ -313,6 +358,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve an attendance
+   *
+   * @remarks
+   * Retrieves a single HrisAttendance by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisAttendance(
     request: operations.GetHrisAttendanceRequest,
@@ -327,6 +375,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a bankaccount
+   *
+   * @remarks
+   * Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisBankaccount(
     request: operations.GetHrisBankaccountRequest,
@@ -341,6 +392,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a benefit
+   *
+   * @remarks
+   * Retrieves a single HrisBenefit by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisBenefit(
     request: operations.GetHrisBenefitRequest,
@@ -355,6 +409,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a company
+   *
+   * @remarks
+   * Retrieves a single HrisCompany by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisCompany(
     request: operations.GetHrisCompanyRequest,
@@ -369,6 +426,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a deduction
+   *
+   * @remarks
+   * Retrieves a single HrisDeduction by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisDeduction(
     request: operations.GetHrisDeductionRequest,
@@ -383,6 +443,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a device
+   *
+   * @remarks
+   * Retrieves a single HrisDevice by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisDevice(
     request: operations.GetHrisDeviceRequest,
@@ -397,6 +460,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a document
+   *
+   * @remarks
+   * Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisDocument(
     request: operations.GetHrisDocumentRequest,
@@ -411,6 +477,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve an earning
+   *
+   * @remarks
+   * Retrieves a single HrisEarning by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisEarning(
     request: operations.GetHrisEarningRequest,
@@ -425,6 +494,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve an employee
+   *
+   * @remarks
+   * Retrieves a single HrisEmployee by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisEmployee(
     request: operations.GetHrisEmployeeRequest,
@@ -439,6 +511,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a group
+   *
+   * @remarks
+   * Retrieves a single HrisGroup by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisGroup(
     request: operations.GetHrisGroupRequest,
@@ -453,6 +528,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a job
+   *
+   * @remarks
+   * Retrieves a single HrisJob by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisJob(
     request: operations.GetHrisJobRequest,
@@ -467,6 +545,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single HrisLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisLocation(
     request: operations.GetHrisLocationRequest,
@@ -481,6 +562,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a paycode
+   *
+   * @remarks
+   * Retrieves a single HrisPaycode by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisPaycode(
     request: operations.GetHrisPaycodeRequest,
@@ -495,6 +579,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a payroll
+   *
+   * @remarks
+   * Retrieves a single HrisPayroll by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisPayroll(
     request: operations.GetHrisPayrollRequest,
@@ -509,6 +596,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a payslip
+   *
+   * @remarks
+   * Retrieves a single HrisPayslip by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisPayslip(
     request: operations.GetHrisPayslipRequest,
@@ -523,6 +613,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a taxonomy
+   *
+   * @remarks
+   * Retrieves a single HrisTaxonomy by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisTaxonomy(
     request: operations.GetHrisTaxonomyRequest,
@@ -537,6 +630,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a timeoff
+   *
+   * @remarks
+   * Retrieves a single HrisTimeoff by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisTimeoff(
     request: operations.GetHrisTimeoffRequest,
@@ -551,6 +647,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Retrieve a timeshift
+   *
+   * @remarks
+   * Retrieves a single HrisTimeshift by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisTimeshift(
     request: operations.GetHrisTimeshiftRequest,
@@ -565,6 +664,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all attendances
+   *
+   * @remarks
+   * Returns a list of HrisAttendances. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisAttendances(
     request: operations.ListHrisAttendancesRequest,
@@ -579,6 +681,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all bankaccounts
+   *
+   * @remarks
+   * Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisBankaccounts(
     request: operations.ListHrisBankaccountsRequest,
@@ -593,6 +698,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all benefits
+   *
+   * @remarks
+   * Returns a list of HrisBenefits. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisBenefits(
     request: operations.ListHrisBenefitsRequest,
@@ -607,6 +715,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all companies
+   *
+   * @remarks
+   * Returns a list of HrisCompanies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisCompanies(
     request: operations.ListHrisCompaniesRequest,
@@ -621,6 +732,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all deductions
+   *
+   * @remarks
+   * Returns a list of HrisDeductions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisDeductions(
     request: operations.ListHrisDeductionsRequest,
@@ -635,6 +749,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all devices
+   *
+   * @remarks
+   * Returns a list of HrisDevices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisDevices(
     request: operations.ListHrisDevicesRequest,
@@ -649,6 +766,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all documents
+   *
+   * @remarks
+   * Returns a list of HrisDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisDocuments(
     request: operations.ListHrisDocumentsRequest,
@@ -663,6 +783,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all earnings
+   *
+   * @remarks
+   * Returns a list of HrisEarnings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisEarnings(
     request: operations.ListHrisEarningsRequest,
@@ -677,6 +800,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all employees
+   *
+   * @remarks
+   * Returns a list of HrisEmployees. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisEmployees(
     request: operations.ListHrisEmployeesRequest,
@@ -691,6 +817,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all groups
+   *
+   * @remarks
+   * Returns a list of HrisGroups. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisGroups(
     request: operations.ListHrisGroupsRequest,
@@ -705,6 +834,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all jobs
+   *
+   * @remarks
+   * Returns a list of HrisJobs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisJobs(
     request: operations.ListHrisJobsRequest,
@@ -719,6 +851,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all locations
+   *
+   * @remarks
+   * Returns a list of HrisLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisLocations(
     request: operations.ListHrisLocationsRequest,
@@ -733,6 +868,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all paycodes
+   *
+   * @remarks
+   * Returns a list of HrisPaycodes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisPaycodes(
     request: operations.ListHrisPaycodesRequest,
@@ -747,6 +885,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all payrolls
+   *
+   * @remarks
+   * Returns a list of HrisPayrolls. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisPayrolls(
     request: operations.ListHrisPayrollsRequest,
@@ -761,6 +902,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all payslips
+   *
+   * @remarks
+   * Returns a list of HrisPayslips. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisPayslips(
     request: operations.ListHrisPayslipsRequest,
@@ -775,6 +919,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all taxonomies
+   *
+   * @remarks
+   * Returns a list of HrisTaxonomies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisTaxonomies(
     request: operations.ListHrisTaxonomiesRequest,
@@ -789,6 +936,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all timeoffs
+   *
+   * @remarks
+   * Returns a list of HrisTimeoffs. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisTimeoffs(
     request: operations.ListHrisTimeoffsRequest,
@@ -803,6 +953,9 @@ export class Hris extends ClientSDK {
 
   /**
    * List all timeshifts
+   *
+   * @remarks
+   * Returns a list of HrisTimeshifts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listHrisTimeshifts(
     request: operations.ListHrisTimeshiftsRequest,
@@ -817,6 +970,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update an attendance
+   *
+   * @remarks
+   * Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
    */
   async patchHrisAttendance(
     request: operations.PatchHrisAttendanceRequest,
@@ -831,6 +987,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a bankaccount
+   *
+   * @remarks
+   * Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
    */
   async patchHrisBankaccount(
     request: operations.PatchHrisBankaccountRequest,
@@ -845,6 +1004,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a benefit
+   *
+   * @remarks
+   * Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
    */
   async patchHrisBenefit(
     request: operations.PatchHrisBenefitRequest,
@@ -859,6 +1021,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
    */
   async patchHrisCompany(
     request: operations.PatchHrisCompanyRequest,
@@ -873,6 +1038,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a deduction
+   *
+   * @remarks
+   * Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
    */
   async patchHrisDeduction(
     request: operations.PatchHrisDeductionRequest,
@@ -887,6 +1055,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a device
+   *
+   * @remarks
+   * Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
    */
   async patchHrisDevice(
     request: operations.PatchHrisDeviceRequest,
@@ -901,6 +1072,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
    */
   async patchHrisDocument(
     request: operations.PatchHrisDocumentRequest,
@@ -915,6 +1089,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update an earning
+   *
+   * @remarks
+   * Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
    */
   async patchHrisEarning(
     request: operations.PatchHrisEarningRequest,
@@ -929,6 +1106,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update an employee
+   *
+   * @remarks
+   * Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
    */
   async patchHrisEmployee(
     request: operations.PatchHrisEmployeeRequest,
@@ -943,6 +1123,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a group
+   *
+   * @remarks
+   * Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
    */
   async patchHrisGroup(
     request: operations.PatchHrisGroupRequest,
@@ -957,6 +1140,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a job
+   *
+   * @remarks
+   * Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
    */
   async patchHrisJob(
     request: operations.PatchHrisJobRequest,
@@ -971,6 +1157,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a location
+   *
+   * @remarks
+   * Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
    */
   async patchHrisLocation(
     request: operations.PatchHrisLocationRequest,
@@ -985,6 +1174,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a timeoff
+   *
+   * @remarks
+   * Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
    */
   async patchHrisTimeoff(
     request: operations.PatchHrisTimeoffRequest,
@@ -999,6 +1191,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a timeshift
+   *
+   * @remarks
+   * Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
    */
   async patchHrisTimeshift(
     request: operations.PatchHrisTimeshiftRequest,
@@ -1013,6 +1208,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove an attendance
+   *
+   * @remarks
+   * Deletes the HrisAttendance identified by `id`.
    */
   async removeHrisAttendance(
     request: operations.RemoveHrisAttendanceRequest,
@@ -1027,6 +1225,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a bankaccount
+   *
+   * @remarks
+   * Deletes the HrisBankaccount identified by `id`.
    */
   async removeHrisBankaccount(
     request: operations.RemoveHrisBankaccountRequest,
@@ -1041,6 +1242,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a benefit
+   *
+   * @remarks
+   * Deletes the HrisBenefit identified by `id`.
    */
   async removeHrisBenefit(
     request: operations.RemoveHrisBenefitRequest,
@@ -1055,6 +1259,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a company
+   *
+   * @remarks
+   * Deletes the HrisCompany identified by `id`.
    */
   async removeHrisCompany(
     request: operations.RemoveHrisCompanyRequest,
@@ -1069,6 +1276,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a deduction
+   *
+   * @remarks
+   * Deletes the HrisDeduction identified by `id`.
    */
   async removeHrisDeduction(
     request: operations.RemoveHrisDeductionRequest,
@@ -1083,6 +1293,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a device
+   *
+   * @remarks
+   * Deletes the HrisDevice identified by `id`.
    */
   async removeHrisDevice(
     request: operations.RemoveHrisDeviceRequest,
@@ -1097,6 +1310,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a document
+   *
+   * @remarks
+   * Deletes the HrisDocument identified by `id`.
    */
   async removeHrisDocument(
     request: operations.RemoveHrisDocumentRequest,
@@ -1111,6 +1327,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove an earning
+   *
+   * @remarks
+   * Deletes the HrisEarning identified by `id`.
    */
   async removeHrisEarning(
     request: operations.RemoveHrisEarningRequest,
@@ -1125,6 +1344,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove an employee
+   *
+   * @remarks
+   * Deletes the HrisEmployee identified by `id`.
    */
   async removeHrisEmployee(
     request: operations.RemoveHrisEmployeeRequest,
@@ -1139,6 +1361,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a group
+   *
+   * @remarks
+   * Deletes the HrisGroup identified by `id`.
    */
   async removeHrisGroup(
     request: operations.RemoveHrisGroupRequest,
@@ -1153,6 +1378,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a job
+   *
+   * @remarks
+   * Deletes the HrisJob identified by `id`.
    */
   async removeHrisJob(
     request: operations.RemoveHrisJobRequest,
@@ -1167,6 +1395,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a location
+   *
+   * @remarks
+   * Deletes the HrisLocation identified by `id`.
    */
   async removeHrisLocation(
     request: operations.RemoveHrisLocationRequest,
@@ -1181,6 +1412,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a timeoff
+   *
+   * @remarks
+   * Deletes the HrisTimeoff identified by `id`.
    */
   async removeHrisTimeoff(
     request: operations.RemoveHrisTimeoffRequest,
@@ -1195,6 +1429,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Remove a timeshift
+   *
+   * @remarks
+   * Deletes the HrisTimeshift identified by `id`.
    */
   async removeHrisTimeshift(
     request: operations.RemoveHrisTimeshiftRequest,
@@ -1209,6 +1446,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update an attendance
+   *
+   * @remarks
+   * Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
    */
   async updateHrisAttendance(
     request: operations.UpdateHrisAttendanceRequest,
@@ -1223,6 +1463,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a bankaccount
+   *
+   * @remarks
+   * Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
    */
   async updateHrisBankaccount(
     request: operations.UpdateHrisBankaccountRequest,
@@ -1237,6 +1480,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a benefit
+   *
+   * @remarks
+   * Updates the HrisBenefit identified by `id`. Provide the unified HrisBenefit fields to change in the request body.
    */
   async updateHrisBenefit(
     request: operations.UpdateHrisBenefitRequest,
@@ -1251,6 +1497,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a company
+   *
+   * @remarks
+   * Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
    */
   async updateHrisCompany(
     request: operations.UpdateHrisCompanyRequest,
@@ -1265,6 +1514,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a deduction
+   *
+   * @remarks
+   * Updates the HrisDeduction identified by `id`. Provide the unified HrisDeduction fields to change in the request body.
    */
   async updateHrisDeduction(
     request: operations.UpdateHrisDeductionRequest,
@@ -1279,6 +1531,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a device
+   *
+   * @remarks
+   * Updates the HrisDevice identified by `id`. Provide the unified HrisDevice fields to change in the request body.
    */
   async updateHrisDevice(
     request: operations.UpdateHrisDeviceRequest,
@@ -1293,6 +1548,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a document
+   *
+   * @remarks
+   * Updates the HrisDocument identified by `id`. Provide the unified HrisDocument fields to change in the request body.
    */
   async updateHrisDocument(
     request: operations.UpdateHrisDocumentRequest,
@@ -1307,6 +1565,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update an earning
+   *
+   * @remarks
+   * Updates the HrisEarning identified by `id`. Provide the unified HrisEarning fields to change in the request body.
    */
   async updateHrisEarning(
     request: operations.UpdateHrisEarningRequest,
@@ -1321,6 +1582,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update an employee
+   *
+   * @remarks
+   * Updates the HrisEmployee identified by `id`. Provide the unified HrisEmployee fields to change in the request body.
    */
   async updateHrisEmployee(
     request: operations.UpdateHrisEmployeeRequest,
@@ -1335,6 +1599,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a group
+   *
+   * @remarks
+   * Updates the HrisGroup identified by `id`. Provide the unified HrisGroup fields to change in the request body.
    */
   async updateHrisGroup(
     request: operations.UpdateHrisGroupRequest,
@@ -1349,6 +1616,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a job
+   *
+   * @remarks
+   * Updates the HrisJob identified by `id`. Provide the unified HrisJob fields to change in the request body.
    */
   async updateHrisJob(
     request: operations.UpdateHrisJobRequest,
@@ -1363,6 +1633,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a location
+   *
+   * @remarks
+   * Updates the HrisLocation identified by `id`. Provide the unified HrisLocation fields to change in the request body.
    */
   async updateHrisLocation(
     request: operations.UpdateHrisLocationRequest,
@@ -1377,6 +1650,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a timeoff
+   *
+   * @remarks
+   * Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
    */
   async updateHrisTimeoff(
     request: operations.UpdateHrisTimeoffRequest,
@@ -1391,6 +1667,9 @@ export class Hris extends ClientSDK {
 
   /**
    * Update a timeshift
+   *
+   * @remarks
+   * Updates the HrisTimeshift identified by `id`. Provide the unified HrisTimeshift fields to change in the request body.
    */
   async updateHrisTimeshift(
     request: operations.UpdateHrisTimeshiftRequest,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a group
+ *
+ * @remarks
+ * Creates a HrisGroup. Provide the unified HrisGroup fields in the request body; they are mapped to the provider's API. Returns the created HrisGroup.
  */
 export function groupCreateHrisGroup(
   client: UnifiedToCore,

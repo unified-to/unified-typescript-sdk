@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Content extends ClientSDK {
   /**
    * Create a content
+   *
+   * @remarks
+   * Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
    */
   async createLmsContent(
     request: operations.CreateLmsContentRequest,
@@ -30,6 +33,9 @@ export class Content extends ClientSDK {
 
   /**
    * Retrieve a content
+   *
+   * @remarks
+   * Retrieves a single LmsContent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLmsContent(
     request: operations.GetLmsContentRequest,
@@ -44,6 +50,9 @@ export class Content extends ClientSDK {
 
   /**
    * List all contents
+   *
+   * @remarks
+   * Returns a list of LmsContents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLmsContents(
     request: operations.ListLmsContentsRequest,
@@ -58,6 +67,9 @@ export class Content extends ClientSDK {
 
   /**
    * Update a content
+   *
+   * @remarks
+   * Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
    */
   async patchLmsContent(
     request: operations.PatchLmsContentRequest,
@@ -72,6 +84,9 @@ export class Content extends ClientSDK {
 
   /**
    * Remove a content
+   *
+   * @remarks
+   * Deletes the LmsContent identified by `id`.
    */
   async removeLmsContent(
     request: operations.RemoveLmsContentRequest,
@@ -86,6 +101,9 @@ export class Content extends ClientSDK {
 
   /**
    * Update a content
+   *
+   * @remarks
+   * Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
    */
   async updateLmsContent(
     request: operations.UpdateLmsContentRequest,

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Table extends ClientSDK {
   /**
    * Create a table
+   *
+   * @remarks
+   * Creates a DatastoreTable. Provide the unified DatastoreTable fields in the request body; they are mapped to the provider's API. Returns the created DatastoreTable.
    */
   async createDatastoreTable(
     request: operations.CreateDatastoreTableRequest,
@@ -30,6 +33,9 @@ export class Table extends ClientSDK {
 
   /**
    * Retrieve a table
+   *
+   * @remarks
+   * Retrieves a single DatastoreTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getDatastoreTable(
     request: operations.GetDatastoreTableRequest,
@@ -44,6 +50,9 @@ export class Table extends ClientSDK {
 
   /**
    * List all tables
+   *
+   * @remarks
+   * Returns a list of DatastoreTables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listDatastoreTables(
     request: operations.ListDatastoreTablesRequest,
@@ -58,6 +67,9 @@ export class Table extends ClientSDK {
 
   /**
    * Update a table
+   *
+   * @remarks
+   * Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
    */
   async patchDatastoreTable(
     request: operations.PatchDatastoreTableRequest,
@@ -72,6 +84,9 @@ export class Table extends ClientSDK {
 
   /**
    * Remove a table
+   *
+   * @remarks
+   * Deletes the DatastoreTable identified by `id`.
    */
   async removeDatastoreTable(
     request: operations.RemoveDatastoreTableRequest,
@@ -86,6 +101,9 @@ export class Table extends ClientSDK {
 
   /**
    * Update a table
+   *
+   * @remarks
+   * Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
    */
   async updateDatastoreTable(
     request: operations.UpdateDatastoreTableRequest,

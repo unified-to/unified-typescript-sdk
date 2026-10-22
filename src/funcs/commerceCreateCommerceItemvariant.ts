@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an itemvariant
+ *
+ * @remarks
+ * Creates a CommerceItemvariant. Provide the unified CommerceItemvariant fields in the request body; they are mapped to the provider's API. Returns the created CommerceItemvariant.
  */
 export function commerceCreateCommerceItemvariant(
   client: UnifiedToCore,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a deal
+ *
+ * @remarks
+ * Deletes the CrmDeal identified by `id`.
  */
 export function crmRemoveCrmDeal(
   client: UnifiedToCore,

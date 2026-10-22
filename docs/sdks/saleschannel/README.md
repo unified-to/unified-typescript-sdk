@@ -13,7 +13,7 @@
 
 ## createCommerceSaleschannel
 
-Create a saleschannel
+Creates a CommerceSaleschannel. Provide the unified CommerceSaleschannel fields in the request body; they are mapped to the provider's API. Returns the created CommerceSaleschannel.
 
 ### Example Usage
 
@@ -33,11 +33,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "513b1ce5-f82b-4fdc-bf95-44411966f171",
+      id: "927daffd-fb45-4f23-8b3e-ba067e4b8505",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.264Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.345Z"),
     },
     connectionId: "<id>",
   });
@@ -70,11 +70,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "513b1ce5-f82b-4fdc-bf95-44411966f171",
+      id: "927daffd-fb45-4f23-8b3e-ba067e4b8505",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.264Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.345Z"),
     },
     connectionId: "<id>",
   });
@@ -110,7 +110,7 @@ run();
 
 ## getCommerceSaleschannel
 
-Retrieve a saleschannel
+Retrieves a single CommerceSaleschannel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -189,7 +189,7 @@ run();
 
 ## listCommerceSaleschannels
 
-List all saleschannels
+Returns a list of CommerceSaleschannels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -266,7 +266,7 @@ run();
 
 ## patchCommerceSaleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -286,11 +286,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "c6d5a63d-9d3a-4c19-82c0-6b339207f5e8",
+      id: "e2b9a722-55e3-48c0-8244-61813d4ee6fa",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.275Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.352Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -324,11 +324,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "c6d5a63d-9d3a-4c19-82c0-6b339207f5e8",
+      id: "e2b9a722-55e3-48c0-8244-61813d4ee6fa",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.275Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.352Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -365,7 +365,7 @@ run();
 
 ## removeCommerceSaleschannel
 
-Remove a saleschannel
+Deletes the CommerceSaleschannel identified by `id`.
 
 ### Example Usage
 
@@ -444,7 +444,7 @@ run();
 
 ## updateCommerceSaleschannel
 
-Update a saleschannel
+Updates the CommerceSaleschannel identified by `id`. Provide the unified CommerceSaleschannel fields to change in the request body.
 
 ### Example Usage
 
@@ -464,11 +464,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "c6d5a63d-9d3a-4c19-82c0-6b339207f5e8",
+      id: "e2b9a722-55e3-48c0-8244-61813d4ee6fa",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.275Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.352Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -502,11 +502,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "c6d5a63d-9d3a-4c19-82c0-6b339207f5e8",
+      id: "e2b9a722-55e3-48c0-8244-61813d4ee6fa",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-01-28T00:23:32.275Z"),
+      updatedAt: new Date("2025-01-28T15:52:42.352Z"),
     },
     connectionId: "<id>",
     id: "<id>",

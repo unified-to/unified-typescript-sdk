@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a matter
+ *
+ * @remarks
+ * Creates a LegalMatter. Provide the unified LegalMatter fields in the request body; they are mapped to the provider's API. Returns the created LegalMatter.
  */
 export function legalCreateLegalMatter(
   client: UnifiedToCore,

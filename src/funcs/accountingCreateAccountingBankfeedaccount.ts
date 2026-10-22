@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a bankfeedaccount
+ *
+ * @remarks
+ * Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
  */
 export function accountingCreateAccountingBankfeedaccount(
   client: UnifiedToCore,

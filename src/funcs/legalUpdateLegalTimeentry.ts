@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a timeentry
+ *
+ * @remarks
+ * Updates the LegalTimeentry identified by `id`. Provide the unified LegalTimeentry fields to change in the request body.
  */
 export function legalUpdateLegalTimeentry(
   client: UnifiedToCore,

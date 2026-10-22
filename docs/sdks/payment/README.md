@@ -29,7 +29,7 @@
 
 ## createPaymentLink
 
-Create a link
+Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
 
 ### Example Usage
 
@@ -50,13 +50,13 @@ async function run() {
       createdAt: new Date("2023-06-04T16:11:45.685Z"),
       currency: "CAD",
       description: "Savor the tender essence in our Ball, designed for dim culinary adventures",
-      id: "f7747124-c35a-4178-b9fc-8a387c3866f4",
+      id: "714432d0-a0b6-461d-9e4b-1ee0848784ec",
       isActive: true,
       isChargeableNow: true,
       lineitems: [
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "a26c7135-bd71-4684-8df5-7025cf155ab4",
+          id: "07a1cc55-8f7a-41bc-bf51-4dcf01f4d617",
           itemDescription: "Discover the worst new Computer with an exciting mix of Steel ingredients",
           itemName: "Soft Marble Cheese",
           taxAmount: 0,
@@ -68,7 +68,7 @@ async function run() {
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
           discountAmount: 424.32,
-          id: "e14947be-31ad-4055-8e2a-1582804f8985",
+          id: "9b88d015-48db-47fc-9e24-87168454c096",
           itemDescription: "Innovative Shoes featuring utilized technology and Cotton construction",
           itemName: "Sleek Aluminum Shoes",
           notes: "Cervus decretum viridis doloremque.",
@@ -80,7 +80,7 @@ async function run() {
         },
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "df426264-bd88-4786-8683-fdd6772c6a62",
+          id: "283c0a85-6f50-46ce-bf13-874db77e2470",
           itemDescription: "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
           itemName: "Elegant Concrete Gloves",
           notes: "Desipio usque vacuus currus cetera testimonium.",
@@ -93,8 +93,8 @@ async function run() {
       ],
       metadata: [],
       successUrl: "https://tinted-jet.info",
-      updatedAt: new Date("2024-04-13T09:39:58.796Z"),
-      url: "https://pay.example.com/f7747124-c35a-4178-b9fc-8a387c3866f4",
+      updatedAt: new Date("2024-04-13T15:46:32.806Z"),
+      url: "https://pay.example.com/714432d0-a0b6-461d-9e4b-1ee0848784ec",
     },
     connectionId: "<id>",
   });
@@ -128,13 +128,13 @@ async function run() {
       createdAt: new Date("2023-06-04T16:11:45.685Z"),
       currency: "CAD",
       description: "Savor the tender essence in our Ball, designed for dim culinary adventures",
-      id: "f7747124-c35a-4178-b9fc-8a387c3866f4",
+      id: "714432d0-a0b6-461d-9e4b-1ee0848784ec",
       isActive: true,
       isChargeableNow: true,
       lineitems: [
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "a26c7135-bd71-4684-8df5-7025cf155ab4",
+          id: "07a1cc55-8f7a-41bc-bf51-4dcf01f4d617",
           itemDescription: "Discover the worst new Computer with an exciting mix of Steel ingredients",
           itemName: "Soft Marble Cheese",
           taxAmount: 0,
@@ -146,7 +146,7 @@ async function run() {
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
           discountAmount: 424.32,
-          id: "e14947be-31ad-4055-8e2a-1582804f8985",
+          id: "9b88d015-48db-47fc-9e24-87168454c096",
           itemDescription: "Innovative Shoes featuring utilized technology and Cotton construction",
           itemName: "Sleek Aluminum Shoes",
           notes: "Cervus decretum viridis doloremque.",
@@ -158,7 +158,7 @@ async function run() {
         },
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "df426264-bd88-4786-8683-fdd6772c6a62",
+          id: "283c0a85-6f50-46ce-bf13-874db77e2470",
           itemDescription: "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
           itemName: "Elegant Concrete Gloves",
           notes: "Desipio usque vacuus currus cetera testimonium.",
@@ -171,8 +171,8 @@ async function run() {
       ],
       metadata: [],
       successUrl: "https://tinted-jet.info",
-      updatedAt: new Date("2024-04-13T09:39:58.796Z"),
-      url: "https://pay.example.com/f7747124-c35a-4178-b9fc-8a387c3866f4",
+      updatedAt: new Date("2024-04-13T15:46:32.806Z"),
+      url: "https://pay.example.com/714432d0-a0b6-461d-9e4b-1ee0848784ec",
     },
     connectionId: "<id>",
   });
@@ -208,7 +208,7 @@ run();
 
 ## createPaymentPayment
 
-Create a payment
+Creates a PaymentPayment. Provide the unified PaymentPayment fields in the request body; they are mapped to the provider's API. Returns the created PaymentPayment.
 
 ### Example Usage
 
@@ -232,7 +232,7 @@ async function run() {
       createdAt: new Date("2022-03-10T00:19:42.086Z"),
       currency: "EUR",
       feeAmount: 2055.82,
-      id: "45f4bf45-be4f-465b-8680-91b594514040",
+      id: "ede3509c-22f9-496f-a024-d2adfbc3c618",
       metadata: [],
       netAmount: 68824.18,
       notes: "Bibo tactus vilicus.",
@@ -244,7 +244,7 @@ async function run() {
       tipAmount: 0,
       totalAmount: 70880,
       type: "INVOICE",
-      updatedAt: new Date("2025-10-08T01:01:47.409Z"),
+      updatedAt: new Date("2025-10-08T19:40:41.835Z"),
     },
     connectionId: "<id>",
   });
@@ -281,7 +281,7 @@ async function run() {
       createdAt: new Date("2022-03-10T00:19:42.086Z"),
       currency: "EUR",
       feeAmount: 2055.82,
-      id: "45f4bf45-be4f-465b-8680-91b594514040",
+      id: "ede3509c-22f9-496f-a024-d2adfbc3c618",
       metadata: [],
       netAmount: 68824.18,
       notes: "Bibo tactus vilicus.",
@@ -293,7 +293,7 @@ async function run() {
       tipAmount: 0,
       totalAmount: 70880,
       type: "INVOICE",
-      updatedAt: new Date("2025-10-08T01:01:47.409Z"),
+      updatedAt: new Date("2025-10-08T19:40:41.835Z"),
     },
     connectionId: "<id>",
   });
@@ -329,7 +329,7 @@ run();
 
 ## createPaymentSubscription
 
-Create a subscription
+Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
 
 ### Example Usage
 
@@ -352,7 +352,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "09978b35-93ba-4d78-9e1a-a8dafd8e00b2",
+      id: "f20ff1d8-b426-49aa-80a8-426d8fe35584",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -361,7 +361,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.479Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.440Z"),
     },
     connectionId: "<id>",
   });
@@ -397,7 +397,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "09978b35-93ba-4d78-9e1a-a8dafd8e00b2",
+      id: "f20ff1d8-b426-49aa-80a8-426d8fe35584",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -406,7 +406,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.479Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.440Z"),
     },
     connectionId: "<id>",
   });
@@ -442,7 +442,7 @@ run();
 
 ## getPaymentLink
 
-Retrieve a link
+Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -521,7 +521,7 @@ run();
 
 ## getPaymentPayment
 
-Retrieve a payment
+Retrieves a single PaymentPayment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -600,7 +600,7 @@ run();
 
 ## getPaymentPayout
 
-Retrieve a payout
+Retrieves a single PaymentPayout by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -679,7 +679,7 @@ run();
 
 ## getPaymentRefund
 
-Retrieve a refund
+Retrieves a single PaymentRefund by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -758,7 +758,7 @@ run();
 
 ## getPaymentSubscription
 
-Retrieve a subscription
+Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -837,7 +837,7 @@ run();
 
 ## listPaymentLinks
 
-List all links
+Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -914,7 +914,7 @@ run();
 
 ## listPaymentPayments
 
-List all payments
+Returns a list of PaymentPayments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -991,7 +991,7 @@ run();
 
 ## listPaymentPayouts
 
-List all payouts
+Returns a list of PaymentPayouts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1068,7 +1068,7 @@ run();
 
 ## listPaymentRefunds
 
-List all refunds
+Returns a list of PaymentRefunds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1145,7 +1145,7 @@ run();
 
 ## listPaymentSubscriptions
 
-List all subscriptions
+Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1222,7 +1222,7 @@ run();
 
 ## patchPaymentLink
 
-Update a link
+Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
 
 ### Example Usage
 
@@ -1243,13 +1243,13 @@ async function run() {
       createdAt: new Date("2023-06-04T16:11:45.685Z"),
       currency: "CAD",
       description: "Savor the tender essence in our Ball, designed for dim culinary adventures",
-      id: "65a90286-182d-45a3-b05d-4986106e09f5",
+      id: "0e7e4f46-94b9-4348-8797-1f616eeaa03d",
       isActive: true,
       isChargeableNow: true,
       lineitems: [
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "07257c3e-22d8-4b84-b853-e9f1cfc9d723",
+          id: "3fecec7e-332d-49c4-9d19-686ecd0a2424",
           itemDescription: "Discover the worst new Computer with an exciting mix of Steel ingredients",
           itemName: "Soft Marble Cheese",
           taxAmount: 0,
@@ -1261,7 +1261,7 @@ async function run() {
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
           discountAmount: 424.32,
-          id: "d20e53cd-2106-4ba5-a497-a41bed32d525",
+          id: "e049e073-3a13-4db2-8c3b-4a18e7cd5de2",
           itemDescription: "Innovative Shoes featuring utilized technology and Cotton construction",
           itemName: "Sleek Aluminum Shoes",
           notes: "Cervus decretum viridis doloremque.",
@@ -1273,7 +1273,7 @@ async function run() {
         },
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "5852382b-ee0e-4071-a1cc-1dec1ba67df8",
+          id: "5ee28ab3-d821-41af-87cf-9e8fc82b0538",
           itemDescription: "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
           itemName: "Elegant Concrete Gloves",
           notes: "Desipio usque vacuus currus cetera testimonium.",
@@ -1286,8 +1286,8 @@ async function run() {
       ],
       metadata: [],
       successUrl: "https://tinted-jet.info",
-      updatedAt: new Date("2024-04-13T09:39:58.803Z"),
-      url: "https://pay.example.com/65a90286-182d-45a3-b05d-4986106e09f5",
+      updatedAt: new Date("2024-04-13T15:46:32.810Z"),
+      url: "https://pay.example.com/0e7e4f46-94b9-4348-8797-1f616eeaa03d",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1322,13 +1322,13 @@ async function run() {
       createdAt: new Date("2023-06-04T16:11:45.685Z"),
       currency: "CAD",
       description: "Savor the tender essence in our Ball, designed for dim culinary adventures",
-      id: "65a90286-182d-45a3-b05d-4986106e09f5",
+      id: "0e7e4f46-94b9-4348-8797-1f616eeaa03d",
       isActive: true,
       isChargeableNow: true,
       lineitems: [
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "07257c3e-22d8-4b84-b853-e9f1cfc9d723",
+          id: "3fecec7e-332d-49c4-9d19-686ecd0a2424",
           itemDescription: "Discover the worst new Computer with an exciting mix of Steel ingredients",
           itemName: "Soft Marble Cheese",
           taxAmount: 0,
@@ -1340,7 +1340,7 @@ async function run() {
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
           discountAmount: 424.32,
-          id: "d20e53cd-2106-4ba5-a497-a41bed32d525",
+          id: "e049e073-3a13-4db2-8c3b-4a18e7cd5de2",
           itemDescription: "Innovative Shoes featuring utilized technology and Cotton construction",
           itemName: "Sleek Aluminum Shoes",
           notes: "Cervus decretum viridis doloremque.",
@@ -1352,7 +1352,7 @@ async function run() {
         },
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "5852382b-ee0e-4071-a1cc-1dec1ba67df8",
+          id: "5ee28ab3-d821-41af-87cf-9e8fc82b0538",
           itemDescription: "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
           itemName: "Elegant Concrete Gloves",
           notes: "Desipio usque vacuus currus cetera testimonium.",
@@ -1365,8 +1365,8 @@ async function run() {
       ],
       metadata: [],
       successUrl: "https://tinted-jet.info",
-      updatedAt: new Date("2024-04-13T09:39:58.803Z"),
-      url: "https://pay.example.com/65a90286-182d-45a3-b05d-4986106e09f5",
+      updatedAt: new Date("2024-04-13T15:46:32.810Z"),
+      url: "https://pay.example.com/0e7e4f46-94b9-4348-8797-1f616eeaa03d",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1403,7 +1403,7 @@ run();
 
 ## patchPaymentPayment
 
-Update a payment
+Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
 
 ### Example Usage
 
@@ -1427,7 +1427,7 @@ async function run() {
       createdAt: new Date("2022-03-10T00:19:42.086Z"),
       currency: "EUR",
       feeAmount: 2055.82,
-      id: "570214f1-6f01-43b5-95a7-6d1ba812a64c",
+      id: "c39a78ee-1e2c-4592-bb7b-bb15a60f496b",
       metadata: [],
       netAmount: 68824.18,
       notes: "Bibo tactus vilicus.",
@@ -1439,7 +1439,7 @@ async function run() {
       tipAmount: 0,
       totalAmount: 70880,
       type: "INVOICE",
-      updatedAt: new Date("2025-10-08T01:01:47.437Z"),
+      updatedAt: new Date("2025-10-08T19:40:41.852Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1477,7 +1477,7 @@ async function run() {
       createdAt: new Date("2022-03-10T00:19:42.086Z"),
       currency: "EUR",
       feeAmount: 2055.82,
-      id: "570214f1-6f01-43b5-95a7-6d1ba812a64c",
+      id: "c39a78ee-1e2c-4592-bb7b-bb15a60f496b",
       metadata: [],
       netAmount: 68824.18,
       notes: "Bibo tactus vilicus.",
@@ -1489,7 +1489,7 @@ async function run() {
       tipAmount: 0,
       totalAmount: 70880,
       type: "INVOICE",
-      updatedAt: new Date("2025-10-08T01:01:47.437Z"),
+      updatedAt: new Date("2025-10-08T19:40:41.852Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1526,7 +1526,7 @@ run();
 
 ## patchPaymentSubscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -1549,7 +1549,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "6fdc396e-6c49-46ec-96c0-84a737c2ba93",
+      id: "fe5a0c2a-57d1-408f-be15-00337c4070bc",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -1558,7 +1558,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.483Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1595,7 +1595,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "6fdc396e-6c49-46ec-96c0-84a737c2ba93",
+      id: "fe5a0c2a-57d1-408f-be15-00337c4070bc",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -1604,7 +1604,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.483Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1641,7 +1641,7 @@ run();
 
 ## removePaymentLink
 
-Remove a link
+Deletes the PaymentLink identified by `id`.
 
 ### Example Usage
 
@@ -1720,7 +1720,7 @@ run();
 
 ## removePaymentPayment
 
-Remove a payment
+Deletes the PaymentPayment identified by `id`.
 
 ### Example Usage
 
@@ -1799,7 +1799,7 @@ run();
 
 ## removePaymentSubscription
 
-Remove a subscription
+Deletes the PaymentSubscription identified by `id`.
 
 ### Example Usage
 
@@ -1878,7 +1878,7 @@ run();
 
 ## updatePaymentLink
 
-Update a link
+Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
 
 ### Example Usage
 
@@ -1899,13 +1899,13 @@ async function run() {
       createdAt: new Date("2023-06-04T16:11:45.685Z"),
       currency: "CAD",
       description: "Savor the tender essence in our Ball, designed for dim culinary adventures",
-      id: "65a90286-182d-45a3-b05d-4986106e09f5",
+      id: "0e7e4f46-94b9-4348-8797-1f616eeaa03d",
       isActive: true,
       isChargeableNow: true,
       lineitems: [
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "07257c3e-22d8-4b84-b853-e9f1cfc9d723",
+          id: "3fecec7e-332d-49c4-9d19-686ecd0a2424",
           itemDescription: "Discover the worst new Computer with an exciting mix of Steel ingredients",
           itemName: "Soft Marble Cheese",
           taxAmount: 0,
@@ -1917,7 +1917,7 @@ async function run() {
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
           discountAmount: 424.32,
-          id: "d20e53cd-2106-4ba5-a497-a41bed32d525",
+          id: "e049e073-3a13-4db2-8c3b-4a18e7cd5de2",
           itemDescription: "Innovative Shoes featuring utilized technology and Cotton construction",
           itemName: "Sleek Aluminum Shoes",
           notes: "Cervus decretum viridis doloremque.",
@@ -1929,7 +1929,7 @@ async function run() {
         },
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "5852382b-ee0e-4071-a1cc-1dec1ba67df8",
+          id: "5ee28ab3-d821-41af-87cf-9e8fc82b0538",
           itemDescription: "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
           itemName: "Elegant Concrete Gloves",
           notes: "Desipio usque vacuus currus cetera testimonium.",
@@ -1942,8 +1942,8 @@ async function run() {
       ],
       metadata: [],
       successUrl: "https://tinted-jet.info",
-      updatedAt: new Date("2024-04-13T09:39:58.803Z"),
-      url: "https://pay.example.com/65a90286-182d-45a3-b05d-4986106e09f5",
+      updatedAt: new Date("2024-04-13T15:46:32.810Z"),
+      url: "https://pay.example.com/0e7e4f46-94b9-4348-8797-1f616eeaa03d",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1978,13 +1978,13 @@ async function run() {
       createdAt: new Date("2023-06-04T16:11:45.685Z"),
       currency: "CAD",
       description: "Savor the tender essence in our Ball, designed for dim culinary adventures",
-      id: "65a90286-182d-45a3-b05d-4986106e09f5",
+      id: "0e7e4f46-94b9-4348-8797-1f616eeaa03d",
       isActive: true,
       isChargeableNow: true,
       lineitems: [
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "07257c3e-22d8-4b84-b853-e9f1cfc9d723",
+          id: "3fecec7e-332d-49c4-9d19-686ecd0a2424",
           itemDescription: "Discover the worst new Computer with an exciting mix of Steel ingredients",
           itemName: "Soft Marble Cheese",
           taxAmount: 0,
@@ -1996,7 +1996,7 @@ async function run() {
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
           discountAmount: 424.32,
-          id: "d20e53cd-2106-4ba5-a497-a41bed32d525",
+          id: "e049e073-3a13-4db2-8c3b-4a18e7cd5de2",
           itemDescription: "Innovative Shoes featuring utilized technology and Cotton construction",
           itemName: "Sleek Aluminum Shoes",
           notes: "Cervus decretum viridis doloremque.",
@@ -2008,7 +2008,7 @@ async function run() {
         },
         {
           createdAt: new Date("2023-06-04T16:11:45.685Z"),
-          id: "5852382b-ee0e-4071-a1cc-1dec1ba67df8",
+          id: "5ee28ab3-d821-41af-87cf-9e8fc82b0538",
           itemDescription: "Featuring Osmium-enhanced technology, our Soap offers unparalleled major performance",
           itemName: "Elegant Concrete Gloves",
           notes: "Desipio usque vacuus currus cetera testimonium.",
@@ -2021,8 +2021,8 @@ async function run() {
       ],
       metadata: [],
       successUrl: "https://tinted-jet.info",
-      updatedAt: new Date("2024-04-13T09:39:58.803Z"),
-      url: "https://pay.example.com/65a90286-182d-45a3-b05d-4986106e09f5",
+      updatedAt: new Date("2024-04-13T15:46:32.810Z"),
+      url: "https://pay.example.com/0e7e4f46-94b9-4348-8797-1f616eeaa03d",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2059,7 +2059,7 @@ run();
 
 ## updatePaymentPayment
 
-Update a payment
+Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
 
 ### Example Usage
 
@@ -2083,7 +2083,7 @@ async function run() {
       createdAt: new Date("2022-03-10T00:19:42.086Z"),
       currency: "EUR",
       feeAmount: 2055.82,
-      id: "570214f1-6f01-43b5-95a7-6d1ba812a64c",
+      id: "c39a78ee-1e2c-4592-bb7b-bb15a60f496b",
       metadata: [],
       netAmount: 68824.18,
       notes: "Bibo tactus vilicus.",
@@ -2095,7 +2095,7 @@ async function run() {
       tipAmount: 0,
       totalAmount: 70880,
       type: "INVOICE",
-      updatedAt: new Date("2025-10-08T01:01:47.437Z"),
+      updatedAt: new Date("2025-10-08T19:40:41.852Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2133,7 +2133,7 @@ async function run() {
       createdAt: new Date("2022-03-10T00:19:42.086Z"),
       currency: "EUR",
       feeAmount: 2055.82,
-      id: "570214f1-6f01-43b5-95a7-6d1ba812a64c",
+      id: "c39a78ee-1e2c-4592-bb7b-bb15a60f496b",
       metadata: [],
       netAmount: 68824.18,
       notes: "Bibo tactus vilicus.",
@@ -2145,7 +2145,7 @@ async function run() {
       tipAmount: 0,
       totalAmount: 70880,
       type: "INVOICE",
-      updatedAt: new Date("2025-10-08T01:01:47.437Z"),
+      updatedAt: new Date("2025-10-08T19:40:41.852Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2182,7 +2182,7 @@ run();
 
 ## updatePaymentSubscription
 
-Update a subscription
+Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
 
 ### Example Usage
 
@@ -2205,7 +2205,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "6fdc396e-6c49-46ec-96c0-84a737c2ba93",
+      id: "fe5a0c2a-57d1-408f-be15-00337c4070bc",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -2214,7 +2214,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.483Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2251,7 +2251,7 @@ async function run() {
       currentPeriodStartAt: new Date("2023-05-08T10:11:03.414Z"),
       dayOfMonth: 8,
       description: "Innovative Mouse featuring important technology and Bamboo construction",
-      id: "6fdc396e-6c49-46ec-96c0-84a737c2ba93",
+      id: "fe5a0c2a-57d1-408f-be15-00337c4070bc",
       interval: 1,
       intervalUnit: "YEAR",
       lineitems: [],
@@ -2260,7 +2260,7 @@ async function run() {
       startAt: new Date("2023-05-08T10:11:03.414Z"),
       status: "ACTIVE",
       totalAmount: 0,
-      updatedAt: new Date("2023-10-04T12:56:51.483Z"),
+      updatedAt: new Date("2023-10-04T15:47:19.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",

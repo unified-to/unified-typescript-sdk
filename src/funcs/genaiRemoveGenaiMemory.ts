@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a memory
+ *
+ * @remarks
+ * Deletes the GenaiMemory identified by `id`.
  */
 export function genaiRemoveGenaiMemory(
   client: UnifiedToCore,

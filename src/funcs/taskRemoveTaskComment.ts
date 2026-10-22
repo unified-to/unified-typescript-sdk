@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a comment
+ *
+ * @remarks
+ * Deletes the TaskComment identified by `id`.
  */
 export function taskRemoveTaskComment(
   client: UnifiedToCore,

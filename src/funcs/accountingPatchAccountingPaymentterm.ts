@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a paymentterm
+ *
+ * @remarks
+ * Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
  */
 export function accountingPatchAccountingPaymentterm(
   client: UnifiedToCore,

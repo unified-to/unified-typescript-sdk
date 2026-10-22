@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Candidate extends ClientSDK {
   /**
    * Create a candidate
+   *
+   * @remarks
+   * Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
    */
   async createAtsCandidate(
     request: operations.CreateAtsCandidateRequest,
@@ -30,6 +33,9 @@ export class Candidate extends ClientSDK {
 
   /**
    * Retrieve a candidate
+   *
+   * @remarks
+   * Retrieves a single AtsCandidate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAtsCandidate(
     request: operations.GetAtsCandidateRequest,
@@ -44,6 +50,9 @@ export class Candidate extends ClientSDK {
 
   /**
    * List all candidates
+   *
+   * @remarks
+   * Returns a list of AtsCandidates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAtsCandidates(
     request: operations.ListAtsCandidatesRequest,
@@ -58,6 +67,9 @@ export class Candidate extends ClientSDK {
 
   /**
    * Update a candidate
+   *
+   * @remarks
+   * Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
    */
   async patchAtsCandidate(
     request: operations.PatchAtsCandidateRequest,
@@ -72,6 +84,9 @@ export class Candidate extends ClientSDK {
 
   /**
    * Remove a candidate
+   *
+   * @remarks
+   * Deletes the AtsCandidate identified by `id`.
    */
   async removeAtsCandidate(
     request: operations.RemoveAtsCandidateRequest,
@@ -86,6 +101,9 @@ export class Candidate extends ClientSDK {
 
   /**
    * Update a candidate
+   *
+   * @remarks
+   * Updates the AtsCandidate identified by `id`. Provide the unified AtsCandidate fields to change in the request body.
    */
   async updateAtsCandidate(
     request: operations.UpdateAtsCandidateRequest,

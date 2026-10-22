@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a creditmemo
+ *
+ * @remarks
+ * Deletes the AccountingCreditmemo identified by `id`.
  */
 export function accountingRemoveAccountingCreditmemo(
   client: UnifiedToCore,

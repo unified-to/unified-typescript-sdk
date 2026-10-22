@@ -150,6 +150,9 @@ export type HrisEmployee = {
    * YYYYMM/DD
    */
   dateOfBirth?: Date | undefined;
+  /**
+   * The employee's email addresses
+   */
   emails?: Array<HrisEmail> | undefined;
   /**
    * the company's ID for this employee
@@ -158,6 +161,9 @@ export type HrisEmployee = {
   employeeRoles?: Array<PropertyHrisEmployeeEmployeeRoles> | undefined;
   employmentStatus?: EmploymentStatus | undefined;
   employmentType?: HrisEmployeeEmploymentType | undefined;
+  /**
+   * The employee's first (given) name
+   */
   firstName?: string | undefined;
   /**
    * US Fair Labor Standards Act classification
@@ -186,11 +192,17 @@ export type HrisEmployee = {
    */
   jobId?: string | undefined;
   languageLocale?: string | undefined;
+  /**
+   * The employee's last (family) name
+   */
   lastName?: string | undefined;
   locations?: Array<HrisLocation> | undefined;
   managerId?: string | undefined;
   maritalStatus?: MaritalStatus | undefined;
   metadata?: Array<HrisMetadata> | undefined;
+  /**
+   * The employee's full name
+   */
   name?: string | undefined;
   /**
    * how often the employee is paid (eg. BIWEEKLY)

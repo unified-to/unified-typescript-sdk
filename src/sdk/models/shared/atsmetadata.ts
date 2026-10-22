@@ -21,6 +21,9 @@ export type AtsMetadataExtraData =
   | boolean
   | Array<AtsMetadata1 | string | number | boolean>;
 
+/**
+ * The data type of the custom field, which determines how `value` is formatted.
+ */
 export const AtsMetadataFormat = {
   Text: "TEXT",
   Number: "NUMBER",
@@ -36,6 +39,9 @@ export const AtsMetadataFormat = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
+/**
+ * The data type of the custom field, which determines how `value` is formatted.
+ */
 export type AtsMetadataFormat = OpenEnum<typeof AtsMetadataFormat>;
 
 export type AtsMetadataSchemas1 = {};
@@ -46,6 +52,9 @@ export type AtsMetadataSchemas5 =
   | number
   | boolean;
 
+/**
+ * The field's value, typed by `format`: DATE as ISO-8601 (`YYYY-MM-DD`, or `YYYY-MM-DDTHH:MM:SSZ` for date-times); NUMBER, PRICE and CURRENCY as a number; BOOLEAN and YES_NO as true/false; MULTIPLE_SELECT as an array of option values; otherwise a string.
+ */
 export type AtsMetadataValue =
   | { [k: string]: any }
   | string
@@ -61,13 +70,22 @@ export type AtsMetadata = {
     | boolean
     | Array<AtsMetadata1 | string | number | boolean>
     | undefined;
+  /**
+   * The data type of the custom field, which determines how `value` is formatted.
+   */
   format?: AtsMetadataFormat | undefined;
+  /**
+   * The ID of the custom field definition (from the metadata/metadata endpoint).
+   */
   id?: string | undefined;
   namespace?: string | undefined;
   /**
-   * Actual textual value of the slug
+   * The integration's API name (key) of an existing custom field. List valid slugs for this object with the metadata/metadata endpoint; unknown slugs are rejected by the integration.
    */
   slug?: string | undefined;
+  /**
+   * The field's value, typed by `format`: DATE as ISO-8601 (`YYYY-MM-DD`, or `YYYY-MM-DDTHH:MM:SSZ` for date-times); NUMBER, PRICE and CURRENCY as a number; BOOLEAN and YES_NO as true/false; MULTIPLE_SELECT as an array of option values; otherwise a string.
+   */
   value?:
     | { [k: string]: any }
     | string

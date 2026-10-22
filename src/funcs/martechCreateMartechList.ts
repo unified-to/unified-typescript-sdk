@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a list
+ *
+ * @remarks
+ * Creates a MarketingList. Provide the unified MarketingList fields in the request body; they are mapped to the provider's API. Returns the created MarketingList.
  */
 export function martechCreateMartechList(
   client: UnifiedToCore,

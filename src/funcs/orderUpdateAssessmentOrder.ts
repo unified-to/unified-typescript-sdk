@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an order
+ *
+ * @remarks
+ * Updates the AssessmentOrder identified by `id`. Provide the unified AssessmentOrder fields to change in the request body.
  */
 export function orderUpdateAssessmentOrder(
   client: UnifiedToCore,

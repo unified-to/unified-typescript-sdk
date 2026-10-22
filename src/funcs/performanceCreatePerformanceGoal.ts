@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a goal
+ *
+ * @remarks
+ * Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
  */
 export function performanceCreatePerformanceGoal(
   client: UnifiedToCore,

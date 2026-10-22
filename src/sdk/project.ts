@@ -22,6 +22,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Project extends ClientSDK {
   /**
    * Create a project
+   *
+   * @remarks
+   * Creates a AccountingProject. Provide the unified AccountingProject fields in the request body; they are mapped to the provider's API. Returns the created AccountingProject.
    */
   async createAccountingProject(
     request: operations.CreateAccountingProjectRequest,
@@ -36,6 +39,9 @@ export class Project extends ClientSDK {
 
   /**
    * Create a project
+   *
+   * @remarks
+   * Creates a TaskProject. Provide the unified TaskProject fields in the request body; they are mapped to the provider's API. Returns the created TaskProject.
    */
   async createTaskProject(
     request: operations.CreateTaskProjectRequest,
@@ -50,6 +56,9 @@ export class Project extends ClientSDK {
 
   /**
    * Retrieve a project
+   *
+   * @remarks
+   * Retrieves a single AccountingProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingProject(
     request: operations.GetAccountingProjectRequest,
@@ -64,6 +73,9 @@ export class Project extends ClientSDK {
 
   /**
    * Retrieve a project
+   *
+   * @remarks
+   * Retrieves a single TaskProject by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTaskProject(
     request: operations.GetTaskProjectRequest,
@@ -78,6 +90,9 @@ export class Project extends ClientSDK {
 
   /**
    * List all projects
+   *
+   * @remarks
+   * Returns a list of AccountingProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingProjects(
     request: operations.ListAccountingProjectsRequest,
@@ -92,6 +107,9 @@ export class Project extends ClientSDK {
 
   /**
    * List all projects
+   *
+   * @remarks
+   * Returns a list of TaskProjects. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listTaskProjects(
     request: operations.ListTaskProjectsRequest,
@@ -106,6 +124,9 @@ export class Project extends ClientSDK {
 
   /**
    * Update a project
+   *
+   * @remarks
+   * Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
    */
   async patchAccountingProject(
     request: operations.PatchAccountingProjectRequest,
@@ -120,6 +141,9 @@ export class Project extends ClientSDK {
 
   /**
    * Update a project
+   *
+   * @remarks
+   * Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
    */
   async patchTaskProject(
     request: operations.PatchTaskProjectRequest,
@@ -134,6 +158,9 @@ export class Project extends ClientSDK {
 
   /**
    * Remove a project
+   *
+   * @remarks
+   * Deletes the AccountingProject identified by `id`.
    */
   async removeAccountingProject(
     request: operations.RemoveAccountingProjectRequest,
@@ -148,6 +175,9 @@ export class Project extends ClientSDK {
 
   /**
    * Remove a project
+   *
+   * @remarks
+   * Deletes the TaskProject identified by `id`.
    */
   async removeTaskProject(
     request: operations.RemoveTaskProjectRequest,
@@ -162,6 +192,9 @@ export class Project extends ClientSDK {
 
   /**
    * Update a project
+   *
+   * @remarks
+   * Updates the AccountingProject identified by `id`. Provide the unified AccountingProject fields to change in the request body.
    */
   async updateAccountingProject(
     request: operations.UpdateAccountingProjectRequest,
@@ -176,6 +209,9 @@ export class Project extends ClientSDK {
 
   /**
    * Update a project
+   *
+   * @remarks
+   * Updates the TaskProject identified by `id`. Provide the unified TaskProject fields to change in the request body.
    */
   async updateTaskProject(
     request: operations.UpdateTaskProjectRequest,

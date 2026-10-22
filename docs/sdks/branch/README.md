@@ -13,7 +13,7 @@
 
 ## createRepoBranch
 
-Create a branch
+Creates a RepoBranch. Provide the unified RepoBranch fields in the request body; they are mapped to the provider's API. Returns the created RepoBranch.
 
 ### Example Usage
 
@@ -31,11 +31,11 @@ async function run() {
   const result = await unifiedTo.branch.createRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "9ab7e295-a5cd-40b0-9f61-0b08cb8bf01b",
+      id: "52cc43c2-5cae-44fa-9644-c745d2331414",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.477Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.675Z"),
     },
     connectionId: "<id>",
   });
@@ -66,11 +66,11 @@ async function run() {
   const res = await repoCreateRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "9ab7e295-a5cd-40b0-9f61-0b08cb8bf01b",
+      id: "52cc43c2-5cae-44fa-9644-c745d2331414",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.477Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.675Z"),
     },
     connectionId: "<id>",
   });
@@ -106,7 +106,7 @@ run();
 
 ## getRepoBranch
 
-Retrieve a branch
+Retrieves a single RepoBranch by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -185,7 +185,7 @@ run();
 
 ## listRepoBranches
 
-List all branches
+Returns a list of RepoBranches. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -262,7 +262,7 @@ run();
 
 ## patchRepoBranch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -280,11 +280,11 @@ async function run() {
   const result = await unifiedTo.branch.patchRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "75566790-ea20-430c-abce-6d184d7c6e40",
+      id: "f563fa65-f563-4f61-9b66-eb9977f25165",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.478Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.676Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -316,11 +316,11 @@ async function run() {
   const res = await repoPatchRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "75566790-ea20-430c-abce-6d184d7c6e40",
+      id: "f563fa65-f563-4f61-9b66-eb9977f25165",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.478Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.676Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -357,7 +357,7 @@ run();
 
 ## removeRepoBranch
 
-Remove a branch
+Deletes the RepoBranch identified by `id`.
 
 ### Example Usage
 
@@ -436,7 +436,7 @@ run();
 
 ## updateRepoBranch
 
-Update a branch
+Updates the RepoBranch identified by `id`. Provide the unified RepoBranch fields to change in the request body.
 
 ### Example Usage
 
@@ -454,11 +454,11 @@ async function run() {
   const result = await unifiedTo.branch.updateRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "75566790-ea20-430c-abce-6d184d7c6e40",
+      id: "f563fa65-f563-4f61-9b66-eb9977f25165",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.478Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.676Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -490,11 +490,11 @@ async function run() {
   const res = await repoUpdateRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "75566790-ea20-430c-abce-6d184d7c6e40",
+      id: "f563fa65-f563-4f61-9b66-eb9977f25165",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-07T08:06:44.478Z"),
+      updatedAt: new Date("2020-01-07T10:50:14.676Z"),
     },
     connectionId: "<id>",
     id: "<id>",

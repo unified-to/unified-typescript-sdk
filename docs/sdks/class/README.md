@@ -13,7 +13,7 @@
 
 ## createLmsClass
 
-Create a class
+Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
 
 ### Example Usage
 
@@ -32,7 +32,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "f1d9c607-e1cf-41ec-acc0-82cd0fb903f6",
+      id: "157c6563-59b4-4ef7-9dcd-ce6c6e903a47",
       instructors: [],
       languages: [
         "in",
@@ -54,7 +54,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.030Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.274Z"),
     },
     connectionId: "<id>",
   });
@@ -86,7 +86,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "f1d9c607-e1cf-41ec-acc0-82cd0fb903f6",
+      id: "157c6563-59b4-4ef7-9dcd-ce6c6e903a47",
       instructors: [],
       languages: [
         "in",
@@ -108,7 +108,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.030Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.274Z"),
     },
     connectionId: "<id>",
   });
@@ -144,7 +144,7 @@ run();
 
 ## getLmsClass
 
-Retrieve a class
+Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -223,7 +223,7 @@ run();
 
 ## listLmsClasses
 
-List all classes
+Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -300,7 +300,7 @@ run();
 
 ## patchLmsClass
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -319,7 +319,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "442e23a2-a566-41bb-8e6a-23d9e71fa4e6",
+      id: "403f6e78-b70d-4e44-97d3-23f9c7969813",
       instructors: [],
       languages: [
         "in",
@@ -341,7 +341,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.050Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.289Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -374,7 +374,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "442e23a2-a566-41bb-8e6a-23d9e71fa4e6",
+      id: "403f6e78-b70d-4e44-97d3-23f9c7969813",
       instructors: [],
       languages: [
         "in",
@@ -396,7 +396,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.050Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.289Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -433,7 +433,7 @@ run();
 
 ## removeLmsClass
 
-Remove a class
+Deletes the LmsClass identified by `id`.
 
 ### Example Usage
 
@@ -512,7 +512,7 @@ run();
 
 ## updateLmsClass
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -531,7 +531,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "442e23a2-a566-41bb-8e6a-23d9e71fa4e6",
+      id: "403f6e78-b70d-4e44-97d3-23f9c7969813",
       instructors: [],
       languages: [
         "in",
@@ -553,7 +553,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.050Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.289Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -586,7 +586,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "442e23a2-a566-41bb-8e6a-23d9e71fa4e6",
+      id: "403f6e78-b70d-4e44-97d3-23f9c7969813",
       instructors: [],
       languages: [
         "in",
@@ -608,7 +608,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.050Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.289Z"),
     },
     connectionId: "<id>",
     id: "<id>",

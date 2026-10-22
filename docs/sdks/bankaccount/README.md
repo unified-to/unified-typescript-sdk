@@ -13,7 +13,7 @@
 
 ## createHrisBankaccount
 
-Create a bankaccount
+Creates a HrisBankaccount. Provide the unified HrisBankaccount fields in the request body; they are mapped to the provider's API. Returns the created HrisBankaccount.
 
 ### Example Usage
 
@@ -37,7 +37,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "4624713e-adf0-4a5a-8f91-4ec7f8c4279c",
+      id: "82bd4b07-a36a-49c2-a7c3-97dce9228954",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -45,7 +45,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.525Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.671Z"),
     },
     connectionId: "<id>",
   });
@@ -82,7 +82,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "4624713e-adf0-4a5a-8f91-4ec7f8c4279c",
+      id: "82bd4b07-a36a-49c2-a7c3-97dce9228954",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -90,7 +90,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.525Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.671Z"),
     },
     connectionId: "<id>",
   });
@@ -126,7 +126,7 @@ run();
 
 ## getHrisBankaccount
 
-Retrieve a bankaccount
+Retrieves a single HrisBankaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -205,7 +205,7 @@ run();
 
 ## listHrisBankaccounts
 
-List all bankaccounts
+Returns a list of HrisBankaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -282,7 +282,7 @@ run();
 
 ## patchHrisBankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -306,7 +306,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "055e688a-9297-4360-85d0-400da027fa26",
+      id: "47ece0fe-1192-426c-9903-652eafd2c868",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -314,7 +314,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.541Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.680Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -352,7 +352,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "055e688a-9297-4360-85d0-400da027fa26",
+      id: "47ece0fe-1192-426c-9903-652eafd2c868",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -360,7 +360,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.541Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.680Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -397,7 +397,7 @@ run();
 
 ## removeHrisBankaccount
 
-Remove a bankaccount
+Deletes the HrisBankaccount identified by `id`.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ run();
 
 ## updateHrisBankaccount
 
-Update a bankaccount
+Updates the HrisBankaccount identified by `id`. Provide the unified HrisBankaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -500,7 +500,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "055e688a-9297-4360-85d0-400da027fa26",
+      id: "47ece0fe-1192-426c-9903-652eafd2c868",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -508,7 +508,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.541Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.680Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -546,7 +546,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "055e688a-9297-4360-85d0-400da027fa26",
+      id: "47ece0fe-1192-426c-9903-652eafd2c868",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -554,7 +554,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-01T06:48:34.541Z"),
+      updatedAt: new Date("2025-07-02T02:19:05.680Z"),
     },
     connectionId: "<id>",
     id: "<id>",

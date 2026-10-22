@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Practicearea extends ClientSDK {
   /**
    * Create a practicearea
+   *
+   * @remarks
+   * Creates a LegalPracticearea. Provide the unified LegalPracticearea fields in the request body; they are mapped to the provider's API. Returns the created LegalPracticearea.
    */
   async createLegalPracticearea(
     request: operations.CreateLegalPracticeareaRequest,
@@ -30,6 +33,9 @@ export class Practicearea extends ClientSDK {
 
   /**
    * Retrieve a practicearea
+   *
+   * @remarks
+   * Retrieves a single LegalPracticearea by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getLegalPracticearea(
     request: operations.GetLegalPracticeareaRequest,
@@ -44,6 +50,9 @@ export class Practicearea extends ClientSDK {
 
   /**
    * List all practiceareas
+   *
+   * @remarks
+   * Returns a list of LegalPracticeareas. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listLegalPracticeareas(
     request: operations.ListLegalPracticeareasRequest,
@@ -58,6 +67,9 @@ export class Practicearea extends ClientSDK {
 
   /**
    * Update a practicearea
+   *
+   * @remarks
+   * Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
    */
   async patchLegalPracticearea(
     request: operations.PatchLegalPracticeareaRequest,
@@ -72,6 +84,9 @@ export class Practicearea extends ClientSDK {
 
   /**
    * Remove a practicearea
+   *
+   * @remarks
+   * Deletes the LegalPracticearea identified by `id`.
    */
   async removeLegalPracticearea(
     request: operations.RemoveLegalPracticeareaRequest,
@@ -86,6 +101,9 @@ export class Practicearea extends ClientSDK {
 
   /**
    * Update a practicearea
+   *
+   * @remarks
+   * Updates the LegalPracticearea identified by `id`. Provide the unified LegalPracticearea fields to change in the request body.
    */
   async updateLegalPracticearea(
     request: operations.UpdateLegalPracticeareaRequest,

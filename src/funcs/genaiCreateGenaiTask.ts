@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a task
+ *
+ * @remarks
+ * Creates a GenaiTask. Provide the unified GenaiTask fields in the request body; they are mapped to the provider's API. Returns the created GenaiTask.
  */
 export function genaiCreateGenaiTask(
   client: UnifiedToCore,

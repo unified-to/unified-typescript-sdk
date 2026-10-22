@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an activation
+ *
+ * @remarks
+ * Creates a CdpActivation. Provide the unified CdpActivation fields in the request body; they are mapped to the provider's API. Returns the created CdpActivation.
  */
 export function cdpCreateCdpActivation(
   client: UnifiedToCore,

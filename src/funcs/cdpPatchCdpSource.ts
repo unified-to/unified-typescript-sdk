@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a source
+ *
+ * @remarks
+ * Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
  */
 export function cdpPatchCdpSource(
   client: UnifiedToCore,

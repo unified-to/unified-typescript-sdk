@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a category
+ *
+ * @remarks
+ * Creates a AccountingCategory. Provide the unified AccountingCategory fields in the request body; they are mapped to the provider's API. Returns the created AccountingCategory.
  */
 export function accountingCreateAccountingCategory(
   client: UnifiedToCore,

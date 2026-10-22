@@ -21,7 +21,7 @@
 
 ## createSigningDocument
 
-Create a document
+Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
 
 ### Example Usage
 
@@ -41,12 +41,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "e05fbc60-ad67-4e77-87f9-e7d53af4b706",
+      id: "879e695c-0288-4b10-b700-965f79030908",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.379Z"),
+      sentAt: new Date("2022-06-29T17:18:33.548Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.960Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.407Z"),
     },
     connectionId: "<id>",
   });
@@ -79,12 +79,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "e05fbc60-ad67-4e77-87f9-e7d53af4b706",
+      id: "879e695c-0288-4b10-b700-965f79030908",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.379Z"),
+      sentAt: new Date("2022-06-29T17:18:33.548Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.960Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.407Z"),
     },
     connectionId: "<id>",
   });
@@ -120,7 +120,7 @@ run();
 
 ## createSigningSignatory
 
-Create a signatory
+Creates a SigningSignatory. Provide the unified SigningSignatory fields in the request body; they are mapped to the provider's API. Returns the created SigningSignatory.
 
 ### Example Usage
 
@@ -139,12 +139,12 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "anais.lakin@icloud.com",
-      id: "41139709-009c-48e6-9356-76c924603d67",
+      id: "9f1aba47-de69-4e20-9dd5-60a85d14442a",
       metadata: [],
       name: "Anais Lakin",
       role: "SIGNER",
       status: "ERROR",
-      updatedAt: new Date("2024-05-17T20:13:20.907Z"),
+      updatedAt: new Date("2024-05-18T07:20:08.363Z"),
     },
     connectionId: "<id>",
   });
@@ -176,12 +176,12 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "anais.lakin@icloud.com",
-      id: "41139709-009c-48e6-9356-76c924603d67",
+      id: "9f1aba47-de69-4e20-9dd5-60a85d14442a",
       metadata: [],
       name: "Anais Lakin",
       role: "SIGNER",
       status: "ERROR",
-      updatedAt: new Date("2024-05-17T20:13:20.907Z"),
+      updatedAt: new Date("2024-05-18T07:20:08.363Z"),
     },
     connectionId: "<id>",
   });
@@ -217,7 +217,7 @@ run();
 
 ## getSigningDocument
 
-Retrieve a document
+Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -296,7 +296,7 @@ run();
 
 ## getSigningSignatory
 
-Retrieve a signatory
+Retrieves a single SigningSignatory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -375,7 +375,7 @@ run();
 
 ## getSigningTemplate
 
-Retrieve a template
+Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -454,7 +454,7 @@ run();
 
 ## listSigningDocuments
 
-List all documents
+Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -531,7 +531,7 @@ run();
 
 ## listSigningSignatories
 
-List all signatories
+Returns a list of SigningSignatories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -608,7 +608,7 @@ run();
 
 ## listSigningTemplates
 
-List all templates
+Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -685,7 +685,7 @@ run();
 
 ## patchSigningDocument
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -705,12 +705,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "df145df4-5c25-48b3-a23d-bbc2f399d2ca",
+      id: "c7946ab4-217f-4227-b84d-5d6ea0457c21",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.384Z"),
+      sentAt: new Date("2022-06-29T17:18:33.551Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.978Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.418Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -744,12 +744,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "df145df4-5c25-48b3-a23d-bbc2f399d2ca",
+      id: "c7946ab4-217f-4227-b84d-5d6ea0457c21",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.384Z"),
+      sentAt: new Date("2022-06-29T17:18:33.551Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.978Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.418Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -786,7 +786,7 @@ run();
 
 ## patchSigningSignatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -805,12 +805,12 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "anais.lakin@icloud.com",
-      id: "887d84a7-889f-42ba-a5f1-2062579b6940",
+      id: "e8b4e5ca-cc25-4dbf-a62e-6d85f5a6772c",
       metadata: [],
       name: "Anais Lakin",
       role: "SIGNER",
       status: "ERROR",
-      updatedAt: new Date("2024-05-17T20:13:20.913Z"),
+      updatedAt: new Date("2024-05-18T07:20:08.371Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -843,12 +843,12 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "anais.lakin@icloud.com",
-      id: "887d84a7-889f-42ba-a5f1-2062579b6940",
+      id: "e8b4e5ca-cc25-4dbf-a62e-6d85f5a6772c",
       metadata: [],
       name: "Anais Lakin",
       role: "SIGNER",
       status: "ERROR",
-      updatedAt: new Date("2024-05-17T20:13:20.913Z"),
+      updatedAt: new Date("2024-05-18T07:20:08.371Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -885,7 +885,7 @@ run();
 
 ## removeSigningDocument
 
-Remove a document
+Deletes the SigningDocument identified by `id`.
 
 ### Example Usage
 
@@ -964,7 +964,7 @@ run();
 
 ## removeSigningSignatory
 
-Remove a signatory
+Deletes the SigningSignatory identified by `id`.
 
 ### Example Usage
 
@@ -1043,7 +1043,7 @@ run();
 
 ## updateSigningDocument
 
-Update a document
+Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
 
 ### Example Usage
 
@@ -1063,12 +1063,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "df145df4-5c25-48b3-a23d-bbc2f399d2ca",
+      id: "c7946ab4-217f-4227-b84d-5d6ea0457c21",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.384Z"),
+      sentAt: new Date("2022-06-29T17:18:33.551Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.978Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.418Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1102,12 +1102,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "df145df4-5c25-48b3-a23d-bbc2f399d2ca",
+      id: "c7946ab4-217f-4227-b84d-5d6ea0457c21",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-06-29T12:13:05.384Z"),
+      sentAt: new Date("2022-06-29T17:18:33.551Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-02T22:55:26.978Z"),
+      updatedAt: new Date("2025-09-03T17:59:26.418Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1144,7 +1144,7 @@ run();
 
 ## updateSigningSignatory
 
-Update a signatory
+Updates the SigningSignatory identified by `id`. Provide the unified SigningSignatory fields to change in the request body.
 
 ### Example Usage
 
@@ -1163,12 +1163,12 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "anais.lakin@icloud.com",
-      id: "887d84a7-889f-42ba-a5f1-2062579b6940",
+      id: "e8b4e5ca-cc25-4dbf-a62e-6d85f5a6772c",
       metadata: [],
       name: "Anais Lakin",
       role: "SIGNER",
       status: "ERROR",
-      updatedAt: new Date("2024-05-17T20:13:20.913Z"),
+      updatedAt: new Date("2024-05-18T07:20:08.371Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1201,12 +1201,12 @@ async function run() {
     signingSignatory: {
       createdAt: new Date("2022-04-16T19:25:01.966Z"),
       email: "anais.lakin@icloud.com",
-      id: "887d84a7-889f-42ba-a5f1-2062579b6940",
+      id: "e8b4e5ca-cc25-4dbf-a62e-6d85f5a6772c",
       metadata: [],
       name: "Anais Lakin",
       role: "SIGNER",
       status: "ERROR",
-      updatedAt: new Date("2024-05-17T20:13:20.913Z"),
+      updatedAt: new Date("2024-05-18T07:20:08.371Z"),
     },
     connectionId: "<id>",
     id: "<id>",

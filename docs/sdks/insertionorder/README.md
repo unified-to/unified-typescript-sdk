@@ -13,7 +13,7 @@
 
 ## createAdsInsertionorder
 
-Create an insertionorder
+Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
 
 ### Example Usage
 
@@ -31,11 +31,11 @@ async function run() {
   const result = await unifiedTo.insertionorder.createAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "9a7ad053-8d4c-43db-98e3-e00a42aa678a",
+      id: "21a8b1f0-ec5a-48e4-9609-01f38e5de899",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
   });
@@ -66,11 +66,11 @@ async function run() {
   const res = await adsCreateAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "9a7ad053-8d4c-43db-98e3-e00a42aa678a",
+      id: "21a8b1f0-ec5a-48e4-9609-01f38e5de899",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
   });
@@ -106,7 +106,7 @@ run();
 
 ## getAdsInsertionorder
 
-Retrieve an insertionorder
+Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -185,7 +185,7 @@ run();
 
 ## listAdsInsertionorders
 
-List all insertionorders
+Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -262,7 +262,7 @@ run();
 
 ## patchAdsInsertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -280,11 +280,11 @@ async function run() {
   const result = await unifiedTo.insertionorder.patchAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "0eabd822-20eb-411a-b2c5-fe70c96a6c14",
+      id: "f59870d8-32d4-46bd-ae9d-248377b094ee",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -316,11 +316,11 @@ async function run() {
   const res = await adsPatchAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "0eabd822-20eb-411a-b2c5-fe70c96a6c14",
+      id: "f59870d8-32d4-46bd-ae9d-248377b094ee",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -357,7 +357,7 @@ run();
 
 ## removeAdsInsertionorder
 
-Remove an insertionorder
+Deletes the AdsInsertionorder identified by `id`.
 
 ### Example Usage
 
@@ -436,7 +436,7 @@ run();
 
 ## updateAdsInsertionorder
 
-Update an insertionorder
+Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
 
 ### Example Usage
 
@@ -454,11 +454,11 @@ async function run() {
   const result = await unifiedTo.insertionorder.updateAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "0eabd822-20eb-411a-b2c5-fe70c96a6c14",
+      id: "f59870d8-32d4-46bd-ae9d-248377b094ee",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -490,11 +490,11 @@ async function run() {
   const res = await adsUpdateAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "0eabd822-20eb-411a-b2c5-fe70c96a6c14",
+      id: "f59870d8-32d4-46bd-ae9d-248377b094ee",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-28T19:47:48.122Z"),
+      updatedAt: new Date("2021-04-28T20:01:02.229Z"),
     },
     connectionId: "<id>",
     id: "<id>",

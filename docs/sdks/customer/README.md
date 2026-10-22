@@ -13,7 +13,7 @@
 
 ## createTicketingCustomer
 
-Create a customer
+Creates a TicketingCustomer. Provide the unified TicketingCustomer fields in the request body; they are mapped to the provider's API. Returns the created TicketingCustomer.
 
 ### Example Usage
 
@@ -37,7 +37,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "889b2097-c4f0-4f90-99c0-51b15b5b507c",
+      id: "607dd186-9b78-40aa-a8d2-0955cb7702ec",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -58,7 +58,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.961Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.011Z"),
     },
     connectionId: "<id>",
   });
@@ -95,7 +95,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "889b2097-c4f0-4f90-99c0-51b15b5b507c",
+      id: "607dd186-9b78-40aa-a8d2-0955cb7702ec",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -116,7 +116,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.961Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.011Z"),
     },
     connectionId: "<id>",
   });
@@ -152,7 +152,7 @@ run();
 
 ## getTicketingCustomer
 
-Retrieve a customer
+Retrieves a single TicketingCustomer by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -231,7 +231,7 @@ run();
 
 ## listTicketingCustomers
 
-List all customers
+Returns a list of TicketingCustomers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -308,7 +308,7 @@ run();
 
 ## patchTicketingCustomer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -332,7 +332,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "4c7c2df4-86c2-4c15-a036-8803e36c55bb",
+      id: "e81799f8-f641-4a11-b580-0a763577793a",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -353,7 +353,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.977Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -391,7 +391,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "4c7c2df4-86c2-4c15-a036-8803e36c55bb",
+      id: "e81799f8-f641-4a11-b580-0a763577793a",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -412,7 +412,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.977Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -449,7 +449,7 @@ run();
 
 ## removeTicketingCustomer
 
-Remove a customer
+Deletes the TicketingCustomer identified by `id`.
 
 ### Example Usage
 
@@ -528,7 +528,7 @@ run();
 
 ## updateTicketingCustomer
 
-Update a customer
+Updates the TicketingCustomer identified by `id`. Provide the unified TicketingCustomer fields to change in the request body.
 
 ### Example Usage
 
@@ -552,7 +552,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "4c7c2df4-86c2-4c15-a036-8803e36c55bb",
+      id: "e81799f8-f641-4a11-b580-0a763577793a",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -573,7 +573,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.977Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -611,7 +611,7 @@ async function run() {
           type: "HOME",
         },
       ],
-      id: "4c7c2df4-86c2-4c15-a036-8803e36c55bb",
+      id: "e81799f8-f641-4a11-b580-0a763577793a",
       metadata: [],
       name: "Christian Windler",
       tags: [
@@ -632,7 +632,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-04T02:27:33.977Z"),
+      updatedAt: new Date("2026-06-05T00:51:53.026Z"),
     },
     connectionId: "<id>",
     id: "<id>",

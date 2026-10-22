@@ -16,6 +16,9 @@ import {
 export type PropertyDatastoreQueryResponseAggregates = {
   avg?: { [k: string]: number } | undefined;
   count?: number | undefined;
+  /**
+   * Each item is one group row: a map of field name to value
+   */
   groups?: Array<{ [k: string]: DatastoreFieldValue }> | undefined;
   max?: { [k: string]: number } | undefined;
   min?: { [k: string]: number } | undefined;

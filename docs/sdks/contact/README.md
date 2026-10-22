@@ -25,7 +25,7 @@
 
 ## createAccountingContact
 
-Create a contact
+Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "60167fe4-b465-4319-8377-feee9193a7e8",
+      id: "e86cdea0-4e51-476a-bf79-4b4778b63dc7",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -77,7 +77,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "994576d5-353f-4e0a-9341-d9fb68715c1f",
+          id: "10f7ba12-83d1-41b9-8569-092d8a10a909",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -99,7 +99,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.472Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.177Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -154,7 +154,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "60167fe4-b465-4319-8377-feee9193a7e8",
+      id: "e86cdea0-4e51-476a-bf79-4b4778b63dc7",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -165,7 +165,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "994576d5-353f-4e0a-9341-d9fb68715c1f",
+          id: "10f7ba12-83d1-41b9-8569-092d8a10a909",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -187,7 +187,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.472Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.177Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -224,7 +224,7 @@ run();
 
 ## createCrmContact
 
-Create a contact
+Creates a CrmContact. Provide the unified CrmContact fields in the request body; they are mapped to the provider's API. Returns the created CrmContact.
 
 ### Example Usage
 
@@ -259,7 +259,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "e9aacd0c-5f0f-4178-bd04-2bf9a4ce7543",
+      id: "29da1daa-a9c1-4bbb-8366-2b3ed00cc7f4",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -271,7 +271,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b89e632c-44b4-4448-b159-bc4da8e09da3",
+          id: "a0206d09-0e03-4cb9-bdd6-40a0299b817e",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -289,7 +289,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.801Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
   });
@@ -337,7 +337,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "e9aacd0c-5f0f-4178-bd04-2bf9a4ce7543",
+      id: "29da1daa-a9c1-4bbb-8366-2b3ed00cc7f4",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -349,7 +349,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b89e632c-44b4-4448-b159-bc4da8e09da3",
+          id: "a0206d09-0e03-4cb9-bdd6-40a0299b817e",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -367,7 +367,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.801Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
   });
@@ -403,7 +403,7 @@ run();
 
 ## createUcContact
 
-Create a contact
+Creates a UcContact. Provide the unified UcContact fields in the request body; they are mapped to the provider's API. Returns the created UcContact.
 
 ### Example Usage
 
@@ -429,7 +429,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "933d0263-b43e-4d6b-ab96-6d6f73087e0e",
+      id: "004b0771-b3c7-4191-91eb-6761c6826781",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -448,7 +448,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.674Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.512Z"),
     },
     connectionId: "<id>",
   });
@@ -487,7 +487,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "933d0263-b43e-4d6b-ab96-6d6f73087e0e",
+      id: "004b0771-b3c7-4191-91eb-6761c6826781",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -506,7 +506,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.674Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.512Z"),
     },
     connectionId: "<id>",
   });
@@ -542,7 +542,7 @@ run();
 
 ## getAccountingContact
 
-Retrieve a contact
+Retrieves a single AccountingContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -621,7 +621,7 @@ run();
 
 ## getCrmContact
 
-Retrieve a contact
+Retrieves a single CrmContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -700,7 +700,7 @@ run();
 
 ## getUcContact
 
-Retrieve a contact
+Retrieves a single UcContact by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -779,7 +779,7 @@ run();
 
 ## listAccountingContacts
 
-List all contacts
+Returns a list of AccountingContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -856,7 +856,7 @@ run();
 
 ## listCrmContacts
 
-List all contacts
+Returns a list of CrmContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -933,7 +933,7 @@ run();
 
 ## listUcContacts
 
-List all contacts
+Returns a list of UcContacts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1010,7 +1010,7 @@ run();
 
 ## patchAccountingContact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1051,7 +1051,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "79da20bd-30fe-45ec-945d-aab5f0152839",
+      id: "6ab9cb6d-95fd-442c-b961-5ed7c6c4dcb3",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -1062,7 +1062,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "3969c650-dd65-4fc3-aabd-b88621b54cb8",
+          id: "1cac51c4-8bd3-4ecf-a06d-87908c0078cb",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -1084,7 +1084,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.506Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.192Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -1140,7 +1140,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "79da20bd-30fe-45ec-945d-aab5f0152839",
+      id: "6ab9cb6d-95fd-442c-b961-5ed7c6c4dcb3",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -1151,7 +1151,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "3969c650-dd65-4fc3-aabd-b88621b54cb8",
+          id: "1cac51c4-8bd3-4ecf-a06d-87908c0078cb",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -1173,7 +1173,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.506Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.192Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -1211,7 +1211,7 @@ run();
 
 ## patchCrmContact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1246,7 +1246,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "5de3b057-57f5-4e82-9d3d-6431bc8abd5b",
+      id: "8c193bd4-df89-4a12-8de9-0784f9b98778",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -1258,7 +1258,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "75077228-f8f0-43fb-8419-fb11ee24516e",
+          id: "b4e64a9b-4fe8-4d3b-95c8-f9186ad07848",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -1276,7 +1276,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.802Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1325,7 +1325,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "5de3b057-57f5-4e82-9d3d-6431bc8abd5b",
+      id: "8c193bd4-df89-4a12-8de9-0784f9b98778",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -1337,7 +1337,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "75077228-f8f0-43fb-8419-fb11ee24516e",
+          id: "b4e64a9b-4fe8-4d3b-95c8-f9186ad07848",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -1355,7 +1355,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.802Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1392,7 +1392,7 @@ run();
 
 ## patchUcContact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1418,7 +1418,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "0bfd88e5-b1db-4297-9275-fc5bc8338163",
+      id: "c0a8450b-d790-49c3-908e-0846ba0cada2",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -1437,7 +1437,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.688Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.519Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1477,7 +1477,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "0bfd88e5-b1db-4297-9275-fc5bc8338163",
+      id: "c0a8450b-d790-49c3-908e-0846ba0cada2",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -1496,7 +1496,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.688Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.519Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1533,7 +1533,7 @@ run();
 
 ## removeAccountingContact
 
-Remove a contact
+Deletes the AccountingContact identified by `id`.
 
 ### Example Usage
 
@@ -1612,7 +1612,7 @@ run();
 
 ## removeCrmContact
 
-Remove a contact
+Deletes the CrmContact identified by `id`.
 
 ### Example Usage
 
@@ -1691,7 +1691,7 @@ run();
 
 ## removeUcContact
 
-Remove a contact
+Deletes the UcContact identified by `id`.
 
 ### Example Usage
 
@@ -1770,7 +1770,7 @@ run();
 
 ## updateAccountingContact
 
-Update a contact
+Updates the AccountingContact identified by `id`. Provide the unified AccountingContact fields to change in the request body.
 
 ### Example Usage
 
@@ -1811,7 +1811,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "79da20bd-30fe-45ec-945d-aab5f0152839",
+      id: "6ab9cb6d-95fd-442c-b961-5ed7c6c4dcb3",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -1822,7 +1822,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "3969c650-dd65-4fc3-aabd-b88621b54cb8",
+          id: "1cac51c4-8bd3-4ecf-a06d-87908c0078cb",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -1844,7 +1844,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.506Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.192Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -1900,7 +1900,7 @@ async function run() {
         },
       ],
       firstName: "Delores",
-      id: "79da20bd-30fe-45ec-945d-aab5f0152839",
+      id: "6ab9cb6d-95fd-442c-b961-5ed7c6c4dcb3",
       identification: "531850872",
       isActive: true,
       isCustomer: true,
@@ -1911,7 +1911,7 @@ async function run() {
       paymentMethods: [
         {
           default: true,
-          id: "3969c650-dd65-4fc3-aabd-b88621b54cb8",
+          id: "1cac51c4-8bd3-4ecf-a06d-87908c0078cb",
           name: "Visa 7844",
           type: "CARD",
         },
@@ -1933,7 +1933,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2023-12-19T21:06:36.506Z"),
+      updatedAt: new Date("2023-12-20T07:59:11.192Z"),
       website: "https://kertzmanngroup.com",
     },
     connectionId: "<id>",
@@ -1971,7 +1971,7 @@ run();
 
 ## updateCrmContact
 
-Update a contact
+Updates the CrmContact identified by `id`. Provide the unified CrmContact fields to change in the request body.
 
 ### Example Usage
 
@@ -2006,7 +2006,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "5de3b057-57f5-4e82-9d3d-6431bc8abd5b",
+      id: "8c193bd4-df89-4a12-8de9-0784f9b98778",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -2018,7 +2018,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "75077228-f8f0-43fb-8419-fb11ee24516e",
+          id: "b4e64a9b-4fe8-4d3b-95c8-f9186ad07848",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -2036,7 +2036,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.802Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2085,7 +2085,7 @@ async function run() {
         },
       ],
       firstName: "Mohammad",
-      id: "5de3b057-57f5-4e82-9d3d-6431bc8abd5b",
+      id: "8c193bd4-df89-4a12-8de9-0784f9b98778",
       imageUrl: "https://avatars.githubusercontent.com/u/26803724",
       lastName: "Bartell",
       linkUrls: [
@@ -2097,7 +2097,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "75077228-f8f0-43fb-8419-fb11ee24516e",
+          id: "b4e64a9b-4fe8-4d3b-95c8-f9186ad07848",
           namespace: "custom",
           slug: "custom_property",
           value: "antiquus",
@@ -2115,7 +2115,7 @@ async function run() {
         },
       ],
       title: "National Tactics Analyst",
-      updatedAt: new Date("2021-02-24T05:07:22.802Z"),
+      updatedAt: new Date("2021-02-24T05:43:35.800Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2152,7 +2152,7 @@ run();
 
 ## updateUcContact
 
-Update a contact
+Updates the UcContact identified by `id`. Provide the unified UcContact fields to change in the request body.
 
 ### Example Usage
 
@@ -2178,7 +2178,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "0bfd88e5-b1db-4297-9275-fc5bc8338163",
+      id: "c0a8450b-d790-49c3-908e-0846ba0cada2",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -2197,7 +2197,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.688Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.519Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2237,7 +2237,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "0bfd88e5-b1db-4297-9275-fc5bc8338163",
+      id: "c0a8450b-d790-49c3-908e-0846ba0cada2",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -2256,7 +2256,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-08T09:26:25.688Z"),
+      updatedAt: new Date("2023-12-08T23:36:03.519Z"),
     },
     connectionId: "<id>",
     id: "<id>",

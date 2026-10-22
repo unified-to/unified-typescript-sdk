@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a contact
+ *
+ * @remarks
+ * Creates a AccountingContact. Provide the unified AccountingContact fields in the request body; they are mapped to the provider's API. Returns the created AccountingContact.
  */
 export function accountingCreateAccountingContact(
   client: UnifiedToCore,

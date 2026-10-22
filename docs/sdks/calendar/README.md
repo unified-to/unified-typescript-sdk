@@ -34,7 +34,7 @@
 
 ## createCalendarCalendar
 
-Create a calendar
+Creates a CalendarCalendar. Provide the unified CalendarCalendar fields in the request body; they are mapped to the provider's API. Returns the created CalendarCalendar.
 
 ### Example Usage
 
@@ -53,12 +53,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "3b5a04f4-ea71-4767-ad74-6d40274bf93d",
+      id: "240a4add-8fec-49b4-868c-4ec567f4881d",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-28T03:42:41.380Z"),
+      updatedAt: new Date("2023-03-28T15:06:02.190Z"),
     },
     connectionId: "<id>",
   });
@@ -90,12 +90,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "3b5a04f4-ea71-4767-ad74-6d40274bf93d",
+      id: "240a4add-8fec-49b4-868c-4ec567f4881d",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-28T03:42:41.380Z"),
+      updatedAt: new Date("2023-03-28T15:06:02.190Z"),
     },
     connectionId: "<id>",
   });
@@ -131,7 +131,7 @@ run();
 
 ## createCalendarEvent
 
-Create an event
+Creates a CalendarEvent. Provide the unified CalendarEvent fields in the request body; they are mapped to the provider's API. Returns the created CalendarEvent.
 
 ### Example Usage
 
@@ -151,9 +151,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.824Z",
+      endAt: "2020-05-24T09:45:40.711Z",
       hasConference: false,
-      id: "4aec450d-26d8-453c-8045-2fa4ad4d7d38",
+      id: "cff0cb34-1422-4415-90ba-550302bb1f68",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -163,15 +163,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.684Z"),
+          endAt: new Date("2025-03-25T10:54:34.563Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.826Z",
+            "2024-02-03T10:06:08.285Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.340Z",
-            "2025-01-23T22:05:54.724Z",
-            "2024-04-02T00:02:54.904Z",
+            "2023-07-07T14:50:38.123Z",
+            "2025-01-24T16:20:26.940Z",
+            "2024-04-02T15:34:54.118Z",
           ],
           interval: 7,
           onDays: [
@@ -508,11 +508,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.303Z",
+      startAt: "2020-05-24T00:31:50.561Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.571Z",
+      updatedAt: "2020-06-30T08:28:58.600Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -546,9 +546,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.824Z",
+      endAt: "2020-05-24T09:45:40.711Z",
       hasConference: false,
-      id: "4aec450d-26d8-453c-8045-2fa4ad4d7d38",
+      id: "cff0cb34-1422-4415-90ba-550302bb1f68",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -558,15 +558,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.684Z"),
+          endAt: new Date("2025-03-25T10:54:34.563Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.826Z",
+            "2024-02-03T10:06:08.285Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.340Z",
-            "2025-01-23T22:05:54.724Z",
-            "2024-04-02T00:02:54.904Z",
+            "2023-07-07T14:50:38.123Z",
+            "2025-01-24T16:20:26.940Z",
+            "2024-04-02T15:34:54.118Z",
           ],
           interval: 7,
           onDays: [
@@ -903,11 +903,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.303Z",
+      startAt: "2020-05-24T00:31:50.561Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.571Z",
+      updatedAt: "2020-06-30T08:28:58.600Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -944,7 +944,7 @@ run();
 
 ## createCalendarLink
 
-Create a link
+Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
 
 ### Example Usage
 
@@ -964,13 +964,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "24868d5f-a5f3-4278-a41b-dd939f70445f",
+      id: "543a3fe9-8246-43fb-86d5-65e76bc755c1",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-15T13:11:26.970Z",
+      updatedAt: "2024-03-15T19:58:59.864Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -1004,13 +1004,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "24868d5f-a5f3-4278-a41b-dd939f70445f",
+      id: "543a3fe9-8246-43fb-86d5-65e76bc755c1",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-15T13:11:26.970Z",
+      updatedAt: "2024-03-15T19:58:59.864Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -1047,7 +1047,7 @@ run();
 
 ## createCalendarWebinar
 
-Create a webinar
+Creates a CalendarWebinar. Provide the unified CalendarWebinar fields in the request body; they are mapped to the provider's API. Returns the created CalendarWebinar.
 
 ### Example Usage
 
@@ -1066,10 +1066,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.462Z"),
+      endAt: new Date("2025-10-29T12:21:12.024Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "e8985118-f711-406d-8c42-b5a5313d38bb",
+      id: "18872dd7-e2c2-4732-b68a-8d8284f0843b",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -1079,13 +1079,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.142Z"),
+          endAt: new Date("2023-08-31T21:24:58.336Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.361Z",
+            "2025-02-13T15:32:50.765Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.525Z",
+            "2024-04-28T17:10:28.604Z",
           ],
           interval: 8,
           onDays: [
@@ -1476,16 +1476,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.356Z"),
+          endAt: new Date("2022-09-30T17:34:48.249Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.766Z",
-            "2024-08-17T05:24:51.537Z",
+            "2024-09-02T06:28:29.663Z",
+            "2024-08-17T17:15:49.536Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.176Z",
-            "2026-01-13T10:08:34.117Z",
-            "2023-08-14T06:30:59.238Z",
+            "2024-03-25T14:03:15.350Z",
+            "2026-01-14T05:52:37.776Z",
+            "2023-08-14T12:42:29.548Z",
           ],
           interval: 1,
           onDays: [
@@ -1629,16 +1629,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.704Z"),
+          endAt: new Date("2026-07-27T12:03:51.294Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.365Z",
-            "2023-06-07T15:27:11.264Z",
+            "2023-06-18T19:56:18.685Z",
+            "2023-06-07T20:36:28.269Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.419Z",
-            "2023-08-20T01:56:44.404Z",
-            "2024-09-26T23:10:42.233Z",
+            "2024-04-02T15:03:08.235Z",
+            "2023-08-20T08:13:35.425Z",
+            "2024-09-27T11:39:09.247Z",
           ],
           interval: 8,
           onDays: [
@@ -1791,11 +1791,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.153Z"),
+      startAt: new Date("2025-05-01T05:57:46.507Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.405Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.824Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -1828,10 +1828,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.462Z"),
+      endAt: new Date("2025-10-29T12:21:12.024Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "e8985118-f711-406d-8c42-b5a5313d38bb",
+      id: "18872dd7-e2c2-4732-b68a-8d8284f0843b",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -1841,13 +1841,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.142Z"),
+          endAt: new Date("2023-08-31T21:24:58.336Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.361Z",
+            "2025-02-13T15:32:50.765Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.525Z",
+            "2024-04-28T17:10:28.604Z",
           ],
           interval: 8,
           onDays: [
@@ -2238,16 +2238,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.356Z"),
+          endAt: new Date("2022-09-30T17:34:48.249Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.766Z",
-            "2024-08-17T05:24:51.537Z",
+            "2024-09-02T06:28:29.663Z",
+            "2024-08-17T17:15:49.536Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.176Z",
-            "2026-01-13T10:08:34.117Z",
-            "2023-08-14T06:30:59.238Z",
+            "2024-03-25T14:03:15.350Z",
+            "2026-01-14T05:52:37.776Z",
+            "2023-08-14T12:42:29.548Z",
           ],
           interval: 1,
           onDays: [
@@ -2391,16 +2391,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.704Z"),
+          endAt: new Date("2026-07-27T12:03:51.294Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.365Z",
-            "2023-06-07T15:27:11.264Z",
+            "2023-06-18T19:56:18.685Z",
+            "2023-06-07T20:36:28.269Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.419Z",
-            "2023-08-20T01:56:44.404Z",
-            "2024-09-26T23:10:42.233Z",
+            "2024-04-02T15:03:08.235Z",
+            "2023-08-20T08:13:35.425Z",
+            "2024-09-27T11:39:09.247Z",
           ],
           interval: 8,
           onDays: [
@@ -2553,11 +2553,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.153Z"),
+      startAt: new Date("2025-05-01T05:57:46.507Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.405Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.824Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -2594,7 +2594,7 @@ run();
 
 ## getCalendarCalendar
 
-Retrieve a calendar
+Retrieves a single CalendarCalendar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2673,7 +2673,7 @@ run();
 
 ## getCalendarEvent
 
-Retrieve an event
+Retrieves a single CalendarEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2752,7 +2752,7 @@ run();
 
 ## getCalendarLink
 
-Retrieve a link
+Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2831,7 +2831,7 @@ run();
 
 ## getCalendarRecording
 
-Retrieve a recording
+Retrieves a single CalendarRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2910,7 +2910,7 @@ run();
 
 ## getCalendarWebinar
 
-Retrieve a webinar
+Retrieves a single CalendarWebinar by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -2989,7 +2989,7 @@ run();
 
 ## listCalendarBusies
 
-List all busies
+Returns a list of CalendarBusies. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3066,7 +3066,7 @@ run();
 
 ## listCalendarCalendars
 
-List all calendars
+Returns a list of CalendarCalendars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3143,7 +3143,7 @@ run();
 
 ## listCalendarEvents
 
-List all events
+Returns a list of CalendarEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3220,7 +3220,7 @@ run();
 
 ## listCalendarLinks
 
-List all links
+Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3297,7 +3297,7 @@ run();
 
 ## listCalendarRecordings
 
-List all recordings
+Returns a list of CalendarRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3374,7 +3374,7 @@ run();
 
 ## listCalendarWebinars
 
-List all webinars
+Returns a list of CalendarWebinars. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -3451,7 +3451,7 @@ run();
 
 ## patchCalendarCalendar
 
-Update a calendar
+Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
 
 ### Example Usage
 
@@ -3470,12 +3470,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "cd85d08a-30b3-474d-8988-3ebfa8e915be",
+      id: "afba3b10-8b2b-4784-9ec5-26a0085ff690",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-28T03:42:41.387Z"),
+      updatedAt: new Date("2023-03-28T15:06:02.194Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3508,12 +3508,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "cd85d08a-30b3-474d-8988-3ebfa8e915be",
+      id: "afba3b10-8b2b-4784-9ec5-26a0085ff690",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-28T03:42:41.387Z"),
+      updatedAt: new Date("2023-03-28T15:06:02.194Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3550,7 +3550,7 @@ run();
 
 ## patchCalendarEvent
 
-Update an event
+Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -3570,9 +3570,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.831Z",
+      endAt: "2020-05-24T09:45:40.715Z",
       hasConference: false,
-      id: "eb50bfa8-0bf5-4dbe-ad5c-42a1965feb61",
+      id: "761e485e-1849-47ee-bbd6-717a147b3791",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -3582,15 +3582,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.733Z"),
+          endAt: new Date("2025-03-25T10:54:34.590Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.865Z",
+            "2024-02-03T10:06:08.307Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.374Z",
-            "2025-01-23T22:05:54.772Z",
-            "2024-04-02T00:02:54.944Z",
+            "2023-07-07T14:50:38.143Z",
+            "2025-01-24T16:20:26.967Z",
+            "2024-04-02T15:34:54.140Z",
           ],
           interval: 7,
           onDays: [
@@ -3927,11 +3927,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.310Z",
+      startAt: "2020-05-24T00:31:50.565Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.579Z",
+      updatedAt: "2020-06-30T08:28:58.605Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -3966,9 +3966,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.831Z",
+      endAt: "2020-05-24T09:45:40.715Z",
       hasConference: false,
-      id: "eb50bfa8-0bf5-4dbe-ad5c-42a1965feb61",
+      id: "761e485e-1849-47ee-bbd6-717a147b3791",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -3978,15 +3978,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.733Z"),
+          endAt: new Date("2025-03-25T10:54:34.590Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.865Z",
+            "2024-02-03T10:06:08.307Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.374Z",
-            "2025-01-23T22:05:54.772Z",
-            "2024-04-02T00:02:54.944Z",
+            "2023-07-07T14:50:38.143Z",
+            "2025-01-24T16:20:26.967Z",
+            "2024-04-02T15:34:54.140Z",
           ],
           interval: 7,
           onDays: [
@@ -4323,11 +4323,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.310Z",
+      startAt: "2020-05-24T00:31:50.565Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.579Z",
+      updatedAt: "2020-06-30T08:28:58.605Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -4365,7 +4365,7 @@ run();
 
 ## patchCalendarLink
 
-Update a link
+Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
 
 ### Example Usage
 
@@ -4385,13 +4385,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "b82fed68-2531-45eb-9e9d-4b7281d226b4",
+      id: "9aaeb149-f12c-4f46-9abb-5a4554869f3c",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-15T13:11:26.974Z",
+      updatedAt: "2024-03-15T19:58:59.867Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -4426,13 +4426,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "b82fed68-2531-45eb-9e9d-4b7281d226b4",
+      id: "9aaeb149-f12c-4f46-9abb-5a4554869f3c",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-15T13:11:26.974Z",
+      updatedAt: "2024-03-15T19:58:59.867Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -4470,7 +4470,7 @@ run();
 
 ## patchCalendarWebinar
 
-Update a webinar
+Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
 
 ### Example Usage
 
@@ -4489,10 +4489,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.518Z"),
+      endAt: new Date("2025-10-29T12:21:12.054Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "2337346d-a87e-40d6-bff6-6d364cd3acbb",
+      id: "3bef1a90-265a-4396-af04-f545a6ab5ca0",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -4502,13 +4502,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.161Z"),
+          endAt: new Date("2023-08-31T21:24:58.347Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.405Z",
+            "2025-02-13T15:32:50.788Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.556Z",
+            "2024-04-28T17:10:28.621Z",
           ],
           interval: 8,
           onDays: [
@@ -4899,16 +4899,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.360Z"),
+          endAt: new Date("2022-09-30T17:34:48.251Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.803Z",
-            "2024-08-17T05:24:51.572Z",
+            "2024-09-02T06:28:29.682Z",
+            "2024-08-17T17:15:49.555Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.206Z",
-            "2026-01-13T10:08:34.177Z",
-            "2023-08-14T06:30:59.256Z",
+            "2024-03-25T14:03:15.366Z",
+            "2026-01-14T05:52:37.808Z",
+            "2023-08-14T12:42:29.558Z",
           ],
           interval: 1,
           onDays: [
@@ -5052,16 +5052,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.772Z"),
+          endAt: new Date("2026-07-27T12:03:51.331Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.381Z",
-            "2023-06-07T15:27:11.280Z",
+            "2023-06-18T19:56:18.694Z",
+            "2023-06-07T20:36:28.277Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.448Z",
-            "2023-08-20T01:56:44.423Z",
-            "2024-09-26T23:10:42.271Z",
+            "2024-04-02T15:03:08.251Z",
+            "2023-08-20T08:13:35.435Z",
+            "2024-09-27T11:39:09.267Z",
           ],
           interval: 8,
           onDays: [
@@ -5214,11 +5214,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.200Z"),
+      startAt: new Date("2025-05-01T05:57:46.533Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.477Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.864Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -5252,10 +5252,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.518Z"),
+      endAt: new Date("2025-10-29T12:21:12.054Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "2337346d-a87e-40d6-bff6-6d364cd3acbb",
+      id: "3bef1a90-265a-4396-af04-f545a6ab5ca0",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -5265,13 +5265,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.161Z"),
+          endAt: new Date("2023-08-31T21:24:58.347Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.405Z",
+            "2025-02-13T15:32:50.788Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.556Z",
+            "2024-04-28T17:10:28.621Z",
           ],
           interval: 8,
           onDays: [
@@ -5662,16 +5662,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.360Z"),
+          endAt: new Date("2022-09-30T17:34:48.251Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.803Z",
-            "2024-08-17T05:24:51.572Z",
+            "2024-09-02T06:28:29.682Z",
+            "2024-08-17T17:15:49.555Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.206Z",
-            "2026-01-13T10:08:34.177Z",
-            "2023-08-14T06:30:59.256Z",
+            "2024-03-25T14:03:15.366Z",
+            "2026-01-14T05:52:37.808Z",
+            "2023-08-14T12:42:29.558Z",
           ],
           interval: 1,
           onDays: [
@@ -5815,16 +5815,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.772Z"),
+          endAt: new Date("2026-07-27T12:03:51.331Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.381Z",
-            "2023-06-07T15:27:11.280Z",
+            "2023-06-18T19:56:18.694Z",
+            "2023-06-07T20:36:28.277Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.448Z",
-            "2023-08-20T01:56:44.423Z",
-            "2024-09-26T23:10:42.271Z",
+            "2024-04-02T15:03:08.251Z",
+            "2023-08-20T08:13:35.435Z",
+            "2024-09-27T11:39:09.267Z",
           ],
           interval: 8,
           onDays: [
@@ -5977,11 +5977,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.200Z"),
+      startAt: new Date("2025-05-01T05:57:46.533Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.477Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.864Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -6019,7 +6019,7 @@ run();
 
 ## removeCalendarCalendar
 
-Remove a calendar
+Deletes the CalendarCalendar identified by `id`.
 
 ### Example Usage
 
@@ -6098,7 +6098,7 @@ run();
 
 ## removeCalendarEvent
 
-Remove an event
+Deletes the CalendarEvent identified by `id`.
 
 ### Example Usage
 
@@ -6177,7 +6177,7 @@ run();
 
 ## removeCalendarLink
 
-Remove a link
+Deletes the CalendarLink identified by `id`.
 
 ### Example Usage
 
@@ -6256,7 +6256,7 @@ run();
 
 ## removeCalendarWebinar
 
-Remove a webinar
+Deletes the CalendarWebinar identified by `id`.
 
 ### Example Usage
 
@@ -6335,7 +6335,7 @@ run();
 
 ## updateCalendarCalendar
 
-Update a calendar
+Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
 
 ### Example Usage
 
@@ -6354,12 +6354,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "cd85d08a-30b3-474d-8988-3ebfa8e915be",
+      id: "afba3b10-8b2b-4784-9ec5-26a0085ff690",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-28T03:42:41.387Z"),
+      updatedAt: new Date("2023-03-28T15:06:02.194Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6392,12 +6392,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "cd85d08a-30b3-474d-8988-3ebfa8e915be",
+      id: "afba3b10-8b2b-4784-9ec5-26a0085ff690",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-28T03:42:41.387Z"),
+      updatedAt: new Date("2023-03-28T15:06:02.194Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6434,7 +6434,7 @@ run();
 
 ## updateCalendarEvent
 
-Update an event
+Updates the CalendarEvent identified by `id`. Provide the unified CalendarEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -6454,9 +6454,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.831Z",
+      endAt: "2020-05-24T09:45:40.715Z",
       hasConference: false,
-      id: "eb50bfa8-0bf5-4dbe-ad5c-42a1965feb61",
+      id: "761e485e-1849-47ee-bbd6-717a147b3791",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -6466,15 +6466,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.733Z"),
+          endAt: new Date("2025-03-25T10:54:34.590Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.865Z",
+            "2024-02-03T10:06:08.307Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.374Z",
-            "2025-01-23T22:05:54.772Z",
-            "2024-04-02T00:02:54.944Z",
+            "2023-07-07T14:50:38.143Z",
+            "2025-01-24T16:20:26.967Z",
+            "2024-04-02T15:34:54.140Z",
           ],
           interval: 7,
           onDays: [
@@ -6811,11 +6811,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.310Z",
+      startAt: "2020-05-24T00:31:50.565Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.579Z",
+      updatedAt: "2020-06-30T08:28:58.605Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -6850,9 +6850,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T07:04:53.831Z",
+      endAt: "2020-05-24T09:45:40.715Z",
       hasConference: false,
-      id: "eb50bfa8-0bf5-4dbe-ad5c-42a1965feb61",
+      id: "761e485e-1849-47ee-bbd6-717a147b3791",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -6862,15 +6862,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-24T16:07:19.733Z"),
+          endAt: new Date("2025-03-25T10:54:34.590Z"),
           excludedDates: [
-            "2024-02-02T19:06:33.865Z",
+            "2024-02-03T10:06:08.307Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-07T01:46:25.374Z",
-            "2025-01-23T22:05:54.772Z",
-            "2024-04-02T00:02:54.944Z",
+            "2023-07-07T14:50:38.143Z",
+            "2025-01-24T16:20:26.967Z",
+            "2024-04-02T15:34:54.140Z",
           ],
           interval: 7,
           onDays: [
@@ -7207,11 +7207,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-23T21:51:16.310Z",
+      startAt: "2020-05-24T00:31:50.565Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T05:27:58.579Z",
+      updatedAt: "2020-06-30T08:28:58.605Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -7249,7 +7249,7 @@ run();
 
 ## updateCalendarLink
 
-Update a link
+Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
 
 ### Example Usage
 
@@ -7269,13 +7269,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "b82fed68-2531-45eb-9e9d-4b7281d226b4",
+      id: "9aaeb149-f12c-4f46-9abb-5a4554869f3c",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-15T13:11:26.974Z",
+      updatedAt: "2024-03-15T19:58:59.867Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -7310,13 +7310,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "b82fed68-2531-45eb-9e9d-4b7281d226b4",
+      id: "9aaeb149-f12c-4f46-9abb-5a4554869f3c",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-15T13:11:26.974Z",
+      updatedAt: "2024-03-15T19:58:59.867Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -7354,7 +7354,7 @@ run();
 
 ## updateCalendarWebinar
 
-Update a webinar
+Updates the CalendarWebinar identified by `id`. Provide the unified CalendarWebinar fields to change in the request body.
 
 ### Example Usage
 
@@ -7373,10 +7373,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.518Z"),
+      endAt: new Date("2025-10-29T12:21:12.054Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "2337346d-a87e-40d6-bff6-6d364cd3acbb",
+      id: "3bef1a90-265a-4396-af04-f545a6ab5ca0",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -7386,13 +7386,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.161Z"),
+          endAt: new Date("2023-08-31T21:24:58.347Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.405Z",
+            "2025-02-13T15:32:50.788Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.556Z",
+            "2024-04-28T17:10:28.621Z",
           ],
           interval: 8,
           onDays: [
@@ -7783,16 +7783,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.360Z"),
+          endAt: new Date("2022-09-30T17:34:48.251Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.803Z",
-            "2024-08-17T05:24:51.572Z",
+            "2024-09-02T06:28:29.682Z",
+            "2024-08-17T17:15:49.555Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.206Z",
-            "2026-01-13T10:08:34.177Z",
-            "2023-08-14T06:30:59.256Z",
+            "2024-03-25T14:03:15.366Z",
+            "2026-01-14T05:52:37.808Z",
+            "2023-08-14T12:42:29.558Z",
           ],
           interval: 1,
           onDays: [
@@ -7936,16 +7936,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.772Z"),
+          endAt: new Date("2026-07-27T12:03:51.331Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.381Z",
-            "2023-06-07T15:27:11.280Z",
+            "2023-06-18T19:56:18.694Z",
+            "2023-06-07T20:36:28.277Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.448Z",
-            "2023-08-20T01:56:44.423Z",
-            "2024-09-26T23:10:42.271Z",
+            "2024-04-02T15:03:08.251Z",
+            "2023-08-20T08:13:35.435Z",
+            "2024-09-27T11:39:09.267Z",
           ],
           interval: 8,
           onDays: [
@@ -8098,11 +8098,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.200Z"),
+      startAt: new Date("2025-05-01T05:57:46.533Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.477Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.864Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -8136,10 +8136,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-28T17:47:41.518Z"),
+      endAt: new Date("2025-10-29T12:21:12.054Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "2337346d-a87e-40d6-bff6-6d364cd3acbb",
+      id: "3bef1a90-265a-4396-af04-f545a6ab5ca0",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -8149,13 +8149,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-08-31T14:57:30.161Z"),
+          endAt: new Date("2023-08-31T21:24:58.347Z"),
           excludedDates: [
-            "2025-02-13T00:56:26.405Z",
+            "2025-02-13T15:32:50.788Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-28T07:01:34.556Z",
+            "2024-04-28T17:10:28.621Z",
           ],
           interval: 8,
           onDays: [
@@ -8546,16 +8546,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T16:15:30.360Z"),
+          endAt: new Date("2022-09-30T17:34:48.251Z"),
           excludedDates: [
-            "2024-09-01T18:23:13.803Z",
-            "2024-08-17T05:24:51.572Z",
+            "2024-09-02T06:28:29.682Z",
+            "2024-08-17T17:15:49.555Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-25T04:25:44.206Z",
-            "2026-01-13T10:08:34.177Z",
-            "2023-08-14T06:30:59.256Z",
+            "2024-03-25T14:03:15.366Z",
+            "2026-01-14T05:52:37.808Z",
+            "2023-08-14T12:42:29.558Z",
           ],
           interval: 1,
           onDays: [
@@ -8699,16 +8699,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-26T13:21:10.772Z"),
+          endAt: new Date("2026-07-27T12:03:51.331Z"),
           excludedDates: [
-            "2023-06-18T14:36:56.381Z",
-            "2023-06-07T15:27:11.280Z",
+            "2023-06-18T19:56:18.694Z",
+            "2023-06-07T20:36:28.277Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-02T05:18:13.448Z",
-            "2023-08-20T01:56:44.423Z",
-            "2024-09-26T23:10:42.271Z",
+            "2024-04-02T15:03:08.251Z",
+            "2023-08-20T08:13:35.435Z",
+            "2024-09-27T11:39:09.267Z",
           ],
           interval: 8,
           onDays: [
@@ -8861,11 +8861,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-04-30T14:10:56.200Z"),
+      startAt: new Date("2025-05-01T05:57:46.533Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-09-30T12:38:46.477Z"),
+      updatedAt: new Date("2026-10-01T12:22:08.864Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",

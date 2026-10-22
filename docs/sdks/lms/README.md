@@ -49,7 +49,7 @@
 
 ## createLmsActivity
 
-Create an activity
+Creates a LmsActivity. Provide the unified LmsActivity fields in the request body; they are mapped to the provider's API. Returns the created LmsActivity.
 
 ### Example Usage
 
@@ -67,15 +67,15 @@ async function run() {
   const result = await unifiedTo.lms.createLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.006Z"),
+      completedAt: new Date("2023-12-06T12:30:29.345Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "4ba3b302-525a-43ac-9bbe-13b0dfbc7b5f",
+      id: "97844196-f86e-41da-b953-157e43e3dcf5",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.363Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.701Z"),
+      startedAt: new Date("2021-04-25T06:31:22.756Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.444Z"),
     },
     connectionId: "<id>",
   });
@@ -106,15 +106,15 @@ async function run() {
   const res = await activityCreateLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.006Z"),
+      completedAt: new Date("2023-12-06T12:30:29.345Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "4ba3b302-525a-43ac-9bbe-13b0dfbc7b5f",
+      id: "97844196-f86e-41da-b953-157e43e3dcf5",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.363Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.701Z"),
+      startedAt: new Date("2021-04-25T06:31:22.756Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.444Z"),
     },
     connectionId: "<id>",
   });
@@ -150,7 +150,7 @@ run();
 
 ## createLmsClass
 
-Create a class
+Creates a LmsClass. Provide the unified LmsClass fields in the request body; they are mapped to the provider's API. Returns the created LmsClass.
 
 ### Example Usage
 
@@ -169,7 +169,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "f1d9c607-e1cf-41ec-acc0-82cd0fb903f6",
+      id: "157c6563-59b4-4ef7-9dcd-ce6c6e903a47",
       instructors: [],
       languages: [
         "in",
@@ -191,7 +191,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.030Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.274Z"),
     },
     connectionId: "<id>",
   });
@@ -223,7 +223,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "f1d9c607-e1cf-41ec-acc0-82cd0fb903f6",
+      id: "157c6563-59b4-4ef7-9dcd-ce6c6e903a47",
       instructors: [],
       languages: [
         "in",
@@ -245,7 +245,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.030Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.274Z"),
     },
     connectionId: "<id>",
   });
@@ -281,7 +281,7 @@ run();
 
 ## createLmsCollection
 
-Create a collection
+Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
 
 ### Example Usage
 
@@ -300,7 +300,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "c4d2d4ba-4033-4ec2-9b2b-6fdbd26e787a",
+      id: "eb013a83-24de-4ec8-9360-bc7d68d6794b",
       isActive: true,
       media: [
         {
@@ -317,7 +317,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.817Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.350Z"),
     },
     connectionId: "<id>",
   });
@@ -349,7 +349,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "c4d2d4ba-4033-4ec2-9b2b-6fdbd26e787a",
+      id: "eb013a83-24de-4ec8-9360-bc7d68d6794b",
       isActive: true,
       media: [
         {
@@ -366,7 +366,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.817Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.350Z"),
     },
     connectionId: "<id>",
   });
@@ -402,7 +402,7 @@ run();
 
 ## createLmsContent
 
-Create a content
+Creates a LmsContent. Provide the unified LmsContent fields in the request body; they are mapped to the provider's API. Returns the created LmsContent.
 
 ### Example Usage
 
@@ -426,7 +426,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "8b31b9b6-afd5-4677-8bb3-01cc19d15267",
+      id: "326a2add-4814-475e-b630-4fb2fbe2d9d4",
       instructors: [],
       isActive: true,
       languages: [
@@ -486,7 +486,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.933Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.936Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -501,7 +501,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.533Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.108Z"),
     },
     connectionId: "<id>",
   });
@@ -538,7 +538,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "8b31b9b6-afd5-4677-8bb3-01cc19d15267",
+      id: "326a2add-4814-475e-b630-4fb2fbe2d9d4",
       instructors: [],
       isActive: true,
       languages: [
@@ -598,7 +598,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.933Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.936Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -613,7 +613,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.533Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.108Z"),
     },
     connectionId: "<id>",
   });
@@ -649,7 +649,7 @@ run();
 
 ## createLmsCourse
 
-Create a course
+Creates a LmsCourse. Provide the unified LmsCourse fields in the request body; they are mapped to the provider's API. Returns the created LmsCourse.
 
 ### Example Usage
 
@@ -674,7 +674,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "95e99d4e-1745-4dce-925f-b2301ae668e4",
+      id: "47f3b183-ec6f-4663-b22c-bd4ed4a1f3d4",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -701,14 +701,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.598Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.281Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.756Z"),
     },
     connectionId: "<id>",
   });
@@ -746,7 +746,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "95e99d4e-1745-4dce-925f-b2301ae668e4",
+      id: "47f3b183-ec6f-4663-b22c-bd4ed4a1f3d4",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -773,14 +773,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.598Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.281Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.756Z"),
     },
     connectionId: "<id>",
   });
@@ -816,7 +816,7 @@ run();
 
 ## createLmsInstructor
 
-Create an instructor
+Creates a LmsInstructor. Provide the unified LmsInstructor fields in the request body; they are mapped to the provider's API. Returns the created LmsInstructor.
 
 ### Example Usage
 
@@ -838,7 +838,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "07b71bf1-5de9-4d24-b04f-2f8350ca3f4e",
+      id: "5d7008f1-d792-413c-9822-466ff9f88296",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -854,7 +854,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.926Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.872Z"),
     },
     connectionId: "<id>",
   });
@@ -889,7 +889,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "07b71bf1-5de9-4d24-b04f-2f8350ca3f4e",
+      id: "5d7008f1-d792-413c-9822-466ff9f88296",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -905,7 +905,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.926Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.872Z"),
     },
     connectionId: "<id>",
   });
@@ -941,7 +941,7 @@ run();
 
 ## createLmsStudent
 
-Create a student
+Creates a LmsStudent. Provide the unified LmsStudent fields in the request body; they are mapped to the provider's API. Returns the created LmsStudent.
 
 ### Example Usage
 
@@ -971,7 +971,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "1d5ec01a-2819-4894-905a-20cc05d63881",
+      id: "b7ca34f9-21f1-471c-9dbc-b1229c026a78",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -990,7 +990,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.970Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.857Z"),
     },
     connectionId: "<id>",
   });
@@ -1033,7 +1033,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "1d5ec01a-2819-4894-905a-20cc05d63881",
+      id: "b7ca34f9-21f1-471c-9dbc-b1229c026a78",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -1052,7 +1052,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.970Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.857Z"),
     },
     connectionId: "<id>",
   });
@@ -1088,7 +1088,7 @@ run();
 
 ## getLmsActivity
 
-Retrieve an activity
+Retrieves a single LmsActivity by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1167,7 +1167,7 @@ run();
 
 ## getLmsClass
 
-Retrieve a class
+Retrieves a single LmsClass by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1246,7 +1246,7 @@ run();
 
 ## getLmsCollection
 
-Retrieve a collection
+Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1325,7 +1325,7 @@ run();
 
 ## getLmsContent
 
-Retrieve a content
+Retrieves a single LmsContent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1404,7 +1404,7 @@ run();
 
 ## getLmsCourse
 
-Retrieve a course
+Retrieves a single LmsCourse by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1483,7 +1483,7 @@ run();
 
 ## getLmsInstructor
 
-Retrieve an instructor
+Retrieves a single LmsInstructor by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1562,7 +1562,7 @@ run();
 
 ## getLmsStudent
 
-Retrieve a student
+Retrieves a single LmsStudent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -1641,7 +1641,7 @@ run();
 
 ## listLmsActivities
 
-List all activities
+Returns a list of LmsActivities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1718,7 +1718,7 @@ run();
 
 ## listLmsClasses
 
-List all classes
+Returns a list of LmsClasses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1795,7 +1795,7 @@ run();
 
 ## listLmsCollections
 
-List all collections
+Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1872,7 +1872,7 @@ run();
 
 ## listLmsContents
 
-List all contents
+Returns a list of LmsContents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1949,7 +1949,7 @@ run();
 
 ## listLmsCourses
 
-List all courses
+Returns a list of LmsCourses. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2026,7 +2026,7 @@ run();
 
 ## listLmsInstructors
 
-List all instructors
+Returns a list of LmsInstructors. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2103,7 +2103,7 @@ run();
 
 ## listLmsStudents
 
-List all students
+Returns a list of LmsStudents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -2180,7 +2180,7 @@ run();
 
 ## patchLmsActivity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -2198,15 +2198,15 @@ async function run() {
   const result = await unifiedTo.lms.patchLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.012Z"),
+      completedAt: new Date("2023-12-06T12:30:29.351Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "68ceb71a-5e6a-429d-b90c-0cd646cd4937",
+      id: "c20e2f40-d01a-488a-8f9a-4fc697b52e94",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.364Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.704Z"),
+      startedAt: new Date("2021-04-25T06:31:22.757Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.447Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2238,15 +2238,15 @@ async function run() {
   const res = await activityPatchLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.012Z"),
+      completedAt: new Date("2023-12-06T12:30:29.351Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "68ceb71a-5e6a-429d-b90c-0cd646cd4937",
+      id: "c20e2f40-d01a-488a-8f9a-4fc697b52e94",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.364Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.704Z"),
+      startedAt: new Date("2021-04-25T06:31:22.757Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.447Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2283,7 +2283,7 @@ run();
 
 ## patchLmsClass
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -2302,7 +2302,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "442e23a2-a566-41bb-8e6a-23d9e71fa4e6",
+      id: "403f6e78-b70d-4e44-97d3-23f9c7969813",
       instructors: [],
       languages: [
         "in",
@@ -2324,7 +2324,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.050Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.289Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2357,7 +2357,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "442e23a2-a566-41bb-8e6a-23d9e71fa4e6",
+      id: "403f6e78-b70d-4e44-97d3-23f9c7969813",
       instructors: [],
       languages: [
         "in",
@@ -2379,7 +2379,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.050Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.289Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2416,7 +2416,7 @@ run();
 
 ## patchLmsCollection
 
-Update a collection
+Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -2435,7 +2435,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "5d489259-96b4-49c7-a2f5-dcce79e89150",
+      id: "22c76508-652e-46c1-b00a-980426850048",
       isActive: true,
       media: [
         {
@@ -2452,7 +2452,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.833Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.364Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2485,7 +2485,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "5d489259-96b4-49c7-a2f5-dcce79e89150",
+      id: "22c76508-652e-46c1-b00a-980426850048",
       isActive: true,
       media: [
         {
@@ -2502,7 +2502,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.833Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.364Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2539,7 +2539,7 @@ run();
 
 ## patchLmsContent
 
-Update a content
+Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
 
 ### Example Usage
 
@@ -2563,7 +2563,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "1a6f7006-921c-4ad1-8690-0bd249ebdf8a",
+      id: "39a76e92-10ec-4d98-836f-6dc457118afc",
       instructors: [],
       isActive: true,
       languages: [
@@ -2623,7 +2623,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.946Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.944Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -2638,7 +2638,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.546Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.116Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2676,7 +2676,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "1a6f7006-921c-4ad1-8690-0bd249ebdf8a",
+      id: "39a76e92-10ec-4d98-836f-6dc457118afc",
       instructors: [],
       isActive: true,
       languages: [
@@ -2736,7 +2736,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.946Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.944Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -2751,7 +2751,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.546Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.116Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2788,7 +2788,7 @@ run();
 
 ## patchLmsCourse
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -2813,7 +2813,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "f7e597d0-3122-4eed-8fe7-476b00812df6",
+      id: "736b47ae-de88-4559-b404-80e554d81fa5",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -2840,14 +2840,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.599Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.283Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.758Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2886,7 +2886,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "f7e597d0-3122-4eed-8fe7-476b00812df6",
+      id: "736b47ae-de88-4559-b404-80e554d81fa5",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -2913,14 +2913,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.599Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.283Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.758Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2957,7 +2957,7 @@ run();
 
 ## patchLmsInstructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -2979,7 +2979,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "b2742410-e4b8-424d-954a-67d050c0a2c4",
+      id: "a7a76f57-951d-4878-8134-eca585f7acb1",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -2995,7 +2995,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.942Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.879Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3031,7 +3031,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "b2742410-e4b8-424d-954a-67d050c0a2c4",
+      id: "a7a76f57-951d-4878-8134-eca585f7acb1",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -3047,7 +3047,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.942Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.879Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3084,7 +3084,7 @@ run();
 
 ## patchLmsStudent
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -3114,7 +3114,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "16fcf44d-f782-4677-94dd-905e73d12d5a",
+      id: "402f3079-ec00-47f2-92bb-ea88ac7ceefe",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -3133,7 +3133,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.978Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.864Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3177,7 +3177,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "16fcf44d-f782-4677-94dd-905e73d12d5a",
+      id: "402f3079-ec00-47f2-92bb-ea88ac7ceefe",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -3196,7 +3196,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.978Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.864Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3233,7 +3233,7 @@ run();
 
 ## removeLmsActivity
 
-Remove an activity
+Deletes the LmsActivity identified by `id`.
 
 ### Example Usage
 
@@ -3312,7 +3312,7 @@ run();
 
 ## removeLmsClass
 
-Remove a class
+Deletes the LmsClass identified by `id`.
 
 ### Example Usage
 
@@ -3391,7 +3391,7 @@ run();
 
 ## removeLmsCollection
 
-Remove a collection
+Deletes the LmsCollection identified by `id`.
 
 ### Example Usage
 
@@ -3470,7 +3470,7 @@ run();
 
 ## removeLmsContent
 
-Remove a content
+Deletes the LmsContent identified by `id`.
 
 ### Example Usage
 
@@ -3549,7 +3549,7 @@ run();
 
 ## removeLmsCourse
 
-Remove a course
+Deletes the LmsCourse identified by `id`.
 
 ### Example Usage
 
@@ -3628,7 +3628,7 @@ run();
 
 ## removeLmsInstructor
 
-Remove an instructor
+Deletes the LmsInstructor identified by `id`.
 
 ### Example Usage
 
@@ -3707,7 +3707,7 @@ run();
 
 ## removeLmsStudent
 
-Remove a student
+Deletes the LmsStudent identified by `id`.
 
 ### Example Usage
 
@@ -3786,7 +3786,7 @@ run();
 
 ## updateLmsActivity
 
-Update an activity
+Updates the LmsActivity identified by `id`. Provide the unified LmsActivity fields to change in the request body.
 
 ### Example Usage
 
@@ -3804,15 +3804,15 @@ async function run() {
   const result = await unifiedTo.lms.updateLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.012Z"),
+      completedAt: new Date("2023-12-06T12:30:29.351Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "68ceb71a-5e6a-429d-b90c-0cd646cd4937",
+      id: "c20e2f40-d01a-488a-8f9a-4fc697b52e94",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.364Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.704Z"),
+      startedAt: new Date("2021-04-25T06:31:22.757Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.447Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3844,15 +3844,15 @@ async function run() {
   const res = await activityUpdateLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-05T23:58:12.012Z"),
+      completedAt: new Date("2023-12-06T12:30:29.351Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "68ceb71a-5e6a-429d-b90c-0cd646cd4937",
+      id: "c20e2f40-d01a-488a-8f9a-4fc697b52e94",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T04:26:27.364Z"),
-      updatedAt: new Date("2022-01-30T23:48:33.704Z"),
+      startedAt: new Date("2021-04-25T06:31:22.757Z"),
+      updatedAt: new Date("2022-01-31T04:57:59.447Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3889,7 +3889,7 @@ run();
 
 ## updateLmsClass
 
-Update a class
+Updates the LmsClass identified by `id`. Provide the unified LmsClass fields to change in the request body.
 
 ### Example Usage
 
@@ -3908,7 +3908,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "442e23a2-a566-41bb-8e6a-23d9e71fa4e6",
+      id: "403f6e78-b70d-4e44-97d3-23f9c7969813",
       instructors: [],
       languages: [
         "in",
@@ -3930,7 +3930,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.050Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.289Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3963,7 +3963,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Anser sperno decerno.",
-      id: "442e23a2-a566-41bb-8e6a-23d9e71fa4e6",
+      id: "403f6e78-b70d-4e44-97d3-23f9c7969813",
       instructors: [],
       languages: [
         "in",
@@ -3985,7 +3985,7 @@ async function run() {
       metadata: [],
       name: "virtus",
       students: [],
-      updatedAt: new Date("2025-08-03T21:58:13.050Z"),
+      updatedAt: new Date("2025-08-04T17:37:55.289Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4022,7 +4022,7 @@ run();
 
 ## updateLmsCollection
 
-Update a collection
+Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -4041,7 +4041,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "5d489259-96b4-49c7-a2f5-dcce79e89150",
+      id: "22c76508-652e-46c1-b00a-980426850048",
       isActive: true,
       media: [
         {
@@ -4058,7 +4058,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.833Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.364Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4091,7 +4091,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "5d489259-96b4-49c7-a2f5-dcce79e89150",
+      id: "22c76508-652e-46c1-b00a-980426850048",
       isActive: true,
       media: [
         {
@@ -4108,7 +4108,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.833Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.364Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4145,7 +4145,7 @@ run();
 
 ## updateLmsContent
 
-Update a content
+Updates the LmsContent identified by `id`. Provide the unified LmsContent fields to change in the request body.
 
 ### Example Usage
 
@@ -4169,7 +4169,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "1a6f7006-921c-4ad1-8690-0bd249ebdf8a",
+      id: "39a76e92-10ec-4d98-836f-6dc457118afc",
       instructors: [],
       isActive: true,
       languages: [
@@ -4229,7 +4229,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.946Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.944Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -4244,7 +4244,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.546Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.116Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4282,7 +4282,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "1a6f7006-921c-4ad1-8690-0bd249ebdf8a",
+      id: "39a76e92-10ec-4d98-836f-6dc457118afc",
       instructors: [],
       isActive: true,
       languages: [
@@ -4342,7 +4342,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-03T06:29:00.946Z"),
+      publishedAt: new Date("2022-09-03T13:57:13.944Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -4357,7 +4357,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-04T04:45:48.546Z"),
+      updatedAt: new Date("2022-10-04T12:34:24.116Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4394,7 +4394,7 @@ run();
 
 ## updateLmsCourse
 
-Update a course
+Updates the LmsCourse identified by `id`. Provide the unified LmsCourse fields to change in the request body.
 
 ### Example Usage
 
@@ -4419,7 +4419,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "f7e597d0-3122-4eed-8fe7-476b00812df6",
+      id: "736b47ae-de88-4559-b404-80e554d81fa5",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -4446,14 +4446,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.599Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.283Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.758Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4492,7 +4492,7 @@ async function run() {
       currency: "FJD",
       description: "Vinco alias aut capitulus.",
       durationMinutes: 148,
-      id: "f7e597d0-3122-4eed-8fe7-476b00812df6",
+      id: "736b47ae-de88-4559-b404-80e554d81fa5",
       instructors: [],
       isActive: true,
       isPrivate: false,
@@ -4519,14 +4519,14 @@ async function run() {
       name: "comptus",
       priceAmount: 84,
       providerName: "Homenick - Wunsch",
-      publishedAt: new Date("2022-11-05T18:11:47.599Z"),
+      publishedAt: new Date("2022-11-05T18:41:26.944Z"),
       skills: [
         "adiuvo",
         "tam",
       ],
       students: [],
       timeEstimateMinutes: 100,
-      updatedAt: new Date("2023-02-09T18:23:01.283Z"),
+      updatedAt: new Date("2023-02-09T20:26:30.758Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4563,7 +4563,7 @@ run();
 
 ## updateLmsInstructor
 
-Update an instructor
+Updates the LmsInstructor identified by `id`. Provide the unified LmsInstructor fields to change in the request body.
 
 ### Example Usage
 
@@ -4585,7 +4585,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "b2742410-e4b8-424d-954a-67d050c0a2c4",
+      id: "a7a76f57-951d-4878-8134-eca585f7acb1",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -4601,7 +4601,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.942Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.879Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4637,7 +4637,7 @@ async function run() {
         {},
       ],
       firstName: "Deangelo",
-      id: "b2742410-e4b8-424d-954a-67d050c0a2c4",
+      id: "a7a76f57-951d-4878-8134-eca585f7acb1",
       imageUrl: "https://avatars.githubusercontent.com/u/95131132",
       lastName: "Ritchie",
       metadata: [],
@@ -4653,7 +4653,7 @@ async function run() {
         },
       ],
       title: "Regional Security Agent",
-      updatedAt: new Date("2025-07-24T10:45:06.942Z"),
+      updatedAt: new Date("2025-07-25T04:50:42.879Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4690,7 +4690,7 @@ run();
 
 ## updateLmsStudent
 
-Update a student
+Updates the LmsStudent identified by `id`. Provide the unified LmsStudent fields to change in the request body.
 
 ### Example Usage
 
@@ -4720,7 +4720,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "16fcf44d-f782-4677-94dd-905e73d12d5a",
+      id: "402f3079-ec00-47f2-92bb-ea88ac7ceefe",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -4739,7 +4739,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.978Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.864Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4783,7 +4783,7 @@ async function run() {
         {},
       ],
       firstName: "Marcella",
-      id: "16fcf44d-f782-4677-94dd-905e73d12d5a",
+      id: "402f3079-ec00-47f2-92bb-ea88ac7ceefe",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/56.jpg",
       lastName: "Murazik",
       metadata: [],
@@ -4802,7 +4802,7 @@ async function run() {
           type: "FAX",
         },
       ],
-      updatedAt: new Date("2022-06-30T23:38:23.978Z"),
+      updatedAt: new Date("2022-07-01T07:56:24.864Z"),
     },
     connectionId: "<id>",
     id: "<id>",

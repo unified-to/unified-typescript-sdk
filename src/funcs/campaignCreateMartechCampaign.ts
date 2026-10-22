@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a campaign
+ *
+ * @remarks
+ * Creates a MarketingCampaign. Provide the unified MarketingCampaign fields in the request body; they are mapped to the provider's API. Returns the created MarketingCampaign.
  */
 export function campaignCreateMartechCampaign(
   client: UnifiedToCore,

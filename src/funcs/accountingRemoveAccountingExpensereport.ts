@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an expensereport
+ *
+ * @remarks
+ * Deletes the AccountingExpensereport identified by `id`.
  */
 export function accountingRemoveAccountingExpensereport(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a document
+ *
+ * @remarks
+ * Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
  */
 export function documentPatchSigningDocument(
   client: UnifiedToCore,

@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Paymentterm extends ClientSDK {
   /**
    * Create a paymentterm
+   *
+   * @remarks
+   * Creates a AccountingPaymentterm. Provide the unified AccountingPaymentterm fields in the request body; they are mapped to the provider's API. Returns the created AccountingPaymentterm.
    */
   async createAccountingPaymentterm(
     request: operations.CreateAccountingPaymenttermRequest,
@@ -30,6 +33,9 @@ export class Paymentterm extends ClientSDK {
 
   /**
    * Retrieve a paymentterm
+   *
+   * @remarks
+   * Retrieves a single AccountingPaymentterm by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingPaymentterm(
     request: operations.GetAccountingPaymenttermRequest,
@@ -44,6 +50,9 @@ export class Paymentterm extends ClientSDK {
 
   /**
    * List all paymentterms
+   *
+   * @remarks
+   * Returns a list of AccountingPaymentterms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingPaymentterms(
     request: operations.ListAccountingPaymenttermsRequest,
@@ -58,6 +67,9 @@ export class Paymentterm extends ClientSDK {
 
   /**
    * Update a paymentterm
+   *
+   * @remarks
+   * Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
    */
   async patchAccountingPaymentterm(
     request: operations.PatchAccountingPaymenttermRequest,
@@ -72,6 +84,9 @@ export class Paymentterm extends ClientSDK {
 
   /**
    * Remove a paymentterm
+   *
+   * @remarks
+   * Deletes the AccountingPaymentterm identified by `id`.
    */
   async removeAccountingPaymentterm(
     request: operations.RemoveAccountingPaymenttermRequest,
@@ -86,6 +101,9 @@ export class Paymentterm extends ClientSDK {
 
   /**
    * Update a paymentterm
+   *
+   * @remarks
+   * Updates the AccountingPaymentterm identified by `id`. Provide the unified AccountingPaymentterm fields to change in the request body.
    */
   async updateAccountingPaymentterm(
     request: operations.UpdateAccountingPaymenttermRequest,

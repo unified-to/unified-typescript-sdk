@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a subscription
+ *
+ * @remarks
+ * Deletes the PaymentSubscription identified by `id`.
  */
 export function paymentRemovePaymentSubscription(
   client: UnifiedToCore,

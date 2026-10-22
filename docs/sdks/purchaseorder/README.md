@@ -13,7 +13,7 @@
 
 ## createAccountingPurchaseorder
 
-Create a purchaseorder
+Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
 
 ### Example Usage
 
@@ -43,7 +43,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "fa379fb8-af26-49b2-8af7-94e331623eae",
+      id: "e8e7fea4-eae6-42cd-8d7a-7e37afc0d963",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -57,7 +57,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.718Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.225Z"),
     },
     connectionId: "<id>",
   });
@@ -100,7 +100,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "fa379fb8-af26-49b2-8af7-94e331623eae",
+      id: "e8e7fea4-eae6-42cd-8d7a-7e37afc0d963",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -114,7 +114,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.718Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.225Z"),
     },
     connectionId: "<id>",
   });
@@ -150,7 +150,7 @@ run();
 
 ## getAccountingPurchaseorder
 
-Retrieve a purchaseorder
+Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -229,7 +229,7 @@ run();
 
 ## listAccountingPurchaseorders
 
-List all purchaseorders
+Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -306,7 +306,7 @@ run();
 
 ## patchAccountingPurchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -336,7 +336,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "633b3b69-943b-4ffd-9f8b-bff28eb95f0f",
+      id: "63fc74d0-07c7-4d62-928f-6c84b729e544",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -350,7 +350,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.726Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.230Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -394,7 +394,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "633b3b69-943b-4ffd-9f8b-bff28eb95f0f",
+      id: "63fc74d0-07c7-4d62-928f-6c84b729e544",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -408,7 +408,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.726Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.230Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -445,7 +445,7 @@ run();
 
 ## removeAccountingPurchaseorder
 
-Remove a purchaseorder
+Deletes the AccountingPurchaseorder identified by `id`.
 
 ### Example Usage
 
@@ -524,7 +524,7 @@ run();
 
 ## updateAccountingPurchaseorder
 
-Update a purchaseorder
+Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
 
 ### Example Usage
 
@@ -554,7 +554,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "633b3b69-943b-4ffd-9f8b-bff28eb95f0f",
+      id: "63fc74d0-07c7-4d62-928f-6c84b729e544",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -568,7 +568,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.726Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.230Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -612,7 +612,7 @@ async function run() {
       categoryIds: [],
       createdAt: new Date("2020-12-12T07:17:47.021Z"),
       currency: "EUR",
-      id: "633b3b69-943b-4ffd-9f8b-bff28eb95f0f",
+      id: "63fc74d0-07c7-4d62-928f-6c84b729e544",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-12-12T07:17:47.021Z"),
@@ -626,7 +626,7 @@ async function run() {
       },
       status: "SUBMITTED",
       totalAmount: 0,
-      updatedAt: new Date("2021-08-11T06:04:11.726Z"),
+      updatedAt: new Date("2021-08-11T08:47:21.230Z"),
     },
     connectionId: "<id>",
     id: "<id>",

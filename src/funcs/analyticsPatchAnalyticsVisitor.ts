@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a visitor
+ *
+ * @remarks
+ * Updates the AnalyticsVisitor identified by `id`. Provide the unified AnalyticsVisitor fields to change in the request body.
  */
 export function analyticsPatchAnalyticsVisitor(
   client: UnifiedToCore,

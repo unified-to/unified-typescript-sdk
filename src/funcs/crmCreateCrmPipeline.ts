@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a pipeline
+ *
+ * @remarks
+ * Creates a CrmPipeline. Provide the unified CrmPipeline fields in the request body; they are mapped to the provider's API. Returns the created CrmPipeline.
  */
 export function crmCreateCrmPipeline(
   client: UnifiedToCore,

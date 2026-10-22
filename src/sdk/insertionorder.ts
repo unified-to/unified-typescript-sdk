@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Insertionorder extends ClientSDK {
   /**
    * Create an insertionorder
+   *
+   * @remarks
+   * Creates a AdsInsertionorder. Provide the unified AdsInsertionorder fields in the request body; they are mapped to the provider's API. Returns the created AdsInsertionorder.
    */
   async createAdsInsertionorder(
     request: operations.CreateAdsInsertionorderRequest,
@@ -30,6 +33,9 @@ export class Insertionorder extends ClientSDK {
 
   /**
    * Retrieve an insertionorder
+   *
+   * @remarks
+   * Retrieves a single AdsInsertionorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsInsertionorder(
     request: operations.GetAdsInsertionorderRequest,
@@ -44,6 +50,9 @@ export class Insertionorder extends ClientSDK {
 
   /**
    * List all insertionorders
+   *
+   * @remarks
+   * Returns a list of AdsInsertionorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsInsertionorders(
     request: operations.ListAdsInsertionordersRequest,
@@ -58,6 +67,9 @@ export class Insertionorder extends ClientSDK {
 
   /**
    * Update an insertionorder
+   *
+   * @remarks
+   * Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
    */
   async patchAdsInsertionorder(
     request: operations.PatchAdsInsertionorderRequest,
@@ -72,6 +84,9 @@ export class Insertionorder extends ClientSDK {
 
   /**
    * Remove an insertionorder
+   *
+   * @remarks
+   * Deletes the AdsInsertionorder identified by `id`.
    */
   async removeAdsInsertionorder(
     request: operations.RemoveAdsInsertionorderRequest,
@@ -86,6 +101,9 @@ export class Insertionorder extends ClientSDK {
 
   /**
    * Update an insertionorder
+   *
+   * @remarks
+   * Updates the AdsInsertionorder identified by `id`. Provide the unified AdsInsertionorder fields to change in the request body.
    */
   async updateAdsInsertionorder(
     request: operations.UpdateAdsInsertionorderRequest,

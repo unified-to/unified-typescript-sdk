@@ -22,6 +22,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Link extends ClientSDK {
   /**
    * Create a link
+   *
+   * @remarks
+   * Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
    */
   async createCalendarLink(
     request: operations.CreateCalendarLinkRequest,
@@ -36,6 +39,9 @@ export class Link extends ClientSDK {
 
   /**
    * Create a link
+   *
+   * @remarks
+   * Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
    */
   async createPaymentLink(
     request: operations.CreatePaymentLinkRequest,
@@ -50,6 +56,9 @@ export class Link extends ClientSDK {
 
   /**
    * Retrieve a link
+   *
+   * @remarks
+   * Retrieves a single CalendarLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCalendarLink(
     request: operations.GetCalendarLinkRequest,
@@ -64,6 +73,9 @@ export class Link extends ClientSDK {
 
   /**
    * Retrieve a link
+   *
+   * @remarks
+   * Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPaymentLink(
     request: operations.GetPaymentLinkRequest,
@@ -78,6 +90,9 @@ export class Link extends ClientSDK {
 
   /**
    * List all links
+   *
+   * @remarks
+   * Returns a list of CalendarLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCalendarLinks(
     request: operations.ListCalendarLinksRequest,
@@ -92,6 +107,9 @@ export class Link extends ClientSDK {
 
   /**
    * List all links
+   *
+   * @remarks
+   * Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPaymentLinks(
     request: operations.ListPaymentLinksRequest,
@@ -106,6 +124,9 @@ export class Link extends ClientSDK {
 
   /**
    * Update a link
+   *
+   * @remarks
+   * Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
    */
   async patchCalendarLink(
     request: operations.PatchCalendarLinkRequest,
@@ -120,6 +141,9 @@ export class Link extends ClientSDK {
 
   /**
    * Update a link
+   *
+   * @remarks
+   * Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
    */
   async patchPaymentLink(
     request: operations.PatchPaymentLinkRequest,
@@ -134,6 +158,9 @@ export class Link extends ClientSDK {
 
   /**
    * Remove a link
+   *
+   * @remarks
+   * Deletes the CalendarLink identified by `id`.
    */
   async removeCalendarLink(
     request: operations.RemoveCalendarLinkRequest,
@@ -148,6 +175,9 @@ export class Link extends ClientSDK {
 
   /**
    * Remove a link
+   *
+   * @remarks
+   * Deletes the PaymentLink identified by `id`.
    */
   async removePaymentLink(
     request: operations.RemovePaymentLinkRequest,
@@ -162,6 +192,9 @@ export class Link extends ClientSDK {
 
   /**
    * Update a link
+   *
+   * @remarks
+   * Updates the CalendarLink identified by `id`. Provide the unified CalendarLink fields to change in the request body.
    */
   async updateCalendarLink(
     request: operations.UpdateCalendarLinkRequest,
@@ -176,6 +209,9 @@ export class Link extends ClientSDK {
 
   /**
    * Update a link
+   *
+   * @remarks
+   * Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
    */
   async updatePaymentLink(
     request: operations.UpdatePaymentLinkRequest,

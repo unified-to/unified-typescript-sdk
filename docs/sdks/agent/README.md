@@ -13,7 +13,7 @@
 
 ## createGenaiAgent
 
-Create an agent
+Creates a GenaiAgent. Provide the unified GenaiAgent fields in the request body; they are mapped to the provider's API. Returns the created GenaiAgent.
 
 ### Example Usage
 
@@ -32,11 +32,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "7fb2beaf-0881-4193-9c48-b3fc0bdf03e3",
+      id: "180d61f5-bb66-476c-b484-ea325ddb7e49",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.469Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.794Z"),
     },
     connectionId: "<id>",
   });
@@ -68,11 +68,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "7fb2beaf-0881-4193-9c48-b3fc0bdf03e3",
+      id: "180d61f5-bb66-476c-b484-ea325ddb7e49",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.469Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.794Z"),
     },
     connectionId: "<id>",
   });
@@ -108,7 +108,7 @@ run();
 
 ## getGenaiAgent
 
-Retrieve an agent
+Retrieves a single GenaiAgent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -187,7 +187,7 @@ run();
 
 ## listGenaiAgents
 
-List all agents
+Returns a list of GenaiAgents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -264,7 +264,7 @@ run();
 
 ## patchGenaiAgent
 
-Update an agent
+Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
 
 ### Example Usage
 
@@ -283,11 +283,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c3763d0c-c3df-47b6-bbb0-61f6ee977c40",
+      id: "794b00a6-ee5f-4091-a92b-b2a4e701c89e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.477Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -320,11 +320,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c3763d0c-c3df-47b6-bbb0-61f6ee977c40",
+      id: "794b00a6-ee5f-4091-a92b-b2a4e701c89e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.477Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -361,7 +361,7 @@ run();
 
 ## removeGenaiAgent
 
-Remove an agent
+Deletes the GenaiAgent identified by `id`.
 
 ### Example Usage
 
@@ -440,7 +440,7 @@ run();
 
 ## updateGenaiAgent
 
-Update an agent
+Updates the GenaiAgent identified by `id`. Provide the unified GenaiAgent fields to change in the request body.
 
 ### Example Usage
 
@@ -459,11 +459,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c3763d0c-c3df-47b6-bbb0-61f6ee977c40",
+      id: "794b00a6-ee5f-4091-a92b-b2a4e701c89e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.477Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -496,11 +496,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "c3763d0c-c3df-47b6-bbb0-61f6ee977c40",
+      id: "794b00a6-ee5f-4091-a92b-b2a4e701c89e",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-15T11:15:33.477Z"),
+      updatedAt: new Date("2025-10-16T07:07:13.798Z"),
     },
     connectionId: "<id>",
     id: "<id>",

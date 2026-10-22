@@ -15,7 +15,7 @@
 
 ## createUcRecording
 
-Create a recording
+Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
 
 ### Example Usage
 
@@ -33,36 +33,36 @@ async function run() {
   const result = await unifiedTo.recording.createUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "389fcd11-b9b4-46ec-ab41-7d616f8c504c",
+      conversationIdentifier: "61f34343-c6f3-473a-b9e6-a93ec94f63bc",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.978Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.274Z"),
-      id: "389fcd11-b9b4-46ec-ab41-7d616f8c504c",
+      endAt: new Date("2024-05-05T09:43:38.990Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.217Z"),
+      id: "61f34343-c6f3-473a-b9e6-a93ec94f63bc",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.105Z"),
+          endAt: new Date("2024-04-02T04:50:58.448Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.690Z"),
+          startAt: new Date("2026-05-16T08:31:57.883Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.051Z"),
-              startAt: new Date("2024-06-02T06:18:20.299Z"),
+              endAt: new Date("2026-02-25T08:58:27.233Z"),
+              startAt: new Date("2024-06-02T16:20:06.772Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.260Z"),
-              startAt: new Date("2026-08-02T21:39:16.849Z"),
+              endAt: new Date("2024-10-13T01:39:00.818Z"),
+              startAt: new Date("2026-08-03T20:25:10.904Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.263Z"),
+      startAt: new Date("2023-04-27T21:43:30.611Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.790Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.273Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -95,36 +95,36 @@ async function run() {
   const res = await recordingCreateUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "389fcd11-b9b4-46ec-ab41-7d616f8c504c",
+      conversationIdentifier: "61f34343-c6f3-473a-b9e6-a93ec94f63bc",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.978Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.274Z"),
-      id: "389fcd11-b9b4-46ec-ab41-7d616f8c504c",
+      endAt: new Date("2024-05-05T09:43:38.990Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.217Z"),
+      id: "61f34343-c6f3-473a-b9e6-a93ec94f63bc",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.105Z"),
+          endAt: new Date("2024-04-02T04:50:58.448Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.690Z"),
+          startAt: new Date("2026-05-16T08:31:57.883Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.051Z"),
-              startAt: new Date("2024-06-02T06:18:20.299Z"),
+              endAt: new Date("2026-02-25T08:58:27.233Z"),
+              startAt: new Date("2024-06-02T16:20:06.772Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.260Z"),
-              startAt: new Date("2026-08-02T21:39:16.849Z"),
+              endAt: new Date("2024-10-13T01:39:00.818Z"),
+              startAt: new Date("2026-08-03T20:25:10.904Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.263Z"),
+      startAt: new Date("2023-04-27T21:43:30.611Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.790Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.273Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -162,7 +162,7 @@ run();
 
 ## getCalendarRecording
 
-Retrieve a recording
+Retrieves a single CalendarRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -241,7 +241,7 @@ run();
 
 ## getUcRecording
 
-Retrieve a recording
+Retrieves a single UcRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -320,7 +320,7 @@ run();
 
 ## listCalendarRecordings
 
-List all recordings
+Returns a list of CalendarRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -397,7 +397,7 @@ run();
 
 ## listUcRecordings
 
-List all recordings
+Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -474,7 +474,7 @@ run();
 
 ## patchUcRecording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -492,36 +492,36 @@ async function run() {
   const result = await unifiedTo.recording.patchUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      conversationIdentifier: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.998Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.317Z"),
-      id: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      endAt: new Date("2024-05-05T09:43:39.003Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.246Z"),
+      id: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.124Z"),
+          endAt: new Date("2024-04-02T04:50:58.460Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.735Z"),
+          startAt: new Date("2026-05-16T08:31:57.911Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.092Z"),
-              startAt: new Date("2024-06-02T06:18:20.320Z"),
+              endAt: new Date("2026-02-25T08:58:27.260Z"),
+              startAt: new Date("2024-06-02T16:20:06.785Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.285Z"),
-              startAt: new Date("2026-08-02T21:39:16.896Z"),
+              endAt: new Date("2024-10-13T01:39:00.834Z"),
+              startAt: new Date("2026-08-03T20:25:10.935Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.270Z"),
+      startAt: new Date("2023-04-27T21:43:30.615Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.820Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.292Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -555,36 +555,36 @@ async function run() {
   const res = await recordingPatchUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      conversationIdentifier: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.998Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.317Z"),
-      id: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      endAt: new Date("2024-05-05T09:43:39.003Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.246Z"),
+      id: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.124Z"),
+          endAt: new Date("2024-04-02T04:50:58.460Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.735Z"),
+          startAt: new Date("2026-05-16T08:31:57.911Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.092Z"),
-              startAt: new Date("2024-06-02T06:18:20.320Z"),
+              endAt: new Date("2026-02-25T08:58:27.260Z"),
+              startAt: new Date("2024-06-02T16:20:06.785Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.285Z"),
-              startAt: new Date("2026-08-02T21:39:16.896Z"),
+              endAt: new Date("2024-10-13T01:39:00.834Z"),
+              startAt: new Date("2026-08-03T20:25:10.935Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.270Z"),
+      startAt: new Date("2023-04-27T21:43:30.615Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.820Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.292Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -623,7 +623,7 @@ run();
 
 ## removeUcRecording
 
-Remove a recording
+Deletes the UcRecording identified by `id`.
 
 ### Example Usage
 
@@ -702,7 +702,7 @@ run();
 
 ## updateUcRecording
 
-Update a recording
+Updates the UcRecording identified by `id`. Provide the unified UcRecording fields to change in the request body.
 
 ### Example Usage
 
@@ -720,36 +720,36 @@ async function run() {
   const result = await unifiedTo.recording.updateUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      conversationIdentifier: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.998Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.317Z"),
-      id: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      endAt: new Date("2024-05-05T09:43:39.003Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.246Z"),
+      id: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.124Z"),
+          endAt: new Date("2024-04-02T04:50:58.460Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.735Z"),
+          startAt: new Date("2026-05-16T08:31:57.911Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.092Z"),
-              startAt: new Date("2024-06-02T06:18:20.320Z"),
+              endAt: new Date("2026-02-25T08:58:27.260Z"),
+              startAt: new Date("2024-06-02T16:20:06.785Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.285Z"),
-              startAt: new Date("2026-08-02T21:39:16.896Z"),
+              endAt: new Date("2024-10-13T01:39:00.834Z"),
+              startAt: new Date("2026-08-03T20:25:10.935Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.270Z"),
+      startAt: new Date("2023-04-27T21:43:30.615Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.820Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.292Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -783,36 +783,36 @@ async function run() {
   const res = await recordingUpdateUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      conversationIdentifier: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-05T00:09:08.998Z"),
-      expiresAt: new Date("2026-04-26T18:58:25.317Z"),
-      id: "852df842-191b-42cd-9da9-ff6dc2091c3d",
+      endAt: new Date("2024-05-05T09:43:39.003Z"),
+      expiresAt: new Date("2026-04-27T16:09:37.246Z"),
+      id: "e4c8bbc2-5646-4e98-983d-f8bd423bc012",
       media: [
         {
-          endAt: new Date("2024-04-01T19:48:30.124Z"),
+          endAt: new Date("2024-04-02T04:50:58.460Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-15T11:02:44.735Z"),
+          startAt: new Date("2026-05-16T08:31:57.911Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-02-24T12:46:23.092Z"),
-              startAt: new Date("2024-06-02T06:18:20.320Z"),
+              endAt: new Date("2026-02-25T08:58:27.260Z"),
+              startAt: new Date("2024-06-02T16:20:06.785Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-12T13:29:32.285Z"),
-              startAt: new Date("2026-08-02T21:39:16.896Z"),
+              endAt: new Date("2024-10-13T01:39:00.834Z"),
+              startAt: new Date("2026-08-03T20:25:10.935Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-27T18:09:17.270Z"),
+      startAt: new Date("2023-04-27T21:43:30.615Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-16T11:28:46.820Z"),
+      updatedAt: new Date("2025-03-17T02:07:47.292Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },

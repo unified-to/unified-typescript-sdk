@@ -18,6 +18,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Verification extends ClientSDK {
   /**
    * Create a request
+   *
+   * @remarks
+   * Creates a VerificationRequest. Provide the unified VerificationRequest fields in the request body; they are mapped to the provider's API. Returns the created VerificationRequest.
    */
   async createVerificationRequest(
     request: operations.CreateVerificationRequestRequest,
@@ -32,6 +35,9 @@ export class Verification extends ClientSDK {
 
   /**
    * Retrieve a package
+   *
+   * @remarks
+   * Retrieves a single VerificationPackage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getVerificationPackage(
     request: operations.GetVerificationPackageRequest,
@@ -46,6 +52,9 @@ export class Verification extends ClientSDK {
 
   /**
    * Retrieve a request
+   *
+   * @remarks
+   * Retrieves a single VerificationRequest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getVerificationRequest(
     request: operations.GetVerificationRequestRequest,
@@ -60,6 +69,9 @@ export class Verification extends ClientSDK {
 
   /**
    * List all packages
+   *
+   * @remarks
+   * Returns a list of VerificationPackages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listVerificationPackages(
     request: operations.ListVerificationPackagesRequest,
@@ -74,6 +86,9 @@ export class Verification extends ClientSDK {
 
   /**
    * List all requests
+   *
+   * @remarks
+   * Returns a list of VerificationRequests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listVerificationRequests(
     request: operations.ListVerificationRequestsRequest,
@@ -88,6 +103,9 @@ export class Verification extends ClientSDK {
 
   /**
    * Update a request
+   *
+   * @remarks
+   * Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
    */
   async patchVerificationRequest(
     request: operations.PatchVerificationRequestRequest,
@@ -102,6 +120,9 @@ export class Verification extends ClientSDK {
 
   /**
    * Remove a request
+   *
+   * @remarks
+   * Deletes the VerificationRequest identified by `id`.
    */
   async removeVerificationRequest(
     request: operations.RemoveVerificationRequestRequest,
@@ -116,6 +137,9 @@ export class Verification extends ClientSDK {
 
   /**
    * Update a request
+   *
+   * @remarks
+   * Updates the VerificationRequest identified by `id`. Provide the unified VerificationRequest fields to change in the request body.
    */
   async updateVerificationRequest(
     request: operations.UpdateVerificationRequestRequest,

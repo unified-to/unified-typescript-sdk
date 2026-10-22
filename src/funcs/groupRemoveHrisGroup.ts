@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a group
+ *
+ * @remarks
+ * Deletes the HrisGroup identified by `id`.
  */
 export function groupRemoveHrisGroup(
   client: UnifiedToCore,

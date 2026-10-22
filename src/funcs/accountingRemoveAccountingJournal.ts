@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a journal
+ *
+ * @remarks
+ * Deletes the AccountingJournal identified by `id`.
  */
 export function accountingRemoveAccountingJournal(
   client: UnifiedToCore,

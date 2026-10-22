@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a company
+ *
+ * @remarks
+ * Updates the HrisCompany identified by `id`. Provide the unified HrisCompany fields to change in the request body.
  */
 export function companyPatchHrisCompany(
   client: UnifiedToCore,

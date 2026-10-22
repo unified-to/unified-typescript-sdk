@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Lead extends ClientSDK {
   /**
    * Create a lead
+   *
+   * @remarks
+   * Creates a CrmLead. Provide the unified CrmLead fields in the request body; they are mapped to the provider's API. Returns the created CrmLead.
    */
   async createCrmLead(
     request: operations.CreateCrmLeadRequest,
@@ -30,6 +33,9 @@ export class Lead extends ClientSDK {
 
   /**
    * Retrieve a lead
+   *
+   * @remarks
+   * Retrieves a single CrmLead by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCrmLead(
     request: operations.GetCrmLeadRequest,
@@ -44,6 +50,9 @@ export class Lead extends ClientSDK {
 
   /**
    * List all leads
+   *
+   * @remarks
+   * Returns a list of CrmLeads. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCrmLeads(
     request: operations.ListCrmLeadsRequest,
@@ -58,6 +67,9 @@ export class Lead extends ClientSDK {
 
   /**
    * Update a lead
+   *
+   * @remarks
+   * Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
    */
   async patchCrmLead(
     request: operations.PatchCrmLeadRequest,
@@ -72,6 +84,9 @@ export class Lead extends ClientSDK {
 
   /**
    * Remove a lead
+   *
+   * @remarks
+   * Deletes the CrmLead identified by `id`.
    */
   async removeCrmLead(
     request: operations.RemoveCrmLeadRequest,
@@ -86,6 +101,9 @@ export class Lead extends ClientSDK {
 
   /**
    * Update a lead
+   *
+   * @remarks
+   * Updates the CrmLead identified by `id`. Provide the unified CrmLead fields to change in the request body.
    */
   async updateCrmLead(
     request: operations.UpdateCrmLeadRequest,

@@ -27,7 +27,7 @@
 
 ## createAdsOrganization
 
-Create an organization
+Creates a AdsOrganization. Provide the unified AdsOrganization fields in the request body; they are mapped to the provider's API. Returns the created AdsOrganization.
 
 ### Example Usage
 
@@ -47,13 +47,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "e1289eeb-482a-4b29-accc-57241630399d",
+      id: "3c24e27f-1705-4e9e-b22e-8b7e9cc923d4",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:19.972Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.388Z"),
     },
     connectionId: "<id>",
   });
@@ -86,13 +86,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "e1289eeb-482a-4b29-accc-57241630399d",
+      id: "3c24e27f-1705-4e9e-b22e-8b7e9cc923d4",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:19.972Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.388Z"),
     },
     connectionId: "<id>",
   });
@@ -128,7 +128,7 @@ run();
 
 ## createGenaiOrganization
 
-Create an organization
+Creates a GenaiOrganization. Provide the unified GenaiOrganization fields in the request body; they are mapped to the provider's API. Returns the created GenaiOrganization.
 
 ### Example Usage
 
@@ -147,10 +147,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "1e6a202a-7a3e-468b-bd3f-61f9028a8e40",
+      id: "2c064f77-5b01-43a2-a9a2-fae6d41838e2",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.827Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.411Z"),
     },
     connectionId: "<id>",
   });
@@ -182,10 +182,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "1e6a202a-7a3e-468b-bd3f-61f9028a8e40",
+      id: "2c064f77-5b01-43a2-a9a2-fae6d41838e2",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.827Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.411Z"),
     },
     connectionId: "<id>",
   });
@@ -221,7 +221,7 @@ run();
 
 ## createRepoOrganization
 
-Create an organization
+Creates a RepoOrganization. Provide the unified RepoOrganization fields in the request body; they are mapped to the provider's API. Returns the created RepoOrganization.
 
 ### Example Usage
 
@@ -241,10 +241,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "c29e54e9-8e0e-4481-b4e3-2c4dbcd43933",
+      id: "6db738ca-1719-4698-bf87-592727b1ea03",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.268Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.635Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -278,10 +278,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "c29e54e9-8e0e-4481-b4e3-2c4dbcd43933",
+      id: "6db738ca-1719-4698-bf87-592727b1ea03",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.268Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.635Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -318,7 +318,7 @@ run();
 
 ## getAccountingOrganization
 
-Retrieve an organization
+Retrieves a single AccountingOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -397,7 +397,7 @@ run();
 
 ## getAdsOrganization
 
-Retrieve an organization
+Retrieves a single AdsOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ run();
 
 ## getGenaiOrganization
 
-Retrieve an organization
+Retrieves a single GenaiOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -555,7 +555,7 @@ run();
 
 ## getRepoOrganization
 
-Retrieve an organization
+Retrieves a single RepoOrganization by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -634,7 +634,7 @@ run();
 
 ## listAccountingOrganizations
 
-List all organizations
+Returns a list of AccountingOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -711,7 +711,7 @@ run();
 
 ## listAdsOrganizations
 
-List all organizations
+Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -788,7 +788,7 @@ run();
 
 ## listGenaiOrganizations
 
-List all organizations
+Returns a list of GenaiOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -865,7 +865,7 @@ run();
 
 ## listRepoOrganizations
 
-List all organizations
+Returns a list of RepoOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -942,7 +942,7 @@ run();
 
 ## patchAdsOrganization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -962,13 +962,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f882ec0d-d908-448e-a7b2-6d10848ba4fc",
+      id: "2f4c954e-5c2f-4773-a76b-287aa807d5f0",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:20.003Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.399Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1002,13 +1002,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f882ec0d-d908-448e-a7b2-6d10848ba4fc",
+      id: "2f4c954e-5c2f-4773-a76b-287aa807d5f0",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:20.003Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.399Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1045,7 +1045,7 @@ run();
 
 ## patchGenaiOrganization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1064,10 +1064,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "4670c118-90f4-4b44-9ee6-e5bb28b6db80",
+      id: "dba4e5a8-5133-4dfe-a14c-a6931fa88295",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.830Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.412Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1100,10 +1100,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "4670c118-90f4-4b44-9ee6-e5bb28b6db80",
+      id: "dba4e5a8-5133-4dfe-a14c-a6931fa88295",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.830Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.412Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1140,7 +1140,7 @@ run();
 
 ## patchRepoOrganization
 
-Update an organization
+Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1160,10 +1160,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "bfa8793e-94cf-4fbb-8d78-e9d99cd797ad",
+      id: "24fc13c1-09e0-44cb-9121-5030953a4858",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.271Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.639Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -1198,10 +1198,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "bfa8793e-94cf-4fbb-8d78-e9d99cd797ad",
+      id: "24fc13c1-09e0-44cb-9121-5030953a4858",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.271Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.639Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -1239,7 +1239,7 @@ run();
 
 ## removeAdsOrganization
 
-Remove an organization
+Deletes the AdsOrganization identified by `id`.
 
 ### Example Usage
 
@@ -1318,7 +1318,7 @@ run();
 
 ## removeGenaiOrganization
 
-Remove an organization
+Deletes the GenaiOrganization identified by `id`.
 
 ### Example Usage
 
@@ -1397,7 +1397,7 @@ run();
 
 ## removeRepoOrganization
 
-Remove an organization
+Deletes the RepoOrganization identified by `id`.
 
 ### Example Usage
 
@@ -1476,7 +1476,7 @@ run();
 
 ## updateAdsOrganization
 
-Update an organization
+Updates the AdsOrganization identified by `id`. Provide the unified AdsOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1496,13 +1496,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f882ec0d-d908-448e-a7b2-6d10848ba4fc",
+      id: "2f4c954e-5c2f-4773-a76b-287aa807d5f0",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:20.003Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.399Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1536,13 +1536,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "f882ec0d-d908-448e-a7b2-6d10848ba4fc",
+      id: "2f4c954e-5c2f-4773-a76b-287aa807d5f0",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-03-29T03:35:20.003Z"),
+      updatedAt: new Date("2026-03-30T01:27:20.399Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1579,7 +1579,7 @@ run();
 
 ## updateGenaiOrganization
 
-Update an organization
+Updates the GenaiOrganization identified by `id`. Provide the unified GenaiOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1598,10 +1598,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "4670c118-90f4-4b44-9ee6-e5bb28b6db80",
+      id: "dba4e5a8-5133-4dfe-a14c-a6931fa88295",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.830Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.412Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1634,10 +1634,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "4670c118-90f4-4b44-9ee6-e5bb28b6db80",
+      id: "dba4e5a8-5133-4dfe-a14c-a6931fa88295",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-01-26T10:51:11.830Z"),
+      updatedAt: new Date("2023-01-26T19:53:07.412Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1674,7 +1674,7 @@ run();
 
 ## updateRepoOrganization
 
-Update an organization
+Updates the RepoOrganization identified by `id`. Provide the unified RepoOrganization fields to change in the request body.
 
 ### Example Usage
 
@@ -1694,10 +1694,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "bfa8793e-94cf-4fbb-8d78-e9d99cd797ad",
+      id: "24fc13c1-09e0-44cb-9121-5030953a4858",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.271Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.639Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",
@@ -1732,10 +1732,10 @@ async function run() {
       avatarUrl: "https://picsum.photos/seed/fGl6Lb/3157/3173",
       createdAt: new Date("2022-07-07T00:18:40.748Z"),
       description: "Trepide defendo supra testimonium ager.",
-      id: "bfa8793e-94cf-4fbb-8d78-e9d99cd797ad",
+      id: "24fc13c1-09e0-44cb-9121-5030953a4858",
       metadata: [],
       name: "Denesik - Lemke",
-      updatedAt: new Date("2023-08-21T15:17:07.271Z"),
+      updatedAt: new Date("2023-08-21T21:35:02.639Z"),
       webUrl: "https://turbulent-overheard.biz",
     },
     connectionId: "<id>",

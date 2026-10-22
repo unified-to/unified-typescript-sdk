@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Activation extends ClientSDK {
   /**
    * Create an activation
+   *
+   * @remarks
+   * Creates a CdpActivation. Provide the unified CdpActivation fields in the request body; they are mapped to the provider's API. Returns the created CdpActivation.
    */
   async createCdpActivation(
     request: operations.CreateCdpActivationRequest,
@@ -30,6 +33,9 @@ export class Activation extends ClientSDK {
 
   /**
    * Retrieve an activation
+   *
+   * @remarks
+   * Retrieves a single CdpActivation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getCdpActivation(
     request: operations.GetCdpActivationRequest,
@@ -44,6 +50,9 @@ export class Activation extends ClientSDK {
 
   /**
    * List all activations
+   *
+   * @remarks
+   * Returns a list of CdpActivations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listCdpActivations(
     request: operations.ListCdpActivationsRequest,
@@ -58,6 +67,9 @@ export class Activation extends ClientSDK {
 
   /**
    * Update an activation
+   *
+   * @remarks
+   * Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
    */
   async patchCdpActivation(
     request: operations.PatchCdpActivationRequest,
@@ -72,6 +84,9 @@ export class Activation extends ClientSDK {
 
   /**
    * Remove an activation
+   *
+   * @remarks
+   * Deletes the CdpActivation identified by `id`.
    */
   async removeCdpActivation(
     request: operations.RemoveCdpActivationRequest,
@@ -86,6 +101,9 @@ export class Activation extends ClientSDK {
 
   /**
    * Update an activation
+   *
+   * @remarks
+   * Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
    */
   async updateCdpActivation(
     request: operations.UpdateCdpActivationRequest,

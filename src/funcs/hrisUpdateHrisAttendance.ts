@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an attendance
+ *
+ * @remarks
+ * Updates the HrisAttendance identified by `id`. Provide the unified HrisAttendance fields to change in the request body.
  */
 export function hrisUpdateHrisAttendance(
   client: UnifiedToCore,

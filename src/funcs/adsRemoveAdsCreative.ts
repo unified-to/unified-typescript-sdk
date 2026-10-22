@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a creative
+ *
+ * @remarks
+ * Deletes the AdsCreative identified by `id`.
  */
 export function adsRemoveAdsCreative(
   client: UnifiedToCore,

@@ -13,6 +13,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Asset extends ClientSDK {
   /**
    * Create an asset
+   *
+   * @remarks
+   * Creates a AdsAsset. Provide the unified AdsAsset fields in the request body; they are mapped to the provider's API. Returns the created AdsAsset.
    */
   async createAdsAsset(
     request: operations.CreateAdsAssetRequest,
@@ -27,6 +30,9 @@ export class Asset extends ClientSDK {
 
   /**
    * Retrieve an asset
+   *
+   * @remarks
+   * Retrieves a single AdsAsset by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAdsAsset(
     request: operations.GetAdsAssetRequest,
@@ -41,6 +47,9 @@ export class Asset extends ClientSDK {
 
   /**
    * List all assets
+   *
+   * @remarks
+   * Returns a list of AdsAssets. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAdsAssets(
     request: operations.ListAdsAssetsRequest,

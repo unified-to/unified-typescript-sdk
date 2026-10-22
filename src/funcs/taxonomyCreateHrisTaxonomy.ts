@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a taxonomy
+ *
+ * @remarks
+ * Creates a HrisTaxonomy. Provide the unified HrisTaxonomy fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxonomy.
  */
 export function taxonomyCreateHrisTaxonomy(
   client: UnifiedToCore,

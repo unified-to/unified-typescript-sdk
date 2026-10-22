@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a job
+ *
+ * @remarks
+ * Creates a AtsJob. Provide the unified AtsJob fields in the request body; they are mapped to the provider's API. Returns the created AtsJob.
  */
 export function atsCreateAtsJob(
   client: UnifiedToCore,

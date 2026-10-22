@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a volume
+ *
+ * @remarks
+ * Updates the ComputeVolume identified by `id`. Provide the unified ComputeVolume fields to change in the request body.
  */
 export function computeUpdateComputeVolume(
   client: UnifiedToCore,

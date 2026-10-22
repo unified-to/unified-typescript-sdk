@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a course
+ *
+ * @remarks
+ * Deletes the LmsCourse identified by `id`.
  */
 export function lmsRemoveLmsCourse(
   client: UnifiedToCore,

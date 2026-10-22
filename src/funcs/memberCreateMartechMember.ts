@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a member
+ *
+ * @remarks
+ * Creates a MarketingMember. Provide the unified MarketingMember fields in the request body; they are mapped to the provider's API. Returns the created MarketingMember.
  */
 export function memberCreateMartechMember(
   client: UnifiedToCore,

@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a timeoff
+ *
+ * @remarks
+ * Deletes the HrisTimeoff identified by `id`.
  */
 export function hrisRemoveHrisTimeoff(
   client: UnifiedToCore,

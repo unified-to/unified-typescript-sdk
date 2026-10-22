@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an item
+ *
+ * @remarks
+ * Creates a CommerceItem. Provide the unified CommerceItem fields in the request body; they are mapped to the provider's API. Returns the created CommerceItem.
  */
 export function commerceCreateCommerceItem(
   client: UnifiedToCore,

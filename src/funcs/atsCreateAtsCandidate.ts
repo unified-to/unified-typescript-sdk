@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a candidate
+ *
+ * @remarks
+ * Creates a AtsCandidate. Provide the unified AtsCandidate fields in the request body; they are mapped to the provider's API. Returns the created AtsCandidate.
  */
 export function atsCreateAtsCandidate(
   client: UnifiedToCore,

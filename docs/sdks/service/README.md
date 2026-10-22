@@ -13,7 +13,7 @@
 
 ## createComputeService
 
-Create a service
+Creates a ComputeService. Provide the unified ComputeService fields in the request body; they are mapped to the provider's API. Returns the created ComputeService.
 
 ### Example Usage
 
@@ -33,7 +33,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "de4f6b03-0dca-4753-a0ef-65d980b31c89",
+      id: "d1a7c3d4-c3ea-4b03-bcf1-68097fd87d3a",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -44,7 +44,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.518Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.085Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -78,7 +78,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "de4f6b03-0dca-4753-a0ef-65d980b31c89",
+      id: "d1a7c3d4-c3ea-4b03-bcf1-68097fd87d3a",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -89,7 +89,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.518Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.085Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -126,7 +126,7 @@ run();
 
 ## getComputeService
 
-Retrieve a service
+Retrieves a single ComputeService by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -205,7 +205,7 @@ run();
 
 ## listComputeServices
 
-List all services
+Returns a list of ComputeServices. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -282,7 +282,7 @@ run();
 
 ## patchComputeService
 
-Update a service
+Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
 
 ### Example Usage
 
@@ -302,7 +302,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "83670f26-9f40-4c1d-b3b5-dbb33aece020",
+      id: "433f3f18-8eae-4cbb-95a7-46a5dfcbc109",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -313,7 +313,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.534Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.097Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -348,7 +348,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "83670f26-9f40-4c1d-b3b5-dbb33aece020",
+      id: "433f3f18-8eae-4cbb-95a7-46a5dfcbc109",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -359,7 +359,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.534Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.097Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -397,7 +397,7 @@ run();
 
 ## removeComputeService
 
-Remove a service
+Deletes the ComputeService identified by `id`.
 
 ### Example Usage
 
@@ -476,7 +476,7 @@ run();
 
 ## updateComputeService
 
-Update a service
+Updates the ComputeService identified by `id`. Provide the unified ComputeService fields to change in the request body.
 
 ### Example Usage
 
@@ -496,7 +496,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "83670f26-9f40-4c1d-b3b5-dbb33aece020",
+      id: "433f3f18-8eae-4cbb-95a7-46a5dfcbc109",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -507,7 +507,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.534Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.097Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -542,7 +542,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "83670f26-9f40-4c1d-b3b5-dbb33aece020",
+      id: "433f3f18-8eae-4cbb-95a7-46a5dfcbc109",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -553,7 +553,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-04T16:47:00.534Z"),
+      updatedAt: new Date("2025-04-05T04:37:56.097Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",

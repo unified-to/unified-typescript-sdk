@@ -13,7 +13,7 @@
 
 ## createAccountingCreditmemo
 
-Create a creditmemo
+Creates a AccountingCreditmemo. Provide the unified AccountingCreditmemo fields in the request body; they are mapped to the provider's API. Returns the created AccountingCreditmemo.
 
 ### Example Usage
 
@@ -37,7 +37,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "6e82e164-1397-4c5f-a6ce-0921ed71fb72",
+      id: "fce48a90-d160-41f6-b9a5-df1681f10dc5",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -46,7 +46,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.489Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.902Z"),
     },
     connectionId: "<id>",
   });
@@ -83,7 +83,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "6e82e164-1397-4c5f-a6ce-0921ed71fb72",
+      id: "fce48a90-d160-41f6-b9a5-df1681f10dc5",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -92,7 +92,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.489Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.902Z"),
     },
     connectionId: "<id>",
   });
@@ -128,7 +128,7 @@ run();
 
 ## getAccountingCreditmemo
 
-Retrieve a creditmemo
+Retrieves a single AccountingCreditmemo by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -207,7 +207,7 @@ run();
 
 ## listAccountingCreditmemoes
 
-List all creditmemoes
+Returns a list of AccountingCreditmemoes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -284,7 +284,7 @@ run();
 
 ## patchAccountingCreditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -308,7 +308,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "b5a6ed42-4635-4616-9b7e-b8bfadbfad47",
+      id: "c0459e23-be53-4a57-9778-8b2245322a5e",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -317,7 +317,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.521Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -355,7 +355,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "b5a6ed42-4635-4616-9b7e-b8bfadbfad47",
+      id: "c0459e23-be53-4a57-9778-8b2245322a5e",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -364,7 +364,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.521Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -401,7 +401,7 @@ run();
 
 ## removeAccountingCreditmemo
 
-Remove a creditmemo
+Deletes the AccountingCreditmemo identified by `id`.
 
 ### Example Usage
 
@@ -480,7 +480,7 @@ run();
 
 ## updateAccountingCreditmemo
 
-Update a creditmemo
+Updates the AccountingCreditmemo identified by `id`. Provide the unified AccountingCreditmemo fields to change in the request body.
 
 ### Example Usage
 
@@ -504,7 +504,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "b5a6ed42-4635-4616-9b7e-b8bfadbfad47",
+      id: "c0459e23-be53-4a57-9778-8b2245322a5e",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -513,7 +513,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.521Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -551,7 +551,7 @@ async function run() {
       creditmemoNumber: "CM-99537",
       currency: "AUD",
       discountAmount: 0,
-      id: "b5a6ed42-4635-4616-9b7e-b8bfadbfad47",
+      id: "c0459e23-be53-4a57-9778-8b2245322a5e",
       lineitems: [],
       metadata: [],
       notes: "Hic vorax dedecor amo adfero torqueo quas victoria.",
@@ -560,7 +560,7 @@ async function run() {
       status: "AUTHORIZED",
       taxAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2025-09-11T08:18:53.521Z"),
+      updatedAt: new Date("2025-09-11T23:43:14.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",

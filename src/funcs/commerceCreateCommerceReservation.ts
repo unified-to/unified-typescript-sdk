@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a reservation
+ *
+ * @remarks
+ * Creates a CommerceReservation. Provide the unified CommerceReservation fields in the request body; they are mapped to the provider's API. Returns the created CommerceReservation.
  */
 export function commerceCreateCommerceReservation(
   client: UnifiedToCore,

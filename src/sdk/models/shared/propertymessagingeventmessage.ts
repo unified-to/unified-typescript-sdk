@@ -80,6 +80,9 @@ export type PropertyMessagingEventMessage = {
    * for email systems, this field represents the CC value
    */
   mentionedMembers?: Array<MessagingMember> | undefined;
+  /**
+   * The message body as plain text
+   */
   message?: string | undefined;
   messageHtml?: string | undefined;
   messageMarkdown?: string | undefined;

@@ -13,7 +13,7 @@
 
 ## createMessagingMessage
 
-Create a message
+Creates a MessagingMessage. Provide the unified MessagingMessage fields in the request body; they are mapped to the provider's API. Returns the created MessagingMessage.
 
 ### Example Usage
 
@@ -32,17 +32,17 @@ async function run() {
     messagingMessage: {
       attachments: [
         {
-          contentIdentifier: "013526b5-8c41-4985-a667-8a7143e24188",
+          contentIdentifier: "288a96a2-6bdb-4f6f-a7d9-57a511ff94ef",
           contentType: "coaegresco",
           downloadUrl: "https://rotating-advertisement.org",
           filename: "super",
-          messageId: "f4a2dead-3ef2-4fdf-8d67-3e524d58eae4",
+          messageId: "67cdfe63-6b3a-48f8-b452-b96e0eb145b0",
           size: 327,
         },
       ],
       buttons: [
         {
-          id: "e73dc1ed-3293-41af-8d9d-2d72393eafdb",
+          id: "51762827-b481-4d21-8481-4deb0cc80caa",
           text: "comparo",
         },
       ],
@@ -50,7 +50,7 @@ async function run() {
       destinationMembers: [],
       hasChildren: true,
       hiddenMembers: [],
-      id: "f4a2dead-3ef2-4fdf-8d67-3e524d58eae4",
+      id: "67cdfe63-6b3a-48f8-b452-b96e0eb145b0",
       isUnread: false,
       mentionedMembers: [],
       message: "Sum utique aliquid.",
@@ -59,7 +59,7 @@ async function run() {
       metadata: [],
       reactions: [],
       subject: "Cernuus optio cohaero summisse in.",
-      updatedAt: new Date("2023-07-17T12:07:47.971Z"),
+      updatedAt: new Date("2023-07-17T20:09:49.341Z"),
       webUrl: "https://grumpy-kit.net",
     },
     connectionId: "<id>",
@@ -92,17 +92,17 @@ async function run() {
     messagingMessage: {
       attachments: [
         {
-          contentIdentifier: "013526b5-8c41-4985-a667-8a7143e24188",
+          contentIdentifier: "288a96a2-6bdb-4f6f-a7d9-57a511ff94ef",
           contentType: "coaegresco",
           downloadUrl: "https://rotating-advertisement.org",
           filename: "super",
-          messageId: "f4a2dead-3ef2-4fdf-8d67-3e524d58eae4",
+          messageId: "67cdfe63-6b3a-48f8-b452-b96e0eb145b0",
           size: 327,
         },
       ],
       buttons: [
         {
-          id: "e73dc1ed-3293-41af-8d9d-2d72393eafdb",
+          id: "51762827-b481-4d21-8481-4deb0cc80caa",
           text: "comparo",
         },
       ],
@@ -110,7 +110,7 @@ async function run() {
       destinationMembers: [],
       hasChildren: true,
       hiddenMembers: [],
-      id: "f4a2dead-3ef2-4fdf-8d67-3e524d58eae4",
+      id: "67cdfe63-6b3a-48f8-b452-b96e0eb145b0",
       isUnread: false,
       mentionedMembers: [],
       message: "Sum utique aliquid.",
@@ -119,7 +119,7 @@ async function run() {
       metadata: [],
       reactions: [],
       subject: "Cernuus optio cohaero summisse in.",
-      updatedAt: new Date("2023-07-17T12:07:47.971Z"),
+      updatedAt: new Date("2023-07-17T20:09:49.341Z"),
       webUrl: "https://grumpy-kit.net",
     },
     connectionId: "<id>",
@@ -156,7 +156,7 @@ run();
 
 ## getMessagingMessage
 
-Retrieve a message
+Retrieves a single MessagingMessage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -235,7 +235,7 @@ run();
 
 ## listMessagingMessages
 
-List all messages
+Returns a list of MessagingMessages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -312,7 +312,7 @@ run();
 
 ## patchMessagingMessage
 
-Update a message
+Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
 
 ### Example Usage
 
@@ -331,17 +331,17 @@ async function run() {
     messagingMessage: {
       attachments: [
         {
-          contentIdentifier: "63cc3e28-792e-475f-8f82-9b4f93fd5e03",
+          contentIdentifier: "37db7188-c0b0-44d4-a23d-4dd93debb338",
           contentType: "coaegresco",
           downloadUrl: "https://rotating-advertisement.org",
           filename: "super",
-          messageId: "9a0eee98-8832-4e56-8241-17e8ee5abe17",
+          messageId: "fa67d738-edf7-48a7-91d6-eb3d41b0263d",
           size: 327,
         },
       ],
       buttons: [
         {
-          id: "36a9b631-24f6-4e5b-a567-9a466f292a71",
+          id: "e53425a5-6dc7-4d68-bb08-a0e4b1fe26e7",
           text: "comparo",
         },
       ],
@@ -349,7 +349,7 @@ async function run() {
       destinationMembers: [],
       hasChildren: true,
       hiddenMembers: [],
-      id: "9a0eee98-8832-4e56-8241-17e8ee5abe17",
+      id: "fa67d738-edf7-48a7-91d6-eb3d41b0263d",
       isUnread: false,
       mentionedMembers: [],
       message: "Sum utique aliquid.",
@@ -358,7 +358,7 @@ async function run() {
       metadata: [],
       reactions: [],
       subject: "Cernuus optio cohaero summisse in.",
-      updatedAt: new Date("2023-07-17T12:07:47.983Z"),
+      updatedAt: new Date("2023-07-17T20:09:49.351Z"),
       webUrl: "https://grumpy-kit.net",
     },
     connectionId: "<id>",
@@ -392,17 +392,17 @@ async function run() {
     messagingMessage: {
       attachments: [
         {
-          contentIdentifier: "63cc3e28-792e-475f-8f82-9b4f93fd5e03",
+          contentIdentifier: "37db7188-c0b0-44d4-a23d-4dd93debb338",
           contentType: "coaegresco",
           downloadUrl: "https://rotating-advertisement.org",
           filename: "super",
-          messageId: "9a0eee98-8832-4e56-8241-17e8ee5abe17",
+          messageId: "fa67d738-edf7-48a7-91d6-eb3d41b0263d",
           size: 327,
         },
       ],
       buttons: [
         {
-          id: "36a9b631-24f6-4e5b-a567-9a466f292a71",
+          id: "e53425a5-6dc7-4d68-bb08-a0e4b1fe26e7",
           text: "comparo",
         },
       ],
@@ -410,7 +410,7 @@ async function run() {
       destinationMembers: [],
       hasChildren: true,
       hiddenMembers: [],
-      id: "9a0eee98-8832-4e56-8241-17e8ee5abe17",
+      id: "fa67d738-edf7-48a7-91d6-eb3d41b0263d",
       isUnread: false,
       mentionedMembers: [],
       message: "Sum utique aliquid.",
@@ -419,7 +419,7 @@ async function run() {
       metadata: [],
       reactions: [],
       subject: "Cernuus optio cohaero summisse in.",
-      updatedAt: new Date("2023-07-17T12:07:47.983Z"),
+      updatedAt: new Date("2023-07-17T20:09:49.351Z"),
       webUrl: "https://grumpy-kit.net",
     },
     connectionId: "<id>",
@@ -457,7 +457,7 @@ run();
 
 ## removeMessagingMessage
 
-Remove a message
+Deletes the MessagingMessage identified by `id`.
 
 ### Example Usage
 
@@ -536,7 +536,7 @@ run();
 
 ## updateMessagingMessage
 
-Update a message
+Updates the MessagingMessage identified by `id`. Provide the unified MessagingMessage fields to change in the request body.
 
 ### Example Usage
 
@@ -555,17 +555,17 @@ async function run() {
     messagingMessage: {
       attachments: [
         {
-          contentIdentifier: "63cc3e28-792e-475f-8f82-9b4f93fd5e03",
+          contentIdentifier: "37db7188-c0b0-44d4-a23d-4dd93debb338",
           contentType: "coaegresco",
           downloadUrl: "https://rotating-advertisement.org",
           filename: "super",
-          messageId: "9a0eee98-8832-4e56-8241-17e8ee5abe17",
+          messageId: "fa67d738-edf7-48a7-91d6-eb3d41b0263d",
           size: 327,
         },
       ],
       buttons: [
         {
-          id: "36a9b631-24f6-4e5b-a567-9a466f292a71",
+          id: "e53425a5-6dc7-4d68-bb08-a0e4b1fe26e7",
           text: "comparo",
         },
       ],
@@ -573,7 +573,7 @@ async function run() {
       destinationMembers: [],
       hasChildren: true,
       hiddenMembers: [],
-      id: "9a0eee98-8832-4e56-8241-17e8ee5abe17",
+      id: "fa67d738-edf7-48a7-91d6-eb3d41b0263d",
       isUnread: false,
       mentionedMembers: [],
       message: "Sum utique aliquid.",
@@ -582,7 +582,7 @@ async function run() {
       metadata: [],
       reactions: [],
       subject: "Cernuus optio cohaero summisse in.",
-      updatedAt: new Date("2023-07-17T12:07:47.983Z"),
+      updatedAt: new Date("2023-07-17T20:09:49.351Z"),
       webUrl: "https://grumpy-kit.net",
     },
     connectionId: "<id>",
@@ -616,17 +616,17 @@ async function run() {
     messagingMessage: {
       attachments: [
         {
-          contentIdentifier: "63cc3e28-792e-475f-8f82-9b4f93fd5e03",
+          contentIdentifier: "37db7188-c0b0-44d4-a23d-4dd93debb338",
           contentType: "coaegresco",
           downloadUrl: "https://rotating-advertisement.org",
           filename: "super",
-          messageId: "9a0eee98-8832-4e56-8241-17e8ee5abe17",
+          messageId: "fa67d738-edf7-48a7-91d6-eb3d41b0263d",
           size: 327,
         },
       ],
       buttons: [
         {
-          id: "36a9b631-24f6-4e5b-a567-9a466f292a71",
+          id: "e53425a5-6dc7-4d68-bb08-a0e4b1fe26e7",
           text: "comparo",
         },
       ],
@@ -634,7 +634,7 @@ async function run() {
       destinationMembers: [],
       hasChildren: true,
       hiddenMembers: [],
-      id: "9a0eee98-8832-4e56-8241-17e8ee5abe17",
+      id: "fa67d738-edf7-48a7-91d6-eb3d41b0263d",
       isUnread: false,
       mentionedMembers: [],
       message: "Sum utique aliquid.",
@@ -643,7 +643,7 @@ async function run() {
       metadata: [],
       reactions: [],
       subject: "Cernuus optio cohaero summisse in.",
-      updatedAt: new Date("2023-07-17T12:07:47.983Z"),
+      updatedAt: new Date("2023-07-17T20:09:49.351Z"),
       webUrl: "https://grumpy-kit.net",
     },
     connectionId: "<id>",

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an embedding
+ *
+ * @remarks
+ * Creates a GenaiEmbedding. Provide the unified GenaiEmbedding fields in the request body; they are mapped to the provider's API. Returns the created GenaiEmbedding.
  */
 export function genaiCreateGenaiEmbedding(
   client: UnifiedToCore,

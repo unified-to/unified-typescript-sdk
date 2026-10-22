@@ -13,7 +13,7 @@
 
 ## createAtsInterview
 
-Create an interview
+Creates a AtsInterview. Provide the unified AtsInterview fields in the request body; they are mapped to the provider's API. Returns the created AtsInterview.
 
 ### Example Usage
 
@@ -32,13 +32,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "f7984ff9-7d37-40d5-b2e8-79a8fa4553d1",
+      id: "4ad86b3e-59c2-4df0-ac76-e99b5b3b78c3",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.043Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.930Z"),
     },
     connectionId: "<id>",
   });
@@ -70,13 +70,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "f7984ff9-7d37-40d5-b2e8-79a8fa4553d1",
+      id: "4ad86b3e-59c2-4df0-ac76-e99b5b3b78c3",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.043Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.930Z"),
     },
     connectionId: "<id>",
   });
@@ -112,7 +112,7 @@ run();
 
 ## getAtsInterview
 
-Retrieve an interview
+Retrieves a single AtsInterview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -191,7 +191,7 @@ run();
 
 ## listAtsInterviews
 
-List all interviews
+Returns a list of AtsInterviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -268,7 +268,7 @@ run();
 
 ## patchAtsInterview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -287,13 +287,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "4582db8a-b78b-4d8e-a4c2-c0087a69cdd3",
+      id: "cbe672bd-271e-492e-b605-0e425aafd6ac",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.049Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.934Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -326,13 +326,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "4582db8a-b78b-4d8e-a4c2-c0087a69cdd3",
+      id: "cbe672bd-271e-492e-b605-0e425aafd6ac",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.049Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.934Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -369,7 +369,7 @@ run();
 
 ## removeAtsInterview
 
-Remove an interview
+Deletes the AtsInterview identified by `id`.
 
 ### Example Usage
 
@@ -448,7 +448,7 @@ run();
 
 ## updateAtsInterview
 
-Update an interview
+Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
 
 ### Example Usage
 
@@ -467,13 +467,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "4582db8a-b78b-4d8e-a4c2-c0087a69cdd3",
+      id: "cbe672bd-271e-492e-b605-0e425aafd6ac",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.049Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.934Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -506,13 +506,13 @@ async function run() {
     atsInterview: {
       createdAt: new Date("2021-11-28T03:14:47.774Z"),
       endAt: new Date("2021-12-08T06:33:19.583Z"),
-      id: "4582db8a-b78b-4d8e-a4c2-c0087a69cdd3",
+      id: "cbe672bd-271e-492e-b605-0e425aafd6ac",
       location: "26596 Halle Trafficway",
       meetingUrl: "https://immaculate-foodstuffs.biz",
       metadata: [],
       startAt: new Date("2021-12-08T06:03:19.583Z"),
       status: "SCHEDULED",
-      updatedAt: new Date("2023-09-23T16:51:40.049Z"),
+      updatedAt: new Date("2023-09-24T01:47:45.934Z"),
     },
     connectionId: "<id>",
     id: "<id>",

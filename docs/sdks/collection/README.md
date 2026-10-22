@@ -19,7 +19,7 @@
 
 ## createCommerceCollection
 
-Create a collection
+Creates a CommerceCollection. Provide the unified CommerceCollection fields in the request body; they are mapped to the provider's API. Returns the created CommerceCollection.
 
 ### Example Usage
 
@@ -38,7 +38,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "99359e53-4c46-42ee-93b3-3c2bc8c71916",
+      id: "e8a687e1-3738-4925-8992-12950e53da27",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -47,10 +47,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "bfdb60d2-90e8-40ba-a755-fdbb9f27d1ae",
+          id: "36cf79b8-0b16-4a66-98d8-bc0d70694cb9",
           metadata: [
             {
-              id: "8b45eb74-0d4e-42f4-9a92-983cb52ffcac",
+              id: "d7af85db-31cc-4be6-9621-8ae1d5a1ac3e",
               slug: "censura",
               value: "toties",
             },
@@ -63,7 +63,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "7e73742e-ff1a-4cde-a763-d888def2243d",
+          id: "1d085b98-86d6-47b8-b8d2-9ddccd45c8f3",
           slug: "aetas",
           value: "consuasor",
         },
@@ -77,7 +77,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.687Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.105Z"),
     },
     connectionId: "<id>",
   });
@@ -109,7 +109,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "99359e53-4c46-42ee-93b3-3c2bc8c71916",
+      id: "e8a687e1-3738-4925-8992-12950e53da27",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -118,10 +118,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "bfdb60d2-90e8-40ba-a755-fdbb9f27d1ae",
+          id: "36cf79b8-0b16-4a66-98d8-bc0d70694cb9",
           metadata: [
             {
-              id: "8b45eb74-0d4e-42f4-9a92-983cb52ffcac",
+              id: "d7af85db-31cc-4be6-9621-8ae1d5a1ac3e",
               slug: "censura",
               value: "toties",
             },
@@ -134,7 +134,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "7e73742e-ff1a-4cde-a763-d888def2243d",
+          id: "1d085b98-86d6-47b8-b8d2-9ddccd45c8f3",
           slug: "aetas",
           value: "consuasor",
         },
@@ -148,7 +148,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.687Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.105Z"),
     },
     connectionId: "<id>",
   });
@@ -184,7 +184,7 @@ run();
 
 ## createLmsCollection
 
-Create a collection
+Creates a LmsCollection. Provide the unified LmsCollection fields in the request body; they are mapped to the provider's API. Returns the created LmsCollection.
 
 ### Example Usage
 
@@ -203,7 +203,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "c4d2d4ba-4033-4ec2-9b2b-6fdbd26e787a",
+      id: "eb013a83-24de-4ec8-9360-bc7d68d6794b",
       isActive: true,
       media: [
         {
@@ -220,7 +220,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.817Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.350Z"),
     },
     connectionId: "<id>",
   });
@@ -252,7 +252,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "c4d2d4ba-4033-4ec2-9b2b-6fdbd26e787a",
+      id: "eb013a83-24de-4ec8-9360-bc7d68d6794b",
       isActive: true,
       media: [
         {
@@ -269,7 +269,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.817Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.350Z"),
     },
     connectionId: "<id>",
   });
@@ -305,7 +305,7 @@ run();
 
 ## getCommerceCollection
 
-Retrieve a collection
+Retrieves a single CommerceCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -384,7 +384,7 @@ run();
 
 ## getLmsCollection
 
-Retrieve a collection
+Retrieves a single LmsCollection by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -463,7 +463,7 @@ run();
 
 ## listCommerceCollections
 
-List all collections
+Returns a list of CommerceCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -540,7 +540,7 @@ run();
 
 ## listLmsCollections
 
-List all collections
+Returns a list of LmsCollections. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -617,7 +617,7 @@ run();
 
 ## patchCommerceCollection
 
-Update a collection
+Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -636,7 +636,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "f7f85d33-4b20-4312-9de9-a59cfccada34",
+      id: "c9bbd4db-a6cd-4bd1-988c-efd24eca83a9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -645,10 +645,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "a9d470be-a733-47f0-b1fe-5ba1ee2ec98c",
+          id: "749e04bf-a34e-4449-a598-b09feaa46c61",
           metadata: [
             {
-              id: "b74c2a90-8e7f-4aa1-ba4f-e4160f3a86a9",
+              id: "335fa85b-f37a-4ef1-97a2-5e7422e6abb3",
               slug: "censura",
               value: "toties",
             },
@@ -661,7 +661,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "bda54747-3682-4288-88ec-227c120edcc0",
+          id: "57fa6d79-2eae-406d-bd99-0b82f5c03e1c",
           slug: "aetas",
           value: "consuasor",
         },
@@ -675,7 +675,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.709Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.117Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -708,7 +708,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "f7f85d33-4b20-4312-9de9-a59cfccada34",
+      id: "c9bbd4db-a6cd-4bd1-988c-efd24eca83a9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -717,10 +717,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "a9d470be-a733-47f0-b1fe-5ba1ee2ec98c",
+          id: "749e04bf-a34e-4449-a598-b09feaa46c61",
           metadata: [
             {
-              id: "b74c2a90-8e7f-4aa1-ba4f-e4160f3a86a9",
+              id: "335fa85b-f37a-4ef1-97a2-5e7422e6abb3",
               slug: "censura",
               value: "toties",
             },
@@ -733,7 +733,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "bda54747-3682-4288-88ec-227c120edcc0",
+          id: "57fa6d79-2eae-406d-bd99-0b82f5c03e1c",
           slug: "aetas",
           value: "consuasor",
         },
@@ -747,7 +747,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.709Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.117Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -784,7 +784,7 @@ run();
 
 ## patchLmsCollection
 
-Update a collection
+Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -803,7 +803,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "5d489259-96b4-49c7-a2f5-dcce79e89150",
+      id: "22c76508-652e-46c1-b00a-980426850048",
       isActive: true,
       media: [
         {
@@ -820,7 +820,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.833Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.364Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -853,7 +853,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "5d489259-96b4-49c7-a2f5-dcce79e89150",
+      id: "22c76508-652e-46c1-b00a-980426850048",
       isActive: true,
       media: [
         {
@@ -870,7 +870,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.833Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.364Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -907,7 +907,7 @@ run();
 
 ## removeCommerceCollection
 
-Remove a collection
+Deletes the CommerceCollection identified by `id`.
 
 ### Example Usage
 
@@ -986,7 +986,7 @@ run();
 
 ## removeLmsCollection
 
-Remove a collection
+Deletes the LmsCollection identified by `id`.
 
 ### Example Usage
 
@@ -1065,7 +1065,7 @@ run();
 
 ## updateCommerceCollection
 
-Update a collection
+Updates the CommerceCollection identified by `id`. Provide the unified CommerceCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -1084,7 +1084,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "f7f85d33-4b20-4312-9de9-a59cfccada34",
+      id: "c9bbd4db-a6cd-4bd1-988c-efd24eca83a9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -1093,10 +1093,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "a9d470be-a733-47f0-b1fe-5ba1ee2ec98c",
+          id: "749e04bf-a34e-4449-a598-b09feaa46c61",
           metadata: [
             {
-              id: "b74c2a90-8e7f-4aa1-ba4f-e4160f3a86a9",
+              id: "335fa85b-f37a-4ef1-97a2-5e7422e6abb3",
               slug: "censura",
               value: "toties",
             },
@@ -1109,7 +1109,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "bda54747-3682-4288-88ec-227c120edcc0",
+          id: "57fa6d79-2eae-406d-bd99-0b82f5c03e1c",
           slug: "aetas",
           value: "consuasor",
         },
@@ -1123,7 +1123,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.709Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.117Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1156,7 +1156,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "f7f85d33-4b20-4312-9de9-a59cfccada34",
+      id: "c9bbd4db-a6cd-4bd1-988c-efd24eca83a9",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -1165,10 +1165,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "a9d470be-a733-47f0-b1fe-5ba1ee2ec98c",
+          id: "749e04bf-a34e-4449-a598-b09feaa46c61",
           metadata: [
             {
-              id: "b74c2a90-8e7f-4aa1-ba4f-e4160f3a86a9",
+              id: "335fa85b-f37a-4ef1-97a2-5e7422e6abb3",
               slug: "censura",
               value: "toties",
             },
@@ -1181,7 +1181,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "bda54747-3682-4288-88ec-227c120edcc0",
+          id: "57fa6d79-2eae-406d-bd99-0b82f5c03e1c",
           slug: "aetas",
           value: "consuasor",
         },
@@ -1195,7 +1195,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-15T01:35:29.709Z"),
+      updatedAt: new Date("2025-03-15T13:51:45.117Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1232,7 +1232,7 @@ run();
 
 ## updateLmsCollection
 
-Update a collection
+Updates the LmsCollection identified by `id`. Provide the unified LmsCollection fields to change in the request body.
 
 ### Example Usage
 
@@ -1251,7 +1251,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "5d489259-96b4-49c7-a2f5-dcce79e89150",
+      id: "22c76508-652e-46c1-b00a-980426850048",
       isActive: true,
       media: [
         {
@@ -1268,7 +1268,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.833Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.364Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1301,7 +1301,7 @@ async function run() {
     lmsCollection: {
       createdAt: new Date("2019-08-19T14:40:29.227Z"),
       description: "Ab.",
-      id: "5d489259-96b4-49c7-a2f5-dcce79e89150",
+      id: "22c76508-652e-46c1-b00a-980426850048",
       isActive: true,
       media: [
         {
@@ -1318,7 +1318,7 @@ async function run() {
       ],
       metadata: [],
       name: "ara",
-      updatedAt: new Date("2026-07-30T07:37:29.833Z"),
+      updatedAt: new Date("2026-07-31T06:54:10.364Z"),
     },
     connectionId: "<id>",
     id: "<id>",

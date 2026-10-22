@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an interview
+ *
+ * @remarks
+ * Updates the AtsInterview identified by `id`. Provide the unified AtsInterview fields to change in the request body.
  */
 export function atsUpdateAtsInterview(
   client: UnifiedToCore,

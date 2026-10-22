@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an item
+ *
+ * @remarks
+ * Deletes the CommerceItem identified by `id`.
  */
 export function commerceRemoveCommerceItem(
   client: UnifiedToCore,

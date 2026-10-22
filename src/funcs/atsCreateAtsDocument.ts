@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a document
+ *
+ * @remarks
+ * Creates a AtsDocument. Provide the unified AtsDocument fields in the request body; they are mapped to the provider's API. Returns the created AtsDocument.
  */
 export function atsCreateAtsDocument(
   client: UnifiedToCore,

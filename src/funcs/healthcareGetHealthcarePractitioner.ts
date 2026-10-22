@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Retrieve a practitioner
+ *
+ * @remarks
+ * Retrieves a single HealthcarePractitioner by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
  */
 export function healthcareGetHealthcarePractitioner(
   client: UnifiedToCore,

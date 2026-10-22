@@ -29,6 +29,9 @@ export type DatastoreRecord = {
    * source Database ID
    */
   databaseId?: string | undefined;
+  /**
+   * The record's values, keyed by the table's field (column) names; each value is a typed value object (e.g. { "string": "Acme" } or { "number": 3 })
+   */
   fields: { [k: string]: DatastoreFieldValue };
   id?: string | undefined;
   metadata?: Array<DatastoreMetadata> | undefined;

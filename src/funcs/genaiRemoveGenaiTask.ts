@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a task
+ *
+ * @remarks
+ * Deletes the GenaiTask identified by `id`.
  */
 export function genaiRemoveGenaiTask(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an instance
+ *
+ * @remarks
+ * Creates a ComputeInstance. Provide the unified ComputeInstance fields in the request body; they are mapped to the provider's API. Returns the created ComputeInstance.
  */
 export function computeCreateComputeInstance(
   client: UnifiedToCore,

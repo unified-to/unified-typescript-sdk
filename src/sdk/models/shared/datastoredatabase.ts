@@ -23,6 +23,9 @@ export type DatastoreDatabase = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   metadata?: Array<DatastoreMetadata> | undefined;
+  /**
+   * The database's name
+   */
   name?: string | undefined;
   password?: string | undefined;
   raw?: { [k: string]: any } | undefined;

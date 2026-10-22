@@ -19,7 +19,7 @@
 
 ## createCommerceReview
 
-Create a review
+Creates a CommerceReview. Provide the unified CommerceReview fields in the request body; they are mapped to the provider's API. Returns the created CommerceReview.
 
 ### Example Usage
 
@@ -44,7 +44,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "0b561561-6c9e-40ee-b6c2-8e610ec09396",
+      id: "52920ad0-c708-4fb6-afaf-bc6a6a22afe1",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -52,10 +52,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "4f263c6e-79ec-41e8-a9f8-a4188ff30ab2",
+          id: "cc2533f3-062b-41f3-b4ad-5c90a733f437",
           metadata: [
             {
-              id: "4fd1fa5b-653f-49fe-8edd-a22c7ddd5499",
+              id: "dbc5d23c-d331-40a2-947e-d6d1c6f199a2",
               slug: "textor",
               value: "quos",
             },
@@ -68,10 +68,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "0dcd72d6-f95b-4f3e-b287-a0f24911c8c7",
+          id: "4ef04e48-4e60-4b2d-b997-7fb2a525861f",
           metadata: [
             {
-              id: "7a58dfb6-07b9-43eb-94b8-b8aa45059725",
+              id: "e18fb206-5a44-44ae-8e5f-7c74bb8848ed",
               slug: "bos",
               value: "casso",
             },
@@ -87,7 +87,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.565Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.797Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -127,7 +127,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "0b561561-6c9e-40ee-b6c2-8e610ec09396",
+      id: "52920ad0-c708-4fb6-afaf-bc6a6a22afe1",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -135,10 +135,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "4f263c6e-79ec-41e8-a9f8-a4188ff30ab2",
+          id: "cc2533f3-062b-41f3-b4ad-5c90a733f437",
           metadata: [
             {
-              id: "4fd1fa5b-653f-49fe-8edd-a22c7ddd5499",
+              id: "dbc5d23c-d331-40a2-947e-d6d1c6f199a2",
               slug: "textor",
               value: "quos",
             },
@@ -151,10 +151,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "0dcd72d6-f95b-4f3e-b287-a0f24911c8c7",
+          id: "4ef04e48-4e60-4b2d-b997-7fb2a525861f",
           metadata: [
             {
-              id: "7a58dfb6-07b9-43eb-94b8-b8aa45059725",
+              id: "e18fb206-5a44-44ae-8e5f-7c74bb8848ed",
               slug: "bos",
               value: "casso",
             },
@@ -170,7 +170,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.565Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.797Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -208,7 +208,7 @@ run();
 
 ## getCommerceReview
 
-Retrieve a review
+Retrieves a single CommerceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -287,7 +287,7 @@ run();
 
 ## getPerformanceReview
 
-Retrieve a review
+Retrieves a single PerformanceReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -366,7 +366,7 @@ run();
 
 ## getSocialReview
 
-Retrieve a review
+Retrieves a single SocialReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -445,7 +445,7 @@ run();
 
 ## listCommerceReviews
 
-List all reviews
+Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -522,7 +522,7 @@ run();
 
 ## listPerformanceReviews
 
-List all reviews
+Returns a list of PerformanceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -599,7 +599,7 @@ run();
 
 ## listSocialReviews
 
-List all reviews
+Returns a list of SocialReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -676,7 +676,7 @@ run();
 
 ## patchCommerceReview
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -701,7 +701,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "46c76e7b-2a36-41cc-9445-e367f9fd4240",
+      id: "cc2d7e9b-383c-4deb-a8ec-41c6e8943350",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -709,10 +709,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "19d36e7e-fc5a-46ad-ae41-6764285279fa",
+          id: "b6c116f2-ad25-4f34-a8c3-df3ceadd5a70",
           metadata: [
             {
-              id: "14b20cf9-a150-4c42-a737-326c6cc00f8f",
+              id: "b8c51f97-5092-4626-a98b-082f601801ca",
               slug: "textor",
               value: "quos",
             },
@@ -725,10 +725,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "cae9779f-85e6-47dd-b2d7-39d1bd116222",
+          id: "82140e19-5ac8-441b-be7c-1409272cf462",
           metadata: [
             {
-              id: "6a5081d4-682f-4210-a0d2-e05df6bbe0a7",
+              id: "56b93e13-c498-44e3-9395-9a685514c647",
               slug: "bos",
               value: "casso",
             },
@@ -744,7 +744,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.613Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.821Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -785,7 +785,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "46c76e7b-2a36-41cc-9445-e367f9fd4240",
+      id: "cc2d7e9b-383c-4deb-a8ec-41c6e8943350",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -793,10 +793,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "19d36e7e-fc5a-46ad-ae41-6764285279fa",
+          id: "b6c116f2-ad25-4f34-a8c3-df3ceadd5a70",
           metadata: [
             {
-              id: "14b20cf9-a150-4c42-a737-326c6cc00f8f",
+              id: "b8c51f97-5092-4626-a98b-082f601801ca",
               slug: "textor",
               value: "quos",
             },
@@ -809,10 +809,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "cae9779f-85e6-47dd-b2d7-39d1bd116222",
+          id: "82140e19-5ac8-441b-be7c-1409272cf462",
           metadata: [
             {
-              id: "6a5081d4-682f-4210-a0d2-e05df6bbe0a7",
+              id: "56b93e13-c498-44e3-9395-9a685514c647",
               slug: "bos",
               value: "casso",
             },
@@ -828,7 +828,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.613Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.821Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -867,7 +867,7 @@ run();
 
 ## patchSocialReview
 
-Update a review
+Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
 
 ### Example Usage
 
@@ -948,7 +948,7 @@ run();
 
 ## removeCommerceReview
 
-Remove a review
+Deletes the CommerceReview identified by `id`.
 
 ### Example Usage
 
@@ -1027,7 +1027,7 @@ run();
 
 ## updateCommerceReview
 
-Update a review
+Updates the CommerceReview identified by `id`. Provide the unified CommerceReview fields to change in the request body.
 
 ### Example Usage
 
@@ -1052,7 +1052,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "46c76e7b-2a36-41cc-9445-e367f9fd4240",
+      id: "cc2d7e9b-383c-4deb-a8ec-41c6e8943350",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -1060,10 +1060,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "19d36e7e-fc5a-46ad-ae41-6764285279fa",
+          id: "b6c116f2-ad25-4f34-a8c3-df3ceadd5a70",
           metadata: [
             {
-              id: "14b20cf9-a150-4c42-a737-326c6cc00f8f",
+              id: "b8c51f97-5092-4626-a98b-082f601801ca",
               slug: "textor",
               value: "quos",
             },
@@ -1076,10 +1076,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "cae9779f-85e6-47dd-b2d7-39d1bd116222",
+          id: "82140e19-5ac8-441b-be7c-1409272cf462",
           metadata: [
             {
-              id: "6a5081d4-682f-4210-a0d2-e05df6bbe0a7",
+              id: "56b93e13-c498-44e3-9395-9a685514c647",
               slug: "bos",
               value: "casso",
             },
@@ -1095,7 +1095,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.613Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.821Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -1136,7 +1136,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "46c76e7b-2a36-41cc-9445-e367f9fd4240",
+      id: "cc2d7e9b-383c-4deb-a8ec-41c6e8943350",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -1144,10 +1144,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "19d36e7e-fc5a-46ad-ae41-6764285279fa",
+          id: "b6c116f2-ad25-4f34-a8c3-df3ceadd5a70",
           metadata: [
             {
-              id: "14b20cf9-a150-4c42-a737-326c6cc00f8f",
+              id: "b8c51f97-5092-4626-a98b-082f601801ca",
               slug: "textor",
               value: "quos",
             },
@@ -1160,10 +1160,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "cae9779f-85e6-47dd-b2d7-39d1bd116222",
+          id: "82140e19-5ac8-441b-be7c-1409272cf462",
           metadata: [
             {
-              id: "6a5081d4-682f-4210-a0d2-e05df6bbe0a7",
+              id: "56b93e13-c498-44e3-9395-9a685514c647",
               slug: "bos",
               value: "casso",
             },
@@ -1179,7 +1179,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-21T09:10:28.613Z"),
+      updatedAt: new Date("2025-08-22T05:07:34.821Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -1218,7 +1218,7 @@ run();
 
 ## updateSocialReview
 
-Update a review
+Updates the SocialReview identified by `id`. Provide the unified SocialReview fields to change in the request body.
 
 ### Example Usage
 

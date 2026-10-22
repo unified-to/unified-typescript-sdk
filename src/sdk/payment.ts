@@ -32,6 +32,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Payment extends ClientSDK {
   /**
    * Create a link
+   *
+   * @remarks
+   * Creates a PaymentLink. Provide the unified PaymentLink fields in the request body; they are mapped to the provider's API. Returns the created PaymentLink.
    */
   async createPaymentLink(
     request: operations.CreatePaymentLinkRequest,
@@ -46,6 +49,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Create a payment
+   *
+   * @remarks
+   * Creates a PaymentPayment. Provide the unified PaymentPayment fields in the request body; they are mapped to the provider's API. Returns the created PaymentPayment.
    */
   async createPaymentPayment(
     request: operations.CreatePaymentPaymentRequest,
@@ -60,6 +66,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Create a subscription
+   *
+   * @remarks
+   * Creates a PaymentSubscription. Provide the unified PaymentSubscription fields in the request body; they are mapped to the provider's API. Returns the created PaymentSubscription.
    */
   async createPaymentSubscription(
     request: operations.CreatePaymentSubscriptionRequest,
@@ -74,6 +83,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Retrieve a link
+   *
+   * @remarks
+   * Retrieves a single PaymentLink by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPaymentLink(
     request: operations.GetPaymentLinkRequest,
@@ -88,6 +100,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Retrieve a payment
+   *
+   * @remarks
+   * Retrieves a single PaymentPayment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPaymentPayment(
     request: operations.GetPaymentPaymentRequest,
@@ -102,6 +117,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Retrieve a payout
+   *
+   * @remarks
+   * Retrieves a single PaymentPayout by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPaymentPayout(
     request: operations.GetPaymentPayoutRequest,
@@ -116,6 +134,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Retrieve a refund
+   *
+   * @remarks
+   * Retrieves a single PaymentRefund by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPaymentRefund(
     request: operations.GetPaymentRefundRequest,
@@ -130,6 +151,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Retrieve a subscription
+   *
+   * @remarks
+   * Retrieves a single PaymentSubscription by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getPaymentSubscription(
     request: operations.GetPaymentSubscriptionRequest,
@@ -144,6 +168,9 @@ export class Payment extends ClientSDK {
 
   /**
    * List all links
+   *
+   * @remarks
+   * Returns a list of PaymentLinks. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPaymentLinks(
     request: operations.ListPaymentLinksRequest,
@@ -158,6 +185,9 @@ export class Payment extends ClientSDK {
 
   /**
    * List all payments
+   *
+   * @remarks
+   * Returns a list of PaymentPayments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPaymentPayments(
     request: operations.ListPaymentPaymentsRequest,
@@ -172,6 +202,9 @@ export class Payment extends ClientSDK {
 
   /**
    * List all payouts
+   *
+   * @remarks
+   * Returns a list of PaymentPayouts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPaymentPayouts(
     request: operations.ListPaymentPayoutsRequest,
@@ -186,6 +219,9 @@ export class Payment extends ClientSDK {
 
   /**
    * List all refunds
+   *
+   * @remarks
+   * Returns a list of PaymentRefunds. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPaymentRefunds(
     request: operations.ListPaymentRefundsRequest,
@@ -200,6 +236,9 @@ export class Payment extends ClientSDK {
 
   /**
    * List all subscriptions
+   *
+   * @remarks
+   * Returns a list of PaymentSubscriptions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listPaymentSubscriptions(
     request: operations.ListPaymentSubscriptionsRequest,
@@ -214,6 +253,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Update a link
+   *
+   * @remarks
+   * Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
    */
   async patchPaymentLink(
     request: operations.PatchPaymentLinkRequest,
@@ -228,6 +270,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Update a payment
+   *
+   * @remarks
+   * Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
    */
   async patchPaymentPayment(
     request: operations.PatchPaymentPaymentRequest,
@@ -242,6 +287,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Update a subscription
+   *
+   * @remarks
+   * Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
    */
   async patchPaymentSubscription(
     request: operations.PatchPaymentSubscriptionRequest,
@@ -256,6 +304,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Remove a link
+   *
+   * @remarks
+   * Deletes the PaymentLink identified by `id`.
    */
   async removePaymentLink(
     request: operations.RemovePaymentLinkRequest,
@@ -270,6 +321,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Remove a payment
+   *
+   * @remarks
+   * Deletes the PaymentPayment identified by `id`.
    */
   async removePaymentPayment(
     request: operations.RemovePaymentPaymentRequest,
@@ -284,6 +338,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Remove a subscription
+   *
+   * @remarks
+   * Deletes the PaymentSubscription identified by `id`.
    */
   async removePaymentSubscription(
     request: operations.RemovePaymentSubscriptionRequest,
@@ -298,6 +355,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Update a link
+   *
+   * @remarks
+   * Updates the PaymentLink identified by `id`. Provide the unified PaymentLink fields to change in the request body.
    */
   async updatePaymentLink(
     request: operations.UpdatePaymentLinkRequest,
@@ -312,6 +372,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Update a payment
+   *
+   * @remarks
+   * Updates the PaymentPayment identified by `id`. Provide the unified PaymentPayment fields to change in the request body.
    */
   async updatePaymentPayment(
     request: operations.UpdatePaymentPaymentRequest,
@@ -326,6 +389,9 @@ export class Payment extends ClientSDK {
 
   /**
    * Update a subscription
+   *
+   * @remarks
+   * Updates the PaymentSubscription identified by `id`. Provide the unified PaymentSubscription fields to change in the request body.
    */
   async updatePaymentSubscription(
     request: operations.UpdatePaymentSubscriptionRequest,

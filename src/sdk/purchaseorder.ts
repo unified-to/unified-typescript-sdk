@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Purchaseorder extends ClientSDK {
   /**
    * Create a purchaseorder
+   *
+   * @remarks
+   * Creates a AccountingPurchaseorder. Provide the unified AccountingPurchaseorder fields in the request body; they are mapped to the provider's API. Returns the created AccountingPurchaseorder.
    */
   async createAccountingPurchaseorder(
     request: operations.CreateAccountingPurchaseorderRequest,
@@ -30,6 +33,9 @@ export class Purchaseorder extends ClientSDK {
 
   /**
    * Retrieve a purchaseorder
+   *
+   * @remarks
+   * Retrieves a single AccountingPurchaseorder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getAccountingPurchaseorder(
     request: operations.GetAccountingPurchaseorderRequest,
@@ -44,6 +50,9 @@ export class Purchaseorder extends ClientSDK {
 
   /**
    * List all purchaseorders
+   *
+   * @remarks
+   * Returns a list of AccountingPurchaseorders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listAccountingPurchaseorders(
     request: operations.ListAccountingPurchaseordersRequest,
@@ -58,6 +67,9 @@ export class Purchaseorder extends ClientSDK {
 
   /**
    * Update a purchaseorder
+   *
+   * @remarks
+   * Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
    */
   async patchAccountingPurchaseorder(
     request: operations.PatchAccountingPurchaseorderRequest,
@@ -72,6 +84,9 @@ export class Purchaseorder extends ClientSDK {
 
   /**
    * Remove a purchaseorder
+   *
+   * @remarks
+   * Deletes the AccountingPurchaseorder identified by `id`.
    */
   async removeAccountingPurchaseorder(
     request: operations.RemoveAccountingPurchaseorderRequest,
@@ -86,6 +101,9 @@ export class Purchaseorder extends ClientSDK {
 
   /**
    * Update a purchaseorder
+   *
+   * @remarks
+   * Updates the AccountingPurchaseorder identified by `id`. Provide the unified AccountingPurchaseorder fields to change in the request body.
    */
   async updateAccountingPurchaseorder(
     request: operations.UpdateAccountingPurchaseorderRequest,

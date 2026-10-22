@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create an envvar
+ *
+ * @remarks
+ * Creates a ComputeEnvvar. Provide the unified ComputeEnvvar fields in the request body; they are mapped to the provider's API. Returns the created ComputeEnvvar.
  */
 export function computeCreateComputeEnvvar(
   client: UnifiedToCore,

@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a link
+ *
+ * @remarks
+ * Creates a CalendarLink. Provide the unified CalendarLink fields in the request body; they are mapped to the provider's API. Returns the created CalendarLink.
  */
 export function calendarCreateCalendarLink(
   client: UnifiedToCore,

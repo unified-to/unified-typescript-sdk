@@ -27,6 +27,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Shipping extends ClientSDK {
   /**
    * Create a label
+   *
+   * @remarks
+   * Creates a ShippingLabel. Provide the unified ShippingLabel fields in the request body; they are mapped to the provider's API. Returns the created ShippingLabel.
    */
   async createShippingLabel(
     request: operations.CreateShippingLabelRequest,
@@ -41,6 +44,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Create a rate
+   *
+   * @remarks
+   * Creates a ShippingRate. Provide the unified ShippingRate fields in the request body; they are mapped to the provider's API. Returns the created ShippingRate.
    */
   async createShippingRate(
     request: operations.CreateShippingRateRequest,
@@ -55,6 +61,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Create a shipment
+   *
+   * @remarks
+   * Creates a ShippingShipment. Provide the unified ShippingShipment fields in the request body; they are mapped to the provider's API. Returns the created ShippingShipment.
    */
   async createShippingShipment(
     request: operations.CreateShippingShipmentRequest,
@@ -69,6 +78,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Retrieve a carrier
+   *
+   * @remarks
+   * Retrieves a single ShippingCarrier by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getShippingCarrier(
     request: operations.GetShippingCarrierRequest,
@@ -83,6 +95,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Retrieve a label
+   *
+   * @remarks
+   * Retrieves a single ShippingLabel by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getShippingLabel(
     request: operations.GetShippingLabelRequest,
@@ -97,6 +112,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Retrieve a shipment
+   *
+   * @remarks
+   * Retrieves a single ShippingShipment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getShippingShipment(
     request: operations.GetShippingShipmentRequest,
@@ -111,6 +129,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Retrieve a tracking
+   *
+   * @remarks
+   * Retrieves a single ShippingTracking by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getShippingTracking(
     request: operations.GetShippingTrackingRequest,
@@ -125,6 +146,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * List all carriers
+   *
+   * @remarks
+   * Returns a list of ShippingCarriers. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listShippingCarriers(
     request: operations.ListShippingCarriersRequest,
@@ -139,6 +163,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * List all labels
+   *
+   * @remarks
+   * Returns a list of ShippingLabels. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listShippingLabels(
     request: operations.ListShippingLabelsRequest,
@@ -153,6 +180,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * List all shipments
+   *
+   * @remarks
+   * Returns a list of ShippingShipments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listShippingShipments(
     request: operations.ListShippingShipmentsRequest,
@@ -167,6 +197,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * List all trackings
+   *
+   * @remarks
+   * Returns a list of ShippingTrackings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listShippingTrackings(
     request: operations.ListShippingTrackingsRequest,
@@ -181,6 +214,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Update a label
+   *
+   * @remarks
+   * Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
    */
   async patchShippingLabel(
     request: operations.PatchShippingLabelRequest,
@@ -195,6 +231,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Update a shipment
+   *
+   * @remarks
+   * Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
    */
   async patchShippingShipment(
     request: operations.PatchShippingShipmentRequest,
@@ -209,6 +248,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Remove a label
+   *
+   * @remarks
+   * Deletes the ShippingLabel identified by `id`.
    */
   async removeShippingLabel(
     request: operations.RemoveShippingLabelRequest,
@@ -223,6 +265,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Remove a shipment
+   *
+   * @remarks
+   * Deletes the ShippingShipment identified by `id`.
    */
   async removeShippingShipment(
     request: operations.RemoveShippingShipmentRequest,
@@ -237,6 +282,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Update a label
+   *
+   * @remarks
+   * Updates the ShippingLabel identified by `id`. Provide the unified ShippingLabel fields to change in the request body.
    */
   async updateShippingLabel(
     request: operations.UpdateShippingLabelRequest,
@@ -251,6 +299,9 @@ export class Shipping extends ClientSDK {
 
   /**
    * Update a shipment
+   *
+   * @remarks
+   * Updates the ShippingShipment identified by `id`. Provide the unified ShippingShipment fields to change in the request body.
    */
   async updateShippingShipment(
     request: operations.UpdateShippingShipmentRequest,

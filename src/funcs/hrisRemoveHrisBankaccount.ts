@@ -27,6 +27,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a bankaccount
+ *
+ * @remarks
+ * Deletes the HrisBankaccount identified by `id`.
  */
 export function hrisRemoveHrisBankaccount(
   client: UnifiedToCore,

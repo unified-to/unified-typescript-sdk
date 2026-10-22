@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a post
+ *
+ * @remarks
+ * Creates a SocialPost. Provide the unified SocialPost fields in the request body; they are mapped to the provider's API. Returns the created SocialPost.
  */
 export function socialCreateSocialPost(
   client: UnifiedToCore,

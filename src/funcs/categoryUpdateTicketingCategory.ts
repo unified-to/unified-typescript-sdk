@@ -28,6 +28,9 @@ import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a category
+ *
+ * @remarks
+ * Updates the TicketingCategory identified by `id`. Provide the unified TicketingCategory fields to change in the request body.
  */
 export function categoryUpdateTicketingCategory(
   client: UnifiedToCore,

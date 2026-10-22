@@ -43,7 +43,7 @@
 
 ## createCdpActivation
 
-Create an activation
+Creates a CdpActivation. Provide the unified CdpActivation fields in the request body; they are mapped to the provider's API. Returns the created CdpActivation.
 
 ### Example Usage
 
@@ -122,7 +122,7 @@ run();
 
 ## createCdpDestination
 
-Create a destination
+Creates a CdpDestination. Provide the unified CdpDestination fields in the request body; they are mapped to the provider's API. Returns the created CdpDestination.
 
 ### Example Usage
 
@@ -201,7 +201,7 @@ run();
 
 ## createCdpEvent
 
-Create an event
+Creates a CdpEvent. Provide the unified CdpEvent fields in the request body; they are mapped to the provider's API. Returns the created CdpEvent.
 
 ### Example Usage
 
@@ -280,7 +280,7 @@ run();
 
 ## createCdpProfile
 
-Create a profile
+Creates a CdpProfile. Provide the unified CdpProfile fields in the request body; they are mapped to the provider's API. Returns the created CdpProfile.
 
 ### Example Usage
 
@@ -359,7 +359,7 @@ run();
 
 ## createCdpSegment
 
-Create a segment
+Creates a CdpSegment. Provide the unified CdpSegment fields in the request body; they are mapped to the provider's API. Returns the created CdpSegment.
 
 ### Example Usage
 
@@ -438,7 +438,7 @@ run();
 
 ## createCdpSource
 
-Create a source
+Creates a CdpSource. Provide the unified CdpSource fields in the request body; they are mapped to the provider's API. Returns the created CdpSource.
 
 ### Example Usage
 
@@ -517,7 +517,7 @@ run();
 
 ## getCdpActivation
 
-Retrieve an activation
+Retrieves a single CdpActivation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -596,7 +596,7 @@ run();
 
 ## getCdpDestination
 
-Retrieve a destination
+Retrieves a single CdpDestination by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -675,7 +675,7 @@ run();
 
 ## getCdpEvent
 
-Retrieve an event
+Retrieves a single CdpEvent by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -754,7 +754,7 @@ run();
 
 ## getCdpProfile
 
-Retrieve a profile
+Retrieves a single CdpProfile by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -833,7 +833,7 @@ run();
 
 ## getCdpSegment
 
-Retrieve a segment
+Retrieves a single CdpSegment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -912,7 +912,7 @@ run();
 
 ## getCdpSource
 
-Retrieve a source
+Retrieves a single CdpSource by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -991,7 +991,7 @@ run();
 
 ## listCdpActivations
 
-List all activations
+Returns a list of CdpActivations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1068,7 +1068,7 @@ run();
 
 ## listCdpDestinations
 
-List all destinations
+Returns a list of CdpDestinations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1145,7 +1145,7 @@ run();
 
 ## listCdpEvents
 
-List all events
+Returns a list of CdpEvents. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1222,7 +1222,7 @@ run();
 
 ## listCdpProfiles
 
-List all profiles
+Returns a list of CdpProfiles. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1299,7 +1299,7 @@ run();
 
 ## listCdpSegments
 
-List all segments
+Returns a list of CdpSegments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1376,7 +1376,7 @@ run();
 
 ## listCdpSources
 
-List all sources
+Returns a list of CdpSources. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -1453,7 +1453,7 @@ run();
 
 ## patchCdpActivation
 
-Update an activation
+Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
 
 ### Example Usage
 
@@ -1534,7 +1534,7 @@ run();
 
 ## patchCdpDestination
 
-Update a destination
+Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
 
 ### Example Usage
 
@@ -1615,7 +1615,7 @@ run();
 
 ## patchCdpEvent
 
-Update an event
+Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -1696,7 +1696,7 @@ run();
 
 ## patchCdpProfile
 
-Update a profile
+Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
 
 ### Example Usage
 
@@ -1777,7 +1777,7 @@ run();
 
 ## patchCdpSegment
 
-Update a segment
+Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
 
 ### Example Usage
 
@@ -1858,7 +1858,7 @@ run();
 
 ## patchCdpSource
 
-Update a source
+Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
 
 ### Example Usage
 
@@ -1939,7 +1939,7 @@ run();
 
 ## removeCdpActivation
 
-Remove an activation
+Deletes the CdpActivation identified by `id`.
 
 ### Example Usage
 
@@ -2018,7 +2018,7 @@ run();
 
 ## removeCdpDestination
 
-Remove a destination
+Deletes the CdpDestination identified by `id`.
 
 ### Example Usage
 
@@ -2097,7 +2097,7 @@ run();
 
 ## removeCdpEvent
 
-Remove an event
+Deletes the CdpEvent identified by `id`.
 
 ### Example Usage
 
@@ -2176,7 +2176,7 @@ run();
 
 ## removeCdpProfile
 
-Remove a profile
+Deletes the CdpProfile identified by `id`.
 
 ### Example Usage
 
@@ -2255,7 +2255,7 @@ run();
 
 ## removeCdpSegment
 
-Remove a segment
+Deletes the CdpSegment identified by `id`.
 
 ### Example Usage
 
@@ -2334,7 +2334,7 @@ run();
 
 ## removeCdpSource
 
-Remove a source
+Deletes the CdpSource identified by `id`.
 
 ### Example Usage
 
@@ -2413,7 +2413,7 @@ run();
 
 ## updateCdpActivation
 
-Update an activation
+Updates the CdpActivation identified by `id`. Provide the unified CdpActivation fields to change in the request body.
 
 ### Example Usage
 
@@ -2494,7 +2494,7 @@ run();
 
 ## updateCdpDestination
 
-Update a destination
+Updates the CdpDestination identified by `id`. Provide the unified CdpDestination fields to change in the request body.
 
 ### Example Usage
 
@@ -2575,7 +2575,7 @@ run();
 
 ## updateCdpEvent
 
-Update an event
+Updates the CdpEvent identified by `id`. Provide the unified CdpEvent fields to change in the request body.
 
 ### Example Usage
 
@@ -2656,7 +2656,7 @@ run();
 
 ## updateCdpProfile
 
-Update a profile
+Updates the CdpProfile identified by `id`. Provide the unified CdpProfile fields to change in the request body.
 
 ### Example Usage
 
@@ -2737,7 +2737,7 @@ run();
 
 ## updateCdpSegment
 
-Update a segment
+Updates the CdpSegment identified by `id`. Provide the unified CdpSegment fields to change in the request body.
 
 ### Example Usage
 
@@ -2818,7 +2818,7 @@ run();
 
 ## updateCdpSource
 
-Update a source
+Updates the CdpSource identified by `id`. Provide the unified CdpSource fields to change in the request body.
 
 ### Example Usage
 

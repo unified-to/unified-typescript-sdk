@@ -13,7 +13,7 @@
 
 ## createAccountingBankfeedaccount
 
-Create a bankfeedaccount
+Creates a AccountingBankfeedaccount. Provide the unified AccountingBankfeedaccount fields in the request body; they are mapped to the provider's API. Returns the created AccountingBankfeedaccount.
 
 ### Example Usage
 
@@ -38,12 +38,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "d7f70a5f-4c6a-43ee-b205-4e6fa8be3083",
+      id: "1d921e12-9a93-429e-98b7-998d2f892b05",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.409Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.401Z"),
     },
     connectionId: "<id>",
   });
@@ -81,12 +81,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "d7f70a5f-4c6a-43ee-b205-4e6fa8be3083",
+      id: "1d921e12-9a93-429e-98b7-998d2f892b05",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.409Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.401Z"),
     },
     connectionId: "<id>",
   });
@@ -122,7 +122,7 @@ run();
 
 ## getAccountingBankfeedaccount
 
-Retrieve a bankfeedaccount
+Retrieves a single AccountingBankfeedaccount by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
 
 ### Example Usage
 
@@ -201,7 +201,7 @@ run();
 
 ## listAccountingBankfeedaccounts
 
-List all bankfeedaccounts
+Returns a list of AccountingBankfeedaccounts. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
 
 ### Example Usage
 
@@ -278,7 +278,7 @@ run();
 
 ## patchAccountingBankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -303,12 +303,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "39362873-785a-448e-89fe-677112022aea",
+      id: "0110f8e8-c27f-42b3-b02c-d4a344f9383a",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.420Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.405Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -347,12 +347,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "39362873-785a-448e-89fe-677112022aea",
+      id: "0110f8e8-c27f-42b3-b02c-d4a344f9383a",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.420Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.405Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -389,7 +389,7 @@ run();
 
 ## removeAccountingBankfeedaccount
 
-Remove a bankfeedaccount
+Deletes the AccountingBankfeedaccount identified by `id`.
 
 ### Example Usage
 
@@ -468,7 +468,7 @@ run();
 
 ## updateAccountingBankfeedaccount
 
-Update a bankfeedaccount
+Updates the AccountingBankfeedaccount identified by `id`. Provide the unified AccountingBankfeedaccount fields to change in the request body.
 
 ### Example Usage
 
@@ -493,12 +493,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "39362873-785a-448e-89fe-677112022aea",
+      id: "0110f8e8-c27f-42b3-b02c-d4a344f9383a",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.420Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.405Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -537,12 +537,12 @@ async function run() {
       createdAt: new Date("2022-10-31T16:42:19.277Z"),
       currency: "AUD",
       feedStartAt: new Date("2022-10-31T16:42:19.277Z"),
-      id: "39362873-785a-448e-89fe-677112022aea",
+      id: "0110f8e8-c27f-42b3-b02c-d4a344f9383a",
       metadata: [],
       name: "Corwin, Donnelly and Connelly Checking",
       routingNumber: "694667752",
       status: "ACTIVE",
-      updatedAt: new Date("2024-04-23T20:08:52.420Z"),
+      updatedAt: new Date("2024-04-24T05:06:00.405Z"),
     },
     connectionId: "<id>",
     id: "<id>",
