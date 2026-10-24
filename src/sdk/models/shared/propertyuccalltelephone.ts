@@ -34,6 +34,12 @@ export const PropertyUcCallTelephoneType$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(PropertyUcCallTelephoneType);
+/** @internal */
+export const PropertyUcCallTelephoneType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  PropertyUcCallTelephoneType
+> = openEnums.outboundSchema(PropertyUcCallTelephoneType);
 
 /** @internal */
 export const PropertyUcCallTelephone$inboundSchema: z.ZodType<
@@ -44,7 +50,29 @@ export const PropertyUcCallTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: PropertyUcCallTelephoneType$inboundSchema.optional(),
 });
+/** @internal */
+export type PropertyUcCallTelephone$Outbound = {
+  telephone: string;
+  type?: string | undefined;
+};
 
+/** @internal */
+export const PropertyUcCallTelephone$outboundSchema: z.ZodType<
+  PropertyUcCallTelephone$Outbound,
+  z.ZodTypeDef,
+  PropertyUcCallTelephone
+> = z.object({
+  telephone: z.string(),
+  type: PropertyUcCallTelephoneType$outboundSchema.optional(),
+});
+
+export function propertyUcCallTelephoneToJSON(
+  propertyUcCallTelephone: PropertyUcCallTelephone,
+): string {
+  return JSON.stringify(
+    PropertyUcCallTelephone$outboundSchema.parse(propertyUcCallTelephone),
+  );
+}
 export function propertyUcCallTelephoneFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyUcCallTelephone, SDKValidationError> {

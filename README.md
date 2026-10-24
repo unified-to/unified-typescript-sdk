@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "83f2ae40-24a8-404a-bae5-53dd1b96b4cf",
+      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T09:59:44.611Z"),
+      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "83f2ae40-24a8-404a-bae5-53dd1b96b4cf",
+      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T09:59:44.611Z"),
+      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "83f2ae40-24a8-404a-bae5-53dd1b96b4cf",
+      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T09:59:44.611Z"),
+      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "83f2ae40-24a8-404a-bae5-53dd1b96b4cf",
+        id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-07T09:59:44.611Z"),
+        updatedAt: new Date("2023-08-07T16:06:39.092Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "83f2ae40-24a8-404a-bae5-53dd1b96b4cf",
+      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T09:59:44.611Z"),
+      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "83f2ae40-24a8-404a-bae5-53dd1b96b4cf",
+      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T09:59:44.611Z"),
+      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
     },
     connectionId: "<id>",
   });
@@ -2496,6 +2496,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`ticketingUpdateTicketingNote`](docs/sdks/ticketing/README.md#updateticketingnote) - Update a note
 - [`ticketingUpdateTicketingTicket`](docs/sdks/ticket/README.md#updateticketingticket) - Update a ticket
 - [`ticketingUpdateTicketingTicket`](docs/sdks/ticketing/README.md#updateticketingticket) - Update a ticket
+- [`ucCreateUcCall`](docs/sdks/call/README.md#createuccall) - Create a call
+- [`ucCreateUcCall`](docs/sdks/uc/README.md#createuccall) - Create a call
 - [`ucGetUcCall`](docs/sdks/call/README.md#getuccall) - Retrieve a call
 - [`ucGetUcCall`](docs/sdks/uc/README.md#getuccall) - Retrieve a call
 - [`ucGetUcScorecardtemplate`](docs/sdks/scorecardtemplate/README.md#getucscorecardtemplate) - Retrieve a scorecardtemplate
@@ -2504,6 +2506,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`ucListUcCalls`](docs/sdks/uc/README.md#listuccalls) - List all calls
 - [`ucListUcScorecardtemplates`](docs/sdks/scorecardtemplate/README.md#listucscorecardtemplates) - List all scorecardtemplates
 - [`ucListUcScorecardtemplates`](docs/sdks/uc/README.md#listucscorecardtemplates) - List all scorecardtemplates
+- [`ucPatchUcCall`](docs/sdks/call/README.md#patchuccall) - Update a call
+- [`ucPatchUcCall`](docs/sdks/uc/README.md#patchuccall) - Update a call
+- [`ucUpdateUcCall`](docs/sdks/call/README.md#updateuccall) - Update a call
+- [`ucUpdateUcCall`](docs/sdks/uc/README.md#updateuccall) - Update a call
 - [`unifiedCreateUnifiedConnection`](docs/sdks/connection/README.md#createunifiedconnection) - Create connection
 - [`unifiedCreateUnifiedConnection`](docs/sdks/unified/README.md#createunifiedconnection) - Create connection
 - [`unifiedCreateUnifiedConnectionReauth`](docs/sdks/connection/README.md#createunifiedconnectionreauth) - Create a re-authorization token for a connection

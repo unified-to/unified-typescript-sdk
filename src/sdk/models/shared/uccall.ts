@@ -12,9 +12,46 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyUcCallTelephone,
   PropertyUcCallTelephone$inboundSchema,
+  PropertyUcCallTelephone$Outbound,
+  PropertyUcCallTelephone$outboundSchema,
 } from "./propertyuccalltelephone.js";
-import { UcContact, UcContact$inboundSchema } from "./uccontact.js";
-import { UcMetadata, UcMetadata$inboundSchema } from "./ucmetadata.js";
+import {
+  UcCallInstruction,
+  UcCallInstruction$inboundSchema,
+  UcCallInstruction$Outbound,
+  UcCallInstruction$outboundSchema,
+} from "./uccallinstruction.js";
+import {
+  UcContact,
+  UcContact$inboundSchema,
+  UcContact$Outbound,
+  UcContact$outboundSchema,
+} from "./uccontact.js";
+import {
+  UcMetadata,
+  UcMetadata$inboundSchema,
+  UcMetadata$Outbound,
+  UcMetadata$outboundSchema,
+} from "./ucmetadata.js";
+
+/**
+ * The current or final status of the call
+ */
+export const UcCallStatus = {
+  Queued: "QUEUED",
+  Ringing: "RINGING",
+  InProgress: "IN_PROGRESS",
+  Completed: "COMPLETED",
+  Busy: "BUSY",
+  NoAnswer: "NO_ANSWER",
+  Failed: "FAILED",
+  Canceled: "CANCELED",
+  Other: "OTHER",
+} as const;
+/**
+ * The current or final status of the call
+ */
+export type UcCallStatus = OpenEnum<typeof UcCallStatus>;
 
 export const UcCallType = {
   Inbound: "INBOUND",
@@ -23,6 +60,10 @@ export const UcCallType = {
 export type UcCallType = OpenEnum<typeof UcCallType>;
 
 export type UcCall = {
+  /**
+   * When the call was answered (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  answerAt?: Date | undefined;
   /**
    * The contact ID for call (reference to UcContact)
    */
@@ -33,9 +74,21 @@ export type UcCall = {
    */
   conversationIdentifier?: string | undefined;
   /**
+   * What the integration charged for the call
+   */
+  costAmount?: number | undefined;
+  /**
    * The date that this call object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
+  /**
+   * ISO 4217 currency of cost_amount
+   */
+  currency?: string | undefined;
+  /**
+   * Call length in seconds
+   */
+  durationSeconds?: number | undefined;
   /**
    * The end time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -44,8 +97,16 @@ export type UcCall = {
    * Unique identifier for this call object
    */
   id?: string | undefined;
+  /**
+   * Write-only: what the call does once answered (create/update only; never returned)
+   */
+  instructions?: Array<UcCallInstruction> | undefined;
   isPrivate?: boolean | undefined;
   metadata?: Array<UcMetadata> | undefined;
+  /**
+   * The parent call (leg) that this call belongs to
+   */
+  parentId?: string | undefined;
   /**
    * The raw data returned by the integration for this call
    */
@@ -54,6 +115,10 @@ export type UcCall = {
    * The start time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startAt?: Date | undefined;
+  /**
+   * The current or final status of the call
+   */
+  status?: UcCallStatus | undefined;
   /**
    * The telephone number called
    */
@@ -72,29 +137,56 @@ export type UcCall = {
 };
 
 /** @internal */
+export const UcCallStatus$inboundSchema: z.ZodType<
+  UcCallStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(UcCallStatus);
+/** @internal */
+export const UcCallStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  UcCallStatus
+> = openEnums.outboundSchema(UcCallStatus);
+
+/** @internal */
 export const UcCallType$inboundSchema: z.ZodType<
   UcCallType,
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(UcCallType);
+/** @internal */
+export const UcCallType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  UcCallType
+> = openEnums.outboundSchema(UcCallType);
 
 /** @internal */
 export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
   .object({
+    answer_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
     contact_id: z.string().optional(),
     contacts: z.array(UcContact$inboundSchema).optional(),
     conversation_identifier: z.string().optional(),
+    cost_amount: z.number().optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
+    currency: z.string().optional(),
+    duration_seconds: z.number().optional(),
     end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
     id: z.string().optional(),
+    instructions: z.array(UcCallInstruction$inboundSchema).optional(),
     is_private: z.boolean().optional(),
     metadata: z.array(UcMetadata$inboundSchema).optional(),
+    parent_id: z.string().optional(),
     raw: z.record(z.any()).optional(),
     start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
+    status: UcCallStatus$inboundSchema.optional(),
     telephone: PropertyUcCallTelephone$inboundSchema.optional(),
     type: UcCallType$inboundSchema.optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
@@ -105,11 +197,15 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
     user_phone: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
+      "answer_at": "answerAt",
       "contact_id": "contactId",
       "conversation_identifier": "conversationIdentifier",
+      "cost_amount": "costAmount",
       "created_at": "createdAt",
+      "duration_seconds": "durationSeconds",
       "end_at": "endAt",
       "is_private": "isPrivate",
+      "parent_id": "parentId",
       "start_at": "startAt",
       "updated_at": "updatedAt",
       "user_id": "userId",
@@ -117,7 +213,84 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
       "user_phone": "userPhone",
     });
   });
+/** @internal */
+export type UcCall$Outbound = {
+  answer_at?: string | undefined;
+  contact_id?: string | undefined;
+  contacts?: Array<UcContact$Outbound> | undefined;
+  conversation_identifier?: string | undefined;
+  cost_amount?: number | undefined;
+  created_at?: string | undefined;
+  currency?: string | undefined;
+  duration_seconds?: number | undefined;
+  end_at?: string | undefined;
+  id?: string | undefined;
+  instructions?: Array<UcCallInstruction$Outbound> | undefined;
+  is_private?: boolean | undefined;
+  metadata?: Array<UcMetadata$Outbound> | undefined;
+  parent_id?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
+  start_at?: string | undefined;
+  status?: string | undefined;
+  telephone?: PropertyUcCallTelephone$Outbound | undefined;
+  type?: string | undefined;
+  updated_at?: string | undefined;
+  user_id?: string | undefined;
+  user_name?: string | undefined;
+  user_phone?: string | undefined;
+};
 
+/** @internal */
+export const UcCall$outboundSchema: z.ZodType<
+  UcCall$Outbound,
+  z.ZodTypeDef,
+  UcCall
+> = z.object({
+  answerAt: z.date().transform(v => v.toISOString()).optional(),
+  contactId: z.string().optional(),
+  contacts: z.array(UcContact$outboundSchema).optional(),
+  conversationIdentifier: z.string().optional(),
+  costAmount: z.number().optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
+  currency: z.string().optional(),
+  durationSeconds: z.number().optional(),
+  endAt: z.date().transform(v => v.toISOString()).optional(),
+  id: z.string().optional(),
+  instructions: z.array(UcCallInstruction$outboundSchema).optional(),
+  isPrivate: z.boolean().optional(),
+  metadata: z.array(UcMetadata$outboundSchema).optional(),
+  parentId: z.string().optional(),
+  raw: z.record(z.any()).optional(),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
+  status: UcCallStatus$outboundSchema.optional(),
+  telephone: PropertyUcCallTelephone$outboundSchema.optional(),
+  type: UcCallType$outboundSchema.optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  userId: z.string().optional(),
+  userName: z.string().optional(),
+  userPhone: z.string().optional(),
+}).transform((v) => {
+  return remap$(v, {
+    answerAt: "answer_at",
+    contactId: "contact_id",
+    conversationIdentifier: "conversation_identifier",
+    costAmount: "cost_amount",
+    createdAt: "created_at",
+    durationSeconds: "duration_seconds",
+    endAt: "end_at",
+    isPrivate: "is_private",
+    parentId: "parent_id",
+    startAt: "start_at",
+    updatedAt: "updated_at",
+    userId: "user_id",
+    userName: "user_name",
+    userPhone: "user_phone",
+  });
+});
+
+export function ucCallToJSON(ucCall: UcCall): string {
+  return JSON.stringify(UcCall$outboundSchema.parse(ucCall));
+}
 export function ucCallFromJSON(
   jsonString: string,
 ): SafeParseResult<UcCall, SDKValidationError> {

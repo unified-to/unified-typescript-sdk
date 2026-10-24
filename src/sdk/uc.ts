@@ -22,16 +22,36 @@ import { recordingRemoveUcRecording } from "../funcs/recordingRemoveUcRecording.
 import { recordingUpdateUcRecording } from "../funcs/recordingUpdateUcRecording.js";
 import { scorecardGetUcScorecard } from "../funcs/scorecardGetUcScorecard.js";
 import { scorecardListUcScorecards } from "../funcs/scorecardListUcScorecards.js";
+import { ucCreateUcCall } from "../funcs/ucCreateUcCall.js";
 import { ucGetUcCall } from "../funcs/ucGetUcCall.js";
 import { ucGetUcScorecardtemplate } from "../funcs/ucGetUcScorecardtemplate.js";
 import { ucListUcCalls } from "../funcs/ucListUcCalls.js";
 import { ucListUcScorecardtemplates } from "../funcs/ucListUcScorecardtemplates.js";
+import { ucPatchUcCall } from "../funcs/ucPatchUcCall.js";
+import { ucUpdateUcCall } from "../funcs/ucUpdateUcCall.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Uc extends ClientSDK {
+  /**
+   * Create a call
+   *
+   * @remarks
+   * Creates a UcCall. Provide the unified UcCall fields in the request body; they are mapped to the provider's API. Returns the created UcCall.
+   */
+  async createUcCall(
+    request: operations.CreateUcCallRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcCall> {
+    return unwrapAsync(ucCreateUcCall(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * Create a comment
    *
@@ -288,6 +308,23 @@ export class Uc extends ClientSDK {
   }
 
   /**
+   * Update a call
+   *
+   * @remarks
+   * Updates the UcCall identified by `id`. Provide the unified UcCall fields to change in the request body.
+   */
+  async patchUcCall(
+    request: operations.PatchUcCallRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcCall> {
+    return unwrapAsync(ucPatchUcCall(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a comment
    *
    * @remarks
@@ -383,6 +420,23 @@ export class Uc extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveUcRecordingResponse | undefined> {
     return unwrapAsync(recordingRemoveUcRecording(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a call
+   *
+   * @remarks
+   * Updates the UcCall identified by `id`. Provide the unified UcCall fields to change in the request body.
+   */
+  async updateUcCall(
+    request: operations.UpdateUcCallRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcCall> {
+    return unwrapAsync(ucUpdateUcCall(
       this,
       request,
       options,

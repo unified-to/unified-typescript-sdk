@@ -177,6 +177,7 @@ export const PropertyConnectionPermissions = {
   HrisEarningRead: "hris_earning_read",
   HrisEarningWrite: "hris_earning_write",
   UcCallRead: "uc_call_read",
+  UcCallWrite: "uc_call_write",
   UcContactRead: "uc_contact_read",
   UcContactWrite: "uc_contact_write",
   UcCommentRead: "uc_comment_read",

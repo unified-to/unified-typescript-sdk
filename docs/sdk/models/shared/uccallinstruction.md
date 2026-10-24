@@ -1,0 +1,25 @@
+# UcCallInstruction
+
+## Example Usage
+
+```typescript
+import { UcCallInstruction } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: UcCallInstruction = {
+  type: "PLAY",
+};
+```
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `audioUrl`                                                                                                    | *string*                                                                                                      | :heavy_minus_sign:                                                                                            | PLAY: public MP3 or WAV URL                                                                                   |
+| `language`                                                                                                    | *string*                                                                                                      | :heavy_minus_sign:                                                                                            | SAY: BCP 47 language code (e.g. en-US), passed to the integration as-is                                       |
+| `seconds`                                                                                                     | *number*                                                                                                      | :heavy_minus_sign:                                                                                            | PAUSE: length of silence                                                                                      |
+| `sipUri`                                                                                                      | *string*                                                                                                      | :heavy_minus_sign:                                                                                            | DIAL: SIP address to dial instead of telephone                                                                |
+| `telephone`                                                                                                   | [shared.PropertyUcCallInstructionTelephone](../../../sdk/models/shared/propertyuccallinstructiontelephone.md) | :heavy_minus_sign:                                                                                            | DIAL: number to dial and bridge                                                                               |
+| `text`                                                                                                        | *string*                                                                                                      | :heavy_minus_sign:                                                                                            | SAY: text to speak                                                                                            |
+| `timeoutSeconds`                                                                                              | *number*                                                                                                      | :heavy_minus_sign:                                                                                            | DIAL: how long to ring before giving up                                                                       |
+| `type`                                                                                                        | [shared.UcCallInstructionType](../../../sdk/models/shared/uccallinstructiontype.md)                           | :heavy_check_mark:                                                                                            | N/A                                                                                                           |
+| `userPhone`                                                                                                   | *string*                                                                                                      | :heavy_minus_sign:                                                                                            | DIAL: caller ID on the dialed leg (defaults to the call's user_phone)                                         |
