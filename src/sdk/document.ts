@@ -8,10 +8,13 @@ import { atsListAtsDocuments } from "../funcs/atsListAtsDocuments.js";
 import { atsPatchAtsDocument } from "../funcs/atsPatchAtsDocument.js";
 import { atsRemoveAtsDocument } from "../funcs/atsRemoveAtsDocument.js";
 import { atsUpdateAtsDocument } from "../funcs/atsUpdateAtsDocument.js";
+import { documentCreateHealthcareDocument } from "../funcs/documentCreateHealthcareDocument.js";
 import { documentCreateHrisDocument } from "../funcs/documentCreateHrisDocument.js";
 import { documentCreateSigningDocument } from "../funcs/documentCreateSigningDocument.js";
+import { documentGetHealthcareDocument } from "../funcs/documentGetHealthcareDocument.js";
 import { documentGetHrisDocument } from "../funcs/documentGetHrisDocument.js";
 import { documentGetSigningDocument } from "../funcs/documentGetSigningDocument.js";
+import { documentListHealthcareDocuments } from "../funcs/documentListHealthcareDocuments.js";
 import { documentListHrisDocuments } from "../funcs/documentListHrisDocuments.js";
 import { documentListSigningDocuments } from "../funcs/documentListSigningDocuments.js";
 import { documentPatchHrisDocument } from "../funcs/documentPatchHrisDocument.js";
@@ -37,6 +40,23 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsDocument> {
     return unwrapAsync(atsCreateAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a document
+   *
+   * @remarks
+   * Creates a HealthcareDocument. Provide the unified HealthcareDocument fields in the request body; they are mapped to the provider's API. Returns the created HealthcareDocument.
+   */
+  async createHealthcareDocument(
+    request: operations.CreateHealthcareDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HealthcareDocument> {
+    return unwrapAsync(documentCreateHealthcareDocument(
       this,
       request,
       options,
@@ -98,6 +118,23 @@ export class Document extends ClientSDK {
    * Retrieve a document
    *
    * @remarks
+   * Retrieves a single HealthcareDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getHealthcareDocument(
+    request: operations.GetHealthcareDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HealthcareDocument> {
+    return unwrapAsync(documentGetHealthcareDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a document
+   *
+   * @remarks
    * Retrieves a single HrisDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getHrisDocument(
@@ -139,6 +176,23 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AtsDocument>> {
     return unwrapAsync(atsListAtsDocuments(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all documents
+   *
+   * @remarks
+   * Returns a list of HealthcareDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listHealthcareDocuments(
+    request: operations.ListHealthcareDocumentsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HealthcareDocument>> {
+    return unwrapAsync(documentListHealthcareDocuments(
       this,
       request,
       options,

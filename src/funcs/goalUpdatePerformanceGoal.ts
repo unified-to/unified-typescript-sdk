@@ -32,7 +32,7 @@ import { Result } from "../sdk/types/fp.js";
  * @remarks
  * Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
  */
-export function performanceUpdatePerformanceGoal(
+export function goalUpdatePerformanceGoal(
   client: UnifiedToCore,
   request: operations.UpdatePerformanceGoalRequest,
   options?: RequestOptions,

@@ -67,9 +67,17 @@ export type HealthcareAppointment = {
    */
   id?: string | undefined;
   /**
+   * Whether the appointment is a telehealth/virtual visit
+   */
+  isVirtual?: boolean | undefined;
+  /**
    * Where the appointment takes place
    */
   locationId?: string | undefined;
+  /**
+   * Join link for a telehealth/virtual visit
+   */
+  meetingUrl?: string | undefined;
   /**
    * Custom field values
    */
@@ -142,7 +150,9 @@ export const HealthcareAppointment$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  is_virtual: z.boolean().optional(),
   location_id: z.string().optional(),
+  meeting_url: z.string().optional(),
   metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
   patient_id: z.string().optional(),
@@ -161,7 +171,9 @@ export const HealthcareAppointment$inboundSchema: z.ZodType<
     "cancellation_reason": "cancellationReason",
     "created_at": "createdAt",
     "end_at": "endAt",
+    "is_virtual": "isVirtual",
     "location_id": "locationId",
+    "meeting_url": "meetingUrl",
     "patient_id": "patientId",
     "practitioner_ids": "practitionerIds",
     "service_types": "serviceTypes",
@@ -177,7 +189,9 @@ export type HealthcareAppointment$Outbound = {
   description?: string | undefined;
   end_at?: string | undefined;
   id?: string | undefined;
+  is_virtual?: boolean | undefined;
   location_id?: string | undefined;
+  meeting_url?: string | undefined;
   metadata?: Array<HealthcareMetadata$Outbound> | undefined;
   notes?: string | undefined;
   patient_id?: string | undefined;
@@ -202,7 +216,9 @@ export const HealthcareAppointment$outboundSchema: z.ZodType<
   description: z.string().optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  isVirtual: z.boolean().optional(),
   locationId: z.string().optional(),
+  meetingUrl: z.string().optional(),
   metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
   patientId: z.string().optional(),
@@ -219,7 +235,9 @@ export const HealthcareAppointment$outboundSchema: z.ZodType<
     cancellationReason: "cancellation_reason",
     createdAt: "created_at",
     endAt: "end_at",
+    isVirtual: "is_virtual",
     locationId: "location_id",
+    meetingUrl: "meeting_url",
     patientId: "patient_id",
     practitionerIds: "practitioner_ids",
     serviceTypes: "service_types",

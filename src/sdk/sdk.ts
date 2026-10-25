@@ -36,6 +36,7 @@ import { Calendar } from "./calendar.js";
 import { Call } from "./call.js";
 import { Campaign } from "./campaign.js";
 import { Candidate } from "./candidate.js";
+import { Careplan } from "./careplan.js";
 import { Carrier } from "./carrier.js";
 import { Cashflow } from "./cashflow.js";
 import { Category } from "./category.js";
@@ -55,6 +56,7 @@ import { Connection } from "./connection.js";
 import { Contact } from "./contact.js";
 import { Content } from "./content.js";
 import { Course } from "./course.js";
+import { Coverage } from "./coverage.js";
 import { Creative } from "./creative.js";
 import { Creditmemo } from "./creditmemo.js";
 import { Crm } from "./crm.js";
@@ -143,6 +145,7 @@ import { Pipeline } from "./pipeline.js";
 import { Post } from "./post.js";
 import { Practicearea } from "./practicearea.js";
 import { Practitioner } from "./practitioner.js";
+import { Procedure } from "./procedure.js";
 import { Profile } from "./profile.js";
 import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
@@ -813,14 +816,29 @@ export class UnifiedTo extends ClientSDK {
     return (this._appointment ??= new Appointment(this._options));
   }
 
+  private _careplan?: Careplan;
+  get careplan(): Careplan {
+    return (this._careplan ??= new Careplan(this._options));
+  }
+
   private _condition?: Condition;
   get condition(): Condition {
     return (this._condition ??= new Condition(this._options));
   }
 
+  private _coverage?: Coverage;
+  get coverage(): Coverage {
+    return (this._coverage ??= new Coverage(this._options));
+  }
+
   private _encounter?: Encounter;
   get encounter(): Encounter {
     return (this._encounter ??= new Encounter(this._options));
+  }
+
+  private _goal?: Goal;
+  get goal(): Goal {
+    return (this._goal ??= new Goal(this._options));
   }
 
   private _immunization?: Immunization;
@@ -846,6 +864,11 @@ export class UnifiedTo extends ClientSDK {
   private _practitioner?: Practitioner;
   get practitioner(): Practitioner {
     return (this._practitioner ??= new Practitioner(this._options));
+  }
+
+  private _procedure?: Procedure;
+  get procedure(): Procedure {
+    return (this._procedure ??= new Procedure(this._options));
   }
 
   private _slot?: Slot;
@@ -1056,11 +1079,6 @@ export class UnifiedTo extends ClientSDK {
   private _feedback?: Feedback;
   get feedback(): Feedback {
     return (this._feedback ??= new Feedback(this._options));
-  }
-
-  private _goal?: Goal;
-  get goal(): Goal {
-    return (this._goal ??= new Goal(this._options));
   }
 
   private _repo?: Repo;

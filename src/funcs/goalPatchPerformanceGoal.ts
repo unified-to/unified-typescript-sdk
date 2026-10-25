@@ -27,14 +27,14 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Create a goal
+ * Update a goal
  *
  * @remarks
- * Creates a PerformanceGoal. Provide the unified PerformanceGoal fields in the request body; they are mapped to the provider's API. Returns the created PerformanceGoal.
+ * Updates the PerformanceGoal identified by `id`. Provide the unified PerformanceGoal fields to change in the request body.
  */
-export function performanceCreatePerformanceGoal(
+export function goalPatchPerformanceGoal(
   client: UnifiedToCore,
-  request: operations.CreatePerformanceGoalRequest,
+  request: operations.PatchPerformanceGoalRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -58,7 +58,7 @@ export function performanceCreatePerformanceGoal(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.CreatePerformanceGoalRequest,
+  request: operations.PatchPerformanceGoalRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -79,7 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.CreatePerformanceGoalRequest$outboundSchema.parse(value),
+      operations.PatchPerformanceGoalRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -93,8 +93,12 @@ async function $do(
       explode: false,
       charEncoding: "percent",
     }),
+    id: encodeSimple("id", payload.id, {
+      explode: false,
+      charEncoding: "percent",
+    }),
   };
-  const path = pathToFunc("/performance/{connection_id}/goal")(pathParams);
+  const path = pathToFunc("/performance/{connection_id}/goal/{id}")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
@@ -112,7 +116,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "createPerformanceGoal",
+    operationID: "patchPerformanceGoal",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -126,7 +130,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "POST",
+    method: "PATCH",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,

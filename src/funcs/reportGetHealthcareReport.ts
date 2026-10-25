@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -22,22 +22,23 @@ import { ResponseValidationError } from "../sdk/models/errors/responsevalidation
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import * as operations from "../sdk/models/operations/index.js";
+import * as shared from "../sdk/models/shared/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Remove a goal
+ * Retrieve a report
  *
  * @remarks
- * Deletes the PerformanceGoal identified by `id`.
+ * Retrieves a single HealthcareReport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
  */
-export function performanceRemovePerformanceGoal(
+export function reportGetHealthcareReport(
   client: UnifiedToCore,
-  request: operations.RemovePerformanceGoalRequest,
+  request: operations.GetHealthcareReportRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.RemovePerformanceGoalResponse | undefined,
+    shared.HealthcareReport,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -57,12 +58,12 @@ export function performanceRemovePerformanceGoal(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.RemovePerformanceGoalRequest,
+  request: operations.GetHealthcareReportRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.RemovePerformanceGoalResponse | undefined,
+      shared.HealthcareReport,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -78,7 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.RemovePerformanceGoalRequest$outboundSchema.parse(value),
+      operations.GetHealthcareReportRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -97,10 +98,17 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/performance/{connection_id}/goal/{id}")(pathParams);
+  const path = pathToFunc("/healthcare/{connection_id}/report/{id}")(
+    pathParams,
+  );
+
+  const query = encodeFormQuery({
+    "fields": payload.fields,
+    "raw": payload.raw,
+  });
 
   const headers = new Headers(compactMap({
-    Accept: "*/*",
+    Accept: "application/json",
   }));
 
   const securityInput = await extractSecurity(client._options.security);
@@ -109,7 +117,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "removePerformanceGoal",
+    operationID: "getHealthcareReport",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -123,10 +131,11 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "DELETE",
+    method: "GET",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    query: query,
     body: body,
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -148,12 +157,8 @@ async function $do(
   }
   const response = doResult.value;
 
-  const responseFields = {
-    HttpMeta: { Response: response, Request: req },
-  };
-
   const [result] = await M.match<
-    operations.RemovePerformanceGoalResponse | undefined,
+    shared.HealthcareReport,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -163,18 +168,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.nil(
-      200,
-      operations.RemovePerformanceGoalResponse$inboundSchema.optional(),
-    ),
+    M.json(200, shared.HealthcareReport$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-    M.nil(
-      "default",
-      operations.RemovePerformanceGoalResponse$inboundSchema.optional(),
-      { hdrs: true },
-    ),
-  )(response, req, { extraFields: responseFields });
+  )(response, req);
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

@@ -57,6 +57,14 @@ export type HealthcareMedication = {
    */
   dosage?: string | undefined;
   /**
+   * Amount of medication per dose
+   */
+  doseNumber?: number | undefined;
+  /**
+   * Unit of the dose amount (e.g. mg, tablet)
+   */
+  doseUnit?: string | undefined;
+  /**
    * The encounter in which the medication was ordered
    */
   encounterId?: string | undefined;
@@ -97,6 +105,10 @@ export type HealthcareMedication = {
    */
   refillCount?: number | undefined;
   /**
+   * How the medication is taken (e.g. oral, intravenous)
+   */
+  route?: string | undefined;
+  /**
    * When the patient should start taking the medication (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startAt?: Date | undefined;
@@ -129,6 +141,8 @@ export const HealthcareMedication$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   dosage: z.string().optional(),
+  dose_number: z.number().optional(),
+  dose_unit: z.string().optional(),
   encounter_id: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -140,6 +154,7 @@ export const HealthcareMedication$inboundSchema: z.ZodType<
   practitioner_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   refill_count: z.number().optional(),
+  route: z.string().optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   status: HealthcareMedicationStatus$inboundSchema.optional(),
@@ -149,6 +164,8 @@ export const HealthcareMedication$inboundSchema: z.ZodType<
   return remap$(v, {
     "authored_at": "authoredAt",
     "created_at": "createdAt",
+    "dose_number": "doseNumber",
+    "dose_unit": "doseUnit",
     "encounter_id": "encounterId",
     "end_at": "endAt",
     "patient_id": "patientId",

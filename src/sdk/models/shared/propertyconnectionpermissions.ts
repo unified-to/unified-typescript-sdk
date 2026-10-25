@@ -404,6 +404,18 @@ export const PropertyConnectionPermissions = {
   HealthcareObservationWrite: "healthcare_observation_write",
   HealthcareImmunizationRead: "healthcare_immunization_read",
   HealthcareImmunizationWrite: "healthcare_immunization_write",
+  HealthcareDocumentRead: "healthcare_document_read",
+  HealthcareDocumentWrite: "healthcare_document_write",
+  HealthcareCoverageRead: "healthcare_coverage_read",
+  HealthcareCoverageWrite: "healthcare_coverage_write",
+  HealthcareProcedureRead: "healthcare_procedure_read",
+  HealthcareProcedureWrite: "healthcare_procedure_write",
+  HealthcareReportRead: "healthcare_report_read",
+  HealthcareReportWrite: "healthcare_report_write",
+  HealthcareCareplanRead: "healthcare_careplan_read",
+  HealthcareCareplanWrite: "healthcare_careplan_write",
+  HealthcareGoalRead: "healthcare_goal_read",
+  HealthcareGoalWrite: "healthcare_goal_write",
 } as const;
 export type PropertyConnectionPermissions = OpenEnum<
   typeof PropertyConnectionPermissions

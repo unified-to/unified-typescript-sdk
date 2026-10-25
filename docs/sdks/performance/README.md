@@ -38,7 +38,7 @@ async function run() {
   const result = await unifiedTo.performance.createPerformanceFeedback({
     performanceFeedback: {
       createdAt: new Date("2023-04-11T16:21:53.862Z"),
-      id: "0667a6a9-9098-49de-8a72-db1c0a3ea89b",
+      id: "907be655-b03c-46ce-9c6b-7b3d76a8dfed",
       isVisible: true,
       message: "Tabernus corpus voluptate aestus.",
       metadata: [],
@@ -47,7 +47,7 @@ async function run() {
         "hexagon",
       ],
       type: "PRAISE",
-      updatedAt: new Date("2025-09-06T03:47:16.564Z"),
+      updatedAt: new Date("2025-09-06T17:30:00.783Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -79,7 +79,7 @@ async function run() {
   const res = await performanceCreatePerformanceFeedback(unifiedTo, {
     performanceFeedback: {
       createdAt: new Date("2023-04-11T16:21:53.862Z"),
-      id: "0667a6a9-9098-49de-8a72-db1c0a3ea89b",
+      id: "907be655-b03c-46ce-9c6b-7b3d76a8dfed",
       isVisible: true,
       message: "Tabernus corpus voluptate aestus.",
       metadata: [],
@@ -88,7 +88,7 @@ async function run() {
         "hexagon",
       ],
       type: "PRAISE",
-      updatedAt: new Date("2025-09-06T03:47:16.564Z"),
+      updatedAt: new Date("2025-09-06T17:30:00.783Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -144,14 +144,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-08-01T16:28:31.921Z"),
-      id: "5cd09abb-5e39-480b-9e22-65f6757c12d8",
+      dueAt: new Date("2026-08-02T11:57:16.651Z"),
+      id: "e6937b5e-cc69-4df1-96ee-ebd8365d292c",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-06T17:32:11.579Z"),
-          id: "f319dd24-b4a2-49c7-b7f7-b01abc75883b",
+          dueAt: new Date("2026-06-07T12:33:38.506Z"),
+          id: "3452b416-9f32-4ac5-8568-a86ab6bf5b22",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -160,8 +160,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-11T09:36:22.814Z"),
-          id: "41a721b4-6e3c-4cc5-af92-4b62f99bfee8",
+          dueAt: new Date("2026-08-12T05:09:51.862Z"),
+          id: "ef1a1136-32ba-44af-8fea-44256d823311",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -170,8 +170,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-13T10:16:58.401Z"),
-          id: "b108edd4-89f8-4c81-9df3-d3b037e03b82",
+          dueAt: new Date("2026-10-14T06:21:12.257Z"),
+          id: "ba8d9649-f3b1-448f-8b6c-f1cd7d81577e",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -180,10 +180,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-25T20:23:12.894Z"),
+      startAt: new Date("2025-07-26T12:50:34.111Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-14T06:05:47.515Z"),
+      updatedAt: new Date("2022-09-14T14:03:04.597Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -201,7 +201,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { performanceCreatePerformanceGoal } from "@unified-api/typescript-sdk/funcs/performanceCreatePerformanceGoal.js";
+import { goalCreatePerformanceGoal } from "@unified-api/typescript-sdk/funcs/goalCreatePerformanceGoal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -212,18 +212,18 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await performanceCreatePerformanceGoal(unifiedTo, {
+  const res = await goalCreatePerformanceGoal(unifiedTo, {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-08-01T16:28:31.921Z"),
-      id: "5cd09abb-5e39-480b-9e22-65f6757c12d8",
+      dueAt: new Date("2026-08-02T11:57:16.651Z"),
+      id: "e6937b5e-cc69-4df1-96ee-ebd8365d292c",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-06T17:32:11.579Z"),
-          id: "f319dd24-b4a2-49c7-b7f7-b01abc75883b",
+          dueAt: new Date("2026-06-07T12:33:38.506Z"),
+          id: "3452b416-9f32-4ac5-8568-a86ab6bf5b22",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -232,8 +232,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-11T09:36:22.814Z"),
-          id: "41a721b4-6e3c-4cc5-af92-4b62f99bfee8",
+          dueAt: new Date("2026-08-12T05:09:51.862Z"),
+          id: "ef1a1136-32ba-44af-8fea-44256d823311",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -242,8 +242,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-13T10:16:58.401Z"),
-          id: "b108edd4-89f8-4c81-9df3-d3b037e03b82",
+          dueAt: new Date("2026-10-14T06:21:12.257Z"),
+          id: "ba8d9649-f3b1-448f-8b6c-f1cd7d81577e",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -252,10 +252,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-25T20:23:12.894Z"),
+      startAt: new Date("2025-07-26T12:50:34.111Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-14T06:05:47.515Z"),
+      updatedAt: new Date("2022-09-14T14:03:04.597Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -264,7 +264,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("performanceCreatePerformanceGoal failed:", res.error);
+    console.log("goalCreatePerformanceGoal failed:", res.error);
   }
 }
 
@@ -482,7 +482,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { performanceGetPerformanceGoal } from "@unified-api/typescript-sdk/funcs/performanceGetPerformanceGoal.js";
+import { goalGetPerformanceGoal } from "@unified-api/typescript-sdk/funcs/goalGetPerformanceGoal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -493,7 +493,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await performanceGetPerformanceGoal(unifiedTo, {
+  const res = await goalGetPerformanceGoal(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -501,7 +501,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("performanceGetPerformanceGoal failed:", res.error);
+    console.log("goalGetPerformanceGoal failed:", res.error);
   }
 }
 
@@ -793,7 +793,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { performanceListPerformanceGoals } from "@unified-api/typescript-sdk/funcs/performanceListPerformanceGoals.js";
+import { goalListPerformanceGoals } from "@unified-api/typescript-sdk/funcs/goalListPerformanceGoals.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -804,14 +804,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await performanceListPerformanceGoals(unifiedTo, {
+  const res = await goalListPerformanceGoals(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("performanceListPerformanceGoals failed:", res.error);
+    console.log("goalListPerformanceGoals failed:", res.error);
   }
 }
 
@@ -935,14 +935,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-08-01T16:28:31.952Z"),
-      id: "48772534-a33e-4e87-8cd7-880826afe6fd",
+      dueAt: new Date("2026-08-02T11:57:16.674Z"),
+      id: "05c4c02e-e711-4c64-be82-5d4b9e5276ec",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-06T17:32:11.609Z"),
-          id: "b8abb940-8c7e-4961-85c4-e6e66b09f15d",
+          dueAt: new Date("2026-06-07T12:33:38.529Z"),
+          id: "52454d68-df59-416b-a863-801dabef4ee7",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -951,8 +951,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-11T09:36:22.845Z"),
-          id: "3e9c5d28-3ed6-4a96-b8ea-5d368817331a",
+          dueAt: new Date("2026-08-12T05:09:51.885Z"),
+          id: "cd508eb2-5047-4d16-a5e6-c1bfe8fb7c3a",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -961,8 +961,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-13T10:16:58.432Z"),
-          id: "32d587fe-abb1-49fb-ba3f-3b8b58134dd1",
+          dueAt: new Date("2026-10-14T06:21:12.280Z"),
+          id: "346ee874-0a45-439b-9e0a-ca92a0de06f9",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -971,10 +971,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-25T20:23:12.920Z"),
+      startAt: new Date("2025-07-26T12:50:34.130Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-14T06:05:47.528Z"),
+      updatedAt: new Date("2022-09-14T14:03:04.607Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -993,7 +993,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { performancePatchPerformanceGoal } from "@unified-api/typescript-sdk/funcs/performancePatchPerformanceGoal.js";
+import { goalPatchPerformanceGoal } from "@unified-api/typescript-sdk/funcs/goalPatchPerformanceGoal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1004,18 +1004,18 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await performancePatchPerformanceGoal(unifiedTo, {
+  const res = await goalPatchPerformanceGoal(unifiedTo, {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-08-01T16:28:31.952Z"),
-      id: "48772534-a33e-4e87-8cd7-880826afe6fd",
+      dueAt: new Date("2026-08-02T11:57:16.674Z"),
+      id: "05c4c02e-e711-4c64-be82-5d4b9e5276ec",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-06T17:32:11.609Z"),
-          id: "b8abb940-8c7e-4961-85c4-e6e66b09f15d",
+          dueAt: new Date("2026-06-07T12:33:38.529Z"),
+          id: "52454d68-df59-416b-a863-801dabef4ee7",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -1024,8 +1024,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-11T09:36:22.845Z"),
-          id: "3e9c5d28-3ed6-4a96-b8ea-5d368817331a",
+          dueAt: new Date("2026-08-12T05:09:51.885Z"),
+          id: "cd508eb2-5047-4d16-a5e6-c1bfe8fb7c3a",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -1034,8 +1034,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-13T10:16:58.432Z"),
-          id: "32d587fe-abb1-49fb-ba3f-3b8b58134dd1",
+          dueAt: new Date("2026-10-14T06:21:12.280Z"),
+          id: "346ee874-0a45-439b-9e0a-ca92a0de06f9",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -1044,10 +1044,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-25T20:23:12.920Z"),
+      startAt: new Date("2025-07-26T12:50:34.130Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-14T06:05:47.528Z"),
+      updatedAt: new Date("2022-09-14T14:03:04.607Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -1057,7 +1057,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("performancePatchPerformanceGoal failed:", res.error);
+    console.log("goalPatchPerformanceGoal failed:", res.error);
   }
 }
 
@@ -1117,7 +1117,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { performanceRemovePerformanceGoal } from "@unified-api/typescript-sdk/funcs/performanceRemovePerformanceGoal.js";
+import { goalRemovePerformanceGoal } from "@unified-api/typescript-sdk/funcs/goalRemovePerformanceGoal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1128,7 +1128,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await performanceRemovePerformanceGoal(unifiedTo, {
+  const res = await goalRemovePerformanceGoal(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1136,7 +1136,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("performanceRemovePerformanceGoal failed:", res.error);
+    console.log("goalRemovePerformanceGoal failed:", res.error);
   }
 }
 
@@ -1183,14 +1183,14 @@ async function run() {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-08-01T16:28:31.952Z"),
-      id: "48772534-a33e-4e87-8cd7-880826afe6fd",
+      dueAt: new Date("2026-08-02T11:57:16.674Z"),
+      id: "05c4c02e-e711-4c64-be82-5d4b9e5276ec",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-06T17:32:11.609Z"),
-          id: "b8abb940-8c7e-4961-85c4-e6e66b09f15d",
+          dueAt: new Date("2026-06-07T12:33:38.529Z"),
+          id: "52454d68-df59-416b-a863-801dabef4ee7",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -1199,8 +1199,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-11T09:36:22.845Z"),
-          id: "3e9c5d28-3ed6-4a96-b8ea-5d368817331a",
+          dueAt: new Date("2026-08-12T05:09:51.885Z"),
+          id: "cd508eb2-5047-4d16-a5e6-c1bfe8fb7c3a",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -1209,8 +1209,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-13T10:16:58.432Z"),
-          id: "32d587fe-abb1-49fb-ba3f-3b8b58134dd1",
+          dueAt: new Date("2026-10-14T06:21:12.280Z"),
+          id: "346ee874-0a45-439b-9e0a-ca92a0de06f9",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -1219,10 +1219,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-25T20:23:12.920Z"),
+      startAt: new Date("2025-07-26T12:50:34.130Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-14T06:05:47.528Z"),
+      updatedAt: new Date("2022-09-14T14:03:04.607Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -1241,7 +1241,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { performanceUpdatePerformanceGoal } from "@unified-api/typescript-sdk/funcs/performanceUpdatePerformanceGoal.js";
+import { goalUpdatePerformanceGoal } from "@unified-api/typescript-sdk/funcs/goalUpdatePerformanceGoal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1252,18 +1252,18 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await performanceUpdatePerformanceGoal(unifiedTo, {
+  const res = await goalUpdatePerformanceGoal(unifiedTo, {
     performanceGoal: {
       createdAt: new Date("2020-01-09T20:43:07.380Z"),
       description: "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-      dueAt: new Date("2026-08-01T16:28:31.952Z"),
-      id: "48772534-a33e-4e87-8cd7-880826afe6fd",
+      dueAt: new Date("2026-08-02T11:57:16.674Z"),
+      id: "05c4c02e-e711-4c64-be82-5d4b9e5276ec",
       metadata: [],
       milestones: [
         {
           currentValue: 10,
-          dueAt: new Date("2026-06-06T17:32:11.609Z"),
-          id: "b8abb940-8c7e-4961-85c4-e6e66b09f15d",
+          dueAt: new Date("2026-06-07T12:33:38.529Z"),
+          id: "52454d68-df59-416b-a863-801dabef4ee7",
           isCompleted: true,
           name: "Team-oriented secondary matrix",
           targetValue: 32,
@@ -1272,8 +1272,8 @@ async function run() {
         },
         {
           currentValue: 0,
-          dueAt: new Date("2026-08-11T09:36:22.845Z"),
-          id: "3e9c5d28-3ed6-4a96-b8ea-5d368817331a",
+          dueAt: new Date("2026-08-12T05:09:51.885Z"),
+          id: "cd508eb2-5047-4d16-a5e6-c1bfe8fb7c3a",
           isCompleted: true,
           name: "Exclusive client-server conglomeration",
           targetValue: 32,
@@ -1282,8 +1282,8 @@ async function run() {
         {
           currentValue: 31,
           description: "Hic explicabo odit.",
-          dueAt: new Date("2026-10-13T10:16:58.432Z"),
-          id: "32d587fe-abb1-49fb-ba3f-3b8b58134dd1",
+          dueAt: new Date("2026-10-14T06:21:12.280Z"),
+          id: "346ee874-0a45-439b-9e0a-ca92a0de06f9",
           isCompleted: true,
           name: "Synchronised immersive success",
           targetValue: 32,
@@ -1292,10 +1292,10 @@ async function run() {
       ],
       name: "Proactive national protocol",
       progress: 3,
-      startAt: new Date("2025-07-25T20:23:12.920Z"),
+      startAt: new Date("2025-07-26T12:50:34.130Z"),
       status: "CLOSED",
       type: "COMPANY",
-      updatedAt: new Date("2022-09-14T06:05:47.528Z"),
+      updatedAt: new Date("2022-09-14T14:03:04.607Z"),
       weight: 5,
     },
     connectionId: "<id>",
@@ -1305,7 +1305,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("performanceUpdatePerformanceGoal failed:", res.error);
+    console.log("goalUpdatePerformanceGoal failed:", res.error);
   }
 }
 

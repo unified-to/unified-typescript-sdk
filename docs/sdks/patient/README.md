@@ -37,6 +37,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -46,7 +59,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "9da7b680-d2bf-4a16-a503-1a58be6429e7",
+      id: "4cb19e3a-7e3c-4079-9ebf-6820c40f975e",
       identifiers: [
         {
           type: "MRN",
@@ -66,7 +79,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.611Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.218Z"),
     },
     connectionId: "<id>",
   });
@@ -104,6 +117,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -113,7 +139,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "9da7b680-d2bf-4a16-a503-1a58be6429e7",
+      id: "4cb19e3a-7e3c-4079-9ebf-6820c40f975e",
       identifiers: [
         {
           type: "MRN",
@@ -133,7 +159,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.611Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.218Z"),
     },
     connectionId: "<id>",
   });
@@ -350,6 +376,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -359,7 +398,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "5fd89fe8-9027-4a60-891c-d5449a86af19",
+      id: "a50434ca-351b-46db-acd2-ace944a5af07",
       identifiers: [
         {
           type: "MRN",
@@ -379,7 +418,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.664Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.265Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -418,6 +457,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -427,7 +479,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "5fd89fe8-9027-4a60-891c-d5449a86af19",
+      id: "a50434ca-351b-46db-acd2-ace944a5af07",
       identifiers: [
         {
           type: "MRN",
@@ -447,7 +499,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.664Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.265Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -509,6 +561,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -518,7 +583,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "5fd89fe8-9027-4a60-891c-d5449a86af19",
+      id: "a50434ca-351b-46db-acd2-ace944a5af07",
       identifiers: [
         {
           type: "MRN",
@@ -538,7 +603,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.664Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.265Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -577,6 +642,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -586,7 +664,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "5fd89fe8-9027-4a60-891c-d5449a86af19",
+      id: "a50434ca-351b-46db-acd2-ace944a5af07",
       identifiers: [
         {
           type: "MRN",
@@ -606,7 +684,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.664Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.265Z"),
     },
     connectionId: "<id>",
     id: "<id>",

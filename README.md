@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
+      id: "42b50887-fc59-4e18-971b-f038f625956b",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
+      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
+      id: "42b50887-fc59-4e18-971b-f038f625956b",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
+      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
+      id: "42b50887-fc59-4e18-971b-f038f625956b",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
+      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
+        id: "42b50887-fc59-4e18-971b-f038f625956b",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-07T16:06:39.092Z"),
+        updatedAt: new Date("2023-08-07T21:14:05.065Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
+      id: "42b50887-fc59-4e18-971b-f038f625956b",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
+      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "3803c66c-0585-4ff9-88f6-eb44030dbe61",
+      id: "42b50887-fc59-4e18-971b-f038f625956b",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T16:06:39.092Z"),
+      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
     },
     connectionId: "<id>",
   });
@@ -1552,14 +1552,20 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`datastoreUpdateDatastoreRecord`](docs/sdks/record/README.md#updatedatastorerecord) - Update a record
 - [`datastoreUpdateDatastoreTable`](docs/sdks/datastore/README.md#updatedatastoretable) - Update a table
 - [`datastoreUpdateDatastoreTable`](docs/sdks/table/README.md#updatedatastoretable) - Update a table
+- [`documentCreateHealthcareDocument`](docs/sdks/document/README.md#createhealthcaredocument) - Create a document
+- [`documentCreateHealthcareDocument`](docs/sdks/healthcare/README.md#createhealthcaredocument) - Create a document
 - [`documentCreateHrisDocument`](docs/sdks/document/README.md#createhrisdocument) - Create a document
 - [`documentCreateHrisDocument`](docs/sdks/hris/README.md#createhrisdocument) - Create a document
 - [`documentCreateSigningDocument`](docs/sdks/document/README.md#createsigningdocument) - Create a document
 - [`documentCreateSigningDocument`](docs/sdks/signing/README.md#createsigningdocument) - Create a document
+- [`documentGetHealthcareDocument`](docs/sdks/document/README.md#gethealthcaredocument) - Retrieve a document
+- [`documentGetHealthcareDocument`](docs/sdks/healthcare/README.md#gethealthcaredocument) - Retrieve a document
 - [`documentGetHrisDocument`](docs/sdks/document/README.md#gethrisdocument) - Retrieve a document
 - [`documentGetHrisDocument`](docs/sdks/hris/README.md#gethrisdocument) - Retrieve a document
 - [`documentGetSigningDocument`](docs/sdks/document/README.md#getsigningdocument) - Retrieve a document
 - [`documentGetSigningDocument`](docs/sdks/signing/README.md#getsigningdocument) - Retrieve a document
+- [`documentListHealthcareDocuments`](docs/sdks/document/README.md#listhealthcaredocuments) - List all documents
+- [`documentListHealthcareDocuments`](docs/sdks/healthcare/README.md#listhealthcaredocuments) - List all documents
 - [`documentListHrisDocuments`](docs/sdks/document/README.md#listhrisdocuments) - List all documents
 - [`documentListHrisDocuments`](docs/sdks/hris/README.md#listhrisdocuments) - List all documents
 - [`documentListSigningDocuments`](docs/sdks/document/README.md#listsigningdocuments) - List all documents
@@ -1700,6 +1706,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`genaiUpdateGenaiMemory`](docs/sdks/memory/README.md#updategenaimemory) - Update a memory
 - [`genaiUpdateGenaiTask`](docs/sdks/genai/README.md#updategenaitask) - Update a task
 - [`genaiUpdateGenaiTask`](docs/sdks/task/README.md#updategenaitask) - Update a task
+- [`goalCreatePerformanceGoal`](docs/sdks/goal/README.md#createperformancegoal) - Create a goal
+- [`goalCreatePerformanceGoal`](docs/sdks/performance/README.md#createperformancegoal) - Create a goal
+- [`goalGetPerformanceGoal`](docs/sdks/goal/README.md#getperformancegoal) - Retrieve a goal
+- [`goalGetPerformanceGoal`](docs/sdks/performance/README.md#getperformancegoal) - Retrieve a goal
+- [`goalListPerformanceGoals`](docs/sdks/goal/README.md#listperformancegoals) - List all goals
+- [`goalListPerformanceGoals`](docs/sdks/performance/README.md#listperformancegoals) - List all goals
+- [`goalPatchPerformanceGoal`](docs/sdks/goal/README.md#patchperformancegoal) - Update a goal
+- [`goalPatchPerformanceGoal`](docs/sdks/performance/README.md#patchperformancegoal) - Update a goal
+- [`goalRemovePerformanceGoal`](docs/sdks/goal/README.md#removeperformancegoal) - Remove a goal
+- [`goalRemovePerformanceGoal`](docs/sdks/performance/README.md#removeperformancegoal) - Remove a goal
+- [`goalUpdatePerformanceGoal`](docs/sdks/goal/README.md#updateperformancegoal) - Update a goal
+- [`goalUpdatePerformanceGoal`](docs/sdks/performance/README.md#updateperformancegoal) - Update a goal
 - [`groupCreateHrisGroup`](docs/sdks/group/README.md#createhrisgroup) - Create a group
 - [`groupCreateHrisGroup`](docs/sdks/hris/README.md#createhrisgroup) - Create a group
 - [`groupCreateScimGroups`](docs/sdks/group/README.md#createscimgroups) - Create group
@@ -1738,10 +1756,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`healthcareGetHealthcareAllergy`](docs/sdks/healthcare/README.md#gethealthcareallergy) - Retrieve an allergy
 - [`healthcareGetHealthcareAppointment`](docs/sdks/appointment/README.md#gethealthcareappointment) - Retrieve an appointment
 - [`healthcareGetHealthcareAppointment`](docs/sdks/healthcare/README.md#gethealthcareappointment) - Retrieve an appointment
+- [`healthcareGetHealthcareCareplan`](docs/sdks/careplan/README.md#gethealthcarecareplan) - Retrieve a careplan
+- [`healthcareGetHealthcareCareplan`](docs/sdks/healthcare/README.md#gethealthcarecareplan) - Retrieve a careplan
 - [`healthcareGetHealthcareCondition`](docs/sdks/condition/README.md#gethealthcarecondition) - Retrieve a condition
 - [`healthcareGetHealthcareCondition`](docs/sdks/healthcare/README.md#gethealthcarecondition) - Retrieve a condition
+- [`healthcareGetHealthcareCoverage`](docs/sdks/coverage/README.md#gethealthcarecoverage) - Retrieve a coverage
+- [`healthcareGetHealthcareCoverage`](docs/sdks/healthcare/README.md#gethealthcarecoverage) - Retrieve a coverage
 - [`healthcareGetHealthcareEncounter`](docs/sdks/encounter/README.md#gethealthcareencounter) - Retrieve an encounter
 - [`healthcareGetHealthcareEncounter`](docs/sdks/healthcare/README.md#gethealthcareencounter) - Retrieve an encounter
+- [`healthcareGetHealthcareGoal`](docs/sdks/goal/README.md#gethealthcaregoal) - Retrieve a goal
+- [`healthcareGetHealthcareGoal`](docs/sdks/healthcare/README.md#gethealthcaregoal) - Retrieve a goal
 - [`healthcareGetHealthcareImmunization`](docs/sdks/healthcare/README.md#gethealthcareimmunization) - Retrieve an immunization
 - [`healthcareGetHealthcareImmunization`](docs/sdks/immunization/README.md#gethealthcareimmunization) - Retrieve an immunization
 - [`healthcareGetHealthcareMedication`](docs/sdks/healthcare/README.md#gethealthcaremedication) - Retrieve a medication
@@ -1752,16 +1776,24 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`healthcareGetHealthcarePatient`](docs/sdks/patient/README.md#gethealthcarepatient) - Retrieve a patient
 - [`healthcareGetHealthcarePractitioner`](docs/sdks/healthcare/README.md#gethealthcarepractitioner) - Retrieve a practitioner
 - [`healthcareGetHealthcarePractitioner`](docs/sdks/practitioner/README.md#gethealthcarepractitioner) - Retrieve a practitioner
+- [`healthcareGetHealthcareProcedure`](docs/sdks/healthcare/README.md#gethealthcareprocedure) - Retrieve a procedure
+- [`healthcareGetHealthcareProcedure`](docs/sdks/procedure/README.md#gethealthcareprocedure) - Retrieve a procedure
 - [`healthcareGetHealthcareSlot`](docs/sdks/healthcare/README.md#gethealthcareslot) - Retrieve a slot
 - [`healthcareGetHealthcareSlot`](docs/sdks/slot/README.md#gethealthcareslot) - Retrieve a slot
 - [`healthcareListHealthcareAllergies`](docs/sdks/allergy/README.md#listhealthcareallergies) - List all allergies
 - [`healthcareListHealthcareAllergies`](docs/sdks/healthcare/README.md#listhealthcareallergies) - List all allergies
 - [`healthcareListHealthcareAppointments`](docs/sdks/appointment/README.md#listhealthcareappointments) - List all appointments
 - [`healthcareListHealthcareAppointments`](docs/sdks/healthcare/README.md#listhealthcareappointments) - List all appointments
+- [`healthcareListHealthcareCareplans`](docs/sdks/careplan/README.md#listhealthcarecareplans) - List all careplans
+- [`healthcareListHealthcareCareplans`](docs/sdks/healthcare/README.md#listhealthcarecareplans) - List all careplans
 - [`healthcareListHealthcareConditions`](docs/sdks/condition/README.md#listhealthcareconditions) - List all conditions
 - [`healthcareListHealthcareConditions`](docs/sdks/healthcare/README.md#listhealthcareconditions) - List all conditions
+- [`healthcareListHealthcareCoverages`](docs/sdks/coverage/README.md#listhealthcarecoverages) - List all coverages
+- [`healthcareListHealthcareCoverages`](docs/sdks/healthcare/README.md#listhealthcarecoverages) - List all coverages
 - [`healthcareListHealthcareEncounters`](docs/sdks/encounter/README.md#listhealthcareencounters) - List all encounters
 - [`healthcareListHealthcareEncounters`](docs/sdks/healthcare/README.md#listhealthcareencounters) - List all encounters
+- [`healthcareListHealthcareGoals`](docs/sdks/goal/README.md#listhealthcaregoals) - List all goals
+- [`healthcareListHealthcareGoals`](docs/sdks/healthcare/README.md#listhealthcaregoals) - List all goals
 - [`healthcareListHealthcareImmunizations`](docs/sdks/healthcare/README.md#listhealthcareimmunizations) - List all immunizations
 - [`healthcareListHealthcareImmunizations`](docs/sdks/immunization/README.md#listhealthcareimmunizations) - List all immunizations
 - [`healthcareListHealthcareMedications`](docs/sdks/healthcare/README.md#listhealthcaremedications) - List all medications
@@ -1772,6 +1804,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`healthcareListHealthcarePatients`](docs/sdks/patient/README.md#listhealthcarepatients) - List all patients
 - [`healthcareListHealthcarePractitioners`](docs/sdks/healthcare/README.md#listhealthcarepractitioners) - List all practitioners
 - [`healthcareListHealthcarePractitioners`](docs/sdks/practitioner/README.md#listhealthcarepractitioners) - List all practitioners
+- [`healthcareListHealthcareProcedures`](docs/sdks/healthcare/README.md#listhealthcareprocedures) - List all procedures
+- [`healthcareListHealthcareProcedures`](docs/sdks/procedure/README.md#listhealthcareprocedures) - List all procedures
 - [`healthcareListHealthcareSlots`](docs/sdks/healthcare/README.md#listhealthcareslots) - List all slots
 - [`healthcareListHealthcareSlots`](docs/sdks/slot/README.md#listhealthcareslots) - List all slots
 - [`healthcarePatchHealthcareAppointment`](docs/sdks/appointment/README.md#patchhealthcareappointment) - Update an appointment
@@ -2226,26 +2260,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`paymentUpdatePaymentSubscription`](docs/sdks/subscription/README.md#updatepaymentsubscription) - Update a subscription
 - [`performanceCreatePerformanceFeedback`](docs/sdks/feedback/README.md#createperformancefeedback) - Create a feedback
 - [`performanceCreatePerformanceFeedback`](docs/sdks/performance/README.md#createperformancefeedback) - Create a feedback
-- [`performanceCreatePerformanceGoal`](docs/sdks/goal/README.md#createperformancegoal) - Create a goal
-- [`performanceCreatePerformanceGoal`](docs/sdks/performance/README.md#createperformancegoal) - Create a goal
 - [`performanceGetPerformanceCycle`](docs/sdks/cycle/README.md#getperformancecycle) - Retrieve a cycle
 - [`performanceGetPerformanceCycle`](docs/sdks/performance/README.md#getperformancecycle) - Retrieve a cycle
 - [`performanceGetPerformanceFeedback`](docs/sdks/feedback/README.md#getperformancefeedback) - Retrieve a feedback
 - [`performanceGetPerformanceFeedback`](docs/sdks/performance/README.md#getperformancefeedback) - Retrieve a feedback
-- [`performanceGetPerformanceGoal`](docs/sdks/goal/README.md#getperformancegoal) - Retrieve a goal
-- [`performanceGetPerformanceGoal`](docs/sdks/performance/README.md#getperformancegoal) - Retrieve a goal
 - [`performanceListPerformanceCycles`](docs/sdks/cycle/README.md#listperformancecycles) - List all cycles
 - [`performanceListPerformanceCycles`](docs/sdks/performance/README.md#listperformancecycles) - List all cycles
 - [`performanceListPerformanceFeedbacks`](docs/sdks/feedback/README.md#listperformancefeedbacks) - List all feedbacks
 - [`performanceListPerformanceFeedbacks`](docs/sdks/performance/README.md#listperformancefeedbacks) - List all feedbacks
-- [`performanceListPerformanceGoals`](docs/sdks/goal/README.md#listperformancegoals) - List all goals
-- [`performanceListPerformanceGoals`](docs/sdks/performance/README.md#listperformancegoals) - List all goals
-- [`performancePatchPerformanceGoal`](docs/sdks/goal/README.md#patchperformancegoal) - Update a goal
-- [`performancePatchPerformanceGoal`](docs/sdks/performance/README.md#patchperformancegoal) - Update a goal
-- [`performanceRemovePerformanceGoal`](docs/sdks/goal/README.md#removeperformancegoal) - Remove a goal
-- [`performanceRemovePerformanceGoal`](docs/sdks/performance/README.md#removeperformancegoal) - Remove a goal
-- [`performanceUpdatePerformanceGoal`](docs/sdks/goal/README.md#updateperformancegoal) - Update a goal
-- [`performanceUpdatePerformanceGoal`](docs/sdks/performance/README.md#updateperformancegoal) - Update a goal
 - [`profileGetSocialProfile`](docs/sdks/profile/README.md#getsocialprofile) - Retrieve a profile
 - [`profileGetSocialProfile`](docs/sdks/social/README.md#getsocialprofile) - Retrieve a profile
 - [`profileListSocialProfiles`](docs/sdks/profile/README.md#listsocialprofiles) - List all profiles
@@ -2314,8 +2336,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`repoRemoveRepoPullrequest`](docs/sdks/repo/README.md#removerepopullrequest) - Remove a pullrequest
 - [`repoRemoveRepoRepository`](docs/sdks/repo/README.md#removereporepository) - Remove a repository
 - [`repoRemoveRepoRepository`](docs/sdks/repository/README.md#removereporepository) - Remove a repository
+- [`reportGetHealthcareReport`](docs/sdks/healthcare/README.md#gethealthcarereport) - Retrieve a report
+- [`reportGetHealthcareReport`](docs/sdks/report/README.md#gethealthcarereport) - Retrieve a report
 - [`reportListAnalyticsReports`](docs/sdks/analytics/README.md#listanalyticsreports) - List all reports
 - [`reportListAnalyticsReports`](docs/sdks/report/README.md#listanalyticsreports) - List all reports
+- [`reportListHealthcareReports`](docs/sdks/healthcare/README.md#listhealthcarereports) - List all reports
+- [`reportListHealthcareReports`](docs/sdks/report/README.md#listhealthcarereports) - List all reports
 - [`reportListMartechReports`](docs/sdks/martech/README.md#listmartechreports) - List all reports
 - [`reportListMartechReports`](docs/sdks/report/README.md#listmartechreports) - List all reports
 - [`repoUpdateRepoBranch`](docs/sdks/branch/README.md#updaterepobranch) - Update a branch

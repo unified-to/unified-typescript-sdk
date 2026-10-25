@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  HealthcareCode,
+  HealthcareCode$inboundSchema,
+  HealthcareCode$Outbound,
+  HealthcareCode$outboundSchema,
+} from "./healthcarecode.js";
+import {
   HealthcareEmail,
   HealthcareEmail$inboundSchema,
   HealthcareEmail$Outbound,
@@ -27,6 +33,12 @@ import {
   HealthcareMetadata$Outbound,
   HealthcareMetadata$outboundSchema,
 } from "./healthcaremetadata.js";
+import {
+  HealthcarePatientContact,
+  HealthcarePatientContact$inboundSchema,
+  HealthcarePatientContact$Outbound,
+  HealthcarePatientContact$outboundSchema,
+} from "./healthcarepatientcontact.js";
 import {
   HealthcareTelephone,
   HealthcareTelephone$inboundSchema,
@@ -54,6 +66,25 @@ export const HealthcarePatientGender = {
  */
 export type HealthcarePatientGender = OpenEnum<typeof HealthcarePatientGender>;
 
+/**
+ * Marital status of the patient
+ */
+export const MaritalStatus = {
+  Married: "MARRIED",
+  Single: "SINGLE",
+  DomesticPartner: "DOMESTIC_PARTNER",
+  Separated: "SEPARATED",
+  Divorced: "DIVORCED",
+  Widowed: "WIDOWED",
+  Annulled: "ANNULLED",
+  Unknown: "UNKNOWN",
+  Other: "OTHER",
+} as const;
+/**
+ * Marital status of the patient
+ */
+export type MaritalStatus = OpenEnum<typeof MaritalStatus>;
+
 export type HealthcarePatient = {
   /**
    * Home address of the patient
@@ -63,6 +94,10 @@ export type HealthcarePatient = {
    * Date of birth (YYYY-MM-DD)
    */
   birthdate?: string | undefined;
+  /**
+   * Emergency contacts, guardians and other contact persons for the patient
+   */
+  contacts?: Array<HealthcarePatientContact> | undefined;
   /**
    * When the patient record was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -75,6 +110,10 @@ export type HealthcarePatient = {
    * Email addresses of the patient
    */
   emails?: Array<HealthcareEmail> | undefined;
+  /**
+   * Codings for the patient's ethnicity (e.g. CDC ethnicity codes)
+   */
+  ethnicities?: Array<HealthcareCode> | undefined;
   /**
    * Given name of the patient
    */
@@ -108,6 +147,10 @@ export type HealthcarePatient = {
    */
   lastName?: string | undefined;
   /**
+   * Marital status of the patient
+   */
+  maritalStatus?: MaritalStatus | undefined;
+  /**
    * Custom field values
    */
   metadata?: Array<HealthcareMetadata> | undefined;
@@ -119,6 +162,10 @@ export type HealthcarePatient = {
    * The patient's primary care practitioners
    */
   practitionerIds?: Array<string> | undefined;
+  /**
+   * Codings for the patient's race (e.g. CDC race codes)
+   */
+  races?: Array<HealthcareCode> | undefined;
   /**
    * Raw data from integration
    */
@@ -147,6 +194,19 @@ export const HealthcarePatientGender$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(HealthcarePatientGender);
 
 /** @internal */
+export const MaritalStatus$inboundSchema: z.ZodType<
+  MaritalStatus,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(MaritalStatus);
+/** @internal */
+export const MaritalStatus$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  MaritalStatus
+> = openEnums.outboundSchema(MaritalStatus);
+
+/** @internal */
 export const HealthcarePatient$inboundSchema: z.ZodType<
   HealthcarePatient,
   z.ZodTypeDef,
@@ -154,11 +214,13 @@ export const HealthcarePatient$inboundSchema: z.ZodType<
 > = z.object({
   address: PropertyHealthcarePatientAddress$inboundSchema.optional(),
   birthdate: z.string().optional(),
+  contacts: z.array(HealthcarePatientContact$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   deceased_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   emails: z.array(HealthcareEmail$inboundSchema).optional(),
+  ethnicities: z.array(HealthcareCode$inboundSchema).optional(),
   first_name: z.string().optional(),
   gender: HealthcarePatientGender$inboundSchema.optional(),
   id: z.string().optional(),
@@ -167,9 +229,11 @@ export const HealthcarePatient$inboundSchema: z.ZodType<
   is_deceased: z.boolean().optional(),
   language: z.string().optional(),
   last_name: z.string().optional(),
+  marital_status: MaritalStatus$inboundSchema.optional(),
   metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   practitioner_ids: z.array(z.string()).optional(),
+  races: z.array(HealthcareCode$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -182,6 +246,7 @@ export const HealthcarePatient$inboundSchema: z.ZodType<
     "is_active": "isActive",
     "is_deceased": "isDeceased",
     "last_name": "lastName",
+    "marital_status": "maritalStatus",
     "practitioner_ids": "practitionerIds",
     "updated_at": "updatedAt",
   });
@@ -190,9 +255,11 @@ export const HealthcarePatient$inboundSchema: z.ZodType<
 export type HealthcarePatient$Outbound = {
   address?: PropertyHealthcarePatientAddress$Outbound | undefined;
   birthdate?: string | undefined;
+  contacts?: Array<HealthcarePatientContact$Outbound> | undefined;
   created_at?: string | undefined;
   deceased_at?: string | undefined;
   emails?: Array<HealthcareEmail$Outbound> | undefined;
+  ethnicities?: Array<HealthcareCode$Outbound> | undefined;
   first_name?: string | undefined;
   gender?: string | undefined;
   id?: string | undefined;
@@ -201,9 +268,11 @@ export type HealthcarePatient$Outbound = {
   is_deceased?: boolean | undefined;
   language?: string | undefined;
   last_name?: string | undefined;
+  marital_status?: string | undefined;
   metadata?: Array<HealthcareMetadata$Outbound> | undefined;
   name?: string | undefined;
   practitioner_ids?: Array<string> | undefined;
+  races?: Array<HealthcareCode$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   telephones?: Array<HealthcareTelephone$Outbound> | undefined;
   updated_at?: string | undefined;
@@ -217,9 +286,11 @@ export const HealthcarePatient$outboundSchema: z.ZodType<
 > = z.object({
   address: PropertyHealthcarePatientAddress$outboundSchema.optional(),
   birthdate: z.string().optional(),
+  contacts: z.array(HealthcarePatientContact$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   deceasedAt: z.date().transform(v => v.toISOString()).optional(),
   emails: z.array(HealthcareEmail$outboundSchema).optional(),
+  ethnicities: z.array(HealthcareCode$outboundSchema).optional(),
   firstName: z.string().optional(),
   gender: HealthcarePatientGender$outboundSchema.optional(),
   id: z.string().optional(),
@@ -228,9 +299,11 @@ export const HealthcarePatient$outboundSchema: z.ZodType<
   isDeceased: z.boolean().optional(),
   language: z.string().optional(),
   lastName: z.string().optional(),
+  maritalStatus: MaritalStatus$outboundSchema.optional(),
   metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   practitionerIds: z.array(z.string()).optional(),
+  races: z.array(HealthcareCode$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   telephones: z.array(HealthcareTelephone$outboundSchema).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -242,6 +315,7 @@ export const HealthcarePatient$outboundSchema: z.ZodType<
     isActive: "is_active",
     isDeceased: "is_deceased",
     lastName: "last_name",
+    maritalStatus: "marital_status",
     practitionerIds: "practitioner_ids",
     updatedAt: "updated_at",
   });

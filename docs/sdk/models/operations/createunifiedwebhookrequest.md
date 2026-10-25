@@ -9,7 +9,7 @@ let value: CreateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "analytics_session",
+    objectType: "forms_submission",
   },
 };
 ```

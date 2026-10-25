@@ -5,29 +5,42 @@
 ### Available Operations
 
 * [createHealthcareAppointment](#createhealthcareappointment) - Create an appointment
+* [createHealthcareDocument](#createhealthcaredocument) - Create a document
 * [createHealthcareObservation](#createhealthcareobservation) - Create an observation
 * [createHealthcarePatient](#createhealthcarepatient) - Create a patient
 * [getHealthcareAllergy](#gethealthcareallergy) - Retrieve an allergy
 * [getHealthcareAppointment](#gethealthcareappointment) - Retrieve an appointment
+* [getHealthcareCareplan](#gethealthcarecareplan) - Retrieve a careplan
 * [getHealthcareCondition](#gethealthcarecondition) - Retrieve a condition
+* [getHealthcareCoverage](#gethealthcarecoverage) - Retrieve a coverage
+* [getHealthcareDocument](#gethealthcaredocument) - Retrieve a document
 * [getHealthcareEncounter](#gethealthcareencounter) - Retrieve an encounter
+* [getHealthcareGoal](#gethealthcaregoal) - Retrieve a goal
 * [getHealthcareImmunization](#gethealthcareimmunization) - Retrieve an immunization
 * [getHealthcareLocation](#gethealthcarelocation) - Retrieve a location
 * [getHealthcareMedication](#gethealthcaremedication) - Retrieve a medication
 * [getHealthcareObservation](#gethealthcareobservation) - Retrieve an observation
 * [getHealthcarePatient](#gethealthcarepatient) - Retrieve a patient
 * [getHealthcarePractitioner](#gethealthcarepractitioner) - Retrieve a practitioner
+* [getHealthcareProcedure](#gethealthcareprocedure) - Retrieve a procedure
+* [getHealthcareReport](#gethealthcarereport) - Retrieve a report
 * [getHealthcareSlot](#gethealthcareslot) - Retrieve a slot
 * [listHealthcareAllergies](#listhealthcareallergies) - List all allergies
 * [listHealthcareAppointments](#listhealthcareappointments) - List all appointments
+* [listHealthcareCareplans](#listhealthcarecareplans) - List all careplans
 * [listHealthcareConditions](#listhealthcareconditions) - List all conditions
+* [listHealthcareCoverages](#listhealthcarecoverages) - List all coverages
+* [listHealthcareDocuments](#listhealthcaredocuments) - List all documents
 * [listHealthcareEncounters](#listhealthcareencounters) - List all encounters
+* [listHealthcareGoals](#listhealthcaregoals) - List all goals
 * [listHealthcareImmunizations](#listhealthcareimmunizations) - List all immunizations
 * [listHealthcareLocations](#listhealthcarelocations) - List all locations
 * [listHealthcareMedications](#listhealthcaremedications) - List all medications
 * [listHealthcareObservations](#listhealthcareobservations) - List all observations
 * [listHealthcarePatients](#listhealthcarepatients) - List all patients
 * [listHealthcarePractitioners](#listhealthcarepractitioners) - List all practitioners
+* [listHealthcareProcedures](#listhealthcareprocedures) - List all procedures
+* [listHealthcareReports](#listhealthcarereports) - List all reports
 * [listHealthcareSlots](#listhealthcareslots) - List all slots
 * [patchHealthcareAppointment](#patchhealthcareappointment) - Update an appointment
 * [patchHealthcarePatient](#patchhealthcarepatient) - Update a patient
@@ -57,27 +70,23 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "eb3a5429-8941-41f6-8ccb-b9d0b03df9c7",
+      id: "af950aa3-7594-4323-88e8-4d93d6f1a586",
+      isVirtual: true,
+      meetingUrl: "https://expensive-slipper.name/",
       metadata: [],
+      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
       practitionerIds: [],
-      reasons: [
-        {
-          code: "12762740",
-          display: "cubicularis caput",
-          system: "http://snomed.info/sct",
-        },
-      ],
       serviceTypes: [
         {
-          code: "61128108",
-          display: "Annual physical",
+          code: "12762740",
+          display: "New patient visit",
           system: "http://snomed.info/sct",
         },
       ],
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-21T16:18:37.366Z"),
+      updatedAt: new Date("2026-09-26T00:06:46.357Z"),
     },
     connectionId: "<id>",
   });
@@ -110,27 +119,23 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "eb3a5429-8941-41f6-8ccb-b9d0b03df9c7",
+      id: "af950aa3-7594-4323-88e8-4d93d6f1a586",
+      isVirtual: true,
+      meetingUrl: "https://expensive-slipper.name/",
       metadata: [],
+      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
       practitionerIds: [],
-      reasons: [
-        {
-          code: "12762740",
-          display: "cubicularis caput",
-          system: "http://snomed.info/sct",
-        },
-      ],
       serviceTypes: [
         {
-          code: "61128108",
-          display: "Annual physical",
+          code: "12762740",
+          display: "New patient visit",
           system: "http://snomed.info/sct",
         },
       ],
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-21T16:18:37.366Z"),
+      updatedAt: new Date("2026-09-26T00:06:46.357Z"),
     },
     connectionId: "<id>",
   });
@@ -157,6 +162,123 @@ run();
 ### Response
 
 **Promise\<[shared.HealthcareAppointment](../../sdk/models/shared/healthcareappointment.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## createHealthcareDocument
+
+Creates a HealthcareDocument. Provide the unified HealthcareDocument fields in the request body; they are mapped to the provider's API. Returns the created HealthcareDocument.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createHealthcareDocument" method="post" path="/healthcare/{connection_id}/document" example="healthcare_document" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.createHealthcareDocument({
+    healthcareDocument: {
+      authoredAt: new Date("2023-07-16T04:00:25.853Z"),
+      codes: [
+        {
+          code: "23671711",
+          display: "History and physical",
+          system: "http://loinc.org",
+        },
+      ],
+      createdAt: new Date("2023-07-16T04:00:25.853Z"),
+      documentUrl: "https://overcooked-yogurt.org",
+      filename: "ugh_after.elc",
+      id: "414a780a-39f7-47c5-8d8a-f325929a9698",
+      metadata: [],
+      mimeType: "application/pdf",
+      name: "History and physical",
+      status: "SUPERSEDED",
+      type: "CONSULTATION_NOTE",
+      updatedAt: new Date("2024-12-28T11:39:14.848Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { documentCreateHealthcareDocument } from "@unified-api/typescript-sdk/funcs/documentCreateHealthcareDocument.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await documentCreateHealthcareDocument(unifiedTo, {
+    healthcareDocument: {
+      authoredAt: new Date("2023-07-16T04:00:25.853Z"),
+      codes: [
+        {
+          code: "23671711",
+          display: "History and physical",
+          system: "http://loinc.org",
+        },
+      ],
+      createdAt: new Date("2023-07-16T04:00:25.853Z"),
+      documentUrl: "https://overcooked-yogurt.org",
+      filename: "ugh_after.elc",
+      id: "414a780a-39f7-47c5-8d8a-f325929a9698",
+      metadata: [],
+      mimeType: "application/pdf",
+      name: "History and physical",
+      status: "SUPERSEDED",
+      type: "CONSULTATION_NOTE",
+      updatedAt: new Date("2024-12-28T11:39:14.848Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentCreateHealthcareDocument failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateHealthcareDocumentRequest](../../sdk/models/operations/createhealthcaredocumentrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareDocument](../../sdk/models/shared/healthcaredocument.md)\>**
 
 ### Errors
 
@@ -215,15 +337,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "d93686a0-0cec-4e88-acd9-b04eddf10780",
+      id: "dd54cc6f-e958-4a9c-8c16-1beb23580478",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-13T07:56:39.736Z"),
+      issuedAt: new Date("2025-05-13T20:34:52.019Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-01-21T19:45:10.357Z"),
+      observedAt: new Date("2025-01-22T06:48:12.861Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-03-26T20:06:27.499Z"),
+      updatedAt: new Date("2026-03-27T13:15:37.756Z"),
     },
     connectionId: "<id>",
   });
@@ -285,15 +407,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "d93686a0-0cec-4e88-acd9-b04eddf10780",
+      id: "dd54cc6f-e958-4a9c-8c16-1beb23580478",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-13T07:56:39.736Z"),
+      issuedAt: new Date("2025-05-13T20:34:52.019Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-01-21T19:45:10.357Z"),
+      observedAt: new Date("2025-01-22T06:48:12.861Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-03-26T20:06:27.499Z"),
+      updatedAt: new Date("2026-03-27T13:15:37.756Z"),
     },
     connectionId: "<id>",
   });
@@ -354,6 +476,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -363,7 +498,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "9da7b680-d2bf-4a16-a503-1a58be6429e7",
+      id: "4cb19e3a-7e3c-4079-9ebf-6820c40f975e",
       identifiers: [
         {
           type: "MRN",
@@ -383,7 +518,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.611Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.218Z"),
     },
     connectionId: "<id>",
   });
@@ -421,6 +556,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -430,7 +578,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "9da7b680-d2bf-4a16-a503-1a58be6429e7",
+      id: "4cb19e3a-7e3c-4079-9ebf-6820c40f975e",
       identifiers: [
         {
           type: "MRN",
@@ -450,7 +598,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.611Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.218Z"),
     },
     connectionId: "<id>",
   });
@@ -642,6 +790,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getHealthcareCareplan
+
+Retrieves a single HealthcareCareplan by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHealthcareCareplan" method="get" path="/healthcare/{connection_id}/careplan/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.getHealthcareCareplan({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { healthcareGetHealthcareCareplan } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareCareplan.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await healthcareGetHealthcareCareplan(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("healthcareGetHealthcareCareplan failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHealthcareCareplanRequest](../../sdk/models/operations/gethealthcarecareplanrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareCareplan](../../sdk/models/shared/healthcarecareplan.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getHealthcareCondition
 
 Retrieves a single HealthcareCondition by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
@@ -721,6 +948,164 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getHealthcareCoverage
+
+Retrieves a single HealthcareCoverage by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHealthcareCoverage" method="get" path="/healthcare/{connection_id}/coverage/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.getHealthcareCoverage({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { healthcareGetHealthcareCoverage } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareCoverage.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await healthcareGetHealthcareCoverage(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("healthcareGetHealthcareCoverage failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHealthcareCoverageRequest](../../sdk/models/operations/gethealthcarecoveragerequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareCoverage](../../sdk/models/shared/healthcarecoverage.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getHealthcareDocument
+
+Retrieves a single HealthcareDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHealthcareDocument" method="get" path="/healthcare/{connection_id}/document/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.getHealthcareDocument({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { documentGetHealthcareDocument } from "@unified-api/typescript-sdk/funcs/documentGetHealthcareDocument.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await documentGetHealthcareDocument(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentGetHealthcareDocument failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHealthcareDocumentRequest](../../sdk/models/operations/gethealthcaredocumentrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareDocument](../../sdk/models/shared/healthcaredocument.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getHealthcareEncounter
 
 Retrieves a single HealthcareEncounter by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
@@ -793,6 +1178,85 @@ run();
 ### Response
 
 **Promise\<[shared.HealthcareEncounter](../../sdk/models/shared/healthcareencounter.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getHealthcareGoal
+
+Retrieves a single HealthcareGoal by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHealthcareGoal" method="get" path="/healthcare/{connection_id}/goal/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.getHealthcareGoal({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { healthcareGetHealthcareGoal } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareGoal.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await healthcareGetHealthcareGoal(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("healthcareGetHealthcareGoal failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHealthcareGoalRequest](../../sdk/models/operations/gethealthcaregoalrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareGoal](../../sdk/models/shared/healthcaregoal.md)\>**
 
 ### Errors
 
@@ -1274,6 +1738,164 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getHealthcareProcedure
+
+Retrieves a single HealthcareProcedure by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHealthcareProcedure" method="get" path="/healthcare/{connection_id}/procedure/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.getHealthcareProcedure({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { healthcareGetHealthcareProcedure } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareProcedure.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await healthcareGetHealthcareProcedure(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("healthcareGetHealthcareProcedure failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHealthcareProcedureRequest](../../sdk/models/operations/gethealthcareprocedurerequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareProcedure](../../sdk/models/shared/healthcareprocedure.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getHealthcareReport
+
+Retrieves a single HealthcareReport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getHealthcareReport" method="get" path="/healthcare/{connection_id}/report/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.getHealthcareReport({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { reportGetHealthcareReport } from "@unified-api/typescript-sdk/funcs/reportGetHealthcareReport.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await reportGetHealthcareReport(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("reportGetHealthcareReport failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetHealthcareReportRequest](../../sdk/models/operations/gethealthcarereportrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareReport](../../sdk/models/shared/healthcarereport.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getHealthcareSlot
 
 Retrieves a single HealthcareSlot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
@@ -1507,6 +2129,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listHealthcareCareplans
+
+Returns a list of HealthcareCareplans. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHealthcareCareplans" method="get" path="/healthcare/{connection_id}/careplan" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.listHealthcareCareplans({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { healthcareListHealthcareCareplans } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareCareplans.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await healthcareListHealthcareCareplans(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("healthcareListHealthcareCareplans failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHealthcareCareplansRequest](../../sdk/models/operations/listhealthcarecareplansrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareCareplan[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listHealthcareConditions
 
 Returns a list of HealthcareConditions. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -1584,6 +2283,160 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listHealthcareCoverages
+
+Returns a list of HealthcareCoverages. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHealthcareCoverages" method="get" path="/healthcare/{connection_id}/coverage" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.listHealthcareCoverages({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { healthcareListHealthcareCoverages } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareCoverages.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await healthcareListHealthcareCoverages(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("healthcareListHealthcareCoverages failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHealthcareCoveragesRequest](../../sdk/models/operations/listhealthcarecoveragesrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareCoverage[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listHealthcareDocuments
+
+Returns a list of HealthcareDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHealthcareDocuments" method="get" path="/healthcare/{connection_id}/document" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.listHealthcareDocuments({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { documentListHealthcareDocuments } from "@unified-api/typescript-sdk/funcs/documentListHealthcareDocuments.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await documentListHealthcareDocuments(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentListHealthcareDocuments failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHealthcareDocumentsRequest](../../sdk/models/operations/listhealthcaredocumentsrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareDocument[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listHealthcareEncounters
 
 Returns a list of HealthcareEncounters. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -1654,6 +2507,83 @@ run();
 ### Response
 
 **Promise\<[shared.HealthcareEncounter[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listHealthcareGoals
+
+Returns a list of HealthcareGoals. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHealthcareGoals" method="get" path="/healthcare/{connection_id}/goal" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.listHealthcareGoals({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { healthcareListHealthcareGoals } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareGoals.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await healthcareListHealthcareGoals(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("healthcareListHealthcareGoals failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHealthcareGoalsRequest](../../sdk/models/operations/listhealthcaregoalsrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareGoal[]](../../models/.md)\>**
 
 ### Errors
 
@@ -2123,6 +3053,160 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listHealthcareProcedures
+
+Returns a list of HealthcareProcedures. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHealthcareProcedures" method="get" path="/healthcare/{connection_id}/procedure" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.listHealthcareProcedures({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { healthcareListHealthcareProcedures } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareProcedures.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await healthcareListHealthcareProcedures(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("healthcareListHealthcareProcedures failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHealthcareProceduresRequest](../../sdk/models/operations/listhealthcareproceduresrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareProcedure[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listHealthcareReports
+
+Returns a list of HealthcareReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listHealthcareReports" method="get" path="/healthcare/{connection_id}/report" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.healthcare.listHealthcareReports({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { reportListHealthcareReports } from "@unified-api/typescript-sdk/funcs/reportListHealthcareReports.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await reportListHealthcareReports(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("reportListHealthcareReports failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListHealthcareReportsRequest](../../sdk/models/operations/listhealthcarereportsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HealthcareReport[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listHealthcareSlots
 
 Returns a list of HealthcareSlots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -2222,27 +3306,23 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "94dde16d-34ca-4785-bf4a-47928e30e43b",
+      id: "d74d1ae7-164d-48ab-934a-cf666a7649f7",
+      isVirtual: true,
+      meetingUrl: "https://expensive-slipper.name/",
       metadata: [],
+      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
       practitionerIds: [],
-      reasons: [
-        {
-          code: "12762740",
-          display: "cubicularis caput",
-          system: "http://snomed.info/sct",
-        },
-      ],
       serviceTypes: [
         {
-          code: "61128108",
-          display: "Annual physical",
+          code: "12762740",
+          display: "New patient visit",
           system: "http://snomed.info/sct",
         },
       ],
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-21T16:18:37.398Z"),
+      updatedAt: new Date("2026-09-26T00:06:46.371Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2276,27 +3356,23 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "94dde16d-34ca-4785-bf4a-47928e30e43b",
+      id: "d74d1ae7-164d-48ab-934a-cf666a7649f7",
+      isVirtual: true,
+      meetingUrl: "https://expensive-slipper.name/",
       metadata: [],
+      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
       practitionerIds: [],
-      reasons: [
-        {
-          code: "12762740",
-          display: "cubicularis caput",
-          system: "http://snomed.info/sct",
-        },
-      ],
       serviceTypes: [
         {
-          code: "61128108",
-          display: "Annual physical",
+          code: "12762740",
+          display: "New patient visit",
           system: "http://snomed.info/sct",
         },
       ],
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-21T16:18:37.398Z"),
+      updatedAt: new Date("2026-09-26T00:06:46.371Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2358,6 +3434,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -2367,7 +3456,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "5fd89fe8-9027-4a60-891c-d5449a86af19",
+      id: "a50434ca-351b-46db-acd2-ace944a5af07",
       identifiers: [
         {
           type: "MRN",
@@ -2387,7 +3476,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.664Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.265Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2426,6 +3515,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -2435,7 +3537,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "5fd89fe8-9027-4a60-891c-d5449a86af19",
+      id: "a50434ca-351b-46db-acd2-ace944a5af07",
       identifiers: [
         {
           type: "MRN",
@@ -2455,7 +3557,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.664Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.265Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2591,27 +3693,23 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "94dde16d-34ca-4785-bf4a-47928e30e43b",
+      id: "d74d1ae7-164d-48ab-934a-cf666a7649f7",
+      isVirtual: true,
+      meetingUrl: "https://expensive-slipper.name/",
       metadata: [],
+      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
       practitionerIds: [],
-      reasons: [
-        {
-          code: "12762740",
-          display: "cubicularis caput",
-          system: "http://snomed.info/sct",
-        },
-      ],
       serviceTypes: [
         {
-          code: "61128108",
-          display: "Annual physical",
+          code: "12762740",
+          display: "New patient visit",
           system: "http://snomed.info/sct",
         },
       ],
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-21T16:18:37.398Z"),
+      updatedAt: new Date("2026-09-26T00:06:46.371Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2645,27 +3743,23 @@ async function run() {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
       description: "clarus aptus cetera",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "94dde16d-34ca-4785-bf4a-47928e30e43b",
+      id: "d74d1ae7-164d-48ab-934a-cf666a7649f7",
+      isVirtual: true,
+      meetingUrl: "https://expensive-slipper.name/",
       metadata: [],
+      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
       practitionerIds: [],
-      reasons: [
-        {
-          code: "12762740",
-          display: "cubicularis caput",
-          system: "http://snomed.info/sct",
-        },
-      ],
       serviceTypes: [
         {
-          code: "61128108",
-          display: "Annual physical",
+          code: "12762740",
+          display: "New patient visit",
           system: "http://snomed.info/sct",
         },
       ],
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2025-11-21T16:18:37.398Z"),
+      updatedAt: new Date("2026-09-26T00:06:46.371Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2727,6 +3821,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -2736,7 +3843,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "5fd89fe8-9027-4a60-891c-d5449a86af19",
+      id: "a50434ca-351b-46db-acd2-ace944a5af07",
       identifiers: [
         {
           type: "MRN",
@@ -2756,7 +3863,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.664Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.265Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2795,6 +3902,19 @@ async function run() {
         region: "Nebraska",
       },
       birthdate: "2025-02-15",
+      contacts: [
+        {
+          emails: [],
+          name: "Antonia Lebsack",
+          relationship: "Spouse",
+          telephones: [
+            {
+              telephone: "(695) 328-7029 x4412",
+              type: "MOBILE",
+            },
+          ],
+        },
+      ],
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
@@ -2804,7 +3924,7 @@ async function run() {
       ],
       firstName: "Alejandrin",
       gender: "FEMALE",
-      id: "5fd89fe8-9027-4a60-891c-d5449a86af19",
+      id: "a50434ca-351b-46db-acd2-ace944a5af07",
       identifiers: [
         {
           type: "MRN",
@@ -2824,7 +3944,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-06-25T16:22:17.664Z"),
+      updatedAt: new Date("2026-06-26T11:17:40.265Z"),
     },
     connectionId: "<id>",
     id: "<id>",

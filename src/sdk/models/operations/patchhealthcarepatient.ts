@@ -25,6 +25,10 @@ export const PatchHealthcarePatientQueryParamFields = {
   Identifiers: "identifiers",
   PractitionerIds: "practitioner_ids",
   IsActive: "is_active",
+  Races: "races",
+  Ethnicities: "ethnicities",
+  MaritalStatus: "marital_status",
+  Contacts: "contacts",
   Metadata: "metadata",
   Raw: "raw",
 } as const;

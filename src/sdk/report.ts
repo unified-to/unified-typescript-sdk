@@ -3,7 +3,9 @@
  */
 
 import { adsListAdsReports } from "../funcs/adsListAdsReports.js";
+import { reportGetHealthcareReport } from "../funcs/reportGetHealthcareReport.js";
 import { reportListAnalyticsReports } from "../funcs/reportListAnalyticsReports.js";
+import { reportListHealthcareReports } from "../funcs/reportListHealthcareReports.js";
 import { reportListMartechReports } from "../funcs/reportListMartechReports.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -11,6 +13,23 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Report extends ClientSDK {
+  /**
+   * Retrieve a report
+   *
+   * @remarks
+   * Retrieves a single HealthcareReport by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getHealthcareReport(
+    request: operations.GetHealthcareReportRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HealthcareReport> {
+    return unwrapAsync(reportGetHealthcareReport(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * List all reports
    *
@@ -39,6 +58,23 @@ export class Report extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AnalyticsReport>> {
     return unwrapAsync(reportListAnalyticsReports(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all reports
+   *
+   * @remarks
+   * Returns a list of HealthcareReports. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listHealthcareReports(
+    request: operations.ListHealthcareReportsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HealthcareReport>> {
+    return unwrapAsync(reportListHealthcareReports(
       this,
       request,
       options,

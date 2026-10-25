@@ -251,6 +251,12 @@ export const WebhookObjectType = {
   HealthcareMedication: "healthcare_medication",
   HealthcareObservation: "healthcare_observation",
   HealthcareImmunization: "healthcare_immunization",
+  HealthcareDocument: "healthcare_document",
+  HealthcareCoverage: "healthcare_coverage",
+  HealthcareProcedure: "healthcare_procedure",
+  HealthcareReport: "healthcare_report",
+  HealthcareCareplan: "healthcare_careplan",
+  HealthcareGoal: "healthcare_goal",
 } as const;
 /**
  * The object to return (eg. CRM "contact")

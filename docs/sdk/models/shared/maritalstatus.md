@@ -1,11 +1,13 @@
 # MaritalStatus
 
+Marital status of the patient
+
 ## Example Usage
 
 ```typescript
 import { MaritalStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: MaritalStatus = "SINGLE";
+let value: MaritalStatus = "OTHER";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +15,5 @@ let value: MaritalStatus = "SINGLE";
 ## Values
 
 ```typescript
-"MARRIED" | "SINGLE" | Unrecognized<string>
+"MARRIED" | "SINGLE" | "DOMESTIC_PARTNER" | "SEPARATED" | "DIVORCED" | "WIDOWED" | "ANNULLED" | "UNKNOWN" | "OTHER" | Unrecognized<string>
 ```

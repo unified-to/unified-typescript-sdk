@@ -1,0 +1,19 @@
+# HealthcarePatientContact
+
+## Example Usage
+
+```typescript
+import { HealthcarePatientContact } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HealthcarePatientContact = {};
+```
+
+## Fields
+
+| Field                                                                                                                   | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `address`                                                                                                               | [shared.PropertyHealthcarePatientContactAddress](../../../sdk/models/shared/propertyhealthcarepatientcontactaddress.md) | :heavy_minus_sign:                                                                                                      | Postal address of the contact person                                                                                    |
+| `emails`                                                                                                                | [shared.HealthcareEmail](../../../sdk/models/shared/healthcareemail.md)[]                                               | :heavy_minus_sign:                                                                                                      | Email addresses of the contact person                                                                                   |
+| `name`                                                                                                                  | *string*                                                                                                                | :heavy_minus_sign:                                                                                                      | Full name of the contact person                                                                                         |
+| `relationship`                                                                                                          | *string*                                                                                                                | :heavy_minus_sign:                                                                                                      | Relationship of the contact to the patient (e.g. emergency contact, spouse)                                             |
+| `telephones`                                                                                                            | [shared.HealthcareTelephone](../../../sdk/models/shared/healthcaretelephone.md)[]                                       | :heavy_minus_sign:                                                                                                      | Phone numbers of the contact person                                                                                     |

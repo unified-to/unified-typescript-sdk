@@ -108,11 +108,13 @@ export const HrisEmployeeGender = {
 } as const;
 export type HrisEmployeeGender = OpenEnum<typeof HrisEmployeeGender>;
 
-export const MaritalStatus = {
+export const HrisEmployeeMaritalStatus = {
   Married: "MARRIED",
   Single: "SINGLE",
 } as const;
-export type MaritalStatus = OpenEnum<typeof MaritalStatus>;
+export type HrisEmployeeMaritalStatus = OpenEnum<
+  typeof HrisEmployeeMaritalStatus
+>;
 
 /**
  * how often the employee is paid (eg. BIWEEKLY)
@@ -198,7 +200,7 @@ export type HrisEmployee = {
   lastName?: string | undefined;
   locations?: Array<HrisLocation> | undefined;
   managerId?: string | undefined;
-  maritalStatus?: MaritalStatus | undefined;
+  maritalStatus?: HrisEmployeeMaritalStatus | undefined;
   metadata?: Array<HrisMetadata> | undefined;
   /**
    * The employee's full name
@@ -297,17 +299,17 @@ export const HrisEmployeeGender$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(HrisEmployeeGender);
 
 /** @internal */
-export const MaritalStatus$inboundSchema: z.ZodType<
-  MaritalStatus,
+export const HrisEmployeeMaritalStatus$inboundSchema: z.ZodType<
+  HrisEmployeeMaritalStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MaritalStatus);
+> = openEnums.inboundSchema(HrisEmployeeMaritalStatus);
 /** @internal */
-export const MaritalStatus$outboundSchema: z.ZodType<
+export const HrisEmployeeMaritalStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  MaritalStatus
-> = openEnums.outboundSchema(MaritalStatus);
+  HrisEmployeeMaritalStatus
+> = openEnums.outboundSchema(HrisEmployeeMaritalStatus);
 
 /** @internal */
 export const PayFrequency$inboundSchema: z.ZodType<
@@ -358,7 +360,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   last_name: z.string().optional(),
   locations: z.array(HrisLocation$inboundSchema).optional(),
   manager_id: z.string().optional(),
-  marital_status: MaritalStatus$inboundSchema.optional(),
+  marital_status: HrisEmployeeMaritalStatus$inboundSchema.optional(),
   metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   pay_frequency: PayFrequency$inboundSchema.optional(),
@@ -493,7 +495,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   lastName: z.string().optional(),
   locations: z.array(HrisLocation$outboundSchema).optional(),
   managerId: z.string().optional(),
-  maritalStatus: MaritalStatus$outboundSchema.optional(),
+  maritalStatus: HrisEmployeeMaritalStatus$outboundSchema.optional(),
   metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   payFrequency: PayFrequency$outboundSchema.optional(),

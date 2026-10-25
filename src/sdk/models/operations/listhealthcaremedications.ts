@@ -22,6 +22,9 @@ export const ListHealthcareMedicationsQueryParamFields = {
   StartAt: "start_at",
   EndAt: "end_at",
   Notes: "notes",
+  Route: "route",
+  DoseNumber: "dose_number",
+  DoseUnit: "dose_unit",
   Metadata: "metadata",
   Raw: "raw",
 } as const;
