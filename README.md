@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "42b50887-fc59-4e18-971b-f038f625956b",
+      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
+      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "42b50887-fc59-4e18-971b-f038f625956b",
+      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
+      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "42b50887-fc59-4e18-971b-f038f625956b",
+      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
+      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "42b50887-fc59-4e18-971b-f038f625956b",
+        id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-07T21:14:05.065Z"),
+        updatedAt: new Date("2023-08-08T04:19:07.544Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "42b50887-fc59-4e18-971b-f038f625956b",
+      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
+      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "42b50887-fc59-4e18-971b-f038f625956b",
+      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-07T21:14:05.065Z"),
+      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
     },
     connectionId: "<id>",
   });
@@ -1082,8 +1082,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`calendarGetCalendarCalendar`](docs/sdks/calendar/README.md#getcalendarcalendar) - Retrieve a calendar
 - [`calendarGetCalendarLink`](docs/sdks/calendar/README.md#getcalendarlink) - Retrieve a link
 - [`calendarGetCalendarLink`](docs/sdks/link/README.md#getcalendarlink) - Retrieve a link
+- [`calendarGetCalendarLocation`](docs/sdks/calendar/README.md#getcalendarlocation) - Retrieve a location
+- [`calendarGetCalendarLocation`](docs/sdks/location/README.md#getcalendarlocation) - Retrieve a location
 - [`calendarGetCalendarRecording`](docs/sdks/calendar/README.md#getcalendarrecording) - Retrieve a recording
 - [`calendarGetCalendarRecording`](docs/sdks/recording/README.md#getcalendarrecording) - Retrieve a recording
+- [`calendarGetCalendarRoom`](docs/sdks/calendar/README.md#getcalendarroom) - Retrieve a room
+- [`calendarGetCalendarRoom`](docs/sdks/room/README.md#getcalendarroom) - Retrieve a room
 - [`calendarGetCalendarWebinar`](docs/sdks/calendar/README.md#getcalendarwebinar) - Retrieve a webinar
 - [`calendarGetCalendarWebinar`](docs/sdks/webinar/README.md#getcalendarwebinar) - Retrieve a webinar
 - [`calendarListCalendarBusies`](docs/sdks/busy/README.md#listcalendarbusies) - List all busies
@@ -1091,8 +1095,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`calendarListCalendarCalendars`](docs/sdks/calendar/README.md#listcalendarcalendars) - List all calendars
 - [`calendarListCalendarLinks`](docs/sdks/calendar/README.md#listcalendarlinks) - List all links
 - [`calendarListCalendarLinks`](docs/sdks/link/README.md#listcalendarlinks) - List all links
+- [`calendarListCalendarLocations`](docs/sdks/calendar/README.md#listcalendarlocations) - List all locations
+- [`calendarListCalendarLocations`](docs/sdks/location/README.md#listcalendarlocations) - List all locations
 - [`calendarListCalendarRecordings`](docs/sdks/calendar/README.md#listcalendarrecordings) - List all recordings
 - [`calendarListCalendarRecordings`](docs/sdks/recording/README.md#listcalendarrecordings) - List all recordings
+- [`calendarListCalendarRooms`](docs/sdks/calendar/README.md#listcalendarrooms) - List all rooms
+- [`calendarListCalendarRooms`](docs/sdks/room/README.md#listcalendarrooms) - List all rooms
 - [`calendarListCalendarWebinars`](docs/sdks/calendar/README.md#listcalendarwebinars) - List all webinars
 - [`calendarListCalendarWebinars`](docs/sdks/webinar/README.md#listcalendarwebinars) - List all webinars
 - [`calendarPatchCalendarCalendar`](docs/sdks/calendar/README.md#patchcalendarcalendar) - Update a calendar
@@ -1194,12 +1202,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`cdpUpdateCdpSegment`](docs/sdks/segment/README.md#updatecdpsegment) - Update a segment
 - [`cdpUpdateCdpSource`](docs/sdks/cdp/README.md#updatecdpsource) - Update a source
 - [`cdpUpdateCdpSource`](docs/sdks/source/README.md#updatecdpsource) - Update a source
-- [`clubsGetClubsLocation`](docs/sdks/clubs/README.md#getclubslocation) - Retrieve a location
-- [`clubsGetClubsLocation`](docs/sdks/location/README.md#getclubslocation) - Retrieve a location
 - [`clubsGetClubsMember`](docs/sdks/clubs/README.md#getclubsmember) - Retrieve a member
 - [`clubsGetClubsMember`](docs/sdks/member/README.md#getclubsmember) - Retrieve a member
-- [`clubsListClubsLocations`](docs/sdks/clubs/README.md#listclubslocations) - List all locations
-- [`clubsListClubsLocations`](docs/sdks/location/README.md#listclubslocations) - List all locations
 - [`clubsListClubsMembers`](docs/sdks/clubs/README.md#listclubsmembers) - List all members
 - [`clubsListClubsMembers`](docs/sdks/member/README.md#listclubsmembers) - List all members
 - [`collectionCreateLmsCollection`](docs/sdks/collection/README.md#createlmscollection) - Create a collection
@@ -2098,12 +2102,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`locationCreateCommerceLocation`](docs/sdks/location/README.md#createcommercelocation) - Create a location
 - [`locationCreateHrisLocation`](docs/sdks/hris/README.md#createhrislocation) - Create a location
 - [`locationCreateHrisLocation`](docs/sdks/location/README.md#createhrislocation) - Create a location
+- [`locationGetClubsLocation`](docs/sdks/clubs/README.md#getclubslocation) - Retrieve a location
+- [`locationGetClubsLocation`](docs/sdks/location/README.md#getclubslocation) - Retrieve a location
 - [`locationGetCommerceLocation`](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
 - [`locationGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
 - [`locationGetHealthcareLocation`](docs/sdks/healthcare/README.md#gethealthcarelocation) - Retrieve a location
 - [`locationGetHealthcareLocation`](docs/sdks/location/README.md#gethealthcarelocation) - Retrieve a location
 - [`locationGetHrisLocation`](docs/sdks/hris/README.md#gethrislocation) - Retrieve a location
 - [`locationGetHrisLocation`](docs/sdks/location/README.md#gethrislocation) - Retrieve a location
+- [`locationListClubsLocations`](docs/sdks/clubs/README.md#listclubslocations) - List all locations
+- [`locationListClubsLocations`](docs/sdks/location/README.md#listclubslocations) - List all locations
 - [`locationListCommerceLocations`](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
 - [`locationListCommerceLocations`](docs/sdks/location/README.md#listcommercelocations) - List all locations
 - [`locationListHealthcareLocations`](docs/sdks/healthcare/README.md#listhealthcarelocations) - List all locations

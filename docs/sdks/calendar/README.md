@@ -11,13 +11,17 @@
 * [getCalendarCalendar](#getcalendarcalendar) - Retrieve a calendar
 * [getCalendarEvent](#getcalendarevent) - Retrieve an event
 * [getCalendarLink](#getcalendarlink) - Retrieve a link
+* [getCalendarLocation](#getcalendarlocation) - Retrieve a location
 * [getCalendarRecording](#getcalendarrecording) - Retrieve a recording
+* [getCalendarRoom](#getcalendarroom) - Retrieve a room
 * [getCalendarWebinar](#getcalendarwebinar) - Retrieve a webinar
 * [listCalendarBusies](#listcalendarbusies) - List all busies
 * [listCalendarCalendars](#listcalendarcalendars) - List all calendars
 * [listCalendarEvents](#listcalendarevents) - List all events
 * [listCalendarLinks](#listcalendarlinks) - List all links
+* [listCalendarLocations](#listcalendarlocations) - List all locations
 * [listCalendarRecordings](#listcalendarrecordings) - List all recordings
+* [listCalendarRooms](#listcalendarrooms) - List all rooms
 * [listCalendarWebinars](#listcalendarwebinars) - List all webinars
 * [patchCalendarCalendar](#patchcalendarcalendar) - Update a calendar
 * [patchCalendarEvent](#patchcalendarevent) - Update an event
@@ -53,12 +57,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "5c8dbfc9-5029-4e51-9295-c6b705590d30",
+      id: "3bca0636-fcf2-4e08-bf59-9b98d280eb68",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-29T23:20:52.706Z"),
+      updatedAt: new Date("2023-03-30T12:33:07.744Z"),
     },
     connectionId: "<id>",
   });
@@ -90,12 +94,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "5c8dbfc9-5029-4e51-9295-c6b705590d30",
+      id: "3bca0636-fcf2-4e08-bf59-9b98d280eb68",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-29T23:20:52.706Z"),
+      updatedAt: new Date("2023-03-30T12:33:07.744Z"),
     },
     connectionId: "<id>",
   });
@@ -151,9 +155,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T17:20:55.109Z",
+      endAt: "2020-05-24T20:27:19.406Z",
       hasConference: false,
-      id: "44f33fbe-333c-432b-828a-e5b2a3c61f9d",
+      id: "2660eaa1-e9da-4215-ab70-286561ecc3c3",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -163,15 +167,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-27T16:06:17.367Z"),
+          endAt: new Date("2025-03-28T13:53:11.111Z"),
           excludedDates: [
-            "2024-02-05T04:33:12.692Z",
+            "2024-02-05T21:56:08.976Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-09T03:51:04.355Z",
-            "2025-01-26T19:59:32.619Z",
-            "2024-04-04T11:33:44.945Z",
+            "2023-07-09T19:00:15.868Z",
+            "2025-01-27T17:08:30.914Z",
+            "2024-04-05T05:34:15.918Z",
           ],
           interval: 7,
           onDays: [
@@ -508,11 +512,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-24T08:06:29.202Z",
+      startAt: "2020-05-24T11:12:38.858Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T17:01:27.914Z",
+      updatedAt: "2020-06-30T20:31:18.689Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -546,9 +550,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T17:20:55.109Z",
+      endAt: "2020-05-24T20:27:19.406Z",
       hasConference: false,
-      id: "44f33fbe-333c-432b-828a-e5b2a3c61f9d",
+      id: "2660eaa1-e9da-4215-ab70-286561ecc3c3",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -558,15 +562,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-27T16:06:17.367Z"),
+          endAt: new Date("2025-03-28T13:53:11.111Z"),
           excludedDates: [
-            "2024-02-05T04:33:12.692Z",
+            "2024-02-05T21:56:08.976Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-09T03:51:04.355Z",
-            "2025-01-26T19:59:32.619Z",
-            "2024-04-04T11:33:44.945Z",
+            "2023-07-09T19:00:15.868Z",
+            "2025-01-27T17:08:30.914Z",
+            "2024-04-05T05:34:15.918Z",
           ],
           interval: 7,
           onDays: [
@@ -903,11 +907,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-24T08:06:29.202Z",
+      startAt: "2020-05-24T11:12:38.858Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T17:01:27.914Z",
+      updatedAt: "2020-06-30T20:31:18.689Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -964,13 +968,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "16b1076f-1118-40a6-b545-158b503be9ab",
+      id: "d531c223-2957-4e68-ba9e-b0317f824850",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-16T15:12:56.333Z",
+      updatedAt: "2024-03-16T23:05:26.259Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -1004,13 +1008,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "16b1076f-1118-40a6-b545-158b503be9ab",
+      id: "d531c223-2957-4e68-ba9e-b0317f824850",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-16T15:12:56.333Z",
+      updatedAt: "2024-03-16T23:05:26.259Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -1066,10 +1070,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-31T16:54:01.010Z"),
+      endAt: new Date("2025-11-01T14:24:59.127Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "3efb655c-d6ef-4576-9597-4790efce4ec3",
+      id: "3edb2c15-4bfb-4353-b581-79875dccd3d7",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -1079,13 +1083,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-01T15:42:03.817Z"),
+          endAt: new Date("2023-09-01T23:11:17.060Z"),
           excludedDates: [
-            "2025-02-15T08:54:19.473Z",
+            "2025-02-16T01:50:24.217Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-29T21:54:32.049Z",
+            "2024-04-30T09:40:28.539Z",
           ],
           interval: 8,
           onDays: [
@@ -1476,16 +1480,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T21:19:19.857Z"),
+          endAt: new Date("2022-09-30T22:51:16.012Z"),
           excludedDates: [
-            "2024-09-03T16:42:01.590Z",
-            "2024-08-19T02:48:52.392Z",
+            "2024-09-04T06:42:52.586Z",
+            "2024-08-19T16:33:08.768Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-26T17:18:27.492Z",
-            "2026-01-16T13:45:12.450Z",
-            "2023-08-15T06:14:22.856Z",
+            "2024-03-27T04:28:00.999Z",
+            "2026-01-17T12:37:58.287Z",
+            "2023-08-15T13:25:05.559Z",
           ],
           interval: 1,
           onDays: [
@@ -1629,16 +1633,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-30T04:22:10.140Z"),
+          endAt: new Date("2026-07-31T06:42:00.861Z"),
           excludedDates: [
-            "2023-06-19T11:00:35.327Z",
-            "2023-06-08T11:12:11.005Z",
+            "2023-06-19T17:10:51.534Z",
+            "2023-06-08T17:10:45.427Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-03T18:39:16.518Z",
-            "2023-08-21T02:00:36.797Z",
-            "2024-09-28T22:58:20.015Z",
+            "2024-04-04T05:57:24.372Z",
+            "2023-08-21T09:17:31.321Z",
+            "2024-09-29T13:26:03.829Z",
           ],
           interval: 8,
           onDays: [
@@ -1791,11 +1795,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-03T02:38:40.672Z"),
+      startAt: new Date("2025-05-03T20:56:24.854Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-04T07:32:19.230Z"),
+      updatedAt: new Date("2026-10-05T11:02:32.176Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -1828,10 +1832,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-31T16:54:01.010Z"),
+      endAt: new Date("2025-11-01T14:24:59.127Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "3efb655c-d6ef-4576-9597-4790efce4ec3",
+      id: "3edb2c15-4bfb-4353-b581-79875dccd3d7",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -1841,13 +1845,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-01T15:42:03.817Z"),
+          endAt: new Date("2023-09-01T23:11:17.060Z"),
           excludedDates: [
-            "2025-02-15T08:54:19.473Z",
+            "2025-02-16T01:50:24.217Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-29T21:54:32.049Z",
+            "2024-04-30T09:40:28.539Z",
           ],
           interval: 8,
           onDays: [
@@ -2238,16 +2242,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T21:19:19.857Z"),
+          endAt: new Date("2022-09-30T22:51:16.012Z"),
           excludedDates: [
-            "2024-09-03T16:42:01.590Z",
-            "2024-08-19T02:48:52.392Z",
+            "2024-09-04T06:42:52.586Z",
+            "2024-08-19T16:33:08.768Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-26T17:18:27.492Z",
-            "2026-01-16T13:45:12.450Z",
-            "2023-08-15T06:14:22.856Z",
+            "2024-03-27T04:28:00.999Z",
+            "2026-01-17T12:37:58.287Z",
+            "2023-08-15T13:25:05.559Z",
           ],
           interval: 1,
           onDays: [
@@ -2391,16 +2395,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-30T04:22:10.140Z"),
+          endAt: new Date("2026-07-31T06:42:00.861Z"),
           excludedDates: [
-            "2023-06-19T11:00:35.327Z",
-            "2023-06-08T11:12:11.005Z",
+            "2023-06-19T17:10:51.534Z",
+            "2023-06-08T17:10:45.427Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-03T18:39:16.518Z",
-            "2023-08-21T02:00:36.797Z",
-            "2024-09-28T22:58:20.015Z",
+            "2024-04-04T05:57:24.372Z",
+            "2023-08-21T09:17:31.321Z",
+            "2024-09-29T13:26:03.829Z",
           ],
           interval: 8,
           onDays: [
@@ -2553,11 +2557,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-03T02:38:40.672Z"),
+      startAt: new Date("2025-05-03T20:56:24.854Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-04T07:32:19.230Z"),
+      updatedAt: new Date("2026-10-05T11:02:32.176Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -2829,6 +2833,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getCalendarLocation
+
+Retrieves a single CalendarLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getCalendarLocation" method="get" path="/calendar/{connection_id}/location/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.getCalendarLocation({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarGetCalendarLocation } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarLocation.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarGetCalendarLocation(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarGetCalendarLocation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetCalendarLocationRequest](../../sdk/models/operations/getcalendarlocationrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarLocation](../../sdk/models/shared/calendarlocation.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getCalendarRecording
 
 Retrieves a single CalendarRecording by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
@@ -2901,6 +2984,85 @@ run();
 ### Response
 
 **Promise\<[shared.CalendarRecording](../../sdk/models/shared/calendarrecording.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getCalendarRoom
+
+Retrieves a single CalendarRoom by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getCalendarRoom" method="get" path="/calendar/{connection_id}/room/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.getCalendarRoom({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarGetCalendarRoom } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarRoom.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarGetCalendarRoom(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarGetCalendarRoom failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetCalendarRoomRequest](../../sdk/models/operations/getcalendarroomrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarRoom](../../sdk/models/shared/calendarroom.md)\>**
 
 ### Errors
 
@@ -3295,6 +3457,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listCalendarLocations
+
+Returns a list of CalendarLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listCalendarLocations" method="get" path="/calendar/{connection_id}/location" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.listCalendarLocations({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarListCalendarLocations } from "@unified-api/typescript-sdk/funcs/calendarListCalendarLocations.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarListCalendarLocations(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarListCalendarLocations failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListCalendarLocationsRequest](../../sdk/models/operations/listcalendarlocationsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarLocation[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listCalendarRecordings
 
 Returns a list of CalendarRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -3365,6 +3604,83 @@ run();
 ### Response
 
 **Promise\<[shared.CalendarRecording[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listCalendarRooms
+
+Returns a list of CalendarRooms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listCalendarRooms" method="get" path="/calendar/{connection_id}/room" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.listCalendarRooms({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarListCalendarRooms } from "@unified-api/typescript-sdk/funcs/calendarListCalendarRooms.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarListCalendarRooms(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarListCalendarRooms failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListCalendarRoomsRequest](../../sdk/models/operations/listcalendarroomsrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarRoom[]](../../models/.md)\>**
 
 ### Errors
 
@@ -3470,12 +3786,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "6d77e417-a5ef-4ab0-81db-5ee1cd271334",
+      id: "52a56562-c244-4cc4-83d1-30197969d583",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-29T23:20:52.712Z"),
+      updatedAt: new Date("2023-03-30T12:33:07.748Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3508,12 +3824,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "6d77e417-a5ef-4ab0-81db-5ee1cd271334",
+      id: "52a56562-c244-4cc4-83d1-30197969d583",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-29T23:20:52.712Z"),
+      updatedAt: new Date("2023-03-30T12:33:07.748Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3570,9 +3886,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T17:20:55.114Z",
+      endAt: "2020-05-24T20:27:19.409Z",
       hasConference: false,
-      id: "8c1b9f43-d9c7-4759-9399-0c29229a62a1",
+      id: "efe23ed2-26cf-4060-bbfe-e5952e12f734",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -3582,15 +3898,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-27T16:06:17.399Z"),
+          endAt: new Date("2025-03-28T13:53:11.136Z"),
           excludedDates: [
-            "2024-02-05T04:33:12.717Z",
+            "2024-02-05T21:56:08.996Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-09T03:51:04.377Z",
-            "2025-01-26T19:59:32.651Z",
-            "2024-04-04T11:33:44.972Z",
+            "2023-07-09T19:00:15.885Z",
+            "2025-01-27T17:08:30.939Z",
+            "2024-04-05T05:34:15.938Z",
           ],
           interval: 7,
           onDays: [
@@ -3927,11 +4243,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-24T08:06:29.207Z",
+      startAt: "2020-05-24T11:12:38.861Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T17:01:27.919Z",
+      updatedAt: "2020-06-30T20:31:18.693Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -3966,9 +4282,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T17:20:55.114Z",
+      endAt: "2020-05-24T20:27:19.409Z",
       hasConference: false,
-      id: "8c1b9f43-d9c7-4759-9399-0c29229a62a1",
+      id: "efe23ed2-26cf-4060-bbfe-e5952e12f734",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -3978,15 +4294,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-27T16:06:17.399Z"),
+          endAt: new Date("2025-03-28T13:53:11.136Z"),
           excludedDates: [
-            "2024-02-05T04:33:12.717Z",
+            "2024-02-05T21:56:08.996Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-09T03:51:04.377Z",
-            "2025-01-26T19:59:32.651Z",
-            "2024-04-04T11:33:44.972Z",
+            "2023-07-09T19:00:15.885Z",
+            "2025-01-27T17:08:30.939Z",
+            "2024-04-05T05:34:15.938Z",
           ],
           interval: 7,
           onDays: [
@@ -4323,11 +4639,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-24T08:06:29.207Z",
+      startAt: "2020-05-24T11:12:38.861Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T17:01:27.919Z",
+      updatedAt: "2020-06-30T20:31:18.693Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -4385,13 +4701,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "18a06bda-aed3-4269-9fa0-5b198e8bfc39",
+      id: "5f5bed0a-664f-4401-9db3-6c69ed2874a6",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-16T15:12:56.335Z",
+      updatedAt: "2024-03-16T23:05:26.262Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -4426,13 +4742,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "18a06bda-aed3-4269-9fa0-5b198e8bfc39",
+      id: "5f5bed0a-664f-4401-9db3-6c69ed2874a6",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-16T15:12:56.335Z",
+      updatedAt: "2024-03-16T23:05:26.262Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -4489,10 +4805,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-31T16:54:01.042Z"),
+      endAt: new Date("2025-11-01T14:24:59.154Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "25208f6d-b8e0-4df3-89f4-b45625c79e89",
+      id: "6abd78bb-427f-45f3-aba2-895e74ed8cf3",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -4502,13 +4818,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-01T15:42:03.828Z"),
+          endAt: new Date("2023-09-01T23:11:17.070Z"),
           excludedDates: [
-            "2025-02-15T08:54:19.498Z",
+            "2025-02-16T01:50:24.238Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-29T21:54:32.066Z",
+            "2024-04-30T09:40:28.554Z",
           ],
           interval: 8,
           onDays: [
@@ -4899,16 +5215,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T21:19:19.859Z"),
+          endAt: new Date("2022-09-30T22:51:16.013Z"),
           excludedDates: [
-            "2024-09-03T16:42:01.611Z",
-            "2024-08-19T02:48:52.412Z",
+            "2024-09-04T06:42:52.603Z",
+            "2024-08-19T16:33:08.784Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-26T17:18:27.508Z",
-            "2026-01-16T13:45:12.483Z",
-            "2023-08-15T06:14:22.867Z",
+            "2024-03-27T04:28:01.013Z",
+            "2026-01-17T12:37:58.316Z",
+            "2023-08-15T13:25:05.568Z",
           ],
           interval: 1,
           onDays: [
@@ -5052,16 +5368,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-30T04:22:10.180Z"),
+          endAt: new Date("2026-07-31T06:42:00.893Z"),
           excludedDates: [
-            "2023-06-19T11:00:35.337Z",
-            "2023-06-08T11:12:11.014Z",
+            "2023-06-19T17:10:51.542Z",
+            "2023-06-08T17:10:45.434Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-03T18:39:16.535Z",
-            "2023-08-21T02:00:36.808Z",
-            "2024-09-28T22:58:20.037Z",
+            "2024-04-04T05:57:24.386Z",
+            "2023-08-21T09:17:31.329Z",
+            "2024-09-29T13:26:03.847Z",
           ],
           interval: 8,
           onDays: [
@@ -5214,11 +5530,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-03T02:38:40.699Z"),
+      startAt: new Date("2025-05-03T20:56:24.877Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-04T07:32:19.271Z"),
+      updatedAt: new Date("2026-10-05T11:02:32.210Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -5252,10 +5568,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-31T16:54:01.042Z"),
+      endAt: new Date("2025-11-01T14:24:59.154Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "25208f6d-b8e0-4df3-89f4-b45625c79e89",
+      id: "6abd78bb-427f-45f3-aba2-895e74ed8cf3",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -5265,13 +5581,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-01T15:42:03.828Z"),
+          endAt: new Date("2023-09-01T23:11:17.070Z"),
           excludedDates: [
-            "2025-02-15T08:54:19.498Z",
+            "2025-02-16T01:50:24.238Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-29T21:54:32.066Z",
+            "2024-04-30T09:40:28.554Z",
           ],
           interval: 8,
           onDays: [
@@ -5662,16 +5978,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T21:19:19.859Z"),
+          endAt: new Date("2022-09-30T22:51:16.013Z"),
           excludedDates: [
-            "2024-09-03T16:42:01.611Z",
-            "2024-08-19T02:48:52.412Z",
+            "2024-09-04T06:42:52.603Z",
+            "2024-08-19T16:33:08.784Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-26T17:18:27.508Z",
-            "2026-01-16T13:45:12.483Z",
-            "2023-08-15T06:14:22.867Z",
+            "2024-03-27T04:28:01.013Z",
+            "2026-01-17T12:37:58.316Z",
+            "2023-08-15T13:25:05.568Z",
           ],
           interval: 1,
           onDays: [
@@ -5815,16 +6131,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-30T04:22:10.180Z"),
+          endAt: new Date("2026-07-31T06:42:00.893Z"),
           excludedDates: [
-            "2023-06-19T11:00:35.337Z",
-            "2023-06-08T11:12:11.014Z",
+            "2023-06-19T17:10:51.542Z",
+            "2023-06-08T17:10:45.434Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-03T18:39:16.535Z",
-            "2023-08-21T02:00:36.808Z",
-            "2024-09-28T22:58:20.037Z",
+            "2024-04-04T05:57:24.386Z",
+            "2023-08-21T09:17:31.329Z",
+            "2024-09-29T13:26:03.847Z",
           ],
           interval: 8,
           onDays: [
@@ -5977,11 +6293,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-03T02:38:40.699Z"),
+      startAt: new Date("2025-05-03T20:56:24.877Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-04T07:32:19.271Z"),
+      updatedAt: new Date("2026-10-05T11:02:32.210Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -6354,12 +6670,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "6d77e417-a5ef-4ab0-81db-5ee1cd271334",
+      id: "52a56562-c244-4cc4-83d1-30197969d583",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-29T23:20:52.712Z"),
+      updatedAt: new Date("2023-03-30T12:33:07.748Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6392,12 +6708,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "6d77e417-a5ef-4ab0-81db-5ee1cd271334",
+      id: "52a56562-c244-4cc4-83d1-30197969d583",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-03-29T23:20:52.712Z"),
+      updatedAt: new Date("2023-03-30T12:33:07.748Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6454,9 +6770,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T17:20:55.114Z",
+      endAt: "2020-05-24T20:27:19.409Z",
       hasConference: false,
-      id: "8c1b9f43-d9c7-4759-9399-0c29229a62a1",
+      id: "efe23ed2-26cf-4060-bbfe-e5952e12f734",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -6466,15 +6782,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-27T16:06:17.399Z"),
+          endAt: new Date("2025-03-28T13:53:11.136Z"),
           excludedDates: [
-            "2024-02-05T04:33:12.717Z",
+            "2024-02-05T21:56:08.996Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-09T03:51:04.377Z",
-            "2025-01-26T19:59:32.651Z",
-            "2024-04-04T11:33:44.972Z",
+            "2023-07-09T19:00:15.885Z",
+            "2025-01-27T17:08:30.939Z",
+            "2024-04-05T05:34:15.938Z",
           ],
           interval: 7,
           onDays: [
@@ -6811,11 +7127,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-24T08:06:29.207Z",
+      startAt: "2020-05-24T11:12:38.861Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T17:01:27.919Z",
+      updatedAt: "2020-06-30T20:31:18.693Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -6850,9 +7166,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-24T17:20:55.114Z",
+      endAt: "2020-05-24T20:27:19.409Z",
       hasConference: false,
-      id: "8c1b9f43-d9c7-4759-9399-0c29229a62a1",
+      id: "efe23ed2-26cf-4060-bbfe-e5952e12f734",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -6862,15 +7178,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-03-27T16:06:17.399Z"),
+          endAt: new Date("2025-03-28T13:53:11.136Z"),
           excludedDates: [
-            "2024-02-05T04:33:12.717Z",
+            "2024-02-05T21:56:08.996Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-09T03:51:04.377Z",
-            "2025-01-26T19:59:32.651Z",
-            "2024-04-04T11:33:44.972Z",
+            "2023-07-09T19:00:15.885Z",
+            "2025-01-27T17:08:30.939Z",
+            "2024-04-05T05:34:15.938Z",
           ],
           interval: 7,
           onDays: [
@@ -7207,11 +7523,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-24T08:06:29.207Z",
+      startAt: "2020-05-24T11:12:38.861Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-06-30T17:01:27.919Z",
+      updatedAt: "2020-06-30T20:31:18.693Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -7269,13 +7585,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "18a06bda-aed3-4269-9fa0-5b198e8bfc39",
+      id: "5f5bed0a-664f-4401-9db3-6c69ed2874a6",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-16T15:12:56.335Z",
+      updatedAt: "2024-03-16T23:05:26.262Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -7310,13 +7626,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "18a06bda-aed3-4269-9fa0-5b198e8bfc39",
+      id: "5f5bed0a-664f-4401-9db3-6c69ed2874a6",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-16T15:12:56.335Z",
+      updatedAt: "2024-03-16T23:05:26.262Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -7373,10 +7689,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-31T16:54:01.042Z"),
+      endAt: new Date("2025-11-01T14:24:59.154Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "25208f6d-b8e0-4df3-89f4-b45625c79e89",
+      id: "6abd78bb-427f-45f3-aba2-895e74ed8cf3",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -7386,13 +7702,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-01T15:42:03.828Z"),
+          endAt: new Date("2023-09-01T23:11:17.070Z"),
           excludedDates: [
-            "2025-02-15T08:54:19.498Z",
+            "2025-02-16T01:50:24.238Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-29T21:54:32.066Z",
+            "2024-04-30T09:40:28.554Z",
           ],
           interval: 8,
           onDays: [
@@ -7783,16 +8099,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T21:19:19.859Z"),
+          endAt: new Date("2022-09-30T22:51:16.013Z"),
           excludedDates: [
-            "2024-09-03T16:42:01.611Z",
-            "2024-08-19T02:48:52.412Z",
+            "2024-09-04T06:42:52.603Z",
+            "2024-08-19T16:33:08.784Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-26T17:18:27.508Z",
-            "2026-01-16T13:45:12.483Z",
-            "2023-08-15T06:14:22.867Z",
+            "2024-03-27T04:28:01.013Z",
+            "2026-01-17T12:37:58.316Z",
+            "2023-08-15T13:25:05.568Z",
           ],
           interval: 1,
           onDays: [
@@ -7936,16 +8252,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-30T04:22:10.180Z"),
+          endAt: new Date("2026-07-31T06:42:00.893Z"),
           excludedDates: [
-            "2023-06-19T11:00:35.337Z",
-            "2023-06-08T11:12:11.014Z",
+            "2023-06-19T17:10:51.542Z",
+            "2023-06-08T17:10:45.434Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-03T18:39:16.535Z",
-            "2023-08-21T02:00:36.808Z",
-            "2024-09-28T22:58:20.037Z",
+            "2024-04-04T05:57:24.386Z",
+            "2023-08-21T09:17:31.329Z",
+            "2024-09-29T13:26:03.847Z",
           ],
           interval: 8,
           onDays: [
@@ -8098,11 +8414,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-03T02:38:40.699Z"),
+      startAt: new Date("2025-05-03T20:56:24.877Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-04T07:32:19.271Z"),
+      updatedAt: new Date("2026-10-05T11:02:32.210Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -8136,10 +8452,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-10-31T16:54:01.042Z"),
+      endAt: new Date("2025-11-01T14:24:59.154Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "25208f6d-b8e0-4df3-89f4-b45625c79e89",
+      id: "6abd78bb-427f-45f3-aba2-895e74ed8cf3",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -8149,13 +8465,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-01T15:42:03.828Z"),
+          endAt: new Date("2023-09-01T23:11:17.070Z"),
           excludedDates: [
-            "2025-02-15T08:54:19.498Z",
+            "2025-02-16T01:50:24.238Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-04-29T21:54:32.066Z",
+            "2024-04-30T09:40:28.554Z",
           ],
           interval: 8,
           onDays: [
@@ -8546,16 +8862,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-09-30T21:19:19.859Z"),
+          endAt: new Date("2022-09-30T22:51:16.013Z"),
           excludedDates: [
-            "2024-09-03T16:42:01.611Z",
-            "2024-08-19T02:48:52.412Z",
+            "2024-09-04T06:42:52.603Z",
+            "2024-08-19T16:33:08.784Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-26T17:18:27.508Z",
-            "2026-01-16T13:45:12.483Z",
-            "2023-08-15T06:14:22.867Z",
+            "2024-03-27T04:28:01.013Z",
+            "2026-01-17T12:37:58.316Z",
+            "2023-08-15T13:25:05.568Z",
           ],
           interval: 1,
           onDays: [
@@ -8699,16 +9015,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-07-30T04:22:10.180Z"),
+          endAt: new Date("2026-07-31T06:42:00.893Z"),
           excludedDates: [
-            "2023-06-19T11:00:35.337Z",
-            "2023-06-08T11:12:11.014Z",
+            "2023-06-19T17:10:51.542Z",
+            "2023-06-08T17:10:45.434Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-03T18:39:16.535Z",
-            "2023-08-21T02:00:36.808Z",
-            "2024-09-28T22:58:20.037Z",
+            "2024-04-04T05:57:24.386Z",
+            "2023-08-21T09:17:31.329Z",
+            "2024-09-29T13:26:03.847Z",
           ],
           interval: 8,
           onDays: [
@@ -8861,11 +9177,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-03T02:38:40.699Z"),
+      startAt: new Date("2025-05-03T20:56:24.877Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-04T07:32:19.271Z"),
+      updatedAt: new Date("2026-10-05T11:02:32.210Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",

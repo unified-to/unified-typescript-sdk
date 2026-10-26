@@ -6,10 +6,12 @@
 
 * [createCommerceLocation](#createcommercelocation) - Create a location
 * [createHrisLocation](#createhrislocation) - Create a location
+* [getCalendarLocation](#getcalendarlocation) - Retrieve a location
 * [getClubsLocation](#getclubslocation) - Retrieve a location
 * [getCommerceLocation](#getcommercelocation) - Retrieve a location
 * [getHealthcareLocation](#gethealthcarelocation) - Retrieve a location
 * [getHrisLocation](#gethrislocation) - Retrieve a location
+* [listCalendarLocations](#listcalendarlocations) - List all locations
 * [listClubsLocations](#listclubslocations) - List all locations
 * [listCommerceLocations](#listcommercelocations) - List all locations
 * [listHealthcareLocations](#listhealthcarelocations) - List all locations
@@ -52,7 +54,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "8c9f861d-e7ae-4c58-b956-5479ea062805",
+      id: "6d58832c-39e1-4429-b515-ccdb28f19a96",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -63,10 +65,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "620d7d01-3560-4ea6-b686-7bdad5c4d7d3",
+          id: "9d8bf529-656b-4599-940b-c219a349a664",
           metadata: [
             {
-              id: "a5c8e589-3097-4bf9-9b76-5963dd87c19b",
+              id: "5e118710-786f-4581-9ec7-7e1f60b88a4b",
               slug: "abutor",
               value: "damno",
             },
@@ -92,7 +94,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-22T01:48:24.462Z"),
+      updatedAt: new Date("2024-04-22T11:23:20.648Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -135,7 +137,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "8c9f861d-e7ae-4c58-b956-5479ea062805",
+      id: "6d58832c-39e1-4429-b515-ccdb28f19a96",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -146,10 +148,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "620d7d01-3560-4ea6-b686-7bdad5c4d7d3",
+          id: "9d8bf529-656b-4599-940b-c219a349a664",
           metadata: [
             {
-              id: "a5c8e589-3097-4bf9-9b76-5963dd87c19b",
+              id: "5e118710-786f-4581-9ec7-7e1f60b88a4b",
               slug: "abutor",
               value: "damno",
             },
@@ -175,7 +177,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-22T01:48:24.462Z"),
+      updatedAt: new Date("2024-04-22T11:23:20.648Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -241,7 +243,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "bf3c571e-ef4a-4819-b644-551070d0f4b9",
+      id: "2007dc94-37b5-42b9-96a6-7408e4d85aad",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -262,7 +264,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-22T12:21:33.165Z"),
+      updatedAt: new Date("2023-06-22T22:33:18.410Z"),
     },
     connectionId: "<id>",
   });
@@ -304,7 +306,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "bf3c571e-ef4a-4819-b644-551070d0f4b9",
+      id: "2007dc94-37b5-42b9-96a6-7408e4d85aad",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -325,7 +327,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-22T12:21:33.165Z"),
+      updatedAt: new Date("2023-06-22T22:33:18.410Z"),
     },
     connectionId: "<id>",
   });
@@ -352,6 +354,85 @@ run();
 ### Response
 
 **Promise\<[shared.HrisLocation](../../sdk/models/shared/hrislocation.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getCalendarLocation
+
+Retrieves a single CalendarLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getCalendarLocation" method="get" path="/calendar/{connection_id}/location/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.location.getCalendarLocation({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarGetCalendarLocation } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarLocation.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarGetCalendarLocation(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarGetCalendarLocation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetCalendarLocationRequest](../../sdk/models/operations/getcalendarlocationrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarLocation](../../sdk/models/shared/calendarlocation.md)\>**
 
 ### Errors
 
@@ -393,7 +474,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { clubsGetClubsLocation } from "@unified-api/typescript-sdk/funcs/clubsGetClubsLocation.js";
+import { locationGetClubsLocation } from "@unified-api/typescript-sdk/funcs/locationGetClubsLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -404,7 +485,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await clubsGetClubsLocation(unifiedTo, {
+  const res = await locationGetClubsLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -412,7 +493,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("clubsGetClubsLocation failed:", res.error);
+    console.log("locationGetClubsLocation failed:", res.error);
   }
 }
 
@@ -675,6 +756,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listCalendarLocations
+
+Returns a list of CalendarLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listCalendarLocations" method="get" path="/calendar/{connection_id}/location" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.location.listCalendarLocations({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarListCalendarLocations } from "@unified-api/typescript-sdk/funcs/calendarListCalendarLocations.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarListCalendarLocations(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarListCalendarLocations failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListCalendarLocationsRequest](../../sdk/models/operations/listcalendarlocationsrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarLocation[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listClubsLocations
 
 Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -708,7 +866,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { clubsListClubsLocations } from "@unified-api/typescript-sdk/funcs/clubsListClubsLocations.js";
+import { locationListClubsLocations } from "@unified-api/typescript-sdk/funcs/locationListClubsLocations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -719,14 +877,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await clubsListClubsLocations(unifiedTo, {
+  const res = await locationListClubsLocations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("clubsListClubsLocations failed:", res.error);
+    console.log("locationListClubsLocations failed:", res.error);
   }
 }
 
@@ -1014,7 +1172,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "93c5ecbd-431c-438b-a5c9-ee9a05840ff7",
+      id: "64ae1f4f-97a1-48c8-9334-cad5ccb493da",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1025,10 +1183,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "90246be0-37ff-496d-9275-ddd53c571c30",
+          id: "00e927d2-08b3-4830-bc43-198960f13c0e",
           metadata: [
             {
-              id: "7821ffd5-4c19-41d4-a50c-eaebe39b924f",
+              id: "7bcff478-6dae-4ca2-91a8-7254edfc8f90",
               slug: "abutor",
               value: "damno",
             },
@@ -1054,7 +1212,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-22T01:48:24.472Z"),
+      updatedAt: new Date("2024-04-22T11:23:20.658Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1098,7 +1256,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "93c5ecbd-431c-438b-a5c9-ee9a05840ff7",
+      id: "64ae1f4f-97a1-48c8-9334-cad5ccb493da",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1109,10 +1267,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "90246be0-37ff-496d-9275-ddd53c571c30",
+          id: "00e927d2-08b3-4830-bc43-198960f13c0e",
           metadata: [
             {
-              id: "7821ffd5-4c19-41d4-a50c-eaebe39b924f",
+              id: "7bcff478-6dae-4ca2-91a8-7254edfc8f90",
               slug: "abutor",
               value: "damno",
             },
@@ -1138,7 +1296,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-22T01:48:24.472Z"),
+      updatedAt: new Date("2024-04-22T11:23:20.658Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1205,7 +1363,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "946f32ad-f3dd-4ca7-bcbd-aa8e19d15051",
+      id: "d4bb0ccf-7094-43a4-8f05-e231fadad7fc",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1226,7 +1384,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-22T12:21:33.170Z"),
+      updatedAt: new Date("2023-06-22T22:33:18.417Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1269,7 +1427,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "946f32ad-f3dd-4ca7-bcbd-aa8e19d15051",
+      id: "d4bb0ccf-7094-43a4-8f05-e231fadad7fc",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1290,7 +1448,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-22T12:21:33.170Z"),
+      updatedAt: new Date("2023-06-22T22:33:18.417Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1514,7 +1672,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "93c5ecbd-431c-438b-a5c9-ee9a05840ff7",
+      id: "64ae1f4f-97a1-48c8-9334-cad5ccb493da",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1525,10 +1683,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "90246be0-37ff-496d-9275-ddd53c571c30",
+          id: "00e927d2-08b3-4830-bc43-198960f13c0e",
           metadata: [
             {
-              id: "7821ffd5-4c19-41d4-a50c-eaebe39b924f",
+              id: "7bcff478-6dae-4ca2-91a8-7254edfc8f90",
               slug: "abutor",
               value: "damno",
             },
@@ -1554,7 +1712,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-22T01:48:24.472Z"),
+      updatedAt: new Date("2024-04-22T11:23:20.658Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1598,7 +1756,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "93c5ecbd-431c-438b-a5c9-ee9a05840ff7",
+      id: "64ae1f4f-97a1-48c8-9334-cad5ccb493da",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -1609,10 +1767,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "90246be0-37ff-496d-9275-ddd53c571c30",
+          id: "00e927d2-08b3-4830-bc43-198960f13c0e",
           metadata: [
             {
-              id: "7821ffd5-4c19-41d4-a50c-eaebe39b924f",
+              id: "7bcff478-6dae-4ca2-91a8-7254edfc8f90",
               slug: "abutor",
               value: "damno",
             },
@@ -1638,7 +1796,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-22T01:48:24.472Z"),
+      updatedAt: new Date("2024-04-22T11:23:20.658Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -1705,7 +1863,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "946f32ad-f3dd-4ca7-bcbd-aa8e19d15051",
+      id: "d4bb0ccf-7094-43a4-8f05-e231fadad7fc",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1726,7 +1884,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-22T12:21:33.170Z"),
+      updatedAt: new Date("2023-06-22T22:33:18.417Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1769,7 +1927,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "946f32ad-f3dd-4ca7-bcbd-aa8e19d15051",
+      id: "d4bb0ccf-7094-43a4-8f05-e231fadad7fc",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1790,7 +1948,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-22T12:21:33.170Z"),
+      updatedAt: new Date("2023-06-22T22:33:18.417Z"),
     },
     connectionId: "<id>",
     id: "<id>",

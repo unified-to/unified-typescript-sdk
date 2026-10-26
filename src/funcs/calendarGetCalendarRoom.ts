@@ -27,18 +27,18 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Retrieve a location
+ * Retrieve a room
  *
  * @remarks
- * Retrieves a single ClubsLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+ * Retrieves a single CalendarRoom by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
  */
-export function clubsGetClubsLocation(
+export function calendarGetCalendarRoom(
   client: UnifiedToCore,
-  request: operations.GetClubsLocationRequest,
+  request: operations.GetCalendarRoomRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    shared.ClubsLocation,
+    shared.CalendarRoom,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -58,12 +58,12 @@ export function clubsGetClubsLocation(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.GetClubsLocationRequest,
+  request: operations.GetCalendarRoomRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      shared.ClubsLocation,
+      shared.CalendarRoom,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -78,7 +78,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.GetClubsLocationRequest$outboundSchema.parse(value),
+    (value) => operations.GetCalendarRoomRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -97,7 +97,7 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/clubs/{connection_id}/location/{id}")(pathParams);
+  const path = pathToFunc("/calendar/{connection_id}/room/{id}")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
@@ -114,7 +114,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getClubsLocation",
+    operationID: "getCalendarRoom",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -155,7 +155,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.ClubsLocation,
+    shared.CalendarRoom,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -165,7 +165,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, shared.ClubsLocation$inboundSchema),
+    M.json(200, shared.CalendarRoom$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

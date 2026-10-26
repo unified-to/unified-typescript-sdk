@@ -5,11 +5,11 @@
 ```typescript
 import { ListCalendarEventsQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListCalendarEventsQueryParamFields = "id";
+let value: ListCalendarEventsQueryParamFields = "created_at";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "calendar_id" | "subject" | "start_at" | "end_at" | "is_all_day" | "timezone" | "notes" | "location" | "is_free" | "is_private" | "status" | "organizer" | "attendees" | "recurring_event_id" | "recurrence" | "web_url" | "has_conference" | "conference" | "attachments" | "send_notifications" | "matter_id" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "calendar_id" | "subject" | "start_at" | "end_at" | "is_all_day" | "timezone" | "notes" | "location" | "is_free" | "is_private" | "status" | "organizer" | "attendees" | "recurring_event_id" | "recurrence" | "web_url" | "has_conference" | "conference" | "attachments" | "send_notifications" | "matter_id" | "metadata" | "raw" | "room_ids"
 ```

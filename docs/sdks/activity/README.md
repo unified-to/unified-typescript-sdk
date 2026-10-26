@@ -40,7 +40,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "5f88da98-a776-4cc7-b047-8d14d10a2c7f",
+      id: "ffb6fe17-c03c-404f-bebf-8a9aacde455a",
       isPrivate: false,
       metadata: [
         {
@@ -48,7 +48,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "0220a1d4-936a-49e2-8ab1-efff2f88e444",
+          id: "aeda20d2-79d0-4315-a4e7-c56acb9f98f6",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -57,7 +57,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-07T15:14:41.415Z"),
+      updatedAt: new Date("2026-04-08T15:29:20.315Z"),
     },
     connectionId: "<id>",
   });
@@ -89,7 +89,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "5f88da98-a776-4cc7-b047-8d14d10a2c7f",
+      id: "ffb6fe17-c03c-404f-bebf-8a9aacde455a",
       isPrivate: false,
       metadata: [
         {
@@ -97,7 +97,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "0220a1d4-936a-49e2-8ab1-efff2f88e444",
+          id: "aeda20d2-79d0-4315-a4e7-c56acb9f98f6",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -106,7 +106,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-07T15:14:41.415Z"),
+      updatedAt: new Date("2026-04-08T15:29:20.315Z"),
     },
     connectionId: "<id>",
   });
@@ -160,15 +160,15 @@ async function run() {
   const result = await unifiedTo.activity.createLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-08T00:00:33.645Z"),
+      completedAt: new Date("2023-12-08T14:32:44.959Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "10c9ee6b-8825-4b61-bb31-918b7e1e9980",
+      id: "22e14226-7dfd-4e17-be70-4097828295f8",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T12:25:05.615Z"),
-      updatedAt: new Date("2022-01-31T19:34:07.493Z"),
+      startedAt: new Date("2021-04-25T14:49:55.621Z"),
+      updatedAt: new Date("2022-02-01T01:32:52.239Z"),
     },
     connectionId: "<id>",
   });
@@ -199,15 +199,15 @@ async function run() {
   const res = await activityCreateLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-08T00:00:33.645Z"),
+      completedAt: new Date("2023-12-08T14:32:44.959Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "10c9ee6b-8825-4b61-bb31-918b7e1e9980",
+      id: "22e14226-7dfd-4e17-be70-4097828295f8",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T12:25:05.615Z"),
-      updatedAt: new Date("2022-01-31T19:34:07.493Z"),
+      startedAt: new Date("2021-04-25T14:49:55.621Z"),
+      updatedAt: new Date("2022-02-01T01:32:52.239Z"),
     },
     connectionId: "<id>",
   });
@@ -730,7 +730,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "df94a656-b5d0-40e6-8e30-a541728986f7",
+      id: "c65fe62e-7b9e-4445-a173-37b4b1224882",
       isPrivate: false,
       metadata: [
         {
@@ -738,7 +738,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "0e8b6bf4-6596-4fdc-bfd3-ab72a07f8d98",
+          id: "464b2c83-fa7f-4e5b-8787-e98527a65076",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -747,7 +747,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-07T15:14:41.436Z"),
+      updatedAt: new Date("2026-04-08T15:29:20.331Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -780,7 +780,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "df94a656-b5d0-40e6-8e30-a541728986f7",
+      id: "c65fe62e-7b9e-4445-a173-37b4b1224882",
       isPrivate: false,
       metadata: [
         {
@@ -788,7 +788,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "0e8b6bf4-6596-4fdc-bfd3-ab72a07f8d98",
+          id: "464b2c83-fa7f-4e5b-8787-e98527a65076",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -797,7 +797,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-07T15:14:41.436Z"),
+      updatedAt: new Date("2026-04-08T15:29:20.331Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -852,15 +852,15 @@ async function run() {
   const result = await unifiedTo.activity.patchLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-08T00:00:33.654Z"),
+      completedAt: new Date("2023-12-08T14:32:44.965Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "5866c1d5-a7fb-4ccb-bcf9-1ad27cf74a25",
+      id: "fcc4ef74-99fe-422b-84a3-55a3021afb61",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T12:25:05.617Z"),
-      updatedAt: new Date("2022-01-31T19:34:07.497Z"),
+      startedAt: new Date("2021-04-25T14:49:55.622Z"),
+      updatedAt: new Date("2022-02-01T01:32:52.241Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -892,15 +892,15 @@ async function run() {
   const res = await activityPatchLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-08T00:00:33.654Z"),
+      completedAt: new Date("2023-12-08T14:32:44.965Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "5866c1d5-a7fb-4ccb-bcf9-1ad27cf74a25",
+      id: "fcc4ef74-99fe-422b-84a3-55a3021afb61",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T12:25:05.617Z"),
-      updatedAt: new Date("2022-01-31T19:34:07.497Z"),
+      startedAt: new Date("2021-04-25T14:49:55.622Z"),
+      updatedAt: new Date("2022-02-01T01:32:52.241Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1114,7 +1114,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "df94a656-b5d0-40e6-8e30-a541728986f7",
+      id: "c65fe62e-7b9e-4445-a173-37b4b1224882",
       isPrivate: false,
       metadata: [
         {
@@ -1122,7 +1122,7 @@ async function run() {
 
           },
           format: "TEXT",
-          id: "0e8b6bf4-6596-4fdc-bfd3-ab72a07f8d98",
+          id: "464b2c83-fa7f-4e5b-8787-e98527a65076",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -1131,7 +1131,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-07T15:14:41.436Z"),
+      updatedAt: new Date("2026-04-08T15:29:20.331Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1164,7 +1164,7 @@ async function run() {
     atsActivity: {
       createdAt: new Date("2022-08-07T03:16:43.865Z"),
       description: "Sapiente.",
-      id: "df94a656-b5d0-40e6-8e30-a541728986f7",
+      id: "c65fe62e-7b9e-4445-a173-37b4b1224882",
       isPrivate: false,
       metadata: [
         {
@@ -1172,7 +1172,7 @@ async function run() {
   
           },
           format: "TEXT",
-          id: "0e8b6bf4-6596-4fdc-bfd3-ab72a07f8d98",
+          id: "464b2c83-fa7f-4e5b-8787-e98527a65076",
           namespace: "activity",
           slug: "cimentarius",
           value: "Reprehenderit verto.",
@@ -1181,7 +1181,7 @@ async function run() {
       subType: "TASK",
       title: "Venio blandior aureus.",
       type: "TASK",
-      updatedAt: new Date("2026-04-07T15:14:41.436Z"),
+      updatedAt: new Date("2026-04-08T15:29:20.331Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1236,15 +1236,15 @@ async function run() {
   const result = await unifiedTo.activity.updateLmsActivity({
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-08T00:00:33.654Z"),
+      completedAt: new Date("2023-12-08T14:32:44.965Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "5866c1d5-a7fb-4ccb-bcf9-1ad27cf74a25",
+      id: "fcc4ef74-99fe-422b-84a3-55a3021afb61",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T12:25:05.617Z"),
-      updatedAt: new Date("2022-01-31T19:34:07.497Z"),
+      startedAt: new Date("2021-04-25T14:49:55.622Z"),
+      updatedAt: new Date("2022-02-01T01:32:52.241Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1276,15 +1276,15 @@ async function run() {
   const res = await activityUpdateLmsActivity(unifiedTo, {
     lmsActivity: {
       assignedGrade: "summopere",
-      completedAt: new Date("2023-12-08T00:00:33.654Z"),
+      completedAt: new Date("2023-12-08T14:32:44.965Z"),
       createdAt: new Date("2020-10-17T01:25:21.745Z"),
       durationMinutes: 55,
-      id: "5866c1d5-a7fb-4ccb-bcf9-1ad27cf74a25",
+      id: "fcc4ef74-99fe-422b-84a3-55a3021afb61",
       isCompleted: true,
       metadata: [],
       progressPercentage: 100,
-      startedAt: new Date("2021-04-25T12:25:05.617Z"),
-      updatedAt: new Date("2022-01-31T19:34:07.497Z"),
+      startedAt: new Date("2021-04-25T14:49:55.622Z"),
+      updatedAt: new Date("2022-02-01T01:32:52.241Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -7,12 +7,16 @@ import { calendarCreateCalendarLink } from "../funcs/calendarCreateCalendarLink.
 import { calendarCreateCalendarWebinar } from "../funcs/calendarCreateCalendarWebinar.js";
 import { calendarGetCalendarCalendar } from "../funcs/calendarGetCalendarCalendar.js";
 import { calendarGetCalendarLink } from "../funcs/calendarGetCalendarLink.js";
+import { calendarGetCalendarLocation } from "../funcs/calendarGetCalendarLocation.js";
 import { calendarGetCalendarRecording } from "../funcs/calendarGetCalendarRecording.js";
+import { calendarGetCalendarRoom } from "../funcs/calendarGetCalendarRoom.js";
 import { calendarGetCalendarWebinar } from "../funcs/calendarGetCalendarWebinar.js";
 import { calendarListCalendarBusies } from "../funcs/calendarListCalendarBusies.js";
 import { calendarListCalendarCalendars } from "../funcs/calendarListCalendarCalendars.js";
 import { calendarListCalendarLinks } from "../funcs/calendarListCalendarLinks.js";
+import { calendarListCalendarLocations } from "../funcs/calendarListCalendarLocations.js";
 import { calendarListCalendarRecordings } from "../funcs/calendarListCalendarRecordings.js";
+import { calendarListCalendarRooms } from "../funcs/calendarListCalendarRooms.js";
 import { calendarListCalendarWebinars } from "../funcs/calendarListCalendarWebinars.js";
 import { calendarPatchCalendarCalendar } from "../funcs/calendarPatchCalendarCalendar.js";
 import { calendarPatchCalendarLink } from "../funcs/calendarPatchCalendarLink.js";
@@ -155,6 +159,23 @@ export class Calendar extends ClientSDK {
   }
 
   /**
+   * Retrieve a location
+   *
+   * @remarks
+   * Retrieves a single CalendarLocation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getCalendarLocation(
+    request: operations.GetCalendarLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CalendarLocation> {
+    return unwrapAsync(calendarGetCalendarLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a recording
    *
    * @remarks
@@ -165,6 +186,23 @@ export class Calendar extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CalendarRecording> {
     return unwrapAsync(calendarGetCalendarRecording(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a room
+   *
+   * @remarks
+   * Retrieves a single CalendarRoom by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getCalendarRoom(
+    request: operations.GetCalendarRoomRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CalendarRoom> {
+    return unwrapAsync(calendarGetCalendarRoom(
       this,
       request,
       options,
@@ -257,6 +295,23 @@ export class Calendar extends ClientSDK {
   }
 
   /**
+   * List all locations
+   *
+   * @remarks
+   * Returns a list of CalendarLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listCalendarLocations(
+    request: operations.ListCalendarLocationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CalendarLocation>> {
+    return unwrapAsync(calendarListCalendarLocations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all recordings
    *
    * @remarks
@@ -267,6 +322,23 @@ export class Calendar extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CalendarRecording>> {
     return unwrapAsync(calendarListCalendarRecordings(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all rooms
+   *
+   * @remarks
+   * Returns a list of CalendarRooms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listCalendarRooms(
+    request: operations.ListCalendarRoomsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CalendarRoom>> {
+    return unwrapAsync(calendarListCalendarRooms(
       this,
       request,
       options,

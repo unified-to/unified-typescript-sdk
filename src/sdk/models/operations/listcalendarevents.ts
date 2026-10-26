@@ -33,6 +33,7 @@ export const ListCalendarEventsQueryParamFields = {
   MatterId: "matter_id",
   Metadata: "metadata",
   Raw: "raw",
+  RoomIds: "room_ids",
 } as const;
 export type ListCalendarEventsQueryParamFields = ClosedEnum<
   typeof ListCalendarEventsQueryParamFields
@@ -74,6 +75,10 @@ export type ListCalendarEventsRequest = {
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
+  /**
+   * The room ID to filter by. Returns the events that booked this room.
+   */
+  roomId?: string | undefined;
   sort?: string | undefined;
   /**
    * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -103,6 +108,7 @@ export type ListCalendarEventsRequest$Outbound = {
   order?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
+  room_id?: string | undefined;
   sort?: string | undefined;
   start_gte?: string | undefined;
   updated_gte?: string | undefined;
@@ -125,6 +131,7 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
   order: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
+  roomId: z.string().optional(),
   sort: z.string().optional(),
   startGte: z.string().optional(),
   updatedGte: z.string().optional(),
@@ -134,6 +141,7 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
     connectionId: "connection_id",
     endLt: "end_lt",
     matterId: "matter_id",
+    roomId: "room_id",
     startGte: "start_gte",
     updatedGte: "updated_gte",
   });

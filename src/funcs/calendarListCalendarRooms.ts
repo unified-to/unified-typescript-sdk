@@ -28,18 +28,18 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List all locations
+ * List all rooms
  *
  * @remarks
- * Returns a list of ClubsLocations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+ * Returns a list of CalendarRooms. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
  */
-export function clubsListClubsLocations(
+export function calendarListCalendarRooms(
   client: UnifiedToCore,
-  request: operations.ListClubsLocationsRequest,
+  request: operations.ListCalendarRoomsRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.ClubsLocation>,
+    Array<shared.CalendarRoom>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -59,12 +59,12 @@ export function clubsListClubsLocations(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListClubsLocationsRequest,
+  request: operations.ListCalendarRoomsRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.ClubsLocation>,
+      Array<shared.CalendarRoom>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -79,7 +79,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.ListClubsLocationsRequest$outboundSchema.parse(value),
+    (value) => operations.ListCalendarRoomsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -94,17 +94,18 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-  const path = pathToFunc("/clubs/{connection_id}/location")(pathParams);
+  const path = pathToFunc("/calendar/{connection_id}/room")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
-    "group_id": payload.group_id,
     "limit": payload.limit,
+    "location_id": payload.location_id,
     "offset": payload.offset,
     "order": payload.order,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
+    "type": payload.type,
     "updated_gte": payload.updated_gte,
   });
 
@@ -118,7 +119,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listClubsLocations",
+    operationID: "listCalendarRooms",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -159,7 +160,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.ClubsLocation>,
+    Array<shared.CalendarRoom>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -169,7 +170,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.ClubsLocation$inboundSchema)),
+    M.json(200, z.array(shared.CalendarRoom$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

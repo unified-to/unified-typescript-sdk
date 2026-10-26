@@ -174,6 +174,8 @@ import {
   ListRepoId$inboundSchema,
   ListRoleId,
   ListRoleId$inboundSchema,
+  ListRoomId,
+  ListRoomId$inboundSchema,
   ListRootId,
   ListRootId$inboundSchema,
   ListSaleschannelId,
@@ -312,9 +314,14 @@ import {
   VirtualWebhookCandidateId$inboundSchema,
   VirtualWebhookCarrierId,
   VirtualWebhookCarrierId$inboundSchema,
-  VirtualWebhookChannelId,
-  VirtualWebhookChannelId$inboundSchema,
-} from "./virtualwebhookchannelid.js";
+} from "./virtualwebhookcarrierid.js";
+
+export const VirtualWebhookChannelId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookChannelId = OpenEnum<typeof VirtualWebhookChannelId>;
 
 export const VirtualWebhookCollectionId = {
   SupportedRequired: "supported-required",
@@ -841,6 +848,7 @@ export type IntegrationSupport = {
   listRegionId?: ListRegionId | undefined;
   listRepoId?: ListRepoId | undefined;
   listRoleId?: ListRoleId | undefined;
+  listRoomId?: ListRoomId | undefined;
   listRootId?: ListRootId | undefined;
   listSaleschannelId?: ListSaleschannelId | undefined;
   listSegmentId?: ListSegmentId | undefined;
@@ -979,6 +987,13 @@ export type IntegrationSupport = {
   virtualWebhookVisitorId?: VirtualWebhookVisitorId | undefined;
   webhookEvents?: PropertyIntegrationSupportWebhookEvents | undefined;
 };
+
+/** @internal */
+export const VirtualWebhookChannelId$inboundSchema: z.ZodType<
+  VirtualWebhookChannelId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookChannelId);
 
 /** @internal */
 export const VirtualWebhookCollectionId$inboundSchema: z.ZodType<
@@ -1480,6 +1495,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_region_id: ListRegionId$inboundSchema.optional(),
   list_repo_id: ListRepoId$inboundSchema.optional(),
   list_role_id: ListRoleId$inboundSchema.optional(),
+  list_room_id: ListRoomId$inboundSchema.optional(),
   list_root_id: ListRootId$inboundSchema.optional(),
   list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
   list_segment_id: ListSegmentId$inboundSchema.optional(),
@@ -1720,6 +1736,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_region_id": "listRegionId",
     "list_repo_id": "listRepoId",
     "list_role_id": "listRoleId",
+    "list_room_id": "listRoomId",
     "list_root_id": "listRootId",
     "list_saleschannel_id": "listSaleschannelId",
     "list_segment_id": "listSegmentId",

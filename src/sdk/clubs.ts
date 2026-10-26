@@ -4,14 +4,14 @@
 
 import { activityGetClubsActivity } from "../funcs/activityGetClubsActivity.js";
 import { activityListClubsActivities } from "../funcs/activityListClubsActivities.js";
-import { clubsGetClubsLocation } from "../funcs/clubsGetClubsLocation.js";
 import { clubsGetClubsMember } from "../funcs/clubsGetClubsMember.js";
-import { clubsListClubsLocations } from "../funcs/clubsListClubsLocations.js";
 import { clubsListClubsMembers } from "../funcs/clubsListClubsMembers.js";
 import { eventGetClubsEvent } from "../funcs/eventGetClubsEvent.js";
 import { eventListClubsEvents } from "../funcs/eventListClubsEvents.js";
 import { groupGetClubsGroup } from "../funcs/groupGetClubsGroup.js";
 import { groupListClubsGroups } from "../funcs/groupListClubsGroups.js";
+import { locationGetClubsLocation } from "../funcs/locationGetClubsLocation.js";
+import { locationListClubsLocations } from "../funcs/locationListClubsLocations.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -79,7 +79,7 @@ export class Clubs extends ClientSDK {
     request: operations.GetClubsLocationRequest,
     options?: RequestOptions,
   ): Promise<shared.ClubsLocation> {
-    return unwrapAsync(clubsGetClubsLocation(
+    return unwrapAsync(locationGetClubsLocation(
       this,
       request,
       options,
@@ -164,7 +164,7 @@ export class Clubs extends ClientSDK {
     request: operations.ListClubsLocationsRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.ClubsLocation>> {
-    return unwrapAsync(clubsListClubsLocations(
+    return unwrapAsync(locationListClubsLocations(
       this,
       request,
       options,

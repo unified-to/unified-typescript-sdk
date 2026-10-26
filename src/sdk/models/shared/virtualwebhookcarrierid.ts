@@ -566,6 +566,13 @@ export const ListRoleId = {
 } as const;
 export type ListRoleId = OpenEnum<typeof ListRoleId>;
 
+export const ListRoomId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListRoomId = OpenEnum<typeof ListRoomId>;
+
 export const ListRootId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1062,13 +1069,6 @@ export const VirtualWebhookCarrierId = {
   NotSupported: "not-supported",
 } as const;
 export type VirtualWebhookCarrierId = OpenEnum<typeof VirtualWebhookCarrierId>;
-
-export const VirtualWebhookChannelId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookChannelId = OpenEnum<typeof VirtualWebhookChannelId>;
 
 /** @internal */
 export const FromWebhook$inboundSchema: z.ZodType<
@@ -1631,6 +1631,13 @@ export const ListRoleId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(ListRoleId);
 
 /** @internal */
+export const ListRoomId$inboundSchema: z.ZodType<
+  ListRoomId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListRoomId);
+
+/** @internal */
 export const ListRootId$inboundSchema: z.ZodType<
   ListRootId,
   z.ZodTypeDef,
@@ -2112,10 +2119,3 @@ export const VirtualWebhookCarrierId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookCarrierId);
-
-/** @internal */
-export const VirtualWebhookChannelId$inboundSchema: z.ZodType<
-  VirtualWebhookChannelId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookChannelId);

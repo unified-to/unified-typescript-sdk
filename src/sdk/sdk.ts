@@ -168,6 +168,7 @@ import { Repository } from "./repository.js";
 import { RequestT } from "./request.js";
 import { Reservation } from "./reservation.js";
 import { Review } from "./review.js";
+import { Room } from "./room.js";
 import { Saleschannel } from "./saleschannel.js";
 import { Salesorder } from "./salesorder.js";
 import { Salesreceipt } from "./salesreceipt.js";
@@ -521,9 +522,19 @@ export class UnifiedTo extends ClientSDK {
     return (this._link ??= new Link(this._options));
   }
 
+  private _location?: Location;
+  get location(): Location {
+    return (this._location ??= new Location(this._options));
+  }
+
   private _recording?: Recording;
   get recording(): Recording {
     return (this._recording ??= new Recording(this._options));
+  }
+
+  private _room?: Room;
+  get room(): Room {
+    return (this._room ??= new Room(this._options));
   }
 
   private _webinar?: Webinar;
@@ -564,11 +575,6 @@ export class UnifiedTo extends ClientSDK {
   private _clubs?: Clubs;
   get clubs(): Clubs {
     return (this._clubs ??= new Clubs(this._options));
-  }
-
-  private _location?: Location;
-  get location(): Location {
-    return (this._location ??= new Location(this._options));
   }
 
   private _member?: Member;

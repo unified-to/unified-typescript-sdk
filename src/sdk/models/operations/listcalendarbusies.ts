@@ -47,6 +47,10 @@ export type ListCalendarBusiesRequest = {
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
+  /**
+   * The room ID to get availability for.
+   */
+  roomId?: string | undefined;
   sort?: string | undefined;
   /**
    * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -78,6 +82,7 @@ export type ListCalendarBusiesRequest$Outbound = {
   order?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
+  room_id?: string | undefined;
   sort?: string | undefined;
   start_gte?: string | undefined;
   updated_gte?: string | undefined;
@@ -99,6 +104,7 @@ export const ListCalendarBusiesRequest$outboundSchema: z.ZodType<
   order: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
+  roomId: z.string().optional(),
   sort: z.string().optional(),
   startGte: z.string().optional(),
   updatedGte: z.string().optional(),
@@ -108,6 +114,7 @@ export const ListCalendarBusiesRequest$outboundSchema: z.ZodType<
     calendarId: "calendar_id",
     connectionId: "connection_id",
     endLt: "end_lt",
+    roomId: "room_id",
     startGte: "start_gte",
     updatedGte: "updated_gte",
     userId: "user_id",

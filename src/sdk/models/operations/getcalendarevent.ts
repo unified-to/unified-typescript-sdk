@@ -33,6 +33,7 @@ export const GetCalendarEventQueryParamFields = {
   MatterId: "matter_id",
   Metadata: "metadata",
   Raw: "raw",
+  RoomIds: "room_ids",
 } as const;
 export type GetCalendarEventQueryParamFields = ClosedEnum<
   typeof GetCalendarEventQueryParamFields

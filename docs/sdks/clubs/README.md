@@ -286,7 +286,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { clubsGetClubsLocation } from "@unified-api/typescript-sdk/funcs/clubsGetClubsLocation.js";
+import { locationGetClubsLocation } from "@unified-api/typescript-sdk/funcs/locationGetClubsLocation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -297,7 +297,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await clubsGetClubsLocation(unifiedTo, {
+  const res = await locationGetClubsLocation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -305,7 +305,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("clubsGetClubsLocation failed:", res.error);
+    console.log("locationGetClubsLocation failed:", res.error);
   }
 }
 
@@ -674,7 +674,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { clubsListClubsLocations } from "@unified-api/typescript-sdk/funcs/clubsListClubsLocations.js";
+import { locationListClubsLocations } from "@unified-api/typescript-sdk/funcs/locationListClubsLocations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -685,14 +685,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await clubsListClubsLocations(unifiedTo, {
+  const res = await locationListClubsLocations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("clubsListClubsLocations failed:", res.error);
+    console.log("locationListClubsLocations failed:", res.error);
   }
 }
 
