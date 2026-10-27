@@ -38,7 +38,7 @@ import {
 export type CrmContact = {
   address?: PropertyCrmContactAddress | undefined;
   /**
-   * The companyorganization name  of the contact
+   * The company/organization name  of the contact
    */
   company?: string | undefined;
   /**
@@ -58,12 +58,18 @@ export type CrmContact = {
    * An array of email addresses for this contact
    */
   emails?: Array<CrmEmail> | undefined;
+  /**
+   * The contact's first (given) name
+   */
   firstName?: string | undefined;
   /**
    * Unique identifier for this contact object
    */
   id?: string | undefined;
   imageUrl?: string | undefined;
+  /**
+   * The contact's last (family) name
+   */
   lastName?: string | undefined;
   /**
    * Additional URLs associated with the contact e.g., LinkedIn, website, etc

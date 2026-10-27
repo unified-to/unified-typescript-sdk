@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
+      id: "e9f8ab7f-7324-4b2b-a749-c248386c0127",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
+      updatedAt: new Date("2023-08-08T10:23:51.997Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
+      id: "e9f8ab7f-7324-4b2b-a749-c248386c0127",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
+      updatedAt: new Date("2023-08-08T10:23:51.997Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
+      id: "e9f8ab7f-7324-4b2b-a749-c248386c0127",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
+      updatedAt: new Date("2023-08-08T10:23:51.997Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
+        id: "e9f8ab7f-7324-4b2b-a749-c248386c0127",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-08T04:19:07.544Z"),
+        updatedAt: new Date("2023-08-08T10:23:51.997Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
+      id: "e9f8ab7f-7324-4b2b-a749-c248386c0127",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
+      updatedAt: new Date("2023-08-08T10:23:51.997Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "96b5e95a-54da-4b08-9e44-5f5d23e50b65",
+      id: "e9f8ab7f-7324-4b2b-a749-c248386c0127",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T04:19:07.544Z"),
+      updatedAt: new Date("2023-08-08T10:23:51.997Z"),
     },
     connectionId: "<id>",
   });
@@ -2593,6 +2593,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedPatchUnifiedConnection`](docs/sdks/unified/README.md#patchunifiedconnection) - Update connection
 - [`unifiedPatchUnifiedWebhook`](docs/sdks/unified/README.md#patchunifiedwebhook) - Update webhook subscription
 - [`unifiedPatchUnifiedWebhook`](docs/sdks/webhook/README.md#patchunifiedwebhook) - Update webhook subscription
+- [`unifiedPatchUnifiedWebhookResume`](docs/sdks/unified/README.md#patchunifiedwebhookresume) - Resume an unhealthy webhook subscription
+- [`unifiedPatchUnifiedWebhookResume`](docs/sdks/webhook/README.md#patchunifiedwebhookresume) - Resume an unhealthy webhook subscription
 - [`unifiedPatchUnifiedWebhookTrigger`](docs/sdks/unified/README.md#patchunifiedwebhooktrigger) - Trigger webhook
 - [`unifiedPatchUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#patchunifiedwebhooktrigger) - Trigger webhook
 - [`unifiedRemoveUnifiedConnection`](docs/sdks/connection/README.md#removeunifiedconnection) - Remove connection
@@ -2607,6 +2609,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
 - [`unifiedUpdateUnifiedWebhook`](docs/sdks/unified/README.md#updateunifiedwebhook) - Update webhook subscription
 - [`unifiedUpdateUnifiedWebhook`](docs/sdks/webhook/README.md#updateunifiedwebhook) - Update webhook subscription
+- [`unifiedUpdateUnifiedWebhookResume`](docs/sdks/unified/README.md#updateunifiedwebhookresume) - Resume an unhealthy webhook subscription
+- [`unifiedUpdateUnifiedWebhookResume`](docs/sdks/webhook/README.md#updateunifiedwebhookresume) - Resume an unhealthy webhook subscription
 - [`unifiedUpdateUnifiedWebhookTrigger`](docs/sdks/unified/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 - [`unifiedUpdateUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 - [`verificationCreateVerificationRequest`](docs/sdks/request/README.md#createverificationrequest) - Create a request

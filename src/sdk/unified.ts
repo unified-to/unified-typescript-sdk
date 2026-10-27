@@ -26,6 +26,7 @@ import { unifiedListUnifiedSecretsmanagerSecrets } from "../funcs/unifiedListUni
 import { unifiedListUnifiedWebhooks } from "../funcs/unifiedListUnifiedWebhooks.js";
 import { unifiedPatchUnifiedConnection } from "../funcs/unifiedPatchUnifiedConnection.js";
 import { unifiedPatchUnifiedWebhook } from "../funcs/unifiedPatchUnifiedWebhook.js";
+import { unifiedPatchUnifiedWebhookResume } from "../funcs/unifiedPatchUnifiedWebhookResume.js";
 import { unifiedPatchUnifiedWebhookTrigger } from "../funcs/unifiedPatchUnifiedWebhookTrigger.js";
 import { unifiedRemoveUnifiedConnection } from "../funcs/unifiedRemoveUnifiedConnection.js";
 import { unifiedRemoveUnifiedEnvironment } from "../funcs/unifiedRemoveUnifiedEnvironment.js";
@@ -33,6 +34,7 @@ import { unifiedRemoveUnifiedSecretsmanager } from "../funcs/unifiedRemoveUnifie
 import { unifiedRemoveUnifiedWebhook } from "../funcs/unifiedRemoveUnifiedWebhook.js";
 import { unifiedUpdateUnifiedConnection } from "../funcs/unifiedUpdateUnifiedConnection.js";
 import { unifiedUpdateUnifiedWebhook } from "../funcs/unifiedUpdateUnifiedWebhook.js";
+import { unifiedUpdateUnifiedWebhookResume } from "../funcs/unifiedUpdateUnifiedWebhookResume.js";
 import { unifiedUpdateUnifiedWebhookTrigger } from "../funcs/unifiedUpdateUnifiedWebhookTrigger.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -388,6 +390,23 @@ export class Unified extends ClientSDK {
   }
 
   /**
+   * Resume an unhealthy webhook subscription
+   *
+   * @remarks
+   * Sets is_healthy back to true and restarts the webhook. Fix the cause first (hook_url, connection auth); the connection must be healthy. Virtual: continues from where it stopped. A webhook that went unhealthy mid-initial-sync before resume was available restarts its initial sync, so deleting and recreating it is safer. Native: re-subscribes if the provider subscription is missing or expired. Events received while the webhook was unhealthy are not re-sent. Webhook sync (beta): continues from the stored sync token. Page cursors are not stored yet, so a resume can re-send some records. Virtual and initial-sync webhooks that have been unhealthy for more than 7 days cannot be resumed, because resuming would re-send every change since then; delete and recreate them instead. MCP Events subscriptions cannot be resumed; they are managed by their MCP client.
+   */
+  async patchUnifiedWebhookResume(
+    request: operations.PatchUnifiedWebhookResumeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(unifiedPatchUnifiedWebhookResume(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Trigger webhook
    */
   async patchUnifiedWebhookTrigger(
@@ -479,6 +498,23 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.Webhook> {
     return unwrapAsync(unifiedUpdateUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Resume an unhealthy webhook subscription
+   *
+   * @remarks
+   * Sets is_healthy back to true and restarts the webhook. Fix the cause first (hook_url, connection auth); the connection must be healthy. Virtual: continues from where it stopped. A webhook that went unhealthy mid-initial-sync before resume was available restarts its initial sync, so deleting and recreating it is safer. Native: re-subscribes if the provider subscription is missing or expired. Events received while the webhook was unhealthy are not re-sent. Webhook sync (beta): continues from the stored sync token. Page cursors are not stored yet, so a resume can re-send some records. Virtual and initial-sync webhooks that have been unhealthy for more than 7 days cannot be resumed, because resuming would re-send every change since then; delete and recreate them instead. MCP Events subscriptions cannot be resumed; they are managed by their MCP client.
+   */
+  async updateUnifiedWebhookResume(
+    request: operations.UpdateUnifiedWebhookResumeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(unifiedUpdateUnifiedWebhookResume(
       this,
       request,
       options,

@@ -52,7 +52,7 @@ export type EnrichPerson = {
    */
   birthdate?: string | undefined;
   /**
-   * The companyorganization name  of the person
+   * The company/organization name  of the person
    */
   company?: string | undefined;
   /**
