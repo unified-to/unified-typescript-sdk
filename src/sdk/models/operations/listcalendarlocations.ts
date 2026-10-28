@@ -8,15 +8,15 @@ import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCalendarLocationsQueryParamFields = {
   Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
   Name: "name",
   ParentId: "parent_id",
   Type: "type",
   Address: "address",
-  Raw: "raw",
-  CreatedAt: "created_at",
-  UpdatedAt: "updated_at",
   Timezone: "timezone",
   Metadata: "metadata",
+  Raw: "raw",
 } as const;
 export type ListCalendarLocationsQueryParamFields = ClosedEnum<
   typeof ListCalendarLocationsQueryParamFields

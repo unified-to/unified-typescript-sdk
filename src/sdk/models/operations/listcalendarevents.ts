@@ -32,8 +32,8 @@ export const ListCalendarEventsQueryParamFields = {
   SendNotifications: "send_notifications",
   MatterId: "matter_id",
   Metadata: "metadata",
-  Raw: "raw",
   RoomIds: "room_ids",
+  Raw: "raw",
 } as const;
 export type ListCalendarEventsQueryParamFields = ClosedEnum<
   typeof ListCalendarEventsQueryParamFields

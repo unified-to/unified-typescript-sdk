@@ -5,11 +5,11 @@
 ```typescript
 import { GetCalendarLocationQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetCalendarLocationQueryParamFields = "raw";
+let value: GetCalendarLocationQueryParamFields = "type";
 ```
 
 ## Values
 
 ```typescript
-"id" | "name" | "parent_id" | "type" | "address" | "raw" | "created_at" | "updated_at" | "timezone" | "metadata"
+"id" | "created_at" | "updated_at" | "name" | "parent_id" | "type" | "address" | "timezone" | "metadata" | "raw"
 ```
