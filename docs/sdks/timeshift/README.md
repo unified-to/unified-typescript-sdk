@@ -30,7 +30,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.createHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-20T23:27:55.503Z"),
+      approvedAt: new Date("2022-07-21T06:29:22.878Z"),
       compensation: [
         {
           amount: 76761,
@@ -42,13 +42,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-03T22:57:31.304Z"),
+      endAt: new Date("2026-10-04T15:39:34.091Z"),
       hours: 6,
-      id: "add9dfaf-ebae-4577-bc21-3744e8843bfa",
+      id: "09e78199-7c14-43b7-a4b4-da8eebd3a7af",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-16T20:39:19.185Z"),
-      updatedAt: new Date("2021-07-03T19:38:14.066Z"),
+      startAt: new Date("2023-07-17T05:57:11.246Z"),
+      updatedAt: new Date("2021-07-04T00:15:14.209Z"),
     },
     connectionId: "<id>",
   });
@@ -78,7 +78,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-20T23:27:55.503Z"),
+      approvedAt: new Date("2022-07-21T06:29:22.878Z"),
       compensation: [
         {
           amount: 76761,
@@ -90,13 +90,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-03T22:57:31.304Z"),
+      endAt: new Date("2026-10-04T15:39:34.091Z"),
       hours: 6,
-      id: "add9dfaf-ebae-4577-bc21-3744e8843bfa",
+      id: "09e78199-7c14-43b7-a4b4-da8eebd3a7af",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-16T20:39:19.185Z"),
-      updatedAt: new Date("2021-07-03T19:38:14.066Z"),
+      startAt: new Date("2023-07-17T05:57:11.246Z"),
+      updatedAt: new Date("2021-07-04T00:15:14.209Z"),
     },
     connectionId: "<id>",
   });
@@ -305,7 +305,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.patchHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-20T23:27:55.510Z"),
+      approvedAt: new Date("2022-07-21T06:29:22.886Z"),
       compensation: [
         {
           amount: 76761,
@@ -317,13 +317,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-03T22:57:31.320Z"),
+      endAt: new Date("2026-10-04T15:39:34.109Z"),
       hours: 6,
-      id: "8afdb07f-c8d6-4d8d-b516-587780a4d796",
+      id: "39dd8a98-77fe-471a-aeda-baf64c23fa50",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-16T20:39:19.194Z"),
-      updatedAt: new Date("2021-07-03T19:38:14.071Z"),
+      startAt: new Date("2023-07-17T05:57:11.256Z"),
+      updatedAt: new Date("2021-07-04T00:15:14.214Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -354,7 +354,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-20T23:27:55.510Z"),
+      approvedAt: new Date("2022-07-21T06:29:22.886Z"),
       compensation: [
         {
           amount: 76761,
@@ -366,13 +366,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-03T22:57:31.320Z"),
+      endAt: new Date("2026-10-04T15:39:34.109Z"),
       hours: 6,
-      id: "8afdb07f-c8d6-4d8d-b516-587780a4d796",
+      id: "39dd8a98-77fe-471a-aeda-baf64c23fa50",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-16T20:39:19.194Z"),
-      updatedAt: new Date("2021-07-03T19:38:14.071Z"),
+      startAt: new Date("2023-07-17T05:57:11.256Z"),
+      updatedAt: new Date("2021-07-04T00:15:14.214Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -505,7 +505,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.updateHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-20T23:27:55.510Z"),
+      approvedAt: new Date("2022-07-21T06:29:22.886Z"),
       compensation: [
         {
           amount: 76761,
@@ -517,13 +517,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-03T22:57:31.320Z"),
+      endAt: new Date("2026-10-04T15:39:34.109Z"),
       hours: 6,
-      id: "8afdb07f-c8d6-4d8d-b516-587780a4d796",
+      id: "39dd8a98-77fe-471a-aeda-baf64c23fa50",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-16T20:39:19.194Z"),
-      updatedAt: new Date("2021-07-03T19:38:14.071Z"),
+      startAt: new Date("2023-07-17T05:57:11.256Z"),
+      updatedAt: new Date("2021-07-04T00:15:14.214Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -554,7 +554,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-20T23:27:55.510Z"),
+      approvedAt: new Date("2022-07-21T06:29:22.886Z"),
       compensation: [
         {
           amount: 76761,
@@ -566,13 +566,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-03T22:57:31.320Z"),
+      endAt: new Date("2026-10-04T15:39:34.109Z"),
       hours: 6,
-      id: "8afdb07f-c8d6-4d8d-b516-587780a4d796",
+      id: "39dd8a98-77fe-471a-aeda-baf64c23fa50",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-16T20:39:19.194Z"),
-      updatedAt: new Date("2021-07-03T19:38:14.071Z"),
+      startAt: new Date("2023-07-17T05:57:11.256Z"),
+      updatedAt: new Date("2021-07-04T00:15:14.214Z"),
     },
     connectionId: "<id>",
     id: "<id>",
