@@ -31,7 +31,7 @@ async function run() {
   const result = await unifiedTo.shipment.createShippingShipment({
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "93cfbfc0-9fa5-4070-afbc-bf0348463de2",
+      id: "bf23c384-ac89-48d4-86fa-dd01942ec3e6",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -41,7 +41,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T14:38:10.636Z"),
+      updatedAt: new Date("2022-11-15T16:01:33.597Z"),
     },
     connectionId: "<id>",
   });
@@ -72,7 +72,7 @@ async function run() {
   const res = await shippingCreateShippingShipment(unifiedTo, {
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "93cfbfc0-9fa5-4070-afbc-bf0348463de2",
+      id: "bf23c384-ac89-48d4-86fa-dd01942ec3e6",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -82,7 +82,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T14:38:10.636Z"),
+      updatedAt: new Date("2022-11-15T16:01:33.597Z"),
     },
     connectionId: "<id>",
   });
@@ -292,7 +292,7 @@ async function run() {
   const result = await unifiedTo.shipment.patchShippingShipment({
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "fb06033e-0fcd-478d-86a6-79da462c3fe3",
+      id: "ca472714-eaa0-431f-a8c0-57ae9e9db517",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -302,7 +302,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T14:38:10.641Z"),
+      updatedAt: new Date("2022-11-15T16:01:33.600Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -334,7 +334,7 @@ async function run() {
   const res = await shippingPatchShippingShipment(unifiedTo, {
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "fb06033e-0fcd-478d-86a6-79da462c3fe3",
+      id: "ca472714-eaa0-431f-a8c0-57ae9e9db517",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -344,7 +344,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T14:38:10.641Z"),
+      updatedAt: new Date("2022-11-15T16:01:33.600Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -478,7 +478,7 @@ async function run() {
   const result = await unifiedTo.shipment.updateShippingShipment({
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "fb06033e-0fcd-478d-86a6-79da462c3fe3",
+      id: "ca472714-eaa0-431f-a8c0-57ae9e9db517",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -488,7 +488,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T14:38:10.641Z"),
+      updatedAt: new Date("2022-11-15T16:01:33.600Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -520,7 +520,7 @@ async function run() {
   const res = await shippingUpdateShippingShipment(unifiedTo, {
     shippingShipment: {
       createdAt: new Date("2022-09-12T03:11:28.960Z"),
-      id: "fb06033e-0fcd-478d-86a6-79da462c3fe3",
+      id: "ca472714-eaa0-431f-a8c0-57ae9e9db517",
       isReturn: false,
       lineitems: [],
       metadata: [],
@@ -530,7 +530,7 @@ async function run() {
       serviceCode: "OVERNIGHT",
       shippedAt: new Date("2022-09-12T07:26:48.479Z"),
       status: "DELIVERED",
-      updatedAt: new Date("2022-11-15T14:38:10.641Z"),
+      updatedAt: new Date("2022-11-15T16:01:33.600Z"),
     },
     connectionId: "<id>",
     id: "<id>",

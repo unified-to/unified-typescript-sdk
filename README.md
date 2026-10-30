@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "10d91247-ded1-4d1d-9568-80e29a471e72",
+      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T20:25:09.921Z"),
+      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "10d91247-ded1-4d1d-9568-80e29a471e72",
+      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T20:25:09.921Z"),
+      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "10d91247-ded1-4d1d-9568-80e29a471e72",
+      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T20:25:09.921Z"),
+      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "10d91247-ded1-4d1d-9568-80e29a471e72",
+        id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-08T20:25:09.921Z"),
+        updatedAt: new Date("2023-08-09T04:40:44.229Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "10d91247-ded1-4d1d-9568-80e29a471e72",
+      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T20:25:09.921Z"),
+      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "10d91247-ded1-4d1d-9568-80e29a471e72",
+      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-08T20:25:09.921Z"),
+      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
     },
     connectionId: "<id>",
   });
@@ -2292,6 +2292,60 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`projectRemoveTaskProject`](docs/sdks/task/README.md#removetaskproject) - Remove a project
 - [`projectUpdateTaskProject`](docs/sdks/project/README.md#updatetaskproject) - Update a project
 - [`projectUpdateTaskProject`](docs/sdks/task/README.md#updatetaskproject) - Update a project
+- [`propertyCreatePropertyConversation`](docs/sdks/conversation/README.md#createpropertyconversation) - Create a conversation
+- [`propertyCreatePropertyConversation`](docs/sdks/property/README.md#createpropertyconversation) - Create a conversation
+- [`propertyCreatePropertyGuest`](docs/sdks/guest/README.md#createpropertyguest) - Create a guest
+- [`propertyCreatePropertyGuest`](docs/sdks/property/README.md#createpropertyguest) - Create a guest
+- [`propertyCreatePropertyListing`](docs/sdks/listing/README.md#createpropertylisting) - Create a listing
+- [`propertyCreatePropertyListing`](docs/sdks/property/README.md#createpropertylisting) - Create a listing
+- [`propertyCreatePropertyReservation`](docs/sdks/property/README.md#createpropertyreservation) - Create a reservation
+- [`propertyCreatePropertyReservation`](docs/sdks/reservation/README.md#createpropertyreservation) - Create a reservation
+- [`propertyGetPropertyConversation`](docs/sdks/conversation/README.md#getpropertyconversation) - Retrieve a conversation
+- [`propertyGetPropertyConversation`](docs/sdks/property/README.md#getpropertyconversation) - Retrieve a conversation
+- [`propertyGetPropertyGuest`](docs/sdks/guest/README.md#getpropertyguest) - Retrieve a guest
+- [`propertyGetPropertyGuest`](docs/sdks/property/README.md#getpropertyguest) - Retrieve a guest
+- [`propertyGetPropertyListing`](docs/sdks/listing/README.md#getpropertylisting) - Retrieve a listing
+- [`propertyGetPropertyListing`](docs/sdks/property/README.md#getpropertylisting) - Retrieve a listing
+- [`propertyGetPropertyReservation`](docs/sdks/property/README.md#getpropertyreservation) - Retrieve a reservation
+- [`propertyGetPropertyReservation`](docs/sdks/reservation/README.md#getpropertyreservation) - Retrieve a reservation
+- [`propertyGetPropertyReview`](docs/sdks/property/README.md#getpropertyreview) - Retrieve a review
+- [`propertyGetPropertyReview`](docs/sdks/review/README.md#getpropertyreview) - Retrieve a review
+- [`propertyGetPropertyUnittype`](docs/sdks/property/README.md#getpropertyunittype) - Retrieve an unittype
+- [`propertyGetPropertyUnittype`](docs/sdks/unittype/README.md#getpropertyunittype) - Retrieve an unittype
+- [`propertyListPropertyAvailabilities`](docs/sdks/availability/README.md#listpropertyavailabilities) - List all availabilities
+- [`propertyListPropertyAvailabilities`](docs/sdks/property/README.md#listpropertyavailabilities) - List all availabilities
+- [`propertyListPropertyConversations`](docs/sdks/conversation/README.md#listpropertyconversations) - List all conversations
+- [`propertyListPropertyConversations`](docs/sdks/property/README.md#listpropertyconversations) - List all conversations
+- [`propertyListPropertyGuests`](docs/sdks/guest/README.md#listpropertyguests) - List all guests
+- [`propertyListPropertyGuests`](docs/sdks/property/README.md#listpropertyguests) - List all guests
+- [`propertyListPropertyListings`](docs/sdks/listing/README.md#listpropertylistings) - List all listings
+- [`propertyListPropertyListings`](docs/sdks/property/README.md#listpropertylistings) - List all listings
+- [`propertyListPropertyReservations`](docs/sdks/property/README.md#listpropertyreservations) - List all reservations
+- [`propertyListPropertyReservations`](docs/sdks/reservation/README.md#listpropertyreservations) - List all reservations
+- [`propertyListPropertyReviews`](docs/sdks/property/README.md#listpropertyreviews) - List all reviews
+- [`propertyListPropertyReviews`](docs/sdks/review/README.md#listpropertyreviews) - List all reviews
+- [`propertyListPropertyUnittypes`](docs/sdks/property/README.md#listpropertyunittypes) - List all unittypes
+- [`propertyListPropertyUnittypes`](docs/sdks/unittype/README.md#listpropertyunittypes) - List all unittypes
+- [`propertyPatchPropertyGuest`](docs/sdks/guest/README.md#patchpropertyguest) - Update a guest
+- [`propertyPatchPropertyGuest`](docs/sdks/property/README.md#patchpropertyguest) - Update a guest
+- [`propertyPatchPropertyListing`](docs/sdks/listing/README.md#patchpropertylisting) - Update a listing
+- [`propertyPatchPropertyListing`](docs/sdks/property/README.md#patchpropertylisting) - Update a listing
+- [`propertyPatchPropertyReservation`](docs/sdks/property/README.md#patchpropertyreservation) - Update a reservation
+- [`propertyPatchPropertyReservation`](docs/sdks/reservation/README.md#patchpropertyreservation) - Update a reservation
+- [`propertyPatchPropertyReview`](docs/sdks/property/README.md#patchpropertyreview) - Update a review
+- [`propertyPatchPropertyReview`](docs/sdks/review/README.md#patchpropertyreview) - Update a review
+- [`propertyRemovePropertyListing`](docs/sdks/listing/README.md#removepropertylisting) - Remove a listing
+- [`propertyRemovePropertyListing`](docs/sdks/property/README.md#removepropertylisting) - Remove a listing
+- [`propertyUpdatePropertyGuest`](docs/sdks/guest/README.md#updatepropertyguest) - Update a guest
+- [`propertyUpdatePropertyGuest`](docs/sdks/property/README.md#updatepropertyguest) - Update a guest
+- [`propertyUpdatePropertyListing`](docs/sdks/listing/README.md#updatepropertylisting) - Update a listing
+- [`propertyUpdatePropertyListing`](docs/sdks/property/README.md#updatepropertylisting) - Update a listing
+- [`propertyUpdatePropertyReservation`](docs/sdks/property/README.md#updatepropertyreservation) - Update a reservation
+- [`propertyUpdatePropertyReservation`](docs/sdks/reservation/README.md#updatepropertyreservation) - Update a reservation
+- [`propertyUpdatePropertyReview`](docs/sdks/property/README.md#updatepropertyreview) - Update a review
+- [`propertyUpdatePropertyReview`](docs/sdks/review/README.md#updatepropertyreview) - Update a review
+- [`quoteCreatePropertyQuote`](docs/sdks/property/README.md#createpropertyquote) - Create a quote
+- [`quoteCreatePropertyQuote`](docs/sdks/quote/README.md#createpropertyquote) - Create a quote
 - [`recordingCreateUcRecording`](docs/sdks/recording/README.md#createucrecording) - Create a recording
 - [`recordingCreateUcRecording`](docs/sdks/uc/README.md#createucrecording) - Create a recording
 - [`recordingGetUcRecording`](docs/sdks/recording/README.md#getucrecording) - Retrieve a recording

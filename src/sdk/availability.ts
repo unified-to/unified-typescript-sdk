@@ -3,6 +3,7 @@
  */
 
 import { commerceListCommerceAvailabilities } from "../funcs/commerceListCommerceAvailabilities.js";
+import { propertyListPropertyAvailabilities } from "../funcs/propertyListPropertyAvailabilities.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -20,6 +21,23 @@ export class Availability extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CommerceAvailability>> {
     return unwrapAsync(commerceListCommerceAvailabilities(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all availabilities
+   *
+   * @remarks
+   * Returns a list of PropertyAvailabilities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyAvailabilities(
+    request: operations.ListPropertyAvailabilitiesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyAvailability>> {
+    return unwrapAsync(propertyListPropertyAvailabilities(
       this,
       request,
       options,

@@ -7,14 +7,18 @@
 * [createCommerceReview](#createcommercereview) - Create a review
 * [getCommerceReview](#getcommercereview) - Retrieve a review
 * [getPerformanceReview](#getperformancereview) - Retrieve a review
+* [getPropertyReview](#getpropertyreview) - Retrieve a review
 * [getSocialReview](#getsocialreview) - Retrieve a review
 * [listCommerceReviews](#listcommercereviews) - List all reviews
 * [listPerformanceReviews](#listperformancereviews) - List all reviews
+* [listPropertyReviews](#listpropertyreviews) - List all reviews
 * [listSocialReviews](#listsocialreviews) - List all reviews
 * [patchCommerceReview](#patchcommercereview) - Update a review
+* [patchPropertyReview](#patchpropertyreview) - Update a review
 * [patchSocialReview](#patchsocialreview) - Update a review
 * [removeCommerceReview](#removecommercereview) - Remove a review
 * [updateCommerceReview](#updatecommercereview) - Update a review
+* [updatePropertyReview](#updatepropertyreview) - Update a review
 * [updateSocialReview](#updatesocialreview) - Update a review
 
 ## createCommerceReview
@@ -44,7 +48,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "3d4d31eb-6be7-46ff-bcd6-14db1295c6e4",
+      id: "a3aa5bcb-59b7-42f4-925c-d03ef1a154ea",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -52,10 +56,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "8f5eddd7-2476-45d4-a773-a4fd740645c9",
+          id: "c1009cb0-cb59-42f8-8b1e-b899f212e69f",
           metadata: [
             {
-              id: "5a8d652a-d0ce-46a4-bb04-97fdb1beef7a",
+              id: "45c4a884-11ee-4b05-a65a-4cdbc0f8b9f4",
               slug: "textor",
               value: "quos",
             },
@@ -68,10 +72,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "d2924f18-417e-4e3d-ba59-72a891f01529",
+          id: "936f8540-c4db-4a0d-bed7-53631769fdce",
           metadata: [
             {
-              id: "6bc9cb03-7b1a-40e8-9a52-798a09b4ae38",
+              id: "69161820-a976-415b-80a2-d316a484264a",
               slug: "bos",
               value: "casso",
             },
@@ -87,7 +91,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-27T17:19:20.590Z"),
+      updatedAt: new Date("2025-08-28T20:17:31.999Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -127,7 +131,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "3d4d31eb-6be7-46ff-bcd6-14db1295c6e4",
+      id: "a3aa5bcb-59b7-42f4-925c-d03ef1a154ea",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -135,10 +139,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "8f5eddd7-2476-45d4-a773-a4fd740645c9",
+          id: "c1009cb0-cb59-42f8-8b1e-b899f212e69f",
           metadata: [
             {
-              id: "5a8d652a-d0ce-46a4-bb04-97fdb1beef7a",
+              id: "45c4a884-11ee-4b05-a65a-4cdbc0f8b9f4",
               slug: "textor",
               value: "quos",
             },
@@ -151,10 +155,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "d2924f18-417e-4e3d-ba59-72a891f01529",
+          id: "936f8540-c4db-4a0d-bed7-53631769fdce",
           metadata: [
             {
-              id: "6bc9cb03-7b1a-40e8-9a52-798a09b4ae38",
+              id: "69161820-a976-415b-80a2-d316a484264a",
               slug: "bos",
               value: "casso",
             },
@@ -170,7 +174,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-27T17:19:20.590Z"),
+      updatedAt: new Date("2025-08-28T20:17:31.999Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -357,6 +361,85 @@ run();
 ### Response
 
 **Promise\<[shared.PerformanceReview](../../sdk/models/shared/performancereview.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getPropertyReview
+
+Retrieves a single PropertyReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getPropertyReview" method="get" path="/property/{connection_id}/review/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.review.getPropertyReview({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { propertyGetPropertyReview } from "@unified-api/typescript-sdk/funcs/propertyGetPropertyReview.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await propertyGetPropertyReview(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("propertyGetPropertyReview failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetPropertyReviewRequest](../../sdk/models/operations/getpropertyreviewrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PropertyReview](../../sdk/models/shared/propertyreview.md)\>**
 
 ### Errors
 
@@ -597,6 +680,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listPropertyReviews
+
+Returns a list of PropertyReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listPropertyReviews" method="get" path="/property/{connection_id}/review" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.review.listPropertyReviews({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { propertyListPropertyReviews } from "@unified-api/typescript-sdk/funcs/propertyListPropertyReviews.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await propertyListPropertyReviews(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("propertyListPropertyReviews failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListPropertyReviewsRequest](../../sdk/models/operations/listpropertyreviewsrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PropertyReview[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listSocialReviews
 
 Returns a list of SocialReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -701,7 +861,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "bffcefdf-1286-41fc-99f7-1286cdf55635",
+      id: "1dff39bf-0b56-4f53-9089-33dcc372468d",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -709,10 +869,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "3b56bb82-45b0-4c58-bc27-e1a5cbe3ff89",
+          id: "6f6bcf81-380e-40a6-a4d5-3879fc612317",
           metadata: [
             {
-              id: "2be425f2-b2a6-435a-8fd8-174980ce3937",
+              id: "fcb92502-d44e-4663-9000-70b6a30314bb",
               slug: "textor",
               value: "quos",
             },
@@ -725,10 +885,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "4c0f18d7-99bc-44c8-8bd4-583d524a40e9",
+          id: "fcc4e39e-bbb7-4d8a-bc83-c4efa3120a41",
           metadata: [
             {
-              id: "a50c14eb-194d-48aa-ae83-74f8dd8d8023",
+              id: "e002fc18-b518-4315-878d-44eeb3410169",
               slug: "bos",
               value: "casso",
             },
@@ -744,7 +904,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-27T17:19:20.614Z"),
+      updatedAt: new Date("2025-08-28T20:17:32.038Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -785,7 +945,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "bffcefdf-1286-41fc-99f7-1286cdf55635",
+      id: "1dff39bf-0b56-4f53-9089-33dcc372468d",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -793,10 +953,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "3b56bb82-45b0-4c58-bc27-e1a5cbe3ff89",
+          id: "6f6bcf81-380e-40a6-a4d5-3879fc612317",
           metadata: [
             {
-              id: "2be425f2-b2a6-435a-8fd8-174980ce3937",
+              id: "fcb92502-d44e-4663-9000-70b6a30314bb",
               slug: "textor",
               value: "quos",
             },
@@ -809,10 +969,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "4c0f18d7-99bc-44c8-8bd4-583d524a40e9",
+          id: "fcc4e39e-bbb7-4d8a-bc83-c4efa3120a41",
           metadata: [
             {
-              id: "a50c14eb-194d-48aa-ae83-74f8dd8d8023",
+              id: "e002fc18-b518-4315-878d-44eeb3410169",
               slug: "bos",
               value: "casso",
             },
@@ -828,7 +988,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-27T17:19:20.614Z"),
+      updatedAt: new Date("2025-08-28T20:17:32.038Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -858,6 +1018,167 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceReview](../../sdk/models/shared/commercereview.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## patchPropertyReview
+
+Updates the PropertyReview identified by `id`. Provide the unified PropertyReview fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchPropertyReview" method="patch" path="/property/{connection_id}/review/{id}" example="property_review" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.review.patchPropertyReview({
+    propertyReview: {
+      authorName: "Benton Jast",
+      categoryRatings: [
+        {
+          category: "CLEANLINESS",
+          comment: "Umquam perferendis amitto voluptas sum blanditiis terreo.",
+          rating: 5,
+        },
+        {
+          category: "ACCURACY",
+          comment: "Capitulus dolorem verus.",
+          rating: 4,
+        },
+        {
+          category: "COMMUNICATION",
+          rating: 1,
+        },
+        {
+          category: "CHECKIN",
+          rating: 1,
+        },
+        {
+          category: "LOCATION",
+          rating: 2,
+        },
+        {
+          category: "VALUE",
+          comment: "Quos constans aperte tero sollers.",
+          rating: 5,
+        },
+      ],
+      content: "Delectus conscendo communis custodia statim. Tutis adsuesco attonbitus comitatus auditor ea tergo nostrum deleo. Comprehendo tertius summopere vaco apparatus incidunt tabula pauci confido colo.",
+      createdAt: new Date("2022-10-17T11:17:07.682Z"),
+      id: "a7750698-a3b6-46a8-ae8f-5b7c955134b2",
+      isPublic: true,
+      metadata: [],
+      privateFeedback: "Tripudio neque communis.",
+      rating: 3,
+      source: "Airbnb",
+      updatedAt: new Date("2026-02-18T09:21:42.301Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { propertyPatchPropertyReview } from "@unified-api/typescript-sdk/funcs/propertyPatchPropertyReview.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await propertyPatchPropertyReview(unifiedTo, {
+    propertyReview: {
+      authorName: "Benton Jast",
+      categoryRatings: [
+        {
+          category: "CLEANLINESS",
+          comment: "Umquam perferendis amitto voluptas sum blanditiis terreo.",
+          rating: 5,
+        },
+        {
+          category: "ACCURACY",
+          comment: "Capitulus dolorem verus.",
+          rating: 4,
+        },
+        {
+          category: "COMMUNICATION",
+          rating: 1,
+        },
+        {
+          category: "CHECKIN",
+          rating: 1,
+        },
+        {
+          category: "LOCATION",
+          rating: 2,
+        },
+        {
+          category: "VALUE",
+          comment: "Quos constans aperte tero sollers.",
+          rating: 5,
+        },
+      ],
+      content: "Delectus conscendo communis custodia statim. Tutis adsuesco attonbitus comitatus auditor ea tergo nostrum deleo. Comprehendo tertius summopere vaco apparatus incidunt tabula pauci confido colo.",
+      createdAt: new Date("2022-10-17T11:17:07.682Z"),
+      id: "a7750698-a3b6-46a8-ae8f-5b7c955134b2",
+      isPublic: true,
+      metadata: [],
+      privateFeedback: "Tripudio neque communis.",
+      rating: 3,
+      source: "Airbnb",
+      updatedAt: new Date("2026-02-18T09:21:42.301Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("propertyPatchPropertyReview failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchPropertyReviewRequest](../../sdk/models/operations/patchpropertyreviewrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PropertyReview](../../sdk/models/shared/propertyreview.md)\>**
 
 ### Errors
 
@@ -1052,7 +1373,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "bffcefdf-1286-41fc-99f7-1286cdf55635",
+      id: "1dff39bf-0b56-4f53-9089-33dcc372468d",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -1060,10 +1381,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "3b56bb82-45b0-4c58-bc27-e1a5cbe3ff89",
+          id: "6f6bcf81-380e-40a6-a4d5-3879fc612317",
           metadata: [
             {
-              id: "2be425f2-b2a6-435a-8fd8-174980ce3937",
+              id: "fcb92502-d44e-4663-9000-70b6a30314bb",
               slug: "textor",
               value: "quos",
             },
@@ -1076,10 +1397,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "4c0f18d7-99bc-44c8-8bd4-583d524a40e9",
+          id: "fcc4e39e-bbb7-4d8a-bc83-c4efa3120a41",
           metadata: [
             {
-              id: "a50c14eb-194d-48aa-ae83-74f8dd8d8023",
+              id: "e002fc18-b518-4315-878d-44eeb3410169",
               slug: "bos",
               value: "casso",
             },
@@ -1095,7 +1416,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-27T17:19:20.614Z"),
+      updatedAt: new Date("2025-08-28T20:17:32.038Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -1136,7 +1457,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "bffcefdf-1286-41fc-99f7-1286cdf55635",
+      id: "1dff39bf-0b56-4f53-9089-33dcc372468d",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -1144,10 +1465,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "3b56bb82-45b0-4c58-bc27-e1a5cbe3ff89",
+          id: "6f6bcf81-380e-40a6-a4d5-3879fc612317",
           metadata: [
             {
-              id: "2be425f2-b2a6-435a-8fd8-174980ce3937",
+              id: "fcb92502-d44e-4663-9000-70b6a30314bb",
               slug: "textor",
               value: "quos",
             },
@@ -1160,10 +1481,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "4c0f18d7-99bc-44c8-8bd4-583d524a40e9",
+          id: "fcc4e39e-bbb7-4d8a-bc83-c4efa3120a41",
           metadata: [
             {
-              id: "a50c14eb-194d-48aa-ae83-74f8dd8d8023",
+              id: "e002fc18-b518-4315-878d-44eeb3410169",
               slug: "bos",
               value: "casso",
             },
@@ -1179,7 +1500,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-27T17:19:20.614Z"),
+      updatedAt: new Date("2025-08-28T20:17:32.038Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -1209,6 +1530,167 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceReview](../../sdk/models/shared/commercereview.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updatePropertyReview
+
+Updates the PropertyReview identified by `id`. Provide the unified PropertyReview fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updatePropertyReview" method="put" path="/property/{connection_id}/review/{id}" example="property_review" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.review.updatePropertyReview({
+    propertyReview: {
+      authorName: "Benton Jast",
+      categoryRatings: [
+        {
+          category: "CLEANLINESS",
+          comment: "Umquam perferendis amitto voluptas sum blanditiis terreo.",
+          rating: 5,
+        },
+        {
+          category: "ACCURACY",
+          comment: "Capitulus dolorem verus.",
+          rating: 4,
+        },
+        {
+          category: "COMMUNICATION",
+          rating: 1,
+        },
+        {
+          category: "CHECKIN",
+          rating: 1,
+        },
+        {
+          category: "LOCATION",
+          rating: 2,
+        },
+        {
+          category: "VALUE",
+          comment: "Quos constans aperte tero sollers.",
+          rating: 5,
+        },
+      ],
+      content: "Delectus conscendo communis custodia statim. Tutis adsuesco attonbitus comitatus auditor ea tergo nostrum deleo. Comprehendo tertius summopere vaco apparatus incidunt tabula pauci confido colo.",
+      createdAt: new Date("2022-10-17T11:17:07.682Z"),
+      id: "a7750698-a3b6-46a8-ae8f-5b7c955134b2",
+      isPublic: true,
+      metadata: [],
+      privateFeedback: "Tripudio neque communis.",
+      rating: 3,
+      source: "Airbnb",
+      updatedAt: new Date("2026-02-18T09:21:42.301Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { propertyUpdatePropertyReview } from "@unified-api/typescript-sdk/funcs/propertyUpdatePropertyReview.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await propertyUpdatePropertyReview(unifiedTo, {
+    propertyReview: {
+      authorName: "Benton Jast",
+      categoryRatings: [
+        {
+          category: "CLEANLINESS",
+          comment: "Umquam perferendis amitto voluptas sum blanditiis terreo.",
+          rating: 5,
+        },
+        {
+          category: "ACCURACY",
+          comment: "Capitulus dolorem verus.",
+          rating: 4,
+        },
+        {
+          category: "COMMUNICATION",
+          rating: 1,
+        },
+        {
+          category: "CHECKIN",
+          rating: 1,
+        },
+        {
+          category: "LOCATION",
+          rating: 2,
+        },
+        {
+          category: "VALUE",
+          comment: "Quos constans aperte tero sollers.",
+          rating: 5,
+        },
+      ],
+      content: "Delectus conscendo communis custodia statim. Tutis adsuesco attonbitus comitatus auditor ea tergo nostrum deleo. Comprehendo tertius summopere vaco apparatus incidunt tabula pauci confido colo.",
+      createdAt: new Date("2022-10-17T11:17:07.682Z"),
+      id: "a7750698-a3b6-46a8-ae8f-5b7c955134b2",
+      isPublic: true,
+      metadata: [],
+      privateFeedback: "Tripudio neque communis.",
+      rating: 3,
+      source: "Airbnb",
+      updatedAt: new Date("2026-02-18T09:21:42.301Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("propertyUpdatePropertyReview failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdatePropertyReviewRequest](../../sdk/models/operations/updatepropertyreviewrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PropertyReview](../../sdk/models/shared/propertyreview.md)\>**
 
 ### Errors
 

@@ -1,0 +1,24 @@
+# PropertyMessage
+
+## Example Usage
+
+```typescript
+import { PropertyMessage } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyMessage = {};
+```
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `attachments`                                                                                 | [shared.PropertyAttachment](../../../sdk/models/shared/propertyattachment.md)[]               | :heavy_minus_sign:                                                                            | files attached to the message                                                                 |
+| `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | when the message was sent (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                            |
+| `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | unique identifier for the message                                                             |
+| `isAutomatic`                                                                                 | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | whether the message was sent automatically                                                    |
+| `isUnread`                                                                                    | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | whether the message has not been read                                                         |
+| `message`                                                                                     | *string*                                                                                      | :heavy_minus_sign:                                                                            | the message body as plain text                                                                |
+| `senderName`                                                                                  | *string*                                                                                      | :heavy_minus_sign:                                                                            | the name of the sender                                                                        |
+| `senderType`                                                                                  | [shared.SenderType](../../../sdk/models/shared/sendertype.md)                                 | :heavy_minus_sign:                                                                            | whether the guest, host or system sent the message                                            |
+| `subject`                                                                                     | *string*                                                                                      | :heavy_minus_sign:                                                                            | the message subject                                                                           |
+| `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | when the message was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                    |

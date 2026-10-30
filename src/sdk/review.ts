@@ -8,6 +8,10 @@ import { commerceListCommerceReviews } from "../funcs/commerceListCommerceReview
 import { commercePatchCommerceReview } from "../funcs/commercePatchCommerceReview.js";
 import { commerceRemoveCommerceReview } from "../funcs/commerceRemoveCommerceReview.js";
 import { commerceUpdateCommerceReview } from "../funcs/commerceUpdateCommerceReview.js";
+import { propertyGetPropertyReview } from "../funcs/propertyGetPropertyReview.js";
+import { propertyListPropertyReviews } from "../funcs/propertyListPropertyReviews.js";
+import { propertyPatchPropertyReview } from "../funcs/propertyPatchPropertyReview.js";
+import { propertyUpdatePropertyReview } from "../funcs/propertyUpdatePropertyReview.js";
 import { reviewGetPerformanceReview } from "../funcs/reviewGetPerformanceReview.js";
 import { reviewGetSocialReview } from "../funcs/reviewGetSocialReview.js";
 import { reviewListPerformanceReviews } from "../funcs/reviewListPerformanceReviews.js";
@@ -75,6 +79,23 @@ export class Review extends ClientSDK {
    * Retrieve a review
    *
    * @remarks
+   * Retrieves a single PropertyReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPropertyReview(
+    request: operations.GetPropertyReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReview> {
+    return unwrapAsync(propertyGetPropertyReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a review
+   *
+   * @remarks
    * Retrieves a single SocialReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSocialReview(
@@ -126,6 +147,23 @@ export class Review extends ClientSDK {
    * List all reviews
    *
    * @remarks
+   * Returns a list of PropertyReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyReviews(
+    request: operations.ListPropertyReviewsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyReview>> {
+    return unwrapAsync(propertyListPropertyReviews(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all reviews
+   *
+   * @remarks
    * Returns a list of SocialReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listSocialReviews(
@@ -150,6 +188,23 @@ export class Review extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReview> {
     return unwrapAsync(commercePatchCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a review
+   *
+   * @remarks
+   * Updates the PropertyReview identified by `id`. Provide the unified PropertyReview fields to change in the request body.
+   */
+  async patchPropertyReview(
+    request: operations.PatchPropertyReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReview> {
+    return unwrapAsync(propertyPatchPropertyReview(
       this,
       request,
       options,
@@ -201,6 +256,23 @@ export class Review extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReview> {
     return unwrapAsync(commerceUpdateCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a review
+   *
+   * @remarks
+   * Updates the PropertyReview identified by `id`. Provide the unified PropertyReview fields to change in the request body.
+   */
+  async updatePropertyReview(
+    request: operations.UpdatePropertyReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReview> {
+    return unwrapAsync(propertyUpdatePropertyReview(
       this,
       request,
       options,

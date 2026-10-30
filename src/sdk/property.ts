@@ -8,6 +8,33 @@ import { analyticsListAnalyticsProperties } from "../funcs/analyticsListAnalytic
 import { analyticsPatchAnalyticsProperty } from "../funcs/analyticsPatchAnalyticsProperty.js";
 import { analyticsRemoveAnalyticsProperty } from "../funcs/analyticsRemoveAnalyticsProperty.js";
 import { analyticsUpdateAnalyticsProperty } from "../funcs/analyticsUpdateAnalyticsProperty.js";
+import { propertyCreatePropertyConversation } from "../funcs/propertyCreatePropertyConversation.js";
+import { propertyCreatePropertyGuest } from "../funcs/propertyCreatePropertyGuest.js";
+import { propertyCreatePropertyListing } from "../funcs/propertyCreatePropertyListing.js";
+import { propertyCreatePropertyReservation } from "../funcs/propertyCreatePropertyReservation.js";
+import { propertyGetPropertyConversation } from "../funcs/propertyGetPropertyConversation.js";
+import { propertyGetPropertyGuest } from "../funcs/propertyGetPropertyGuest.js";
+import { propertyGetPropertyListing } from "../funcs/propertyGetPropertyListing.js";
+import { propertyGetPropertyReservation } from "../funcs/propertyGetPropertyReservation.js";
+import { propertyGetPropertyReview } from "../funcs/propertyGetPropertyReview.js";
+import { propertyGetPropertyUnittype } from "../funcs/propertyGetPropertyUnittype.js";
+import { propertyListPropertyAvailabilities } from "../funcs/propertyListPropertyAvailabilities.js";
+import { propertyListPropertyConversations } from "../funcs/propertyListPropertyConversations.js";
+import { propertyListPropertyGuests } from "../funcs/propertyListPropertyGuests.js";
+import { propertyListPropertyListings } from "../funcs/propertyListPropertyListings.js";
+import { propertyListPropertyReservations } from "../funcs/propertyListPropertyReservations.js";
+import { propertyListPropertyReviews } from "../funcs/propertyListPropertyReviews.js";
+import { propertyListPropertyUnittypes } from "../funcs/propertyListPropertyUnittypes.js";
+import { propertyPatchPropertyGuest } from "../funcs/propertyPatchPropertyGuest.js";
+import { propertyPatchPropertyListing } from "../funcs/propertyPatchPropertyListing.js";
+import { propertyPatchPropertyReservation } from "../funcs/propertyPatchPropertyReservation.js";
+import { propertyPatchPropertyReview } from "../funcs/propertyPatchPropertyReview.js";
+import { propertyRemovePropertyListing } from "../funcs/propertyRemovePropertyListing.js";
+import { propertyUpdatePropertyGuest } from "../funcs/propertyUpdatePropertyGuest.js";
+import { propertyUpdatePropertyListing } from "../funcs/propertyUpdatePropertyListing.js";
+import { propertyUpdatePropertyReservation } from "../funcs/propertyUpdatePropertyReservation.js";
+import { propertyUpdatePropertyReview } from "../funcs/propertyUpdatePropertyReview.js";
+import { quoteCreatePropertyQuote } from "../funcs/quoteCreatePropertyQuote.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -32,6 +59,91 @@ export class Property extends ClientSDK {
   }
 
   /**
+   * Create a conversation
+   *
+   * @remarks
+   * Creates a PropertyConversation. Provide the unified PropertyConversation fields in the request body; they are mapped to the provider's API. Returns the created PropertyConversation.
+   */
+  async createPropertyConversation(
+    request: operations.CreatePropertyConversationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyConversation> {
+    return unwrapAsync(propertyCreatePropertyConversation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a guest
+   *
+   * @remarks
+   * Creates a PropertyGuest. Provide the unified PropertyGuest fields in the request body; they are mapped to the provider's API. Returns the created PropertyGuest.
+   */
+  async createPropertyGuest(
+    request: operations.CreatePropertyGuestRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyGuest> {
+    return unwrapAsync(propertyCreatePropertyGuest(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a listing
+   *
+   * @remarks
+   * Creates a PropertyListing. Provide the unified PropertyListing fields in the request body; they are mapped to the provider's API. Returns the created PropertyListing.
+   */
+  async createPropertyListing(
+    request: operations.CreatePropertyListingRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyListing> {
+    return unwrapAsync(propertyCreatePropertyListing(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a quote
+   *
+   * @remarks
+   * Creates a PropertyQuote. Provide the unified PropertyQuote fields in the request body; they are mapped to the provider's API. Returns the created PropertyQuote.
+   */
+  async createPropertyQuote(
+    request: operations.CreatePropertyQuoteRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyQuote> {
+    return unwrapAsync(quoteCreatePropertyQuote(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a reservation
+   *
+   * @remarks
+   * Creates a PropertyReservation. Provide the unified PropertyReservation fields in the request body; they are mapped to the provider's API. Returns the created PropertyReservation.
+   */
+  async createPropertyReservation(
+    request: operations.CreatePropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReservation> {
+    return unwrapAsync(propertyCreatePropertyReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a property
    *
    * @remarks
@@ -42,6 +154,108 @@ export class Property extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AnalyticsProperty> {
     return unwrapAsync(analyticsGetAnalyticsProperty(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a conversation
+   *
+   * @remarks
+   * Retrieves a single PropertyConversation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPropertyConversation(
+    request: operations.GetPropertyConversationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyConversation> {
+    return unwrapAsync(propertyGetPropertyConversation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a guest
+   *
+   * @remarks
+   * Retrieves a single PropertyGuest by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPropertyGuest(
+    request: operations.GetPropertyGuestRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyGuest> {
+    return unwrapAsync(propertyGetPropertyGuest(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a listing
+   *
+   * @remarks
+   * Retrieves a single PropertyListing by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPropertyListing(
+    request: operations.GetPropertyListingRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyListing> {
+    return unwrapAsync(propertyGetPropertyListing(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a reservation
+   *
+   * @remarks
+   * Retrieves a single PropertyReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPropertyReservation(
+    request: operations.GetPropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReservation> {
+    return unwrapAsync(propertyGetPropertyReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a review
+   *
+   * @remarks
+   * Retrieves a single PropertyReview by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPropertyReview(
+    request: operations.GetPropertyReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReview> {
+    return unwrapAsync(propertyGetPropertyReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an unittype
+   *
+   * @remarks
+   * Retrieves a single PropertyUnittype by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPropertyUnittype(
+    request: operations.GetPropertyUnittypeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyUnittype> {
+    return unwrapAsync(propertyGetPropertyUnittype(
       this,
       request,
       options,
@@ -66,6 +280,125 @@ export class Property extends ClientSDK {
   }
 
   /**
+   * List all availabilities
+   *
+   * @remarks
+   * Returns a list of PropertyAvailabilities. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyAvailabilities(
+    request: operations.ListPropertyAvailabilitiesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyAvailability>> {
+    return unwrapAsync(propertyListPropertyAvailabilities(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all conversations
+   *
+   * @remarks
+   * Returns a list of PropertyConversations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyConversations(
+    request: operations.ListPropertyConversationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyConversation>> {
+    return unwrapAsync(propertyListPropertyConversations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all guests
+   *
+   * @remarks
+   * Returns a list of PropertyGuests. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyGuests(
+    request: operations.ListPropertyGuestsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyGuest>> {
+    return unwrapAsync(propertyListPropertyGuests(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all listings
+   *
+   * @remarks
+   * Returns a list of PropertyListings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyListings(
+    request: operations.ListPropertyListingsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyListing>> {
+    return unwrapAsync(propertyListPropertyListings(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all reservations
+   *
+   * @remarks
+   * Returns a list of PropertyReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyReservations(
+    request: operations.ListPropertyReservationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyReservation>> {
+    return unwrapAsync(propertyListPropertyReservations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all reviews
+   *
+   * @remarks
+   * Returns a list of PropertyReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyReviews(
+    request: operations.ListPropertyReviewsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyReview>> {
+    return unwrapAsync(propertyListPropertyReviews(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all unittypes
+   *
+   * @remarks
+   * Returns a list of PropertyUnittypes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyUnittypes(
+    request: operations.ListPropertyUnittypesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyUnittype>> {
+    return unwrapAsync(propertyListPropertyUnittypes(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a property
    *
    * @remarks
@@ -76,6 +409,74 @@ export class Property extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AnalyticsProperty> {
     return unwrapAsync(analyticsPatchAnalyticsProperty(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a guest
+   *
+   * @remarks
+   * Updates the PropertyGuest identified by `id`. Provide the unified PropertyGuest fields to change in the request body.
+   */
+  async patchPropertyGuest(
+    request: operations.PatchPropertyGuestRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyGuest> {
+    return unwrapAsync(propertyPatchPropertyGuest(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a listing
+   *
+   * @remarks
+   * Updates the PropertyListing identified by `id`. Provide the unified PropertyListing fields to change in the request body.
+   */
+  async patchPropertyListing(
+    request: operations.PatchPropertyListingRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyListing> {
+    return unwrapAsync(propertyPatchPropertyListing(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a reservation
+   *
+   * @remarks
+   * Updates the PropertyReservation identified by `id`. Provide the unified PropertyReservation fields to change in the request body.
+   */
+  async patchPropertyReservation(
+    request: operations.PatchPropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReservation> {
+    return unwrapAsync(propertyPatchPropertyReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a review
+   *
+   * @remarks
+   * Updates the PropertyReview identified by `id`. Provide the unified PropertyReview fields to change in the request body.
+   */
+  async patchPropertyReview(
+    request: operations.PatchPropertyReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReview> {
+    return unwrapAsync(propertyPatchPropertyReview(
       this,
       request,
       options,
@@ -100,6 +501,23 @@ export class Property extends ClientSDK {
   }
 
   /**
+   * Remove a listing
+   *
+   * @remarks
+   * Deletes the PropertyListing identified by `id`.
+   */
+  async removePropertyListing(
+    request: operations.RemovePropertyListingRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePropertyListingResponse | undefined> {
+    return unwrapAsync(propertyRemovePropertyListing(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a property
    *
    * @remarks
@@ -110,6 +528,74 @@ export class Property extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AnalyticsProperty> {
     return unwrapAsync(analyticsUpdateAnalyticsProperty(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a guest
+   *
+   * @remarks
+   * Updates the PropertyGuest identified by `id`. Provide the unified PropertyGuest fields to change in the request body.
+   */
+  async updatePropertyGuest(
+    request: operations.UpdatePropertyGuestRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyGuest> {
+    return unwrapAsync(propertyUpdatePropertyGuest(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a listing
+   *
+   * @remarks
+   * Updates the PropertyListing identified by `id`. Provide the unified PropertyListing fields to change in the request body.
+   */
+  async updatePropertyListing(
+    request: operations.UpdatePropertyListingRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyListing> {
+    return unwrapAsync(propertyUpdatePropertyListing(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a reservation
+   *
+   * @remarks
+   * Updates the PropertyReservation identified by `id`. Provide the unified PropertyReservation fields to change in the request body.
+   */
+  async updatePropertyReservation(
+    request: operations.UpdatePropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReservation> {
+    return unwrapAsync(propertyUpdatePropertyReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a review
+   *
+   * @remarks
+   * Updates the PropertyReview identified by `id`. Provide the unified PropertyReview fields to change in the request body.
+   */
+  async updatePropertyReview(
+    request: operations.UpdatePropertyReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReview> {
+    return unwrapAsync(propertyUpdatePropertyReview(
       this,
       request,
       options,

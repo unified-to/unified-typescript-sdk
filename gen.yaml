@@ -30,7 +30,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.86.7
+  version: 2.86.8
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}

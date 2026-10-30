@@ -32,17 +32,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "2eb381b9-58f4-46fc-9c89-09063a442dfe",
+      id: "8176b3ac-1014-406c-88ee-6b829f1fde61",
       isRequired: false,
       name: "autem",
-      objectType: "legal_expense",
+      objectType: "compute_usage",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-27T10:51:13.022Z"),
+      updatedAt: new Date("2025-03-28T10:07:14.920Z"),
     },
     connectionId: "<id>",
   });
@@ -74,17 +74,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "2eb381b9-58f4-46fc-9c89-09063a442dfe",
+      id: "8176b3ac-1014-406c-88ee-6b829f1fde61",
       isRequired: false,
       name: "autem",
-      objectType: "legal_expense",
+      objectType: "compute_usage",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-27T10:51:13.022Z"),
+      updatedAt: new Date("2025-03-28T10:07:14.920Z"),
     },
     connectionId: "<id>",
   });
@@ -295,17 +295,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "db85e3e8-4006-4319-b3a8-a8cb4f96c1a7",
+      id: "5a43a705-5e91-4f4a-aa49-afd278913887",
       isRequired: false,
       name: "autem",
-      objectType: "legal_expense",
+      objectType: "compute_usage",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-27T10:51:13.030Z"),
+      updatedAt: new Date("2025-03-28T10:07:14.932Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -338,17 +338,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "db85e3e8-4006-4319-b3a8-a8cb4f96c1a7",
+      id: "5a43a705-5e91-4f4a-aa49-afd278913887",
       isRequired: false,
       name: "autem",
-      objectType: "legal_expense",
+      objectType: "compute_usage",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-27T10:51:13.030Z"),
+      updatedAt: new Date("2025-03-28T10:07:14.932Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -483,17 +483,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "db85e3e8-4006-4319-b3a8-a8cb4f96c1a7",
+      id: "5a43a705-5e91-4f4a-aa49-afd278913887",
       isRequired: false,
       name: "autem",
-      objectType: "legal_expense",
+      objectType: "compute_usage",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-27T10:51:13.030Z"),
+      updatedAt: new Date("2025-03-28T10:07:14.932Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -526,17 +526,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "db85e3e8-4006-4319-b3a8-a8cb4f96c1a7",
+      id: "5a43a705-5e91-4f4a-aa49-afd278913887",
       isRequired: false,
       name: "autem",
-      objectType: "legal_expense",
+      objectType: "compute_usage",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-03-27T10:51:13.030Z"),
+      updatedAt: new Date("2025-03-28T10:07:14.932Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -8,6 +8,11 @@ import { commerceListCommerceReservations } from "../funcs/commerceListCommerceR
 import { commercePatchCommerceReservation } from "../funcs/commercePatchCommerceReservation.js";
 import { commerceRemoveCommerceReservation } from "../funcs/commerceRemoveCommerceReservation.js";
 import { commerceUpdateCommerceReservation } from "../funcs/commerceUpdateCommerceReservation.js";
+import { propertyCreatePropertyReservation } from "../funcs/propertyCreatePropertyReservation.js";
+import { propertyGetPropertyReservation } from "../funcs/propertyGetPropertyReservation.js";
+import { propertyListPropertyReservations } from "../funcs/propertyListPropertyReservations.js";
+import { propertyPatchPropertyReservation } from "../funcs/propertyPatchPropertyReservation.js";
+import { propertyUpdatePropertyReservation } from "../funcs/propertyUpdatePropertyReservation.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -32,6 +37,23 @@ export class Reservation extends ClientSDK {
   }
 
   /**
+   * Create a reservation
+   *
+   * @remarks
+   * Creates a PropertyReservation. Provide the unified PropertyReservation fields in the request body; they are mapped to the provider's API. Returns the created PropertyReservation.
+   */
+  async createPropertyReservation(
+    request: operations.CreatePropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReservation> {
+    return unwrapAsync(propertyCreatePropertyReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a reservation
    *
    * @remarks
@@ -42,6 +64,23 @@ export class Reservation extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReservation> {
     return unwrapAsync(commerceGetCommerceReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a reservation
+   *
+   * @remarks
+   * Retrieves a single PropertyReservation by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPropertyReservation(
+    request: operations.GetPropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReservation> {
+    return unwrapAsync(propertyGetPropertyReservation(
       this,
       request,
       options,
@@ -66,6 +105,23 @@ export class Reservation extends ClientSDK {
   }
 
   /**
+   * List all reservations
+   *
+   * @remarks
+   * Returns a list of PropertyReservations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPropertyReservations(
+    request: operations.ListPropertyReservationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PropertyReservation>> {
+    return unwrapAsync(propertyListPropertyReservations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a reservation
    *
    * @remarks
@@ -76,6 +132,23 @@ export class Reservation extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReservation> {
     return unwrapAsync(commercePatchCommerceReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a reservation
+   *
+   * @remarks
+   * Updates the PropertyReservation identified by `id`. Provide the unified PropertyReservation fields to change in the request body.
+   */
+  async patchPropertyReservation(
+    request: operations.PatchPropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReservation> {
+    return unwrapAsync(propertyPatchPropertyReservation(
       this,
       request,
       options,
@@ -110,6 +183,23 @@ export class Reservation extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReservation> {
     return unwrapAsync(commerceUpdateCommerceReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a reservation
+   *
+   * @remarks
+   * Updates the PropertyReservation identified by `id`. Provide the unified PropertyReservation fields to change in the request body.
+   */
+  async updatePropertyReservation(
+    request: operations.UpdatePropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyReservation> {
+    return unwrapAsync(propertyUpdatePropertyReservation(
       this,
       request,
       options,

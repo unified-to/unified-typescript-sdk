@@ -55,6 +55,7 @@ import { Condition } from "./condition.js";
 import { Connection } from "./connection.js";
 import { Contact } from "./contact.js";
 import { Content } from "./content.js";
+import { Conversation } from "./conversation.js";
 import { Course } from "./course.js";
 import { Coverage } from "./coverage.js";
 import { Creative } from "./creative.js";
@@ -89,6 +90,7 @@ import { Genai } from "./genai.js";
 import { Goal } from "./goal.js";
 import { Gputype } from "./gputype.js";
 import { Group } from "./group.js";
+import { Guest } from "./guest.js";
 import { Healthcare } from "./healthcare.js";
 import { Hris } from "./hris.js";
 import { Immunization } from "./immunization.js";
@@ -112,6 +114,7 @@ import { Lead } from "./lead.js";
 import { Legal } from "./legal.js";
 import { Link } from "./link.js";
 import { List } from "./list.js";
+import { Listing } from "./listing.js";
 import { Lms } from "./lms.js";
 import { Location } from "./location.js";
 import { Login } from "./login.js";
@@ -210,6 +213,7 @@ import { Transaction } from "./transaction.js";
 import { Trialbalance } from "./trialbalance.js";
 import { Uc } from "./uc.js";
 import { Unified } from "./unified.js";
+import { Unittype } from "./unittype.js";
 import { Usage } from "./usage.js";
 import { User } from "./user.js";
 import { Vendorcredit } from "./vendorcredit.js";
@@ -1085,6 +1089,26 @@ export class UnifiedTo extends ClientSDK {
   private _feedback?: Feedback;
   get feedback(): Feedback {
     return (this._feedback ??= new Feedback(this._options));
+  }
+
+  private _conversation?: Conversation;
+  get conversation(): Conversation {
+    return (this._conversation ??= new Conversation(this._options));
+  }
+
+  private _guest?: Guest;
+  get guest(): Guest {
+    return (this._guest ??= new Guest(this._options));
+  }
+
+  private _listing?: Listing;
+  get listing(): Listing {
+    return (this._listing ??= new Listing(this._options));
+  }
+
+  private _unittype?: Unittype;
+  get unittype(): Unittype {
+    return (this._unittype ??= new Unittype(this._options));
   }
 
   private _repo?: Repo;

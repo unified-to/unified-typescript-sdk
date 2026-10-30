@@ -8,6 +8,7 @@ import { accountingListAccountingQuotes } from "../funcs/accountingListAccountin
 import { accountingPatchAccountingQuote } from "../funcs/accountingPatchAccountingQuote.js";
 import { accountingRemoveAccountingQuote } from "../funcs/accountingRemoveAccountingQuote.js";
 import { accountingUpdateAccountingQuote } from "../funcs/accountingUpdateAccountingQuote.js";
+import { quoteCreatePropertyQuote } from "../funcs/quoteCreatePropertyQuote.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -25,6 +26,23 @@ export class Quote extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingQuote> {
     return unwrapAsync(accountingCreateAccountingQuote(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a quote
+   *
+   * @remarks
+   * Creates a PropertyQuote. Provide the unified PropertyQuote fields in the request body; they are mapped to the provider's API. Returns the created PropertyQuote.
+   */
+  async createPropertyQuote(
+    request: operations.CreatePropertyQuoteRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PropertyQuote> {
+    return unwrapAsync(quoteCreatePropertyQuote(
       this,
       request,
       options,
