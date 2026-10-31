@@ -45,6 +45,9 @@ export type CommerceCollection = {
   itemMetadata?: Array<CommerceMetadata> | undefined;
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
+  /**
+   * The collection's name
+   */
   name: string;
   parentId?: string | undefined;
   publicDescription?: string | undefined;

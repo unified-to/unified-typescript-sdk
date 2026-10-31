@@ -162,6 +162,8 @@ export * from "./commercelocation.js";
 export * from "./commercemetadata.js";
 export * from "./commercereference.js";
 export * from "./commercereservation.js";
+export * from "./commercereturn.js";
+export * from "./commercereturnlineitem.js";
 export * from "./commercereview.js";
 export * from "./commercereviewcomment.js";
 export * from "./commercesaleschannel.js";

@@ -18,6 +18,7 @@
 * [getCommerceItemvariant](#getcommerceitemvariant) - Retrieve an itemvariant
 * [getCommerceLocation](#getcommercelocation) - Retrieve a location
 * [getCommerceReservation](#getcommercereservation) - Retrieve a reservation
+* [getCommerceReturn](#getcommercereturn) - Retrieve a return
 * [getCommerceReview](#getcommercereview) - Retrieve a review
 * [getCommerceSaleschannel](#getcommercesaleschannel) - Retrieve a saleschannel
 * [listCommerceAvailabilities](#listcommerceavailabilities) - List all availabilities
@@ -27,6 +28,7 @@
 * [listCommerceItemvariants](#listcommerceitemvariants) - List all itemvariants
 * [listCommerceLocations](#listcommercelocations) - List all locations
 * [listCommerceReservations](#listcommercereservations) - List all reservations
+* [listCommerceReturns](#listcommercereturns) - List all returns
 * [listCommerceReviews](#listcommercereviews) - List all reviews
 * [listCommerceSaleschannels](#listcommercesaleschannels) - List all saleschannels
 * [patchCommerceCollection](#patchcommercecollection) - Update a collection
@@ -75,7 +77,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "65b5fd73-5424-4b27-9ea4-47fcb2547673",
+      id: "da396712-4436-4f5e-a368-380afc123b3a",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -84,10 +86,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "8b640b1b-e9d7-4661-8d7d-8ac00d21b8d1",
+          id: "135fce2a-2470-46bb-b3a1-dc795d0c2b51",
           metadata: [
             {
-              id: "984636d3-eead-499d-836f-43f965b7b14b",
+              id: "cd2afb6d-54b7-4cbd-8462-6cc4819cc4b6",
               slug: "censura",
               value: "toties",
             },
@@ -100,7 +102,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "26bccd7f-be8d-4d2c-abeb-6545e00c5a2b",
+          id: "816dbea0-0920-4c93-b999-616714020642",
           slug: "aetas",
           value: "consuasor",
         },
@@ -114,7 +116,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-19T15:45:16.302Z"),
+      updatedAt: new Date("2025-03-20T02:34:48.288Z"),
     },
     connectionId: "<id>",
   });
@@ -146,7 +148,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "65b5fd73-5424-4b27-9ea4-47fcb2547673",
+      id: "da396712-4436-4f5e-a368-380afc123b3a",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -155,10 +157,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "8b640b1b-e9d7-4661-8d7d-8ac00d21b8d1",
+          id: "135fce2a-2470-46bb-b3a1-dc795d0c2b51",
           metadata: [
             {
-              id: "984636d3-eead-499d-836f-43f965b7b14b",
+              id: "cd2afb6d-54b7-4cbd-8462-6cc4819cc4b6",
               slug: "censura",
               value: "toties",
             },
@@ -171,7 +173,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "26bccd7f-be8d-4d2c-abeb-6545e00c5a2b",
+          id: "816dbea0-0920-4c93-b999-616714020642",
           slug: "aetas",
           value: "consuasor",
         },
@@ -185,7 +187,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-19T15:45:16.302Z"),
+      updatedAt: new Date("2025-03-20T02:34:48.288Z"),
     },
     connectionId: "<id>",
   });
@@ -239,9 +241,9 @@ async function run() {
   const result = await unifiedTo.commerce.createCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "54789a29-fdda-4393-9faf-0c9ce8d9ab47",
+      id: "91c335bb-a12a-47a9-b3dd-6aacd50fb0a6",
       metadata: [],
-      updatedAt: new Date("2025-11-27T16:08:08.822Z"),
+      updatedAt: new Date("2025-11-28T09:13:19.696Z"),
     },
     connectionId: "<id>",
   });
@@ -272,9 +274,9 @@ async function run() {
   const res = await commerceCreateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "54789a29-fdda-4393-9faf-0c9ce8d9ab47",
+      id: "91c335bb-a12a-47a9-b3dd-6aacd50fb0a6",
       metadata: [],
-      updatedAt: new Date("2025-11-27T16:08:08.822Z"),
+      updatedAt: new Date("2025-11-28T09:13:19.696Z"),
     },
     connectionId: "<id>",
   });
@@ -332,7 +334,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "637c0ec7-3d3d-4e81-a182-d60799c564d3",
+      id: "096d2ca4-65b9-47df-8cb7-13f026b75a8c",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -341,10 +343,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "e65915d7-be75-43b6-af2b-361cb8d8f5ef",
+          id: "66c19b26-d3a3-44c5-adad-dd07446cc13b",
           metadata: [
             {
-              id: "60619a80-cda4-4b5e-b638-7a0b716453f9",
+              id: "fe058fcd-e004-4fa9-8017-7dc04fe800b4",
               slug: "doloremque",
               value: "allatus",
             },
@@ -357,10 +359,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "e7484dc7-e80c-4b3f-821a-2a3e73950609",
+          id: "779c5b99-8c2d-4cea-86b6-1d06adaeacc8",
           metadata: [
             {
-              id: "96828295-20b4-4966-aa15-396adb4bda53",
+              id: "82f860f5-7d62-45a2-b85c-5ea655bdaf5c",
               slug: "bis",
               value: "somniculosus",
             },
@@ -377,7 +379,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "772f85eb-9ca9-4b02-8d0c-03fda1437bea",
+          id: "e187d5bb-cbe9-4e99-afa5-d77695fbe4e9",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -400,7 +402,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-22T23:26:56.820Z"),
+      updatedAt: new Date("2022-04-23T07:37:32.877Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -438,7 +440,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "637c0ec7-3d3d-4e81-a182-d60799c564d3",
+      id: "096d2ca4-65b9-47df-8cb7-13f026b75a8c",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -447,10 +449,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "e65915d7-be75-43b6-af2b-361cb8d8f5ef",
+          id: "66c19b26-d3a3-44c5-adad-dd07446cc13b",
           metadata: [
             {
-              id: "60619a80-cda4-4b5e-b638-7a0b716453f9",
+              id: "fe058fcd-e004-4fa9-8017-7dc04fe800b4",
               slug: "doloremque",
               value: "allatus",
             },
@@ -463,10 +465,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "e7484dc7-e80c-4b3f-821a-2a3e73950609",
+          id: "779c5b99-8c2d-4cea-86b6-1d06adaeacc8",
           metadata: [
             {
-              id: "96828295-20b4-4966-aa15-396adb4bda53",
+              id: "82f860f5-7d62-45a2-b85c-5ea655bdaf5c",
               slug: "bis",
               value: "somniculosus",
             },
@@ -483,7 +485,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "772f85eb-9ca9-4b02-8d0c-03fda1437bea",
+          id: "e187d5bb-cbe9-4e99-afa5-d77695fbe4e9",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -506,7 +508,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-22T23:26:56.820Z"),
+      updatedAt: new Date("2022-04-23T07:37:32.877Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -566,7 +568,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "84ff6f0e-7309-4864-8f10-a83bf42b04f5",
+      id: "af1cd2cd-7c85-4b9d-87c1-6554bc7837a1",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -575,10 +577,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "c32951c7-ba81-418e-b49c-4cb5cdae4f0b",
+          id: "52485441-5af5-4c33-bdca-c5c3ecc84988",
           metadata: [
             {
-              id: "cf822395-e1f8-4d84-b563-707313e4d89e",
+              id: "b916f54a-3ae4-4f7b-b3bb-d15772ae981c",
               slug: "ubi",
               value: "textus",
             },
@@ -595,7 +597,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "50d27968-32f3-4311-959c-e6ebae6ad314",
+          id: "4a2c2272-a0f4-4dab-9077-71f143e3d12e",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -604,7 +606,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "037285a9-84cd-45e9-be06-2b00ace6f94a",
+          id: "af3d343c-c6be-4faf-8766-e5507dc72cf2",
           name: "Color",
           position: 1,
           values: [
@@ -612,7 +614,7 @@ async function run() {
           ],
         },
         {
-          id: "b9fdcedf-3b11-4ecd-aecd-42eafbbfccb2",
+          id: "c1ddf447-71a2-406a-8131-297b680af20c",
           name: "Size",
           position: 2,
           values: [
@@ -635,7 +637,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-17T12:35:40.221Z"),
+      updatedAt: new Date("2026-03-18T07:02:44.148Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -672,7 +674,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "84ff6f0e-7309-4864-8f10-a83bf42b04f5",
+      id: "af1cd2cd-7c85-4b9d-87c1-6554bc7837a1",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -681,10 +683,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "c32951c7-ba81-418e-b49c-4cb5cdae4f0b",
+          id: "52485441-5af5-4c33-bdca-c5c3ecc84988",
           metadata: [
             {
-              id: "cf822395-e1f8-4d84-b563-707313e4d89e",
+              id: "b916f54a-3ae4-4f7b-b3bb-d15772ae981c",
               slug: "ubi",
               value: "textus",
             },
@@ -701,7 +703,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "50d27968-32f3-4311-959c-e6ebae6ad314",
+          id: "4a2c2272-a0f4-4dab-9077-71f143e3d12e",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -710,7 +712,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "037285a9-84cd-45e9-be06-2b00ace6f94a",
+          id: "af3d343c-c6be-4faf-8766-e5507dc72cf2",
           name: "Color",
           position: 1,
           values: [
@@ -718,7 +720,7 @@ async function run() {
           ],
         },
         {
-          id: "b9fdcedf-3b11-4ecd-aecd-42eafbbfccb2",
+          id: "c1ddf447-71a2-406a-8131-297b680af20c",
           name: "Size",
           position: 2,
           values: [
@@ -741,7 +743,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-17T12:35:40.221Z"),
+      updatedAt: new Date("2026-03-18T07:02:44.148Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -809,7 +811,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "204e1943-fab4-4f9f-9d4b-fa5930ff2af1",
+      id: "59c3390f-2ddf-46aa-82da-cf751013642b",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -820,10 +822,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "b040f543-9947-4913-b05c-87daaa1754e3",
+          id: "f1f8e78c-4c76-4d82-81df-c4fd4fd79965",
           metadata: [
             {
-              id: "5225233f-0a86-4164-8aa7-455c1dceb17e",
+              id: "90e01837-d409-4c7b-b1a4-ec95c73db340",
               slug: "abutor",
               value: "damno",
             },
@@ -849,7 +851,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-23T20:20:24.893Z"),
+      updatedAt: new Date("2024-04-24T03:37:54.544Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -892,7 +894,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "204e1943-fab4-4f9f-9d4b-fa5930ff2af1",
+      id: "59c3390f-2ddf-46aa-82da-cf751013642b",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -903,10 +905,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "b040f543-9947-4913-b05c-87daaa1754e3",
+          id: "f1f8e78c-4c76-4d82-81df-c4fd4fd79965",
           metadata: [
             {
-              id: "5225233f-0a86-4164-8aa7-455c1dceb17e",
+              id: "90e01837-d409-4c7b-b1a4-ec95c73db340",
               slug: "abutor",
               value: "damno",
             },
@@ -932,7 +934,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-23T20:20:24.893Z"),
+      updatedAt: new Date("2024-04-24T03:37:54.544Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -991,13 +993,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "4cb274e3-8c28-49ff-8ae1-5219db87f2de",
+      id: "f1f4641b-d2c3-4abc-a5e7-896d1d6384d9",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-05T20:26:03.847Z"),
+      updatedAt: new Date("2023-01-06T01:02:40.984Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -1033,13 +1035,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "4cb274e3-8c28-49ff-8ae1-5219db87f2de",
+      id: "f1f4641b-d2c3-4abc-a5e7-896d1d6384d9",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-05T20:26:03.847Z"),
+      updatedAt: new Date("2023-01-06T01:02:40.984Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -1101,7 +1103,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "a3aa5bcb-59b7-42f4-925c-d03ef1a154ea",
+      id: "dbc23a58-c169-48a3-b455-9ae987d7969e",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -1109,10 +1111,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "c1009cb0-cb59-42f8-8b1e-b899f212e69f",
+          id: "33676040-f83d-4c81-b96e-a8addb593719",
           metadata: [
             {
-              id: "45c4a884-11ee-4b05-a65a-4cdbc0f8b9f4",
+              id: "f219520e-1b0e-443d-ba2b-c7aba4f26eba",
               slug: "textor",
               value: "quos",
             },
@@ -1125,10 +1127,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "936f8540-c4db-4a0d-bed7-53631769fdce",
+          id: "7cf026a0-a6a4-42c5-b846-8f7d0c68f5a6",
           metadata: [
             {
-              id: "69161820-a976-415b-80a2-d316a484264a",
+              id: "5458abab-ffb8-4171-8239-2e476966ff0d",
               slug: "bos",
               value: "casso",
             },
@@ -1144,7 +1146,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-28T20:17:31.999Z"),
+      updatedAt: new Date("2025-08-29T13:53:37.837Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -1184,7 +1186,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "a3aa5bcb-59b7-42f4-925c-d03ef1a154ea",
+      id: "dbc23a58-c169-48a3-b455-9ae987d7969e",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -1192,10 +1194,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "c1009cb0-cb59-42f8-8b1e-b899f212e69f",
+          id: "33676040-f83d-4c81-b96e-a8addb593719",
           metadata: [
             {
-              id: "45c4a884-11ee-4b05-a65a-4cdbc0f8b9f4",
+              id: "f219520e-1b0e-443d-ba2b-c7aba4f26eba",
               slug: "textor",
               value: "quos",
             },
@@ -1208,10 +1210,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "936f8540-c4db-4a0d-bed7-53631769fdce",
+          id: "7cf026a0-a6a4-42c5-b846-8f7d0c68f5a6",
           metadata: [
             {
-              id: "69161820-a976-415b-80a2-d316a484264a",
+              id: "5458abab-ffb8-4171-8239-2e476966ff0d",
               slug: "bos",
               value: "casso",
             },
@@ -1227,7 +1229,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-28T20:17:31.999Z"),
+      updatedAt: new Date("2025-08-29T13:53:37.837Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -1285,11 +1287,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "7906e47d-1991-4bc0-8114-f0c1dd284d5c",
+      id: "61332233-58c1-4e95-b1d7-5613f617f6d8",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-02-02T19:25:11.650Z"),
+      updatedAt: new Date("2025-02-03T09:04:54.964Z"),
     },
     connectionId: "<id>",
   });
@@ -1322,11 +1324,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "7906e47d-1991-4bc0-8114-f0c1dd284d5c",
+      id: "61332233-58c1-4e95-b1d7-5613f617f6d8",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-02-02T19:25:11.650Z"),
+      updatedAt: new Date("2025-02-03T09:04:54.964Z"),
     },
     connectionId: "<id>",
   });
@@ -1827,6 +1829,85 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceReservation](../../sdk/models/shared/commercereservation.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getCommerceReturn
+
+Retrieves a single CommerceReturn by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getCommerceReturn" method="get" path="/commerce/{connection_id}/return/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.commerce.getCommerceReturn({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { commerceGetCommerceReturn } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceReturn.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await commerceGetCommerceReturn(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("commerceGetCommerceReturn failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetCommerceReturnRequest](../../sdk/models/operations/getcommercereturnrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CommerceReturn](../../sdk/models/shared/commercereturn.md)\>**
 
 ### Errors
 
@@ -2531,6 +2612,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listCommerceReturns
+
+Returns a list of CommerceReturns. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listCommerceReturns" method="get" path="/commerce/{connection_id}/return" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.commerce.listCommerceReturns({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { commerceListCommerceReturns } from "@unified-api/typescript-sdk/funcs/commerceListCommerceReturns.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await commerceListCommerceReturns(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("commerceListCommerceReturns failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListCommerceReturnsRequest](../../sdk/models/operations/listcommercereturnsrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CommerceReturn[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listCommerceReviews
 
 Returns a list of CommerceReviews. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -2706,7 +2864,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "79c0c02d-c862-4a2d-bd17-3e135d3e3499",
+      id: "4cb88363-c1b9-44a5-b2c0-5efaf0a28c7f",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -2715,10 +2873,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "b95817a3-265d-47d4-b949-cf65a5443216",
+          id: "473a61dd-4970-4a41-86bf-5ce5ed55c88a",
           metadata: [
             {
-              id: "c447e4cc-3790-45a3-81f0-3bf705e3720a",
+              id: "11f70ebf-82b0-4505-8163-c398b1cd61a0",
               slug: "censura",
               value: "toties",
             },
@@ -2731,7 +2889,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "399d1be4-dc31-43ff-bd6d-0e02c6b06a8f",
+          id: "3b410ac7-5fab-4a37-af65-36792f0de19e",
           slug: "aetas",
           value: "consuasor",
         },
@@ -2745,7 +2903,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-19T15:45:16.318Z"),
+      updatedAt: new Date("2025-03-20T02:34:48.306Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2778,7 +2936,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "79c0c02d-c862-4a2d-bd17-3e135d3e3499",
+      id: "4cb88363-c1b9-44a5-b2c0-5efaf0a28c7f",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -2787,10 +2945,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "b95817a3-265d-47d4-b949-cf65a5443216",
+          id: "473a61dd-4970-4a41-86bf-5ce5ed55c88a",
           metadata: [
             {
-              id: "c447e4cc-3790-45a3-81f0-3bf705e3720a",
+              id: "11f70ebf-82b0-4505-8163-c398b1cd61a0",
               slug: "censura",
               value: "toties",
             },
@@ -2803,7 +2961,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "399d1be4-dc31-43ff-bd6d-0e02c6b06a8f",
+          id: "3b410ac7-5fab-4a37-af65-36792f0de19e",
           slug: "aetas",
           value: "consuasor",
         },
@@ -2817,7 +2975,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-19T15:45:16.318Z"),
+      updatedAt: new Date("2025-03-20T02:34:48.306Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2872,9 +3030,9 @@ async function run() {
   const result = await unifiedTo.commerce.patchCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "9f87fcd0-143e-4058-ae13-391a0bc9f153",
+      id: "3319add1-0b39-4cfe-ade5-6124cbd19331",
       metadata: [],
-      updatedAt: new Date("2025-11-27T16:08:08.841Z"),
+      updatedAt: new Date("2025-11-28T09:13:19.708Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2906,9 +3064,9 @@ async function run() {
   const res = await commercePatchCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "9f87fcd0-143e-4058-ae13-391a0bc9f153",
+      id: "3319add1-0b39-4cfe-ade5-6124cbd19331",
       metadata: [],
-      updatedAt: new Date("2025-11-27T16:08:08.841Z"),
+      updatedAt: new Date("2025-11-28T09:13:19.708Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2967,7 +3125,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "c32dd919-c089-4a45-a7ee-4e589c63dd95",
+      id: "641c2377-18a8-4c51-9e12-ee8cc05e2510",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -2976,10 +3134,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "b072f834-aba3-426f-8725-8d7a80288dab",
+          id: "7864297b-7024-4c54-82d4-a588d9e874f8",
           metadata: [
             {
-              id: "39dd8b01-e1f1-4fb4-9fc8-6e5ca3d52c2e",
+              id: "483f547a-bcc1-4506-8bac-d6131bdbac54",
               slug: "doloremque",
               value: "allatus",
             },
@@ -2992,10 +3150,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "57bcf9b1-893c-40fa-9eeb-d4b67673b240",
+          id: "9aadb571-2034-45d0-83c6-6cb1ae9ff937",
           metadata: [
             {
-              id: "329793ef-8843-4adf-979b-76a7bea801f2",
+              id: "92b6ef4d-ecc6-462e-a46c-9dd1eb3a43fd",
               slug: "bis",
               value: "somniculosus",
             },
@@ -3012,7 +3170,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "639ef675-b345-4212-b8c8-55caa0677c67",
+          id: "e19505e6-63f9-47ef-b586-94e35ae9dfca",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -3035,7 +3193,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-22T23:26:56.837Z"),
+      updatedAt: new Date("2022-04-23T07:37:32.893Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -3074,7 +3232,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "c32dd919-c089-4a45-a7ee-4e589c63dd95",
+      id: "641c2377-18a8-4c51-9e12-ee8cc05e2510",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -3083,10 +3241,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "b072f834-aba3-426f-8725-8d7a80288dab",
+          id: "7864297b-7024-4c54-82d4-a588d9e874f8",
           metadata: [
             {
-              id: "39dd8b01-e1f1-4fb4-9fc8-6e5ca3d52c2e",
+              id: "483f547a-bcc1-4506-8bac-d6131bdbac54",
               slug: "doloremque",
               value: "allatus",
             },
@@ -3099,10 +3257,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "57bcf9b1-893c-40fa-9eeb-d4b67673b240",
+          id: "9aadb571-2034-45d0-83c6-6cb1ae9ff937",
           metadata: [
             {
-              id: "329793ef-8843-4adf-979b-76a7bea801f2",
+              id: "92b6ef4d-ecc6-462e-a46c-9dd1eb3a43fd",
               slug: "bis",
               value: "somniculosus",
             },
@@ -3119,7 +3277,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "639ef675-b345-4212-b8c8-55caa0677c67",
+          id: "e19505e6-63f9-47ef-b586-94e35ae9dfca",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -3142,7 +3300,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-22T23:26:56.837Z"),
+      updatedAt: new Date("2022-04-23T07:37:32.893Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -3203,7 +3361,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "04af7128-7f58-4963-9a94-07631122b912",
+      id: "0d4822f2-02e0-4b87-bf48-6c731a91ed08",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -3212,10 +3370,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "971da61c-9819-4ce8-96de-63b48b0e9263",
+          id: "b1513414-e430-426b-a290-5acb9b49d6cd",
           metadata: [
             {
-              id: "af0712fa-e7c6-4c3f-81be-74b115f9236f",
+              id: "afb22809-eb83-4573-92be-1a591f956088",
               slug: "ubi",
               value: "textus",
             },
@@ -3232,7 +3390,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "3a962b96-c7dd-4e89-a118-c721c39612a4",
+          id: "92713480-deff-464a-80b0-0152f2fa826e",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -3241,7 +3399,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "f4fb5629-6183-453a-881a-53186d90c94a",
+          id: "f858605e-1048-4e98-a613-97697f4b4b1f",
           name: "Color",
           position: 1,
           values: [
@@ -3249,7 +3407,7 @@ async function run() {
           ],
         },
         {
-          id: "2b490f08-bf8a-424e-a6bb-909c9b9013fa",
+          id: "b4bf7ecd-eb65-43a5-a936-11def1b366de",
           name: "Size",
           position: 2,
           values: [
@@ -3272,7 +3430,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-17T12:35:40.254Z"),
+      updatedAt: new Date("2026-03-18T07:02:44.171Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -3310,7 +3468,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "04af7128-7f58-4963-9a94-07631122b912",
+      id: "0d4822f2-02e0-4b87-bf48-6c731a91ed08",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -3319,10 +3477,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "971da61c-9819-4ce8-96de-63b48b0e9263",
+          id: "b1513414-e430-426b-a290-5acb9b49d6cd",
           metadata: [
             {
-              id: "af0712fa-e7c6-4c3f-81be-74b115f9236f",
+              id: "afb22809-eb83-4573-92be-1a591f956088",
               slug: "ubi",
               value: "textus",
             },
@@ -3339,7 +3497,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "3a962b96-c7dd-4e89-a118-c721c39612a4",
+          id: "92713480-deff-464a-80b0-0152f2fa826e",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -3348,7 +3506,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "f4fb5629-6183-453a-881a-53186d90c94a",
+          id: "f858605e-1048-4e98-a613-97697f4b4b1f",
           name: "Color",
           position: 1,
           values: [
@@ -3356,7 +3514,7 @@ async function run() {
           ],
         },
         {
-          id: "2b490f08-bf8a-424e-a6bb-909c9b9013fa",
+          id: "b4bf7ecd-eb65-43a5-a936-11def1b366de",
           name: "Size",
           position: 2,
           values: [
@@ -3379,7 +3537,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-17T12:35:40.254Z"),
+      updatedAt: new Date("2026-03-18T07:02:44.171Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -3448,7 +3606,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "e01c05a4-39ef-4372-879f-e79e6f347acf",
+      id: "75ef984e-15b6-4e4c-9ae5-90443ebf5be6",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -3459,10 +3617,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "a23ebf1b-17c7-4ecb-b0b1-fe808abdc194",
+          id: "03d140aa-56aa-4e5d-a396-637a9af910d0",
           metadata: [
             {
-              id: "ce50e1f4-38a0-49f3-981e-b554c2473ca4",
+              id: "44d7a783-6a37-4ccf-b6c8-636d59e7b5f5",
               slug: "abutor",
               value: "damno",
             },
@@ -3488,7 +3646,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-23T20:20:24.908Z"),
+      updatedAt: new Date("2024-04-24T03:37:54.552Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -3532,7 +3690,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "e01c05a4-39ef-4372-879f-e79e6f347acf",
+      id: "75ef984e-15b6-4e4c-9ae5-90443ebf5be6",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -3543,10 +3701,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "a23ebf1b-17c7-4ecb-b0b1-fe808abdc194",
+          id: "03d140aa-56aa-4e5d-a396-637a9af910d0",
           metadata: [
             {
-              id: "ce50e1f4-38a0-49f3-981e-b554c2473ca4",
+              id: "44d7a783-6a37-4ccf-b6c8-636d59e7b5f5",
               slug: "abutor",
               value: "damno",
             },
@@ -3572,7 +3730,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-23T20:20:24.908Z"),
+      updatedAt: new Date("2024-04-24T03:37:54.552Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -3632,13 +3790,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "1f1b3bbf-042f-4280-86ec-57c81d71dc17",
+      id: "5d99ac29-04bf-43c6-9aab-7df1740d2d71",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-05T20:26:03.850Z"),
+      updatedAt: new Date("2023-01-06T01:02:40.987Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -3675,13 +3833,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "1f1b3bbf-042f-4280-86ec-57c81d71dc17",
+      id: "5d99ac29-04bf-43c6-9aab-7df1740d2d71",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-05T20:26:03.850Z"),
+      updatedAt: new Date("2023-01-06T01:02:40.987Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -3744,7 +3902,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "1dff39bf-0b56-4f53-9089-33dcc372468d",
+      id: "03bc3566-32a7-4da2-b273-c4a5b1230442",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -3752,10 +3910,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "6f6bcf81-380e-40a6-a4d5-3879fc612317",
+          id: "97f9186a-2e2f-4de0-925b-85a6f40d6e95",
           metadata: [
             {
-              id: "fcb92502-d44e-4663-9000-70b6a30314bb",
+              id: "f979e266-6ebb-48e2-908c-75a8d1287edd",
               slug: "textor",
               value: "quos",
             },
@@ -3768,10 +3926,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "fcc4e39e-bbb7-4d8a-bc83-c4efa3120a41",
+          id: "03ae440e-f427-41aa-8d6c-af74476ebad0",
           metadata: [
             {
-              id: "e002fc18-b518-4315-878d-44eeb3410169",
+              id: "48546cee-08c4-41bc-ba7f-fc766f96ceb2",
               slug: "bos",
               value: "casso",
             },
@@ -3787,7 +3945,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-28T20:17:32.038Z"),
+      updatedAt: new Date("2025-08-29T13:53:37.863Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -3828,7 +3986,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "1dff39bf-0b56-4f53-9089-33dcc372468d",
+      id: "03bc3566-32a7-4da2-b273-c4a5b1230442",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -3836,10 +3994,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "6f6bcf81-380e-40a6-a4d5-3879fc612317",
+          id: "97f9186a-2e2f-4de0-925b-85a6f40d6e95",
           metadata: [
             {
-              id: "fcb92502-d44e-4663-9000-70b6a30314bb",
+              id: "f979e266-6ebb-48e2-908c-75a8d1287edd",
               slug: "textor",
               value: "quos",
             },
@@ -3852,10 +4010,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "fcc4e39e-bbb7-4d8a-bc83-c4efa3120a41",
+          id: "03ae440e-f427-41aa-8d6c-af74476ebad0",
           metadata: [
             {
-              id: "e002fc18-b518-4315-878d-44eeb3410169",
+              id: "48546cee-08c4-41bc-ba7f-fc766f96ceb2",
               slug: "bos",
               value: "casso",
             },
@@ -3871,7 +4029,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-28T20:17:32.038Z"),
+      updatedAt: new Date("2025-08-29T13:53:37.863Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -3930,11 +4088,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "8cbf4432-b417-436e-a9e7-de6d12d50b08",
+      id: "d934e36a-1a42-48cd-963c-fa80519682d1",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-02-02T19:25:11.659Z"),
+      updatedAt: new Date("2025-02-03T09:04:54.970Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3968,11 +4126,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "8cbf4432-b417-436e-a9e7-de6d12d50b08",
+      id: "d934e36a-1a42-48cd-963c-fa80519682d1",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-02-02T19:25:11.659Z"),
+      updatedAt: new Date("2025-02-03T09:04:54.970Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4660,7 +4818,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "79c0c02d-c862-4a2d-bd17-3e135d3e3499",
+      id: "4cb88363-c1b9-44a5-b2c0-5efaf0a28c7f",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -4669,10 +4827,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "b95817a3-265d-47d4-b949-cf65a5443216",
+          id: "473a61dd-4970-4a41-86bf-5ce5ed55c88a",
           metadata: [
             {
-              id: "c447e4cc-3790-45a3-81f0-3bf705e3720a",
+              id: "11f70ebf-82b0-4505-8163-c398b1cd61a0",
               slug: "censura",
               value: "toties",
             },
@@ -4685,7 +4843,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "399d1be4-dc31-43ff-bd6d-0e02c6b06a8f",
+          id: "3b410ac7-5fab-4a37-af65-36792f0de19e",
           slug: "aetas",
           value: "consuasor",
         },
@@ -4699,7 +4857,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-19T15:45:16.318Z"),
+      updatedAt: new Date("2025-03-20T02:34:48.306Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4732,7 +4890,7 @@ async function run() {
     commerceCollection: {
       createdAt: new Date("2023-07-14T00:42:54.742Z"),
       description: "The Integrated leading edge website Cheese offers reliable performance and productive design",
-      id: "79c0c02d-c862-4a2d-bd17-3e135d3e3499",
+      id: "4cb88363-c1b9-44a5-b2c0-5efaf0a28c7f",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -4741,10 +4899,10 @@ async function run() {
         {
           alt: "Defungo adopto thorax.",
           height: 759,
-          id: "b95817a3-265d-47d4-b949-cf65a5443216",
+          id: "473a61dd-4970-4a41-86bf-5ce5ed55c88a",
           metadata: [
             {
-              id: "c447e4cc-3790-45a3-81f0-3bf705e3720a",
+              id: "11f70ebf-82b0-4505-8163-c398b1cd61a0",
               slug: "censura",
               value: "toties",
             },
@@ -4757,7 +4915,7 @@ async function run() {
       ],
       metadata: [
         {
-          id: "399d1be4-dc31-43ff-bd6d-0e02c6b06a8f",
+          id: "3b410ac7-5fab-4a37-af65-36792f0de19e",
           slug: "aetas",
           value: "consuasor",
         },
@@ -4771,7 +4929,7 @@ async function run() {
         "contego",
       ],
       type: "COLLECTION",
-      updatedAt: new Date("2025-03-19T15:45:16.318Z"),
+      updatedAt: new Date("2025-03-20T02:34:48.306Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4826,9 +4984,9 @@ async function run() {
   const result = await unifiedTo.commerce.updateCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "9f87fcd0-143e-4058-ae13-391a0bc9f153",
+      id: "3319add1-0b39-4cfe-ade5-6124cbd19331",
       metadata: [],
-      updatedAt: new Date("2025-11-27T16:08:08.841Z"),
+      updatedAt: new Date("2025-11-28T09:13:19.708Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4860,9 +5018,9 @@ async function run() {
   const res = await commerceUpdateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "9f87fcd0-143e-4058-ae13-391a0bc9f153",
+      id: "3319add1-0b39-4cfe-ade5-6124cbd19331",
       metadata: [],
-      updatedAt: new Date("2025-11-27T16:08:08.841Z"),
+      updatedAt: new Date("2025-11-28T09:13:19.708Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4921,7 +5079,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "c32dd919-c089-4a45-a7ee-4e589c63dd95",
+      id: "641c2377-18a8-4c51-9e12-ee8cc05e2510",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -4930,10 +5088,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "b072f834-aba3-426f-8725-8d7a80288dab",
+          id: "7864297b-7024-4c54-82d4-a588d9e874f8",
           metadata: [
             {
-              id: "39dd8b01-e1f1-4fb4-9fc8-6e5ca3d52c2e",
+              id: "483f547a-bcc1-4506-8bac-d6131bdbac54",
               slug: "doloremque",
               value: "allatus",
             },
@@ -4946,10 +5104,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "57bcf9b1-893c-40fa-9eeb-d4b67673b240",
+          id: "9aadb571-2034-45d0-83c6-6cb1ae9ff937",
           metadata: [
             {
-              id: "329793ef-8843-4adf-979b-76a7bea801f2",
+              id: "92b6ef4d-ecc6-462e-a46c-9dd1eb3a43fd",
               slug: "bis",
               value: "somniculosus",
             },
@@ -4966,7 +5124,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "639ef675-b345-4212-b8c8-55caa0677c67",
+          id: "e19505e6-63f9-47ef-b586-94e35ae9dfca",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -4989,7 +5147,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-22T23:26:56.837Z"),
+      updatedAt: new Date("2022-04-23T07:37:32.893Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -5028,7 +5186,7 @@ async function run() {
       description: "Decretum vulnero ustulo abeo.",
       duration: 104,
       globalCode: "978-0-85270-680-0",
-      id: "c32dd919-c089-4a45-a7ee-4e589c63dd95",
+      id: "641c2377-18a8-4c51-9e12-ee8cc05e2510",
       isActive: false,
       isFeatured: false,
       isTaxable: true,
@@ -5037,10 +5195,10 @@ async function run() {
         {
           alt: "Caterva eveniet acies candidus.",
           height: 876,
-          id: "b072f834-aba3-426f-8725-8d7a80288dab",
+          id: "7864297b-7024-4c54-82d4-a588d9e874f8",
           metadata: [
             {
-              id: "39dd8b01-e1f1-4fb4-9fc8-6e5ca3d52c2e",
+              id: "483f547a-bcc1-4506-8bac-d6131bdbac54",
               slug: "doloremque",
               value: "allatus",
             },
@@ -5053,10 +5211,10 @@ async function run() {
         {
           alt: "Comedo.",
           height: 651,
-          id: "57bcf9b1-893c-40fa-9eeb-d4b67673b240",
+          id: "9aadb571-2034-45d0-83c6-6cb1ae9ff937",
           metadata: [
             {
-              id: "329793ef-8843-4adf-979b-76a7bea801f2",
+              id: "92b6ef4d-ecc6-462e-a46c-9dd1eb3a43fd",
               slug: "bis",
               value: "somniculosus",
             },
@@ -5073,7 +5231,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "639ef675-b345-4212-b8c8-55caa0677c67",
+          id: "e19505e6-63f9-47ef-b586-94e35ae9dfca",
           namespace: "custom",
           slug: "custom_property",
           value: "abstergo",
@@ -5096,7 +5254,7 @@ async function run() {
       ],
       totalStock: 682,
       type: "SERVICE",
-      updatedAt: new Date("2022-04-22T23:26:56.837Z"),
+      updatedAt: new Date("2022-04-23T07:37:32.893Z"),
       vendorName: "Mayer - Flatley",
       weight: 37,
       weightUnit: "oz",
@@ -5157,7 +5315,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "04af7128-7f58-4963-9a94-07631122b912",
+      id: "0d4822f2-02e0-4b87-bf48-6c731a91ed08",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -5166,10 +5324,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "971da61c-9819-4ce8-96de-63b48b0e9263",
+          id: "b1513414-e430-426b-a290-5acb9b49d6cd",
           metadata: [
             {
-              id: "af0712fa-e7c6-4c3f-81be-74b115f9236f",
+              id: "afb22809-eb83-4573-92be-1a591f956088",
               slug: "ubi",
               value: "textus",
             },
@@ -5186,7 +5344,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "3a962b96-c7dd-4e89-a118-c721c39612a4",
+          id: "92713480-deff-464a-80b0-0152f2fa826e",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -5195,7 +5353,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "f4fb5629-6183-453a-881a-53186d90c94a",
+          id: "f858605e-1048-4e98-a613-97697f4b4b1f",
           name: "Color",
           position: 1,
           values: [
@@ -5203,7 +5361,7 @@ async function run() {
           ],
         },
         {
-          id: "2b490f08-bf8a-424e-a6bb-909c9b9013fa",
+          id: "b4bf7ecd-eb65-43a5-a936-11def1b366de",
           name: "Size",
           position: 2,
           values: [
@@ -5226,7 +5384,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-17T12:35:40.254Z"),
+      updatedAt: new Date("2026-03-18T07:02:44.171Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -5264,7 +5422,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "04af7128-7f58-4963-9a94-07631122b912",
+      id: "0d4822f2-02e0-4b87-bf48-6c731a91ed08",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -5273,10 +5431,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "971da61c-9819-4ce8-96de-63b48b0e9263",
+          id: "b1513414-e430-426b-a290-5acb9b49d6cd",
           metadata: [
             {
-              id: "af0712fa-e7c6-4c3f-81be-74b115f9236f",
+              id: "afb22809-eb83-4573-92be-1a591f956088",
               slug: "ubi",
               value: "textus",
             },
@@ -5293,7 +5451,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "3a962b96-c7dd-4e89-a118-c721c39612a4",
+          id: "92713480-deff-464a-80b0-0152f2fa826e",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -5302,7 +5460,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "f4fb5629-6183-453a-881a-53186d90c94a",
+          id: "f858605e-1048-4e98-a613-97697f4b4b1f",
           name: "Color",
           position: 1,
           values: [
@@ -5310,7 +5468,7 @@ async function run() {
           ],
         },
         {
-          id: "2b490f08-bf8a-424e-a6bb-909c9b9013fa",
+          id: "b4bf7ecd-eb65-43a5-a936-11def1b366de",
           name: "Size",
           position: 2,
           values: [
@@ -5333,7 +5491,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-17T12:35:40.254Z"),
+      updatedAt: new Date("2026-03-18T07:02:44.171Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -5402,7 +5560,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "e01c05a4-39ef-4372-879f-e79e6f347acf",
+      id: "75ef984e-15b6-4e4c-9ae5-90443ebf5be6",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -5413,10 +5571,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "a23ebf1b-17c7-4ecb-b0b1-fe808abdc194",
+          id: "03d140aa-56aa-4e5d-a396-637a9af910d0",
           metadata: [
             {
-              id: "ce50e1f4-38a0-49f3-981e-b554c2473ca4",
+              id: "44d7a783-6a37-4ccf-b6c8-636d59e7b5f5",
               slug: "abutor",
               value: "damno",
             },
@@ -5442,7 +5600,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-23T20:20:24.908Z"),
+      updatedAt: new Date("2024-04-24T03:37:54.552Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -5486,7 +5644,7 @@ async function run() {
       createdAt: new Date("2022-12-29T04:15:21.195Z"),
       currency: "XCD",
       description: "Adsidue audentia.",
-      id: "e01c05a4-39ef-4372-879f-e79e6f347acf",
+      id: "75ef984e-15b6-4e4c-9ae5-90443ebf5be6",
       imageUrl: "https://picsum.photos/seed/hjFt1/1036/2220",
       isActive: false,
       languageLocale: "vulgaris",
@@ -5497,10 +5655,10 @@ async function run() {
         {
           alt: "Addo.",
           height: 283,
-          id: "a23ebf1b-17c7-4ecb-b0b1-fe808abdc194",
+          id: "03d140aa-56aa-4e5d-a396-637a9af910d0",
           metadata: [
             {
-              id: "ce50e1f4-38a0-49f3-981e-b554c2473ca4",
+              id: "44d7a783-6a37-4ccf-b6c8-636d59e7b5f5",
               slug: "abutor",
               value: "damno",
             },
@@ -5526,7 +5684,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2024-04-23T20:20:24.908Z"),
+      updatedAt: new Date("2024-04-24T03:37:54.552Z"),
       webUrl: "https://chilly-edge.info",
     },
     connectionId: "<id>",
@@ -5586,13 +5744,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "1f1b3bbf-042f-4280-86ec-57c81d71dc17",
+      id: "5d99ac29-04bf-43c6-9aab-7df1740d2d71",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-05T20:26:03.850Z"),
+      updatedAt: new Date("2023-01-06T01:02:40.987Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -5629,13 +5787,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "1f1b3bbf-042f-4280-86ec-57c81d71dc17",
+      id: "5d99ac29-04bf-43c6-9aab-7df1740d2d71",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-05T20:26:03.850Z"),
+      updatedAt: new Date("2023-01-06T01:02:40.987Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -5698,7 +5856,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "1dff39bf-0b56-4f53-9089-33dcc372468d",
+      id: "03bc3566-32a7-4da2-b273-c4a5b1230442",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -5706,10 +5864,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "6f6bcf81-380e-40a6-a4d5-3879fc612317",
+          id: "97f9186a-2e2f-4de0-925b-85a6f40d6e95",
           metadata: [
             {
-              id: "fcb92502-d44e-4663-9000-70b6a30314bb",
+              id: "f979e266-6ebb-48e2-908c-75a8d1287edd",
               slug: "textor",
               value: "quos",
             },
@@ -5722,10 +5880,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "fcc4e39e-bbb7-4d8a-bc83-c4efa3120a41",
+          id: "03ae440e-f427-41aa-8d6c-af74476ebad0",
           metadata: [
             {
-              id: "e002fc18-b518-4315-878d-44eeb3410169",
+              id: "48546cee-08c4-41bc-ba7f-fc766f96ceb2",
               slug: "bos",
               value: "casso",
             },
@@ -5741,7 +5899,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-28T20:17:32.038Z"),
+      updatedAt: new Date("2025-08-29T13:53:37.863Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -5782,7 +5940,7 @@ async function run() {
       content: "Taedium thymum adipiscor amicitia cui.",
       createdAt: new Date("2019-12-12T18:10:22.988Z"),
       helpfulVotes: 66,
-      id: "1dff39bf-0b56-4f53-9089-33dcc372468d",
+      id: "03bc3566-32a7-4da2-b273-c4a5b1230442",
       isFeatured: false,
       isPublic: true,
       isVerified: false,
@@ -5790,10 +5948,10 @@ async function run() {
         {
           alt: "Desipio carpo sol laudantium colo.",
           height: 749,
-          id: "6f6bcf81-380e-40a6-a4d5-3879fc612317",
+          id: "97f9186a-2e2f-4de0-925b-85a6f40d6e95",
           metadata: [
             {
-              id: "fcb92502-d44e-4663-9000-70b6a30314bb",
+              id: "f979e266-6ebb-48e2-908c-75a8d1287edd",
               slug: "textor",
               value: "quos",
             },
@@ -5806,10 +5964,10 @@ async function run() {
         {
           alt: "Adopto teneo numquam.",
           height: 957,
-          id: "fcc4e39e-bbb7-4d8a-bc83-c4efa3120a41",
+          id: "03ae440e-f427-41aa-8d6c-af74476ebad0",
           metadata: [
             {
-              id: "e002fc18-b518-4315-878d-44eeb3410169",
+              id: "48546cee-08c4-41bc-ba7f-fc766f96ceb2",
               slug: "bos",
               value: "casso",
             },
@@ -5825,7 +5983,7 @@ async function run() {
       status: "APPROVED",
       title: "Coepi adamo amicitia auxilium toties.",
       unhelpfulVotes: 88,
-      updatedAt: new Date("2025-08-28T20:17:32.038Z"),
+      updatedAt: new Date("2025-08-29T13:53:37.863Z"),
       url: "https://diligent-bandwidth.biz",
       verifiedPurchase: true,
     },
@@ -5884,11 +6042,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "8cbf4432-b417-436e-a9e7-de6d12d50b08",
+      id: "d934e36a-1a42-48cd-963c-fa80519682d1",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-02-02T19:25:11.659Z"),
+      updatedAt: new Date("2025-02-03T09:04:54.970Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5922,11 +6080,11 @@ async function run() {
       collections: [],
       createdAt: new Date("2021-12-12T06:19:55.421Z"),
       description: "Utroque denuncio solutio.",
-      id: "8cbf4432-b417-436e-a9e7-de6d12d50b08",
+      id: "d934e36a-1a42-48cd-963c-fa80519682d1",
       isActive: false,
       metadata: [],
       slug: "amiculum-congregatio-suspendo",
-      updatedAt: new Date("2025-02-02T19:25:11.659Z"),
+      updatedAt: new Date("2025-02-03T09:04:54.970Z"),
     },
     connectionId: "<id>",
     id: "<id>",

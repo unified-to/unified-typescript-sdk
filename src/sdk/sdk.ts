@@ -170,6 +170,7 @@ import { Report } from "./report.js";
 import { Repository } from "./repository.js";
 import { RequestT } from "./request.js";
 import { Reservation } from "./reservation.js";
+import { Return } from "./return.js";
 import { Review } from "./review.js";
 import { Room } from "./room.js";
 import { Saleschannel } from "./saleschannel.js";
@@ -619,6 +620,11 @@ export class UnifiedTo extends ClientSDK {
   private _reservation?: Reservation;
   get reservation(): Reservation {
     return (this._reservation ??= new Reservation(this._options));
+  }
+
+  private _return?: Return;
+  get return(): Return {
+    return (this._return ??= new Return(this._options));
   }
 
   private _review?: Review;

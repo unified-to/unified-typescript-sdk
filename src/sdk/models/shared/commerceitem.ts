@@ -73,6 +73,9 @@ export type CommerceItem = {
   locationId?: string | undefined;
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
+  /**
+   * The item's (product's) name
+   */
   name?: string | undefined;
   prices?: Array<CommerceItemPrice> | undefined;
   publicDescription?: string | undefined;

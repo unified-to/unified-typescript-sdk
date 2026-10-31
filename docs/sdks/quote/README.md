@@ -115,9 +115,9 @@ async function run() {
       createdAt: new Date("2020-12-18T19:14:11.415Z"),
       currency: "USD",
       depositAmount: 594.54,
-      endAt: new Date("2026-11-13"),
+      endAt: new Date("2026-11-14"),
       guests: 2,
-      id: "a346331f-845a-4e3e-b6da-f8c2bbd98d09",
+      id: "3a6896b1-881f-4e05-ba3d-decd2dffcb6e",
       lineItems: [
         {
           amount: 1665,
@@ -139,7 +139,7 @@ async function run() {
           type: "TAX",
         },
       ],
-      startAt: new Date("2026-11-04"),
+      startAt: new Date("2026-11-05"),
       totalAmount: 1981.8,
     },
     connectionId: "<id>",
@@ -175,9 +175,9 @@ async function run() {
       createdAt: new Date("2020-12-18T19:14:11.415Z"),
       currency: "USD",
       depositAmount: 594.54,
-      endAt: new Date("2026-11-13"),
+      endAt: new Date("2026-11-14"),
       guests: 2,
-      id: "a346331f-845a-4e3e-b6da-f8c2bbd98d09",
+      id: "3a6896b1-881f-4e05-ba3d-decd2dffcb6e",
       lineItems: [
         {
           amount: 1665,
@@ -199,7 +199,7 @@ async function run() {
           type: "TAX",
         },
       ],
-      startAt: new Date("2026-11-04"),
+      startAt: new Date("2026-11-05"),
       totalAmount: 1981.8,
     },
     connectionId: "<id>",

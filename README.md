@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
+      id: "853b3879-bf51-4e06-a9bb-663afa86e34a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
+      updatedAt: new Date("2023-08-09T10:04:10.263Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
+      id: "853b3879-bf51-4e06-a9bb-663afa86e34a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
+      updatedAt: new Date("2023-08-09T10:04:10.263Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
+      id: "853b3879-bf51-4e06-a9bb-663afa86e34a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
+      updatedAt: new Date("2023-08-09T10:04:10.263Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
+        id: "853b3879-bf51-4e06-a9bb-663afa86e34a",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-09T04:40:44.229Z"),
+        updatedAt: new Date("2023-08-09T10:04:10.263Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
+      id: "853b3879-bf51-4e06-a9bb-663afa86e34a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
+      updatedAt: new Date("2023-08-09T10:04:10.263Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "4be28bd8-5ab2-4b36-b1e8-f7f160124512",
+      id: "853b3879-bf51-4e06-a9bb-663afa86e34a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T04:40:44.229Z"),
+      updatedAt: new Date("2023-08-09T10:04:10.263Z"),
     },
     connectionId: "<id>",
   });
@@ -1254,6 +1254,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceGetCommerceItemvariant`](docs/sdks/itemvariant/README.md#getcommerceitemvariant) - Retrieve an itemvariant
 - [`commerceGetCommerceReservation`](docs/sdks/commerce/README.md#getcommercereservation) - Retrieve a reservation
 - [`commerceGetCommerceReservation`](docs/sdks/reservation/README.md#getcommercereservation) - Retrieve a reservation
+- [`commerceGetCommerceReturn`](docs/sdks/commerce/README.md#getcommercereturn) - Retrieve a return
+- [`commerceGetCommerceReturn`](docs/sdks/return/README.md#getcommercereturn) - Retrieve a return
 - [`commerceGetCommerceReview`](docs/sdks/commerce/README.md#getcommercereview) - Retrieve a review
 - [`commerceGetCommerceReview`](docs/sdks/review/README.md#getcommercereview) - Retrieve a review
 - [`commerceGetCommerceSaleschannel`](docs/sdks/commerce/README.md#getcommercesaleschannel) - Retrieve a saleschannel
@@ -1270,6 +1272,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceListCommerceItemvariants`](docs/sdks/itemvariant/README.md#listcommerceitemvariants) - List all itemvariants
 - [`commerceListCommerceReservations`](docs/sdks/commerce/README.md#listcommercereservations) - List all reservations
 - [`commerceListCommerceReservations`](docs/sdks/reservation/README.md#listcommercereservations) - List all reservations
+- [`commerceListCommerceReturns`](docs/sdks/commerce/README.md#listcommercereturns) - List all returns
+- [`commerceListCommerceReturns`](docs/sdks/return/README.md#listcommercereturns) - List all returns
 - [`commerceListCommerceReviews`](docs/sdks/commerce/README.md#listcommercereviews) - List all reviews
 - [`commerceListCommerceReviews`](docs/sdks/review/README.md#listcommercereviews) - List all reviews
 - [`commerceListCommerceSaleschannels`](docs/sdks/commerce/README.md#listcommercesaleschannels) - List all saleschannels

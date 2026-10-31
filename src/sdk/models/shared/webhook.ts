@@ -80,6 +80,7 @@ export const WebhookObjectType = {
   CommerceSaleschannel: "commerce_saleschannel",
   CommerceItemvariant: "commerce_itemvariant",
   CommerceReservation: "commerce_reservation",
+  CommerceReturn: "commerce_return",
   CommerceAvailability: "commerce_availability",
   VerificationPackage: "verification_package",
   VerificationRequest: "verification_request",
