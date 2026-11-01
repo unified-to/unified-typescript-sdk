@@ -31,11 +31,11 @@ async function run() {
   const result = await unifiedTo.branch.createRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "70316740-2f3d-4ae1-8fd1-a07371e36eab",
+      id: "5d789814-fe46-431d-b471-e1df622bc6f0",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-08T10:58:52.063Z"),
+      updatedAt: new Date("2020-01-08T13:44:43.159Z"),
     },
     connectionId: "<id>",
   });
@@ -66,11 +66,11 @@ async function run() {
   const res = await repoCreateRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "70316740-2f3d-4ae1-8fd1-a07371e36eab",
+      id: "5d789814-fe46-431d-b471-e1df622bc6f0",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-08T10:58:52.063Z"),
+      updatedAt: new Date("2020-01-08T13:44:43.159Z"),
     },
     connectionId: "<id>",
   });
@@ -280,11 +280,11 @@ async function run() {
   const result = await unifiedTo.branch.patchRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "e95629c6-fb8b-4dfd-be5b-0f3a7c2f7bbc",
+      id: "74bcba8c-5055-434e-a8d9-4fe78bea5d91",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-08T10:58:52.064Z"),
+      updatedAt: new Date("2020-01-08T13:44:43.160Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -316,11 +316,11 @@ async function run() {
   const res = await repoPatchRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "e95629c6-fb8b-4dfd-be5b-0f3a7c2f7bbc",
+      id: "74bcba8c-5055-434e-a8d9-4fe78bea5d91",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-08T10:58:52.064Z"),
+      updatedAt: new Date("2020-01-08T13:44:43.160Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -454,11 +454,11 @@ async function run() {
   const result = await unifiedTo.branch.updateRepoBranch({
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "e95629c6-fb8b-4dfd-be5b-0f3a7c2f7bbc",
+      id: "74bcba8c-5055-434e-a8d9-4fe78bea5d91",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-08T10:58:52.064Z"),
+      updatedAt: new Date("2020-01-08T13:44:43.160Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -490,11 +490,11 @@ async function run() {
   const res = await repoUpdateRepoBranch(unifiedTo, {
     repoBranch: {
       createdAt: new Date("2019-02-24T09:33:48.540Z"),
-      id: "e95629c6-fb8b-4dfd-be5b-0f3a7c2f7bbc",
+      id: "74bcba8c-5055-434e-a8d9-4fe78bea5d91",
       metadata: [],
       name: "transmitter-calculate",
       repoId: "<id>",
-      updatedAt: new Date("2020-01-08T10:58:52.064Z"),
+      updatedAt: new Date("2020-01-08T13:44:43.160Z"),
     },
     connectionId: "<id>",
     id: "<id>",
