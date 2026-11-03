@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyIntegrationCategories } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyIntegrationCategories = "commerce";
+let value: PropertyIntegrationCategories = "payment";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: PropertyIntegrationCategories = "commerce";
 ## Values
 
 ```typescript
-"passthrough" | "hris" | "ats" | "auth" | "saml" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | "verification" | "ads" | "analytics" | "forms" | "shipping" | "assessment" | "signing" | "clubs" | "datastore" | "cdp" | "performance" | "social" | "legal" | "compute" | "healthcare" | "property" | Unrecognized<string>
+"passthrough" | "hris" | "ats" | "auth" | "saml" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | "verification" | "ads" | "analytics" | "forms" | "shipping" | "assessment" | "signing" | "clubs" | "datastore" | "cdp" | "performance" | "social" | "legal" | "compute" | "healthcare" | "property" | "plm" | Unrecognized<string>
 ```

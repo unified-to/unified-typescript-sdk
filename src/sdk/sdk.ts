@@ -30,6 +30,7 @@ import { Bankfeedaccount } from "./bankfeedaccount.js";
 import { Bankfeedtransaction } from "./bankfeedtransaction.js";
 import { Benefit } from "./benefit.js";
 import { Bill } from "./bill.js";
+import { Bomline } from "./bomline.js";
 import { Branch } from "./branch.js";
 import { Busy } from "./busy.js";
 import { Calendar } from "./calendar.js";
@@ -134,6 +135,7 @@ import { Order } from "./order.js";
 import { Organization } from "./organization.js";
 import { Package } from "./package.js";
 import { Page } from "./page.js";
+import { Part } from "./part.js";
 import { Passthrough } from "./passthrough.js";
 import { Patient } from "./patient.js";
 import { Paycode } from "./paycode.js";
@@ -145,6 +147,7 @@ import { Payslip } from "./payslip.js";
 import { Performance } from "./performance.js";
 import { Person } from "./person.js";
 import { Pipeline } from "./pipeline.js";
+import { Plm } from "./plm.js";
 import { Post } from "./post.js";
 import { Practicearea } from "./practicearea.js";
 import { Practitioner } from "./practitioner.js";
@@ -1097,6 +1100,26 @@ export class UnifiedTo extends ClientSDK {
     return (this._feedback ??= new Feedback(this._options));
   }
 
+  private _plm?: Plm;
+  get plm(): Plm {
+    return (this._plm ??= new Plm(this._options));
+  }
+
+  private _bomline?: Bomline;
+  get bomline(): Bomline {
+    return (this._bomline ??= new Bomline(this._options));
+  }
+
+  private _change?: Change;
+  get change(): Change {
+    return (this._change ??= new Change(this._options));
+  }
+
+  private _part?: Part;
+  get part(): Part {
+    return (this._part ??= new Part(this._options));
+  }
+
   private _conversation?: Conversation;
   get conversation(): Conversation {
     return (this._conversation ??= new Conversation(this._options));
@@ -1215,11 +1238,6 @@ export class UnifiedTo extends ClientSDK {
   private _file?: FileT;
   get file(): FileT {
     return (this._file ??= new FileT(this._options));
-  }
-
-  private _change?: Change;
-  get change(): Change {
-    return (this._change ??= new Change(this._options));
   }
 
   private _ticketing?: Ticketing;

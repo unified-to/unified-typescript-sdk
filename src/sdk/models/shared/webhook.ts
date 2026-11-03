@@ -268,6 +268,11 @@ export const WebhookObjectType = {
   PropertyQuote: "property_quote",
   PropertyReview: "property_review",
   PropertyConversation: "property_conversation",
+  PlmPart: "plm_part",
+  PlmBomline: "plm_bomline",
+  PlmDocument: "plm_document",
+  PlmChange: "plm_change",
+  PlmCategory: "plm_category",
 } as const;
 /**
  * The object to return (eg. CRM "contact")

@@ -40,6 +40,12 @@ import {
   CalendarMetadata$outboundSchema,
 } from "./calendarmetadata.js";
 import {
+  CalendarReference,
+  CalendarReference$inboundSchema,
+  CalendarReference$Outbound,
+  CalendarReference$outboundSchema,
+} from "./calendarreference.js";
+import {
   PropertyCalendarEventOrganizer,
   PropertyCalendarEventOrganizer$inboundSchema,
   PropertyCalendarEventOrganizer$Outbound,
@@ -89,9 +95,9 @@ export type CalendarEvent = {
    */
   recurringEventId?: string | undefined;
   /**
-   * pointers to Calendar Rooms booked for this event
+   * Calendar Rooms booked for this event
    */
-  roomIds?: Array<string> | undefined;
+  rooms?: Array<CalendarReference> | undefined;
   sendNotifications?: boolean | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -145,7 +151,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   recurrence: z.array(CalendarEventRecurrence$inboundSchema).optional(),
   recurring_event_id: z.string().optional(),
-  room_ids: z.array(z.string()).optional(),
+  rooms: z.array(CalendarReference$inboundSchema).optional(),
   send_notifications: z.boolean().optional(),
   start_at: z.string().optional(),
   status: CalendarEventStatus$inboundSchema.optional(),
@@ -164,7 +170,6 @@ export const CalendarEvent$inboundSchema: z.ZodType<
     "is_private": "isPrivate",
     "matter_id": "matterId",
     "recurring_event_id": "recurringEventId",
-    "room_ids": "roomIds",
     "send_notifications": "sendNotifications",
     "start_at": "startAt",
     "updated_at": "updatedAt",
@@ -192,7 +197,7 @@ export type CalendarEvent$Outbound = {
   raw?: { [k: string]: any } | undefined;
   recurrence?: Array<CalendarEventRecurrence$Outbound> | undefined;
   recurring_event_id?: string | undefined;
-  room_ids?: Array<string> | undefined;
+  rooms?: Array<CalendarReference$Outbound> | undefined;
   send_notifications?: boolean | undefined;
   start_at?: string | undefined;
   status?: string | undefined;
@@ -227,7 +232,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   recurrence: z.array(CalendarEventRecurrence$outboundSchema).optional(),
   recurringEventId: z.string().optional(),
-  roomIds: z.array(z.string()).optional(),
+  rooms: z.array(CalendarReference$outboundSchema).optional(),
   sendNotifications: z.boolean().optional(),
   startAt: z.string().optional(),
   status: CalendarEventStatus$outboundSchema.optional(),
@@ -246,7 +251,6 @@ export const CalendarEvent$outboundSchema: z.ZodType<
     isPrivate: "is_private",
     matterId: "matter_id",
     recurringEventId: "recurring_event_id",
-    roomIds: "room_ids",
     sendNotifications: "send_notifications",
     startAt: "start_at",
     updatedAt: "updated_at",

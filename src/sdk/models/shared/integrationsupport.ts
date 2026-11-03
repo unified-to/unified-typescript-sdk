@@ -146,6 +146,8 @@ import {
   ListPageId$inboundSchema,
   ListParentId,
   ListParentId$inboundSchema,
+  ListPartId,
+  ListPartId$inboundSchema,
   ListPatientId,
   ListPatientId$inboundSchema,
   ListPaymentId,
@@ -312,9 +314,16 @@ import {
   VirtualWebhookBillId$inboundSchema,
   VirtualWebhookBranchId,
   VirtualWebhookBranchId$inboundSchema,
-  VirtualWebhookCalendarId,
-  VirtualWebhookCalendarId$inboundSchema,
-} from "./virtualwebhookcalendarid.js";
+} from "./virtualwebhookbranchid.js";
+
+export const VirtualWebhookCalendarId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookCalendarId = OpenEnum<
+  typeof VirtualWebhookCalendarId
+>;
 
 export const VirtualWebhookCallId = {
   SupportedRequired: "supported-required",
@@ -605,6 +614,13 @@ export const VirtualWebhookParentId = {
 } as const;
 export type VirtualWebhookParentId = OpenEnum<typeof VirtualWebhookParentId>;
 
+export const VirtualWebhookPartId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookPartId = OpenEnum<typeof VirtualWebhookPartId>;
+
 export const VirtualWebhookPatientId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -889,6 +905,7 @@ export type IntegrationSupport = {
   listPackageId?: ListPackageId | undefined;
   listPageId?: ListPageId | undefined;
   listParentId?: ListParentId | undefined;
+  listPartId?: ListPartId | undefined;
   listPatientId?: ListPatientId | undefined;
   listPaymentId?: ListPaymentId | undefined;
   listPayslipId?: ListPayslipId | undefined;
@@ -1019,6 +1036,7 @@ export type IntegrationSupport = {
   virtualWebhookOrgId?: VirtualWebhookOrgId | undefined;
   virtualWebhookPageId?: VirtualWebhookPageId | undefined;
   virtualWebhookParentId?: VirtualWebhookParentId | undefined;
+  virtualWebhookPartId?: VirtualWebhookPartId | undefined;
   virtualWebhookPatientId?: VirtualWebhookPatientId | undefined;
   virtualWebhookPaymentId?: VirtualWebhookPaymentId | undefined;
   virtualWebhookPipelineId?: VirtualWebhookPipelineId | undefined;
@@ -1049,6 +1067,13 @@ export type IntegrationSupport = {
   virtualWebhookVisitorId?: VirtualWebhookVisitorId | undefined;
   webhookEvents?: PropertyIntegrationSupportWebhookEvents | undefined;
 };
+
+/** @internal */
+export const VirtualWebhookCalendarId$inboundSchema: z.ZodType<
+  VirtualWebhookCalendarId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookCalendarId);
 
 /** @internal */
 export const VirtualWebhookCallId$inboundSchema: z.ZodType<
@@ -1324,6 +1349,13 @@ export const VirtualWebhookParentId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookParentId);
 
 /** @internal */
+export const VirtualWebhookPartId$inboundSchema: z.ZodType<
+  VirtualWebhookPartId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookPartId);
+
+/** @internal */
 export const VirtualWebhookPatientId$inboundSchema: z.ZodType<
   VirtualWebhookPatientId,
   z.ZodTypeDef,
@@ -1592,6 +1624,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_package_id: ListPackageId$inboundSchema.optional(),
   list_page_id: ListPageId$inboundSchema.optional(),
   list_parent_id: ListParentId$inboundSchema.optional(),
+  list_part_id: ListPartId$inboundSchema.optional(),
   list_patient_id: ListPatientId$inboundSchema.optional(),
   list_payment_id: ListPaymentId$inboundSchema.optional(),
   list_payslip_id: ListPayslipId$inboundSchema.optional(),
@@ -1732,6 +1765,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_org_id: VirtualWebhookOrgId$inboundSchema.optional(),
   virtual_webhook_page_id: VirtualWebhookPageId$inboundSchema.optional(),
   virtual_webhook_parent_id: VirtualWebhookParentId$inboundSchema.optional(),
+  virtual_webhook_part_id: VirtualWebhookPartId$inboundSchema.optional(),
   virtual_webhook_patient_id: VirtualWebhookPatientId$inboundSchema.optional(),
   virtual_webhook_payment_id: VirtualWebhookPaymentId$inboundSchema.optional(),
   virtual_webhook_pipeline_id: VirtualWebhookPipelineId$inboundSchema
@@ -1841,6 +1875,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_package_id": "listPackageId",
     "list_page_id": "listPageId",
     "list_parent_id": "listParentId",
+    "list_part_id": "listPartId",
     "list_patient_id": "listPatientId",
     "list_payment_id": "listPaymentId",
     "list_payslip_id": "listPayslipId",
@@ -1967,6 +2002,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_org_id": "virtualWebhookOrgId",
     "virtual_webhook_page_id": "virtualWebhookPageId",
     "virtual_webhook_parent_id": "virtualWebhookParentId",
+    "virtual_webhook_part_id": "virtualWebhookPartId",
     "virtual_webhook_patient_id": "virtualWebhookPatientId",
     "virtual_webhook_payment_id": "virtualWebhookPaymentId",
     "virtual_webhook_pipeline_id": "virtualWebhookPipelineId",

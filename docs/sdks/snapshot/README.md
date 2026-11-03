@@ -29,13 +29,13 @@ async function run() {
   const result = await unifiedTo.snapshot.createComputeSnapshot({
     computeSnapshot: {
       createdAt: new Date("2021-09-24T14:40:06.110Z"),
-      id: "f8571d8b-0261-409b-99f9-78a1c8566b05",
+      id: "06b29dbc-cbd7-452e-94ef-7dfd0b0ef38e",
       metadata: [],
       name: "snap-alius",
       sizeMb: 169984,
       status: "DELETING",
       type: "DISK",
-      updatedAt: new Date("2026-04-10T14:06:59.358Z"),
+      updatedAt: new Date("2026-04-11T10:54:57.661Z"),
     },
     connectionId: "<id>",
   });
@@ -66,13 +66,13 @@ async function run() {
   const res = await computeCreateComputeSnapshot(unifiedTo, {
     computeSnapshot: {
       createdAt: new Date("2021-09-24T14:40:06.110Z"),
-      id: "f8571d8b-0261-409b-99f9-78a1c8566b05",
+      id: "06b29dbc-cbd7-452e-94ef-7dfd0b0ef38e",
       metadata: [],
       name: "snap-alius",
       sizeMb: 169984,
       status: "DELETING",
       type: "DISK",
-      updatedAt: new Date("2026-04-10T14:06:59.358Z"),
+      updatedAt: new Date("2026-04-11T10:54:57.661Z"),
     },
     connectionId: "<id>",
   });

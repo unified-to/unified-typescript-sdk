@@ -7,8 +7,10 @@
 * [createAccountingCategory](#createaccountingcategory) - Create a category
 * [createTicketingCategory](#createticketingcategory) - Create a category
 * [getAccountingCategory](#getaccountingcategory) - Retrieve a category
+* [getPlmCategory](#getplmcategory) - Retrieve a category
 * [getTicketingCategory](#getticketingcategory) - Retrieve a category
 * [listAccountingCategories](#listaccountingcategories) - List all categories
+* [listPlmCategories](#listplmcategories) - List all categories
 * [listTicketingCategories](#listticketingcategories) - List all categories
 * [patchAccountingCategory](#patchaccountingcategory) - Update a category
 * [patchTicketingCategory](#patchticketingcategory) - Update a category
@@ -38,11 +40,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "854abfbf-c1e8-4bd6-a59c-655de03ff51c",
+      id: "4f24e093-7643-4ac0-8df9-2fc8c93f187c",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-19T14:32:02.109Z"),
+      updatedAt: new Date("2025-09-20T06:16:51.359Z"),
     },
     connectionId: "<id>",
   });
@@ -74,11 +76,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "854abfbf-c1e8-4bd6-a59c-655de03ff51c",
+      id: "4f24e093-7643-4ac0-8df9-2fc8c93f187c",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-19T14:32:02.109Z"),
+      updatedAt: new Date("2025-09-20T06:16:51.359Z"),
     },
     connectionId: "<id>",
   });
@@ -133,11 +135,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "5f6f3562-565d-4888-87c8-c5ec734485e9",
+      id: "0b53585d-e21f-4a8e-b3d5-25248e02bfe1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-24T17:29:20.300Z"),
+      updatedAt: new Date("2026-01-25T14:18:20.978Z"),
     },
     connectionId: "<id>",
   });
@@ -169,11 +171,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "5f6f3562-565d-4888-87c8-c5ec734485e9",
+      id: "0b53585d-e21f-4a8e-b3d5-25248e02bfe1",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-24T17:29:20.300Z"),
+      updatedAt: new Date("2026-01-25T14:18:20.978Z"),
     },
     connectionId: "<id>",
   });
@@ -279,6 +281,85 @@ run();
 ### Response
 
 **Promise\<[shared.AccountingCategory](../../sdk/models/shared/accountingcategory.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getPlmCategory
+
+Retrieves a single PlmCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getPlmCategory" method="get" path="/plm/{connection_id}/category/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.category.getPlmCategory({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { categoryGetPlmCategory } from "@unified-api/typescript-sdk/funcs/categoryGetPlmCategory.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await categoryGetPlmCategory(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoryGetPlmCategory failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetPlmCategoryRequest](../../sdk/models/operations/getplmcategoryrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PlmCategory](../../sdk/models/shared/plmcategory.md)\>**
 
 ### Errors
 
@@ -442,6 +523,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listPlmCategories
+
+Returns a list of PlmCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listPlmCategories" method="get" path="/plm/{connection_id}/category" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.category.listPlmCategories({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { categoryListPlmCategories } from "@unified-api/typescript-sdk/funcs/categoryListPlmCategories.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await categoryListPlmCategories(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("categoryListPlmCategories failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListPlmCategoriesRequest](../../sdk/models/operations/listplmcategoriesrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PlmCategory[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listTicketingCategories
 
 Returns a list of TicketingCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -540,11 +698,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "45331255-5890-4e89-a5d6-dc74bf0c4b54",
+      id: "71288fcb-b4c8-4025-beb3-8bc38c96fede",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-19T14:32:02.115Z"),
+      updatedAt: new Date("2025-09-20T06:16:51.369Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -577,11 +735,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "45331255-5890-4e89-a5d6-dc74bf0c4b54",
+      id: "71288fcb-b4c8-4025-beb3-8bc38c96fede",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-19T14:32:02.115Z"),
+      updatedAt: new Date("2025-09-20T06:16:51.369Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -637,11 +795,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "b0e16134-d316-489f-b0ba-f41425cb5cc8",
+      id: "ea9394ee-5a42-4431-afe9-abbf8b10b202",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-24T17:29:20.316Z"),
+      updatedAt: new Date("2026-01-25T14:18:20.997Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -674,11 +832,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "b0e16134-d316-489f-b0ba-f41425cb5cc8",
+      id: "ea9394ee-5a42-4431-afe9-abbf8b10b202",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-24T17:29:20.316Z"),
+      updatedAt: new Date("2026-01-25T14:18:20.997Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -892,11 +1050,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "45331255-5890-4e89-a5d6-dc74bf0c4b54",
+      id: "71288fcb-b4c8-4025-beb3-8bc38c96fede",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-19T14:32:02.115Z"),
+      updatedAt: new Date("2025-09-20T06:16:51.369Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -929,11 +1087,11 @@ async function run() {
     accountingCategory: {
       createdAt: new Date("2023-05-30T12:29:04.257Z"),
       description: "Textus ab thymum labore basium.",
-      id: "45331255-5890-4e89-a5d6-dc74bf0c4b54",
+      id: "71288fcb-b4c8-4025-beb3-8bc38c96fede",
       isActive: false,
       metadata: [],
       name: "Beauty",
-      updatedAt: new Date("2025-09-19T14:32:02.115Z"),
+      updatedAt: new Date("2025-09-20T06:16:51.369Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -989,11 +1147,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "b0e16134-d316-489f-b0ba-f41425cb5cc8",
+      id: "ea9394ee-5a42-4431-afe9-abbf8b10b202",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-24T17:29:20.316Z"),
+      updatedAt: new Date("2026-01-25T14:18:20.997Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1026,11 +1184,11 @@ async function run() {
     ticketingCategory: {
       createdAt: new Date("2019-10-19T22:02:51.067Z"),
       description: "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-      id: "b0e16134-d316-489f-b0ba-f41425cb5cc8",
+      id: "ea9394ee-5a42-4431-afe9-abbf8b10b202",
       isActive: true,
       metadata: [],
       name: "amicitia",
-      updatedAt: new Date("2026-01-24T17:29:20.316Z"),
+      updatedAt: new Date("2026-01-25T14:18:20.997Z"),
     },
     connectionId: "<id>",
     id: "<id>",

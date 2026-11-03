@@ -11,7 +11,7 @@ export const GetSocialPostQueryParamFields = {
   CreatedAt: "created_at",
   UpdatedAt: "updated_at",
   ProfileId: "profile_id",
-  ParentPostId: "parent_post_id",
+  ParentId: "parent_id",
   Title: "title",
   Body: "body",
   Status: "status",

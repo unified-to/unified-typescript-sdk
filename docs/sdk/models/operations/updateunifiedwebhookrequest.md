@@ -9,7 +9,7 @@ let value: UpdateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "shipping_tracking",
+    objectType: "clubs_group",
   },
   id: "<id>",
 };

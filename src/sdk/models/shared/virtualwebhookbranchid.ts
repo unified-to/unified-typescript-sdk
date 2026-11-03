@@ -468,6 +468,13 @@ export const ListParentId = {
 } as const;
 export type ListParentId = OpenEnum<typeof ListParentId>;
 
+export const ListPartId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListPartId = OpenEnum<typeof ListPartId>;
+
 export const ListPatientId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1057,15 +1064,6 @@ export const VirtualWebhookBranchId = {
 } as const;
 export type VirtualWebhookBranchId = OpenEnum<typeof VirtualWebhookBranchId>;
 
-export const VirtualWebhookCalendarId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookCalendarId = OpenEnum<
-  typeof VirtualWebhookCalendarId
->;
-
 /** @internal */
 export const FromWebhook$inboundSchema: z.ZodType<
   FromWebhook,
@@ -1527,6 +1525,13 @@ export const ListParentId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListParentId);
+
+/** @internal */
+export const ListPartId$inboundSchema: z.ZodType<
+  ListPartId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListPartId);
 
 /** @internal */
 export const ListPatientId$inboundSchema: z.ZodType<
@@ -2108,10 +2113,3 @@ export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookBranchId);
-
-/** @internal */
-export const VirtualWebhookCalendarId$inboundSchema: z.ZodType<
-  VirtualWebhookCalendarId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookCalendarId);

@@ -7,23 +7,28 @@
 * [createAtsDocument](#createatsdocument) - Create a document
 * [createHealthcareDocument](#createhealthcaredocument) - Create a document
 * [createHrisDocument](#createhrisdocument) - Create a document
+* [createPlmDocument](#createplmdocument) - Create a document
 * [createSigningDocument](#createsigningdocument) - Create a document
 * [getAtsDocument](#getatsdocument) - Retrieve a document
 * [getHealthcareDocument](#gethealthcaredocument) - Retrieve a document
 * [getHrisDocument](#gethrisdocument) - Retrieve a document
+* [getPlmDocument](#getplmdocument) - Retrieve a document
 * [getSigningDocument](#getsigningdocument) - Retrieve a document
 * [listAtsDocuments](#listatsdocuments) - List all documents
 * [listHealthcareDocuments](#listhealthcaredocuments) - List all documents
 * [listHrisDocuments](#listhrisdocuments) - List all documents
+* [listPlmDocuments](#listplmdocuments) - List all documents
 * [listSigningDocuments](#listsigningdocuments) - List all documents
 * [patchAtsDocument](#patchatsdocument) - Update a document
 * [patchHrisDocument](#patchhrisdocument) - Update a document
+* [patchPlmDocument](#patchplmdocument) - Update a document
 * [patchSigningDocument](#patchsigningdocument) - Update a document
 * [removeAtsDocument](#removeatsdocument) - Remove a document
 * [removeHrisDocument](#removehrisdocument) - Remove a document
 * [removeSigningDocument](#removesigningdocument) - Remove a document
 * [updateAtsDocument](#updateatsdocument) - Update a document
 * [updateHrisDocument](#updatehrisdocument) - Update a document
+* [updatePlmDocument](#updateplmdocument) - Update a document
 * [updateSigningDocument](#updatesigningdocument) - Update a document
 
 ## createAtsDocument
@@ -48,10 +53,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0125d3f5-eb07-4b0a-bdfb-a68811e7d10a",
+      id: "02b6943d-b386-4f03-9b4d-ab0a8ab3c7a1",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-10T05:25:20.213Z"),
+      updatedAt: new Date("2022-12-10T11:17:25.233Z"),
     },
     connectionId: "<id>",
   });
@@ -84,10 +89,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "0125d3f5-eb07-4b0a-bdfb-a68811e7d10a",
+      id: "02b6943d-b386-4f03-9b4d-ab0a8ab3c7a1",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-10T05:25:20.213Z"),
+      updatedAt: new Date("2022-12-10T11:17:25.233Z"),
     },
     connectionId: "<id>",
   });
@@ -151,13 +156,13 @@ async function run() {
       createdAt: new Date("2023-07-16T04:00:25.853Z"),
       documentUrl: "https://overcooked-yogurt.org",
       filename: "ugh_after.elc",
-      id: "e39e3600-1af4-47d8-95ff-772d92a10f6d",
+      id: "80a635e6-8c5e-48d1-9e17-1fca96ff37e8",
       metadata: [],
       mimeType: "application/pdf",
       name: "History and physical",
       status: "SUPERSEDED",
       type: "CONSULTATION_NOTE",
-      updatedAt: new Date("2025-01-01T02:36:21.344Z"),
+      updatedAt: new Date("2025-01-01T12:59:03.351Z"),
     },
     connectionId: "<id>",
   });
@@ -198,13 +203,13 @@ async function run() {
       createdAt: new Date("2023-07-16T04:00:25.853Z"),
       documentUrl: "https://overcooked-yogurt.org",
       filename: "ugh_after.elc",
-      id: "e39e3600-1af4-47d8-95ff-772d92a10f6d",
+      id: "80a635e6-8c5e-48d1-9e17-1fca96ff37e8",
       metadata: [],
       mimeType: "application/pdf",
       name: "History and physical",
       status: "SUPERSEDED",
       type: "CONSULTATION_NOTE",
-      updatedAt: new Date("2025-01-01T02:36:21.344Z"),
+      updatedAt: new Date("2025-01-01T12:59:03.351Z"),
     },
     connectionId: "<id>",
   });
@@ -260,10 +265,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "c5729f8c-fcf1-483a-9c34-44edc657a2bc",
+      id: "d06b9321-b8ce-4aaf-8608-f639983c8314",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-20T12:20:09.309Z"),
+      updatedAt: new Date("2025-10-21T05:41:38.613Z"),
     },
     connectionId: "<id>",
   });
@@ -296,10 +301,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "c5729f8c-fcf1-483a-9c34-44edc657a2bc",
+      id: "d06b9321-b8ce-4aaf-8608-f639983c8314",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-20T12:20:09.309Z"),
+      updatedAt: new Date("2025-10-21T05:41:38.613Z"),
     },
     connectionId: "<id>",
   });
@@ -333,6 +338,115 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## createPlmDocument
+
+Creates a PlmDocument. Provide the unified PlmDocument fields in the request body; they are mapped to the provider's API. Returns the created PlmDocument.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createPlmDocument" method="post" path="/plm/{connection_id}/document" example="plm_document" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.document.createPlmDocument({
+    plmDocument: {
+      createdAt: new Date("2020-10-16T01:44:30.293Z"),
+      fileIds: [],
+      id: "e1661071-e8e2-4e71-a04d-4328d0496840",
+      lifecycleState: "Under Review",
+      masterIdentifier: "779d51bc-b54b-4c04-91ad-5a2164ea907e",
+      metadata: [],
+      name: "Procedure taxicab",
+      number: "DOC-086886",
+      originalType: "Procedure",
+      revision: "C",
+      status: "IN_REVIEW",
+      type: "PROCEDURE",
+      updatedAt: new Date("2026-08-28T11:15:16.798Z"),
+      url: "https://uncommon-guide.info/",
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { documentCreatePlmDocument } from "@unified-api/typescript-sdk/funcs/documentCreatePlmDocument.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await documentCreatePlmDocument(unifiedTo, {
+    plmDocument: {
+      createdAt: new Date("2020-10-16T01:44:30.293Z"),
+      fileIds: [],
+      id: "e1661071-e8e2-4e71-a04d-4328d0496840",
+      lifecycleState: "Under Review",
+      masterIdentifier: "779d51bc-b54b-4c04-91ad-5a2164ea907e",
+      metadata: [],
+      name: "Procedure taxicab",
+      number: "DOC-086886",
+      originalType: "Procedure",
+      revision: "C",
+      status: "IN_REVIEW",
+      type: "PROCEDURE",
+      updatedAt: new Date("2026-08-28T11:15:16.798Z"),
+      url: "https://uncommon-guide.info/",
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentCreatePlmDocument failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreatePlmDocumentRequest](../../sdk/models/operations/createplmdocumentrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PlmDocument](../../sdk/models/shared/plmdocument.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## createSigningDocument
 
 Creates a SigningDocument. Provide the unified SigningDocument fields in the request body; they are mapped to the provider's API. Returns the created SigningDocument.
@@ -355,12 +469,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "db5d5fd1-49c5-4b8e-a7fb-ff7aa404a778",
+      id: "4d1a7a4d-d098-425f-ba99-7a61681dc795",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-07-02T01:12:18.778Z"),
+      sentAt: new Date("2022-07-02T06:09:22.435Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-12T11:19:19.877Z"),
+      updatedAt: new Date("2025-09-13T05:51:49.914Z"),
     },
     connectionId: "<id>",
   });
@@ -393,12 +507,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "db5d5fd1-49c5-4b8e-a7fb-ff7aa404a778",
+      id: "4d1a7a4d-d098-425f-ba99-7a61681dc795",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-07-02T01:12:18.778Z"),
+      sentAt: new Date("2022-07-02T06:09:22.435Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-12T11:19:19.877Z"),
+      updatedAt: new Date("2025-09-13T05:51:49.914Z"),
     },
     connectionId: "<id>",
   });
@@ -662,6 +776,85 @@ run();
 ### Response
 
 **Promise\<[shared.HrisDocument](../../sdk/models/shared/hrisdocument.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getPlmDocument
+
+Retrieves a single PlmDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getPlmDocument" method="get" path="/plm/{connection_id}/document/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.document.getPlmDocument({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { documentGetPlmDocument } from "@unified-api/typescript-sdk/funcs/documentGetPlmDocument.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await documentGetPlmDocument(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentGetPlmDocument failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetPlmDocumentRequest](../../sdk/models/operations/getplmdocumentrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PlmDocument](../../sdk/models/shared/plmdocument.md)\>**
 
 ### Errors
 
@@ -979,6 +1172,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listPlmDocuments
+
+Returns a list of PlmDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listPlmDocuments" method="get" path="/plm/{connection_id}/document" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.document.listPlmDocuments({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { documentListPlmDocuments } from "@unified-api/typescript-sdk/funcs/documentListPlmDocuments.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await documentListPlmDocuments(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentListPlmDocuments failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListPlmDocumentsRequest](../../sdk/models/operations/listplmdocumentsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PlmDocument[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listSigningDocuments
 
 Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -1078,10 +1348,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "5de6452a-e882-4644-af6c-2446d76ec49b",
+      id: "3b0b18fd-193c-413d-9baf-6882546023d1",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-10T05:25:20.217Z"),
+      updatedAt: new Date("2022-12-10T11:17:25.235Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1115,10 +1385,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "5de6452a-e882-4644-af6c-2446d76ec49b",
+      id: "3b0b18fd-193c-413d-9baf-6882546023d1",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-10T05:25:20.217Z"),
+      updatedAt: new Date("2022-12-10T11:17:25.235Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1175,10 +1445,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "cf2f1399-8078-42f2-92e4-38adae668316",
+      id: "6883342e-75f9-4f84-b17b-7e5b3f3a8a76",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-20T12:20:09.317Z"),
+      updatedAt: new Date("2025-10-21T05:41:38.621Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1212,10 +1482,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "cf2f1399-8078-42f2-92e4-38adae668316",
+      id: "6883342e-75f9-4f84-b17b-7e5b3f3a8a76",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-20T12:20:09.317Z"),
+      updatedAt: new Date("2025-10-21T05:41:38.621Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1250,6 +1520,117 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchPlmDocument
+
+Updates the PlmDocument identified by `id`. Provide the unified PlmDocument fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchPlmDocument" method="patch" path="/plm/{connection_id}/document/{id}" example="plm_document" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.document.patchPlmDocument({
+    plmDocument: {
+      createdAt: new Date("2020-10-16T01:44:30.293Z"),
+      fileIds: [],
+      id: "ee2677bc-3524-44c8-afc0-d8cb1e2b1c48",
+      lifecycleState: "Under Review",
+      masterIdentifier: "4010f891-3378-4d60-bdab-0f27b6ada0e5",
+      metadata: [],
+      name: "Procedure taxicab",
+      number: "DOC-086886",
+      originalType: "Procedure",
+      revision: "C",
+      status: "IN_REVIEW",
+      type: "PROCEDURE",
+      updatedAt: new Date("2026-08-28T11:15:16.819Z"),
+      url: "https://uncommon-guide.info/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { documentPatchPlmDocument } from "@unified-api/typescript-sdk/funcs/documentPatchPlmDocument.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await documentPatchPlmDocument(unifiedTo, {
+    plmDocument: {
+      createdAt: new Date("2020-10-16T01:44:30.293Z"),
+      fileIds: [],
+      id: "ee2677bc-3524-44c8-afc0-d8cb1e2b1c48",
+      lifecycleState: "Under Review",
+      masterIdentifier: "4010f891-3378-4d60-bdab-0f27b6ada0e5",
+      metadata: [],
+      name: "Procedure taxicab",
+      number: "DOC-086886",
+      originalType: "Procedure",
+      revision: "C",
+      status: "IN_REVIEW",
+      type: "PROCEDURE",
+      updatedAt: new Date("2026-08-28T11:15:16.819Z"),
+      url: "https://uncommon-guide.info/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentPatchPlmDocument failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchPlmDocumentRequest](../../sdk/models/operations/patchplmdocumentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PlmDocument](../../sdk/models/shared/plmdocument.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchSigningDocument
 
 Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
@@ -1272,12 +1653,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "979442bf-8335-452a-9025-bcf0f69a7b6e",
+      id: "51c6227d-15c3-4fea-9686-2979e6206039",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-07-02T01:12:18.782Z"),
+      sentAt: new Date("2022-07-02T06:09:22.439Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-12T11:19:19.891Z"),
+      updatedAt: new Date("2025-09-13T05:51:49.926Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1311,12 +1692,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "979442bf-8335-452a-9025-bcf0f69a7b6e",
+      id: "51c6227d-15c3-4fea-9686-2979e6206039",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-07-02T01:12:18.782Z"),
+      sentAt: new Date("2022-07-02T06:09:22.439Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-12T11:19:19.891Z"),
+      updatedAt: new Date("2025-09-13T05:51:49.926Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1610,10 +1991,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "5de6452a-e882-4644-af6c-2446d76ec49b",
+      id: "3b0b18fd-193c-413d-9baf-6882546023d1",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-10T05:25:20.217Z"),
+      updatedAt: new Date("2022-12-10T11:17:25.235Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1647,10 +2028,10 @@ async function run() {
       createdAt: new Date("2021-08-20T08:00:27.437Z"),
       documentUrl: "https://vengeful-lashes.biz",
       filename: "lonzo_schowalter_resume.pdf",
-      id: "5de6452a-e882-4644-af6c-2446d76ec49b",
+      id: "3b0b18fd-193c-413d-9baf-6882546023d1",
       metadata: [],
       type: "COVER_LETTER",
-      updatedAt: new Date("2022-12-10T05:25:20.217Z"),
+      updatedAt: new Date("2022-12-10T11:17:25.235Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1707,10 +2088,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "cf2f1399-8078-42f2-92e4-38adae668316",
+      id: "6883342e-75f9-4f84-b17b-7e5b3f3a8a76",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-20T12:20:09.317Z"),
+      updatedAt: new Date("2025-10-21T05:41:38.621Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1744,10 +2125,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "cf2f1399-8078-42f2-92e4-38adae668316",
+      id: "6883342e-75f9-4f84-b17b-7e5b3f3a8a76",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-20T12:20:09.317Z"),
+      updatedAt: new Date("2025-10-21T05:41:38.621Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1782,6 +2163,117 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updatePlmDocument
+
+Updates the PlmDocument identified by `id`. Provide the unified PlmDocument fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updatePlmDocument" method="put" path="/plm/{connection_id}/document/{id}" example="plm_document" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.document.updatePlmDocument({
+    plmDocument: {
+      createdAt: new Date("2020-10-16T01:44:30.293Z"),
+      fileIds: [],
+      id: "ee2677bc-3524-44c8-afc0-d8cb1e2b1c48",
+      lifecycleState: "Under Review",
+      masterIdentifier: "4010f891-3378-4d60-bdab-0f27b6ada0e5",
+      metadata: [],
+      name: "Procedure taxicab",
+      number: "DOC-086886",
+      originalType: "Procedure",
+      revision: "C",
+      status: "IN_REVIEW",
+      type: "PROCEDURE",
+      updatedAt: new Date("2026-08-28T11:15:16.819Z"),
+      url: "https://uncommon-guide.info/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { documentUpdatePlmDocument } from "@unified-api/typescript-sdk/funcs/documentUpdatePlmDocument.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await documentUpdatePlmDocument(unifiedTo, {
+    plmDocument: {
+      createdAt: new Date("2020-10-16T01:44:30.293Z"),
+      fileIds: [],
+      id: "ee2677bc-3524-44c8-afc0-d8cb1e2b1c48",
+      lifecycleState: "Under Review",
+      masterIdentifier: "4010f891-3378-4d60-bdab-0f27b6ada0e5",
+      metadata: [],
+      name: "Procedure taxicab",
+      number: "DOC-086886",
+      originalType: "Procedure",
+      revision: "C",
+      status: "IN_REVIEW",
+      type: "PROCEDURE",
+      updatedAt: new Date("2026-08-28T11:15:16.819Z"),
+      url: "https://uncommon-guide.info/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("documentUpdatePlmDocument failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdatePlmDocumentRequest](../../sdk/models/operations/updateplmdocumentrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PlmDocument](../../sdk/models/shared/plmdocument.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateSigningDocument
 
 Updates the SigningDocument identified by `id`. Provide the unified SigningDocument fields to change in the request body.
@@ -1804,12 +2296,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "979442bf-8335-452a-9025-bcf0f69a7b6e",
+      id: "51c6227d-15c3-4fea-9686-2979e6206039",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-07-02T01:12:18.782Z"),
+      sentAt: new Date("2022-07-02T06:09:22.439Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-12T11:19:19.891Z"),
+      updatedAt: new Date("2025-09-13T05:51:49.926Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1843,12 +2335,12 @@ async function run() {
       createdAt: new Date("2021-05-02T09:35:23.679Z"),
       description: "Aer asporto caste umbra coerceo anser color allatus aestas perspiciatis.",
       expiresAt: new Date("2021-06-04T01:21:34.949Z"),
-      id: "979442bf-8335-452a-9025-bcf0f69a7b6e",
+      id: "51c6227d-15c3-4fea-9686-2979e6206039",
       metadata: [],
       name: "Denesik Group NDA",
-      sentAt: new Date("2022-07-02T01:12:18.782Z"),
+      sentAt: new Date("2022-07-02T06:09:22.439Z"),
       status: "DRAFT",
-      updatedAt: new Date("2025-09-12T11:19:19.891Z"),
+      updatedAt: new Date("2025-09-13T05:51:49.926Z"),
     },
     connectionId: "<id>",
     id: "<id>",

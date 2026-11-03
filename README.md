@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "cd28e259-8abd-47c0-aff2-091155e4d01a",
+      id: "2e724077-88d7-4366-ba1a-611261e21271",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T23:01:02.560Z"),
+      updatedAt: new Date("2023-08-10T04:57:33.594Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "cd28e259-8abd-47c0-aff2-091155e4d01a",
+      id: "2e724077-88d7-4366-ba1a-611261e21271",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T23:01:02.560Z"),
+      updatedAt: new Date("2023-08-10T04:57:33.594Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "cd28e259-8abd-47c0-aff2-091155e4d01a",
+      id: "2e724077-88d7-4366-ba1a-611261e21271",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T23:01:02.560Z"),
+      updatedAt: new Date("2023-08-10T04:57:33.594Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "cd28e259-8abd-47c0-aff2-091155e4d01a",
+        id: "2e724077-88d7-4366-ba1a-611261e21271",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-09T23:01:02.560Z"),
+        updatedAt: new Date("2023-08-10T04:57:33.594Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "cd28e259-8abd-47c0-aff2-091155e4d01a",
+      id: "2e724077-88d7-4366-ba1a-611261e21271",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T23:01:02.560Z"),
+      updatedAt: new Date("2023-08-10T04:57:33.594Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "cd28e259-8abd-47c0-aff2-091155e4d01a",
+      id: "2e724077-88d7-4366-ba1a-611261e21271",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-09T23:01:02.560Z"),
+      updatedAt: new Date("2023-08-10T04:57:33.594Z"),
     },
     connectionId: "<id>",
   });
@@ -1132,8 +1132,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`campaignUpdateMartechCampaign`](docs/sdks/martech/README.md#updatemartechcampaign) - Update a campaign
 - [`categoryCreateTicketingCategory`](docs/sdks/category/README.md#createticketingcategory) - Create a category
 - [`categoryCreateTicketingCategory`](docs/sdks/ticketing/README.md#createticketingcategory) - Create a category
+- [`categoryGetPlmCategory`](docs/sdks/category/README.md#getplmcategory) - Retrieve a category
+- [`categoryGetPlmCategory`](docs/sdks/plm/README.md#getplmcategory) - Retrieve a category
 - [`categoryGetTicketingCategory`](docs/sdks/category/README.md#getticketingcategory) - Retrieve a category
 - [`categoryGetTicketingCategory`](docs/sdks/ticketing/README.md#getticketingcategory) - Retrieve a category
+- [`categoryListPlmCategories`](docs/sdks/category/README.md#listplmcategories) - List all categories
+- [`categoryListPlmCategories`](docs/sdks/plm/README.md#listplmcategories) - List all categories
 - [`categoryListTicketingCategories`](docs/sdks/category/README.md#listticketingcategories) - List all categories
 - [`categoryListTicketingCategories`](docs/sdks/ticketing/README.md#listticketingcategories) - List all categories
 - [`categoryPatchTicketingCategory`](docs/sdks/category/README.md#patchticketingcategory) - Update a category
@@ -1564,22 +1568,30 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`documentCreateHealthcareDocument`](docs/sdks/healthcare/README.md#createhealthcaredocument) - Create a document
 - [`documentCreateHrisDocument`](docs/sdks/document/README.md#createhrisdocument) - Create a document
 - [`documentCreateHrisDocument`](docs/sdks/hris/README.md#createhrisdocument) - Create a document
+- [`documentCreatePlmDocument`](docs/sdks/document/README.md#createplmdocument) - Create a document
+- [`documentCreatePlmDocument`](docs/sdks/plm/README.md#createplmdocument) - Create a document
 - [`documentCreateSigningDocument`](docs/sdks/document/README.md#createsigningdocument) - Create a document
 - [`documentCreateSigningDocument`](docs/sdks/signing/README.md#createsigningdocument) - Create a document
 - [`documentGetHealthcareDocument`](docs/sdks/document/README.md#gethealthcaredocument) - Retrieve a document
 - [`documentGetHealthcareDocument`](docs/sdks/healthcare/README.md#gethealthcaredocument) - Retrieve a document
 - [`documentGetHrisDocument`](docs/sdks/document/README.md#gethrisdocument) - Retrieve a document
 - [`documentGetHrisDocument`](docs/sdks/hris/README.md#gethrisdocument) - Retrieve a document
+- [`documentGetPlmDocument`](docs/sdks/document/README.md#getplmdocument) - Retrieve a document
+- [`documentGetPlmDocument`](docs/sdks/plm/README.md#getplmdocument) - Retrieve a document
 - [`documentGetSigningDocument`](docs/sdks/document/README.md#getsigningdocument) - Retrieve a document
 - [`documentGetSigningDocument`](docs/sdks/signing/README.md#getsigningdocument) - Retrieve a document
 - [`documentListHealthcareDocuments`](docs/sdks/document/README.md#listhealthcaredocuments) - List all documents
 - [`documentListHealthcareDocuments`](docs/sdks/healthcare/README.md#listhealthcaredocuments) - List all documents
 - [`documentListHrisDocuments`](docs/sdks/document/README.md#listhrisdocuments) - List all documents
 - [`documentListHrisDocuments`](docs/sdks/hris/README.md#listhrisdocuments) - List all documents
+- [`documentListPlmDocuments`](docs/sdks/document/README.md#listplmdocuments) - List all documents
+- [`documentListPlmDocuments`](docs/sdks/plm/README.md#listplmdocuments) - List all documents
 - [`documentListSigningDocuments`](docs/sdks/document/README.md#listsigningdocuments) - List all documents
 - [`documentListSigningDocuments`](docs/sdks/signing/README.md#listsigningdocuments) - List all documents
 - [`documentPatchHrisDocument`](docs/sdks/document/README.md#patchhrisdocument) - Update a document
 - [`documentPatchHrisDocument`](docs/sdks/hris/README.md#patchhrisdocument) - Update a document
+- [`documentPatchPlmDocument`](docs/sdks/document/README.md#patchplmdocument) - Update a document
+- [`documentPatchPlmDocument`](docs/sdks/plm/README.md#patchplmdocument) - Update a document
 - [`documentPatchSigningDocument`](docs/sdks/document/README.md#patchsigningdocument) - Update a document
 - [`documentPatchSigningDocument`](docs/sdks/signing/README.md#patchsigningdocument) - Update a document
 - [`documentRemoveHrisDocument`](docs/sdks/document/README.md#removehrisdocument) - Remove a document
@@ -1588,6 +1600,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`documentRemoveSigningDocument`](docs/sdks/signing/README.md#removesigningdocument) - Remove a document
 - [`documentUpdateHrisDocument`](docs/sdks/document/README.md#updatehrisdocument) - Update a document
 - [`documentUpdateHrisDocument`](docs/sdks/hris/README.md#updatehrisdocument) - Update a document
+- [`documentUpdatePlmDocument`](docs/sdks/document/README.md#updateplmdocument) - Update a document
+- [`documentUpdatePlmDocument`](docs/sdks/plm/README.md#updateplmdocument) - Update a document
 - [`documentUpdateSigningDocument`](docs/sdks/document/README.md#updatesigningdocument) - Update a document
 - [`documentUpdateSigningDocument`](docs/sdks/signing/README.md#updatesigningdocument) - Update a document
 - [`enrichListEnrichPeople`](docs/sdks/enrich/README.md#listenrichpeople) - Retrieve enrichment information for a person
@@ -2280,6 +2294,38 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`performanceListPerformanceCycles`](docs/sdks/performance/README.md#listperformancecycles) - List all cycles
 - [`performanceListPerformanceFeedbacks`](docs/sdks/feedback/README.md#listperformancefeedbacks) - List all feedbacks
 - [`performanceListPerformanceFeedbacks`](docs/sdks/performance/README.md#listperformancefeedbacks) - List all feedbacks
+- [`plmCreatePlmBomline`](docs/sdks/bomline/README.md#createplmbomline) - Create a bomline
+- [`plmCreatePlmBomline`](docs/sdks/plm/README.md#createplmbomline) - Create a bomline
+- [`plmCreatePlmChange`](docs/sdks/change/README.md#createplmchange) - Create a change
+- [`plmCreatePlmChange`](docs/sdks/plm/README.md#createplmchange) - Create a change
+- [`plmCreatePlmPart`](docs/sdks/part/README.md#createplmpart) - Create a part
+- [`plmCreatePlmPart`](docs/sdks/plm/README.md#createplmpart) - Create a part
+- [`plmGetPlmBomline`](docs/sdks/bomline/README.md#getplmbomline) - Retrieve a bomline
+- [`plmGetPlmBomline`](docs/sdks/plm/README.md#getplmbomline) - Retrieve a bomline
+- [`plmGetPlmChange`](docs/sdks/change/README.md#getplmchange) - Retrieve a change
+- [`plmGetPlmChange`](docs/sdks/plm/README.md#getplmchange) - Retrieve a change
+- [`plmGetPlmPart`](docs/sdks/part/README.md#getplmpart) - Retrieve a part
+- [`plmGetPlmPart`](docs/sdks/plm/README.md#getplmpart) - Retrieve a part
+- [`plmListPlmBomlines`](docs/sdks/bomline/README.md#listplmbomlines) - List all bomlines
+- [`plmListPlmBomlines`](docs/sdks/plm/README.md#listplmbomlines) - List all bomlines
+- [`plmListPlmChanges`](docs/sdks/change/README.md#listplmchanges) - List all changes
+- [`plmListPlmChanges`](docs/sdks/plm/README.md#listplmchanges) - List all changes
+- [`plmListPlmParts`](docs/sdks/part/README.md#listplmparts) - List all parts
+- [`plmListPlmParts`](docs/sdks/plm/README.md#listplmparts) - List all parts
+- [`plmPatchPlmBomline`](docs/sdks/bomline/README.md#patchplmbomline) - Update a bomline
+- [`plmPatchPlmBomline`](docs/sdks/plm/README.md#patchplmbomline) - Update a bomline
+- [`plmPatchPlmChange`](docs/sdks/change/README.md#patchplmchange) - Update a change
+- [`plmPatchPlmChange`](docs/sdks/plm/README.md#patchplmchange) - Update a change
+- [`plmPatchPlmPart`](docs/sdks/part/README.md#patchplmpart) - Update a part
+- [`plmPatchPlmPart`](docs/sdks/plm/README.md#patchplmpart) - Update a part
+- [`plmRemovePlmBomline`](docs/sdks/bomline/README.md#removeplmbomline) - Remove a bomline
+- [`plmRemovePlmBomline`](docs/sdks/plm/README.md#removeplmbomline) - Remove a bomline
+- [`plmUpdatePlmBomline`](docs/sdks/bomline/README.md#updateplmbomline) - Update a bomline
+- [`plmUpdatePlmBomline`](docs/sdks/plm/README.md#updateplmbomline) - Update a bomline
+- [`plmUpdatePlmChange`](docs/sdks/change/README.md#updateplmchange) - Update a change
+- [`plmUpdatePlmChange`](docs/sdks/plm/README.md#updateplmchange) - Update a change
+- [`plmUpdatePlmPart`](docs/sdks/part/README.md#updateplmpart) - Update a part
+- [`plmUpdatePlmPart`](docs/sdks/plm/README.md#updateplmpart) - Update a part
 - [`profileGetSocialProfile`](docs/sdks/profile/README.md#getsocialprofile) - Retrieve a profile
 - [`profileGetSocialProfile`](docs/sdks/social/README.md#getsocialprofile) - Retrieve a profile
 - [`profileListSocialProfiles`](docs/sdks/profile/README.md#listsocialprofiles) - List all profiles

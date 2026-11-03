@@ -10,18 +10,23 @@ import { atsRemoveAtsDocument } from "../funcs/atsRemoveAtsDocument.js";
 import { atsUpdateAtsDocument } from "../funcs/atsUpdateAtsDocument.js";
 import { documentCreateHealthcareDocument } from "../funcs/documentCreateHealthcareDocument.js";
 import { documentCreateHrisDocument } from "../funcs/documentCreateHrisDocument.js";
+import { documentCreatePlmDocument } from "../funcs/documentCreatePlmDocument.js";
 import { documentCreateSigningDocument } from "../funcs/documentCreateSigningDocument.js";
 import { documentGetHealthcareDocument } from "../funcs/documentGetHealthcareDocument.js";
 import { documentGetHrisDocument } from "../funcs/documentGetHrisDocument.js";
+import { documentGetPlmDocument } from "../funcs/documentGetPlmDocument.js";
 import { documentGetSigningDocument } from "../funcs/documentGetSigningDocument.js";
 import { documentListHealthcareDocuments } from "../funcs/documentListHealthcareDocuments.js";
 import { documentListHrisDocuments } from "../funcs/documentListHrisDocuments.js";
+import { documentListPlmDocuments } from "../funcs/documentListPlmDocuments.js";
 import { documentListSigningDocuments } from "../funcs/documentListSigningDocuments.js";
 import { documentPatchHrisDocument } from "../funcs/documentPatchHrisDocument.js";
+import { documentPatchPlmDocument } from "../funcs/documentPatchPlmDocument.js";
 import { documentPatchSigningDocument } from "../funcs/documentPatchSigningDocument.js";
 import { documentRemoveHrisDocument } from "../funcs/documentRemoveHrisDocument.js";
 import { documentRemoveSigningDocument } from "../funcs/documentRemoveSigningDocument.js";
 import { documentUpdateHrisDocument } from "../funcs/documentUpdateHrisDocument.js";
+import { documentUpdatePlmDocument } from "../funcs/documentUpdatePlmDocument.js";
 import { documentUpdateSigningDocument } from "../funcs/documentUpdateSigningDocument.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -74,6 +79,23 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisDocument> {
     return unwrapAsync(documentCreateHrisDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a document
+   *
+   * @remarks
+   * Creates a PlmDocument. Provide the unified PlmDocument fields in the request body; they are mapped to the provider's API. Returns the created PlmDocument.
+   */
+  async createPlmDocument(
+    request: operations.CreatePlmDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PlmDocument> {
+    return unwrapAsync(documentCreatePlmDocument(
       this,
       request,
       options,
@@ -152,6 +174,23 @@ export class Document extends ClientSDK {
    * Retrieve a document
    *
    * @remarks
+   * Retrieves a single PlmDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPlmDocument(
+    request: operations.GetPlmDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PlmDocument> {
+    return unwrapAsync(documentGetPlmDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a document
+   *
+   * @remarks
    * Retrieves a single SigningDocument by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSigningDocument(
@@ -220,6 +259,23 @@ export class Document extends ClientSDK {
    * List all documents
    *
    * @remarks
+   * Returns a list of PlmDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPlmDocuments(
+    request: operations.ListPlmDocumentsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PlmDocument>> {
+    return unwrapAsync(documentListPlmDocuments(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all documents
+   *
+   * @remarks
    * Returns a list of SigningDocuments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
    */
   async listSigningDocuments(
@@ -261,6 +317,23 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisDocument> {
     return unwrapAsync(documentPatchHrisDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a document
+   *
+   * @remarks
+   * Updates the PlmDocument identified by `id`. Provide the unified PlmDocument fields to change in the request body.
+   */
+  async patchPlmDocument(
+    request: operations.PatchPlmDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PlmDocument> {
+    return unwrapAsync(documentPatchPlmDocument(
       this,
       request,
       options,
@@ -363,6 +436,23 @@ export class Document extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisDocument> {
     return unwrapAsync(documentUpdateHrisDocument(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a document
+   *
+   * @remarks
+   * Updates the PlmDocument identified by `id`. Provide the unified PlmDocument fields to change in the request body.
+   */
+  async updatePlmDocument(
+    request: operations.UpdatePlmDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PlmDocument> {
+    return unwrapAsync(documentUpdatePlmDocument(
       this,
       request,
       options,

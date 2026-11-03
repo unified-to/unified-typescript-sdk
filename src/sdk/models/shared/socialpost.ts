@@ -103,7 +103,7 @@ export type SocialPost = {
   /**
    * The post this one replies to or references
    */
-  parentPostId?: string | undefined;
+  parentId?: string | undefined;
   /**
    * The social profile (page/handle/listing) that owns this post
    */
@@ -179,7 +179,7 @@ export const SocialPost$inboundSchema: z.ZodType<
   media: z.array(SocialMedia$inboundSchema).optional(),
   metadata: z.array(SocialMetadata$inboundSchema).optional(),
   metrics: PropertySocialPostMetrics$inboundSchema.optional(),
-  parent_post_id: z.string().optional(),
+  parent_id: z.string().optional(),
   profile_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   scheduled_at: z.string().datetime({ offset: true }).transform(v =>
@@ -195,7 +195,7 @@ export const SocialPost$inboundSchema: z.ZodType<
   return remap$(v, {
     "call_to_action": "callToAction",
     "created_at": "createdAt",
-    "parent_post_id": "parentPostId",
+    "parent_id": "parentId",
     "profile_id": "profileId",
     "scheduled_at": "scheduledAt",
     "updated_at": "updatedAt",
@@ -211,7 +211,7 @@ export type SocialPost$Outbound = {
   media?: Array<SocialMedia$Outbound> | undefined;
   metadata?: Array<SocialMetadata$Outbound> | undefined;
   metrics?: PropertySocialPostMetrics$Outbound | undefined;
-  parent_post_id?: string | undefined;
+  parent_id?: string | undefined;
   profile_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   scheduled_at?: string | undefined;
@@ -236,7 +236,7 @@ export const SocialPost$outboundSchema: z.ZodType<
   media: z.array(SocialMedia$outboundSchema).optional(),
   metadata: z.array(SocialMetadata$outboundSchema).optional(),
   metrics: PropertySocialPostMetrics$outboundSchema.optional(),
-  parentPostId: z.string().optional(),
+  parentId: z.string().optional(),
   profileId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   scheduledAt: z.date().transform(v => v.toISOString()).optional(),
@@ -249,7 +249,7 @@ export const SocialPost$outboundSchema: z.ZodType<
   return remap$(v, {
     callToAction: "call_to_action",
     createdAt: "created_at",
-    parentPostId: "parent_post_id",
+    parentId: "parent_id",
     profileId: "profile_id",
     scheduledAt: "scheduled_at",
     updatedAt: "updated_at",

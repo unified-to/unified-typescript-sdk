@@ -9,7 +9,9 @@ import { accountingPatchAccountingCategory } from "../funcs/accountingPatchAccou
 import { accountingRemoveAccountingCategory } from "../funcs/accountingRemoveAccountingCategory.js";
 import { accountingUpdateAccountingCategory } from "../funcs/accountingUpdateAccountingCategory.js";
 import { categoryCreateTicketingCategory } from "../funcs/categoryCreateTicketingCategory.js";
+import { categoryGetPlmCategory } from "../funcs/categoryGetPlmCategory.js";
 import { categoryGetTicketingCategory } from "../funcs/categoryGetTicketingCategory.js";
+import { categoryListPlmCategories } from "../funcs/categoryListPlmCategories.js";
 import { categoryListTicketingCategories } from "../funcs/categoryListTicketingCategories.js";
 import { categoryPatchTicketingCategory } from "../funcs/categoryPatchTicketingCategory.js";
 import { categoryRemoveTicketingCategory } from "../funcs/categoryRemoveTicketingCategory.js";
@@ -75,6 +77,23 @@ export class Category extends ClientSDK {
    * Retrieve a category
    *
    * @remarks
+   * Retrieves a single PlmCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPlmCategory(
+    request: operations.GetPlmCategoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PlmCategory> {
+    return unwrapAsync(categoryGetPlmCategory(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a category
+   *
+   * @remarks
    * Retrieves a single TicketingCategory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getTicketingCategory(
@@ -99,6 +118,23 @@ export class Category extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AccountingCategory>> {
     return unwrapAsync(accountingListAccountingCategories(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all categories
+   *
+   * @remarks
+   * Returns a list of PlmCategories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPlmCategories(
+    request: operations.ListPlmCategoriesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PlmCategory>> {
+    return unwrapAsync(categoryListPlmCategories(
       this,
       request,
       options,
