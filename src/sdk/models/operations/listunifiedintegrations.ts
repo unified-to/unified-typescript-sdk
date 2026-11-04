@@ -63,12 +63,20 @@ export type ListUnifiedIntegrationsRequest = {
   categories?: Array<ListUnifiedIntegrationsQueryParamCategories> | undefined;
   env?: string | undefined;
   limit?: number | undefined;
+  /**
+   * Only return support and OAuth2 scopes for these object types (e.g. crm_contact,crm_deal), to keep the response small
+   */
+  objectTypes?: Array<string> | undefined;
   offset?: number | undefined;
   summary?: boolean | undefined;
   /**
    * Filter the results for only this integration type
    */
   type?: string | undefined;
+  /**
+   * Filter the results for only these integration types (e.g. hubspot,salesforce)
+   */
+  types?: Array<string> | undefined;
   updatedGte?: string | undefined;
 };
 
@@ -83,9 +91,11 @@ export type ListUnifiedIntegrationsRequest$Outbound = {
   categories?: Array<string> | undefined;
   env?: string | undefined;
   limit?: number | undefined;
+  object_types?: Array<string> | undefined;
   offset?: number | undefined;
   summary?: boolean | undefined;
   type?: string | undefined;
+  types?: Array<string> | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -101,12 +111,15 @@ export const ListUnifiedIntegrationsRequest$outboundSchema: z.ZodType<
   ).optional(),
   env: z.string().optional(),
   limit: z.number().optional(),
+  objectTypes: z.array(z.string()).optional(),
   offset: z.number().optional(),
   summary: z.boolean().optional(),
   type: z.string().optional(),
+  types: z.array(z.string()).optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    objectTypes: "object_types",
     updatedGte: "updated_gte",
   });
 });

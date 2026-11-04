@@ -93,9 +93,11 @@ async function $do(
     "categories": payload.categories,
     "env": payload.env,
     "limit": payload.limit,
+    "object_types": payload.object_types,
     "offset": payload.offset,
     "summary": payload.summary,
     "type": payload.type,
+    "types": payload.types,
     "updated_gte": payload.updated_gte,
   });
 
