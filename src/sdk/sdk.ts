@@ -31,6 +31,7 @@ import { Bankfeedtransaction } from "./bankfeedtransaction.js";
 import { Benefit } from "./benefit.js";
 import { Bill } from "./bill.js";
 import { Bomline } from "./bomline.js";
+import { Bot } from "./bot.js";
 import { Branch } from "./branch.js";
 import { Busy } from "./busy.js";
 import { Calendar } from "./calendar.js";
@@ -518,6 +519,11 @@ export class UnifiedTo extends ClientSDK {
   private _calendar?: Calendar;
   get calendar(): Calendar {
     return (this._calendar ??= new Calendar(this._options));
+  }
+
+  private _bot?: Bot;
+  get bot(): Bot {
+    return (this._bot ??= new Bot(this._options));
   }
 
   private _busy?: Busy;

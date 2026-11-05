@@ -4,10 +4,12 @@
 
 ### Available Operations
 
+* [createCalendarBot](#createcalendarbot) - Create a bot
 * [createCalendarCalendar](#createcalendarcalendar) - Create a calendar
 * [createCalendarEvent](#createcalendarevent) - Create an event
 * [createCalendarLink](#createcalendarlink) - Create a link
 * [createCalendarWebinar](#createcalendarwebinar) - Create a webinar
+* [getCalendarBot](#getcalendarbot) - Retrieve a bot
 * [getCalendarCalendar](#getcalendarcalendar) - Retrieve a calendar
 * [getCalendarEvent](#getcalendarevent) - Retrieve an event
 * [getCalendarLink](#getcalendarlink) - Retrieve a link
@@ -15,6 +17,7 @@
 * [getCalendarRecording](#getcalendarrecording) - Retrieve a recording
 * [getCalendarRoom](#getcalendarroom) - Retrieve a room
 * [getCalendarWebinar](#getcalendarwebinar) - Retrieve a webinar
+* [listCalendarBots](#listcalendarbots) - List all bots
 * [listCalendarBusies](#listcalendarbusies) - List all busies
 * [listCalendarCalendars](#listcalendarcalendars) - List all calendars
 * [listCalendarEvents](#listcalendarevents) - List all events
@@ -23,18 +26,100 @@
 * [listCalendarRecordings](#listcalendarrecordings) - List all recordings
 * [listCalendarRooms](#listcalendarrooms) - List all rooms
 * [listCalendarWebinars](#listcalendarwebinars) - List all webinars
+* [patchCalendarBot](#patchcalendarbot) - Update a bot
 * [patchCalendarCalendar](#patchcalendarcalendar) - Update a calendar
 * [patchCalendarEvent](#patchcalendarevent) - Update an event
 * [patchCalendarLink](#patchcalendarlink) - Update a link
 * [patchCalendarWebinar](#patchcalendarwebinar) - Update a webinar
+* [removeCalendarBot](#removecalendarbot) - Remove a bot
 * [removeCalendarCalendar](#removecalendarcalendar) - Remove a calendar
 * [removeCalendarEvent](#removecalendarevent) - Remove an event
 * [removeCalendarLink](#removecalendarlink) - Remove a link
 * [removeCalendarWebinar](#removecalendarwebinar) - Remove a webinar
+* [updateCalendarBot](#updatecalendarbot) - Update a bot
 * [updateCalendarCalendar](#updatecalendarcalendar) - Update a calendar
 * [updateCalendarEvent](#updatecalendarevent) - Update an event
 * [updateCalendarLink](#updatecalendarlink) - Update a link
 * [updateCalendarWebinar](#updatecalendarwebinar) - Update a webinar
+
+## createCalendarBot
+
+Creates a CalendarBot. Provide the unified CalendarBot fields in the request body; they are mapped to the provider's API. Returns the created CalendarBot.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createCalendarBot" method="post" path="/calendar/{connection_id}/bot" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.createCalendarBot({
+    calendarBot: {},
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarCreateCalendarBot } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarBot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarCreateCalendarBot(unifiedTo, {
+    calendarBot: {},
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarCreateCalendarBot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateCalendarBotRequest](../../sdk/models/operations/createcalendarbotrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarBot](../../sdk/models/shared/calendarbot.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## createCalendarCalendar
 
@@ -57,12 +142,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "cba6e66c-4762-446f-8ea6-532eee4891f5",
+      id: "d39ddf9e-1a90-4acc-bac0-c88f7e56f3d5",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-04-03T17:36:41.383Z"),
+      updatedAt: new Date("2023-04-04T05:53:26.743Z"),
     },
     connectionId: "<id>",
   });
@@ -94,12 +179,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "cba6e66c-4762-446f-8ea6-532eee4891f5",
+      id: "d39ddf9e-1a90-4acc-bac0-c88f7e56f3d5",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-04-03T17:36:41.383Z"),
+      updatedAt: new Date("2023-04-04T05:53:26.743Z"),
     },
     connectionId: "<id>",
   });
@@ -155,9 +240,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-25T20:13:59.418Z",
+      endAt: "2020-05-25T23:07:20.293Z",
       hasConference: false,
-      id: "79c8e1b1-a07c-4b2d-a103-65425a30ccd4",
+      id: "0f8c13ba-b9a8-4f5f-bafd-dbd78989bedd",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -167,15 +252,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-04-04T12:35:37.701Z"),
+          endAt: new Date("2025-04-05T08:50:58.830Z"),
           excludedDates: [
-            "2024-02-11T10:58:22.155Z",
+            "2024-02-12T03:08:15.184Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-14T14:58:50.739Z",
-            "2025-02-03T11:00:42.148Z",
-            "2024-04-10T23:24:05.550Z",
+            "2023-07-15T05:04:21.104Z",
+            "2025-02-04T06:40:47.215Z",
+            "2024-04-11T16:08:55.334Z",
           ],
           interval: 7,
           onDays: [
@@ -512,11 +597,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-25T10:57:26.813Z",
+      startAt: "2020-05-25T13:50:34.072Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-07-01T23:17:23.312Z",
+      updatedAt: "2020-07-02T02:32:32.146Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -550,9 +635,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-25T20:13:59.418Z",
+      endAt: "2020-05-25T23:07:20.293Z",
       hasConference: false,
-      id: "79c8e1b1-a07c-4b2d-a103-65425a30ccd4",
+      id: "0f8c13ba-b9a8-4f5f-bafd-dbd78989bedd",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -562,15 +647,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-04-04T12:35:37.701Z"),
+          endAt: new Date("2025-04-05T08:50:58.830Z"),
           excludedDates: [
-            "2024-02-11T10:58:22.155Z",
+            "2024-02-12T03:08:15.184Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-14T14:58:50.739Z",
-            "2025-02-03T11:00:42.148Z",
-            "2024-04-10T23:24:05.550Z",
+            "2023-07-15T05:04:21.104Z",
+            "2025-02-04T06:40:47.215Z",
+            "2024-04-11T16:08:55.334Z",
           ],
           interval: 7,
           onDays: [
@@ -907,11 +992,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-25T10:57:26.813Z",
+      startAt: "2020-05-25T13:50:34.072Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-07-01T23:17:23.312Z",
+      updatedAt: "2020-07-02T02:32:32.146Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -968,13 +1053,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "296209bf-b41d-4e9b-8033-aebc4564be26",
+      id: "7de2db26-84ce-4e2e-9417-4e7afb628667",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-19T11:21:44.965Z",
+      updatedAt: "2024-03-19T18:41:09.082Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -1008,13 +1093,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "296209bf-b41d-4e9b-8033-aebc4564be26",
+      id: "7de2db26-84ce-4e2e-9417-4e7afb628667",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-19T11:21:44.965Z",
+      updatedAt: "2024-03-19T18:41:09.082Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -1070,10 +1155,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-11-08T11:05:31.799Z"),
+      endAt: new Date("2025-11-09T07:06:04.270Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "0f050cd2-a2da-4298-92c8-4ca53adfaf10",
+      id: "2b1e090e-458f-4857-adca-299066aa2675",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -1083,13 +1168,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-04T08:29:26.137Z"),
+          endAt: new Date("2023-09-04T15:27:11.409Z"),
           excludedDates: [
-            "2025-02-21T11:27:03.381Z",
+            "2025-02-22T03:11:57.778Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-05-04T03:43:27.754Z",
+            "2024-05-04T14:39:57.334Z",
           ],
           interval: 8,
           onDays: [
@@ -1480,16 +1565,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-10-01T10:34:54.398Z"),
+          endAt: new Date("2022-10-01T12:00:24.167Z"),
           excludedDates: [
-            "2024-09-08T17:58:23.828Z",
-            "2024-08-24T01:41:47.596Z",
+            "2024-09-09T07:00:20.924Z",
+            "2024-08-24T14:28:19.741Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-30T17:52:32.559Z",
-            "2026-01-24T19:44:32.651Z",
-            "2023-08-17T20:21:35.013Z",
+            "2024-03-31T04:15:12.066Z",
+            "2026-01-25T17:01:09.076Z",
+            "2023-08-18T03:02:07.533Z",
           ],
           interval: 1,
           onDays: [
@@ -1633,16 +1718,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-08-08T16:13:30.181Z"),
+          endAt: new Date("2026-08-09T16:42:41.174Z"),
           excludedDates: [
-            "2023-06-21T16:24:45.274Z",
-            "2023-06-10T14:55:07.992Z",
+            "2023-06-21T22:09:05.320Z",
+            "2023-06-10T20:28:35.411Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-07T20:27:32.526Z",
-            "2023-08-23T17:01:26.540Z",
-            "2024-10-04T04:07:18.923Z",
+            "2024-04-08T06:58:10.351Z",
+            "2023-08-23T23:47:44.836Z",
+            "2024-10-04T17:34:15.866Z",
           ],
           interval: 8,
           onDays: [
@@ -1795,11 +1880,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-09T16:58:02.308Z"),
+      startAt: new Date("2025-05-10T09:58:52.955Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-14T05:32:36.674Z"),
+      updatedAt: new Date("2026-10-15T07:07:14.141Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -1832,10 +1917,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-11-08T11:05:31.799Z"),
+      endAt: new Date("2025-11-09T07:06:04.270Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "0f050cd2-a2da-4298-92c8-4ca53adfaf10",
+      id: "2b1e090e-458f-4857-adca-299066aa2675",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -1845,13 +1930,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-04T08:29:26.137Z"),
+          endAt: new Date("2023-09-04T15:27:11.409Z"),
           excludedDates: [
-            "2025-02-21T11:27:03.381Z",
+            "2025-02-22T03:11:57.778Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-05-04T03:43:27.754Z",
+            "2024-05-04T14:39:57.334Z",
           ],
           interval: 8,
           onDays: [
@@ -2242,16 +2327,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-10-01T10:34:54.398Z"),
+          endAt: new Date("2022-10-01T12:00:24.167Z"),
           excludedDates: [
-            "2024-09-08T17:58:23.828Z",
-            "2024-08-24T01:41:47.596Z",
+            "2024-09-09T07:00:20.924Z",
+            "2024-08-24T14:28:19.741Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-30T17:52:32.559Z",
-            "2026-01-24T19:44:32.651Z",
-            "2023-08-17T20:21:35.013Z",
+            "2024-03-31T04:15:12.066Z",
+            "2026-01-25T17:01:09.076Z",
+            "2023-08-18T03:02:07.533Z",
           ],
           interval: 1,
           onDays: [
@@ -2395,16 +2480,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-08-08T16:13:30.181Z"),
+          endAt: new Date("2026-08-09T16:42:41.174Z"),
           excludedDates: [
-            "2023-06-21T16:24:45.274Z",
-            "2023-06-10T14:55:07.992Z",
+            "2023-06-21T22:09:05.320Z",
+            "2023-06-10T20:28:35.411Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-07T20:27:32.526Z",
-            "2023-08-23T17:01:26.540Z",
-            "2024-10-04T04:07:18.923Z",
+            "2024-04-08T06:58:10.351Z",
+            "2023-08-23T23:47:44.836Z",
+            "2024-10-04T17:34:15.866Z",
           ],
           interval: 8,
           onDays: [
@@ -2557,11 +2642,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-09T16:58:02.308Z"),
+      startAt: new Date("2025-05-10T09:58:52.955Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-14T05:32:36.674Z"),
+      updatedAt: new Date("2026-10-15T07:07:14.141Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -2589,6 +2674,85 @@ run();
 ### Response
 
 **Promise\<[shared.CalendarWebinar](../../sdk/models/shared/calendarwebinar.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getCalendarBot
+
+Retrieves a single CalendarBot by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getCalendarBot" method="get" path="/calendar/{connection_id}/bot/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.getCalendarBot({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarGetCalendarBot } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarBot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarGetCalendarBot(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarGetCalendarBot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetCalendarBotRequest](../../sdk/models/operations/getcalendarbotrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarBot](../../sdk/models/shared/calendarbot.md)\>**
 
 ### Errors
 
@@ -3142,6 +3306,83 @@ run();
 ### Response
 
 **Promise\<[shared.CalendarWebinar](../../sdk/models/shared/calendarwebinar.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listCalendarBots
+
+Returns a list of CalendarBots. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listCalendarBots" method="get" path="/calendar/{connection_id}/bot" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.listCalendarBots({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarListCalendarBots } from "@unified-api/typescript-sdk/funcs/calendarListCalendarBots.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarListCalendarBots(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarListCalendarBots failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListCalendarBotsRequest](../../sdk/models/operations/listcalendarbotsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarBot[]](../../models/.md)\>**
 
 ### Errors
 
@@ -3765,6 +4006,87 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchCalendarBot
+
+Updates the CalendarBot identified by `id`. Provide the unified CalendarBot fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchCalendarBot" method="patch" path="/calendar/{connection_id}/bot/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.patchCalendarBot({
+    calendarBot: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarPatchCalendarBot } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarBot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarPatchCalendarBot(unifiedTo, {
+    calendarBot: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarPatchCalendarBot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchCalendarBotRequest](../../sdk/models/operations/patchcalendarbotrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarBot](../../sdk/models/shared/calendarbot.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchCalendarCalendar
 
 Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
@@ -3786,12 +4108,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "5fc2605a-8e72-4271-a104-0e470b833ebd",
+      id: "eece2a3e-7c7d-42bb-9dae-2d3912db7a9d",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-04-03T17:36:41.386Z"),
+      updatedAt: new Date("2023-04-04T05:53:26.747Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3824,12 +4146,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "5fc2605a-8e72-4271-a104-0e470b833ebd",
+      id: "eece2a3e-7c7d-42bb-9dae-2d3912db7a9d",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-04-03T17:36:41.386Z"),
+      updatedAt: new Date("2023-04-04T05:53:26.747Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3886,9 +4208,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-25T20:13:59.421Z",
+      endAt: "2020-05-25T23:07:20.297Z",
       hasConference: false,
-      id: "19417546-97de-404f-9596-08f2b66a7d7f",
+      id: "69a451e3-bbdd-4e67-b72d-5167995ea921",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -3898,15 +4220,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-04-04T12:35:37.725Z"),
+          endAt: new Date("2025-04-05T08:50:58.857Z"),
           excludedDates: [
-            "2024-02-11T10:58:22.174Z",
+            "2024-02-12T03:08:15.206Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-14T14:58:50.755Z",
-            "2025-02-03T11:00:42.171Z",
-            "2024-04-10T23:24:05.569Z",
+            "2023-07-15T05:04:21.123Z",
+            "2025-02-04T06:40:47.241Z",
+            "2024-04-11T16:08:55.356Z",
           ],
           interval: 7,
           onDays: [
@@ -4243,11 +4565,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-25T10:57:26.816Z",
+      startAt: "2020-05-25T13:50:34.076Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-07-01T23:17:23.315Z",
+      updatedAt: "2020-07-02T02:32:32.150Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -4282,9 +4604,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-25T20:13:59.421Z",
+      endAt: "2020-05-25T23:07:20.297Z",
       hasConference: false,
-      id: "19417546-97de-404f-9596-08f2b66a7d7f",
+      id: "69a451e3-bbdd-4e67-b72d-5167995ea921",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -4294,15 +4616,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-04-04T12:35:37.725Z"),
+          endAt: new Date("2025-04-05T08:50:58.857Z"),
           excludedDates: [
-            "2024-02-11T10:58:22.174Z",
+            "2024-02-12T03:08:15.206Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-14T14:58:50.755Z",
-            "2025-02-03T11:00:42.171Z",
-            "2024-04-10T23:24:05.569Z",
+            "2023-07-15T05:04:21.123Z",
+            "2025-02-04T06:40:47.241Z",
+            "2024-04-11T16:08:55.356Z",
           ],
           interval: 7,
           onDays: [
@@ -4639,11 +4961,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-25T10:57:26.816Z",
+      startAt: "2020-05-25T13:50:34.076Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-07-01T23:17:23.315Z",
+      updatedAt: "2020-07-02T02:32:32.150Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -4701,13 +5023,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "ab3c2f9d-8a24-4ae5-b845-900c5ddc0a85",
+      id: "373b2209-3ab9-4b7e-8da4-2b9fcf9be777",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-19T11:21:44.967Z",
+      updatedAt: "2024-03-19T18:41:09.084Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -4742,13 +5064,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "ab3c2f9d-8a24-4ae5-b845-900c5ddc0a85",
+      id: "373b2209-3ab9-4b7e-8da4-2b9fcf9be777",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-19T11:21:44.967Z",
+      updatedAt: "2024-03-19T18:41:09.084Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -4805,10 +5127,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-11-08T11:05:31.824Z"),
+      endAt: new Date("2025-11-09T07:06:04.303Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "48222515-2c50-4410-ac4f-0a871769e590",
+      id: "0513788a-d7ae-4156-a185-a4edef2d2f5f",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -4818,13 +5140,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-04T08:29:26.146Z"),
+          endAt: new Date("2023-09-04T15:27:11.420Z"),
           excludedDates: [
-            "2025-02-21T11:27:03.400Z",
+            "2025-02-22T03:11:57.804Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-05-04T03:43:27.767Z",
+            "2024-05-04T14:39:57.352Z",
           ],
           interval: 8,
           onDays: [
@@ -5215,16 +5537,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-10-01T10:34:54.400Z"),
+          endAt: new Date("2022-10-01T12:00:24.169Z"),
           excludedDates: [
-            "2024-09-08T17:58:23.844Z",
-            "2024-08-24T01:41:47.611Z",
+            "2024-09-09T07:00:20.946Z",
+            "2024-08-24T14:28:19.763Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-30T17:52:32.572Z",
-            "2026-01-24T19:44:32.677Z",
-            "2023-08-17T20:21:35.021Z",
+            "2024-03-31T04:15:12.083Z",
+            "2026-01-25T17:01:09.112Z",
+            "2023-08-18T03:02:07.545Z",
           ],
           interval: 1,
           onDays: [
@@ -5368,16 +5690,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-08-08T16:13:30.211Z"),
+          endAt: new Date("2026-08-09T16:42:41.214Z"),
           excludedDates: [
-            "2023-06-21T16:24:45.281Z",
-            "2023-06-10T14:55:07.999Z",
+            "2023-06-21T22:09:05.330Z",
+            "2023-06-10T20:28:35.420Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-07T20:27:32.539Z",
-            "2023-08-23T17:01:26.548Z",
-            "2024-10-04T04:07:18.939Z",
+            "2024-04-08T06:58:10.368Z",
+            "2023-08-23T23:47:44.847Z",
+            "2024-10-04T17:34:15.888Z",
           ],
           interval: 8,
           onDays: [
@@ -5530,11 +5852,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-09T16:58:02.329Z"),
+      startAt: new Date("2025-05-10T09:58:52.984Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-14T05:32:36.705Z"),
+      updatedAt: new Date("2026-10-15T07:07:14.182Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -5568,10 +5890,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-11-08T11:05:31.824Z"),
+      endAt: new Date("2025-11-09T07:06:04.303Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "48222515-2c50-4410-ac4f-0a871769e590",
+      id: "0513788a-d7ae-4156-a185-a4edef2d2f5f",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -5581,13 +5903,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-04T08:29:26.146Z"),
+          endAt: new Date("2023-09-04T15:27:11.420Z"),
           excludedDates: [
-            "2025-02-21T11:27:03.400Z",
+            "2025-02-22T03:11:57.804Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-05-04T03:43:27.767Z",
+            "2024-05-04T14:39:57.352Z",
           ],
           interval: 8,
           onDays: [
@@ -5978,16 +6300,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-10-01T10:34:54.400Z"),
+          endAt: new Date("2022-10-01T12:00:24.169Z"),
           excludedDates: [
-            "2024-09-08T17:58:23.844Z",
-            "2024-08-24T01:41:47.611Z",
+            "2024-09-09T07:00:20.946Z",
+            "2024-08-24T14:28:19.763Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-30T17:52:32.572Z",
-            "2026-01-24T19:44:32.677Z",
-            "2023-08-17T20:21:35.021Z",
+            "2024-03-31T04:15:12.083Z",
+            "2026-01-25T17:01:09.112Z",
+            "2023-08-18T03:02:07.545Z",
           ],
           interval: 1,
           onDays: [
@@ -6131,16 +6453,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-08-08T16:13:30.211Z"),
+          endAt: new Date("2026-08-09T16:42:41.214Z"),
           excludedDates: [
-            "2023-06-21T16:24:45.281Z",
-            "2023-06-10T14:55:07.999Z",
+            "2023-06-21T22:09:05.330Z",
+            "2023-06-10T20:28:35.420Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-07T20:27:32.539Z",
-            "2023-08-23T17:01:26.548Z",
-            "2024-10-04T04:07:18.939Z",
+            "2024-04-08T06:58:10.368Z",
+            "2023-08-23T23:47:44.847Z",
+            "2024-10-04T17:34:15.888Z",
           ],
           interval: 8,
           onDays: [
@@ -6293,11 +6615,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-09T16:58:02.329Z"),
+      startAt: new Date("2025-05-10T09:58:52.984Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-14T05:32:36.705Z"),
+      updatedAt: new Date("2026-10-15T07:07:14.182Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -6326,6 +6648,85 @@ run();
 ### Response
 
 **Promise\<[shared.CalendarWebinar](../../sdk/models/shared/calendarwebinar.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## removeCalendarBot
+
+Deletes the CalendarBot identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeCalendarBot" method="delete" path="/calendar/{connection_id}/bot/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.removeCalendarBot({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarRemoveCalendarBot } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarBot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarRemoveCalendarBot(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarRemoveCalendarBot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveCalendarBotRequest](../../sdk/models/operations/removecalendarbotrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveCalendarBotResponse](../../sdk/models/operations/removecalendarbotresponse.md)\>**
 
 ### Errors
 
@@ -6649,6 +7050,87 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updateCalendarBot
+
+Updates the CalendarBot identified by `id`. Provide the unified CalendarBot fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateCalendarBot" method="put" path="/calendar/{connection_id}/bot/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.calendar.updateCalendarBot({
+    calendarBot: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { calendarUpdateCalendarBot } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarBot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await calendarUpdateCalendarBot(unifiedTo, {
+    calendarBot: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("calendarUpdateCalendarBot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateCalendarBotRequest](../../sdk/models/operations/updatecalendarbotrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.CalendarBot](../../sdk/models/shared/calendarbot.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateCalendarCalendar
 
 Updates the CalendarCalendar identified by `id`. Provide the unified CalendarCalendar fields to change in the request body.
@@ -6670,12 +7152,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "5fc2605a-8e72-4271-a104-0e470b833ebd",
+      id: "eece2a3e-7c7d-42bb-9dae-2d3912db7a9d",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-04-03T17:36:41.386Z"),
+      updatedAt: new Date("2023-04-04T05:53:26.747Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6708,12 +7190,12 @@ async function run() {
     calendarCalendar: {
       createdAt: new Date("2020-01-09T23:11:34.147Z"),
       description: "Acer supra vallum suasoria thesaurus.",
-      id: "5fc2605a-8e72-4271-a104-0e470b833ebd",
+      id: "eece2a3e-7c7d-42bb-9dae-2d3912db7a9d",
       isPrimary: false,
       metadata: [],
       name: "Interviews",
       timezone: "Asia/Kolkata",
-      updatedAt: new Date("2023-04-03T17:36:41.386Z"),
+      updatedAt: new Date("2023-04-04T05:53:26.747Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6770,9 +7252,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-25T20:13:59.421Z",
+      endAt: "2020-05-25T23:07:20.297Z",
       hasConference: false,
-      id: "19417546-97de-404f-9596-08f2b66a7d7f",
+      id: "69a451e3-bbdd-4e67-b72d-5167995ea921",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -6782,15 +7264,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-04-04T12:35:37.725Z"),
+          endAt: new Date("2025-04-05T08:50:58.857Z"),
           excludedDates: [
-            "2024-02-11T10:58:22.174Z",
+            "2024-02-12T03:08:15.206Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-14T14:58:50.755Z",
-            "2025-02-03T11:00:42.171Z",
-            "2024-04-10T23:24:05.569Z",
+            "2023-07-15T05:04:21.123Z",
+            "2025-02-04T06:40:47.241Z",
+            "2024-04-11T16:08:55.356Z",
           ],
           interval: 7,
           onDays: [
@@ -7127,11 +7609,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-25T10:57:26.816Z",
+      startAt: "2020-05-25T13:50:34.076Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-07-01T23:17:23.315Z",
+      updatedAt: "2020-07-02T02:32:32.150Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -7166,9 +7648,9 @@ async function run() {
       attachments: [],
       conference: [],
       createdAt: "2019-08-04T14:33:51.814Z",
-      endAt: "2020-05-25T20:13:59.421Z",
+      endAt: "2020-05-25T23:07:20.297Z",
       hasConference: false,
-      id: "19417546-97de-404f-9596-08f2b66a7d7f",
+      id: "69a451e3-bbdd-4e67-b72d-5167995ea921",
       isAllDay: false,
       isFree: false,
       isPrivate: false,
@@ -7178,15 +7660,15 @@ async function run() {
       recurrence: [
         {
           count: 4,
-          endAt: new Date("2025-04-04T12:35:37.725Z"),
+          endAt: new Date("2025-04-05T08:50:58.857Z"),
           excludedDates: [
-            "2024-02-11T10:58:22.174Z",
+            "2024-02-12T03:08:15.206Z",
           ],
           frequency: "YEARLY",
           includedDates: [
-            "2023-07-14T14:58:50.755Z",
-            "2025-02-03T11:00:42.171Z",
-            "2024-04-10T23:24:05.569Z",
+            "2023-07-15T05:04:21.123Z",
+            "2025-02-04T06:40:47.241Z",
+            "2024-04-11T16:08:55.356Z",
           ],
           interval: 7,
           onDays: [
@@ -7523,11 +8005,11 @@ async function run() {
           weekStart: "TU",
         },
       ],
-      startAt: "2020-05-25T10:57:26.816Z",
+      startAt: "2020-05-25T13:50:34.076Z",
       status: "CONFIRMED",
       subject: "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
       timezone: "Asia/Bangkok",
-      updatedAt: "2020-07-01T23:17:23.315Z",
+      updatedAt: "2020-07-02T02:32:32.150Z",
       webUrl: "https://another-pinstripe.com",
     },
     connectionId: "<id>",
@@ -7585,13 +8067,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "ab3c2f9d-8a24-4ae5-b845-900c5ddc0a85",
+      id: "373b2209-3ab9-4b7e-8da4-2b9fcf9be777",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-19T11:21:44.967Z",
+      updatedAt: "2024-03-19T18:41:09.084Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -7626,13 +8108,13 @@ async function run() {
       createdAt: "2023-03-07T13:34:11.959Z",
       description: "Vitium clibanus laboriosam uxor denuncio.",
       duration: 74,
-      id: "ab3c2f9d-8a24-4ae5-b845-900c5ddc0a85",
+      id: "373b2209-3ab9-4b7e-8da4-2b9fcf9be777",
       isActive: true,
       metadata: [],
       name: "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
       priceAmount: 44,
       priceCurrency: "USD",
-      updatedAt: "2024-03-19T11:21:44.967Z",
+      updatedAt: "2024-03-19T18:41:09.084Z",
       url: "https://annual-apricot.info/",
     },
     connectionId: "<id>",
@@ -7689,10 +8171,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-11-08T11:05:31.824Z"),
+      endAt: new Date("2025-11-09T07:06:04.303Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "48222515-2c50-4410-ac4f-0a871769e590",
+      id: "0513788a-d7ae-4156-a185-a4edef2d2f5f",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -7702,13 +8184,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-04T08:29:26.146Z"),
+          endAt: new Date("2023-09-04T15:27:11.420Z"),
           excludedDates: [
-            "2025-02-21T11:27:03.400Z",
+            "2025-02-22T03:11:57.804Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-05-04T03:43:27.767Z",
+            "2024-05-04T14:39:57.352Z",
           ],
           interval: 8,
           onDays: [
@@ -8099,16 +8581,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-10-01T10:34:54.400Z"),
+          endAt: new Date("2022-10-01T12:00:24.169Z"),
           excludedDates: [
-            "2024-09-08T17:58:23.844Z",
-            "2024-08-24T01:41:47.611Z",
+            "2024-09-09T07:00:20.946Z",
+            "2024-08-24T14:28:19.763Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-30T17:52:32.572Z",
-            "2026-01-24T19:44:32.677Z",
-            "2023-08-17T20:21:35.021Z",
+            "2024-03-31T04:15:12.083Z",
+            "2026-01-25T17:01:09.112Z",
+            "2023-08-18T03:02:07.545Z",
           ],
           interval: 1,
           onDays: [
@@ -8252,16 +8734,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-08-08T16:13:30.211Z"),
+          endAt: new Date("2026-08-09T16:42:41.214Z"),
           excludedDates: [
-            "2023-06-21T16:24:45.281Z",
-            "2023-06-10T14:55:07.999Z",
+            "2023-06-21T22:09:05.330Z",
+            "2023-06-10T20:28:35.420Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-07T20:27:32.539Z",
-            "2023-08-23T17:01:26.548Z",
-            "2024-10-04T04:07:18.939Z",
+            "2024-04-08T06:58:10.368Z",
+            "2023-08-23T23:47:44.847Z",
+            "2024-10-04T17:34:15.888Z",
           ],
           interval: 8,
           onDays: [
@@ -8414,11 +8896,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-09T16:58:02.329Z"),
+      startAt: new Date("2025-05-10T09:58:52.984Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-14T05:32:36.705Z"),
+      updatedAt: new Date("2026-10-15T07:07:14.182Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",
@@ -8452,10 +8934,10 @@ async function run() {
     calendarWebinar: {
       conference: [],
       createdAt: new Date("2022-07-06T11:45:14.631Z"),
-      endAt: new Date("2025-11-08T11:05:31.824Z"),
+      endAt: new Date("2025-11-09T07:06:04.303Z"),
       hasPolls: false,
       hasRecording: false,
-      id: "48222515-2c50-4410-ac4f-0a871769e590",
+      id: "0513788a-d7ae-4156-a185-a4edef2d2f5f",
       isAutoApprove: false,
       isEnabled: true,
       isWebcast: false,
@@ -8465,13 +8947,13 @@ async function run() {
       recurrence: [
         {
           count: 10,
-          endAt: new Date("2023-09-04T08:29:26.146Z"),
+          endAt: new Date("2023-09-04T15:27:11.420Z"),
           excludedDates: [
-            "2025-02-21T11:27:03.400Z",
+            "2025-02-22T03:11:57.804Z",
           ],
           frequency: "MONTHLY",
           includedDates: [
-            "2024-05-04T03:43:27.767Z",
+            "2024-05-04T14:39:57.352Z",
           ],
           interval: 8,
           onDays: [
@@ -8862,16 +9344,16 @@ async function run() {
         },
         {
           count: 3,
-          endAt: new Date("2022-10-01T10:34:54.400Z"),
+          endAt: new Date("2022-10-01T12:00:24.169Z"),
           excludedDates: [
-            "2024-09-08T17:58:23.844Z",
-            "2024-08-24T01:41:47.611Z",
+            "2024-09-09T07:00:20.946Z",
+            "2024-08-24T14:28:19.763Z",
           ],
           frequency: "DAILY",
           includedDates: [
-            "2024-03-30T17:52:32.572Z",
-            "2026-01-24T19:44:32.677Z",
-            "2023-08-17T20:21:35.021Z",
+            "2024-03-31T04:15:12.083Z",
+            "2026-01-25T17:01:09.112Z",
+            "2023-08-18T03:02:07.545Z",
           ],
           interval: 1,
           onDays: [
@@ -9015,16 +9497,16 @@ async function run() {
         },
         {
           count: 8,
-          endAt: new Date("2026-08-08T16:13:30.211Z"),
+          endAt: new Date("2026-08-09T16:42:41.214Z"),
           excludedDates: [
-            "2023-06-21T16:24:45.281Z",
-            "2023-06-10T14:55:07.999Z",
+            "2023-06-21T22:09:05.330Z",
+            "2023-06-10T20:28:35.420Z",
           ],
           frequency: "WEEKLY",
           includedDates: [
-            "2024-04-07T20:27:32.539Z",
-            "2023-08-23T17:01:26.548Z",
-            "2024-10-04T04:07:18.939Z",
+            "2024-04-08T06:58:10.368Z",
+            "2023-08-23T23:47:44.847Z",
+            "2024-10-04T17:34:15.888Z",
           ],
           interval: 8,
           onDays: [
@@ -9177,11 +9659,11 @@ async function run() {
       registrantPassword: "W7J6DhkM",
       requireAddress: false,
       requireJobTitle: false,
-      startAt: new Date("2025-05-09T16:58:02.329Z"),
+      startAt: new Date("2025-05-10T09:58:52.984Z"),
       status: "TENTATIVE",
       subject: "Harum culpa decipio ex cubo ancilla cresco.",
       timezone: "Europe/Kaliningrad",
-      updatedAt: new Date("2026-10-14T05:32:36.705Z"),
+      updatedAt: new Date("2026-10-15T07:07:14.182Z"),
       webUrl: "https://quiet-permafrost.name",
     },
     connectionId: "<id>",

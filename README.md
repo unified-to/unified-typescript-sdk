@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "0e0226be-7502-42bc-a8f4-a91f1ed02568",
+      id: "ff138c61-a55e-4951-b821-6727a62d413a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T10:32:12.530Z"),
+      updatedAt: new Date("2023-08-10T17:07:28.438Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "0e0226be-7502-42bc-a8f4-a91f1ed02568",
+      id: "ff138c61-a55e-4951-b821-6727a62d413a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T10:32:12.530Z"),
+      updatedAt: new Date("2023-08-10T17:07:28.438Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "0e0226be-7502-42bc-a8f4-a91f1ed02568",
+      id: "ff138c61-a55e-4951-b821-6727a62d413a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T10:32:12.530Z"),
+      updatedAt: new Date("2023-08-10T17:07:28.438Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "0e0226be-7502-42bc-a8f4-a91f1ed02568",
+        id: "ff138c61-a55e-4951-b821-6727a62d413a",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-10T10:32:12.530Z"),
+        updatedAt: new Date("2023-08-10T17:07:28.438Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "0e0226be-7502-42bc-a8f4-a91f1ed02568",
+      id: "ff138c61-a55e-4951-b821-6727a62d413a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T10:32:12.530Z"),
+      updatedAt: new Date("2023-08-10T17:07:28.438Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "0e0226be-7502-42bc-a8f4-a91f1ed02568",
+      id: "ff138c61-a55e-4951-b821-6727a62d413a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T10:32:12.530Z"),
+      updatedAt: new Date("2023-08-10T17:07:28.438Z"),
     },
     connectionId: "<id>",
   });
@@ -1074,11 +1074,15 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`authGetUnifiedIntegrationLogin`](docs/sdks/login/README.md#getunifiedintegrationlogin) - Sign in a user
 - [`authGetUnifiedIntegrationSaml`](docs/sdks/auth/README.md#getunifiedintegrationsaml) - Sign in a user via SAML
 - [`authGetUnifiedIntegrationSaml`](docs/sdks/saml/README.md#getunifiedintegrationsaml) - Sign in a user via SAML
+- [`calendarCreateCalendarBot`](docs/sdks/bot/README.md#createcalendarbot) - Create a bot
+- [`calendarCreateCalendarBot`](docs/sdks/calendar/README.md#createcalendarbot) - Create a bot
 - [`calendarCreateCalendarCalendar`](docs/sdks/calendar/README.md#createcalendarcalendar) - Create a calendar
 - [`calendarCreateCalendarLink`](docs/sdks/calendar/README.md#createcalendarlink) - Create a link
 - [`calendarCreateCalendarLink`](docs/sdks/link/README.md#createcalendarlink) - Create a link
 - [`calendarCreateCalendarWebinar`](docs/sdks/calendar/README.md#createcalendarwebinar) - Create a webinar
 - [`calendarCreateCalendarWebinar`](docs/sdks/webinar/README.md#createcalendarwebinar) - Create a webinar
+- [`calendarGetCalendarBot`](docs/sdks/bot/README.md#getcalendarbot) - Retrieve a bot
+- [`calendarGetCalendarBot`](docs/sdks/calendar/README.md#getcalendarbot) - Retrieve a bot
 - [`calendarGetCalendarCalendar`](docs/sdks/calendar/README.md#getcalendarcalendar) - Retrieve a calendar
 - [`calendarGetCalendarLink`](docs/sdks/calendar/README.md#getcalendarlink) - Retrieve a link
 - [`calendarGetCalendarLink`](docs/sdks/link/README.md#getcalendarlink) - Retrieve a link
@@ -1090,6 +1094,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`calendarGetCalendarRoom`](docs/sdks/room/README.md#getcalendarroom) - Retrieve a room
 - [`calendarGetCalendarWebinar`](docs/sdks/calendar/README.md#getcalendarwebinar) - Retrieve a webinar
 - [`calendarGetCalendarWebinar`](docs/sdks/webinar/README.md#getcalendarwebinar) - Retrieve a webinar
+- [`calendarListCalendarBots`](docs/sdks/bot/README.md#listcalendarbots) - List all bots
+- [`calendarListCalendarBots`](docs/sdks/calendar/README.md#listcalendarbots) - List all bots
 - [`calendarListCalendarBusies`](docs/sdks/busy/README.md#listcalendarbusies) - List all busies
 - [`calendarListCalendarBusies`](docs/sdks/calendar/README.md#listcalendarbusies) - List all busies
 - [`calendarListCalendarCalendars`](docs/sdks/calendar/README.md#listcalendarcalendars) - List all calendars
@@ -1103,16 +1109,22 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`calendarListCalendarRooms`](docs/sdks/room/README.md#listcalendarrooms) - List all rooms
 - [`calendarListCalendarWebinars`](docs/sdks/calendar/README.md#listcalendarwebinars) - List all webinars
 - [`calendarListCalendarWebinars`](docs/sdks/webinar/README.md#listcalendarwebinars) - List all webinars
+- [`calendarPatchCalendarBot`](docs/sdks/bot/README.md#patchcalendarbot) - Update a bot
+- [`calendarPatchCalendarBot`](docs/sdks/calendar/README.md#patchcalendarbot) - Update a bot
 - [`calendarPatchCalendarCalendar`](docs/sdks/calendar/README.md#patchcalendarcalendar) - Update a calendar
 - [`calendarPatchCalendarLink`](docs/sdks/calendar/README.md#patchcalendarlink) - Update a link
 - [`calendarPatchCalendarLink`](docs/sdks/link/README.md#patchcalendarlink) - Update a link
 - [`calendarPatchCalendarWebinar`](docs/sdks/calendar/README.md#patchcalendarwebinar) - Update a webinar
 - [`calendarPatchCalendarWebinar`](docs/sdks/webinar/README.md#patchcalendarwebinar) - Update a webinar
+- [`calendarRemoveCalendarBot`](docs/sdks/bot/README.md#removecalendarbot) - Remove a bot
+- [`calendarRemoveCalendarBot`](docs/sdks/calendar/README.md#removecalendarbot) - Remove a bot
 - [`calendarRemoveCalendarCalendar`](docs/sdks/calendar/README.md#removecalendarcalendar) - Remove a calendar
 - [`calendarRemoveCalendarLink`](docs/sdks/calendar/README.md#removecalendarlink) - Remove a link
 - [`calendarRemoveCalendarLink`](docs/sdks/link/README.md#removecalendarlink) - Remove a link
 - [`calendarRemoveCalendarWebinar`](docs/sdks/calendar/README.md#removecalendarwebinar) - Remove a webinar
 - [`calendarRemoveCalendarWebinar`](docs/sdks/webinar/README.md#removecalendarwebinar) - Remove a webinar
+- [`calendarUpdateCalendarBot`](docs/sdks/bot/README.md#updatecalendarbot) - Update a bot
+- [`calendarUpdateCalendarBot`](docs/sdks/calendar/README.md#updatecalendarbot) - Update a bot
 - [`calendarUpdateCalendarCalendar`](docs/sdks/calendar/README.md#updatecalendarcalendar) - Update a calendar
 - [`calendarUpdateCalendarLink`](docs/sdks/calendar/README.md#updatecalendarlink) - Update a link
 - [`calendarUpdateCalendarLink`](docs/sdks/link/README.md#updatecalendarlink) - Update a link
