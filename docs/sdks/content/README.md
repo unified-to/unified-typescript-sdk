@@ -37,7 +37,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "30830338-c15f-487b-88c6-52122bbb9e52",
+      id: "78c7b9bd-b7f2-4059-8560-a545c5620754",
       instructors: [],
       isActive: true,
       languages: [
@@ -97,7 +97,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-07T22:06:27.703Z"),
+      publishedAt: new Date("2022-09-08T05:40:30.574Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -112,7 +112,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-09T01:27:43.513Z"),
+      updatedAt: new Date("2022-10-09T09:22:24.863Z"),
     },
     connectionId: "<id>",
   });
@@ -149,7 +149,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "30830338-c15f-487b-88c6-52122bbb9e52",
+      id: "78c7b9bd-b7f2-4059-8560-a545c5620754",
       instructors: [],
       isActive: true,
       languages: [
@@ -209,7 +209,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-07T22:06:27.703Z"),
+      publishedAt: new Date("2022-09-08T05:40:30.574Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -224,7 +224,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-09T01:27:43.513Z"),
+      updatedAt: new Date("2022-10-09T09:22:24.863Z"),
     },
     connectionId: "<id>",
   });
@@ -440,7 +440,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "73ebf86a-4442-4e60-99ea-70844ff9eb97",
+      id: "41f58cf7-d7b3-47b8-b124-df6409e7e981",
       instructors: [],
       isActive: true,
       languages: [
@@ -500,7 +500,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-07T22:06:27.710Z"),
+      publishedAt: new Date("2022-09-08T05:40:30.581Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -515,7 +515,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-09T01:27:43.520Z"),
+      updatedAt: new Date("2022-10-09T09:22:24.870Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -553,7 +553,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "73ebf86a-4442-4e60-99ea-70844ff9eb97",
+      id: "41f58cf7-d7b3-47b8-b124-df6409e7e981",
       instructors: [],
       isActive: true,
       languages: [
@@ -613,7 +613,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-07T22:06:27.710Z"),
+      publishedAt: new Date("2022-09-08T05:40:30.581Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -628,7 +628,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-09T01:27:43.520Z"),
+      updatedAt: new Date("2022-10-09T09:22:24.870Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -768,7 +768,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "73ebf86a-4442-4e60-99ea-70844ff9eb97",
+      id: "41f58cf7-d7b3-47b8-b124-df6409e7e981",
       instructors: [],
       isActive: true,
       languages: [
@@ -828,7 +828,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-07T22:06:27.710Z"),
+      publishedAt: new Date("2022-09-08T05:40:30.581Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -843,7 +843,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-09T01:27:43.520Z"),
+      updatedAt: new Date("2022-10-09T09:22:24.870Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -881,7 +881,7 @@ async function run() {
       description: "Usque laboriosam ventosus adflicto.",
       difficulty: "Beginner",
       durationMinutes: 19,
-      id: "73ebf86a-4442-4e60-99ea-70844ff9eb97",
+      id: "41f58cf7-d7b3-47b8-b124-df6409e7e981",
       instructors: [],
       isActive: true,
       languages: [
@@ -941,7 +941,7 @@ async function run() {
       metadata: [],
       name: "ut",
       providerName: "Bins LLC",
-      publishedAt: new Date("2022-09-07T22:06:27.710Z"),
+      publishedAt: new Date("2022-09-08T05:40:30.581Z"),
       shortDescription: "Caritas.",
       skills: [
         "trucido",
@@ -956,7 +956,7 @@ async function run() {
       tags: [
         "dens",
       ],
-      updatedAt: new Date("2022-10-09T01:27:43.520Z"),
+      updatedAt: new Date("2022-10-09T09:22:24.870Z"),
     },
     connectionId: "<id>",
     id: "<id>",

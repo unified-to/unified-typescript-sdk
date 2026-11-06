@@ -29,13 +29,13 @@ async function run() {
     propertyConversation: {
       createdAt: new Date("2022-06-20T00:02:46.530Z"),
       guestName: "Evie Okuneva",
-      id: "00716c2d-8ad6-47e7-88ba-5d6a5a9edc11",
+      id: "44d1c1c3-1f0e-4a94-b893-cbf6a2f9720f",
       isUnread: false,
       messages: [
         {
           attachments: [],
-          createdAt: new Date("2025-04-26T07:04:13.154Z"),
-          id: "98bb1795-529f-4e49-870c-a0befbded0d4",
+          createdAt: new Date("2025-04-26T22:55:38.467Z"),
+          id: "5565cdae-64f3-4c5c-bbfb-365f0838100b",
           isAutomatic: false,
           message: "Vinitor caterva amor sophismata admitto colo tempore aufero torrens.",
           senderName: "Evie Okuneva",
@@ -43,8 +43,8 @@ async function run() {
         },
         {
           attachments: [],
-          createdAt: new Date("2026-05-10T23:31:48.917Z"),
-          id: "28f39632-3f0c-4122-b4ae-d6e79ee91a28",
+          createdAt: new Date("2026-05-11T21:10:09.208Z"),
+          id: "b9e76a1a-61c8-45b2-a732-9aa950901955",
           message: "Aequitas torqueo curiositas cimentarius repellendus auditor degero ademptio adnuo.",
           senderName: "Ms. Patti Lynch",
           senderType: "HOST",
@@ -52,7 +52,7 @@ async function run() {
       ],
       metadata: [],
       source: "Airbnb",
-      updatedAt: new Date("2026-05-10T23:31:48.917Z"),
+      updatedAt: new Date("2026-05-11T21:10:09.208Z"),
     },
     connectionId: "<id>",
   });
@@ -84,13 +84,13 @@ async function run() {
     propertyConversation: {
       createdAt: new Date("2022-06-20T00:02:46.530Z"),
       guestName: "Evie Okuneva",
-      id: "00716c2d-8ad6-47e7-88ba-5d6a5a9edc11",
+      id: "44d1c1c3-1f0e-4a94-b893-cbf6a2f9720f",
       isUnread: false,
       messages: [
         {
           attachments: [],
-          createdAt: new Date("2025-04-26T07:04:13.154Z"),
-          id: "98bb1795-529f-4e49-870c-a0befbded0d4",
+          createdAt: new Date("2025-04-26T22:55:38.467Z"),
+          id: "5565cdae-64f3-4c5c-bbfb-365f0838100b",
           isAutomatic: false,
           message: "Vinitor caterva amor sophismata admitto colo tempore aufero torrens.",
           senderName: "Evie Okuneva",
@@ -98,8 +98,8 @@ async function run() {
         },
         {
           attachments: [],
-          createdAt: new Date("2026-05-10T23:31:48.917Z"),
-          id: "28f39632-3f0c-4122-b4ae-d6e79ee91a28",
+          createdAt: new Date("2026-05-11T21:10:09.208Z"),
+          id: "b9e76a1a-61c8-45b2-a732-9aa950901955",
           message: "Aequitas torqueo curiositas cimentarius repellendus auditor degero ademptio adnuo.",
           senderName: "Ms. Patti Lynch",
           senderType: "HOST",
@@ -107,7 +107,7 @@ async function run() {
       ],
       metadata: [],
       source: "Airbnb",
-      updatedAt: new Date("2026-05-10T23:31:48.917Z"),
+      updatedAt: new Date("2026-05-11T21:10:09.208Z"),
     },
     connectionId: "<id>",
   });

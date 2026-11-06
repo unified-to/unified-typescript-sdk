@@ -9,8 +9,17 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PropertyCalendarBotAutomaticLeave = {
+  /**
+   * Whether to leave if only bots remain
+   */
   detectBots?: boolean | undefined;
+  /**
+   * Seconds to wait when no other participants before leaving (default: 2)
+   */
   noParticipantsTimeout?: number | undefined;
+  /**
+   * Seconds to wait in waiting room before leaving (default: 1200)
+   */
   waitingRoomTimeout?: number | undefined;
 };
 

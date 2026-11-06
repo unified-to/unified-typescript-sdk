@@ -15,8 +15,14 @@ export type PropertyCalendarBotMeetingMetadata = {
   endedAt?: Date | undefined;
   hostEmail?: string | undefined;
   hostName?: string | undefined;
+  /**
+   * Platform-specific meeting identifier (not a unified object ref)
+   */
   meetingIdentifier?: string | undefined;
   participantCount?: number | undefined;
+  /**
+   * 'zoom', 'webex', 'google_meet', etc.
+   */
   platform?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)

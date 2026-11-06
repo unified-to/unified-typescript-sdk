@@ -61,30 +61,42 @@ export type CalendarBot = {
    */
   createdAt?: Date | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * When the bot left (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   endedAt?: Date | undefined;
   /**
-   * (reference to CalendarEvent)
+   * Reference to calendar_event if scheduled via calendar (reference to CalendarEvent)
    */
   eventId?: string | undefined;
   id?: string | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * When to join the meeting (for scheduled bots) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   joinAt?: Date | undefined;
   meetingMetadata?: PropertyCalendarBotMeetingMetadata | undefined;
+  /**
+   * URL of the meeting to join
+   */
   meetingUrl?: string | undefined;
+  /**
+   * Display name for the bot in the meeting
+   */
   name?: string | undefined;
   participants?: Array<CalendarBotParticipant> | undefined;
   raw?: { [k: string]: any } | undefined;
   recordingConfig?: PropertyCalendarBotRecordingConfig | undefined;
+  /**
+   * Reference to calendar_recording when ready
+   */
   recordingId?: string | undefined;
   /**
-   * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   * When the bot actually joined (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startedAt?: Date | undefined;
   status?: CalendarBotStatus | undefined;
+  /**
+   * History of status changes
+   */
   statusChanges?: Array<CalendarBotStatusChange> | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)

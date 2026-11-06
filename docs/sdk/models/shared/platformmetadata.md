@@ -1,5 +1,7 @@
 # PlatformMetadata
 
+Platform-specific metadata
+
 
 ## Supported Types
 

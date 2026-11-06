@@ -31,8 +31,14 @@ export type CalendarBotStatusChange = {
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   changedAt?: Date | undefined;
+  /**
+   * Human-readable status message
+   */
   message?: string | undefined;
   status?: CalendarBotStatusChangeStatus | undefined;
+  /**
+   * Platform-specific status sub-code
+   */
   subCode?: string | undefined;
 };
 

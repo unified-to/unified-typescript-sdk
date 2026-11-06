@@ -57,11 +57,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "dc5ff8d8-f6ab-4a4c-97df-59c024ec19ff",
+      id: "21434133-0849-4c32-9504-8f93946d8fc7",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-27T20:01:49.482Z"),
+      updatedAt: new Date("2025-10-28T16:08:59.445Z"),
     },
     connectionId: "<id>",
   });
@@ -93,11 +93,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "dc5ff8d8-f6ab-4a4c-97df-59c024ec19ff",
+      id: "21434133-0849-4c32-9504-8f93946d8fc7",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-27T20:01:49.482Z"),
+      updatedAt: new Date("2025-10-28T16:08:59.445Z"),
     },
     connectionId: "<id>",
   });
@@ -158,7 +158,7 @@ async function run() {
       dimension: 423,
       embeddings: "Est.",
       encondingFormat: "FLOAT",
-      id: "9590a5a7-b26d-4f91-949e-e6e7615893da",
+      id: "ecd1e60a-1432-4445-afba-348daf1cda34",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -199,7 +199,7 @@ async function run() {
       dimension: 423,
       embeddings: "Est.",
       encondingFormat: "FLOAT",
-      id: "9590a5a7-b26d-4f91-949e-e6e7615893da",
+      id: "ecd1e60a-1432-4445-afba-348daf1cda34",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -257,7 +257,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "d287bf68-d3c4-4f16-b1d0-2ec3c76e380f",
+      id: "d6b9c033-f985-4697-a913-2b2cedeaae93",
       metadata: [
         {
           extraData: {
@@ -272,7 +272,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-30T10:02:47.225Z"),
+      updatedAt: new Date("2023-04-30T17:23:42.102Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -305,7 +305,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "d287bf68-d3c4-4f16-b1d0-2ec3c76e380f",
+      id: "d6b9c033-f985-4697-a913-2b2cedeaae93",
       metadata: [
         {
           extraData: {
@@ -320,7 +320,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-30T10:02:47.225Z"),
+      updatedAt: new Date("2023-04-30T17:23:42.102Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -376,10 +376,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "e942f85e-74a5-4b5b-b99d-6ecb78251d43",
+      id: "86394d3c-0e11-4bdd-9cfa-2557542e35b0",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-02-01T01:48:47.969Z"),
+      updatedAt: new Date("2023-02-01T10:57:46.318Z"),
     },
     connectionId: "<id>",
   });
@@ -411,10 +411,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "e942f85e-74a5-4b5b-b99d-6ecb78251d43",
+      id: "86394d3c-0e11-4bdd-9cfa-2557542e35b0",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-02-01T01:48:47.969Z"),
+      updatedAt: new Date("2023-02-01T10:57:46.318Z"),
     },
     connectionId: "<id>",
   });
@@ -692,10 +692,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.createGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-13T15:05:47.285Z"),
+      completedAt: new Date("2025-10-14T11:09:39.947Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "64d18668-5977-47ea-94ce-c078308ae2ef",
+      id: "fc8a8314-7ea3-4af5-b0ce-05a929730c09",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -710,12 +710,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-30T09:00:11.874Z"),
+      startedAt: new Date("2024-05-30T23:31:22.435Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-04T03:41:18.595Z"),
+      updatedAt: new Date("2023-03-04T13:11:39.914Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -746,10 +746,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiCreateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-13T15:05:47.285Z"),
+      completedAt: new Date("2025-10-14T11:09:39.947Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "64d18668-5977-47ea-94ce-c078308ae2ef",
+      id: "fc8a8314-7ea3-4af5-b0ce-05a929730c09",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -764,12 +764,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-30T09:00:11.874Z"),
+      startedAt: new Date("2024-05-30T23:31:22.435Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-04T03:41:18.595Z"),
+      updatedAt: new Date("2023-03-04T13:11:39.914Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -1761,11 +1761,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "5fcc67b2-41fc-4314-9cff-f1dc6abae99c",
+      id: "48377c97-0c17-4718-9ccc-6c435dc37d71",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-27T20:01:49.488Z"),
+      updatedAt: new Date("2025-10-28T16:08:59.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1798,11 +1798,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "5fcc67b2-41fc-4314-9cff-f1dc6abae99c",
+      id: "48377c97-0c17-4718-9ccc-6c435dc37d71",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-27T20:01:49.488Z"),
+      updatedAt: new Date("2025-10-28T16:08:59.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1858,7 +1858,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "afb018aa-7249-440c-95cd-1995390a308f",
+      id: "ac947155-58a7-4dac-a508-eec26ef01253",
       metadata: [
         {
           extraData: {
@@ -1873,7 +1873,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-30T10:02:47.229Z"),
+      updatedAt: new Date("2023-04-30T17:23:42.104Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -1907,7 +1907,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "afb018aa-7249-440c-95cd-1995390a308f",
+      id: "ac947155-58a7-4dac-a508-eec26ef01253",
       metadata: [
         {
           extraData: {
@@ -1922,7 +1922,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-30T10:02:47.229Z"),
+      updatedAt: new Date("2023-04-30T17:23:42.104Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -1979,10 +1979,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "ef124d41-28d2-4c09-8cef-896c7a6551cd",
+      id: "bcc03bca-68d5-4c42-9d49-db8a96c81239",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-02-01T01:48:47.971Z"),
+      updatedAt: new Date("2023-02-01T10:57:46.321Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2015,10 +2015,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "ef124d41-28d2-4c09-8cef-896c7a6551cd",
+      id: "bcc03bca-68d5-4c42-9d49-db8a96c81239",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-02-01T01:48:47.971Z"),
+      updatedAt: new Date("2023-02-01T10:57:46.321Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2072,10 +2072,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.patchGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-13T15:05:47.294Z"),
+      completedAt: new Date("2025-10-14T11:09:39.958Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "e254cac7-3a6c-4f3d-8c7d-6a4b75e8d112",
+      id: "fb6085f2-6718-497f-93b2-1d0ba0db93c7",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2090,12 +2090,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-30T09:00:11.881Z"),
+      startedAt: new Date("2024-05-30T23:31:22.443Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-04T03:41:18.599Z"),
+      updatedAt: new Date("2023-03-04T13:11:39.919Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -2127,10 +2127,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiPatchGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-13T15:05:47.294Z"),
+      completedAt: new Date("2025-10-14T11:09:39.958Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "e254cac7-3a6c-4f3d-8c7d-6a4b75e8d112",
+      id: "fb6085f2-6718-497f-93b2-1d0ba0db93c7",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2145,12 +2145,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-30T09:00:11.881Z"),
+      startedAt: new Date("2024-05-30T23:31:22.443Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-04T03:41:18.599Z"),
+      updatedAt: new Date("2023-03-04T13:11:39.919Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -2602,11 +2602,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "5fcc67b2-41fc-4314-9cff-f1dc6abae99c",
+      id: "48377c97-0c17-4718-9ccc-6c435dc37d71",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-27T20:01:49.488Z"),
+      updatedAt: new Date("2025-10-28T16:08:59.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2639,11 +2639,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Assentator tero sequi.",
-      id: "5fcc67b2-41fc-4314-9cff-f1dc6abae99c",
+      id: "48377c97-0c17-4718-9ccc-6c435dc37d71",
       instructions: "Delicate tabella addo vita ver auctus corrumpo. Conscendo auctus maiores astrum sulum aufero bis stella. Non varius sto solus admitto vado suggero theatrum.",
       isActive: false,
       name: "daughter with",
-      updatedAt: new Date("2025-10-27T20:01:49.488Z"),
+      updatedAt: new Date("2025-10-28T16:08:59.450Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2699,7 +2699,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "afb018aa-7249-440c-95cd-1995390a308f",
+      id: "ac947155-58a7-4dac-a508-eec26ef01253",
       metadata: [
         {
           extraData: {
@@ -2714,7 +2714,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-30T10:02:47.229Z"),
+      updatedAt: new Date("2023-04-30T17:23:42.104Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -2748,7 +2748,7 @@ async function run() {
     genaiMemory: {
       content: "Tabella rem approbo spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis. Ullus ager degero deporto cicuta vulgivagus.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "afb018aa-7249-440c-95cd-1995390a308f",
+      id: "ac947155-58a7-4dac-a508-eec26ef01253",
       metadata: [
         {
           extraData: {
@@ -2763,7 +2763,7 @@ async function run() {
       ],
       name: "sponte.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-04-30T10:02:47.229Z"),
+      updatedAt: new Date("2023-04-30T17:23:42.104Z"),
       userIdentifier: "9d170613-4338-447d-bdb6-8ea96a2d7513",
     },
     connectionId: "<id>",
@@ -2820,10 +2820,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "ef124d41-28d2-4c09-8cef-896c7a6551cd",
+      id: "bcc03bca-68d5-4c42-9d49-db8a96c81239",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-02-01T01:48:47.971Z"),
+      updatedAt: new Date("2023-02-01T10:57:46.321Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2856,10 +2856,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Voluptates abeo subseco.",
-      id: "ef124d41-28d2-4c09-8cef-896c7a6551cd",
+      id: "bcc03bca-68d5-4c42-9d49-db8a96c81239",
       isActive: false,
       name: "officially about",
-      updatedAt: new Date("2023-02-01T01:48:47.971Z"),
+      updatedAt: new Date("2023-02-01T10:57:46.321Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2913,10 +2913,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.updateGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-13T15:05:47.294Z"),
+      completedAt: new Date("2025-10-14T11:09:39.958Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "e254cac7-3a6c-4f3d-8c7d-6a4b75e8d112",
+      id: "fb6085f2-6718-497f-93b2-1d0ba0db93c7",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2931,12 +2931,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-30T09:00:11.881Z"),
+      startedAt: new Date("2024-05-30T23:31:22.443Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-04T03:41:18.599Z"),
+      updatedAt: new Date("2023-03-04T13:11:39.919Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",
@@ -2968,10 +2968,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiUpdateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-13T15:05:47.294Z"),
+      completedAt: new Date("2025-10-14T11:09:39.958Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "e254cac7-3a6c-4f3d-8c7d-6a4b75e8d112",
+      id: "fb6085f2-6718-497f-93b2-1d0ba0db93c7",
       instructions: "Benigne canonicus officiis solvo adsidue deleo angustus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2986,12 +2986,12 @@ async function run() {
       pullrequestUrl: "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
       repoUrl: "https://github.com/berenice.satterfield/joshingly-ignorance",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-05-30T09:00:11.881Z"),
+      startedAt: new Date("2024-05-30T23:31:22.443Z"),
       status: "BLOCKED",
       summary: "Cur aeternus cogito vesper.",
       targetBranchIdentifier: "agent/joshingly-ignorance",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-04T03:41:18.599Z"),
+      updatedAt: new Date("2023-03-04T13:11:39.919Z"),
       webUrl: "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>",

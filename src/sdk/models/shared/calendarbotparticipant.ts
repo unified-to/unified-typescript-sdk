@@ -16,6 +16,9 @@ export type CalendarBotParticipant5 =
   | number
   | boolean;
 
+/**
+ * Platform-specific metadata
+ */
 export type PlatformMetadata =
   | { [k: string]: any }
   | string
@@ -26,9 +29,15 @@ export type PlatformMetadata =
 export type CalendarBotParticipant = {
   email?: string | undefined;
   id?: string | undefined;
+  /**
+   * Whether this participant is a bot
+   */
   isBot?: boolean | undefined;
   isCohost?: boolean | undefined;
   isHost?: boolean | undefined;
+  /**
+   * Whether this participant is the current bot
+   */
   isSelf?: boolean | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -39,7 +48,13 @@ export type CalendarBotParticipant = {
    */
   leftAt?: Date | undefined;
   name?: string | undefined;
+  /**
+   * Platform-specific participant identifier
+   */
   platform?: string | undefined;
+  /**
+   * Platform-specific metadata
+   */
   platformMetadata?:
     | { [k: string]: any }
     | string
@@ -47,8 +62,17 @@ export type CalendarBotParticipant = {
     | boolean
     | Array<CalendarBotParticipant1 | string | number | boolean>
     | undefined;
+  /**
+   * Whether participant is sharing screen
+   */
   screenshareOn?: boolean | undefined;
+  /**
+   * Whether participant is currently speaking
+   */
   speaking?: boolean | undefined;
+  /**
+   * Whether participant's webcam is on
+   */
   webcamOn?: boolean | undefined;
 };
 

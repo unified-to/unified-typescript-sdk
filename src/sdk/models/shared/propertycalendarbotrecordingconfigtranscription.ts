@@ -29,8 +29,17 @@ export const Provider = {
 export type Provider = OpenEnum<typeof Provider>;
 
 export type PropertyCalendarBotRecordingConfigTranscription = {
+  /**
+   * Whether to identify speakers in transcript
+   */
   enableSpeakerLabels?: boolean | undefined;
+  /**
+   * Whether to include word-level timestamps
+   */
   enableWordTimestamps?: boolean | undefined;
+  /**
+   * ISO language code (e.g., 'en-US')
+   */
   language?: string | undefined;
   mode?: PropertyCalendarBotRecordingConfigTranscriptionMode | undefined;
   provider?: Provider | undefined;
