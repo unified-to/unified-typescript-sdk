@@ -182,6 +182,8 @@ export const PropertyConnectionPermissions = {
   UcCallWrite: "uc_call_write",
   UcContactRead: "uc_contact_read",
   UcContactWrite: "uc_contact_write",
+  UcFaxRead: "uc_fax_read",
+  UcFaxWrite: "uc_fax_write",
   UcCommentRead: "uc_comment_read",
   UcCommentWrite: "uc_comment_write",
   UcRecordingRead: "uc_recording_read",

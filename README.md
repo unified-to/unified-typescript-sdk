@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "9e182b48-b3e7-4f5b-8df1-cf9312691f8e",
+      id: "60127d3b-f181-45a4-ada4-111917bd5b3a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T23:18:51.300Z"),
+      updatedAt: new Date("2023-08-11T05:16:18.051Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "9e182b48-b3e7-4f5b-8df1-cf9312691f8e",
+      id: "60127d3b-f181-45a4-ada4-111917bd5b3a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T23:18:51.300Z"),
+      updatedAt: new Date("2023-08-11T05:16:18.051Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "9e182b48-b3e7-4f5b-8df1-cf9312691f8e",
+      id: "60127d3b-f181-45a4-ada4-111917bd5b3a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T23:18:51.300Z"),
+      updatedAt: new Date("2023-08-11T05:16:18.051Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "9e182b48-b3e7-4f5b-8df1-cf9312691f8e",
+        id: "60127d3b-f181-45a4-ada4-111917bd5b3a",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-10T23:18:51.300Z"),
+        updatedAt: new Date("2023-08-11T05:16:18.051Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "9e182b48-b3e7-4f5b-8df1-cf9312691f8e",
+      id: "60127d3b-f181-45a4-ada4-111917bd5b3a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T23:18:51.300Z"),
+      updatedAt: new Date("2023-08-11T05:16:18.051Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "9e182b48-b3e7-4f5b-8df1-cf9312691f8e",
+      id: "60127d3b-f181-45a4-ada4-111917bd5b3a",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-10T23:18:51.300Z"),
+      updatedAt: new Date("2023-08-11T05:16:18.051Z"),
     },
     connectionId: "<id>",
   });
@@ -2648,16 +2648,24 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`ticketingUpdateTicketingTicket`](docs/sdks/ticketing/README.md#updateticketingticket) - Update a ticket
 - [`ucCreateUcCall`](docs/sdks/call/README.md#createuccall) - Create a call
 - [`ucCreateUcCall`](docs/sdks/uc/README.md#createuccall) - Create a call
+- [`ucCreateUcFax`](docs/sdks/fax/README.md#createucfax) - Create a fax
+- [`ucCreateUcFax`](docs/sdks/uc/README.md#createucfax) - Create a fax
 - [`ucGetUcCall`](docs/sdks/call/README.md#getuccall) - Retrieve a call
 - [`ucGetUcCall`](docs/sdks/uc/README.md#getuccall) - Retrieve a call
+- [`ucGetUcFax`](docs/sdks/fax/README.md#getucfax) - Retrieve a fax
+- [`ucGetUcFax`](docs/sdks/uc/README.md#getucfax) - Retrieve a fax
 - [`ucGetUcScorecardtemplate`](docs/sdks/scorecardtemplate/README.md#getucscorecardtemplate) - Retrieve a scorecardtemplate
 - [`ucGetUcScorecardtemplate`](docs/sdks/uc/README.md#getucscorecardtemplate) - Retrieve a scorecardtemplate
 - [`ucListUcCalls`](docs/sdks/call/README.md#listuccalls) - List all calls
 - [`ucListUcCalls`](docs/sdks/uc/README.md#listuccalls) - List all calls
+- [`ucListUcFaxes`](docs/sdks/fax/README.md#listucfaxes) - List all faxes
+- [`ucListUcFaxes`](docs/sdks/uc/README.md#listucfaxes) - List all faxes
 - [`ucListUcScorecardtemplates`](docs/sdks/scorecardtemplate/README.md#listucscorecardtemplates) - List all scorecardtemplates
 - [`ucListUcScorecardtemplates`](docs/sdks/uc/README.md#listucscorecardtemplates) - List all scorecardtemplates
 - [`ucPatchUcCall`](docs/sdks/call/README.md#patchuccall) - Update a call
 - [`ucPatchUcCall`](docs/sdks/uc/README.md#patchuccall) - Update a call
+- [`ucRemoveUcFax`](docs/sdks/fax/README.md#removeucfax) - Remove a fax
+- [`ucRemoveUcFax`](docs/sdks/uc/README.md#removeucfax) - Remove a fax
 - [`ucUpdateUcCall`](docs/sdks/call/README.md#updateuccall) - Update a call
 - [`ucUpdateUcCall`](docs/sdks/uc/README.md#updateuccall) - Update a call
 - [`unifiedCreateUnifiedConnection`](docs/sdks/connection/README.md#createunifiedconnection) - Create connection

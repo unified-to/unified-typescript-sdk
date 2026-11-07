@@ -84,6 +84,7 @@ import { Envvar } from "./envvar.js";
 import { Event } from "./event.js";
 import { Expense } from "./expense.js";
 import { Expensereport } from "./expensereport.js";
+import { Fax } from "./fax.js";
 import { Feedback } from "./feedback.js";
 import { FileT } from "./file.js";
 import { Form } from "./form.js";
@@ -1274,6 +1275,11 @@ export class UnifiedTo extends ClientSDK {
   private _call?: Call;
   get call(): Call {
     return (this._call ??= new Call(this._options));
+  }
+
+  private _fax?: Fax;
+  get fax(): Fax {
+    return (this._fax ??= new Fax(this._options));
   }
 
   private _scorecardtemplate?: Scorecardtemplate;

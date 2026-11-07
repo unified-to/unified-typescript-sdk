@@ -24,6 +24,7 @@ export const ListHrisTimeoffsQueryParamFields = {
   Type: "type",
   Duration: "duration",
   DurationType: "duration_type",
+  Attachments: "attachments",
   Metadata: "metadata",
   Raw: "raw",
 } as const;

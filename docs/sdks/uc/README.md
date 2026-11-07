@@ -7,16 +7,19 @@
 * [createUcCall](#createuccall) - Create a call
 * [createUcComment](#createuccomment) - Create a comment
 * [createUcContact](#createuccontact) - Create a contact
+* [createUcFax](#createucfax) - Create a fax
 * [createUcRecording](#createucrecording) - Create a recording
 * [getUcCall](#getuccall) - Retrieve a call
 * [getUcComment](#getuccomment) - Retrieve a comment
 * [getUcContact](#getuccontact) - Retrieve a contact
+* [getUcFax](#getucfax) - Retrieve a fax
 * [getUcRecording](#getucrecording) - Retrieve a recording
 * [getUcScorecard](#getucscorecard) - Retrieve a scorecard
 * [getUcScorecardtemplate](#getucscorecardtemplate) - Retrieve a scorecardtemplate
 * [listUcCalls](#listuccalls) - List all calls
 * [listUcComments](#listuccomments) - List all comments
 * [listUcContacts](#listuccontacts) - List all contacts
+* [listUcFaxes](#listucfaxes) - List all faxes
 * [listUcRecordings](#listucrecordings) - List all recordings
 * [listUcScorecards](#listucscorecards) - List all scorecards
 * [listUcScorecardtemplates](#listucscorecardtemplates) - List all scorecardtemplates
@@ -26,6 +29,7 @@
 * [patchUcRecording](#patchucrecording) - Update a recording
 * [removeUcComment](#removeuccomment) - Remove a comment
 * [removeUcContact](#removeuccontact) - Remove a contact
+* [removeUcFax](#removeucfax) - Remove a fax
 * [removeUcRecording](#removeucrecording) - Remove a recording
 * [updateUcCall](#updateuccall) - Update a call
 * [updateUcComment](#updateuccomment) - Update a comment
@@ -51,15 +55,15 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.uc.createUcCall({
     ucCall: {
-      answerAt: new Date("2025-05-23T01:26:21.121Z"),
+      answerAt: new Date("2025-05-23T15:14:06.966Z"),
       contacts: [],
-      conversationIdentifier: "ceaa8a14-d755-4ed6-ba58-d3a8c826e568",
+      conversationIdentifier: "791e49c9-957c-4ebe-a75d-e62eb6fd7cac",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-04T02:51:12.755Z"),
-      id: "ceaa8a14-d755-4ed6-ba58-d3a8c826e568",
+      endAt: new Date("2024-06-04T10:15:12.282Z"),
+      id: "791e49c9-957c-4ebe-a75d-e62eb6fd7cac",
       isPrivate: false,
       metadata: [
         {
@@ -67,20 +71,20 @@ async function run() {
 
           },
           format: "PRICE",
-          id: "a47c626c-94e2-4a4e-b254-7db5e8727f61",
+          id: "35879f0a-a940-472b-9b75-cbc9f3afdec0",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-20T09:47:01.726Z"),
+      startAt: new Date("2023-12-20T14:09:44.803Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-04T15:25:11.215Z"),
+      updatedAt: new Date("2023-08-04T17:18:06.320Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -111,15 +115,15 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await ucCreateUcCall(unifiedTo, {
     ucCall: {
-      answerAt: new Date("2025-05-23T01:26:21.121Z"),
+      answerAt: new Date("2025-05-23T15:14:06.966Z"),
       contacts: [],
-      conversationIdentifier: "ceaa8a14-d755-4ed6-ba58-d3a8c826e568",
+      conversationIdentifier: "791e49c9-957c-4ebe-a75d-e62eb6fd7cac",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-04T02:51:12.755Z"),
-      id: "ceaa8a14-d755-4ed6-ba58-d3a8c826e568",
+      endAt: new Date("2024-06-04T10:15:12.282Z"),
+      id: "791e49c9-957c-4ebe-a75d-e62eb6fd7cac",
       isPrivate: false,
       metadata: [
         {
@@ -127,20 +131,20 @@ async function run() {
   
           },
           format: "PRICE",
-          id: "a47c626c-94e2-4a4e-b254-7db5e8727f61",
+          id: "35879f0a-a940-472b-9b75-cbc9f3afdec0",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-20T09:47:01.726Z"),
+      startAt: new Date("2023-12-20T14:09:44.803Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-04T15:25:11.215Z"),
+      updatedAt: new Date("2023-08-04T17:18:06.320Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -196,9 +200,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "c74f308d-831d-4bd5-8214-f2fe50177f11",
+      id: "ec300af3-cbe5-4905-8e4e-79d1a8214321",
       metadata: [],
-      updatedAt: "2024-02-13T15:07:29.088Z",
+      updatedAt: "2024-02-13T20:46:35.583Z",
     },
     connectionId: "<id>",
   });
@@ -230,9 +234,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "c74f308d-831d-4bd5-8214-f2fe50177f11",
+      id: "ec300af3-cbe5-4905-8e4e-79d1a8214321",
       metadata: [],
-      updatedAt: "2024-02-13T15:07:29.088Z",
+      updatedAt: "2024-02-13T20:46:35.583Z",
     },
     connectionId: "<id>",
   });
@@ -294,7 +298,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "244b5581-2895-435b-9cb3-e412b05bfc6e",
+      id: "9065ce08-f42e-40dd-94fb-e1926d1bb0bb",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -313,7 +317,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-17T19:22:10.841Z"),
+      updatedAt: new Date("2023-12-18T09:10:32.711Z"),
     },
     connectionId: "<id>",
   });
@@ -352,7 +356,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "244b5581-2895-435b-9cb3-e412b05bfc6e",
+      id: "9065ce08-f42e-40dd-94fb-e1926d1bb0bb",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -371,7 +375,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-17T19:22:10.841Z"),
+      updatedAt: new Date("2023-12-18T09:10:32.711Z"),
     },
     connectionId: "<id>",
   });
@@ -405,6 +409,111 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## createUcFax
+
+Creates a UcFax. Provide the unified UcFax fields in the request body; they are mapped to the provider's API. Returns the created UcFax.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createUcFax" method="post" path="/uc/{connection_id}/fax" example="uc_fax" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.uc.createUcFax({
+    ucFax: {
+      costAmount: 1.2207,
+      createdAt: new Date("2022-10-25T13:37:51.431Z"),
+      currency: "USD",
+      fromTelephone: "+13605107540",
+      id: "09d5d95e-2557-463c-b931-5956af5ff218",
+      mediaUrl: "https://doting-jump.biz",
+      metadata: [],
+      pages: 20,
+      status: "DELIVERED",
+      toTelephone: "+19083998866",
+      type: "INBOUND",
+      updatedAt: new Date("2023-04-15T18:40:36.197Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { ucCreateUcFax } from "@unified-api/typescript-sdk/funcs/ucCreateUcFax.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await ucCreateUcFax(unifiedTo, {
+    ucFax: {
+      costAmount: 1.2207,
+      createdAt: new Date("2022-10-25T13:37:51.431Z"),
+      currency: "USD",
+      fromTelephone: "+13605107540",
+      id: "09d5d95e-2557-463c-b931-5956af5ff218",
+      mediaUrl: "https://doting-jump.biz",
+      metadata: [],
+      pages: 20,
+      status: "DELIVERED",
+      toTelephone: "+19083998866",
+      type: "INBOUND",
+      updatedAt: new Date("2023-04-15T18:40:36.197Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ucCreateUcFax failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateUcFaxRequest](../../sdk/models/operations/createucfaxrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcFax](../../sdk/models/shared/ucfax.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## createUcRecording
 
 Creates a UcRecording. Provide the unified UcRecording fields in the request body; they are mapped to the provider's API. Returns the created UcRecording.
@@ -425,36 +534,36 @@ async function run() {
   const result = await unifiedTo.uc.createUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "238df717-92d2-4c0c-b8ba-92cd48320a95",
+      conversationIdentifier: "36641330-10c9-4a64-9ed9-734ce8417b0d",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-11T08:55:13.970Z"),
-      expiresAt: new Date("2026-05-10T21:00:15.169Z"),
-      id: "238df717-92d2-4c0c-b8ba-92cd48320a95",
+      endAt: new Date("2024-05-11T18:15:21.201Z"),
+      expiresAt: new Date("2026-05-11T17:39:38.035Z"),
+      id: "36641330-10c9-4a64-9ed9-734ce8417b0d",
       media: [
         {
-          endAt: new Date("2024-04-07T20:03:35.098Z"),
+          endAt: new Date("2024-04-08T04:52:28.761Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-29T17:52:05.781Z"),
+          startAt: new Date("2026-05-30T14:49:02.832Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-03-09T23:04:48.839Z"),
-              startAt: new Date("2024-06-08T22:19:34.824Z"),
+              endAt: new Date("2026-03-10T18:46:32.745Z"),
+              startAt: new Date("2024-06-09T08:06:17.556Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-20T15:28:14.456Z"),
-              startAt: new Date("2026-08-18T00:52:04.176Z"),
+              endAt: new Date("2024-10-21T03:19:27.493Z"),
+              startAt: new Date("2026-08-18T23:03:46.931Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-30T03:07:10.920Z"),
+      startAt: new Date("2023-04-30T06:36:02.550Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-26T05:13:14.996Z"),
+      updatedAt: new Date("2025-03-26T19:30:15.391Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -487,36 +596,36 @@ async function run() {
   const res = await recordingCreateUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "238df717-92d2-4c0c-b8ba-92cd48320a95",
+      conversationIdentifier: "36641330-10c9-4a64-9ed9-734ce8417b0d",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-11T08:55:13.970Z"),
-      expiresAt: new Date("2026-05-10T21:00:15.169Z"),
-      id: "238df717-92d2-4c0c-b8ba-92cd48320a95",
+      endAt: new Date("2024-05-11T18:15:21.201Z"),
+      expiresAt: new Date("2026-05-11T17:39:38.035Z"),
+      id: "36641330-10c9-4a64-9ed9-734ce8417b0d",
       media: [
         {
-          endAt: new Date("2024-04-07T20:03:35.098Z"),
+          endAt: new Date("2024-04-08T04:52:28.761Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-29T17:52:05.781Z"),
+          startAt: new Date("2026-05-30T14:49:02.832Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-03-09T23:04:48.839Z"),
-              startAt: new Date("2024-06-08T22:19:34.824Z"),
+              endAt: new Date("2026-03-10T18:46:32.745Z"),
+              startAt: new Date("2024-06-09T08:06:17.556Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-20T15:28:14.456Z"),
-              startAt: new Date("2026-08-18T00:52:04.176Z"),
+              endAt: new Date("2024-10-21T03:19:27.493Z"),
+              startAt: new Date("2026-08-18T23:03:46.931Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-30T03:07:10.920Z"),
+      startAt: new Date("2023-04-30T06:36:02.550Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-26T05:13:14.996Z"),
+      updatedAt: new Date("2025-03-26T19:30:15.391Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -782,6 +891,85 @@ run();
 ### Response
 
 **Promise\<[shared.UcContact](../../sdk/models/shared/uccontact.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getUcFax
+
+Retrieves a single UcFax by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getUcFax" method="get" path="/uc/{connection_id}/fax/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.uc.getUcFax({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { ucGetUcFax } from "@unified-api/typescript-sdk/funcs/ucGetUcFax.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await ucGetUcFax(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ucGetUcFax failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetUcFaxRequest](../../sdk/models/operations/getucfaxrequest.md)                                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcFax](../../sdk/models/shared/ucfax.md)\>**
 
 ### Errors
 
@@ -1257,6 +1445,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listUcFaxes
+
+Returns a list of UcFaxes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listUcFaxes" method="get" path="/uc/{connection_id}/fax" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.uc.listUcFaxes({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { ucListUcFaxes } from "@unified-api/typescript-sdk/funcs/ucListUcFaxes.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await ucListUcFaxes(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ucListUcFaxes failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListUcFaxesRequest](../../sdk/models/operations/listucfaxesrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.UcFax[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listUcRecordings
 
 Returns a list of UcRecordings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -1507,15 +1772,15 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.uc.patchUcCall({
     ucCall: {
-      answerAt: new Date("2025-05-23T01:26:21.139Z"),
+      answerAt: new Date("2025-05-23T15:14:06.981Z"),
       contacts: [],
-      conversationIdentifier: "516c7d0b-45f6-4d56-8abe-fbc192e1200a",
+      conversationIdentifier: "3ee2c802-6699-4b7f-99ff-814d758a1bc5",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-04T02:51:12.765Z"),
-      id: "516c7d0b-45f6-4d56-8abe-fbc192e1200a",
+      endAt: new Date("2024-06-04T10:15:12.290Z"),
+      id: "3ee2c802-6699-4b7f-99ff-814d758a1bc5",
       isPrivate: false,
       metadata: [
         {
@@ -1523,20 +1788,20 @@ async function run() {
 
           },
           format: "PRICE",
-          id: "25927e3b-4527-44c6-aa79-0016b894b34a",
+          id: "9b7a97e4-11cd-44f8-bce3-9813a37e20da",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-20T09:47:01.732Z"),
+      startAt: new Date("2023-12-20T14:09:44.808Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-04T15:25:11.218Z"),
+      updatedAt: new Date("2023-08-04T17:18:06.322Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -1568,15 +1833,15 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await ucPatchUcCall(unifiedTo, {
     ucCall: {
-      answerAt: new Date("2025-05-23T01:26:21.139Z"),
+      answerAt: new Date("2025-05-23T15:14:06.981Z"),
       contacts: [],
-      conversationIdentifier: "516c7d0b-45f6-4d56-8abe-fbc192e1200a",
+      conversationIdentifier: "3ee2c802-6699-4b7f-99ff-814d758a1bc5",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-04T02:51:12.765Z"),
-      id: "516c7d0b-45f6-4d56-8abe-fbc192e1200a",
+      endAt: new Date("2024-06-04T10:15:12.290Z"),
+      id: "3ee2c802-6699-4b7f-99ff-814d758a1bc5",
       isPrivate: false,
       metadata: [
         {
@@ -1584,20 +1849,20 @@ async function run() {
   
           },
           format: "PRICE",
-          id: "25927e3b-4527-44c6-aa79-0016b894b34a",
+          id: "9b7a97e4-11cd-44f8-bce3-9813a37e20da",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-20T09:47:01.732Z"),
+      startAt: new Date("2023-12-20T14:09:44.808Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-04T15:25:11.218Z"),
+      updatedAt: new Date("2023-08-04T17:18:06.322Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -1654,9 +1919,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "6fae923b-8ae4-49c6-9273-7d8202617042",
+      id: "6d5e4746-8cfa-42bc-94e2-9d417ced8c6d",
       metadata: [],
-      updatedAt: "2024-02-13T15:07:29.091Z",
+      updatedAt: "2024-02-13T20:46:35.585Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1689,9 +1954,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "6fae923b-8ae4-49c6-9273-7d8202617042",
+      id: "6d5e4746-8cfa-42bc-94e2-9d417ced8c6d",
       metadata: [],
-      updatedAt: "2024-02-13T15:07:29.091Z",
+      updatedAt: "2024-02-13T20:46:35.585Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1754,7 +2019,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "a743964c-1e2d-4c1d-a9dd-f8ef801d746b",
+      id: "0f0bf49c-2e79-4321-bccb-b4b262752189",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -1773,7 +2038,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-17T19:22:10.851Z"),
+      updatedAt: new Date("2023-12-18T09:10:32.721Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1813,7 +2078,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "a743964c-1e2d-4c1d-a9dd-f8ef801d746b",
+      id: "0f0bf49c-2e79-4321-bccb-b4b262752189",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -1832,7 +2097,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-17T19:22:10.851Z"),
+      updatedAt: new Date("2023-12-18T09:10:32.721Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1887,36 +2152,36 @@ async function run() {
   const result = await unifiedTo.uc.patchUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "6400691c-34f8-49e1-8552-41d9cf07ff98",
+      conversationIdentifier: "661f7fc4-ab71-40df-931c-48d16a1a6ffa",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-11T08:55:13.985Z"),
-      expiresAt: new Date("2026-05-10T21:00:15.203Z"),
-      id: "6400691c-34f8-49e1-8552-41d9cf07ff98",
+      endAt: new Date("2024-05-11T18:15:21.211Z"),
+      expiresAt: new Date("2026-05-11T17:39:38.055Z"),
+      id: "661f7fc4-ab71-40df-931c-48d16a1a6ffa",
       media: [
         {
-          endAt: new Date("2024-04-07T20:03:35.113Z"),
+          endAt: new Date("2024-04-08T04:52:28.769Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-29T17:52:05.816Z"),
+          startAt: new Date("2026-05-30T14:49:02.853Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-03-09T23:04:48.872Z"),
-              startAt: new Date("2024-06-08T22:19:34.840Z"),
+              endAt: new Date("2026-03-10T18:46:32.764Z"),
+              startAt: new Date("2024-06-09T08:06:17.566Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-20T15:28:14.476Z"),
-              startAt: new Date("2026-08-18T00:52:04.213Z"),
+              endAt: new Date("2024-10-21T03:19:27.505Z"),
+              startAt: new Date("2026-08-18T23:03:46.954Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-30T03:07:10.925Z"),
+      startAt: new Date("2023-04-30T06:36:02.554Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-26T05:13:15.019Z"),
+      updatedAt: new Date("2025-03-26T19:30:15.405Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -1950,36 +2215,36 @@ async function run() {
   const res = await recordingPatchUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "6400691c-34f8-49e1-8552-41d9cf07ff98",
+      conversationIdentifier: "661f7fc4-ab71-40df-931c-48d16a1a6ffa",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-11T08:55:13.985Z"),
-      expiresAt: new Date("2026-05-10T21:00:15.203Z"),
-      id: "6400691c-34f8-49e1-8552-41d9cf07ff98",
+      endAt: new Date("2024-05-11T18:15:21.211Z"),
+      expiresAt: new Date("2026-05-11T17:39:38.055Z"),
+      id: "661f7fc4-ab71-40df-931c-48d16a1a6ffa",
       media: [
         {
-          endAt: new Date("2024-04-07T20:03:35.113Z"),
+          endAt: new Date("2024-04-08T04:52:28.769Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-29T17:52:05.816Z"),
+          startAt: new Date("2026-05-30T14:49:02.853Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-03-09T23:04:48.872Z"),
-              startAt: new Date("2024-06-08T22:19:34.840Z"),
+              endAt: new Date("2026-03-10T18:46:32.764Z"),
+              startAt: new Date("2024-06-09T08:06:17.566Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-20T15:28:14.476Z"),
-              startAt: new Date("2026-08-18T00:52:04.213Z"),
+              endAt: new Date("2024-10-21T03:19:27.505Z"),
+              startAt: new Date("2026-08-18T23:03:46.954Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-30T03:07:10.925Z"),
+      startAt: new Date("2023-04-30T06:36:02.554Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-26T05:13:15.019Z"),
+      updatedAt: new Date("2025-03-26T19:30:15.405Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -2174,6 +2439,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removeUcFax
+
+Deletes the UcFax identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeUcFax" method="delete" path="/uc/{connection_id}/fax/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.uc.removeUcFax({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { ucRemoveUcFax } from "@unified-api/typescript-sdk/funcs/ucRemoveUcFax.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await ucRemoveUcFax(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ucRemoveUcFax failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveUcFaxRequest](../../sdk/models/operations/removeucfaxrequest.md)                                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveUcFaxResponse](../../sdk/models/operations/removeucfaxresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## removeUcRecording
 
 Deletes the UcRecording identified by `id`.
@@ -2272,15 +2616,15 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.uc.updateUcCall({
     ucCall: {
-      answerAt: new Date("2025-05-23T01:26:21.139Z"),
+      answerAt: new Date("2025-05-23T15:14:06.981Z"),
       contacts: [],
-      conversationIdentifier: "516c7d0b-45f6-4d56-8abe-fbc192e1200a",
+      conversationIdentifier: "3ee2c802-6699-4b7f-99ff-814d758a1bc5",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-04T02:51:12.765Z"),
-      id: "516c7d0b-45f6-4d56-8abe-fbc192e1200a",
+      endAt: new Date("2024-06-04T10:15:12.290Z"),
+      id: "3ee2c802-6699-4b7f-99ff-814d758a1bc5",
       isPrivate: false,
       metadata: [
         {
@@ -2288,20 +2632,20 @@ async function run() {
 
           },
           format: "PRICE",
-          id: "25927e3b-4527-44c6-aa79-0016b894b34a",
+          id: "9b7a97e4-11cd-44f8-bce3-9813a37e20da",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-20T09:47:01.732Z"),
+      startAt: new Date("2023-12-20T14:09:44.808Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-04T15:25:11.218Z"),
+      updatedAt: new Date("2023-08-04T17:18:06.322Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -2333,15 +2677,15 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await ucUpdateUcCall(unifiedTo, {
     ucCall: {
-      answerAt: new Date("2025-05-23T01:26:21.139Z"),
+      answerAt: new Date("2025-05-23T15:14:06.981Z"),
       contacts: [],
-      conversationIdentifier: "516c7d0b-45f6-4d56-8abe-fbc192e1200a",
+      conversationIdentifier: "3ee2c802-6699-4b7f-99ff-814d758a1bc5",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-04T02:51:12.765Z"),
-      id: "516c7d0b-45f6-4d56-8abe-fbc192e1200a",
+      endAt: new Date("2024-06-04T10:15:12.290Z"),
+      id: "3ee2c802-6699-4b7f-99ff-814d758a1bc5",
       isPrivate: false,
       metadata: [
         {
@@ -2349,20 +2693,20 @@ async function run() {
   
           },
           format: "PRICE",
-          id: "25927e3b-4527-44c6-aa79-0016b894b34a",
+          id: "9b7a97e4-11cd-44f8-bce3-9813a37e20da",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-20T09:47:01.732Z"),
+      startAt: new Date("2023-12-20T14:09:44.808Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-04T15:25:11.218Z"),
+      updatedAt: new Date("2023-08-04T17:18:06.322Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -2419,9 +2763,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "6fae923b-8ae4-49c6-9273-7d8202617042",
+      id: "6d5e4746-8cfa-42bc-94e2-9d417ced8c6d",
       metadata: [],
-      updatedAt: "2024-02-13T15:07:29.091Z",
+      updatedAt: "2024-02-13T20:46:35.585Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2454,9 +2798,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "6fae923b-8ae4-49c6-9273-7d8202617042",
+      id: "6d5e4746-8cfa-42bc-94e2-9d417ced8c6d",
       metadata: [],
-      updatedAt: "2024-02-13T15:07:29.091Z",
+      updatedAt: "2024-02-13T20:46:35.585Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2519,7 +2863,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "a743964c-1e2d-4c1d-a9dd-f8ef801d746b",
+      id: "0f0bf49c-2e79-4321-bccb-b4b262752189",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -2538,7 +2882,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-17T19:22:10.851Z"),
+      updatedAt: new Date("2023-12-18T09:10:32.721Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2578,7 +2922,7 @@ async function run() {
         },
       ],
       firstName: "Luther",
-      id: "a743964c-1e2d-4c1d-a9dd-f8ef801d746b",
+      id: "0f0bf49c-2e79-4321-bccb-b4b262752189",
       lastName: "Rogahn",
       metadata: [],
       name: "Luther Rogahn",
@@ -2597,7 +2941,7 @@ async function run() {
         },
       ],
       title: "Chief Optimization Executive",
-      updatedAt: new Date("2023-12-17T19:22:10.851Z"),
+      updatedAt: new Date("2023-12-18T09:10:32.721Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2652,36 +2996,36 @@ async function run() {
   const result = await unifiedTo.uc.updateUcRecording({
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "6400691c-34f8-49e1-8552-41d9cf07ff98",
+      conversationIdentifier: "661f7fc4-ab71-40df-931c-48d16a1a6ffa",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-11T08:55:13.985Z"),
-      expiresAt: new Date("2026-05-10T21:00:15.203Z"),
-      id: "6400691c-34f8-49e1-8552-41d9cf07ff98",
+      endAt: new Date("2024-05-11T18:15:21.211Z"),
+      expiresAt: new Date("2026-05-11T17:39:38.055Z"),
+      id: "661f7fc4-ab71-40df-931c-48d16a1a6ffa",
       media: [
         {
-          endAt: new Date("2024-04-07T20:03:35.113Z"),
+          endAt: new Date("2024-04-08T04:52:28.769Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-29T17:52:05.816Z"),
+          startAt: new Date("2026-05-30T14:49:02.853Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-03-09T23:04:48.872Z"),
-              startAt: new Date("2024-06-08T22:19:34.840Z"),
+              endAt: new Date("2026-03-10T18:46:32.764Z"),
+              startAt: new Date("2024-06-09T08:06:17.566Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-20T15:28:14.476Z"),
-              startAt: new Date("2026-08-18T00:52:04.213Z"),
+              endAt: new Date("2024-10-21T03:19:27.505Z"),
+              startAt: new Date("2026-08-18T23:03:46.954Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-30T03:07:10.925Z"),
+      startAt: new Date("2023-04-30T06:36:02.554Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-26T05:13:15.019Z"),
+      updatedAt: new Date("2025-03-26T19:30:15.405Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },
@@ -2715,36 +3059,36 @@ async function run() {
   const res = await recordingUpdateUcRecording(unifiedTo, {
     ucRecording: {
       contacts: [],
-      conversationIdentifier: "6400691c-34f8-49e1-8552-41d9cf07ff98",
+      conversationIdentifier: "661f7fc4-ab71-40df-931c-48d16a1a6ffa",
       createdAt: new Date("2022-09-17T19:41:46.956Z"),
-      endAt: new Date("2024-05-11T08:55:13.985Z"),
-      expiresAt: new Date("2026-05-10T21:00:15.203Z"),
-      id: "6400691c-34f8-49e1-8552-41d9cf07ff98",
+      endAt: new Date("2024-05-11T18:15:21.211Z"),
+      expiresAt: new Date("2026-05-11T17:39:38.055Z"),
+      id: "661f7fc4-ab71-40df-931c-48d16a1a6ffa",
       media: [
         {
-          endAt: new Date("2024-04-07T20:03:35.113Z"),
+          endAt: new Date("2024-04-08T04:52:28.769Z"),
           language: "en",
           recordingDownloadUrl: "https://parched-wasabi.com/",
-          startAt: new Date("2026-05-29T17:52:05.816Z"),
+          startAt: new Date("2026-05-30T14:49:02.853Z"),
           transcriptDownloadUrl: "https://colossal-cuckoo.name",
           transcripts: [
             {
-              endAt: new Date("2026-03-09T23:04:48.872Z"),
-              startAt: new Date("2024-06-08T22:19:34.840Z"),
+              endAt: new Date("2026-03-10T18:46:32.764Z"),
+              startAt: new Date("2024-06-09T08:06:17.566Z"),
               text: "Turpis maiores ducimus tero speculum.",
             },
             {
-              endAt: new Date("2024-10-20T15:28:14.476Z"),
-              startAt: new Date("2026-08-18T00:52:04.213Z"),
+              endAt: new Date("2024-10-21T03:19:27.505Z"),
+              startAt: new Date("2026-08-18T23:03:46.954Z"),
               text: "Magnam consuasor uxor tergiversatio subseco.",
             },
           ],
         },
       ],
       metadata: [],
-      startAt: new Date("2023-04-30T03:07:10.925Z"),
+      startAt: new Date("2023-04-30T06:36:02.554Z"),
       type: "OUTBOUND",
-      updatedAt: new Date("2025-03-26T05:13:15.019Z"),
+      updatedAt: new Date("2025-03-26T19:30:15.405Z"),
       userPhone: "1-915-327-0429 x509",
       webUrl: "https://spherical-comparison.org",
     },

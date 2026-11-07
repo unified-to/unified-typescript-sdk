@@ -23,11 +23,15 @@ import { recordingUpdateUcRecording } from "../funcs/recordingUpdateUcRecording.
 import { scorecardGetUcScorecard } from "../funcs/scorecardGetUcScorecard.js";
 import { scorecardListUcScorecards } from "../funcs/scorecardListUcScorecards.js";
 import { ucCreateUcCall } from "../funcs/ucCreateUcCall.js";
+import { ucCreateUcFax } from "../funcs/ucCreateUcFax.js";
 import { ucGetUcCall } from "../funcs/ucGetUcCall.js";
+import { ucGetUcFax } from "../funcs/ucGetUcFax.js";
 import { ucGetUcScorecardtemplate } from "../funcs/ucGetUcScorecardtemplate.js";
 import { ucListUcCalls } from "../funcs/ucListUcCalls.js";
+import { ucListUcFaxes } from "../funcs/ucListUcFaxes.js";
 import { ucListUcScorecardtemplates } from "../funcs/ucListUcScorecardtemplates.js";
 import { ucPatchUcCall } from "../funcs/ucPatchUcCall.js";
+import { ucRemoveUcFax } from "../funcs/ucRemoveUcFax.js";
 import { ucUpdateUcCall } from "../funcs/ucUpdateUcCall.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -80,6 +84,23 @@ export class Uc extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.UcContact> {
     return unwrapAsync(contactCreateUcContact(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a fax
+   *
+   * @remarks
+   * Creates a UcFax. Provide the unified UcFax fields in the request body; they are mapped to the provider's API. Returns the created UcFax.
+   */
+  async createUcFax(
+    request: operations.CreateUcFaxRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcFax> {
+    return unwrapAsync(ucCreateUcFax(
       this,
       request,
       options,
@@ -148,6 +169,23 @@ export class Uc extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.UcContact> {
     return unwrapAsync(contactGetUcContact(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a fax
+   *
+   * @remarks
+   * Retrieves a single UcFax by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getUcFax(
+    request: operations.GetUcFaxRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcFax> {
+    return unwrapAsync(ucGetUcFax(
       this,
       request,
       options,
@@ -250,6 +288,23 @@ export class Uc extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.UcContact>> {
     return unwrapAsync(contactListUcContacts(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all faxes
+   *
+   * @remarks
+   * Returns a list of UcFaxes. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listUcFaxes(
+    request: operations.ListUcFaxesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.UcFax>> {
+    return unwrapAsync(ucListUcFaxes(
       this,
       request,
       options,
@@ -403,6 +458,23 @@ export class Uc extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveUcContactResponse | undefined> {
     return unwrapAsync(contactRemoveUcContact(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a fax
+   *
+   * @remarks
+   * Deletes the UcFax identified by `id`.
+   */
+  async removeUcFax(
+    request: operations.RemoveUcFaxRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveUcFaxResponse | undefined> {
+    return unwrapAsync(ucRemoveUcFax(
       this,
       request,
       options,

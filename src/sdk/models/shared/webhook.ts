@@ -130,6 +130,7 @@ export const WebhookObjectType = {
   TicketingCustomer: "ticketing_customer",
   TicketingCategory: "ticketing_category",
   UcContact: "uc_contact",
+  UcFax: "uc_fax",
   UcCall: "uc_call",
   UcComment: "uc_comment",
   UcRecording: "uc_recording",

@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  HrisAttachment,
+  HrisAttachment$inboundSchema,
+  HrisAttachment$Outbound,
+  HrisAttachment$outboundSchema,
+} from "./hrisattachment.js";
+import {
   HrisMetadata,
   HrisMetadata$inboundSchema,
   HrisMetadata$Outbound,
@@ -51,6 +57,10 @@ export type HrisTimeoff = {
    * (reference to HrisEmployee)
    */
   approverUserId?: string | undefined;
+  /**
+   * supporting documents (eg. doctor's notes) attached to the leave request
+   */
+  attachments?: Array<HrisAttachment> | undefined;
   comments?: string | undefined;
   /**
    * (reference to HrisCompany)
@@ -139,6 +149,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
   approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   approver_user_id: z.string().optional(),
+  attachments: z.array(HrisAttachment$inboundSchema).optional(),
   comments: z.string().optional(),
   company_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -179,6 +190,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
 export type HrisTimeoff$Outbound = {
   approved_at?: string | undefined;
   approver_user_id?: string | undefined;
+  attachments?: Array<HrisAttachment$Outbound> | undefined;
   comments?: string | undefined;
   company_id?: string | undefined;
   created_at?: string | undefined;
@@ -206,6 +218,7 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
 > = z.object({
   approvedAt: z.date().transform(v => v.toISOString()).optional(),
   approverUserId: z.string().optional(),
+  attachments: z.array(HrisAttachment$outboundSchema).optional(),
   comments: z.string().optional(),
   companyId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
