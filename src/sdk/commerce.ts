@@ -17,6 +17,7 @@ import { commerceGetCommerceReservation } from "../funcs/commerceGetCommerceRese
 import { commerceGetCommerceReturn } from "../funcs/commerceGetCommerceReturn.js";
 import { commerceGetCommerceReview } from "../funcs/commerceGetCommerceReview.js";
 import { commerceGetCommerceSaleschannel } from "../funcs/commerceGetCommerceSaleschannel.js";
+import { commerceGetCommerceTable } from "../funcs/commerceGetCommerceTable.js";
 import { commerceListCommerceAvailabilities } from "../funcs/commerceListCommerceAvailabilities.js";
 import { commerceListCommerceCollections } from "../funcs/commerceListCommerceCollections.js";
 import { commerceListCommerceInventories } from "../funcs/commerceListCommerceInventories.js";
@@ -26,6 +27,7 @@ import { commerceListCommerceReservations } from "../funcs/commerceListCommerceR
 import { commerceListCommerceReturns } from "../funcs/commerceListCommerceReturns.js";
 import { commerceListCommerceReviews } from "../funcs/commerceListCommerceReviews.js";
 import { commerceListCommerceSaleschannels } from "../funcs/commerceListCommerceSaleschannels.js";
+import { commerceListCommerceTables } from "../funcs/commerceListCommerceTables.js";
 import { commercePatchCommerceCollection } from "../funcs/commercePatchCommerceCollection.js";
 import { commercePatchCommerceInventory } from "../funcs/commercePatchCommerceInventory.js";
 import { commercePatchCommerceItem } from "../funcs/commercePatchCommerceItem.js";
@@ -349,6 +351,23 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * Retrieve a table
+   *
+   * @remarks
+   * Retrieves a single CommerceTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getCommerceTable(
+    request: operations.GetCommerceTableRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceTable> {
+    return unwrapAsync(commerceGetCommerceTable(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all availabilities
    *
    * @remarks
@@ -512,6 +531,23 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.CommerceSaleschannel>> {
     return unwrapAsync(commerceListCommerceSaleschannels(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all tables
+   *
+   * @remarks
+   * Returns a list of CommerceTables. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listCommerceTables(
+    request: operations.ListCommerceTablesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceTable>> {
+    return unwrapAsync(commerceListCommerceTables(
       this,
       request,
       options,

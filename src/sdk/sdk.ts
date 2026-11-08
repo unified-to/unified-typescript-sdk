@@ -647,6 +647,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._saleschannel ??= new Saleschannel(this._options));
   }
 
+  private _table?: Table;
+  get table(): Table {
+    return (this._table ??= new Table(this._options));
+  }
+
   private _compute?: Compute;
   get compute(): Compute {
     return (this._compute ??= new Compute(this._options));
@@ -755,11 +760,6 @@ export class UnifiedTo extends ClientSDK {
   private _record?: RecordT;
   get record(): RecordT {
     return (this._record ??= new RecordT(this._options));
-  }
-
-  private _table?: Table;
-  get table(): Table {
-    return (this._table ??= new Table(this._options));
   }
 
   private _enrich?: Enrich;

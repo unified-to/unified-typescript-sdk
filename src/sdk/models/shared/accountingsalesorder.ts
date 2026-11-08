@@ -121,6 +121,10 @@ export type AccountingSalesorder = {
   orderNumber?: string | undefined;
   organizationId?: string | undefined;
   /**
+   * total of the payments applied so far
+   */
+  paidAmount?: number | undefined;
+  /**
    * read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order
    */
   payments?: Array<AccountingPaymentReference> | undefined;
@@ -142,6 +146,10 @@ export type AccountingSalesorder = {
    * pre-tax, pre-tip amount
    */
   subtotalAmount?: number | undefined;
+  /**
+   * reference to a commerce_table (restaurant table) the order is seated at
+   */
+  tableId?: string | undefined;
   taxAmount?: number | undefined;
   tipAmount?: number | undefined;
   totalAmount?: number | undefined;
@@ -205,6 +213,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
   metadata: z.array(AccountingMetadata$inboundSchema).optional(),
   order_number: z.string().optional(),
   organization_id: z.string().optional(),
+  paid_amount: z.number().optional(),
   payments: z.array(AccountingPaymentReference$inboundSchema).optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -217,6 +226,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
   status: AccountingSalesorderStatus$inboundSchema.optional(),
   subscription_id: z.string().optional(),
   subtotal_amount: z.number().optional(),
+  table_id: z.string().optional(),
   tax_amount: z.number().optional(),
   tip_amount: z.number().optional(),
   total_amount: z.number().optional(),
@@ -238,6 +248,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
     "location_id": "locationId",
     "order_number": "orderNumber",
     "organization_id": "organizationId",
+    "paid_amount": "paidAmount",
     "posted_at": "postedAt",
     "refunded_amount": "refundedAmount",
     "sales_channel": "salesChannel",
@@ -245,6 +256,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
     "shipping_address": "shippingAddress",
     "subscription_id": "subscriptionId",
     "subtotal_amount": "subtotalAmount",
+    "table_id": "tableId",
     "tax_amount": "taxAmount",
     "tip_amount": "tipAmount",
     "total_amount": "totalAmount",
@@ -274,6 +286,7 @@ export type AccountingSalesorder$Outbound = {
   metadata?: Array<AccountingMetadata$Outbound> | undefined;
   order_number?: string | undefined;
   organization_id?: string | undefined;
+  paid_amount?: number | undefined;
   payments?: Array<AccountingPaymentReference$Outbound> | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -286,6 +299,7 @@ export type AccountingSalesorder$Outbound = {
   status?: string | undefined;
   subscription_id?: string | undefined;
   subtotal_amount?: number | undefined;
+  table_id?: string | undefined;
   tax_amount?: number | undefined;
   tip_amount?: number | undefined;
   total_amount?: number | undefined;
@@ -318,6 +332,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   metadata: z.array(AccountingMetadata$outboundSchema).optional(),
   orderNumber: z.string().optional(),
   organizationId: z.string().optional(),
+  paidAmount: z.number().optional(),
   payments: z.array(AccountingPaymentReference$outboundSchema).optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
@@ -329,6 +344,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   status: AccountingSalesorderStatus$outboundSchema.optional(),
   subscriptionId: z.string().optional(),
   subtotalAmount: z.number().optional(),
+  tableId: z.string().optional(),
   taxAmount: z.number().optional(),
   tipAmount: z.number().optional(),
   totalAmount: z.number().optional(),
@@ -349,6 +365,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
     locationId: "location_id",
     orderNumber: "order_number",
     organizationId: "organization_id",
+    paidAmount: "paid_amount",
     postedAt: "posted_at",
     refundedAmount: "refunded_amount",
     salesChannel: "sales_channel",
@@ -356,6 +373,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
     shippingAddress: "shipping_address",
     subscriptionId: "subscription_id",
     subtotalAmount: "subtotal_amount",
+    tableId: "table_id",
     taxAmount: "tax_amount",
     tipAmount: "tip_amount",
     totalAmount: "total_amount",

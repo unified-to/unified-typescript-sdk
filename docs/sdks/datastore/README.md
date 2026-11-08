@@ -45,13 +45,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "c940b81a-046b-4cf6-81a8-9e958dc53955",
+      id: "374dde58-f00a-48ac-85ef-36205796f3ca",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-07-10T10:37:46.760Z"),
+      updatedAt: new Date("2023-07-11T00:42:04.444Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -84,13 +84,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "c940b81a-046b-4cf6-81a8-9e958dc53955",
+      id: "374dde58-f00a-48ac-85ef-36205796f3ca",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-07-10T10:37:46.760Z"),
+      updatedAt: new Date("2023-07-11T00:42:04.444Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -249,10 +249,10 @@ async function run() {
       fields: {
 
       },
-      id: "33b5e902-d269-46ca-86a7-09a1ec231ae5",
+      id: "99a207d8-f6a2-4ce0-9556-03d14836fa9c",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-15T15:40:18.665Z"),
+      updatedAt: new Date("2025-03-16T07:03:54.683Z"),
     },
     connectionId: "<id>",
   });
@@ -286,10 +286,10 @@ async function run() {
       fields: {
   
       },
-      id: "33b5e902-d269-46ca-86a7-09a1ec231ae5",
+      id: "99a207d8-f6a2-4ce0-9556-03d14836fa9c",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-15T15:40:18.665Z"),
+      updatedAt: new Date("2025-03-16T07:03:54.683Z"),
     },
     connectionId: "<id>",
   });
@@ -347,7 +347,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "0057009f-beb6-4014-8e52-d159a0e0d095",
+          id: "f1c75977-4691-4d91-9730-246669095756",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -357,7 +357,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "052a334e-0995-407d-a61e-23894cf419db",
+          id: "314eaf2f-d475-4aad-a303-f481833e83a7",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -367,7 +367,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "97036325-4b11-4b8e-aee9-87ab45934c2d",
+          id: "a89cd3ec-c700-49b4-a876-f3195e822a45",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -379,7 +379,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "85179390-49b1-4050-90f9-57852adfdfcd",
+          id: "a3011dc1-1057-4dac-8c8b-b90611fc2fb0",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -388,7 +388,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "b89183e7-2b12-41dd-a477-97cae30ea4d0",
+          id: "889495e1-daea-4ebc-a1b7-b77faf9764d6",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -398,18 +398,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "2a816f8e-a171-4dcc-9fd2-cd6b543f73a4",
+      id: "8d19486a-5839-4165-bd1c-26c283f03bb5",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "2a816f8e-a171-4dcc-9fd2-cd6b543f73a4",
+          tableId: "8d19486a-5839-4165-bd1c-26c283f03bb5",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-13T17:18:51.708Z"),
+      updatedAt: new Date("2022-08-13T18:35:15.105Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -427,7 +427,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreCreateDatastoreTable } from "@unified-api/typescript-sdk/funcs/datastoreCreateDatastoreTable.js";
+import { tableCreateDatastoreTable } from "@unified-api/typescript-sdk/funcs/tableCreateDatastoreTable.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -438,14 +438,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreCreateDatastoreTable(unifiedTo, {
+  const res = await tableCreateDatastoreTable(unifiedTo, {
     datastoreTable: {
       createdAt: new Date("2022-05-22T04:49:00.762Z"),
       description: "Quasi adhuc paulatim ducimus carpo vomito magni tantum tubineus corona.",
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "0057009f-beb6-4014-8e52-d159a0e0d095",
+          id: "f1c75977-4691-4d91-9730-246669095756",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -455,7 +455,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "052a334e-0995-407d-a61e-23894cf419db",
+          id: "314eaf2f-d475-4aad-a303-f481833e83a7",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -465,7 +465,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "97036325-4b11-4b8e-aee9-87ab45934c2d",
+          id: "a89cd3ec-c700-49b4-a876-f3195e822a45",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -477,7 +477,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "85179390-49b1-4050-90f9-57852adfdfcd",
+          id: "a3011dc1-1057-4dac-8c8b-b90611fc2fb0",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -486,7 +486,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "b89183e7-2b12-41dd-a477-97cae30ea4d0",
+          id: "889495e1-daea-4ebc-a1b7-b77faf9764d6",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -496,18 +496,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "2a816f8e-a171-4dcc-9fd2-cd6b543f73a4",
+      id: "8d19486a-5839-4165-bd1c-26c283f03bb5",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "2a816f8e-a171-4dcc-9fd2-cd6b543f73a4",
+          tableId: "8d19486a-5839-4165-bd1c-26c283f03bb5",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-13T17:18:51.708Z"),
+      updatedAt: new Date("2022-08-13T18:35:15.105Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -516,7 +516,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreCreateDatastoreTable failed:", res.error);
+    console.log("tableCreateDatastoreTable failed:", res.error);
   }
 }
 
@@ -734,7 +734,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreGetDatastoreTable } from "@unified-api/typescript-sdk/funcs/datastoreGetDatastoreTable.js";
+import { tableGetDatastoreTable } from "@unified-api/typescript-sdk/funcs/tableGetDatastoreTable.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -745,7 +745,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreGetDatastoreTable(unifiedTo, {
+  const res = await tableGetDatastoreTable(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -753,7 +753,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreGetDatastoreTable failed:", res.error);
+    console.log("tableGetDatastoreTable failed:", res.error);
   }
 }
 
@@ -966,7 +966,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreListDatastoreTables } from "@unified-api/typescript-sdk/funcs/datastoreListDatastoreTables.js";
+import { tableListDatastoreTables } from "@unified-api/typescript-sdk/funcs/tableListDatastoreTables.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -977,14 +977,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreListDatastoreTables(unifiedTo, {
+  const res = await tableListDatastoreTables(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreListDatastoreTables failed:", res.error);
+    console.log("tableListDatastoreTables failed:", res.error);
   }
 }
 
@@ -1031,13 +1031,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "0ec3b087-8aa6-46aa-8fee-f13f5953c13b",
+      id: "435f789f-b538-4e2e-9a6c-38d908ee6a9d",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-07-10T10:37:46.764Z"),
+      updatedAt: new Date("2023-07-11T00:42:04.452Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -1071,13 +1071,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "0ec3b087-8aa6-46aa-8fee-f13f5953c13b",
+      id: "435f789f-b538-4e2e-9a6c-38d908ee6a9d",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-07-10T10:37:46.764Z"),
+      updatedAt: new Date("2023-07-11T00:42:04.452Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -1136,10 +1136,10 @@ async function run() {
       fields: {
 
       },
-      id: "f2140037-d5b6-4762-8c95-2e79f4653e71",
+      id: "4ed04f42-8f45-47ec-8b5d-c8506c4cd755",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-15T15:40:18.670Z"),
+      updatedAt: new Date("2025-03-16T07:03:54.701Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1174,10 +1174,10 @@ async function run() {
       fields: {
   
       },
-      id: "f2140037-d5b6-4762-8c95-2e79f4653e71",
+      id: "4ed04f42-8f45-47ec-8b5d-c8506c4cd755",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-15T15:40:18.670Z"),
+      updatedAt: new Date("2025-03-16T07:03:54.701Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1236,7 +1236,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "27361227-a721-4f26-9484-062fb1aa54b7",
+          id: "faa59840-aa52-42fe-ada7-a96655b0dfcd",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -1246,7 +1246,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "a8b6b702-acbc-4e17-8d48-9aec63963e23",
+          id: "6b36d2e2-e25c-4619-95dc-c51fe336bceb",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -1256,7 +1256,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "0476ce5c-de1b-4cb8-97ec-01e39d9681d6",
+          id: "1b850b4f-4602-4720-b339-929f6fbf24b2",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -1268,7 +1268,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "52867994-482f-467b-a3ab-4df847a84b83",
+          id: "1c6ed679-9636-4619-bbed-17e7a8589b81",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -1277,7 +1277,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "bb291eb7-86ec-4fe0-b7ff-e357ef97abfc",
+          id: "e576457b-e00a-4fc2-89ce-010aa2d55790",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -1287,18 +1287,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "9dc3b6ab-2ec8-43c5-8673-dd5846189031",
+      id: "49307d50-a11d-4c12-b274-482fd84231e7",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "9dc3b6ab-2ec8-43c5-8673-dd5846189031",
+          tableId: "49307d50-a11d-4c12-b274-482fd84231e7",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-13T17:18:51.709Z"),
+      updatedAt: new Date("2022-08-13T18:35:15.107Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -1317,7 +1317,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastorePatchDatastoreTable } from "@unified-api/typescript-sdk/funcs/datastorePatchDatastoreTable.js";
+import { tablePatchDatastoreTable } from "@unified-api/typescript-sdk/funcs/tablePatchDatastoreTable.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1328,14 +1328,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastorePatchDatastoreTable(unifiedTo, {
+  const res = await tablePatchDatastoreTable(unifiedTo, {
     datastoreTable: {
       createdAt: new Date("2022-05-22T04:49:00.762Z"),
       description: "Quasi adhuc paulatim ducimus carpo vomito magni tantum tubineus corona.",
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "27361227-a721-4f26-9484-062fb1aa54b7",
+          id: "faa59840-aa52-42fe-ada7-a96655b0dfcd",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -1345,7 +1345,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "a8b6b702-acbc-4e17-8d48-9aec63963e23",
+          id: "6b36d2e2-e25c-4619-95dc-c51fe336bceb",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -1355,7 +1355,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "0476ce5c-de1b-4cb8-97ec-01e39d9681d6",
+          id: "1b850b4f-4602-4720-b339-929f6fbf24b2",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -1367,7 +1367,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "52867994-482f-467b-a3ab-4df847a84b83",
+          id: "1c6ed679-9636-4619-bbed-17e7a8589b81",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -1376,7 +1376,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "bb291eb7-86ec-4fe0-b7ff-e357ef97abfc",
+          id: "e576457b-e00a-4fc2-89ce-010aa2d55790",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -1386,18 +1386,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "9dc3b6ab-2ec8-43c5-8673-dd5846189031",
+      id: "49307d50-a11d-4c12-b274-482fd84231e7",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "9dc3b6ab-2ec8-43c5-8673-dd5846189031",
+          tableId: "49307d50-a11d-4c12-b274-482fd84231e7",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-13T17:18:51.709Z"),
+      updatedAt: new Date("2022-08-13T18:35:15.107Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -1407,7 +1407,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastorePatchDatastoreTable failed:", res.error);
+    console.log("tablePatchDatastoreTable failed:", res.error);
   }
 }
 
@@ -1625,7 +1625,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreRemoveDatastoreTable } from "@unified-api/typescript-sdk/funcs/datastoreRemoveDatastoreTable.js";
+import { tableRemoveDatastoreTable } from "@unified-api/typescript-sdk/funcs/tableRemoveDatastoreTable.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1636,7 +1636,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreRemoveDatastoreTable(unifiedTo, {
+  const res = await tableRemoveDatastoreTable(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1644,7 +1644,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreRemoveDatastoreTable failed:", res.error);
+    console.log("tableRemoveDatastoreTable failed:", res.error);
   }
 }
 
@@ -1691,13 +1691,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "0ec3b087-8aa6-46aa-8fee-f13f5953c13b",
+      id: "435f789f-b538-4e2e-9a6c-38d908ee6a9d",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-07-10T10:37:46.764Z"),
+      updatedAt: new Date("2023-07-11T00:42:04.452Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -1731,13 +1731,13 @@ async function run() {
     datastoreDatabase: {
       createdAt: new Date("2019-03-05T14:31:00.223Z"),
       description: "Substantia tantillus coniuratio repellat coerceo amet vito vorago.",
-      id: "0ec3b087-8aa6-46aa-8fee-f13f5953c13b",
+      id: "435f789f-b538-4e2e-9a6c-38d908ee6a9d",
       isActive: true,
       metadata: [],
       name: "Rau - O'Reilly",
       password: "iYLhYwOHm0NLDvI",
       region: "France",
-      updatedAt: new Date("2023-07-10T10:37:46.764Z"),
+      updatedAt: new Date("2023-07-11T00:42:04.452Z"),
       webUrl: "https://optimal-signature.name",
     },
     connectionId: "<id>",
@@ -1796,10 +1796,10 @@ async function run() {
       fields: {
 
       },
-      id: "f2140037-d5b6-4762-8c95-2e79f4653e71",
+      id: "4ed04f42-8f45-47ec-8b5d-c8506c4cd755",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-15T15:40:18.670Z"),
+      updatedAt: new Date("2025-03-16T07:03:54.701Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1834,10 +1834,10 @@ async function run() {
       fields: {
   
       },
-      id: "f2140037-d5b6-4762-8c95-2e79f4653e71",
+      id: "4ed04f42-8f45-47ec-8b5d-c8506c4cd755",
       metadata: [],
       rowNumber: 33,
-      updatedAt: new Date("2025-03-15T15:40:18.670Z"),
+      updatedAt: new Date("2025-03-16T07:03:54.701Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1896,7 +1896,7 @@ async function run() {
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "27361227-a721-4f26-9484-062fb1aa54b7",
+          id: "faa59840-aa52-42fe-ada7-a96655b0dfcd",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -1906,7 +1906,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "a8b6b702-acbc-4e17-8d48-9aec63963e23",
+          id: "6b36d2e2-e25c-4619-95dc-c51fe336bceb",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -1916,7 +1916,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "0476ce5c-de1b-4cb8-97ec-01e39d9681d6",
+          id: "1b850b4f-4602-4720-b339-929f6fbf24b2",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -1928,7 +1928,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "52867994-482f-467b-a3ab-4df847a84b83",
+          id: "1c6ed679-9636-4619-bbed-17e7a8589b81",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -1937,7 +1937,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "bb291eb7-86ec-4fe0-b7ff-e357ef97abfc",
+          id: "e576457b-e00a-4fc2-89ce-010aa2d55790",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -1947,18 +1947,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "9dc3b6ab-2ec8-43c5-8673-dd5846189031",
+      id: "49307d50-a11d-4c12-b274-482fd84231e7",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "9dc3b6ab-2ec8-43c5-8673-dd5846189031",
+          tableId: "49307d50-a11d-4c12-b274-482fd84231e7",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-13T17:18:51.709Z"),
+      updatedAt: new Date("2022-08-13T18:35:15.107Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -1977,7 +1977,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { datastoreUpdateDatastoreTable } from "@unified-api/typescript-sdk/funcs/datastoreUpdateDatastoreTable.js";
+import { tableUpdateDatastoreTable } from "@unified-api/typescript-sdk/funcs/tableUpdateDatastoreTable.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1988,14 +1988,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await datastoreUpdateDatastoreTable(unifiedTo, {
+  const res = await tableUpdateDatastoreTable(unifiedTo, {
     datastoreTable: {
       createdAt: new Date("2022-05-22T04:49:00.762Z"),
       description: "Quasi adhuc paulatim ducimus carpo vomito magni tantum tubineus corona.",
       fields: [
         {
           description: "Antea soluta itaque clamo despecto basium accendo.",
-          id: "27361227-a721-4f26-9484-062fb1aa54b7",
+          id: "faa59840-aa52-42fe-ada7-a96655b0dfcd",
           isIndexed: true,
           isUnique: true,
           name: "Ferry LLC",
@@ -2005,7 +2005,7 @@ async function run() {
         },
         {
           description: "Nulla cattus aequus sumo neque alter cauda subseco.",
-          id: "a8b6b702-acbc-4e17-8d48-9aec63963e23",
+          id: "6b36d2e2-e25c-4619-95dc-c51fe336bceb",
           isNullable: true,
           isUnique: true,
           name: "Hand - Nader",
@@ -2015,7 +2015,7 @@ async function run() {
         },
         {
           description: "Utilis callide adhuc verumtamen doloremque ceno sui sint.",
-          id: "0476ce5c-de1b-4cb8-97ec-01e39d9681d6",
+          id: "1b850b4f-4602-4720-b339-929f6fbf24b2",
           isIndexed: true,
           isNullable: true,
           isUnique: true,
@@ -2027,7 +2027,7 @@ async function run() {
         },
         {
           description: "Audax articulus triumphus tametsi cura tenetur colligo arcesso bestia.",
-          id: "52867994-482f-467b-a3ab-4df847a84b83",
+          id: "1c6ed679-9636-4619-bbed-17e7a8589b81",
           name: "Gislason, Gorczany and Hegmann",
           originalType: "tego",
           precision: 94,
@@ -2036,7 +2036,7 @@ async function run() {
         },
         {
           description: "Communis coma cura audio aduro acer canis expedita.",
-          id: "bb291eb7-86ec-4fe0-b7ff-e357ef97abfc",
+          id: "e576457b-e00a-4fc2-89ce-010aa2d55790",
           isIndexed: true,
           isPrimaryKey: true,
           isRequired: true,
@@ -2046,18 +2046,18 @@ async function run() {
           type: "EMAIL",
         },
       ],
-      id: "9dc3b6ab-2ec8-43c5-8673-dd5846189031",
+      id: "49307d50-a11d-4c12-b274-482fd84231e7",
       metadata: [],
       name: "Rogahn, Lowe and Heller",
       relationships: [
         {
           field: "Macejkovic - Shields",
           name: "Hyatt, Ryan and Nienow",
-          tableId: "9dc3b6ab-2ec8-43c5-8673-dd5846189031",
+          tableId: "49307d50-a11d-4c12-b274-482fd84231e7",
           type: "MANY",
         },
       ],
-      updatedAt: new Date("2022-08-13T17:18:51.709Z"),
+      updatedAt: new Date("2022-08-13T18:35:15.107Z"),
       webUrl: "https://nervous-deck.com",
     },
     connectionId: "<id>",
@@ -2067,7 +2067,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("datastoreUpdateDatastoreTable failed:", res.error);
+    console.log("tableUpdateDatastoreTable failed:", res.error);
   }
 }
 

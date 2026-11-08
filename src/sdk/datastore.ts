@@ -5,22 +5,22 @@
 import { datastoreCreateDatastoreDatabase } from "../funcs/datastoreCreateDatastoreDatabase.js";
 import { datastoreCreateDatastoreQuery } from "../funcs/datastoreCreateDatastoreQuery.js";
 import { datastoreCreateDatastoreRecord } from "../funcs/datastoreCreateDatastoreRecord.js";
-import { datastoreCreateDatastoreTable } from "../funcs/datastoreCreateDatastoreTable.js";
 import { datastoreGetDatastoreDatabase } from "../funcs/datastoreGetDatastoreDatabase.js";
 import { datastoreGetDatastoreRecord } from "../funcs/datastoreGetDatastoreRecord.js";
-import { datastoreGetDatastoreTable } from "../funcs/datastoreGetDatastoreTable.js";
 import { datastoreListDatastoreDatabases } from "../funcs/datastoreListDatastoreDatabases.js";
 import { datastoreListDatastoreRecords } from "../funcs/datastoreListDatastoreRecords.js";
-import { datastoreListDatastoreTables } from "../funcs/datastoreListDatastoreTables.js";
 import { datastorePatchDatastoreDatabase } from "../funcs/datastorePatchDatastoreDatabase.js";
 import { datastorePatchDatastoreRecord } from "../funcs/datastorePatchDatastoreRecord.js";
-import { datastorePatchDatastoreTable } from "../funcs/datastorePatchDatastoreTable.js";
 import { datastoreRemoveDatastoreDatabase } from "../funcs/datastoreRemoveDatastoreDatabase.js";
 import { datastoreRemoveDatastoreRecord } from "../funcs/datastoreRemoveDatastoreRecord.js";
-import { datastoreRemoveDatastoreTable } from "../funcs/datastoreRemoveDatastoreTable.js";
 import { datastoreUpdateDatastoreDatabase } from "../funcs/datastoreUpdateDatastoreDatabase.js";
 import { datastoreUpdateDatastoreRecord } from "../funcs/datastoreUpdateDatastoreRecord.js";
-import { datastoreUpdateDatastoreTable } from "../funcs/datastoreUpdateDatastoreTable.js";
+import { tableCreateDatastoreTable } from "../funcs/tableCreateDatastoreTable.js";
+import { tableGetDatastoreTable } from "../funcs/tableGetDatastoreTable.js";
+import { tableListDatastoreTables } from "../funcs/tableListDatastoreTables.js";
+import { tablePatchDatastoreTable } from "../funcs/tablePatchDatastoreTable.js";
+import { tableRemoveDatastoreTable } from "../funcs/tableRemoveDatastoreTable.js";
+import { tableUpdateDatastoreTable } from "../funcs/tableUpdateDatastoreTable.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -88,7 +88,7 @@ export class Datastore extends ClientSDK {
     request: operations.CreateDatastoreTableRequest,
     options?: RequestOptions,
   ): Promise<shared.DatastoreTable> {
-    return unwrapAsync(datastoreCreateDatastoreTable(
+    return unwrapAsync(tableCreateDatastoreTable(
       this,
       request,
       options,
@@ -139,7 +139,7 @@ export class Datastore extends ClientSDK {
     request: operations.GetDatastoreTableRequest,
     options?: RequestOptions,
   ): Promise<shared.DatastoreTable> {
-    return unwrapAsync(datastoreGetDatastoreTable(
+    return unwrapAsync(tableGetDatastoreTable(
       this,
       request,
       options,
@@ -190,7 +190,7 @@ export class Datastore extends ClientSDK {
     request: operations.ListDatastoreTablesRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.DatastoreTable>> {
-    return unwrapAsync(datastoreListDatastoreTables(
+    return unwrapAsync(tableListDatastoreTables(
       this,
       request,
       options,
@@ -241,7 +241,7 @@ export class Datastore extends ClientSDK {
     request: operations.PatchDatastoreTableRequest,
     options?: RequestOptions,
   ): Promise<shared.DatastoreTable> {
-    return unwrapAsync(datastorePatchDatastoreTable(
+    return unwrapAsync(tablePatchDatastoreTable(
       this,
       request,
       options,
@@ -292,7 +292,7 @@ export class Datastore extends ClientSDK {
     request: operations.RemoveDatastoreTableRequest,
     options?: RequestOptions,
   ): Promise<operations.RemoveDatastoreTableResponse | undefined> {
-    return unwrapAsync(datastoreRemoveDatastoreTable(
+    return unwrapAsync(tableRemoveDatastoreTable(
       this,
       request,
       options,
@@ -343,7 +343,7 @@ export class Datastore extends ClientSDK {
     request: operations.UpdateDatastoreTableRequest,
     options?: RequestOptions,
   ): Promise<shared.DatastoreTable> {
-    return unwrapAsync(datastoreUpdateDatastoreTable(
+    return unwrapAsync(tableUpdateDatastoreTable(
       this,
       request,
       options,

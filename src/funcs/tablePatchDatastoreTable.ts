@@ -27,14 +27,14 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Create a table
+ * Update a table
  *
  * @remarks
- * Creates a DatastoreTable. Provide the unified DatastoreTable fields in the request body; they are mapped to the provider's API. Returns the created DatastoreTable.
+ * Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
  */
-export function datastoreCreateDatastoreTable(
+export function tablePatchDatastoreTable(
   client: UnifiedToCore,
-  request: operations.CreateDatastoreTableRequest,
+  request: operations.PatchDatastoreTableRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -58,7 +58,7 @@ export function datastoreCreateDatastoreTable(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.CreateDatastoreTableRequest,
+  request: operations.PatchDatastoreTableRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -79,7 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.CreateDatastoreTableRequest$outboundSchema.parse(value),
+      operations.PatchDatastoreTableRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -93,8 +93,12 @@ async function $do(
       explode: false,
       charEncoding: "percent",
     }),
+    id: encodeSimple("id", payload.id, {
+      explode: false,
+      charEncoding: "percent",
+    }),
   };
-  const path = pathToFunc("/datastore/{connection_id}/table")(pathParams);
+  const path = pathToFunc("/datastore/{connection_id}/table/{id}")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
@@ -112,7 +116,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "createDatastoreTable",
+    operationID: "patchDatastoreTable",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -126,7 +130,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "POST",
+    method: "PATCH",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,

@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
+import { encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -22,23 +22,22 @@ import { ResponseValidationError } from "../sdk/models/errors/responsevalidation
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import * as operations from "../sdk/models/operations/index.js";
-import * as shared from "../sdk/models/shared/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Retrieve a table
+ * Remove a table
  *
  * @remarks
- * Retrieves a single DatastoreTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+ * Deletes the DatastoreTable identified by `id`.
  */
-export function datastoreGetDatastoreTable(
+export function tableRemoveDatastoreTable(
   client: UnifiedToCore,
-  request: operations.GetDatastoreTableRequest,
+  request: operations.RemoveDatastoreTableRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    shared.DatastoreTable,
+    operations.RemoveDatastoreTableResponse | undefined,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -58,12 +57,12 @@ export function datastoreGetDatastoreTable(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.GetDatastoreTableRequest,
+  request: operations.RemoveDatastoreTableRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      shared.DatastoreTable,
+      operations.RemoveDatastoreTableResponse | undefined,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -78,7 +77,8 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.GetDatastoreTableRequest$outboundSchema.parse(value),
+    (value) =>
+      operations.RemoveDatastoreTableRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -99,13 +99,8 @@ async function $do(
   };
   const path = pathToFunc("/datastore/{connection_id}/table/{id}")(pathParams);
 
-  const query = encodeFormQuery({
-    "fields": payload.fields,
-    "raw": payload.raw,
-  });
-
   const headers = new Headers(compactMap({
-    Accept: "application/json",
+    Accept: "*/*",
   }));
 
   const securityInput = await extractSecurity(client._options.security);
@@ -114,7 +109,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getDatastoreTable",
+    operationID: "removeDatastoreTable",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -128,11 +123,10 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "DELETE",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
-    query: query,
     body: body,
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -154,8 +148,12 @@ async function $do(
   }
   const response = doResult.value;
 
+  const responseFields = {
+    HttpMeta: { Response: response, Request: req },
+  };
+
   const [result] = await M.match<
-    shared.DatastoreTable,
+    operations.RemoveDatastoreTableResponse | undefined,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -165,10 +163,18 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, shared.DatastoreTable$inboundSchema),
+    M.nil(
+      200,
+      operations.RemoveDatastoreTableResponse$inboundSchema.optional(),
+    ),
     M.fail("4XX"),
     M.fail("5XX"),
-  )(response, req);
+    M.nil(
+      "default",
+      operations.RemoveDatastoreTableResponse$inboundSchema.optional(),
+      { hdrs: true },
+    ),
+  )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

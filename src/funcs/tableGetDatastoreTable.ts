@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -27,14 +27,14 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Update a table
+ * Retrieve a table
  *
  * @remarks
- * Updates the DatastoreTable identified by `id`. Provide the unified DatastoreTable fields to change in the request body.
+ * Retrieves a single DatastoreTable by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
  */
-export function datastoreUpdateDatastoreTable(
+export function tableGetDatastoreTable(
   client: UnifiedToCore,
-  request: operations.UpdateDatastoreTableRequest,
+  request: operations.GetDatastoreTableRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -58,7 +58,7 @@ export function datastoreUpdateDatastoreTable(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.UpdateDatastoreTableRequest,
+  request: operations.GetDatastoreTableRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -78,15 +78,14 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) =>
-      operations.UpdateDatastoreTableRequest$outboundSchema.parse(value),
+    (value) => operations.GetDatastoreTableRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.DatastoreTable, { explode: true });
+  const body = null;
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -106,7 +105,6 @@ async function $do(
   });
 
   const headers = new Headers(compactMap({
-    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -116,7 +114,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "updateDatastoreTable",
+    operationID: "getDatastoreTable",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -130,7 +128,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "PUT",
+    method: "GET",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
