@@ -98,7 +98,7 @@ export type HrisBankaccount = {
    */
   updatedAt?: Date | undefined;
   /**
-   * employee ID (required for listcreate) (reference to HrisEmployee)
+   * employee ID (required for list and create) (reference to HrisEmployee)
    */
   userId?: string | undefined;
 };

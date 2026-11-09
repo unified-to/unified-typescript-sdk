@@ -34,7 +34,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "8f358a63-bcf1-4028-8f4f-8fb0b41221f6",
+      id: "a98425e0-73af-44fa-bab6-30c80bfc0ad0",
       metadata: [],
       questions: [
         {
@@ -48,7 +48,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-10T12:56:06.297Z"),
+      updatedAt: new Date("2023-06-10T19:31:07.809Z"),
     },
     connectionId: "<id>",
   });
@@ -80,7 +80,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "8f358a63-bcf1-4028-8f4f-8fb0b41221f6",
+      id: "a98425e0-73af-44fa-bab6-30c80bfc0ad0",
       metadata: [],
       questions: [
         {
@@ -94,7 +94,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-10T12:56:06.297Z"),
+      updatedAt: new Date("2023-06-10T19:31:07.809Z"),
     },
     connectionId: "<id>",
   });
@@ -461,7 +461,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "c3963459-f400-4965-b1d7-7fb6de81b6bb",
+      id: "075e8fb2-995a-4123-a4e8-42a0ef8350aa",
       metadata: [],
       questions: [
         {
@@ -475,7 +475,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-10T12:56:06.300Z"),
+      updatedAt: new Date("2023-06-10T19:31:07.814Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -508,7 +508,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "c3963459-f400-4965-b1d7-7fb6de81b6bb",
+      id: "075e8fb2-995a-4123-a4e8-42a0ef8350aa",
       metadata: [],
       questions: [
         {
@@ -522,7 +522,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-10T12:56:06.300Z"),
+      updatedAt: new Date("2023-06-10T19:31:07.814Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -657,7 +657,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "c3963459-f400-4965-b1d7-7fb6de81b6bb",
+      id: "075e8fb2-995a-4123-a4e8-42a0ef8350aa",
       metadata: [],
       questions: [
         {
@@ -671,7 +671,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-10T12:56:06.300Z"),
+      updatedAt: new Date("2023-06-10T19:31:07.814Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -704,7 +704,7 @@ async function run() {
     atsScorecard: {
       comment: "Maiores enim.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "c3963459-f400-4965-b1d7-7fb6de81b6bb",
+      id: "075e8fb2-995a-4123-a4e8-42a0ef8350aa",
       metadata: [],
       questions: [
         {
@@ -718,7 +718,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-10T12:56:06.300Z"),
+      updatedAt: new Date("2023-06-10T19:31:07.814Z"),
     },
     connectionId: "<id>",
     id: "<id>",

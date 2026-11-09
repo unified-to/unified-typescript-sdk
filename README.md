@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "5295f056-b906-471f-93e8-b5571d47d101",
+      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T11:35:12.545Z"),
+      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "5295f056-b906-471f-93e8-b5571d47d101",
+      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T11:35:12.545Z"),
+      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "5295f056-b906-471f-93e8-b5571d47d101",
+      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T11:35:12.545Z"),
+      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "5295f056-b906-471f-93e8-b5571d47d101",
+        id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-11T11:35:12.545Z"),
+        updatedAt: new Date("2023-08-11T17:39:13.600Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "5295f056-b906-471f-93e8-b5571d47d101",
+      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T11:35:12.545Z"),
+      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "5295f056-b906-471f-93e8-b5571d47d101",
+      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T11:35:12.545Z"),
+      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
     },
     connectionId: "<id>",
   });
@@ -2682,6 +2682,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedCreateUnifiedSecretsmanager`](docs/sdks/unified/README.md#createunifiedsecretsmanager) - Create secrets manager
 - [`unifiedCreateUnifiedWebhook`](docs/sdks/unified/README.md#createunifiedwebhook) - Create webhook subscription
 - [`unifiedCreateUnifiedWebhook`](docs/sdks/webhook/README.md#createunifiedwebhook) - Create webhook subscription
+- [`unifiedCreateUnifiedWorkspaceintegration`](docs/sdks/unified/README.md#createunifiedworkspaceintegration) - Create workspace integration
+- [`unifiedCreateUnifiedWorkspaceintegration`](docs/sdks/workspaceintegration/README.md#createunifiedworkspaceintegration) - Create workspace integration
 - [`unifiedGetUnifiedApicall`](docs/sdks/apicall/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
 - [`unifiedGetUnifiedApicall`](docs/sdks/unified/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
 - [`unifiedGetUnifiedConnection`](docs/sdks/connection/README.md#getunifiedconnection) - Retrieve connection
@@ -2695,6 +2697,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedGetUnifiedSecretsmanager`](docs/sdks/unified/README.md#getunifiedsecretsmanager) - Retrieve secrets manager
 - [`unifiedGetUnifiedWebhook`](docs/sdks/unified/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 - [`unifiedGetUnifiedWebhook`](docs/sdks/webhook/README.md#getunifiedwebhook) - Retrieve webhook by its ID
+- [`unifiedGetUnifiedWorkspaceintegration`](docs/sdks/unified/README.md#getunifiedworkspaceintegration) - Retrieve workspace integration
+- [`unifiedGetUnifiedWorkspaceintegration`](docs/sdks/workspaceintegration/README.md#getunifiedworkspaceintegration) - Retrieve workspace integration
 - [`unifiedListUnifiedApicalls`](docs/sdks/apicall/README.md#listunifiedapicalls) - Returns API Calls
 - [`unifiedListUnifiedApicalls`](docs/sdks/unified/README.md#listunifiedapicalls) - Returns API Calls
 - [`unifiedListUnifiedConnections`](docs/sdks/connection/README.md#listunifiedconnections) - List all connections
@@ -2717,6 +2721,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedListUnifiedSecretsmanagerSecrets`](docs/sdks/unified/README.md#listunifiedsecretsmanagersecrets) - List secrets in a secrets manager
 - [`unifiedListUnifiedWebhooks`](docs/sdks/unified/README.md#listunifiedwebhooks) - Returns all registered webhooks
 - [`unifiedListUnifiedWebhooks`](docs/sdks/webhook/README.md#listunifiedwebhooks) - Returns all registered webhooks
+- [`unifiedListUnifiedWorkspaceintegrations`](docs/sdks/unified/README.md#listunifiedworkspaceintegrations) - List workspace integrations
+- [`unifiedListUnifiedWorkspaceintegrations`](docs/sdks/workspaceintegration/README.md#listunifiedworkspaceintegrations) - List workspace integrations
 - [`unifiedPatchUnifiedConnection`](docs/sdks/connection/README.md#patchunifiedconnection) - Update connection
 - [`unifiedPatchUnifiedConnection`](docs/sdks/unified/README.md#patchunifiedconnection) - Update connection
 - [`unifiedPatchUnifiedWebhook`](docs/sdks/unified/README.md#patchunifiedwebhook) - Update webhook subscription
@@ -2725,6 +2731,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedPatchUnifiedWebhookResume`](docs/sdks/webhook/README.md#patchunifiedwebhookresume) - Resume an unhealthy webhook subscription
 - [`unifiedPatchUnifiedWebhookTrigger`](docs/sdks/unified/README.md#patchunifiedwebhooktrigger) - Trigger webhook
 - [`unifiedPatchUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#patchunifiedwebhooktrigger) - Trigger webhook
+- [`unifiedPatchUnifiedWorkspaceintegration`](docs/sdks/unified/README.md#patchunifiedworkspaceintegration) - Update workspace integration
+- [`unifiedPatchUnifiedWorkspaceintegration`](docs/sdks/workspaceintegration/README.md#patchunifiedworkspaceintegration) - Update workspace integration
 - [`unifiedRemoveUnifiedConnection`](docs/sdks/connection/README.md#removeunifiedconnection) - Remove connection
 - [`unifiedRemoveUnifiedConnection`](docs/sdks/unified/README.md#removeunifiedconnection) - Remove connection
 - [`unifiedRemoveUnifiedEnvironment`](docs/sdks/environment/README.md#removeunifiedenvironment) - Remove an environment
@@ -2733,6 +2741,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedRemoveUnifiedSecretsmanager`](docs/sdks/unified/README.md#removeunifiedsecretsmanager) - Remove secrets manager
 - [`unifiedRemoveUnifiedWebhook`](docs/sdks/unified/README.md#removeunifiedwebhook) - Remove webhook subscription
 - [`unifiedRemoveUnifiedWebhook`](docs/sdks/webhook/README.md#removeunifiedwebhook) - Remove webhook subscription
+- [`unifiedRemoveUnifiedWorkspaceintegration`](docs/sdks/unified/README.md#removeunifiedworkspaceintegration) - Remove workspace integration
+- [`unifiedRemoveUnifiedWorkspaceintegration`](docs/sdks/workspaceintegration/README.md#removeunifiedworkspaceintegration) - Remove workspace integration
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/connection/README.md#updateunifiedconnection) - Update connection
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
 - [`unifiedUpdateUnifiedWebhook`](docs/sdks/unified/README.md#updateunifiedwebhook) - Update webhook subscription
@@ -2741,6 +2751,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedUpdateUnifiedWebhookResume`](docs/sdks/webhook/README.md#updateunifiedwebhookresume) - Resume an unhealthy webhook subscription
 - [`unifiedUpdateUnifiedWebhookTrigger`](docs/sdks/unified/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 - [`unifiedUpdateUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#updateunifiedwebhooktrigger) - Trigger webhook
+- [`unifiedUpdateUnifiedWorkspaceintegration`](docs/sdks/unified/README.md#updateunifiedworkspaceintegration) - Update workspace integration
+- [`unifiedUpdateUnifiedWorkspaceintegration`](docs/sdks/workspaceintegration/README.md#updateunifiedworkspaceintegration) - Update workspace integration
 - [`verificationCreateVerificationRequest`](docs/sdks/request/README.md#createverificationrequest) - Create a request
 - [`verificationCreateVerificationRequest`](docs/sdks/verification/README.md#createverificationrequest) - Create a request
 - [`verificationGetVerificationRequest`](docs/sdks/request/README.md#getverificationrequest) - Retrieve a request

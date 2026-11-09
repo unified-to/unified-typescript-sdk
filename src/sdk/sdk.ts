@@ -228,6 +228,7 @@ import { Visitor } from "./visitor.js";
 import { Volume } from "./volume.js";
 import { Webhook } from "./webhook.js";
 import { Webinar } from "./webinar.js";
+import { Workspaceintegration } from "./workspaceintegration.js";
 
 export class UnifiedTo extends ClientSDK {
   private _accounting?: Accounting;
@@ -1345,6 +1346,13 @@ export class UnifiedTo extends ClientSDK {
   private _webhook?: Webhook;
   get webhook(): Webhook {
     return (this._webhook ??= new Webhook(this._options));
+  }
+
+  private _workspaceintegration?: Workspaceintegration;
+  get workspaceintegration(): Workspaceintegration {
+    return (this._workspaceintegration ??= new Workspaceintegration(
+      this._options,
+    ));
   }
 
   private _verification?: Verification;

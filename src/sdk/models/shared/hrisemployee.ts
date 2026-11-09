@@ -149,7 +149,7 @@ export type HrisEmployee = {
   createdAt?: Date | undefined;
   currency?: string | undefined;
   /**
-   * YYYYMM/DD
+   * YYYY-MM-DD
    */
   dateOfBirth?: Date | undefined;
   /**
