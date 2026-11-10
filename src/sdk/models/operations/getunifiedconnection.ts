@@ -3,8 +3,36 @@
  */
 
 import * as z from "zod/v3";
+import { ClosedEnum } from "../../types/enums.js";
+
+export const GetUnifiedConnectionQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  WorkspaceId: "workspace_id",
+  IntegrationType: "integration_type",
+  IntegrationName: "integration_name",
+  ExternalXref: "external_xref",
+  Permissions: "permissions",
+  Categories: "categories",
+  Auth: "auth",
+  IsPaused: "is_paused",
+  Environment: "environment",
+  LastHealthyAt: "last_healthy_at",
+  LastUnhealthyAt: "last_unhealthy_at",
+  LastUnhealthyCode: "last_unhealthy_code",
+  SecretsmanagerId: "secretsmanager_id",
+  SecretsmanagerKey: "secretsmanager_key",
+} as const;
+export type GetUnifiedConnectionQueryParamFields = ClosedEnum<
+  typeof GetUnifiedConnectionQueryParamFields
+>;
 
 export type GetUnifiedConnectionRequest = {
+  /**
+   * Fields to return. Leave out auth to get connection metadata without credentials
+   */
+  fields?: Array<GetUnifiedConnectionQueryParamFields> | undefined;
   /**
    * ID of the Connection
    */
@@ -12,7 +40,14 @@ export type GetUnifiedConnectionRequest = {
 };
 
 /** @internal */
+export const GetUnifiedConnectionQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof GetUnifiedConnectionQueryParamFields> = z.nativeEnum(
+    GetUnifiedConnectionQueryParamFields,
+  );
+
+/** @internal */
 export type GetUnifiedConnectionRequest$Outbound = {
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -22,6 +57,8 @@ export const GetUnifiedConnectionRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   GetUnifiedConnectionRequest
 > = z.object({
+  fields: z.array(GetUnifiedConnectionQueryParamFields$outboundSchema)
+    .optional(),
   id: z.string(),
 });
 

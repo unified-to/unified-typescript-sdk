@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
+      id: "01688ad0-63fc-4619-84f2-db96663ec5bc",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
+      updatedAt: new Date("2023-08-11T23:36:30.718Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
+      id: "01688ad0-63fc-4619-84f2-db96663ec5bc",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
+      updatedAt: new Date("2023-08-11T23:36:30.718Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
+      id: "01688ad0-63fc-4619-84f2-db96663ec5bc",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
+      updatedAt: new Date("2023-08-11T23:36:30.718Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
+        id: "01688ad0-63fc-4619-84f2-db96663ec5bc",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-11T17:39:13.600Z"),
+        updatedAt: new Date("2023-08-11T23:36:30.718Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
+      id: "01688ad0-63fc-4619-84f2-db96663ec5bc",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
+      updatedAt: new Date("2023-08-11T23:36:30.718Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "13bdedde-753e-4ea8-b5b5-322c626dbe88",
+      id: "01688ad0-63fc-4619-84f2-db96663ec5bc",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-11T17:39:13.600Z"),
+      updatedAt: new Date("2023-08-11T23:36:30.718Z"),
     },
     connectionId: "<id>",
   });
@@ -1234,16 +1234,28 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`collectionRemoveLmsCollection`](docs/sdks/lms/README.md#removelmscollection) - Remove a collection
 - [`collectionUpdateLmsCollection`](docs/sdks/collection/README.md#updatelmscollection) - Update a collection
 - [`collectionUpdateLmsCollection`](docs/sdks/lms/README.md#updatelmscollection) - Update a collection
+- [`commentCreateSocialComment`](docs/sdks/comment/README.md#createsocialcomment) - Create a comment
+- [`commentCreateSocialComment`](docs/sdks/social/README.md#createsocialcomment) - Create a comment
 - [`commentCreateUcComment`](docs/sdks/comment/README.md#createuccomment) - Create a comment
 - [`commentCreateUcComment`](docs/sdks/uc/README.md#createuccomment) - Create a comment
+- [`commentGetSocialComment`](docs/sdks/comment/README.md#getsocialcomment) - Retrieve a comment
+- [`commentGetSocialComment`](docs/sdks/social/README.md#getsocialcomment) - Retrieve a comment
 - [`commentGetUcComment`](docs/sdks/comment/README.md#getuccomment) - Retrieve a comment
 - [`commentGetUcComment`](docs/sdks/uc/README.md#getuccomment) - Retrieve a comment
+- [`commentListSocialComments`](docs/sdks/comment/README.md#listsocialcomments) - List all comments
+- [`commentListSocialComments`](docs/sdks/social/README.md#listsocialcomments) - List all comments
 - [`commentListUcComments`](docs/sdks/comment/README.md#listuccomments) - List all comments
 - [`commentListUcComments`](docs/sdks/uc/README.md#listuccomments) - List all comments
+- [`commentPatchSocialComment`](docs/sdks/comment/README.md#patchsocialcomment) - Update a comment
+- [`commentPatchSocialComment`](docs/sdks/social/README.md#patchsocialcomment) - Update a comment
 - [`commentPatchUcComment`](docs/sdks/comment/README.md#patchuccomment) - Update a comment
 - [`commentPatchUcComment`](docs/sdks/uc/README.md#patchuccomment) - Update a comment
+- [`commentRemoveSocialComment`](docs/sdks/comment/README.md#removesocialcomment) - Remove a comment
+- [`commentRemoveSocialComment`](docs/sdks/social/README.md#removesocialcomment) - Remove a comment
 - [`commentRemoveUcComment`](docs/sdks/comment/README.md#removeuccomment) - Remove a comment
 - [`commentRemoveUcComment`](docs/sdks/uc/README.md#removeuccomment) - Remove a comment
+- [`commentUpdateSocialComment`](docs/sdks/comment/README.md#updatesocialcomment) - Update a comment
+- [`commentUpdateSocialComment`](docs/sdks/social/README.md#updatesocialcomment) - Update a comment
 - [`commentUpdateUcComment`](docs/sdks/comment/README.md#updateuccomment) - Update a comment
 - [`commentUpdateUcComment`](docs/sdks/uc/README.md#updateuccomment) - Update a comment
 - [`commerceCreateCommerceCollection`](docs/sdks/collection/README.md#createcommercecollection) - Create a collection

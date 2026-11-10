@@ -20,11 +20,6 @@ export type PropertyCalendarBotRecordingConfigTranscriptionMode = OpenEnum<
 
 export const Provider = {
   MeetingCaptions: "MEETING_CAPTIONS",
-  AwsTranscribe: "AWS_TRANSCRIBE",
-  GoogleSpeech: "GOOGLE_SPEECH",
-  Assemblyai: "ASSEMBLYAI",
-  Deepgram: "DEEPGRAM",
-  Custom: "CUSTOM",
 } as const;
 export type Provider = OpenEnum<typeof Provider>;
 

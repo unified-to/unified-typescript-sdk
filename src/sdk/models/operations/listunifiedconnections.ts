@@ -50,6 +50,29 @@ export const Categories = {
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 
+export const ListUnifiedConnectionsQueryParamFields = {
+  Id: "id",
+  CreatedAt: "created_at",
+  UpdatedAt: "updated_at",
+  WorkspaceId: "workspace_id",
+  IntegrationType: "integration_type",
+  IntegrationName: "integration_name",
+  ExternalXref: "external_xref",
+  Permissions: "permissions",
+  Categories: "categories",
+  Auth: "auth",
+  IsPaused: "is_paused",
+  Environment: "environment",
+  LastHealthyAt: "last_healthy_at",
+  LastUnhealthyAt: "last_unhealthy_at",
+  LastUnhealthyCode: "last_unhealthy_code",
+  SecretsmanagerId: "secretsmanager_id",
+  SecretsmanagerKey: "secretsmanager_key",
+} as const;
+export type ListUnifiedConnectionsQueryParamFields = ClosedEnum<
+  typeof ListUnifiedConnectionsQueryParamFields
+>;
+
 export type ListUnifiedConnectionsRequest = {
   /**
    * Filter the results on these categories
@@ -60,6 +83,10 @@ export type ListUnifiedConnectionsRequest = {
    * Filter the results to only those integrations for your user referenced by this value
    */
   externalXref?: string | undefined;
+  /**
+   * Fields to return. Leave out auth to get connection metadata without credentials
+   */
+  fields?: Array<ListUnifiedConnectionsQueryParamFields> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -75,10 +102,17 @@ export const Categories$outboundSchema: z.ZodNativeEnum<typeof Categories> = z
   .nativeEnum(Categories);
 
 /** @internal */
+export const ListUnifiedConnectionsQueryParamFields$outboundSchema:
+  z.ZodNativeEnum<typeof ListUnifiedConnectionsQueryParamFields> = z.nativeEnum(
+    ListUnifiedConnectionsQueryParamFields,
+  );
+
+/** @internal */
 export type ListUnifiedConnectionsRequest$Outbound = {
   categories?: Array<string> | undefined;
   env?: string | undefined;
   external_xref?: string | undefined;
+  fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -95,6 +129,8 @@ export const ListUnifiedConnectionsRequest$outboundSchema: z.ZodType<
   categories: z.array(Categories$outboundSchema).optional(),
   env: z.string().optional(),
   externalXref: z.string().optional(),
+  fields: z.array(ListUnifiedConnectionsQueryParamFields$outboundSchema)
+    .optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),

@@ -5,21 +5,27 @@
 ### Available Operations
 
 * [createKmsComment](#createkmscomment) - Create a comment
+* [createSocialComment](#createsocialcomment) - Create a comment
 * [createTaskComment](#createtaskcomment) - Create a comment
 * [createUcComment](#createuccomment) - Create a comment
 * [getKmsComment](#getkmscomment) - Retrieve a comment
+* [getSocialComment](#getsocialcomment) - Retrieve a comment
 * [getTaskComment](#gettaskcomment) - Retrieve a comment
 * [getUcComment](#getuccomment) - Retrieve a comment
 * [listKmsComments](#listkmscomments) - List all comments
+* [listSocialComments](#listsocialcomments) - List all comments
 * [listTaskComments](#listtaskcomments) - List all comments
 * [listUcComments](#listuccomments) - List all comments
 * [patchKmsComment](#patchkmscomment) - Update a comment
+* [patchSocialComment](#patchsocialcomment) - Update a comment
 * [patchTaskComment](#patchtaskcomment) - Update a comment
 * [patchUcComment](#patchuccomment) - Update a comment
 * [removeKmsComment](#removekmscomment) - Remove a comment
+* [removeSocialComment](#removesocialcomment) - Remove a comment
 * [removeTaskComment](#removetaskcomment) - Remove a comment
 * [removeUcComment](#removeuccomment) - Remove a comment
 * [updateKmsComment](#updatekmscomment) - Update a comment
+* [updateSocialComment](#updatesocialcomment) - Update a comment
 * [updateTaskComment](#updatetaskcomment) - Update a comment
 * [updateUcComment](#updateuccomment) - Update a comment
 
@@ -45,10 +51,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "6b231734-f8d9-4d08-9f87-76d2aa298061",
+      id: "f3016620-4735-4e75-a25e-e4eda6bd4868",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-12-02T00:11:25.850Z"),
+      updatedAt: new Date("2023-12-02T07:14:43.140Z"),
     },
     connectionId: "<id>",
   });
@@ -81,10 +87,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "6b231734-f8d9-4d08-9f87-76d2aa298061",
+      id: "f3016620-4735-4e75-a25e-e4eda6bd4868",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-12-02T00:11:25.850Z"),
+      updatedAt: new Date("2023-12-02T07:14:43.140Z"),
     },
     connectionId: "<id>",
   });
@@ -118,6 +124,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## createSocialComment
+
+Creates a SocialComment. Provide the unified SocialComment fields in the request body; they are mapped to the provider's API. Returns the created SocialComment.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createSocialComment" method="post" path="/social/{connection_id}/comment" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.comment.createSocialComment({
+    socialComment: {},
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { commentCreateSocialComment } from "@unified-api/typescript-sdk/funcs/commentCreateSocialComment.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await commentCreateSocialComment(unifiedTo, {
+    socialComment: {},
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("commentCreateSocialComment failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateSocialCommentRequest](../../sdk/models/operations/createsocialcommentrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SocialComment](../../sdk/models/shared/socialcomment.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## createTaskComment
 
 Creates a TaskComment. Provide the unified TaskComment fields in the request body; they are mapped to the provider's API. Returns the created TaskComment.
@@ -139,10 +224,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1fd9c643-374c-4cb3-8beb-13412ddaa7e2",
+      id: "c7d522e0-8be4-4e83-828a-37daf41288ec",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-08T16:18:42.788Z"),
+      updatedAt: new Date("2021-10-08T22:54:02.146Z"),
     },
     connectionId: "<id>",
   });
@@ -174,10 +259,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1fd9c643-374c-4cb3-8beb-13412ddaa7e2",
+      id: "c7d522e0-8be4-4e83-828a-37daf41288ec",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-08T16:18:42.788Z"),
+      updatedAt: new Date("2021-10-08T22:54:02.146Z"),
     },
     connectionId: "<id>",
   });
@@ -232,9 +317,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "1b736380-4182-4e36-84b2-983d154afd6b",
+      id: "6a3f1780-feb8-42d6-9b32-0d87de881c1d",
       metadata: [],
-      updatedAt: "2024-02-14T08:31:24.084Z",
+      updatedAt: "2024-02-14T14:10:21.405Z",
     },
     connectionId: "<id>",
   });
@@ -266,9 +351,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "1b736380-4182-4e36-84b2-983d154afd6b",
+      id: "6a3f1780-feb8-42d6-9b32-0d87de881c1d",
       metadata: [],
-      updatedAt: "2024-02-14T08:31:24.084Z",
+      updatedAt: "2024-02-14T14:10:21.405Z",
     },
     connectionId: "<id>",
   });
@@ -374,6 +459,85 @@ run();
 ### Response
 
 **Promise\<[shared.KmsComment](../../sdk/models/shared/kmscomment.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getSocialComment
+
+Retrieves a single SocialComment by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getSocialComment" method="get" path="/social/{connection_id}/comment/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.comment.getSocialComment({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { commentGetSocialComment } from "@unified-api/typescript-sdk/funcs/commentGetSocialComment.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await commentGetSocialComment(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("commentGetSocialComment failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetSocialCommentRequest](../../sdk/models/operations/getsocialcommentrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SocialComment](../../sdk/models/shared/socialcomment.md)\>**
 
 ### Errors
 
@@ -616,6 +780,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listSocialComments
+
+Returns a list of SocialComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listSocialComments" method="get" path="/social/{connection_id}/comment" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.comment.listSocialComments({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { commentListSocialComments } from "@unified-api/typescript-sdk/funcs/commentListSocialComments.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await commentListSocialComments(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("commentListSocialComments failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListSocialCommentsRequest](../../sdk/models/operations/listsocialcommentsrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SocialComment[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listTaskComments
 
 Returns a list of TaskComments. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -792,10 +1033,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "faa57245-2b96-4b95-b099-816769926cb1",
+      id: "f2046797-3929-43ab-b1b7-bdec0efca42c",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-12-02T00:11:25.853Z"),
+      updatedAt: new Date("2023-12-02T07:14:43.143Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -829,10 +1070,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "faa57245-2b96-4b95-b099-816769926cb1",
+      id: "f2046797-3929-43ab-b1b7-bdec0efca42c",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-12-02T00:11:25.853Z"),
+      updatedAt: new Date("2023-12-02T07:14:43.143Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -867,6 +1108,87 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchSocialComment
+
+Updates the SocialComment identified by `id`. Provide the unified SocialComment fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchSocialComment" method="patch" path="/social/{connection_id}/comment/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.comment.patchSocialComment({
+    socialComment: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { commentPatchSocialComment } from "@unified-api/typescript-sdk/funcs/commentPatchSocialComment.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await commentPatchSocialComment(unifiedTo, {
+    socialComment: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("commentPatchSocialComment failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchSocialCommentRequest](../../sdk/models/operations/patchsocialcommentrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SocialComment](../../sdk/models/shared/socialcomment.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchTaskComment
 
 Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
@@ -888,10 +1210,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1929b32d-54b1-4580-9d78-9a44ba063d8d",
+      id: "53abd4a2-b928-4a91-acd7-b90ac8c5d1fc",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-08T16:18:42.791Z"),
+      updatedAt: new Date("2021-10-08T22:54:02.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -924,10 +1246,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1929b32d-54b1-4580-9d78-9a44ba063d8d",
+      id: "53abd4a2-b928-4a91-acd7-b90ac8c5d1fc",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-08T16:18:42.791Z"),
+      updatedAt: new Date("2021-10-08T22:54:02.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -983,9 +1305,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "1ecaf39a-9828-4c3d-87f1-ff2f971a423e",
+      id: "1ab4a118-cb5f-4f83-b937-be39f20a8846",
       metadata: [],
-      updatedAt: "2024-02-14T08:31:24.087Z",
+      updatedAt: "2024-02-14T14:10:21.408Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1018,9 +1340,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "1ecaf39a-9828-4c3d-87f1-ff2f971a423e",
+      id: "1ab4a118-cb5f-4f83-b937-be39f20a8846",
       metadata: [],
-      updatedAt: "2024-02-14T08:31:24.087Z",
+      updatedAt: "2024-02-14T14:10:21.408Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1127,6 +1449,85 @@ run();
 ### Response
 
 **Promise\<[operations.RemoveKmsCommentResponse](../../sdk/models/operations/removekmscommentresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## removeSocialComment
+
+Deletes the SocialComment identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeSocialComment" method="delete" path="/social/{connection_id}/comment/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.comment.removeSocialComment({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { commentRemoveSocialComment } from "@unified-api/typescript-sdk/funcs/commentRemoveSocialComment.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await commentRemoveSocialComment(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("commentRemoveSocialComment failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveSocialCommentRequest](../../sdk/models/operations/removesocialcommentrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveSocialCommentResponse](../../sdk/models/operations/removesocialcommentresponse.md)\>**
 
 ### Errors
 
@@ -1314,10 +1715,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "faa57245-2b96-4b95-b099-816769926cb1",
+      id: "f2046797-3929-43ab-b1b7-bdec0efca42c",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-12-02T00:11:25.853Z"),
+      updatedAt: new Date("2023-12-02T07:14:43.143Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1351,10 +1752,10 @@ async function run() {
       content: "Decimus tolero viriliter usque.",
       contentType: "HTML",
       createdAt: new Date("2022-08-26T14:40:49.732Z"),
-      id: "faa57245-2b96-4b95-b099-816769926cb1",
+      id: "f2046797-3929-43ab-b1b7-bdec0efca42c",
       metadata: [],
       type: "PAGE",
-      updatedAt: new Date("2023-12-02T00:11:25.853Z"),
+      updatedAt: new Date("2023-12-02T07:14:43.143Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1389,6 +1790,87 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updateSocialComment
+
+Updates the SocialComment identified by `id`. Provide the unified SocialComment fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateSocialComment" method="put" path="/social/{connection_id}/comment/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.comment.updateSocialComment({
+    socialComment: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { commentUpdateSocialComment } from "@unified-api/typescript-sdk/funcs/commentUpdateSocialComment.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await commentUpdateSocialComment(unifiedTo, {
+    socialComment: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("commentUpdateSocialComment failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateSocialCommentRequest](../../sdk/models/operations/updatesocialcommentrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SocialComment](../../sdk/models/shared/socialcomment.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateTaskComment
 
 Updates the TaskComment identified by `id`. Provide the unified TaskComment fields to change in the request body.
@@ -1410,10 +1892,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1929b32d-54b1-4580-9d78-9a44ba063d8d",
+      id: "53abd4a2-b928-4a91-acd7-b90ac8c5d1fc",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-08T16:18:42.791Z"),
+      updatedAt: new Date("2021-10-08T22:54:02.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1446,10 +1928,10 @@ async function run() {
     taskComment: {
       createdAt: new Date("2019-10-12T20:33:37.879Z"),
       hasChildren: true,
-      id: "1929b32d-54b1-4580-9d78-9a44ba063d8d",
+      id: "53abd4a2-b928-4a91-acd7-b90ac8c5d1fc",
       metadata: [],
       text: "Colo ulciscor sublime tabernus.",
-      updatedAt: new Date("2021-10-08T16:18:42.791Z"),
+      updatedAt: new Date("2021-10-08T22:54:02.149Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1505,9 +1987,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "1ecaf39a-9828-4c3d-87f1-ff2f971a423e",
+      id: "1ab4a118-cb5f-4f83-b937-be39f20a8846",
       metadata: [],
-      updatedAt: "2024-02-14T08:31:24.087Z",
+      updatedAt: "2024-02-14T14:10:21.408Z",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1540,9 +2022,9 @@ async function run() {
     ucComment: {
       content: "Vociferor vitiosus.",
       createdAt: "2023-04-02T23:42:31.571Z",
-      id: "1ecaf39a-9828-4c3d-87f1-ff2f971a423e",
+      id: "1ab4a118-cb5f-4f83-b937-be39f20a8846",
       metadata: [],
-      updatedAt: "2024-02-14T08:31:24.087Z",
+      updatedAt: "2024-02-14T14:10:21.408Z",
     },
     connectionId: "<id>",
     id: "<id>",

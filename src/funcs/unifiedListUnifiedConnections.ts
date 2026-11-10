@@ -92,6 +92,7 @@ async function $do(
     "categories": payload.categories,
     "env": payload.env,
     "external_xref": payload.external_xref,
+    "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,

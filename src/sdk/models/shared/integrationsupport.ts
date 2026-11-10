@@ -130,6 +130,8 @@ import {
   ListMatterId$inboundSchema,
   ListMedium,
   ListMedium$inboundSchema,
+  ListMeetingUrl,
+  ListMeetingUrl$inboundSchema,
   ListMemberId,
   ListMemberId$inboundSchema,
   ListOffset,
@@ -312,9 +314,14 @@ import {
   VirtualWebhookBenefitId$inboundSchema,
   VirtualWebhookBillId,
   VirtualWebhookBillId$inboundSchema,
-  VirtualWebhookBranchId,
-  VirtualWebhookBranchId$inboundSchema,
-} from "./virtualwebhookbranchid.js";
+} from "./virtualwebhookbillid.js";
+
+export const VirtualWebhookBranchId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookBranchId = OpenEnum<typeof VirtualWebhookBranchId>;
 
 export const VirtualWebhookCalendarId = {
   SupportedRequired: "supported-required",
@@ -897,6 +904,7 @@ export type IntegrationSupport = {
   listLocationId?: ListLocationId | undefined;
   listMatterId?: ListMatterId | undefined;
   listMedium?: ListMedium | undefined;
+  listMeetingUrl?: ListMeetingUrl | undefined;
   listMemberId?: ListMemberId | undefined;
   listOffset?: ListOffset | undefined;
   listOrder?: ListOrder | undefined;
@@ -1067,6 +1075,13 @@ export type IntegrationSupport = {
   virtualWebhookVisitorId?: VirtualWebhookVisitorId | undefined;
   webhookEvents?: PropertyIntegrationSupportWebhookEvents | undefined;
 };
+
+/** @internal */
+export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
+  VirtualWebhookBranchId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookBranchId);
 
 /** @internal */
 export const VirtualWebhookCalendarId$inboundSchema: z.ZodType<
@@ -1616,6 +1631,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_location_id: ListLocationId$inboundSchema.optional(),
   list_matter_id: ListMatterId$inboundSchema.optional(),
   list_medium: ListMedium$inboundSchema.optional(),
+  list_meeting_url: ListMeetingUrl$inboundSchema.optional(),
   list_member_id: ListMemberId$inboundSchema.optional(),
   list_offset: ListOffset$inboundSchema.optional(),
   list_order: ListOrder$inboundSchema.optional(),
@@ -1867,6 +1883,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_location_id": "listLocationId",
     "list_matter_id": "listMatterId",
     "list_medium": "listMedium",
+    "list_meeting_url": "listMeetingUrl",
     "list_member_id": "listMemberId",
     "list_offset": "listOffset",
     "list_order": "listOrder",

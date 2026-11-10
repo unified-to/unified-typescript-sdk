@@ -79,8 +79,16 @@ export type AtsCandidate = {
   experiences?: Array<AtsCandidateExperience> | undefined;
   externalIdentifier?: string | undefined;
   firstName?: string | undefined;
+  /**
+   * Whether the candidate must not be contacted for outreach
+   */
+  hasDoNotContact?: boolean | undefined;
   id?: string | undefined;
   imageUrl?: string | undefined;
+  /**
+   * Whether the candidate is confidential / private (visible only to permitted users)
+   */
+  isPrivate?: boolean | undefined;
   jobIds?: Array<string> | undefined;
   lastName?: string | undefined;
   /**
@@ -147,8 +155,10 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   experiences: z.array(AtsCandidateExperience$inboundSchema).optional(),
   external_identifier: z.string().optional(),
   first_name: z.string().optional(),
+  has_do_not_contact: z.boolean().optional(),
   id: z.string().optional(),
   image_url: z.string().optional(),
+  is_private: z.boolean().optional(),
   job_ids: z.array(z.string()).optional(),
   last_name: z.string().optional(),
   link_urls: z.array(z.string()).optional(),
@@ -175,7 +185,9 @@ export const AtsCandidate$inboundSchema: z.ZodType<
     "date_of_birth": "dateOfBirth",
     "external_identifier": "externalIdentifier",
     "first_name": "firstName",
+    "has_do_not_contact": "hasDoNotContact",
     "image_url": "imageUrl",
+    "is_private": "isPrivate",
     "job_ids": "jobIds",
     "last_name": "lastName",
     "link_urls": "linkUrls",
@@ -197,8 +209,10 @@ export type AtsCandidate$Outbound = {
   experiences?: Array<AtsCandidateExperience$Outbound> | undefined;
   external_identifier?: string | undefined;
   first_name?: string | undefined;
+  has_do_not_contact?: boolean | undefined;
   id?: string | undefined;
   image_url?: string | undefined;
+  is_private?: boolean | undefined;
   job_ids?: Array<string> | undefined;
   last_name?: string | undefined;
   link_urls?: Array<string> | undefined;
@@ -234,8 +248,10 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   experiences: z.array(AtsCandidateExperience$outboundSchema).optional(),
   externalIdentifier: z.string().optional(),
   firstName: z.string().optional(),
+  hasDoNotContact: z.boolean().optional(),
   id: z.string().optional(),
   imageUrl: z.string().optional(),
+  isPrivate: z.boolean().optional(),
   jobIds: z.array(z.string()).optional(),
   lastName: z.string().optional(),
   linkUrls: z.array(z.string()).optional(),
@@ -261,7 +277,9 @@ export const AtsCandidate$outboundSchema: z.ZodType<
     dateOfBirth: "date_of_birth",
     externalIdentifier: "external_identifier",
     firstName: "first_name",
+    hasDoNotContact: "has_do_not_contact",
     imageUrl: "image_url",
+    isPrivate: "is_private",
     jobIds: "job_ids",
     lastName: "last_name",
     linkUrls: "link_urls",

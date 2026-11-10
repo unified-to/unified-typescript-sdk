@@ -413,6 +413,8 @@ export type PropertyWorkspaceIntegrationOverridenScopes = {
   signingSignatoryWrite?: string | undefined;
   signingTemplateRead?: string | undefined;
   signingTemplateWrite?: string | undefined;
+  socialCommentRead?: string | undefined;
+  socialCommentWrite?: string | undefined;
   socialInsightRead?: string | undefined;
   socialInsightWrite?: string | undefined;
   socialPostRead?: string | undefined;
@@ -866,6 +868,8 @@ export const PropertyWorkspaceIntegrationOverridenScopes$inboundSchema:
     signing_signatory_write: z.string().optional(),
     signing_template_read: z.string().optional(),
     signing_template_write: z.string().optional(),
+    social_comment_read: z.string().optional(),
+    social_comment_write: z.string().optional(),
     social_insight_read: z.string().optional(),
     social_insight_write: z.string().optional(),
     social_post_read: z.string().optional(),
@@ -1314,6 +1318,8 @@ export const PropertyWorkspaceIntegrationOverridenScopes$inboundSchema:
       "signing_signatory_write": "signingSignatoryWrite",
       "signing_template_read": "signingTemplateRead",
       "signing_template_write": "signingTemplateWrite",
+      "social_comment_read": "socialCommentRead",
+      "social_comment_write": "socialCommentWrite",
       "social_insight_read": "socialInsightRead",
       "social_insight_write": "socialInsightWrite",
       "social_post_read": "socialPostRead",
@@ -1761,6 +1767,8 @@ export type PropertyWorkspaceIntegrationOverridenScopes$Outbound = {
   signing_signatory_write?: string | undefined;
   signing_template_read?: string | undefined;
   signing_template_write?: string | undefined;
+  social_comment_read?: string | undefined;
+  social_comment_write?: string | undefined;
   social_insight_read?: string | undefined;
   social_insight_write?: string | undefined;
   social_post_read?: string | undefined;
@@ -2214,6 +2222,8 @@ export const PropertyWorkspaceIntegrationOverridenScopes$outboundSchema:
     signingSignatoryWrite: z.string().optional(),
     signingTemplateRead: z.string().optional(),
     signingTemplateWrite: z.string().optional(),
+    socialCommentRead: z.string().optional(),
+    socialCommentWrite: z.string().optional(),
     socialInsightRead: z.string().optional(),
     socialInsightWrite: z.string().optional(),
     socialPostRead: z.string().optional(),
@@ -2661,6 +2671,8 @@ export const PropertyWorkspaceIntegrationOverridenScopes$outboundSchema:
       signingSignatoryWrite: "signing_signatory_write",
       signingTemplateRead: "signing_template_read",
       signingTemplateWrite: "signing_template_write",
+      socialCommentRead: "social_comment_read",
+      socialCommentWrite: "social_comment_write",
       socialInsightRead: "social_insight_read",
       socialInsightWrite: "social_insight_write",
       socialPostRead: "social_post_read",

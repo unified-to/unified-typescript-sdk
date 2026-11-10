@@ -231,6 +231,7 @@ export const WebhookObjectType = {
   SocialProfile: "social_profile",
   SocialReview: "social_review",
   SocialInsight: "social_insight",
+  SocialComment: "social_comment",
   LegalMatter: "legal_matter",
   LegalPracticearea: "legal_practicearea",
   LegalTimeentry: "legal_timeentry",

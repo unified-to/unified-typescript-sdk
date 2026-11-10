@@ -364,6 +364,8 @@ export const PropertyWorkspaceIntegrationPermissions = {
   SocialReviewWrite: "social_review_write",
   SocialInsightRead: "social_insight_read",
   SocialInsightWrite: "social_insight_write",
+  SocialCommentRead: "social_comment_read",
+  SocialCommentWrite: "social_comment_write",
   LegalMatterRead: "legal_matter_read",
   LegalMatterWrite: "legal_matter_write",
   LegalPracticeareaRead: "legal_practicearea_read",

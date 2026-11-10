@@ -412,6 +412,13 @@ export const ListMedium = {
 } as const;
 export type ListMedium = OpenEnum<typeof ListMedium>;
 
+export const ListMeetingUrl = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListMeetingUrl = OpenEnum<typeof ListMeetingUrl>;
+
 export const ListMemberId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -1057,13 +1064,6 @@ export const VirtualWebhookBillId = {
 } as const;
 export type VirtualWebhookBillId = OpenEnum<typeof VirtualWebhookBillId>;
 
-export const VirtualWebhookBranchId = {
-  SupportedRequired: "supported-required",
-  Supported: "supported",
-  NotSupported: "not-supported",
-} as const;
-export type VirtualWebhookBranchId = OpenEnum<typeof VirtualWebhookBranchId>;
-
 /** @internal */
 export const FromWebhook$inboundSchema: z.ZodType<
   FromWebhook,
@@ -1469,6 +1469,13 @@ export const ListMedium$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListMedium);
+
+/** @internal */
+export const ListMeetingUrl$inboundSchema: z.ZodType<
+  ListMeetingUrl,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListMeetingUrl);
 
 /** @internal */
 export const ListMemberId$inboundSchema: z.ZodType<
@@ -2106,10 +2113,3 @@ export const VirtualWebhookBillId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookBillId);
-
-/** @internal */
-export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
-  VirtualWebhookBranchId,
-  z.ZodTypeDef,
-  unknown
-> = openEnums.inboundSchema(VirtualWebhookBranchId);

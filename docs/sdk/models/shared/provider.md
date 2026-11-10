@@ -5,7 +5,7 @@
 ```typescript
 import { Provider } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Provider = "AWS_TRANSCRIBE";
+let value: Provider = "MEETING_CAPTIONS";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +13,5 @@ let value: Provider = "AWS_TRANSCRIBE";
 ## Values
 
 ```typescript
-"MEETING_CAPTIONS" | "AWS_TRANSCRIBE" | "GOOGLE_SPEECH" | "ASSEMBLYAI" | "DEEPGRAM" | "CUSTOM" | Unrecognized<string>
+"MEETING_CAPTIONS" | Unrecognized<string>
 ```

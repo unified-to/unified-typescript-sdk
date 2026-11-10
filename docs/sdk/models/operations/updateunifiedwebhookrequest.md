@@ -9,7 +9,7 @@ let value: UpdateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "signing_signatory",
+    objectType: "signing_template",
   },
   id: "<id>",
 };
