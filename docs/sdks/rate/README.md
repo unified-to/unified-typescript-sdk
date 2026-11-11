@@ -26,7 +26,7 @@ async function run() {
   const result = await unifiedTo.rate.createShippingRate({
     shippingRate: {
       currency: "USD",
-      id: "0e6f7395-42e7-4b35-aec1-347ff5bb75be",
+      id: "0ea221aa-650b-4bb9-81b1-408b5618f045",
       metadata: [],
       rates: [
         {
@@ -73,7 +73,7 @@ async function run() {
   const res = await shippingCreateShippingRate(unifiedTo, {
     shippingRate: {
       currency: "USD",
-      id: "0e6f7395-42e7-4b35-aec1-347ff5bb75be",
+      id: "0ea221aa-650b-4bb9-81b1-408b5618f045",
       metadata: [],
       rates: [
         {

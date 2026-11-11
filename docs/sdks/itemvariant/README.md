@@ -34,7 +34,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "20366232-2b95-40da-95c7-220fc1712da0",
+      id: "af359f82-69e0-468f-82a5-4e87481c561d",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -43,10 +43,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "1a99ee92-dced-4c47-8112-f14c88720e0d",
+          id: "0301ebf7-8e30-4de4-bc26-4f7e68441783",
           metadata: [
             {
-              id: "ca3973b2-70f5-4bda-a34c-f6ff6f035770",
+              id: "c46e7a9a-72b5-47f3-b509-b9ab303fed16",
               slug: "ubi",
               value: "textus",
             },
@@ -63,7 +63,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "d04579f2-5525-402c-b492-ad8ddb2728c7",
+          id: "506caf24-2077-4505-8415-565a38ad547e",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -72,7 +72,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "87993945-74d4-4d82-99e7-333023097b6e",
+          id: "a5e0d008-94ad-4189-b8ca-131b74a2f86e",
           name: "Color",
           position: 1,
           values: [
@@ -80,7 +80,7 @@ async function run() {
           ],
         },
         {
-          id: "d43b96b6-78e6-4789-b035-f3e7a21db2b7",
+          id: "467df0fe-46bd-48e8-96c9-f931edf13159",
           name: "Size",
           position: 2,
           values: [
@@ -103,7 +103,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-27T01:41:09.970Z"),
+      updatedAt: new Date("2026-03-27T20:53:10.426Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -140,7 +140,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "20366232-2b95-40da-95c7-220fc1712da0",
+      id: "af359f82-69e0-468f-82a5-4e87481c561d",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -149,10 +149,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "1a99ee92-dced-4c47-8112-f14c88720e0d",
+          id: "0301ebf7-8e30-4de4-bc26-4f7e68441783",
           metadata: [
             {
-              id: "ca3973b2-70f5-4bda-a34c-f6ff6f035770",
+              id: "c46e7a9a-72b5-47f3-b509-b9ab303fed16",
               slug: "ubi",
               value: "textus",
             },
@@ -169,7 +169,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "d04579f2-5525-402c-b492-ad8ddb2728c7",
+          id: "506caf24-2077-4505-8415-565a38ad547e",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -178,7 +178,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "87993945-74d4-4d82-99e7-333023097b6e",
+          id: "a5e0d008-94ad-4189-b8ca-131b74a2f86e",
           name: "Color",
           position: 1,
           values: [
@@ -186,7 +186,7 @@ async function run() {
           ],
         },
         {
-          id: "d43b96b6-78e6-4789-b035-f3e7a21db2b7",
+          id: "467df0fe-46bd-48e8-96c9-f931edf13159",
           name: "Size",
           position: 2,
           values: [
@@ -209,7 +209,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-27T01:41:09.970Z"),
+      updatedAt: new Date("2026-03-27T20:53:10.426Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -425,7 +425,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "dc8f6c3c-e790-414a-ac84-8e0da227c7a6",
+      id: "4f733dea-829f-40c1-b464-5a0a66560938",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -434,10 +434,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "4ae315dd-8d30-41f5-9ec3-1a32b0a1f361",
+          id: "7662ff5b-16b1-41aa-a6c1-d31180fe6f02",
           metadata: [
             {
-              id: "8965e9c6-fb18-4a79-bc4b-e0a20dc15c25",
+              id: "67e83c59-f1d0-4c94-9ec9-bcd3d6a5b67e",
               slug: "ubi",
               value: "textus",
             },
@@ -454,7 +454,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b00739e8-d4be-4319-a582-8807d4f31e42",
+          id: "d6c38e1d-8dd5-4607-b3be-01b73cc6ec23",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -463,7 +463,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "cefb840d-2f2d-4ff1-8155-0161b50fadaf",
+          id: "2f5237b1-5b0a-4a36-b28a-9c855d935bdc",
           name: "Color",
           position: 1,
           values: [
@@ -471,7 +471,7 @@ async function run() {
           ],
         },
         {
-          id: "6dff1c1b-95f4-4985-8bea-894f535b98a9",
+          id: "1700b933-22df-495c-b2f6-f22e0827190b",
           name: "Size",
           position: 2,
           values: [
@@ -494,7 +494,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-27T01:41:10.000Z"),
+      updatedAt: new Date("2026-03-27T20:53:10.452Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -532,7 +532,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "dc8f6c3c-e790-414a-ac84-8e0da227c7a6",
+      id: "4f733dea-829f-40c1-b464-5a0a66560938",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -541,10 +541,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "4ae315dd-8d30-41f5-9ec3-1a32b0a1f361",
+          id: "7662ff5b-16b1-41aa-a6c1-d31180fe6f02",
           metadata: [
             {
-              id: "8965e9c6-fb18-4a79-bc4b-e0a20dc15c25",
+              id: "67e83c59-f1d0-4c94-9ec9-bcd3d6a5b67e",
               slug: "ubi",
               value: "textus",
             },
@@ -561,7 +561,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b00739e8-d4be-4319-a582-8807d4f31e42",
+          id: "d6c38e1d-8dd5-4607-b3be-01b73cc6ec23",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -570,7 +570,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "cefb840d-2f2d-4ff1-8155-0161b50fadaf",
+          id: "2f5237b1-5b0a-4a36-b28a-9c855d935bdc",
           name: "Color",
           position: 1,
           values: [
@@ -578,7 +578,7 @@ async function run() {
           ],
         },
         {
-          id: "6dff1c1b-95f4-4985-8bea-894f535b98a9",
+          id: "1700b933-22df-495c-b2f6-f22e0827190b",
           name: "Size",
           position: 2,
           values: [
@@ -601,7 +601,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-27T01:41:10.000Z"),
+      updatedAt: new Date("2026-03-27T20:53:10.452Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -741,7 +741,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "dc8f6c3c-e790-414a-ac84-8e0da227c7a6",
+      id: "4f733dea-829f-40c1-b464-5a0a66560938",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -750,10 +750,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "4ae315dd-8d30-41f5-9ec3-1a32b0a1f361",
+          id: "7662ff5b-16b1-41aa-a6c1-d31180fe6f02",
           metadata: [
             {
-              id: "8965e9c6-fb18-4a79-bc4b-e0a20dc15c25",
+              id: "67e83c59-f1d0-4c94-9ec9-bcd3d6a5b67e",
               slug: "ubi",
               value: "textus",
             },
@@ -770,7 +770,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b00739e8-d4be-4319-a582-8807d4f31e42",
+          id: "d6c38e1d-8dd5-4607-b3be-01b73cc6ec23",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -779,7 +779,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "cefb840d-2f2d-4ff1-8155-0161b50fadaf",
+          id: "2f5237b1-5b0a-4a36-b28a-9c855d935bdc",
           name: "Color",
           position: 1,
           values: [
@@ -787,7 +787,7 @@ async function run() {
           ],
         },
         {
-          id: "6dff1c1b-95f4-4985-8bea-894f535b98a9",
+          id: "1700b933-22df-495c-b2f6-f22e0827190b",
           name: "Size",
           position: 2,
           values: [
@@ -810,7 +810,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-27T01:41:10.000Z"),
+      updatedAt: new Date("2026-03-27T20:53:10.452Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -848,7 +848,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Stylish Salad designed to make you stand out with little looks",
       height: 54,
-      id: "dc8f6c3c-e790-414a-ac84-8e0da227c7a6",
+      id: "4f733dea-829f-40c1-b464-5a0a66560938",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -857,10 +857,10 @@ async function run() {
         {
           alt: "Hic desipio thorax.",
           height: 961,
-          id: "4ae315dd-8d30-41f5-9ec3-1a32b0a1f361",
+          id: "7662ff5b-16b1-41aa-a6c1-d31180fe6f02",
           metadata: [
             {
-              id: "8965e9c6-fb18-4a79-bc4b-e0a20dc15c25",
+              id: "67e83c59-f1d0-4c94-9ec9-bcd3d6a5b67e",
               slug: "ubi",
               value: "textus",
             },
@@ -877,7 +877,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b00739e8-d4be-4319-a582-8807d4f31e42",
+          id: "d6c38e1d-8dd5-4607-b3be-01b73cc6ec23",
           namespace: "custom",
           slug: "custom_property",
           value: "absens",
@@ -886,7 +886,7 @@ async function run() {
       name: "Chair",
       options: [
         {
-          id: "cefb840d-2f2d-4ff1-8155-0161b50fadaf",
+          id: "2f5237b1-5b0a-4a36-b28a-9c855d935bdc",
           name: "Color",
           position: 1,
           values: [
@@ -894,7 +894,7 @@ async function run() {
           ],
         },
         {
-          id: "6dff1c1b-95f4-4985-8bea-894f535b98a9",
+          id: "1700b933-22df-495c-b2f6-f22e0827190b",
           name: "Size",
           position: 2,
           values: [
@@ -917,7 +917,7 @@ async function run() {
         "deserunt",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-03-27T01:41:10.000Z"),
+      updatedAt: new Date("2026-03-27T20:53:10.452Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
