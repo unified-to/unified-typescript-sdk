@@ -5,7 +5,9 @@
 ### Available Operations
 
 * [createCommerceInventory](#createcommerceinventory) - Create an inventory
+* [getAdsInventory](#getadsinventory) - Retrieve an inventory
 * [getCommerceInventory](#getcommerceinventory) - Retrieve an inventory
+* [listAdsInventories](#listadsinventories) - List all inventories
 * [listCommerceInventories](#listcommerceinventories) - List all inventories
 * [patchCommerceInventory](#patchcommerceinventory) - Update an inventory
 * [removeCommerceInventory](#removecommerceinventory) - Remove an inventory
@@ -31,9 +33,9 @@ async function run() {
   const result = await unifiedTo.inventory.createCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "9d4416fc-f65c-434d-aed7-61a01fe0a72b",
+      id: "3291d35b-85d6-47b3-9653-dab781ceede0",
       metadata: [],
-      updatedAt: new Date("2025-12-08T03:33:34.554Z"),
+      updatedAt: new Date("2025-12-08T22:34:30.206Z"),
     },
     connectionId: "<id>",
   });
@@ -50,7 +52,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceInventory.js";
+import { inventoryCreateCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryCreateCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -61,12 +63,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceCreateCommerceInventory(unifiedTo, {
+  const res = await inventoryCreateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "9d4416fc-f65c-434d-aed7-61a01fe0a72b",
+      id: "3291d35b-85d6-47b3-9653-dab781ceede0",
       metadata: [],
-      updatedAt: new Date("2025-12-08T03:33:34.554Z"),
+      updatedAt: new Date("2025-12-08T22:34:30.206Z"),
     },
     connectionId: "<id>",
   });
@@ -74,7 +76,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceCreateCommerceInventory failed:", res.error);
+    console.log("inventoryCreateCommerceInventory failed:", res.error);
   }
 }
 
@@ -93,6 +95,85 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceInventory](../../sdk/models/shared/commerceinventory.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getAdsInventory
+
+Retrieves a single AdsInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getAdsInventory" method="get" path="/ads/{connection_id}/inventory/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.inventory.getAdsInventory({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { adsGetAdsInventory } from "@unified-api/typescript-sdk/funcs/adsGetAdsInventory.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await adsGetAdsInventory(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adsGetAdsInventory failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAdsInventoryRequest](../../sdk/models/operations/getadsinventoryrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AdsInventory](../../sdk/models/shared/adsinventory.md)\>**
 
 ### Errors
 
@@ -134,7 +215,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceInventory.js";
+import { inventoryGetCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryGetCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -145,7 +226,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceGetCommerceInventory(unifiedTo, {
+  const res = await inventoryGetCommerceInventory(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -153,7 +234,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceGetCommerceInventory failed:", res.error);
+    console.log("inventoryGetCommerceInventory failed:", res.error);
   }
 }
 
@@ -172,6 +253,83 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceInventory](../../sdk/models/shared/commerceinventory.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listAdsInventories
+
+Returns a list of AdsInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listAdsInventories" method="get" path="/ads/{connection_id}/inventory" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.inventory.listAdsInventories({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { adsListAdsInventories } from "@unified-api/typescript-sdk/funcs/adsListAdsInventories.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await adsListAdsInventories(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adsListAdsInventories failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListAdsInventoriesRequest](../../sdk/models/operations/listadsinventoriesrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AdsInventory[]](../../models/.md)\>**
 
 ### Errors
 
@@ -212,7 +370,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceInventories } from "@unified-api/typescript-sdk/funcs/commerceListCommerceInventories.js";
+import { inventoryListCommerceInventories } from "@unified-api/typescript-sdk/funcs/inventoryListCommerceInventories.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -223,14 +381,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceListCommerceInventories(unifiedTo, {
+  const res = await inventoryListCommerceInventories(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceListCommerceInventories failed:", res.error);
+    console.log("inventoryListCommerceInventories failed:", res.error);
   }
 }
 
@@ -276,9 +434,9 @@ async function run() {
   const result = await unifiedTo.inventory.patchCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "b76fbb03-5216-4705-9c3f-1234c1b2483a",
+      id: "efd227df-bfd5-492c-9664-6eba19179276",
       metadata: [],
-      updatedAt: new Date("2025-12-08T03:33:34.561Z"),
+      updatedAt: new Date("2025-12-08T22:34:30.217Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -296,7 +454,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceInventory } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceInventory.js";
+import { inventoryPatchCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryPatchCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -307,12 +465,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commercePatchCommerceInventory(unifiedTo, {
+  const res = await inventoryPatchCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "b76fbb03-5216-4705-9c3f-1234c1b2483a",
+      id: "efd227df-bfd5-492c-9664-6eba19179276",
       metadata: [],
-      updatedAt: new Date("2025-12-08T03:33:34.561Z"),
+      updatedAt: new Date("2025-12-08T22:34:30.217Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -321,7 +479,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commercePatchCommerceInventory failed:", res.error);
+    console.log("inventoryPatchCommerceInventory failed:", res.error);
   }
 }
 
@@ -381,7 +539,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceInventory.js";
+import { inventoryRemoveCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryRemoveCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -392,7 +550,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceRemoveCommerceInventory(unifiedTo, {
+  const res = await inventoryRemoveCommerceInventory(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -400,7 +558,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceRemoveCommerceInventory failed:", res.error);
+    console.log("inventoryRemoveCommerceInventory failed:", res.error);
   }
 }
 
@@ -446,9 +604,9 @@ async function run() {
   const result = await unifiedTo.inventory.updateCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "b76fbb03-5216-4705-9c3f-1234c1b2483a",
+      id: "efd227df-bfd5-492c-9664-6eba19179276",
       metadata: [],
-      updatedAt: new Date("2025-12-08T03:33:34.561Z"),
+      updatedAt: new Date("2025-12-08T22:34:30.217Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -466,7 +624,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceInventory.js";
+import { inventoryUpdateCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryUpdateCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -477,12 +635,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commerceUpdateCommerceInventory(unifiedTo, {
+  const res = await inventoryUpdateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "b76fbb03-5216-4705-9c3f-1234c1b2483a",
+      id: "efd227df-bfd5-492c-9664-6eba19179276",
       metadata: [],
-      updatedAt: new Date("2025-12-08T03:33:34.561Z"),
+      updatedAt: new Date("2025-12-08T22:34:30.217Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -491,7 +649,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commerceUpdateCommerceInventory failed:", res.error);
+    console.log("inventoryUpdateCommerceInventory failed:", res.error);
   }
 }
 

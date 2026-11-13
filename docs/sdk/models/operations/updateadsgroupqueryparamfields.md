@@ -5,11 +5,11 @@
 ```typescript
 import { UpdateAdsGroupQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: UpdateAdsGroupQueryParamFields = "frequency_cap";
+let value: UpdateAdsGroupQueryParamFields = "currency";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "parent_id" | "campaign_id" | "organization_id" | "insertionorder_id" | "status" | "effective_status" | "targeting" | "bid_amount" | "bid_strategy" | "budget_amount" | "budget_period" | "budget_allocation_type" | "start_at" | "end_at" | "budget_unit" | "budget_max_amount" | "type" | "has_eu_political_ads" | "pacing" | "frequency_cap" | "creative_ids" | "optimization_goal" | "billing_event" | "currency" | "promoted" | "language_locale" | "creative_selection" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "parent_id" | "campaign_id" | "organization_id" | "insertionorder_id" | "status" | "effective_status" | "targeting" | "bid_amount" | "bid_strategy" | "budget_amount" | "budget_period" | "budget_allocation_type" | "start_at" | "end_at" | "budget_unit" | "budget_max_amount" | "type" | "has_eu_political_ads" | "pacing" | "frequency_cap" | "creative_ids" | "optimization_goal" | "billing_event" | "currency" | "promoted" | "language_locale" | "creative_selection" | "metadata" | "raw" | "delivery_type" | "priority" | "cost_type" | "delivery_goal" | "creative_sizes"
 ```

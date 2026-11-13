@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "c47b9240-3943-421e-8975-3c314455a43c",
+      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T12:00:00.095Z"),
+      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "c47b9240-3943-421e-8975-3c314455a43c",
+      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T12:00:00.095Z"),
+      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "c47b9240-3943-421e-8975-3c314455a43c",
+      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T12:00:00.095Z"),
+      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "c47b9240-3943-421e-8975-3c314455a43c",
+        id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-12T12:00:00.095Z"),
+        updatedAt: new Date("2023-08-12T17:59:56.921Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "c47b9240-3943-421e-8975-3c314455a43c",
+      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T12:00:00.095Z"),
+      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "c47b9240-3943-421e-8975-3c314455a43c",
+      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T12:00:00.095Z"),
+      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
     },
     connectionId: "<id>",
   });
@@ -872,6 +872,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adsGetAdsGroup`](docs/sdks/group/README.md#getadsgroup) - Retrieve a group
 - [`adsGetAdsInsertionorder`](docs/sdks/ads/README.md#getadsinsertionorder) - Retrieve an insertionorder
 - [`adsGetAdsInsertionorder`](docs/sdks/insertionorder/README.md#getadsinsertionorder) - Retrieve an insertionorder
+- [`adsGetAdsInventory`](docs/sdks/ads/README.md#getadsinventory) - Retrieve an inventory
+- [`adsGetAdsInventory`](docs/sdks/inventory/README.md#getadsinventory) - Retrieve an inventory
 - [`adsGetAdsPromoted`](docs/sdks/ads/README.md#getadspromoted) - Retrieve a promoted
 - [`adsGetAdsPromoted`](docs/sdks/promoted/README.md#getadspromoted) - Retrieve a promoted
 - [`adsGetAdsTarget`](docs/sdks/ads/README.md#getadstarget) - Retrieve a target
@@ -888,6 +890,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`adsListAdsGroups`](docs/sdks/group/README.md#listadsgroups) - List all groups
 - [`adsListAdsInsertionorders`](docs/sdks/ads/README.md#listadsinsertionorders) - List all insertionorders
 - [`adsListAdsInsertionorders`](docs/sdks/insertionorder/README.md#listadsinsertionorders) - List all insertionorders
+- [`adsListAdsInventories`](docs/sdks/ads/README.md#listadsinventories) - List all inventories
+- [`adsListAdsInventories`](docs/sdks/inventory/README.md#listadsinventories) - List all inventories
 - [`adsListAdsPromoteds`](docs/sdks/ads/README.md#listadspromoteds) - List all promoteds
 - [`adsListAdsPromoteds`](docs/sdks/promoted/README.md#listadspromoteds) - List all promoteds
 - [`adsListAdsReports`](docs/sdks/ads/README.md#listadsreports) - List all reports
@@ -1260,8 +1264,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commentUpdateUcComment`](docs/sdks/uc/README.md#updateuccomment) - Update a comment
 - [`commerceCreateCommerceCollection`](docs/sdks/collection/README.md#createcommercecollection) - Create a collection
 - [`commerceCreateCommerceCollection`](docs/sdks/commerce/README.md#createcommercecollection) - Create a collection
-- [`commerceCreateCommerceInventory`](docs/sdks/commerce/README.md#createcommerceinventory) - Create an inventory
-- [`commerceCreateCommerceInventory`](docs/sdks/inventory/README.md#createcommerceinventory) - Create an inventory
 - [`commerceCreateCommerceItem`](docs/sdks/commerce/README.md#createcommerceitem) - Create an item
 - [`commerceCreateCommerceItem`](docs/sdks/item/README.md#createcommerceitem) - Create an item
 - [`commerceCreateCommerceItemvariant`](docs/sdks/commerce/README.md#createcommerceitemvariant) - Create an itemvariant
@@ -1274,8 +1276,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceCreateCommerceSaleschannel`](docs/sdks/saleschannel/README.md#createcommercesaleschannel) - Create a saleschannel
 - [`commerceGetCommerceCollection`](docs/sdks/collection/README.md#getcommercecollection) - Retrieve a collection
 - [`commerceGetCommerceCollection`](docs/sdks/commerce/README.md#getcommercecollection) - Retrieve a collection
-- [`commerceGetCommerceInventory`](docs/sdks/commerce/README.md#getcommerceinventory) - Retrieve an inventory
-- [`commerceGetCommerceInventory`](docs/sdks/inventory/README.md#getcommerceinventory) - Retrieve an inventory
 - [`commerceGetCommerceItem`](docs/sdks/commerce/README.md#getcommerceitem) - Retrieve an item
 - [`commerceGetCommerceItem`](docs/sdks/item/README.md#getcommerceitem) - Retrieve an item
 - [`commerceGetCommerceItemvariant`](docs/sdks/commerce/README.md#getcommerceitemvariant) - Retrieve an itemvariant
@@ -1294,8 +1294,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceListCommerceAvailabilities`](docs/sdks/commerce/README.md#listcommerceavailabilities) - List all availabilities
 - [`commerceListCommerceCollections`](docs/sdks/collection/README.md#listcommercecollections) - List all collections
 - [`commerceListCommerceCollections`](docs/sdks/commerce/README.md#listcommercecollections) - List all collections
-- [`commerceListCommerceInventories`](docs/sdks/commerce/README.md#listcommerceinventories) - List all inventories
-- [`commerceListCommerceInventories`](docs/sdks/inventory/README.md#listcommerceinventories) - List all inventories
 - [`commerceListCommerceItems`](docs/sdks/commerce/README.md#listcommerceitems) - List all items
 - [`commerceListCommerceItems`](docs/sdks/item/README.md#listcommerceitems) - List all items
 - [`commerceListCommerceItemvariants`](docs/sdks/commerce/README.md#listcommerceitemvariants) - List all itemvariants
@@ -1312,8 +1310,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceListCommerceTables`](docs/sdks/table/README.md#listcommercetables) - List all tables
 - [`commercePatchCommerceCollection`](docs/sdks/collection/README.md#patchcommercecollection) - Update a collection
 - [`commercePatchCommerceCollection`](docs/sdks/commerce/README.md#patchcommercecollection) - Update a collection
-- [`commercePatchCommerceInventory`](docs/sdks/commerce/README.md#patchcommerceinventory) - Update an inventory
-- [`commercePatchCommerceInventory`](docs/sdks/inventory/README.md#patchcommerceinventory) - Update an inventory
 - [`commercePatchCommerceItem`](docs/sdks/commerce/README.md#patchcommerceitem) - Update an item
 - [`commercePatchCommerceItem`](docs/sdks/item/README.md#patchcommerceitem) - Update an item
 - [`commercePatchCommerceItemvariant`](docs/sdks/commerce/README.md#patchcommerceitemvariant) - Update an itemvariant
@@ -1326,8 +1322,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commercePatchCommerceSaleschannel`](docs/sdks/saleschannel/README.md#patchcommercesaleschannel) - Update a saleschannel
 - [`commerceRemoveCommerceCollection`](docs/sdks/collection/README.md#removecommercecollection) - Remove a collection
 - [`commerceRemoveCommerceCollection`](docs/sdks/commerce/README.md#removecommercecollection) - Remove a collection
-- [`commerceRemoveCommerceInventory`](docs/sdks/commerce/README.md#removecommerceinventory) - Remove an inventory
-- [`commerceRemoveCommerceInventory`](docs/sdks/inventory/README.md#removecommerceinventory) - Remove an inventory
 - [`commerceRemoveCommerceItem`](docs/sdks/commerce/README.md#removecommerceitem) - Remove an item
 - [`commerceRemoveCommerceItem`](docs/sdks/item/README.md#removecommerceitem) - Remove an item
 - [`commerceRemoveCommerceItemvariant`](docs/sdks/commerce/README.md#removecommerceitemvariant) - Remove an itemvariant
@@ -1340,8 +1334,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceRemoveCommerceSaleschannel`](docs/sdks/saleschannel/README.md#removecommercesaleschannel) - Remove a saleschannel
 - [`commerceUpdateCommerceCollection`](docs/sdks/collection/README.md#updatecommercecollection) - Update a collection
 - [`commerceUpdateCommerceCollection`](docs/sdks/commerce/README.md#updatecommercecollection) - Update a collection
-- [`commerceUpdateCommerceInventory`](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
-- [`commerceUpdateCommerceInventory`](docs/sdks/inventory/README.md#updatecommerceinventory) - Update an inventory
 - [`commerceUpdateCommerceItem`](docs/sdks/commerce/README.md#updatecommerceitem) - Update an item
 - [`commerceUpdateCommerceItem`](docs/sdks/item/README.md#updatecommerceitem) - Update an item
 - [`commerceUpdateCommerceItemvariant`](docs/sdks/commerce/README.md#updatecommerceitemvariant) - Update an itemvariant
@@ -1976,6 +1968,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisUpdateHrisTimeoff`](docs/sdks/timeoff/README.md#updatehristimeoff) - Update a timeoff
 - [`hrisUpdateHrisTimeshift`](docs/sdks/hris/README.md#updatehristimeshift) - Update a timeshift
 - [`hrisUpdateHrisTimeshift`](docs/sdks/timeshift/README.md#updatehristimeshift) - Update a timeshift
+- [`inventoryCreateCommerceInventory`](docs/sdks/commerce/README.md#createcommerceinventory) - Create an inventory
+- [`inventoryCreateCommerceInventory`](docs/sdks/inventory/README.md#createcommerceinventory) - Create an inventory
+- [`inventoryGetCommerceInventory`](docs/sdks/commerce/README.md#getcommerceinventory) - Retrieve an inventory
+- [`inventoryGetCommerceInventory`](docs/sdks/inventory/README.md#getcommerceinventory) - Retrieve an inventory
+- [`inventoryListCommerceInventories`](docs/sdks/commerce/README.md#listcommerceinventories) - List all inventories
+- [`inventoryListCommerceInventories`](docs/sdks/inventory/README.md#listcommerceinventories) - List all inventories
+- [`inventoryPatchCommerceInventory`](docs/sdks/commerce/README.md#patchcommerceinventory) - Update an inventory
+- [`inventoryPatchCommerceInventory`](docs/sdks/inventory/README.md#patchcommerceinventory) - Update an inventory
+- [`inventoryRemoveCommerceInventory`](docs/sdks/commerce/README.md#removecommerceinventory) - Remove an inventory
+- [`inventoryRemoveCommerceInventory`](docs/sdks/inventory/README.md#removecommerceinventory) - Remove an inventory
+- [`inventoryUpdateCommerceInventory`](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
+- [`inventoryUpdateCommerceInventory`](docs/sdks/inventory/README.md#updatecommerceinventory) - Update an inventory
 - [`jobCreateHrisJob`](docs/sdks/hris/README.md#createhrisjob) - Create a job
 - [`jobCreateHrisJob`](docs/sdks/job/README.md#createhrisjob) - Create a job
 - [`jobGetHrisJob`](docs/sdks/hris/README.md#gethrisjob) - Retrieve a job

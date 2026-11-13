@@ -17,6 +17,7 @@
 * [getAdsCreative](#getadscreative) - Retrieve a creative
 * [getAdsGroup](#getadsgroup) - Retrieve a group
 * [getAdsInsertionorder](#getadsinsertionorder) - Retrieve an insertionorder
+* [getAdsInventory](#getadsinventory) - Retrieve an inventory
 * [getAdsOrganization](#getadsorganization) - Retrieve an organization
 * [getAdsPromoted](#getadspromoted) - Retrieve a promoted
 * [getAdsTarget](#getadstarget) - Retrieve a target
@@ -26,6 +27,7 @@
 * [listAdsCreatives](#listadscreatives) - List all creatives
 * [listAdsGroups](#listadsgroups) - List all groups
 * [listAdsInsertionorders](#listadsinsertionorders) - List all insertionorders
+* [listAdsInventories](#listadsinventories) - List all inventories
 * [listAdsOrganizations](#listadsorganizations) - List all organizations
 * [listAdsPromoteds](#listadspromoteds) - List all promoteds
 * [listAdsReports](#listadsreports) - List all reports
@@ -75,11 +77,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "c74d0bdd-69c8-4767-a8fe-7cd83e0abd19",
+      id: "60e3b43d-8bb2-42ab-b819-ad66206825c7",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-27T13:09:02.620Z"),
+      updatedAt: new Date("2024-06-27T22:46:31.020Z"),
     },
     connectionId: "<id>",
   });
@@ -116,11 +118,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "c74d0bdd-69c8-4767-a8fe-7cd83e0abd19",
+      id: "60e3b43d-8bb2-42ab-b819-ad66206825c7",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-27T13:09:02.620Z"),
+      updatedAt: new Date("2024-06-27T22:46:31.020Z"),
     },
     connectionId: "<id>",
   });
@@ -175,12 +177,12 @@ async function run() {
     adsAsset: {
       createdAt: new Date("2020-03-27T20:14:38.603Z"),
       height: 400,
-      id: "6ea5083d-139b-4090-bb3f-f251230b7f7d",
+      id: "c11012a7-028f-4e2e-b591-b774867b467a",
       metadata: [],
       mimeType: "IMAGE_PNG",
       name: "Lockman - DuBuque",
       type: "IMAGE",
-      updatedAt: new Date("2022-03-31T20:54:42.881Z"),
+      updatedAt: new Date("2022-04-01T04:04:11.002Z"),
       url: "https://informal-perfection.com/",
       width: 600,
     },
@@ -214,12 +216,12 @@ async function run() {
     adsAsset: {
       createdAt: new Date("2020-03-27T20:14:38.603Z"),
       height: 400,
-      id: "6ea5083d-139b-4090-bb3f-f251230b7f7d",
+      id: "c11012a7-028f-4e2e-b591-b774867b467a",
       metadata: [],
       mimeType: "IMAGE_PNG",
       name: "Lockman - DuBuque",
       type: "IMAGE",
-      updatedAt: new Date("2022-03-31T20:54:42.881Z"),
+      updatedAt: new Date("2022-04-01T04:04:11.002Z"),
       url: "https://informal-perfection.com/",
       width: 600,
     },
@@ -280,18 +282,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-06-16T01:52:37.794Z"),
-      id: "10880dc5-22f2-422e-a815-6b8c6ed37181",
+      endAt: new Date("2025-06-16T18:03:42.881Z"),
+      id: "806c603d-8e70-496b-86a3-b5a91cfa03c0",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-22T06:50:28.696Z"),
+      startAt: new Date("2022-07-22T07:44:04.798Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-19T14:46:37.560Z"),
+      updatedAt: new Date("2026-01-20T10:06:02.227Z"),
     },
     connectionId: "<id>",
   });
@@ -327,18 +329,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-06-16T01:52:37.794Z"),
-      id: "10880dc5-22f2-422e-a815-6b8c6ed37181",
+      endAt: new Date("2025-06-16T18:03:42.881Z"),
+      id: "806c603d-8e70-496b-86a3-b5a91cfa03c0",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-22T06:50:28.696Z"),
+      startAt: new Date("2022-07-22T07:44:04.798Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-19T14:46:37.560Z"),
+      updatedAt: new Date("2026-01-20T10:06:02.227Z"),
     },
     connectionId: "<id>",
   });
@@ -392,7 +394,7 @@ async function run() {
   const result = await unifiedTo.ads.createAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "1e6bdecb-e8a5-48cc-adbd-19701ce0c40c",
+      id: "51f95169-df14-4986-bc0d-9153136ce9f3",
       labels: [
         "coma",
         "accedo",
@@ -401,7 +403,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-07-02T05:52:32.247Z"),
+      updatedAt: new Date("2021-07-02T10:40:50.418Z"),
     },
     connectionId: "<id>",
   });
@@ -432,7 +434,7 @@ async function run() {
   const res = await adsCreateAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "1e6bdecb-e8a5-48cc-adbd-19701ce0c40c",
+      id: "51f95169-df14-4986-bc0d-9153136ce9f3",
       labels: [
         "coma",
         "accedo",
@@ -441,7 +443,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-07-02T05:52:32.247Z"),
+      updatedAt: new Date("2021-07-02T10:40:50.418Z"),
     },
     connectionId: "<id>",
   });
@@ -500,15 +502,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-07-16T02:05:46.237Z"),
-      id: "761df82c-0620-4b7c-b228-12e5a286a1a2",
+      endAt: new Date("2026-07-17T00:37:46.509Z"),
+      id: "d544e6b6-8089-474a-949b-dbc3074e4add",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-28T21:33:36.045Z"),
+      startAt: new Date("2026-01-29T18:35:05.703Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-20T23:59:49.161Z"),
+      updatedAt: new Date("2022-01-21T07:50:49.904Z"),
     },
     connectionId: "<id>",
   });
@@ -544,15 +546,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-07-16T02:05:46.237Z"),
-      id: "761df82c-0620-4b7c-b228-12e5a286a1a2",
+      endAt: new Date("2026-07-17T00:37:46.509Z"),
+      id: "d544e6b6-8089-474a-949b-dbc3074e4add",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-28T21:33:36.045Z"),
+      startAt: new Date("2026-01-29T18:35:05.703Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-20T23:59:49.161Z"),
+      updatedAt: new Date("2022-01-21T07:50:49.904Z"),
     },
     connectionId: "<id>",
   });
@@ -606,11 +608,11 @@ async function run() {
   const result = await unifiedTo.ads.createAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "e3cddd4d-cc23-4bb8-bb26-b43fffe89fb4",
+      id: "ab1ef64e-5237-45d2-9c1f-437a7a4005d3",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-29T00:38:26.218Z"),
+      updatedAt: new Date("2021-04-29T00:51:25.891Z"),
     },
     connectionId: "<id>",
   });
@@ -641,11 +643,11 @@ async function run() {
   const res = await adsCreateAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "e3cddd4d-cc23-4bb8-bb26-b43fffe89fb4",
+      id: "ab1ef64e-5237-45d2-9c1f-437a7a4005d3",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-29T00:38:26.218Z"),
+      updatedAt: new Date("2021-04-29T00:51:25.891Z"),
     },
     connectionId: "<id>",
   });
@@ -701,13 +703,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "dd2182e7-e57d-4fd9-936f-c743f64e6b36",
+      id: "b4e36064-6e03-49d1-b003-404847a87d13",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-04-18T03:46:06.297Z"),
+      updatedAt: new Date("2026-04-19T01:14:15.574Z"),
     },
     connectionId: "<id>",
   });
@@ -740,13 +742,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "dd2182e7-e57d-4fd9-936f-c743f64e6b36",
+      id: "b4e36064-6e03-49d1-b003-404847a87d13",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-04-18T03:46:06.297Z"),
+      updatedAt: new Date("2026-04-19T01:14:15.574Z"),
     },
     connectionId: "<id>",
   });
@@ -1247,6 +1249,85 @@ run();
 ### Response
 
 **Promise\<[shared.AdsInsertionorder](../../sdk/models/shared/adsinsertionorder.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getAdsInventory
+
+Retrieves a single AdsInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getAdsInventory" method="get" path="/ads/{connection_id}/inventory/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.ads.getAdsInventory({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { adsGetAdsInventory } from "@unified-api/typescript-sdk/funcs/adsGetAdsInventory.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await adsGetAdsInventory(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adsGetAdsInventory failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAdsInventoryRequest](../../sdk/models/operations/getadsinventoryrequest.md)                                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AdsInventory](../../sdk/models/shared/adsinventory.md)\>**
 
 ### Errors
 
@@ -1953,6 +2034,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listAdsInventories
+
+Returns a list of AdsInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listAdsInventories" method="get" path="/ads/{connection_id}/inventory" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.ads.listAdsInventories({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { adsListAdsInventories } from "@unified-api/typescript-sdk/funcs/adsListAdsInventories.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await adsListAdsInventories(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("adsListAdsInventories failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListAdsInventoriesRequest](../../sdk/models/operations/listadsinventoriesrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AdsInventory[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listAdsOrganizations
 
 Returns a list of AdsOrganizations. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -2287,11 +2445,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "0fee2f12-c8bb-4bc4-a4ff-c6a6b6766abf",
+      id: "c0d8a8df-a79e-4d1a-85d2-3eb9d87ff5fc",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-27T13:09:02.628Z"),
+      updatedAt: new Date("2024-06-27T22:46:31.028Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2329,11 +2487,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "0fee2f12-c8bb-4bc4-a4ff-c6a6b6766abf",
+      id: "c0d8a8df-a79e-4d1a-85d2-3eb9d87ff5fc",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-27T13:09:02.628Z"),
+      updatedAt: new Date("2024-06-27T22:46:31.028Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2393,18 +2551,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-06-16T01:52:37.877Z"),
-      id: "00b471b1-e3e2-4102-b88d-3bdf9fc8dd65",
+      endAt: new Date("2025-06-16T18:03:42.960Z"),
+      id: "70ab299a-3680-4639-9e1a-177e4ec18dbf",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-22T06:50:28.701Z"),
+      startAt: new Date("2022-07-22T07:44:04.802Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-19T14:46:37.659Z"),
+      updatedAt: new Date("2026-01-20T10:06:02.322Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2441,18 +2599,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-06-16T01:52:37.877Z"),
-      id: "00b471b1-e3e2-4102-b88d-3bdf9fc8dd65",
+      endAt: new Date("2025-06-16T18:03:42.960Z"),
+      id: "70ab299a-3680-4639-9e1a-177e4ec18dbf",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-22T06:50:28.701Z"),
+      startAt: new Date("2022-07-22T07:44:04.802Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-19T14:46:37.659Z"),
+      updatedAt: new Date("2026-01-20T10:06:02.322Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2507,7 +2665,7 @@ async function run() {
   const result = await unifiedTo.ads.patchAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "6b953613-7b3d-4a15-b939-4c9731d4b8c5",
+      id: "5502e1e3-fe09-4d73-875f-529adf9446ad",
       labels: [
         "coma",
         "accedo",
@@ -2516,7 +2674,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-07-02T05:52:32.252Z"),
+      updatedAt: new Date("2021-07-02T10:40:50.423Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2548,7 +2706,7 @@ async function run() {
   const res = await adsPatchAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "6b953613-7b3d-4a15-b939-4c9731d4b8c5",
+      id: "5502e1e3-fe09-4d73-875f-529adf9446ad",
       labels: [
         "coma",
         "accedo",
@@ -2557,7 +2715,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-07-02T05:52:32.252Z"),
+      updatedAt: new Date("2021-07-02T10:40:50.423Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2617,15 +2775,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-07-16T02:05:46.353Z"),
-      id: "6272901f-841a-438c-92ac-25fc1d5dd785",
+      endAt: new Date("2026-07-17T00:37:46.630Z"),
+      id: "783a619e-814a-44d3-9bef-a64c0dada569",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-28T21:33:36.154Z"),
+      startAt: new Date("2026-01-29T18:35:05.815Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-20T23:59:49.201Z"),
+      updatedAt: new Date("2022-01-21T07:50:49.946Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2662,15 +2820,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-07-16T02:05:46.353Z"),
-      id: "6272901f-841a-438c-92ac-25fc1d5dd785",
+      endAt: new Date("2026-07-17T00:37:46.630Z"),
+      id: "783a619e-814a-44d3-9bef-a64c0dada569",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-28T21:33:36.154Z"),
+      startAt: new Date("2026-01-29T18:35:05.815Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-20T23:59:49.201Z"),
+      updatedAt: new Date("2022-01-21T07:50:49.946Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2725,11 +2883,11 @@ async function run() {
   const result = await unifiedTo.ads.patchAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "961231fc-1da9-4beb-913c-04a276fbc553",
+      id: "5d6679b1-daa3-48b2-927b-93adeae466df",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-29T00:38:26.219Z"),
+      updatedAt: new Date("2021-04-29T00:51:25.891Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2761,11 +2919,11 @@ async function run() {
   const res = await adsPatchAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "961231fc-1da9-4beb-913c-04a276fbc553",
+      id: "5d6679b1-daa3-48b2-927b-93adeae466df",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-29T00:38:26.219Z"),
+      updatedAt: new Date("2021-04-29T00:51:25.891Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2822,13 +2980,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "c60068b6-b100-4f4d-a2a9-dc1c33f8678c",
+      id: "a3ffa5d2-8a69-4735-9a83-2ff954c6524d",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-04-18T03:46:06.304Z"),
+      updatedAt: new Date("2026-04-19T01:14:15.584Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2862,13 +3020,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "c60068b6-b100-4f4d-a2a9-dc1c33f8678c",
+      id: "a3ffa5d2-8a69-4735-9a83-2ff954c6524d",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-04-18T03:46:06.304Z"),
+      updatedAt: new Date("2026-04-19T01:14:15.584Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3403,11 +3561,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "0fee2f12-c8bb-4bc4-a4ff-c6a6b6766abf",
+      id: "c0d8a8df-a79e-4d1a-85d2-3eb9d87ff5fc",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-27T13:09:02.628Z"),
+      updatedAt: new Date("2024-06-27T22:46:31.028Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3445,11 +3603,11 @@ async function run() {
       creativeAssetUrl: "https://picsum.photos/seed/LwOzrpr9/948/2793",
       description: "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
       finalUrl: "https://improbable-sanity.com",
-      id: "0fee2f12-c8bb-4bc4-a4ff-c6a6b6766abf",
+      id: "c0d8a8df-a79e-4d1a-85d2-3eb9d87ff5fc",
       metadata: [],
       name: "Hermiston Group",
       status: "ARCHIVED",
-      updatedAt: new Date("2024-06-27T13:09:02.628Z"),
+      updatedAt: new Date("2024-06-27T22:46:31.028Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3509,18 +3667,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-06-16T01:52:37.877Z"),
-      id: "00b471b1-e3e2-4102-b88d-3bdf9fc8dd65",
+      endAt: new Date("2025-06-16T18:03:42.960Z"),
+      id: "70ab299a-3680-4639-9e1a-177e4ec18dbf",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-22T06:50:28.701Z"),
+      startAt: new Date("2022-07-22T07:44:04.802Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-19T14:46:37.659Z"),
+      updatedAt: new Date("2026-01-20T10:06:02.322Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3557,18 +3715,18 @@ async function run() {
       createdAt: new Date("2022-05-21T08:51:41.868Z"),
       currency: "USD",
       effectiveStatus: "NOT_ELIGIBLE",
-      endAt: new Date("2025-06-16T01:52:37.877Z"),
-      id: "00b471b1-e3e2-4102-b88d-3bdf9fc8dd65",
+      endAt: new Date("2025-06-16T18:03:42.960Z"),
+      id: "70ab299a-3680-4639-9e1a-177e4ec18dbf",
       labels: [
         "comedo",
       ],
       metadata: [],
       name: "Emard Inc",
-      startAt: new Date("2022-07-22T06:50:28.701Z"),
+      startAt: new Date("2022-07-22T07:44:04.802Z"),
       status: "PROCESSING_FAILED",
       targeting: {},
       totalSpendAmount: 2349.8642875347286,
-      updatedAt: new Date("2026-01-19T14:46:37.659Z"),
+      updatedAt: new Date("2026-01-20T10:06:02.322Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3623,7 +3781,7 @@ async function run() {
   const result = await unifiedTo.ads.updateAdsCreative({
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "6b953613-7b3d-4a15-b939-4c9731d4b8c5",
+      id: "5502e1e3-fe09-4d73-875f-529adf9446ad",
       labels: [
         "coma",
         "accedo",
@@ -3632,7 +3790,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-07-02T05:52:32.252Z"),
+      updatedAt: new Date("2021-07-02T10:40:50.423Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3664,7 +3822,7 @@ async function run() {
   const res = await adsUpdateAdsCreative(unifiedTo, {
     adsCreative: {
       createdAt: new Date("2020-02-17T11:24:51.093Z"),
-      id: "6b953613-7b3d-4a15-b939-4c9731d4b8c5",
+      id: "5502e1e3-fe09-4d73-875f-529adf9446ad",
       labels: [
         "coma",
         "accedo",
@@ -3673,7 +3831,7 @@ async function run() {
       metadata: [],
       name: "Brekke, Bradtke and Robel",
       status: "PAUSED",
-      updatedAt: new Date("2021-07-02T05:52:32.252Z"),
+      updatedAt: new Date("2021-07-02T10:40:50.423Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3733,15 +3891,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-07-16T02:05:46.353Z"),
-      id: "6272901f-841a-438c-92ac-25fc1d5dd785",
+      endAt: new Date("2026-07-17T00:37:46.630Z"),
+      id: "783a619e-814a-44d3-9bef-a64c0dada569",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-28T21:33:36.154Z"),
+      startAt: new Date("2026-01-29T18:35:05.815Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-20T23:59:49.201Z"),
+      updatedAt: new Date("2022-01-21T07:50:49.946Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3778,15 +3936,15 @@ async function run() {
       createdAt: new Date("2019-08-29T17:59:41.045Z"),
       currency: "USD",
       effectiveStatus: "PAUSED",
-      endAt: new Date("2026-07-16T02:05:46.353Z"),
-      id: "6272901f-841a-438c-92ac-25fc1d5dd785",
+      endAt: new Date("2026-07-17T00:37:46.630Z"),
+      id: "783a619e-814a-44d3-9bef-a64c0dada569",
       languageLocale: "fr-FR",
       metadata: [],
       name: "Stark - Baumbach",
-      startAt: new Date("2026-01-28T21:33:36.154Z"),
+      startAt: new Date("2026-01-29T18:35:05.815Z"),
       status: "PROCESSING",
       targeting: {},
-      updatedAt: new Date("2022-01-20T23:59:49.201Z"),
+      updatedAt: new Date("2022-01-21T07:50:49.946Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3841,11 +3999,11 @@ async function run() {
   const result = await unifiedTo.ads.updateAdsInsertionorder({
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "961231fc-1da9-4beb-913c-04a276fbc553",
+      id: "5d6679b1-daa3-48b2-927b-93adeae466df",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-29T00:38:26.219Z"),
+      updatedAt: new Date("2021-04-29T00:51:25.891Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3877,11 +4035,11 @@ async function run() {
   const res = await adsUpdateAdsInsertionorder(unifiedTo, {
     adsInsertionorder: {
       createdAt: new Date("2021-04-10T06:57:36.611Z"),
-      id: "961231fc-1da9-4beb-913c-04a276fbc553",
+      id: "5d6679b1-daa3-48b2-927b-93adeae466df",
       metadata: [],
       name: "Kunde, Smith and Reinger",
       status: "UNSPECIFIED",
-      updatedAt: new Date("2021-04-29T00:38:26.219Z"),
+      updatedAt: new Date("2021-04-29T00:51:25.891Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3938,13 +4096,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "c60068b6-b100-4f4d-a2a9-dc1c33f8678c",
+      id: "a3ffa5d2-8a69-4735-9a83-2ff954c6524d",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-04-18T03:46:06.304Z"),
+      updatedAt: new Date("2026-04-19T01:14:15.584Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3978,13 +4136,13 @@ async function run() {
       accountNumber: "LQUJx8zQBW",
       createdAt: new Date("2020-07-23T21:47:11.440Z"),
       currency: "USD",
-      id: "c60068b6-b100-4f4d-a2a9-dc1c33f8678c",
+      id: "a3ffa5d2-8a69-4735-9a83-2ff954c6524d",
       managers: [],
       metadata: [],
       name: "Ankunding Inc",
       status: "PROCESSING",
       timezone: "Europe/Chisinau",
-      updatedAt: new Date("2026-04-18T03:46:06.304Z"),
+      updatedAt: new Date("2026-04-19T01:14:15.584Z"),
     },
     connectionId: "<id>",
     id: "<id>",

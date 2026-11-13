@@ -9,6 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { AdSchedule, AdSchedule$inboundSchema } from "./adschedule.js";
 import {
+  CustomTargeting,
+  CustomTargeting$inboundSchema,
+} from "./customtargeting.js";
+import {
   PropertyAdsReportMetricsCampaignTargetingAudience,
   PropertyAdsReportMetricsCampaignTargetingAudience$inboundSchema,
 } from "./propertyadsreportmetricscampaigntargetingaudience.js";
@@ -33,6 +37,10 @@ import {
   PropertyAdsReportMetricsCampaignTargetingGeographic$inboundSchema,
 } from "./propertyadsreportmetricscampaigntargetinggeographic.js";
 import {
+  PropertyAdsReportMetricsCampaignTargetingInventory,
+  PropertyAdsReportMetricsCampaignTargetingInventory$inboundSchema,
+} from "./propertyadsreportmetricscampaigntargetinginventory.js";
+import {
   PropertyAdsReportMetricsCampaignTargetingOptimization,
   PropertyAdsReportMetricsCampaignTargetingOptimization$inboundSchema,
 } from "./propertyadsreportmetricscampaigntargetingoptimization.js";
@@ -52,6 +60,10 @@ export type PropertyAdsReportMetricsCampaignTargeting = {
     | undefined;
   content?: PropertyAdsReportMetricsCampaignTargetingContent | undefined;
   /**
+   * Key-value targeting; clauses are ANDed
+   */
+  custom?: Array<CustomTargeting> | undefined;
+  /**
    * Demographic targeting (Meta: age_min, age_max, genders)
    */
   demographic?:
@@ -59,6 +71,10 @@ export type PropertyAdsReportMetricsCampaignTargeting = {
     | undefined;
   device?: PropertyAdsReportMetricsCampaignTargetingDevice | undefined;
   geographic?: PropertyAdsReportMetricsCampaignTargetingGeographic | undefined;
+  /**
+   * Publisher inventory (ad units, placements) to include / exclude
+   */
+  inventory?: PropertyAdsReportMetricsCampaignTargetingInventory | undefined;
   language?: Array<TargetRef> | undefined;
   /**
    * Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
@@ -83,12 +99,15 @@ export const PropertyAdsReportMetricsCampaignTargeting$inboundSchema: z.ZodType<
       .optional(),
   content: PropertyAdsReportMetricsCampaignTargetingContent$inboundSchema
     .optional(),
+  custom: z.array(CustomTargeting$inboundSchema).optional(),
   demographic:
     PropertyAdsReportMetricsCampaignTargetingDemographic$inboundSchema
       .optional(),
   device: PropertyAdsReportMetricsCampaignTargetingDevice$inboundSchema
     .optional(),
   geographic: PropertyAdsReportMetricsCampaignTargetingGeographic$inboundSchema
+    .optional(),
+  inventory: PropertyAdsReportMetricsCampaignTargetingInventory$inboundSchema
     .optional(),
   language: z.array(TargetRef$inboundSchema).optional(),
   optimization:

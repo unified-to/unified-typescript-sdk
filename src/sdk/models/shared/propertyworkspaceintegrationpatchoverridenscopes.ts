@@ -73,6 +73,7 @@ export type PropertyWorkspaceIntegrationPatchOverridenScopes = {
   adsGroupWrite?: string | undefined;
   adsInsertionorderRead?: string | undefined;
   adsInsertionorderWrite?: string | undefined;
+  adsInventoryRead?: string | undefined;
   adsOrganizationRead?: string | undefined;
   adsOrganizationWrite?: string | undefined;
   adsPromotedRead?: string | undefined;
@@ -523,6 +524,7 @@ export type PropertyWorkspaceIntegrationPatchOverridenScopes$Outbound = {
   ads_group_write?: string | undefined;
   ads_insertionorder_read?: string | undefined;
   ads_insertionorder_write?: string | undefined;
+  ads_inventory_read?: string | undefined;
   ads_organization_read?: string | undefined;
   ads_organization_write?: string | undefined;
   ads_promoted_read?: string | undefined;
@@ -978,6 +980,7 @@ export const PropertyWorkspaceIntegrationPatchOverridenScopes$outboundSchema:
     adsGroupWrite: z.string().optional(),
     adsInsertionorderRead: z.string().optional(),
     adsInsertionorderWrite: z.string().optional(),
+    adsInventoryRead: z.string().optional(),
     adsOrganizationRead: z.string().optional(),
     adsOrganizationWrite: z.string().optional(),
     adsPromotedRead: z.string().optional(),
@@ -1427,6 +1430,7 @@ export const PropertyWorkspaceIntegrationPatchOverridenScopes$outboundSchema:
       adsGroupWrite: "ads_group_write",
       adsInsertionorderRead: "ads_insertionorder_read",
       adsInsertionorderWrite: "ads_insertionorder_write",
+      adsInventoryRead: "ads_inventory_read",
       adsOrganizationRead: "ads_organization_read",
       adsOrganizationWrite: "ads_organization_write",
       adsPromotedRead: "ads_promoted_read",

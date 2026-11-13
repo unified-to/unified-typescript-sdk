@@ -40,6 +40,11 @@ export const ListAdsGroupsQueryParamFields = {
   CreativeSelection: "creative_selection",
   Metadata: "metadata",
   Raw: "raw",
+  DeliveryType: "delivery_type",
+  Priority: "priority",
+  CostType: "cost_type",
+  DeliveryGoal: "delivery_goal",
+  CreativeSizes: "creative_sizes",
 } as const;
 export type ListAdsGroupsQueryParamFields = ClosedEnum<
   typeof ListAdsGroupsQueryParamFields

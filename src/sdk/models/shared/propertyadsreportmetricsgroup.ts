@@ -11,10 +11,15 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import { AdsPromoted, AdsPromoted$inboundSchema } from "./adspromoted.js";
+import { AdsSize, AdsSize$inboundSchema } from "./adssize.js";
 import {
   PropertyAdsReportMetricsGroupBidStrategy,
   PropertyAdsReportMetricsGroupBidStrategy$inboundSchema,
 } from "./propertyadsreportmetricsgroupbidstrategy.js";
+import {
+  PropertyAdsReportMetricsGroupDeliveryGoal,
+  PropertyAdsReportMetricsGroupDeliveryGoal$inboundSchema,
+} from "./propertyadsreportmetricsgroupdeliverygoal.js";
 import {
   PropertyAdsReportMetricsGroupFrequencyCap,
   PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema,
@@ -80,17 +85,60 @@ export type PropertyAdsReportMetricsGroupBudgetUnit = OpenEnum<
 >;
 
 /**
+ * How the line item is priced (Google Ad Manager costType)
+ */
+export const PropertyAdsReportMetricsGroupCostType = {
+  Cpm: "CPM",
+  ViewableCpm: "VIEWABLE_CPM",
+  Cpc: "CPC",
+  Cpd: "CPD",
+  Cpa: "CPA",
+  Cpcv: "CPCV",
+  Other: "OTHER",
+} as const;
+/**
+ * How the line item is priced (Google Ad Manager costType)
+ */
+export type PropertyAdsReportMetricsGroupCostType = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupCostType
+>;
+
+/**
  * Creative rotation strategy (LinkedIn creativeSelection)
  */
 export const PropertyAdsReportMetricsGroupCreativeSelection = {
   Optimized: "OPTIMIZED",
   RoundRobin: "ROUND_ROBIN",
+  Weighted: "WEIGHTED",
+  Sequential: "SEQUENTIAL",
 } as const;
 /**
  * Creative rotation strategy (LinkedIn creativeSelection)
  */
 export type PropertyAdsReportMetricsGroupCreativeSelection = OpenEnum<
   typeof PropertyAdsReportMetricsGroupCreativeSelection
+>;
+
+/**
+ * Ad server line item type / delivery class (Google Ad Manager lineItemType)
+ */
+export const PropertyAdsReportMetricsGroupDeliveryType = {
+  Standard: "STANDARD",
+  Sponsorship: "SPONSORSHIP",
+  Network: "NETWORK",
+  Bulk: "BULK",
+  PricePriority: "PRICE_PRIORITY",
+  House: "HOUSE",
+  PreferredDeal: "PREFERRED_DEAL",
+  AdExchange: "AD_EXCHANGE",
+  ClickTracking: "CLICK_TRACKING",
+  Other: "OTHER",
+} as const;
+/**
+ * Ad server line item type / delivery class (Google Ad Manager lineItemType)
+ */
+export type PropertyAdsReportMetricsGroupDeliveryType = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupDeliveryType
 >;
 
 export const PropertyAdsReportMetricsGroupEffectiveStatus = {
@@ -193,6 +241,10 @@ export type PropertyAdsReportMetricsGroup = {
    */
   campaignId?: string | undefined;
   /**
+   * How the line item is priced (Google Ad Manager costType)
+   */
+  costType?: PropertyAdsReportMetricsGroupCostType | undefined;
+  /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
@@ -203,7 +255,19 @@ export type PropertyAdsReportMetricsGroup = {
   creativeSelection?:
     | PropertyAdsReportMetricsGroupCreativeSelection
     | undefined;
+  /**
+   * Expected creative sizes (Google Ad Manager creativePlaceholders)
+   */
+  creativeSizes?: Array<AdsSize> | undefined;
   currency?: string | undefined;
+  /**
+   * Booked delivery goal (Google Ad Manager goal)
+   */
+  deliveryGoal?: PropertyAdsReportMetricsGroupDeliveryGoal | undefined;
+  /**
+   * Ad server line item type / delivery class (Google Ad Manager lineItemType)
+   */
+  deliveryType?: PropertyAdsReportMetricsGroupDeliveryType | undefined;
   effectiveStatus?: PropertyAdsReportMetricsGroupEffectiveStatus | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -229,6 +293,10 @@ export type PropertyAdsReportMetricsGroup = {
   organizationId?: string | undefined;
   pacing?: PropertyAdsReportMetricsGroupPacing | undefined;
   parentId?: string | undefined;
+  /**
+   * Ad server delivery priority, lower serves first (Google Ad Manager priority, Kevel priority)
+   */
+  priority?: number | undefined;
   promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -276,12 +344,26 @@ export const PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetUnit);
 
 /** @internal */
+export const PropertyAdsReportMetricsGroupCostType$inboundSchema: z.ZodType<
+  PropertyAdsReportMetricsGroupCostType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupCostType);
+
+/** @internal */
 export const PropertyAdsReportMetricsGroupCreativeSelection$inboundSchema:
   z.ZodType<
     PropertyAdsReportMetricsGroupCreativeSelection,
     z.ZodTypeDef,
     unknown
   > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupCreativeSelection);
+
+/** @internal */
+export const PropertyAdsReportMetricsGroupDeliveryType$inboundSchema: z.ZodType<
+  PropertyAdsReportMetricsGroupDeliveryType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupDeliveryType);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema:
@@ -332,12 +414,18 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     .optional(),
   budget_unit: PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema.optional(),
   campaign_id: z.string().optional(),
+  cost_type: PropertyAdsReportMetricsGroupCostType$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_ids: z.array(z.string()).optional(),
   creative_selection:
     PropertyAdsReportMetricsGroupCreativeSelection$inboundSchema.optional(),
+  creative_sizes: z.array(AdsSize$inboundSchema).optional(),
   currency: z.string().optional(),
+  delivery_goal: PropertyAdsReportMetricsGroupDeliveryGoal$inboundSchema
+    .optional(),
+  delivery_type: PropertyAdsReportMetricsGroupDeliveryType$inboundSchema
+    .optional(),
   effective_status: PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema
     .optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -355,6 +443,7 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   organization_id: z.string().optional(),
   pacing: PropertyAdsReportMetricsGroupPacing$inboundSchema.optional(),
   parent_id: z.string().optional(),
+  priority: z.number().optional(),
   promoted: z.array(AdsPromoted$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -375,9 +464,13 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     "budget_period": "budgetPeriod",
     "budget_unit": "budgetUnit",
     "campaign_id": "campaignId",
+    "cost_type": "costType",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
     "creative_selection": "creativeSelection",
+    "creative_sizes": "creativeSizes",
+    "delivery_goal": "deliveryGoal",
+    "delivery_type": "deliveryType",
     "effective_status": "effectiveStatus",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",

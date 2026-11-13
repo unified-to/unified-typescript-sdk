@@ -7,7 +7,7 @@ Creative rotation strategy (LinkedIn creativeSelection)
 ```typescript
 import { CreativeSelection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CreativeSelection = "ROUND_ROBIN";
+let value: CreativeSelection = "SEQUENTIAL";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -15,5 +15,5 @@ let value: CreativeSelection = "ROUND_ROBIN";
 ## Values
 
 ```typescript
-"OPTIMIZED" | "ROUND_ROBIN" | Unrecognized<string>
+"OPTIMIZED" | "ROUND_ROBIN" | "WEIGHTED" | "SEQUENTIAL" | Unrecognized<string>
 ```

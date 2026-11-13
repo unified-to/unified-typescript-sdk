@@ -79,6 +79,7 @@ let value: PropertyWorkspaceIntegrationPatchOverridenScopes = {};
 | `adsGroupWrite`                      | *string*                             | :heavy_minus_sign:                   | N/A                                  |
 | `adsInsertionorderRead`              | *string*                             | :heavy_minus_sign:                   | N/A                                  |
 | `adsInsertionorderWrite`             | *string*                             | :heavy_minus_sign:                   | N/A                                  |
+| `adsInventoryRead`                   | *string*                             | :heavy_minus_sign:                   | N/A                                  |
 | `adsOrganizationRead`                | *string*                             | :heavy_minus_sign:                   | N/A                                  |
 | `adsOrganizationWrite`               | *string*                             | :heavy_minus_sign:                   | N/A                                  |
 | `adsPromotedRead`                    | *string*                             | :heavy_minus_sign:                   | N/A                                  |

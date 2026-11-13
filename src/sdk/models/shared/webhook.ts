@@ -193,6 +193,7 @@ export const WebhookObjectType = {
   AdsInsertionorder: "ads_insertionorder",
   AdsTarget: "ads_target",
   AdsPromoted: "ads_promoted",
+  AdsInventory: "ads_inventory",
   AnalyticsProperty: "analytics_property",
   AnalyticsEvent: "analytics_event",
   AnalyticsSession: "analytics_session",

@@ -14,6 +14,7 @@ import { adsGetAdsCampaign } from "../funcs/adsGetAdsCampaign.js";
 import { adsGetAdsCreative } from "../funcs/adsGetAdsCreative.js";
 import { adsGetAdsGroup } from "../funcs/adsGetAdsGroup.js";
 import { adsGetAdsInsertionorder } from "../funcs/adsGetAdsInsertionorder.js";
+import { adsGetAdsInventory } from "../funcs/adsGetAdsInventory.js";
 import { adsGetAdsPromoted } from "../funcs/adsGetAdsPromoted.js";
 import { adsGetAdsTarget } from "../funcs/adsGetAdsTarget.js";
 import { adsListAdsAds } from "../funcs/adsListAdsAds.js";
@@ -22,6 +23,7 @@ import { adsListAdsCampaigns } from "../funcs/adsListAdsCampaigns.js";
 import { adsListAdsCreatives } from "../funcs/adsListAdsCreatives.js";
 import { adsListAdsGroups } from "../funcs/adsListAdsGroups.js";
 import { adsListAdsInsertionorders } from "../funcs/adsListAdsInsertionorders.js";
+import { adsListAdsInventories } from "../funcs/adsListAdsInventories.js";
 import { adsListAdsPromoteds } from "../funcs/adsListAdsPromoteds.js";
 import { adsListAdsReports } from "../funcs/adsListAdsReports.js";
 import { adsListAdsTargets } from "../funcs/adsListAdsTargets.js";
@@ -274,6 +276,23 @@ export class Ads extends ClientSDK {
   }
 
   /**
+   * Retrieve an inventory
+   *
+   * @remarks
+   * Retrieves a single AdsInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getAdsInventory(
+    request: operations.GetAdsInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsInventory> {
+    return unwrapAsync(adsGetAdsInventory(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve an organization
    *
    * @remarks
@@ -420,6 +439,23 @@ export class Ads extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AdsInsertionorder>> {
     return unwrapAsync(adsListAdsInsertionorders(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all inventories
+   *
+   * @remarks
+   * Returns a list of AdsInventories. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listAdsInventories(
+    request: operations.ListAdsInventoriesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AdsInventory>> {
+    return unwrapAsync(adsListAdsInventories(
       this,
       request,
       options,

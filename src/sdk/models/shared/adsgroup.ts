@@ -22,11 +22,23 @@ import {
   AdsPromoted$outboundSchema,
 } from "./adspromoted.js";
 import {
+  AdsSize,
+  AdsSize$inboundSchema,
+  AdsSize$Outbound,
+  AdsSize$outboundSchema,
+} from "./adssize.js";
+import {
   PropertyAdsGroupBidStrategy,
   PropertyAdsGroupBidStrategy$inboundSchema,
   PropertyAdsGroupBidStrategy$Outbound,
   PropertyAdsGroupBidStrategy$outboundSchema,
 } from "./propertyadsgroupbidstrategy.js";
+import {
+  PropertyAdsGroupDeliveryGoal,
+  PropertyAdsGroupDeliveryGoal$inboundSchema,
+  PropertyAdsGroupDeliveryGoal$Outbound,
+  PropertyAdsGroupDeliveryGoal$outboundSchema,
+} from "./propertyadsgroupdeliverygoal.js";
 import {
   PropertyAdsGroupFrequencyCap,
   PropertyAdsGroupFrequencyCap$inboundSchema,
@@ -90,16 +102,55 @@ export const AdsGroupBudgetUnit = {
 export type AdsGroupBudgetUnit = OpenEnum<typeof AdsGroupBudgetUnit>;
 
 /**
+ * How the line item is priced (Google Ad Manager costType)
+ */
+export const CostType = {
+  Cpm: "CPM",
+  ViewableCpm: "VIEWABLE_CPM",
+  Cpc: "CPC",
+  Cpd: "CPD",
+  Cpa: "CPA",
+  Cpcv: "CPCV",
+  Other: "OTHER",
+} as const;
+/**
+ * How the line item is priced (Google Ad Manager costType)
+ */
+export type CostType = OpenEnum<typeof CostType>;
+
+/**
  * Creative rotation strategy (LinkedIn creativeSelection)
  */
 export const CreativeSelection = {
   Optimized: "OPTIMIZED",
   RoundRobin: "ROUND_ROBIN",
+  Weighted: "WEIGHTED",
+  Sequential: "SEQUENTIAL",
 } as const;
 /**
  * Creative rotation strategy (LinkedIn creativeSelection)
  */
 export type CreativeSelection = OpenEnum<typeof CreativeSelection>;
+
+/**
+ * Ad server line item type / delivery class (Google Ad Manager lineItemType)
+ */
+export const DeliveryType = {
+  Standard: "STANDARD",
+  Sponsorship: "SPONSORSHIP",
+  Network: "NETWORK",
+  Bulk: "BULK",
+  PricePriority: "PRICE_PRIORITY",
+  House: "HOUSE",
+  PreferredDeal: "PREFERRED_DEAL",
+  AdExchange: "AD_EXCHANGE",
+  ClickTracking: "CLICK_TRACKING",
+  Other: "OTHER",
+} as const;
+/**
+ * Ad server line item type / delivery class (Google Ad Manager lineItemType)
+ */
+export type DeliveryType = OpenEnum<typeof DeliveryType>;
 
 export const AdsGroupEffectiveStatus = {
   Unspecified: "UNSPECIFIED",
@@ -191,6 +242,10 @@ export type AdsGroup = {
    */
   campaignId?: string | undefined;
   /**
+   * How the line item is priced (Google Ad Manager costType)
+   */
+  costType?: CostType | undefined;
+  /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
@@ -199,7 +254,19 @@ export type AdsGroup = {
    * Creative rotation strategy (LinkedIn creativeSelection)
    */
   creativeSelection?: CreativeSelection | undefined;
+  /**
+   * Expected creative sizes (Google Ad Manager creativePlaceholders)
+   */
+  creativeSizes?: Array<AdsSize> | undefined;
   currency?: string | undefined;
+  /**
+   * Booked delivery goal (Google Ad Manager goal)
+   */
+  deliveryGoal?: PropertyAdsGroupDeliveryGoal | undefined;
+  /**
+   * Ad server line item type / delivery class (Google Ad Manager lineItemType)
+   */
+  deliveryType?: DeliveryType | undefined;
   effectiveStatus?: AdsGroupEffectiveStatus | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -225,6 +292,10 @@ export type AdsGroup = {
   organizationId?: string | undefined;
   pacing?: PropertyAdsGroupPacing | undefined;
   parentId?: string | undefined;
+  /**
+   * Ad server delivery priority, lower serves first (Google Ad Manager priority, Kevel priority)
+   */
+  priority?: number | undefined;
   promoted?: Array<AdsPromoted> | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
@@ -293,6 +364,19 @@ export const AdsGroupBudgetUnit$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(AdsGroupBudgetUnit);
 
 /** @internal */
+export const CostType$inboundSchema: z.ZodType<
+  CostType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(CostType);
+/** @internal */
+export const CostType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  CostType
+> = openEnums.outboundSchema(CostType);
+
+/** @internal */
 export const CreativeSelection$inboundSchema: z.ZodType<
   CreativeSelection,
   z.ZodTypeDef,
@@ -304,6 +388,19 @@ export const CreativeSelection$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreativeSelection
 > = openEnums.outboundSchema(CreativeSelection);
+
+/** @internal */
+export const DeliveryType$inboundSchema: z.ZodType<
+  DeliveryType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(DeliveryType);
+/** @internal */
+export const DeliveryType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  DeliveryType
+> = openEnums.outboundSchema(DeliveryType);
 
 /** @internal */
 export const AdsGroupEffectiveStatus$inboundSchema: z.ZodType<
@@ -372,11 +469,15 @@ export const AdsGroup$inboundSchema: z.ZodType<
   budget_period: AdsGroupBudgetPeriod$inboundSchema.optional(),
   budget_unit: AdsGroupBudgetUnit$inboundSchema.optional(),
   campaign_id: z.string().optional(),
+  cost_type: CostType$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   creative_ids: z.array(z.string()).optional(),
   creative_selection: CreativeSelection$inboundSchema.optional(),
+  creative_sizes: z.array(AdsSize$inboundSchema).optional(),
   currency: z.string().optional(),
+  delivery_goal: PropertyAdsGroupDeliveryGoal$inboundSchema.optional(),
+  delivery_type: DeliveryType$inboundSchema.optional(),
   effective_status: AdsGroupEffectiveStatus$inboundSchema.optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -391,6 +492,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
   organization_id: z.string().optional(),
   pacing: PropertyAdsGroupPacing$inboundSchema.optional(),
   parent_id: z.string().optional(),
+  priority: z.number().optional(),
   promoted: z.array(AdsPromoted$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -411,9 +513,13 @@ export const AdsGroup$inboundSchema: z.ZodType<
     "budget_period": "budgetPeriod",
     "budget_unit": "budgetUnit",
     "campaign_id": "campaignId",
+    "cost_type": "costType",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
     "creative_selection": "creativeSelection",
+    "creative_sizes": "creativeSizes",
+    "delivery_goal": "deliveryGoal",
+    "delivery_type": "deliveryType",
     "effective_status": "effectiveStatus",
     "end_at": "endAt",
     "frequency_cap": "frequencyCap",
@@ -438,10 +544,14 @@ export type AdsGroup$Outbound = {
   budget_period?: string | undefined;
   budget_unit?: string | undefined;
   campaign_id?: string | undefined;
+  cost_type?: string | undefined;
   created_at?: string | undefined;
   creative_ids?: Array<string> | undefined;
   creative_selection?: string | undefined;
+  creative_sizes?: Array<AdsSize$Outbound> | undefined;
   currency?: string | undefined;
+  delivery_goal?: PropertyAdsGroupDeliveryGoal$Outbound | undefined;
+  delivery_type?: string | undefined;
   effective_status?: string | undefined;
   end_at?: string | undefined;
   frequency_cap?: PropertyAdsGroupFrequencyCap$Outbound | undefined;
@@ -455,6 +565,7 @@ export type AdsGroup$Outbound = {
   organization_id?: string | undefined;
   pacing?: PropertyAdsGroupPacing$Outbound | undefined;
   parent_id?: string | undefined;
+  priority?: number | undefined;
   promoted?: Array<AdsPromoted$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
@@ -479,10 +590,14 @@ export const AdsGroup$outboundSchema: z.ZodType<
   budgetPeriod: AdsGroupBudgetPeriod$outboundSchema.optional(),
   budgetUnit: AdsGroupBudgetUnit$outboundSchema.optional(),
   campaignId: z.string().optional(),
+  costType: CostType$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeIds: z.array(z.string()).optional(),
   creativeSelection: CreativeSelection$outboundSchema.optional(),
+  creativeSizes: z.array(AdsSize$outboundSchema).optional(),
   currency: z.string().optional(),
+  deliveryGoal: PropertyAdsGroupDeliveryGoal$outboundSchema.optional(),
+  deliveryType: DeliveryType$outboundSchema.optional(),
   effectiveStatus: AdsGroupEffectiveStatus$outboundSchema.optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   frequencyCap: PropertyAdsGroupFrequencyCap$outboundSchema.optional(),
@@ -496,6 +611,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
   organizationId: z.string().optional(),
   pacing: PropertyAdsGroupPacing$outboundSchema.optional(),
   parentId: z.string().optional(),
+  priority: z.number().optional(),
   promoted: z.array(AdsPromoted$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
@@ -514,9 +630,13 @@ export const AdsGroup$outboundSchema: z.ZodType<
     budgetPeriod: "budget_period",
     budgetUnit: "budget_unit",
     campaignId: "campaign_id",
+    costType: "cost_type",
     createdAt: "created_at",
     creativeIds: "creative_ids",
     creativeSelection: "creative_selection",
+    creativeSizes: "creative_sizes",
+    deliveryGoal: "delivery_goal",
+    deliveryType: "delivery_type",
     effectiveStatus: "effective_status",
     endAt: "end_at",
     frequencyCap: "frequency_cap",

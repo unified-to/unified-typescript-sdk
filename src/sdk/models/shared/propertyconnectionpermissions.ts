@@ -293,6 +293,7 @@ export const PropertyConnectionPermissions = {
   AdsInsertionorderWrite: "ads_insertionorder_write",
   AdsTargetRead: "ads_target_read",
   AdsPromotedRead: "ads_promoted_read",
+  AdsInventoryRead: "ads_inventory_read",
   AnalyticsPropertyRead: "analytics_property_read",
   AnalyticsPropertyWrite: "analytics_property_write",
   AnalyticsEventRead: "analytics_event_read",

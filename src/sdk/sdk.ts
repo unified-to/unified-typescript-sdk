@@ -418,6 +418,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._insertionorder ??= new Insertionorder(this._options));
   }
 
+  private _inventory?: Inventory;
+  get inventory(): Inventory {
+    return (this._inventory ??= new Inventory(this._options));
+  }
+
   private _promoted?: Promoted;
   get promoted(): Promoted {
     return (this._promoted ??= new Promoted(this._options));
@@ -611,11 +616,6 @@ export class UnifiedTo extends ClientSDK {
   private _collection?: Collection;
   get collection(): Collection {
     return (this._collection ??= new Collection(this._options));
-  }
-
-  private _inventory?: Inventory;
-  get inventory(): Inventory {
-    return (this._inventory ??= new Inventory(this._options));
   }
 
   private _item?: Item;

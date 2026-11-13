@@ -32,9 +32,9 @@ import { Result } from "../sdk/types/fp.js";
  * @remarks
  * Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
  */
-export function commerceUpdateCommerceInventory(
+export function inventoryPatchCommerceInventory(
   client: UnifiedToCore,
-  request: operations.UpdateCommerceInventoryRequest,
+  request: operations.PatchCommerceInventoryRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -58,7 +58,7 @@ export function commerceUpdateCommerceInventory(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.UpdateCommerceInventoryRequest,
+  request: operations.PatchCommerceInventoryRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -79,7 +79,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.UpdateCommerceInventoryRequest$outboundSchema.parse(value),
+      operations.PatchCommerceInventoryRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -118,7 +118,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "updateCommerceInventory",
+    operationID: "patchCommerceInventory",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -132,7 +132,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "PUT",
+    method: "PATCH",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,

@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -27,14 +27,14 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Retrieve an inventory
+ * Update an inventory
  *
  * @remarks
- * Retrieves a single CommerceInventory by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+ * Updates the CommerceInventory identified by `id`. Provide the unified CommerceInventory fields to change in the request body.
  */
-export function commerceGetCommerceInventory(
+export function inventoryUpdateCommerceInventory(
   client: UnifiedToCore,
-  request: operations.GetCommerceInventoryRequest,
+  request: operations.UpdateCommerceInventoryRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -58,7 +58,7 @@ export function commerceGetCommerceInventory(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.GetCommerceInventoryRequest,
+  request: operations.UpdateCommerceInventoryRequest,
   options?: RequestOptions,
 ): Promise<
   [
@@ -79,14 +79,14 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.GetCommerceInventoryRequest$outboundSchema.parse(value),
+      operations.UpdateCommerceInventoryRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = null;
+  const body = encodeJSON("body", payload.CommerceInventory, { explode: true });
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -108,6 +108,7 @@ async function $do(
   });
 
   const headers = new Headers(compactMap({
+    "Content-Type": "application/json",
     Accept: "application/json",
   }));
 
@@ -117,7 +118,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "getCommerceInventory",
+    operationID: "updateCommerceInventory",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -131,7 +132,7 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "PUT",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
