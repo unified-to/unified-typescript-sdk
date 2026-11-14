@@ -10,6 +10,12 @@ import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AdsConversionTracking,
+  AdsConversionTracking$inboundSchema,
+  AdsConversionTracking$Outbound,
+  AdsConversionTracking$outboundSchema,
+} from "./adsconversiontracking.js";
+import {
   AdsMetadata,
   AdsMetadata$inboundSchema,
   AdsMetadata$Outbound,
@@ -242,6 +248,10 @@ export type AdsGroup = {
    */
   campaignId?: string | undefined;
   /**
+   * Conversion trackers counted for this group (DV360 Floodlight activities, Pinterest conversion tag)
+   */
+  conversionTracking?: Array<AdsConversionTracking> | undefined;
+  /**
    * How the line item is priced (Google Ad Manager costType)
    */
   costType?: CostType | undefined;
@@ -469,6 +479,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
   budget_period: AdsGroupBudgetPeriod$inboundSchema.optional(),
   budget_unit: AdsGroupBudgetUnit$inboundSchema.optional(),
   campaign_id: z.string().optional(),
+  conversion_tracking: z.array(AdsConversionTracking$inboundSchema).optional(),
   cost_type: CostType$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -513,6 +524,7 @@ export const AdsGroup$inboundSchema: z.ZodType<
     "budget_period": "budgetPeriod",
     "budget_unit": "budgetUnit",
     "campaign_id": "campaignId",
+    "conversion_tracking": "conversionTracking",
     "cost_type": "costType",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",
@@ -544,6 +556,7 @@ export type AdsGroup$Outbound = {
   budget_period?: string | undefined;
   budget_unit?: string | undefined;
   campaign_id?: string | undefined;
+  conversion_tracking?: Array<AdsConversionTracking$Outbound> | undefined;
   cost_type?: string | undefined;
   created_at?: string | undefined;
   creative_ids?: Array<string> | undefined;
@@ -590,6 +603,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
   budgetPeriod: AdsGroupBudgetPeriod$outboundSchema.optional(),
   budgetUnit: AdsGroupBudgetUnit$outboundSchema.optional(),
   campaignId: z.string().optional(),
+  conversionTracking: z.array(AdsConversionTracking$outboundSchema).optional(),
   costType: CostType$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creativeIds: z.array(z.string()).optional(),
@@ -630,6 +644,7 @@ export const AdsGroup$outboundSchema: z.ZodType<
     budgetPeriod: "budget_period",
     budgetUnit: "budget_unit",
     campaignId: "campaign_id",
+    conversionTracking: "conversion_tracking",
     costType: "cost_type",
     createdAt: "created_at",
     creativeIds: "creative_ids",

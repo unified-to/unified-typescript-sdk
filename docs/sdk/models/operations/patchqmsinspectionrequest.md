@@ -1,0 +1,23 @@
+# PatchQmsInspectionRequest
+
+## Example Usage
+
+```typescript
+import { PatchQmsInspectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchQmsInspectionRequest = {
+  qmsInspection: {},
+  connectionId: "<id>",
+  id: "<id>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                            | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `qmsInspection`                                                                                                                                  | [shared.QmsInspection](../../../sdk/models/shared/qmsinspection.md)                                                                              | :heavy_check_mark:                                                                                                                               | An inspection of a part, lot or serial against its requirements                                                                                  |
+| `connectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `fields`                                                                                                                                         | [operations.PatchQmsInspectionQueryParamFields](../../../sdk/models/operations/patchqmsinspectionqueryparamfields.md)[]                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Inspection                                                                                                                             |
+| `raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |

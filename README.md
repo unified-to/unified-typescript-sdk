@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
+      id: "b624dc49-e33a-4f21-9acb-7c05dff87712",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
+      updatedAt: new Date("2023-08-12T23:35:28.689Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
+      id: "b624dc49-e33a-4f21-9acb-7c05dff87712",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
+      updatedAt: new Date("2023-08-12T23:35:28.689Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
+      id: "b624dc49-e33a-4f21-9acb-7c05dff87712",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
+      updatedAt: new Date("2023-08-12T23:35:28.689Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
+        id: "b624dc49-e33a-4f21-9acb-7c05dff87712",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-12T17:59:56.921Z"),
+        updatedAt: new Date("2023-08-12T23:35:28.689Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
+      id: "b624dc49-e33a-4f21-9acb-7c05dff87712",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
+      updatedAt: new Date("2023-08-12T23:35:28.689Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "02da62e8-55be-4db0-b808-43e3cbc9440d",
+      id: "b624dc49-e33a-4f21-9acb-7c05dff87712",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T17:59:56.921Z"),
+      updatedAt: new Date("2023-08-12T23:35:28.689Z"),
     },
     connectionId: "<id>",
   });
@@ -1980,6 +1980,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`inventoryRemoveCommerceInventory`](docs/sdks/inventory/README.md#removecommerceinventory) - Remove an inventory
 - [`inventoryUpdateCommerceInventory`](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
 - [`inventoryUpdateCommerceInventory`](docs/sdks/inventory/README.md#updatecommerceinventory) - Update an inventory
+- [`issueGetUnifiedIssue`](docs/sdks/issue/README.md#getunifiedissue) - Retrieve support issue
+- [`issueGetUnifiedIssue`](docs/sdks/unified/README.md#getunifiedissue) - Retrieve support issue
+- [`issueListUnifiedIssues`](docs/sdks/issue/README.md#listunifiedissues) - List support issues
+- [`issueListUnifiedIssues`](docs/sdks/unified/README.md#listunifiedissues) - List support issues
 - [`jobCreateHrisJob`](docs/sdks/hris/README.md#createhrisjob) - Create a job
 - [`jobCreateHrisJob`](docs/sdks/job/README.md#createhrisjob) - Create a job
 - [`jobGetHrisJob`](docs/sdks/hris/README.md#gethrisjob) - Retrieve a job
@@ -2414,6 +2418,46 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`propertyUpdatePropertyReservation`](docs/sdks/reservation/README.md#updatepropertyreservation) - Update a reservation
 - [`propertyUpdatePropertyReview`](docs/sdks/property/README.md#updatepropertyreview) - Update a review
 - [`propertyUpdatePropertyReview`](docs/sdks/review/README.md#updatepropertyreview) - Update a review
+- [`qmsCreateQmsAction`](docs/sdks/action/README.md#createqmsaction) - Create an action
+- [`qmsCreateQmsAction`](docs/sdks/qms/README.md#createqmsaction) - Create an action
+- [`qmsCreateQmsAudit`](docs/sdks/audit/README.md#createqmsaudit) - Create an audit
+- [`qmsCreateQmsAudit`](docs/sdks/qms/README.md#createqmsaudit) - Create an audit
+- [`qmsCreateQmsInspection`](docs/sdks/inspection/README.md#createqmsinspection) - Create an inspection
+- [`qmsCreateQmsInspection`](docs/sdks/qms/README.md#createqmsinspection) - Create an inspection
+- [`qmsCreateQmsIssue`](docs/sdks/issue/README.md#createqmsissue) - Create an issue
+- [`qmsCreateQmsIssue`](docs/sdks/qms/README.md#createqmsissue) - Create an issue
+- [`qmsGetQmsAction`](docs/sdks/action/README.md#getqmsaction) - Retrieve an action
+- [`qmsGetQmsAction`](docs/sdks/qms/README.md#getqmsaction) - Retrieve an action
+- [`qmsGetQmsAudit`](docs/sdks/audit/README.md#getqmsaudit) - Retrieve an audit
+- [`qmsGetQmsAudit`](docs/sdks/qms/README.md#getqmsaudit) - Retrieve an audit
+- [`qmsGetQmsInspection`](docs/sdks/inspection/README.md#getqmsinspection) - Retrieve an inspection
+- [`qmsGetQmsInspection`](docs/sdks/qms/README.md#getqmsinspection) - Retrieve an inspection
+- [`qmsGetQmsIssue`](docs/sdks/issue/README.md#getqmsissue) - Retrieve an issue
+- [`qmsGetQmsIssue`](docs/sdks/qms/README.md#getqmsissue) - Retrieve an issue
+- [`qmsListQmsActions`](docs/sdks/action/README.md#listqmsactions) - List all actions
+- [`qmsListQmsActions`](docs/sdks/qms/README.md#listqmsactions) - List all actions
+- [`qmsListQmsAudits`](docs/sdks/audit/README.md#listqmsaudits) - List all audits
+- [`qmsListQmsAudits`](docs/sdks/qms/README.md#listqmsaudits) - List all audits
+- [`qmsListQmsInspections`](docs/sdks/inspection/README.md#listqmsinspections) - List all inspections
+- [`qmsListQmsInspections`](docs/sdks/qms/README.md#listqmsinspections) - List all inspections
+- [`qmsListQmsIssues`](docs/sdks/issue/README.md#listqmsissues) - List all issues
+- [`qmsListQmsIssues`](docs/sdks/qms/README.md#listqmsissues) - List all issues
+- [`qmsPatchQmsAction`](docs/sdks/action/README.md#patchqmsaction) - Update an action
+- [`qmsPatchQmsAction`](docs/sdks/qms/README.md#patchqmsaction) - Update an action
+- [`qmsPatchQmsAudit`](docs/sdks/audit/README.md#patchqmsaudit) - Update an audit
+- [`qmsPatchQmsAudit`](docs/sdks/qms/README.md#patchqmsaudit) - Update an audit
+- [`qmsPatchQmsInspection`](docs/sdks/inspection/README.md#patchqmsinspection) - Update an inspection
+- [`qmsPatchQmsInspection`](docs/sdks/qms/README.md#patchqmsinspection) - Update an inspection
+- [`qmsPatchQmsIssue`](docs/sdks/issue/README.md#patchqmsissue) - Update an issue
+- [`qmsPatchQmsIssue`](docs/sdks/qms/README.md#patchqmsissue) - Update an issue
+- [`qmsUpdateQmsAction`](docs/sdks/action/README.md#updateqmsaction) - Update an action
+- [`qmsUpdateQmsAction`](docs/sdks/qms/README.md#updateqmsaction) - Update an action
+- [`qmsUpdateQmsAudit`](docs/sdks/audit/README.md#updateqmsaudit) - Update an audit
+- [`qmsUpdateQmsAudit`](docs/sdks/qms/README.md#updateqmsaudit) - Update an audit
+- [`qmsUpdateQmsInspection`](docs/sdks/inspection/README.md#updateqmsinspection) - Update an inspection
+- [`qmsUpdateQmsInspection`](docs/sdks/qms/README.md#updateqmsinspection) - Update an inspection
+- [`qmsUpdateQmsIssue`](docs/sdks/issue/README.md#updateqmsissue) - Update an issue
+- [`qmsUpdateQmsIssue`](docs/sdks/qms/README.md#updateqmsissue) - Update an issue
 - [`quoteCreatePropertyQuote`](docs/sdks/property/README.md#createpropertyquote) - Create a quote
 - [`quoteCreatePropertyQuote`](docs/sdks/quote/README.md#createpropertyquote) - Create a quote
 - [`recordingCreateUcRecording`](docs/sdks/recording/README.md#createucrecording) - Create a recording
@@ -2707,8 +2751,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/auth/README.md#getunifiedintegrationauth) - Authorize or re-authorize a connection
 - [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/integration/README.md#getunifiedintegrationauth) - Authorize or re-authorize a connection
 - [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/unified/README.md#getunifiedintegrationauth) - Authorize or re-authorize a connection
-- [`unifiedGetUnifiedIssue`](docs/sdks/issue/README.md#getunifiedissue) - Retrieve support issue
-- [`unifiedGetUnifiedIssue`](docs/sdks/unified/README.md#getunifiedissue) - Retrieve support issue
 - [`unifiedGetUnifiedSecretsmanager`](docs/sdks/secretsmanager/README.md#getunifiedsecretsmanager) - Retrieve secrets manager
 - [`unifiedGetUnifiedSecretsmanager`](docs/sdks/unified/README.md#getunifiedsecretsmanager) - Retrieve secrets manager
 - [`unifiedGetUnifiedWebhook`](docs/sdks/unified/README.md#getunifiedwebhook) - Retrieve webhook by its ID
@@ -2725,8 +2767,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedListUnifiedIntegrations`](docs/sdks/unified/README.md#listunifiedintegrations) - Returns all integrations
 - [`unifiedListUnifiedIntegrationWorkspaces`](docs/sdks/integration/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 - [`unifiedListUnifiedIntegrationWorkspaces`](docs/sdks/unified/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
-- [`unifiedListUnifiedIssues`](docs/sdks/issue/README.md#listunifiedissues) - List support issues
-- [`unifiedListUnifiedIssues`](docs/sdks/unified/README.md#listunifiedissues) - List support issues
 - [`unifiedListUnifiedNotifications`](docs/sdks/notification/README.md#listunifiednotifications) - List event notifications
 - [`unifiedListUnifiedNotifications`](docs/sdks/unified/README.md#listunifiednotifications) - List event notifications
 - [`unifiedListUnifiedSecretsmanagerInstructions`](docs/sdks/secretsmanager/README.md#listunifiedsecretsmanagerinstructions) - List secrets manager setup instructions

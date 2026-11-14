@@ -47,6 +47,7 @@ export const PropertyWorkspaceIntegrationPatchCategories = {
   Healthcare: "healthcare",
   Property: "property",
   Plm: "plm",
+  Qms: "qms",
 } as const;
 export type PropertyWorkspaceIntegrationPatchCategories = OpenEnum<
   typeof PropertyWorkspaceIntegrationPatchCategories

@@ -386,6 +386,14 @@ export type PropertyWorkspaceIntegrationOverridenScopes = {
   propertyReviewRead?: string | undefined;
   propertyReviewWrite?: string | undefined;
   propertyUnittypeRead?: string | undefined;
+  qmsActionRead?: string | undefined;
+  qmsActionWrite?: string | undefined;
+  qmsAuditRead?: string | undefined;
+  qmsAuditWrite?: string | undefined;
+  qmsInspectionRead?: string | undefined;
+  qmsInspectionWrite?: string | undefined;
+  qmsIssueRead?: string | undefined;
+  qmsIssueWrite?: string | undefined;
   repoBranchRead?: string | undefined;
   repoBranchWrite?: string | undefined;
   repoCommitRead?: string | undefined;
@@ -842,6 +850,14 @@ export const PropertyWorkspaceIntegrationOverridenScopes$inboundSchema:
     property_review_read: z.string().optional(),
     property_review_write: z.string().optional(),
     property_unittype_read: z.string().optional(),
+    qms_action_read: z.string().optional(),
+    qms_action_write: z.string().optional(),
+    qms_audit_read: z.string().optional(),
+    qms_audit_write: z.string().optional(),
+    qms_inspection_read: z.string().optional(),
+    qms_inspection_write: z.string().optional(),
+    qms_issue_read: z.string().optional(),
+    qms_issue_write: z.string().optional(),
     repo_branch_read: z.string().optional(),
     repo_branch_write: z.string().optional(),
     repo_commit_read: z.string().optional(),
@@ -1293,6 +1309,14 @@ export const PropertyWorkspaceIntegrationOverridenScopes$inboundSchema:
       "property_review_read": "propertyReviewRead",
       "property_review_write": "propertyReviewWrite",
       "property_unittype_read": "propertyUnittypeRead",
+      "qms_action_read": "qmsActionRead",
+      "qms_action_write": "qmsActionWrite",
+      "qms_audit_read": "qmsAuditRead",
+      "qms_audit_write": "qmsAuditWrite",
+      "qms_inspection_read": "qmsInspectionRead",
+      "qms_inspection_write": "qmsInspectionWrite",
+      "qms_issue_read": "qmsIssueRead",
+      "qms_issue_write": "qmsIssueWrite",
       "repo_branch_read": "repoBranchRead",
       "repo_branch_write": "repoBranchWrite",
       "repo_commit_read": "repoCommitRead",
@@ -1743,6 +1767,14 @@ export type PropertyWorkspaceIntegrationOverridenScopes$Outbound = {
   property_review_read?: string | undefined;
   property_review_write?: string | undefined;
   property_unittype_read?: string | undefined;
+  qms_action_read?: string | undefined;
+  qms_action_write?: string | undefined;
+  qms_audit_read?: string | undefined;
+  qms_audit_write?: string | undefined;
+  qms_inspection_read?: string | undefined;
+  qms_inspection_write?: string | undefined;
+  qms_issue_read?: string | undefined;
+  qms_issue_write?: string | undefined;
   repo_branch_read?: string | undefined;
   repo_branch_write?: string | undefined;
   repo_commit_read?: string | undefined;
@@ -2199,6 +2231,14 @@ export const PropertyWorkspaceIntegrationOverridenScopes$outboundSchema:
     propertyReviewRead: z.string().optional(),
     propertyReviewWrite: z.string().optional(),
     propertyUnittypeRead: z.string().optional(),
+    qmsActionRead: z.string().optional(),
+    qmsActionWrite: z.string().optional(),
+    qmsAuditRead: z.string().optional(),
+    qmsAuditWrite: z.string().optional(),
+    qmsInspectionRead: z.string().optional(),
+    qmsInspectionWrite: z.string().optional(),
+    qmsIssueRead: z.string().optional(),
+    qmsIssueWrite: z.string().optional(),
     repoBranchRead: z.string().optional(),
     repoBranchWrite: z.string().optional(),
     repoCommitRead: z.string().optional(),
@@ -2649,6 +2689,14 @@ export const PropertyWorkspaceIntegrationOverridenScopes$outboundSchema:
       propertyReviewRead: "property_review_read",
       propertyReviewWrite: "property_review_write",
       propertyUnittypeRead: "property_unittype_read",
+      qmsActionRead: "qms_action_read",
+      qmsActionWrite: "qms_action_write",
+      qmsAuditRead: "qms_audit_read",
+      qmsAuditWrite: "qms_audit_write",
+      qmsInspectionRead: "qms_inspection_read",
+      qmsInspectionWrite: "qms_inspection_write",
+      qmsIssueRead: "qms_issue_read",
+      qmsIssueWrite: "qms_issue_write",
       repoBranchRead: "repo_branch_read",
       repoBranchWrite: "repo_branch_write",
       repoCommitRead: "repo_commit_read",

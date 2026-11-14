@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery } from "../lib/encodings.js";
+import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
 import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
@@ -28,15 +28,18 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List support issues
+ * List all issues
+ *
+ * @remarks
+ * Returns a list of QmsIssues. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
  */
-export function unifiedListUnifiedIssues(
+export function qmsListQmsIssues(
   client: UnifiedToCore,
-  request: operations.ListUnifiedIssuesRequest,
+  request: operations.ListQmsIssuesRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.Issue>,
+    Array<shared.QmsIssue>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -56,12 +59,12 @@ export function unifiedListUnifiedIssues(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListUnifiedIssuesRequest,
+  request: operations.ListQmsIssuesRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.Issue>,
+      Array<shared.QmsIssue>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -76,7 +79,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.ListUnifiedIssuesRequest$outboundSchema.parse(value),
+    (value) => operations.ListQmsIssuesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -85,14 +88,27 @@ async function $do(
   const payload = parsed.value;
   const body = null;
 
-  const path = pathToFunc("/unified/issue")();
+  const pathParams = {
+    connection_id: encodeSimple("connection_id", payload.connection_id, {
+      explode: false,
+      charEncoding: "percent",
+    }),
+  };
+  const path = pathToFunc("/qms/{connection_id}/issue")(pathParams);
 
   const query = encodeFormQuery({
+    "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
+    "part_id": payload.part_id,
+    "query": payload.query,
+    "raw": payload.raw,
     "sort": payload.sort,
+    "status": payload.status,
+    "type": payload.type,
     "updated_gte": payload.updated_gte,
+    "user_id": payload.user_id,
   });
 
   const headers = new Headers(compactMap({
@@ -105,7 +121,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listUnifiedIssues",
+    operationID: "listQmsIssues",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -146,7 +162,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.Issue>,
+    Array<shared.QmsIssue>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -156,7 +172,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.Issue$inboundSchema)),
+    M.json(200, z.array(shared.QmsIssue$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

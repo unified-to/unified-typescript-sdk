@@ -7,7 +7,7 @@ Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavio
 ```typescript
 import { AdsTargetType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AdsTargetType = "CUSTOM_VALUE";
+let value: AdsTargetType = "OPERATING_SYSTEM";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -15,5 +15,5 @@ let value: AdsTargetType = "CUSTOM_VALUE";
 ## Values
 
 ```typescript
-"INTEREST" | "BEHAVIOR" | "LOCALE" | "COUNTRY" | "REGION" | "CITY" | "ZIP" | "US_DMA" | "TOPIC" | "USER_LIST" | "CARRIER" | "DEVICE_MODEL" | "OS_VERSION" | "CUSTOM_KEY" | "CUSTOM_VALUE" | "BROWSER" | "OPERATING_SYSTEM" | "DEVICE_CATEGORY" | Unrecognized<string>
+"INTEREST" | "BEHAVIOR" | "LOCALE" | "COUNTRY" | "REGION" | "CITY" | "ZIP" | "US_DMA" | "TOPIC" | "USER_LIST" | "CARRIER" | "DEVICE_MODEL" | "OS_VERSION" | "CUSTOM_KEY" | "CUSTOM_VALUE" | "BROWSER" | "OPERATING_SYSTEM" | "DEVICE_CATEGORY" | "EXCHANGE" | "DEAL" | "DEAL_GROUP" | Unrecognized<string>
 ```

@@ -797,7 +797,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { unifiedGetUnifiedIssue } from "@unified-api/typescript-sdk/funcs/unifiedGetUnifiedIssue.js";
+import { issueGetUnifiedIssue } from "@unified-api/typescript-sdk/funcs/issueGetUnifiedIssue.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -808,14 +808,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await unifiedGetUnifiedIssue(unifiedTo, {
+  const res = await issueGetUnifiedIssue(unifiedTo, {
     id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("unifiedGetUnifiedIssue failed:", res.error);
+    console.log("issueGetUnifiedIssue failed:", res.error);
   }
 }
 
@@ -1471,7 +1471,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { unifiedListUnifiedIssues } from "@unified-api/typescript-sdk/funcs/unifiedListUnifiedIssues.js";
+import { issueListUnifiedIssues } from "@unified-api/typescript-sdk/funcs/issueListUnifiedIssues.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1482,12 +1482,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await unifiedListUnifiedIssues(unifiedTo, {});
+  const res = await issueListUnifiedIssues(unifiedTo, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("unifiedListUnifiedIssues failed:", res.error);
+    console.log("issueListUnifiedIssues failed:", res.error);
   }
 }
 

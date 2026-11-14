@@ -33,6 +33,9 @@ export const AdsTargetType = {
   Browser: "BROWSER",
   OperatingSystem: "OPERATING_SYSTEM",
   DeviceCategory: "DEVICE_CATEGORY",
+  Exchange: "EXCHANGE",
+  Deal: "DEAL",
+  DealGroup: "DEAL_GROUP",
 } as const;
 /**
  * Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant)

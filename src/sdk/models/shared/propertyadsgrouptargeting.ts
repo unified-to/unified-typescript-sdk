@@ -74,6 +74,12 @@ import {
   PropertyAdsGroupTargetingPlacement$outboundSchema,
 } from "./propertyadsgrouptargetingplacement.js";
 import {
+  PropertyAdsGroupTargetingSupply,
+  PropertyAdsGroupTargetingSupply$inboundSchema,
+  PropertyAdsGroupTargetingSupply$Outbound,
+  PropertyAdsGroupTargetingSupply$outboundSchema,
+} from "./propertyadsgrouptargetingsupply.js";
+import {
   TargetRef,
   TargetRef$inboundSchema,
   TargetRef$Outbound,
@@ -108,6 +114,10 @@ export type PropertyAdsGroupTargeting = {
   optimization?: PropertyAdsGroupTargetingOptimization | undefined;
   placement?: PropertyAdsGroupTargetingPlacement | undefined;
   schedule?: Array<AdSchedule> | undefined;
+  /**
+   * Buy-side inventory: exchanges, deals, deal groups and seller authorization (DSPs)
+   */
+  supply?: PropertyAdsGroupTargetingSupply | undefined;
 };
 
 /** @internal */
@@ -128,6 +138,7 @@ export const PropertyAdsGroupTargeting$inboundSchema: z.ZodType<
   optimization: PropertyAdsGroupTargetingOptimization$inboundSchema.optional(),
   placement: PropertyAdsGroupTargetingPlacement$inboundSchema.optional(),
   schedule: z.array(AdSchedule$inboundSchema).optional(),
+  supply: PropertyAdsGroupTargetingSupply$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "brand_safety": "brandSafety",
@@ -147,6 +158,7 @@ export type PropertyAdsGroupTargeting$Outbound = {
   optimization?: PropertyAdsGroupTargetingOptimization$Outbound | undefined;
   placement?: PropertyAdsGroupTargetingPlacement$Outbound | undefined;
   schedule?: Array<AdSchedule$Outbound> | undefined;
+  supply?: PropertyAdsGroupTargetingSupply$Outbound | undefined;
 };
 
 /** @internal */
@@ -167,6 +179,7 @@ export const PropertyAdsGroupTargeting$outboundSchema: z.ZodType<
   optimization: PropertyAdsGroupTargetingOptimization$outboundSchema.optional(),
   placement: PropertyAdsGroupTargetingPlacement$outboundSchema.optional(),
   schedule: z.array(AdSchedule$outboundSchema).optional(),
+  supply: PropertyAdsGroupTargetingSupply$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     brandSafety: "brand_safety",

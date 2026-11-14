@@ -8,7 +8,7 @@ import { PatchUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/m
 let value: PatchUnifiedConnectionRequest = {
   connection: {
     categories: [
-      "signing",
+      "clubs",
     ],
     integrationType: "<value>",
     permissions: [],

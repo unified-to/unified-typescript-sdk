@@ -9,6 +9,10 @@ import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AdsConversionTracking,
+  AdsConversionTracking$inboundSchema,
+} from "./adsconversiontracking.js";
 import { AdsMetadata, AdsMetadata$inboundSchema } from "./adsmetadata.js";
 import { AdsPromoted, AdsPromoted$inboundSchema } from "./adspromoted.js";
 import { AdsSize, AdsSize$inboundSchema } from "./adssize.js";
@@ -241,6 +245,10 @@ export type PropertyAdsReportMetricsGroup = {
    */
   campaignId?: string | undefined;
   /**
+   * Conversion trackers counted for this group (DV360 Floodlight activities, Pinterest conversion tag)
+   */
+  conversionTracking?: Array<AdsConversionTracking> | undefined;
+  /**
    * How the line item is priced (Google Ad Manager costType)
    */
   costType?: PropertyAdsReportMetricsGroupCostType | undefined;
@@ -414,6 +422,7 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     .optional(),
   budget_unit: PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema.optional(),
   campaign_id: z.string().optional(),
+  conversion_tracking: z.array(AdsConversionTracking$inboundSchema).optional(),
   cost_type: PropertyAdsReportMetricsGroupCostType$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -464,6 +473,7 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
     "budget_period": "budgetPeriod",
     "budget_unit": "budgetUnit",
     "campaign_id": "campaignId",
+    "conversion_tracking": "conversionTracking",
     "cost_type": "costType",
     "created_at": "createdAt",
     "creative_ids": "creativeIds",

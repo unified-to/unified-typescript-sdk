@@ -5,6 +5,7 @@
 import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
 import { Accounting } from "./accounting.js";
+import { Action } from "./action.js";
 import { Activation } from "./activation.js";
 import { Activity } from "./activity.js";
 import { Ad } from "./ad.js";
@@ -22,6 +23,7 @@ import { Assessment } from "./assessment.js";
 import { Asset } from "./asset.js";
 import { Ats } from "./ats.js";
 import { Attendance } from "./attendance.js";
+import { Audit } from "./audit.js";
 import { Auth } from "./auth.js";
 import { Availability } from "./availability.js";
 import { Balancesheet } from "./balancesheet.js";
@@ -99,6 +101,7 @@ import { Hris } from "./hris.js";
 import { Immunization } from "./immunization.js";
 import { Insertionorder } from "./insertionorder.js";
 import { Insight } from "./insight.js";
+import { Inspection } from "./inspection.js";
 import { Instance } from "./instance.js";
 import { Instructor } from "./instructor.js";
 import { Integration } from "./integration.js";
@@ -163,6 +166,7 @@ import { Property } from "./property.js";
 import { Pullrequest } from "./pullrequest.js";
 import { Purchaseorder } from "./purchaseorder.js";
 import { Purchasereceipt } from "./purchasereceipt.js";
+import { Qms } from "./qms.js";
 import { Query } from "./query.js";
 import { Quote } from "./quote.js";
 import { Rate } from "./rate.js";
@@ -1148,6 +1152,31 @@ export class UnifiedTo extends ClientSDK {
     return (this._unittype ??= new Unittype(this._options));
   }
 
+  private _qms?: Qms;
+  get qms(): Qms {
+    return (this._qms ??= new Qms(this._options));
+  }
+
+  private _action?: Action;
+  get action(): Action {
+    return (this._action ??= new Action(this._options));
+  }
+
+  private _audit?: Audit;
+  get audit(): Audit {
+    return (this._audit ??= new Audit(this._options));
+  }
+
+  private _inspection?: Inspection;
+  get inspection(): Inspection {
+    return (this._inspection ??= new Inspection(this._options));
+  }
+
+  private _issue?: Issue;
+  get issue(): Issue {
+    return (this._issue ??= new Issue(this._options));
+  }
+
   private _repo?: Repo;
   get repo(): Repo {
     return (this._repo ??= new Repo(this._options));
@@ -1326,11 +1355,6 @@ export class UnifiedTo extends ClientSDK {
   private _saml?: Saml;
   get saml(): Saml {
     return (this._saml ??= new Saml(this._options));
-  }
-
-  private _issue?: Issue;
-  get issue(): Issue {
-    return (this._issue ??= new Issue(this._options));
   }
 
   private _notification?: Notification;

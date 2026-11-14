@@ -1,0 +1,19 @@
+# QmsInspectionStatus
+
+Normalized status of a quality record
+
+## Example Usage
+
+```typescript
+import { QmsInspectionStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: QmsInspectionStatus = "CLOSED";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
+```
+
+## Values
+
+```typescript
+"OPEN" | "IN_PROGRESS" | "IN_REVIEW" | "CLOSED" | "CANCELLED" | Unrecognized<string>
+```

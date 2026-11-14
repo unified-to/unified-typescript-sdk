@@ -106,6 +106,8 @@ import {
   ListInvoiceId$inboundSchema,
   ListIoId,
   ListIoId$inboundSchema,
+  ListIssueId,
+  ListIssueId$inboundSchema,
   ListItemId,
   ListItemId$inboundSchema,
   ListItemVariantId,
@@ -312,9 +314,14 @@ import {
   VirtualWebhookBankfeedaccountId$inboundSchema,
   VirtualWebhookBenefitId,
   VirtualWebhookBenefitId$inboundSchema,
-  VirtualWebhookBillId,
-  VirtualWebhookBillId$inboundSchema,
-} from "./virtualwebhookbillid.js";
+} from "./virtualwebhookbenefitid.js";
+
+export const VirtualWebhookBillId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookBillId = OpenEnum<typeof VirtualWebhookBillId>;
 
 export const VirtualWebhookBranchId = {
   SupportedRequired: "supported-required",
@@ -504,6 +511,13 @@ export const VirtualWebhookIoId = {
   NotSupported: "not-supported",
 } as const;
 export type VirtualWebhookIoId = OpenEnum<typeof VirtualWebhookIoId>;
+
+export const VirtualWebhookIssueId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookIssueId = OpenEnum<typeof VirtualWebhookIssueId>;
 
 export const VirtualWebhookItemId = {
   SupportedRequired: "supported-required",
@@ -892,6 +906,7 @@ export type IntegrationSupport = {
   listInterviewId?: ListInterviewId | undefined;
   listInvoiceId?: ListInvoiceId | undefined;
   listIoId?: ListIoId | undefined;
+  listIssueId?: ListIssueId | undefined;
   listItemId?: ListItemId | undefined;
   listItemVariantId?: ListItemVariantId | undefined;
   listJobId?: ListJobId | undefined;
@@ -1028,6 +1043,7 @@ export type IntegrationSupport = {
   virtualWebhookGuestId?: VirtualWebhookGuestId | undefined;
   virtualWebhookInvoiceId?: VirtualWebhookInvoiceId | undefined;
   virtualWebhookIoId?: VirtualWebhookIoId | undefined;
+  virtualWebhookIssueId?: VirtualWebhookIssueId | undefined;
   virtualWebhookItemId?: VirtualWebhookItemId | undefined;
   virtualWebhookItemVariantId?: VirtualWebhookItemVariantId | undefined;
   virtualWebhookJobId?: VirtualWebhookJobId | undefined;
@@ -1075,6 +1091,13 @@ export type IntegrationSupport = {
   virtualWebhookVisitorId?: VirtualWebhookVisitorId | undefined;
   webhookEvents?: PropertyIntegrationSupportWebhookEvents | undefined;
 };
+
+/** @internal */
+export const VirtualWebhookBillId$inboundSchema: z.ZodType<
+  VirtualWebhookBillId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookBillId);
 
 /** @internal */
 export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
@@ -1250,6 +1273,13 @@ export const VirtualWebhookIoId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookIoId);
+
+/** @internal */
+export const VirtualWebhookIssueId$inboundSchema: z.ZodType<
+  VirtualWebhookIssueId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookIssueId);
 
 /** @internal */
 export const VirtualWebhookItemId$inboundSchema: z.ZodType<
@@ -1619,6 +1649,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_interview_id: ListInterviewId$inboundSchema.optional(),
   list_invoice_id: ListInvoiceId$inboundSchema.optional(),
   list_io_id: ListIoId$inboundSchema.optional(),
+  list_issue_id: ListIssueId$inboundSchema.optional(),
   list_item_id: ListItemId$inboundSchema.optional(),
   list_item_variant_id: ListItemVariantId$inboundSchema.optional(),
   list_job_id: ListJobId$inboundSchema.optional(),
@@ -1763,6 +1794,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_guest_id: VirtualWebhookGuestId$inboundSchema.optional(),
   virtual_webhook_invoice_id: VirtualWebhookInvoiceId$inboundSchema.optional(),
   virtual_webhook_io_id: VirtualWebhookIoId$inboundSchema.optional(),
+  virtual_webhook_issue_id: VirtualWebhookIssueId$inboundSchema.optional(),
   virtual_webhook_item_id: VirtualWebhookItemId$inboundSchema.optional(),
   virtual_webhook_item_variant_id: VirtualWebhookItemVariantId$inboundSchema
     .optional(),
@@ -1871,6 +1903,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_interview_id": "listInterviewId",
     "list_invoice_id": "listInvoiceId",
     "list_io_id": "listIoId",
+    "list_issue_id": "listIssueId",
     "list_item_id": "listItemId",
     "list_item_variant_id": "listItemVariantId",
     "list_job_id": "listJobId",
@@ -2003,6 +2036,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_guest_id": "virtualWebhookGuestId",
     "virtual_webhook_invoice_id": "virtualWebhookInvoiceId",
     "virtual_webhook_io_id": "virtualWebhookIoId",
+    "virtual_webhook_issue_id": "virtualWebhookIssueId",
     "virtual_webhook_item_id": "virtualWebhookItemId",
     "virtual_webhook_item_variant_id": "virtualWebhookItemVariantId",
     "virtual_webhook_job_id": "virtualWebhookJobId",

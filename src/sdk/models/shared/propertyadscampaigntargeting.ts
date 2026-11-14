@@ -74,6 +74,12 @@ import {
   PropertyAdsCampaignTargetingPlacement$outboundSchema,
 } from "./propertyadscampaigntargetingplacement.js";
 import {
+  PropertyAdsCampaignTargetingSupply,
+  PropertyAdsCampaignTargetingSupply$inboundSchema,
+  PropertyAdsCampaignTargetingSupply$Outbound,
+  PropertyAdsCampaignTargetingSupply$outboundSchema,
+} from "./propertyadscampaigntargetingsupply.js";
+import {
   TargetRef,
   TargetRef$inboundSchema,
   TargetRef$Outbound,
@@ -108,6 +114,10 @@ export type PropertyAdsCampaignTargeting = {
   optimization?: PropertyAdsCampaignTargetingOptimization | undefined;
   placement?: PropertyAdsCampaignTargetingPlacement | undefined;
   schedule?: Array<AdSchedule> | undefined;
+  /**
+   * Buy-side inventory: exchanges, deals, deal groups and seller authorization (DSPs)
+   */
+  supply?: PropertyAdsCampaignTargetingSupply | undefined;
 };
 
 /** @internal */
@@ -130,6 +140,7 @@ export const PropertyAdsCampaignTargeting$inboundSchema: z.ZodType<
     .optional(),
   placement: PropertyAdsCampaignTargetingPlacement$inboundSchema.optional(),
   schedule: z.array(AdSchedule$inboundSchema).optional(),
+  supply: PropertyAdsCampaignTargetingSupply$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "brand_safety": "brandSafety",
@@ -149,6 +160,7 @@ export type PropertyAdsCampaignTargeting$Outbound = {
   optimization?: PropertyAdsCampaignTargetingOptimization$Outbound | undefined;
   placement?: PropertyAdsCampaignTargetingPlacement$Outbound | undefined;
   schedule?: Array<AdSchedule$Outbound> | undefined;
+  supply?: PropertyAdsCampaignTargetingSupply$Outbound | undefined;
 };
 
 /** @internal */
@@ -172,6 +184,7 @@ export const PropertyAdsCampaignTargeting$outboundSchema: z.ZodType<
     .optional(),
   placement: PropertyAdsCampaignTargetingPlacement$outboundSchema.optional(),
   schedule: z.array(AdSchedule$outboundSchema).optional(),
+  supply: PropertyAdsCampaignTargetingSupply$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     brandSafety: "brand_safety",

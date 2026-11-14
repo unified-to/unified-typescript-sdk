@@ -1,0 +1,20 @@
+# PropertyAdsGroupTargetingSupply
+
+Buy-side inventory: exchanges, deals, deal groups and seller authorization (DSPs)
+
+## Example Usage
+
+```typescript
+import { PropertyAdsGroupTargetingSupply } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyAdsGroupTargetingSupply = {};
+```
+
+## Fields
+
+| Field                                                                                                                                               | Type                                                                                                                                                | Required                                                                                                                                            | Description                                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `authorizedSellerStatus`                                                                                                                            | [shared.PropertyAdsGroupTargetingSupplyAuthorizedSellerStatus](../../../sdk/models/shared/propertyadsgrouptargetingsupplyauthorizedsellerstatus.md) | :heavy_minus_sign:                                                                                                                                  | ads.txt seller authorization to buy from                                                                                                            |
+| `dealGroups`                                                                                                                                        | [shared.TargetRef](../../../sdk/models/shared/targetref.md)[]                                                                                       | :heavy_minus_sign:                                                                                                                                  | Groups of deals (ads_target type DEAL_GROUP)                                                                                                        |
+| `deals`                                                                                                                                             | [shared.TargetRef](../../../sdk/models/shared/targetref.md)[]                                                                                       | :heavy_minus_sign:                                                                                                                                  | Deals / inventory packages (ads_target type DEAL)                                                                                                   |
+| `exchanges`                                                                                                                                         | [shared.TargetRef](../../../sdk/models/shared/targetref.md)[]                                                                                       | :heavy_minus_sign:                                                                                                                                  | Public exchanges to buy on (ads_target type EXCHANGE)                                                                                               |

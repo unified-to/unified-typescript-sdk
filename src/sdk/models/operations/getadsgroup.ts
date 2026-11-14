@@ -45,6 +45,7 @@ export const GetAdsGroupQueryParamFields = {
   CostType: "cost_type",
   DeliveryGoal: "delivery_goal",
   CreativeSizes: "creative_sizes",
+  ConversionTracking: "conversion_tracking",
 } as const;
 export type GetAdsGroupQueryParamFields = ClosedEnum<
   typeof GetAdsGroupQueryParamFields

@@ -48,6 +48,10 @@ import {
   PropertyAdsReportMetricsCampaignTargetingPlacement,
   PropertyAdsReportMetricsCampaignTargetingPlacement$inboundSchema,
 } from "./propertyadsreportmetricscampaigntargetingplacement.js";
+import {
+  PropertyAdsReportMetricsCampaignTargetingSupply,
+  PropertyAdsReportMetricsCampaignTargetingSupply$inboundSchema,
+} from "./propertyadsreportmetricscampaigntargetingsupply.js";
 import { TargetRef, TargetRef$inboundSchema } from "./targetref.js";
 
 export type PropertyAdsReportMetricsCampaignTargeting = {
@@ -84,6 +88,10 @@ export type PropertyAdsReportMetricsCampaignTargeting = {
     | undefined;
   placement?: PropertyAdsReportMetricsCampaignTargetingPlacement | undefined;
   schedule?: Array<AdSchedule> | undefined;
+  /**
+   * Buy-side inventory: exchanges, deals, deal groups and seller authorization (DSPs)
+   */
+  supply?: PropertyAdsReportMetricsCampaignTargetingSupply | undefined;
 };
 
 /** @internal */
@@ -116,6 +124,8 @@ export const PropertyAdsReportMetricsCampaignTargeting$inboundSchema: z.ZodType<
   placement: PropertyAdsReportMetricsCampaignTargetingPlacement$inboundSchema
     .optional(),
   schedule: z.array(AdSchedule$inboundSchema).optional(),
+  supply: PropertyAdsReportMetricsCampaignTargetingSupply$inboundSchema
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     "brand_safety": "brandSafety",
