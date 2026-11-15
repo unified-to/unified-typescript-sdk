@@ -29,15 +29,15 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.call.createUcCall({
     ucCall: {
-      answerAt: new Date("2025-05-27T17:14:15.690Z"),
+      answerAt: new Date("2025-05-27T17:37:09.452Z"),
       contacts: [],
-      conversationIdentifier: "9cd6893e-1a7b-4b7a-8fd1-56cfd644c404",
+      conversationIdentifier: "4939934c-3c22-43a9-9a25-fe41305ff658",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-06T14:49:10.131Z"),
-      id: "9cd6893e-1a7b-4b7a-8fd1-56cfd644c404",
+      endAt: new Date("2024-06-06T15:01:26.983Z"),
+      id: "4939934c-3c22-43a9-9a25-fe41305ff658",
       isPrivate: false,
       metadata: [
         {
@@ -45,20 +45,20 @@ async function run() {
 
           },
           format: "PRICE",
-          id: "418fdaac-fc5c-4067-b70a-cb7a584b6c05",
+          id: "602972af-7c46-4dba-9d9f-3b256066b971",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-21T21:16:00.169Z"),
+      startAt: new Date("2023-12-21T21:23:16.177Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-05T06:40:14.288Z"),
+      updatedAt: new Date("2023-08-05T06:43:21.688Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -89,15 +89,15 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await ucCreateUcCall(unifiedTo, {
     ucCall: {
-      answerAt: new Date("2025-05-27T17:14:15.690Z"),
+      answerAt: new Date("2025-05-27T17:37:09.452Z"),
       contacts: [],
-      conversationIdentifier: "9cd6893e-1a7b-4b7a-8fd1-56cfd644c404",
+      conversationIdentifier: "4939934c-3c22-43a9-9a25-fe41305ff658",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-06T14:49:10.131Z"),
-      id: "9cd6893e-1a7b-4b7a-8fd1-56cfd644c404",
+      endAt: new Date("2024-06-06T15:01:26.983Z"),
+      id: "4939934c-3c22-43a9-9a25-fe41305ff658",
       isPrivate: false,
       metadata: [
         {
@@ -105,20 +105,20 @@ async function run() {
   
           },
           format: "PRICE",
-          id: "418fdaac-fc5c-4067-b70a-cb7a584b6c05",
+          id: "602972af-7c46-4dba-9d9f-3b256066b971",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-21T21:16:00.169Z"),
+      startAt: new Date("2023-12-21T21:23:16.177Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-05T06:40:14.288Z"),
+      updatedAt: new Date("2023-08-05T06:43:21.688Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -328,15 +328,15 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.call.patchUcCall({
     ucCall: {
-      answerAt: new Date("2025-05-27T17:14:15.716Z"),
+      answerAt: new Date("2025-05-27T17:37:09.476Z"),
       contacts: [],
-      conversationIdentifier: "e4405e14-daa3-4db5-9a93-d1d7b85d7c44",
+      conversationIdentifier: "685fda4d-a653-4e28-b527-e9deeeebe20a",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-06T14:49:10.145Z"),
-      id: "e4405e14-daa3-4db5-9a93-d1d7b85d7c44",
+      endAt: new Date("2024-06-06T15:01:26.996Z"),
+      id: "685fda4d-a653-4e28-b527-e9deeeebe20a",
       isPrivate: false,
       metadata: [
         {
@@ -344,20 +344,20 @@ async function run() {
 
           },
           format: "PRICE",
-          id: "b0da6b96-2d48-4600-b81c-7b67169429ca",
+          id: "141d4527-dbff-4528-a105-209e43681792",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-21T21:16:00.177Z"),
+      startAt: new Date("2023-12-21T21:23:16.185Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-05T06:40:14.291Z"),
+      updatedAt: new Date("2023-08-05T06:43:21.691Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -389,15 +389,15 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await ucPatchUcCall(unifiedTo, {
     ucCall: {
-      answerAt: new Date("2025-05-27T17:14:15.716Z"),
+      answerAt: new Date("2025-05-27T17:37:09.476Z"),
       contacts: [],
-      conversationIdentifier: "e4405e14-daa3-4db5-9a93-d1d7b85d7c44",
+      conversationIdentifier: "685fda4d-a653-4e28-b527-e9deeeebe20a",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-06T14:49:10.145Z"),
-      id: "e4405e14-daa3-4db5-9a93-d1d7b85d7c44",
+      endAt: new Date("2024-06-06T15:01:26.996Z"),
+      id: "685fda4d-a653-4e28-b527-e9deeeebe20a",
       isPrivate: false,
       metadata: [
         {
@@ -405,20 +405,20 @@ async function run() {
   
           },
           format: "PRICE",
-          id: "b0da6b96-2d48-4600-b81c-7b67169429ca",
+          id: "141d4527-dbff-4528-a105-209e43681792",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-21T21:16:00.177Z"),
+      startAt: new Date("2023-12-21T21:23:16.185Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-05T06:40:14.291Z"),
+      updatedAt: new Date("2023-08-05T06:43:21.691Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -473,15 +473,15 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.call.updateUcCall({
     ucCall: {
-      answerAt: new Date("2025-05-27T17:14:15.716Z"),
+      answerAt: new Date("2025-05-27T17:37:09.476Z"),
       contacts: [],
-      conversationIdentifier: "e4405e14-daa3-4db5-9a93-d1d7b85d7c44",
+      conversationIdentifier: "685fda4d-a653-4e28-b527-e9deeeebe20a",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-06T14:49:10.145Z"),
-      id: "e4405e14-daa3-4db5-9a93-d1d7b85d7c44",
+      endAt: new Date("2024-06-06T15:01:26.996Z"),
+      id: "685fda4d-a653-4e28-b527-e9deeeebe20a",
       isPrivate: false,
       metadata: [
         {
@@ -489,20 +489,20 @@ async function run() {
 
           },
           format: "PRICE",
-          id: "b0da6b96-2d48-4600-b81c-7b67169429ca",
+          id: "141d4527-dbff-4528-a105-209e43681792",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-21T21:16:00.177Z"),
+      startAt: new Date("2023-12-21T21:23:16.185Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-05T06:40:14.291Z"),
+      updatedAt: new Date("2023-08-05T06:43:21.691Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",
@@ -534,15 +534,15 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await ucUpdateUcCall(unifiedTo, {
     ucCall: {
-      answerAt: new Date("2025-05-27T17:14:15.716Z"),
+      answerAt: new Date("2025-05-27T17:37:09.476Z"),
       contacts: [],
-      conversationIdentifier: "e4405e14-daa3-4db5-9a93-d1d7b85d7c44",
+      conversationIdentifier: "685fda4d-a653-4e28-b527-e9deeeebe20a",
       costAmount: 1.564,
       createdAt: new Date("2023-04-22T19:05:34.882Z"),
       currency: "USD",
       durationSeconds: 2556,
-      endAt: new Date("2024-06-06T14:49:10.145Z"),
-      id: "e4405e14-daa3-4db5-9a93-d1d7b85d7c44",
+      endAt: new Date("2024-06-06T15:01:26.996Z"),
+      id: "685fda4d-a653-4e28-b527-e9deeeebe20a",
       isPrivate: false,
       metadata: [
         {
@@ -550,20 +550,20 @@ async function run() {
   
           },
           format: "PRICE",
-          id: "b0da6b96-2d48-4600-b81c-7b67169429ca",
+          id: "141d4527-dbff-4528-a105-209e43681792",
           namespace: "custom",
           slug: "custom_field",
           value: "tui",
         },
       ],
-      startAt: new Date("2023-12-21T21:16:00.177Z"),
+      startAt: new Date("2023-12-21T21:23:16.185Z"),
       status: "IN_PROGRESS",
       telephone: {
         telephone: "(493) 534-0768",
         type: "MOBILE",
       },
       type: "INBOUND",
-      updatedAt: new Date("2023-08-05T06:40:14.291Z"),
+      updatedAt: new Date("2023-08-05T06:43:21.691Z"),
       userPhone: "819-894-3317 x163",
     },
     connectionId: "<id>",

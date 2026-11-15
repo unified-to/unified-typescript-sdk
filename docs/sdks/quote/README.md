@@ -117,7 +117,7 @@ async function run() {
       depositAmount: 594.54,
       endAt: new Date("2026-11-28"),
       guests: 2,
-      id: "dc901149-bdd3-45af-8c0e-9caef990375c",
+      id: "fcfa106c-e755-48db-9b62-140a83aacd95",
       lineItems: [
         {
           amount: 1665,
@@ -177,7 +177,7 @@ async function run() {
       depositAmount: 594.54,
       endAt: new Date("2026-11-28"),
       guests: 2,
-      id: "dc901149-bdd3-45af-8c0e-9caef990375c",
+      id: "fcfa106c-e755-48db-9b62-140a83aacd95",
       lineItems: [
         {
           amount: 1665,
