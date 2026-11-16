@@ -42,6 +42,7 @@
 * [patchComputeInstance](#patchcomputeinstance) - Update an instance
 * [patchComputeKey](#patchcomputekey) - Update a key
 * [patchComputeService](#patchcomputeservice) - Update a service
+* [patchComputeSnapshot](#patchcomputesnapshot) - Update a snapshot
 * [patchComputeTemplate](#patchcomputetemplate) - Update a template
 * [patchComputeVolume](#patchcomputevolume) - Update a volume
 * [removeComputeDeployment](#removecomputedeployment) - Remove a deployment
@@ -59,6 +60,7 @@
 * [updateComputeInstance](#updatecomputeinstance) - Update an instance
 * [updateComputeKey](#updatecomputekey) - Update a key
 * [updateComputeService](#updatecomputeservice) - Update a service
+* [updateComputeSnapshot](#updatecomputesnapshot) - Update a snapshot
 * [updateComputeTemplate](#updatecomputetemplate) - Update a template
 * [updateComputeVolume](#updatecomputevolume) - Update a volume
 
@@ -86,13 +88,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-09-16T07:32:50.904Z"),
-      id: "749d3d71-cdb9-475f-9850-7aa78f1adaeb",
+      finishedAt: new Date("2025-09-17T19:51:25.755Z"),
+      id: "7346cc28-8e27-49ef-af6a-b4ea86706588",
       metadata: [],
-      startedAt: new Date("2025-04-25T21:05:54.196Z"),
+      startedAt: new Date("2025-04-27T05:03:27.616Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-03-21T04:24:11.640Z"),
+      updatedAt: new Date("2026-03-22T22:21:01.167Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -128,13 +130,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-09-16T07:32:50.904Z"),
-      id: "749d3d71-cdb9-475f-9850-7aa78f1adaeb",
+      finishedAt: new Date("2025-09-17T19:51:25.755Z"),
+      id: "7346cc28-8e27-49ef-af6a-b4ea86706588",
       metadata: [],
-      startedAt: new Date("2025-04-25T21:05:54.196Z"),
+      startedAt: new Date("2025-04-27T05:03:27.616Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-03-21T04:24:11.640Z"),
+      updatedAt: new Date("2026-03-22T22:21:01.167Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -189,12 +191,12 @@ async function run() {
   const result = await unifiedTo.compute.createComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "047c64b2-a9f8-43d4-86fa-82bd04fad234",
+      id: "4174a159-241c-4a6c-8553-8232dfb8feb1",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-17T07:26:51.071Z"),
+      updatedAt: new Date("2023-11-18T11:31:39.979Z"),
     },
     connectionId: "<id>",
   });
@@ -225,12 +227,12 @@ async function run() {
   const res = await computeCreateComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "047c64b2-a9f8-43d4-86fa-82bd04fad234",
+      id: "4174a159-241c-4a6c-8553-8232dfb8feb1",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-17T07:26:51.071Z"),
+      updatedAt: new Date("2023-11-18T11:31:39.979Z"),
     },
     connectionId: "<id>",
   });
@@ -287,11 +289,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "4b4c4a27-84d9-4ea2-acf7-a7596d80e833",
+      id: "eade7a48-150d-412d-bb77-04f429a19401",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-21T12:54:10.311Z"),
+      updatedAt: new Date("2025-07-23T01:43:58.918Z"),
     },
     connectionId: "<id>",
   });
@@ -325,11 +327,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "4b4c4a27-84d9-4ea2-acf7-a7596d80e833",
+      id: "eade7a48-150d-412d-bb77-04f429a19401",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-21T12:54:10.311Z"),
+      updatedAt: new Date("2025-07-23T01:43:58.918Z"),
     },
     connectionId: "<id>",
   });
@@ -400,7 +402,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "6b32065c-90a9-46be-ad7e-cd9c1aeece04",
+      id: "d20d10ae-ccb7-4524-b43b-3a0ca20025c6",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -415,11 +417,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-04-07T13:26:37.742Z"),
+      startedAt: new Date("2025-04-08T19:23:48.203Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-07-02T03:48:55.596Z"),
+      updatedAt: new Date("2025-07-03T12:34:36.163Z"),
     },
     connectionId: "<id>",
   });
@@ -467,7 +469,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "6b32065c-90a9-46be-ad7e-cd9c1aeece04",
+      id: "d20d10ae-ccb7-4524-b43b-3a0ca20025c6",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -482,11 +484,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-04-07T13:26:37.742Z"),
+      startedAt: new Date("2025-04-08T19:23:48.203Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-07-02T03:48:55.596Z"),
+      updatedAt: new Date("2025-07-03T12:34:36.163Z"),
     },
     connectionId: "<id>",
   });
@@ -540,11 +542,11 @@ async function run() {
   const result = await unifiedTo.compute.createComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "b87c2b09-cac0-4930-9b76-258e436f351a",
+      id: "cd28dd29-5e86-49c0-995f-90515b6aa1bc",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-15T12:54:08.395Z"),
+      updatedAt: new Date("2024-10-16T06:29:12.281Z"),
     },
     connectionId: "<id>",
   });
@@ -575,11 +577,11 @@ async function run() {
   const res = await computeCreateComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "b87c2b09-cac0-4930-9b76-258e436f351a",
+      id: "cd28dd29-5e86-49c0-995f-90515b6aa1bc",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-15T12:54:08.395Z"),
+      updatedAt: new Date("2024-10-16T06:29:12.281Z"),
     },
     connectionId: "<id>",
   });
@@ -635,7 +637,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "e58b0ea6-a3d4-4e2f-a35e-862e60f99668",
+      id: "0e6306dd-309d-464f-8775-26ad583302c2",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -646,7 +648,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-16T11:46:32.539Z"),
+      updatedAt: new Date("2025-04-17T12:00:28.682Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -680,7 +682,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "e58b0ea6-a3d4-4e2f-a35e-862e60f99668",
+      id: "0e6306dd-309d-464f-8775-26ad583302c2",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -691,7 +693,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-16T11:46:32.539Z"),
+      updatedAt: new Date("2025-04-17T12:00:28.682Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -746,13 +748,13 @@ async function run() {
   const result = await unifiedTo.compute.createComputeSnapshot({
     computeSnapshot: {
       createdAt: new Date("2021-09-24T14:40:06.110Z"),
-      id: "0d7d1154-cc8e-45a9-b316-746ce1cc1251",
+      id: "54f1bc94-1d68-4013-9074-6348421b9ceb",
       metadata: [],
       name: "snap-alius",
       sizeMb: 169984,
       status: "DELETING",
       type: "DISK",
-      updatedAt: new Date("2026-04-21T04:44:07.989Z"),
+      updatedAt: new Date("2026-04-23T00:28:38.237Z"),
     },
     connectionId: "<id>",
   });
@@ -783,13 +785,13 @@ async function run() {
   const res = await computeCreateComputeSnapshot(unifiedTo, {
     computeSnapshot: {
       createdAt: new Date("2021-09-24T14:40:06.110Z"),
-      id: "0d7d1154-cc8e-45a9-b316-746ce1cc1251",
+      id: "54f1bc94-1d68-4013-9074-6348421b9ceb",
       metadata: [],
       name: "snap-alius",
       sizeMb: 169984,
       status: "DELETING",
       type: "DISK",
-      updatedAt: new Date("2026-04-21T04:44:07.989Z"),
+      updatedAt: new Date("2026-04-23T00:28:38.237Z"),
     },
     connectionId: "<id>",
   });
@@ -848,10 +850,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "2b4c3aca-d489-4f0a-b134-fc1a2bebaf42",
+      id: "030863a9-a81b-425f-9af3-f0052ddfdb7a",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-13T00:16:21.552Z"),
+      lastUsedAt: new Date("2026-04-14T17:39:39.725Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -859,7 +861,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-25T16:38:37.273Z"),
+      updatedAt: new Date("2025-02-26T19:09:44.640Z"),
     },
     connectionId: "<id>",
   });
@@ -895,10 +897,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "2b4c3aca-d489-4f0a-b134-fc1a2bebaf42",
+      id: "030863a9-a81b-425f-9af3-f0052ddfdb7a",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-13T00:16:21.552Z"),
+      lastUsedAt: new Date("2026-04-14T17:39:39.725Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -906,7 +908,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-25T16:38:37.273Z"),
+      updatedAt: new Date("2025-02-26T19:09:44.640Z"),
     },
     connectionId: "<id>",
   });
@@ -960,14 +962,14 @@ async function run() {
   const result = await unifiedTo.compute.createComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "324abe6d-ae51-4ac8-a6fe-a0945ae168fd",
+      id: "3f051417-ccfa-432f-b7b4-1c70263ed8d0",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-17T10:31:18.708Z"),
+      updatedAt: new Date("2024-02-18T01:58:37.872Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -999,14 +1001,14 @@ async function run() {
   const res = await computeCreateComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "324abe6d-ae51-4ac8-a6fe-a0945ae168fd",
+      id: "3f051417-ccfa-432f-b7b4-1c70263ed8d0",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-17T10:31:18.708Z"),
+      updatedAt: new Date("2024-02-18T01:58:37.872Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -2858,13 +2860,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-09-16T07:32:50.919Z"),
-      id: "e1981e01-8f2a-443c-abfb-5789b86a93fc",
+      finishedAt: new Date("2025-09-17T19:51:25.762Z"),
+      id: "fbfa5494-9f6e-45cf-9e5c-d667d45615a6",
       metadata: [],
-      startedAt: new Date("2025-04-25T21:05:54.209Z"),
+      startedAt: new Date("2025-04-27T05:03:27.622Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-03-21T04:24:11.658Z"),
+      updatedAt: new Date("2026-03-22T22:21:01.175Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -2901,13 +2903,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-09-16T07:32:50.919Z"),
-      id: "e1981e01-8f2a-443c-abfb-5789b86a93fc",
+      finishedAt: new Date("2025-09-17T19:51:25.762Z"),
+      id: "fbfa5494-9f6e-45cf-9e5c-d667d45615a6",
       metadata: [],
-      startedAt: new Date("2025-04-25T21:05:54.209Z"),
+      startedAt: new Date("2025-04-27T05:03:27.622Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-03-21T04:24:11.658Z"),
+      updatedAt: new Date("2026-03-22T22:21:01.175Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -2963,12 +2965,12 @@ async function run() {
   const result = await unifiedTo.compute.patchComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "d47e3b3c-395e-44bf-b67e-78a4ff98c7fb",
+      id: "af71ef15-f01f-4385-ad5b-6d2a9ccccba0",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-17T07:26:51.077Z"),
+      updatedAt: new Date("2023-11-18T11:31:39.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3000,12 +3002,12 @@ async function run() {
   const res = await computePatchComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "d47e3b3c-395e-44bf-b67e-78a4ff98c7fb",
+      id: "af71ef15-f01f-4385-ad5b-6d2a9ccccba0",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-17T07:26:51.077Z"),
+      updatedAt: new Date("2023-11-18T11:31:39.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3063,11 +3065,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "39094714-652b-497c-a22e-6fb405c66c76",
+      id: "f3e9ac0e-8969-48d6-ba3a-01ecb0e80726",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-21T12:54:10.320Z"),
+      updatedAt: new Date("2025-07-23T01:43:58.923Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3102,11 +3104,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "39094714-652b-497c-a22e-6fb405c66c76",
+      id: "f3e9ac0e-8969-48d6-ba3a-01ecb0e80726",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-21T12:54:10.320Z"),
+      updatedAt: new Date("2025-07-23T01:43:58.923Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3178,7 +3180,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "a725e7ac-cc90-4cdd-ba4b-f0a6ce9877f5",
+      id: "5dea0983-bcfb-4312-bf90-aee5bd7065df",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -3193,11 +3195,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-04-07T13:26:37.764Z"),
+      startedAt: new Date("2025-04-08T19:23:48.215Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-07-02T03:48:55.620Z"),
+      updatedAt: new Date("2025-07-03T12:34:36.177Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3246,7 +3248,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "a725e7ac-cc90-4cdd-ba4b-f0a6ce9877f5",
+      id: "5dea0983-bcfb-4312-bf90-aee5bd7065df",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -3261,11 +3263,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-04-07T13:26:37.764Z"),
+      startedAt: new Date("2025-04-08T19:23:48.215Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-07-02T03:48:55.620Z"),
+      updatedAt: new Date("2025-07-03T12:34:36.177Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3320,11 +3322,11 @@ async function run() {
   const result = await unifiedTo.compute.patchComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "2697426c-7ac2-45d8-8dfe-d235f5687ad3",
+      id: "54ba2391-3f5f-443f-8546-3263430b7232",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-15T12:54:08.400Z"),
+      updatedAt: new Date("2024-10-16T06:29:12.284Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3356,11 +3358,11 @@ async function run() {
   const res = await computePatchComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "2697426c-7ac2-45d8-8dfe-d235f5687ad3",
+      id: "54ba2391-3f5f-443f-8546-3263430b7232",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-15T12:54:08.400Z"),
+      updatedAt: new Date("2024-10-16T06:29:12.284Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3417,7 +3419,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "a276022a-6575-49ce-bf0e-81cf1390a55b",
+      id: "1707048e-b4d1-44d3-aa61-88efb6c5368f",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -3428,7 +3430,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-16T11:46:32.548Z"),
+      updatedAt: new Date("2025-04-17T12:00:28.687Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -3463,7 +3465,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "a276022a-6575-49ce-bf0e-81cf1390a55b",
+      id: "1707048e-b4d1-44d3-aa61-88efb6c5368f",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -3474,7 +3476,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-16T11:46:32.548Z"),
+      updatedAt: new Date("2025-04-17T12:00:28.687Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -3510,6 +3512,105 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchComputeSnapshot
+
+Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchComputeSnapshot" method="patch" path="/compute/{connection_id}/snapshot/{id}" example="compute_snapshot" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.compute.patchComputeSnapshot({
+    computeSnapshot: {
+      createdAt: new Date("2021-09-24T14:40:06.110Z"),
+      id: "8236394c-c3a7-4792-b0c9-b1348c8b6510",
+      metadata: [],
+      name: "snap-alius",
+      sizeMb: 169984,
+      status: "DELETING",
+      type: "DISK",
+      updatedAt: new Date("2026-04-23T00:28:38.244Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { computePatchComputeSnapshot } from "@unified-api/typescript-sdk/funcs/computePatchComputeSnapshot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await computePatchComputeSnapshot(unifiedTo, {
+    computeSnapshot: {
+      createdAt: new Date("2021-09-24T14:40:06.110Z"),
+      id: "8236394c-c3a7-4792-b0c9-b1348c8b6510",
+      metadata: [],
+      name: "snap-alius",
+      sizeMb: 169984,
+      status: "DELETING",
+      type: "DISK",
+      updatedAt: new Date("2026-04-23T00:28:38.244Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("computePatchComputeSnapshot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchComputeSnapshotRequest](../../sdk/models/operations/patchcomputesnapshotrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.ComputeSnapshot](../../sdk/models/shared/computesnapshot.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchComputeTemplate
 
 Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
@@ -3535,10 +3636,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "0dfad193-7e7b-4b76-ba8d-b4b90370e5c3",
+      id: "88739a73-80b0-4825-b23b-6cc3b8f4fae6",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-13T00:16:21.571Z"),
+      lastUsedAt: new Date("2026-04-14T17:39:39.735Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -3546,7 +3647,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-25T16:38:37.285Z"),
+      updatedAt: new Date("2025-02-26T19:09:44.646Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3583,10 +3684,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "0dfad193-7e7b-4b76-ba8d-b4b90370e5c3",
+      id: "88739a73-80b0-4825-b23b-6cc3b8f4fae6",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-13T00:16:21.571Z"),
+      lastUsedAt: new Date("2026-04-14T17:39:39.735Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -3594,7 +3695,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-25T16:38:37.285Z"),
+      updatedAt: new Date("2025-02-26T19:09:44.646Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3649,14 +3750,14 @@ async function run() {
   const result = await unifiedTo.compute.patchComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "dcbaa3ab-d415-4e9e-9dca-d9b8e4206532",
+      id: "8b65db47-cf48-41d7-8903-4515de6f5818",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-17T10:31:18.712Z"),
+      updatedAt: new Date("2024-02-18T01:58:37.876Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -3689,14 +3790,14 @@ async function run() {
   const res = await computePatchComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "dcbaa3ab-d415-4e9e-9dca-d9b8e4206532",
+      id: "8b65db47-cf48-41d7-8903-4515de6f5818",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-17T10:31:18.712Z"),
+      updatedAt: new Date("2024-02-18T01:58:37.876Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -4467,13 +4568,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-09-16T07:32:50.919Z"),
-      id: "e1981e01-8f2a-443c-abfb-5789b86a93fc",
+      finishedAt: new Date("2025-09-17T19:51:25.762Z"),
+      id: "fbfa5494-9f6e-45cf-9e5c-d667d45615a6",
       metadata: [],
-      startedAt: new Date("2025-04-25T21:05:54.209Z"),
+      startedAt: new Date("2025-04-27T05:03:27.622Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-03-21T04:24:11.658Z"),
+      updatedAt: new Date("2026-03-22T22:21:01.175Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -4510,13 +4611,13 @@ async function run() {
       commitMessage: "copy primary pixel",
       createdAt: new Date("2022-06-07T03:52:04.613Z"),
       environment: "PREVIEW",
-      finishedAt: new Date("2025-09-16T07:32:50.919Z"),
-      id: "e1981e01-8f2a-443c-abfb-5789b86a93fc",
+      finishedAt: new Date("2025-09-17T19:51:25.762Z"),
+      id: "fbfa5494-9f6e-45cf-9e5c-d667d45615a6",
       metadata: [],
-      startedAt: new Date("2025-04-25T21:05:54.209Z"),
+      startedAt: new Date("2025-04-27T05:03:27.622Z"),
       status: "LIVE",
       trigger: "API",
-      updatedAt: new Date("2026-03-21T04:24:11.658Z"),
+      updatedAt: new Date("2026-03-22T22:21:01.175Z"),
       url: "https://comfortable-petal.name",
     },
     connectionId: "<id>",
@@ -4572,12 +4673,12 @@ async function run() {
   const result = await unifiedTo.compute.updateComputeDomain({
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "d47e3b3c-395e-44bf-b67e-78a4ff98c7fb",
+      id: "af71ef15-f01f-4385-ad5b-6d2a9ccccba0",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-17T07:26:51.077Z"),
+      updatedAt: new Date("2023-11-18T11:31:39.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4609,12 +4710,12 @@ async function run() {
   const res = await computeUpdateComputeDomain(unifiedTo, {
     computeDomain: {
       createdAt: new Date("2019-11-22T16:38:26.009Z"),
-      id: "d47e3b3c-395e-44bf-b67e-78a4ff98c7fb",
+      id: "af71ef15-f01f-4385-ad5b-6d2a9ccccba0",
       isPrimary: false,
       metadata: [],
       name: "mysterious-republican.usable-section.info",
       status: "PENDING",
-      updatedAt: new Date("2023-11-17T07:26:51.077Z"),
+      updatedAt: new Date("2023-11-18T11:31:39.983Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4672,11 +4773,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "39094714-652b-497c-a22e-6fb405c66c76",
+      id: "f3e9ac0e-8969-48d6-ba3a-01ecb0e80726",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-21T12:54:10.320Z"),
+      updatedAt: new Date("2025-07-23T01:43:58.923Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4711,11 +4812,11 @@ async function run() {
       environments: [
         "PREVIEW",
       ],
-      id: "39094714-652b-497c-a22e-6fb405c66c76",
+      id: "f3e9ac0e-8969-48d6-ba3a-01ecb0e80726",
       isSecret: true,
       metadata: [],
       name: "AEGER_SUBSTANTIA",
-      updatedAt: new Date("2025-07-21T12:54:10.320Z"),
+      updatedAt: new Date("2025-07-23T01:43:58.923Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4787,7 +4888,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "a725e7ac-cc90-4cdd-ba4b-f0a6ce9877f5",
+      id: "5dea0983-bcfb-4312-bf90-aee5bd7065df",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -4802,11 +4903,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-04-07T13:26:37.764Z"),
+      startedAt: new Date("2025-04-08T19:23:48.215Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-07-02T03:48:55.620Z"),
+      updatedAt: new Date("2025-07-03T12:34:36.177Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4855,7 +4956,7 @@ async function run() {
       ],
       gpuCount: 0,
       hasInternetAccess: true,
-      id: "a725e7ac-cc90-4cdd-ba4b-f0a6ce9877f5",
+      id: "5dea0983-bcfb-4312-bf90-aee5bd7065df",
       image: "ubuntu:24.04",
       market: "SPOT",
       memoryMb: 2048,
@@ -4870,11 +4971,11 @@ async function run() {
         port: 22,
         username: "root",
       },
-      startedAt: new Date("2025-04-07T13:26:37.764Z"),
+      startedAt: new Date("2025-04-08T19:23:48.215Z"),
       status: "ERROR",
       statusReason: "Sponte quasi adversus alioqui reiciendis arca carmen canis.",
       type: "BAREMETAL",
-      updatedAt: new Date("2025-07-02T03:48:55.620Z"),
+      updatedAt: new Date("2025-07-03T12:34:36.177Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4929,11 +5030,11 @@ async function run() {
   const result = await unifiedTo.compute.updateComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "2697426c-7ac2-45d8-8dfe-d235f5687ad3",
+      id: "54ba2391-3f5f-443f-8546-3263430b7232",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-15T12:54:08.400Z"),
+      updatedAt: new Date("2024-10-16T06:29:12.284Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4965,11 +5066,11 @@ async function run() {
   const res = await computeUpdateComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "2697426c-7ac2-45d8-8dfe-d235f5687ad3",
+      id: "54ba2391-3f5f-443f-8546-3263430b7232",
       metadata: [],
       name: "nienow-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-15T12:54:08.400Z"),
+      updatedAt: new Date("2024-10-16T06:29:12.284Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5026,7 +5127,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "a276022a-6575-49ce-bf0e-81cf1390a55b",
+      id: "1707048e-b4d1-44d3-aa61-88efb6c5368f",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -5037,7 +5138,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-16T11:46:32.548Z"),
+      updatedAt: new Date("2025-04-17T12:00:28.687Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -5072,7 +5173,7 @@ async function run() {
       branch: "main",
       buildCommand: "npm run build",
       createdAt: new Date("2023-10-04T02:06:29.391Z"),
-      id: "a276022a-6575-49ce-bf0e-81cf1390a55b",
+      id: "1707048e-b4d1-44d3-aa61-88efb6c5368f",
       instanceCount: 6,
       maxInstanceCount: 6,
       metadata: [],
@@ -5083,7 +5184,7 @@ async function run() {
       runtime: "python",
       status: "SUSPENDED",
       type: "OTHER",
-      updatedAt: new Date("2025-04-16T11:46:32.548Z"),
+      updatedAt: new Date("2025-04-17T12:00:28.687Z"),
       url: "https://tame-sideboard.rotating-shoulder.biz",
     },
     connectionId: "<id>",
@@ -5119,6 +5220,105 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updateComputeSnapshot
+
+Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateComputeSnapshot" method="put" path="/compute/{connection_id}/snapshot/{id}" example="compute_snapshot" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.compute.updateComputeSnapshot({
+    computeSnapshot: {
+      createdAt: new Date("2021-09-24T14:40:06.110Z"),
+      id: "8236394c-c3a7-4792-b0c9-b1348c8b6510",
+      metadata: [],
+      name: "snap-alius",
+      sizeMb: 169984,
+      status: "DELETING",
+      type: "DISK",
+      updatedAt: new Date("2026-04-23T00:28:38.244Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { computeUpdateComputeSnapshot } from "@unified-api/typescript-sdk/funcs/computeUpdateComputeSnapshot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await computeUpdateComputeSnapshot(unifiedTo, {
+    computeSnapshot: {
+      createdAt: new Date("2021-09-24T14:40:06.110Z"),
+      id: "8236394c-c3a7-4792-b0c9-b1348c8b6510",
+      metadata: [],
+      name: "snap-alius",
+      sizeMb: 169984,
+      status: "DELETING",
+      type: "DISK",
+      updatedAt: new Date("2026-04-23T00:28:38.244Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("computeUpdateComputeSnapshot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateComputeSnapshotRequest](../../sdk/models/operations/updatecomputesnapshotrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.ComputeSnapshot](../../sdk/models/shared/computesnapshot.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateComputeTemplate
 
 Updates the ComputeTemplate identified by `id`. Provide the unified ComputeTemplate fields to change in the request body.
@@ -5144,10 +5344,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "0dfad193-7e7b-4b76-ba8d-b4b90370e5c3",
+      id: "88739a73-80b0-4825-b23b-6cc3b8f4fae6",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-13T00:16:21.571Z"),
+      lastUsedAt: new Date("2026-04-14T17:39:39.735Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -5155,7 +5355,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-25T16:38:37.285Z"),
+      updatedAt: new Date("2025-02-26T19:09:44.646Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5192,10 +5392,10 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "0dfad193-7e7b-4b76-ba8d-b4b90370e5c3",
+      id: "88739a73-80b0-4825-b23b-6cc3b8f4fae6",
       image: "perfumed-molasses/cohibeo:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-13T00:16:21.571Z"),
+      lastUsedAt: new Date("2026-04-14T17:39:39.735Z"),
       memoryMb: 8192,
       metadata: [],
       name: "multi-byte-card",
@@ -5203,7 +5403,7 @@ async function run() {
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-25T16:38:37.285Z"),
+      updatedAt: new Date("2025-02-26T19:09:44.646Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5258,14 +5458,14 @@ async function run() {
   const result = await unifiedTo.compute.updateComputeVolume({
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "dcbaa3ab-d415-4e9e-9dca-d9b8e4206532",
+      id: "8b65db47-cf48-41d7-8903-4515de6f5818",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-17T10:31:18.712Z"),
+      updatedAt: new Date("2024-02-18T01:58:37.876Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",
@@ -5298,14 +5498,14 @@ async function run() {
   const res = await computeUpdateComputeVolume(unifiedTo, {
     computeVolume: {
       createdAt: new Date("2022-11-15T15:12:48.055Z"),
-      id: "dcbaa3ab-d415-4e9e-9dca-d9b8e4206532",
+      id: "8b65db47-cf48-41d7-8903-4515de6f5818",
       instanceIds: [],
       metadata: [],
       name: "vol-solum",
       sizeMb: 1024000,
       status: "OTHER",
       type: "HIGH_PERFORMANCE",
-      updatedAt: new Date("2024-02-17T10:31:18.712Z"),
+      updatedAt: new Date("2024-02-18T01:58:37.876Z"),
       usedMb: 524986,
     },
     connectionId: "<id>",

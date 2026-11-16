@@ -22,9 +22,6 @@ import {
   QmsMetadata$outboundSchema,
 } from "./qmsmetadata.js";
 
-/**
- * Normalized status of a quality record
- */
 export const QmsActionStatus = {
   Open: "OPEN",
   InProgress: "IN_PROGRESS",
@@ -32,9 +29,6 @@ export const QmsActionStatus = {
   Closed: "CLOSED",
   Cancelled: "CANCELLED",
 } as const;
-/**
- * Normalized status of a quality record
- */
 export type QmsActionStatus = OpenEnum<typeof QmsActionStatus>;
 
 export const QmsActionType = {
@@ -95,9 +89,6 @@ export type QmsAction = {
    */
   raw?: { [k: string]: any } | undefined;
   rootCause?: string | undefined;
-  /**
-   * Normalized status of a quality record
-   */
   status?: QmsActionStatus | undefined;
   supplierName?: string | undefined;
   type?: QmsActionType | undefined;

@@ -7,7 +7,9 @@ import { unifiedGetUnifiedSecretsmanager } from "../funcs/unifiedGetUnifiedSecre
 import { unifiedListUnifiedSecretsmanagerInstructions } from "../funcs/unifiedListUnifiedSecretsmanagerInstructions.js";
 import { unifiedListUnifiedSecretsmanagers } from "../funcs/unifiedListUnifiedSecretsmanagers.js";
 import { unifiedListUnifiedSecretsmanagerSecrets } from "../funcs/unifiedListUnifiedSecretsmanagerSecrets.js";
+import { unifiedPatchUnifiedSecretsmanager } from "../funcs/unifiedPatchUnifiedSecretsmanager.js";
 import { unifiedRemoveUnifiedSecretsmanager } from "../funcs/unifiedRemoveUnifiedSecretsmanager.js";
+import { unifiedUpdateUnifiedSecretsmanager } from "../funcs/unifiedUpdateUnifiedSecretsmanager.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -83,6 +85,20 @@ export class Secretsmanager extends ClientSDK {
   }
 
   /**
+   * Update secrets manager
+   */
+  async patchUnifiedSecretsmanager(
+    request: operations.PatchUnifiedSecretsmanagerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SecretsManager> {
+    return unwrapAsync(unifiedPatchUnifiedSecretsmanager(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove secrets manager
    */
   async removeUnifiedSecretsmanager(
@@ -90,6 +106,20 @@ export class Secretsmanager extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveUnifiedSecretsmanagerResponse | undefined> {
     return unwrapAsync(unifiedRemoveUnifiedSecretsmanager(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update secrets manager
+   */
+  async updateUnifiedSecretsmanager(
+    request: operations.UpdateUnifiedSecretsmanagerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SecretsManager> {
+    return unwrapAsync(unifiedUpdateUnifiedSecretsmanager(
       this,
       request,
       options,

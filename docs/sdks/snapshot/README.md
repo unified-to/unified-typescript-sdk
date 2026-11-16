@@ -7,7 +7,9 @@
 * [createComputeSnapshot](#createcomputesnapshot) - Create a snapshot
 * [getComputeSnapshot](#getcomputesnapshot) - Retrieve a snapshot
 * [listComputeSnapshots](#listcomputesnapshots) - List all snapshots
+* [patchComputeSnapshot](#patchcomputesnapshot) - Update a snapshot
 * [removeComputeSnapshot](#removecomputesnapshot) - Remove a snapshot
+* [updateComputeSnapshot](#updatecomputesnapshot) - Update a snapshot
 
 ## createComputeSnapshot
 
@@ -29,13 +31,13 @@ async function run() {
   const result = await unifiedTo.snapshot.createComputeSnapshot({
     computeSnapshot: {
       createdAt: new Date("2021-09-24T14:40:06.110Z"),
-      id: "0d7d1154-cc8e-45a9-b316-746ce1cc1251",
+      id: "54f1bc94-1d68-4013-9074-6348421b9ceb",
       metadata: [],
       name: "snap-alius",
       sizeMb: 169984,
       status: "DELETING",
       type: "DISK",
-      updatedAt: new Date("2026-04-21T04:44:07.989Z"),
+      updatedAt: new Date("2026-04-23T00:28:38.237Z"),
     },
     connectionId: "<id>",
   });
@@ -66,13 +68,13 @@ async function run() {
   const res = await computeCreateComputeSnapshot(unifiedTo, {
     computeSnapshot: {
       createdAt: new Date("2021-09-24T14:40:06.110Z"),
-      id: "0d7d1154-cc8e-45a9-b316-746ce1cc1251",
+      id: "54f1bc94-1d68-4013-9074-6348421b9ceb",
       metadata: [],
       name: "snap-alius",
       sizeMb: 169984,
       status: "DELETING",
       type: "DISK",
-      updatedAt: new Date("2026-04-21T04:44:07.989Z"),
+      updatedAt: new Date("2026-04-23T00:28:38.237Z"),
     },
     connectionId: "<id>",
   });
@@ -262,6 +264,105 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchComputeSnapshot
+
+Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchComputeSnapshot" method="patch" path="/compute/{connection_id}/snapshot/{id}" example="compute_snapshot" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.snapshot.patchComputeSnapshot({
+    computeSnapshot: {
+      createdAt: new Date("2021-09-24T14:40:06.110Z"),
+      id: "8236394c-c3a7-4792-b0c9-b1348c8b6510",
+      metadata: [],
+      name: "snap-alius",
+      sizeMb: 169984,
+      status: "DELETING",
+      type: "DISK",
+      updatedAt: new Date("2026-04-23T00:28:38.244Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { computePatchComputeSnapshot } from "@unified-api/typescript-sdk/funcs/computePatchComputeSnapshot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await computePatchComputeSnapshot(unifiedTo, {
+    computeSnapshot: {
+      createdAt: new Date("2021-09-24T14:40:06.110Z"),
+      id: "8236394c-c3a7-4792-b0c9-b1348c8b6510",
+      metadata: [],
+      name: "snap-alius",
+      sizeMb: 169984,
+      status: "DELETING",
+      type: "DISK",
+      updatedAt: new Date("2026-04-23T00:28:38.244Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("computePatchComputeSnapshot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchComputeSnapshotRequest](../../sdk/models/operations/patchcomputesnapshotrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.ComputeSnapshot](../../sdk/models/shared/computesnapshot.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## removeComputeSnapshot
 
 Deletes the ComputeSnapshot identified by `id`.
@@ -334,6 +435,105 @@ run();
 ### Response
 
 **Promise\<[operations.RemoveComputeSnapshotResponse](../../sdk/models/operations/removecomputesnapshotresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateComputeSnapshot
+
+Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateComputeSnapshot" method="put" path="/compute/{connection_id}/snapshot/{id}" example="compute_snapshot" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.snapshot.updateComputeSnapshot({
+    computeSnapshot: {
+      createdAt: new Date("2021-09-24T14:40:06.110Z"),
+      id: "8236394c-c3a7-4792-b0c9-b1348c8b6510",
+      metadata: [],
+      name: "snap-alius",
+      sizeMb: 169984,
+      status: "DELETING",
+      type: "DISK",
+      updatedAt: new Date("2026-04-23T00:28:38.244Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { computeUpdateComputeSnapshot } from "@unified-api/typescript-sdk/funcs/computeUpdateComputeSnapshot.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await computeUpdateComputeSnapshot(unifiedTo, {
+    computeSnapshot: {
+      createdAt: new Date("2021-09-24T14:40:06.110Z"),
+      id: "8236394c-c3a7-4792-b0c9-b1348c8b6510",
+      metadata: [],
+      name: "snap-alius",
+      sizeMb: 169984,
+      status: "DELETING",
+      type: "DISK",
+      updatedAt: new Date("2026-04-23T00:28:38.244Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("computeUpdateComputeSnapshot failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateComputeSnapshotRequest](../../sdk/models/operations/updatecomputesnapshotrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.ComputeSnapshot](../../sdk/models/shared/computesnapshot.md)\>**
 
 ### Errors
 

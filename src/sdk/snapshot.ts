@@ -5,7 +5,9 @@
 import { computeCreateComputeSnapshot } from "../funcs/computeCreateComputeSnapshot.js";
 import { computeGetComputeSnapshot } from "../funcs/computeGetComputeSnapshot.js";
 import { computeListComputeSnapshots } from "../funcs/computeListComputeSnapshots.js";
+import { computePatchComputeSnapshot } from "../funcs/computePatchComputeSnapshot.js";
 import { computeRemoveComputeSnapshot } from "../funcs/computeRemoveComputeSnapshot.js";
+import { computeUpdateComputeSnapshot } from "../funcs/computeUpdateComputeSnapshot.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -64,6 +66,23 @@ export class Snapshot extends ClientSDK {
   }
 
   /**
+   * Update a snapshot
+   *
+   * @remarks
+   * Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+   */
+  async patchComputeSnapshot(
+    request: operations.PatchComputeSnapshotRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ComputeSnapshot> {
+    return unwrapAsync(computePatchComputeSnapshot(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a snapshot
    *
    * @remarks
@@ -74,6 +93,23 @@ export class Snapshot extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveComputeSnapshotResponse | undefined> {
     return unwrapAsync(computeRemoveComputeSnapshot(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a snapshot
+   *
+   * @remarks
+   * Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+   */
+  async updateComputeSnapshot(
+    request: operations.UpdateComputeSnapshotRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ComputeSnapshot> {
+    return unwrapAsync(computeUpdateComputeSnapshot(
       this,
       request,
       options,

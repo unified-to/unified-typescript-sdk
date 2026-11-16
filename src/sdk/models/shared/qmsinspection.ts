@@ -29,9 +29,6 @@ export const QmsInspectionResult = {
 } as const;
 export type QmsInspectionResult = OpenEnum<typeof QmsInspectionResult>;
 
-/**
- * Normalized status of a quality record
- */
 export const QmsInspectionStatus = {
   Open: "OPEN",
   InProgress: "IN_PROGRESS",
@@ -39,9 +36,6 @@ export const QmsInspectionStatus = {
   Closed: "CLOSED",
   Cancelled: "CANCELLED",
 } as const;
-/**
- * Normalized status of a quality record
- */
 export type QmsInspectionStatus = OpenEnum<typeof QmsInspectionStatus>;
 
 export const QmsInspectionType = {
@@ -107,9 +101,6 @@ export type QmsInspection = {
   result?: QmsInspectionResult | undefined;
   revision?: string | undefined;
   serialNumber?: string | undefined;
-  /**
-   * Normalized status of a quality record
-   */
   status?: QmsInspectionStatus | undefined;
   supplierName?: string | undefined;
   type?: QmsInspectionType | undefined;

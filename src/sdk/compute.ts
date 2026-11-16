@@ -40,6 +40,7 @@ import { computePatchComputeEnvvar } from "../funcs/computePatchComputeEnvvar.js
 import { computePatchComputeInstance } from "../funcs/computePatchComputeInstance.js";
 import { computePatchComputeKey } from "../funcs/computePatchComputeKey.js";
 import { computePatchComputeService } from "../funcs/computePatchComputeService.js";
+import { computePatchComputeSnapshot } from "../funcs/computePatchComputeSnapshot.js";
 import { computePatchComputeTemplate } from "../funcs/computePatchComputeTemplate.js";
 import { computePatchComputeVolume } from "../funcs/computePatchComputeVolume.js";
 import { computeRemoveComputeDeployment } from "../funcs/computeRemoveComputeDeployment.js";
@@ -57,6 +58,7 @@ import { computeUpdateComputeEnvvar } from "../funcs/computeUpdateComputeEnvvar.
 import { computeUpdateComputeInstance } from "../funcs/computeUpdateComputeInstance.js";
 import { computeUpdateComputeKey } from "../funcs/computeUpdateComputeKey.js";
 import { computeUpdateComputeService } from "../funcs/computeUpdateComputeService.js";
+import { computeUpdateComputeSnapshot } from "../funcs/computeUpdateComputeSnapshot.js";
 import { computeUpdateComputeTemplate } from "../funcs/computeUpdateComputeTemplate.js";
 import { computeUpdateComputeVolume } from "../funcs/computeUpdateComputeVolume.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -712,6 +714,23 @@ export class Compute extends ClientSDK {
   }
 
   /**
+   * Update a snapshot
+   *
+   * @remarks
+   * Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+   */
+  async patchComputeSnapshot(
+    request: operations.PatchComputeSnapshotRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ComputeSnapshot> {
+    return unwrapAsync(computePatchComputeSnapshot(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a template
    *
    * @remarks
@@ -994,6 +1013,23 @@ export class Compute extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.ComputeService> {
     return unwrapAsync(computeUpdateComputeService(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a snapshot
+   *
+   * @remarks
+   * Updates the ComputeSnapshot identified by `id`. Provide the unified ComputeSnapshot fields to change in the request body.
+   */
+  async updateComputeSnapshot(
+    request: operations.UpdateComputeSnapshotRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ComputeSnapshot> {
+    return unwrapAsync(computeUpdateComputeSnapshot(
       this,
       request,
       options,

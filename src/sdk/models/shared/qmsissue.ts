@@ -22,9 +22,6 @@ import {
   QmsMetadata$outboundSchema,
 } from "./qmsmetadata.js";
 
-/**
- * What to do with the nonconforming material
- */
 export const Disposition = {
   UseAsIs: "USE_AS_IS",
   Rework: "REWORK",
@@ -33,9 +30,6 @@ export const Disposition = {
   ReturnToVendor: "RETURN_TO_VENDOR",
   Other: "OTHER",
 } as const;
-/**
- * What to do with the nonconforming material
- */
 export type Disposition = OpenEnum<typeof Disposition>;
 
 export const Severity = {
@@ -46,9 +40,6 @@ export const Severity = {
 } as const;
 export type Severity = OpenEnum<typeof Severity>;
 
-/**
- * Where a quality issue was found
- */
 export const QmsIssueSource = {
   Internal: "INTERNAL",
   Supplier: "SUPPLIER",
@@ -56,14 +47,8 @@ export const QmsIssueSource = {
   Audit: "AUDIT",
   Other: "OTHER",
 } as const;
-/**
- * Where a quality issue was found
- */
 export type QmsIssueSource = OpenEnum<typeof QmsIssueSource>;
 
-/**
- * Normalized status of a quality record
- */
 export const QmsIssueStatus = {
   Open: "OPEN",
   InProgress: "IN_PROGRESS",
@@ -71,9 +56,6 @@ export const QmsIssueStatus = {
   Closed: "CLOSED",
   Cancelled: "CANCELLED",
 } as const;
-/**
- * Normalized status of a quality record
- */
 export type QmsIssueStatus = OpenEnum<typeof QmsIssueStatus>;
 
 export const QmsIssueType = {
@@ -86,7 +68,7 @@ export const QmsIssueType = {
 export type QmsIssueType = OpenEnum<typeof QmsIssueType>;
 
 /**
- * A nonconformance, complaint, audit finding or problem report
+ * A nonconformance, complaint, audit finding or other quality issue
  */
 export type QmsIssue = {
   /**
@@ -107,9 +89,6 @@ export type QmsIssue = {
    */
   createdAt?: Date | undefined;
   description?: string | undefined;
-  /**
-   * What to do with the nonconforming material
-   */
   disposition?: Disposition | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -151,13 +130,7 @@ export type QmsIssue = {
    */
   reporterUserId?: string | undefined;
   severity?: Severity | undefined;
-  /**
-   * Where a quality issue was found
-   */
   source?: QmsIssueSource | undefined;
-  /**
-   * Normalized status of a quality record
-   */
   status?: QmsIssueStatus | undefined;
   supplierName?: string | undefined;
   type?: QmsIssueType | undefined;

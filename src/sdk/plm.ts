@@ -22,6 +22,7 @@ import { plmPatchPlmBomline } from "../funcs/plmPatchPlmBomline.js";
 import { plmPatchPlmChange } from "../funcs/plmPatchPlmChange.js";
 import { plmPatchPlmPart } from "../funcs/plmPatchPlmPart.js";
 import { plmRemovePlmBomline } from "../funcs/plmRemovePlmBomline.js";
+import { plmRemovePlmPart } from "../funcs/plmRemovePlmPart.js";
 import { plmUpdatePlmBomline } from "../funcs/plmUpdatePlmBomline.js";
 import { plmUpdatePlmChange } from "../funcs/plmUpdatePlmChange.js";
 import { plmUpdatePlmPart } from "../funcs/plmUpdatePlmPart.js";
@@ -348,6 +349,23 @@ export class Plm extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemovePlmBomlineResponse | undefined> {
     return unwrapAsync(plmRemovePlmBomline(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a part
+   *
+   * @remarks
+   * Deletes the PlmPart identified by `id`.
+   */
+  async removePlmPart(
+    request: operations.RemovePlmPartRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePlmPartResponse | undefined> {
+    return unwrapAsync(plmRemovePlmPart(
       this,
       request,
       options,

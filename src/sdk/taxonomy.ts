@@ -6,6 +6,9 @@ import { crmListCrmTaxonomies } from "../funcs/crmListCrmTaxonomies.js";
 import { taxonomyCreateHrisTaxonomy } from "../funcs/taxonomyCreateHrisTaxonomy.js";
 import { taxonomyGetHrisTaxonomy } from "../funcs/taxonomyGetHrisTaxonomy.js";
 import { taxonomyListHrisTaxonomies } from "../funcs/taxonomyListHrisTaxonomies.js";
+import { taxonomyPatchHrisTaxonomy } from "../funcs/taxonomyPatchHrisTaxonomy.js";
+import { taxonomyRemoveHrisTaxonomy } from "../funcs/taxonomyRemoveHrisTaxonomy.js";
+import { taxonomyUpdateHrisTaxonomy } from "../funcs/taxonomyUpdateHrisTaxonomy.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -74,6 +77,57 @@ export class Taxonomy extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.HrisTaxonomy>> {
     return unwrapAsync(taxonomyListHrisTaxonomies(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a taxonomy
+   *
+   * @remarks
+   * Updates the HrisTaxonomy identified by `id`. Provide the unified HrisTaxonomy fields to change in the request body.
+   */
+  async patchHrisTaxonomy(
+    request: operations.PatchHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxonomy> {
+    return unwrapAsync(taxonomyPatchHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a taxonomy
+   *
+   * @remarks
+   * Deletes the HrisTaxonomy identified by `id`.
+   */
+  async removeHrisTaxonomy(
+    request: operations.RemoveHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisTaxonomyResponse | undefined> {
+    return unwrapAsync(taxonomyRemoveHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a taxonomy
+   *
+   * @remarks
+   * Updates the HrisTaxonomy identified by `id`. Provide the unified HrisTaxonomy fields to change in the request body.
+   */
+  async updateHrisTaxonomy(
+    request: operations.UpdateHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxonomy> {
+    return unwrapAsync(taxonomyUpdateHrisTaxonomy(
       this,
       request,
       options,

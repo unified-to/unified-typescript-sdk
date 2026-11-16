@@ -16,9 +16,6 @@ import {
   QmsMetadata$outboundSchema,
 } from "./qmsmetadata.js";
 
-/**
- * Normalized status of a quality record
- */
 export const QmsAuditStatus = {
   Open: "OPEN",
   InProgress: "IN_PROGRESS",
@@ -26,9 +23,6 @@ export const QmsAuditStatus = {
   Closed: "CLOSED",
   Cancelled: "CANCELLED",
 } as const;
-/**
- * Normalized status of a quality record
- */
 export type QmsAuditStatus = OpenEnum<typeof QmsAuditStatus>;
 
 export const QmsAuditType = {
@@ -94,9 +88,6 @@ export type QmsAudit = {
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   startAt?: Date | undefined;
-  /**
-   * Normalized status of a quality record
-   */
   status?: QmsAuditStatus | undefined;
   supplierName?: string | undefined;
   type?: QmsAuditType | undefined;

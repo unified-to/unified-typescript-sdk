@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "f861d2ef-1575-498b-96ae-33aeea92794d",
+      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T23:45:21.887Z"),
+      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "f861d2ef-1575-498b-96ae-33aeea92794d",
+      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T23:45:21.887Z"),
+      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "f861d2ef-1575-498b-96ae-33aeea92794d",
+      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T23:45:21.887Z"),
+      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "f861d2ef-1575-498b-96ae-33aeea92794d",
+        id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-12T23:45:21.887Z"),
+        updatedAt: new Date("2023-08-13T12:15:07.848Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "f861d2ef-1575-498b-96ae-33aeea92794d",
+      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T23:45:21.887Z"),
+      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "f861d2ef-1575-498b-96ae-33aeea92794d",
+      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-12T23:45:21.887Z"),
+      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
     },
     connectionId: "<id>",
   });
@@ -1446,6 +1446,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`computePatchComputeKey`](docs/sdks/key/README.md#patchcomputekey) - Update a key
 - [`computePatchComputeService`](docs/sdks/compute/README.md#patchcomputeservice) - Update a service
 - [`computePatchComputeService`](docs/sdks/service/README.md#patchcomputeservice) - Update a service
+- [`computePatchComputeSnapshot`](docs/sdks/compute/README.md#patchcomputesnapshot) - Update a snapshot
+- [`computePatchComputeSnapshot`](docs/sdks/snapshot/README.md#patchcomputesnapshot) - Update a snapshot
 - [`computePatchComputeTemplate`](docs/sdks/compute/README.md#patchcomputetemplate) - Update a template
 - [`computePatchComputeTemplate`](docs/sdks/template/README.md#patchcomputetemplate) - Update a template
 - [`computePatchComputeVolume`](docs/sdks/compute/README.md#patchcomputevolume) - Update a volume
@@ -1480,6 +1482,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`computeUpdateComputeKey`](docs/sdks/key/README.md#updatecomputekey) - Update a key
 - [`computeUpdateComputeService`](docs/sdks/compute/README.md#updatecomputeservice) - Update a service
 - [`computeUpdateComputeService`](docs/sdks/service/README.md#updatecomputeservice) - Update a service
+- [`computeUpdateComputeSnapshot`](docs/sdks/compute/README.md#updatecomputesnapshot) - Update a snapshot
+- [`computeUpdateComputeSnapshot`](docs/sdks/snapshot/README.md#updatecomputesnapshot) - Update a snapshot
 - [`computeUpdateComputeTemplate`](docs/sdks/compute/README.md#updatecomputetemplate) - Update a template
 - [`computeUpdateComputeTemplate`](docs/sdks/template/README.md#updatecomputetemplate) - Update a template
 - [`computeUpdateComputeVolume`](docs/sdks/compute/README.md#updatecomputevolume) - Update a volume
@@ -2344,6 +2348,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`plmPatchPlmPart`](docs/sdks/plm/README.md#patchplmpart) - Update a part
 - [`plmRemovePlmBomline`](docs/sdks/bomline/README.md#removeplmbomline) - Remove a bomline
 - [`plmRemovePlmBomline`](docs/sdks/plm/README.md#removeplmbomline) - Remove a bomline
+- [`plmRemovePlmPart`](docs/sdks/part/README.md#removeplmpart) - Remove a part
+- [`plmRemovePlmPart`](docs/sdks/plm/README.md#removeplmpart) - Remove a part
 - [`plmUpdatePlmBomline`](docs/sdks/bomline/README.md#updateplmbomline) - Update a bomline
 - [`plmUpdatePlmBomline`](docs/sdks/plm/README.md#updateplmbomline) - Update a bomline
 - [`plmUpdatePlmChange`](docs/sdks/change/README.md#updateplmchange) - Update a change
@@ -2408,8 +2414,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`propertyPatchPropertyReservation`](docs/sdks/reservation/README.md#patchpropertyreservation) - Update a reservation
 - [`propertyPatchPropertyReview`](docs/sdks/property/README.md#patchpropertyreview) - Update a review
 - [`propertyPatchPropertyReview`](docs/sdks/review/README.md#patchpropertyreview) - Update a review
+- [`propertyRemovePropertyGuest`](docs/sdks/guest/README.md#removepropertyguest) - Remove a guest
+- [`propertyRemovePropertyGuest`](docs/sdks/property/README.md#removepropertyguest) - Remove a guest
 - [`propertyRemovePropertyListing`](docs/sdks/listing/README.md#removepropertylisting) - Remove a listing
 - [`propertyRemovePropertyListing`](docs/sdks/property/README.md#removepropertylisting) - Remove a listing
+- [`propertyRemovePropertyReservation`](docs/sdks/property/README.md#removepropertyreservation) - Remove a reservation
+- [`propertyRemovePropertyReservation`](docs/sdks/reservation/README.md#removepropertyreservation) - Remove a reservation
 - [`propertyUpdatePropertyGuest`](docs/sdks/guest/README.md#updatepropertyguest) - Update a guest
 - [`propertyUpdatePropertyGuest`](docs/sdks/property/README.md#updatepropertyguest) - Update a guest
 - [`propertyUpdatePropertyListing`](docs/sdks/listing/README.md#updatepropertylisting) - Update a listing
@@ -2670,6 +2680,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`taxonomyGetHrisTaxonomy`](docs/sdks/taxonomy/README.md#gethristaxonomy) - Retrieve a taxonomy
 - [`taxonomyListHrisTaxonomies`](docs/sdks/hris/README.md#listhristaxonomies) - List all taxonomies
 - [`taxonomyListHrisTaxonomies`](docs/sdks/taxonomy/README.md#listhristaxonomies) - List all taxonomies
+- [`taxonomyPatchHrisTaxonomy`](docs/sdks/hris/README.md#patchhristaxonomy) - Update a taxonomy
+- [`taxonomyPatchHrisTaxonomy`](docs/sdks/taxonomy/README.md#patchhristaxonomy) - Update a taxonomy
+- [`taxonomyRemoveHrisTaxonomy`](docs/sdks/hris/README.md#removehristaxonomy) - Remove a taxonomy
+- [`taxonomyRemoveHrisTaxonomy`](docs/sdks/taxonomy/README.md#removehristaxonomy) - Remove a taxonomy
+- [`taxonomyUpdateHrisTaxonomy`](docs/sdks/hris/README.md#updatehristaxonomy) - Update a taxonomy
+- [`taxonomyUpdateHrisTaxonomy`](docs/sdks/taxonomy/README.md#updatehristaxonomy) - Update a taxonomy
 - [`templateGetSigningTemplate`](docs/sdks/signing/README.md#getsigningtemplate) - Retrieve a template
 - [`templateGetSigningTemplate`](docs/sdks/template/README.md#getsigningtemplate) - Retrieve a template
 - [`templateListSigningTemplates`](docs/sdks/signing/README.md#listsigningtemplates) - List all templates
@@ -2781,6 +2797,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedListUnifiedWorkspaceintegrations`](docs/sdks/workspaceintegration/README.md#listunifiedworkspaceintegrations) - List workspace integrations
 - [`unifiedPatchUnifiedConnection`](docs/sdks/connection/README.md#patchunifiedconnection) - Update connection
 - [`unifiedPatchUnifiedConnection`](docs/sdks/unified/README.md#patchunifiedconnection) - Update connection
+- [`unifiedPatchUnifiedSecretsmanager`](docs/sdks/secretsmanager/README.md#patchunifiedsecretsmanager) - Update secrets manager
+- [`unifiedPatchUnifiedSecretsmanager`](docs/sdks/unified/README.md#patchunifiedsecretsmanager) - Update secrets manager
 - [`unifiedPatchUnifiedWebhook`](docs/sdks/unified/README.md#patchunifiedwebhook) - Update webhook subscription
 - [`unifiedPatchUnifiedWebhook`](docs/sdks/webhook/README.md#patchunifiedwebhook) - Update webhook subscription
 - [`unifiedPatchUnifiedWebhookResume`](docs/sdks/unified/README.md#patchunifiedwebhookresume) - Resume an unhealthy webhook subscription
@@ -2801,6 +2819,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedRemoveUnifiedWorkspaceintegration`](docs/sdks/workspaceintegration/README.md#removeunifiedworkspaceintegration) - Remove workspace integration
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/connection/README.md#updateunifiedconnection) - Update connection
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
+- [`unifiedUpdateUnifiedSecretsmanager`](docs/sdks/secretsmanager/README.md#updateunifiedsecretsmanager) - Update secrets manager
+- [`unifiedUpdateUnifiedSecretsmanager`](docs/sdks/unified/README.md#updateunifiedsecretsmanager) - Update secrets manager
 - [`unifiedUpdateUnifiedWebhook`](docs/sdks/unified/README.md#updateunifiedwebhook) - Update webhook subscription
 - [`unifiedUpdateUnifiedWebhook`](docs/sdks/webhook/README.md#updateunifiedwebhook) - Update webhook subscription
 - [`unifiedUpdateUnifiedWebhookResume`](docs/sdks/unified/README.md#updateunifiedwebhookresume) - Resume an unhealthy webhook subscription

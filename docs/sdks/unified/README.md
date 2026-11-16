@@ -30,6 +30,7 @@
 * [listUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
 * [listUnifiedWorkspaceintegrations](#listunifiedworkspaceintegrations) - List workspace integrations
 * [patchUnifiedConnection](#patchunifiedconnection) - Update connection
+* [patchUnifiedSecretsmanager](#patchunifiedsecretsmanager) - Update secrets manager
 * [patchUnifiedWebhook](#patchunifiedwebhook) - Update webhook subscription
 * [patchUnifiedWebhookResume](#patchunifiedwebhookresume) - Resume an unhealthy webhook subscription
 * [patchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
@@ -40,6 +41,7 @@
 * [removeUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
 * [removeUnifiedWorkspaceintegration](#removeunifiedworkspaceintegration) - Remove workspace integration
 * [updateUnifiedConnection](#updateunifiedconnection) - Update connection
+* [updateUnifiedSecretsmanager](#updateunifiedsecretsmanager) - Update secrets manager
 * [updateUnifiedWebhook](#updateunifiedwebhook) - Update webhook subscription
 * [updateUnifiedWebhookResume](#updateunifiedwebhookresume) - Resume an unhealthy webhook subscription
 * [updateUnifiedWebhookTrigger](#updateunifiedwebhooktrigger) - Trigger webhook
@@ -2049,6 +2051,99 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchUnifiedSecretsmanager
+
+Update secrets manager
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchUnifiedSecretsmanager" method="patch" path="/unified/secretsmanager/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.unified.patchUnifiedSecretsmanager({
+    secretsManager: {
+      auth: {
+        "key": "<value>",
+        "key1": "<value>",
+      },
+      name: "<value>",
+      type: "akeyless",
+    },
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { unifiedPatchUnifiedSecretsmanager } from "@unified-api/typescript-sdk/funcs/unifiedPatchUnifiedSecretsmanager.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await unifiedPatchUnifiedSecretsmanager(unifiedTo, {
+    secretsManager: {
+      auth: {
+        "key": "<value>",
+        "key1": "<value>",
+      },
+      name: "<value>",
+      type: "akeyless",
+    },
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedPatchUnifiedSecretsmanager failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchUnifiedSecretsmanagerRequest](../../sdk/models/operations/patchunifiedsecretsmanagerrequest.md)                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SecretsManager](../../sdk/models/shared/secretsmanager.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchUnifiedWebhook
 
 Update webhook subscription
@@ -2840,6 +2935,97 @@ run();
 ### Response
 
 **Promise\<[shared.Connection](../../sdk/models/shared/connection.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updateUnifiedSecretsmanager
+
+Update secrets manager
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateUnifiedSecretsmanager" method="put" path="/unified/secretsmanager/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.unified.updateUnifiedSecretsmanager({
+    secretsManager: {
+      auth: {
+        "key": "<value>",
+      },
+      name: "<value>",
+      type: "alibabacloud",
+    },
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { unifiedUpdateUnifiedSecretsmanager } from "@unified-api/typescript-sdk/funcs/unifiedUpdateUnifiedSecretsmanager.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await unifiedUpdateUnifiedSecretsmanager(unifiedTo, {
+    secretsManager: {
+      auth: {
+        "key": "<value>",
+      },
+      name: "<value>",
+      type: "alibabacloud",
+    },
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedUpdateUnifiedSecretsmanager failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateUnifiedSecretsmanagerRequest](../../sdk/models/operations/updateunifiedsecretsmanagerrequest.md)                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.SecretsManager](../../sdk/models/shared/secretsmanager.md)\>**
 
 ### Errors
 

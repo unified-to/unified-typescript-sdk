@@ -1,7 +1,5 @@
 # QmsIssueSource
 
-Where a quality issue was found
-
 ## Example Usage
 
 ```typescript

@@ -30,7 +30,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.createHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.512Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.425Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -44,16 +44,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.671Z"),
-      id: "f416099b-5542-43ad-8f34-cdb617c13141",
+      endAt: new Date("2025-01-14T08:57:03.108Z"),
+      id: "5c606537-c7c5-441f-99c2-f180e6c6ff6d",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.565Z"),
+      startAt: new Date("2023-09-14T16:01:58.951Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.395Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.861Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -84,7 +84,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.512Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.425Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -98,16 +98,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.671Z"),
-      id: "f416099b-5542-43ad-8f34-cdb617c13141",
+      endAt: new Date("2025-01-14T08:57:03.108Z"),
+      id: "5c606537-c7c5-441f-99c2-f180e6c6ff6d",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.565Z"),
+      startAt: new Date("2023-09-14T16:01:58.951Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.395Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.861Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -317,7 +317,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.patchHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.513Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.426Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -331,16 +331,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.679Z"),
-      id: "53bf0961-d4fb-4647-9a8a-ccc050224c02",
+      endAt: new Date("2025-01-14T08:57:03.118Z"),
+      id: "798c3024-c554-4b36-af59-b63ac9523642",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.570Z"),
+      startAt: new Date("2023-09-14T16:01:58.957Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.397Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.863Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -372,7 +372,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.513Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.426Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -386,16 +386,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.679Z"),
-      id: "53bf0961-d4fb-4647-9a8a-ccc050224c02",
+      endAt: new Date("2025-01-14T08:57:03.118Z"),
+      id: "798c3024-c554-4b36-af59-b63ac9523642",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.570Z"),
+      startAt: new Date("2023-09-14T16:01:58.957Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.397Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.863Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -529,7 +529,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.updateHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.513Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.426Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -543,16 +543,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.679Z"),
-      id: "53bf0961-d4fb-4647-9a8a-ccc050224c02",
+      endAt: new Date("2025-01-14T08:57:03.118Z"),
+      id: "798c3024-c554-4b36-af59-b63ac9523642",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.570Z"),
+      startAt: new Date("2023-09-14T16:01:58.957Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.397Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.863Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -584,7 +584,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.513Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.426Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -598,16 +598,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.679Z"),
-      id: "53bf0961-d4fb-4647-9a8a-ccc050224c02",
+      endAt: new Date("2025-01-14T08:57:03.118Z"),
+      id: "798c3024-c554-4b36-af59-b63ac9523642",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.570Z"),
+      startAt: new Date("2023-09-14T16:01:58.957Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.397Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.863Z"),
       userId: "<id>",
     },
     connectionId: "<id>",

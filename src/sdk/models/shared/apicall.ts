@@ -60,6 +60,10 @@ export type ApiCall = {
    */
   path: string;
   /**
+   * Names of the query-string parameters sent with this API call (eg. updated_gte, offset). Values are not stored.
+   */
+  queryParams?: Array<string> | undefined;
+  /**
    * The size of the response
    */
   size?: number | undefined;
@@ -105,6 +109,7 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
     method: z.string(),
     name: z.string(),
     path: z.string(),
+    query_params: z.array(z.string()).optional(),
     size: z.number().optional(),
     status: z.string(),
     type: ApiCallType$inboundSchema,
@@ -121,6 +126,7 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
       "integration_type": "integrationType",
       "ip_address": "ipAddress",
       "is_billable": "isBillable",
+      "query_params": "queryParams",
       "unified_response_time": "unifiedResponseTime",
       "user_agent": "userAgent",
       "webhook_id": "webhookId",

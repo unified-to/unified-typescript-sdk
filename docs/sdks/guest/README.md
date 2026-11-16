@@ -8,6 +8,7 @@
 * [getPropertyGuest](#getpropertyguest) - Retrieve a guest
 * [listPropertyGuests](#listpropertyguests) - List all guests
 * [patchPropertyGuest](#patchpropertyguest) - Update a guest
+* [removePropertyGuest](#removepropertyguest) - Remove a guest
 * [updatePropertyGuest](#updatepropertyguest) - Update a guest
 
 ## createPropertyGuest
@@ -46,7 +47,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "5c999937-91f5-4399-9877-21e8ad5390e7",
+      id: "6716fe12-9a39-4135-a84d-97b5471f52c3",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -60,7 +61,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.655Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.643Z"),
     },
     connectionId: "<id>",
   });
@@ -107,7 +108,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "5c999937-91f5-4399-9877-21e8ad5390e7",
+      id: "6716fe12-9a39-4135-a84d-97b5471f52c3",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -121,7 +122,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.655Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.643Z"),
     },
     connectionId: "<id>",
   });
@@ -347,7 +348,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "9682bfcc-ae86-4a23-847f-a703f7589b4f",
+      id: "c6ba411c-668f-48e4-bdca-f03d743b6873",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -361,7 +362,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.666Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.656Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -409,7 +410,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "9682bfcc-ae86-4a23-847f-a703f7589b4f",
+      id: "c6ba411c-668f-48e4-bdca-f03d743b6873",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -423,7 +424,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.666Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.656Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -451,6 +452,85 @@ run();
 ### Response
 
 **Promise\<[shared.PropertyGuest](../../sdk/models/shared/propertyguest.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## removePropertyGuest
+
+Deletes the PropertyGuest identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removePropertyGuest" method="delete" path="/property/{connection_id}/guest/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.guest.removePropertyGuest({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { propertyRemovePropertyGuest } from "@unified-api/typescript-sdk/funcs/propertyRemovePropertyGuest.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await propertyRemovePropertyGuest(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("propertyRemovePropertyGuest failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemovePropertyGuestRequest](../../sdk/models/operations/removepropertyguestrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemovePropertyGuestResponse](../../sdk/models/operations/removepropertyguestresponse.md)\>**
 
 ### Errors
 
@@ -494,7 +574,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "9682bfcc-ae86-4a23-847f-a703f7589b4f",
+      id: "c6ba411c-668f-48e4-bdca-f03d743b6873",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -508,7 +588,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.666Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.656Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -556,7 +636,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "9682bfcc-ae86-4a23-847f-a703f7589b4f",
+      id: "c6ba411c-668f-48e4-bdca-f03d743b6873",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -570,7 +650,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.666Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.656Z"),
     },
     connectionId: "<id>",
     id: "<id>",

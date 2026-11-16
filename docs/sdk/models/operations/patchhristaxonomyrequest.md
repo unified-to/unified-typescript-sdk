@@ -1,0 +1,23 @@
+# PatchHrisTaxonomyRequest
+
+## Example Usage
+
+```typescript
+import { PatchHrisTaxonomyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchHrisTaxonomyRequest = {
+  hrisTaxonomy: {},
+  connectionId: "<id>",
+  id: "<id>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                            | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `hrisTaxonomy`                                                                                                                                   | [shared.HrisTaxonomy](../../../sdk/models/shared/hristaxonomy.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `connectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `fields`                                                                                                                                         | [operations.PatchHrisTaxonomyQueryParamFields](../../../sdk/models/operations/patchhristaxonomyqueryparamfields.md)[]                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Taxonomy                                                                                                                               |
+| `raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |

@@ -95,6 +95,9 @@ import { locationUpdateHrisLocation } from "../funcs/locationUpdateHrisLocation.
 import { taxonomyCreateHrisTaxonomy } from "../funcs/taxonomyCreateHrisTaxonomy.js";
 import { taxonomyGetHrisTaxonomy } from "../funcs/taxonomyGetHrisTaxonomy.js";
 import { taxonomyListHrisTaxonomies } from "../funcs/taxonomyListHrisTaxonomies.js";
+import { taxonomyPatchHrisTaxonomy } from "../funcs/taxonomyPatchHrisTaxonomy.js";
+import { taxonomyRemoveHrisTaxonomy } from "../funcs/taxonomyRemoveHrisTaxonomy.js";
+import { taxonomyUpdateHrisTaxonomy } from "../funcs/taxonomyUpdateHrisTaxonomy.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -1173,6 +1176,23 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Update a taxonomy
+   *
+   * @remarks
+   * Updates the HrisTaxonomy identified by `id`. Provide the unified HrisTaxonomy fields to change in the request body.
+   */
+  async patchHrisTaxonomy(
+    request: operations.PatchHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxonomy> {
+    return unwrapAsync(taxonomyPatchHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a timeoff
    *
    * @remarks
@@ -1411,6 +1431,23 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove a taxonomy
+   *
+   * @remarks
+   * Deletes the HrisTaxonomy identified by `id`.
+   */
+  async removeHrisTaxonomy(
+    request: operations.RemoveHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisTaxonomyResponse | undefined> {
+    return unwrapAsync(taxonomyRemoveHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a timeoff
    *
    * @remarks
@@ -1642,6 +1679,23 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisLocation> {
     return unwrapAsync(locationUpdateHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a taxonomy
+   *
+   * @remarks
+   * Updates the HrisTaxonomy identified by `id`. Provide the unified HrisTaxonomy fields to change in the request body.
+   */
+  async updateHrisTaxonomy(
+    request: operations.UpdateHrisTaxonomyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxonomy> {
+    return unwrapAsync(taxonomyUpdateHrisTaxonomy(
       this,
       request,
       options,

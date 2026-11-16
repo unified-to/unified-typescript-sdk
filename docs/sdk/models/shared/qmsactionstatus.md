@@ -1,7 +1,5 @@
 # QmsActionStatus
 
-Normalized status of a quality record
-
 ## Example Usage
 
 ```typescript

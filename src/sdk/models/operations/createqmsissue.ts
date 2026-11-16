@@ -42,7 +42,7 @@ export type CreateQmsIssueQueryParamFields = ClosedEnum<
 
 export type CreateQmsIssueRequest = {
   /**
-   * A nonconformance, complaint, audit finding or problem report
+   * A nonconformance, complaint, audit finding or other quality issue
    */
   qmsIssue: shared.QmsIssue;
   /**

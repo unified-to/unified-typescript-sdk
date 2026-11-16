@@ -1,7 +1,5 @@
 # Disposition
 
-What to do with the nonconforming material
-
 ## Example Usage
 
 ```typescript

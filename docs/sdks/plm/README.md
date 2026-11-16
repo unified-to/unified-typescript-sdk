@@ -23,6 +23,7 @@
 * [patchPlmDocument](#patchplmdocument) - Update a document
 * [patchPlmPart](#patchplmpart) - Update a part
 * [removePlmBomline](#removeplmbomline) - Remove a bomline
+* [removePlmPart](#removeplmpart) - Remove a part
 * [updatePlmBomline](#updateplmbomline) - Update a bomline
 * [updatePlmChange](#updateplmchange) - Update a change
 * [updatePlmDocument](#updateplmdocument) - Update a document
@@ -49,11 +50,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "7819debc-633d-4bf8-96a5-df2ddad6cb10",
+      id: "204abd1e-ebea-4a39-920f-d4ec423797d8",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-19T23:00:43.624Z"),
+      updatedAt: new Date("2023-04-20T10:09:53.959Z"),
     },
     connectionId: "<id>",
   });
@@ -85,11 +86,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "7819debc-633d-4bf8-96a5-df2ddad6cb10",
+      id: "204abd1e-ebea-4a39-920f-d4ec423797d8",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-19T23:00:43.624Z"),
+      updatedAt: new Date("2023-04-20T10:09:53.959Z"),
     },
     connectionId: "<id>",
   });
@@ -145,14 +146,14 @@ async function run() {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
       description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "77415523-633e-4202-bb90-8b58d577a793",
+      id: "890414d5-60ae-42fb-bdf6-6afed387b4a0",
       metadata: [],
       name: "Update goodwill",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-09-27T08:40:13.683Z"),
+      updatedAt: new Date("2026-09-29T08:36:59.588Z"),
       url: "https://warmhearted-fraudster.biz/",
     },
     connectionId: "<id>",
@@ -186,14 +187,14 @@ async function run() {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
       description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "77415523-633e-4202-bb90-8b58d577a793",
+      id: "890414d5-60ae-42fb-bdf6-6afed387b4a0",
       metadata: [],
       name: "Update goodwill",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-09-27T08:40:13.683Z"),
+      updatedAt: new Date("2026-09-29T08:36:59.588Z"),
       url: "https://warmhearted-fraudster.biz/",
     },
     connectionId: "<id>",
@@ -249,9 +250,9 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "e82a4015-5601-45e8-9fbb-7135ee709ee1",
+      id: "0652570f-5a47-4d74-a3cf-5f28faa9a475",
       lifecycleState: "Under Review",
-      masterIdentifier: "2ddef8c8-dca0-4538-8e8c-eb8f660fd0c6",
+      masterIdentifier: "48a993b6-019c-4c26-9a32-afd72a206ca6",
       metadata: [],
       name: "Procedure taxicab",
       number: "DOC-086886",
@@ -259,7 +260,7 @@ async function run() {
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-08T02:06:50.488Z"),
+      updatedAt: new Date("2026-09-10T01:47:30.194Z"),
       url: "https://uncommon-guide.info/",
     },
     connectionId: "<id>",
@@ -292,9 +293,9 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "e82a4015-5601-45e8-9fbb-7135ee709ee1",
+      id: "0652570f-5a47-4d74-a3cf-5f28faa9a475",
       lifecycleState: "Under Review",
-      masterIdentifier: "2ddef8c8-dca0-4538-8e8c-eb8f660fd0c6",
+      masterIdentifier: "48a993b6-019c-4c26-9a32-afd72a206ca6",
       metadata: [],
       name: "Procedure taxicab",
       number: "DOC-086886",
@@ -302,7 +303,7 @@ async function run() {
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-08T02:06:50.488Z"),
+      updatedAt: new Date("2026-09-10T01:47:30.194Z"),
       url: "https://uncommon-guide.info/",
     },
     connectionId: "<id>",
@@ -360,10 +361,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fdcd5c30-83b8-4ea0-8f77-5f9ff76d572f",
+      id: "d1d17550-7dba-4386-8812-862c80454dbb",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "92011598-b021-4869-8949-dcca73a6f34b",
+      masterIdentifier: "38c93670-d215-4816-828f-8cdf514f88f4",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -373,7 +374,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.293Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.419Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -408,10 +409,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fdcd5c30-83b8-4ea0-8f77-5f9ff76d572f",
+      id: "d1d17550-7dba-4386-8812-862c80454dbb",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "92011598-b021-4869-8949-dcca73a6f34b",
+      masterIdentifier: "38c93670-d215-4816-828f-8cdf514f88f4",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -421,7 +422,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.293Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.419Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -1257,11 +1258,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "2e4b39e1-5b9b-4587-9bb2-85daf2c02fb0",
+      id: "55a79ef5-c0ef-4962-aeb0-f6f88f7bbe23",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-19T23:00:43.626Z"),
+      updatedAt: new Date("2023-04-20T10:09:53.961Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1294,11 +1295,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "2e4b39e1-5b9b-4587-9bb2-85daf2c02fb0",
+      id: "55a79ef5-c0ef-4962-aeb0-f6f88f7bbe23",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-19T23:00:43.626Z"),
+      updatedAt: new Date("2023-04-20T10:09:53.961Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1355,14 +1356,14 @@ async function run() {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
       description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "95d906e6-1739-469b-93e5-ef9aeca38b47",
+      id: "bd1ac7ce-8d47-44d2-b190-04b0bbe25f5e",
       metadata: [],
       name: "Update goodwill",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-09-27T08:40:13.703Z"),
+      updatedAt: new Date("2026-09-29T08:36:59.600Z"),
       url: "https://warmhearted-fraudster.biz/",
     },
     connectionId: "<id>",
@@ -1397,14 +1398,14 @@ async function run() {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
       description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "95d906e6-1739-469b-93e5-ef9aeca38b47",
+      id: "bd1ac7ce-8d47-44d2-b190-04b0bbe25f5e",
       metadata: [],
       name: "Update goodwill",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-09-27T08:40:13.703Z"),
+      updatedAt: new Date("2026-09-29T08:36:59.600Z"),
       url: "https://warmhearted-fraudster.biz/",
     },
     connectionId: "<id>",
@@ -1461,9 +1462,9 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "d4974c23-6c0d-4a58-beca-a48bb7468123",
+      id: "3d9e471c-7b12-4886-9d65-f6e80d55d3fd",
       lifecycleState: "Under Review",
-      masterIdentifier: "86524f06-3b57-404e-9b33-4251d5f4c104",
+      masterIdentifier: "81228e8a-3e2a-4c51-af0e-7edc5eab9787",
       metadata: [],
       name: "Procedure taxicab",
       number: "DOC-086886",
@@ -1471,7 +1472,7 @@ async function run() {
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-08T02:06:50.507Z"),
+      updatedAt: new Date("2026-09-10T01:47:30.203Z"),
       url: "https://uncommon-guide.info/",
     },
     connectionId: "<id>",
@@ -1505,9 +1506,9 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "d4974c23-6c0d-4a58-beca-a48bb7468123",
+      id: "3d9e471c-7b12-4886-9d65-f6e80d55d3fd",
       lifecycleState: "Under Review",
-      masterIdentifier: "86524f06-3b57-404e-9b33-4251d5f4c104",
+      masterIdentifier: "81228e8a-3e2a-4c51-af0e-7edc5eab9787",
       metadata: [],
       name: "Procedure taxicab",
       number: "DOC-086886",
@@ -1515,7 +1516,7 @@ async function run() {
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-08T02:06:50.507Z"),
+      updatedAt: new Date("2026-09-10T01:47:30.203Z"),
       url: "https://uncommon-guide.info/",
     },
     connectionId: "<id>",
@@ -1574,10 +1575,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fd1f4391-d35d-47e2-ae82-c0c4e7c9d088",
+      id: "68c10319-21ab-44a9-b873-061ed4415b1f",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "60a8e4a5-5045-41a6-a5f9-7caf006fcb05",
+      masterIdentifier: "337e79f2-8c11-4d62-93d0-ec47354b813b",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -1587,7 +1588,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.297Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.422Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -1623,10 +1624,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fd1f4391-d35d-47e2-ae82-c0c4e7c9d088",
+      id: "68c10319-21ab-44a9-b873-061ed4415b1f",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "60a8e4a5-5045-41a6-a5f9-7caf006fcb05",
+      masterIdentifier: "337e79f2-8c11-4d62-93d0-ec47354b813b",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -1636,7 +1637,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.297Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.422Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -1751,6 +1752,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removePlmPart
+
+Deletes the PlmPart identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removePlmPart" method="delete" path="/plm/{connection_id}/part/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.plm.removePlmPart({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { plmRemovePlmPart } from "@unified-api/typescript-sdk/funcs/plmRemovePlmPart.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await plmRemovePlmPart(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("plmRemovePlmPart failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemovePlmPartRequest](../../sdk/models/operations/removeplmpartrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemovePlmPartResponse](../../sdk/models/operations/removeplmpartresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updatePlmBomline
 
 Updates the PlmBomline identified by `id`. Provide the unified PlmBomline fields to change in the request body.
@@ -1772,11 +1852,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "2e4b39e1-5b9b-4587-9bb2-85daf2c02fb0",
+      id: "55a79ef5-c0ef-4962-aeb0-f6f88f7bbe23",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-19T23:00:43.626Z"),
+      updatedAt: new Date("2023-04-20T10:09:53.961Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1809,11 +1889,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "2e4b39e1-5b9b-4587-9bb2-85daf2c02fb0",
+      id: "55a79ef5-c0ef-4962-aeb0-f6f88f7bbe23",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-19T23:00:43.626Z"),
+      updatedAt: new Date("2023-04-20T10:09:53.961Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1870,14 +1950,14 @@ async function run() {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
       description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "95d906e6-1739-469b-93e5-ef9aeca38b47",
+      id: "bd1ac7ce-8d47-44d2-b190-04b0bbe25f5e",
       metadata: [],
       name: "Update goodwill",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-09-27T08:40:13.703Z"),
+      updatedAt: new Date("2026-09-29T08:36:59.600Z"),
       url: "https://warmhearted-fraudster.biz/",
     },
     connectionId: "<id>",
@@ -1912,14 +1992,14 @@ async function run() {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
       description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "95d906e6-1739-469b-93e5-ef9aeca38b47",
+      id: "bd1ac7ce-8d47-44d2-b190-04b0bbe25f5e",
       metadata: [],
       name: "Update goodwill",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-09-27T08:40:13.703Z"),
+      updatedAt: new Date("2026-09-29T08:36:59.600Z"),
       url: "https://warmhearted-fraudster.biz/",
     },
     connectionId: "<id>",
@@ -1976,9 +2056,9 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "d4974c23-6c0d-4a58-beca-a48bb7468123",
+      id: "3d9e471c-7b12-4886-9d65-f6e80d55d3fd",
       lifecycleState: "Under Review",
-      masterIdentifier: "86524f06-3b57-404e-9b33-4251d5f4c104",
+      masterIdentifier: "81228e8a-3e2a-4c51-af0e-7edc5eab9787",
       metadata: [],
       name: "Procedure taxicab",
       number: "DOC-086886",
@@ -1986,7 +2066,7 @@ async function run() {
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-08T02:06:50.507Z"),
+      updatedAt: new Date("2026-09-10T01:47:30.203Z"),
       url: "https://uncommon-guide.info/",
     },
     connectionId: "<id>",
@@ -2020,9 +2100,9 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "d4974c23-6c0d-4a58-beca-a48bb7468123",
+      id: "3d9e471c-7b12-4886-9d65-f6e80d55d3fd",
       lifecycleState: "Under Review",
-      masterIdentifier: "86524f06-3b57-404e-9b33-4251d5f4c104",
+      masterIdentifier: "81228e8a-3e2a-4c51-af0e-7edc5eab9787",
       metadata: [],
       name: "Procedure taxicab",
       number: "DOC-086886",
@@ -2030,7 +2110,7 @@ async function run() {
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-08T02:06:50.507Z"),
+      updatedAt: new Date("2026-09-10T01:47:30.203Z"),
       url: "https://uncommon-guide.info/",
     },
     connectionId: "<id>",
@@ -2089,10 +2169,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fd1f4391-d35d-47e2-ae82-c0c4e7c9d088",
+      id: "68c10319-21ab-44a9-b873-061ed4415b1f",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "60a8e4a5-5045-41a6-a5f9-7caf006fcb05",
+      masterIdentifier: "337e79f2-8c11-4d62-93d0-ec47354b813b",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -2102,7 +2182,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.297Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.422Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -2138,10 +2218,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fd1f4391-d35d-47e2-ae82-c0c4e7c9d088",
+      id: "68c10319-21ab-44a9-b873-061ed4415b1f",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "60a8e4a5-5045-41a6-a5f9-7caf006fcb05",
+      masterIdentifier: "337e79f2-8c11-4d62-93d0-ec47354b813b",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -2151,7 +2231,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.297Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.422Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",

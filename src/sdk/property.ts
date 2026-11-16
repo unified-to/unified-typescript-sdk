@@ -29,7 +29,9 @@ import { propertyPatchPropertyGuest } from "../funcs/propertyPatchPropertyGuest.
 import { propertyPatchPropertyListing } from "../funcs/propertyPatchPropertyListing.js";
 import { propertyPatchPropertyReservation } from "../funcs/propertyPatchPropertyReservation.js";
 import { propertyPatchPropertyReview } from "../funcs/propertyPatchPropertyReview.js";
+import { propertyRemovePropertyGuest } from "../funcs/propertyRemovePropertyGuest.js";
 import { propertyRemovePropertyListing } from "../funcs/propertyRemovePropertyListing.js";
+import { propertyRemovePropertyReservation } from "../funcs/propertyRemovePropertyReservation.js";
 import { propertyUpdatePropertyGuest } from "../funcs/propertyUpdatePropertyGuest.js";
 import { propertyUpdatePropertyListing } from "../funcs/propertyUpdatePropertyListing.js";
 import { propertyUpdatePropertyReservation } from "../funcs/propertyUpdatePropertyReservation.js";
@@ -501,6 +503,23 @@ export class Property extends ClientSDK {
   }
 
   /**
+   * Remove a guest
+   *
+   * @remarks
+   * Deletes the PropertyGuest identified by `id`.
+   */
+  async removePropertyGuest(
+    request: operations.RemovePropertyGuestRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePropertyGuestResponse | undefined> {
+    return unwrapAsync(propertyRemovePropertyGuest(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a listing
    *
    * @remarks
@@ -511,6 +530,23 @@ export class Property extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemovePropertyListingResponse | undefined> {
     return unwrapAsync(propertyRemovePropertyListing(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a reservation
+   *
+   * @remarks
+   * Deletes the PropertyReservation identified by `id`.
+   */
+  async removePropertyReservation(
+    request: operations.RemovePropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePropertyReservationResponse | undefined> {
+    return unwrapAsync(propertyRemovePropertyReservation(
       this,
       request,
       options,

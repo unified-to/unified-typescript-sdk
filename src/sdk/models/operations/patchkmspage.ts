@@ -22,6 +22,7 @@ export const PatchKmsPageQueryParamFields = {
   HasChildren: "has_children",
   WebUrl: "web_url",
   Raw: "raw",
+  Content: "content",
 } as const;
 export type PatchKmsPageQueryParamFields = ClosedEnum<
   typeof PatchKmsPageQueryParamFields

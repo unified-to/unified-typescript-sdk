@@ -6,6 +6,7 @@ import { plmCreatePlmPart } from "../funcs/plmCreatePlmPart.js";
 import { plmGetPlmPart } from "../funcs/plmGetPlmPart.js";
 import { plmListPlmParts } from "../funcs/plmListPlmParts.js";
 import { plmPatchPlmPart } from "../funcs/plmPatchPlmPart.js";
+import { plmRemovePlmPart } from "../funcs/plmRemovePlmPart.js";
 import { plmUpdatePlmPart } from "../funcs/plmUpdatePlmPart.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -75,6 +76,23 @@ export class Part extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.PlmPart> {
     return unwrapAsync(plmPatchPlmPart(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a part
+   *
+   * @remarks
+   * Deletes the PlmPart identified by `id`.
+   */
+  async removePlmPart(
+    request: operations.RemovePlmPartRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePlmPartResponse | undefined> {
+    return unwrapAsync(plmRemovePlmPart(
       this,
       request,
       options,

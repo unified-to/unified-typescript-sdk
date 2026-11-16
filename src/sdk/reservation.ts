@@ -12,6 +12,7 @@ import { propertyCreatePropertyReservation } from "../funcs/propertyCreateProper
 import { propertyGetPropertyReservation } from "../funcs/propertyGetPropertyReservation.js";
 import { propertyListPropertyReservations } from "../funcs/propertyListPropertyReservations.js";
 import { propertyPatchPropertyReservation } from "../funcs/propertyPatchPropertyReservation.js";
+import { propertyRemovePropertyReservation } from "../funcs/propertyRemovePropertyReservation.js";
 import { propertyUpdatePropertyReservation } from "../funcs/propertyUpdatePropertyReservation.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -166,6 +167,23 @@ export class Reservation extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveCommerceReservationResponse | undefined> {
     return unwrapAsync(commerceRemoveCommerceReservation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a reservation
+   *
+   * @remarks
+   * Deletes the PropertyReservation identified by `id`.
+   */
+  async removePropertyReservation(
+    request: operations.RemovePropertyReservationRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePropertyReservationResponse | undefined> {
+    return unwrapAsync(propertyRemovePropertyReservation(
       this,
       request,
       options,

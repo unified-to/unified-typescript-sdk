@@ -8,6 +8,7 @@
 * [getPlmPart](#getplmpart) - Retrieve a part
 * [listPlmParts](#listplmparts) - List all parts
 * [patchPlmPart](#patchplmpart) - Update a part
+* [removePlmPart](#removeplmpart) - Remove a part
 * [updatePlmPart](#updateplmpart) - Update a part
 
 ## createPlmPart
@@ -33,10 +34,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fdcd5c30-83b8-4ea0-8f77-5f9ff76d572f",
+      id: "d1d17550-7dba-4386-8812-862c80454dbb",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "92011598-b021-4869-8949-dcca73a6f34b",
+      masterIdentifier: "38c93670-d215-4816-828f-8cdf514f88f4",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -46,7 +47,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.293Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.419Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -81,10 +82,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fdcd5c30-83b8-4ea0-8f77-5f9ff76d572f",
+      id: "d1d17550-7dba-4386-8812-862c80454dbb",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "92011598-b021-4869-8949-dcca73a6f34b",
+      masterIdentifier: "38c93670-d215-4816-828f-8cdf514f88f4",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -94,7 +95,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.293Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.419Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -308,10 +309,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fd1f4391-d35d-47e2-ae82-c0c4e7c9d088",
+      id: "68c10319-21ab-44a9-b873-061ed4415b1f",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "60a8e4a5-5045-41a6-a5f9-7caf006fcb05",
+      masterIdentifier: "337e79f2-8c11-4d62-93d0-ec47354b813b",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -321,7 +322,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.297Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.422Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -357,10 +358,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fd1f4391-d35d-47e2-ae82-c0c4e7c9d088",
+      id: "68c10319-21ab-44a9-b873-061ed4415b1f",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "60a8e4a5-5045-41a6-a5f9-7caf006fcb05",
+      masterIdentifier: "337e79f2-8c11-4d62-93d0-ec47354b813b",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -370,7 +371,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.297Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.422Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -406,6 +407,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removePlmPart
+
+Deletes the PlmPart identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removePlmPart" method="delete" path="/plm/{connection_id}/part/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.part.removePlmPart({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { plmRemovePlmPart } from "@unified-api/typescript-sdk/funcs/plmRemovePlmPart.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await plmRemovePlmPart(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("plmRemovePlmPart failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemovePlmPartRequest](../../sdk/models/operations/removeplmpartrequest.md)                                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemovePlmPartResponse](../../sdk/models/operations/removeplmpartresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updatePlmPart
 
 Updates the PlmPart identified by `id`. Provide the unified PlmPart fields to change in the request body.
@@ -429,10 +509,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fd1f4391-d35d-47e2-ae82-c0c4e7c9d088",
+      id: "68c10319-21ab-44a9-b873-061ed4415b1f",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "60a8e4a5-5045-41a6-a5f9-7caf006fcb05",
+      masterIdentifier: "337e79f2-8c11-4d62-93d0-ec47354b813b",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -442,7 +522,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.297Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.422Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",
@@ -478,10 +558,10 @@ async function run() {
       description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
       documentIds: [],
       fileIds: [],
-      id: "fd1f4391-d35d-47e2-ae82-c0c4e7c9d088",
+      id: "68c10319-21ab-44a9-b873-061ed4415b1f",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "60a8e4a5-5045-41a6-a5f9-7caf006fcb05",
+      masterIdentifier: "337e79f2-8c11-4d62-93d0-ec47354b813b",
       metadata: [],
       name: "grumpy PCB",
       number: "PRT-009154",
@@ -491,7 +571,7 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-12T09:53:26.297Z"),
+      updatedAt: new Date("2021-04-12T22:50:25.422Z"),
       url: "https://inborn-independence.info",
     },
     connectionId: "<id>",

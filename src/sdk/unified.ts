@@ -28,6 +28,7 @@ import { unifiedListUnifiedSecretsmanagerSecrets } from "../funcs/unifiedListUni
 import { unifiedListUnifiedWebhooks } from "../funcs/unifiedListUnifiedWebhooks.js";
 import { unifiedListUnifiedWorkspaceintegrations } from "../funcs/unifiedListUnifiedWorkspaceintegrations.js";
 import { unifiedPatchUnifiedConnection } from "../funcs/unifiedPatchUnifiedConnection.js";
+import { unifiedPatchUnifiedSecretsmanager } from "../funcs/unifiedPatchUnifiedSecretsmanager.js";
 import { unifiedPatchUnifiedWebhook } from "../funcs/unifiedPatchUnifiedWebhook.js";
 import { unifiedPatchUnifiedWebhookResume } from "../funcs/unifiedPatchUnifiedWebhookResume.js";
 import { unifiedPatchUnifiedWebhookTrigger } from "../funcs/unifiedPatchUnifiedWebhookTrigger.js";
@@ -38,6 +39,7 @@ import { unifiedRemoveUnifiedSecretsmanager } from "../funcs/unifiedRemoveUnifie
 import { unifiedRemoveUnifiedWebhook } from "../funcs/unifiedRemoveUnifiedWebhook.js";
 import { unifiedRemoveUnifiedWorkspaceintegration } from "../funcs/unifiedRemoveUnifiedWorkspaceintegration.js";
 import { unifiedUpdateUnifiedConnection } from "../funcs/unifiedUpdateUnifiedConnection.js";
+import { unifiedUpdateUnifiedSecretsmanager } from "../funcs/unifiedUpdateUnifiedSecretsmanager.js";
 import { unifiedUpdateUnifiedWebhook } from "../funcs/unifiedUpdateUnifiedWebhook.js";
 import { unifiedUpdateUnifiedWebhookResume } from "../funcs/unifiedUpdateUnifiedWebhookResume.js";
 import { unifiedUpdateUnifiedWebhookTrigger } from "../funcs/unifiedUpdateUnifiedWebhookTrigger.js";
@@ -424,6 +426,20 @@ export class Unified extends ClientSDK {
   }
 
   /**
+   * Update secrets manager
+   */
+  async patchUnifiedSecretsmanager(
+    request: operations.PatchUnifiedSecretsmanagerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SecretsManager> {
+    return unwrapAsync(unifiedPatchUnifiedSecretsmanager(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update webhook subscription
    */
   async patchUnifiedWebhook(
@@ -560,6 +576,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.Connection> {
     return unwrapAsync(unifiedUpdateUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update secrets manager
+   */
+  async updateUnifiedSecretsmanager(
+    request: operations.UpdateUnifiedSecretsmanagerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.SecretsManager> {
+    return unwrapAsync(unifiedUpdateUnifiedSecretsmanager(
       this,
       request,
       options,

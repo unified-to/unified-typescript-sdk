@@ -11,5 +11,5 @@ let value: ListKmsPagesQueryParamFields = "is_active";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "title" | "type" | "space_id" | "parent_id" | "is_active" | "user_id" | "download_url" | "metadata" | "has_children" | "web_url" | "raw"
+"id" | "created_at" | "updated_at" | "title" | "type" | "space_id" | "parent_id" | "is_active" | "user_id" | "download_url" | "metadata" | "has_children" | "web_url" | "raw" | "content"
 ```

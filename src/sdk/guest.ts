@@ -6,6 +6,7 @@ import { propertyCreatePropertyGuest } from "../funcs/propertyCreatePropertyGues
 import { propertyGetPropertyGuest } from "../funcs/propertyGetPropertyGuest.js";
 import { propertyListPropertyGuests } from "../funcs/propertyListPropertyGuests.js";
 import { propertyPatchPropertyGuest } from "../funcs/propertyPatchPropertyGuest.js";
+import { propertyRemovePropertyGuest } from "../funcs/propertyRemovePropertyGuest.js";
 import { propertyUpdatePropertyGuest } from "../funcs/propertyUpdatePropertyGuest.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -75,6 +76,23 @@ export class Guest extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.PropertyGuest> {
     return unwrapAsync(propertyPatchPropertyGuest(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove a guest
+   *
+   * @remarks
+   * Deletes the PropertyGuest identified by `id`.
+   */
+  async removePropertyGuest(
+    request: operations.RemovePropertyGuestRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePropertyGuestResponse | undefined> {
+    return unwrapAsync(propertyRemovePropertyGuest(
       this,
       request,
       options,

@@ -26,6 +26,10 @@ export type KmsPageType = OpenEnum<typeof KmsPageType>;
 
 export type KmsPage = {
   /**
+   * The page body, in the format given by `type`. Used to create/update only; read a page's body from `download_url`.
+   */
+  content?: string | undefined;
+  /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
@@ -72,6 +76,7 @@ export const KmsPageType$outboundSchema: z.ZodType<
 /** @internal */
 export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
   z.object({
+    content: z.string().optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
@@ -105,6 +110,7 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
   });
 /** @internal */
 export type KmsPage$Outbound = {
+  content?: string | undefined;
   created_at?: string | undefined;
   download_url?: string | undefined;
   has_children?: boolean | undefined;
@@ -127,6 +133,7 @@ export const KmsPage$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   KmsPage
 > = z.object({
+  content: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   downloadUrl: z.string().optional(),
   hasChildren: z.boolean().optional(),

@@ -13,6 +13,7 @@
 * [patchCommerceReservation](#patchcommercereservation) - Update a reservation
 * [patchPropertyReservation](#patchpropertyreservation) - Update a reservation
 * [removeCommerceReservation](#removecommercereservation) - Remove a reservation
+* [removePropertyReservation](#removepropertyreservation) - Remove a reservation
 * [updateCommerceReservation](#updatecommercereservation) - Update a reservation
 * [updatePropertyReservation](#updatepropertyreservation) - Update a reservation
 
@@ -40,13 +41,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "037f869a-3e09-4304-9a34-873cd4499810",
+      id: "e47a5f26-a3df-4215-a76d-8b9d64ffa792",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-09T02:19:45.339Z"),
+      updatedAt: new Date("2023-01-09T13:01:00.078Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -82,13 +83,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "037f869a-3e09-4304-9a34-873cd4499810",
+      id: "e47a5f26-a3df-4215-a76d-8b9d64ffa792",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-09T02:19:45.339Z"),
+      updatedAt: new Date("2023-01-09T13:01:00.078Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -153,7 +154,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "f94c496b-9373-48fb-b80c-33cddc7005e9",
+      id: "6ffd2510-6152-4a89-baf3-2934411cda22",
       lineItems: [
         {
           amount: 1980,
@@ -190,7 +191,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.521Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.396Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -232,7 +233,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "f94c496b-9373-48fb-b80c-33cddc7005e9",
+      id: "6ffd2510-6152-4a89-baf3-2934411cda22",
       lineItems: [
         {
           amount: 1980,
@@ -269,7 +270,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.521Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.396Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -640,13 +641,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "9d015d63-5c3e-4473-b2b1-c6e95383d4de",
+      id: "f8bf6d4e-4900-4d39-a1cd-1ad06d9143eb",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-09T02:19:45.342Z"),
+      updatedAt: new Date("2023-01-09T13:01:00.080Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -683,13 +684,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "9d015d63-5c3e-4473-b2b1-c6e95383d4de",
+      id: "f8bf6d4e-4900-4d39-a1cd-1ad06d9143eb",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-09T02:19:45.342Z"),
+      updatedAt: new Date("2023-01-09T13:01:00.080Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -755,7 +756,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "6684721e-f634-42a0-b235-52791b4ff1c6",
+      id: "857f4669-54a2-4d9f-abd7-2c319ff23b21",
       lineItems: [
         {
           amount: 1980,
@@ -792,7 +793,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.523Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.398Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -835,7 +836,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "6684721e-f634-42a0-b235-52791b4ff1c6",
+      id: "857f4669-54a2-4d9f-abd7-2c319ff23b21",
       lineItems: [
         {
           amount: 1980,
@@ -872,7 +873,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.523Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.398Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -987,6 +988,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removePropertyReservation
+
+Deletes the PropertyReservation identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removePropertyReservation" method="delete" path="/property/{connection_id}/reservation/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.reservation.removePropertyReservation({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { propertyRemovePropertyReservation } from "@unified-api/typescript-sdk/funcs/propertyRemovePropertyReservation.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await propertyRemovePropertyReservation(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("propertyRemovePropertyReservation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemovePropertyReservationRequest](../../sdk/models/operations/removepropertyreservationrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemovePropertyReservationResponse](../../sdk/models/operations/removepropertyreservationresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateCommerceReservation
 
 Updates the CommerceReservation identified by `id`. Provide the unified CommerceReservation fields to change in the request body.
@@ -1011,13 +1091,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "9d015d63-5c3e-4473-b2b1-c6e95383d4de",
+      id: "f8bf6d4e-4900-4d39-a1cd-1ad06d9143eb",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-09T02:19:45.342Z"),
+      updatedAt: new Date("2023-01-09T13:01:00.080Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -1054,13 +1134,13 @@ async function run() {
       guestEmail: "julien.bartoletti@icloud.com",
       guestName: "Julien Bartoletti",
       guestPhone: "(728) 596-2620",
-      id: "9d015d63-5c3e-4473-b2b1-c6e95383d4de",
+      id: "f8bf6d4e-4900-4d39-a1cd-1ad06d9143eb",
       metadata: [],
       notes: "Adsum textilis ipsum despecto.",
       size: 10,
       startAt: new Date("2021-12-18T00:40:25.125Z"),
       status: "PENDING",
-      updatedAt: new Date("2023-01-09T02:19:45.342Z"),
+      updatedAt: new Date("2023-01-09T13:01:00.080Z"),
       url: "https://expensive-gift.org",
     },
     connectionId: "<id>",
@@ -1126,7 +1206,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "6684721e-f634-42a0-b235-52791b4ff1c6",
+      id: "857f4669-54a2-4d9f-abd7-2c319ff23b21",
       lineItems: [
         {
           amount: 1980,
@@ -1163,7 +1243,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.523Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.398Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -1206,7 +1286,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "6684721e-f634-42a0-b235-52791b4ff1c6",
+      id: "857f4669-54a2-4d9f-abd7-2c319ff23b21",
       lineItems: [
         {
           amount: 1980,
@@ -1243,7 +1323,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.523Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.398Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",

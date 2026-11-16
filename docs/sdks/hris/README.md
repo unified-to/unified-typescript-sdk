@@ -67,6 +67,7 @@
 * [patchHrisGroup](#patchhrisgroup) - Update a group
 * [patchHrisJob](#patchhrisjob) - Update a job
 * [patchHrisLocation](#patchhrislocation) - Update a location
+* [patchHrisTaxonomy](#patchhristaxonomy) - Update a taxonomy
 * [patchHrisTimeoff](#patchhristimeoff) - Update a timeoff
 * [patchHrisTimeshift](#patchhristimeshift) - Update a timeshift
 * [removeHrisAttendance](#removehrisattendance) - Remove an attendance
@@ -81,6 +82,7 @@
 * [removeHrisGroup](#removehrisgroup) - Remove a group
 * [removeHrisJob](#removehrisjob) - Remove a job
 * [removeHrisLocation](#removehrislocation) - Remove a location
+* [removeHrisTaxonomy](#removehristaxonomy) - Remove a taxonomy
 * [removeHrisTimeoff](#removehristimeoff) - Remove a timeoff
 * [removeHrisTimeshift](#removehristimeshift) - Remove a timeshift
 * [updateHrisAttendance](#updatehrisattendance) - Update an attendance
@@ -95,6 +97,7 @@
 * [updateHrisGroup](#updatehrisgroup) - Update a group
 * [updateHrisJob](#updatehrisjob) - Update a job
 * [updateHrisLocation](#updatehrislocation) - Update a location
+* [updateHrisTaxonomy](#updatehristaxonomy) - Update a taxonomy
 * [updateHrisTimeoff](#updatehristimeoff) - Update a timeoff
 * [updateHrisTimeshift](#updatehristimeshift) - Update a timeshift
 
@@ -125,32 +128,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-20T02:09:12.520Z"),
+      approvedAt: new Date("2021-09-20T03:11:01.965Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-26T03:14:35.850Z"),
-          id: "ad800710-85d8-4a25-8b30-7a8b0d1817ed",
+          endAt: new Date("2024-02-27T03:01:23.228Z"),
+          id: "5cd908e1-6758-4033-b248-240cae71af5b",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-11-09T04:26:14.498Z"),
+          startAt: new Date("2023-11-10T01:25:45.494Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-05-05T18:36:38.134Z"),
+      endAt: new Date("2024-05-06T20:10:20.704Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "64f6541b-ceba-45dc-8c15-f553bc8ebd35",
+      id: "9522d463-7e60-49cd-b7fa-b5814157c5d0",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-12T04:51:57.584Z"),
+      startAt: new Date("2021-11-12T07:15:19.745Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-21T22:09:44.927Z"),
+      updatedAt: new Date("2022-01-22T02:21:41.803Z"),
     },
     connectionId: "<id>",
   });
@@ -188,32 +191,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-20T02:09:12.520Z"),
+      approvedAt: new Date("2021-09-20T03:11:01.965Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-26T03:14:35.850Z"),
-          id: "ad800710-85d8-4a25-8b30-7a8b0d1817ed",
+          endAt: new Date("2024-02-27T03:01:23.228Z"),
+          id: "5cd908e1-6758-4033-b248-240cae71af5b",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-11-09T04:26:14.498Z"),
+          startAt: new Date("2023-11-10T01:25:45.494Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-05-05T18:36:38.134Z"),
+      endAt: new Date("2024-05-06T20:10:20.704Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "64f6541b-ceba-45dc-8c15-f553bc8ebd35",
+      id: "9522d463-7e60-49cd-b7fa-b5814157c5d0",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-12T04:51:57.584Z"),
+      startAt: new Date("2021-11-12T07:15:19.745Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-21T22:09:44.927Z"),
+      updatedAt: new Date("2022-01-22T02:21:41.803Z"),
     },
     connectionId: "<id>",
   });
@@ -273,7 +276,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "2570fd2b-8db0-41e3-97a4-f1db981df9ac",
+      id: "15166ff4-5101-46a4-b156-7dcccd3429a2",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -281,7 +284,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-20T16:43:55.117Z"),
+      updatedAt: new Date("2025-07-22T08:37:43.263Z"),
     },
     connectionId: "<id>",
   });
@@ -318,7 +321,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "2570fd2b-8db0-41e3-97a4-f1db981df9ac",
+      id: "15166ff4-5101-46a4-b156-7dcccd3429a2",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -326,7 +329,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-20T16:43:55.117Z"),
+      updatedAt: new Date("2025-07-22T08:37:43.263Z"),
     },
     connectionId: "<id>",
   });
@@ -387,13 +390,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "7814809e-333c-4236-92b5-17ce8cce4220",
+      id: "7b1b09cb-606b-464c-b322-0fb7d9c4a0e8",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-31T06:53:33.658Z"),
+      updatedAt: new Date("2023-04-01T04:19:32.238Z"),
     },
     connectionId: "<id>",
   });
@@ -431,13 +434,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "7814809e-333c-4236-92b5-17ce8cce4220",
+      id: "7b1b09cb-606b-464c-b322-0fb7d9c4a0e8",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-31T06:53:33.658Z"),
+      updatedAt: new Date("2023-04-01T04:19:32.238Z"),
     },
     connectionId: "<id>",
   });
@@ -499,11 +502,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "983e48cb-052e-454e-8f0a-b9eeff39f07f",
+      id: "afbc0fb0-2e8a-44fd-9904-d26598c1730d",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-11-01T11:29:03.639Z"),
+      updatedAt: new Date("2026-11-03T12:20:24.032Z"),
     },
     connectionId: "<id>",
   });
@@ -542,11 +545,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "983e48cb-052e-454e-8f0a-b9eeff39f07f",
+      id: "afbc0fb0-2e8a-44fd-9904-d26598c1730d",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-11-01T11:29:03.639Z"),
+      updatedAt: new Date("2026-11-03T12:20:24.032Z"),
     },
     connectionId: "<id>",
   });
@@ -606,14 +609,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "88685286-e88e-4f9c-a93c-96edea21511b",
+      id: "e36ca7e1-b6f3-4df6-9324-df8598a7eeef",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-04-02T13:11:06.121Z"),
+      startAt: new Date("2025-04-04T02:36:42.927Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-04-06T00:31:11.430Z"),
+      updatedAt: new Date("2024-04-07T06:45:45.892Z"),
     },
     connectionId: "<id>",
   });
@@ -650,14 +653,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "88685286-e88e-4f9c-a93c-96edea21511b",
+      id: "e36ca7e1-b6f3-4df6-9324-df8598a7eeef",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-04-02T13:11:06.121Z"),
+      startAt: new Date("2025-04-04T02:36:42.927Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-04-06T00:31:11.430Z"),
+      updatedAt: new Date("2024-04-07T06:45:45.892Z"),
     },
     connectionId: "<id>",
   });
@@ -718,7 +721,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "02dd12c0-3eaa-46b4-95d1-f9fcb6b58e08",
+      id: "d963b5a8-2568-4f64-bef9-5efbee507e11",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -726,7 +729,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-21T13:24:45.954Z"),
+      updatedAt: new Date("2023-06-22T16:37:18.759Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -765,7 +768,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "02dd12c0-3eaa-46b4-95d1-f9fcb6b58e08",
+      id: "d963b5a8-2568-4f64-bef9-5efbee507e11",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -773,7 +776,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-21T13:24:45.954Z"),
+      updatedAt: new Date("2023-06-22T16:37:18.759Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -830,10 +833,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "523d7345-cc1a-40ab-8a05-07e37ea6ac5a",
+      id: "343bfe20-c84f-4640-8cb0-e835c8b1b2af",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-29T08:49:34.791Z"),
+      updatedAt: new Date("2025-10-30T21:19:51.597Z"),
     },
     connectionId: "<id>",
   });
@@ -866,10 +869,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "523d7345-cc1a-40ab-8a05-07e37ea6ac5a",
+      id: "343bfe20-c84f-4640-8cb0-e835c8b1b2af",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-29T08:49:34.791Z"),
+      updatedAt: new Date("2025-10-30T21:19:51.597Z"),
     },
     connectionId: "<id>",
   });
@@ -926,12 +929,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "410a0dfc-0b82-49c1-bcae-db0c213c9198",
+      id: "07045cc7-52e7-4752-a5a5-2403492def7c",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-08-05T07:24:39.079Z"),
+      startAt: new Date("2022-08-06T05:37:06.348Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-12T01:31:08.483Z"),
+      updatedAt: new Date("2020-02-12T08:06:13.007Z"),
     },
     connectionId: "<id>",
   });
@@ -965,12 +968,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "410a0dfc-0b82-49c1-bcae-db0c213c9198",
+      id: "07045cc7-52e7-4752-a5a5-2403492def7c",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-08-05T07:24:39.079Z"),
+      startAt: new Date("2022-08-06T05:37:06.348Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-12T01:31:08.483Z"),
+      updatedAt: new Date("2020-02-12T08:06:13.007Z"),
     },
     connectionId: "<id>",
   });
@@ -1059,7 +1062,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "37227bf9-0337-4230-9e1b-a5aa769b3074",
+      id: "707b4157-c86a-4ec5-bf4e-c247e7692a2b",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -1071,7 +1074,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "f63f78d2-6383-4c0f-8e26-34efbcf409fb",
+          id: "ce7d15cf-9906-4252-95f4-602c82ad6144",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -1119,7 +1122,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-22T00:11:21.910Z"),
+      updatedAt: new Date("2020-07-22T06:00:16.664Z"),
     },
     connectionId: "<id>",
   });
@@ -1185,7 +1188,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "37227bf9-0337-4230-9e1b-a5aa769b3074",
+      id: "707b4157-c86a-4ec5-bf4e-c247e7692a2b",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -1197,7 +1200,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "f63f78d2-6383-4c0f-8e26-34efbcf409fb",
+          id: "ce7d15cf-9906-4252-95f4-602c82ad6144",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -1245,7 +1248,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-22T00:11:21.910Z"),
+      updatedAt: new Date("2020-07-22T06:00:16.664Z"),
     },
     connectionId: "<id>",
   });
@@ -1300,12 +1303,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ba544c84-39dd-4780-bde2-e37452314580",
+      id: "92263f0e-a716-4a2b-adc3-81556bdc6ad6",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-06-11T13:33:16.642Z"),
+      updatedAt: new Date("2026-06-13T07:49:20.785Z"),
     },
     connectionId: "<id>",
   });
@@ -1337,12 +1340,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "ba544c84-39dd-4780-bde2-e37452314580",
+      id: "92263f0e-a716-4a2b-adc3-81556bdc6ad6",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-06-11T13:33:16.642Z"),
+      updatedAt: new Date("2026-06-13T07:49:20.785Z"),
     },
     connectionId: "<id>",
   });
@@ -1399,11 +1402,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "0a253570-4fbd-49af-b856-e091430f7401",
+      id: "a2202ccc-cf49-433e-bcdf-8f0c91cb286c",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-02-08T06:10:08.445Z"),
+      updatedAt: new Date("2023-02-09T00:43:13.377Z"),
     },
     connectionId: "<id>",
   });
@@ -1437,11 +1440,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "0a253570-4fbd-49af-b856-e091430f7401",
+      id: "a2202ccc-cf49-433e-bcdf-8f0c91cb286c",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-02-08T06:10:08.445Z"),
+      updatedAt: new Date("2023-02-09T00:43:13.377Z"),
     },
     connectionId: "<id>",
   });
@@ -1506,7 +1509,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "742a422a-fb34-4a79-a8a6-ed08df1bb557",
+      id: "c608411e-b659-40aa-96ca-fabed999a2b4",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1527,7 +1530,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-29T20:42:07.201Z"),
+      updatedAt: new Date("2023-06-30T14:41:14.815Z"),
     },
     connectionId: "<id>",
   });
@@ -1569,7 +1572,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "742a422a-fb34-4a79-a8a6-ed08df1bb557",
+      id: "c608411e-b659-40aa-96ca-fabed999a2b4",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -1590,7 +1593,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-29T20:42:07.201Z"),
+      updatedAt: new Date("2023-06-30T14:41:14.815Z"),
     },
     connectionId: "<id>",
   });
@@ -1650,13 +1653,13 @@ async function run() {
       createdAt: new Date("2022-06-23T02:10:00.789Z"),
       description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
       domain: "Health",
-      id: "16d5c011-48b0-4280-89f6-1607393b0cfc",
+      id: "010270db-f5e7-4b9b-b182-44ec803a38af",
       isActive: false,
       metadata: [],
       name: "International Functionality Architect",
       subcategory: "Marble",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-06-03T11:05:03.494Z"),
+      updatedAt: new Date("2023-06-03T21:39:48.643Z"),
       url: "https://fixed-membership.biz/",
     },
     connectionId: "<id>",
@@ -1694,13 +1697,13 @@ async function run() {
       createdAt: new Date("2022-06-23T02:10:00.789Z"),
       description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
       domain: "Health",
-      id: "16d5c011-48b0-4280-89f6-1607393b0cfc",
+      id: "010270db-f5e7-4b9b-b182-44ec803a38af",
       isActive: false,
       metadata: [],
       name: "International Functionality Architect",
       subcategory: "Marble",
       type: "KNOWLEDGE",
-      updatedAt: new Date("2023-06-03T11:05:03.494Z"),
+      updatedAt: new Date("2023-06-03T21:39:48.643Z"),
       url: "https://fixed-membership.biz/",
     },
     connectionId: "<id>",
@@ -1754,7 +1757,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.512Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.425Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -1768,16 +1771,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.671Z"),
-      id: "f416099b-5542-43ad-8f34-cdb617c13141",
+      endAt: new Date("2025-01-14T08:57:03.108Z"),
+      id: "5c606537-c7c5-441f-99c2-f180e6c6ff6d",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.565Z"),
+      startAt: new Date("2023-09-14T16:01:58.951Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.395Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.861Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -1808,7 +1811,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.512Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.425Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -1822,16 +1825,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.671Z"),
-      id: "f416099b-5542-43ad-8f34-cdb617c13141",
+      endAt: new Date("2025-01-14T08:57:03.108Z"),
+      id: "5c606537-c7c5-441f-99c2-f180e6c6ff6d",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.565Z"),
+      startAt: new Date("2023-09-14T16:01:58.951Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.395Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.861Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -1885,7 +1888,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-28T01:22:34.807Z"),
+      approvedAt: new Date("2022-07-28T21:52:00.290Z"),
       compensation: [
         {
           amount: 76761,
@@ -1897,13 +1900,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-20T18:56:08.562Z"),
+      endAt: new Date("2026-10-22T19:39:11.994Z"),
       hours: 6,
-      id: "4e8a6a74-a247-43d1-b1a1-6b5c7d019c4d",
+      id: "9aefbd62-36ad-46d0-b84c-ecef739ec118",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-26T05:33:38.840Z"),
-      updatedAt: new Date("2021-07-08T11:18:40.678Z"),
+      startAt: new Date("2023-07-27T08:40:59.769Z"),
+      updatedAt: new Date("2021-07-09T00:46:43.089Z"),
     },
     connectionId: "<id>",
   });
@@ -1933,7 +1936,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-28T01:22:34.807Z"),
+      approvedAt: new Date("2022-07-28T21:52:00.290Z"),
       compensation: [
         {
           amount: 76761,
@@ -1945,13 +1948,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-20T18:56:08.562Z"),
+      endAt: new Date("2026-10-22T19:39:11.994Z"),
       hours: 6,
-      id: "4e8a6a74-a247-43d1-b1a1-6b5c7d019c4d",
+      id: "9aefbd62-36ad-46d0-b84c-ecef739ec118",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-26T05:33:38.840Z"),
-      updatedAt: new Date("2021-07-08T11:18:40.678Z"),
+      startAt: new Date("2023-07-27T08:40:59.769Z"),
+      updatedAt: new Date("2021-07-09T00:46:43.089Z"),
     },
     connectionId: "<id>",
   });
@@ -4820,32 +4823,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-20T02:09:12.521Z"),
+      approvedAt: new Date("2021-09-20T03:11:01.965Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-26T03:14:35.859Z"),
-          id: "37fc4b36-7e7b-4f1c-b558-4371b240de78",
+          endAt: new Date("2024-02-27T03:01:23.234Z"),
+          id: "30131dbc-6690-407b-850b-9227dc0c3cf2",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-11-09T04:26:14.507Z"),
+          startAt: new Date("2023-11-10T01:25:45.499Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-05-05T18:36:38.144Z"),
+      endAt: new Date("2024-05-06T20:10:20.711Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "4b94e8b6-6361-4e3a-8255-04a0804db753",
+      id: "2f482267-cf80-490c-891d-98de285e0708",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-12T04:51:57.585Z"),
+      startAt: new Date("2021-11-12T07:15:19.745Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-21T22:09:44.928Z"),
+      updatedAt: new Date("2022-01-22T02:21:41.805Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4884,32 +4887,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-20T02:09:12.521Z"),
+      approvedAt: new Date("2021-09-20T03:11:01.965Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-26T03:14:35.859Z"),
-          id: "37fc4b36-7e7b-4f1c-b558-4371b240de78",
+          endAt: new Date("2024-02-27T03:01:23.234Z"),
+          id: "30131dbc-6690-407b-850b-9227dc0c3cf2",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-11-09T04:26:14.507Z"),
+          startAt: new Date("2023-11-10T01:25:45.499Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-05-05T18:36:38.144Z"),
+      endAt: new Date("2024-05-06T20:10:20.711Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "4b94e8b6-6361-4e3a-8255-04a0804db753",
+      id: "2f482267-cf80-490c-891d-98de285e0708",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-12T04:51:57.585Z"),
+      startAt: new Date("2021-11-12T07:15:19.745Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-21T22:09:44.928Z"),
+      updatedAt: new Date("2022-01-22T02:21:41.805Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -4970,7 +4973,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "c49ca002-508b-4cd7-b721-c732e68f50d0",
+      id: "be0925eb-62c7-40fd-aee8-22a80472f59d",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -4978,7 +4981,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-20T16:43:55.128Z"),
+      updatedAt: new Date("2025-07-22T08:37:43.274Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5016,7 +5019,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "c49ca002-508b-4cd7-b721-c732e68f50d0",
+      id: "be0925eb-62c7-40fd-aee8-22a80472f59d",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -5024,7 +5027,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-20T16:43:55.128Z"),
+      updatedAt: new Date("2025-07-22T08:37:43.274Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5086,13 +5089,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "98464f50-dbad-42b1-82ce-a204657b9668",
+      id: "804db955-9455-4d68-b400-ccb2da7af933",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-31T06:53:33.672Z"),
+      updatedAt: new Date("2023-04-01T04:19:32.243Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5131,13 +5134,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "98464f50-dbad-42b1-82ce-a204657b9668",
+      id: "804db955-9455-4d68-b400-ccb2da7af933",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-31T06:53:33.672Z"),
+      updatedAt: new Date("2023-04-01T04:19:32.243Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5200,11 +5203,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "75372615-0f4f-4dd8-bf66-be3953d1309c",
+      id: "e0f986a2-05c6-4138-bb11-010ea85836a0",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-11-01T11:29:03.653Z"),
+      updatedAt: new Date("2026-11-03T12:20:24.041Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5244,11 +5247,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "75372615-0f4f-4dd8-bf66-be3953d1309c",
+      id: "e0f986a2-05c6-4138-bb11-010ea85836a0",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-11-01T11:29:03.653Z"),
+      updatedAt: new Date("2026-11-03T12:20:24.041Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5309,14 +5312,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "c67531d0-a26b-4f83-acc5-61684b8c7cb7",
+      id: "16160888-06f7-444d-bb95-86368e1f153b",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-04-02T13:11:06.129Z"),
+      startAt: new Date("2025-04-04T02:36:42.938Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-04-06T00:31:11.437Z"),
+      updatedAt: new Date("2024-04-07T06:45:45.901Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5354,14 +5357,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "c67531d0-a26b-4f83-acc5-61684b8c7cb7",
+      id: "16160888-06f7-444d-bb95-86368e1f153b",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-04-02T13:11:06.129Z"),
+      startAt: new Date("2025-04-04T02:36:42.938Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-04-06T00:31:11.437Z"),
+      updatedAt: new Date("2024-04-07T06:45:45.901Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5423,7 +5426,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "319b1a88-ff6b-4898-abf1-38e3e2352270",
+      id: "52373cf0-672e-4641-868f-4a3f0b9a5b8d",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -5431,7 +5434,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-21T13:24:45.961Z"),
+      updatedAt: new Date("2023-06-22T16:37:18.764Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -5471,7 +5474,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "319b1a88-ff6b-4898-abf1-38e3e2352270",
+      id: "52373cf0-672e-4641-868f-4a3f0b9a5b8d",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -5479,7 +5482,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-21T13:24:45.961Z"),
+      updatedAt: new Date("2023-06-22T16:37:18.764Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -5537,10 +5540,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "1a9e8227-7996-4cce-9519-37686cb2334f",
+      id: "245f676e-a5f1-4417-b3ac-4d0648c41644",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-29T08:49:34.799Z"),
+      updatedAt: new Date("2025-10-30T21:19:51.602Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5574,10 +5577,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "1a9e8227-7996-4cce-9519-37686cb2334f",
+      id: "245f676e-a5f1-4417-b3ac-4d0648c41644",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-29T08:49:34.799Z"),
+      updatedAt: new Date("2025-10-30T21:19:51.602Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5635,12 +5638,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "b9aafba2-c03b-42fa-9a16-8e27d4da0af5",
+      id: "c9f7d345-cb91-4af1-a7ae-e9ccb28fd32b",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-08-05T07:24:39.089Z"),
+      startAt: new Date("2022-08-06T05:37:06.353Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-12T01:31:08.485Z"),
+      updatedAt: new Date("2020-02-12T08:06:13.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5675,12 +5678,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "b9aafba2-c03b-42fa-9a16-8e27d4da0af5",
+      id: "c9f7d345-cb91-4af1-a7ae-e9ccb28fd32b",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-08-05T07:24:39.089Z"),
+      startAt: new Date("2022-08-06T05:37:06.353Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-12T01:31:08.485Z"),
+      updatedAt: new Date("2020-02-12T08:06:13.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5770,7 +5773,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "1f0b3e82-eafc-49c2-91e4-69718091ae69",
+      id: "97589961-dc09-4a14-927d-c5770e874a73",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -5782,7 +5785,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b98d1bee-76c0-4103-a60d-47126a22d639",
+          id: "b9e4e4d2-c380-408d-b0a8-5096fa56cef7",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -5830,7 +5833,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-22T00:11:21.921Z"),
+      updatedAt: new Date("2020-07-22T06:00:16.671Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -5897,7 +5900,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "1f0b3e82-eafc-49c2-91e4-69718091ae69",
+      id: "97589961-dc09-4a14-927d-c5770e874a73",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -5909,7 +5912,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b98d1bee-76c0-4103-a60d-47126a22d639",
+          id: "b9e4e4d2-c380-408d-b0a8-5096fa56cef7",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -5957,7 +5960,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-22T00:11:21.921Z"),
+      updatedAt: new Date("2020-07-22T06:00:16.671Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6013,12 +6016,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "141d9cc4-23ff-4b02-b4d8-0014b64809e8",
+      id: "a8616c2c-de93-467e-969c-d88d8a6e6570",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-06-11T13:33:16.654Z"),
+      updatedAt: new Date("2026-06-13T07:49:20.792Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6051,12 +6054,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "141d9cc4-23ff-4b02-b4d8-0014b64809e8",
+      id: "a8616c2c-de93-467e-969c-d88d8a6e6570",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-06-11T13:33:16.654Z"),
+      updatedAt: new Date("2026-06-13T07:49:20.792Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6114,11 +6117,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "7c599974-fdbc-44e4-8bbf-c4920d669eff",
+      id: "c142f789-1676-4c3e-a6d0-e4a3d82a75ee",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-02-08T06:10:08.508Z"),
+      updatedAt: new Date("2023-02-09T00:43:13.409Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6153,11 +6156,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "7c599974-fdbc-44e4-8bbf-c4920d669eff",
+      id: "c142f789-1676-4c3e-a6d0-e4a3d82a75ee",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-02-08T06:10:08.508Z"),
+      updatedAt: new Date("2023-02-09T00:43:13.409Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6223,7 +6226,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "2573a8c0-73e5-4067-8b0d-29fc145e08d1",
+      id: "c349e202-221e-4b1d-b653-9d148caa127f",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -6244,7 +6247,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-29T20:42:07.207Z"),
+      updatedAt: new Date("2023-06-30T14:41:14.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6287,7 +6290,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "2573a8c0-73e5-4067-8b0d-29fc145e08d1",
+      id: "c349e202-221e-4b1d-b653-9d148caa127f",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -6308,7 +6311,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-29T20:42:07.207Z"),
+      updatedAt: new Date("2023-06-30T14:41:14.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6343,6 +6346,119 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchHrisTaxonomy
+
+Updates the HrisTaxonomy identified by `id`. Provide the unified HrisTaxonomy fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchHrisTaxonomy" method="patch" path="/hris/{connection_id}/taxonomy/{id}" example="hris_taxonomy" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.patchHrisTaxonomy({
+    hrisTaxonomy: {
+      alternativeNames: [
+        "Facilitator",
+        "National",
+      ],
+      createdAt: new Date("2022-06-23T02:10:00.789Z"),
+      description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
+      domain: "Health",
+      id: "2d9f56a8-8e4d-4c51-acd1-3ac8f2450442",
+      isActive: false,
+      metadata: [],
+      name: "International Functionality Architect",
+      subcategory: "Marble",
+      type: "KNOWLEDGE",
+      updatedAt: new Date("2023-06-03T21:39:48.645Z"),
+      url: "https://fixed-membership.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { taxonomyPatchHrisTaxonomy } from "@unified-api/typescript-sdk/funcs/taxonomyPatchHrisTaxonomy.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await taxonomyPatchHrisTaxonomy(unifiedTo, {
+    hrisTaxonomy: {
+      alternativeNames: [
+        "Facilitator",
+        "National",
+      ],
+      createdAt: new Date("2022-06-23T02:10:00.789Z"),
+      description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
+      domain: "Health",
+      id: "2d9f56a8-8e4d-4c51-acd1-3ac8f2450442",
+      isActive: false,
+      metadata: [],
+      name: "International Functionality Architect",
+      subcategory: "Marble",
+      type: "KNOWLEDGE",
+      updatedAt: new Date("2023-06-03T21:39:48.645Z"),
+      url: "https://fixed-membership.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxonomyPatchHrisTaxonomy failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchHrisTaxonomyRequest](../../sdk/models/operations/patchhristaxonomyrequest.md)                                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisTaxonomy](../../sdk/models/shared/hristaxonomy.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchHrisTimeoff
 
 Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
@@ -6362,7 +6478,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.513Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.426Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -6376,16 +6492,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.679Z"),
-      id: "53bf0961-d4fb-4647-9a8a-ccc050224c02",
+      endAt: new Date("2025-01-14T08:57:03.118Z"),
+      id: "798c3024-c554-4b36-af59-b63ac9523642",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.570Z"),
+      startAt: new Date("2023-09-14T16:01:58.957Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.397Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.863Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -6417,7 +6533,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.513Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.426Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -6431,16 +6547,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.679Z"),
-      id: "53bf0961-d4fb-4647-9a8a-ccc050224c02",
+      endAt: new Date("2025-01-14T08:57:03.118Z"),
+      id: "798c3024-c554-4b36-af59-b63ac9523642",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.570Z"),
+      startAt: new Date("2023-09-14T16:01:58.957Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.397Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.863Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -6495,7 +6611,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-28T01:22:34.813Z"),
+      approvedAt: new Date("2022-07-28T21:52:00.294Z"),
       compensation: [
         {
           amount: 76761,
@@ -6507,13 +6623,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-20T18:56:08.577Z"),
+      endAt: new Date("2026-10-22T19:39:12.004Z"),
       hours: 6,
-      id: "2dcefa6e-69d8-4563-bdc1-286e34d0b6f2",
+      id: "729bf08a-8342-4dd4-8422-29a966dc1e95",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-26T05:33:38.848Z"),
-      updatedAt: new Date("2021-07-08T11:18:40.682Z"),
+      startAt: new Date("2023-07-27T08:40:59.775Z"),
+      updatedAt: new Date("2021-07-09T00:46:43.092Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -6544,7 +6660,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-28T01:22:34.813Z"),
+      approvedAt: new Date("2022-07-28T21:52:00.294Z"),
       compensation: [
         {
           amount: 76761,
@@ -6556,13 +6672,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-20T18:56:08.577Z"),
+      endAt: new Date("2026-10-22T19:39:12.004Z"),
       hours: 6,
-      id: "2dcefa6e-69d8-4563-bdc1-286e34d0b6f2",
+      id: "729bf08a-8342-4dd4-8422-29a966dc1e95",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-26T05:33:38.848Z"),
-      updatedAt: new Date("2021-07-08T11:18:40.682Z"),
+      startAt: new Date("2023-07-27T08:40:59.775Z"),
+      updatedAt: new Date("2021-07-09T00:46:43.092Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7545,6 +7661,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removeHrisTaxonomy
+
+Deletes the HrisTaxonomy identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeHrisTaxonomy" method="delete" path="/hris/{connection_id}/taxonomy/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.removeHrisTaxonomy({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { taxonomyRemoveHrisTaxonomy } from "@unified-api/typescript-sdk/funcs/taxonomyRemoveHrisTaxonomy.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await taxonomyRemoveHrisTaxonomy(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxonomyRemoveHrisTaxonomy failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveHrisTaxonomyRequest](../../sdk/models/operations/removehristaxonomyrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveHrisTaxonomyResponse](../../sdk/models/operations/removehristaxonomyresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## removeHrisTimeoff
 
 Deletes the HrisTimeoff identified by `id`.
@@ -7730,32 +7925,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-20T02:09:12.521Z"),
+      approvedAt: new Date("2021-09-20T03:11:01.965Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-26T03:14:35.859Z"),
-          id: "37fc4b36-7e7b-4f1c-b558-4371b240de78",
+          endAt: new Date("2024-02-27T03:01:23.234Z"),
+          id: "30131dbc-6690-407b-850b-9227dc0c3cf2",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-11-09T04:26:14.507Z"),
+          startAt: new Date("2023-11-10T01:25:45.499Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-05-05T18:36:38.144Z"),
+      endAt: new Date("2024-05-06T20:10:20.711Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "4b94e8b6-6361-4e3a-8255-04a0804db753",
+      id: "2f482267-cf80-490c-891d-98de285e0708",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-12T04:51:57.585Z"),
+      startAt: new Date("2021-11-12T07:15:19.745Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-21T22:09:44.928Z"),
+      updatedAt: new Date("2022-01-22T02:21:41.805Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7794,32 +7989,32 @@ async function run() {
         region: "Tennessee",
         regionCode: "CA",
       },
-      approvedAt: new Date("2021-09-20T02:09:12.521Z"),
+      approvedAt: new Date("2021-09-20T03:11:01.965Z"),
       breaks: [
         {
           durationMinutes: 51,
-          endAt: new Date("2024-02-26T03:14:35.859Z"),
-          id: "37fc4b36-7e7b-4f1c-b558-4371b240de78",
+          endAt: new Date("2024-02-27T03:01:23.234Z"),
+          id: "30131dbc-6690-407b-850b-9227dc0c3cf2",
           isPaid: false,
           name: "Lunch",
-          startAt: new Date("2023-11-09T04:26:14.507Z"),
+          startAt: new Date("2023-11-10T01:25:45.499Z"),
         },
       ],
       createdAt: new Date("2021-08-10T19:43:18.452Z"),
       currency: "EUR",
       declaredTipsAmount: 54,
       employeeUserId: "<id>",
-      endAt: new Date("2024-05-05T18:36:38.144Z"),
+      endAt: new Date("2024-05-06T20:10:20.711Z"),
       hourlyRate: 16,
       hours: 10,
-      id: "4b94e8b6-6361-4e3a-8255-04a0804db753",
+      id: "2f482267-cf80-490c-891d-98de285e0708",
       jobName: "Human Accountability Administrator",
       metadata: [],
       nonCashTipsAmount: 167,
-      startAt: new Date("2021-11-12T04:51:57.585Z"),
+      startAt: new Date("2021-11-12T07:15:19.745Z"),
       status: "OPEN",
       timezone: "America/Atikokan",
-      updatedAt: new Date("2022-01-21T22:09:44.928Z"),
+      updatedAt: new Date("2022-01-22T02:21:41.805Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7880,7 +8075,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "c49ca002-508b-4cd7-b721-c732e68f50d0",
+      id: "be0925eb-62c7-40fd-aee8-22a80472f59d",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -7888,7 +8083,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-20T16:43:55.128Z"),
+      updatedAt: new Date("2025-07-22T08:37:43.274Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7926,7 +8121,7 @@ async function run() {
       countryCode: "US",
       createdAt: new Date("2019-11-16T16:43:45.976Z"),
       currency: "USD",
-      id: "c49ca002-508b-4cd7-b721-c732e68f50d0",
+      id: "be0925eb-62c7-40fd-aee8-22a80472f59d",
       isPrimary: true,
       metadata: [],
       name: "Granville Schumm - Checking",
@@ -7934,7 +8129,7 @@ async function run() {
       routingNumber: "448650724",
       splitAmount: 98,
       splitType: "PERCENTAGE",
-      updatedAt: new Date("2025-07-20T16:43:55.128Z"),
+      updatedAt: new Date("2025-07-22T08:37:43.274Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -7996,13 +8191,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "98464f50-dbad-42b1-82ce-a204657b9668",
+      id: "804db955-9455-4d68-b400-ccb2da7af933",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-31T06:53:33.672Z"),
+      updatedAt: new Date("2023-04-01T04:19:32.243Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8041,13 +8236,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "98464f50-dbad-42b1-82ce-a204657b9668",
+      id: "804db955-9455-4d68-b400-ccb2da7af933",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
       type: "OTHER",
-      updatedAt: new Date("2023-03-31T06:53:33.672Z"),
+      updatedAt: new Date("2023-04-01T04:19:32.243Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8110,11 +8305,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "75372615-0f4f-4dd8-bf66-be3953d1309c",
+      id: "e0f986a2-05c6-4138-bb11-010ea85836a0",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-11-01T11:29:03.653Z"),
+      updatedAt: new Date("2026-11-03T12:20:24.041Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8154,11 +8349,11 @@ async function run() {
         regionCode: "MO",
       },
       createdAt: new Date("2021-05-02T22:27:38.970Z"),
-      id: "75372615-0f4f-4dd8-bf66-be3953d1309c",
+      id: "e0f986a2-05c6-4138-bb11-010ea85836a0",
       legalName: "Gottlieb Group LLC",
       metadata: [],
       name: "Gottlieb Group",
-      updatedAt: new Date("2026-11-01T11:29:03.653Z"),
+      updatedAt: new Date("2026-11-03T12:20:24.041Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8219,14 +8414,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "c67531d0-a26b-4f83-acc5-61684b8c7cb7",
+      id: "16160888-06f7-444d-bb95-86368e1f153b",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-04-02T13:11:06.129Z"),
+      startAt: new Date("2025-04-04T02:36:42.938Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-04-06T00:31:11.437Z"),
+      updatedAt: new Date("2024-04-07T06:45:45.901Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8264,14 +8459,14 @@ async function run() {
       employerType: "PERCENTAGE",
       frequency: "ONE_TIME",
       garnishmentType: "CHILD_SUPPORT",
-      id: "c67531d0-a26b-4f83-acc5-61684b8c7cb7",
+      id: "16160888-06f7-444d-bb95-86368e1f153b",
       isActive: true,
       maxAmount: 21794,
       metadata: [],
       notes: "Carmen desidero.",
-      startAt: new Date("2025-04-02T13:11:06.129Z"),
+      startAt: new Date("2025-04-04T02:36:42.938Z"),
       type: "FIXED",
-      updatedAt: new Date("2024-04-06T00:31:11.437Z"),
+      updatedAt: new Date("2024-04-07T06:45:45.901Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8333,7 +8528,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "319b1a88-ff6b-4898-abf1-38e3e2352270",
+      id: "52373cf0-672e-4641-868f-4a3f0b9a5b8d",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -8341,7 +8536,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-21T13:24:45.961Z"),
+      updatedAt: new Date("2023-06-22T16:37:18.764Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -8381,7 +8576,7 @@ async function run() {
       hasHdEncrypted: true,
       hasPasswordManager: true,
       hasScreenlock: false,
-      id: "319b1a88-ff6b-4898-abf1-38e3e2352270",
+      id: "52373cf0-672e-4641-868f-4a3f0b9a5b8d",
       isMissing: false,
       manufacturer: "Hackett Inc",
       metadata: [],
@@ -8389,7 +8584,7 @@ async function run() {
       name: "august-laptop",
       os: "transmitter",
       osVersion: "8.4.8",
-      updatedAt: new Date("2023-06-21T13:24:45.961Z"),
+      updatedAt: new Date("2023-06-22T16:37:18.764Z"),
       version: "4.15.7",
     },
     connectionId: "<id>",
@@ -8447,10 +8642,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "1a9e8227-7996-4cce-9519-37686cb2334f",
+      id: "245f676e-a5f1-4417-b3ac-4d0648c41644",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-29T08:49:34.799Z"),
+      updatedAt: new Date("2025-10-30T21:19:51.602Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8484,10 +8679,10 @@ async function run() {
       createdAt: new Date("2022-10-27T11:47:26.086Z"),
       documentUrl: "https://sore-decision.biz/",
       filename: "ridge_forager.xsl",
-      id: "1a9e8227-7996-4cce-9519-37686cb2334f",
+      id: "245f676e-a5f1-4417-b3ac-4d0648c41644",
       metadata: [],
       type: "POLICY",
-      updatedAt: new Date("2025-10-29T08:49:34.799Z"),
+      updatedAt: new Date("2025-10-30T21:19:51.602Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8545,12 +8740,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "b9aafba2-c03b-42fa-9a16-8e27d4da0af5",
+      id: "c9f7d345-cb91-4af1-a7ae-e9ccb28fd32b",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-08-05T07:24:39.089Z"),
+      startAt: new Date("2022-08-06T05:37:06.353Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-12T01:31:08.485Z"),
+      updatedAt: new Date("2020-02-12T08:06:13.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8585,12 +8780,12 @@ async function run() {
       createdAt: new Date("2019-01-26T12:44:52.326Z"),
       currency: "USD",
       frequency: "SEMIMONTHLY",
-      id: "b9aafba2-c03b-42fa-9a16-8e27d4da0af5",
+      id: "c9f7d345-cb91-4af1-a7ae-e9ccb28fd32b",
       metadata: [],
       notes: "Deporto truculenter vinum beatae.",
-      startAt: new Date("2022-08-05T07:24:39.089Z"),
+      startAt: new Date("2022-08-06T05:37:06.353Z"),
       status: "ENDED",
-      updatedAt: new Date("2020-02-12T01:31:08.485Z"),
+      updatedAt: new Date("2020-02-12T08:06:13.009Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8680,7 +8875,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "1f0b3e82-eafc-49c2-91e4-69718091ae69",
+      id: "97589961-dc09-4a14-927d-c5770e874a73",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -8692,7 +8887,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b98d1bee-76c0-4103-a60d-47126a22d639",
+          id: "b9e4e4d2-c380-408d-b0a8-5096fa56cef7",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -8740,7 +8935,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-22T00:11:21.921Z"),
+      updatedAt: new Date("2020-07-22T06:00:16.671Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8807,7 +9002,7 @@ async function run() {
       gender: "MALE",
       hasMfa: true,
       hiredAt: new Date("2019-09-16T15:08:53.262Z"),
-      id: "1f0b3e82-eafc-49c2-91e4-69718091ae69",
+      id: "97589961-dc09-4a14-927d-c5770e874a73",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/85.jpg",
       languageLocale: "in",
       lastName: "Prohaska",
@@ -8819,7 +9014,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "b98d1bee-76c0-4103-a60d-47126a22d639",
+          id: "b9e4e4d2-c380-408d-b0a8-5096fa56cef7",
           namespace: "custom",
           slug: "custom_property",
           value: "tutis",
@@ -8867,7 +9062,7 @@ async function run() {
       timeoffDaysUsed: 9,
       timezone: "Europe/Ljubljana",
       title: "District Branding Specialist",
-      updatedAt: new Date("2020-07-22T00:11:21.921Z"),
+      updatedAt: new Date("2020-07-22T06:00:16.671Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8923,12 +9118,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "141d9cc4-23ff-4b02-b4d8-0014b64809e8",
+      id: "a8616c2c-de93-467e-969c-d88d8a6e6570",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-06-11T13:33:16.654Z"),
+      updatedAt: new Date("2026-06-13T07:49:20.792Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -8961,12 +9156,12 @@ async function run() {
     hrisGroup: {
       createdAt: new Date("2023-11-01T13:13:40.714Z"),
       description: "Absorbeo casso.",
-      id: "141d9cc4-23ff-4b02-b4d8-0014b64809e8",
+      id: "a8616c2c-de93-467e-969c-d88d8a6e6570",
       isActive: false,
       metadata: [],
       name: "Games",
       type: "BRANCH",
-      updatedAt: new Date("2026-06-11T13:33:16.654Z"),
+      updatedAt: new Date("2026-06-13T07:49:20.792Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9024,11 +9219,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "7c599974-fdbc-44e4-8bbf-c4920d669eff",
+      id: "c142f789-1676-4c3e-a6d0-e4a3d82a75ee",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-02-08T06:10:08.508Z"),
+      updatedAt: new Date("2023-02-09T00:43:13.409Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9063,11 +9258,11 @@ async function run() {
       createdAt: new Date("2020-10-28T01:13:19.491Z"),
       description: "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
       employmentType: "FREELANCE",
-      id: "7c599974-fdbc-44e4-8bbf-c4920d669eff",
+      id: "c142f789-1676-4c3e-a6d0-e4a3d82a75ee",
       isActive: false,
       metadata: [],
       name: "Internal Integration Specialist",
-      updatedAt: new Date("2023-02-08T06:10:08.508Z"),
+      updatedAt: new Date("2023-02-09T00:43:13.409Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9133,7 +9328,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "2573a8c0-73e5-4067-8b0d-29fc145e08d1",
+      id: "c349e202-221e-4b1d-b653-9d148caa127f",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -9154,7 +9349,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-29T20:42:07.207Z"),
+      updatedAt: new Date("2023-06-30T14:41:14.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9197,7 +9392,7 @@ async function run() {
       createdAt: new Date("2021-07-18T10:32:01.414Z"),
       currency: "MNT",
       description: "Commemoro acervus.",
-      id: "2573a8c0-73e5-4067-8b0d-29fc145e08d1",
+      id: "c349e202-221e-4b1d-b653-9d148caa127f",
       isActive: false,
       isHq: true,
       languageLocale: "it",
@@ -9218,7 +9413,7 @@ async function run() {
         },
       ],
       timezone: "Asia/Jerusalem",
-      updatedAt: new Date("2023-06-29T20:42:07.207Z"),
+      updatedAt: new Date("2023-06-30T14:41:14.820Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9253,6 +9448,119 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updateHrisTaxonomy
+
+Updates the HrisTaxonomy identified by `id`. Provide the unified HrisTaxonomy fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateHrisTaxonomy" method="put" path="/hris/{connection_id}/taxonomy/{id}" example="hris_taxonomy" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.hris.updateHrisTaxonomy({
+    hrisTaxonomy: {
+      alternativeNames: [
+        "Facilitator",
+        "National",
+      ],
+      createdAt: new Date("2022-06-23T02:10:00.789Z"),
+      description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
+      domain: "Health",
+      id: "2d9f56a8-8e4d-4c51-acd1-3ac8f2450442",
+      isActive: false,
+      metadata: [],
+      name: "International Functionality Architect",
+      subcategory: "Marble",
+      type: "KNOWLEDGE",
+      updatedAt: new Date("2023-06-03T21:39:48.645Z"),
+      url: "https://fixed-membership.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { taxonomyUpdateHrisTaxonomy } from "@unified-api/typescript-sdk/funcs/taxonomyUpdateHrisTaxonomy.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await taxonomyUpdateHrisTaxonomy(unifiedTo, {
+    hrisTaxonomy: {
+      alternativeNames: [
+        "Facilitator",
+        "National",
+      ],
+      createdAt: new Date("2022-06-23T02:10:00.789Z"),
+      description: "Uterque vespillo adnuo ea commodo turbo suscipio condico.",
+      domain: "Health",
+      id: "2d9f56a8-8e4d-4c51-acd1-3ac8f2450442",
+      isActive: false,
+      metadata: [],
+      name: "International Functionality Architect",
+      subcategory: "Marble",
+      type: "KNOWLEDGE",
+      updatedAt: new Date("2023-06-03T21:39:48.645Z"),
+      url: "https://fixed-membership.biz/",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("taxonomyUpdateHrisTaxonomy failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateHrisTaxonomyRequest](../../sdk/models/operations/updatehristaxonomyrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.HrisTaxonomy](../../sdk/models/shared/hristaxonomy.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateHrisTimeoff
 
 Updates the HrisTimeoff identified by `id`. Provide the unified HrisTimeoff fields to change in the request body.
@@ -9272,7 +9580,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.513Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.426Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -9286,16 +9594,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.679Z"),
-      id: "53bf0961-d4fb-4647-9a8a-ccc050224c02",
+      endAt: new Date("2025-01-14T08:57:03.118Z"),
+      id: "798c3024-c554-4b36-af59-b63ac9523642",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.570Z"),
+      startAt: new Date("2023-09-14T16:01:58.957Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.397Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.863Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -9327,7 +9635,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-25T04:44:45.513Z"),
+      approvedAt: new Date("2022-02-25T08:28:33.426Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -9341,16 +9649,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-13T01:27:24.679Z"),
-      id: "53bf0961-d4fb-4647-9a8a-ccc050224c02",
+      endAt: new Date("2025-01-14T08:57:03.118Z"),
+      id: "798c3024-c554-4b36-af59-b63ac9523642",
       isPaid: true,
       metadata: [],
       originalType: "acerbitas ut",
       reason: "verto",
-      startAt: new Date("2023-09-13T21:23:08.570Z"),
+      startAt: new Date("2023-09-14T16:01:58.957Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-16T10:50:39.397Z"),
+      updatedAt: new Date("2022-07-16T18:17:56.863Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -9405,7 +9713,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-28T01:22:34.813Z"),
+      approvedAt: new Date("2022-07-28T21:52:00.294Z"),
       compensation: [
         {
           amount: 76761,
@@ -9417,13 +9725,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-20T18:56:08.577Z"),
+      endAt: new Date("2026-10-22T19:39:12.004Z"),
       hours: 6,
-      id: "2dcefa6e-69d8-4563-bdc1-286e34d0b6f2",
+      id: "729bf08a-8342-4dd4-8422-29a966dc1e95",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-26T05:33:38.848Z"),
-      updatedAt: new Date("2021-07-08T11:18:40.682Z"),
+      startAt: new Date("2023-07-27T08:40:59.775Z"),
+      updatedAt: new Date("2021-07-09T00:46:43.092Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -9454,7 +9762,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-28T01:22:34.813Z"),
+      approvedAt: new Date("2022-07-28T21:52:00.294Z"),
       compensation: [
         {
           amount: 76761,
@@ -9466,13 +9774,13 @@ async function run() {
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-20T18:56:08.577Z"),
+      endAt: new Date("2026-10-22T19:39:12.004Z"),
       hours: 6,
-      id: "2dcefa6e-69d8-4563-bdc1-286e34d0b6f2",
+      id: "729bf08a-8342-4dd4-8422-29a966dc1e95",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-26T05:33:38.848Z"),
-      updatedAt: new Date("2021-07-08T11:18:40.682Z"),
+      startAt: new Date("2023-07-27T08:40:59.775Z"),
+      updatedAt: new Date("2021-07-09T00:46:43.092Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -31,7 +31,9 @@
 * [patchPropertyReservation](#patchpropertyreservation) - Update a reservation
 * [patchPropertyReview](#patchpropertyreview) - Update a review
 * [removeAnalyticsProperty](#removeanalyticsproperty) - Remove a property
+* [removePropertyGuest](#removepropertyguest) - Remove a guest
 * [removePropertyListing](#removepropertylisting) - Remove a listing
+* [removePropertyReservation](#removepropertyreservation) - Remove a reservation
 * [updateAnalyticsProperty](#updateanalyticsproperty) - Update a property
 * [updatePropertyGuest](#updatepropertyguest) - Update a guest
 * [updatePropertyListing](#updatepropertylisting) - Update a listing
@@ -59,10 +61,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "c7b36f82-5f7a-41c8-97eb-b14b65b3ad62",
+      id: "c631431a-3149-4823-baf0-e1cebd19c215",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T23:13:10.779Z"),
+      updatedAt: new Date("2021-09-14T23:27:27.301Z"),
     },
     connectionId: "<id>",
   });
@@ -94,10 +96,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "c7b36f82-5f7a-41c8-97eb-b14b65b3ad62",
+      id: "c631431a-3149-4823-baf0-e1cebd19c215",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T23:13:10.779Z"),
+      updatedAt: new Date("2021-09-14T23:27:27.301Z"),
     },
     connectionId: "<id>",
   });
@@ -152,13 +154,13 @@ async function run() {
     propertyConversation: {
       createdAt: new Date("2022-06-20T00:02:46.530Z"),
       guestName: "Evie Okuneva",
-      id: "a836f289-a2fe-4b9a-b5ad-af391d8f650c",
+      id: "2bdb820e-0237-4699-afa7-8c8cb02f5482",
       isUnread: false,
       messages: [
         {
           attachments: [],
-          createdAt: new Date("2025-05-02T03:01:42.800Z"),
-          id: "23b809b6-8dd6-4616-b89f-d9e2f8520e29",
+          createdAt: new Date("2025-05-03T11:02:29.200Z"),
+          id: "ad460423-f3cd-4d8c-8034-2adb7fe6466c",
           isAutomatic: false,
           message: "Vinitor caterva amor sophismata admitto colo tempore aufero torrens.",
           senderName: "Evie Okuneva",
@@ -166,8 +168,8 @@ async function run() {
         },
         {
           attachments: [],
-          createdAt: new Date("2026-05-18T22:31:16.912Z"),
-          id: "45c822f9-5291-4cb3-97ca-0169ed83d9f4",
+          createdAt: new Date("2026-05-20T18:12:25.530Z"),
+          id: "7dd5485b-ce30-4d10-a7c6-a9627fea5e05",
           message: "Aequitas torqueo curiositas cimentarius repellendus auditor degero ademptio adnuo.",
           senderName: "Ms. Patti Lynch",
           senderType: "HOST",
@@ -175,7 +177,7 @@ async function run() {
       ],
       metadata: [],
       source: "Airbnb",
-      updatedAt: new Date("2026-05-18T22:31:16.912Z"),
+      updatedAt: new Date("2026-05-20T18:12:25.530Z"),
     },
     connectionId: "<id>",
   });
@@ -207,13 +209,13 @@ async function run() {
     propertyConversation: {
       createdAt: new Date("2022-06-20T00:02:46.530Z"),
       guestName: "Evie Okuneva",
-      id: "a836f289-a2fe-4b9a-b5ad-af391d8f650c",
+      id: "2bdb820e-0237-4699-afa7-8c8cb02f5482",
       isUnread: false,
       messages: [
         {
           attachments: [],
-          createdAt: new Date("2025-05-02T03:01:42.800Z"),
-          id: "23b809b6-8dd6-4616-b89f-d9e2f8520e29",
+          createdAt: new Date("2025-05-03T11:02:29.200Z"),
+          id: "ad460423-f3cd-4d8c-8034-2adb7fe6466c",
           isAutomatic: false,
           message: "Vinitor caterva amor sophismata admitto colo tempore aufero torrens.",
           senderName: "Evie Okuneva",
@@ -221,8 +223,8 @@ async function run() {
         },
         {
           attachments: [],
-          createdAt: new Date("2026-05-18T22:31:16.912Z"),
-          id: "45c822f9-5291-4cb3-97ca-0169ed83d9f4",
+          createdAt: new Date("2026-05-20T18:12:25.530Z"),
+          id: "7dd5485b-ce30-4d10-a7c6-a9627fea5e05",
           message: "Aequitas torqueo curiositas cimentarius repellendus auditor degero ademptio adnuo.",
           senderName: "Ms. Patti Lynch",
           senderType: "HOST",
@@ -230,7 +232,7 @@ async function run() {
       ],
       metadata: [],
       source: "Airbnb",
-      updatedAt: new Date("2026-05-18T22:31:16.912Z"),
+      updatedAt: new Date("2026-05-20T18:12:25.530Z"),
     },
     connectionId: "<id>",
   });
@@ -300,7 +302,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "5c999937-91f5-4399-9877-21e8ad5390e7",
+      id: "6716fe12-9a39-4135-a84d-97b5471f52c3",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -314,7 +316,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.655Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.643Z"),
     },
     connectionId: "<id>",
   });
@@ -361,7 +363,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "5c999937-91f5-4399-9877-21e8ad5390e7",
+      id: "6716fe12-9a39-4135-a84d-97b5471f52c3",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -375,7 +377,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.655Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.643Z"),
     },
     connectionId: "<id>",
   });
@@ -459,7 +461,7 @@ async function run() {
       currency: "USD",
       description: "Cuius deputo cruentus demoror censura caveo sponte statim vespillo cursim. Arbitro barba summopere. Curto vulticulus comparo surgo vociferor carmen deputo defluo.",
       houseRules: "No smoking. No parties or events.",
-      id: "242b560e-a918-413f-97cb-87b8f2865259",
+      id: "b5f120c8-fe4a-4578-a6d2-0957f29cd5cc",
       imageUrls: [
         "https://loremflickr.com/23/1328?lock=5798241296161663",
         "https://loremflickr.com/12/1312?lock=6354590363728966",
@@ -476,7 +478,7 @@ async function run() {
       startPriceAmount: 470,
       timezone: "America/Los_Angeles",
       type: "ROOM",
-      updatedAt: new Date("2026-09-21T10:24:45.046Z"),
+      updatedAt: new Date("2026-09-23T10:20:20.340Z"),
       webUrl: "https://tight-pronoun.info/",
     },
     connectionId: "<id>",
@@ -538,7 +540,7 @@ async function run() {
       currency: "USD",
       description: "Cuius deputo cruentus demoror censura caveo sponte statim vespillo cursim. Arbitro barba summopere. Curto vulticulus comparo surgo vociferor carmen deputo defluo.",
       houseRules: "No smoking. No parties or events.",
-      id: "242b560e-a918-413f-97cb-87b8f2865259",
+      id: "b5f120c8-fe4a-4578-a6d2-0957f29cd5cc",
       imageUrls: [
         "https://loremflickr.com/23/1328?lock=5798241296161663",
         "https://loremflickr.com/12/1312?lock=6354590363728966",
@@ -555,7 +557,7 @@ async function run() {
       startPriceAmount: 470,
       timezone: "America/Los_Angeles",
       type: "ROOM",
-      updatedAt: new Date("2026-09-21T10:24:45.046Z"),
+      updatedAt: new Date("2026-09-23T10:20:20.340Z"),
       webUrl: "https://tight-pronoun.info/",
     },
     connectionId: "<id>",
@@ -614,9 +616,9 @@ async function run() {
       createdAt: new Date("2020-12-18T19:14:11.415Z"),
       currency: "USD",
       depositAmount: 594.54,
-      endAt: new Date("2026-11-28"),
+      endAt: new Date("2026-11-30"),
       guests: 2,
-      id: "fcfa106c-e755-48db-9b62-140a83aacd95",
+      id: "4cbc4542-75fa-4f7e-8e48-359223657f56",
       lineItems: [
         {
           amount: 1665,
@@ -638,7 +640,7 @@ async function run() {
           type: "TAX",
         },
       ],
-      startAt: new Date("2026-11-19"),
+      startAt: new Date("2026-11-21"),
       totalAmount: 1981.8,
     },
     connectionId: "<id>",
@@ -674,9 +676,9 @@ async function run() {
       createdAt: new Date("2020-12-18T19:14:11.415Z"),
       currency: "USD",
       depositAmount: 594.54,
-      endAt: new Date("2026-11-28"),
+      endAt: new Date("2026-11-30"),
       guests: 2,
-      id: "fcfa106c-e755-48db-9b62-140a83aacd95",
+      id: "4cbc4542-75fa-4f7e-8e48-359223657f56",
       lineItems: [
         {
           amount: 1665,
@@ -698,7 +700,7 @@ async function run() {
           type: "TAX",
         },
       ],
-      startAt: new Date("2026-11-19"),
+      startAt: new Date("2026-11-21"),
       totalAmount: 1981.8,
     },
     connectionId: "<id>",
@@ -763,7 +765,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "f94c496b-9373-48fb-b80c-33cddc7005e9",
+      id: "6ffd2510-6152-4a89-baf3-2934411cda22",
       lineItems: [
         {
           amount: 1980,
@@ -800,7 +802,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.521Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.396Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -842,7 +844,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "f94c496b-9373-48fb-b80c-33cddc7005e9",
+      id: "6ffd2510-6152-4a89-baf3-2934411cda22",
       lineItems: [
         {
           amount: 1980,
@@ -879,7 +881,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.521Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.396Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -2104,10 +2106,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "9e8d841f-6d49-469e-9446-eb0a49f3f91e",
+      id: "aa23357e-1f2e-4adf-b1c5-d1fa3e0b64e4",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T23:13:10.779Z"),
+      updatedAt: new Date("2021-09-14T23:27:27.301Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2140,10 +2142,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "9e8d841f-6d49-469e-9446-eb0a49f3f91e",
+      id: "aa23357e-1f2e-4adf-b1c5-d1fa3e0b64e4",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T23:13:10.779Z"),
+      updatedAt: new Date("2021-09-14T23:27:27.301Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2214,7 +2216,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "9682bfcc-ae86-4a23-847f-a703f7589b4f",
+      id: "c6ba411c-668f-48e4-bdca-f03d743b6873",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -2228,7 +2230,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.666Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.656Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2276,7 +2278,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "9682bfcc-ae86-4a23-847f-a703f7589b4f",
+      id: "c6ba411c-668f-48e4-bdca-f03d743b6873",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -2290,7 +2292,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.666Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.656Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2375,7 +2377,7 @@ async function run() {
       currency: "USD",
       description: "Cuius deputo cruentus demoror censura caveo sponte statim vespillo cursim. Arbitro barba summopere. Curto vulticulus comparo surgo vociferor carmen deputo defluo.",
       houseRules: "No smoking. No parties or events.",
-      id: "822ae20c-0054-49f6-9f50-8f73cc0ab89a",
+      id: "b0113e41-653f-45d0-8d7a-91463144e738",
       imageUrls: [
         "https://loremflickr.com/23/1328?lock=5798241296161663",
         "https://loremflickr.com/12/1312?lock=6354590363728966",
@@ -2392,7 +2394,7 @@ async function run() {
       startPriceAmount: 470,
       timezone: "America/Los_Angeles",
       type: "ROOM",
-      updatedAt: new Date("2026-09-21T10:24:45.072Z"),
+      updatedAt: new Date("2026-09-23T10:20:20.360Z"),
       webUrl: "https://tight-pronoun.info/",
     },
     connectionId: "<id>",
@@ -2455,7 +2457,7 @@ async function run() {
       currency: "USD",
       description: "Cuius deputo cruentus demoror censura caveo sponte statim vespillo cursim. Arbitro barba summopere. Curto vulticulus comparo surgo vociferor carmen deputo defluo.",
       houseRules: "No smoking. No parties or events.",
-      id: "822ae20c-0054-49f6-9f50-8f73cc0ab89a",
+      id: "b0113e41-653f-45d0-8d7a-91463144e738",
       imageUrls: [
         "https://loremflickr.com/23/1328?lock=5798241296161663",
         "https://loremflickr.com/12/1312?lock=6354590363728966",
@@ -2472,7 +2474,7 @@ async function run() {
       startPriceAmount: 470,
       timezone: "America/Los_Angeles",
       type: "ROOM",
-      updatedAt: new Date("2026-09-21T10:24:45.072Z"),
+      updatedAt: new Date("2026-09-23T10:20:20.360Z"),
       webUrl: "https://tight-pronoun.info/",
     },
     connectionId: "<id>",
@@ -2538,7 +2540,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "6684721e-f634-42a0-b235-52791b4ff1c6",
+      id: "857f4669-54a2-4d9f-abd7-2c319ff23b21",
       lineItems: [
         {
           amount: 1980,
@@ -2575,7 +2577,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.523Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.398Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -2618,7 +2620,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "6684721e-f634-42a0-b235-52791b4ff1c6",
+      id: "857f4669-54a2-4d9f-abd7-2c319ff23b21",
       lineItems: [
         {
           amount: 1980,
@@ -2655,7 +2657,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.523Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.398Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -2742,13 +2744,13 @@ async function run() {
       ],
       content: "Delectus conscendo communis custodia statim. Tutis adsuesco attonbitus comitatus auditor ea tergo nostrum deleo. Comprehendo tertius summopere vaco apparatus incidunt tabula pauci confido colo.",
       createdAt: new Date("2022-10-17T11:17:07.682Z"),
-      id: "6d3a97b6-87ca-43d1-b771-449a765a09c6",
+      id: "3140f20e-7711-4b8d-afe6-5a0db558f8c6",
       isPublic: true,
       metadata: [],
       privateFeedback: "Tripudio neque communis.",
       rating: 3,
       source: "Airbnb",
-      updatedAt: new Date("2026-03-02T17:59:04.299Z"),
+      updatedAt: new Date("2026-03-04T10:40:54.471Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2811,13 +2813,13 @@ async function run() {
       ],
       content: "Delectus conscendo communis custodia statim. Tutis adsuesco attonbitus comitatus auditor ea tergo nostrum deleo. Comprehendo tertius summopere vaco apparatus incidunt tabula pauci confido colo.",
       createdAt: new Date("2022-10-17T11:17:07.682Z"),
-      id: "6d3a97b6-87ca-43d1-b771-449a765a09c6",
+      id: "3140f20e-7711-4b8d-afe6-5a0db558f8c6",
       isPublic: true,
       metadata: [],
       privateFeedback: "Tripudio neque communis.",
       rating: 3,
       source: "Airbnb",
-      updatedAt: new Date("2026-03-02T17:59:04.299Z"),
+      updatedAt: new Date("2026-03-04T10:40:54.471Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2931,6 +2933,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removePropertyGuest
+
+Deletes the PropertyGuest identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removePropertyGuest" method="delete" path="/property/{connection_id}/guest/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.property.removePropertyGuest({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { propertyRemovePropertyGuest } from "@unified-api/typescript-sdk/funcs/propertyRemovePropertyGuest.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await propertyRemovePropertyGuest(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("propertyRemovePropertyGuest failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemovePropertyGuestRequest](../../sdk/models/operations/removepropertyguestrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemovePropertyGuestResponse](../../sdk/models/operations/removepropertyguestresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## removePropertyListing
 
 Deletes the PropertyListing identified by `id`.
@@ -3010,6 +3091,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removePropertyReservation
+
+Deletes the PropertyReservation identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removePropertyReservation" method="delete" path="/property/{connection_id}/reservation/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.property.removePropertyReservation({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { propertyRemovePropertyReservation } from "@unified-api/typescript-sdk/funcs/propertyRemovePropertyReservation.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await propertyRemovePropertyReservation(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("propertyRemovePropertyReservation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemovePropertyReservationRequest](../../sdk/models/operations/removepropertyreservationrequest.md)                                                                 | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemovePropertyReservationResponse](../../sdk/models/operations/removepropertyreservationresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateAnalyticsProperty
 
 Updates the AnalyticsProperty identified by `id`. Provide the unified AnalyticsProperty fields to change in the request body.
@@ -3031,10 +3191,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "9e8d841f-6d49-469e-9446-eb0a49f3f91e",
+      id: "aa23357e-1f2e-4adf-b1c5-d1fa3e0b64e4",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T23:13:10.779Z"),
+      updatedAt: new Date("2021-09-14T23:27:27.301Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3067,10 +3227,10 @@ async function run() {
     analyticsProperty: {
       createdAt: new Date("2021-09-05T19:04:58.430Z"),
       currency: "USD",
-      id: "9e8d841f-6d49-469e-9446-eb0a49f3f91e",
+      id: "aa23357e-1f2e-4adf-b1c5-d1fa3e0b64e4",
       name: "Daniel, Goldner and Dickinson",
       timezone: "UTC",
-      updatedAt: new Date("2021-09-14T23:13:10.779Z"),
+      updatedAt: new Date("2021-09-14T23:27:27.301Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3141,7 +3301,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "9682bfcc-ae86-4a23-847f-a703f7589b4f",
+      id: "c6ba411c-668f-48e4-bdca-f03d743b6873",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -3155,7 +3315,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.666Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.656Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3203,7 +3363,7 @@ async function run() {
         },
       ],
       firstName: "Melissa",
-      id: "9682bfcc-ae86-4a23-847f-a703f7589b4f",
+      id: "c6ba411c-668f-48e4-bdca-f03d743b6873",
       imageUrl: "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/36.jpg",
       language: "es",
       lastName: "Green",
@@ -3217,7 +3377,7 @@ async function run() {
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2025-07-14T13:28:25.666Z"),
+      updatedAt: new Date("2025-07-16T01:42:25.656Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3302,7 +3462,7 @@ async function run() {
       currency: "USD",
       description: "Cuius deputo cruentus demoror censura caveo sponte statim vespillo cursim. Arbitro barba summopere. Curto vulticulus comparo surgo vociferor carmen deputo defluo.",
       houseRules: "No smoking. No parties or events.",
-      id: "822ae20c-0054-49f6-9f50-8f73cc0ab89a",
+      id: "b0113e41-653f-45d0-8d7a-91463144e738",
       imageUrls: [
         "https://loremflickr.com/23/1328?lock=5798241296161663",
         "https://loremflickr.com/12/1312?lock=6354590363728966",
@@ -3319,7 +3479,7 @@ async function run() {
       startPriceAmount: 470,
       timezone: "America/Los_Angeles",
       type: "ROOM",
-      updatedAt: new Date("2026-09-21T10:24:45.072Z"),
+      updatedAt: new Date("2026-09-23T10:20:20.360Z"),
       webUrl: "https://tight-pronoun.info/",
     },
     connectionId: "<id>",
@@ -3382,7 +3542,7 @@ async function run() {
       currency: "USD",
       description: "Cuius deputo cruentus demoror censura caveo sponte statim vespillo cursim. Arbitro barba summopere. Curto vulticulus comparo surgo vociferor carmen deputo defluo.",
       houseRules: "No smoking. No parties or events.",
-      id: "822ae20c-0054-49f6-9f50-8f73cc0ab89a",
+      id: "b0113e41-653f-45d0-8d7a-91463144e738",
       imageUrls: [
         "https://loremflickr.com/23/1328?lock=5798241296161663",
         "https://loremflickr.com/12/1312?lock=6354590363728966",
@@ -3399,7 +3559,7 @@ async function run() {
       startPriceAmount: 470,
       timezone: "America/Los_Angeles",
       type: "ROOM",
-      updatedAt: new Date("2026-09-21T10:24:45.072Z"),
+      updatedAt: new Date("2026-09-23T10:20:20.360Z"),
       webUrl: "https://tight-pronoun.info/",
     },
     connectionId: "<id>",
@@ -3465,7 +3625,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "6684721e-f634-42a0-b235-52791b4ff1c6",
+      id: "857f4669-54a2-4d9f-abd7-2c319ff23b21",
       lineItems: [
         {
           amount: 1980,
@@ -3502,7 +3662,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.523Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.398Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -3545,7 +3705,7 @@ async function run() {
       guestEmail: "anya.parisian@hotmail.com",
       guestName: "Anya Parisian",
       guests: 6,
-      id: "6684721e-f634-42a0-b235-52791b4ff1c6",
+      id: "857f4669-54a2-4d9f-abd7-2c319ff23b21",
       lineItems: [
         {
           amount: 1980,
@@ -3582,7 +3742,7 @@ async function run() {
       startAt: new Date("2022-09-25T17:17:08.838Z"),
       status: "PENDING",
       totalAmount: 2181.6,
-      updatedAt: new Date("2022-11-17T23:47:33.523Z"),
+      updatedAt: new Date("2022-11-18T04:52:22.398Z"),
       webUrl: "https://antique-tennis.biz/",
     },
     connectionId: "<id>",
@@ -3669,13 +3829,13 @@ async function run() {
       ],
       content: "Delectus conscendo communis custodia statim. Tutis adsuesco attonbitus comitatus auditor ea tergo nostrum deleo. Comprehendo tertius summopere vaco apparatus incidunt tabula pauci confido colo.",
       createdAt: new Date("2022-10-17T11:17:07.682Z"),
-      id: "6d3a97b6-87ca-43d1-b771-449a765a09c6",
+      id: "3140f20e-7711-4b8d-afe6-5a0db558f8c6",
       isPublic: true,
       metadata: [],
       privateFeedback: "Tripudio neque communis.",
       rating: 3,
       source: "Airbnb",
-      updatedAt: new Date("2026-03-02T17:59:04.299Z"),
+      updatedAt: new Date("2026-03-04T10:40:54.471Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3738,13 +3898,13 @@ async function run() {
       ],
       content: "Delectus conscendo communis custodia statim. Tutis adsuesco attonbitus comitatus auditor ea tergo nostrum deleo. Comprehendo tertius summopere vaco apparatus incidunt tabula pauci confido colo.",
       createdAt: new Date("2022-10-17T11:17:07.682Z"),
-      id: "6d3a97b6-87ca-43d1-b771-449a765a09c6",
+      id: "3140f20e-7711-4b8d-afe6-5a0db558f8c6",
       isPublic: true,
       metadata: [],
       privateFeedback: "Tripudio neque communis.",
       rating: 3,
       source: "Airbnb",
-      updatedAt: new Date("2026-03-02T17:59:04.299Z"),
+      updatedAt: new Date("2026-03-04T10:40:54.471Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -30,16 +30,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expensereport.createAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-22T19:32:06.317Z"),
+      approvedAt: new Date("2021-04-23T02:22:58.338Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "95cc6149-77ca-4309-8b95-b4c4ba713225",
+      id: "d1bc7559-39fa-48af-87f3-56f013d2cd04",
       lineitems: [
         {
-          id: "b2c6a7e1-04cf-444f-8172-44b822aadd94",
+          id: "a4e9246c-237b-4bd1-9a39-908eb16afcf6",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -47,7 +47,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "aad5e9df-9eaa-4176-97b1-f65314810593",
+          id: "87205e6b-816a-4f41-96d9-a3dc211c3262",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -56,7 +56,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "883ac463-969e-4b11-a7f5-bbc37f3684fc",
+          id: "fedf6b56-8d40-4779-88aa-053c139f6ab5",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -65,7 +65,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4035c3ab-66d1-4f06-9335-a73bcd62b740",
+          id: "80148ade-b74b-45f7-9260-7a5c64a15f83",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -77,11 +77,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-22T19:32:06.317Z"),
+      reimbursedAt: new Date("2021-04-23T02:22:58.338Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-22T19:32:06.317Z"),
+      updatedAt: new Date("2021-04-23T02:22:58.338Z"),
     },
     connectionId: "<id>",
   });
@@ -111,16 +111,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-22T19:32:06.317Z"),
+      approvedAt: new Date("2021-04-23T02:22:58.338Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "95cc6149-77ca-4309-8b95-b4c4ba713225",
+      id: "d1bc7559-39fa-48af-87f3-56f013d2cd04",
       lineitems: [
         {
-          id: "b2c6a7e1-04cf-444f-8172-44b822aadd94",
+          id: "a4e9246c-237b-4bd1-9a39-908eb16afcf6",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -128,7 +128,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "aad5e9df-9eaa-4176-97b1-f65314810593",
+          id: "87205e6b-816a-4f41-96d9-a3dc211c3262",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -137,7 +137,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "883ac463-969e-4b11-a7f5-bbc37f3684fc",
+          id: "fedf6b56-8d40-4779-88aa-053c139f6ab5",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -146,7 +146,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "4035c3ab-66d1-4f06-9335-a73bcd62b740",
+          id: "80148ade-b74b-45f7-9260-7a5c64a15f83",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -158,11 +158,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-22T19:32:06.317Z"),
+      reimbursedAt: new Date("2021-04-23T02:22:58.338Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-22T19:32:06.317Z"),
+      updatedAt: new Date("2021-04-23T02:22:58.338Z"),
     },
     connectionId: "<id>",
   });
@@ -371,16 +371,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expensereport.patchAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-22T19:32:06.324Z"),
+      approvedAt: new Date("2021-04-23T02:22:58.341Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "b23b2ea2-939c-4671-93d2-ebdeeb2a3c85",
+      id: "18ecd76d-46ff-4c66-8c54-13f458c7eec6",
       lineitems: [
         {
-          id: "d13fe0f0-0d55-4d7f-9830-33a5598fa744",
+          id: "e4595dec-dda5-45ca-8649-ab07790ab638",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -388,7 +388,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7d204be0-c7f4-4f65-80d9-43c8b92e804e",
+          id: "a267f30a-0fe6-45a3-8c31-f96707e23c85",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -397,7 +397,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "b2a89f11-1ec7-4521-ae1a-893f1fe1ec20",
+          id: "dd980c4f-dbf6-4948-b7ef-db8388337b13",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -406,7 +406,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "23b548a9-52c0-4a69-9d06-05d6145dfc81",
+          id: "14edfdb9-2244-48cb-a923-519875892780",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -418,11 +418,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-22T19:32:06.324Z"),
+      reimbursedAt: new Date("2021-04-23T02:22:58.341Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-22T19:32:06.324Z"),
+      updatedAt: new Date("2021-04-23T02:22:58.341Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -453,16 +453,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-22T19:32:06.324Z"),
+      approvedAt: new Date("2021-04-23T02:22:58.341Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "b23b2ea2-939c-4671-93d2-ebdeeb2a3c85",
+      id: "18ecd76d-46ff-4c66-8c54-13f458c7eec6",
       lineitems: [
         {
-          id: "d13fe0f0-0d55-4d7f-9830-33a5598fa744",
+          id: "e4595dec-dda5-45ca-8649-ab07790ab638",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -470,7 +470,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7d204be0-c7f4-4f65-80d9-43c8b92e804e",
+          id: "a267f30a-0fe6-45a3-8c31-f96707e23c85",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -479,7 +479,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "b2a89f11-1ec7-4521-ae1a-893f1fe1ec20",
+          id: "dd980c4f-dbf6-4948-b7ef-db8388337b13",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -488,7 +488,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "23b548a9-52c0-4a69-9d06-05d6145dfc81",
+          id: "14edfdb9-2244-48cb-a923-519875892780",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -500,11 +500,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-22T19:32:06.324Z"),
+      reimbursedAt: new Date("2021-04-23T02:22:58.341Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-22T19:32:06.324Z"),
+      updatedAt: new Date("2021-04-23T02:22:58.341Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -637,16 +637,16 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.expensereport.updateAccountingExpensereport({
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-22T19:32:06.324Z"),
+      approvedAt: new Date("2021-04-23T02:22:58.341Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "b23b2ea2-939c-4671-93d2-ebdeeb2a3c85",
+      id: "18ecd76d-46ff-4c66-8c54-13f458c7eec6",
       lineitems: [
         {
-          id: "d13fe0f0-0d55-4d7f-9830-33a5598fa744",
+          id: "e4595dec-dda5-45ca-8649-ab07790ab638",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -654,7 +654,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7d204be0-c7f4-4f65-80d9-43c8b92e804e",
+          id: "a267f30a-0fe6-45a3-8c31-f96707e23c85",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -663,7 +663,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "b2a89f11-1ec7-4521-ae1a-893f1fe1ec20",
+          id: "dd980c4f-dbf6-4948-b7ef-db8388337b13",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -672,7 +672,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "23b548a9-52c0-4a69-9d06-05d6145dfc81",
+          id: "14edfdb9-2244-48cb-a923-519875892780",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -684,11 +684,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-22T19:32:06.324Z"),
+      reimbursedAt: new Date("2021-04-23T02:22:58.341Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-22T19:32:06.324Z"),
+      updatedAt: new Date("2021-04-23T02:22:58.341Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -719,16 +719,16 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingExpensereport(unifiedTo, {
     accountingExpensereport: {
-      approvedAt: new Date("2021-04-22T19:32:06.324Z"),
+      approvedAt: new Date("2021-04-23T02:22:58.341Z"),
       attachments: [],
       categoryIds: [],
       createdAt: new Date("2020-05-29T02:04:59.078Z"),
       currency: "GBP",
       externalNumber: "ER-31240",
-      id: "b23b2ea2-939c-4671-93d2-ebdeeb2a3c85",
+      id: "18ecd76d-46ff-4c66-8c54-13f458c7eec6",
       lineitems: [
         {
-          id: "d13fe0f0-0d55-4d7f-9830-33a5598fa744",
+          id: "e4595dec-dda5-45ca-8649-ab07790ab638",
           itemName: "Conference ticket",
           taxAmount: 0,
           totalAmount: 39.9,
@@ -736,7 +736,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "7d204be0-c7f4-4f65-80d9-43c8b92e804e",
+          id: "a267f30a-0fe6-45a3-8c31-f96707e23c85",
           itemName: "Flight",
           notes: "Soluta omnis dolor.",
           taxAmount: 0,
@@ -745,7 +745,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "b2a89f11-1ec7-4521-ae1a-893f1fe1ec20",
+          id: "dd980c4f-dbf6-4948-b7ef-db8388337b13",
           itemName: "Client dinner",
           notes: "Altus caveo capio.",
           taxAmount: 0,
@@ -754,7 +754,7 @@ async function run() {
           unitQuantity: 1,
         },
         {
-          id: "23b548a9-52c0-4a69-9d06-05d6145dfc81",
+          id: "14edfdb9-2244-48cb-a923-519875892780",
           itemName: "Flight",
           taxAmount: 0,
           totalAmount: 445.27,
@@ -766,11 +766,11 @@ async function run() {
       name: "Lolita Kunde - October expenses",
       postedAt: new Date("2020-05-29T02:04:59.078Z"),
       reimbursedAmount: 908.46,
-      reimbursedAt: new Date("2021-04-22T19:32:06.324Z"),
+      reimbursedAt: new Date("2021-04-23T02:22:58.341Z"),
       status: "PAID",
       taxAmount: 0,
       totalAmount: 908.46,
-      updatedAt: new Date("2021-04-22T19:32:06.324Z"),
+      updatedAt: new Date("2021-04-23T02:22:58.341Z"),
     },
     connectionId: "<id>",
     id: "<id>",
