@@ -296,6 +296,8 @@ export type PropertyWorkspaceIntegrationPatchOverridenScopes = {
   hrisPayslipWrite?: string | undefined;
   hrisTaxonomyRead?: string | undefined;
   hrisTaxonomyWrite?: string | undefined;
+  hrisTaxwithholdingRead?: string | undefined;
+  hrisTaxwithholdingWrite?: string | undefined;
   hrisTimeoffRead?: string | undefined;
   hrisTimeoffWrite?: string | undefined;
   hrisTimeshiftRead?: string | undefined;
@@ -755,6 +757,8 @@ export type PropertyWorkspaceIntegrationPatchOverridenScopes$Outbound = {
   hris_payslip_write?: string | undefined;
   hris_taxonomy_read?: string | undefined;
   hris_taxonomy_write?: string | undefined;
+  hris_taxwithholding_read?: string | undefined;
+  hris_taxwithholding_write?: string | undefined;
   hris_timeoff_read?: string | undefined;
   hris_timeoff_write?: string | undefined;
   hris_timeshift_read?: string | undefined;
@@ -1219,6 +1223,8 @@ export const PropertyWorkspaceIntegrationPatchOverridenScopes$outboundSchema:
     hrisPayslipWrite: z.string().optional(),
     hrisTaxonomyRead: z.string().optional(),
     hrisTaxonomyWrite: z.string().optional(),
+    hrisTaxwithholdingRead: z.string().optional(),
+    hrisTaxwithholdingWrite: z.string().optional(),
     hrisTimeoffRead: z.string().optional(),
     hrisTimeoffWrite: z.string().optional(),
     hrisTimeshiftRead: z.string().optional(),
@@ -1677,6 +1683,8 @@ export const PropertyWorkspaceIntegrationPatchOverridenScopes$outboundSchema:
       hrisPayslipWrite: "hris_payslip_write",
       hrisTaxonomyRead: "hris_taxonomy_read",
       hrisTaxonomyWrite: "hris_taxonomy_write",
+      hrisTaxwithholdingRead: "hris_taxwithholding_read",
+      hrisTaxwithholdingWrite: "hris_taxwithholding_write",
       hrisTimeoffRead: "hris_timeoff_read",
       hrisTimeoffWrite: "hris_timeoff_write",
       hrisTimeshiftRead: "hris_timeshift_read",

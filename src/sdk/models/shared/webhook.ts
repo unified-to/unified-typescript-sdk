@@ -121,6 +121,7 @@ export const WebhookObjectType = {
   HrisPayroll: "hris_payroll",
   HrisPaycode: "hris_paycode",
   HrisEarning: "hris_earning",
+  HrisTaxwithholding: "hris_taxwithholding",
   MartechList: "martech_list",
   MartechMember: "martech_member",
   MartechCampaign: "martech_campaign",

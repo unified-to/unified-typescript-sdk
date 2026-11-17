@@ -212,6 +212,7 @@ import { Target } from "./target.js";
 import { Task } from "./task.js";
 import { Taxonomy } from "./taxonomy.js";
 import { Taxrate } from "./taxrate.js";
+import { Taxwithholding } from "./taxwithholding.js";
 import { Template } from "./template.js";
 import { Ticket } from "./ticket.js";
 import { Ticketing } from "./ticketing.js";
@@ -960,6 +961,11 @@ export class UnifiedTo extends ClientSDK {
   private _payslip?: Payslip;
   get payslip(): Payslip {
     return (this._payslip ??= new Payslip(this._options));
+  }
+
+  private _taxwithholding?: Taxwithholding;
+  get taxwithholding(): Taxwithholding {
+    return (this._taxwithholding ??= new Taxwithholding(this._options));
   }
 
   private _timeoff?: Timeoff;

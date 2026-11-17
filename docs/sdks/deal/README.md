@@ -31,19 +31,19 @@ async function run() {
   const result = await unifiedTo.deal.createCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-15T19:31:47.371Z"),
-      closingAt: new Date("2025-09-17T13:15:39.453Z"),
+      closedAt: new Date("2024-03-16T00:21:13.244Z"),
+      closingAt: new Date("2025-09-18T04:29:30.328Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "265eba5e-44f3-43f6-ae3c-6ea0b42721d7",
+      id: "69569aff-8865-4996-bd1b-34f459a2df7e",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "fdb4eb64-16e4-4ab4-8733-1e251b1bcec4",
+          id: "0cb1a1b0-0d99-4bbc-8759-8aa0d53b1347",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -56,7 +56,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-21T22:13:37.470Z"),
+      updatedAt: new Date("2024-10-22T07:12:36.886Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -88,19 +88,19 @@ async function run() {
   const res = await crmCreateCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-15T19:31:47.371Z"),
-      closingAt: new Date("2025-09-17T13:15:39.453Z"),
+      closedAt: new Date("2024-03-16T00:21:13.244Z"),
+      closingAt: new Date("2025-09-18T04:29:30.328Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "265eba5e-44f3-43f6-ae3c-6ea0b42721d7",
+      id: "69569aff-8865-4996-bd1b-34f459a2df7e",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "fdb4eb64-16e4-4ab4-8733-1e251b1bcec4",
+          id: "0cb1a1b0-0d99-4bbc-8759-8aa0d53b1347",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -113,7 +113,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-21T22:13:37.470Z"),
+      updatedAt: new Date("2024-10-22T07:12:36.886Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -324,19 +324,19 @@ async function run() {
   const result = await unifiedTo.deal.patchCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-15T19:31:47.373Z"),
-      closingAt: new Date("2025-09-17T13:15:39.460Z"),
+      closedAt: new Date("2024-03-16T00:21:13.246Z"),
+      closingAt: new Date("2025-09-18T04:29:30.335Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "42444596-d035-435e-a065-85d688918284",
+      id: "19b166b2-31f7-4c81-839d-1a07f6f92f51",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "fe62bfd1-724a-4e83-93b5-e299ce8004c8",
+          id: "300c9ee2-1a1b-4ad3-886c-3ec39544d029",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -349,7 +349,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-21T22:13:37.474Z"),
+      updatedAt: new Date("2024-10-22T07:12:36.890Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -382,19 +382,19 @@ async function run() {
   const res = await crmPatchCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-15T19:31:47.373Z"),
-      closingAt: new Date("2025-09-17T13:15:39.460Z"),
+      closedAt: new Date("2024-03-16T00:21:13.246Z"),
+      closingAt: new Date("2025-09-18T04:29:30.335Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "42444596-d035-435e-a065-85d688918284",
+      id: "19b166b2-31f7-4c81-839d-1a07f6f92f51",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "fe62bfd1-724a-4e83-93b5-e299ce8004c8",
+          id: "300c9ee2-1a1b-4ad3-886c-3ec39544d029",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -407,7 +407,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-21T22:13:37.474Z"),
+      updatedAt: new Date("2024-10-22T07:12:36.890Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -542,19 +542,19 @@ async function run() {
   const result = await unifiedTo.deal.updateCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-15T19:31:47.373Z"),
-      closingAt: new Date("2025-09-17T13:15:39.460Z"),
+      closedAt: new Date("2024-03-16T00:21:13.246Z"),
+      closingAt: new Date("2025-09-18T04:29:30.335Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "42444596-d035-435e-a065-85d688918284",
+      id: "19b166b2-31f7-4c81-839d-1a07f6f92f51",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "fe62bfd1-724a-4e83-93b5-e299ce8004c8",
+          id: "300c9ee2-1a1b-4ad3-886c-3ec39544d029",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -567,7 +567,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-21T22:13:37.474Z"),
+      updatedAt: new Date("2024-10-22T07:12:36.890Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",
@@ -600,19 +600,19 @@ async function run() {
   const res = await crmUpdateCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-15T19:31:47.373Z"),
-      closingAt: new Date("2025-09-17T13:15:39.460Z"),
+      closedAt: new Date("2024-03-16T00:21:13.246Z"),
+      closingAt: new Date("2025-09-18T04:29:30.335Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Comis tepidus sit cavus crustulum trans tubineus adfectus.",
-      id: "42444596-d035-435e-a065-85d688918284",
+      id: "19b166b2-31f7-4c81-839d-1a07f6f92f51",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "fe62bfd1-724a-4e83-93b5-e299ce8004c8",
+          id: "300c9ee2-1a1b-4ad3-886c-3ec39544d029",
           namespace: "custom",
           slug: "custom_property",
           value: "conatus",
@@ -625,7 +625,7 @@ async function run() {
         "causa",
         "suus",
       ],
-      updatedAt: new Date("2024-10-21T22:13:37.474Z"),
+      updatedAt: new Date("2024-10-22T07:12:36.890Z"),
       wonReason: "Usque libero soleo.",
     },
     connectionId: "<id>",

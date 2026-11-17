@@ -27,6 +27,7 @@ import { hrisCreateHrisDeduction } from "../funcs/hrisCreateHrisDeduction.js";
 import { hrisCreateHrisDevice } from "../funcs/hrisCreateHrisDevice.js";
 import { hrisCreateHrisEarning } from "../funcs/hrisCreateHrisEarning.js";
 import { hrisCreateHrisEmployee } from "../funcs/hrisCreateHrisEmployee.js";
+import { hrisCreateHrisTaxwithholding } from "../funcs/hrisCreateHrisTaxwithholding.js";
 import { hrisCreateHrisTimeoff } from "../funcs/hrisCreateHrisTimeoff.js";
 import { hrisCreateHrisTimeshift } from "../funcs/hrisCreateHrisTimeshift.js";
 import { hrisGetHrisAttendance } from "../funcs/hrisGetHrisAttendance.js";
@@ -39,6 +40,7 @@ import { hrisGetHrisEmployee } from "../funcs/hrisGetHrisEmployee.js";
 import { hrisGetHrisPaycode } from "../funcs/hrisGetHrisPaycode.js";
 import { hrisGetHrisPayroll } from "../funcs/hrisGetHrisPayroll.js";
 import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
+import { hrisGetHrisTaxwithholding } from "../funcs/hrisGetHrisTaxwithholding.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
 import { hrisGetHrisTimeshift } from "../funcs/hrisGetHrisTimeshift.js";
 import { hrisListHrisAttendances } from "../funcs/hrisListHrisAttendances.js";
@@ -51,6 +53,7 @@ import { hrisListHrisEmployees } from "../funcs/hrisListHrisEmployees.js";
 import { hrisListHrisPaycodes } from "../funcs/hrisListHrisPaycodes.js";
 import { hrisListHrisPayrolls } from "../funcs/hrisListHrisPayrolls.js";
 import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
+import { hrisListHrisTaxwithholdings } from "../funcs/hrisListHrisTaxwithholdings.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
 import { hrisListHrisTimeshifts } from "../funcs/hrisListHrisTimeshifts.js";
 import { hrisPatchHrisAttendance } from "../funcs/hrisPatchHrisAttendance.js";
@@ -60,6 +63,7 @@ import { hrisPatchHrisDeduction } from "../funcs/hrisPatchHrisDeduction.js";
 import { hrisPatchHrisDevice } from "../funcs/hrisPatchHrisDevice.js";
 import { hrisPatchHrisEarning } from "../funcs/hrisPatchHrisEarning.js";
 import { hrisPatchHrisEmployee } from "../funcs/hrisPatchHrisEmployee.js";
+import { hrisPatchHrisTaxwithholding } from "../funcs/hrisPatchHrisTaxwithholding.js";
 import { hrisPatchHrisTimeoff } from "../funcs/hrisPatchHrisTimeoff.js";
 import { hrisPatchHrisTimeshift } from "../funcs/hrisPatchHrisTimeshift.js";
 import { hrisRemoveHrisAttendance } from "../funcs/hrisRemoveHrisAttendance.js";
@@ -69,6 +73,7 @@ import { hrisRemoveHrisDeduction } from "../funcs/hrisRemoveHrisDeduction.js";
 import { hrisRemoveHrisDevice } from "../funcs/hrisRemoveHrisDevice.js";
 import { hrisRemoveHrisEarning } from "../funcs/hrisRemoveHrisEarning.js";
 import { hrisRemoveHrisEmployee } from "../funcs/hrisRemoveHrisEmployee.js";
+import { hrisRemoveHrisTaxwithholding } from "../funcs/hrisRemoveHrisTaxwithholding.js";
 import { hrisRemoveHrisTimeoff } from "../funcs/hrisRemoveHrisTimeoff.js";
 import { hrisRemoveHrisTimeshift } from "../funcs/hrisRemoveHrisTimeshift.js";
 import { hrisUpdateHrisAttendance } from "../funcs/hrisUpdateHrisAttendance.js";
@@ -78,6 +83,7 @@ import { hrisUpdateHrisDeduction } from "../funcs/hrisUpdateHrisDeduction.js";
 import { hrisUpdateHrisDevice } from "../funcs/hrisUpdateHrisDevice.js";
 import { hrisUpdateHrisEarning } from "../funcs/hrisUpdateHrisEarning.js";
 import { hrisUpdateHrisEmployee } from "../funcs/hrisUpdateHrisEmployee.js";
+import { hrisUpdateHrisTaxwithholding } from "../funcs/hrisUpdateHrisTaxwithholding.js";
 import { hrisUpdateHrisTimeoff } from "../funcs/hrisUpdateHrisTimeoff.js";
 import { hrisUpdateHrisTimeshift } from "../funcs/hrisUpdateHrisTimeshift.js";
 import { jobCreateHrisJob } from "../funcs/jobCreateHrisJob.js";
@@ -319,6 +325,23 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisTaxonomy> {
     return unwrapAsync(taxonomyCreateHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a taxwithholding
+   *
+   * @remarks
+   * Creates a HrisTaxwithholding. Provide the unified HrisTaxwithholding fields in the request body; they are mapped to the provider's API. Returns the created HrisTaxwithholding.
+   */
+  async createHrisTaxwithholding(
+    request: operations.CreateHrisTaxwithholdingRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxwithholding> {
+    return unwrapAsync(hrisCreateHrisTaxwithholding(
       this,
       request,
       options,
@@ -632,6 +655,23 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Retrieve a taxwithholding
+   *
+   * @remarks
+   * Retrieves a single HrisTaxwithholding by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getHrisTaxwithholding(
+    request: operations.GetHrisTaxwithholdingRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxwithholding> {
+    return unwrapAsync(hrisGetHrisTaxwithholding(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a timeoff
    *
    * @remarks
@@ -938,6 +978,23 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * List all taxwithholdings
+   *
+   * @remarks
+   * Returns a list of HrisTaxwithholdings. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listHrisTaxwithholdings(
+    request: operations.ListHrisTaxwithholdingsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisTaxwithholding>> {
+    return unwrapAsync(hrisListHrisTaxwithholdings(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all timeoffs
    *
    * @remarks
@@ -1186,6 +1243,23 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisTaxonomy> {
     return unwrapAsync(taxonomyPatchHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a taxwithholding
+   *
+   * @remarks
+   * Updates the HrisTaxwithholding identified by `id`. Provide the unified HrisTaxwithholding fields to change in the request body.
+   */
+  async patchHrisTaxwithholding(
+    request: operations.PatchHrisTaxwithholdingRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxwithholding> {
+    return unwrapAsync(hrisPatchHrisTaxwithholding(
       this,
       request,
       options,
@@ -1448,6 +1522,23 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove a taxwithholding
+   *
+   * @remarks
+   * Deletes the HrisTaxwithholding identified by `id`.
+   */
+  async removeHrisTaxwithholding(
+    request: operations.RemoveHrisTaxwithholdingRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisTaxwithholdingResponse | undefined> {
+    return unwrapAsync(hrisRemoveHrisTaxwithholding(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a timeoff
    *
    * @remarks
@@ -1696,6 +1787,23 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisTaxonomy> {
     return unwrapAsync(taxonomyUpdateHrisTaxonomy(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a taxwithholding
+   *
+   * @remarks
+   * Updates the HrisTaxwithholding identified by `id`. Provide the unified HrisTaxwithholding fields to change in the request body.
+   */
+  async updateHrisTaxwithholding(
+    request: operations.UpdateHrisTaxwithholdingRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTaxwithholding> {
+    return unwrapAsync(hrisUpdateHrisTaxwithholding(
       this,
       request,
       options,

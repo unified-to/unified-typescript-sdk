@@ -299,6 +299,8 @@ export type PropertyWorkspaceIntegrationOverridenScopes = {
   hrisPayslipWrite?: string | undefined;
   hrisTaxonomyRead?: string | undefined;
   hrisTaxonomyWrite?: string | undefined;
+  hrisTaxwithholdingRead?: string | undefined;
+  hrisTaxwithholdingWrite?: string | undefined;
   hrisTimeoffRead?: string | undefined;
   hrisTimeoffWrite?: string | undefined;
   hrisTimeshiftRead?: string | undefined;
@@ -763,6 +765,8 @@ export const PropertyWorkspaceIntegrationOverridenScopes$inboundSchema:
     hris_payslip_write: z.string().optional(),
     hris_taxonomy_read: z.string().optional(),
     hris_taxonomy_write: z.string().optional(),
+    hris_taxwithholding_read: z.string().optional(),
+    hris_taxwithholding_write: z.string().optional(),
     hris_timeoff_read: z.string().optional(),
     hris_timeoff_write: z.string().optional(),
     hris_timeshift_read: z.string().optional(),
@@ -1222,6 +1226,8 @@ export const PropertyWorkspaceIntegrationOverridenScopes$inboundSchema:
       "hris_payslip_write": "hrisPayslipWrite",
       "hris_taxonomy_read": "hrisTaxonomyRead",
       "hris_taxonomy_write": "hrisTaxonomyWrite",
+      "hris_taxwithholding_read": "hrisTaxwithholdingRead",
+      "hris_taxwithholding_write": "hrisTaxwithholdingWrite",
       "hris_timeoff_read": "hrisTimeoffRead",
       "hris_timeoff_write": "hrisTimeoffWrite",
       "hris_timeshift_read": "hrisTimeshiftRead",
@@ -1680,6 +1686,8 @@ export type PropertyWorkspaceIntegrationOverridenScopes$Outbound = {
   hris_payslip_write?: string | undefined;
   hris_taxonomy_read?: string | undefined;
   hris_taxonomy_write?: string | undefined;
+  hris_taxwithholding_read?: string | undefined;
+  hris_taxwithholding_write?: string | undefined;
   hris_timeoff_read?: string | undefined;
   hris_timeoff_write?: string | undefined;
   hris_timeshift_read?: string | undefined;
@@ -2144,6 +2152,8 @@ export const PropertyWorkspaceIntegrationOverridenScopes$outboundSchema:
     hrisPayslipWrite: z.string().optional(),
     hrisTaxonomyRead: z.string().optional(),
     hrisTaxonomyWrite: z.string().optional(),
+    hrisTaxwithholdingRead: z.string().optional(),
+    hrisTaxwithholdingWrite: z.string().optional(),
     hrisTimeoffRead: z.string().optional(),
     hrisTimeoffWrite: z.string().optional(),
     hrisTimeshiftRead: z.string().optional(),
@@ -2602,6 +2612,8 @@ export const PropertyWorkspaceIntegrationOverridenScopes$outboundSchema:
       hrisPayslipWrite: "hris_payslip_write",
       hrisTaxonomyRead: "hris_taxonomy_read",
       hrisTaxonomyWrite: "hris_taxonomy_write",
+      hrisTaxwithholdingRead: "hris_taxwithholding_read",
+      hrisTaxwithholdingWrite: "hris_taxwithholding_write",
       hrisTimeoffRead: "hris_timeoff_read",
       hrisTimeoffWrite: "hris_timeoff_write",
       hrisTimeshiftRead: "hris_timeshift_read",

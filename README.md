@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
+      id: "e4c3791d-c69b-4636-ba35-9b8a46fa13f9",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
+      updatedAt: new Date("2023-08-13T18:09:45.309Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
+      id: "e4c3791d-c69b-4636-ba35-9b8a46fa13f9",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
+      updatedAt: new Date("2023-08-13T18:09:45.309Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
+      id: "e4c3791d-c69b-4636-ba35-9b8a46fa13f9",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
+      updatedAt: new Date("2023-08-13T18:09:45.309Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Voluptatibus valde spoliatio.",
-        id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
+        id: "e4c3791d-c69b-4636-ba35-9b8a46fa13f9",
         isPayable: false,
         metadata: [],
         name: "Auto Loan Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-13T12:15:07.848Z"),
+        updatedAt: new Date("2023-08-13T18:09:45.309Z"),
       },
       connectionId: "<id>",
     });
@@ -446,7 +446,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
+      id: "e4c3791d-c69b-4636-ba35-9b8a46fa13f9",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -459,7 +459,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
+      updatedAt: new Date("2023-08-13T18:09:45.309Z"),
     },
     connectionId: "<id>",
   }, {
@@ -510,7 +510,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "453c6a24-84f8-42b0-8ac0-6ac7b3d202db",
+      id: "e4c3791d-c69b-4636-ba35-9b8a46fa13f9",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -523,7 +523,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-13T12:15:07.848Z"),
+      updatedAt: new Date("2023-08-13T18:09:45.309Z"),
     },
     connectionId: "<id>",
   });
@@ -1866,6 +1866,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisCreateHrisEarning`](docs/sdks/hris/README.md#createhrisearning) - Create an earning
 - [`hrisCreateHrisEmployee`](docs/sdks/employee/README.md#createhrisemployee) - Create an employee
 - [`hrisCreateHrisEmployee`](docs/sdks/hris/README.md#createhrisemployee) - Create an employee
+- [`hrisCreateHrisTaxwithholding`](docs/sdks/hris/README.md#createhristaxwithholding) - Create a taxwithholding
+- [`hrisCreateHrisTaxwithholding`](docs/sdks/taxwithholding/README.md#createhristaxwithholding) - Create a taxwithholding
 - [`hrisCreateHrisTimeoff`](docs/sdks/hris/README.md#createhristimeoff) - Create a timeoff
 - [`hrisCreateHrisTimeoff`](docs/sdks/timeoff/README.md#createhristimeoff) - Create a timeoff
 - [`hrisCreateHrisTimeshift`](docs/sdks/hris/README.md#createhristimeshift) - Create a timeshift
@@ -1890,6 +1892,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisGetHrisPayroll`](docs/sdks/payroll/README.md#gethrispayroll) - Retrieve a payroll
 - [`hrisGetHrisPayslip`](docs/sdks/hris/README.md#gethrispayslip) - Retrieve a payslip
 - [`hrisGetHrisPayslip`](docs/sdks/payslip/README.md#gethrispayslip) - Retrieve a payslip
+- [`hrisGetHrisTaxwithholding`](docs/sdks/hris/README.md#gethristaxwithholding) - Retrieve a taxwithholding
+- [`hrisGetHrisTaxwithholding`](docs/sdks/taxwithholding/README.md#gethristaxwithholding) - Retrieve a taxwithholding
 - [`hrisGetHrisTimeoff`](docs/sdks/hris/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeoff`](docs/sdks/timeoff/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeshift`](docs/sdks/hris/README.md#gethristimeshift) - Retrieve a timeshift
@@ -1914,6 +1918,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisListHrisPayrolls`](docs/sdks/payroll/README.md#listhrispayrolls) - List all payrolls
 - [`hrisListHrisPayslips`](docs/sdks/hris/README.md#listhrispayslips) - List all payslips
 - [`hrisListHrisPayslips`](docs/sdks/payslip/README.md#listhrispayslips) - List all payslips
+- [`hrisListHrisTaxwithholdings`](docs/sdks/hris/README.md#listhristaxwithholdings) - List all taxwithholdings
+- [`hrisListHrisTaxwithholdings`](docs/sdks/taxwithholding/README.md#listhristaxwithholdings) - List all taxwithholdings
 - [`hrisListHrisTimeoffs`](docs/sdks/hris/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeoffs`](docs/sdks/timeoff/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeshifts`](docs/sdks/hris/README.md#listhristimeshifts) - List all timeshifts
@@ -1932,6 +1938,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisPatchHrisEarning`](docs/sdks/hris/README.md#patchhrisearning) - Update an earning
 - [`hrisPatchHrisEmployee`](docs/sdks/employee/README.md#patchhrisemployee) - Update an employee
 - [`hrisPatchHrisEmployee`](docs/sdks/hris/README.md#patchhrisemployee) - Update an employee
+- [`hrisPatchHrisTaxwithholding`](docs/sdks/hris/README.md#patchhristaxwithholding) - Update a taxwithholding
+- [`hrisPatchHrisTaxwithholding`](docs/sdks/taxwithholding/README.md#patchhristaxwithholding) - Update a taxwithholding
 - [`hrisPatchHrisTimeoff`](docs/sdks/hris/README.md#patchhristimeoff) - Update a timeoff
 - [`hrisPatchHrisTimeoff`](docs/sdks/timeoff/README.md#patchhristimeoff) - Update a timeoff
 - [`hrisPatchHrisTimeshift`](docs/sdks/hris/README.md#patchhristimeshift) - Update a timeshift
@@ -1950,6 +1958,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisRemoveHrisEarning`](docs/sdks/hris/README.md#removehrisearning) - Remove an earning
 - [`hrisRemoveHrisEmployee`](docs/sdks/employee/README.md#removehrisemployee) - Remove an employee
 - [`hrisRemoveHrisEmployee`](docs/sdks/hris/README.md#removehrisemployee) - Remove an employee
+- [`hrisRemoveHrisTaxwithholding`](docs/sdks/hris/README.md#removehristaxwithholding) - Remove a taxwithholding
+- [`hrisRemoveHrisTaxwithholding`](docs/sdks/taxwithholding/README.md#removehristaxwithholding) - Remove a taxwithholding
 - [`hrisRemoveHrisTimeoff`](docs/sdks/hris/README.md#removehristimeoff) - Remove a timeoff
 - [`hrisRemoveHrisTimeoff`](docs/sdks/timeoff/README.md#removehristimeoff) - Remove a timeoff
 - [`hrisRemoveHrisTimeshift`](docs/sdks/hris/README.md#removehristimeshift) - Remove a timeshift
@@ -1968,6 +1978,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisUpdateHrisEarning`](docs/sdks/hris/README.md#updatehrisearning) - Update an earning
 - [`hrisUpdateHrisEmployee`](docs/sdks/employee/README.md#updatehrisemployee) - Update an employee
 - [`hrisUpdateHrisEmployee`](docs/sdks/hris/README.md#updatehrisemployee) - Update an employee
+- [`hrisUpdateHrisTaxwithholding`](docs/sdks/hris/README.md#updatehristaxwithholding) - Update a taxwithholding
+- [`hrisUpdateHrisTaxwithholding`](docs/sdks/taxwithholding/README.md#updatehristaxwithholding) - Update a taxwithholding
 - [`hrisUpdateHrisTimeoff`](docs/sdks/hris/README.md#updatehristimeoff) - Update a timeoff
 - [`hrisUpdateHrisTimeoff`](docs/sdks/timeoff/README.md#updatehristimeoff) - Update a timeoff
 - [`hrisUpdateHrisTimeshift`](docs/sdks/hris/README.md#updatehristimeshift) - Update a timeshift

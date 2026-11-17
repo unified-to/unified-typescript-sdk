@@ -292,6 +292,7 @@ export * from "./hrispayroll.js";
 export * from "./hrispayslip.js";
 export * from "./hrispayslipdetail.js";
 export * from "./hristaxonomy.js";
+export * from "./hristaxwithholding.js";
 export * from "./hristelephone.js";
 export * from "./hristimeoff.js";
 export * from "./hristimeshift.js";

@@ -32,17 +32,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "56145fa9-64aa-4253-be9a-74a9b6ea3b02",
+      id: "d76bb8a8-a591-49f9-917b-330e1a95885e",
       isRequired: false,
       name: "autem",
-      objectType: "healthcare_practitioner",
+      objectType: "healthcare_patient",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-04-09T13:53:06.957Z"),
+      updatedAt: new Date("2025-04-10T06:32:05.478Z"),
     },
     connectionId: "<id>",
   });
@@ -74,17 +74,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "56145fa9-64aa-4253-be9a-74a9b6ea3b02",
+      id: "d76bb8a8-a591-49f9-917b-330e1a95885e",
       isRequired: false,
       name: "autem",
-      objectType: "healthcare_practitioner",
+      objectType: "healthcare_patient",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-04-09T13:53:06.957Z"),
+      updatedAt: new Date("2025-04-10T06:32:05.478Z"),
     },
     connectionId: "<id>",
   });
@@ -295,17 +295,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "5c4c8810-89c5-4876-a7f1-137d7879a6f9",
+      id: "7441eef5-3926-4334-a5c6-1325dd842d62",
       isRequired: false,
       name: "autem",
-      objectType: "healthcare_practitioner",
+      objectType: "healthcare_patient",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-04-09T13:53:06.961Z"),
+      updatedAt: new Date("2025-04-10T06:32:05.485Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -338,17 +338,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "5c4c8810-89c5-4876-a7f1-137d7879a6f9",
+      id: "7441eef5-3926-4334-a5c6-1325dd842d62",
       isRequired: false,
       name: "autem",
-      objectType: "healthcare_practitioner",
+      objectType: "healthcare_patient",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-04-09T13:53:06.961Z"),
+      updatedAt: new Date("2025-04-10T06:32:05.485Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -483,17 +483,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "5c4c8810-89c5-4876-a7f1-137d7879a6f9",
+      id: "7441eef5-3926-4334-a5c6-1325dd842d62",
       isRequired: false,
       name: "autem",
-      objectType: "healthcare_practitioner",
+      objectType: "healthcare_patient",
       objects: {
 
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-04-09T13:53:06.961Z"),
+      updatedAt: new Date("2025-04-10T06:32:05.485Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -526,17 +526,17 @@ async function run() {
     metadataMetadata: {
       createdAt: new Date("2021-03-25T03:02:17.656Z"),
       format: "PRICE",
-      id: "5c4c8810-89c5-4876-a7f1-137d7879a6f9",
+      id: "7441eef5-3926-4334-a5c6-1325dd842d62",
       isRequired: false,
       name: "autem",
-      objectType: "healthcare_practitioner",
+      objectType: "healthcare_patient",
       objects: {
   
       },
       options: [],
       originalFormat: "advoco",
       slug: "arbustum",
-      updatedAt: new Date("2025-04-09T13:53:06.961Z"),
+      updatedAt: new Date("2025-04-10T06:32:05.485Z"),
     },
     connectionId: "<id>",
     id: "<id>",

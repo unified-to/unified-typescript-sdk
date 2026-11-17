@@ -180,6 +180,8 @@ export const PropertyWorkspaceIntegrationPatchPermissions = {
   HrisPaycodeWrite: "hris_paycode_write",
   HrisEarningRead: "hris_earning_read",
   HrisEarningWrite: "hris_earning_write",
+  HrisTaxwithholdingRead: "hris_taxwithholding_read",
+  HrisTaxwithholdingWrite: "hris_taxwithholding_write",
   UcCallRead: "uc_call_read",
   UcCallWrite: "uc_call_write",
   UcContactRead: "uc_contact_read",
