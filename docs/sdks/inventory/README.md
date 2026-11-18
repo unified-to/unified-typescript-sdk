@@ -33,9 +33,9 @@ async function run() {
   const result = await unifiedTo.inventory.createCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "2df37383-6227-4353-a5e9-2a21597ed6b1",
+      id: "e41763f1-20f0-45a5-8855-670c5c1eab39",
       metadata: [],
-      updatedAt: new Date("2025-12-12T03:09:57.061Z"),
+      updatedAt: new Date("2025-12-12T19:15:37.314Z"),
     },
     connectionId: "<id>",
   });
@@ -66,9 +66,9 @@ async function run() {
   const res = await inventoryCreateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "2df37383-6227-4353-a5e9-2a21597ed6b1",
+      id: "e41763f1-20f0-45a5-8855-670c5c1eab39",
       metadata: [],
-      updatedAt: new Date("2025-12-12T03:09:57.061Z"),
+      updatedAt: new Date("2025-12-12T19:15:37.314Z"),
     },
     connectionId: "<id>",
   });
@@ -434,9 +434,9 @@ async function run() {
   const result = await unifiedTo.inventory.patchCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "eceb0bdc-4a8e-40f6-92fa-a74068a7162f",
+      id: "52904a67-866a-490a-a541-98ec1084a34e",
       metadata: [],
-      updatedAt: new Date("2025-12-12T03:09:57.066Z"),
+      updatedAt: new Date("2025-12-12T19:15:37.323Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -468,9 +468,9 @@ async function run() {
   const res = await inventoryPatchCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "eceb0bdc-4a8e-40f6-92fa-a74068a7162f",
+      id: "52904a67-866a-490a-a541-98ec1084a34e",
       metadata: [],
-      updatedAt: new Date("2025-12-12T03:09:57.066Z"),
+      updatedAt: new Date("2025-12-12T19:15:37.323Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -604,9 +604,9 @@ async function run() {
   const result = await unifiedTo.inventory.updateCommerceInventory({
     commerceInventory: {
       available: 337,
-      id: "eceb0bdc-4a8e-40f6-92fa-a74068a7162f",
+      id: "52904a67-866a-490a-a541-98ec1084a34e",
       metadata: [],
-      updatedAt: new Date("2025-12-12T03:09:57.066Z"),
+      updatedAt: new Date("2025-12-12T19:15:37.323Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -638,9 +638,9 @@ async function run() {
   const res = await inventoryUpdateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 337,
-      id: "eceb0bdc-4a8e-40f6-92fa-a74068a7162f",
+      id: "52904a67-866a-490a-a541-98ec1084a34e",
       metadata: [],
-      updatedAt: new Date("2025-12-12T03:09:57.066Z"),
+      updatedAt: new Date("2025-12-12T19:15:37.323Z"),
     },
     connectionId: "<id>",
     id: "<id>",
