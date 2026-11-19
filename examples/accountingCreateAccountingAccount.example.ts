@@ -27,7 +27,7 @@ async function main() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Voluptatibus valde spoliatio.",
-      id: "733f58fe-c169-4534-b913-89c3531f29d2",
+      id: "a33172ff-9fd9-43ab-b7af-05abd5b2b601",
       isPayable: false,
       metadata: [],
       name: "Auto Loan Account",
@@ -40,7 +40,7 @@ async function main() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-13T23:14:24.636Z"),
+      updatedAt: new Date("2023-08-14T05:55:34.003Z"),
     },
     connectionId: "<id>",
   });
