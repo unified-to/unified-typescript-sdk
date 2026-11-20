@@ -52,6 +52,12 @@ export const PatchHrisEmployeeQueryParamFields = {
   TimeoffDaysUsed: "timeoff_days_used",
   FlsaStatus: "flsa_status",
   PayFrequency: "pay_frequency",
+  RehiredAt: "rehired_at",
+  ServiceStartedAt: "service_started_at",
+  SeniorityStartedAt: "seniority_started_at",
+  LeaveStartAt: "leave_start_at",
+  LeaveEndAt: "leave_end_at",
+  EmploymentStatusReason: "employment_status_reason",
   Raw: "raw",
 } as const;
 export type PatchHrisEmployeeQueryParamFields = ClosedEnum<

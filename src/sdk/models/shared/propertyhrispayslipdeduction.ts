@@ -126,6 +126,10 @@ export type PropertyHrisPayslipDeduction = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   /**
+   * the payroll system's identifier for the retirement-plan loan this deduction repays
+   */
+  loanIdentifier?: string | undefined;
+  /**
    * annual maximum employee amount (always money)
    */
   maxAmount?: number | undefined;
@@ -210,6 +214,7 @@ export const PropertyHrisPayslipDeduction$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  loan_identifier: z.string().optional(),
   max_amount: z.number().optional(),
   metadata: z.array(HrisMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
@@ -232,6 +237,7 @@ export const PropertyHrisPayslipDeduction$inboundSchema: z.ZodType<
     "end_at": "endAt",
     "garnishment_type": "garnishmentType",
     "is_active": "isActive",
+    "loan_identifier": "loanIdentifier",
     "max_amount": "maxAmount",
     "paycode_id": "paycodeId",
     "start_at": "startAt",

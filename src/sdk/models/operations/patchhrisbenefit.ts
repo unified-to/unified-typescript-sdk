@@ -23,6 +23,9 @@ export const PatchHrisBenefitQueryParamFields = {
   EmployerContributionMaxAmount: "employer_contribution_max_amount",
   CoverageLevel: "coverage_level",
   Currency: "currency",
+  Code: "code",
+  RetirementPlanType: "retirement_plan_type",
+  EmployerContributionCategory: "employer_contribution_category",
   Metadata: "metadata",
   Raw: "raw",
 } as const;

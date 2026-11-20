@@ -27,6 +27,25 @@ export const CoverageLevel = {
 } as const;
 export type CoverageLevel = OpenEnum<typeof CoverageLevel>;
 
+/**
+ * kind of employer retirement contribution (eg. MATCH, SAFE_HARBOR_MATCH, PROFIT_SHARING)
+ */
+export const EmployerContributionCategory = {
+  Match: "MATCH",
+  SafeHarborMatch: "SAFE_HARBOR_MATCH",
+  SafeHarborNonelective: "SAFE_HARBOR_NONELECTIVE",
+  QacaMatch: "QACA_MATCH",
+  Nonelective: "NONELECTIVE",
+  ProfitSharing: "PROFIT_SHARING",
+  Other: "OTHER",
+} as const;
+/**
+ * kind of employer retirement contribution (eg. MATCH, SAFE_HARBOR_MATCH, PROFIT_SHARING)
+ */
+export type EmployerContributionCategory = OpenEnum<
+  typeof EmployerContributionCategory
+>;
+
 export const EmployerContributionType = {
   Percentage: "PERCENTAGE",
   Fixed: "FIXED",
@@ -53,6 +72,24 @@ export const HrisBenefitFrequency = {
  * Frequency that costs accrue for this benefit. For insurance/benefits, usually "MONTHLY". For compensation, matches pay cycle (WEEKLY, BIWEEKLY, etc).
  */
 export type HrisBenefitFrequency = OpenEnum<typeof HrisBenefitFrequency>;
+
+/**
+ * the retirement plan this benefit belongs to (for RETIREMENT* types)
+ */
+export const RetirementPlanType = {
+  Plan401K: "PLAN_401K",
+  Plan403B: "PLAN_403B",
+  Plan457B: "PLAN_457B",
+  SimpleIra: "SIMPLE_IRA",
+  SepIra: "SEP_IRA",
+  Nqdc: "NQDC",
+  Pension: "PENSION",
+  Other: "OTHER",
+} as const;
+/**
+ * the retirement plan this benefit belongs to (for RETIREMENT* types)
+ */
+export type RetirementPlanType = OpenEnum<typeof RetirementPlanType>;
 
 /**
  * Tax describes the tax treatment of the benefit
@@ -90,6 +127,12 @@ export const HrisBenefitType = {
   Commuter: "COMMUTER",
   DependentCare: "DEPENDENT_CARE",
   Pension: "PENSION",
+  RetirementCatchup: "RETIREMENT_CATCHUP",
+  RetirementRothCatchup: "RETIREMENT_ROTH_CATCHUP",
+  RetirementAfterTax: "RETIREMENT_AFTER_TAX",
+  CollegeSavings: "COLLEGE_SAVINGS",
+  EarnedWageAccess: "EARNED_WAGE_ACCESS",
+  UnionDues: "UNION_DUES",
 } as const;
 export type HrisBenefitType = OpenEnum<typeof HrisBenefitType>;
 
@@ -97,6 +140,10 @@ export type HrisBenefitType = OpenEnum<typeof HrisBenefitType>;
  * Company-wide benefit plans available to employees.
  */
 export type HrisBenefit = {
+  /**
+   * the payroll system's code for this benefit plan
+   */
+  code?: string | undefined;
   /**
    * (reference to HrisCompany)
    */
@@ -116,6 +163,10 @@ export type HrisBenefit = {
    */
   employerContributionAmount?: number | undefined;
   /**
+   * kind of employer retirement contribution (eg. MATCH, SAFE_HARBOR_MATCH, PROFIT_SHARING)
+   */
+  employerContributionCategory?: EmployerContributionCategory | undefined;
+  /**
    * always money
    */
   employerContributionMaxAmount?: number | undefined;
@@ -132,6 +183,10 @@ export type HrisBenefit = {
    */
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * the retirement plan this benefit belongs to (for RETIREMENT* types)
+   */
+  retirementPlanType?: RetirementPlanType | undefined;
   /**
    * Tax describes the tax treatment of the benefit
    */
@@ -155,6 +210,19 @@ export const CoverageLevel$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CoverageLevel
 > = openEnums.outboundSchema(CoverageLevel);
+
+/** @internal */
+export const EmployerContributionCategory$inboundSchema: z.ZodType<
+  EmployerContributionCategory,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(EmployerContributionCategory);
+/** @internal */
+export const EmployerContributionCategory$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  EmployerContributionCategory
+> = openEnums.outboundSchema(EmployerContributionCategory);
 
 /** @internal */
 export const EmployerContributionType$inboundSchema: z.ZodType<
@@ -183,6 +251,19 @@ export const HrisBenefitFrequency$outboundSchema: z.ZodType<
 > = openEnums.outboundSchema(HrisBenefitFrequency);
 
 /** @internal */
+export const RetirementPlanType$inboundSchema: z.ZodType<
+  RetirementPlanType,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(RetirementPlanType);
+/** @internal */
+export const RetirementPlanType$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  RetirementPlanType
+> = openEnums.outboundSchema(RetirementPlanType);
+
+/** @internal */
 export const Tax$inboundSchema: z.ZodType<Tax, z.ZodTypeDef, unknown> =
   openEnums.inboundSchema(Tax);
 /** @internal */
@@ -208,6 +289,7 @@ export const HrisBenefit$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  code: z.string().optional(),
   company_id: z.string().optional(),
   coverage_level: CoverageLevel$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -215,6 +297,8 @@ export const HrisBenefit$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   description: z.string().optional(),
   employer_contribution_amount: z.number().optional(),
+  employer_contribution_category: EmployerContributionCategory$inboundSchema
+    .optional(),
   employer_contribution_max_amount: z.number().optional(),
   employer_contribution_type: EmployerContributionType$inboundSchema.optional(),
   frequency: HrisBenefitFrequency$inboundSchema.optional(),
@@ -223,6 +307,7 @@ export const HrisBenefit$inboundSchema: z.ZodType<
   metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  retirement_plan_type: RetirementPlanType$inboundSchema.optional(),
   tax: Tax$inboundSchema.optional(),
   type: HrisBenefitType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -233,20 +318,24 @@ export const HrisBenefit$inboundSchema: z.ZodType<
     "coverage_level": "coverageLevel",
     "created_at": "createdAt",
     "employer_contribution_amount": "employerContributionAmount",
+    "employer_contribution_category": "employerContributionCategory",
     "employer_contribution_max_amount": "employerContributionMaxAmount",
     "employer_contribution_type": "employerContributionType",
     "is_active": "isActive",
+    "retirement_plan_type": "retirementPlanType",
     "updated_at": "updatedAt",
   });
 });
 /** @internal */
 export type HrisBenefit$Outbound = {
+  code?: string | undefined;
   company_id?: string | undefined;
   coverage_level?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   description?: string | undefined;
   employer_contribution_amount?: number | undefined;
+  employer_contribution_category?: string | undefined;
   employer_contribution_max_amount?: number | undefined;
   employer_contribution_type?: string | undefined;
   frequency?: string | undefined;
@@ -255,6 +344,7 @@ export type HrisBenefit$Outbound = {
   metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  retirement_plan_type?: string | undefined;
   tax?: string | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -266,12 +356,15 @@ export const HrisBenefit$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   HrisBenefit
 > = z.object({
+  code: z.string().optional(),
   companyId: z.string().optional(),
   coverageLevel: CoverageLevel$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
   employerContributionAmount: z.number().optional(),
+  employerContributionCategory: EmployerContributionCategory$outboundSchema
+    .optional(),
   employerContributionMaxAmount: z.number().optional(),
   employerContributionType: EmployerContributionType$outboundSchema.optional(),
   frequency: HrisBenefitFrequency$outboundSchema.optional(),
@@ -280,6 +373,7 @@ export const HrisBenefit$outboundSchema: z.ZodType<
   metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  retirementPlanType: RetirementPlanType$outboundSchema.optional(),
   tax: Tax$outboundSchema.optional(),
   type: HrisBenefitType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -289,9 +383,11 @@ export const HrisBenefit$outboundSchema: z.ZodType<
     coverageLevel: "coverage_level",
     createdAt: "created_at",
     employerContributionAmount: "employer_contribution_amount",
+    employerContributionCategory: "employer_contribution_category",
     employerContributionMaxAmount: "employer_contribution_max_amount",
     employerContributionType: "employer_contribution_type",
     isActive: "is_active",
+    retirementPlanType: "retirement_plan_type",
     updatedAt: "updated_at",
   });
 });

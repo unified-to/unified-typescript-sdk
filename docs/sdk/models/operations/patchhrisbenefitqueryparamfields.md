@@ -5,11 +5,11 @@
 ```typescript
 import { PatchHrisBenefitQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: PatchHrisBenefitQueryParamFields = "frequency";
+let value: PatchHrisBenefitQueryParamFields = "employer_contribution_type";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "description" | "company_id" | "type" | "tax" | "frequency" | "is_active" | "employer_contribution_type" | "employer_contribution_amount" | "employer_contribution_max_amount" | "coverage_level" | "currency" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "description" | "company_id" | "type" | "tax" | "frequency" | "is_active" | "employer_contribution_type" | "employer_contribution_amount" | "employer_contribution_max_amount" | "coverage_level" | "currency" | "code" | "retirement_plan_type" | "employer_contribution_category" | "metadata" | "raw"
 ```

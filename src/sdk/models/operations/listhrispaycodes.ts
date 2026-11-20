@@ -19,6 +19,7 @@ export const ListHrisPaycodesQueryParamFields = {
   IsPreTax: "is_pre_tax",
   IsEmployer: "is_employer",
   IsActive: "is_active",
+  IsRetirementEligible: "is_retirement_eligible",
   Metadata: "metadata",
   Raw: "raw",
 } as const;

@@ -51,6 +51,15 @@ export const HrisPayslipDetailType = {
   EmployerContribution: "EMPLOYER_CONTRIBUTION",
   Pension: "PENSION",
   EarningCashInLieu: "EARNING_CASH_IN_LIEU",
+  PretaxDeductionRetirementCatchup: "PRETAX_DEDUCTION_RETIREMENT_CATCHUP",
+  PosttaxRetirementRothCatchup: "POSTTAX_RETIREMENT_ROTH_CATCHUP",
+  PosttaxRetirementAfterTax: "POSTTAX_RETIREMENT_AFTER_TAX",
+  EmployerContributionRetirement: "EMPLOYER_CONTRIBUTION_RETIREMENT",
+  EmployerContributionHsa: "EMPLOYER_CONTRIBUTION_HSA",
+  EmployerContributionFsa: "EMPLOYER_CONTRIBUTION_FSA",
+  PosttaxDeductionCollegeSavings: "POSTTAX_DEDUCTION_COLLEGE_SAVINGS",
+  PosttaxDeductionUnionDues: "POSTTAX_DEDUCTION_UNION_DUES",
+  PosttaxDeductionEwaRepayment: "POSTTAX_DEDUCTION_EWA_REPAYMENT",
 } as const;
 export type HrisPayslipDetailType = OpenEnum<typeof HrisPayslipDetailType>;
 
@@ -67,6 +76,14 @@ export type HrisPayslipDetail = {
    */
   isEmployer?: boolean | undefined;
   isPreTax?: boolean | undefined;
+  /**
+   * true when this line counts as retirement-plan compensation
+   */
+  isRetirementEligible?: boolean | undefined;
+  /**
+   * the payroll system's identifier for the retirement-plan loan this line repays
+   */
+  loanIdentifier?: string | undefined;
   name?: string | undefined;
   /**
    * integration pay-code label before normalization
@@ -85,6 +102,10 @@ export type HrisPayslipDetail = {
    * year-to-date amount for this line
    */
   ytdAmount?: number | undefined;
+  /**
+   * year-to-date hours for this line
+   */
+  ytdHours?: number | undefined;
 };
 
 /** @internal */
@@ -109,12 +130,15 @@ export const HrisPayslipDetail$inboundSchema: z.ZodType<
   hours: z.number().optional(),
   is_employer: z.boolean().optional(),
   is_pre_tax: z.boolean().optional(),
+  is_retirement_eligible: z.boolean().optional(),
+  loan_identifier: z.string().optional(),
   name: z.string().optional(),
   original_type: z.string().optional(),
   paycode_id: z.string().optional(),
   rate_amount: z.number().optional(),
   type: HrisPayslipDetailType$inboundSchema.optional(),
   ytd_amount: z.number().optional(),
+  ytd_hours: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
     "benefit_id": "benefitId",
@@ -123,10 +147,13 @@ export const HrisPayslipDetail$inboundSchema: z.ZodType<
     "employee_amount": "employeeAmount",
     "is_employer": "isEmployer",
     "is_pre_tax": "isPreTax",
+    "is_retirement_eligible": "isRetirementEligible",
+    "loan_identifier": "loanIdentifier",
     "original_type": "originalType",
     "paycode_id": "paycodeId",
     "rate_amount": "rateAmount",
     "ytd_amount": "ytdAmount",
+    "ytd_hours": "ytdHours",
   });
 });
 

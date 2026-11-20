@@ -27,6 +27,7 @@ export const CreateHrisDeductionQueryParamFields = {
   MaxAmount: "max_amount",
   PaycodeId: "paycode_id",
   GarnishmentType: "garnishment_type",
+  LoanIdentifier: "loan_identifier",
   Metadata: "metadata",
   Raw: "raw",
 } as const;

@@ -115,6 +115,10 @@ export type HrisPayslip = {
    * the employee (reference to HrisEmployee)
    */
   userId?: string | undefined;
+  /**
+   * year-to-date hours paid as of this payslip
+   */
+  ytdHours?: number | undefined;
 };
 
 /** @internal */
@@ -169,6 +173,7 @@ export const HrisPayslip$inboundSchema: z.ZodType<
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
+  ytd_hours: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
     "company_id": "companyId",
@@ -190,6 +195,7 @@ export const HrisPayslip$inboundSchema: z.ZodType<
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_id": "userId",
+    "ytd_hours": "ytdHours",
   });
 });
 

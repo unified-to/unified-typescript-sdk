@@ -69,6 +69,22 @@ export const EmploymentStatus = {
 } as const;
 export type EmploymentStatus = OpenEnum<typeof EmploymentStatus>;
 
+/**
+ * why the employee is not actively working (eg. LEAVE, TERMINATED, RETIRED)
+ */
+export const EmploymentStatusReason = {
+  Leave: "LEAVE",
+  Terminated: "TERMINATED",
+  Retired: "RETIRED",
+  Deceased: "DECEASED",
+  Disabled: "DISABLED",
+  Other: "OTHER",
+} as const;
+/**
+ * why the employee is not actively working (eg. LEAVE, TERMINATED, RETIRED)
+ */
+export type EmploymentStatusReason = OpenEnum<typeof EmploymentStatusReason>;
+
 export const HrisEmployeeEmploymentType = {
   FullTime: "FULL_TIME",
   PartTime: "PART_TIME",
@@ -162,6 +178,10 @@ export type HrisEmployee = {
   employeeNumber?: string | undefined;
   employeeRoles?: Array<PropertyHrisEmployeeEmployeeRoles> | undefined;
   employmentStatus?: EmploymentStatus | undefined;
+  /**
+   * why the employee is not actively working (eg. LEAVE, TERMINATED, RETIRED)
+   */
+  employmentStatusReason?: EmploymentStatusReason | undefined;
   employmentType?: HrisEmployeeEmploymentType | undefined;
   /**
    * The employee's first (given) name
@@ -198,6 +218,14 @@ export type HrisEmployee = {
    * The employee's last (family) name
    */
   lastName?: string | undefined;
+  /**
+   * expected or actual end of the current leave of absence (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  leaveEndAt?: Date | undefined;
+  /**
+   * start of the current leave of absence (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  leaveStartAt?: Date | undefined;
   locations?: Array<HrisLocation> | undefined;
   managerId?: string | undefined;
   maritalStatus?: HrisEmployeeMaritalStatus | undefined;
@@ -213,6 +241,10 @@ export type HrisEmployee = {
   pronouns?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   /**
+   * most recent rehire date (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  rehiredAt?: Date | undefined;
+  /**
    * the employee's personal relationships (eg. emergency contacts, spouse, dependants, ...)
    */
   relationships?: Array<HrisEmployeerelationship> | undefined;
@@ -220,6 +252,14 @@ export type HrisEmployee = {
    * Mr. Mrs. Ms.
    */
   salutation?: string | undefined;
+  /**
+   * seniority date (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  seniorityStartedAt?: Date | undefined;
+  /**
+   * adjusted service date used for benefits eligibility and vesting (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  serviceStartedAt?: Date | undefined;
   ssnSin?: string | undefined;
   storageQuotaAllocated?: number | undefined;
   storageQuotaAvailable?: number | undefined;
@@ -258,6 +298,19 @@ export const EmploymentStatus$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   EmploymentStatus
 > = openEnums.outboundSchema(EmploymentStatus);
+
+/** @internal */
+export const EmploymentStatusReason$inboundSchema: z.ZodType<
+  EmploymentStatusReason,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(EmploymentStatusReason);
+/** @internal */
+export const EmploymentStatusReason$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  EmploymentStatusReason
+> = openEnums.outboundSchema(EmploymentStatusReason);
 
 /** @internal */
 export const HrisEmployeeEmploymentType$inboundSchema: z.ZodType<
@@ -345,6 +398,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   employee_roles: z.array(PropertyHrisEmployeeEmployeeRoles$inboundSchema)
     .optional(),
   employment_status: EmploymentStatus$inboundSchema.optional(),
+  employment_status_reason: EmploymentStatusReason$inboundSchema.optional(),
   employment_type: HrisEmployeeEmploymentType$inboundSchema.optional(),
   first_name: z.string().optional(),
   flsa_status: FlsaStatus$inboundSchema.optional(),
@@ -358,6 +412,12 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   job_id: z.string().optional(),
   language_locale: z.string().optional(),
   last_name: z.string().optional(),
+  leave_end_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
+  leave_start_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
   locations: z.array(HrisLocation$inboundSchema).optional(),
   manager_id: z.string().optional(),
   marital_status: HrisEmployeeMaritalStatus$inboundSchema.optional(),
@@ -366,8 +426,16 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   pay_frequency: PayFrequency$inboundSchema.optional(),
   pronouns: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  rehired_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   relationships: z.array(HrisEmployeerelationship$inboundSchema).optional(),
   salutation: z.string().optional(),
+  seniority_started_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
+  service_started_at: z.string().datetime({ offset: true }).transform(v =>
+    new Date(v)
+  ).optional(),
   ssn_sin: z.string().optional(),
   storage_quota_allocated: z.number().optional(),
   storage_quota_available: z.number().optional(),
@@ -391,6 +459,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     "employee_number": "employeeNumber",
     "employee_roles": "employeeRoles",
     "employment_status": "employmentStatus",
+    "employment_status_reason": "employmentStatusReason",
     "employment_type": "employmentType",
     "first_name": "firstName",
     "flsa_status": "flsaStatus",
@@ -400,9 +469,14 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     "job_id": "jobId",
     "language_locale": "languageLocale",
     "last_name": "lastName",
+    "leave_end_at": "leaveEndAt",
+    "leave_start_at": "leaveStartAt",
     "manager_id": "managerId",
     "marital_status": "maritalStatus",
     "pay_frequency": "payFrequency",
+    "rehired_at": "rehiredAt",
+    "seniority_started_at": "seniorityStartedAt",
+    "service_started_at": "serviceStartedAt",
     "ssn_sin": "ssnSin",
     "storage_quota_allocated": "storageQuotaAllocated",
     "storage_quota_available": "storageQuotaAvailable",
@@ -427,6 +501,7 @@ export type HrisEmployee$Outbound = {
   employee_number?: string | undefined;
   employee_roles?: Array<string> | undefined;
   employment_status?: string | undefined;
+  employment_status_reason?: string | undefined;
   employment_type?: string | undefined;
   first_name?: string | undefined;
   flsa_status?: string | undefined;
@@ -439,6 +514,8 @@ export type HrisEmployee$Outbound = {
   job_id?: string | undefined;
   language_locale?: string | undefined;
   last_name?: string | undefined;
+  leave_end_at?: string | undefined;
+  leave_start_at?: string | undefined;
   locations?: Array<HrisLocation$Outbound> | undefined;
   manager_id?: string | undefined;
   marital_status?: string | undefined;
@@ -447,8 +524,11 @@ export type HrisEmployee$Outbound = {
   pay_frequency?: string | undefined;
   pronouns?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  rehired_at?: string | undefined;
   relationships?: Array<HrisEmployeerelationship$Outbound> | undefined;
   salutation?: string | undefined;
+  seniority_started_at?: string | undefined;
+  service_started_at?: string | undefined;
   ssn_sin?: string | undefined;
   storage_quota_allocated?: number | undefined;
   storage_quota_available?: number | undefined;
@@ -481,6 +561,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   employeeRoles: z.array(PropertyHrisEmployeeEmployeeRoles$outboundSchema)
     .optional(),
   employmentStatus: EmploymentStatus$outboundSchema.optional(),
+  employmentStatusReason: EmploymentStatusReason$outboundSchema.optional(),
   employmentType: HrisEmployeeEmploymentType$outboundSchema.optional(),
   firstName: z.string().optional(),
   flsaStatus: FlsaStatus$outboundSchema.optional(),
@@ -493,6 +574,8 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   jobId: z.string().optional(),
   languageLocale: z.string().optional(),
   lastName: z.string().optional(),
+  leaveEndAt: z.date().transform(v => v.toISOString()).optional(),
+  leaveStartAt: z.date().transform(v => v.toISOString()).optional(),
   locations: z.array(HrisLocation$outboundSchema).optional(),
   managerId: z.string().optional(),
   maritalStatus: HrisEmployeeMaritalStatus$outboundSchema.optional(),
@@ -501,8 +584,11 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   payFrequency: PayFrequency$outboundSchema.optional(),
   pronouns: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  rehiredAt: z.date().transform(v => v.toISOString()).optional(),
   relationships: z.array(HrisEmployeerelationship$outboundSchema).optional(),
   salutation: z.string().optional(),
+  seniorityStartedAt: z.date().transform(v => v.toISOString()).optional(),
+  serviceStartedAt: z.date().transform(v => v.toISOString()).optional(),
   ssnSin: z.string().optional(),
   storageQuotaAllocated: z.number().optional(),
   storageQuotaAvailable: z.number().optional(),
@@ -523,6 +609,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
     employeeNumber: "employee_number",
     employeeRoles: "employee_roles",
     employmentStatus: "employment_status",
+    employmentStatusReason: "employment_status_reason",
     employmentType: "employment_type",
     firstName: "first_name",
     flsaStatus: "flsa_status",
@@ -532,9 +619,14 @@ export const HrisEmployee$outboundSchema: z.ZodType<
     jobId: "job_id",
     languageLocale: "language_locale",
     lastName: "last_name",
+    leaveEndAt: "leave_end_at",
+    leaveStartAt: "leave_start_at",
     managerId: "manager_id",
     maritalStatus: "marital_status",
     payFrequency: "pay_frequency",
+    rehiredAt: "rehired_at",
+    seniorityStartedAt: "seniority_started_at",
+    serviceStartedAt: "service_started_at",
     ssnSin: "ssn_sin",
     storageQuotaAllocated: "storage_quota_allocated",
     storageQuotaAvailable: "storage_quota_available",

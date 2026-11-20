@@ -55,6 +55,15 @@ export const DetailType = {
   EmployerContribution: "EMPLOYER_CONTRIBUTION",
   Pension: "PENSION",
   EarningCashInLieu: "EARNING_CASH_IN_LIEU",
+  PretaxDeductionRetirementCatchup: "PRETAX_DEDUCTION_RETIREMENT_CATCHUP",
+  PosttaxRetirementRothCatchup: "POSTTAX_RETIREMENT_ROTH_CATCHUP",
+  PosttaxRetirementAfterTax: "POSTTAX_RETIREMENT_AFTER_TAX",
+  EmployerContributionRetirement: "EMPLOYER_CONTRIBUTION_RETIREMENT",
+  EmployerContributionHsa: "EMPLOYER_CONTRIBUTION_HSA",
+  EmployerContributionFsa: "EMPLOYER_CONTRIBUTION_FSA",
+  PosttaxDeductionCollegeSavings: "POSTTAX_DEDUCTION_COLLEGE_SAVINGS",
+  PosttaxDeductionUnionDues: "POSTTAX_DEDUCTION_UNION_DUES",
+  PosttaxDeductionEwaRepayment: "POSTTAX_DEDUCTION_EWA_REPAYMENT",
 } as const;
 /**
  * the normalized payslip-line type this code produces
@@ -92,6 +101,10 @@ export type HrisPaycode = {
   isActive?: boolean | undefined;
   isEmployer?: boolean | undefined;
   isPreTax?: boolean | undefined;
+  /**
+   * true when earnings under this code count as retirement-plan compensation
+   */
+  isRetirementEligible?: boolean | undefined;
   metadata?: Array<HrisMetadata> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -132,6 +145,7 @@ export const HrisPaycode$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_employer: z.boolean().optional(),
   is_pre_tax: z.boolean().optional(),
+  is_retirement_eligible: z.boolean().optional(),
   metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
@@ -146,6 +160,7 @@ export const HrisPaycode$inboundSchema: z.ZodType<
     "is_active": "isActive",
     "is_employer": "isEmployer",
     "is_pre_tax": "isPreTax",
+    "is_retirement_eligible": "isRetirementEligible",
     "updated_at": "updatedAt",
   });
 });

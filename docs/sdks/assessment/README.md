@@ -34,9 +34,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.assessment.createAssessmentOrder({
     assessmentOrder: {
-      connectionId: "<id>",
+      connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "f9735a9d-501b-45ac-9c85-8e1c44accea0",
+      id: "7c5d340c-d7d4-4911-8e63-9ba58f90e148",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -63,7 +63,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T13:01:16.210Z"),
+      updatedAt: new Date("2023-02-02T20:11:57.252Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -94,9 +94,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await orderCreateAssessmentOrder(unifiedTo, {
     assessmentOrder: {
-      connectionId: "<id>",
+      connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "f9735a9d-501b-45ac-9c85-8e1c44accea0",
+      id: "7c5d340c-d7d4-4911-8e63-9ba58f90e148",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -123,7 +123,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T13:01:16.210Z"),
+      updatedAt: new Date("2023-02-02T20:11:57.252Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -184,7 +184,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "0b05455a-d1a4-4c91-bce6-027718d5de8b",
+      id: "47f6c44a-3bb6-4142-a49b-ac5879a860fa",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -199,7 +199,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-10-01T15:35:19.763Z"),
+      updatedAt: new Date("2023-10-01T21:26:23.865Z"),
     },
     connectionId: "<id>",
   });
@@ -236,7 +236,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "0b05455a-d1a4-4c91-bce6-027718d5de8b",
+      id: "47f6c44a-3bb6-4142-a49b-ac5879a860fa",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -251,7 +251,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-10-01T15:35:19.763Z"),
+      updatedAt: new Date("2023-10-01T21:26:23.865Z"),
     },
     connectionId: "<id>",
   });
@@ -539,9 +539,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.assessment.patchAssessmentOrder({
     assessmentOrder: {
-      connectionId: "<id>",
+      connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "79a38b2b-e31c-4b6b-bb35-9bd3be2e5800",
+      id: "88d1ab61-99ab-40b0-b9ab-13747e2b4a83",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -568,7 +568,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T13:01:16.219Z"),
+      updatedAt: new Date("2023-02-02T20:11:57.262Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -600,9 +600,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await orderPatchAssessmentOrder(unifiedTo, {
     assessmentOrder: {
-      connectionId: "<id>",
+      connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "79a38b2b-e31c-4b6b-bb35-9bd3be2e5800",
+      id: "88d1ab61-99ab-40b0-b9ab-13747e2b4a83",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -629,7 +629,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T13:01:16.219Z"),
+      updatedAt: new Date("2023-02-02T20:11:57.262Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -691,7 +691,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "dd32eeed-d939-4da5-8132-d047c9ed763c",
+      id: "150d6e19-e46d-4b09-bf7a-58d5787f5b2d",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -706,7 +706,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-10-01T15:35:19.766Z"),
+      updatedAt: new Date("2023-10-01T21:26:23.870Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -744,7 +744,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "dd32eeed-d939-4da5-8132-d047c9ed763c",
+      id: "150d6e19-e46d-4b09-bf7a-58d5787f5b2d",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -759,7 +759,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-10-01T15:35:19.766Z"),
+      updatedAt: new Date("2023-10-01T21:26:23.870Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -892,9 +892,9 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.assessment.updateAssessmentOrder({
     assessmentOrder: {
-      connectionId: "<id>",
+      connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "79a38b2b-e31c-4b6b-bb35-9bd3be2e5800",
+      id: "88d1ab61-99ab-40b0-b9ab-13747e2b4a83",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -921,7 +921,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T13:01:16.219Z"),
+      updatedAt: new Date("2023-02-02T20:11:57.262Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -953,9 +953,9 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await orderUpdateAssessmentOrder(unifiedTo, {
     assessmentOrder: {
-      connectionId: "<id>",
+      connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "79a38b2b-e31c-4b6b-bb35-9bd3be2e5800",
+      id: "88d1ab61-99ab-40b0-b9ab-13747e2b4a83",
       metadata: [],
       parameters: [],
       profileAddresses: [],
@@ -982,7 +982,7 @@ async function run() {
       responseUrl: "https://rowdy-fisherman.biz/",
       status: "REJECTED",
       targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T13:01:16.219Z"),
+      updatedAt: new Date("2023-02-02T20:11:57.262Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -1044,7 +1044,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "dd32eeed-d939-4da5-8132-d047c9ed763c",
+      id: "150d6e19-e46d-4b09-bf7a-58d5787f5b2d",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -1059,7 +1059,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-10-01T15:35:19.766Z"),
+      updatedAt: new Date("2023-10-01T21:26:23.870Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1097,7 +1097,7 @@ async function run() {
       description: "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
       hasRedirectUrl: true,
       hasTargetUrl: false,
-      id: "dd32eeed-d939-4da5-8132-d047c9ed763c",
+      id: "150d6e19-e46d-4b09-bf7a-58d5787f5b2d",
       infoUrl: "https://ugly-instance.biz/",
       integrationTypes: [
         "viridis",
@@ -1112,7 +1112,7 @@ async function run() {
         "clamo",
       ],
       type: "VIDEO_INTERVIEW",
-      updatedAt: new Date("2023-10-01T15:35:19.766Z"),
+      updatedAt: new Date("2023-10-01T21:26:23.870Z"),
     },
     connectionId: "<id>",
     id: "<id>",

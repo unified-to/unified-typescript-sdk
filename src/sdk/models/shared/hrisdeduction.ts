@@ -123,6 +123,10 @@ export type HrisDeduction = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   /**
+   * the payroll system's identifier for the retirement-plan loan this deduction repays
+   */
+  loanIdentifier?: string | undefined;
+  /**
    * annual maximum employee amount (always money)
    */
   maxAmount?: number | undefined;
@@ -233,6 +237,7 @@ export const HrisDeduction$inboundSchema: z.ZodType<
   garnishment_type: GarnishmentType$inboundSchema.optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  loan_identifier: z.string().optional(),
   max_amount: z.number().optional(),
   metadata: z.array(HrisMetadata$inboundSchema).optional(),
   notes: z.string().optional(),
@@ -255,6 +260,7 @@ export const HrisDeduction$inboundSchema: z.ZodType<
     "end_at": "endAt",
     "garnishment_type": "garnishmentType",
     "is_active": "isActive",
+    "loan_identifier": "loanIdentifier",
     "max_amount": "maxAmount",
     "paycode_id": "paycodeId",
     "start_at": "startAt",
@@ -276,6 +282,7 @@ export type HrisDeduction$Outbound = {
   garnishment_type?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  loan_identifier?: string | undefined;
   max_amount?: number | undefined;
   metadata?: Array<HrisMetadata$Outbound> | undefined;
   notes?: string | undefined;
@@ -305,6 +312,7 @@ export const HrisDeduction$outboundSchema: z.ZodType<
   garnishmentType: GarnishmentType$outboundSchema.optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  loanIdentifier: z.string().optional(),
   maxAmount: z.number().optional(),
   metadata: z.array(HrisMetadata$outboundSchema).optional(),
   notes: z.string().optional(),
@@ -325,6 +333,7 @@ export const HrisDeduction$outboundSchema: z.ZodType<
     endAt: "end_at",
     garnishmentType: "garnishment_type",
     isActive: "is_active",
+    loanIdentifier: "loan_identifier",
     maxAmount: "max_amount",
     paycodeId: "paycode_id",
     startAt: "start_at",

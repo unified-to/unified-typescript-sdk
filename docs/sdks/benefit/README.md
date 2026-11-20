@@ -30,6 +30,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.benefit.createHrisBenefit({
     hrisBenefit: {
+      code: "E7P1FZ",
       coverageLevel: "EMPLOYEE_SPOUSE",
       createdAt: new Date("2020-06-11T01:24:05.654Z"),
       currency: "GBP",
@@ -38,13 +39,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "c6645194-4504-4f23-9c7c-928c65325216",
+      id: "45565288-e1dc-4a8e-ab65-07651261ade8",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "OTHER",
-      updatedAt: new Date("2023-04-02T10:38:21.796Z"),
+      type: "EMPLOYER_TAX_CONTRIBUTION",
+      updatedAt: new Date("2025-07-18T08:23:11.709Z"),
     },
     connectionId: "<id>",
   });
@@ -74,6 +75,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisBenefit(unifiedTo, {
     hrisBenefit: {
+      code: "E7P1FZ",
       coverageLevel: "EMPLOYEE_SPOUSE",
       createdAt: new Date("2020-06-11T01:24:05.654Z"),
       currency: "GBP",
@@ -82,13 +84,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "c6645194-4504-4f23-9c7c-928c65325216",
+      id: "45565288-e1dc-4a8e-ab65-07651261ade8",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "OTHER",
-      updatedAt: new Date("2023-04-02T10:38:21.796Z"),
+      type: "EMPLOYER_TAX_CONTRIBUTION",
+      updatedAt: new Date("2025-07-18T08:23:11.709Z"),
     },
     connectionId: "<id>",
   });
@@ -297,6 +299,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.benefit.patchHrisBenefit({
     hrisBenefit: {
+      code: "E7P1FZ",
       coverageLevel: "EMPLOYEE_SPOUSE",
       createdAt: new Date("2020-06-11T01:24:05.654Z"),
       currency: "GBP",
@@ -305,13 +308,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "7c9a1926-1629-4c7a-beff-35eb936b4d6d",
+      id: "2ae76bea-5d7a-467a-82e1-712606a02a98",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "OTHER",
-      updatedAt: new Date("2023-04-02T10:38:21.803Z"),
+      type: "EMPLOYER_TAX_CONTRIBUTION",
+      updatedAt: new Date("2025-07-18T08:23:11.726Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -342,6 +345,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisBenefit(unifiedTo, {
     hrisBenefit: {
+      code: "E7P1FZ",
       coverageLevel: "EMPLOYEE_SPOUSE",
       createdAt: new Date("2020-06-11T01:24:05.654Z"),
       currency: "GBP",
@@ -350,13 +354,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "7c9a1926-1629-4c7a-beff-35eb936b4d6d",
+      id: "2ae76bea-5d7a-467a-82e1-712606a02a98",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "OTHER",
-      updatedAt: new Date("2023-04-02T10:38:21.803Z"),
+      type: "EMPLOYER_TAX_CONTRIBUTION",
+      updatedAt: new Date("2025-07-18T08:23:11.726Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -489,6 +493,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.benefit.updateHrisBenefit({
     hrisBenefit: {
+      code: "E7P1FZ",
       coverageLevel: "EMPLOYEE_SPOUSE",
       createdAt: new Date("2020-06-11T01:24:05.654Z"),
       currency: "GBP",
@@ -497,13 +502,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "7c9a1926-1629-4c7a-beff-35eb936b4d6d",
+      id: "2ae76bea-5d7a-467a-82e1-712606a02a98",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "OTHER",
-      updatedAt: new Date("2023-04-02T10:38:21.803Z"),
+      type: "EMPLOYER_TAX_CONTRIBUTION",
+      updatedAt: new Date("2025-07-18T08:23:11.726Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -534,6 +539,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisBenefit(unifiedTo, {
     hrisBenefit: {
+      code: "E7P1FZ",
       coverageLevel: "EMPLOYEE_SPOUSE",
       createdAt: new Date("2020-06-11T01:24:05.654Z"),
       currency: "GBP",
@@ -542,13 +548,13 @@ async function run() {
       employerContributionMaxAmount: 179093,
       employerContributionType: "PERCENTAGE",
       frequency: "MONTH",
-      id: "7c9a1926-1629-4c7a-beff-35eb936b4d6d",
+      id: "2ae76bea-5d7a-467a-82e1-712606a02a98",
       isActive: false,
       metadata: [],
       name: "Frozen Wooden Ball",
       tax: "PRE_TAX",
-      type: "OTHER",
-      updatedAt: new Date("2023-04-02T10:38:21.803Z"),
+      type: "EMPLOYER_TAX_CONTRIBUTION",
+      updatedAt: new Date("2025-07-18T08:23:11.726Z"),
     },
     connectionId: "<id>",
     id: "<id>",
