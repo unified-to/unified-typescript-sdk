@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -118,64 +118,70 @@ export const CalendarEventStatus$inboundSchema: z.ZodType<
   CalendarEventStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarEventStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarEventStatus)
+);
 /** @internal */
 export const CalendarEventStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CalendarEventStatus
-> = openEnums.outboundSchema(CalendarEventStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CalendarEventStatus)
+);
 
 /** @internal */
 export const CalendarEvent$inboundSchema: z.ZodType<
   CalendarEvent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attachments: z.array(CalendarAttachment$inboundSchema).optional(),
-  attendees: z.array(CalendarAttendee$inboundSchema).optional(),
-  calendar_id: z.string().optional(),
-  conference: z.array(CalendarConference$inboundSchema).optional(),
-  created_at: z.string().optional(),
-  end_at: z.string().optional(),
-  has_conference: z.boolean().optional(),
-  id: z.string().optional(),
-  is_all_day: z.boolean().optional(),
-  is_free: z.boolean().optional(),
-  is_private: z.boolean().optional(),
-  location: z.string().optional(),
-  matter_id: z.string().optional(),
-  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  organizer: PropertyCalendarEventOrganizer$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  recurrence: z.array(CalendarEventRecurrence$inboundSchema).optional(),
-  recurring_event_id: z.string().optional(),
-  rooms: z.array(CalendarReference$inboundSchema).optional(),
-  send_notifications: z.boolean().optional(),
-  start_at: z.string().optional(),
-  status: CalendarEventStatus$inboundSchema.optional(),
-  subject: z.string().optional(),
-  timezone: z.string().optional(),
-  updated_at: z.string().optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "calendar_id": "calendarId",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "has_conference": "hasConference",
-    "is_all_day": "isAllDay",
-    "is_free": "isFree",
-    "is_private": "isPrivate",
-    "matter_id": "matterId",
-    "recurring_event_id": "recurringEventId",
-    "send_notifications": "sendNotifications",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(CalendarAttachment$inboundSchema).optional(),
+    attendees: z.array(CalendarAttendee$inboundSchema).optional(),
+    calendar_id: z.string().optional(),
+    conference: z.array(CalendarConference$inboundSchema).optional(),
+    created_at: z.string().optional(),
+    end_at: z.string().optional(),
+    has_conference: z.boolean().optional(),
+    id: z.string().optional(),
+    is_all_day: z.boolean().optional(),
+    is_free: z.boolean().optional(),
+    is_private: z.boolean().optional(),
+    location: z.string().optional(),
+    matter_id: z.string().optional(),
+    metadata: z.array(CalendarMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    organizer: PropertyCalendarEventOrganizer$inboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    recurrence: z.array(CalendarEventRecurrence$inboundSchema).optional(),
+    recurring_event_id: z.string().optional(),
+    rooms: z.array(CalendarReference$inboundSchema).optional(),
+    send_notifications: z.boolean().optional(),
+    start_at: z.string().optional(),
+    status: CalendarEventStatus$inboundSchema.optional(),
+    subject: z.string().optional(),
+    timezone: z.string().optional(),
+    updated_at: z.string().optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "calendar_id": "calendarId",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "has_conference": "hasConference",
+      "is_all_day": "isAllDay",
+      "is_free": "isFree",
+      "is_private": "isPrivate",
+      "matter_id": "matterId",
+      "recurring_event_id": "recurringEventId",
+      "send_notifications": "sendNotifications",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type CalendarEvent$Outbound = {
   attachments?: Array<CalendarAttachment$Outbound> | undefined;
@@ -212,51 +218,53 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   CalendarEvent$Outbound,
   z.ZodTypeDef,
   CalendarEvent
-> = z.object({
-  attachments: z.array(CalendarAttachment$outboundSchema).optional(),
-  attendees: z.array(CalendarAttendee$outboundSchema).optional(),
-  calendarId: z.string().optional(),
-  conference: z.array(CalendarConference$outboundSchema).optional(),
-  createdAt: z.string().optional(),
-  endAt: z.string().optional(),
-  hasConference: z.boolean().optional(),
-  id: z.string().optional(),
-  isAllDay: z.boolean().optional(),
-  isFree: z.boolean().optional(),
-  isPrivate: z.boolean().optional(),
-  location: z.string().optional(),
-  matterId: z.string().optional(),
-  metadata: z.array(CalendarMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  organizer: PropertyCalendarEventOrganizer$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  recurrence: z.array(CalendarEventRecurrence$outboundSchema).optional(),
-  recurringEventId: z.string().optional(),
-  rooms: z.array(CalendarReference$outboundSchema).optional(),
-  sendNotifications: z.boolean().optional(),
-  startAt: z.string().optional(),
-  status: CalendarEventStatus$outboundSchema.optional(),
-  subject: z.string().optional(),
-  timezone: z.string().optional(),
-  updatedAt: z.string().optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    calendarId: "calendar_id",
-    createdAt: "created_at",
-    endAt: "end_at",
-    hasConference: "has_conference",
-    isAllDay: "is_all_day",
-    isFree: "is_free",
-    isPrivate: "is_private",
-    matterId: "matter_id",
-    recurringEventId: "recurring_event_id",
-    sendNotifications: "send_notifications",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(CalendarAttachment$outboundSchema).optional(),
+    attendees: z.array(CalendarAttendee$outboundSchema).optional(),
+    calendarId: z.string().optional(),
+    conference: z.array(CalendarConference$outboundSchema).optional(),
+    createdAt: z.string().optional(),
+    endAt: z.string().optional(),
+    hasConference: z.boolean().optional(),
+    id: z.string().optional(),
+    isAllDay: z.boolean().optional(),
+    isFree: z.boolean().optional(),
+    isPrivate: z.boolean().optional(),
+    location: z.string().optional(),
+    matterId: z.string().optional(),
+    metadata: z.array(CalendarMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    organizer: PropertyCalendarEventOrganizer$outboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    recurrence: z.array(CalendarEventRecurrence$outboundSchema).optional(),
+    recurringEventId: z.string().optional(),
+    rooms: z.array(CalendarReference$outboundSchema).optional(),
+    sendNotifications: z.boolean().optional(),
+    startAt: z.string().optional(),
+    status: CalendarEventStatus$outboundSchema.optional(),
+    subject: z.string().optional(),
+    timezone: z.string().optional(),
+    updatedAt: z.string().optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      calendarId: "calendar_id",
+      createdAt: "created_at",
+      endAt: "end_at",
+      hasConference: "has_conference",
+      isAllDay: "is_all_day",
+      isFree: "is_free",
+      isPrivate: "is_private",
+      matterId: "matter_id",
+      recurringEventId: "recurring_event_id",
+      sendNotifications: "send_notifications",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function calendarEventToJSON(calendarEvent: CalendarEvent): string {
   return JSON.stringify(CalendarEvent$outboundSchema.parse(calendarEvent));

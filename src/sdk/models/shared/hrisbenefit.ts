@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -203,129 +203,152 @@ export const CoverageLevel$inboundSchema: z.ZodType<
   CoverageLevel,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CoverageLevel);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CoverageLevel));
 /** @internal */
 export const CoverageLevel$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CoverageLevel
-> = openEnums.outboundSchema(CoverageLevel);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(CoverageLevel));
 
 /** @internal */
 export const EmployerContributionCategory$inboundSchema: z.ZodType<
   EmployerContributionCategory,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EmployerContributionCategory);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(EmployerContributionCategory)
+);
 /** @internal */
 export const EmployerContributionCategory$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   EmployerContributionCategory
-> = openEnums.outboundSchema(EmployerContributionCategory);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(EmployerContributionCategory)
+);
 
 /** @internal */
 export const EmployerContributionType$inboundSchema: z.ZodType<
   EmployerContributionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EmployerContributionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(EmployerContributionType)
+);
 /** @internal */
 export const EmployerContributionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   EmployerContributionType
-> = openEnums.outboundSchema(EmployerContributionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(EmployerContributionType)
+);
 
 /** @internal */
 export const HrisBenefitFrequency$inboundSchema: z.ZodType<
   HrisBenefitFrequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisBenefitFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisBenefitFrequency)
+);
 /** @internal */
 export const HrisBenefitFrequency$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisBenefitFrequency
-> = openEnums.outboundSchema(HrisBenefitFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisBenefitFrequency)
+);
 
 /** @internal */
 export const RetirementPlanType$inboundSchema: z.ZodType<
   RetirementPlanType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(RetirementPlanType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(RetirementPlanType)
+);
 /** @internal */
 export const RetirementPlanType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   RetirementPlanType
-> = openEnums.outboundSchema(RetirementPlanType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(RetirementPlanType)
+);
 
 /** @internal */
 export const Tax$inboundSchema: z.ZodType<Tax, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Tax);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Tax));
 /** @internal */
 export const Tax$outboundSchema: z.ZodType<string, z.ZodTypeDef, Tax> =
-  openEnums.outboundSchema(Tax);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Tax));
 
 /** @internal */
 export const HrisBenefitType$inboundSchema: z.ZodType<
   HrisBenefitType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisBenefitType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(HrisBenefitType));
 /** @internal */
 export const HrisBenefitType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisBenefitType
-> = openEnums.outboundSchema(HrisBenefitType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisBenefitType)
+);
 
 /** @internal */
 export const HrisBenefit$inboundSchema: z.ZodType<
   HrisBenefit,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  code: z.string().optional(),
-  company_id: z.string().optional(),
-  coverage_level: CoverageLevel$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  employer_contribution_amount: z.number().optional(),
-  employer_contribution_category: EmployerContributionCategory$inboundSchema
-    .optional(),
-  employer_contribution_max_amount: z.number().optional(),
-  employer_contribution_type: EmployerContributionType$inboundSchema.optional(),
-  frequency: HrisBenefitFrequency$inboundSchema.optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  retirement_plan_type: RetirementPlanType$inboundSchema.optional(),
-  tax: Tax$inboundSchema.optional(),
-  type: HrisBenefitType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "coverage_level": "coverageLevel",
-    "created_at": "createdAt",
-    "employer_contribution_amount": "employerContributionAmount",
-    "employer_contribution_category": "employerContributionCategory",
-    "employer_contribution_max_amount": "employerContributionMaxAmount",
-    "employer_contribution_type": "employerContributionType",
-    "is_active": "isActive",
-    "retirement_plan_type": "retirementPlanType",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    company_id: z.string().optional(),
+    coverage_level: CoverageLevel$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    employer_contribution_amount: z.number().optional(),
+    employer_contribution_category: EmployerContributionCategory$inboundSchema
+      .optional(),
+    employer_contribution_max_amount: z.number().optional(),
+    employer_contribution_type: EmployerContributionType$inboundSchema
+      .optional(),
+    frequency: HrisBenefitFrequency$inboundSchema.optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    retirement_plan_type: RetirementPlanType$inboundSchema.optional(),
+    tax: Tax$inboundSchema.optional(),
+    type: HrisBenefitType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "coverage_level": "coverageLevel",
+      "created_at": "createdAt",
+      "employer_contribution_amount": "employerContributionAmount",
+      "employer_contribution_category": "employerContributionCategory",
+      "employer_contribution_max_amount": "employerContributionMaxAmount",
+      "employer_contribution_type": "employerContributionType",
+      "is_active": "isActive",
+      "retirement_plan_type": "retirementPlanType",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HrisBenefit$Outbound = {
   code?: string | undefined;
@@ -355,42 +378,45 @@ export const HrisBenefit$outboundSchema: z.ZodType<
   HrisBenefit$Outbound,
   z.ZodTypeDef,
   HrisBenefit
-> = z.object({
-  code: z.string().optional(),
-  companyId: z.string().optional(),
-  coverageLevel: CoverageLevel$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  employerContributionAmount: z.number().optional(),
-  employerContributionCategory: EmployerContributionCategory$outboundSchema
-    .optional(),
-  employerContributionMaxAmount: z.number().optional(),
-  employerContributionType: EmployerContributionType$outboundSchema.optional(),
-  frequency: HrisBenefitFrequency$outboundSchema.optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  retirementPlanType: RetirementPlanType$outboundSchema.optional(),
-  tax: Tax$outboundSchema.optional(),
-  type: HrisBenefitType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    coverageLevel: "coverage_level",
-    createdAt: "created_at",
-    employerContributionAmount: "employer_contribution_amount",
-    employerContributionCategory: "employer_contribution_category",
-    employerContributionMaxAmount: "employer_contribution_max_amount",
-    employerContributionType: "employer_contribution_type",
-    isActive: "is_active",
-    retirementPlanType: "retirement_plan_type",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    companyId: z.string().optional(),
+    coverageLevel: CoverageLevel$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    employerContributionAmount: z.number().optional(),
+    employerContributionCategory: EmployerContributionCategory$outboundSchema
+      .optional(),
+    employerContributionMaxAmount: z.number().optional(),
+    employerContributionType: EmployerContributionType$outboundSchema
+      .optional(),
+    frequency: HrisBenefitFrequency$outboundSchema.optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    retirementPlanType: RetirementPlanType$outboundSchema.optional(),
+    tax: Tax$outboundSchema.optional(),
+    type: HrisBenefitType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      coverageLevel: "coverage_level",
+      createdAt: "created_at",
+      employerContributionAmount: "employer_contribution_amount",
+      employerContributionCategory: "employer_contribution_category",
+      employerContributionMaxAmount: "employer_contribution_max_amount",
+      employerContributionType: "employer_contribution_type",
+      isActive: "is_active",
+      retirementPlanType: "retirement_plan_type",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function hrisBenefitToJSON(hrisBenefit: HrisBenefit): string {
   return JSON.stringify(HrisBenefit$outboundSchema.parse(hrisBenefit));

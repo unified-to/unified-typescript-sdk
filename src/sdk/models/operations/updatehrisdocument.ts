@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,7 +48,9 @@ export type UpdateHrisDocumentRequest = {
 /** @internal */
 export const UpdateHrisDocumentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdateHrisDocumentQueryParamFields
-> = z.nativeEnum(UpdateHrisDocumentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdateHrisDocumentQueryParamFields)
+);
 
 /** @internal */
 export type UpdateHrisDocumentRequest$Outbound = {
@@ -63,18 +66,21 @@ export const UpdateHrisDocumentRequest$outboundSchema: z.ZodType<
   UpdateHrisDocumentRequest$Outbound,
   z.ZodTypeDef,
   UpdateHrisDocumentRequest
-> = z.object({
-  hrisDocument: shared.HrisDocument$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateHrisDocumentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisDocument: "HrisDocument",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisDocument: shared.HrisDocument$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateHrisDocumentQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisDocument: "HrisDocument",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateHrisDocumentRequestToJSON(
   updateHrisDocumentRequest: UpdateHrisDocumentRequest,

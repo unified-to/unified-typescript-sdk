@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -61,7 +62,9 @@ export type PatchLmsContentRequest = {
 /** @internal */
 export const PatchLmsContentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchLmsContentQueryParamFields
-> = z.nativeEnum(PatchLmsContentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchLmsContentQueryParamFields)
+);
 
 /** @internal */
 export type PatchLmsContentRequest$Outbound = {
@@ -77,18 +80,20 @@ export const PatchLmsContentRequest$outboundSchema: z.ZodType<
   PatchLmsContentRequest$Outbound,
   z.ZodTypeDef,
   PatchLmsContentRequest
-> = z.object({
-  lmsContent: shared.LmsContent$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchLmsContentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    lmsContent: "LmsContent",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    lmsContent: shared.LmsContent$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchLmsContentQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      lmsContent: "LmsContent",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchLmsContentRequestToJSON(
   patchLmsContentRequest: PatchLmsContentRequest,

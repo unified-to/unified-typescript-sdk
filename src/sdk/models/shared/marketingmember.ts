@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -82,44 +82,52 @@ export const MarketingMemberStatus$inboundSchema: z.ZodType<
   MarketingMemberStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MarketingMemberStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MarketingMemberStatus)
+);
 /** @internal */
 export const MarketingMemberStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   MarketingMemberStatus
-> = openEnums.outboundSchema(MarketingMemberStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(MarketingMemberStatus)
+);
 
 /** @internal */
 export const MarketingMember$inboundSchema: z.ZodType<
   MarketingMember,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  emails: z.array(MarketingEmail$inboundSchema).optional(),
-  first_name: z.string().optional(),
-  id: z.string().optional(),
-  last_name: z.string().optional(),
-  list_ids: z.array(z.string()).optional(),
-  metadata: z.array(MarketingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: MarketingMemberStatus$inboundSchema.optional(),
-  tags: z.array(z.string()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "first_name": "firstName",
-    "last_name": "lastName",
-    "list_ids": "listIds",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    emails: z.array(MarketingEmail$inboundSchema).optional(),
+    first_name: z.string().optional(),
+    id: z.string().optional(),
+    last_name: z.string().optional(),
+    list_ids: z.array(z.string()).optional(),
+    metadata: z.array(MarketingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: MarketingMemberStatus$inboundSchema.optional(),
+    tags: z.array(z.string()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "first_name": "firstName",
+      "last_name": "lastName",
+      "list_ids": "listIds",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type MarketingMember$Outbound = {
   company?: string | undefined;
@@ -142,29 +150,31 @@ export const MarketingMember$outboundSchema: z.ZodType<
   MarketingMember$Outbound,
   z.ZodTypeDef,
   MarketingMember
-> = z.object({
-  company: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  emails: z.array(MarketingEmail$outboundSchema).optional(),
-  firstName: z.string().optional(),
-  id: z.string().optional(),
-  lastName: z.string().optional(),
-  listIds: z.array(z.string()).optional(),
-  metadata: z.array(MarketingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: MarketingMemberStatus$outboundSchema.optional(),
-  tags: z.array(z.string()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    firstName: "first_name",
-    lastName: "last_name",
-    listIds: "list_ids",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    emails: z.array(MarketingEmail$outboundSchema).optional(),
+    firstName: z.string().optional(),
+    id: z.string().optional(),
+    lastName: z.string().optional(),
+    listIds: z.array(z.string()).optional(),
+    metadata: z.array(MarketingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: MarketingMemberStatus$outboundSchema.optional(),
+    tags: z.array(z.string()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      firstName: "first_name",
+      lastName: "last_name",
+      listIds: "list_ids",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function marketingMemberToJSON(
   marketingMember: MarketingMember,

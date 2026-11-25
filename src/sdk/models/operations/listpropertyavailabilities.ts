@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPropertyAvailabilitiesQueryParamFields = {
@@ -69,8 +70,10 @@ export type ListPropertyAvailabilitiesRequest = {
 
 /** @internal */
 export const ListPropertyAvailabilitiesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListPropertyAvailabilitiesQueryParamFields> = z
-    .nativeEnum(ListPropertyAvailabilitiesQueryParamFields);
+  z.ZodNativeEnum<typeof ListPropertyAvailabilitiesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListPropertyAvailabilitiesQueryParamFields)
+    );
 
 /** @internal */
 export type ListPropertyAvailabilitiesRequest$Outbound = {
@@ -94,31 +97,33 @@ export const ListPropertyAvailabilitiesRequest$outboundSchema: z.ZodType<
   ListPropertyAvailabilitiesRequest$Outbound,
   z.ZodTypeDef,
   ListPropertyAvailabilitiesRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListPropertyAvailabilitiesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  listingId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  unittypeId: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    listingId: "listing_id",
-    startGte: "start_gte",
-    unittypeId: "unittype_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListPropertyAvailabilitiesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    listingId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    unittypeId: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      listingId: "listing_id",
+      startGte: "start_gte",
+      unittypeId: "unittype_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPropertyAvailabilitiesRequestToJSON(
   listPropertyAvailabilitiesRequest: ListPropertyAvailabilitiesRequest,

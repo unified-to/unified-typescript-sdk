@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -212,99 +212,105 @@ export const ClubsActivityType$inboundSchema: z.ZodType<
   ClubsActivityType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ClubsActivityType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ClubsActivityType)
+);
 
 /** @internal */
 export const ClubsActivity$inboundSchema: z.ZodType<
   ClubsActivity,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  achievement_count: z.number().optional(),
-  athlete_count: z.number().optional(),
-  athlete_id: z.string().optional(),
-  athlete_name: z.string().optional(),
-  average_cadence: z.number().optional(),
-  average_heartrate: z.number().optional(),
-  average_speed: z.number().optional(),
-  average_watts: z.number().optional(),
-  calories: z.number().optional(),
-  comment_count: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  distance: z.number().optional(),
-  elapsed_time: z.number().optional(),
-  elevation_high: z.number().optional(),
-  elevation_low: z.number().optional(),
-  group_id: z.string().optional(),
-  has_heartrate: z.boolean().optional(),
-  id: z.string().optional(),
-  is_commute: z.boolean().optional(),
-  is_manual: z.boolean().optional(),
-  is_private: z.boolean().optional(),
-  is_trainer: z.boolean().optional(),
-  kilojoules: z.number().optional(),
-  kudos_count: z.number().optional(),
-  map_polyline: z.string().optional(),
-  map_summary_polyline: z.string().optional(),
-  max_heartrate: z.number().optional(),
-  max_speed: z.number().optional(),
-  max_watts: z.number().optional(),
-  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
-  moving_time: z.number().optional(),
-  name: z.string().optional(),
-  photo_count: z.number().optional(),
-  pr_count: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  suffer_score: z.number().optional(),
-  timezone: z.string().optional(),
-  total_elevation_gain: z.number().optional(),
-  type: ClubsActivityType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  weighted_average_watts: z.number().optional(),
-  workout_type: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "achievement_count": "achievementCount",
-    "athlete_count": "athleteCount",
-    "athlete_id": "athleteId",
-    "athlete_name": "athleteName",
-    "average_cadence": "averageCadence",
-    "average_heartrate": "averageHeartrate",
-    "average_speed": "averageSpeed",
-    "average_watts": "averageWatts",
-    "comment_count": "commentCount",
-    "created_at": "createdAt",
-    "elapsed_time": "elapsedTime",
-    "elevation_high": "elevationHigh",
-    "elevation_low": "elevationLow",
-    "group_id": "groupId",
-    "has_heartrate": "hasHeartrate",
-    "is_commute": "isCommute",
-    "is_manual": "isManual",
-    "is_private": "isPrivate",
-    "is_trainer": "isTrainer",
-    "kudos_count": "kudosCount",
-    "map_polyline": "mapPolyline",
-    "map_summary_polyline": "mapSummaryPolyline",
-    "max_heartrate": "maxHeartrate",
-    "max_speed": "maxSpeed",
-    "max_watts": "maxWatts",
-    "moving_time": "movingTime",
-    "photo_count": "photoCount",
-    "pr_count": "prCount",
-    "start_at": "startAt",
-    "suffer_score": "sufferScore",
-    "total_elevation_gain": "totalElevationGain",
-    "updated_at": "updatedAt",
-    "weighted_average_watts": "weightedAverageWatts",
-    "workout_type": "workoutType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    achievement_count: z.number().optional(),
+    athlete_count: z.number().optional(),
+    athlete_id: z.string().optional(),
+    athlete_name: z.string().optional(),
+    average_cadence: z.number().optional(),
+    average_heartrate: z.number().optional(),
+    average_speed: z.number().optional(),
+    average_watts: z.number().optional(),
+    calories: z.number().optional(),
+    comment_count: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    distance: z.number().optional(),
+    elapsed_time: z.number().optional(),
+    elevation_high: z.number().optional(),
+    elevation_low: z.number().optional(),
+    group_id: z.string().optional(),
+    has_heartrate: z.boolean().optional(),
+    id: z.string().optional(),
+    is_commute: z.boolean().optional(),
+    is_manual: z.boolean().optional(),
+    is_private: z.boolean().optional(),
+    is_trainer: z.boolean().optional(),
+    kilojoules: z.number().optional(),
+    kudos_count: z.number().optional(),
+    map_polyline: z.string().optional(),
+    map_summary_polyline: z.string().optional(),
+    max_heartrate: z.number().optional(),
+    max_speed: z.number().optional(),
+    max_watts: z.number().optional(),
+    metadata: z.array(ClubsMetadata$inboundSchema).optional(),
+    moving_time: z.number().optional(),
+    name: z.string().optional(),
+    photo_count: z.number().optional(),
+    pr_count: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    suffer_score: z.number().optional(),
+    timezone: z.string().optional(),
+    total_elevation_gain: z.number().optional(),
+    type: ClubsActivityType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    weighted_average_watts: z.number().optional(),
+    workout_type: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "achievement_count": "achievementCount",
+      "athlete_count": "athleteCount",
+      "athlete_id": "athleteId",
+      "athlete_name": "athleteName",
+      "average_cadence": "averageCadence",
+      "average_heartrate": "averageHeartrate",
+      "average_speed": "averageSpeed",
+      "average_watts": "averageWatts",
+      "comment_count": "commentCount",
+      "created_at": "createdAt",
+      "elapsed_time": "elapsedTime",
+      "elevation_high": "elevationHigh",
+      "elevation_low": "elevationLow",
+      "group_id": "groupId",
+      "has_heartrate": "hasHeartrate",
+      "is_commute": "isCommute",
+      "is_manual": "isManual",
+      "is_private": "isPrivate",
+      "is_trainer": "isTrainer",
+      "kudos_count": "kudosCount",
+      "map_polyline": "mapPolyline",
+      "map_summary_polyline": "mapSummaryPolyline",
+      "max_heartrate": "maxHeartrate",
+      "max_speed": "maxSpeed",
+      "max_watts": "maxWatts",
+      "moving_time": "movingTime",
+      "photo_count": "photoCount",
+      "pr_count": "prCount",
+      "start_at": "startAt",
+      "suffer_score": "sufferScore",
+      "total_elevation_gain": "totalElevationGain",
+      "updated_at": "updatedAt",
+      "weighted_average_watts": "weightedAverageWatts",
+      "workout_type": "workoutType",
+    });
+  })
+);
 
 export function clubsActivityFromJSON(
   jsonString: string,

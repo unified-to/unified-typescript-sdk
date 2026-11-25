@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListGenaiTasksQueryParamFields = {
@@ -72,7 +73,9 @@ export type ListGenaiTasksRequest = {
 /** @internal */
 export const ListGenaiTasksQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListGenaiTasksQueryParamFields
-> = z.nativeEnum(ListGenaiTasksQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListGenaiTasksQueryParamFields)
+);
 
 /** @internal */
 export type ListGenaiTasksRequest$Outbound = {
@@ -94,25 +97,27 @@ export const ListGenaiTasksRequest$outboundSchema: z.ZodType<
   ListGenaiTasksRequest$Outbound,
   z.ZodTypeDef,
   ListGenaiTasksRequest
-> = z.object({
-  agentId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListGenaiTasksQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    agentId: "agent_id",
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    agentId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListGenaiTasksQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      agentId: "agent_id",
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listGenaiTasksRequestToJSON(
   listGenaiTasksRequest: ListGenaiTasksRequest,

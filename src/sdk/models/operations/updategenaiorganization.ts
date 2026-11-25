@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -42,8 +43,10 @@ export type UpdateGenaiOrganizationRequest = {
 
 /** @internal */
 export const UpdateGenaiOrganizationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateGenaiOrganizationQueryParamFields> = z
-    .nativeEnum(UpdateGenaiOrganizationQueryParamFields);
+  z.ZodNativeEnum<typeof UpdateGenaiOrganizationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateGenaiOrganizationQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateGenaiOrganizationRequest$Outbound = {
@@ -59,19 +62,21 @@ export const UpdateGenaiOrganizationRequest$outboundSchema: z.ZodType<
   UpdateGenaiOrganizationRequest$Outbound,
   z.ZodTypeDef,
   UpdateGenaiOrganizationRequest
-> = z.object({
-  genaiOrganization: shared.GenaiOrganization$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateGenaiOrganizationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    genaiOrganization: "GenaiOrganization",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    genaiOrganization: shared.GenaiOrganization$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateGenaiOrganizationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      genaiOrganization: "GenaiOrganization",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateGenaiOrganizationRequestToJSON(
   updateGenaiOrganizationRequest: UpdateGenaiOrganizationRequest,

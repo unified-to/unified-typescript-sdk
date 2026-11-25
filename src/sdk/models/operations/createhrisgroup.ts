@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,7 +48,9 @@ export type CreateHrisGroupRequest = {
 /** @internal */
 export const CreateHrisGroupQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateHrisGroupQueryParamFields
-> = z.nativeEnum(CreateHrisGroupQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateHrisGroupQueryParamFields)
+);
 
 /** @internal */
 export type CreateHrisGroupRequest$Outbound = {
@@ -62,17 +65,19 @@ export const CreateHrisGroupRequest$outboundSchema: z.ZodType<
   CreateHrisGroupRequest$Outbound,
   z.ZodTypeDef,
   CreateHrisGroupRequest
-> = z.object({
-  hrisGroup: shared.HrisGroup$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateHrisGroupQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisGroup: "HrisGroup",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisGroup: shared.HrisGroup$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateHrisGroupQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisGroup: "HrisGroup",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createHrisGroupRequestToJSON(
   createHrisGroupRequest: CreateHrisGroupRequest,

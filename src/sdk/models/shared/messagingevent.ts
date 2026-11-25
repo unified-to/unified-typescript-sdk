@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -81,37 +81,44 @@ export const MessagingEventType$inboundSchema: z.ZodType<
   MessagingEventType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MessagingEventType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MessagingEventType)
+);
 /** @internal */
 export const MessagingEventType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   MessagingEventType
-> = openEnums.outboundSchema(MessagingEventType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(MessagingEventType)
+);
 
 /** @internal */
 export const MessagingEvent$inboundSchema: z.ZodType<
   MessagingEvent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  button: PropertyMessagingEventButton$inboundSchema.optional(),
-  channel: PropertyMessagingEventChannel$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_replacing_original: z.boolean().optional(),
-  message: PropertyMessagingEventMessage$inboundSchema.optional(),
-  metadata: z.array(MessagingMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  type: MessagingEventType$inboundSchema.optional(),
-  user: PropertyMessagingEventUser$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_replacing_original": "isReplacingOriginal",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    button: PropertyMessagingEventButton$inboundSchema.optional(),
+    channel: PropertyMessagingEventChannel$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    is_replacing_original: z.boolean().optional(),
+    message: PropertyMessagingEventMessage$inboundSchema.optional(),
+    metadata: z.array(MessagingMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    type: MessagingEventType$inboundSchema.optional(),
+    user: PropertyMessagingEventUser$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_replacing_original": "isReplacingOriginal",
+    });
+  })
+);
 /** @internal */
 export type MessagingEvent$Outbound = {
   button?: PropertyMessagingEventButton$Outbound | undefined;
@@ -131,23 +138,25 @@ export const MessagingEvent$outboundSchema: z.ZodType<
   MessagingEvent$Outbound,
   z.ZodTypeDef,
   MessagingEvent
-> = z.object({
-  button: PropertyMessagingEventButton$outboundSchema.optional(),
-  channel: PropertyMessagingEventChannel$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isReplacingOriginal: z.boolean().optional(),
-  message: PropertyMessagingEventMessage$outboundSchema.optional(),
-  metadata: z.array(MessagingMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  type: MessagingEventType$outboundSchema.optional(),
-  user: PropertyMessagingEventUser$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isReplacingOriginal: "is_replacing_original",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    button: PropertyMessagingEventButton$outboundSchema.optional(),
+    channel: PropertyMessagingEventChannel$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isReplacingOriginal: z.boolean().optional(),
+    message: PropertyMessagingEventMessage$outboundSchema.optional(),
+    metadata: z.array(MessagingMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    type: MessagingEventType$outboundSchema.optional(),
+    user: PropertyMessagingEventUser$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isReplacingOriginal: "is_replacing_original",
+    });
+  })
+);
 
 export function messagingEventToJSON(messagingEvent: MessagingEvent): string {
   return JSON.stringify(MessagingEvent$outboundSchema.parse(messagingEvent));

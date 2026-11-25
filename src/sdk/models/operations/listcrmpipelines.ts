@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCrmPipelinesQueryParamFields = {
@@ -52,7 +53,9 @@ export type ListCrmPipelinesRequest = {
 /** @internal */
 export const ListCrmPipelinesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCrmPipelinesQueryParamFields
-> = z.nativeEnum(ListCrmPipelinesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCrmPipelinesQueryParamFields)
+);
 
 /** @internal */
 export type ListCrmPipelinesRequest$Outbound = {
@@ -72,22 +75,24 @@ export const ListCrmPipelinesRequest$outboundSchema: z.ZodType<
   ListCrmPipelinesRequest$Outbound,
   z.ZodTypeDef,
   ListCrmPipelinesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCrmPipelinesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCrmPipelinesQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCrmPipelinesRequestToJSON(
   listCrmPipelinesRequest: ListCrmPipelinesRequest,

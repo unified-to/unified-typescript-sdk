@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -42,39 +42,45 @@ export const Frequency$inboundSchema: z.ZodType<
   Frequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Frequency);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Frequency));
 /** @internal */
 export const Frequency$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Frequency
-> = openEnums.outboundSchema(Frequency);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Frequency));
 
 /** @internal */
 export const AtsCompensationType$inboundSchema: z.ZodType<
   AtsCompensationType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsCompensationType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AtsCompensationType)
+);
 /** @internal */
 export const AtsCompensationType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsCompensationType
-> = openEnums.outboundSchema(AtsCompensationType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsCompensationType)
+);
 
 /** @internal */
 export const AtsCompensation$inboundSchema: z.ZodType<
   AtsCompensation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  currency: z.string().optional(),
-  frequency: Frequency$inboundSchema.optional(),
-  max: z.number().optional(),
-  min: z.number().optional(),
-  type: AtsCompensationType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    currency: z.string().optional(),
+    frequency: Frequency$inboundSchema.optional(),
+    max: z.number().optional(),
+    min: z.number().optional(),
+    type: AtsCompensationType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type AtsCompensation$Outbound = {
   currency?: string | undefined;
@@ -89,13 +95,15 @@ export const AtsCompensation$outboundSchema: z.ZodType<
   AtsCompensation$Outbound,
   z.ZodTypeDef,
   AtsCompensation
-> = z.object({
-  currency: z.string().optional(),
-  frequency: Frequency$outboundSchema.optional(),
-  max: z.number().optional(),
-  min: z.number().optional(),
-  type: AtsCompensationType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    currency: z.string().optional(),
+    frequency: Frequency$outboundSchema.optional(),
+    max: z.number().optional(),
+    min: z.number().optional(),
+    type: AtsCompensationType$outboundSchema.optional(),
+  })
+);
 
 export function atsCompensationToJSON(
   atsCompensation: AtsCompensation,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { UcMetadata, UcMetadata$inboundSchema } from "./ucmetadata.js";
@@ -36,25 +36,29 @@ export const UcScorecardtemplate$inboundSchema: z.ZodType<
   UcScorecardtemplate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(UcMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  questions: z.array(UcScorecardtemplateQuestion$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(UcMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    questions: z.array(UcScorecardtemplateQuestion$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function ucScorecardtemplateFromJSON(
   jsonString: string,

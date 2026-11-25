@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -57,25 +57,30 @@ export const ComputeRegion$inboundSchema: z.ZodType<
   ComputeRegion,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  country: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  gpu_models: z.array(PropertyComputeRegionGpuModels$inboundSchema).optional(),
-  id: z.string().optional(),
-  location: z.string().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "gpu_models": "gpuModels",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    country: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    gpu_models: z.array(PropertyComputeRegionGpuModels$inboundSchema)
+      .optional(),
+    id: z.string().optional(),
+    location: z.string().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "gpu_models": "gpuModels",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function computeRegionFromJSON(
   jsonString: string,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -29,9 +29,11 @@ export const RemoveUnifiedConnectionRequest$outboundSchema: z.ZodType<
   RemoveUnifiedConnectionRequest$Outbound,
   z.ZodTypeDef,
   RemoveUnifiedConnectionRequest
-> = z.object({
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+  })
+);
 
 export function removeUnifiedConnectionRequestToJSON(
   removeUnifiedConnectionRequest: RemoveUnifiedConnectionRequest,
@@ -48,13 +50,15 @@ export const RemoveUnifiedConnectionResponse$inboundSchema: z.ZodType<
   RemoveUnifiedConnectionResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+    });
+  })
+);
 
 export function removeUnifiedConnectionResponseFromJSON(
   jsonString: string,

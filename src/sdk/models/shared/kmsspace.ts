@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -45,30 +45,34 @@ export const KmsSpace$inboundSchema: z.ZodType<
   KmsSpace,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  parent_page_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "parent_id": "parentId",
-    "parent_page_id": "parentPageId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    parent_page_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "parent_id": "parentId",
+      "parent_page_id": "parentPageId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type KmsSpace$Outbound = {
   created_at?: string | undefined;
@@ -89,28 +93,30 @@ export const KmsSpace$outboundSchema: z.ZodType<
   KmsSpace$Outbound,
   z.ZodTypeDef,
   KmsSpace
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  parentPageId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isActive: "is_active",
-    parentId: "parent_id",
-    parentPageId: "parent_page_id",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    parentPageId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isActive: "is_active",
+      parentId: "parent_id",
+      parentPageId: "parent_page_id",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function kmsSpaceToJSON(kmsSpace: KmsSpace): string {
   return JSON.stringify(KmsSpace$outboundSchema.parse(kmsSpace));

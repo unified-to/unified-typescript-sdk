@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -110,79 +110,83 @@ export const QmsAuditStatus$inboundSchema: z.ZodType<
   QmsAuditStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsAuditStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(QmsAuditStatus));
 /** @internal */
 export const QmsAuditStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsAuditStatus
-> = openEnums.outboundSchema(QmsAuditStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(QmsAuditStatus));
 
 /** @internal */
 export const QmsAuditType$inboundSchema: z.ZodType<
   QmsAuditType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsAuditType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(QmsAuditType));
 /** @internal */
 export const QmsAuditType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsAuditType
-> = openEnums.outboundSchema(QmsAuditType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(QmsAuditType));
 
 /** @internal */
 export const QmsAudit$inboundSchema: z.ZodType<
   QmsAudit,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  file_ids: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  issue_ids: z.array(z.string()).optional(),
-  lifecycle_state: z.string().optional(),
-  metadata: z.array(QmsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  original_type: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  scheduled_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  scope: z.string().optional(),
-  standard: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: QmsAuditStatus$inboundSchema.optional(),
-  supplier_name: z.string().optional(),
-  type: QmsAuditType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "closed_at": "closedAt",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "file_ids": "fileIds",
-    "issue_ids": "issueIds",
-    "lifecycle_state": "lifecycleState",
-    "original_type": "originalType",
-    "scheduled_at": "scheduledAt",
-    "start_at": "startAt",
-    "supplier_name": "supplierName",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    file_ids: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    issue_ids: z.array(z.string()).optional(),
+    lifecycle_state: z.string().optional(),
+    metadata: z.array(QmsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    original_type: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    scheduled_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    scope: z.string().optional(),
+    standard: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: QmsAuditStatus$inboundSchema.optional(),
+    supplier_name: z.string().optional(),
+    type: QmsAuditType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "closed_at": "closedAt",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "file_ids": "fileIds",
+      "issue_ids": "issueIds",
+      "lifecycle_state": "lifecycleState",
+      "original_type": "originalType",
+      "scheduled_at": "scheduledAt",
+      "start_at": "startAt",
+      "supplier_name": "supplierName",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type QmsAudit$Outbound = {
   closed_at?: string | undefined;
@@ -215,46 +219,48 @@ export const QmsAudit$outboundSchema: z.ZodType<
   QmsAudit$Outbound,
   z.ZodTypeDef,
   QmsAudit
-> = z.object({
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  fileIds: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  issueIds: z.array(z.string()).optional(),
-  lifecycleState: z.string().optional(),
-  metadata: z.array(QmsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  originalType: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  scheduledAt: z.date().transform(v => v.toISOString()).optional(),
-  scope: z.string().optional(),
-  standard: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: QmsAuditStatus$outboundSchema.optional(),
-  supplierName: z.string().optional(),
-  type: QmsAuditType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    closedAt: "closed_at",
-    createdAt: "created_at",
-    endAt: "end_at",
-    fileIds: "file_ids",
-    issueIds: "issue_ids",
-    lifecycleState: "lifecycle_state",
-    originalType: "original_type",
-    scheduledAt: "scheduled_at",
-    startAt: "start_at",
-    supplierName: "supplier_name",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    fileIds: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    issueIds: z.array(z.string()).optional(),
+    lifecycleState: z.string().optional(),
+    metadata: z.array(QmsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    originalType: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    scheduledAt: z.date().transform(v => v.toISOString()).optional(),
+    scope: z.string().optional(),
+    standard: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: QmsAuditStatus$outboundSchema.optional(),
+    supplierName: z.string().optional(),
+    type: QmsAuditType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      closedAt: "closed_at",
+      createdAt: "created_at",
+      endAt: "end_at",
+      fileIds: "file_ids",
+      issueIds: "issue_ids",
+      lifecycleState: "lifecycle_state",
+      originalType: "original_type",
+      scheduledAt: "scheduled_at",
+      startAt: "start_at",
+      supplierName: "supplier_name",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function qmsAuditToJSON(qmsAudit: QmsAudit): string {
   return JSON.stringify(QmsAudit$outboundSchema.parse(qmsAudit));

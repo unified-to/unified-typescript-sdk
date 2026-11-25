@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -74,39 +74,43 @@ export const Direction$inboundSchema: z.ZodType<
   Direction,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Direction);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Direction));
 /** @internal */
 export const Direction$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Direction
-> = openEnums.outboundSchema(Direction);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Direction));
 
 /** @internal */
 export const CdpDestination$inboundSchema: z.ZodType<
   CdpDestination,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  direction: Direction$inboundSchema.optional(),
-  id: z.string().optional(),
-  is_enabled: z.boolean().optional(),
-  metadata: z.array(CdpMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  slug: z.string().optional(),
-  type: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_enabled": "isEnabled",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    direction: Direction$inboundSchema.optional(),
+    id: z.string().optional(),
+    is_enabled: z.boolean().optional(),
+    metadata: z.array(CdpMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    slug: z.string().optional(),
+    type: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_enabled": "isEnabled",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CdpDestination$Outbound = {
   created_at?: string | undefined;
@@ -126,24 +130,26 @@ export const CdpDestination$outboundSchema: z.ZodType<
   CdpDestination$Outbound,
   z.ZodTypeDef,
   CdpDestination
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  direction: Direction$outboundSchema.optional(),
-  id: z.string().optional(),
-  isEnabled: z.boolean().optional(),
-  metadata: z.array(CdpMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  slug: z.string().optional(),
-  type: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isEnabled: "is_enabled",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    direction: Direction$outboundSchema.optional(),
+    id: z.string().optional(),
+    isEnabled: z.boolean().optional(),
+    metadata: z.array(CdpMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    slug: z.string().optional(),
+    type: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isEnabled: "is_enabled",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function cdpDestinationToJSON(cdpDestination: CdpDestination): string {
   return JSON.stringify(CdpDestination$outboundSchema.parse(cdpDestination));

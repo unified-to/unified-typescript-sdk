@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -105,30 +105,36 @@ export const AnalyticsReportMetricsDimension$inboundSchema: z.ZodType<
   AnalyticsReportMetricsDimension,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AnalyticsReportMetricsDimension);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AnalyticsReportMetricsDimension)
+);
 
 /** @internal */
 export const AnalyticsReportMetricsType$inboundSchema: z.ZodType<
   AnalyticsReportMetricsType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AnalyticsReportMetricsType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AnalyticsReportMetricsType)
+);
 
 /** @internal */
 export const AnalyticsReportMetrics$inboundSchema: z.ZodType<
   AnalyticsReportMetrics,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  dimension: AnalyticsReportMetricsDimension$inboundSchema.optional(),
-  dimension_value: z.string().optional(),
-  type: AnalyticsReportMetricsType$inboundSchema.optional(),
-  value: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "dimension_value": "dimensionValue",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    dimension: AnalyticsReportMetricsDimension$inboundSchema.optional(),
+    dimension_value: z.string().optional(),
+    type: AnalyticsReportMetricsType$inboundSchema.optional(),
+    value: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "dimension_value": "dimensionValue",
+    });
+  })
+);
 
 export function analyticsReportMetricsFromJSON(
   jsonString: string,

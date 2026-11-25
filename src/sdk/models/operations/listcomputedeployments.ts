@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListComputeDeploymentsQueryParamFields = {
@@ -63,9 +64,10 @@ export type ListComputeDeploymentsRequest = {
 
 /** @internal */
 export const ListComputeDeploymentsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListComputeDeploymentsQueryParamFields> = z.nativeEnum(
-    ListComputeDeploymentsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListComputeDeploymentsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListComputeDeploymentsQueryParamFields)
+    );
 
 /** @internal */
 export type ListComputeDeploymentsRequest$Outbound = {
@@ -87,26 +89,28 @@ export const ListComputeDeploymentsRequest$outboundSchema: z.ZodType<
   ListComputeDeploymentsRequest$Outbound,
   z.ZodTypeDef,
   ListComputeDeploymentsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListComputeDeploymentsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  serviceId: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    serviceId: "service_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListComputeDeploymentsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    serviceId: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      serviceId: "service_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listComputeDeploymentsRequestToJSON(
   listComputeDeploymentsRequest: ListComputeDeploymentsRequest,

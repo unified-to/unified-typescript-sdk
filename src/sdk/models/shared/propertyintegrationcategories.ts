@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -48,6 +49,9 @@ export const PropertyIntegrationCategories = {
   Property: "property",
   Plm: "plm",
   Qms: "qms",
+  Dms: "dms",
+  Fhir: "fhir",
+  Printing: "printing",
 } as const;
 export type PropertyIntegrationCategories = OpenEnum<
   typeof PropertyIntegrationCategories
@@ -58,4 +62,6 @@ export const PropertyIntegrationCategories$inboundSchema: z.ZodType<
   PropertyIntegrationCategories,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyIntegrationCategories);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyIntegrationCategories)
+);

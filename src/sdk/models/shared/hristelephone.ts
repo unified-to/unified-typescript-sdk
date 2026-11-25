@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -28,23 +28,29 @@ export const HrisTelephoneType$inboundSchema: z.ZodType<
   HrisTelephoneType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisTelephoneType)
+);
 /** @internal */
 export const HrisTelephoneType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisTelephoneType
-> = openEnums.outboundSchema(HrisTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisTelephoneType)
+);
 
 /** @internal */
 export const HrisTelephone$inboundSchema: z.ZodType<
   HrisTelephone,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  telephone: z.string(),
-  type: HrisTelephoneType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: HrisTelephoneType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type HrisTelephone$Outbound = {
   telephone: string;
@@ -56,10 +62,12 @@ export const HrisTelephone$outboundSchema: z.ZodType<
   HrisTelephone$Outbound,
   z.ZodTypeDef,
   HrisTelephone
-> = z.object({
-  telephone: z.string(),
-  type: HrisTelephoneType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: HrisTelephoneType$outboundSchema.optional(),
+  })
+);
 
 export function hrisTelephoneToJSON(hrisTelephone: HrisTelephone): string {
   return JSON.stringify(HrisTelephone$outboundSchema.parse(hrisTelephone));

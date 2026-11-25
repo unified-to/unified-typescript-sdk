@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -115,68 +115,76 @@ export const AccountType$inboundSchema: z.ZodType<
   AccountType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AccountType));
 /** @internal */
 export const AccountType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountType
-> = openEnums.outboundSchema(AccountType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(AccountType));
 
 /** @internal */
 export const AccountingBankfeedaccountStatus$inboundSchema: z.ZodType<
   AccountingBankfeedaccountStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingBankfeedaccountStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingBankfeedaccountStatus)
+);
 /** @internal */
 export const AccountingBankfeedaccountStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingBankfeedaccountStatus
-> = openEnums.outboundSchema(AccountingBankfeedaccountStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingBankfeedaccountStatus)
+);
 
 /** @internal */
 export const AccountingBankfeedaccount$inboundSchema: z.ZodType<
   AccountingBankfeedaccount,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  account_number: z.string().optional(),
-  account_number_last4: z.string().optional(),
-  account_type: AccountType$inboundSchema.optional(),
-  balance: z.number().optional(),
-  bank_name: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  feed_start_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  id: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  routing_number: z.string().optional(),
-  status: AccountingBankfeedaccountStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "account_number": "accountNumber",
-    "account_number_last4": "accountNumberLast4",
-    "account_type": "accountType",
-    "bank_name": "bankName",
-    "created_at": "createdAt",
-    "feed_start_at": "feedStartAt",
-    "organization_id": "organizationId",
-    "routing_number": "routingNumber",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    account_number: z.string().optional(),
+    account_number_last4: z.string().optional(),
+    account_type: AccountType$inboundSchema.optional(),
+    balance: z.number().optional(),
+    bank_name: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    feed_start_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    routing_number: z.string().optional(),
+    status: AccountingBankfeedaccountStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "account_number": "accountNumber",
+      "account_number_last4": "accountNumberLast4",
+      "account_type": "accountType",
+      "bank_name": "bankName",
+      "created_at": "createdAt",
+      "feed_start_at": "feedStartAt",
+      "organization_id": "organizationId",
+      "routing_number": "routingNumber",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingBankfeedaccount$Outbound = {
   account_id?: string | undefined;
@@ -203,38 +211,40 @@ export const AccountingBankfeedaccount$outboundSchema: z.ZodType<
   AccountingBankfeedaccount$Outbound,
   z.ZodTypeDef,
   AccountingBankfeedaccount
-> = z.object({
-  accountId: z.string().optional(),
-  accountNumber: z.string().optional(),
-  accountNumberLast4: z.string().optional(),
-  accountType: AccountType$outboundSchema.optional(),
-  balance: z.number().optional(),
-  bankName: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  feedStartAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  routingNumber: z.string().optional(),
-  status: AccountingBankfeedaccountStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    accountNumber: "account_number",
-    accountNumberLast4: "account_number_last4",
-    accountType: "account_type",
-    bankName: "bank_name",
-    createdAt: "created_at",
-    feedStartAt: "feed_start_at",
-    organizationId: "organization_id",
-    routingNumber: "routing_number",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    accountNumber: z.string().optional(),
+    accountNumberLast4: z.string().optional(),
+    accountType: AccountType$outboundSchema.optional(),
+    balance: z.number().optional(),
+    bankName: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    feedStartAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    routingNumber: z.string().optional(),
+    status: AccountingBankfeedaccountStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      accountNumber: "account_number",
+      accountNumberLast4: "account_number_last4",
+      accountType: "account_type",
+      bankName: "bank_name",
+      createdAt: "created_at",
+      feedStartAt: "feed_start_at",
+      organizationId: "organization_id",
+      routingNumber: "routing_number",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingBankfeedaccountToJSON(
   accountingBankfeedaccount: AccountingBankfeedaccount,

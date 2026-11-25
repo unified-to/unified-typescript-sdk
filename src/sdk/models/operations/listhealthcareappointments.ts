@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHealthcareAppointmentsQueryParamFields = {
@@ -81,8 +82,10 @@ export type ListHealthcareAppointmentsRequest = {
 
 /** @internal */
 export const ListHealthcareAppointmentsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListHealthcareAppointmentsQueryParamFields> = z
-    .nativeEnum(ListHealthcareAppointmentsQueryParamFields);
+  z.ZodNativeEnum<typeof ListHealthcareAppointmentsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListHealthcareAppointmentsQueryParamFields)
+    );
 
 /** @internal */
 export type ListHealthcareAppointmentsRequest$Outbound = {
@@ -108,34 +111,36 @@ export const ListHealthcareAppointmentsRequest$outboundSchema: z.ZodType<
   ListHealthcareAppointmentsRequest$Outbound,
   z.ZodTypeDef,
   ListHealthcareAppointmentsRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListHealthcareAppointmentsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  locationId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  patientId: z.string().optional(),
-  practitionerId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    locationId: "location_id",
-    patientId: "patient_id",
-    practitionerId: "practitioner_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListHealthcareAppointmentsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    locationId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    patientId: z.string().optional(),
+    practitionerId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      locationId: "location_id",
+      patientId: "patient_id",
+      practitionerId: "practitioner_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHealthcareAppointmentsRequestToJSON(
   listHealthcareAppointmentsRequest: ListHealthcareAppointmentsRequest,

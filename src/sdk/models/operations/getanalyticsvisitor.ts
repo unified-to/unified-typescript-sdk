@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetAnalyticsVisitorQueryParamFields = {
@@ -55,9 +56,10 @@ export type GetAnalyticsVisitorRequest = {
 
 /** @internal */
 export const GetAnalyticsVisitorQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetAnalyticsVisitorQueryParamFields> = z.nativeEnum(
-    GetAnalyticsVisitorQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetAnalyticsVisitorQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetAnalyticsVisitorQueryParamFields)
+    );
 
 /** @internal */
 export type GetAnalyticsVisitorRequest$Outbound = {
@@ -72,17 +74,19 @@ export const GetAnalyticsVisitorRequest$outboundSchema: z.ZodType<
   GetAnalyticsVisitorRequest$Outbound,
   z.ZodTypeDef,
   GetAnalyticsVisitorRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetAnalyticsVisitorQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetAnalyticsVisitorQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getAnalyticsVisitorRequestToJSON(
   getAnalyticsVisitorRequest: GetAnalyticsVisitorRequest,

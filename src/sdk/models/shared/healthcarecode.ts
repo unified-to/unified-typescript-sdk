@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -27,11 +27,13 @@ export const HealthcareCode$inboundSchema: z.ZodType<
   HealthcareCode,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  code: z.string().optional(),
-  display: z.string().optional(),
-  system: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    display: z.string().optional(),
+    system: z.string().optional(),
+  })
+);
 /** @internal */
 export type HealthcareCode$Outbound = {
   code?: string | undefined;
@@ -44,11 +46,13 @@ export const HealthcareCode$outboundSchema: z.ZodType<
   HealthcareCode$Outbound,
   z.ZodTypeDef,
   HealthcareCode
-> = z.object({
-  code: z.string().optional(),
-  display: z.string().optional(),
-  system: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    display: z.string().optional(),
+    system: z.string().optional(),
+  })
+);
 
 export function healthcareCodeToJSON(healthcareCode: HealthcareCode): string {
   return JSON.stringify(HealthcareCode$outboundSchema.parse(healthcareCode));

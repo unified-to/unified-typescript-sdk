@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -60,34 +60,38 @@ export const PlmCategoryType$inboundSchema: z.ZodType<
   PlmCategoryType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PlmCategoryType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PlmCategoryType));
 
 /** @internal */
 export const PlmCategory$inboundSchema: z.ZodType<
   PlmCategory,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(PlmMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: PlmCategoryType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(PlmMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: PlmCategoryType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function plmCategoryFromJSON(
   jsonString: string,

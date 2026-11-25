@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -98,46 +98,50 @@ export const LegalTimeentry$inboundSchema: z.ZodType<
   LegalTimeentry,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  activity_code: z.string().optional(),
-  billable_minutes: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  invoice_id: z.string().optional(),
-  is_billable: z.boolean().optional(),
-  is_billed: z.boolean().optional(),
-  matter_id: z.string().optional(),
-  metadata: z.array(LegalMetadata$inboundSchema).optional(),
-  minutes: z.number().optional(),
-  rate_amount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  task_code: z.string().optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  worked_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "activity_code": "activityCode",
-    "billable_minutes": "billableMinutes",
-    "created_at": "createdAt",
-    "invoice_id": "invoiceId",
-    "is_billable": "isBillable",
-    "is_billed": "isBilled",
-    "matter_id": "matterId",
-    "rate_amount": "rateAmount",
-    "task_code": "taskCode",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "worked_at": "workedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    activity_code: z.string().optional(),
+    billable_minutes: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    invoice_id: z.string().optional(),
+    is_billable: z.boolean().optional(),
+    is_billed: z.boolean().optional(),
+    matter_id: z.string().optional(),
+    metadata: z.array(LegalMetadata$inboundSchema).optional(),
+    minutes: z.number().optional(),
+    rate_amount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    task_code: z.string().optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    worked_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "activity_code": "activityCode",
+      "billable_minutes": "billableMinutes",
+      "created_at": "createdAt",
+      "invoice_id": "invoiceId",
+      "is_billable": "isBillable",
+      "is_billed": "isBilled",
+      "matter_id": "matterId",
+      "rate_amount": "rateAmount",
+      "task_code": "taskCode",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "worked_at": "workedAt",
+    });
+  })
+);
 /** @internal */
 export type LegalTimeentry$Outbound = {
   activity_code?: string | undefined;
@@ -166,43 +170,45 @@ export const LegalTimeentry$outboundSchema: z.ZodType<
   LegalTimeentry$Outbound,
   z.ZodTypeDef,
   LegalTimeentry
-> = z.object({
-  activityCode: z.string().optional(),
-  billableMinutes: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  invoiceId: z.string().optional(),
-  isBillable: z.boolean().optional(),
-  isBilled: z.boolean().optional(),
-  matterId: z.string().optional(),
-  metadata: z.array(LegalMetadata$outboundSchema).optional(),
-  minutes: z.number().optional(),
-  rateAmount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  taskCode: z.string().optional(),
-  totalAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  workedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    activityCode: "activity_code",
-    billableMinutes: "billable_minutes",
-    createdAt: "created_at",
-    invoiceId: "invoice_id",
-    isBillable: "is_billable",
-    isBilled: "is_billed",
-    matterId: "matter_id",
-    rateAmount: "rate_amount",
-    taskCode: "task_code",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    workedAt: "worked_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    activityCode: z.string().optional(),
+    billableMinutes: z.number().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    invoiceId: z.string().optional(),
+    isBillable: z.boolean().optional(),
+    isBilled: z.boolean().optional(),
+    matterId: z.string().optional(),
+    metadata: z.array(LegalMetadata$outboundSchema).optional(),
+    minutes: z.number().optional(),
+    rateAmount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    taskCode: z.string().optional(),
+    totalAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    workedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      activityCode: "activity_code",
+      billableMinutes: "billable_minutes",
+      createdAt: "created_at",
+      invoiceId: "invoice_id",
+      isBillable: "is_billable",
+      isBilled: "is_billed",
+      matterId: "matter_id",
+      rateAmount: "rate_amount",
+      taskCode: "task_code",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      workedAt: "worked_at",
+    });
+  })
+);
 
 export function legalTimeentryToJSON(legalTimeentry: LegalTimeentry): string {
   return JSON.stringify(LegalTimeentry$outboundSchema.parse(legalTimeentry));

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetCommerceLocationQueryParamFields = {
@@ -56,9 +57,10 @@ export type GetCommerceLocationRequest = {
 
 /** @internal */
 export const GetCommerceLocationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetCommerceLocationQueryParamFields> = z.nativeEnum(
-    GetCommerceLocationQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetCommerceLocationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetCommerceLocationQueryParamFields)
+    );
 
 /** @internal */
 export type GetCommerceLocationRequest$Outbound = {
@@ -73,17 +75,19 @@ export const GetCommerceLocationRequest$outboundSchema: z.ZodType<
   GetCommerceLocationRequest$Outbound,
   z.ZodTypeDef,
   GetCommerceLocationRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetCommerceLocationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetCommerceLocationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getCommerceLocationRequestToJSON(
   getCommerceLocationRequest: GetCommerceLocationRequest,

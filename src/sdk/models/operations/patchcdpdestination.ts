@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -45,9 +46,10 @@ export type PatchCdpDestinationRequest = {
 
 /** @internal */
 export const PatchCdpDestinationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchCdpDestinationQueryParamFields> = z.nativeEnum(
-    PatchCdpDestinationQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchCdpDestinationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchCdpDestinationQueryParamFields)
+    );
 
 /** @internal */
 export type PatchCdpDestinationRequest$Outbound = {
@@ -63,19 +65,21 @@ export const PatchCdpDestinationRequest$outboundSchema: z.ZodType<
   PatchCdpDestinationRequest$Outbound,
   z.ZodTypeDef,
   PatchCdpDestinationRequest
-> = z.object({
-  cdpDestination: shared.CdpDestination$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchCdpDestinationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cdpDestination: "CdpDestination",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cdpDestination: shared.CdpDestination$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchCdpDestinationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      cdpDestination: "CdpDestination",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchCdpDestinationRequestToJSON(
   patchCdpDestinationRequest: PatchCdpDestinationRequest,

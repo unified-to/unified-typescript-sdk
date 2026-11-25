@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -49,26 +49,30 @@ export const AtsJobPosting$inboundSchema: z.ZodType<
   AtsJobPosting,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyAtsJobPostingAddress$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  location: z.string().optional(),
-  name: z.string().optional(),
-  posting_url: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "posting_url": "postingUrl",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyAtsJobPostingAddress$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    location: z.string().optional(),
+    name: z.string().optional(),
+    posting_url: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "posting_url": "postingUrl",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AtsJobPosting$Outbound = {
   address?: PropertyAtsJobPostingAddress$Outbound | undefined;
@@ -87,24 +91,26 @@ export const AtsJobPosting$outboundSchema: z.ZodType<
   AtsJobPosting$Outbound,
   z.ZodTypeDef,
   AtsJobPosting
-> = z.object({
-  address: PropertyAtsJobPostingAddress$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  location: z.string().optional(),
-  name: z.string().optional(),
-  postingUrl: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isActive: "is_active",
-    postingUrl: "posting_url",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyAtsJobPostingAddress$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    location: z.string().optional(),
+    name: z.string().optional(),
+    postingUrl: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isActive: "is_active",
+      postingUrl: "posting_url",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function atsJobPostingToJSON(atsJobPosting: AtsJobPosting): string {
   return JSON.stringify(AtsJobPosting$outboundSchema.parse(atsJobPosting));

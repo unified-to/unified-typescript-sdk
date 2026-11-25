@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -30,26 +30,30 @@ export const CrmStage$inboundSchema: z.ZodType<
   CrmStage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  active: z.boolean().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  deal_probability: z.number().optional(),
-  display_order: z.number().optional(),
-  id: z.string().optional(),
-  is_closed: z.boolean().optional(),
-  name: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "deal_probability": "dealProbability",
-    "display_order": "displayOrder",
-    "is_closed": "isClosed",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    active: z.boolean().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    deal_probability: z.number().optional(),
+    display_order: z.number().optional(),
+    id: z.string().optional(),
+    is_closed: z.boolean().optional(),
+    name: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "deal_probability": "dealProbability",
+      "display_order": "displayOrder",
+      "is_closed": "isClosed",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CrmStage$Outbound = {
   active?: boolean | undefined;
@@ -67,24 +71,26 @@ export const CrmStage$outboundSchema: z.ZodType<
   CrmStage$Outbound,
   z.ZodTypeDef,
   CrmStage
-> = z.object({
-  active: z.boolean().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dealProbability: z.number().optional(),
-  displayOrder: z.number().optional(),
-  id: z.string().optional(),
-  isClosed: z.boolean().optional(),
-  name: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    dealProbability: "deal_probability",
-    displayOrder: "display_order",
-    isClosed: "is_closed",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    active: z.boolean().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dealProbability: z.number().optional(),
+    displayOrder: z.number().optional(),
+    id: z.string().optional(),
+    isClosed: z.boolean().optional(),
+    name: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      dealProbability: "deal_probability",
+      displayOrder: "display_order",
+      isClosed: "is_closed",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function crmStageToJSON(crmStage: CrmStage): string {
   return JSON.stringify(CrmStage$outboundSchema.parse(crmStage));

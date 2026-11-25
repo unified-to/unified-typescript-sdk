@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,11 +18,13 @@ export const CommerceReference$inboundSchema: z.ZodType<
   CommerceReference,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string().optional(),
-  name: z.string().optional(),
-  type: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    type: z.string().optional(),
+  })
+);
 /** @internal */
 export type CommerceReference$Outbound = {
   id?: string | undefined;
@@ -35,11 +37,13 @@ export const CommerceReference$outboundSchema: z.ZodType<
   CommerceReference$Outbound,
   z.ZodTypeDef,
   CommerceReference
-> = z.object({
-  id: z.string().optional(),
-  name: z.string().optional(),
-  type: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    type: z.string().optional(),
+  })
+);
 
 export function commerceReferenceToJSON(
   commerceReference: CommerceReference,

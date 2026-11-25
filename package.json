@@ -1,6 +1,6 @@
 {
   "name": "@unified-api/typescript-sdk",
-  "version": "2.86.29",
+  "version": "2.86.30",
   "author": "Unified",
   "type": "module",
   "tshy": {
@@ -10,6 +10,7 @@
     "exports": {
       ".": "./src/index.ts",
       "./package.json": "./package.json",
+      "./node": "./src/node.ts",
       "./sdk/types": "./src/sdk/types/index.ts",
       "./sdk/models/errors": "./src/sdk/models/errors/index.ts",
       "./sdk/models/shared": "./src/sdk/models/shared/index.ts",
@@ -54,6 +55,17 @@
       }
     },
     "./package.json": "./package.json",
+    "./node": {
+      "import": {
+        "@unified-api/typescript-sdk/source": "./src/node.ts",
+        "types": "./dist/esm/node.d.ts",
+        "default": "./dist/esm/node.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/node.d.ts",
+        "default": "./dist/commonjs/node.js"
+      }
+    },
     "./sdk/types": {
       "import": {
         "@unified-api/typescript-sdk/source": "./src/sdk/types/index.ts",

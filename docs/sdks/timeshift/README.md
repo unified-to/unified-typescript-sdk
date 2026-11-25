@@ -30,25 +30,25 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.createHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-30T14:05:40.270Z"),
+      approvedAt: new Date("2022-08-02T00:50:55.935Z"),
       compensation: [
         {
           amount: 76761,
           currency: "GBP",
           frequency: "SEMIMONTHLY",
-          notes: "Vehemens annus adficio.",
+          notes: "Suasoria.",
           type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-26T19:17:53.268Z"),
+      endAt: new Date("2026-11-01T14:59:28.953Z"),
       hours: 6,
-      id: "772301fe-05bc-4079-895a-6125b88013d6",
+      id: "626d756b-6f97-4835-8d23-b52bcb154fc0",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-29T13:55:53.185Z"),
-      updatedAt: new Date("2021-07-10T03:13:06.114Z"),
+      startAt: new Date("2023-08-01T19:42:09.473Z"),
+      updatedAt: new Date("2021-07-11T17:50:04.920Z"),
     },
     connectionId: "<id>",
   });
@@ -78,25 +78,25 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-30T14:05:40.270Z"),
+      approvedAt: new Date("2022-08-02T00:50:55.935Z"),
       compensation: [
         {
           amount: 76761,
           currency: "GBP",
           frequency: "SEMIMONTHLY",
-          notes: "Vehemens annus adficio.",
+          notes: "Suasoria.",
           type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-26T19:17:53.268Z"),
+      endAt: new Date("2026-11-01T14:59:28.953Z"),
       hours: 6,
-      id: "772301fe-05bc-4079-895a-6125b88013d6",
+      id: "626d756b-6f97-4835-8d23-b52bcb154fc0",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-29T13:55:53.185Z"),
-      updatedAt: new Date("2021-07-10T03:13:06.114Z"),
+      startAt: new Date("2023-08-01T19:42:09.473Z"),
+      updatedAt: new Date("2021-07-11T17:50:04.920Z"),
     },
     connectionId: "<id>",
   });
@@ -305,25 +305,25 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.patchHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-30T14:05:40.277Z"),
+      approvedAt: new Date("2022-08-02T00:50:55.944Z"),
       compensation: [
         {
           amount: 76761,
           currency: "GBP",
           frequency: "SEMIMONTHLY",
-          notes: "Vehemens annus adficio.",
+          notes: "Suasoria.",
           type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-26T19:17:53.285Z"),
+      endAt: new Date("2026-11-01T14:59:28.976Z"),
       hours: 6,
-      id: "fcb68dbc-6825-44ca-a0b9-45fba9ee0c46",
+      id: "451fabeb-6d11-4785-b1ba-caa2389200e5",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-29T13:55:53.195Z"),
-      updatedAt: new Date("2021-07-10T03:13:06.118Z"),
+      startAt: new Date("2023-08-01T19:42:09.485Z"),
+      updatedAt: new Date("2021-07-11T17:50:04.926Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -354,25 +354,25 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-30T14:05:40.277Z"),
+      approvedAt: new Date("2022-08-02T00:50:55.944Z"),
       compensation: [
         {
           amount: 76761,
           currency: "GBP",
           frequency: "SEMIMONTHLY",
-          notes: "Vehemens annus adficio.",
+          notes: "Suasoria.",
           type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-26T19:17:53.285Z"),
+      endAt: new Date("2026-11-01T14:59:28.976Z"),
       hours: 6,
-      id: "fcb68dbc-6825-44ca-a0b9-45fba9ee0c46",
+      id: "451fabeb-6d11-4785-b1ba-caa2389200e5",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-29T13:55:53.195Z"),
-      updatedAt: new Date("2021-07-10T03:13:06.118Z"),
+      startAt: new Date("2023-08-01T19:42:09.485Z"),
+      updatedAt: new Date("2021-07-11T17:50:04.926Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -505,25 +505,25 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeshift.updateHrisTimeshift({
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-30T14:05:40.277Z"),
+      approvedAt: new Date("2022-08-02T00:50:55.944Z"),
       compensation: [
         {
           amount: 76761,
           currency: "GBP",
           frequency: "SEMIMONTHLY",
-          notes: "Vehemens annus adficio.",
+          notes: "Suasoria.",
           type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-26T19:17:53.285Z"),
+      endAt: new Date("2026-11-01T14:59:28.976Z"),
       hours: 6,
-      id: "fcb68dbc-6825-44ca-a0b9-45fba9ee0c46",
+      id: "451fabeb-6d11-4785-b1ba-caa2389200e5",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-29T13:55:53.195Z"),
-      updatedAt: new Date("2021-07-10T03:13:06.118Z"),
+      startAt: new Date("2023-08-01T19:42:09.485Z"),
+      updatedAt: new Date("2021-07-11T17:50:04.926Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -554,25 +554,25 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
     hrisTimeshift: {
-      approvedAt: new Date("2022-07-30T14:05:40.277Z"),
+      approvedAt: new Date("2022-08-02T00:50:55.944Z"),
       compensation: [
         {
           amount: 76761,
           currency: "GBP",
           frequency: "SEMIMONTHLY",
-          notes: "Vehemens annus adficio.",
+          notes: "Suasoria.",
           type: "COMMISSION",
         },
       ],
       createdAt: new Date("2019-07-01T23:53:15.738Z"),
       employeeUserId: "<id>",
-      endAt: new Date("2026-10-26T19:17:53.285Z"),
+      endAt: new Date("2026-11-01T14:59:28.976Z"),
       hours: 6,
-      id: "fcb68dbc-6825-44ca-a0b9-45fba9ee0c46",
+      id: "451fabeb-6d11-4785-b1ba-caa2389200e5",
       isApproved: false,
       metadata: [],
-      startAt: new Date("2023-07-29T13:55:53.195Z"),
-      updatedAt: new Date("2021-07-10T03:13:06.118Z"),
+      startAt: new Date("2023-08-01T19:42:09.485Z"),
+      updatedAt: new Date("2021-07-11T17:50:04.926Z"),
     },
     connectionId: "<id>",
     id: "<id>",

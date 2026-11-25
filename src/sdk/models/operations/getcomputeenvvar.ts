@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetComputeEnvvarQueryParamFields = {
@@ -44,7 +45,9 @@ export type GetComputeEnvvarRequest = {
 /** @internal */
 export const GetComputeEnvvarQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetComputeEnvvarQueryParamFields
-> = z.nativeEnum(GetComputeEnvvarQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetComputeEnvvarQueryParamFields)
+);
 
 /** @internal */
 export type GetComputeEnvvarRequest$Outbound = {
@@ -59,16 +62,18 @@ export const GetComputeEnvvarRequest$outboundSchema: z.ZodType<
   GetComputeEnvvarRequest$Outbound,
   z.ZodTypeDef,
   GetComputeEnvvarRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetComputeEnvvarQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetComputeEnvvarQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getComputeEnvvarRequestToJSON(
   getComputeEnvvarRequest: GetComputeEnvvarRequest,

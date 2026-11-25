@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -23,18 +23,20 @@ export const PropertyDatastoreFilterConditionNotContains$inboundSchema:
     PropertyDatastoreFilterConditionNotContains,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    boolean: z.boolean().optional(),
-    date: z.string().optional(),
-    is_null: z.boolean().optional(),
-    number: z.number().optional(),
-    selection: z.array(z.string()).optional(),
-    string: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "is_null": "isNull",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      boolean: z.boolean().optional(),
+      date: z.string().optional(),
+      is_null: z.boolean().optional(),
+      number: z.number().optional(),
+      selection: z.array(z.string()).optional(),
+      string: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "is_null": "isNull",
+      });
+    })
+  );
 /** @internal */
 export type PropertyDatastoreFilterConditionNotContains$Outbound = {
   boolean?: boolean | undefined;
@@ -51,18 +53,20 @@ export const PropertyDatastoreFilterConditionNotContains$outboundSchema:
     PropertyDatastoreFilterConditionNotContains$Outbound,
     z.ZodTypeDef,
     PropertyDatastoreFilterConditionNotContains
-  > = z.object({
-    boolean: z.boolean().optional(),
-    date: z.string().optional(),
-    isNull: z.boolean().optional(),
-    number: z.number().optional(),
-    selection: z.array(z.string()).optional(),
-    string: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      isNull: "is_null",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      boolean: z.boolean().optional(),
+      date: z.string().optional(),
+      isNull: z.boolean().optional(),
+      number: z.number().optional(),
+      selection: z.array(z.string()).optional(),
+      string: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        isNull: "is_null",
+      });
+    })
+  );
 
 export function propertyDatastoreFilterConditionNotContainsToJSON(
   propertyDatastoreFilterConditionNotContains:

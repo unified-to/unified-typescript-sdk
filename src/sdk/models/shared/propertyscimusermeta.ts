@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -30,26 +30,32 @@ export const PropertyScimUserMetaResourceType$inboundSchema: z.ZodType<
   PropertyScimUserMetaResourceType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyScimUserMetaResourceType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyScimUserMetaResourceType)
+);
 /** @internal */
 export const PropertyScimUserMetaResourceType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyScimUserMetaResourceType
-> = openEnums.outboundSchema(PropertyScimUserMetaResourceType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyScimUserMetaResourceType)
+);
 
 /** @internal */
 export const PropertyScimUserMeta$inboundSchema: z.ZodType<
   PropertyScimUserMeta,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created: z.string().optional(),
-  lastModified: z.string().optional(),
-  location: z.string().optional(),
-  resourceType: PropertyScimUserMetaResourceType$inboundSchema.optional(),
-  version: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created: z.string().optional(),
+    lastModified: z.string().optional(),
+    location: z.string().optional(),
+    resourceType: PropertyScimUserMetaResourceType$inboundSchema.optional(),
+    version: z.string().optional(),
+  })
+);
 /** @internal */
 export type PropertyScimUserMeta$Outbound = {
   created?: string | undefined;
@@ -64,13 +70,15 @@ export const PropertyScimUserMeta$outboundSchema: z.ZodType<
   PropertyScimUserMeta$Outbound,
   z.ZodTypeDef,
   PropertyScimUserMeta
-> = z.object({
-  created: z.string().optional(),
-  lastModified: z.string().optional(),
-  location: z.string().optional(),
-  resourceType: PropertyScimUserMetaResourceType$outboundSchema.optional(),
-  version: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created: z.string().optional(),
+    lastModified: z.string().optional(),
+    location: z.string().optional(),
+    resourceType: PropertyScimUserMetaResourceType$outboundSchema.optional(),
+    version: z.string().optional(),
+  })
+);
 
 export function propertyScimUserMetaToJSON(
   propertyScimUserMeta: PropertyScimUserMeta,

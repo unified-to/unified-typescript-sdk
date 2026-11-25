@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -60,9 +61,10 @@ export type UpdateCommerceReviewRequest = {
 
 /** @internal */
 export const UpdateCommerceReviewQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateCommerceReviewQueryParamFields> = z.nativeEnum(
-    UpdateCommerceReviewQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateCommerceReviewQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateCommerceReviewQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateCommerceReviewRequest$Outbound = {
@@ -78,19 +80,21 @@ export const UpdateCommerceReviewRequest$outboundSchema: z.ZodType<
   UpdateCommerceReviewRequest$Outbound,
   z.ZodTypeDef,
   UpdateCommerceReviewRequest
-> = z.object({
-  commerceReview: shared.CommerceReview$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateCommerceReviewQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    commerceReview: "CommerceReview",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    commerceReview: shared.CommerceReview$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateCommerceReviewQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      commerceReview: "CommerceReview",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateCommerceReviewRequestToJSON(
   updateCommerceReviewRequest: UpdateCommerceReviewRequest,

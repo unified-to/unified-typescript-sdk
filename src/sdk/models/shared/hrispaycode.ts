@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -64,6 +64,7 @@ export const DetailType = {
   PosttaxDeductionCollegeSavings: "POSTTAX_DEDUCTION_COLLEGE_SAVINGS",
   PosttaxDeductionUnionDues: "POSTTAX_DEDUCTION_UNION_DUES",
   PosttaxDeductionEwaRepayment: "POSTTAX_DEDUCTION_EWA_REPAYMENT",
+  EarningTaxableBenefit: "EARNING_TAXABLE_BENEFIT",
 } as const;
 /**
  * the normalized payslip-line type this code produces
@@ -120,50 +121,54 @@ export const DetailType$inboundSchema: z.ZodType<
   DetailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(DetailType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(DetailType));
 
 /** @internal */
 export const HrisPaycodeType$inboundSchema: z.ZodType<
   HrisPaycodeType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisPaycodeType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(HrisPaycodeType));
 
 /** @internal */
 export const HrisPaycode$inboundSchema: z.ZodType<
   HrisPaycode,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  code: z.string().optional(),
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  detail_type: DetailType$inboundSchema.optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_employer: z.boolean().optional(),
-  is_pre_tax: z.boolean().optional(),
-  is_retirement_eligible: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: HrisPaycodeType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "detail_type": "detailType",
-    "is_active": "isActive",
-    "is_employer": "isEmployer",
-    "is_pre_tax": "isPreTax",
-    "is_retirement_eligible": "isRetirementEligible",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    detail_type: DetailType$inboundSchema.optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_employer: z.boolean().optional(),
+    is_pre_tax: z.boolean().optional(),
+    is_retirement_eligible: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: HrisPaycodeType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "detail_type": "detailType",
+      "is_active": "isActive",
+      "is_employer": "isEmployer",
+      "is_pre_tax": "isPreTax",
+      "is_retirement_eligible": "isRetirementEligible",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function hrisPaycodeFromJSON(
   jsonString: string,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListLegalTimeentriesQueryParamFields = {
@@ -68,9 +69,10 @@ export type ListLegalTimeentriesRequest = {
 
 /** @internal */
 export const ListLegalTimeentriesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListLegalTimeentriesQueryParamFields> = z.nativeEnum(
-    ListLegalTimeentriesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListLegalTimeentriesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListLegalTimeentriesQueryParamFields)
+    );
 
 /** @internal */
 export type ListLegalTimeentriesRequest$Outbound = {
@@ -92,27 +94,29 @@ export const ListLegalTimeentriesRequest$outboundSchema: z.ZodType<
   ListLegalTimeentriesRequest$Outbound,
   z.ZodTypeDef,
   ListLegalTimeentriesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListLegalTimeentriesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  matterId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    matterId: "matter_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListLegalTimeentriesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    matterId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      matterId: "matter_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listLegalTimeentriesRequestToJSON(
   listLegalTimeentriesRequest: ListLegalTimeentriesRequest,

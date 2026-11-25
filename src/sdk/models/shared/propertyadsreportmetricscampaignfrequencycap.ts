@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -37,8 +37,10 @@ export const PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit$inboundSchema:
     PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit,
+    )
   );
 
 /** @internal */
@@ -47,23 +49,25 @@ export const PropertyAdsReportMetricsCampaignFrequencyCap$inboundSchema:
     PropertyAdsReportMetricsCampaignFrequencyCap,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    is_unlimited: z.boolean().optional(),
-    max_impressions: z.number().optional(),
-    max_views: z.number().optional(),
-    time_unit:
-      PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit$inboundSchema
-        .optional(),
-    time_unit_count: z.number().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "is_unlimited": "isUnlimited",
-      "max_impressions": "maxImpressions",
-      "max_views": "maxViews",
-      "time_unit": "timeUnit",
-      "time_unit_count": "timeUnitCount",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      is_unlimited: z.boolean().optional(),
+      max_impressions: z.number().optional(),
+      max_views: z.number().optional(),
+      time_unit:
+        PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit$inboundSchema
+          .optional(),
+      time_unit_count: z.number().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "is_unlimited": "isUnlimited",
+        "max_impressions": "maxImpressions",
+        "max_views": "maxViews",
+        "time_unit": "timeUnit",
+        "time_unit_count": "timeUnitCount",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsCampaignFrequencyCapFromJSON(
   jsonString: string,

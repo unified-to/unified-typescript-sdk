@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type RemoveUnifiedEnvironmentRequest = {
   env: string;
@@ -18,9 +19,11 @@ export const RemoveUnifiedEnvironmentRequest$outboundSchema: z.ZodType<
   RemoveUnifiedEnvironmentRequest$Outbound,
   z.ZodTypeDef,
   RemoveUnifiedEnvironmentRequest
-> = z.object({
-  env: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    env: z.string(),
+  })
+);
 
 export function removeUnifiedEnvironmentRequestToJSON(
   removeUnifiedEnvironmentRequest: RemoveUnifiedEnvironmentRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,25 +31,27 @@ export const PerformanceGoalMilestone$inboundSchema: z.ZodType<
   PerformanceGoalMilestone,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  current_value: z.number().optional(),
-  description: z.string().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_completed: z.boolean().optional(),
-  name: z.string(),
-  target_value: z.number().optional(),
-  unit: z.string().optional(),
-  weight: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "current_value": "currentValue",
-    "due_at": "dueAt",
-    "is_completed": "isCompleted",
-    "target_value": "targetValue",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    current_value: z.number().optional(),
+    description: z.string().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    is_completed: z.boolean().optional(),
+    name: z.string(),
+    target_value: z.number().optional(),
+    unit: z.string().optional(),
+    weight: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "current_value": "currentValue",
+      "due_at": "dueAt",
+      "is_completed": "isCompleted",
+      "target_value": "targetValue",
+    });
+  })
+);
 /** @internal */
 export type PerformanceGoalMilestone$Outbound = {
   current_value?: number | undefined;
@@ -68,24 +70,26 @@ export const PerformanceGoalMilestone$outboundSchema: z.ZodType<
   PerformanceGoalMilestone$Outbound,
   z.ZodTypeDef,
   PerformanceGoalMilestone
-> = z.object({
-  currentValue: z.number().optional(),
-  description: z.string().optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isCompleted: z.boolean().optional(),
-  name: z.string(),
-  targetValue: z.number().optional(),
-  unit: z.string().optional(),
-  weight: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    currentValue: "current_value",
-    dueAt: "due_at",
-    isCompleted: "is_completed",
-    targetValue: "target_value",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    currentValue: z.number().optional(),
+    description: z.string().optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isCompleted: z.boolean().optional(),
+    name: z.string(),
+    targetValue: z.number().optional(),
+    unit: z.string().optional(),
+    weight: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      currentValue: "current_value",
+      dueAt: "due_at",
+      isCompleted: "is_completed",
+      targetValue: "target_value",
+    });
+  })
+);
 
 export function performanceGoalMilestoneToJSON(
   performanceGoalMilestone: PerformanceGoalMilestone,

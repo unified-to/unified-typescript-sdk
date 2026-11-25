@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,20 +22,22 @@ export const PropertyAdsReportMetricsKeyword$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsKeyword,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  engine_id: z.string().optional(),
-  id: z.string(),
-  landing_page: z.string().optional(),
-  match_type: z.string().optional(),
-  name: z.string().optional(),
-  text: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "engine_id": "engineId",
-    "landing_page": "landingPage",
-    "match_type": "matchType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    engine_id: z.string().optional(),
+    id: z.string(),
+    landing_page: z.string().optional(),
+    match_type: z.string().optional(),
+    name: z.string().optional(),
+    text: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "engine_id": "engineId",
+      "landing_page": "landingPage",
+      "match_type": "matchType",
+    });
+  })
+);
 
 export function propertyAdsReportMetricsKeywordFromJSON(
   jsonString: string,

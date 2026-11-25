@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListRepoBranchesQueryParamFields = {
@@ -53,7 +54,9 @@ export type ListRepoBranchesRequest = {
 /** @internal */
 export const ListRepoBranchesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListRepoBranchesQueryParamFields
-> = z.nativeEnum(ListRepoBranchesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListRepoBranchesQueryParamFields)
+);
 
 /** @internal */
 export type ListRepoBranchesRequest$Outbound = {
@@ -74,24 +77,26 @@ export const ListRepoBranchesRequest$outboundSchema: z.ZodType<
   ListRepoBranchesRequest$Outbound,
   z.ZodTypeDef,
   ListRepoBranchesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListRepoBranchesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  repoId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    repoId: "repo_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListRepoBranchesQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    repoId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      repoId: "repo_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listRepoBranchesRequestToJSON(
   listRepoBranchesRequest: ListRepoBranchesRequest,

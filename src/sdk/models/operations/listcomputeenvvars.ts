@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListComputeEnvvarsQueryParamFields = {
@@ -56,7 +57,9 @@ export type ListComputeEnvvarsRequest = {
 /** @internal */
 export const ListComputeEnvvarsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListComputeEnvvarsQueryParamFields
-> = z.nativeEnum(ListComputeEnvvarsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListComputeEnvvarsQueryParamFields)
+);
 
 /** @internal */
 export type ListComputeEnvvarsRequest$Outbound = {
@@ -77,24 +80,27 @@ export const ListComputeEnvvarsRequest$outboundSchema: z.ZodType<
   ListComputeEnvvarsRequest$Outbound,
   z.ZodTypeDef,
   ListComputeEnvvarsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListComputeEnvvarsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  serviceId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    serviceId: "service_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListComputeEnvvarsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    serviceId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      serviceId: "service_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listComputeEnvvarsRequestToJSON(
   listComputeEnvvarsRequest: ListComputeEnvvarsRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -104,45 +104,51 @@ export const ComputeUsageCategory$inboundSchema: z.ZodType<
   ComputeUsageCategory,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeUsageCategory);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeUsageCategory)
+);
 
 /** @internal */
 export const Unit$inboundSchema: z.ZodType<Unit, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Unit);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Unit));
 
 /** @internal */
 export const ComputeUsage$inboundSchema: z.ZodType<
   ComputeUsage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  category: ComputeUsageCategory$inboundSchema.optional(),
-  cost_amount: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  instance_id: z.string().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  quantity: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  unit: Unit$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "cost_amount": "costAmount",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "instance_id": "instanceId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category: ComputeUsageCategory$inboundSchema.optional(),
+    cost_amount: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    instance_id: z.string().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    quantity: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    unit: Unit$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "cost_amount": "costAmount",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "instance_id": "instanceId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function computeUsageFromJSON(
   jsonString: string,

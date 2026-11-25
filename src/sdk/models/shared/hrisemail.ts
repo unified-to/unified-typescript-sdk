@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -26,23 +26,25 @@ export const HrisEmailType$inboundSchema: z.ZodType<
   HrisEmailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisEmailType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(HrisEmailType));
 /** @internal */
 export const HrisEmailType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisEmailType
-> = openEnums.outboundSchema(HrisEmailType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(HrisEmailType));
 
 /** @internal */
 export const HrisEmail$inboundSchema: z.ZodType<
   HrisEmail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string(),
-  type: HrisEmailType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    type: HrisEmailType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type HrisEmail$Outbound = {
   email: string;
@@ -54,10 +56,12 @@ export const HrisEmail$outboundSchema: z.ZodType<
   HrisEmail$Outbound,
   z.ZodTypeDef,
   HrisEmail
-> = z.object({
-  email: z.string(),
-  type: HrisEmailType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    type: HrisEmailType$outboundSchema.optional(),
+  })
+);
 
 export function hrisEmailToJSON(hrisEmail: HrisEmail): string {
   return JSON.stringify(HrisEmail$outboundSchema.parse(hrisEmail));

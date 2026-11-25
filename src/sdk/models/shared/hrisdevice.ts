@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -67,47 +67,51 @@ export const HrisDevice$inboundSchema: z.ZodType<
   HrisDevice,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  admin_user_ids: z.array(z.string()).optional(),
-  asset_tag: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  has_antivirus: z.boolean().optional(),
-  has_firewall: z.boolean().optional(),
-  has_hd_encrypted: z.boolean().optional(),
-  has_password_manager: z.boolean().optional(),
-  has_screenlock: z.boolean().optional(),
-  id: z.string().optional(),
-  is_missing: z.boolean().optional(),
-  location_id: z.string().optional(),
-  manufacturer: z.string().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  model: z.string().optional(),
-  name: z.string().optional(),
-  os: z.string().optional(),
-  os_version: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-  version: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "admin_user_ids": "adminUserIds",
-    "asset_tag": "assetTag",
-    "created_at": "createdAt",
-    "has_antivirus": "hasAntivirus",
-    "has_firewall": "hasFirewall",
-    "has_hd_encrypted": "hasHdEncrypted",
-    "has_password_manager": "hasPasswordManager",
-    "has_screenlock": "hasScreenlock",
-    "is_missing": "isMissing",
-    "location_id": "locationId",
-    "os_version": "osVersion",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    admin_user_ids: z.array(z.string()).optional(),
+    asset_tag: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    has_antivirus: z.boolean().optional(),
+    has_firewall: z.boolean().optional(),
+    has_hd_encrypted: z.boolean().optional(),
+    has_password_manager: z.boolean().optional(),
+    has_screenlock: z.boolean().optional(),
+    id: z.string().optional(),
+    is_missing: z.boolean().optional(),
+    location_id: z.string().optional(),
+    manufacturer: z.string().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    model: z.string().optional(),
+    name: z.string().optional(),
+    os: z.string().optional(),
+    os_version: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+    version: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "admin_user_ids": "adminUserIds",
+      "asset_tag": "assetTag",
+      "created_at": "createdAt",
+      "has_antivirus": "hasAntivirus",
+      "has_firewall": "hasFirewall",
+      "has_hd_encrypted": "hasHdEncrypted",
+      "has_password_manager": "hasPasswordManager",
+      "has_screenlock": "hasScreenlock",
+      "is_missing": "isMissing",
+      "location_id": "locationId",
+      "os_version": "osVersion",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+    });
+  })
+);
 /** @internal */
 export type HrisDevice$Outbound = {
   admin_user_ids?: Array<string> | undefined;
@@ -138,45 +142,47 @@ export const HrisDevice$outboundSchema: z.ZodType<
   HrisDevice$Outbound,
   z.ZodTypeDef,
   HrisDevice
-> = z.object({
-  adminUserIds: z.array(z.string()).optional(),
-  assetTag: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  hasAntivirus: z.boolean().optional(),
-  hasFirewall: z.boolean().optional(),
-  hasHdEncrypted: z.boolean().optional(),
-  hasPasswordManager: z.boolean().optional(),
-  hasScreenlock: z.boolean().optional(),
-  id: z.string().optional(),
-  isMissing: z.boolean().optional(),
-  locationId: z.string().optional(),
-  manufacturer: z.string().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  model: z.string().optional(),
-  name: z.string().optional(),
-  os: z.string().optional(),
-  osVersion: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIds: z.array(z.string()).optional(),
-  version: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    adminUserIds: "admin_user_ids",
-    assetTag: "asset_tag",
-    createdAt: "created_at",
-    hasAntivirus: "has_antivirus",
-    hasFirewall: "has_firewall",
-    hasHdEncrypted: "has_hd_encrypted",
-    hasPasswordManager: "has_password_manager",
-    hasScreenlock: "has_screenlock",
-    isMissing: "is_missing",
-    locationId: "location_id",
-    osVersion: "os_version",
-    updatedAt: "updated_at",
-    userIds: "user_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    adminUserIds: z.array(z.string()).optional(),
+    assetTag: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    hasAntivirus: z.boolean().optional(),
+    hasFirewall: z.boolean().optional(),
+    hasHdEncrypted: z.boolean().optional(),
+    hasPasswordManager: z.boolean().optional(),
+    hasScreenlock: z.boolean().optional(),
+    id: z.string().optional(),
+    isMissing: z.boolean().optional(),
+    locationId: z.string().optional(),
+    manufacturer: z.string().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    model: z.string().optional(),
+    name: z.string().optional(),
+    os: z.string().optional(),
+    osVersion: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIds: z.array(z.string()).optional(),
+    version: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      adminUserIds: "admin_user_ids",
+      assetTag: "asset_tag",
+      createdAt: "created_at",
+      hasAntivirus: "has_antivirus",
+      hasFirewall: "has_firewall",
+      hasHdEncrypted: "has_hd_encrypted",
+      hasPasswordManager: "has_password_manager",
+      hasScreenlock: "has_screenlock",
+      isMissing: "is_missing",
+      locationId: "location_id",
+      osVersion: "os_version",
+      updatedAt: "updated_at",
+      userIds: "user_ids",
+    });
+  })
+);
 
 export function hrisDeviceToJSON(hrisDevice: HrisDevice): string {
   return JSON.stringify(HrisDevice$outboundSchema.parse(hrisDevice));

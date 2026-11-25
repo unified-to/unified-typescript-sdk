@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -114,85 +114,93 @@ export const CalendarWebinarStatus$inboundSchema: z.ZodType<
   CalendarWebinarStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarWebinarStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarWebinarStatus)
+);
 /** @internal */
 export const CalendarWebinarStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CalendarWebinarStatus
-> = openEnums.outboundSchema(CalendarWebinarStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CalendarWebinarStatus)
+);
 
 /** @internal */
 export const CalendarWebinar$inboundSchema: z.ZodType<
   CalendarWebinar,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  calendar_id: z.string().optional(),
-  capacity: z.number().optional(),
-  conference: z.array(CalendarConference$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  has_polls: z.boolean().optional(),
-  has_qa: z.boolean().optional(),
-  has_recording: z.boolean().optional(),
-  id: z.string().optional(),
-  is_auto_approve: z.boolean().optional(),
-  is_enabled: z.boolean().optional(),
-  is_webcast: z.boolean().optional(),
-  join_url: z.string().optional(),
-  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  organizer: PropertyCalendarWebinarOrganizer$inboundSchema.optional(),
-  panelist_password: z.string().optional(),
-  panelists: z.array(CalendarWebinarPanelist$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  recurrence: z.array(CalendarEventRecurrence$inboundSchema).optional(),
-  registrant_password: z.string().optional(),
-  registrants: z.array(CalendarWebinarRegistrant$inboundSchema).optional(),
-  require_address: z.boolean().optional(),
-  require_company: z.boolean().optional(),
-  require_email: z.boolean().optional(),
-  require_first_name: z.boolean().optional(),
-  require_job_title: z.boolean().optional(),
-  require_last_name: z.boolean().optional(),
-  require_phone: z.boolean().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: CalendarWebinarStatus$inboundSchema.optional(),
-  subject: z.string().optional(),
-  timezone: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "calendar_id": "calendarId",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "has_polls": "hasPolls",
-    "has_qa": "hasQa",
-    "has_recording": "hasRecording",
-    "is_auto_approve": "isAutoApprove",
-    "is_enabled": "isEnabled",
-    "is_webcast": "isWebcast",
-    "join_url": "joinUrl",
-    "panelist_password": "panelistPassword",
-    "registrant_password": "registrantPassword",
-    "require_address": "requireAddress",
-    "require_company": "requireCompany",
-    "require_email": "requireEmail",
-    "require_first_name": "requireFirstName",
-    "require_job_title": "requireJobTitle",
-    "require_last_name": "requireLastName",
-    "require_phone": "requirePhone",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    calendar_id: z.string().optional(),
+    capacity: z.number().optional(),
+    conference: z.array(CalendarConference$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    has_polls: z.boolean().optional(),
+    has_qa: z.boolean().optional(),
+    has_recording: z.boolean().optional(),
+    id: z.string().optional(),
+    is_auto_approve: z.boolean().optional(),
+    is_enabled: z.boolean().optional(),
+    is_webcast: z.boolean().optional(),
+    join_url: z.string().optional(),
+    metadata: z.array(CalendarMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    organizer: PropertyCalendarWebinarOrganizer$inboundSchema.optional(),
+    panelist_password: z.string().optional(),
+    panelists: z.array(CalendarWebinarPanelist$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    recurrence: z.array(CalendarEventRecurrence$inboundSchema).optional(),
+    registrant_password: z.string().optional(),
+    registrants: z.array(CalendarWebinarRegistrant$inboundSchema).optional(),
+    require_address: z.boolean().optional(),
+    require_company: z.boolean().optional(),
+    require_email: z.boolean().optional(),
+    require_first_name: z.boolean().optional(),
+    require_job_title: z.boolean().optional(),
+    require_last_name: z.boolean().optional(),
+    require_phone: z.boolean().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: CalendarWebinarStatus$inboundSchema.optional(),
+    subject: z.string().optional(),
+    timezone: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "calendar_id": "calendarId",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "has_polls": "hasPolls",
+      "has_qa": "hasQa",
+      "has_recording": "hasRecording",
+      "is_auto_approve": "isAutoApprove",
+      "is_enabled": "isEnabled",
+      "is_webcast": "isWebcast",
+      "join_url": "joinUrl",
+      "panelist_password": "panelistPassword",
+      "registrant_password": "registrantPassword",
+      "require_address": "requireAddress",
+      "require_company": "requireCompany",
+      "require_email": "requireEmail",
+      "require_first_name": "requireFirstName",
+      "require_job_title": "requireJobTitle",
+      "require_last_name": "requireLastName",
+      "require_phone": "requirePhone",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type CalendarWebinar$Outbound = {
   calendar_id?: string | undefined;
@@ -237,68 +245,70 @@ export const CalendarWebinar$outboundSchema: z.ZodType<
   CalendarWebinar$Outbound,
   z.ZodTypeDef,
   CalendarWebinar
-> = z.object({
-  calendarId: z.string().optional(),
-  capacity: z.number().optional(),
-  conference: z.array(CalendarConference$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  hasPolls: z.boolean().optional(),
-  hasQa: z.boolean().optional(),
-  hasRecording: z.boolean().optional(),
-  id: z.string().optional(),
-  isAutoApprove: z.boolean().optional(),
-  isEnabled: z.boolean().optional(),
-  isWebcast: z.boolean().optional(),
-  joinUrl: z.string().optional(),
-  metadata: z.array(CalendarMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  organizer: PropertyCalendarWebinarOrganizer$outboundSchema.optional(),
-  panelistPassword: z.string().optional(),
-  panelists: z.array(CalendarWebinarPanelist$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  recurrence: z.array(CalendarEventRecurrence$outboundSchema).optional(),
-  registrantPassword: z.string().optional(),
-  registrants: z.array(CalendarWebinarRegistrant$outboundSchema).optional(),
-  requireAddress: z.boolean().optional(),
-  requireCompany: z.boolean().optional(),
-  requireEmail: z.boolean().optional(),
-  requireFirstName: z.boolean().optional(),
-  requireJobTitle: z.boolean().optional(),
-  requireLastName: z.boolean().optional(),
-  requirePhone: z.boolean().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: CalendarWebinarStatus$outboundSchema.optional(),
-  subject: z.string().optional(),
-  timezone: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    calendarId: "calendar_id",
-    createdAt: "created_at",
-    endAt: "end_at",
-    hasPolls: "has_polls",
-    hasQa: "has_qa",
-    hasRecording: "has_recording",
-    isAutoApprove: "is_auto_approve",
-    isEnabled: "is_enabled",
-    isWebcast: "is_webcast",
-    joinUrl: "join_url",
-    panelistPassword: "panelist_password",
-    registrantPassword: "registrant_password",
-    requireAddress: "require_address",
-    requireCompany: "require_company",
-    requireEmail: "require_email",
-    requireFirstName: "require_first_name",
-    requireJobTitle: "require_job_title",
-    requireLastName: "require_last_name",
-    requirePhone: "require_phone",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    calendarId: z.string().optional(),
+    capacity: z.number().optional(),
+    conference: z.array(CalendarConference$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    hasPolls: z.boolean().optional(),
+    hasQa: z.boolean().optional(),
+    hasRecording: z.boolean().optional(),
+    id: z.string().optional(),
+    isAutoApprove: z.boolean().optional(),
+    isEnabled: z.boolean().optional(),
+    isWebcast: z.boolean().optional(),
+    joinUrl: z.string().optional(),
+    metadata: z.array(CalendarMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    organizer: PropertyCalendarWebinarOrganizer$outboundSchema.optional(),
+    panelistPassword: z.string().optional(),
+    panelists: z.array(CalendarWebinarPanelist$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    recurrence: z.array(CalendarEventRecurrence$outboundSchema).optional(),
+    registrantPassword: z.string().optional(),
+    registrants: z.array(CalendarWebinarRegistrant$outboundSchema).optional(),
+    requireAddress: z.boolean().optional(),
+    requireCompany: z.boolean().optional(),
+    requireEmail: z.boolean().optional(),
+    requireFirstName: z.boolean().optional(),
+    requireJobTitle: z.boolean().optional(),
+    requireLastName: z.boolean().optional(),
+    requirePhone: z.boolean().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: CalendarWebinarStatus$outboundSchema.optional(),
+    subject: z.string().optional(),
+    timezone: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      calendarId: "calendar_id",
+      createdAt: "created_at",
+      endAt: "end_at",
+      hasPolls: "has_polls",
+      hasQa: "has_qa",
+      hasRecording: "has_recording",
+      isAutoApprove: "is_auto_approve",
+      isEnabled: "is_enabled",
+      isWebcast: "is_webcast",
+      joinUrl: "join_url",
+      panelistPassword: "panelist_password",
+      registrantPassword: "registrant_password",
+      requireAddress: "require_address",
+      requireCompany: "require_company",
+      requireEmail: "require_email",
+      requireFirstName: "require_first_name",
+      requireJobTitle: "require_job_title",
+      requireLastName: "require_last_name",
+      requirePhone: "require_phone",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function calendarWebinarToJSON(
   calendarWebinar: CalendarWebinar,

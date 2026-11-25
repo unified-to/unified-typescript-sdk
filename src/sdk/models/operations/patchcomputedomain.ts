@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -46,7 +47,9 @@ export type PatchComputeDomainRequest = {
 /** @internal */
 export const PatchComputeDomainQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchComputeDomainQueryParamFields
-> = z.nativeEnum(PatchComputeDomainQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchComputeDomainQueryParamFields)
+);
 
 /** @internal */
 export type PatchComputeDomainRequest$Outbound = {
@@ -62,18 +65,21 @@ export const PatchComputeDomainRequest$outboundSchema: z.ZodType<
   PatchComputeDomainRequest$Outbound,
   z.ZodTypeDef,
   PatchComputeDomainRequest
-> = z.object({
-  computeDomain: shared.ComputeDomain$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchComputeDomainQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    computeDomain: "ComputeDomain",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    computeDomain: shared.ComputeDomain$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchComputeDomainQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      computeDomain: "ComputeDomain",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchComputeDomainRequestToJSON(
   patchComputeDomainRequest: PatchComputeDomainRequest,

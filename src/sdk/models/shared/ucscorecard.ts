@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { UcMetadata, UcMetadata$inboundSchema } from "./ucmetadata.js";
@@ -55,34 +55,39 @@ export const UcScorecard$inboundSchema: z.ZodType<
   UcScorecard,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  call_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(UcMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  questions: z.array(UcScorecardQuestion$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  reviewed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  reviewer_user_id: z.string().optional(),
-  score: z.number().optional(),
-  scorecardtemplate_id: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "call_id": "callId",
-    "created_at": "createdAt",
-    "reviewed_at": "reviewedAt",
-    "reviewer_user_id": "reviewerUserId",
-    "scorecardtemplate_id": "scorecardtemplateId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    call_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    metadata: z.array(UcMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    questions: z.array(UcScorecardQuestion$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    reviewed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    reviewer_user_id: z.string().optional(),
+    score: z.number().optional(),
+    scorecardtemplate_id: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "call_id": "callId",
+      "created_at": "createdAt",
+      "reviewed_at": "reviewedAt",
+      "reviewer_user_id": "reviewerUserId",
+      "scorecardtemplate_id": "scorecardtemplateId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 
 export function ucScorecardFromJSON(
   jsonString: string,

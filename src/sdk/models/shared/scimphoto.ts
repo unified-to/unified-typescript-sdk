@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -30,25 +30,27 @@ export const ScimPhotoType$inboundSchema: z.ZodType<
   ScimPhotoType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ScimPhotoType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ScimPhotoType));
 /** @internal */
 export const ScimPhotoType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ScimPhotoType
-> = openEnums.outboundSchema(ScimPhotoType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ScimPhotoType));
 
 /** @internal */
 export const ScimPhoto$inboundSchema: z.ZodType<
   ScimPhoto,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: ScimPhotoType$inboundSchema.optional(),
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: ScimPhotoType$inboundSchema.optional(),
+    value: z.string().optional(),
+  })
+);
 /** @internal */
 export type ScimPhoto$Outbound = {
   display?: string | undefined;
@@ -62,12 +64,14 @@ export const ScimPhoto$outboundSchema: z.ZodType<
   ScimPhoto$Outbound,
   z.ZodTypeDef,
   ScimPhoto
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: ScimPhotoType$outboundSchema.optional(),
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: ScimPhotoType$outboundSchema.optional(),
+    value: z.string().optional(),
+  })
+);
 
 export function scimPhotoToJSON(scimPhoto: ScimPhoto): string {
   return JSON.stringify(ScimPhoto$outboundSchema.parse(scimPhoto));

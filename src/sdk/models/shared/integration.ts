@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -190,7 +190,7 @@ export const Integration1$inboundSchema: z.ZodType<
   Integration1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function integration1FromJSON(
   jsonString: string,
@@ -207,12 +207,14 @@ export const Integration5$inboundSchema: z.ZodType<
   Integration5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => Integration1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => Integration1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function integration5FromJSON(
   jsonString: string,
@@ -225,22 +227,23 @@ export function integration5FromJSON(
 }
 
 /** @internal */
-export const Api$inboundSchema: z.ZodType<Api, z.ZodTypeDef, unknown> = z.union(
-  [
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => Integration1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ],
-);
+export const Api$inboundSchema: z.ZodType<Api, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => Integration1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ])
+  );
 
 export function apiFromJSON(
   jsonString: string,
@@ -257,7 +260,7 @@ export const IntegrationSchemas1$inboundSchema: z.ZodType<
   IntegrationSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function integrationSchemas1FromJSON(
   jsonString: string,
@@ -274,12 +277,14 @@ export const IntegrationSchemas5$inboundSchema: z.ZodType<
   IntegrationSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => IntegrationSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function integrationSchemas5FromJSON(
   jsonString: string,
@@ -296,20 +301,22 @@ export const Partnership$inboundSchema: z.ZodType<
   Partnership,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => IntegrationSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function partnershipFromJSON(
   jsonString: string,
@@ -326,7 +333,7 @@ export const IntegrationSchemasSaml1$inboundSchema: z.ZodType<
   IntegrationSchemasSaml1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function integrationSchemasSaml1FromJSON(
   jsonString: string,
@@ -343,12 +350,14 @@ export const IntegrationSchemasSaml5$inboundSchema: z.ZodType<
   IntegrationSchemasSaml5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function integrationSchemasSaml5FromJSON(
   jsonString: string,
@@ -361,21 +370,23 @@ export function integrationSchemasSaml5FromJSON(
 }
 
 /** @internal */
-export const Saml$inboundSchema: z.ZodType<Saml, z.ZodTypeDef, unknown> = z
-  .union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]);
+export const Saml$inboundSchema: z.ZodType<Saml, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ])
+  );
 
 export function samlFromJSON(
   jsonString: string,
@@ -392,7 +403,7 @@ export const IntegrationSchemasSandbox1$inboundSchema: z.ZodType<
   IntegrationSchemasSandbox1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function integrationSchemasSandbox1FromJSON(
   jsonString: string,
@@ -409,12 +420,14 @@ export const IntegrationSchemasSandbox5$inboundSchema: z.ZodType<
   IntegrationSchemasSandbox5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function integrationSchemasSandbox5FromJSON(
   jsonString: string,
@@ -428,20 +441,22 @@ export function integrationSchemasSandbox5FromJSON(
 
 /** @internal */
 export const Sandbox$inboundSchema: z.ZodType<Sandbox, z.ZodTypeDef, unknown> =
-  z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]);
+  /* @__PURE__ */ lazySchema$(() =>
+    z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ])
+  );
 
 export function sandboxFromJSON(
   jsonString: string,
@@ -458,109 +473,111 @@ export const Integration$inboundSchema: z.ZodType<
   Integration,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  active_healthy_connections: z.number().optional(),
-  api: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => Integration1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  api_docs_url: z.string().optional(),
-  beta: z.boolean().optional(),
-  categories: z.array(PropertyIntegrationCategories$inboundSchema),
-  color: z.string().optional(),
-  created_at: z.string().optional(),
-  description: z.string().optional(),
-  fa_icon: z.string().optional(),
-  featured: z.boolean().optional(),
-  in_progress: z.boolean().optional(),
-  is_active: z.boolean().optional(),
-  is_hidden: z.boolean().optional(),
-  logo_url: z.string().optional(),
-  name: z.string(),
-  partnership: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => IntegrationSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  popularity: z.number().optional(),
-  rate_limit_description: z.string().optional(),
-  requires_cname: z.boolean().optional(),
-  saml: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  sandbox: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  support: z.record(IntegrationSupport$inboundSchema).optional(),
-  tested_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  text_color: z.string().optional(),
-  token_instructions: z.array(z.string()).optional(),
-  token_names: z.array(z.string()).optional(),
-  type: z.string(),
-  updated_at: z.string().optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "active_healthy_connections": "activeHealthyConnections",
-    "api_docs_url": "apiDocsUrl",
-    "created_at": "createdAt",
-    "fa_icon": "faIcon",
-    "in_progress": "inProgress",
-    "is_active": "isActive",
-    "is_hidden": "isHidden",
-    "logo_url": "logoUrl",
-    "rate_limit_description": "rateLimitDescription",
-    "requires_cname": "requiresCname",
-    "tested_at": "testedAt",
-    "text_color": "textColor",
-    "token_instructions": "tokenInstructions",
-    "token_names": "tokenNames",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    active_healthy_connections: z.number().optional(),
+    api: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => Integration1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    api_docs_url: z.string().optional(),
+    beta: z.boolean().optional(),
+    categories: z.array(PropertyIntegrationCategories$inboundSchema),
+    color: z.string().optional(),
+    created_at: z.string().optional(),
+    description: z.string().optional(),
+    fa_icon: z.string().optional(),
+    featured: z.boolean().optional(),
+    in_progress: z.boolean().optional(),
+    is_active: z.boolean().optional(),
+    is_hidden: z.boolean().optional(),
+    logo_url: z.string().optional(),
+    name: z.string(),
+    partnership: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => IntegrationSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    popularity: z.number().optional(),
+    rate_limit_description: z.string().optional(),
+    requires_cname: z.boolean().optional(),
+    saml: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    sandbox: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    support: z.record(IntegrationSupport$inboundSchema).optional(),
+    tested_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    text_color: z.string().optional(),
+    token_instructions: z.array(z.string()).optional(),
+    token_names: z.array(z.string()).optional(),
+    type: z.string(),
+    updated_at: z.string().optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "active_healthy_connections": "activeHealthyConnections",
+      "api_docs_url": "apiDocsUrl",
+      "created_at": "createdAt",
+      "fa_icon": "faIcon",
+      "in_progress": "inProgress",
+      "is_active": "isActive",
+      "is_hidden": "isHidden",
+      "logo_url": "logoUrl",
+      "rate_limit_description": "rateLimitDescription",
+      "requires_cname": "requiresCname",
+      "tested_at": "testedAt",
+      "text_color": "textColor",
+      "token_instructions": "tokenInstructions",
+      "token_names": "tokenNames",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 
 export function integrationFromJSON(
   jsonString: string,

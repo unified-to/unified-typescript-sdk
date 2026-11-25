@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -23,8 +24,10 @@ export const PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategorie
     PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories,
+    )
   );
 /** @internal */
 export const PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories$outboundSchema:
@@ -32,6 +35,8 @@ export const PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategorie
     string,
     z.ZodTypeDef,
     PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories
-  > = openEnums.outboundSchema(
-    PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories,
+    )
   );

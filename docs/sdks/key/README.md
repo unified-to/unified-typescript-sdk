@@ -31,11 +31,11 @@ async function run() {
   const result = await unifiedTo.key.createComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "d8380abb-8fde-4cb5-9005-11a755c41d45",
+      id: "73d9d879-28fa-4d80-b3b0-b218fc702c4a",
       metadata: [],
-      name: "nienow-secret",
+      name: "huels-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-17T17:00:35.714Z"),
+      updatedAt: new Date("2024-10-19T19:25:55.305Z"),
     },
     connectionId: "<id>",
   });
@@ -66,11 +66,11 @@ async function run() {
   const res = await computeCreateComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "d8380abb-8fde-4cb5-9005-11a755c41d45",
+      id: "73d9d879-28fa-4d80-b3b0-b218fc702c4a",
       metadata: [],
-      name: "nienow-secret",
+      name: "huels-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-17T17:00:35.714Z"),
+      updatedAt: new Date("2024-10-19T19:25:55.305Z"),
     },
     connectionId: "<id>",
   });
@@ -280,11 +280,11 @@ async function run() {
   const result = await unifiedTo.key.patchComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "982d8210-aa3b-44d2-83e8-2038ef42304c",
+      id: "ee302465-5c7a-41ad-a86b-385baed09ff2",
       metadata: [],
-      name: "nienow-secret",
+      name: "huels-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-17T17:00:35.719Z"),
+      updatedAt: new Date("2024-10-19T19:25:55.309Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -316,11 +316,11 @@ async function run() {
   const res = await computePatchComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "982d8210-aa3b-44d2-83e8-2038ef42304c",
+      id: "ee302465-5c7a-41ad-a86b-385baed09ff2",
       metadata: [],
-      name: "nienow-secret",
+      name: "huels-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-17T17:00:35.719Z"),
+      updatedAt: new Date("2024-10-19T19:25:55.309Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -454,11 +454,11 @@ async function run() {
   const result = await unifiedTo.key.updateComputeKey({
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "982d8210-aa3b-44d2-83e8-2038ef42304c",
+      id: "ee302465-5c7a-41ad-a86b-385baed09ff2",
       metadata: [],
-      name: "nienow-secret",
+      name: "huels-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-17T17:00:35.719Z"),
+      updatedAt: new Date("2024-10-19T19:25:55.309Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -490,11 +490,11 @@ async function run() {
   const res = await computeUpdateComputeKey(unifiedTo, {
     computeKey: {
       createdAt: new Date("2023-08-19T14:31:46.492Z"),
-      id: "982d8210-aa3b-44d2-83e8-2038ef42304c",
+      id: "ee302465-5c7a-41ad-a86b-385baed09ff2",
       metadata: [],
-      name: "nienow-secret",
+      name: "huels-secret",
       type: "SECRET",
-      updatedAt: new Date("2024-10-17T17:00:35.719Z"),
+      updatedAt: new Date("2024-10-19T19:25:55.309Z"),
     },
     connectionId: "<id>",
     id: "<id>",

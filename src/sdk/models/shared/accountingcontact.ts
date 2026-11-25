@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -145,91 +145,99 @@ export const AccountingContactPaymentTerms$inboundSchema: z.ZodType<
   AccountingContactPaymentTerms,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingContactPaymentTerms);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingContactPaymentTerms)
+);
 /** @internal */
 export const AccountingContactPaymentTerms$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingContactPaymentTerms
-> = openEnums.outboundSchema(AccountingContactPaymentTerms);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingContactPaymentTerms)
+);
 
 /** @internal */
 export const TaxExemption$inboundSchema: z.ZodType<
   TaxExemption,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(TaxExemption);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TaxExemption));
 /** @internal */
 export const TaxExemption$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   TaxExemption
-> = openEnums.outboundSchema(TaxExemption);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(TaxExemption));
 
 /** @internal */
 export const AccountingContact$inboundSchema: z.ZodType<
   AccountingContact,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  associated_contacts: z.array(AccountingAssociatedContact$inboundSchema)
-    .optional(),
-  balance_amount: z.number().optional(),
-  billing_address: PropertyAccountingContactBillingAddress$inboundSchema
-    .optional(),
-  company_name: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().default("USD"),
-  emails: z.array(AccountingEmail$inboundSchema).optional(),
-  first_name: z.string().optional(),
-  id: z.string().optional(),
-  identification: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_customer: z.boolean().optional(),
-  is_supplier: z.boolean().optional(),
-  last_name: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  organization_id: z.string().optional(),
-  payment_methods: z.array(AccountingContactPaymentMethod$inboundSchema)
-    .optional(),
-  payment_terms: AccountingContactPaymentTerms$inboundSchema.optional(),
-  paymentterm_id: z.string().optional(),
-  portal_url: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  shipping_address: PropertyAccountingContactShippingAddress$inboundSchema
-    .optional(),
-  tax_exemption: TaxExemption$inboundSchema.optional(),
-  tax_number: z.string().optional(),
-  telephones: z.array(AccountingTelephone$inboundSchema).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  website: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "associated_contacts": "associatedContacts",
-    "balance_amount": "balanceAmount",
-    "billing_address": "billingAddress",
-    "company_name": "companyName",
-    "created_at": "createdAt",
-    "first_name": "firstName",
-    "is_active": "isActive",
-    "is_customer": "isCustomer",
-    "is_supplier": "isSupplier",
-    "last_name": "lastName",
-    "organization_id": "organizationId",
-    "payment_methods": "paymentMethods",
-    "payment_terms": "paymentTerms",
-    "paymentterm_id": "paymenttermId",
-    "portal_url": "portalUrl",
-    "shipping_address": "shippingAddress",
-    "tax_exemption": "taxExemption",
-    "tax_number": "taxNumber",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    associated_contacts: z.array(AccountingAssociatedContact$inboundSchema)
+      .optional(),
+    balance_amount: z.number().optional(),
+    billing_address: PropertyAccountingContactBillingAddress$inboundSchema
+      .optional(),
+    company_name: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().default("USD"),
+    emails: z.array(AccountingEmail$inboundSchema).optional(),
+    first_name: z.string().optional(),
+    id: z.string().optional(),
+    identification: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_customer: z.boolean().optional(),
+    is_supplier: z.boolean().optional(),
+    last_name: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    organization_id: z.string().optional(),
+    payment_methods: z.array(AccountingContactPaymentMethod$inboundSchema)
+      .optional(),
+    payment_terms: AccountingContactPaymentTerms$inboundSchema.optional(),
+    paymentterm_id: z.string().optional(),
+    portal_url: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    shipping_address: PropertyAccountingContactShippingAddress$inboundSchema
+      .optional(),
+    tax_exemption: TaxExemption$inboundSchema.optional(),
+    tax_number: z.string().optional(),
+    telephones: z.array(AccountingTelephone$inboundSchema).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    website: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "associated_contacts": "associatedContacts",
+      "balance_amount": "balanceAmount",
+      "billing_address": "billingAddress",
+      "company_name": "companyName",
+      "created_at": "createdAt",
+      "first_name": "firstName",
+      "is_active": "isActive",
+      "is_customer": "isCustomer",
+      "is_supplier": "isSupplier",
+      "last_name": "lastName",
+      "organization_id": "organizationId",
+      "payment_methods": "paymentMethods",
+      "payment_terms": "paymentTerms",
+      "paymentterm_id": "paymenttermId",
+      "portal_url": "portalUrl",
+      "shipping_address": "shippingAddress",
+      "tax_exemption": "taxExemption",
+      "tax_number": "taxNumber",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingContact$Outbound = {
   associated_contacts?: Array<AccountingAssociatedContact$Outbound> | undefined;
@@ -272,63 +280,65 @@ export const AccountingContact$outboundSchema: z.ZodType<
   AccountingContact$Outbound,
   z.ZodTypeDef,
   AccountingContact
-> = z.object({
-  associatedContacts: z.array(AccountingAssociatedContact$outboundSchema)
-    .optional(),
-  balanceAmount: z.number().optional(),
-  billingAddress: PropertyAccountingContactBillingAddress$outboundSchema
-    .optional(),
-  companyName: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().default("USD"),
-  emails: z.array(AccountingEmail$outboundSchema).optional(),
-  firstName: z.string().optional(),
-  id: z.string().optional(),
-  identification: z.string().optional(),
-  isActive: z.boolean().optional(),
-  isCustomer: z.boolean().optional(),
-  isSupplier: z.boolean().optional(),
-  lastName: z.string().optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  organizationId: z.string().optional(),
-  paymentMethods: z.array(AccountingContactPaymentMethod$outboundSchema)
-    .optional(),
-  paymentTerms: AccountingContactPaymentTerms$outboundSchema.optional(),
-  paymenttermId: z.string().optional(),
-  portalUrl: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  shippingAddress: PropertyAccountingContactShippingAddress$outboundSchema
-    .optional(),
-  taxExemption: TaxExemption$outboundSchema.optional(),
-  taxNumber: z.string().optional(),
-  telephones: z.array(AccountingTelephone$outboundSchema).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  website: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    associatedContacts: "associated_contacts",
-    balanceAmount: "balance_amount",
-    billingAddress: "billing_address",
-    companyName: "company_name",
-    createdAt: "created_at",
-    firstName: "first_name",
-    isActive: "is_active",
-    isCustomer: "is_customer",
-    isSupplier: "is_supplier",
-    lastName: "last_name",
-    organizationId: "organization_id",
-    paymentMethods: "payment_methods",
-    paymentTerms: "payment_terms",
-    paymenttermId: "paymentterm_id",
-    portalUrl: "portal_url",
-    shippingAddress: "shipping_address",
-    taxExemption: "tax_exemption",
-    taxNumber: "tax_number",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    associatedContacts: z.array(AccountingAssociatedContact$outboundSchema)
+      .optional(),
+    balanceAmount: z.number().optional(),
+    billingAddress: PropertyAccountingContactBillingAddress$outboundSchema
+      .optional(),
+    companyName: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().default("USD"),
+    emails: z.array(AccountingEmail$outboundSchema).optional(),
+    firstName: z.string().optional(),
+    id: z.string().optional(),
+    identification: z.string().optional(),
+    isActive: z.boolean().optional(),
+    isCustomer: z.boolean().optional(),
+    isSupplier: z.boolean().optional(),
+    lastName: z.string().optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    organizationId: z.string().optional(),
+    paymentMethods: z.array(AccountingContactPaymentMethod$outboundSchema)
+      .optional(),
+    paymentTerms: AccountingContactPaymentTerms$outboundSchema.optional(),
+    paymenttermId: z.string().optional(),
+    portalUrl: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    shippingAddress: PropertyAccountingContactShippingAddress$outboundSchema
+      .optional(),
+    taxExemption: TaxExemption$outboundSchema.optional(),
+    taxNumber: z.string().optional(),
+    telephones: z.array(AccountingTelephone$outboundSchema).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    website: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      associatedContacts: "associated_contacts",
+      balanceAmount: "balance_amount",
+      billingAddress: "billing_address",
+      companyName: "company_name",
+      createdAt: "created_at",
+      firstName: "first_name",
+      isActive: "is_active",
+      isCustomer: "is_customer",
+      isSupplier: "is_supplier",
+      lastName: "last_name",
+      organizationId: "organization_id",
+      paymentMethods: "payment_methods",
+      paymentTerms: "payment_terms",
+      paymenttermId: "paymentterm_id",
+      portalUrl: "portal_url",
+      shippingAddress: "shipping_address",
+      taxExemption: "tax_exemption",
+      taxNumber: "tax_number",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingContactToJSON(
   accountingContact: AccountingContact,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -55,8 +56,10 @@ export type CreateAccountingExpensereportRequest = {
 
 /** @internal */
 export const CreateAccountingExpensereportQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingExpensereportQueryParamFields> = z
-    .nativeEnum(CreateAccountingExpensereportQueryParamFields);
+  z.ZodNativeEnum<typeof CreateAccountingExpensereportQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingExpensereportQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingExpensereportRequest$Outbound = {
@@ -71,18 +74,21 @@ export const CreateAccountingExpensereportRequest$outboundSchema: z.ZodType<
   CreateAccountingExpensereportRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingExpensereportRequest
-> = z.object({
-  accountingExpensereport: shared.AccountingExpensereport$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAccountingExpensereportQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingExpensereport: "AccountingExpensereport",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingExpensereport: shared.AccountingExpensereport$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(
+      CreateAccountingExpensereportQueryParamFields$outboundSchema,
+    ).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingExpensereport: "AccountingExpensereport",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingExpensereportRequestToJSON(
   createAccountingExpensereportRequest: CreateAccountingExpensereportRequest,

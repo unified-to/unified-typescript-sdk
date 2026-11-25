@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -55,28 +55,32 @@ export const LmsClass$inboundSchema: z.ZodType<
   LmsClass,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  course_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  instructors: z.array(LmsReference$inboundSchema).optional(),
-  languages: z.array(z.string()).optional(),
-  media: z.array(LmsMedia$inboundSchema).optional(),
-  metadata: z.array(LmsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  students: z.array(LmsReference$inboundSchema).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "course_id": "courseId",
-    "created_at": "createdAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    course_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    instructors: z.array(LmsReference$inboundSchema).optional(),
+    languages: z.array(z.string()).optional(),
+    media: z.array(LmsMedia$inboundSchema).optional(),
+    metadata: z.array(LmsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    students: z.array(LmsReference$inboundSchema).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "course_id": "courseId",
+      "created_at": "createdAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type LmsClass$Outbound = {
   course_id?: string | undefined;
@@ -98,26 +102,28 @@ export const LmsClass$outboundSchema: z.ZodType<
   LmsClass$Outbound,
   z.ZodTypeDef,
   LmsClass
-> = z.object({
-  courseId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  instructors: z.array(LmsReference$outboundSchema).optional(),
-  languages: z.array(z.string()).optional(),
-  media: z.array(LmsMedia$outboundSchema).optional(),
-  metadata: z.array(LmsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  students: z.array(LmsReference$outboundSchema).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    courseId: "course_id",
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    courseId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    instructors: z.array(LmsReference$outboundSchema).optional(),
+    languages: z.array(z.string()).optional(),
+    media: z.array(LmsMedia$outboundSchema).optional(),
+    metadata: z.array(LmsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    students: z.array(LmsReference$outboundSchema).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      courseId: "course_id",
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function lmsClassToJSON(lmsClass: LmsClass): string {
   return JSON.stringify(LmsClass$outboundSchema.parse(lmsClass));

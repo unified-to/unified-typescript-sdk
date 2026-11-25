@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -54,41 +54,46 @@ export const LmsActivity$inboundSchema: z.ZodType<
   LmsActivity,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  assigned_grade: z.string().optional(),
-  completed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  content_id: z.string().optional(),
-  course_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  duration_minutes: z.number().optional(),
-  id: z.string().optional(),
-  is_completed: z.boolean().optional(),
-  metadata: z.array(LmsMetadata$inboundSchema).optional(),
-  progress_percentage: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  started_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  student_id: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "assigned_grade": "assignedGrade",
-    "completed_at": "completedAt",
-    "content_id": "contentId",
-    "course_id": "courseId",
-    "created_at": "createdAt",
-    "duration_minutes": "durationMinutes",
-    "is_completed": "isCompleted",
-    "progress_percentage": "progressPercentage",
-    "started_at": "startedAt",
-    "student_id": "studentId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    assigned_grade: z.string().optional(),
+    completed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    content_id: z.string().optional(),
+    course_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    duration_minutes: z.number().optional(),
+    id: z.string().optional(),
+    is_completed: z.boolean().optional(),
+    metadata: z.array(LmsMetadata$inboundSchema).optional(),
+    progress_percentage: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    student_id: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "assigned_grade": "assignedGrade",
+      "completed_at": "completedAt",
+      "content_id": "contentId",
+      "course_id": "courseId",
+      "created_at": "createdAt",
+      "duration_minutes": "durationMinutes",
+      "is_completed": "isCompleted",
+      "progress_percentage": "progressPercentage",
+      "started_at": "startedAt",
+      "student_id": "studentId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type LmsActivity$Outbound = {
   assigned_grade?: string | undefined;
@@ -112,36 +117,38 @@ export const LmsActivity$outboundSchema: z.ZodType<
   LmsActivity$Outbound,
   z.ZodTypeDef,
   LmsActivity
-> = z.object({
-  assignedGrade: z.string().optional(),
-  completedAt: z.date().transform(v => v.toISOString()).optional(),
-  contentId: z.string().optional(),
-  courseId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  durationMinutes: z.number().optional(),
-  id: z.string().optional(),
-  isCompleted: z.boolean().optional(),
-  metadata: z.array(LmsMetadata$outboundSchema).optional(),
-  progressPercentage: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startedAt: z.date().transform(v => v.toISOString()).optional(),
-  studentId: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    assignedGrade: "assigned_grade",
-    completedAt: "completed_at",
-    contentId: "content_id",
-    courseId: "course_id",
-    createdAt: "created_at",
-    durationMinutes: "duration_minutes",
-    isCompleted: "is_completed",
-    progressPercentage: "progress_percentage",
-    startedAt: "started_at",
-    studentId: "student_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    assignedGrade: z.string().optional(),
+    completedAt: z.date().transform(v => v.toISOString()).optional(),
+    contentId: z.string().optional(),
+    courseId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    durationMinutes: z.number().optional(),
+    id: z.string().optional(),
+    isCompleted: z.boolean().optional(),
+    metadata: z.array(LmsMetadata$outboundSchema).optional(),
+    progressPercentage: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    startedAt: z.date().transform(v => v.toISOString()).optional(),
+    studentId: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      assignedGrade: "assigned_grade",
+      completedAt: "completed_at",
+      contentId: "content_id",
+      courseId: "course_id",
+      createdAt: "created_at",
+      durationMinutes: "duration_minutes",
+      isCompleted: "is_completed",
+      progressPercentage: "progress_percentage",
+      startedAt: "started_at",
+      studentId: "student_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function lmsActivityToJSON(lmsActivity: LmsActivity): string {
   return JSON.stringify(LmsActivity$outboundSchema.parse(lmsActivity));

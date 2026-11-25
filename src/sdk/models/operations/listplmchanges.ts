@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPlmChangesQueryParamFields = {
@@ -67,7 +68,9 @@ export type ListPlmChangesRequest = {
 /** @internal */
 export const ListPlmChangesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListPlmChangesQueryParamFields
-> = z.nativeEnum(ListPlmChangesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListPlmChangesQueryParamFields)
+);
 
 /** @internal */
 export type ListPlmChangesRequest$Outbound = {
@@ -90,26 +93,28 @@ export const ListPlmChangesRequest$outboundSchema: z.ZodType<
   ListPlmChangesRequest$Outbound,
   z.ZodTypeDef,
   ListPlmChangesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPlmChangesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  partId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    partId: "part_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPlmChangesQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    partId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      partId: "part_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPlmChangesRequestToJSON(
   listPlmChangesRequest: ListPlmChangesRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,15 +22,17 @@ export const CommerceItemPrice$inboundSchema: z.ZodType<
   CommerceItemPrice,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  compare_at_price: z.number().optional(),
-  currency: z.string().optional(),
-  price: z.number(),
-}).transform((v) => {
-  return remap$(v, {
-    "compare_at_price": "compareAtPrice",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    compare_at_price: z.number().optional(),
+    currency: z.string().optional(),
+    price: z.number(),
+  }).transform((v) => {
+    return remap$(v, {
+      "compare_at_price": "compareAtPrice",
+    });
+  })
+);
 /** @internal */
 export type CommerceItemPrice$Outbound = {
   compare_at_price?: number | undefined;
@@ -43,15 +45,17 @@ export const CommerceItemPrice$outboundSchema: z.ZodType<
   CommerceItemPrice$Outbound,
   z.ZodTypeDef,
   CommerceItemPrice
-> = z.object({
-  compareAtPrice: z.number().optional(),
-  currency: z.string().optional(),
-  price: z.number(),
-}).transform((v) => {
-  return remap$(v, {
-    compareAtPrice: "compare_at_price",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    compareAtPrice: z.number().optional(),
+    currency: z.string().optional(),
+    price: z.number(),
+  }).transform((v) => {
+    return remap$(v, {
+      compareAtPrice: "compare_at_price",
+    });
+  })
+);
 
 export function commerceItemPriceToJSON(
   commerceItemPrice: CommerceItemPrice,

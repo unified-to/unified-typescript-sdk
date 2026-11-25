@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -41,28 +41,32 @@ export const RepoOrganization$inboundSchema: z.ZodType<
   RepoOrganization,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  avatar_url: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(RepoMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "avatar_url": "avatarUrl",
-    "created_at": "createdAt",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    avatar_url: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(RepoMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "avatar_url": "avatarUrl",
+      "created_at": "createdAt",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type RepoOrganization$Outbound = {
   avatar_url?: string | undefined;
@@ -82,26 +86,28 @@ export const RepoOrganization$outboundSchema: z.ZodType<
   RepoOrganization$Outbound,
   z.ZodTypeDef,
   RepoOrganization
-> = z.object({
-  avatarUrl: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(RepoMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIds: z.array(z.string()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    avatarUrl: "avatar_url",
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    userIds: "user_ids",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    avatarUrl: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(RepoMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIds: z.array(z.string()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      avatarUrl: "avatar_url",
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+      userIds: "user_ids",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function repoOrganizationToJSON(
   repoOrganization: RepoOrganization,

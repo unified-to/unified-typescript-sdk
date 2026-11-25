@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -66,9 +67,10 @@ export type PatchPaymentPaymentRequest = {
 
 /** @internal */
 export const PatchPaymentPaymentQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchPaymentPaymentQueryParamFields> = z.nativeEnum(
-    PatchPaymentPaymentQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchPaymentPaymentQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchPaymentPaymentQueryParamFields)
+    );
 
 /** @internal */
 export type PatchPaymentPaymentRequest$Outbound = {
@@ -84,19 +86,21 @@ export const PatchPaymentPaymentRequest$outboundSchema: z.ZodType<
   PatchPaymentPaymentRequest$Outbound,
   z.ZodTypeDef,
   PatchPaymentPaymentRequest
-> = z.object({
-  paymentPayment: shared.PaymentPayment$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchPaymentPaymentQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    paymentPayment: "PaymentPayment",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    paymentPayment: shared.PaymentPayment$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchPaymentPaymentQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      paymentPayment: "PaymentPayment",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchPaymentPaymentRequestToJSON(
   patchPaymentPaymentRequest: PatchPaymentPaymentRequest,

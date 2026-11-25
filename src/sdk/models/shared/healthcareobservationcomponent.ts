@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -68,35 +68,41 @@ export const HealthcareObservationComponentInterpretation$inboundSchema:
     HealthcareObservationComponentInterpretation,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(HealthcareObservationComponentInterpretation);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(HealthcareObservationComponentInterpretation)
+  );
 /** @internal */
 export const HealthcareObservationComponentInterpretation$outboundSchema:
   z.ZodType<
     string,
     z.ZodTypeDef,
     HealthcareObservationComponentInterpretation
-  > = openEnums.outboundSchema(HealthcareObservationComponentInterpretation);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(HealthcareObservationComponentInterpretation)
+  );
 
 /** @internal */
 export const HealthcareObservationComponent$inboundSchema: z.ZodType<
   HealthcareObservationComponent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  interpretation: HealthcareObservationComponentInterpretation$inboundSchema
-    .optional(),
-  name: z.string().optional(),
-  value_number: z.number().optional(),
-  value_text: z.string().optional(),
-  value_unit: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "value_number": "valueNumber",
-    "value_text": "valueText",
-    "value_unit": "valueUnit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    interpretation: HealthcareObservationComponentInterpretation$inboundSchema
+      .optional(),
+    name: z.string().optional(),
+    value_number: z.number().optional(),
+    value_text: z.string().optional(),
+    value_unit: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "value_number": "valueNumber",
+      "value_text": "valueText",
+      "value_unit": "valueUnit",
+    });
+  })
+);
 /** @internal */
 export type HealthcareObservationComponent$Outbound = {
   codes?: Array<HealthcareCode$Outbound> | undefined;
@@ -112,21 +118,23 @@ export const HealthcareObservationComponent$outboundSchema: z.ZodType<
   HealthcareObservationComponent$Outbound,
   z.ZodTypeDef,
   HealthcareObservationComponent
-> = z.object({
-  codes: z.array(HealthcareCode$outboundSchema).optional(),
-  interpretation: HealthcareObservationComponentInterpretation$outboundSchema
-    .optional(),
-  name: z.string().optional(),
-  valueNumber: z.number().optional(),
-  valueText: z.string().optional(),
-  valueUnit: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    valueNumber: "value_number",
-    valueText: "value_text",
-    valueUnit: "value_unit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    codes: z.array(HealthcareCode$outboundSchema).optional(),
+    interpretation: HealthcareObservationComponentInterpretation$outboundSchema
+      .optional(),
+    name: z.string().optional(),
+    valueNumber: z.number().optional(),
+    valueText: z.string().optional(),
+    valueUnit: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      valueNumber: "value_number",
+      valueText: "value_text",
+      valueUnit: "value_unit",
+    });
+  })
+);
 
 export function healthcareObservationComponentToJSON(
   healthcareObservationComponent: HealthcareObservationComponent,

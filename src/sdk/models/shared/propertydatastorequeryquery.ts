@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -58,37 +58,39 @@ export const SortOrder$inboundSchema: z.ZodType<
   SortOrder,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SortOrder);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SortOrder));
 /** @internal */
 export const SortOrder$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SortOrder
-> = openEnums.outboundSchema(SortOrder);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(SortOrder));
 
 /** @internal */
 export const PropertyDatastoreQueryQuery$inboundSchema: z.ZodType<
   PropertyDatastoreQueryQuery,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  aggregate: PropertyDatastoreQueryQueryAggregate$inboundSchema.optional(),
-  expand: z.record(DatastoreQueryExpand$inboundSchema).optional(),
-  filter: PropertyDatastoreQueryQueryFilter$inboundSchema.optional(),
-  is_count_only: z.boolean().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  select: z.array(z.string()).optional(),
-  sort_fields: z.array(z.string()).optional(),
-  sort_order: SortOrder$inboundSchema.optional(),
-  sql: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_count_only": "isCountOnly",
-    "sort_fields": "sortFields",
-    "sort_order": "sortOrder",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aggregate: PropertyDatastoreQueryQueryAggregate$inboundSchema.optional(),
+    expand: z.record(DatastoreQueryExpand$inboundSchema).optional(),
+    filter: PropertyDatastoreQueryQueryFilter$inboundSchema.optional(),
+    is_count_only: z.boolean().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    select: z.array(z.string()).optional(),
+    sort_fields: z.array(z.string()).optional(),
+    sort_order: SortOrder$inboundSchema.optional(),
+    sql: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_count_only": "isCountOnly",
+      "sort_fields": "sortFields",
+      "sort_order": "sortOrder",
+    });
+  })
+);
 /** @internal */
 export type PropertyDatastoreQueryQuery$Outbound = {
   aggregate?: PropertyDatastoreQueryQueryAggregate$Outbound | undefined;
@@ -108,24 +110,26 @@ export const PropertyDatastoreQueryQuery$outboundSchema: z.ZodType<
   PropertyDatastoreQueryQuery$Outbound,
   z.ZodTypeDef,
   PropertyDatastoreQueryQuery
-> = z.object({
-  aggregate: PropertyDatastoreQueryQueryAggregate$outboundSchema.optional(),
-  expand: z.record(DatastoreQueryExpand$outboundSchema).optional(),
-  filter: PropertyDatastoreQueryQueryFilter$outboundSchema.optional(),
-  isCountOnly: z.boolean().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  select: z.array(z.string()).optional(),
-  sortFields: z.array(z.string()).optional(),
-  sortOrder: SortOrder$outboundSchema.optional(),
-  sql: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isCountOnly: "is_count_only",
-    sortFields: "sort_fields",
-    sortOrder: "sort_order",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aggregate: PropertyDatastoreQueryQueryAggregate$outboundSchema.optional(),
+    expand: z.record(DatastoreQueryExpand$outboundSchema).optional(),
+    filter: PropertyDatastoreQueryQueryFilter$outboundSchema.optional(),
+    isCountOnly: z.boolean().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    select: z.array(z.string()).optional(),
+    sortFields: z.array(z.string()).optional(),
+    sortOrder: SortOrder$outboundSchema.optional(),
+    sql: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isCountOnly: "is_count_only",
+      sortFields: "sort_fields",
+      sortOrder: "sort_order",
+    });
+  })
+);
 
 export function propertyDatastoreQueryQueryToJSON(
   propertyDatastoreQueryQuery: PropertyDatastoreQueryQuery,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const CalendarMetadata1$inboundSchema: z.ZodType<
   CalendarMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CalendarMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const CalendarMetadata1$outboundSchema: z.ZodType<
   CalendarMetadata1$Outbound,
   z.ZodTypeDef,
   CalendarMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function calendarMetadata1ToJSON(
   calendarMetadata1: CalendarMetadata1,
@@ -112,12 +112,14 @@ export const CalendarMetadata5$inboundSchema: z.ZodType<
   CalendarMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CalendarMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CalendarMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CalendarMetadata5$Outbound =
   | CalendarMetadata1$Outbound
@@ -130,12 +132,14 @@ export const CalendarMetadata5$outboundSchema: z.ZodType<
   CalendarMetadata5$Outbound,
   z.ZodTypeDef,
   CalendarMetadata5
-> = z.union([
-  z.lazy(() => CalendarMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CalendarMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function calendarMetadata5ToJSON(
   calendarMetadata5: CalendarMetadata5,
@@ -159,20 +163,22 @@ export const CalendarMetadataExtraData$inboundSchema: z.ZodType<
   CalendarMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CalendarMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CalendarMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type CalendarMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -186,20 +192,22 @@ export const CalendarMetadataExtraData$outboundSchema: z.ZodType<
   CalendarMetadataExtraData$Outbound,
   z.ZodTypeDef,
   CalendarMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CalendarMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CalendarMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function calendarMetadataExtraDataToJSON(
   calendarMetadataExtraData: CalendarMetadataExtraData,
@@ -223,20 +231,24 @@ export const CalendarMetadataFormat$inboundSchema: z.ZodType<
   CalendarMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarMetadataFormat)
+);
 /** @internal */
 export const CalendarMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CalendarMetadataFormat
-> = openEnums.outboundSchema(CalendarMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CalendarMetadataFormat)
+);
 
 /** @internal */
 export const CalendarMetadataSchemas1$inboundSchema: z.ZodType<
   CalendarMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CalendarMetadataSchemas1$Outbound = {};
 
@@ -245,7 +257,7 @@ export const CalendarMetadataSchemas1$outboundSchema: z.ZodType<
   CalendarMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   CalendarMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function calendarMetadataSchemas1ToJSON(
   calendarMetadataSchemas1: CalendarMetadataSchemas1,
@@ -269,12 +281,14 @@ export const CalendarMetadataSchemas5$inboundSchema: z.ZodType<
   CalendarMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CalendarMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CalendarMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CalendarMetadataSchemas5$Outbound =
   | CalendarMetadataSchemas1$Outbound
@@ -287,12 +301,14 @@ export const CalendarMetadataSchemas5$outboundSchema: z.ZodType<
   CalendarMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   CalendarMetadataSchemas5
-> = z.union([
-  z.lazy(() => CalendarMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CalendarMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function calendarMetadataSchemas5ToJSON(
   calendarMetadataSchemas5: CalendarMetadataSchemas5,
@@ -316,20 +332,22 @@ export const CalendarMetadataValue$inboundSchema: z.ZodType<
   CalendarMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CalendarMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CalendarMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type CalendarMetadataValue$Outbound =
   | { [k: string]: any }
@@ -343,20 +361,22 @@ export const CalendarMetadataValue$outboundSchema: z.ZodType<
   CalendarMetadataValue$Outbound,
   z.ZodTypeDef,
   CalendarMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CalendarMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CalendarMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function calendarMetadataValueToJSON(
   calendarMetadataValue: CalendarMetadataValue,
@@ -380,44 +400,46 @@ export const CalendarMetadata$inboundSchema: z.ZodType<
   CalendarMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CalendarMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: CalendarMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CalendarMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CalendarMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: CalendarMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CalendarMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type CalendarMetadata$Outbound = {
   extra_data?:
@@ -445,44 +467,46 @@ export const CalendarMetadata$outboundSchema: z.ZodType<
   CalendarMetadata$Outbound,
   z.ZodTypeDef,
   CalendarMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CalendarMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: CalendarMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CalendarMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CalendarMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: CalendarMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CalendarMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function calendarMetadataToJSON(
   calendarMetadata: CalendarMetadata,

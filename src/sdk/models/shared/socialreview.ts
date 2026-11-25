@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -81,33 +81,37 @@ export const SocialReview$inboundSchema: z.ZodType<
   SocialReview,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  author_avatar_url: z.string().optional(),
-  author_location: z.string().optional(),
-  author_name: z.string().optional(),
-  content: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(SocialMetadata$inboundSchema).optional(),
-  profile_id: z.string().optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reply: PropertySocialReviewReply$inboundSchema.optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "author_avatar_url": "authorAvatarUrl",
-    "author_location": "authorLocation",
-    "author_name": "authorName",
-    "created_at": "createdAt",
-    "profile_id": "profileId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    author_avatar_url: z.string().optional(),
+    author_location: z.string().optional(),
+    author_name: z.string().optional(),
+    content: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    metadata: z.array(SocialMetadata$inboundSchema).optional(),
+    profile_id: z.string().optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reply: PropertySocialReviewReply$inboundSchema.optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "author_avatar_url": "authorAvatarUrl",
+      "author_location": "authorLocation",
+      "author_name": "authorName",
+      "created_at": "createdAt",
+      "profile_id": "profileId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type SocialReview$Outbound = {
   author_avatar_url?: string | undefined;
@@ -131,31 +135,33 @@ export const SocialReview$outboundSchema: z.ZodType<
   SocialReview$Outbound,
   z.ZodTypeDef,
   SocialReview
-> = z.object({
-  authorAvatarUrl: z.string().optional(),
-  authorLocation: z.string().optional(),
-  authorName: z.string().optional(),
-  content: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(SocialMetadata$outboundSchema).optional(),
-  profileId: z.string().optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reply: PropertySocialReviewReply$outboundSchema.optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    authorAvatarUrl: "author_avatar_url",
-    authorLocation: "author_location",
-    authorName: "author_name",
-    createdAt: "created_at",
-    profileId: "profile_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authorAvatarUrl: z.string().optional(),
+    authorLocation: z.string().optional(),
+    authorName: z.string().optional(),
+    content: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    metadata: z.array(SocialMetadata$outboundSchema).optional(),
+    profileId: z.string().optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reply: PropertySocialReviewReply$outboundSchema.optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      authorAvatarUrl: "author_avatar_url",
+      authorLocation: "author_location",
+      authorName: "author_name",
+      createdAt: "created_at",
+      profileId: "profile_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function socialReviewToJSON(socialReview: SocialReview): string {
   return JSON.stringify(SocialReview$outboundSchema.parse(socialReview));

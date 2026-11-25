@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -120,65 +120,73 @@ export const LabelFormat$inboundSchema: z.ZodType<
   LabelFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LabelFormat);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(LabelFormat));
 /** @internal */
 export const LabelFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LabelFormat
-> = openEnums.outboundSchema(LabelFormat);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(LabelFormat));
 
 /** @internal */
 export const ShippingLabelStatus$inboundSchema: z.ZodType<
   ShippingLabelStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ShippingLabelStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ShippingLabelStatus)
+);
 /** @internal */
 export const ShippingLabelStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ShippingLabelStatus
-> = openEnums.outboundSchema(ShippingLabelStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ShippingLabelStatus)
+);
 
 /** @internal */
 export const ShippingLabel$inboundSchema: z.ZodType<
   ShippingLabel,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_voided: z.boolean().optional(),
-  label_cost: z.number().optional(),
-  label_cost_currency: z.string().optional(),
-  label_format: LabelFormat$inboundSchema.optional(),
-  label_url: z.string().optional(),
-  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
-  rate_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  service_code: z.string().optional(),
-  shipment_id: z.string().optional(),
-  status: ShippingLabelStatus$inboundSchema.optional(),
-  tracking_number: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_voided": "isVoided",
-    "label_cost": "labelCost",
-    "label_cost_currency": "labelCostCurrency",
-    "label_format": "labelFormat",
-    "label_url": "labelUrl",
-    "rate_id": "rateId",
-    "service_code": "serviceCode",
-    "shipment_id": "shipmentId",
-    "tracking_number": "trackingNumber",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    is_voided: z.boolean().optional(),
+    label_cost: z.number().optional(),
+    label_cost_currency: z.string().optional(),
+    label_format: LabelFormat$inboundSchema.optional(),
+    label_url: z.string().optional(),
+    metadata: z.array(ShippingMetadata$inboundSchema).optional(),
+    rate_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    service_code: z.string().optional(),
+    shipment_id: z.string().optional(),
+    status: ShippingLabelStatus$inboundSchema.optional(),
+    tracking_number: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_voided": "isVoided",
+      "label_cost": "labelCost",
+      "label_cost_currency": "labelCostCurrency",
+      "label_format": "labelFormat",
+      "label_url": "labelUrl",
+      "rate_id": "rateId",
+      "service_code": "serviceCode",
+      "shipment_id": "shipmentId",
+      "tracking_number": "trackingNumber",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type ShippingLabel$Outbound = {
   created_at?: string | undefined;
@@ -203,37 +211,39 @@ export const ShippingLabel$outboundSchema: z.ZodType<
   ShippingLabel$Outbound,
   z.ZodTypeDef,
   ShippingLabel
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isVoided: z.boolean().optional(),
-  labelCost: z.number().optional(),
-  labelCostCurrency: z.string().optional(),
-  labelFormat: LabelFormat$outboundSchema.optional(),
-  labelUrl: z.string().optional(),
-  metadata: z.array(ShippingMetadata$outboundSchema).optional(),
-  rateId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  serviceCode: z.string().optional(),
-  shipmentId: z.string().optional(),
-  status: ShippingLabelStatus$outboundSchema.optional(),
-  trackingNumber: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isVoided: "is_voided",
-    labelCost: "label_cost",
-    labelCostCurrency: "label_cost_currency",
-    labelFormat: "label_format",
-    labelUrl: "label_url",
-    rateId: "rate_id",
-    serviceCode: "service_code",
-    shipmentId: "shipment_id",
-    trackingNumber: "tracking_number",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isVoided: z.boolean().optional(),
+    labelCost: z.number().optional(),
+    labelCostCurrency: z.string().optional(),
+    labelFormat: LabelFormat$outboundSchema.optional(),
+    labelUrl: z.string().optional(),
+    metadata: z.array(ShippingMetadata$outboundSchema).optional(),
+    rateId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    serviceCode: z.string().optional(),
+    shipmentId: z.string().optional(),
+    status: ShippingLabelStatus$outboundSchema.optional(),
+    trackingNumber: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isVoided: "is_voided",
+      labelCost: "label_cost",
+      labelCostCurrency: "label_cost_currency",
+      labelFormat: "label_format",
+      labelUrl: "label_url",
+      rateId: "rate_id",
+      serviceCode: "service_code",
+      shipmentId: "shipment_id",
+      trackingNumber: "tracking_number",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function shippingLabelToJSON(shippingLabel: ShippingLabel): string {
   return JSON.stringify(ShippingLabel$outboundSchema.parse(shippingLabel));

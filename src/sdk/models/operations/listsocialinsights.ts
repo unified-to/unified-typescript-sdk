@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListSocialInsightsQueryParamFields = {
@@ -68,7 +69,9 @@ export type ListSocialInsightsRequest = {
 /** @internal */
 export const ListSocialInsightsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListSocialInsightsQueryParamFields
-> = z.nativeEnum(ListSocialInsightsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListSocialInsightsQueryParamFields)
+);
 
 /** @internal */
 export type ListSocialInsightsRequest$Outbound = {
@@ -92,30 +95,33 @@ export const ListSocialInsightsRequest$outboundSchema: z.ZodType<
   ListSocialInsightsRequest$Outbound,
   z.ZodTypeDef,
   ListSocialInsightsRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListSocialInsightsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  postId: z.string().optional(),
-  profileId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    postId: "post_id",
-    profileId: "profile_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListSocialInsightsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    postId: z.string().optional(),
+    profileId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      postId: "post_id",
+      profileId: "profile_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listSocialInsightsRequestToJSON(
   listSocialInsightsRequest: ListSocialInsightsRequest,

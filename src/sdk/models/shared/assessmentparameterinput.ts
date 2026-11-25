@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,15 +22,17 @@ export const AssessmentParameterInput$inboundSchema: z.ZodType<
   AssessmentParameterInput,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  inputs: z.array(z.string()).optional(),
-  name: z.string().optional(),
-  parameter_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "parameter_id": "parameterId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    inputs: z.array(z.string()).optional(),
+    name: z.string().optional(),
+    parameter_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "parameter_id": "parameterId",
+    });
+  })
+);
 /** @internal */
 export type AssessmentParameterInput$Outbound = {
   inputs?: Array<string> | undefined;
@@ -43,15 +45,17 @@ export const AssessmentParameterInput$outboundSchema: z.ZodType<
   AssessmentParameterInput$Outbound,
   z.ZodTypeDef,
   AssessmentParameterInput
-> = z.object({
-  inputs: z.array(z.string()).optional(),
-  name: z.string().optional(),
-  parameterId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    parameterId: "parameter_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    inputs: z.array(z.string()).optional(),
+    name: z.string().optional(),
+    parameterId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      parameterId: "parameter_id",
+    });
+  })
+);
 
 export function assessmentParameterInputToJSON(
   assessmentParameterInput: AssessmentParameterInput,

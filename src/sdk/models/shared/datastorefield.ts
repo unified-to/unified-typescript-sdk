@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -57,47 +57,53 @@ export const DatastoreFieldType$inboundSchema: z.ZodType<
   DatastoreFieldType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(DatastoreFieldType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(DatastoreFieldType)
+);
 /** @internal */
 export const DatastoreFieldType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   DatastoreFieldType
-> = openEnums.outboundSchema(DatastoreFieldType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(DatastoreFieldType)
+);
 
 /** @internal */
 export const DatastoreField$inboundSchema: z.ZodType<
   DatastoreField,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  default_value: PropertyDatastoreFieldDefaultValue$inboundSchema.optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_indexed: z.boolean().optional(),
-  is_nullable: z.boolean().optional(),
-  is_primary_key: z.boolean().optional(),
-  is_required: z.boolean().optional(),
-  is_unique: z.boolean().optional(),
-  max_length: z.number().optional(),
-  name: z.string(),
-  original_type: z.string(),
-  precision: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  scale: z.number().optional(),
-  type: DatastoreFieldType$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "default_value": "defaultValue",
-    "is_indexed": "isIndexed",
-    "is_nullable": "isNullable",
-    "is_primary_key": "isPrimaryKey",
-    "is_required": "isRequired",
-    "is_unique": "isUnique",
-    "max_length": "maxLength",
-    "original_type": "originalType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    default_value: PropertyDatastoreFieldDefaultValue$inboundSchema.optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_indexed: z.boolean().optional(),
+    is_nullable: z.boolean().optional(),
+    is_primary_key: z.boolean().optional(),
+    is_required: z.boolean().optional(),
+    is_unique: z.boolean().optional(),
+    max_length: z.number().optional(),
+    name: z.string(),
+    original_type: z.string(),
+    precision: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    scale: z.number().optional(),
+    type: DatastoreFieldType$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "default_value": "defaultValue",
+      "is_indexed": "isIndexed",
+      "is_nullable": "isNullable",
+      "is_primary_key": "isPrimaryKey",
+      "is_required": "isRequired",
+      "is_unique": "isUnique",
+      "max_length": "maxLength",
+      "original_type": "originalType",
+    });
+  })
+);
 /** @internal */
 export type DatastoreField$Outbound = {
   default_value?: PropertyDatastoreFieldDefaultValue$Outbound | undefined;
@@ -122,34 +128,36 @@ export const DatastoreField$outboundSchema: z.ZodType<
   DatastoreField$Outbound,
   z.ZodTypeDef,
   DatastoreField
-> = z.object({
-  defaultValue: PropertyDatastoreFieldDefaultValue$outboundSchema.optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isIndexed: z.boolean().optional(),
-  isNullable: z.boolean().optional(),
-  isPrimaryKey: z.boolean().optional(),
-  isRequired: z.boolean().optional(),
-  isUnique: z.boolean().optional(),
-  maxLength: z.number().optional(),
-  name: z.string(),
-  originalType: z.string(),
-  precision: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  scale: z.number().optional(),
-  type: DatastoreFieldType$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    defaultValue: "default_value",
-    isIndexed: "is_indexed",
-    isNullable: "is_nullable",
-    isPrimaryKey: "is_primary_key",
-    isRequired: "is_required",
-    isUnique: "is_unique",
-    maxLength: "max_length",
-    originalType: "original_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    defaultValue: PropertyDatastoreFieldDefaultValue$outboundSchema.optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isIndexed: z.boolean().optional(),
+    isNullable: z.boolean().optional(),
+    isPrimaryKey: z.boolean().optional(),
+    isRequired: z.boolean().optional(),
+    isUnique: z.boolean().optional(),
+    maxLength: z.number().optional(),
+    name: z.string(),
+    originalType: z.string(),
+    precision: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    scale: z.number().optional(),
+    type: DatastoreFieldType$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      defaultValue: "default_value",
+      isIndexed: "is_indexed",
+      isNullable: "is_nullable",
+      isPrimaryKey: "is_primary_key",
+      isRequired: "is_required",
+      isUnique: "is_unique",
+      maxLength: "max_length",
+      originalType: "original_type",
+    });
+  })
+);
 
 export function datastoreFieldToJSON(datastoreField: DatastoreField): string {
   return JSON.stringify(DatastoreField$outboundSchema.parse(datastoreField));

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCommerceReturnsQueryParamFields = {
@@ -59,9 +60,10 @@ export type ListCommerceReturnsRequest = {
 
 /** @internal */
 export const ListCommerceReturnsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCommerceReturnsQueryParamFields> = z.nativeEnum(
-    ListCommerceReturnsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListCommerceReturnsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCommerceReturnsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCommerceReturnsRequest$Outbound = {
@@ -82,25 +84,27 @@ export const ListCommerceReturnsRequest$outboundSchema: z.ZodType<
   ListCommerceReturnsRequest$Outbound,
   z.ZodTypeDef,
   ListCommerceReturnsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCommerceReturnsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orderId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orderId: "order_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCommerceReturnsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orderId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orderId: "order_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCommerceReturnsRequestToJSON(
   listCommerceReturnsRequest: ListCommerceReturnsRequest,

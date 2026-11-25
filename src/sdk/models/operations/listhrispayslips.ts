@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisPayslipsQueryParamFields = {
@@ -78,7 +79,9 @@ export type ListHrisPayslipsRequest = {
 /** @internal */
 export const ListHrisPayslipsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisPayslipsQueryParamFields
-> = z.nativeEnum(ListHrisPayslipsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisPayslipsQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisPayslipsRequest$Outbound = {
@@ -100,26 +103,28 @@ export const ListHrisPayslipsRequest$outboundSchema: z.ZodType<
   ListHrisPayslipsRequest$Outbound,
   z.ZodTypeDef,
   ListHrisPayslipsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListHrisPayslipsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListHrisPayslipsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listHrisPayslipsRequestToJSON(
   listHrisPayslipsRequest: ListHrisPayslipsRequest,

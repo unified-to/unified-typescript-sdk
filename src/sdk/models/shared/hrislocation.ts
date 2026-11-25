@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -66,38 +66,42 @@ export const HrisLocation$inboundSchema: z.ZodType<
   HrisLocation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyHrisLocationAddress$inboundSchema.optional(),
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  external_identifier: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_hq: z.boolean().optional(),
-  language_locale: z.string().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(HrisTelephone$inboundSchema).optional(),
-  timezone: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "external_identifier": "externalIdentifier",
-    "is_active": "isActive",
-    "is_hq": "isHq",
-    "language_locale": "languageLocale",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHrisLocationAddress$inboundSchema.optional(),
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    external_identifier: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_hq: z.boolean().optional(),
+    language_locale: z.string().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(HrisTelephone$inboundSchema).optional(),
+    timezone: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "external_identifier": "externalIdentifier",
+      "is_active": "isActive",
+      "is_hq": "isHq",
+      "language_locale": "languageLocale",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HrisLocation$Outbound = {
   address?: PropertyHrisLocationAddress$Outbound | undefined;
@@ -124,36 +128,38 @@ export const HrisLocation$outboundSchema: z.ZodType<
   HrisLocation$Outbound,
   z.ZodTypeDef,
   HrisLocation
-> = z.object({
-  address: PropertyHrisLocationAddress$outboundSchema.optional(),
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  externalIdentifier: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  isHq: z.boolean().optional(),
-  languageLocale: z.string().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(HrisTelephone$outboundSchema).optional(),
-  timezone: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    createdAt: "created_at",
-    externalIdentifier: "external_identifier",
-    isActive: "is_active",
-    isHq: "is_hq",
-    languageLocale: "language_locale",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHrisLocationAddress$outboundSchema.optional(),
+    companyId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    externalIdentifier: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    isHq: z.boolean().optional(),
+    languageLocale: z.string().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(HrisTelephone$outboundSchema).optional(),
+    timezone: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      createdAt: "created_at",
+      externalIdentifier: "external_identifier",
+      isActive: "is_active",
+      isHq: "is_hq",
+      languageLocale: "language_locale",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function hrisLocationToJSON(hrisLocation: HrisLocation): string {
   return JSON.stringify(HrisLocation$outboundSchema.parse(hrisLocation));

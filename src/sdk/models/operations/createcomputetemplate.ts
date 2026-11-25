@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -51,9 +52,10 @@ export type CreateComputeTemplateRequest = {
 
 /** @internal */
 export const CreateComputeTemplateQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateComputeTemplateQueryParamFields> = z.nativeEnum(
-    CreateComputeTemplateQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateComputeTemplateQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateComputeTemplateQueryParamFields)
+    );
 
 /** @internal */
 export type CreateComputeTemplateRequest$Outbound = {
@@ -68,18 +70,20 @@ export const CreateComputeTemplateRequest$outboundSchema: z.ZodType<
   CreateComputeTemplateRequest$Outbound,
   z.ZodTypeDef,
   CreateComputeTemplateRequest
-> = z.object({
-  computeTemplate: shared.ComputeTemplate$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateComputeTemplateQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    computeTemplate: "ComputeTemplate",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    computeTemplate: shared.ComputeTemplate$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateComputeTemplateQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      computeTemplate: "ComputeTemplate",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createComputeTemplateRequestToJSON(
   createComputeTemplateRequest: CreateComputeTemplateRequest,

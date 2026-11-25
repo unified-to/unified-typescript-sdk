@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetAdsCreativeQueryParamFields = {
@@ -66,7 +67,9 @@ export type GetAdsCreativeRequest = {
 /** @internal */
 export const GetAdsCreativeQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetAdsCreativeQueryParamFields
-> = z.nativeEnum(GetAdsCreativeQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetAdsCreativeQueryParamFields)
+);
 
 /** @internal */
 export type GetAdsCreativeRequest$Outbound = {
@@ -81,16 +84,18 @@ export const GetAdsCreativeRequest$outboundSchema: z.ZodType<
   GetAdsCreativeRequest$Outbound,
   z.ZodTypeDef,
   GetAdsCreativeRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetAdsCreativeQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetAdsCreativeQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getAdsCreativeRequestToJSON(
   getAdsCreativeRequest: GetAdsCreativeRequest,

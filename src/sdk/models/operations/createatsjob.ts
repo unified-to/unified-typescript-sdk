@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -37,6 +38,7 @@ export const CreateAtsJobQueryParamFields = {
   UserId: "user_id",
   Industry: "industry",
   Summary: "summary",
+  Fees: "fees",
   Raw: "raw",
 } as const;
 export type CreateAtsJobQueryParamFields = ClosedEnum<
@@ -62,7 +64,9 @@ export type CreateAtsJobRequest = {
 /** @internal */
 export const CreateAtsJobQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateAtsJobQueryParamFields
-> = z.nativeEnum(CreateAtsJobQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateAtsJobQueryParamFields)
+);
 
 /** @internal */
 export type CreateAtsJobRequest$Outbound = {
@@ -77,17 +81,19 @@ export const CreateAtsJobRequest$outboundSchema: z.ZodType<
   CreateAtsJobRequest$Outbound,
   z.ZodTypeDef,
   CreateAtsJobRequest
-> = z.object({
-  atsJob: shared.AtsJob$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAtsJobQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    atsJob: "AtsJob",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    atsJob: shared.AtsJob$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAtsJobQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      atsJob: "AtsJob",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAtsJobRequestToJSON(
   createAtsJobRequest: CreateAtsJobRequest,

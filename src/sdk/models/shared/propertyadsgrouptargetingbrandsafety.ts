@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -34,23 +34,25 @@ export const PropertyAdsGroupTargetingBrandSafety$inboundSchema: z.ZodType<
   PropertyAdsGroupTargetingBrandSafety,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  block_list_ids: z.array(z.string()).optional(),
-  brand_safety_content_filter_levels: z.array(z.string()).optional(),
-  excluded_content_labels: z.array(z.string()).optional(),
-  excluded_publisher_categories: z.array(z.string()).optional(),
-  publisher_visibility_categories: z.array(
-    PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategories$inboundSchema,
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "block_list_ids": "blockListIds",
-    "brand_safety_content_filter_levels": "brandSafetyContentFilterLevels",
-    "excluded_content_labels": "excludedContentLabels",
-    "excluded_publisher_categories": "excludedPublisherCategories",
-    "publisher_visibility_categories": "publisherVisibilityCategories",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    block_list_ids: z.array(z.string()).optional(),
+    brand_safety_content_filter_levels: z.array(z.string()).optional(),
+    excluded_content_labels: z.array(z.string()).optional(),
+    excluded_publisher_categories: z.array(z.string()).optional(),
+    publisher_visibility_categories: z.array(
+      PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategories$inboundSchema,
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "block_list_ids": "blockListIds",
+      "brand_safety_content_filter_levels": "brandSafetyContentFilterLevels",
+      "excluded_content_labels": "excludedContentLabels",
+      "excluded_publisher_categories": "excludedPublisherCategories",
+      "publisher_visibility_categories": "publisherVisibilityCategories",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsGroupTargetingBrandSafety$Outbound = {
   block_list_ids?: Array<string> | undefined;
@@ -65,23 +67,25 @@ export const PropertyAdsGroupTargetingBrandSafety$outboundSchema: z.ZodType<
   PropertyAdsGroupTargetingBrandSafety$Outbound,
   z.ZodTypeDef,
   PropertyAdsGroupTargetingBrandSafety
-> = z.object({
-  blockListIds: z.array(z.string()).optional(),
-  brandSafetyContentFilterLevels: z.array(z.string()).optional(),
-  excludedContentLabels: z.array(z.string()).optional(),
-  excludedPublisherCategories: z.array(z.string()).optional(),
-  publisherVisibilityCategories: z.array(
-    PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategories$outboundSchema,
-  ).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    blockListIds: "block_list_ids",
-    brandSafetyContentFilterLevels: "brand_safety_content_filter_levels",
-    excludedContentLabels: "excluded_content_labels",
-    excludedPublisherCategories: "excluded_publisher_categories",
-    publisherVisibilityCategories: "publisher_visibility_categories",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    blockListIds: z.array(z.string()).optional(),
+    brandSafetyContentFilterLevels: z.array(z.string()).optional(),
+    excludedContentLabels: z.array(z.string()).optional(),
+    excludedPublisherCategories: z.array(z.string()).optional(),
+    publisherVisibilityCategories: z.array(
+      PropertyAdsGroupTargetingBrandSafetyPublisherVisibilityCategories$outboundSchema,
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      blockListIds: "block_list_ids",
+      brandSafetyContentFilterLevels: "brand_safety_content_filter_levels",
+      excludedContentLabels: "excluded_content_labels",
+      excludedPublisherCategories: "excluded_publisher_categories",
+      publisherVisibilityCategories: "publisher_visibility_categories",
+    });
+  })
+);
 
 export function propertyAdsGroupTargetingBrandSafetyToJSON(
   propertyAdsGroupTargetingBrandSafety: PropertyAdsGroupTargetingBrandSafety,

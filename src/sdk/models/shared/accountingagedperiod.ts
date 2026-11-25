@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -31,22 +31,24 @@ export const AccountingAgedPeriod$inboundSchema: z.ZodType<
   AccountingAgedPeriod,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  name: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  sub_items: z.array(AccountingAgedRow$inboundSchema).optional(),
-  total_amount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "start_at": "startAt",
-    "sub_items": "subItems",
-    "total_amount": "totalAmount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    name: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    sub_items: z.array(AccountingAgedRow$inboundSchema).optional(),
+    total_amount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "start_at": "startAt",
+      "sub_items": "subItems",
+      "total_amount": "totalAmount",
+    });
+  })
+);
 
 export function accountingAgedPeriodFromJSON(
   jsonString: string,

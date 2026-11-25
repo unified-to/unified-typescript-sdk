@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisGroupsQueryParamFields = {
@@ -65,7 +66,9 @@ export type ListHrisGroupsRequest = {
 /** @internal */
 export const ListHrisGroupsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisGroupsQueryParamFields
-> = z.nativeEnum(ListHrisGroupsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisGroupsQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisGroupsRequest$Outbound = {
@@ -87,25 +90,27 @@ export const ListHrisGroupsRequest$outboundSchema: z.ZodType<
   ListHrisGroupsRequest$Outbound,
   z.ZodTypeDef,
   ListHrisGroupsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListHrisGroupsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListHrisGroupsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHrisGroupsRequestToJSON(
   listHrisGroupsRequest: ListHrisGroupsRequest,

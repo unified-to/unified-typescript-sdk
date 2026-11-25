@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -66,52 +66,60 @@ export const CommerceCollectionType$inboundSchema: z.ZodType<
   CommerceCollectionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CommerceCollectionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CommerceCollectionType)
+);
 /** @internal */
 export const CommerceCollectionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CommerceCollectionType
-> = openEnums.outboundSchema(CommerceCollectionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CommerceCollectionType)
+);
 
 /** @internal */
 export const CommerceCollection$inboundSchema: z.ZodType<
   CommerceCollection,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_featured: z.boolean().optional(),
-  is_visible: z.boolean().optional(),
-  item_metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  media: z.array(CommerceItemMedia$inboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  name: z.string(),
-  parent_id: z.string().optional(),
-  public_description: z.string().optional(),
-  public_name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  tags: z.array(z.string()).optional(),
-  type: CommerceCollectionType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "is_featured": "isFeatured",
-    "is_visible": "isVisible",
-    "item_metadata": "itemMetadata",
-    "parent_id": "parentId",
-    "public_description": "publicDescription",
-    "public_name": "publicName",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_featured: z.boolean().optional(),
+    is_visible: z.boolean().optional(),
+    item_metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    media: z.array(CommerceItemMedia$inboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    name: z.string(),
+    parent_id: z.string().optional(),
+    public_description: z.string().optional(),
+    public_name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    tags: z.array(z.string()).optional(),
+    type: CommerceCollectionType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "is_featured": "isFeatured",
+      "is_visible": "isVisible",
+      "item_metadata": "itemMetadata",
+      "parent_id": "parentId",
+      "public_description": "publicDescription",
+      "public_name": "publicName",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CommerceCollection$Outbound = {
   created_at?: string | undefined;
@@ -138,37 +146,39 @@ export const CommerceCollection$outboundSchema: z.ZodType<
   CommerceCollection$Outbound,
   z.ZodTypeDef,
   CommerceCollection
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  isFeatured: z.boolean().optional(),
-  isVisible: z.boolean().optional(),
-  itemMetadata: z.array(CommerceMetadata$outboundSchema).optional(),
-  media: z.array(CommerceItemMedia$outboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
-  name: z.string(),
-  parentId: z.string().optional(),
-  publicDescription: z.string().optional(),
-  publicName: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  tags: z.array(z.string()).optional(),
-  type: CommerceCollectionType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isActive: "is_active",
-    isFeatured: "is_featured",
-    isVisible: "is_visible",
-    itemMetadata: "item_metadata",
-    parentId: "parent_id",
-    publicDescription: "public_description",
-    publicName: "public_name",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    isFeatured: z.boolean().optional(),
+    isVisible: z.boolean().optional(),
+    itemMetadata: z.array(CommerceMetadata$outboundSchema).optional(),
+    media: z.array(CommerceItemMedia$outboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$outboundSchema).optional(),
+    name: z.string(),
+    parentId: z.string().optional(),
+    publicDescription: z.string().optional(),
+    publicName: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    tags: z.array(z.string()).optional(),
+    type: CommerceCollectionType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isActive: "is_active",
+      isFeatured: "is_featured",
+      isVisible: "is_visible",
+      itemMetadata: "item_metadata",
+      parentId: "parent_id",
+      publicDescription: "public_description",
+      publicName: "public_name",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function commerceCollectionToJSON(
   commerceCollection: CommerceCollection,

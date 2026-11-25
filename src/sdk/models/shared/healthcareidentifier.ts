@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -48,24 +48,30 @@ export const HealthcareIdentifierType$inboundSchema: z.ZodType<
   HealthcareIdentifierType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareIdentifierType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareIdentifierType)
+);
 /** @internal */
 export const HealthcareIdentifierType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareIdentifierType
-> = openEnums.outboundSchema(HealthcareIdentifierType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareIdentifierType)
+);
 
 /** @internal */
 export const HealthcareIdentifier$inboundSchema: z.ZodType<
   HealthcareIdentifier,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  system: z.string().optional(),
-  type: HealthcareIdentifierType$inboundSchema.optional(),
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    system: z.string().optional(),
+    type: HealthcareIdentifierType$inboundSchema.optional(),
+    value: z.string(),
+  })
+);
 /** @internal */
 export type HealthcareIdentifier$Outbound = {
   system?: string | undefined;
@@ -78,11 +84,13 @@ export const HealthcareIdentifier$outboundSchema: z.ZodType<
   HealthcareIdentifier$Outbound,
   z.ZodTypeDef,
   HealthcareIdentifier
-> = z.object({
-  system: z.string().optional(),
-  type: HealthcareIdentifierType$outboundSchema.optional(),
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    system: z.string().optional(),
+    type: HealthcareIdentifierType$outboundSchema.optional(),
+    value: z.string(),
+  })
+);
 
 export function healthcareIdentifierToJSON(
   healthcareIdentifier: HealthcareIdentifier,

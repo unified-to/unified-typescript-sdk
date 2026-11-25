@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -65,31 +65,33 @@ export const AdsTargetType$inboundSchema: z.ZodType<
   AdsTargetType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsTargetType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AdsTargetType));
 
 /** @internal */
 export const AdsTarget$inboundSchema: z.ZodType<
   AdsTarget,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  audience_count_max: z.number().optional(),
-  audience_count_min: z.number().optional(),
-  id: z.string(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: AdsTargetType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "audience_count_max": "audienceCountMax",
-    "audience_count_min": "audienceCountMin",
-    "is_active": "isActive",
-    "parent_id": "parentId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    audience_count_max: z.number().optional(),
+    audience_count_min: z.number().optional(),
+    id: z.string(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: AdsTargetType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "audience_count_max": "audienceCountMax",
+      "audience_count_min": "audienceCountMin",
+      "is_active": "isActive",
+      "parent_id": "parentId",
+    });
+  })
+);
 
 export function adsTargetFromJSON(
   jsonString: string,

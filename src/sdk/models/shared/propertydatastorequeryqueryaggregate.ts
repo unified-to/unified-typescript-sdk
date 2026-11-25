@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -46,18 +46,20 @@ export const PropertyDatastoreQueryQueryAggregate$inboundSchema: z.ZodType<
   PropertyDatastoreQueryQueryAggregate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  avg: PropertyDatastoreQueryQueryAggregateAvg$inboundSchema.optional(),
-  count: z.boolean().optional(),
-  group_by: z.array(z.string()).optional(),
-  max: PropertyDatastoreQueryQueryAggregateMax$inboundSchema.optional(),
-  min: PropertyDatastoreQueryQueryAggregateMin$inboundSchema.optional(),
-  sum: PropertyDatastoreQueryQueryAggregateSum$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "group_by": "groupBy",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    avg: PropertyDatastoreQueryQueryAggregateAvg$inboundSchema.optional(),
+    count: z.boolean().optional(),
+    group_by: z.array(z.string()).optional(),
+    max: PropertyDatastoreQueryQueryAggregateMax$inboundSchema.optional(),
+    min: PropertyDatastoreQueryQueryAggregateMin$inboundSchema.optional(),
+    sum: PropertyDatastoreQueryQueryAggregateSum$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "group_by": "groupBy",
+    });
+  })
+);
 /** @internal */
 export type PropertyDatastoreQueryQueryAggregate$Outbound = {
   avg?: PropertyDatastoreQueryQueryAggregateAvg$Outbound | undefined;
@@ -73,18 +75,20 @@ export const PropertyDatastoreQueryQueryAggregate$outboundSchema: z.ZodType<
   PropertyDatastoreQueryQueryAggregate$Outbound,
   z.ZodTypeDef,
   PropertyDatastoreQueryQueryAggregate
-> = z.object({
-  avg: PropertyDatastoreQueryQueryAggregateAvg$outboundSchema.optional(),
-  count: z.boolean().optional(),
-  groupBy: z.array(z.string()).optional(),
-  max: PropertyDatastoreQueryQueryAggregateMax$outboundSchema.optional(),
-  min: PropertyDatastoreQueryQueryAggregateMin$outboundSchema.optional(),
-  sum: PropertyDatastoreQueryQueryAggregateSum$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    groupBy: "group_by",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    avg: PropertyDatastoreQueryQueryAggregateAvg$outboundSchema.optional(),
+    count: z.boolean().optional(),
+    groupBy: z.array(z.string()).optional(),
+    max: PropertyDatastoreQueryQueryAggregateMax$outboundSchema.optional(),
+    min: PropertyDatastoreQueryQueryAggregateMin$outboundSchema.optional(),
+    sum: PropertyDatastoreQueryQueryAggregateSum$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      groupBy: "group_by",
+    });
+  })
+);
 
 export function propertyDatastoreQueryQueryAggregateToJSON(
   propertyDatastoreQueryQueryAggregate: PropertyDatastoreQueryQueryAggregate,

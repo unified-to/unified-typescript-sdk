@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListVerificationPackagesQueryParamFields = {
@@ -61,8 +62,10 @@ export type ListVerificationPackagesRequest = {
 
 /** @internal */
 export const ListVerificationPackagesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListVerificationPackagesQueryParamFields> = z
-    .nativeEnum(ListVerificationPackagesQueryParamFields);
+  z.ZodNativeEnum<typeof ListVerificationPackagesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListVerificationPackagesQueryParamFields)
+    );
 
 /** @internal */
 export type ListVerificationPackagesRequest$Outbound = {
@@ -82,23 +85,25 @@ export const ListVerificationPackagesRequest$outboundSchema: z.ZodType<
   ListVerificationPackagesRequest$Outbound,
   z.ZodTypeDef,
   ListVerificationPackagesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListVerificationPackagesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListVerificationPackagesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listVerificationPackagesRequestToJSON(
   listVerificationPackagesRequest: ListVerificationPackagesRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -164,105 +164,115 @@ export const FulfillmentType$inboundSchema: z.ZodType<
   FulfillmentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(FulfillmentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(FulfillmentType));
 /** @internal */
 export const FulfillmentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   FulfillmentType
-> = openEnums.outboundSchema(FulfillmentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(FulfillmentType)
+);
 
 /** @internal */
 export const AccountingSalesorderStatus$inboundSchema: z.ZodType<
   AccountingSalesorderStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingSalesorderStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingSalesorderStatus)
+);
 /** @internal */
 export const AccountingSalesorderStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingSalesorderStatus
-> = openEnums.outboundSchema(AccountingSalesorderStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingSalesorderStatus)
+);
 
 /** @internal */
 export const AccountingSalesorder$inboundSchema: z.ZodType<
   AccountingSalesorder,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  billing_address: PropertyAccountingSalesorderBillingAddress$inboundSchema
-    .optional(),
-  category_ids: z.array(z.string()).optional(),
-  closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  device_id: z.string().optional(),
-  discount_amount: z.number().optional(),
-  employee_user_id: z.string().optional(),
-  fees: z.array(AccountingFee$inboundSchema).optional(),
-  fulfillment_type: FulfillmentType$inboundSchema.optional(),
-  guest_count: z.number().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  order_number: z.string().optional(),
-  organization_id: z.string().optional(),
-  paid_amount: z.number().optional(),
-  payments: z.array(AccountingPaymentReference$inboundSchema).optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  refunded_amount: z.number().optional(),
-  sales_channel: z.string().optional(),
-  service_charge_amount: z.number().optional(),
-  shipping_address: PropertyAccountingSalesorderShippingAddress$inboundSchema
-    .optional(),
-  status: AccountingSalesorderStatus$inboundSchema.optional(),
-  subscription_id: z.string().optional(),
-  subtotal_amount: z.number().optional(),
-  table_id: z.string().optional(),
-  tax_amount: z.number().optional(),
-  tip_amount: z.number().optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "billing_address": "billingAddress",
-    "category_ids": "categoryIds",
-    "closed_at": "closedAt",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "device_id": "deviceId",
-    "discount_amount": "discountAmount",
-    "employee_user_id": "employeeUserId",
-    "fulfillment_type": "fulfillmentType",
-    "guest_count": "guestCount",
-    "location_id": "locationId",
-    "order_number": "orderNumber",
-    "organization_id": "organizationId",
-    "paid_amount": "paidAmount",
-    "posted_at": "postedAt",
-    "refunded_amount": "refundedAmount",
-    "sales_channel": "salesChannel",
-    "service_charge_amount": "serviceChargeAmount",
-    "shipping_address": "shippingAddress",
-    "subscription_id": "subscriptionId",
-    "subtotal_amount": "subtotalAmount",
-    "table_id": "tableId",
-    "tax_amount": "taxAmount",
-    "tip_amount": "tipAmount",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    billing_address: PropertyAccountingSalesorderBillingAddress$inboundSchema
+      .optional(),
+    category_ids: z.array(z.string()).optional(),
+    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    device_id: z.string().optional(),
+    discount_amount: z.number().optional(),
+    employee_user_id: z.string().optional(),
+    fees: z.array(AccountingFee$inboundSchema).optional(),
+    fulfillment_type: FulfillmentType$inboundSchema.optional(),
+    guest_count: z.number().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    order_number: z.string().optional(),
+    organization_id: z.string().optional(),
+    paid_amount: z.number().optional(),
+    payments: z.array(AccountingPaymentReference$inboundSchema).optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    raw: z.record(z.any()).optional(),
+    refunded_amount: z.number().optional(),
+    sales_channel: z.string().optional(),
+    service_charge_amount: z.number().optional(),
+    shipping_address: PropertyAccountingSalesorderShippingAddress$inboundSchema
+      .optional(),
+    status: AccountingSalesorderStatus$inboundSchema.optional(),
+    subscription_id: z.string().optional(),
+    subtotal_amount: z.number().optional(),
+    table_id: z.string().optional(),
+    tax_amount: z.number().optional(),
+    tip_amount: z.number().optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "billing_address": "billingAddress",
+      "category_ids": "categoryIds",
+      "closed_at": "closedAt",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "device_id": "deviceId",
+      "discount_amount": "discountAmount",
+      "employee_user_id": "employeeUserId",
+      "fulfillment_type": "fulfillmentType",
+      "guest_count": "guestCount",
+      "location_id": "locationId",
+      "order_number": "orderNumber",
+      "organization_id": "organizationId",
+      "paid_amount": "paidAmount",
+      "posted_at": "postedAt",
+      "refunded_amount": "refundedAmount",
+      "sales_channel": "salesChannel",
+      "service_charge_amount": "serviceChargeAmount",
+      "shipping_address": "shippingAddress",
+      "subscription_id": "subscriptionId",
+      "subtotal_amount": "subtotalAmount",
+      "table_id": "tableId",
+      "tax_amount": "taxAmount",
+      "tip_amount": "tipAmount",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingSalesorder$Outbound = {
   account_id?: string | undefined;
@@ -311,75 +321,77 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   AccountingSalesorder$Outbound,
   z.ZodTypeDef,
   AccountingSalesorder
-> = z.object({
-  accountId: z.string().optional(),
-  billingAddress: PropertyAccountingSalesorderBillingAddress$outboundSchema
-    .optional(),
-  categoryIds: z.array(z.string()).optional(),
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  deviceId: z.string().optional(),
-  discountAmount: z.number().optional(),
-  employeeUserId: z.string().optional(),
-  fees: z.array(AccountingFee$outboundSchema).optional(),
-  fulfillmentType: FulfillmentType$outboundSchema.optional(),
-  guestCount: z.number().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
-  locationId: z.string().optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  orderNumber: z.string().optional(),
-  organizationId: z.string().optional(),
-  paidAmount: z.number().optional(),
-  payments: z.array(AccountingPaymentReference$outboundSchema).optional(),
-  postedAt: z.date().transform(v => v.toISOString()).optional(),
-  raw: z.record(z.any()).optional(),
-  refundedAmount: z.number().optional(),
-  salesChannel: z.string().optional(),
-  serviceChargeAmount: z.number().optional(),
-  shippingAddress: PropertyAccountingSalesorderShippingAddress$outboundSchema
-    .optional(),
-  status: AccountingSalesorderStatus$outboundSchema.optional(),
-  subscriptionId: z.string().optional(),
-  subtotalAmount: z.number().optional(),
-  tableId: z.string().optional(),
-  taxAmount: z.number().optional(),
-  tipAmount: z.number().optional(),
-  totalAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    billingAddress: "billing_address",
-    categoryIds: "category_ids",
-    closedAt: "closed_at",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    deviceId: "device_id",
-    discountAmount: "discount_amount",
-    employeeUserId: "employee_user_id",
-    fulfillmentType: "fulfillment_type",
-    guestCount: "guest_count",
-    locationId: "location_id",
-    orderNumber: "order_number",
-    organizationId: "organization_id",
-    paidAmount: "paid_amount",
-    postedAt: "posted_at",
-    refundedAmount: "refunded_amount",
-    salesChannel: "sales_channel",
-    serviceChargeAmount: "service_charge_amount",
-    shippingAddress: "shipping_address",
-    subscriptionId: "subscription_id",
-    subtotalAmount: "subtotal_amount",
-    tableId: "table_id",
-    taxAmount: "tax_amount",
-    tipAmount: "tip_amount",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    billingAddress: PropertyAccountingSalesorderBillingAddress$outboundSchema
+      .optional(),
+    categoryIds: z.array(z.string()).optional(),
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    deviceId: z.string().optional(),
+    discountAmount: z.number().optional(),
+    employeeUserId: z.string().optional(),
+    fees: z.array(AccountingFee$outboundSchema).optional(),
+    fulfillmentType: FulfillmentType$outboundSchema.optional(),
+    guestCount: z.number().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+    locationId: z.string().optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    orderNumber: z.string().optional(),
+    organizationId: z.string().optional(),
+    paidAmount: z.number().optional(),
+    payments: z.array(AccountingPaymentReference$outboundSchema).optional(),
+    postedAt: z.date().transform(v => v.toISOString()).optional(),
+    raw: z.record(z.any()).optional(),
+    refundedAmount: z.number().optional(),
+    salesChannel: z.string().optional(),
+    serviceChargeAmount: z.number().optional(),
+    shippingAddress: PropertyAccountingSalesorderShippingAddress$outboundSchema
+      .optional(),
+    status: AccountingSalesorderStatus$outboundSchema.optional(),
+    subscriptionId: z.string().optional(),
+    subtotalAmount: z.number().optional(),
+    tableId: z.string().optional(),
+    taxAmount: z.number().optional(),
+    tipAmount: z.number().optional(),
+    totalAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      billingAddress: "billing_address",
+      categoryIds: "category_ids",
+      closedAt: "closed_at",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      deviceId: "device_id",
+      discountAmount: "discount_amount",
+      employeeUserId: "employee_user_id",
+      fulfillmentType: "fulfillment_type",
+      guestCount: "guest_count",
+      locationId: "location_id",
+      orderNumber: "order_number",
+      organizationId: "organization_id",
+      paidAmount: "paid_amount",
+      postedAt: "posted_at",
+      refundedAmount: "refunded_amount",
+      salesChannel: "sales_channel",
+      serviceChargeAmount: "service_charge_amount",
+      shippingAddress: "shipping_address",
+      subscriptionId: "subscription_id",
+      subtotalAmount: "subtotal_amount",
+      tableId: "table_id",
+      taxAmount: "tax_amount",
+      tipAmount: "tip_amount",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingSalesorderToJSON(
   accountingSalesorder: AccountingSalesorder,

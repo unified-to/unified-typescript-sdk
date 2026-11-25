@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const QueryParamCategories = {
@@ -48,6 +49,9 @@ export const QueryParamCategories = {
   Property: "property",
   Plm: "plm",
   Qms: "qms",
+  Dms: "dms",
+  Fhir: "fhir",
+  Printing: "printing",
 } as const;
 export type QueryParamCategories = ClosedEnum<typeof QueryParamCategories>;
 
@@ -74,7 +78,7 @@ export type ListUnifiedIntegrationWorkspacesRequest = {
 /** @internal */
 export const QueryParamCategories$outboundSchema: z.ZodNativeEnum<
   typeof QueryParamCategories
-> = z.nativeEnum(QueryParamCategories);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(QueryParamCategories));
 
 /** @internal */
 export type ListUnifiedIntegrationWorkspacesRequest$Outbound = {
@@ -93,21 +97,23 @@ export const ListUnifiedIntegrationWorkspacesRequest$outboundSchema: z.ZodType<
   ListUnifiedIntegrationWorkspacesRequest$Outbound,
   z.ZodTypeDef,
   ListUnifiedIntegrationWorkspacesRequest
-> = z.object({
-  active: z.boolean().optional(),
-  categories: z.array(QueryParamCategories$outboundSchema).optional(),
-  env: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  summary: z.boolean().optional(),
-  updatedGte: z.string().optional(),
-  workspaceId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    updatedGte: "updated_gte",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    active: z.boolean().optional(),
+    categories: z.array(QueryParamCategories$outboundSchema).optional(),
+    env: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    summary: z.boolean().optional(),
+    updatedGte: z.string().optional(),
+    workspaceId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      updatedGte: "updated_gte",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function listUnifiedIntegrationWorkspacesRequestToJSON(
   listUnifiedIntegrationWorkspacesRequest:

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingAccountsQueryParamFields = {
@@ -65,9 +66,10 @@ export type ListAccountingAccountsRequest = {
 
 /** @internal */
 export const ListAccountingAccountsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingAccountsQueryParamFields> = z.nativeEnum(
-    ListAccountingAccountsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAccountingAccountsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingAccountsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingAccountsRequest$Outbound = {
@@ -89,26 +91,28 @@ export const ListAccountingAccountsRequest$outboundSchema: z.ZodType<
   ListAccountingAccountsRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingAccountsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAccountingAccountsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAccountingAccountsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingAccountsRequestToJSON(
   listAccountingAccountsRequest: ListAccountingAccountsRequest,

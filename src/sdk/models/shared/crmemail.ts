@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -26,23 +26,25 @@ export const CrmEmailType$inboundSchema: z.ZodType<
   CrmEmailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CrmEmailType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CrmEmailType));
 /** @internal */
 export const CrmEmailType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CrmEmailType
-> = openEnums.outboundSchema(CrmEmailType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(CrmEmailType));
 
 /** @internal */
 export const CrmEmail$inboundSchema: z.ZodType<
   CrmEmail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string().optional(),
-  type: CrmEmailType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    type: CrmEmailType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type CrmEmail$Outbound = {
   email?: string | undefined;
@@ -54,10 +56,12 @@ export const CrmEmail$outboundSchema: z.ZodType<
   CrmEmail$Outbound,
   z.ZodTypeDef,
   CrmEmail
-> = z.object({
-  email: z.string().optional(),
-  type: CrmEmailType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    type: CrmEmailType$outboundSchema.optional(),
+  })
+);
 
 export function crmEmailToJSON(crmEmail: CrmEmail): string {
   return JSON.stringify(CrmEmail$outboundSchema.parse(crmEmail));

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -54,7 +55,9 @@ export type CreatePlmDocumentRequest = {
 /** @internal */
 export const CreatePlmDocumentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreatePlmDocumentQueryParamFields
-> = z.nativeEnum(CreatePlmDocumentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreatePlmDocumentQueryParamFields)
+);
 
 /** @internal */
 export type CreatePlmDocumentRequest$Outbound = {
@@ -69,17 +72,20 @@ export const CreatePlmDocumentRequest$outboundSchema: z.ZodType<
   CreatePlmDocumentRequest$Outbound,
   z.ZodTypeDef,
   CreatePlmDocumentRequest
-> = z.object({
-  plmDocument: shared.PlmDocument$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreatePlmDocumentQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    plmDocument: "PlmDocument",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    plmDocument: shared.PlmDocument$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreatePlmDocumentQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      plmDocument: "PlmDocument",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createPlmDocumentRequestToJSON(
   createPlmDocumentRequest: CreatePlmDocumentRequest,

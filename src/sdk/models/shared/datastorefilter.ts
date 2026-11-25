@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -23,10 +23,12 @@ export const DatastoreFilter$inboundSchema: z.ZodType<
   DatastoreFilter,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  condition: PropertyDatastoreFilterCondition$inboundSchema,
-  field: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    condition: PropertyDatastoreFilterCondition$inboundSchema,
+    field: z.string(),
+  })
+);
 /** @internal */
 export type DatastoreFilter$Outbound = {
   condition: PropertyDatastoreFilterCondition$Outbound;
@@ -38,10 +40,12 @@ export const DatastoreFilter$outboundSchema: z.ZodType<
   DatastoreFilter$Outbound,
   z.ZodTypeDef,
   DatastoreFilter
-> = z.object({
-  condition: PropertyDatastoreFilterCondition$outboundSchema,
-  field: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    condition: PropertyDatastoreFilterCondition$outboundSchema,
+    field: z.string(),
+  })
+);
 
 export function datastoreFilterToJSON(
   datastoreFilter: DatastoreFilter,

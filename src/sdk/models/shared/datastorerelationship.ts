@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -33,29 +33,35 @@ export const DatastoreRelationshipType$inboundSchema: z.ZodType<
   DatastoreRelationshipType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(DatastoreRelationshipType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(DatastoreRelationshipType)
+);
 /** @internal */
 export const DatastoreRelationshipType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   DatastoreRelationshipType
-> = openEnums.outboundSchema(DatastoreRelationshipType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(DatastoreRelationshipType)
+);
 
 /** @internal */
 export const DatastoreRelationship$inboundSchema: z.ZodType<
   DatastoreRelationship,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  field: z.string(),
-  name: z.string(),
-  table_id: z.string(),
-  type: DatastoreRelationshipType$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "table_id": "tableId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    field: z.string(),
+    name: z.string(),
+    table_id: z.string(),
+    type: DatastoreRelationshipType$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "table_id": "tableId",
+    });
+  })
+);
 /** @internal */
 export type DatastoreRelationship$Outbound = {
   field: string;
@@ -69,16 +75,18 @@ export const DatastoreRelationship$outboundSchema: z.ZodType<
   DatastoreRelationship$Outbound,
   z.ZodTypeDef,
   DatastoreRelationship
-> = z.object({
-  field: z.string(),
-  name: z.string(),
-  tableId: z.string(),
-  type: DatastoreRelationshipType$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    tableId: "table_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    field: z.string(),
+    name: z.string(),
+    tableId: z.string(),
+    type: DatastoreRelationshipType$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      tableId: "table_id",
+    });
+  })
+);
 
 export function datastoreRelationshipToJSON(
   datastoreRelationship: DatastoreRelationship,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as shared from "../shared/index.js";
 
 export type CreateScimGroupsRequest = {
@@ -25,15 +26,17 @@ export const CreateScimGroupsRequest$outboundSchema: z.ZodType<
   CreateScimGroupsRequest$Outbound,
   z.ZodTypeDef,
   CreateScimGroupsRequest
-> = z.object({
-  scimGroup: shared.ScimGroup$outboundSchema,
-  connectionId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    scimGroup: "ScimGroup",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    scimGroup: shared.ScimGroup$outboundSchema,
+    connectionId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      scimGroup: "ScimGroup",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createScimGroupsRequestToJSON(
   createScimGroupsRequest: CreateScimGroupsRequest,

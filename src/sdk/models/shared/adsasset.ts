@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -62,45 +62,49 @@ export const AdsAssetType$inboundSchema: z.ZodType<
   AdsAssetType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsAssetType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AdsAssetType));
 /** @internal */
 export const AdsAssetType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsAssetType
-> = openEnums.outboundSchema(AdsAssetType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(AdsAssetType));
 
 /** @internal */
 export const AdsAsset$inboundSchema: z.ZodType<
   AdsAsset,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  content: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  file_size: z.number().optional(),
-  height: z.number().optional(),
-  id: z.string().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  mime_type: z.string().optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: AdsAssetType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  width: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "file_size": "fileSize",
-    "mime_type": "mimeType",
-    "organization_id": "organizationId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    file_size: z.number().optional(),
+    height: z.number().optional(),
+    id: z.string().optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    mime_type: z.string().optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: AdsAssetType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    width: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "file_size": "fileSize",
+      "mime_type": "mimeType",
+      "organization_id": "organizationId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AdsAsset$Outbound = {
   content?: string | undefined;
@@ -124,30 +128,32 @@ export const AdsAsset$outboundSchema: z.ZodType<
   AdsAsset$Outbound,
   z.ZodTypeDef,
   AdsAsset
-> = z.object({
-  content: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  fileSize: z.number().optional(),
-  height: z.number().optional(),
-  id: z.string().optional(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
-  mimeType: z.string().optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: AdsAssetType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  width: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    fileSize: "file_size",
-    mimeType: "mime_type",
-    organizationId: "organization_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    fileSize: z.number().optional(),
+    height: z.number().optional(),
+    id: z.string().optional(),
+    metadata: z.array(AdsMetadata$outboundSchema).optional(),
+    mimeType: z.string().optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: AdsAssetType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    width: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      fileSize: "file_size",
+      mimeType: "mime_type",
+      organizationId: "organization_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function adsAssetToJSON(adsAsset: AdsAsset): string {
   return JSON.stringify(AdsAsset$outboundSchema.parse(adsAsset));

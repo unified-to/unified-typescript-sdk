@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [createAccountingQuote](#createaccountingquote) - Create a quote
+* [createPrintingQuote](#createprintingquote) - Create a quote
 * [createPropertyQuote](#createpropertyquote) - Create a quote
 * [getAccountingQuote](#getaccountingquote) - Retrieve a quote
 * [listAccountingQuotes](#listaccountingquotes) - List all quotes
@@ -91,6 +92,231 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## createPrintingQuote
+
+Creates a PrintingQuote. Provide the unified PrintingQuote fields in the request body; they are mapped to the provider's API. Returns the created PrintingQuote.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createPrintingQuote" method="post" path="/printing/{connection_id}/quote" example="printing_quote" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.quote.createPrintingQuote({
+    printingQuote: {
+      createdAt: new Date("2019-01-02T03:42:06.944Z"),
+      currency: "USD",
+      discountAmount: 0,
+      id: "c2851f92-c271-4f8b-ac4a-8c209ee44bd6",
+      lineitems: [
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/0Y5Bjnoiwx/3057/3113",
+            },
+          ],
+          id: "1",
+          name: "Practical Wooden Salad",
+          quantity: 2,
+          retailPriceAmount: 50.83,
+          unitPriceAmount: 21.72,
+        },
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/rcPUF/2295/1801",
+            },
+          ],
+          id: "2",
+          name: "Handmade Gold Car",
+          quantity: 4,
+          retailPriceAmount: 35.47,
+          sku: "I79GIBCK",
+          unitPriceAmount: 17.64,
+        },
+      ],
+      metadata: [],
+      shippingAddress: {
+        address1: "4290 Garden Street",
+        address2: "Suite 874",
+        city: "Cartwrightshire",
+        companyName: "Kris and Sons",
+        country: "United States",
+        countryCode: "US",
+        email: "jada73@hotmail.com",
+        name: "Heaven Crist",
+        postalCode: "92871",
+        region: "North Carolina",
+        regionCode: "KY",
+        telephone: "653.412.8900 x9387",
+      },
+      shippingAmount: 4.69,
+      shippingMethod: "STANDARD",
+      shippingOptions: [
+        {
+          amount: 4.69,
+          code: "STANDARD",
+          currency: "USD",
+          maxDeliveryDays: 5,
+          minDeliveryDays: 3,
+          name: "Flat Rate (3-5 business days after fulfillment)",
+        },
+        {
+          amount: 12.99,
+          code: "EXPRESS",
+          currency: "USD",
+          maxDeliveryDays: 3,
+          minDeliveryDays: 1,
+          name: "Express (1-3 business days after fulfillment)",
+        },
+      ],
+      subtotalAmount: 114,
+      taxAmount: 9.12,
+      totalAmount: 127.81,
+      updatedAt: new Date("2019-01-02T03:42:06.944Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { quoteCreatePrintingQuote } from "@unified-api/typescript-sdk/funcs/quoteCreatePrintingQuote.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await quoteCreatePrintingQuote(unifiedTo, {
+    printingQuote: {
+      createdAt: new Date("2019-01-02T03:42:06.944Z"),
+      currency: "USD",
+      discountAmount: 0,
+      id: "c2851f92-c271-4f8b-ac4a-8c209ee44bd6",
+      lineitems: [
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/0Y5Bjnoiwx/3057/3113",
+            },
+          ],
+          id: "1",
+          name: "Practical Wooden Salad",
+          quantity: 2,
+          retailPriceAmount: 50.83,
+          unitPriceAmount: 21.72,
+        },
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/rcPUF/2295/1801",
+            },
+          ],
+          id: "2",
+          name: "Handmade Gold Car",
+          quantity: 4,
+          retailPriceAmount: 35.47,
+          sku: "I79GIBCK",
+          unitPriceAmount: 17.64,
+        },
+      ],
+      metadata: [],
+      shippingAddress: {
+        address1: "4290 Garden Street",
+        address2: "Suite 874",
+        city: "Cartwrightshire",
+        companyName: "Kris and Sons",
+        country: "United States",
+        countryCode: "US",
+        email: "jada73@hotmail.com",
+        name: "Heaven Crist",
+        postalCode: "92871",
+        region: "North Carolina",
+        regionCode: "KY",
+        telephone: "653.412.8900 x9387",
+      },
+      shippingAmount: 4.69,
+      shippingMethod: "STANDARD",
+      shippingOptions: [
+        {
+          amount: 4.69,
+          code: "STANDARD",
+          currency: "USD",
+          maxDeliveryDays: 5,
+          minDeliveryDays: 3,
+          name: "Flat Rate (3-5 business days after fulfillment)",
+        },
+        {
+          amount: 12.99,
+          code: "EXPRESS",
+          currency: "USD",
+          maxDeliveryDays: 3,
+          minDeliveryDays: 1,
+          name: "Express (1-3 business days after fulfillment)",
+        },
+      ],
+      subtotalAmount: 114,
+      taxAmount: 9.12,
+      totalAmount: 127.81,
+      updatedAt: new Date("2019-01-02T03:42:06.944Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("quoteCreatePrintingQuote failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreatePrintingQuoteRequest](../../sdk/models/operations/createprintingquoterequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PrintingQuote](../../sdk/models/shared/printingquote.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## createPropertyQuote
 
 Creates a PropertyQuote. Provide the unified PropertyQuote fields in the request body; they are mapped to the provider's API. Returns the created PropertyQuote.
@@ -115,9 +341,9 @@ async function run() {
       createdAt: new Date("2020-12-18T19:14:11.415Z"),
       currency: "USD",
       depositAmount: 594.54,
-      endAt: new Date("2026-12-04"),
+      endAt: new Date("2026-12-10"),
       guests: 2,
-      id: "a8c9c922-d172-4a19-9c54-3c87ff71917b",
+      id: "c391ced4-cee1-4fc4-9ebd-ab601ccba21d",
       lineItems: [
         {
           amount: 1665,
@@ -139,7 +365,7 @@ async function run() {
           type: "TAX",
         },
       ],
-      startAt: new Date("2026-11-25"),
+      startAt: new Date("2026-12-01"),
       totalAmount: 1981.8,
     },
     connectionId: "<id>",
@@ -175,9 +401,9 @@ async function run() {
       createdAt: new Date("2020-12-18T19:14:11.415Z"),
       currency: "USD",
       depositAmount: 594.54,
-      endAt: new Date("2026-12-04"),
+      endAt: new Date("2026-12-10"),
       guests: 2,
-      id: "a8c9c922-d172-4a19-9c54-3c87ff71917b",
+      id: "c391ced4-cee1-4fc4-9ebd-ab601ccba21d",
       lineItems: [
         {
           amount: 1665,
@@ -199,7 +425,7 @@ async function run() {
           type: "TAX",
         },
       ],
-      startAt: new Date("2026-11-25"),
+      startAt: new Date("2026-12-01"),
       totalAmount: 1981.8,
     },
     connectionId: "<id>",

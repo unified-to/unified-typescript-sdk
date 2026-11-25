@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -89,50 +89,52 @@ export const ApiCallType$inboundSchema: z.ZodType<
   ApiCallType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ApiCallType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ApiCallType));
 
 /** @internal */
 export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
-  z.object({
-    connection_id: z.string().optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    endapi_response_time: z.number().optional(),
-    environment: z.string().default("Production"),
-    error: z.string().optional(),
-    external_xref: z.string().optional(),
-    id: z.string().optional(),
-    integration_type: z.string(),
-    ip_address: z.string().optional(),
-    is_billable: z.boolean().optional(),
-    method: z.string(),
-    name: z.string(),
-    path: z.string(),
-    query_params: z.array(z.string()).optional(),
-    size: z.number().optional(),
-    status: z.string(),
-    type: ApiCallType$inboundSchema,
-    unified_response_time: z.number().optional(),
-    user_agent: z.string().optional(),
-    webhook_id: z.string().optional(),
-    workspace_id: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "connection_id": "connectionId",
-      "created_at": "createdAt",
-      "endapi_response_time": "endapiResponseTime",
-      "external_xref": "externalXref",
-      "integration_type": "integrationType",
-      "ip_address": "ipAddress",
-      "is_billable": "isBillable",
-      "query_params": "queryParams",
-      "unified_response_time": "unifiedResponseTime",
-      "user_agent": "userAgent",
-      "webhook_id": "webhookId",
-      "workspace_id": "workspaceId",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      connection_id: z.string().optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      endapi_response_time: z.number().optional(),
+      environment: z.string().default("Production"),
+      error: z.string().optional(),
+      external_xref: z.string().optional(),
+      id: z.string().optional(),
+      integration_type: z.string(),
+      ip_address: z.string().optional(),
+      is_billable: z.boolean().optional(),
+      method: z.string(),
+      name: z.string(),
+      path: z.string(),
+      query_params: z.array(z.string()).optional(),
+      size: z.number().optional(),
+      status: z.string(),
+      type: ApiCallType$inboundSchema,
+      unified_response_time: z.number().optional(),
+      user_agent: z.string().optional(),
+      webhook_id: z.string().optional(),
+      workspace_id: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "connection_id": "connectionId",
+        "created_at": "createdAt",
+        "endapi_response_time": "endapiResponseTime",
+        "external_xref": "externalXref",
+        "integration_type": "integrationType",
+        "ip_address": "ipAddress",
+        "is_billable": "isBillable",
+        "query_params": "queryParams",
+        "unified_response_time": "unifiedResponseTime",
+        "user_agent": "userAgent",
+        "webhook_id": "webhookId",
+        "workspace_id": "workspaceId",
+      });
+    })
+  );
 
 export function apiCallFromJSON(
   jsonString: string,

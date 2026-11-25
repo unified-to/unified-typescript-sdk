@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCrmLeadsQueryParamFields = {
@@ -27,6 +28,7 @@ export const ListCrmLeadsQueryParamFields = {
   Title: "title",
   LinkUrls: "link_urls",
   Metadata: "metadata",
+  VehicleIds: "vehicle_ids",
   Raw: "raw",
 } as const;
 export type ListCrmLeadsQueryParamFields = ClosedEnum<
@@ -75,7 +77,9 @@ export type ListCrmLeadsRequest = {
 /** @internal */
 export const ListCrmLeadsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCrmLeadsQueryParamFields
-> = z.nativeEnum(ListCrmLeadsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCrmLeadsQueryParamFields)
+);
 
 /** @internal */
 export type ListCrmLeadsRequest$Outbound = {
@@ -98,28 +102,30 @@ export const ListCrmLeadsRequest$outboundSchema: z.ZodType<
   ListCrmLeadsRequest$Outbound,
   z.ZodTypeDef,
   ListCrmLeadsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  fields: z.array(ListCrmLeadsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    fields: z.array(ListCrmLeadsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listCrmLeadsRequestToJSON(
   listCrmLeadsRequest: ListCrmLeadsRequest,

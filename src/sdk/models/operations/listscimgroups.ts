@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type ListScimGroupsRequest = {
   /**
@@ -32,18 +33,20 @@ export const ListScimGroupsRequest$outboundSchema: z.ZodType<
   ListScimGroupsRequest$Outbound,
   z.ZodTypeDef,
   ListScimGroupsRequest
-> = z.object({
-  connectionId: z.string(),
-  count: z.number().optional(),
-  filter: z.string().optional(),
-  sortBy: z.string().optional(),
-  sortOrder: z.string().optional(),
-  startIndex: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    count: z.number().optional(),
+    filter: z.string().optional(),
+    sortBy: z.string().optional(),
+    sortOrder: z.string().optional(),
+    startIndex: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function listScimGroupsRequestToJSON(
   listScimGroupsRequest: ListScimGroupsRequest,

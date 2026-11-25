@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAtsActivitiesQueryParamFields = {
@@ -91,7 +92,9 @@ export type ListAtsActivitiesRequest = {
 /** @internal */
 export const ListAtsActivitiesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAtsActivitiesQueryParamFields
-> = z.nativeEnum(ListAtsActivitiesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAtsActivitiesQueryParamFields)
+);
 
 /** @internal */
 export type ListAtsActivitiesRequest$Outbound = {
@@ -118,35 +121,38 @@ export const ListAtsActivitiesRequest$outboundSchema: z.ZodType<
   ListAtsActivitiesRequest$Outbound,
   z.ZodTypeDef,
   ListAtsActivitiesRequest
-> = z.object({
-  applicationId: z.string().optional(),
-  candidateId: z.string().optional(),
-  connectionId: z.string(),
-  documentId: z.string().optional(),
-  fields: z.array(ListAtsActivitiesQueryParamFields$outboundSchema).optional(),
-  interviewId: z.string().optional(),
-  jobId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    applicationId: "application_id",
-    candidateId: "candidate_id",
-    connectionId: "connection_id",
-    documentId: "document_id",
-    interviewId: "interview_id",
-    jobId: "job_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applicationId: z.string().optional(),
+    candidateId: z.string().optional(),
+    connectionId: z.string(),
+    documentId: z.string().optional(),
+    fields: z.array(ListAtsActivitiesQueryParamFields$outboundSchema)
+      .optional(),
+    interviewId: z.string().optional(),
+    jobId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      applicationId: "application_id",
+      candidateId: "candidate_id",
+      connectionId: "connection_id",
+      documentId: "document_id",
+      interviewId: "interview_id",
+      jobId: "job_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listAtsActivitiesRequestToJSON(
   listAtsActivitiesRequest: ListAtsActivitiesRequest,

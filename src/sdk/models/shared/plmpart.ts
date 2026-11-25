@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -144,81 +144,83 @@ export type PlmPart = {
 
 /** @internal */
 export const Source$inboundSchema: z.ZodType<Source, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Source);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Source));
 /** @internal */
 export const Source$outboundSchema: z.ZodType<string, z.ZodTypeDef, Source> =
-  openEnums.outboundSchema(Source);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Source));
 
 /** @internal */
 export const PlmPartStatus$inboundSchema: z.ZodType<
   PlmPartStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PlmPartStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PlmPartStatus));
 /** @internal */
 export const PlmPartStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PlmPartStatus
-> = openEnums.outboundSchema(PlmPartStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(PlmPartStatus));
 
 /** @internal */
 export const PlmPartType$inboundSchema: z.ZodType<
   PlmPartType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PlmPartType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PlmPartType));
 /** @internal */
 export const PlmPartType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PlmPartType
-> = openEnums.outboundSchema(PlmPartType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(PlmPartType));
 
 /** @internal */
 export const PlmPart$inboundSchema: z.ZodType<PlmPart, z.ZodTypeDef, unknown> =
-  z.object({
-    category_id: z.string().optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    description: z.string().optional(),
-    document_ids: z.array(z.string()).optional(),
-    file_ids: z.array(z.string()).optional(),
-    id: z.string().optional(),
-    is_assembly: z.boolean().optional(),
-    lifecycle_state: z.string().optional(),
-    master_identifier: z.string().optional(),
-    metadata: z.array(PlmMetadata$inboundSchema).optional(),
-    name: z.string().optional(),
-    number: z.string().optional(),
-    original_type: z.string().optional(),
-    raw: z.record(z.any()).optional(),
-    revision: z.string().optional(),
-    source: Source$inboundSchema.optional(),
-    status: PlmPartStatus$inboundSchema.optional(),
-    type: PlmPartType$inboundSchema.optional(),
-    unit_of_measure: z.string().optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    url: z.string().optional(),
-    user_id: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "category_id": "categoryId",
-      "created_at": "createdAt",
-      "document_ids": "documentIds",
-      "file_ids": "fileIds",
-      "is_assembly": "isAssembly",
-      "lifecycle_state": "lifecycleState",
-      "master_identifier": "masterIdentifier",
-      "original_type": "originalType",
-      "unit_of_measure": "unitOfMeasure",
-      "updated_at": "updatedAt",
-      "user_id": "userId",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      category_id: z.string().optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      description: z.string().optional(),
+      document_ids: z.array(z.string()).optional(),
+      file_ids: z.array(z.string()).optional(),
+      id: z.string().optional(),
+      is_assembly: z.boolean().optional(),
+      lifecycle_state: z.string().optional(),
+      master_identifier: z.string().optional(),
+      metadata: z.array(PlmMetadata$inboundSchema).optional(),
+      name: z.string().optional(),
+      number: z.string().optional(),
+      original_type: z.string().optional(),
+      raw: z.record(z.any()).optional(),
+      revision: z.string().optional(),
+      source: Source$inboundSchema.optional(),
+      status: PlmPartStatus$inboundSchema.optional(),
+      type: PlmPartType$inboundSchema.optional(),
+      unit_of_measure: z.string().optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      url: z.string().optional(),
+      user_id: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "category_id": "categoryId",
+        "created_at": "createdAt",
+        "document_ids": "documentIds",
+        "file_ids": "fileIds",
+        "is_assembly": "isAssembly",
+        "lifecycle_state": "lifecycleState",
+        "master_identifier": "masterIdentifier",
+        "original_type": "originalType",
+        "unit_of_measure": "unitOfMeasure",
+        "updated_at": "updatedAt",
+        "user_id": "userId",
+      });
+    })
+  );
 /** @internal */
 export type PlmPart$Outbound = {
   category_id?: string | undefined;
@@ -250,44 +252,46 @@ export const PlmPart$outboundSchema: z.ZodType<
   PlmPart$Outbound,
   z.ZodTypeDef,
   PlmPart
-> = z.object({
-  categoryId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  documentIds: z.array(z.string()).optional(),
-  fileIds: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  isAssembly: z.boolean().optional(),
-  lifecycleState: z.string().optional(),
-  masterIdentifier: z.string().optional(),
-  metadata: z.array(PlmMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  originalType: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  revision: z.string().optional(),
-  source: Source$outboundSchema.optional(),
-  status: PlmPartStatus$outboundSchema.optional(),
-  type: PlmPartType$outboundSchema.optional(),
-  unitOfMeasure: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    categoryId: "category_id",
-    createdAt: "created_at",
-    documentIds: "document_ids",
-    fileIds: "file_ids",
-    isAssembly: "is_assembly",
-    lifecycleState: "lifecycle_state",
-    masterIdentifier: "master_identifier",
-    originalType: "original_type",
-    unitOfMeasure: "unit_of_measure",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categoryId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    documentIds: z.array(z.string()).optional(),
+    fileIds: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    isAssembly: z.boolean().optional(),
+    lifecycleState: z.string().optional(),
+    masterIdentifier: z.string().optional(),
+    metadata: z.array(PlmMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    originalType: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    revision: z.string().optional(),
+    source: Source$outboundSchema.optional(),
+    status: PlmPartStatus$outboundSchema.optional(),
+    type: PlmPartType$outboundSchema.optional(),
+    unitOfMeasure: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      categoryId: "category_id",
+      createdAt: "created_at",
+      documentIds: "document_ids",
+      fileIds: "file_ids",
+      isAssembly: "is_assembly",
+      lifecycleState: "lifecycle_state",
+      masterIdentifier: "master_identifier",
+      originalType: "original_type",
+      unitOfMeasure: "unit_of_measure",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function plmPartToJSON(plmPart: PlmPart): string {
   return JSON.stringify(PlmPart$outboundSchema.parse(plmPart));

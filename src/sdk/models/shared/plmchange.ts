@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -104,73 +104,81 @@ export const PlmChangeStatus$inboundSchema: z.ZodType<
   PlmChangeStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PlmChangeStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PlmChangeStatus));
 /** @internal */
 export const PlmChangeStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PlmChangeStatus
-> = openEnums.outboundSchema(PlmChangeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PlmChangeStatus)
+);
 
 /** @internal */
 export const PlmChangeType$inboundSchema: z.ZodType<
   PlmChangeType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PlmChangeType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PlmChangeType));
 /** @internal */
 export const PlmChangeType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PlmChangeType
-> = openEnums.outboundSchema(PlmChangeType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(PlmChangeType));
 
 /** @internal */
 export const PlmChange$inboundSchema: z.ZodType<
   PlmChange,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  affected_items: z.array(PlmAffectedItem$inboundSchema).optional(),
-  approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  category_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  effective_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  implemented_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  metadata: z.array(PlmMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  priority: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: PlmChangeStatus$inboundSchema.optional(),
-  type: PlmChangeType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "affected_items": "affectedItems",
-    "approved_at": "approvedAt",
-    "category_id": "categoryId",
-    "created_at": "createdAt",
-    "effective_at": "effectiveAt",
-    "expires_at": "expiresAt",
-    "implemented_at": "implementedAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    affected_items: z.array(PlmAffectedItem$inboundSchema).optional(),
+    approved_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    category_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    effective_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    implemented_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    metadata: z.array(PlmMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    priority: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: PlmChangeStatus$inboundSchema.optional(),
+    type: PlmChangeType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "affected_items": "affectedItems",
+      "approved_at": "approvedAt",
+      "category_id": "categoryId",
+      "created_at": "createdAt",
+      "effective_at": "effectiveAt",
+      "expires_at": "expiresAt",
+      "implemented_at": "implementedAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type PlmChange$Outbound = {
   affected_items?: Array<PlmAffectedItem$Outbound> | undefined;
@@ -199,39 +207,41 @@ export const PlmChange$outboundSchema: z.ZodType<
   PlmChange$Outbound,
   z.ZodTypeDef,
   PlmChange
-> = z.object({
-  affectedItems: z.array(PlmAffectedItem$outboundSchema).optional(),
-  approvedAt: z.date().transform(v => v.toISOString()).optional(),
-  categoryId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  effectiveAt: z.date().transform(v => v.toISOString()).optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  implementedAt: z.date().transform(v => v.toISOString()).optional(),
-  metadata: z.array(PlmMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  priority: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: PlmChangeStatus$outboundSchema.optional(),
-  type: PlmChangeType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    affectedItems: "affected_items",
-    approvedAt: "approved_at",
-    categoryId: "category_id",
-    createdAt: "created_at",
-    effectiveAt: "effective_at",
-    expiresAt: "expires_at",
-    implementedAt: "implemented_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    affectedItems: z.array(PlmAffectedItem$outboundSchema).optional(),
+    approvedAt: z.date().transform(v => v.toISOString()).optional(),
+    categoryId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    effectiveAt: z.date().transform(v => v.toISOString()).optional(),
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    implementedAt: z.date().transform(v => v.toISOString()).optional(),
+    metadata: z.array(PlmMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    priority: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: PlmChangeStatus$outboundSchema.optional(),
+    type: PlmChangeType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      affectedItems: "affected_items",
+      approvedAt: "approved_at",
+      categoryId: "category_id",
+      createdAt: "created_at",
+      effectiveAt: "effective_at",
+      expiresAt: "expires_at",
+      implementedAt: "implemented_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function plmChangeToJSON(plmChange: PlmChange): string {
   return JSON.stringify(PlmChange$outboundSchema.parse(plmChange));

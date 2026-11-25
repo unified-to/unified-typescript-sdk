@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -109,81 +109,90 @@ export const IntervalUnit$inboundSchema: z.ZodType<
   IntervalUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(IntervalUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(IntervalUnit));
 /** @internal */
 export const IntervalUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   IntervalUnit
-> = openEnums.outboundSchema(IntervalUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(IntervalUnit));
 
 /** @internal */
 export const PaymentSubscriptionStatus$inboundSchema: z.ZodType<
   PaymentSubscriptionStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentSubscriptionStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PaymentSubscriptionStatus)
+);
 /** @internal */
 export const PaymentSubscriptionStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PaymentSubscriptionStatus
-> = openEnums.outboundSchema(PaymentSubscriptionStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PaymentSubscriptionStatus)
+);
 
 /** @internal */
 export const PaymentSubscription$inboundSchema: z.ZodType<
   PaymentSubscription,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  canceled_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  current_period_end_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  current_period_start_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  day_of_month: z.number().optional(),
-  day_of_week: z.number().optional(),
-  description: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  interval: z.number().optional(),
-  interval_unit: IntervalUnit$inboundSchema.optional(),
-  invoice_id: z.string().optional(),
-  lineitems: z.array(PaymentLineitem$inboundSchema).optional(),
-  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
-  month: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: PaymentSubscriptionStatus$inboundSchema.optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "canceled_at": "canceledAt",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "current_period_end_at": "currentPeriodEndAt",
-    "current_period_start_at": "currentPeriodStartAt",
-    "day_of_month": "dayOfMonth",
-    "day_of_week": "dayOfWeek",
-    "end_at": "endAt",
-    "interval_unit": "intervalUnit",
-    "invoice_id": "invoiceId",
-    "start_at": "startAt",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    canceled_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    current_period_end_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    current_period_start_at: z.string().datetime({ offset: true }).transform(
+      v => new Date(v)
+    ).optional(),
+    day_of_month: z.number().optional(),
+    day_of_week: z.number().optional(),
+    description: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    interval: z.number().optional(),
+    interval_unit: IntervalUnit$inboundSchema.optional(),
+    invoice_id: z.string().optional(),
+    lineitems: z.array(PaymentLineitem$inboundSchema).optional(),
+    metadata: z.array(PaymentMetadata$inboundSchema).optional(),
+    month: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: PaymentSubscriptionStatus$inboundSchema.optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "canceled_at": "canceledAt",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "current_period_end_at": "currentPeriodEndAt",
+      "current_period_start_at": "currentPeriodStartAt",
+      "day_of_month": "dayOfMonth",
+      "day_of_week": "dayOfWeek",
+      "end_at": "endAt",
+      "interval_unit": "intervalUnit",
+      "invoice_id": "invoiceId",
+      "start_at": "startAt",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type PaymentSubscription$Outbound = {
   canceled_at?: string | undefined;
@@ -215,46 +224,48 @@ export const PaymentSubscription$outboundSchema: z.ZodType<
   PaymentSubscription$Outbound,
   z.ZodTypeDef,
   PaymentSubscription
-> = z.object({
-  canceledAt: z.date().transform(v => v.toISOString()).optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  currentPeriodEndAt: z.date().transform(v => v.toISOString()).optional(),
-  currentPeriodStartAt: z.date().transform(v => v.toISOString()).optional(),
-  dayOfMonth: z.number().optional(),
-  dayOfWeek: z.number().optional(),
-  description: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  interval: z.number().optional(),
-  intervalUnit: IntervalUnit$outboundSchema.optional(),
-  invoiceId: z.string().optional(),
-  lineitems: z.array(PaymentLineitem$outboundSchema).optional(),
-  metadata: z.array(PaymentMetadata$outboundSchema).optional(),
-  month: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: PaymentSubscriptionStatus$outboundSchema.optional(),
-  totalAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    canceledAt: "canceled_at",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    currentPeriodEndAt: "current_period_end_at",
-    currentPeriodStartAt: "current_period_start_at",
-    dayOfMonth: "day_of_month",
-    dayOfWeek: "day_of_week",
-    endAt: "end_at",
-    intervalUnit: "interval_unit",
-    invoiceId: "invoice_id",
-    startAt: "start_at",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    canceledAt: z.date().transform(v => v.toISOString()).optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    currentPeriodEndAt: z.date().transform(v => v.toISOString()).optional(),
+    currentPeriodStartAt: z.date().transform(v => v.toISOString()).optional(),
+    dayOfMonth: z.number().optional(),
+    dayOfWeek: z.number().optional(),
+    description: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    interval: z.number().optional(),
+    intervalUnit: IntervalUnit$outboundSchema.optional(),
+    invoiceId: z.string().optional(),
+    lineitems: z.array(PaymentLineitem$outboundSchema).optional(),
+    metadata: z.array(PaymentMetadata$outboundSchema).optional(),
+    month: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: PaymentSubscriptionStatus$outboundSchema.optional(),
+    totalAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      canceledAt: "canceled_at",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      currentPeriodEndAt: "current_period_end_at",
+      currentPeriodStartAt: "current_period_start_at",
+      dayOfMonth: "day_of_month",
+      dayOfWeek: "day_of_week",
+      endAt: "end_at",
+      intervalUnit: "interval_unit",
+      invoiceId: "invoice_id",
+      startAt: "start_at",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function paymentSubscriptionToJSON(
   paymentSubscription: PaymentSubscription,

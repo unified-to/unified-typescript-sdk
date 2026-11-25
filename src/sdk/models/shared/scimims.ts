@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -33,22 +33,24 @@ export const ScimImsType$inboundSchema: z.ZodType<
   ScimImsType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ScimImsType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ScimImsType));
 /** @internal */
 export const ScimImsType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ScimImsType
-> = openEnums.outboundSchema(ScimImsType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ScimImsType));
 
 /** @internal */
 export const ScimIms$inboundSchema: z.ZodType<ScimIms, z.ZodTypeDef, unknown> =
-  z.object({
-    display: z.string().optional(),
-    primary: z.boolean().optional(),
-    type: ScimImsType$inboundSchema.optional(),
-    value: z.string().optional(),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      display: z.string().optional(),
+      primary: z.boolean().optional(),
+      type: ScimImsType$inboundSchema.optional(),
+      value: z.string().optional(),
+    })
+  );
 /** @internal */
 export type ScimIms$Outbound = {
   display?: string | undefined;
@@ -62,12 +64,14 @@ export const ScimIms$outboundSchema: z.ZodType<
   ScimIms$Outbound,
   z.ZodTypeDef,
   ScimIms
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: ScimImsType$outboundSchema.optional(),
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: ScimImsType$outboundSchema.optional(),
+    value: z.string().optional(),
+  })
+);
 
 export function scimImsToJSON(scimIms: ScimIms): string {
   return JSON.stringify(ScimIms$outboundSchema.parse(scimIms));

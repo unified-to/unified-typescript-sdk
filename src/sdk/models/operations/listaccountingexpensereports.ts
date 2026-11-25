@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingExpensereportsQueryParamFields = {
@@ -90,8 +91,10 @@ export type ListAccountingExpensereportsRequest = {
 
 /** @internal */
 export const ListAccountingExpensereportsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingExpensereportsQueryParamFields> = z
-    .nativeEnum(ListAccountingExpensereportsQueryParamFields);
+  z.ZodNativeEnum<typeof ListAccountingExpensereportsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingExpensereportsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingExpensereportsRequest$Outbound = {
@@ -118,36 +121,38 @@ export const ListAccountingExpensereportsRequest$outboundSchema: z.ZodType<
   ListAccountingExpensereportsRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingExpensereportsRequest
-> = z.object({
-  approverUserId: z.string().optional(),
-  categoryId: z.string().optional(),
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAccountingExpensereportsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    approverUserId: "approver_user_id",
-    categoryId: "category_id",
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    orgId: "org_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    approverUserId: z.string().optional(),
+    categoryId: z.string().optional(),
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAccountingExpensereportsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      approverUserId: "approver_user_id",
+      categoryId: "category_id",
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      orgId: "org_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listAccountingExpensereportsRequestToJSON(
   listAccountingExpensereportsRequest: ListAccountingExpensereportsRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { ClubsMetadata, ClubsMetadata$inboundSchema } from "./clubsmetadata.js";
@@ -66,28 +66,32 @@ export const ClubsLocation$inboundSchema: z.ZodType<
   ClubsLocation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyClubsLocationAddress$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  group_id: z.string().optional(),
-  id: z.string().optional(),
-  latitude: z.number().optional(),
-  longitude: z.number().optional(),
-  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephone: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "group_id": "groupId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyClubsLocationAddress$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    group_id: z.string().optional(),
+    id: z.string().optional(),
+    latitude: z.number().optional(),
+    longitude: z.number().optional(),
+    metadata: z.array(ClubsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephone: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "group_id": "groupId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function clubsLocationFromJSON(
   jsonString: string,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListShippingShipmentsQueryParamFields = {
@@ -94,9 +95,10 @@ export type ListShippingShipmentsRequest = {
 
 /** @internal */
 export const ListShippingShipmentsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListShippingShipmentsQueryParamFields> = z.nativeEnum(
-    ListShippingShipmentsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListShippingShipmentsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListShippingShipmentsQueryParamFields)
+    );
 
 /** @internal */
 export type ListShippingShipmentsRequest$Outbound = {
@@ -119,29 +121,31 @@ export const ListShippingShipmentsRequest$outboundSchema: z.ZodType<
   ListShippingShipmentsRequest$Outbound,
   z.ZodTypeDef,
   ListShippingShipmentsRequest
-> = z.object({
-  carrierId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListShippingShipmentsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orderId: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    carrierId: "carrier_id",
-    connectionId: "connection_id",
-    orderId: "order_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    carrierId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListShippingShipmentsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orderId: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      carrierId: "carrier_id",
+      connectionId: "connection_id",
+      orderId: "order_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listShippingShipmentsRequestToJSON(
   listShippingShipmentsRequest: ListShippingShipmentsRequest,

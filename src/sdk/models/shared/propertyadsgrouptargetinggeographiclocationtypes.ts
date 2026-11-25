@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -21,13 +22,15 @@ export const PropertyAdsGroupTargetingGeographicLocationTypes$inboundSchema:
     PropertyAdsGroupTargetingGeographicLocationTypes,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsGroupTargetingGeographicLocationTypes);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsGroupTargetingGeographicLocationTypes)
+  );
 /** @internal */
 export const PropertyAdsGroupTargetingGeographicLocationTypes$outboundSchema:
   z.ZodType<
     string,
     z.ZodTypeDef,
     PropertyAdsGroupTargetingGeographicLocationTypes
-  > = openEnums.outboundSchema(
-    PropertyAdsGroupTargetingGeographicLocationTypes,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(PropertyAdsGroupTargetingGeographicLocationTypes)
   );

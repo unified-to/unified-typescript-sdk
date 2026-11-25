@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -86,51 +86,55 @@ export const LmsContent$inboundSchema: z.ZodType<
   LmsContent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  categories: z.array(z.string()).optional(),
-  collection_ids: z.array(z.string()).optional(),
-  course_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  difficulty: z.string().optional(),
-  duration_minutes: z.number().optional(),
-  external_reference: z.string().optional(),
-  id: z.string().optional(),
-  instructors: z.array(LmsReference$inboundSchema).optional(),
-  is_active: z.boolean().optional(),
-  languages: z.array(z.string()).optional(),
-  localizations: z.array(LmsContentLocalization$inboundSchema).optional(),
-  media: z.array(LmsMedia$inboundSchema).optional(),
-  metadata: z.array(LmsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  provider_name: z.string().optional(),
-  published_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  raw: z.record(z.any()).optional(),
-  short_description: z.string().optional(),
-  skills: z.array(z.string()).optional(),
-  sort_order: z.number().optional(),
-  subjects: z.array(LmsSubject$inboundSchema).optional(),
-  tags: z.array(z.string()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "collection_ids": "collectionIds",
-    "course_ids": "courseIds",
-    "created_at": "createdAt",
-    "duration_minutes": "durationMinutes",
-    "external_reference": "externalReference",
-    "is_active": "isActive",
-    "provider_name": "providerName",
-    "published_at": "publishedAt",
-    "short_description": "shortDescription",
-    "sort_order": "sortOrder",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categories: z.array(z.string()).optional(),
+    collection_ids: z.array(z.string()).optional(),
+    course_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    difficulty: z.string().optional(),
+    duration_minutes: z.number().optional(),
+    external_reference: z.string().optional(),
+    id: z.string().optional(),
+    instructors: z.array(LmsReference$inboundSchema).optional(),
+    is_active: z.boolean().optional(),
+    languages: z.array(z.string()).optional(),
+    localizations: z.array(LmsContentLocalization$inboundSchema).optional(),
+    media: z.array(LmsMedia$inboundSchema).optional(),
+    metadata: z.array(LmsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    provider_name: z.string().optional(),
+    published_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    raw: z.record(z.any()).optional(),
+    short_description: z.string().optional(),
+    skills: z.array(z.string()).optional(),
+    sort_order: z.number().optional(),
+    subjects: z.array(LmsSubject$inboundSchema).optional(),
+    tags: z.array(z.string()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "collection_ids": "collectionIds",
+      "course_ids": "courseIds",
+      "created_at": "createdAt",
+      "duration_minutes": "durationMinutes",
+      "external_reference": "externalReference",
+      "is_active": "isActive",
+      "provider_name": "providerName",
+      "published_at": "publishedAt",
+      "short_description": "shortDescription",
+      "sort_order": "sortOrder",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type LmsContent$Outbound = {
   categories?: Array<string> | undefined;
@@ -165,47 +169,49 @@ export const LmsContent$outboundSchema: z.ZodType<
   LmsContent$Outbound,
   z.ZodTypeDef,
   LmsContent
-> = z.object({
-  categories: z.array(z.string()).optional(),
-  collectionIds: z.array(z.string()).optional(),
-  courseIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  difficulty: z.string().optional(),
-  durationMinutes: z.number().optional(),
-  externalReference: z.string().optional(),
-  id: z.string().optional(),
-  instructors: z.array(LmsReference$outboundSchema).optional(),
-  isActive: z.boolean().optional(),
-  languages: z.array(z.string()).optional(),
-  localizations: z.array(LmsContentLocalization$outboundSchema).optional(),
-  media: z.array(LmsMedia$outboundSchema).optional(),
-  metadata: z.array(LmsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  providerName: z.string().optional(),
-  publishedAt: z.date().transform(v => v.toISOString()).optional(),
-  raw: z.record(z.any()).optional(),
-  shortDescription: z.string().optional(),
-  skills: z.array(z.string()).optional(),
-  sortOrder: z.number().optional(),
-  subjects: z.array(LmsSubject$outboundSchema).optional(),
-  tags: z.array(z.string()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    collectionIds: "collection_ids",
-    courseIds: "course_ids",
-    createdAt: "created_at",
-    durationMinutes: "duration_minutes",
-    externalReference: "external_reference",
-    isActive: "is_active",
-    providerName: "provider_name",
-    publishedAt: "published_at",
-    shortDescription: "short_description",
-    sortOrder: "sort_order",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categories: z.array(z.string()).optional(),
+    collectionIds: z.array(z.string()).optional(),
+    courseIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    difficulty: z.string().optional(),
+    durationMinutes: z.number().optional(),
+    externalReference: z.string().optional(),
+    id: z.string().optional(),
+    instructors: z.array(LmsReference$outboundSchema).optional(),
+    isActive: z.boolean().optional(),
+    languages: z.array(z.string()).optional(),
+    localizations: z.array(LmsContentLocalization$outboundSchema).optional(),
+    media: z.array(LmsMedia$outboundSchema).optional(),
+    metadata: z.array(LmsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    providerName: z.string().optional(),
+    publishedAt: z.date().transform(v => v.toISOString()).optional(),
+    raw: z.record(z.any()).optional(),
+    shortDescription: z.string().optional(),
+    skills: z.array(z.string()).optional(),
+    sortOrder: z.number().optional(),
+    subjects: z.array(LmsSubject$outboundSchema).optional(),
+    tags: z.array(z.string()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      collectionIds: "collection_ids",
+      courseIds: "course_ids",
+      createdAt: "created_at",
+      durationMinutes: "duration_minutes",
+      externalReference: "external_reference",
+      isActive: "is_active",
+      providerName: "provider_name",
+      publishedAt: "published_at",
+      shortDescription: "short_description",
+      sortOrder: "sort_order",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function lmsContentToJSON(lmsContent: LmsContent): string {
   return JSON.stringify(LmsContent$outboundSchema.parse(lmsContent));

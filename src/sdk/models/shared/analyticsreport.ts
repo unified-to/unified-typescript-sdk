@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -48,29 +48,33 @@ export const AnalyticsReport$inboundSchema: z.ZodType<
   AnalyticsReport,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(AnalyticsMetadata$inboundSchema).optional(),
-  metrics: z.array(AnalyticsReportMetrics$inboundSchema).optional(),
-  property_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "property_id": "propertyId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(AnalyticsMetadata$inboundSchema).optional(),
+    metrics: z.array(AnalyticsReportMetrics$inboundSchema).optional(),
+    property_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "property_id": "propertyId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function analyticsReportFromJSON(
   jsonString: string,

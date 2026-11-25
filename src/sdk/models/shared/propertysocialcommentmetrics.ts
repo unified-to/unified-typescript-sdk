@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,15 +24,17 @@ export const PropertySocialCommentMetrics$inboundSchema: z.ZodType<
   PropertySocialCommentMetrics,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  like_count: z.number().optional(),
-  reply_count: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "like_count": "likeCount",
-    "reply_count": "replyCount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    like_count: z.number().optional(),
+    reply_count: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "like_count": "likeCount",
+      "reply_count": "replyCount",
+    });
+  })
+);
 /** @internal */
 export type PropertySocialCommentMetrics$Outbound = {
   like_count?: number | undefined;
@@ -44,15 +46,17 @@ export const PropertySocialCommentMetrics$outboundSchema: z.ZodType<
   PropertySocialCommentMetrics$Outbound,
   z.ZodTypeDef,
   PropertySocialCommentMetrics
-> = z.object({
-  likeCount: z.number().optional(),
-  replyCount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    likeCount: "like_count",
-    replyCount: "reply_count",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    likeCount: z.number().optional(),
+    replyCount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      likeCount: "like_count",
+      replyCount: "reply_count",
+    });
+  })
+);
 
 export function propertySocialCommentMetricsToJSON(
   propertySocialCommentMetrics: PropertySocialCommentMetrics,

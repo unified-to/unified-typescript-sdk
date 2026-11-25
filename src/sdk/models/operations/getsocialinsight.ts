@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetSocialInsightQueryParamFields = {
@@ -44,7 +45,9 @@ export type GetSocialInsightRequest = {
 /** @internal */
 export const GetSocialInsightQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetSocialInsightQueryParamFields
-> = z.nativeEnum(GetSocialInsightQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetSocialInsightQueryParamFields)
+);
 
 /** @internal */
 export type GetSocialInsightRequest$Outbound = {
@@ -59,16 +62,18 @@ export const GetSocialInsightRequest$outboundSchema: z.ZodType<
   GetSocialInsightRequest$Outbound,
   z.ZodTypeDef,
   GetSocialInsightRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetSocialInsightQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetSocialInsightQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getSocialInsightRequestToJSON(
   getSocialInsightRequest: GetSocialInsightRequest,

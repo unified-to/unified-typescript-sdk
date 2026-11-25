@@ -11,5 +11,5 @@ let value: ListAtsCompaniesQueryParamFields = "updated_at";
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "address" | "website_url" | "phone" | "parent_id" | "recruiter_ids" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "address" | "website_url" | "phone" | "parent_id" | "recruiter_ids" | "metadata" | "fees" | "raw"
 ```

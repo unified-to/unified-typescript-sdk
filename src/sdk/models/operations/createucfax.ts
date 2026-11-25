@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -50,7 +51,9 @@ export type CreateUcFaxRequest = {
 /** @internal */
 export const CreateUcFaxQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateUcFaxQueryParamFields
-> = z.nativeEnum(CreateUcFaxQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateUcFaxQueryParamFields)
+);
 
 /** @internal */
 export type CreateUcFaxRequest$Outbound = {
@@ -65,17 +68,19 @@ export const CreateUcFaxRequest$outboundSchema: z.ZodType<
   CreateUcFaxRequest$Outbound,
   z.ZodTypeDef,
   CreateUcFaxRequest
-> = z.object({
-  ucFax: shared.UcFax$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateUcFaxQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    ucFax: "UcFax",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    ucFax: shared.UcFax$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateUcFaxQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      ucFax: "UcFax",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createUcFaxRequestToJSON(
   createUcFaxRequest: CreateUcFaxRequest,

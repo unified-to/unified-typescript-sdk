@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAdsPromotedsQueryParamFields = {
@@ -52,7 +53,9 @@ export type ListAdsPromotedsRequest = {
 /** @internal */
 export const ListAdsPromotedsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAdsPromotedsQueryParamFields
-> = z.nativeEnum(ListAdsPromotedsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAdsPromotedsQueryParamFields)
+);
 
 /** @internal */
 export type ListAdsPromotedsRequest$Outbound = {
@@ -74,25 +77,27 @@ export const ListAdsPromotedsRequest$outboundSchema: z.ZodType<
   ListAdsPromotedsRequest$Outbound,
   z.ZodTypeDef,
   ListAdsPromotedsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAdsPromotedsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAdsPromotedsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAdsPromotedsRequestToJSON(
   listAdsPromotedsRequest: ListAdsPromotedsRequest,

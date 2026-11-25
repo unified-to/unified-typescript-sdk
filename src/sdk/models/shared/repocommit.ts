@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -50,35 +50,39 @@ export const RepoCommit$inboundSchema: z.ZodType<
   RepoCommit,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  branch_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  lines_added: z.number().optional(),
-  lines_changed: z.number().optional(),
-  lines_deleted: z.number().optional(),
-  message: z.string().optional(),
-  metadata: z.array(RepoMetadata$inboundSchema).optional(),
-  pullrequest_ids: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  repo_id: z.string(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "branch_id": "branchId",
-    "created_at": "createdAt",
-    "lines_added": "linesAdded",
-    "lines_changed": "linesChanged",
-    "lines_deleted": "linesDeleted",
-    "pullrequest_ids": "pullrequestIds",
-    "repo_id": "repoId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    branch_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    lines_added: z.number().optional(),
+    lines_changed: z.number().optional(),
+    lines_deleted: z.number().optional(),
+    message: z.string().optional(),
+    metadata: z.array(RepoMetadata$inboundSchema).optional(),
+    pullrequest_ids: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    repo_id: z.string(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "branch_id": "branchId",
+      "created_at": "createdAt",
+      "lines_added": "linesAdded",
+      "lines_changed": "linesChanged",
+      "lines_deleted": "linesDeleted",
+      "pullrequest_ids": "pullrequestIds",
+      "repo_id": "repoId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type RepoCommit$Outbound = {
   branch_id?: string | undefined;
@@ -101,33 +105,35 @@ export const RepoCommit$outboundSchema: z.ZodType<
   RepoCommit$Outbound,
   z.ZodTypeDef,
   RepoCommit
-> = z.object({
-  branchId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  linesAdded: z.number().optional(),
-  linesChanged: z.number().optional(),
-  linesDeleted: z.number().optional(),
-  message: z.string().optional(),
-  metadata: z.array(RepoMetadata$outboundSchema).optional(),
-  pullrequestIds: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  repoId: z.string(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    branchId: "branch_id",
-    createdAt: "created_at",
-    linesAdded: "lines_added",
-    linesChanged: "lines_changed",
-    linesDeleted: "lines_deleted",
-    pullrequestIds: "pullrequest_ids",
-    repoId: "repo_id",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    branchId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    linesAdded: z.number().optional(),
+    linesChanged: z.number().optional(),
+    linesDeleted: z.number().optional(),
+    message: z.string().optional(),
+    metadata: z.array(RepoMetadata$outboundSchema).optional(),
+    pullrequestIds: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    repoId: z.string(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      branchId: "branch_id",
+      createdAt: "created_at",
+      linesAdded: "lines_added",
+      linesChanged: "lines_changed",
+      linesDeleted: "lines_deleted",
+      pullrequestIds: "pullrequest_ids",
+      repoId: "repo_id",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function repoCommitToJSON(repoCommit: RepoCommit): string {
   return JSON.stringify(RepoCommit$outboundSchema.parse(repoCommit));

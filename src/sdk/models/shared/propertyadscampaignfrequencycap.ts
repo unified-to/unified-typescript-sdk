@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -34,34 +34,36 @@ export const TimeUnit$inboundSchema: z.ZodType<
   TimeUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(TimeUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TimeUnit));
 /** @internal */
 export const TimeUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   TimeUnit
-> = openEnums.outboundSchema(TimeUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(TimeUnit));
 
 /** @internal */
 export const PropertyAdsCampaignFrequencyCap$inboundSchema: z.ZodType<
   PropertyAdsCampaignFrequencyCap,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  is_unlimited: z.boolean().optional(),
-  max_impressions: z.number().optional(),
-  max_views: z.number().optional(),
-  time_unit: TimeUnit$inboundSchema.optional(),
-  time_unit_count: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_unlimited": "isUnlimited",
-    "max_impressions": "maxImpressions",
-    "max_views": "maxViews",
-    "time_unit": "timeUnit",
-    "time_unit_count": "timeUnitCount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    is_unlimited: z.boolean().optional(),
+    max_impressions: z.number().optional(),
+    max_views: z.number().optional(),
+    time_unit: TimeUnit$inboundSchema.optional(),
+    time_unit_count: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_unlimited": "isUnlimited",
+      "max_impressions": "maxImpressions",
+      "max_views": "maxViews",
+      "time_unit": "timeUnit",
+      "time_unit_count": "timeUnitCount",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsCampaignFrequencyCap$Outbound = {
   is_unlimited?: boolean | undefined;
@@ -76,21 +78,23 @@ export const PropertyAdsCampaignFrequencyCap$outboundSchema: z.ZodType<
   PropertyAdsCampaignFrequencyCap$Outbound,
   z.ZodTypeDef,
   PropertyAdsCampaignFrequencyCap
-> = z.object({
-  isUnlimited: z.boolean().optional(),
-  maxImpressions: z.number().optional(),
-  maxViews: z.number().optional(),
-  timeUnit: TimeUnit$outboundSchema.optional(),
-  timeUnitCount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isUnlimited: "is_unlimited",
-    maxImpressions: "max_impressions",
-    maxViews: "max_views",
-    timeUnit: "time_unit",
-    timeUnitCount: "time_unit_count",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    isUnlimited: z.boolean().optional(),
+    maxImpressions: z.number().optional(),
+    maxViews: z.number().optional(),
+    timeUnit: TimeUnit$outboundSchema.optional(),
+    timeUnitCount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isUnlimited: "is_unlimited",
+      maxImpressions: "max_impressions",
+      maxViews: "max_views",
+      timeUnit: "time_unit",
+      timeUnitCount: "time_unit_count",
+    });
+  })
+);
 
 export function propertyAdsCampaignFrequencyCapToJSON(
   propertyAdsCampaignFrequencyCap: PropertyAdsCampaignFrequencyCap,

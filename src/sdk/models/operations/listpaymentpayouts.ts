@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPaymentPayoutsQueryParamFields = {
@@ -56,7 +57,9 @@ export type ListPaymentPayoutsRequest = {
 /** @internal */
 export const ListPaymentPayoutsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListPaymentPayoutsQueryParamFields
-> = z.nativeEnum(ListPaymentPayoutsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListPaymentPayoutsQueryParamFields)
+);
 
 /** @internal */
 export type ListPaymentPayoutsRequest$Outbound = {
@@ -76,22 +79,25 @@ export const ListPaymentPayoutsRequest$outboundSchema: z.ZodType<
   ListPaymentPayoutsRequest$Outbound,
   z.ZodTypeDef,
   ListPaymentPayoutsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPaymentPayoutsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPaymentPayoutsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPaymentPayoutsRequestToJSON(
   listPaymentPayoutsRequest: ListPaymentPayoutsRequest,

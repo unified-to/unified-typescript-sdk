@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -61,7 +62,9 @@ export type PatchHrisDeductionRequest = {
 /** @internal */
 export const PatchHrisDeductionQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchHrisDeductionQueryParamFields
-> = z.nativeEnum(PatchHrisDeductionQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchHrisDeductionQueryParamFields)
+);
 
 /** @internal */
 export type PatchHrisDeductionRequest$Outbound = {
@@ -77,18 +80,21 @@ export const PatchHrisDeductionRequest$outboundSchema: z.ZodType<
   PatchHrisDeductionRequest$Outbound,
   z.ZodTypeDef,
   PatchHrisDeductionRequest
-> = z.object({
-  hrisDeduction: shared.HrisDeduction$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchHrisDeductionQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisDeduction: "HrisDeduction",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisDeduction: shared.HrisDeduction$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchHrisDeductionQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisDeduction: "HrisDeduction",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchHrisDeductionRequestToJSON(
   patchHrisDeductionRequest: PatchHrisDeductionRequest,

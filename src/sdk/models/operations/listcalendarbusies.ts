@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCalendarBusiesQueryParamFields = {
@@ -69,7 +70,9 @@ export type ListCalendarBusiesRequest = {
 /** @internal */
 export const ListCalendarBusiesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCalendarBusiesQueryParamFields
-> = z.nativeEnum(ListCalendarBusiesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCalendarBusiesQueryParamFields)
+);
 
 /** @internal */
 export type ListCalendarBusiesRequest$Outbound = {
@@ -94,32 +97,35 @@ export const ListCalendarBusiesRequest$outboundSchema: z.ZodType<
   ListCalendarBusiesRequest$Outbound,
   z.ZodTypeDef,
   ListCalendarBusiesRequest
-> = z.object({
-  calendarId: z.string().optional(),
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListCalendarBusiesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  roomId: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    calendarId: "calendar_id",
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    roomId: "room_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    calendarId: z.string().optional(),
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListCalendarBusiesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    roomId: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      calendarId: "calendar_id",
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      roomId: "room_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listCalendarBusiesRequestToJSON(
   listCalendarBusiesRequest: ListCalendarBusiesRequest,

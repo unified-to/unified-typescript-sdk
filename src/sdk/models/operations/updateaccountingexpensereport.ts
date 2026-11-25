@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -59,8 +60,10 @@ export type UpdateAccountingExpensereportRequest = {
 
 /** @internal */
 export const UpdateAccountingExpensereportQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateAccountingExpensereportQueryParamFields> = z
-    .nativeEnum(UpdateAccountingExpensereportQueryParamFields);
+  z.ZodNativeEnum<typeof UpdateAccountingExpensereportQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAccountingExpensereportQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAccountingExpensereportRequest$Outbound = {
@@ -76,19 +79,22 @@ export const UpdateAccountingExpensereportRequest$outboundSchema: z.ZodType<
   UpdateAccountingExpensereportRequest$Outbound,
   z.ZodTypeDef,
   UpdateAccountingExpensereportRequest
-> = z.object({
-  accountingExpensereport: shared.AccountingExpensereport$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateAccountingExpensereportQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingExpensereport: "AccountingExpensereport",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingExpensereport: shared.AccountingExpensereport$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(
+      UpdateAccountingExpensereportQueryParamFields$outboundSchema,
+    ).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingExpensereport: "AccountingExpensereport",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateAccountingExpensereportRequestToJSON(
   updateAccountingExpensereportRequest: UpdateAccountingExpensereportRequest,

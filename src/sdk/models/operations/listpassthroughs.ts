@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -47,15 +47,17 @@ export const ListPassthroughsRequest$outboundSchema: z.ZodType<
   ListPassthroughsRequest$Outbound,
   z.ZodTypeDef,
   ListPassthroughsRequest
-> = z.object({
-  connectionId: z.string(),
-  path: z.string(),
-  query: z.record(z.any()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    path: z.string(),
+    query: z.record(z.any()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function listPassthroughsRequestToJSON(
   listPassthroughsRequest: ListPassthroughsRequest,
@@ -70,13 +72,15 @@ export const ListPassthroughsResponseResult$inboundSchema: z.ZodType<
   ListPassthroughsResponseResult,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.instanceof(ReadableStream<Uint8Array>),
-  z.any(),
-  z.string(),
-  z.string(),
-  z.string(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ])
+);
 
 export function listPassthroughsResponseResultFromJSON(
   jsonString: string,
@@ -93,21 +97,23 @@ export const ListPassthroughsResponse$inboundSchema: z.ZodType<
   ListPassthroughsResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-  Result: z.union([
-    z.instanceof(ReadableStream<Uint8Array>),
-    z.any(),
-    z.string(),
-    z.string(),
-    z.string(),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-    "Result": "result",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+    Result: z.union([
+      z.instanceof(ReadableStream<Uint8Array>),
+      z.any(),
+      z.string(),
+      z.string(),
+      z.string(),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+      "Result": "result",
+    });
+  })
+);
 
 export function listPassthroughsResponseFromJSON(
   jsonString: string,

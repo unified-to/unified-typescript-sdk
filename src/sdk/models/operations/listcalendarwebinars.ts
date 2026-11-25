@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCalendarWebinarsQueryParamFields = {
@@ -88,9 +89,10 @@ export type ListCalendarWebinarsRequest = {
 
 /** @internal */
 export const ListCalendarWebinarsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCalendarWebinarsQueryParamFields> = z.nativeEnum(
-    ListCalendarWebinarsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListCalendarWebinarsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCalendarWebinarsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCalendarWebinarsRequest$Outbound = {
@@ -113,29 +115,31 @@ export const ListCalendarWebinarsRequest$outboundSchema: z.ZodType<
   ListCalendarWebinarsRequest$Outbound,
   z.ZodTypeDef,
   ListCalendarWebinarsRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListCalendarWebinarsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListCalendarWebinarsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listCalendarWebinarsRequestToJSON(
   listCalendarWebinarsRequest: ListCalendarWebinarsRequest,

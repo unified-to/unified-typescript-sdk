@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -26,18 +26,20 @@ export const FormAnswer$inboundSchema: z.ZodType<
   FormAnswer,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  field_id: z.string(),
-  field_name: z.string().optional(),
-  file_ids: z.array(z.string()).optional(),
-  value: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "field_id": "fieldId",
-    "field_name": "fieldName",
-    "file_ids": "fileIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    field_id: z.string(),
+    field_name: z.string().optional(),
+    file_ids: z.array(z.string()).optional(),
+    value: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "field_id": "fieldId",
+      "field_name": "fieldName",
+      "file_ids": "fileIds",
+    });
+  })
+);
 
 export function formAnswerFromJSON(
   jsonString: string,

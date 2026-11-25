@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -24,10 +25,14 @@ export const PropertyCalendarEventRecurrenceOnDays$inboundSchema: z.ZodType<
   PropertyCalendarEventRecurrenceOnDays,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyCalendarEventRecurrenceOnDays);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyCalendarEventRecurrenceOnDays)
+);
 /** @internal */
 export const PropertyCalendarEventRecurrenceOnDays$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyCalendarEventRecurrenceOnDays
-> = openEnums.outboundSchema(PropertyCalendarEventRecurrenceOnDays);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyCalendarEventRecurrenceOnDays)
+);

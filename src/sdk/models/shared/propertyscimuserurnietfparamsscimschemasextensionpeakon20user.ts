@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -35,8 +35,10 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender
     PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
+    )
   );
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$outboundSchema:
@@ -44,8 +46,10 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender
     string,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender
-  > = openEnums.outboundSchema(
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
+    )
   );
 
 /** @internal */
@@ -54,23 +58,25 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$inbou
     PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    "Date of Birth": z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    Gender:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$inboundSchema
-        .optional(),
-    Manager: z.string().optional(),
-    Team: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "Date of Birth": "dateOfBirth",
-      "Gender": "gender",
-      "Manager": "manager",
-      "Team": "team",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      "Date of Birth": z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      Gender:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$inboundSchema
+          .optional(),
+      Manager: z.string().optional(),
+      Team: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "Date of Birth": "dateOfBirth",
+        "Gender": "gender",
+        "Manager": "manager",
+        "Team": "team",
+      });
+    })
+  );
 /** @internal */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$Outbound =
   {
@@ -86,21 +92,23 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$outbo
     PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$Outbound,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User
-  > = z.object({
-    dateOfBirth: z.date().transform(v => v.toISOString()).optional(),
-    gender:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$outboundSchema
-        .optional(),
-    manager: z.string().optional(),
-    team: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      dateOfBirth: "Date of Birth",
-      gender: "Gender",
-      manager: "Manager",
-      team: "Team",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      dateOfBirth: z.date().transform(v => v.toISOString()).optional(),
+      gender:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$outboundSchema
+          .optional(),
+      manager: z.string().optional(),
+      team: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        dateOfBirth: "Date of Birth",
+        gender: "Gender",
+        manager: "Manager",
+        team: "Team",
+      });
+    })
+  );
 
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserToJSON(
   propertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User:

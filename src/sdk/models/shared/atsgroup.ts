@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -31,24 +31,26 @@ export const AtsGroupType$inboundSchema: z.ZodType<
   AtsGroupType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsGroupType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AtsGroupType));
 /** @internal */
 export const AtsGroupType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsGroupType
-> = openEnums.outboundSchema(AtsGroupType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(AtsGroupType));
 
 /** @internal */
 export const AtsGroup$inboundSchema: z.ZodType<
   AtsGroup,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string().optional(),
-  name: z.string().optional(),
-  type: AtsGroupType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    type: AtsGroupType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type AtsGroup$Outbound = {
   id?: string | undefined;
@@ -61,11 +63,13 @@ export const AtsGroup$outboundSchema: z.ZodType<
   AtsGroup$Outbound,
   z.ZodTypeDef,
   AtsGroup
-> = z.object({
-  id: z.string().optional(),
-  name: z.string().optional(),
-  type: AtsGroupType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    type: AtsGroupType$outboundSchema.optional(),
+  })
+);
 
 export function atsGroupToJSON(atsGroup: AtsGroup): string {
   return JSON.stringify(AtsGroup$outboundSchema.parse(atsGroup));

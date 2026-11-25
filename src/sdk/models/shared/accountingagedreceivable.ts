@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -61,36 +61,40 @@ export const AccountingAgedreceivable$inboundSchema: z.ZodType<
   AccountingAgedreceivable,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  organization_id: z.string().optional(),
-  periods: z.array(AccountingAgedPeriod$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  total_amount: z.number().optional(),
-  total_current_amount: z.number().optional(),
-  total_overdue_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "organization_id": "organizationId",
-    "start_at": "startAt",
-    "total_amount": "totalAmount",
-    "total_current_amount": "totalCurrentAmount",
-    "total_overdue_amount": "totalOverdueAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    organization_id: z.string().optional(),
+    periods: z.array(AccountingAgedPeriod$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    total_amount: z.number().optional(),
+    total_current_amount: z.number().optional(),
+    total_overdue_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "organization_id": "organizationId",
+      "start_at": "startAt",
+      "total_amount": "totalAmount",
+      "total_current_amount": "totalCurrentAmount",
+      "total_overdue_amount": "totalOverdueAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function accountingAgedreceivableFromJSON(
   jsonString: string,

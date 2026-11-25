@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAtsCandidatesQueryParamFields = {
@@ -81,7 +82,9 @@ export type ListAtsCandidatesRequest = {
 /** @internal */
 export const ListAtsCandidatesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAtsCandidatesQueryParamFields
-> = z.nativeEnum(ListAtsCandidatesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAtsCandidatesQueryParamFields)
+);
 
 /** @internal */
 export type ListAtsCandidatesRequest$Outbound = {
@@ -103,26 +106,29 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
   ListAtsCandidatesRequest$Outbound,
   z.ZodTypeDef,
   ListAtsCandidatesRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListAtsCandidatesQueryParamFields$outboundSchema).optional(),
-  jobId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    jobId: "job_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListAtsCandidatesQueryParamFields$outboundSchema)
+      .optional(),
+    jobId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      jobId: "job_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAtsCandidatesRequestToJSON(
   listAtsCandidatesRequest: ListAtsCandidatesRequest,

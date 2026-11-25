@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -141,78 +141,82 @@ export const UcCallStatus$inboundSchema: z.ZodType<
   UcCallStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(UcCallStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(UcCallStatus));
 /** @internal */
 export const UcCallStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   UcCallStatus
-> = openEnums.outboundSchema(UcCallStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(UcCallStatus));
 
 /** @internal */
 export const UcCallType$inboundSchema: z.ZodType<
   UcCallType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(UcCallType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(UcCallType));
 /** @internal */
 export const UcCallType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   UcCallType
-> = openEnums.outboundSchema(UcCallType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(UcCallType));
 
 /** @internal */
-export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
-  .object({
-    answer_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-    contact_id: z.string().optional(),
-    contacts: z.array(UcContact$inboundSchema).optional(),
-    conversation_identifier: z.string().optional(),
-    cost_amount: z.number().optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    currency: z.string().optional(),
-    duration_seconds: z.number().optional(),
-    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-    id: z.string().optional(),
-    instructions: z.array(UcCallInstruction$inboundSchema).optional(),
-    is_private: z.boolean().optional(),
-    metadata: z.array(UcMetadata$inboundSchema).optional(),
-    parent_id: z.string().optional(),
-    raw: z.record(z.any()).optional(),
-    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-    status: UcCallStatus$inboundSchema.optional(),
-    telephone: PropertyUcCallTelephone$inboundSchema.optional(),
-    type: UcCallType$inboundSchema.optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    user_id: z.string().optional(),
-    user_name: z.string().optional(),
-    user_phone: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "answer_at": "answerAt",
-      "contact_id": "contactId",
-      "conversation_identifier": "conversationIdentifier",
-      "cost_amount": "costAmount",
-      "created_at": "createdAt",
-      "duration_seconds": "durationSeconds",
-      "end_at": "endAt",
-      "is_private": "isPrivate",
-      "parent_id": "parentId",
-      "start_at": "startAt",
-      "updated_at": "updatedAt",
-      "user_id": "userId",
-      "user_name": "userName",
-      "user_phone": "userPhone",
-    });
-  });
+export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      answer_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      contact_id: z.string().optional(),
+      contacts: z.array(UcContact$inboundSchema).optional(),
+      conversation_identifier: z.string().optional(),
+      cost_amount: z.number().optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      currency: z.string().optional(),
+      duration_seconds: z.number().optional(),
+      end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+        .optional(),
+      id: z.string().optional(),
+      instructions: z.array(UcCallInstruction$inboundSchema).optional(),
+      is_private: z.boolean().optional(),
+      metadata: z.array(UcMetadata$inboundSchema).optional(),
+      parent_id: z.string().optional(),
+      raw: z.record(z.any()).optional(),
+      start_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      status: UcCallStatus$inboundSchema.optional(),
+      telephone: PropertyUcCallTelephone$inboundSchema.optional(),
+      type: UcCallType$inboundSchema.optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      user_id: z.string().optional(),
+      user_name: z.string().optional(),
+      user_phone: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "answer_at": "answerAt",
+        "contact_id": "contactId",
+        "conversation_identifier": "conversationIdentifier",
+        "cost_amount": "costAmount",
+        "created_at": "createdAt",
+        "duration_seconds": "durationSeconds",
+        "end_at": "endAt",
+        "is_private": "isPrivate",
+        "parent_id": "parentId",
+        "start_at": "startAt",
+        "updated_at": "updatedAt",
+        "user_id": "userId",
+        "user_name": "userName",
+        "user_phone": "userPhone",
+      });
+    })
+  );
 /** @internal */
 export type UcCall$Outbound = {
   answer_at?: string | undefined;
@@ -245,48 +249,50 @@ export const UcCall$outboundSchema: z.ZodType<
   UcCall$Outbound,
   z.ZodTypeDef,
   UcCall
-> = z.object({
-  answerAt: z.date().transform(v => v.toISOString()).optional(),
-  contactId: z.string().optional(),
-  contacts: z.array(UcContact$outboundSchema).optional(),
-  conversationIdentifier: z.string().optional(),
-  costAmount: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  durationSeconds: z.number().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  instructions: z.array(UcCallInstruction$outboundSchema).optional(),
-  isPrivate: z.boolean().optional(),
-  metadata: z.array(UcMetadata$outboundSchema).optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: UcCallStatus$outboundSchema.optional(),
-  telephone: PropertyUcCallTelephone$outboundSchema.optional(),
-  type: UcCallType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  userName: z.string().optional(),
-  userPhone: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    answerAt: "answer_at",
-    contactId: "contact_id",
-    conversationIdentifier: "conversation_identifier",
-    costAmount: "cost_amount",
-    createdAt: "created_at",
-    durationSeconds: "duration_seconds",
-    endAt: "end_at",
-    isPrivate: "is_private",
-    parentId: "parent_id",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    userName: "user_name",
-    userPhone: "user_phone",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answerAt: z.date().transform(v => v.toISOString()).optional(),
+    contactId: z.string().optional(),
+    contacts: z.array(UcContact$outboundSchema).optional(),
+    conversationIdentifier: z.string().optional(),
+    costAmount: z.number().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    durationSeconds: z.number().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    instructions: z.array(UcCallInstruction$outboundSchema).optional(),
+    isPrivate: z.boolean().optional(),
+    metadata: z.array(UcMetadata$outboundSchema).optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: UcCallStatus$outboundSchema.optional(),
+    telephone: PropertyUcCallTelephone$outboundSchema.optional(),
+    type: UcCallType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    userName: z.string().optional(),
+    userPhone: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      answerAt: "answer_at",
+      contactId: "contact_id",
+      conversationIdentifier: "conversation_identifier",
+      costAmount: "cost_amount",
+      createdAt: "created_at",
+      durationSeconds: "duration_seconds",
+      endAt: "end_at",
+      isPrivate: "is_private",
+      parentId: "parent_id",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      userName: "user_name",
+      userPhone: "user_phone",
+    });
+  })
+);
 
 export function ucCallToJSON(ucCall: UcCall): string {
   return JSON.stringify(UcCall$outboundSchema.parse(ucCall));

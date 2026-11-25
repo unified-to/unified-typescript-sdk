@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -28,23 +28,25 @@ export const PropertyCalendarBotRecordingConfig$inboundSchema: z.ZodType<
   PropertyCalendarBotRecordingConfig,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  record_audio: z.boolean().optional(),
-  record_chat: z.boolean().optional(),
-  record_screenshare: z.boolean().optional(),
-  record_transcript: z.boolean().optional(),
-  record_video: z.boolean().optional(),
-  transcription: PropertyCalendarBotRecordingConfigTranscription$inboundSchema
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "record_audio": "recordAudio",
-    "record_chat": "recordChat",
-    "record_screenshare": "recordScreenshare",
-    "record_transcript": "recordTranscript",
-    "record_video": "recordVideo",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    record_audio: z.boolean().optional(),
+    record_chat: z.boolean().optional(),
+    record_screenshare: z.boolean().optional(),
+    record_transcript: z.boolean().optional(),
+    record_video: z.boolean().optional(),
+    transcription: PropertyCalendarBotRecordingConfigTranscription$inboundSchema
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "record_audio": "recordAudio",
+      "record_chat": "recordChat",
+      "record_screenshare": "recordScreenshare",
+      "record_transcript": "recordTranscript",
+      "record_video": "recordVideo",
+    });
+  })
+);
 /** @internal */
 export type PropertyCalendarBotRecordingConfig$Outbound = {
   record_audio?: boolean | undefined;
@@ -62,23 +64,25 @@ export const PropertyCalendarBotRecordingConfig$outboundSchema: z.ZodType<
   PropertyCalendarBotRecordingConfig$Outbound,
   z.ZodTypeDef,
   PropertyCalendarBotRecordingConfig
-> = z.object({
-  recordAudio: z.boolean().optional(),
-  recordChat: z.boolean().optional(),
-  recordScreenshare: z.boolean().optional(),
-  recordTranscript: z.boolean().optional(),
-  recordVideo: z.boolean().optional(),
-  transcription: PropertyCalendarBotRecordingConfigTranscription$outboundSchema
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    recordAudio: "record_audio",
-    recordChat: "record_chat",
-    recordScreenshare: "record_screenshare",
-    recordTranscript: "record_transcript",
-    recordVideo: "record_video",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    recordAudio: z.boolean().optional(),
+    recordChat: z.boolean().optional(),
+    recordScreenshare: z.boolean().optional(),
+    recordTranscript: z.boolean().optional(),
+    recordVideo: z.boolean().optional(),
+    transcription:
+      PropertyCalendarBotRecordingConfigTranscription$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      recordAudio: "record_audio",
+      recordChat: "record_chat",
+      recordScreenshare: "record_screenshare",
+      recordTranscript: "record_transcript",
+      recordVideo: "record_video",
+    });
+  })
+);
 
 export function propertyCalendarBotRecordingConfigToJSON(
   propertyCalendarBotRecordingConfig: PropertyCalendarBotRecordingConfig,

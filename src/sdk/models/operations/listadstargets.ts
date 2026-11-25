@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAdsTargetsQueryParamFields = {
@@ -56,7 +57,9 @@ export type ListAdsTargetsRequest = {
 /** @internal */
 export const ListAdsTargetsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAdsTargetsQueryParamFields
-> = z.nativeEnum(ListAdsTargetsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAdsTargetsQueryParamFields)
+);
 
 /** @internal */
 export type ListAdsTargetsRequest$Outbound = {
@@ -78,25 +81,27 @@ export const ListAdsTargetsRequest$outboundSchema: z.ZodType<
   ListAdsTargetsRequest$Outbound,
   z.ZodTypeDef,
   ListAdsTargetsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAdsTargetsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAdsTargetsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAdsTargetsRequestToJSON(
   listAdsTargetsRequest: ListAdsTargetsRequest,

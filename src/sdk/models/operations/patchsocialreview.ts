@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -50,7 +51,9 @@ export type PatchSocialReviewRequest = {
 /** @internal */
 export const PatchSocialReviewQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchSocialReviewQueryParamFields
-> = z.nativeEnum(PatchSocialReviewQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchSocialReviewQueryParamFields)
+);
 
 /** @internal */
 export type PatchSocialReviewRequest$Outbound = {
@@ -66,18 +69,21 @@ export const PatchSocialReviewRequest$outboundSchema: z.ZodType<
   PatchSocialReviewRequest$Outbound,
   z.ZodTypeDef,
   PatchSocialReviewRequest
-> = z.object({
-  socialReview: shared.SocialReview$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchSocialReviewQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    socialReview: "SocialReview",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    socialReview: shared.SocialReview$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchSocialReviewQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      socialReview: "SocialReview",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchSocialReviewRequestToJSON(
   patchSocialReviewRequest: PatchSocialReviewRequest,

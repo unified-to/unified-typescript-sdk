@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -20,17 +20,19 @@ export const AccountingAttachment$inboundSchema: z.ZodType<
   AccountingAttachment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  download_url: z.string().optional(),
-  id: z.string().optional(),
-  mime_type: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "download_url": "downloadUrl",
-    "mime_type": "mimeType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    download_url: z.string().optional(),
+    id: z.string().optional(),
+    mime_type: z.string().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "download_url": "downloadUrl",
+      "mime_type": "mimeType",
+    });
+  })
+);
 /** @internal */
 export type AccountingAttachment$Outbound = {
   download_url?: string | undefined;
@@ -44,17 +46,19 @@ export const AccountingAttachment$outboundSchema: z.ZodType<
   AccountingAttachment$Outbound,
   z.ZodTypeDef,
   AccountingAttachment
-> = z.object({
-  downloadUrl: z.string().optional(),
-  id: z.string().optional(),
-  mimeType: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    downloadUrl: "download_url",
-    mimeType: "mime_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    downloadUrl: z.string().optional(),
+    id: z.string().optional(),
+    mimeType: z.string().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      downloadUrl: "download_url",
+      mimeType: "mime_type",
+    });
+  })
+);
 
 export function accountingAttachmentToJSON(
   accountingAttachment: AccountingAttachment,

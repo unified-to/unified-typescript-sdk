@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -81,7 +81,7 @@ export const CalendarBotParticipant1$inboundSchema: z.ZodType<
   CalendarBotParticipant1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CalendarBotParticipant1$Outbound = {};
 
@@ -90,7 +90,7 @@ export const CalendarBotParticipant1$outboundSchema: z.ZodType<
   CalendarBotParticipant1$Outbound,
   z.ZodTypeDef,
   CalendarBotParticipant1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function calendarBotParticipant1ToJSON(
   calendarBotParticipant1: CalendarBotParticipant1,
@@ -114,12 +114,14 @@ export const CalendarBotParticipant5$inboundSchema: z.ZodType<
   CalendarBotParticipant5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CalendarBotParticipant1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CalendarBotParticipant1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CalendarBotParticipant5$Outbound =
   | CalendarBotParticipant1$Outbound
@@ -132,12 +134,14 @@ export const CalendarBotParticipant5$outboundSchema: z.ZodType<
   CalendarBotParticipant5$Outbound,
   z.ZodTypeDef,
   CalendarBotParticipant5
-> = z.union([
-  z.lazy(() => CalendarBotParticipant1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CalendarBotParticipant1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function calendarBotParticipant5ToJSON(
   calendarBotParticipant5: CalendarBotParticipant5,
@@ -161,20 +165,22 @@ export const PlatformMetadata$inboundSchema: z.ZodType<
   PlatformMetadata,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CalendarBotParticipant1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CalendarBotParticipant1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type PlatformMetadata$Outbound =
   | { [k: string]: any }
@@ -188,20 +194,22 @@ export const PlatformMetadata$outboundSchema: z.ZodType<
   PlatformMetadata$Outbound,
   z.ZodTypeDef,
   PlatformMetadata
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CalendarBotParticipant1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CalendarBotParticipant1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function platformMetadataToJSON(
   platformMetadata: PlatformMetadata,
@@ -225,49 +233,51 @@ export const CalendarBotParticipant$inboundSchema: z.ZodType<
   CalendarBotParticipant,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string().optional(),
-  id: z.string().optional(),
-  is_bot: z.boolean().optional(),
-  is_cohost: z.boolean().optional(),
-  is_host: z.boolean().optional(),
-  is_self: z.boolean().optional(),
-  joined_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  left_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  name: z.string().optional(),
-  platform: z.string().optional(),
-  platform_metadata: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CalendarBotParticipant1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  screenshare_on: z.boolean().optional(),
-  speaking: z.boolean().optional(),
-  webcam_on: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_bot": "isBot",
-    "is_cohost": "isCohost",
-    "is_host": "isHost",
-    "is_self": "isSelf",
-    "joined_at": "joinedAt",
-    "left_at": "leftAt",
-    "platform_metadata": "platformMetadata",
-    "screenshare_on": "screenshareOn",
-    "webcam_on": "webcamOn",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    id: z.string().optional(),
+    is_bot: z.boolean().optional(),
+    is_cohost: z.boolean().optional(),
+    is_host: z.boolean().optional(),
+    is_self: z.boolean().optional(),
+    joined_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    left_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    name: z.string().optional(),
+    platform: z.string().optional(),
+    platform_metadata: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CalendarBotParticipant1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    screenshare_on: z.boolean().optional(),
+    speaking: z.boolean().optional(),
+    webcam_on: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_bot": "isBot",
+      "is_cohost": "isCohost",
+      "is_host": "isHost",
+      "is_self": "isSelf",
+      "joined_at": "joinedAt",
+      "left_at": "leftAt",
+      "platform_metadata": "platformMetadata",
+      "screenshare_on": "screenshareOn",
+      "webcam_on": "webcamOn",
+    });
+  })
+);
 /** @internal */
 export type CalendarBotParticipant$Outbound = {
   email?: string | undefined;
@@ -297,47 +307,49 @@ export const CalendarBotParticipant$outboundSchema: z.ZodType<
   CalendarBotParticipant$Outbound,
   z.ZodTypeDef,
   CalendarBotParticipant
-> = z.object({
-  email: z.string().optional(),
-  id: z.string().optional(),
-  isBot: z.boolean().optional(),
-  isCohost: z.boolean().optional(),
-  isHost: z.boolean().optional(),
-  isSelf: z.boolean().optional(),
-  joinedAt: z.date().transform(v => v.toISOString()).optional(),
-  leftAt: z.date().transform(v => v.toISOString()).optional(),
-  name: z.string().optional(),
-  platform: z.string().optional(),
-  platformMetadata: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CalendarBotParticipant1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  screenshareOn: z.boolean().optional(),
-  speaking: z.boolean().optional(),
-  webcamOn: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isBot: "is_bot",
-    isCohost: "is_cohost",
-    isHost: "is_host",
-    isSelf: "is_self",
-    joinedAt: "joined_at",
-    leftAt: "left_at",
-    platformMetadata: "platform_metadata",
-    screenshareOn: "screenshare_on",
-    webcamOn: "webcam_on",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    id: z.string().optional(),
+    isBot: z.boolean().optional(),
+    isCohost: z.boolean().optional(),
+    isHost: z.boolean().optional(),
+    isSelf: z.boolean().optional(),
+    joinedAt: z.date().transform(v => v.toISOString()).optional(),
+    leftAt: z.date().transform(v => v.toISOString()).optional(),
+    name: z.string().optional(),
+    platform: z.string().optional(),
+    platformMetadata: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CalendarBotParticipant1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    screenshareOn: z.boolean().optional(),
+    speaking: z.boolean().optional(),
+    webcamOn: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isBot: "is_bot",
+      isCohost: "is_cohost",
+      isHost: "is_host",
+      isSelf: "is_self",
+      joinedAt: "joined_at",
+      leftAt: "left_at",
+      platformMetadata: "platform_metadata",
+      screenshareOn: "screenshare_on",
+      webcamOn: "webcam_on",
+    });
+  })
+);
 
 export function calendarBotParticipantToJSON(
   calendarBotParticipant: CalendarBotParticipant,

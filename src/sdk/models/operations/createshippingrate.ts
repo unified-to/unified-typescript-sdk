@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -43,7 +44,9 @@ export type CreateShippingRateRequest = {
 /** @internal */
 export const CreateShippingRateQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateShippingRateQueryParamFields
-> = z.nativeEnum(CreateShippingRateQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateShippingRateQueryParamFields)
+);
 
 /** @internal */
 export type CreateShippingRateRequest$Outbound = {
@@ -58,17 +61,20 @@ export const CreateShippingRateRequest$outboundSchema: z.ZodType<
   CreateShippingRateRequest$Outbound,
   z.ZodTypeDef,
   CreateShippingRateRequest
-> = z.object({
-  shippingRate: shared.ShippingRate$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateShippingRateQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    shippingRate: "ShippingRate",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    shippingRate: shared.ShippingRate$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateShippingRateQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      shippingRate: "ShippingRate",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createShippingRateRequestToJSON(
   createShippingRateRequest: CreateShippingRateRequest,

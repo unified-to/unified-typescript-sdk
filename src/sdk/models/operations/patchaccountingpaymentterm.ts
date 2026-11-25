@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,8 +53,10 @@ export type PatchAccountingPaymenttermRequest = {
 
 /** @internal */
 export const PatchAccountingPaymenttermQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchAccountingPaymenttermQueryParamFields> = z
-    .nativeEnum(PatchAccountingPaymenttermQueryParamFields);
+  z.ZodNativeEnum<typeof PatchAccountingPaymenttermQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchAccountingPaymenttermQueryParamFields)
+    );
 
 /** @internal */
 export type PatchAccountingPaymenttermRequest$Outbound = {
@@ -69,19 +72,21 @@ export const PatchAccountingPaymenttermRequest$outboundSchema: z.ZodType<
   PatchAccountingPaymenttermRequest$Outbound,
   z.ZodTypeDef,
   PatchAccountingPaymenttermRequest
-> = z.object({
-  accountingPaymentterm: shared.AccountingPaymentterm$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAccountingPaymenttermQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingPaymentterm: "AccountingPaymentterm",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingPaymentterm: shared.AccountingPaymentterm$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchAccountingPaymenttermQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingPaymentterm: "AccountingPaymentterm",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAccountingPaymenttermRequestToJSON(
   patchAccountingPaymenttermRequest: PatchAccountingPaymenttermRequest,

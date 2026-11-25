@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPaymentLinksQueryParamFields = {
@@ -22,6 +23,9 @@ export const ListPaymentLinksQueryParamFields = {
   SuccessUrl: "success_url",
   Metadata: "metadata",
   Raw: "raw",
+  ContactName: "contact_name",
+  ContactEmail: "contact_email",
+  ContactPhone: "contact_phone",
 } as const;
 export type ListPaymentLinksQueryParamFields = ClosedEnum<
   typeof ListPaymentLinksQueryParamFields
@@ -65,7 +69,9 @@ export type ListPaymentLinksRequest = {
 /** @internal */
 export const ListPaymentLinksQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListPaymentLinksQueryParamFields
-> = z.nativeEnum(ListPaymentLinksQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListPaymentLinksQueryParamFields)
+);
 
 /** @internal */
 export type ListPaymentLinksRequest$Outbound = {
@@ -87,26 +93,28 @@ export const ListPaymentLinksRequest$outboundSchema: z.ZodType<
   ListPaymentLinksRequest$Outbound,
   z.ZodTypeDef,
   ListPaymentLinksRequest
-> = z.object({
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  fields: z.array(ListPaymentLinksQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  paymentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    paymentId: "payment_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    fields: z.array(ListPaymentLinksQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    paymentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      paymentId: "payment_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPaymentLinksRequestToJSON(
   listPaymentLinksRequest: ListPaymentLinksRequest,

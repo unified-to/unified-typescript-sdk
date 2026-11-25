@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -60,28 +60,32 @@ export const PaymentPayoutLineitemObjectType$inboundSchema: z.ZodType<
   PaymentPayoutLineitemObjectType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentPayoutLineitemObjectType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PaymentPayoutLineitemObjectType)
+);
 
 /** @internal */
 export const PaymentPayoutLineitem$inboundSchema: z.ZodType<
   PaymentPayoutLineitem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  currency: z.string().optional(),
-  fee_amount: z.number().optional(),
-  net_amount: z.number().optional(),
-  object_id: z.string().optional(),
-  object_type: PaymentPayoutLineitemObjectType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "fee_amount": "feeAmount",
-    "net_amount": "netAmount",
-    "object_id": "objectId",
-    "object_type": "objectType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    currency: z.string().optional(),
+    fee_amount: z.number().optional(),
+    net_amount: z.number().optional(),
+    object_id: z.string().optional(),
+    object_type: PaymentPayoutLineitemObjectType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "fee_amount": "feeAmount",
+      "net_amount": "netAmount",
+      "object_id": "objectId",
+      "object_type": "objectType",
+    });
+  })
+);
 
 export function paymentPayoutLineitemFromJSON(
   jsonString: string,

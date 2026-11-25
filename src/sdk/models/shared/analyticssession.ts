@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -80,52 +80,56 @@ export const AnalyticsSession$inboundSchema: z.ZodType<
   AnalyticsSession,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  browser: z.string().optional(),
-  campaign: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  device: z.string().optional(),
-  duration_seconds: z.number().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  events_count: z.number().optional(),
-  exit_page: z.string().optional(),
-  id: z.string().optional(),
-  is_bounce: z.boolean().optional(),
-  is_conversion: z.boolean().optional(),
-  landing_page: z.string().optional(),
-  medium: z.string().optional(),
-  metadata: z.array(AnalyticsMetadata$inboundSchema).optional(),
-  os: z.string().optional(),
-  page_views: z.number().optional(),
-  property_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  visitor_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "duration_seconds": "durationSeconds",
-    "end_at": "endAt",
-    "events_count": "eventsCount",
-    "exit_page": "exitPage",
-    "is_bounce": "isBounce",
-    "is_conversion": "isConversion",
-    "landing_page": "landingPage",
-    "page_views": "pageViews",
-    "property_id": "propertyId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "visitor_id": "visitorId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    browser: z.string().optional(),
+    campaign: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    device: z.string().optional(),
+    duration_seconds: z.number().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    events_count: z.number().optional(),
+    exit_page: z.string().optional(),
+    id: z.string().optional(),
+    is_bounce: z.boolean().optional(),
+    is_conversion: z.boolean().optional(),
+    landing_page: z.string().optional(),
+    medium: z.string().optional(),
+    metadata: z.array(AnalyticsMetadata$inboundSchema).optional(),
+    os: z.string().optional(),
+    page_views: z.number().optional(),
+    property_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    visitor_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "duration_seconds": "durationSeconds",
+      "end_at": "endAt",
+      "events_count": "eventsCount",
+      "exit_page": "exitPage",
+      "is_bounce": "isBounce",
+      "is_conversion": "isConversion",
+      "landing_page": "landingPage",
+      "page_views": "pageViews",
+      "property_id": "propertyId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "visitor_id": "visitorId",
+    });
+  })
+);
 
 export function analyticsSessionFromJSON(
   jsonString: string,

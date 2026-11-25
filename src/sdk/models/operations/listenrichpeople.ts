@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type ListEnrichPeopleRequest = {
   /**
@@ -47,20 +48,22 @@ export const ListEnrichPeopleRequest$outboundSchema: z.ZodType<
   ListEnrichPeopleRequest$Outbound,
   z.ZodTypeDef,
   ListEnrichPeopleRequest
-> = z.object({
-  companyName: z.string().optional(),
-  connectionId: z.string(),
-  email: z.string().optional(),
-  linkedinUrl: z.string().optional(),
-  name: z.string().optional(),
-  twitter: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyName: "company_name",
-    connectionId: "connection_id",
-    linkedinUrl: "linkedin_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyName: z.string().optional(),
+    connectionId: z.string(),
+    email: z.string().optional(),
+    linkedinUrl: z.string().optional(),
+    name: z.string().optional(),
+    twitter: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyName: "company_name",
+      connectionId: "connection_id",
+      linkedinUrl: "linkedin_url",
+    });
+  })
+);
 
 export function listEnrichPeopleRequestToJSON(
   listEnrichPeopleRequest: ListEnrichPeopleRequest,

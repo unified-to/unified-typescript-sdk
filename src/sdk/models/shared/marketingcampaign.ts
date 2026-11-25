@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -99,51 +99,59 @@ export const MarketingCampaignStatus$inboundSchema: z.ZodType<
   MarketingCampaignStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MarketingCampaignStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MarketingCampaignStatus)
+);
 /** @internal */
 export const MarketingCampaignStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   MarketingCampaignStatus
-> = openEnums.outboundSchema(MarketingCampaignStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(MarketingCampaignStatus)
+);
 
 /** @internal */
 export const MarketingCampaign$inboundSchema: z.ZodType<
   MarketingCampaign,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  from_email: z.string().optional(),
-  from_name: z.string().optional(),
-  id: z.string().optional(),
-  list_ids: z.array(z.string()).optional(),
-  metadata: z.array(MarketingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  preview_text: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reply_to_email: z.string().optional(),
-  send_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: MarketingCampaignStatus$inboundSchema.optional(),
-  subject_line: z.string().optional(),
-  type: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "from_email": "fromEmail",
-    "from_name": "fromName",
-    "list_ids": "listIds",
-    "preview_text": "previewText",
-    "reply_to_email": "replyToEmail",
-    "send_at": "sendAt",
-    "subject_line": "subjectLine",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    from_email: z.string().optional(),
+    from_name: z.string().optional(),
+    id: z.string().optional(),
+    list_ids: z.array(z.string()).optional(),
+    metadata: z.array(MarketingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    preview_text: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reply_to_email: z.string().optional(),
+    send_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: MarketingCampaignStatus$inboundSchema.optional(),
+    subject_line: z.string().optional(),
+    type: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "from_email": "fromEmail",
+      "from_name": "fromName",
+      "list_ids": "listIds",
+      "preview_text": "previewText",
+      "reply_to_email": "replyToEmail",
+      "send_at": "sendAt",
+      "subject_line": "subjectLine",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type MarketingCampaign$Outbound = {
   created_at?: string | undefined;
@@ -168,35 +176,37 @@ export const MarketingCampaign$outboundSchema: z.ZodType<
   MarketingCampaign$Outbound,
   z.ZodTypeDef,
   MarketingCampaign
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  fromEmail: z.string().optional(),
-  fromName: z.string().optional(),
-  id: z.string().optional(),
-  listIds: z.array(z.string()).optional(),
-  metadata: z.array(MarketingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  previewText: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  replyToEmail: z.string().optional(),
-  sendAt: z.date().transform(v => v.toISOString()).optional(),
-  status: MarketingCampaignStatus$outboundSchema.optional(),
-  subjectLine: z.string().optional(),
-  type: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    fromEmail: "from_email",
-    fromName: "from_name",
-    listIds: "list_ids",
-    previewText: "preview_text",
-    replyToEmail: "reply_to_email",
-    sendAt: "send_at",
-    subjectLine: "subject_line",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    fromEmail: z.string().optional(),
+    fromName: z.string().optional(),
+    id: z.string().optional(),
+    listIds: z.array(z.string()).optional(),
+    metadata: z.array(MarketingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    previewText: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    replyToEmail: z.string().optional(),
+    sendAt: z.date().transform(v => v.toISOString()).optional(),
+    status: MarketingCampaignStatus$outboundSchema.optional(),
+    subjectLine: z.string().optional(),
+    type: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      fromEmail: "from_email",
+      fromName: "from_name",
+      listIds: "list_ids",
+      previewText: "preview_text",
+      replyToEmail: "reply_to_email",
+      sendAt: "send_at",
+      subjectLine: "subject_line",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function marketingCampaignToJSON(
   marketingCampaign: MarketingCampaign,

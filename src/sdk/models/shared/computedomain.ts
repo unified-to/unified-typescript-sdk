@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -75,41 +75,49 @@ export const ComputeDomainStatus$inboundSchema: z.ZodType<
   ComputeDomainStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeDomainStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeDomainStatus)
+);
 /** @internal */
 export const ComputeDomainStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeDomainStatus
-> = openEnums.outboundSchema(ComputeDomainStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeDomainStatus)
+);
 
 /** @internal */
 export const ComputeDomain$inboundSchema: z.ZodType<
   ComputeDomain,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_primary: z.boolean().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  redirect_url: z.string().optional(),
-  service_id: z.string().optional(),
-  status: ComputeDomainStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_primary": "isPrimary",
-    "redirect_url": "redirectUrl",
-    "service_id": "serviceId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    is_primary: z.boolean().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    redirect_url: z.string().optional(),
+    service_id: z.string().optional(),
+    status: ComputeDomainStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_primary": "isPrimary",
+      "redirect_url": "redirectUrl",
+      "service_id": "serviceId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type ComputeDomain$Outbound = {
   created_at?: string | undefined;
@@ -129,26 +137,28 @@ export const ComputeDomain$outboundSchema: z.ZodType<
   ComputeDomain$Outbound,
   z.ZodTypeDef,
   ComputeDomain
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isPrimary: z.boolean().optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  redirectUrl: z.string().optional(),
-  serviceId: z.string().optional(),
-  status: ComputeDomainStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isPrimary: "is_primary",
-    redirectUrl: "redirect_url",
-    serviceId: "service_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isPrimary: z.boolean().optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    redirectUrl: z.string().optional(),
+    serviceId: z.string().optional(),
+    status: ComputeDomainStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isPrimary: "is_primary",
+      redirectUrl: "redirect_url",
+      serviceId: "service_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function computeDomainToJSON(computeDomain: ComputeDomain): string {
   return JSON.stringify(ComputeDomain$outboundSchema.parse(computeDomain));

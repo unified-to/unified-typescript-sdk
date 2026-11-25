@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -36,23 +36,25 @@ export const AccountingAgedRow$inboundSchema: z.ZodType<
   AccountingAgedRow,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  balance_amount: z.number().optional(),
-  contact: PropertyAccountingAgedRowContact$inboundSchema.optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  total_amount: z.number().optional(),
-  transaction: PropertyAccountingAgedRowTransaction$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "balance_amount": "balanceAmount",
-    "due_at": "dueAt",
-    "posted_at": "postedAt",
-    "total_amount": "totalAmount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    balance_amount: z.number().optional(),
+    contact: PropertyAccountingAgedRowContact$inboundSchema.optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    total_amount: z.number().optional(),
+    transaction: PropertyAccountingAgedRowTransaction$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "balance_amount": "balanceAmount",
+      "due_at": "dueAt",
+      "posted_at": "postedAt",
+      "total_amount": "totalAmount",
+    });
+  })
+);
 
 export function accountingAgedRowFromJSON(
   jsonString: string,

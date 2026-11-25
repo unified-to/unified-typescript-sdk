@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const RepoMetadata1$inboundSchema: z.ZodType<
   RepoMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type RepoMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const RepoMetadata1$outboundSchema: z.ZodType<
   RepoMetadata1$Outbound,
   z.ZodTypeDef,
   RepoMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function repoMetadata1ToJSON(repoMetadata1: RepoMetadata1): string {
   return JSON.stringify(RepoMetadata1$outboundSchema.parse(repoMetadata1));
@@ -108,12 +108,14 @@ export const RepoMetadata5$inboundSchema: z.ZodType<
   RepoMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => RepoMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => RepoMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type RepoMetadata5$Outbound =
   | RepoMetadata1$Outbound
@@ -126,12 +128,14 @@ export const RepoMetadata5$outboundSchema: z.ZodType<
   RepoMetadata5$Outbound,
   z.ZodTypeDef,
   RepoMetadata5
-> = z.union([
-  z.lazy(() => RepoMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => RepoMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function repoMetadata5ToJSON(repoMetadata5: RepoMetadata5): string {
   return JSON.stringify(RepoMetadata5$outboundSchema.parse(repoMetadata5));
@@ -151,20 +155,22 @@ export const RepoMetadataExtraData$inboundSchema: z.ZodType<
   RepoMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => RepoMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => RepoMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type RepoMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -178,20 +184,22 @@ export const RepoMetadataExtraData$outboundSchema: z.ZodType<
   RepoMetadataExtraData$Outbound,
   z.ZodTypeDef,
   RepoMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => RepoMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => RepoMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function repoMetadataExtraDataToJSON(
   repoMetadataExtraData: RepoMetadataExtraData,
@@ -215,20 +223,24 @@ export const RepoMetadataFormat$inboundSchema: z.ZodType<
   RepoMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(RepoMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(RepoMetadataFormat)
+);
 /** @internal */
 export const RepoMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   RepoMetadataFormat
-> = openEnums.outboundSchema(RepoMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(RepoMetadataFormat)
+);
 
 /** @internal */
 export const RepoMetadataSchemas1$inboundSchema: z.ZodType<
   RepoMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type RepoMetadataSchemas1$Outbound = {};
 
@@ -237,7 +249,7 @@ export const RepoMetadataSchemas1$outboundSchema: z.ZodType<
   RepoMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   RepoMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function repoMetadataSchemas1ToJSON(
   repoMetadataSchemas1: RepoMetadataSchemas1,
@@ -261,12 +273,14 @@ export const RepoMetadataSchemas5$inboundSchema: z.ZodType<
   RepoMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => RepoMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => RepoMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type RepoMetadataSchemas5$Outbound =
   | RepoMetadataSchemas1$Outbound
@@ -279,12 +293,14 @@ export const RepoMetadataSchemas5$outboundSchema: z.ZodType<
   RepoMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   RepoMetadataSchemas5
-> = z.union([
-  z.lazy(() => RepoMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => RepoMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function repoMetadataSchemas5ToJSON(
   repoMetadataSchemas5: RepoMetadataSchemas5,
@@ -308,20 +324,22 @@ export const RepoMetadataValue$inboundSchema: z.ZodType<
   RepoMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => RepoMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => RepoMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type RepoMetadataValue$Outbound =
   | { [k: string]: any }
@@ -335,20 +353,22 @@ export const RepoMetadataValue$outboundSchema: z.ZodType<
   RepoMetadataValue$Outbound,
   z.ZodTypeDef,
   RepoMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => RepoMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => RepoMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function repoMetadataValueToJSON(
   repoMetadataValue: RepoMetadataValue,
@@ -372,44 +392,46 @@ export const RepoMetadata$inboundSchema: z.ZodType<
   RepoMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => RepoMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: RepoMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => RepoMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => RepoMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: RepoMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => RepoMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type RepoMetadata$Outbound = {
   extra_data?:
@@ -437,44 +459,46 @@ export const RepoMetadata$outboundSchema: z.ZodType<
   RepoMetadata$Outbound,
   z.ZodTypeDef,
   RepoMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => RepoMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: RepoMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => RepoMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => RepoMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: RepoMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => RepoMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function repoMetadataToJSON(repoMetadata: RepoMetadata): string {
   return JSON.stringify(RepoMetadata$outboundSchema.parse(repoMetadata));

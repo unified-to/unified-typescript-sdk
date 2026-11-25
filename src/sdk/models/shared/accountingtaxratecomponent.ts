@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -28,15 +28,17 @@ export const AccountingTaxrateComponent$inboundSchema: z.ZodType<
   AccountingTaxrateComponent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  is_compound: z.boolean().optional(),
-  name: z.string().optional(),
-  rate: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_compound": "isCompound",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    is_compound: z.boolean().optional(),
+    name: z.string().optional(),
+    rate: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_compound": "isCompound",
+    });
+  })
+);
 /** @internal */
 export type AccountingTaxrateComponent$Outbound = {
   is_compound?: boolean | undefined;
@@ -49,15 +51,17 @@ export const AccountingTaxrateComponent$outboundSchema: z.ZodType<
   AccountingTaxrateComponent$Outbound,
   z.ZodTypeDef,
   AccountingTaxrateComponent
-> = z.object({
-  isCompound: z.boolean().optional(),
-  name: z.string().optional(),
-  rate: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isCompound: "is_compound",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    isCompound: z.boolean().optional(),
+    name: z.string().optional(),
+    rate: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isCompound: "is_compound",
+    });
+  })
+);
 
 export function accountingTaxrateComponentToJSON(
   accountingTaxrateComponent: AccountingTaxrateComponent,

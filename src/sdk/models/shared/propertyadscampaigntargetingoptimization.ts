@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -13,14 +13,16 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 /**
  * Google: bid_only falsetrue
  */
-export const Mode = {
+export const PropertyAdsCampaignTargetingOptimizationMode = {
   Targeting: "TARGETING",
   Observation: "OBSERVATION",
 } as const;
 /**
  * Google: bid_only falsetrue
  */
-export type Mode = OpenEnum<typeof Mode>;
+export type PropertyAdsCampaignTargetingOptimizationMode = OpenEnum<
+  typeof PropertyAdsCampaignTargetingOptimizationMode
+>;
 
 /**
  * Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
@@ -31,34 +33,49 @@ export type PropertyAdsCampaignTargetingOptimization = {
   /**
    * Google: bid_only falsetrue
    */
-  mode?: Mode | undefined;
+  mode?: PropertyAdsCampaignTargetingOptimizationMode | undefined;
   targetingOptimizationExpansionAll?: boolean | undefined;
 };
 
 /** @internal */
-export const Mode$inboundSchema: z.ZodType<Mode, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Mode);
+export const PropertyAdsCampaignTargetingOptimizationMode$inboundSchema:
+  z.ZodType<
+    PropertyAdsCampaignTargetingOptimizationMode,
+    z.ZodTypeDef,
+    unknown
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsCampaignTargetingOptimizationMode)
+  );
 /** @internal */
-export const Mode$outboundSchema: z.ZodType<string, z.ZodTypeDef, Mode> =
-  openEnums.outboundSchema(Mode);
+export const PropertyAdsCampaignTargetingOptimizationMode$outboundSchema:
+  z.ZodType<
+    string,
+    z.ZodTypeDef,
+    PropertyAdsCampaignTargetingOptimizationMode
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(PropertyAdsCampaignTargetingOptimizationMode)
+  );
 
 /** @internal */
 export const PropertyAdsCampaignTargetingOptimization$inboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingOptimization,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  advantage_audience: z.boolean().optional(),
-  advantage_placements: z.boolean().optional(),
-  mode: Mode$inboundSchema.optional(),
-  targeting_optimization_expansion_all: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "advantage_audience": "advantageAudience",
-    "advantage_placements": "advantagePlacements",
-    "targeting_optimization_expansion_all": "targetingOptimizationExpansionAll",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    advantage_audience: z.boolean().optional(),
+    advantage_placements: z.boolean().optional(),
+    mode: PropertyAdsCampaignTargetingOptimizationMode$inboundSchema.optional(),
+    targeting_optimization_expansion_all: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "advantage_audience": "advantageAudience",
+      "advantage_placements": "advantagePlacements",
+      "targeting_optimization_expansion_all":
+        "targetingOptimizationExpansionAll",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsCampaignTargetingOptimization$Outbound = {
   advantage_audience?: boolean | undefined;
@@ -72,18 +89,21 @@ export const PropertyAdsCampaignTargetingOptimization$outboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingOptimization$Outbound,
   z.ZodTypeDef,
   PropertyAdsCampaignTargetingOptimization
-> = z.object({
-  advantageAudience: z.boolean().optional(),
-  advantagePlacements: z.boolean().optional(),
-  mode: Mode$outboundSchema.optional(),
-  targetingOptimizationExpansionAll: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    advantageAudience: "advantage_audience",
-    advantagePlacements: "advantage_placements",
-    targetingOptimizationExpansionAll: "targeting_optimization_expansion_all",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    advantageAudience: z.boolean().optional(),
+    advantagePlacements: z.boolean().optional(),
+    mode: PropertyAdsCampaignTargetingOptimizationMode$outboundSchema
+      .optional(),
+    targetingOptimizationExpansionAll: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      advantageAudience: "advantage_audience",
+      advantagePlacements: "advantage_placements",
+      targetingOptimizationExpansionAll: "targeting_optimization_expansion_all",
+    });
+  })
+);
 
 export function propertyAdsCampaignTargetingOptimizationToJSON(
   propertyAdsCampaignTargetingOptimization:

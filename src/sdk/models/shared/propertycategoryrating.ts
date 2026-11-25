@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -48,24 +48,30 @@ export const PropertyCategoryratingCategory$inboundSchema: z.ZodType<
   PropertyCategoryratingCategory,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyCategoryratingCategory);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyCategoryratingCategory)
+);
 /** @internal */
 export const PropertyCategoryratingCategory$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyCategoryratingCategory
-> = openEnums.outboundSchema(PropertyCategoryratingCategory);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyCategoryratingCategory)
+);
 
 /** @internal */
 export const PropertyCategoryrating$inboundSchema: z.ZodType<
   PropertyCategoryrating,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  category: PropertyCategoryratingCategory$inboundSchema.optional(),
-  comment: z.string().optional(),
-  rating: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category: PropertyCategoryratingCategory$inboundSchema.optional(),
+    comment: z.string().optional(),
+    rating: z.number().optional(),
+  })
+);
 /** @internal */
 export type PropertyCategoryrating$Outbound = {
   category?: string | undefined;
@@ -78,11 +84,13 @@ export const PropertyCategoryrating$outboundSchema: z.ZodType<
   PropertyCategoryrating$Outbound,
   z.ZodTypeDef,
   PropertyCategoryrating
-> = z.object({
-  category: PropertyCategoryratingCategory$outboundSchema.optional(),
-  comment: z.string().optional(),
-  rating: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category: PropertyCategoryratingCategory$outboundSchema.optional(),
+    comment: z.string().optional(),
+    rating: z.number().optional(),
+  })
+);
 
 export function propertyCategoryratingToJSON(
   propertyCategoryrating: PropertyCategoryrating,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -60,43 +60,49 @@ export const CommerceReturnStatus$inboundSchema: z.ZodType<
   CommerceReturnStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CommerceReturnStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CommerceReturnStatus)
+);
 
 /** @internal */
 export const CommerceReturn$inboundSchema: z.ZodType<
   CommerceReturn,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  customer_email: z.string().optional(),
-  customer_name: z.string().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(CommerceReturnLineitem$inboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  order_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  return_by_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  status: CommerceReturnStatus$inboundSchema.optional(),
-  total_refund_amount: z.number().optional(),
-  type: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "customer_email": "customerEmail",
-    "customer_name": "customerName",
-    "order_id": "orderId",
-    "return_by_at": "returnByAt",
-    "total_refund_amount": "totalRefundAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    customer_email: z.string().optional(),
+    customer_name: z.string().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(CommerceReturnLineitem$inboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    order_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    return_by_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: CommerceReturnStatus$inboundSchema.optional(),
+    total_refund_amount: z.number().optional(),
+    type: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "customer_email": "customerEmail",
+      "customer_name": "customerName",
+      "order_id": "orderId",
+      "return_by_at": "returnByAt",
+      "total_refund_amount": "totalRefundAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function commerceReturnFromJSON(
   jsonString: string,

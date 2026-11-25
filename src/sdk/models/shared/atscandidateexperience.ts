@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -26,20 +26,22 @@ export const AtsCandidateExperience$inboundSchema: z.ZodType<
   AtsCandidateExperience,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_name: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  title: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_name": "companyName",
-    "end_at": "endAt",
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_name: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    title: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_name": "companyName",
+      "end_at": "endAt",
+      "start_at": "startAt",
+    });
+  })
+);
 /** @internal */
 export type AtsCandidateExperience$Outbound = {
   company_name?: string | undefined;
@@ -53,18 +55,20 @@ export const AtsCandidateExperience$outboundSchema: z.ZodType<
   AtsCandidateExperience$Outbound,
   z.ZodTypeDef,
   AtsCandidateExperience
-> = z.object({
-  companyName: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  title: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyName: "company_name",
-    endAt: "end_at",
-    startAt: "start_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyName: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    title: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyName: "company_name",
+      endAt: "end_at",
+      startAt: "start_at",
+    });
+  })
+);
 
 export function atsCandidateExperienceToJSON(
   atsCandidateExperience: AtsCandidateExperience,

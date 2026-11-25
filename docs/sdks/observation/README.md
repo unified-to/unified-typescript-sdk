@@ -5,7 +5,9 @@
 ### Available Operations
 
 * [createHealthcareObservation](#createhealthcareobservation) - Create an observation
+* [getFhirObservation](#getfhirobservation) - Read a Observation
 * [getHealthcareObservation](#gethealthcareobservation) - Retrieve an observation
+* [listFhirObservations](#listfhirobservations) - Search Observation resources
 * [listHealthcareObservations](#listhealthcareobservations) - List all observations
 
 ## createHealthcareObservation
@@ -59,15 +61,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "3983cb55-48e0-468e-ac82-9113864e7f31",
+      id: "ee665e84-1d67-4c1b-8e5f-2774a668b124",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-30T06:04:45.360Z"),
+      issuedAt: new Date("2025-06-02T22:26:59.741Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-02-05T14:54:48.242Z"),
+      observedAt: new Date("2025-02-08T20:11:33.278Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-04-18T19:23:11.388Z"),
+      updatedAt: new Date("2026-04-23T19:20:20.221Z"),
     },
     connectionId: "<id>",
   });
@@ -84,7 +86,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareCreateHealthcareObservation } from "@unified-api/typescript-sdk/funcs/healthcareCreateHealthcareObservation.js";
+import { observationCreateHealthcareObservation } from "@unified-api/typescript-sdk/funcs/observationCreateHealthcareObservation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -95,7 +97,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareCreateHealthcareObservation(unifiedTo, {
+  const res = await observationCreateHealthcareObservation(unifiedTo, {
     healthcareObservation: {
       codes: [
         {
@@ -129,15 +131,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "3983cb55-48e0-468e-ac82-9113864e7f31",
+      id: "ee665e84-1d67-4c1b-8e5f-2774a668b124",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-30T06:04:45.360Z"),
+      issuedAt: new Date("2025-06-02T22:26:59.741Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-02-05T14:54:48.242Z"),
+      observedAt: new Date("2025-02-08T20:11:33.278Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-04-18T19:23:11.388Z"),
+      updatedAt: new Date("2026-04-23T19:20:20.221Z"),
     },
     connectionId: "<id>",
   });
@@ -145,7 +147,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareCreateHealthcareObservation failed:", res.error);
+    console.log("observationCreateHealthcareObservation failed:", res.error);
   }
 }
 
@@ -164,6 +166,85 @@ run();
 ### Response
 
 **Promise\<[shared.HealthcareObservation](../../sdk/models/shared/healthcareobservation.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getFhirObservation
+
+Responses use the application/fhir+json media type; errors are OperationOutcome resources. Read-only (FHIR R4 4.0.1).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getFhirObservation" method="get" path="/fhir/{connection_id}/Observation/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.observation.getFhirObservation({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { fhirGetFhirObservation } from "@unified-api/typescript-sdk/funcs/fhirGetFhirObservation.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await fhirGetFhirObservation(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("fhirGetFhirObservation failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetFhirObservationRequest](../../sdk/models/operations/getfhirobservationrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.FhirObservation](../../sdk/models/shared/fhirobservation.md)\>**
 
 ### Errors
 
@@ -205,7 +286,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcareObservation } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareObservation.js";
+import { observationGetHealthcareObservation } from "@unified-api/typescript-sdk/funcs/observationGetHealthcareObservation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -216,7 +297,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcareObservation(unifiedTo, {
+  const res = await observationGetHealthcareObservation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -224,7 +305,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcareObservation failed:", res.error);
+    console.log("observationGetHealthcareObservation failed:", res.error);
   }
 }
 
@@ -243,6 +324,83 @@ run();
 ### Response
 
 **Promise\<[shared.HealthcareObservation](../../sdk/models/shared/healthcareobservation.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listFhirObservations
+
+Returns a searchset Bundle; follow its next link for more pages. Responses use the application/fhir+json media type; errors are OperationOutcome resources. Read-only (FHIR R4 4.0.1).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listFhirObservations" method="get" path="/fhir/{connection_id}/Observation" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.observation.listFhirObservations({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { fhirListFhirObservations } from "@unified-api/typescript-sdk/funcs/fhirListFhirObservations.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await fhirListFhirObservations(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("fhirListFhirObservations failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListFhirObservationsRequest](../../sdk/models/operations/listfhirobservationsrequest.md)                                                                           | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.FhirBundle](../../sdk/models/shared/fhirbundle.md)\>**
 
 ### Errors
 
@@ -283,7 +441,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcareObservations } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareObservations.js";
+import { observationListHealthcareObservations } from "@unified-api/typescript-sdk/funcs/observationListHealthcareObservations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -294,14 +452,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcareObservations(unifiedTo, {
+  const res = await observationListHealthcareObservations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcareObservations failed:", res.error);
+    console.log("observationListHealthcareObservations failed:", res.error);
   }
 }
 

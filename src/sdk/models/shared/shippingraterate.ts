@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -87,50 +87,51 @@ export const ShippingRateRate$inboundSchema: z.ZodType<
   ShippingRateRate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  base_amount: z.number().optional(),
-  currency: z.string().optional(),
-  delivery_days: z.number().optional(),
-  delivery_terms: z.string().optional(),
-  description: z.string().optional(),
-  discount_amount: z.number().optional(),
-  estimated_days: z.number().optional(),
-  estimated_delivery_end_at: z.string().datetime({ offset: true }).transform(
-    v => new Date(v)
-  ).optional(),
-  estimated_delivery_start_at: z.string().datetime({ offset: true }).transform(
-    v => new Date(v)
-  ).optional(),
-  is_active: z.boolean().optional(),
-  is_guaranteed: z.boolean().optional(),
-  is_negotiated_rate: z.boolean().optional(),
-  is_trackable: z.boolean().optional(),
-  package_type: z.string().optional(),
-  rate_source: z.string().optional(),
-  surcharges: z.array(ShippingRateSurcharge$inboundSchema).optional(),
-  tax_amount: z.number().optional(),
-  title: z.string(),
-  transit_hours: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "base_amount": "baseAmount",
-    "delivery_days": "deliveryDays",
-    "delivery_terms": "deliveryTerms",
-    "discount_amount": "discountAmount",
-    "estimated_days": "estimatedDays",
-    "estimated_delivery_end_at": "estimatedDeliveryEndAt",
-    "estimated_delivery_start_at": "estimatedDeliveryStartAt",
-    "is_active": "isActive",
-    "is_guaranteed": "isGuaranteed",
-    "is_negotiated_rate": "isNegotiatedRate",
-    "is_trackable": "isTrackable",
-    "package_type": "packageType",
-    "rate_source": "rateSource",
-    "tax_amount": "taxAmount",
-    "transit_hours": "transitHours",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    base_amount: z.number().optional(),
+    currency: z.string().optional(),
+    delivery_days: z.number().optional(),
+    delivery_terms: z.string().optional(),
+    description: z.string().optional(),
+    discount_amount: z.number().optional(),
+    estimated_days: z.number().optional(),
+    estimated_delivery_end_at: z.string().datetime({ offset: true }).transform(
+      v => new Date(v)
+    ).optional(),
+    estimated_delivery_start_at: z.string().datetime({ offset: true })
+      .transform(v => new Date(v)).optional(),
+    is_active: z.boolean().optional(),
+    is_guaranteed: z.boolean().optional(),
+    is_negotiated_rate: z.boolean().optional(),
+    is_trackable: z.boolean().optional(),
+    package_type: z.string().optional(),
+    rate_source: z.string().optional(),
+    surcharges: z.array(ShippingRateSurcharge$inboundSchema).optional(),
+    tax_amount: z.number().optional(),
+    title: z.string(),
+    transit_hours: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "base_amount": "baseAmount",
+      "delivery_days": "deliveryDays",
+      "delivery_terms": "deliveryTerms",
+      "discount_amount": "discountAmount",
+      "estimated_days": "estimatedDays",
+      "estimated_delivery_end_at": "estimatedDeliveryEndAt",
+      "estimated_delivery_start_at": "estimatedDeliveryStartAt",
+      "is_active": "isActive",
+      "is_guaranteed": "isGuaranteed",
+      "is_negotiated_rate": "isNegotiatedRate",
+      "is_trackable": "isTrackable",
+      "package_type": "packageType",
+      "rate_source": "rateSource",
+      "tax_amount": "taxAmount",
+      "transit_hours": "transitHours",
+    });
+  })
+);
 /** @internal */
 export type ShippingRateRate$Outbound = {
   amount?: number | undefined;
@@ -160,46 +161,49 @@ export const ShippingRateRate$outboundSchema: z.ZodType<
   ShippingRateRate$Outbound,
   z.ZodTypeDef,
   ShippingRateRate
-> = z.object({
-  amount: z.number().optional(),
-  baseAmount: z.number().optional(),
-  currency: z.string().optional(),
-  deliveryDays: z.number().optional(),
-  deliveryTerms: z.string().optional(),
-  description: z.string().optional(),
-  discountAmount: z.number().optional(),
-  estimatedDays: z.number().optional(),
-  estimatedDeliveryEndAt: z.date().transform(v => v.toISOString()).optional(),
-  estimatedDeliveryStartAt: z.date().transform(v => v.toISOString()).optional(),
-  isActive: z.boolean().optional(),
-  isGuaranteed: z.boolean().optional(),
-  isNegotiatedRate: z.boolean().optional(),
-  isTrackable: z.boolean().optional(),
-  packageType: z.string().optional(),
-  rateSource: z.string().optional(),
-  surcharges: z.array(ShippingRateSurcharge$outboundSchema).optional(),
-  taxAmount: z.number().optional(),
-  title: z.string(),
-  transitHours: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    baseAmount: "base_amount",
-    deliveryDays: "delivery_days",
-    deliveryTerms: "delivery_terms",
-    discountAmount: "discount_amount",
-    estimatedDays: "estimated_days",
-    estimatedDeliveryEndAt: "estimated_delivery_end_at",
-    estimatedDeliveryStartAt: "estimated_delivery_start_at",
-    isActive: "is_active",
-    isGuaranteed: "is_guaranteed",
-    isNegotiatedRate: "is_negotiated_rate",
-    isTrackable: "is_trackable",
-    packageType: "package_type",
-    rateSource: "rate_source",
-    taxAmount: "tax_amount",
-    transitHours: "transit_hours",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    baseAmount: z.number().optional(),
+    currency: z.string().optional(),
+    deliveryDays: z.number().optional(),
+    deliveryTerms: z.string().optional(),
+    description: z.string().optional(),
+    discountAmount: z.number().optional(),
+    estimatedDays: z.number().optional(),
+    estimatedDeliveryEndAt: z.date().transform(v => v.toISOString()).optional(),
+    estimatedDeliveryStartAt: z.date().transform(v => v.toISOString())
+      .optional(),
+    isActive: z.boolean().optional(),
+    isGuaranteed: z.boolean().optional(),
+    isNegotiatedRate: z.boolean().optional(),
+    isTrackable: z.boolean().optional(),
+    packageType: z.string().optional(),
+    rateSource: z.string().optional(),
+    surcharges: z.array(ShippingRateSurcharge$outboundSchema).optional(),
+    taxAmount: z.number().optional(),
+    title: z.string(),
+    transitHours: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      baseAmount: "base_amount",
+      deliveryDays: "delivery_days",
+      deliveryTerms: "delivery_terms",
+      discountAmount: "discount_amount",
+      estimatedDays: "estimated_days",
+      estimatedDeliveryEndAt: "estimated_delivery_end_at",
+      estimatedDeliveryStartAt: "estimated_delivery_start_at",
+      isActive: "is_active",
+      isGuaranteed: "is_guaranteed",
+      isNegotiatedRate: "is_negotiated_rate",
+      isTrackable: "is_trackable",
+      packageType: "package_type",
+      rateSource: "rate_source",
+      taxAmount: "tax_amount",
+      transitHours: "transit_hours",
+    });
+  })
+);
 
 export function shippingRateRateToJSON(
   shippingRateRate: ShippingRateRate,

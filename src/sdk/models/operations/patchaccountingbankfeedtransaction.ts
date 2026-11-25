@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -57,8 +58,10 @@ export type PatchAccountingBankfeedtransactionRequest = {
 
 /** @internal */
 export const PatchAccountingBankfeedtransactionQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchAccountingBankfeedtransactionQueryParamFields> = z
-    .nativeEnum(PatchAccountingBankfeedtransactionQueryParamFields);
+  z.ZodNativeEnum<typeof PatchAccountingBankfeedtransactionQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchAccountingBankfeedtransactionQueryParamFields)
+    );
 
 /** @internal */
 export type PatchAccountingBankfeedtransactionRequest$Outbound = {
@@ -75,21 +78,23 @@ export const PatchAccountingBankfeedtransactionRequest$outboundSchema:
     PatchAccountingBankfeedtransactionRequest$Outbound,
     z.ZodTypeDef,
     PatchAccountingBankfeedtransactionRequest
-  > = z.object({
-    accountingBankfeedtransaction:
-      shared.AccountingBankfeedtransaction$outboundSchema,
-    connectionId: z.string(),
-    fields: z.array(
-      PatchAccountingBankfeedtransactionQueryParamFields$outboundSchema,
-    ).optional(),
-    id: z.string(),
-    raw: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      accountingBankfeedtransaction: "AccountingBankfeedtransaction",
-      connectionId: "connection_id",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      accountingBankfeedtransaction:
+        shared.AccountingBankfeedtransaction$outboundSchema,
+      connectionId: z.string(),
+      fields: z.array(
+        PatchAccountingBankfeedtransactionQueryParamFields$outboundSchema,
+      ).optional(),
+      id: z.string(),
+      raw: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        accountingBankfeedtransaction: "AccountingBankfeedtransaction",
+        connectionId: "connection_id",
+      });
+    })
+  );
 
 export function patchAccountingBankfeedtransactionRequestToJSON(
   patchAccountingBankfeedtransactionRequest:

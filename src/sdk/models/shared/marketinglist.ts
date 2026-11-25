@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -73,43 +73,47 @@ export const MarketingList$inboundSchema: z.ZodType<
   MarketingList,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyMarketingListAddress$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  language: z.string().optional(),
-  metadata: z.array(MarketingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  sender_company: z.string().optional(),
-  sender_email: z.string().optional(),
-  sender_name: z.string().optional(),
-  sender_phone: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  subject: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "is_active": "isActive",
-    "sender_company": "senderCompany",
-    "sender_email": "senderEmail",
-    "sender_name": "senderName",
-    "sender_phone": "senderPhone",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyMarketingListAddress$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    language: z.string().optional(),
+    metadata: z.array(MarketingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    sender_company: z.string().optional(),
+    sender_email: z.string().optional(),
+    sender_name: z.string().optional(),
+    sender_phone: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    subject: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "is_active": "isActive",
+      "sender_company": "senderCompany",
+      "sender_email": "senderEmail",
+      "sender_name": "senderName",
+      "sender_phone": "senderPhone",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type MarketingList$Outbound = {
   address?: PropertyMarketingListAddress$Outbound | undefined;
@@ -137,39 +141,41 @@ export const MarketingList$outboundSchema: z.ZodType<
   MarketingList$Outbound,
   z.ZodTypeDef,
   MarketingList
-> = z.object({
-  address: PropertyMarketingListAddress$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  language: z.string().optional(),
-  metadata: z.array(MarketingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  senderCompany: z.string().optional(),
-  senderEmail: z.string().optional(),
-  senderName: z.string().optional(),
-  senderPhone: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  subject: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    endAt: "end_at",
-    isActive: "is_active",
-    senderCompany: "sender_company",
-    senderEmail: "sender_email",
-    senderName: "sender_name",
-    senderPhone: "sender_phone",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyMarketingListAddress$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    language: z.string().optional(),
+    metadata: z.array(MarketingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    senderCompany: z.string().optional(),
+    senderEmail: z.string().optional(),
+    senderName: z.string().optional(),
+    senderPhone: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    subject: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      endAt: "end_at",
+      isActive: "is_active",
+      senderCompany: "sender_company",
+      senderEmail: "sender_email",
+      senderName: "sender_name",
+      senderPhone: "sender_phone",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function marketingListToJSON(marketingList: MarketingList): string {
   return JSON.stringify(MarketingList$outboundSchema.parse(marketingList));

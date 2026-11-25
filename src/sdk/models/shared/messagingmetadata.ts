@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const MessagingMetadata1$inboundSchema: z.ZodType<
   MessagingMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type MessagingMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const MessagingMetadata1$outboundSchema: z.ZodType<
   MessagingMetadata1$Outbound,
   z.ZodTypeDef,
   MessagingMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function messagingMetadata1ToJSON(
   messagingMetadata1: MessagingMetadata1,
@@ -112,12 +112,14 @@ export const MessagingMetadata5$inboundSchema: z.ZodType<
   MessagingMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => MessagingMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => MessagingMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type MessagingMetadata5$Outbound =
   | MessagingMetadata1$Outbound
@@ -130,12 +132,14 @@ export const MessagingMetadata5$outboundSchema: z.ZodType<
   MessagingMetadata5$Outbound,
   z.ZodTypeDef,
   MessagingMetadata5
-> = z.union([
-  z.lazy(() => MessagingMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => MessagingMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function messagingMetadata5ToJSON(
   messagingMetadata5: MessagingMetadata5,
@@ -159,20 +163,22 @@ export const MessagingMetadataExtraData$inboundSchema: z.ZodType<
   MessagingMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => MessagingMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => MessagingMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type MessagingMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -186,20 +192,22 @@ export const MessagingMetadataExtraData$outboundSchema: z.ZodType<
   MessagingMetadataExtraData$Outbound,
   z.ZodTypeDef,
   MessagingMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => MessagingMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => MessagingMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function messagingMetadataExtraDataToJSON(
   messagingMetadataExtraData: MessagingMetadataExtraData,
@@ -223,20 +231,24 @@ export const MessagingMetadataFormat$inboundSchema: z.ZodType<
   MessagingMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MessagingMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MessagingMetadataFormat)
+);
 /** @internal */
 export const MessagingMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   MessagingMetadataFormat
-> = openEnums.outboundSchema(MessagingMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(MessagingMetadataFormat)
+);
 
 /** @internal */
 export const MessagingMetadataSchemas1$inboundSchema: z.ZodType<
   MessagingMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type MessagingMetadataSchemas1$Outbound = {};
 
@@ -245,7 +257,7 @@ export const MessagingMetadataSchemas1$outboundSchema: z.ZodType<
   MessagingMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   MessagingMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function messagingMetadataSchemas1ToJSON(
   messagingMetadataSchemas1: MessagingMetadataSchemas1,
@@ -269,12 +281,14 @@ export const MessagingMetadataSchemas5$inboundSchema: z.ZodType<
   MessagingMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => MessagingMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => MessagingMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type MessagingMetadataSchemas5$Outbound =
   | MessagingMetadataSchemas1$Outbound
@@ -287,12 +301,14 @@ export const MessagingMetadataSchemas5$outboundSchema: z.ZodType<
   MessagingMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   MessagingMetadataSchemas5
-> = z.union([
-  z.lazy(() => MessagingMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => MessagingMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function messagingMetadataSchemas5ToJSON(
   messagingMetadataSchemas5: MessagingMetadataSchemas5,
@@ -316,20 +332,22 @@ export const MessagingMetadataValue$inboundSchema: z.ZodType<
   MessagingMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => MessagingMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => MessagingMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type MessagingMetadataValue$Outbound =
   | { [k: string]: any }
@@ -343,20 +361,22 @@ export const MessagingMetadataValue$outboundSchema: z.ZodType<
   MessagingMetadataValue$Outbound,
   z.ZodTypeDef,
   MessagingMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => MessagingMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => MessagingMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function messagingMetadataValueToJSON(
   messagingMetadataValue: MessagingMetadataValue,
@@ -380,44 +400,46 @@ export const MessagingMetadata$inboundSchema: z.ZodType<
   MessagingMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => MessagingMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: MessagingMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => MessagingMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => MessagingMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: MessagingMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => MessagingMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type MessagingMetadata$Outbound = {
   extra_data?:
@@ -445,44 +467,46 @@ export const MessagingMetadata$outboundSchema: z.ZodType<
   MessagingMetadata$Outbound,
   z.ZodTypeDef,
   MessagingMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => MessagingMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: MessagingMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => MessagingMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => MessagingMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: MessagingMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => MessagingMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function messagingMetadataToJSON(
   messagingMetadata: MessagingMetadata,

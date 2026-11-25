@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -15,6 +15,12 @@ import {
   AtsCompensation$Outbound,
   AtsCompensation$outboundSchema,
 } from "./atscompensation.js";
+import {
+  AtsFee,
+  AtsFee$inboundSchema,
+  AtsFee$Outbound,
+  AtsFee$outboundSchema,
+} from "./atsfee.js";
 
 export const AtsOfferStatus = {
   Created: "CREATED",
@@ -45,6 +51,10 @@ export type AtsOffer = {
    * newly hired employee id (reference to HrisEmployee)
    */
   employeeUserId?: string | undefined;
+  /**
+   * The placement fee earned on this hire
+   */
+  fees?: Array<AtsFee> | undefined;
   id?: string | undefined;
   /**
    * date the offer was rejected (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -70,49 +80,56 @@ export const AtsOfferStatus$inboundSchema: z.ZodType<
   AtsOfferStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsOfferStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AtsOfferStatus));
 /** @internal */
 export const AtsOfferStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsOfferStatus
-> = openEnums.outboundSchema(AtsOfferStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(AtsOfferStatus));
 
 /** @internal */
 export const AtsOffer$inboundSchema: z.ZodType<
   AtsOffer,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  accepted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  compensation: z.array(AtsCompensation$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  creator_user_id: z.string().optional(),
-  employee_user_id: z.string().optional(),
-  id: z.string().optional(),
-  rejected_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: AtsOfferStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "accepted_at": "acceptedAt",
-    "created_at": "createdAt",
-    "creator_user_id": "creatorUserId",
-    "employee_user_id": "employeeUserId",
-    "rejected_at": "rejectedAt",
-    "sent_at": "sentAt",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accepted_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    compensation: z.array(AtsCompensation$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    creator_user_id: z.string().optional(),
+    employee_user_id: z.string().optional(),
+    fees: z.array(AtsFee$inboundSchema).optional(),
+    id: z.string().optional(),
+    rejected_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: AtsOfferStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "accepted_at": "acceptedAt",
+      "created_at": "createdAt",
+      "creator_user_id": "creatorUserId",
+      "employee_user_id": "employeeUserId",
+      "rejected_at": "rejectedAt",
+      "sent_at": "sentAt",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AtsOffer$Outbound = {
   accepted_at?: string | undefined;
@@ -120,6 +137,7 @@ export type AtsOffer$Outbound = {
   created_at?: string | undefined;
   creator_user_id?: string | undefined;
   employee_user_id?: string | undefined;
+  fees?: Array<AtsFee$Outbound> | undefined;
   id?: string | undefined;
   rejected_at?: string | undefined;
   sent_at?: string | undefined;
@@ -133,30 +151,33 @@ export const AtsOffer$outboundSchema: z.ZodType<
   AtsOffer$Outbound,
   z.ZodTypeDef,
   AtsOffer
-> = z.object({
-  acceptedAt: z.date().transform(v => v.toISOString()).optional(),
-  compensation: z.array(AtsCompensation$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  creatorUserId: z.string().optional(),
-  employeeUserId: z.string().optional(),
-  id: z.string().optional(),
-  rejectedAt: z.date().transform(v => v.toISOString()).optional(),
-  sentAt: z.date().transform(v => v.toISOString()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: AtsOfferStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    acceptedAt: "accepted_at",
-    createdAt: "created_at",
-    creatorUserId: "creator_user_id",
-    employeeUserId: "employee_user_id",
-    rejectedAt: "rejected_at",
-    sentAt: "sent_at",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    acceptedAt: z.date().transform(v => v.toISOString()).optional(),
+    compensation: z.array(AtsCompensation$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    creatorUserId: z.string().optional(),
+    employeeUserId: z.string().optional(),
+    fees: z.array(AtsFee$outboundSchema).optional(),
+    id: z.string().optional(),
+    rejectedAt: z.date().transform(v => v.toISOString()).optional(),
+    sentAt: z.date().transform(v => v.toISOString()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: AtsOfferStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      acceptedAt: "accepted_at",
+      createdAt: "created_at",
+      creatorUserId: "creator_user_id",
+      employeeUserId: "employee_user_id",
+      rejectedAt: "rejected_at",
+      sentAt: "sent_at",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function atsOfferToJSON(atsOffer: AtsOffer): string {
   return JSON.stringify(AtsOffer$outboundSchema.parse(atsOffer));

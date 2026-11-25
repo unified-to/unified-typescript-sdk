@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListLmsClassesQueryParamFields = {
@@ -58,7 +59,9 @@ export type ListLmsClassesRequest = {
 /** @internal */
 export const ListLmsClassesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListLmsClassesQueryParamFields
-> = z.nativeEnum(ListLmsClassesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListLmsClassesQueryParamFields)
+);
 
 /** @internal */
 export type ListLmsClassesRequest$Outbound = {
@@ -79,24 +82,26 @@ export const ListLmsClassesRequest$outboundSchema: z.ZodType<
   ListLmsClassesRequest$Outbound,
   z.ZodTypeDef,
   ListLmsClassesRequest
-> = z.object({
-  connectionId: z.string(),
-  courseId: z.string().optional(),
-  fields: z.array(ListLmsClassesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    courseId: "course_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    courseId: z.string().optional(),
+    fields: z.array(ListLmsClassesQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      courseId: "course_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listLmsClassesRequestToJSON(
   listLmsClassesRequest: ListLmsClassesRequest,

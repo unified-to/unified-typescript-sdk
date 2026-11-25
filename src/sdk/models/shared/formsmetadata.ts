@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const FormsMetadata1$inboundSchema: z.ZodType<
   FormsMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type FormsMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const FormsMetadata1$outboundSchema: z.ZodType<
   FormsMetadata1$Outbound,
   z.ZodTypeDef,
   FormsMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function formsMetadata1ToJSON(formsMetadata1: FormsMetadata1): string {
   return JSON.stringify(FormsMetadata1$outboundSchema.parse(formsMetadata1));
@@ -108,12 +108,14 @@ export const FormsMetadata5$inboundSchema: z.ZodType<
   FormsMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => FormsMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => FormsMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type FormsMetadata5$Outbound =
   | FormsMetadata1$Outbound
@@ -126,12 +128,14 @@ export const FormsMetadata5$outboundSchema: z.ZodType<
   FormsMetadata5$Outbound,
   z.ZodTypeDef,
   FormsMetadata5
-> = z.union([
-  z.lazy(() => FormsMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => FormsMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function formsMetadata5ToJSON(formsMetadata5: FormsMetadata5): string {
   return JSON.stringify(FormsMetadata5$outboundSchema.parse(formsMetadata5));
@@ -151,20 +155,22 @@ export const FormsMetadataExtraData$inboundSchema: z.ZodType<
   FormsMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => FormsMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => FormsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type FormsMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -178,20 +184,22 @@ export const FormsMetadataExtraData$outboundSchema: z.ZodType<
   FormsMetadataExtraData$Outbound,
   z.ZodTypeDef,
   FormsMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => FormsMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => FormsMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function formsMetadataExtraDataToJSON(
   formsMetadataExtraData: FormsMetadataExtraData,
@@ -215,20 +223,24 @@ export const FormsMetadataFormat$inboundSchema: z.ZodType<
   FormsMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(FormsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(FormsMetadataFormat)
+);
 /** @internal */
 export const FormsMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   FormsMetadataFormat
-> = openEnums.outboundSchema(FormsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(FormsMetadataFormat)
+);
 
 /** @internal */
 export const FormsMetadataSchemas1$inboundSchema: z.ZodType<
   FormsMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type FormsMetadataSchemas1$Outbound = {};
 
@@ -237,7 +249,7 @@ export const FormsMetadataSchemas1$outboundSchema: z.ZodType<
   FormsMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   FormsMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function formsMetadataSchemas1ToJSON(
   formsMetadataSchemas1: FormsMetadataSchemas1,
@@ -261,12 +273,14 @@ export const FormsMetadataSchemas5$inboundSchema: z.ZodType<
   FormsMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => FormsMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => FormsMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type FormsMetadataSchemas5$Outbound =
   | FormsMetadataSchemas1$Outbound
@@ -279,12 +293,14 @@ export const FormsMetadataSchemas5$outboundSchema: z.ZodType<
   FormsMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   FormsMetadataSchemas5
-> = z.union([
-  z.lazy(() => FormsMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => FormsMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function formsMetadataSchemas5ToJSON(
   formsMetadataSchemas5: FormsMetadataSchemas5,
@@ -308,20 +324,22 @@ export const FormsMetadataValue$inboundSchema: z.ZodType<
   FormsMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => FormsMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => FormsMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type FormsMetadataValue$Outbound =
   | { [k: string]: any }
@@ -335,20 +353,22 @@ export const FormsMetadataValue$outboundSchema: z.ZodType<
   FormsMetadataValue$Outbound,
   z.ZodTypeDef,
   FormsMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => FormsMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => FormsMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function formsMetadataValueToJSON(
   formsMetadataValue: FormsMetadataValue,
@@ -372,44 +392,46 @@ export const FormsMetadata$inboundSchema: z.ZodType<
   FormsMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => FormsMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: FormsMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => FormsMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => FormsMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: FormsMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => FormsMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type FormsMetadata$Outbound = {
   extra_data?:
@@ -437,44 +459,46 @@ export const FormsMetadata$outboundSchema: z.ZodType<
   FormsMetadata$Outbound,
   z.ZodTypeDef,
   FormsMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => FormsMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: FormsMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => FormsMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => FormsMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: FormsMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => FormsMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function formsMetadataToJSON(formsMetadata: FormsMetadata): string {
   return JSON.stringify(FormsMetadata$outboundSchema.parse(formsMetadata));

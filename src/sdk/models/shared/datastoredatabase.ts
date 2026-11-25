@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -42,28 +42,32 @@ export const DatastoreDatabase$inboundSchema: z.ZodType<
   DatastoreDatabase,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  password: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  region: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    password: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    region: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type DatastoreDatabase$Outbound = {
   created_at?: string | undefined;
@@ -84,26 +88,28 @@ export const DatastoreDatabase$outboundSchema: z.ZodType<
   DatastoreDatabase$Outbound,
   z.ZodTypeDef,
   DatastoreDatabase
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  password: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  region: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isActive: "is_active",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    password: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    region: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isActive: "is_active",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function datastoreDatabaseToJSON(
   datastoreDatabase: DatastoreDatabase,

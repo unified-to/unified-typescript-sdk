@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,15 +24,17 @@ export const ConnectionReauth$inboundSchema: z.ZodType<
   ConnectionReauth,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  expires_at: z.string().optional(),
-  reauth_token: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "expires_at": "expiresAt",
-    "reauth_token": "reauthToken",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    expires_at: z.string().optional(),
+    reauth_token: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "expires_at": "expiresAt",
+      "reauth_token": "reauthToken",
+    });
+  })
+);
 
 export function connectionReauthFromJSON(
   jsonString: string,

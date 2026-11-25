@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -99,71 +99,78 @@ export const HrisPayrollStatus$inboundSchema: z.ZodType<
   HrisPayrollStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisPayrollStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisPayrollStatus)
+);
 
 /** @internal */
 export const HrisPayrollType$inboundSchema: z.ZodType<
   HrisPayrollType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisPayrollType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(HrisPayrollType));
 
 /** @internal */
 export const HrisPayroll$inboundSchema: z.ZodType<
   HrisPayroll,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  deduction_amount: z.number().optional(),
-  employee_tax_amount: z.number().optional(),
-  employer_contribution_amount: z.number().optional(),
-  employer_tax_amount: z.number().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  gross_amount: z.number().optional(),
-  group_id: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  net_amount: z.number().optional(),
-  paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  payslip_ids: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HrisPayrollStatus$inboundSchema.optional(),
-  total_cost_amount: z.number().optional(),
-  type: HrisPayrollType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "approved_at": "approvedAt",
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "deduction_amount": "deductionAmount",
-    "employee_tax_amount": "employeeTaxAmount",
-    "employer_contribution_amount": "employerContributionAmount",
-    "employer_tax_amount": "employerTaxAmount",
-    "end_at": "endAt",
-    "gross_amount": "grossAmount",
-    "group_id": "groupId",
-    "net_amount": "netAmount",
-    "paid_at": "paidAt",
-    "payslip_ids": "payslipIds",
-    "start_at": "startAt",
-    "total_cost_amount": "totalCostAmount",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    approved_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    deduction_amount: z.number().optional(),
+    employee_tax_amount: z.number().optional(),
+    employer_contribution_amount: z.number().optional(),
+    employer_tax_amount: z.number().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    gross_amount: z.number().optional(),
+    group_id: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    net_amount: z.number().optional(),
+    paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    payslip_ids: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HrisPayrollStatus$inboundSchema.optional(),
+    total_cost_amount: z.number().optional(),
+    type: HrisPayrollType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "approved_at": "approvedAt",
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "deduction_amount": "deductionAmount",
+      "employee_tax_amount": "employeeTaxAmount",
+      "employer_contribution_amount": "employerContributionAmount",
+      "employer_tax_amount": "employerTaxAmount",
+      "end_at": "endAt",
+      "gross_amount": "grossAmount",
+      "group_id": "groupId",
+      "net_amount": "netAmount",
+      "paid_at": "paidAt",
+      "payslip_ids": "payslipIds",
+      "start_at": "startAt",
+      "total_cost_amount": "totalCostAmount",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+    });
+  })
+);
 
 export function hrisPayrollFromJSON(
   jsonString: string,

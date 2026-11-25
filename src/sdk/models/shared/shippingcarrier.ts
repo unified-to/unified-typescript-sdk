@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -57,28 +57,32 @@ export const ShippingCarrier$inboundSchema: z.ZodType<
   ShippingCarrier,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  code: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  logo_url: z.string().optional(),
-  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  website_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "logo_url": "logoUrl",
-    "updated_at": "updatedAt",
-    "website_url": "websiteUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    logo_url: z.string().optional(),
+    metadata: z.array(ShippingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    website_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "logo_url": "logoUrl",
+      "updated_at": "updatedAt",
+      "website_url": "websiteUrl",
+    });
+  })
+);
 
 export function shippingCarrierFromJSON(
   jsonString: string,

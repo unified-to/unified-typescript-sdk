@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -99,61 +99,67 @@ export const CalendarEventRecurrenceFrequency$inboundSchema: z.ZodType<
   CalendarEventRecurrenceFrequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarEventRecurrenceFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarEventRecurrenceFrequency)
+);
 /** @internal */
 export const CalendarEventRecurrenceFrequency$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CalendarEventRecurrenceFrequency
-> = openEnums.outboundSchema(CalendarEventRecurrenceFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CalendarEventRecurrenceFrequency)
+);
 
 /** @internal */
 export const WeekStart$inboundSchema: z.ZodType<
   WeekStart,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(WeekStart);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(WeekStart));
 /** @internal */
 export const WeekStart$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   WeekStart
-> = openEnums.outboundSchema(WeekStart);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(WeekStart));
 
 /** @internal */
 export const CalendarEventRecurrence$inboundSchema: z.ZodType<
   CalendarEventRecurrence,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  count: z.number().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  excluded_dates: z.array(z.string()).optional(),
-  frequency: CalendarEventRecurrenceFrequency$inboundSchema.optional(),
-  included_dates: z.array(z.string()).optional(),
-  interval: z.number().optional(),
-  on_days: z.array(PropertyCalendarEventRecurrenceOnDays$inboundSchema)
-    .optional(),
-  on_month_days: z.array(z.number()).optional(),
-  on_months: z.array(z.number()).optional(),
-  on_weeks: z.array(z.number()).optional(),
-  on_year_days: z.array(z.number()).optional(),
-  timezone: z.string().optional(),
-  week_start: WeekStart$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "excluded_dates": "excludedDates",
-    "included_dates": "includedDates",
-    "on_days": "onDays",
-    "on_month_days": "onMonthDays",
-    "on_months": "onMonths",
-    "on_weeks": "onWeeks",
-    "on_year_days": "onYearDays",
-    "week_start": "weekStart",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    count: z.number().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    excluded_dates: z.array(z.string()).optional(),
+    frequency: CalendarEventRecurrenceFrequency$inboundSchema.optional(),
+    included_dates: z.array(z.string()).optional(),
+    interval: z.number().optional(),
+    on_days: z.array(PropertyCalendarEventRecurrenceOnDays$inboundSchema)
+      .optional(),
+    on_month_days: z.array(z.number()).optional(),
+    on_months: z.array(z.number()).optional(),
+    on_weeks: z.array(z.number()).optional(),
+    on_year_days: z.array(z.number()).optional(),
+    timezone: z.string().optional(),
+    week_start: WeekStart$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "excluded_dates": "excludedDates",
+      "included_dates": "includedDates",
+      "on_days": "onDays",
+      "on_month_days": "onMonthDays",
+      "on_months": "onMonths",
+      "on_weeks": "onWeeks",
+      "on_year_days": "onYearDays",
+      "week_start": "weekStart",
+    });
+  })
+);
 /** @internal */
 export type CalendarEventRecurrence$Outbound = {
   count?: number | undefined;
@@ -176,34 +182,36 @@ export const CalendarEventRecurrence$outboundSchema: z.ZodType<
   CalendarEventRecurrence$Outbound,
   z.ZodTypeDef,
   CalendarEventRecurrence
-> = z.object({
-  count: z.number().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  excludedDates: z.array(z.string()).optional(),
-  frequency: CalendarEventRecurrenceFrequency$outboundSchema.optional(),
-  includedDates: z.array(z.string()).optional(),
-  interval: z.number().optional(),
-  onDays: z.array(PropertyCalendarEventRecurrenceOnDays$outboundSchema)
-    .optional(),
-  onMonthDays: z.array(z.number()).optional(),
-  onMonths: z.array(z.number()).optional(),
-  onWeeks: z.array(z.number()).optional(),
-  onYearDays: z.array(z.number()).optional(),
-  timezone: z.string().optional(),
-  weekStart: WeekStart$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    endAt: "end_at",
-    excludedDates: "excluded_dates",
-    includedDates: "included_dates",
-    onDays: "on_days",
-    onMonthDays: "on_month_days",
-    onMonths: "on_months",
-    onWeeks: "on_weeks",
-    onYearDays: "on_year_days",
-    weekStart: "week_start",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    count: z.number().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    excludedDates: z.array(z.string()).optional(),
+    frequency: CalendarEventRecurrenceFrequency$outboundSchema.optional(),
+    includedDates: z.array(z.string()).optional(),
+    interval: z.number().optional(),
+    onDays: z.array(PropertyCalendarEventRecurrenceOnDays$outboundSchema)
+      .optional(),
+    onMonthDays: z.array(z.number()).optional(),
+    onMonths: z.array(z.number()).optional(),
+    onWeeks: z.array(z.number()).optional(),
+    onYearDays: z.array(z.number()).optional(),
+    timezone: z.string().optional(),
+    weekStart: WeekStart$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      endAt: "end_at",
+      excludedDates: "excluded_dates",
+      includedDates: "included_dates",
+      onDays: "on_days",
+      onMonthDays: "on_month_days",
+      onMonths: "on_months",
+      onWeeks: "on_weeks",
+      onYearDays: "on_year_days",
+      weekStart: "week_start",
+    });
+  })
+);
 
 export function calendarEventRecurrenceToJSON(
   calendarEventRecurrence: CalendarEventRecurrence,

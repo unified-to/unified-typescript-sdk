@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -114,61 +114,63 @@ export const UcFaxStatus$inboundSchema: z.ZodType<
   UcFaxStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(UcFaxStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(UcFaxStatus));
 /** @internal */
 export const UcFaxStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   UcFaxStatus
-> = openEnums.outboundSchema(UcFaxStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(UcFaxStatus));
 
 /** @internal */
 export const UcFaxType$inboundSchema: z.ZodType<
   UcFaxType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(UcFaxType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(UcFaxType));
 /** @internal */
 export const UcFaxType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   UcFaxType
-> = openEnums.outboundSchema(UcFaxType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(UcFaxType));
 
 /** @internal */
-export const UcFax$inboundSchema: z.ZodType<UcFax, z.ZodTypeDef, unknown> = z
-  .object({
-    cost_amount: z.number().optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    currency: z.string().optional(),
-    error_message: z.string().optional(),
-    from_telephone: z.string().optional(),
-    id: z.string().optional(),
-    media_url: z.string().optional(),
-    metadata: z.array(UcMetadata$inboundSchema).optional(),
-    pages: z.number().optional(),
-    raw: z.record(z.any()).optional(),
-    status: UcFaxStatus$inboundSchema.optional(),
-    to_telephone: z.string().optional(),
-    type: UcFaxType$inboundSchema.optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    user_id: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "cost_amount": "costAmount",
-      "created_at": "createdAt",
-      "error_message": "errorMessage",
-      "from_telephone": "fromTelephone",
-      "media_url": "mediaUrl",
-      "to_telephone": "toTelephone",
-      "updated_at": "updatedAt",
-      "user_id": "userId",
-    });
-  });
+export const UcFax$inboundSchema: z.ZodType<UcFax, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      cost_amount: z.number().optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      currency: z.string().optional(),
+      error_message: z.string().optional(),
+      from_telephone: z.string().optional(),
+      id: z.string().optional(),
+      media_url: z.string().optional(),
+      metadata: z.array(UcMetadata$inboundSchema).optional(),
+      pages: z.number().optional(),
+      raw: z.record(z.any()).optional(),
+      status: UcFaxStatus$inboundSchema.optional(),
+      to_telephone: z.string().optional(),
+      type: UcFaxType$inboundSchema.optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      user_id: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "cost_amount": "costAmount",
+        "created_at": "createdAt",
+        "error_message": "errorMessage",
+        "from_telephone": "fromTelephone",
+        "media_url": "mediaUrl",
+        "to_telephone": "toTelephone",
+        "updated_at": "updatedAt",
+        "user_id": "userId",
+      });
+    })
+  );
 /** @internal */
 export type UcFax$Outbound = {
   cost_amount?: number | undefined;
@@ -193,34 +195,36 @@ export const UcFax$outboundSchema: z.ZodType<
   UcFax$Outbound,
   z.ZodTypeDef,
   UcFax
-> = z.object({
-  costAmount: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  errorMessage: z.string().optional(),
-  fromTelephone: z.string().optional(),
-  id: z.string().optional(),
-  mediaUrl: z.string().optional(),
-  metadata: z.array(UcMetadata$outboundSchema).optional(),
-  pages: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  status: UcFaxStatus$outboundSchema.optional(),
-  toTelephone: z.string().optional(),
-  type: UcFaxType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    costAmount: "cost_amount",
-    createdAt: "created_at",
-    errorMessage: "error_message",
-    fromTelephone: "from_telephone",
-    mediaUrl: "media_url",
-    toTelephone: "to_telephone",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    costAmount: z.number().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    errorMessage: z.string().optional(),
+    fromTelephone: z.string().optional(),
+    id: z.string().optional(),
+    mediaUrl: z.string().optional(),
+    metadata: z.array(UcMetadata$outboundSchema).optional(),
+    pages: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    status: UcFaxStatus$outboundSchema.optional(),
+    toTelephone: z.string().optional(),
+    type: UcFaxType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      costAmount: "cost_amount",
+      createdAt: "created_at",
+      errorMessage: "error_message",
+      fromTelephone: "from_telephone",
+      mediaUrl: "media_url",
+      toTelephone: "to_telephone",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function ucFaxToJSON(ucFax: UcFax): string {
   return JSON.stringify(UcFax$outboundSchema.parse(ucFax));

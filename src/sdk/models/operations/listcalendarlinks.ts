@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCalendarLinksQueryParamFields = {
@@ -54,7 +55,9 @@ export type ListCalendarLinksRequest = {
 /** @internal */
 export const ListCalendarLinksQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCalendarLinksQueryParamFields
-> = z.nativeEnum(ListCalendarLinksQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCalendarLinksQueryParamFields)
+);
 
 /** @internal */
 export type ListCalendarLinksRequest$Outbound = {
@@ -74,22 +77,25 @@ export const ListCalendarLinksRequest$outboundSchema: z.ZodType<
   ListCalendarLinksRequest$Outbound,
   z.ZodTypeDef,
   ListCalendarLinksRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCalendarLinksQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCalendarLinksQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCalendarLinksRequestToJSON(
   listCalendarLinksRequest: ListCalendarLinksRequest,

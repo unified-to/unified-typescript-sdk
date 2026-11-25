@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -23,9 +23,21 @@ import {
 export type PaymentLink = {
   amount?: number | undefined;
   /**
+   * payer's email
+   */
+  contactEmail?: string | undefined;
+  /**
    * ID of the AccountingContact (reference to AccountingContact)
    */
   contactId?: string | undefined;
+  /**
+   * payer's name, for providers that take payer details on the link rather than a contact_id
+   */
+  contactName?: string | undefined;
+  /**
+   * payer's phone
+   */
+  contactPhone?: string | undefined;
   /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
@@ -58,39 +70,52 @@ export const PaymentLink$inboundSchema: z.ZodType<
   PaymentLink,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_chargeable_now: z.boolean().optional(),
-  lineitems: z.array(PaymentLineitem$inboundSchema).optional(),
-  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
-  payment_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  success_url: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "is_chargeable_now": "isChargeableNow",
-    "payment_id": "paymentId",
-    "success_url": "successUrl",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    contact_email: z.string().optional(),
+    contact_id: z.string().optional(),
+    contact_name: z.string().optional(),
+    contact_phone: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_chargeable_now: z.boolean().optional(),
+    lineitems: z.array(PaymentLineitem$inboundSchema).optional(),
+    metadata: z.array(PaymentMetadata$inboundSchema).optional(),
+    payment_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    success_url: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "contact_email": "contactEmail",
+      "contact_id": "contactId",
+      "contact_name": "contactName",
+      "contact_phone": "contactPhone",
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "is_chargeable_now": "isChargeableNow",
+      "payment_id": "paymentId",
+      "success_url": "successUrl",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type PaymentLink$Outbound = {
   amount?: number | undefined;
+  contact_email?: string | undefined;
   contact_id?: string | undefined;
+  contact_name?: string | undefined;
+  contact_phone?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   description?: string | undefined;
@@ -111,33 +136,41 @@ export const PaymentLink$outboundSchema: z.ZodType<
   PaymentLink$Outbound,
   z.ZodTypeDef,
   PaymentLink
-> = z.object({
-  amount: z.number().optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  isChargeableNow: z.boolean().optional(),
-  lineitems: z.array(PaymentLineitem$outboundSchema).optional(),
-  metadata: z.array(PaymentMetadata$outboundSchema).optional(),
-  paymentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  successUrl: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contactId: "contact_id",
-    createdAt: "created_at",
-    isActive: "is_active",
-    isChargeableNow: "is_chargeable_now",
-    paymentId: "payment_id",
-    successUrl: "success_url",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    contactEmail: z.string().optional(),
+    contactId: z.string().optional(),
+    contactName: z.string().optional(),
+    contactPhone: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    isChargeableNow: z.boolean().optional(),
+    lineitems: z.array(PaymentLineitem$outboundSchema).optional(),
+    metadata: z.array(PaymentMetadata$outboundSchema).optional(),
+    paymentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    successUrl: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contactEmail: "contact_email",
+      contactId: "contact_id",
+      contactName: "contact_name",
+      contactPhone: "contact_phone",
+      createdAt: "created_at",
+      isActive: "is_active",
+      isChargeableNow: "is_chargeable_now",
+      paymentId: "payment_id",
+      successUrl: "success_url",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function paymentLinkToJSON(paymentLink: PaymentLink): string {
   return JSON.stringify(PaymentLink$outboundSchema.parse(paymentLink));

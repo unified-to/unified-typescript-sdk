@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListMessagingChannelsQueryParamFields = {
@@ -59,9 +60,10 @@ export type ListMessagingChannelsRequest = {
 
 /** @internal */
 export const ListMessagingChannelsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListMessagingChannelsQueryParamFields> = z.nativeEnum(
-    ListMessagingChannelsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListMessagingChannelsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListMessagingChannelsQueryParamFields)
+    );
 
 /** @internal */
 export type ListMessagingChannelsRequest$Outbound = {
@@ -83,26 +85,28 @@ export const ListMessagingChannelsRequest$outboundSchema: z.ZodType<
   ListMessagingChannelsRequest$Outbound,
   z.ZodTypeDef,
   ListMessagingChannelsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListMessagingChannelsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListMessagingChannelsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listMessagingChannelsRequestToJSON(
   listMessagingChannelsRequest: ListMessagingChannelsRequest,

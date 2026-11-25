@@ -68,13 +68,13 @@ async function run() {
   const result = await unifiedTo.healthcare.createHealthcareAppointment({
     healthcareAppointment: {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
-      description: "clarus aptus cetera",
+      description: "cubicularis caput viriliter",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "b4fb9068-8c27-4942-a46d-d02fa90e11e8",
+      id: "24be529f-c1c9-442a-9083-81f979659ad6",
       isVirtual: true,
-      meetingUrl: "https://expensive-slipper.name/",
+      meetingUrl: "https://cautious-cannon.com/",
       metadata: [],
-      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
+      notes: "Casus anser ver alo beatus.",
       practitionerIds: [],
       serviceTypes: [
         {
@@ -86,7 +86,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2026-10-21T13:45:44.338Z"),
+      updatedAt: new Date("2026-10-27T07:34:26.105Z"),
     },
     connectionId: "<id>",
   });
@@ -103,7 +103,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareCreateHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/healthcareCreateHealthcareAppointment.js";
+import { appointmentCreateHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/appointmentCreateHealthcareAppointment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -114,16 +114,16 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareCreateHealthcareAppointment(unifiedTo, {
+  const res = await appointmentCreateHealthcareAppointment(unifiedTo, {
     healthcareAppointment: {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
-      description: "clarus aptus cetera",
+      description: "cubicularis caput viriliter",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "b4fb9068-8c27-4942-a46d-d02fa90e11e8",
+      id: "24be529f-c1c9-442a-9083-81f979659ad6",
       isVirtual: true,
-      meetingUrl: "https://expensive-slipper.name/",
+      meetingUrl: "https://cautious-cannon.com/",
       metadata: [],
-      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
+      notes: "Casus anser ver alo beatus.",
       practitionerIds: [],
       serviceTypes: [
         {
@@ -135,7 +135,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2026-10-21T13:45:44.338Z"),
+      updatedAt: new Date("2026-10-27T07:34:26.105Z"),
     },
     connectionId: "<id>",
   });
@@ -143,7 +143,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareCreateHealthcareAppointment failed:", res.error);
+    console.log("appointmentCreateHealthcareAppointment failed:", res.error);
   }
 }
 
@@ -197,15 +197,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2023-07-16T04:00:25.853Z"),
-      documentUrl: "https://overcooked-yogurt.org",
-      filename: "ugh_after.elc",
-      id: "1ad07795-7034-4f25-8e5d-eebd8fa3a965",
+      documentUrl: "https://noxious-abacus.biz/",
+      filename: "quip.eot",
+      id: "56f02533-4945-4d24-8ed5-14682275859e",
       metadata: [],
       mimeType: "application/pdf",
       name: "History and physical",
       status: "SUPERSEDED",
       type: "CONSULTATION_NOTE",
-      updatedAt: new Date("2025-01-09T02:19:45.809Z"),
+      updatedAt: new Date("2025-01-11T16:54:48.481Z"),
     },
     connectionId: "<id>",
   });
@@ -244,15 +244,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2023-07-16T04:00:25.853Z"),
-      documentUrl: "https://overcooked-yogurt.org",
-      filename: "ugh_after.elc",
-      id: "1ad07795-7034-4f25-8e5d-eebd8fa3a965",
+      documentUrl: "https://noxious-abacus.biz/",
+      filename: "quip.eot",
+      id: "56f02533-4945-4d24-8ed5-14682275859e",
       metadata: [],
       mimeType: "application/pdf",
       name: "History and physical",
       status: "SUPERSEDED",
       type: "CONSULTATION_NOTE",
-      updatedAt: new Date("2025-01-09T02:19:45.809Z"),
+      updatedAt: new Date("2025-01-11T16:54:48.481Z"),
     },
     connectionId: "<id>",
   });
@@ -337,15 +337,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "3983cb55-48e0-468e-ac82-9113864e7f31",
+      id: "ee665e84-1d67-4c1b-8e5f-2774a668b124",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-30T06:04:45.360Z"),
+      issuedAt: new Date("2025-06-02T22:26:59.741Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-02-05T14:54:48.242Z"),
+      observedAt: new Date("2025-02-08T20:11:33.278Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-04-18T19:23:11.388Z"),
+      updatedAt: new Date("2026-04-23T19:20:20.221Z"),
     },
     connectionId: "<id>",
   });
@@ -362,7 +362,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareCreateHealthcareObservation } from "@unified-api/typescript-sdk/funcs/healthcareCreateHealthcareObservation.js";
+import { observationCreateHealthcareObservation } from "@unified-api/typescript-sdk/funcs/observationCreateHealthcareObservation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -373,7 +373,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareCreateHealthcareObservation(unifiedTo, {
+  const res = await observationCreateHealthcareObservation(unifiedTo, {
     healthcareObservation: {
       codes: [
         {
@@ -407,15 +407,15 @@ async function run() {
         },
       ],
       createdAt: new Date("2022-12-06T21:34:04.293Z"),
-      id: "3983cb55-48e0-468e-ac82-9113864e7f31",
+      id: "ee665e84-1d67-4c1b-8e5f-2774a668b124",
       interpretation: "CRITICAL_HIGH",
-      issuedAt: new Date("2025-05-30T06:04:45.360Z"),
+      issuedAt: new Date("2025-06-02T22:26:59.741Z"),
       metadata: [],
       name: "Blood pressure panel",
-      observedAt: new Date("2025-02-05T14:54:48.242Z"),
+      observedAt: new Date("2025-02-08T20:11:33.278Z"),
       status: "CORRECTED",
       type: "VITAL_SIGNS",
-      updatedAt: new Date("2026-04-18T19:23:11.388Z"),
+      updatedAt: new Date("2026-04-23T19:20:20.221Z"),
     },
     connectionId: "<id>",
   });
@@ -423,7 +423,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareCreateHealthcareObservation failed:", res.error);
+    console.log("observationCreateHealthcareObservation failed:", res.error);
   }
 }
 
@@ -469,21 +469,21 @@ async function run() {
   const result = await unifiedTo.healthcare.createHealthcarePatient({
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -492,33 +492,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "5b64973c-47cb-4348-ba05-97fb9dd0e396",
+      id: "780efb28-b421-4271-b453-d1389a73efd1",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.570Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.863Z"),
     },
     connectionId: "<id>",
   });
@@ -535,7 +535,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareCreateHealthcarePatient } from "@unified-api/typescript-sdk/funcs/healthcareCreateHealthcarePatient.js";
+import { patientCreateHealthcarePatient } from "@unified-api/typescript-sdk/funcs/patientCreateHealthcarePatient.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -546,24 +546,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareCreateHealthcarePatient(unifiedTo, {
+  const res = await patientCreateHealthcarePatient(unifiedTo, {
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -572,33 +572,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "5b64973c-47cb-4348-ba05-97fb9dd0e396",
+      id: "780efb28-b421-4271-b453-d1389a73efd1",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.570Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.863Z"),
     },
     connectionId: "<id>",
   });
@@ -606,7 +606,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareCreateHealthcarePatient failed:", res.error);
+    console.log("patientCreateHealthcarePatient failed:", res.error);
   }
 }
 
@@ -745,7 +745,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareAppointment.js";
+import { appointmentGetHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/appointmentGetHealthcareAppointment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -756,7 +756,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcareAppointment(unifiedTo, {
+  const res = await appointmentGetHealthcareAppointment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -764,7 +764,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcareAppointment failed:", res.error);
+    console.log("appointmentGetHealthcareAppointment failed:", res.error);
   }
 }
 
@@ -903,7 +903,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcareCondition } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareCondition.js";
+import { conditionGetHealthcareCondition } from "@unified-api/typescript-sdk/funcs/conditionGetHealthcareCondition.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -914,7 +914,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcareCondition(unifiedTo, {
+  const res = await conditionGetHealthcareCondition(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -922,7 +922,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcareCondition failed:", res.error);
+    console.log("conditionGetHealthcareCondition failed:", res.error);
   }
 }
 
@@ -1140,7 +1140,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcareEncounter } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareEncounter.js";
+import { encounterGetHealthcareEncounter } from "@unified-api/typescript-sdk/funcs/encounterGetHealthcareEncounter.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1151,7 +1151,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcareEncounter(unifiedTo, {
+  const res = await encounterGetHealthcareEncounter(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1159,7 +1159,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcareEncounter failed:", res.error);
+    console.log("encounterGetHealthcareEncounter failed:", res.error);
   }
 }
 
@@ -1298,7 +1298,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcareImmunization } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareImmunization.js";
+import { immunizationGetHealthcareImmunization } from "@unified-api/typescript-sdk/funcs/immunizationGetHealthcareImmunization.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1309,7 +1309,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcareImmunization(unifiedTo, {
+  const res = await immunizationGetHealthcareImmunization(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1317,7 +1317,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcareImmunization failed:", res.error);
+    console.log("immunizationGetHealthcareImmunization failed:", res.error);
   }
 }
 
@@ -1535,7 +1535,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcareObservation } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcareObservation.js";
+import { observationGetHealthcareObservation } from "@unified-api/typescript-sdk/funcs/observationGetHealthcareObservation.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1546,7 +1546,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcareObservation(unifiedTo, {
+  const res = await observationGetHealthcareObservation(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1554,7 +1554,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcareObservation failed:", res.error);
+    console.log("observationGetHealthcareObservation failed:", res.error);
   }
 }
 
@@ -1614,7 +1614,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcarePatient } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcarePatient.js";
+import { patientGetHealthcarePatient } from "@unified-api/typescript-sdk/funcs/patientGetHealthcarePatient.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1625,7 +1625,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcarePatient(unifiedTo, {
+  const res = await patientGetHealthcarePatient(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1633,7 +1633,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcarePatient failed:", res.error);
+    console.log("patientGetHealthcarePatient failed:", res.error);
   }
 }
 
@@ -1693,7 +1693,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcarePractitioner } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcarePractitioner.js";
+import { practitionerGetHealthcarePractitioner } from "@unified-api/typescript-sdk/funcs/practitionerGetHealthcarePractitioner.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1704,7 +1704,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcarePractitioner(unifiedTo, {
+  const res = await practitionerGetHealthcarePractitioner(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1712,7 +1712,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcarePractitioner failed:", res.error);
+    console.log("practitionerGetHealthcarePractitioner failed:", res.error);
   }
 }
 
@@ -2085,7 +2085,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcareAppointments } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareAppointments.js";
+import { appointmentListHealthcareAppointments } from "@unified-api/typescript-sdk/funcs/appointmentListHealthcareAppointments.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2096,14 +2096,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcareAppointments(unifiedTo, {
+  const res = await appointmentListHealthcareAppointments(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcareAppointments failed:", res.error);
+    console.log("appointmentListHealthcareAppointments failed:", res.error);
   }
 }
 
@@ -2239,7 +2239,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcareConditions } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareConditions.js";
+import { conditionListHealthcareConditions } from "@unified-api/typescript-sdk/funcs/conditionListHealthcareConditions.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2250,14 +2250,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcareConditions(unifiedTo, {
+  const res = await conditionListHealthcareConditions(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcareConditions failed:", res.error);
+    console.log("conditionListHealthcareConditions failed:", res.error);
   }
 }
 
@@ -2470,7 +2470,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcareEncounters } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareEncounters.js";
+import { encounterListHealthcareEncounters } from "@unified-api/typescript-sdk/funcs/encounterListHealthcareEncounters.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2481,14 +2481,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcareEncounters(unifiedTo, {
+  const res = await encounterListHealthcareEncounters(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcareEncounters failed:", res.error);
+    console.log("encounterListHealthcareEncounters failed:", res.error);
   }
 }
 
@@ -2624,7 +2624,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcareImmunizations } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareImmunizations.js";
+import { immunizationListHealthcareImmunizations } from "@unified-api/typescript-sdk/funcs/immunizationListHealthcareImmunizations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2635,14 +2635,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcareImmunizations(unifiedTo, {
+  const res = await immunizationListHealthcareImmunizations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcareImmunizations failed:", res.error);
+    console.log("immunizationListHealthcareImmunizations failed:", res.error);
   }
 }
 
@@ -2855,7 +2855,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcareObservations } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcareObservations.js";
+import { observationListHealthcareObservations } from "@unified-api/typescript-sdk/funcs/observationListHealthcareObservations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2866,14 +2866,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcareObservations(unifiedTo, {
+  const res = await observationListHealthcareObservations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcareObservations failed:", res.error);
+    console.log("observationListHealthcareObservations failed:", res.error);
   }
 }
 
@@ -2932,7 +2932,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcarePatients } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcarePatients.js";
+import { patientListHealthcarePatients } from "@unified-api/typescript-sdk/funcs/patientListHealthcarePatients.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2943,14 +2943,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcarePatients(unifiedTo, {
+  const res = await patientListHealthcarePatients(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcarePatients failed:", res.error);
+    console.log("patientListHealthcarePatients failed:", res.error);
   }
 }
 
@@ -3009,7 +3009,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcarePractitioners } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcarePractitioners.js";
+import { practitionerListHealthcarePractitioners } from "@unified-api/typescript-sdk/funcs/practitionerListHealthcarePractitioners.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3020,14 +3020,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcarePractitioners(unifiedTo, {
+  const res = await practitionerListHealthcarePractitioners(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcarePractitioners failed:", res.error);
+    console.log("practitionerListHealthcarePractitioners failed:", res.error);
   }
 }
 
@@ -3304,13 +3304,13 @@ async function run() {
   const result = await unifiedTo.healthcare.patchHealthcareAppointment({
     healthcareAppointment: {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
-      description: "clarus aptus cetera",
+      description: "cubicularis caput viriliter",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "70ae223a-75ba-4b90-94ed-a6c7c19a7517",
+      id: "169547f6-e704-4a4e-a235-289250bb8345",
       isVirtual: true,
-      meetingUrl: "https://expensive-slipper.name/",
+      meetingUrl: "https://cautious-cannon.com/",
       metadata: [],
-      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
+      notes: "Casus anser ver alo beatus.",
       practitionerIds: [],
       serviceTypes: [
         {
@@ -3322,7 +3322,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2026-10-21T13:45:44.361Z"),
+      updatedAt: new Date("2026-10-27T07:34:26.124Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3340,7 +3340,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcarePatchHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/healthcarePatchHealthcareAppointment.js";
+import { appointmentPatchHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/appointmentPatchHealthcareAppointment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3351,16 +3351,16 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcarePatchHealthcareAppointment(unifiedTo, {
+  const res = await appointmentPatchHealthcareAppointment(unifiedTo, {
     healthcareAppointment: {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
-      description: "clarus aptus cetera",
+      description: "cubicularis caput viriliter",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "70ae223a-75ba-4b90-94ed-a6c7c19a7517",
+      id: "169547f6-e704-4a4e-a235-289250bb8345",
       isVirtual: true,
-      meetingUrl: "https://expensive-slipper.name/",
+      meetingUrl: "https://cautious-cannon.com/",
       metadata: [],
-      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
+      notes: "Casus anser ver alo beatus.",
       practitionerIds: [],
       serviceTypes: [
         {
@@ -3372,7 +3372,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2026-10-21T13:45:44.361Z"),
+      updatedAt: new Date("2026-10-27T07:34:26.124Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3381,7 +3381,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcarePatchHealthcareAppointment failed:", res.error);
+    console.log("appointmentPatchHealthcareAppointment failed:", res.error);
   }
 }
 
@@ -3427,21 +3427,21 @@ async function run() {
   const result = await unifiedTo.healthcare.patchHealthcarePatient({
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -3450,33 +3450,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "ef574ab8-412a-46b3-bc6f-6aec809b601e",
+      id: "046dbc01-e433-4e1b-bf50-49ba74d30803",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.607Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.905Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3494,7 +3494,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcarePatchHealthcarePatient } from "@unified-api/typescript-sdk/funcs/healthcarePatchHealthcarePatient.js";
+import { patientPatchHealthcarePatient } from "@unified-api/typescript-sdk/funcs/patientPatchHealthcarePatient.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3505,24 +3505,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcarePatchHealthcarePatient(unifiedTo, {
+  const res = await patientPatchHealthcarePatient(unifiedTo, {
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -3531,33 +3531,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "ef574ab8-412a-46b3-bc6f-6aec809b601e",
+      id: "046dbc01-e433-4e1b-bf50-49ba74d30803",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.607Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.905Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3566,7 +3566,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcarePatchHealthcarePatient failed:", res.error);
+    console.log("patientPatchHealthcarePatient failed:", res.error);
   }
 }
 
@@ -3626,7 +3626,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareRemoveHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/healthcareRemoveHealthcareAppointment.js";
+import { appointmentRemoveHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/appointmentRemoveHealthcareAppointment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3637,7 +3637,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareRemoveHealthcareAppointment(unifiedTo, {
+  const res = await appointmentRemoveHealthcareAppointment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3645,7 +3645,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareRemoveHealthcareAppointment failed:", res.error);
+    console.log("appointmentRemoveHealthcareAppointment failed:", res.error);
   }
 }
 
@@ -3691,13 +3691,13 @@ async function run() {
   const result = await unifiedTo.healthcare.updateHealthcareAppointment({
     healthcareAppointment: {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
-      description: "clarus aptus cetera",
+      description: "cubicularis caput viriliter",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "70ae223a-75ba-4b90-94ed-a6c7c19a7517",
+      id: "169547f6-e704-4a4e-a235-289250bb8345",
       isVirtual: true,
-      meetingUrl: "https://expensive-slipper.name/",
+      meetingUrl: "https://cautious-cannon.com/",
       metadata: [],
-      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
+      notes: "Casus anser ver alo beatus.",
       practitionerIds: [],
       serviceTypes: [
         {
@@ -3709,7 +3709,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2026-10-21T13:45:44.361Z"),
+      updatedAt: new Date("2026-10-27T07:34:26.124Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3727,7 +3727,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareUpdateHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/healthcareUpdateHealthcareAppointment.js";
+import { appointmentUpdateHealthcareAppointment } from "@unified-api/typescript-sdk/funcs/appointmentUpdateHealthcareAppointment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3738,16 +3738,16 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareUpdateHealthcareAppointment(unifiedTo, {
+  const res = await appointmentUpdateHealthcareAppointment(unifiedTo, {
     healthcareAppointment: {
       createdAt: new Date("2023-04-11T08:16:20.874Z"),
-      description: "clarus aptus cetera",
+      description: "cubicularis caput viriliter",
       endAt: new Date("2023-12-12T13:04:41.451Z"),
-      id: "70ae223a-75ba-4b90-94ed-a6c7c19a7517",
+      id: "169547f6-e704-4a4e-a235-289250bb8345",
       isVirtual: true,
-      meetingUrl: "https://expensive-slipper.name/",
+      meetingUrl: "https://cautious-cannon.com/",
       metadata: [],
-      notes: "Stabilis triduana colo casus anser ver alo beatus contabesco amiculum.",
+      notes: "Casus anser ver alo beatus.",
       practitionerIds: [],
       serviceTypes: [
         {
@@ -3759,7 +3759,7 @@ async function run() {
       slotIds: [],
       startAt: new Date("2023-12-12T12:34:41.451Z"),
       status: "BOOKED",
-      updatedAt: new Date("2026-10-21T13:45:44.361Z"),
+      updatedAt: new Date("2026-10-27T07:34:26.124Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3768,7 +3768,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareUpdateHealthcareAppointment failed:", res.error);
+    console.log("appointmentUpdateHealthcareAppointment failed:", res.error);
   }
 }
 
@@ -3814,21 +3814,21 @@ async function run() {
   const result = await unifiedTo.healthcare.updateHealthcarePatient({
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -3837,33 +3837,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "ef574ab8-412a-46b3-bc6f-6aec809b601e",
+      id: "046dbc01-e433-4e1b-bf50-49ba74d30803",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.607Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.905Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3881,7 +3881,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareUpdateHealthcarePatient } from "@unified-api/typescript-sdk/funcs/healthcareUpdateHealthcarePatient.js";
+import { patientUpdateHealthcarePatient } from "@unified-api/typescript-sdk/funcs/patientUpdateHealthcarePatient.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -3892,24 +3892,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareUpdateHealthcarePatient(unifiedTo, {
+  const res = await patientUpdateHealthcarePatient(unifiedTo, {
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -3918,33 +3918,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "ef574ab8-412a-46b3-bc6f-6aec809b601e",
+      id: "046dbc01-e433-4e1b-bf50-49ba74d30803",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.607Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.905Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -3953,7 +3953,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareUpdateHealthcarePatient failed:", res.error);
+    console.log("patientUpdateHealthcarePatient failed:", res.error);
   }
 }
 

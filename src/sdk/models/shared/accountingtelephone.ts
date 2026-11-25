@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -28,23 +28,29 @@ export const AccountingTelephoneType$inboundSchema: z.ZodType<
   AccountingTelephoneType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingTelephoneType)
+);
 /** @internal */
 export const AccountingTelephoneType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingTelephoneType
-> = openEnums.outboundSchema(AccountingTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingTelephoneType)
+);
 
 /** @internal */
 export const AccountingTelephone$inboundSchema: z.ZodType<
   AccountingTelephone,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  telephone: z.string().optional(),
-  type: AccountingTelephoneType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string().optional(),
+    type: AccountingTelephoneType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type AccountingTelephone$Outbound = {
   telephone?: string | undefined;
@@ -56,10 +62,12 @@ export const AccountingTelephone$outboundSchema: z.ZodType<
   AccountingTelephone$Outbound,
   z.ZodTypeDef,
   AccountingTelephone
-> = z.object({
-  telephone: z.string().optional(),
-  type: AccountingTelephoneType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string().optional(),
+    type: AccountingTelephoneType$outboundSchema.optional(),
+  })
+);
 
 export function accountingTelephoneToJSON(
   accountingTelephone: AccountingTelephone,

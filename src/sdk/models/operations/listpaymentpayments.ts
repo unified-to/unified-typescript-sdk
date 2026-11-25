@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPaymentPaymentsQueryParamFields = {
@@ -104,9 +105,10 @@ export type ListPaymentPaymentsRequest = {
 
 /** @internal */
 export const ListPaymentPaymentsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListPaymentPaymentsQueryParamFields> = z.nativeEnum(
-    ListPaymentPaymentsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListPaymentPaymentsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListPaymentPaymentsQueryParamFields)
+    );
 
 /** @internal */
 export type ListPaymentPaymentsRequest$Outbound = {
@@ -134,38 +136,40 @@ export const ListPaymentPaymentsRequest$outboundSchema: z.ZodType<
   ListPaymentPaymentsRequest$Outbound,
   z.ZodTypeDef,
   ListPaymentPaymentsRequest
-> = z.object({
-  billId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListPaymentPaymentsQueryParamFields$outboundSchema)
-    .optional(),
-  invoiceId: z.string().optional(),
-  limit: z.number().optional(),
-  linkId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    billId: "bill_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    endLt: "end_lt",
-    invoiceId: "invoice_id",
-    linkId: "link_id",
-    orgId: "org_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    billId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListPaymentPaymentsQueryParamFields$outboundSchema)
+      .optional(),
+    invoiceId: z.string().optional(),
+    limit: z.number().optional(),
+    linkId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      billId: "bill_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      endLt: "end_lt",
+      invoiceId: "invoice_id",
+      linkId: "link_id",
+      orgId: "org_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPaymentPaymentsRequestToJSON(
   listPaymentPaymentsRequest: ListPaymentPaymentsRequest,

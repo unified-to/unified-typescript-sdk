@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -154,73 +154,85 @@ export const ComputeServiceStatus$inboundSchema: z.ZodType<
   ComputeServiceStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeServiceStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeServiceStatus)
+);
 /** @internal */
 export const ComputeServiceStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeServiceStatus
-> = openEnums.outboundSchema(ComputeServiceStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeServiceStatus)
+);
 
 /** @internal */
 export const ComputeServiceType$inboundSchema: z.ZodType<
   ComputeServiceType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeServiceType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeServiceType)
+);
 /** @internal */
 export const ComputeServiceType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeServiceType
-> = openEnums.outboundSchema(ComputeServiceType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeServiceType)
+);
 
 /** @internal */
 export const ComputeService$inboundSchema: z.ZodType<
   ComputeService,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  branch: z.string().optional(),
-  build_command: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  env: z.array(ComputeEnv$inboundSchema).optional(),
-  gputype_id: z.string().optional(),
-  id: z.string().optional(),
-  image: z.string().optional(),
-  instance_count: z.number().optional(),
-  max_instance_count: z.number().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  min_instance_count: z.number().optional(),
-  name: z.string().optional(),
-  project_identifier: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  region_id: z.string().optional(),
-  repo_url: z.string().optional(),
-  runtime: z.string().optional(),
-  sku: z.string().optional(),
-  start_command: z.string().optional(),
-  status: ComputeServiceStatus$inboundSchema.optional(),
-  type: ComputeServiceType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "build_command": "buildCommand",
-    "created_at": "createdAt",
-    "gputype_id": "gputypeId",
-    "instance_count": "instanceCount",
-    "max_instance_count": "maxInstanceCount",
-    "min_instance_count": "minInstanceCount",
-    "project_identifier": "projectIdentifier",
-    "region_id": "regionId",
-    "repo_url": "repoUrl",
-    "start_command": "startCommand",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    branch: z.string().optional(),
+    build_command: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    env: z.array(ComputeEnv$inboundSchema).optional(),
+    gputype_id: z.string().optional(),
+    id: z.string().optional(),
+    image: z.string().optional(),
+    instance_count: z.number().optional(),
+    max_instance_count: z.number().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    min_instance_count: z.number().optional(),
+    name: z.string().optional(),
+    project_identifier: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    region_id: z.string().optional(),
+    repo_url: z.string().optional(),
+    runtime: z.string().optional(),
+    sku: z.string().optional(),
+    start_command: z.string().optional(),
+    status: ComputeServiceStatus$inboundSchema.optional(),
+    type: ComputeServiceType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "build_command": "buildCommand",
+      "created_at": "createdAt",
+      "gputype_id": "gputypeId",
+      "instance_count": "instanceCount",
+      "max_instance_count": "maxInstanceCount",
+      "min_instance_count": "minInstanceCount",
+      "project_identifier": "projectIdentifier",
+      "region_id": "regionId",
+      "repo_url": "repoUrl",
+      "start_command": "startCommand",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type ComputeService$Outbound = {
   branch?: string | undefined;
@@ -253,45 +265,47 @@ export const ComputeService$outboundSchema: z.ZodType<
   ComputeService$Outbound,
   z.ZodTypeDef,
   ComputeService
-> = z.object({
-  branch: z.string().optional(),
-  buildCommand: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  env: z.array(ComputeEnv$outboundSchema).optional(),
-  gputypeId: z.string().optional(),
-  id: z.string().optional(),
-  image: z.string().optional(),
-  instanceCount: z.number().optional(),
-  maxInstanceCount: z.number().optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  minInstanceCount: z.number().optional(),
-  name: z.string().optional(),
-  projectIdentifier: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  regionId: z.string().optional(),
-  repoUrl: z.string().optional(),
-  runtime: z.string().optional(),
-  sku: z.string().optional(),
-  startCommand: z.string().optional(),
-  status: ComputeServiceStatus$outboundSchema.optional(),
-  type: ComputeServiceType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    buildCommand: "build_command",
-    createdAt: "created_at",
-    gputypeId: "gputype_id",
-    instanceCount: "instance_count",
-    maxInstanceCount: "max_instance_count",
-    minInstanceCount: "min_instance_count",
-    projectIdentifier: "project_identifier",
-    regionId: "region_id",
-    repoUrl: "repo_url",
-    startCommand: "start_command",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    branch: z.string().optional(),
+    buildCommand: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    env: z.array(ComputeEnv$outboundSchema).optional(),
+    gputypeId: z.string().optional(),
+    id: z.string().optional(),
+    image: z.string().optional(),
+    instanceCount: z.number().optional(),
+    maxInstanceCount: z.number().optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    minInstanceCount: z.number().optional(),
+    name: z.string().optional(),
+    projectIdentifier: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    regionId: z.string().optional(),
+    repoUrl: z.string().optional(),
+    runtime: z.string().optional(),
+    sku: z.string().optional(),
+    startCommand: z.string().optional(),
+    status: ComputeServiceStatus$outboundSchema.optional(),
+    type: ComputeServiceType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      buildCommand: "build_command",
+      createdAt: "created_at",
+      gputypeId: "gputype_id",
+      instanceCount: "instance_count",
+      maxInstanceCount: "max_instance_count",
+      minInstanceCount: "min_instance_count",
+      projectIdentifier: "project_identifier",
+      regionId: "region_id",
+      repoUrl: "repo_url",
+      startCommand: "start_command",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function computeServiceToJSON(computeService: ComputeService): string {
   return JSON.stringify(ComputeService$outboundSchema.parse(computeService));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -119,50 +119,56 @@ export const HealthcareProcedureStatus$inboundSchema: z.ZodType<
   HealthcareProcedureStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareProcedureStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareProcedureStatus)
+);
 
 /** @internal */
 export const HealthcareProcedure$inboundSchema: z.ZodType<
   HealthcareProcedure,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  body_sites: z.array(HealthcareCode$inboundSchema).optional(),
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  condition_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  encounter_id: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  patient_id: z.string().optional(),
-  practitioner_ids: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  reasons: z.array(HealthcareCode$inboundSchema).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HealthcareProcedureStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "body_sites": "bodySites",
-    "condition_ids": "conditionIds",
-    "created_at": "createdAt",
-    "encounter_id": "encounterId",
-    "end_at": "endAt",
-    "location_id": "locationId",
-    "patient_id": "patientId",
-    "practitioner_ids": "practitionerIds",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    body_sites: z.array(HealthcareCode$inboundSchema).optional(),
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    condition_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    encounter_id: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    patient_id: z.string().optional(),
+    practitioner_ids: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    reasons: z.array(HealthcareCode$inboundSchema).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HealthcareProcedureStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "body_sites": "bodySites",
+      "condition_ids": "conditionIds",
+      "created_at": "createdAt",
+      "encounter_id": "encounterId",
+      "end_at": "endAt",
+      "location_id": "locationId",
+      "patient_id": "patientId",
+      "practitioner_ids": "practitionerIds",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcareProcedureFromJSON(
   jsonString: string,

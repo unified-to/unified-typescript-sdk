@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -113,57 +113,66 @@ export const LegalExpenseType$inboundSchema: z.ZodType<
   LegalExpenseType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LegalExpenseType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(LegalExpenseType)
+);
 /** @internal */
 export const LegalExpenseType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LegalExpenseType
-> = openEnums.outboundSchema(LegalExpenseType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(LegalExpenseType)
+);
 
 /** @internal */
 export const LegalExpense$inboundSchema: z.ZodType<
   LegalExpense,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  category: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  expense_code: z.string().optional(),
-  id: z.string().optional(),
-  incurred_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  invoice_id: z.string().optional(),
-  is_billable: z.boolean().optional(),
-  is_billed: z.boolean().optional(),
-  matter_id: z.string().optional(),
-  metadata: z.array(LegalMetadata$inboundSchema).optional(),
-  price_amount: z.number().optional(),
-  quantity: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  total_amount: z.number().optional(),
-  type: LegalExpenseType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "expense_code": "expenseCode",
-    "incurred_at": "incurredAt",
-    "invoice_id": "invoiceId",
-    "is_billable": "isBillable",
-    "is_billed": "isBilled",
-    "matter_id": "matterId",
-    "price_amount": "priceAmount",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    expense_code: z.string().optional(),
+    id: z.string().optional(),
+    incurred_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    invoice_id: z.string().optional(),
+    is_billable: z.boolean().optional(),
+    is_billed: z.boolean().optional(),
+    matter_id: z.string().optional(),
+    metadata: z.array(LegalMetadata$inboundSchema).optional(),
+    price_amount: z.number().optional(),
+    quantity: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    total_amount: z.number().optional(),
+    type: LegalExpenseType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "expense_code": "expenseCode",
+      "incurred_at": "incurredAt",
+      "invoice_id": "invoiceId",
+      "is_billable": "isBillable",
+      "is_billed": "isBilled",
+      "matter_id": "matterId",
+      "price_amount": "priceAmount",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type LegalExpense$Outbound = {
   category?: string | undefined;
@@ -192,41 +201,43 @@ export const LegalExpense$outboundSchema: z.ZodType<
   LegalExpense$Outbound,
   z.ZodTypeDef,
   LegalExpense
-> = z.object({
-  category: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  expenseCode: z.string().optional(),
-  id: z.string().optional(),
-  incurredAt: z.date().transform(v => v.toISOString()).optional(),
-  invoiceId: z.string().optional(),
-  isBillable: z.boolean().optional(),
-  isBilled: z.boolean().optional(),
-  matterId: z.string().optional(),
-  metadata: z.array(LegalMetadata$outboundSchema).optional(),
-  priceAmount: z.number().optional(),
-  quantity: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  totalAmount: z.number().optional(),
-  type: LegalExpenseType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    expenseCode: "expense_code",
-    incurredAt: "incurred_at",
-    invoiceId: "invoice_id",
-    isBillable: "is_billable",
-    isBilled: "is_billed",
-    matterId: "matter_id",
-    priceAmount: "price_amount",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    expenseCode: z.string().optional(),
+    id: z.string().optional(),
+    incurredAt: z.date().transform(v => v.toISOString()).optional(),
+    invoiceId: z.string().optional(),
+    isBillable: z.boolean().optional(),
+    isBilled: z.boolean().optional(),
+    matterId: z.string().optional(),
+    metadata: z.array(LegalMetadata$outboundSchema).optional(),
+    priceAmount: z.number().optional(),
+    quantity: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    totalAmount: z.number().optional(),
+    type: LegalExpenseType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      expenseCode: "expense_code",
+      incurredAt: "incurred_at",
+      invoiceId: "invoice_id",
+      isBillable: "is_billable",
+      isBilled: "is_billed",
+      matterId: "matter_id",
+      priceAmount: "price_amount",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function legalExpenseToJSON(legalExpense: LegalExpense): string {
   return JSON.stringify(LegalExpense$outboundSchema.parse(legalExpense));

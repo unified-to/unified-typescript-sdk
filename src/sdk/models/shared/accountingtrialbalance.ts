@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -48,34 +48,38 @@ export const AccountingTrialbalance$inboundSchema: z.ZodType<
   AccountingTrialbalance,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  sub_items: z.array(AccountingTrialbalanceSubItem$inboundSchema).optional(),
-  total_credit_amount: z.number().optional(),
-  total_debit_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "start_at": "startAt",
-    "sub_items": "subItems",
-    "total_credit_amount": "totalCreditAmount",
-    "total_debit_amount": "totalDebitAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    sub_items: z.array(AccountingTrialbalanceSubItem$inboundSchema).optional(),
+    total_credit_amount: z.number().optional(),
+    total_debit_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "start_at": "startAt",
+      "sub_items": "subItems",
+      "total_credit_amount": "totalCreditAmount",
+      "total_debit_amount": "totalDebitAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function accountingTrialbalanceFromJSON(
   jsonString: string,

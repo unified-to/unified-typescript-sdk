@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateUnifiedWebhookRequest = {
@@ -28,14 +29,16 @@ export const UpdateUnifiedWebhookRequest$outboundSchema: z.ZodType<
   UpdateUnifiedWebhookRequest$Outbound,
   z.ZodTypeDef,
   UpdateUnifiedWebhookRequest
-> = z.object({
-  webhook: shared.Webhook$outboundSchema,
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    webhook: "Webhook",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    webhook: shared.Webhook$outboundSchema,
+    id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      webhook: "Webhook",
+    });
+  })
+);
 
 export function updateUnifiedWebhookRequestToJSON(
   updateUnifiedWebhookRequest: UpdateUnifiedWebhookRequest,

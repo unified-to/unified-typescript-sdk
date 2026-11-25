@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListUnifiedWorkspaceintegrationsQueryParamCategories = {
@@ -48,6 +49,9 @@ export const ListUnifiedWorkspaceintegrationsQueryParamCategories = {
   Property: "property",
   Plm: "plm",
   Qms: "qms",
+  Dms: "dms",
+  Fhir: "fhir",
+  Printing: "printing",
 } as const;
 export type ListUnifiedWorkspaceintegrationsQueryParamCategories = ClosedEnum<
   typeof ListUnifiedWorkspaceintegrationsQueryParamCategories
@@ -79,7 +83,9 @@ export type ListUnifiedWorkspaceintegrationsRequest = {
 /** @internal */
 export const ListUnifiedWorkspaceintegrationsQueryParamCategories$outboundSchema:
   z.ZodNativeEnum<typeof ListUnifiedWorkspaceintegrationsQueryParamCategories> =
-    z.nativeEnum(ListUnifiedWorkspaceintegrationsQueryParamCategories);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListUnifiedWorkspaceintegrationsQueryParamCategories)
+    );
 
 /** @internal */
 export type ListUnifiedWorkspaceintegrationsRequest$Outbound = {
@@ -99,25 +105,27 @@ export const ListUnifiedWorkspaceintegrationsRequest$outboundSchema: z.ZodType<
   ListUnifiedWorkspaceintegrationsRequest$Outbound,
   z.ZodTypeDef,
   ListUnifiedWorkspaceintegrationsRequest
-> = z.object({
-  categories: z.array(
-    ListUnifiedWorkspaceintegrationsQueryParamCategories$outboundSchema,
-  ).optional(),
-  env: z.string().optional(),
-  includeCredentials: z.boolean().optional(),
-  integrationType: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    includeCredentials: "include_credentials",
-    integrationType: "integration_type",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categories: z.array(
+      ListUnifiedWorkspaceintegrationsQueryParamCategories$outboundSchema,
+    ).optional(),
+    env: z.string().optional(),
+    includeCredentials: z.boolean().optional(),
+    integrationType: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      includeCredentials: "include_credentials",
+      integrationType: "integration_type",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listUnifiedWorkspaceintegrationsRequestToJSON(
   listUnifiedWorkspaceintegrationsRequest:

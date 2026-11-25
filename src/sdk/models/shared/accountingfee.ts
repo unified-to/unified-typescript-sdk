@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -51,29 +51,35 @@ export const AccountingFeeType$inboundSchema: z.ZodType<
   AccountingFeeType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingFeeType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingFeeType)
+);
 /** @internal */
 export const AccountingFeeType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingFeeType
-> = openEnums.outboundSchema(AccountingFeeType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingFeeType)
+);
 
 /** @internal */
 export const AccountingFee$inboundSchema: z.ZodType<
   AccountingFee,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number(),
-  currency: z.string().optional(),
-  original_type: z.string().optional(),
-  type: AccountingFeeType$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "original_type": "originalType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number(),
+    currency: z.string().optional(),
+    original_type: z.string().optional(),
+    type: AccountingFeeType$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "original_type": "originalType",
+    });
+  })
+);
 /** @internal */
 export type AccountingFee$Outbound = {
   amount: number;
@@ -87,16 +93,18 @@ export const AccountingFee$outboundSchema: z.ZodType<
   AccountingFee$Outbound,
   z.ZodTypeDef,
   AccountingFee
-> = z.object({
-  amount: z.number(),
-  currency: z.string().optional(),
-  originalType: z.string().optional(),
-  type: AccountingFeeType$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    originalType: "original_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number(),
+    currency: z.string().optional(),
+    originalType: z.string().optional(),
+    type: AccountingFeeType$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      originalType: "original_type",
+    });
+  })
+);
 
 export function accountingFeeToJSON(accountingFee: AccountingFee): string {
   return JSON.stringify(AccountingFee$outboundSchema.parse(accountingFee));

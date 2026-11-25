@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListGenaiMemoriesQueryParamFields = {
@@ -58,7 +59,9 @@ export type ListGenaiMemoriesRequest = {
 /** @internal */
 export const ListGenaiMemoriesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListGenaiMemoriesQueryParamFields
-> = z.nativeEnum(ListGenaiMemoriesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListGenaiMemoriesQueryParamFields)
+);
 
 /** @internal */
 export type ListGenaiMemoriesRequest$Outbound = {
@@ -80,25 +83,28 @@ export const ListGenaiMemoriesRequest$outboundSchema: z.ZodType<
   ListGenaiMemoriesRequest$Outbound,
   z.ZodTypeDef,
   ListGenaiMemoriesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListGenaiMemoriesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListGenaiMemoriesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listGenaiMemoriesRequestToJSON(
   listGenaiMemoriesRequest: ListGenaiMemoriesRequest,

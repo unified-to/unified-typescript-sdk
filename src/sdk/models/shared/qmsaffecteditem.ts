@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -35,23 +35,25 @@ export const QmsAffectedItem$inboundSchema: z.ZodType<
   QmsAffectedItem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  document_id: z.string().optional(),
-  lot_number: z.string().optional(),
-  part_id: z.string().optional(),
-  part_number: z.string().optional(),
-  quantity: z.number().optional(),
-  revision: z.string().optional(),
-  serial_number: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "document_id": "documentId",
-    "lot_number": "lotNumber",
-    "part_id": "partId",
-    "part_number": "partNumber",
-    "serial_number": "serialNumber",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    document_id: z.string().optional(),
+    lot_number: z.string().optional(),
+    part_id: z.string().optional(),
+    part_number: z.string().optional(),
+    quantity: z.number().optional(),
+    revision: z.string().optional(),
+    serial_number: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "document_id": "documentId",
+      "lot_number": "lotNumber",
+      "part_id": "partId",
+      "part_number": "partNumber",
+      "serial_number": "serialNumber",
+    });
+  })
+);
 /** @internal */
 export type QmsAffectedItem$Outbound = {
   document_id?: string | undefined;
@@ -68,23 +70,25 @@ export const QmsAffectedItem$outboundSchema: z.ZodType<
   QmsAffectedItem$Outbound,
   z.ZodTypeDef,
   QmsAffectedItem
-> = z.object({
-  documentId: z.string().optional(),
-  lotNumber: z.string().optional(),
-  partId: z.string().optional(),
-  partNumber: z.string().optional(),
-  quantity: z.number().optional(),
-  revision: z.string().optional(),
-  serialNumber: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    documentId: "document_id",
-    lotNumber: "lot_number",
-    partId: "part_id",
-    partNumber: "part_number",
-    serialNumber: "serial_number",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    documentId: z.string().optional(),
+    lotNumber: z.string().optional(),
+    partId: z.string().optional(),
+    partNumber: z.string().optional(),
+    quantity: z.number().optional(),
+    revision: z.string().optional(),
+    serialNumber: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      documentId: "document_id",
+      lotNumber: "lot_number",
+      partId: "part_id",
+      partNumber: "part_number",
+      serialNumber: "serial_number",
+    });
+  })
+);
 
 export function qmsAffectedItemToJSON(
   qmsAffectedItem: QmsAffectedItem,

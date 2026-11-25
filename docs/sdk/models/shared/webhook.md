@@ -10,7 +10,7 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 let value: Webhook = {
   connectionId: "<id>",
   event: "deleted",
-  objectType: "clubs_group",
+  objectType: "cdp_profile",
 };
 ```
 

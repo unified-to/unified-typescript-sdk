@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const AnalyticsMetadata1$inboundSchema: z.ZodType<
   AnalyticsMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type AnalyticsMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const AnalyticsMetadata1$outboundSchema: z.ZodType<
   AnalyticsMetadata1$Outbound,
   z.ZodTypeDef,
   AnalyticsMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function analyticsMetadata1ToJSON(
   analyticsMetadata1: AnalyticsMetadata1,
@@ -112,12 +112,14 @@ export const AnalyticsMetadata5$inboundSchema: z.ZodType<
   AnalyticsMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => AnalyticsMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AnalyticsMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type AnalyticsMetadata5$Outbound =
   | AnalyticsMetadata1$Outbound
@@ -130,12 +132,14 @@ export const AnalyticsMetadata5$outboundSchema: z.ZodType<
   AnalyticsMetadata5$Outbound,
   z.ZodTypeDef,
   AnalyticsMetadata5
-> = z.union([
-  z.lazy(() => AnalyticsMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AnalyticsMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function analyticsMetadata5ToJSON(
   analyticsMetadata5: AnalyticsMetadata5,
@@ -159,20 +163,22 @@ export const AnalyticsMetadataExtraData$inboundSchema: z.ZodType<
   AnalyticsMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AnalyticsMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AnalyticsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type AnalyticsMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -186,20 +192,22 @@ export const AnalyticsMetadataExtraData$outboundSchema: z.ZodType<
   AnalyticsMetadataExtraData$Outbound,
   z.ZodTypeDef,
   AnalyticsMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AnalyticsMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AnalyticsMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function analyticsMetadataExtraDataToJSON(
   analyticsMetadataExtraData: AnalyticsMetadataExtraData,
@@ -223,20 +231,24 @@ export const AnalyticsMetadataFormat$inboundSchema: z.ZodType<
   AnalyticsMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AnalyticsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AnalyticsMetadataFormat)
+);
 /** @internal */
 export const AnalyticsMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AnalyticsMetadataFormat
-> = openEnums.outboundSchema(AnalyticsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AnalyticsMetadataFormat)
+);
 
 /** @internal */
 export const AnalyticsMetadataSchemas1$inboundSchema: z.ZodType<
   AnalyticsMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type AnalyticsMetadataSchemas1$Outbound = {};
 
@@ -245,7 +257,7 @@ export const AnalyticsMetadataSchemas1$outboundSchema: z.ZodType<
   AnalyticsMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   AnalyticsMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function analyticsMetadataSchemas1ToJSON(
   analyticsMetadataSchemas1: AnalyticsMetadataSchemas1,
@@ -269,12 +281,14 @@ export const AnalyticsMetadataSchemas5$inboundSchema: z.ZodType<
   AnalyticsMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => AnalyticsMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AnalyticsMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type AnalyticsMetadataSchemas5$Outbound =
   | AnalyticsMetadataSchemas1$Outbound
@@ -287,12 +301,14 @@ export const AnalyticsMetadataSchemas5$outboundSchema: z.ZodType<
   AnalyticsMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   AnalyticsMetadataSchemas5
-> = z.union([
-  z.lazy(() => AnalyticsMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AnalyticsMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function analyticsMetadataSchemas5ToJSON(
   analyticsMetadataSchemas5: AnalyticsMetadataSchemas5,
@@ -316,20 +332,22 @@ export const AnalyticsMetadataValue$inboundSchema: z.ZodType<
   AnalyticsMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AnalyticsMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AnalyticsMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type AnalyticsMetadataValue$Outbound =
   | { [k: string]: any }
@@ -343,20 +361,22 @@ export const AnalyticsMetadataValue$outboundSchema: z.ZodType<
   AnalyticsMetadataValue$Outbound,
   z.ZodTypeDef,
   AnalyticsMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AnalyticsMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AnalyticsMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function analyticsMetadataValueToJSON(
   analyticsMetadataValue: AnalyticsMetadataValue,
@@ -380,44 +400,46 @@ export const AnalyticsMetadata$inboundSchema: z.ZodType<
   AnalyticsMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AnalyticsMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: AnalyticsMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AnalyticsMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AnalyticsMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: AnalyticsMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AnalyticsMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type AnalyticsMetadata$Outbound = {
   extra_data?:
@@ -445,44 +467,46 @@ export const AnalyticsMetadata$outboundSchema: z.ZodType<
   AnalyticsMetadata$Outbound,
   z.ZodTypeDef,
   AnalyticsMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AnalyticsMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: AnalyticsMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AnalyticsMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AnalyticsMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: AnalyticsMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AnalyticsMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function analyticsMetadataToJSON(
   analyticsMetadata: AnalyticsMetadata,

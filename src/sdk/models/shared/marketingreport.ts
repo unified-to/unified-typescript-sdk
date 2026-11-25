@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -137,71 +137,73 @@ export const MarketingReport$inboundSchema: z.ZodType<
   MarketingReport,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  abuse_reports: z.number().optional(),
-  campaign_id: z.string().optional(),
-  click_rate: z.number().optional(),
-  clicks_total: z.number().optional(),
-  emails_sent: z.number().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  forwards_count: z.number().optional(),
-  forwards_opens: z.number().optional(),
-  hard_bounces: z.number().optional(),
-  human_open_rate: z.number().optional(),
-  human_opens_total: z.number().optional(),
-  human_unique_opens: z.number().optional(),
-  id: z.string().optional(),
-  last_click_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  last_open_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  links: z.array(MarketingReportLink$inboundSchema).optional(),
-  list_id: z.string().optional(),
-  metadata: z.array(MarketingMetadata$inboundSchema).optional(),
-  open_rate: z.number().optional(),
-  opens_total: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  soft_bounces: z.number().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  syntax_errors: z.number().optional(),
-  unique_clicks: z.number().optional(),
-  unique_opens: z.number().optional(),
-  unique_subscriber_clicks: z.number().optional(),
-  unsubscribed: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "abuse_reports": "abuseReports",
-    "campaign_id": "campaignId",
-    "click_rate": "clickRate",
-    "clicks_total": "clicksTotal",
-    "emails_sent": "emailsSent",
-    "end_at": "endAt",
-    "forwards_count": "forwardsCount",
-    "forwards_opens": "forwardsOpens",
-    "hard_bounces": "hardBounces",
-    "human_open_rate": "humanOpenRate",
-    "human_opens_total": "humanOpensTotal",
-    "human_unique_opens": "humanUniqueOpens",
-    "last_click_at": "lastClickAt",
-    "last_open_at": "lastOpenAt",
-    "list_id": "listId",
-    "open_rate": "openRate",
-    "opens_total": "opensTotal",
-    "sent_at": "sentAt",
-    "soft_bounces": "softBounces",
-    "start_at": "startAt",
-    "syntax_errors": "syntaxErrors",
-    "unique_clicks": "uniqueClicks",
-    "unique_opens": "uniqueOpens",
-    "unique_subscriber_clicks": "uniqueSubscriberClicks",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    abuse_reports: z.number().optional(),
+    campaign_id: z.string().optional(),
+    click_rate: z.number().optional(),
+    clicks_total: z.number().optional(),
+    emails_sent: z.number().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    forwards_count: z.number().optional(),
+    forwards_opens: z.number().optional(),
+    hard_bounces: z.number().optional(),
+    human_open_rate: z.number().optional(),
+    human_opens_total: z.number().optional(),
+    human_unique_opens: z.number().optional(),
+    id: z.string().optional(),
+    last_click_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    last_open_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    links: z.array(MarketingReportLink$inboundSchema).optional(),
+    list_id: z.string().optional(),
+    metadata: z.array(MarketingMetadata$inboundSchema).optional(),
+    open_rate: z.number().optional(),
+    opens_total: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    soft_bounces: z.number().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    syntax_errors: z.number().optional(),
+    unique_clicks: z.number().optional(),
+    unique_opens: z.number().optional(),
+    unique_subscriber_clicks: z.number().optional(),
+    unsubscribed: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "abuse_reports": "abuseReports",
+      "campaign_id": "campaignId",
+      "click_rate": "clickRate",
+      "clicks_total": "clicksTotal",
+      "emails_sent": "emailsSent",
+      "end_at": "endAt",
+      "forwards_count": "forwardsCount",
+      "forwards_opens": "forwardsOpens",
+      "hard_bounces": "hardBounces",
+      "human_open_rate": "humanOpenRate",
+      "human_opens_total": "humanOpensTotal",
+      "human_unique_opens": "humanUniqueOpens",
+      "last_click_at": "lastClickAt",
+      "last_open_at": "lastOpenAt",
+      "list_id": "listId",
+      "open_rate": "openRate",
+      "opens_total": "opensTotal",
+      "sent_at": "sentAt",
+      "soft_bounces": "softBounces",
+      "start_at": "startAt",
+      "syntax_errors": "syntaxErrors",
+      "unique_clicks": "uniqueClicks",
+      "unique_opens": "uniqueOpens",
+      "unique_subscriber_clicks": "uniqueSubscriberClicks",
+    });
+  })
+);
 
 export function marketingReportFromJSON(
   jsonString: string,

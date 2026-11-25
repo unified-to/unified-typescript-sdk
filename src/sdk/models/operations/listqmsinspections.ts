@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListQmsInspectionsQueryParamFields = {
@@ -80,7 +81,9 @@ export type ListQmsInspectionsRequest = {
 /** @internal */
 export const ListQmsInspectionsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListQmsInspectionsQueryParamFields
-> = z.nativeEnum(ListQmsInspectionsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListQmsInspectionsQueryParamFields)
+);
 
 /** @internal */
 export type ListQmsInspectionsRequest$Outbound = {
@@ -104,28 +107,31 @@ export const ListQmsInspectionsRequest$outboundSchema: z.ZodType<
   ListQmsInspectionsRequest$Outbound,
   z.ZodTypeDef,
   ListQmsInspectionsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListQmsInspectionsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  partId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    partId: "part_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListQmsInspectionsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    partId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      partId: "part_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listQmsInspectionsRequestToJSON(
   listQmsInspectionsRequest: ListQmsInspectionsRequest,

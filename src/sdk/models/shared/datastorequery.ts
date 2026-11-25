@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -43,19 +43,21 @@ export const DatastoreQuery$inboundSchema: z.ZodType<
   DatastoreQuery,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  database_id: z.string().optional(),
-  metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
-  query: PropertyDatastoreQueryQuery$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  response: PropertyDatastoreQueryResponse$inboundSchema.optional(),
-  table_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "database_id": "databaseId",
-    "table_id": "tableId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    database_id: z.string().optional(),
+    metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
+    query: PropertyDatastoreQueryQuery$inboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    response: PropertyDatastoreQueryResponse$inboundSchema.optional(),
+    table_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "database_id": "databaseId",
+      "table_id": "tableId",
+    });
+  })
+);
 /** @internal */
 export type DatastoreQuery$Outbound = {
   database_id?: string | undefined;
@@ -71,19 +73,21 @@ export const DatastoreQuery$outboundSchema: z.ZodType<
   DatastoreQuery$Outbound,
   z.ZodTypeDef,
   DatastoreQuery
-> = z.object({
-  databaseId: z.string().optional(),
-  metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
-  query: PropertyDatastoreQueryQuery$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  response: PropertyDatastoreQueryResponse$outboundSchema.optional(),
-  tableId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    databaseId: "database_id",
-    tableId: "table_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    databaseId: z.string().optional(),
+    metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
+    query: PropertyDatastoreQueryQuery$outboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    response: PropertyDatastoreQueryResponse$outboundSchema.optional(),
+    tableId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      databaseId: "database_id",
+      tableId: "table_id",
+    });
+  })
+);
 
 export function datastoreQueryToJSON(datastoreQuery: DatastoreQuery): string {
   return JSON.stringify(DatastoreQuery$outboundSchema.parse(datastoreQuery));

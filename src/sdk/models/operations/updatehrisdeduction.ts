@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -60,9 +61,10 @@ export type UpdateHrisDeductionRequest = {
 
 /** @internal */
 export const UpdateHrisDeductionQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateHrisDeductionQueryParamFields> = z.nativeEnum(
-    UpdateHrisDeductionQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateHrisDeductionQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateHrisDeductionQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateHrisDeductionRequest$Outbound = {
@@ -78,19 +80,21 @@ export const UpdateHrisDeductionRequest$outboundSchema: z.ZodType<
   UpdateHrisDeductionRequest$Outbound,
   z.ZodTypeDef,
   UpdateHrisDeductionRequest
-> = z.object({
-  hrisDeduction: shared.HrisDeduction$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateHrisDeductionQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisDeduction: "HrisDeduction",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisDeduction: shared.HrisDeduction$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateHrisDeductionQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisDeduction: "HrisDeduction",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateHrisDeductionRequestToJSON(
   updateHrisDeductionRequest: UpdateHrisDeductionRequest,

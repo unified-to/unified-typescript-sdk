@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -28,22 +28,24 @@ export const EnrichEmailType$inboundSchema: z.ZodType<
   EnrichEmailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EnrichEmailType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(EnrichEmailType));
 
 /** @internal */
 export const EnrichEmail$inboundSchema: z.ZodType<
   EnrichEmail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string(),
-  is_verified: z.boolean().optional(),
-  type: EnrichEmailType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_verified": "isVerified",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    is_verified: z.boolean().optional(),
+    type: EnrichEmailType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_verified": "isVerified",
+    });
+  })
+);
 
 export function enrichEmailFromJSON(
   jsonString: string,

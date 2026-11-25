@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -61,7 +62,9 @@ export type UpdateGenaiTaskRequest = {
 /** @internal */
 export const UpdateGenaiTaskQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdateGenaiTaskQueryParamFields
-> = z.nativeEnum(UpdateGenaiTaskQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdateGenaiTaskQueryParamFields)
+);
 
 /** @internal */
 export type UpdateGenaiTaskRequest$Outbound = {
@@ -77,18 +80,20 @@ export const UpdateGenaiTaskRequest$outboundSchema: z.ZodType<
   UpdateGenaiTaskRequest$Outbound,
   z.ZodTypeDef,
   UpdateGenaiTaskRequest
-> = z.object({
-  genaiTask: shared.GenaiTask$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateGenaiTaskQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    genaiTask: "GenaiTask",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    genaiTask: shared.GenaiTask$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateGenaiTaskQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      genaiTask: "GenaiTask",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateGenaiTaskRequestToJSON(
   updateGenaiTaskRequest: UpdateGenaiTaskRequest,

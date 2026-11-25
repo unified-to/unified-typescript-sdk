@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListDatastoreDatabasesQueryParamFields = {
@@ -52,9 +53,10 @@ export type ListDatastoreDatabasesRequest = {
 
 /** @internal */
 export const ListDatastoreDatabasesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListDatastoreDatabasesQueryParamFields> = z.nativeEnum(
-    ListDatastoreDatabasesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListDatastoreDatabasesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListDatastoreDatabasesQueryParamFields)
+    );
 
 /** @internal */
 export type ListDatastoreDatabasesRequest$Outbound = {
@@ -74,23 +76,25 @@ export const ListDatastoreDatabasesRequest$outboundSchema: z.ZodType<
   ListDatastoreDatabasesRequest$Outbound,
   z.ZodTypeDef,
   ListDatastoreDatabasesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListDatastoreDatabasesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListDatastoreDatabasesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listDatastoreDatabasesRequestToJSON(
   listDatastoreDatabasesRequest: ListDatastoreDatabasesRequest,

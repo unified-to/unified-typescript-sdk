@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -161,60 +161,64 @@ export const Architecture$inboundSchema: z.ZodType<
   Architecture,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Architecture);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Architecture));
 
 /** @internal */
 export const GpuManufacturer$inboundSchema: z.ZodType<
   GpuManufacturer,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GpuManufacturer);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(GpuManufacturer));
 
 /** @internal */
 export const GpuModel$inboundSchema: z.ZodType<
   GpuModel,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GpuModel);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(GpuModel));
 
 /** @internal */
 export const ComputeGputype$inboundSchema: z.ZodType<
   ComputeGputype,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  architecture: Architecture$inboundSchema.optional(),
-  availability: z.array(ComputeAvailability$inboundSchema).optional(),
-  cpu_count: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  disk_mb: z.number().optional(),
-  gpu_count: z.number().optional(),
-  gpu_manufacturer: GpuManufacturer$inboundSchema.optional(),
-  gpu_memory_mb: z.number().optional(),
-  gpu_model: GpuModel$inboundSchema.optional(),
-  id: z.string().optional(),
-  memory_mb: z.number().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  prices: z.array(ComputePrice$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  sku: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "cpu_count": "cpuCount",
-    "created_at": "createdAt",
-    "disk_mb": "diskMb",
-    "gpu_count": "gpuCount",
-    "gpu_manufacturer": "gpuManufacturer",
-    "gpu_memory_mb": "gpuMemoryMb",
-    "gpu_model": "gpuModel",
-    "memory_mb": "memoryMb",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    architecture: Architecture$inboundSchema.optional(),
+    availability: z.array(ComputeAvailability$inboundSchema).optional(),
+    cpu_count: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    disk_mb: z.number().optional(),
+    gpu_count: z.number().optional(),
+    gpu_manufacturer: GpuManufacturer$inboundSchema.optional(),
+    gpu_memory_mb: z.number().optional(),
+    gpu_model: GpuModel$inboundSchema.optional(),
+    id: z.string().optional(),
+    memory_mb: z.number().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    prices: z.array(ComputePrice$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    sku: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "cpu_count": "cpuCount",
+      "created_at": "createdAt",
+      "disk_mb": "diskMb",
+      "gpu_count": "gpuCount",
+      "gpu_manufacturer": "gpuManufacturer",
+      "gpu_memory_mb": "gpuMemoryMb",
+      "gpu_model": "gpuModel",
+      "memory_mb": "memoryMb",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function computeGputypeFromJSON(
   jsonString: string,

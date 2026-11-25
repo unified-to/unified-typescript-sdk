@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -66,42 +66,50 @@ export const AdsOrganizationStatus$inboundSchema: z.ZodType<
   AdsOrganizationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsOrganizationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsOrganizationStatus)
+);
 /** @internal */
 export const AdsOrganizationStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsOrganizationStatus
-> = openEnums.outboundSchema(AdsOrganizationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AdsOrganizationStatus)
+);
 
 /** @internal */
 export const AdsOrganization$inboundSchema: z.ZodType<
   AdsOrganization,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_number: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  id: z.string().optional(),
-  managers: z.array(AdsManager$inboundSchema).optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: AdsOrganizationStatus$inboundSchema.optional(),
-  timezone: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_number": "accountNumber",
-    "created_at": "createdAt",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_number: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    id: z.string().optional(),
+    managers: z.array(AdsManager$inboundSchema).optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: AdsOrganizationStatus$inboundSchema.optional(),
+    timezone: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_number": "accountNumber",
+      "created_at": "createdAt",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AdsOrganization$Outbound = {
   account_number?: string | undefined;
@@ -123,27 +131,29 @@ export const AdsOrganization$outboundSchema: z.ZodType<
   AdsOrganization$Outbound,
   z.ZodTypeDef,
   AdsOrganization
-> = z.object({
-  accountNumber: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  id: z.string().optional(),
-  managers: z.array(AdsManager$outboundSchema).optional(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: AdsOrganizationStatus$outboundSchema.optional(),
-  timezone: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountNumber: "account_number",
-    createdAt: "created_at",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountNumber: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    id: z.string().optional(),
+    managers: z.array(AdsManager$outboundSchema).optional(),
+    metadata: z.array(AdsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: AdsOrganizationStatus$outboundSchema.optional(),
+    timezone: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountNumber: "account_number",
+      createdAt: "created_at",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function adsOrganizationToJSON(
   adsOrganization: AdsOrganization,

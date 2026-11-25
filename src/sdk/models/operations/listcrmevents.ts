@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCrmEventsQueryParamFields = {
@@ -82,7 +83,9 @@ export type ListCrmEventsRequest = {
 /** @internal */
 export const ListCrmEventsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCrmEventsQueryParamFields
-> = z.nativeEnum(ListCrmEventsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCrmEventsQueryParamFields)
+);
 
 /** @internal */
 export type ListCrmEventsRequest$Outbound = {
@@ -108,33 +111,35 @@ export const ListCrmEventsRequest$outboundSchema: z.ZodType<
   ListCrmEventsRequest$Outbound,
   z.ZodTypeDef,
   ListCrmEventsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  dealId: z.string().optional(),
-  fields: z.array(ListCrmEventsQueryParamFields$outboundSchema).optional(),
-  leadId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    dealId: "deal_id",
-    leadId: "lead_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    dealId: z.string().optional(),
+    fields: z.array(ListCrmEventsQueryParamFields$outboundSchema).optional(),
+    leadId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      dealId: "deal_id",
+      leadId: "lead_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listCrmEventsRequestToJSON(
   listCrmEventsRequest: ListCrmEventsRequest,

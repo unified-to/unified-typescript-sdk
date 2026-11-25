@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -21,20 +21,22 @@ export const PropertyAdsCampaignTargetingPlacement$inboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingPlacement,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  audience_network_positions: z.array(z.string()).optional(),
-  facebook_positions: z.array(z.string()).optional(),
-  instagram_positions: z.array(z.string()).optional(),
-  messenger_positions: z.array(z.string()).optional(),
-  platforms: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "audience_network_positions": "audienceNetworkPositions",
-    "facebook_positions": "facebookPositions",
-    "instagram_positions": "instagramPositions",
-    "messenger_positions": "messengerPositions",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    audience_network_positions: z.array(z.string()).optional(),
+    facebook_positions: z.array(z.string()).optional(),
+    instagram_positions: z.array(z.string()).optional(),
+    messenger_positions: z.array(z.string()).optional(),
+    platforms: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "audience_network_positions": "audienceNetworkPositions",
+      "facebook_positions": "facebookPositions",
+      "instagram_positions": "instagramPositions",
+      "messenger_positions": "messengerPositions",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsCampaignTargetingPlacement$Outbound = {
   audience_network_positions?: Array<string> | undefined;
@@ -49,20 +51,22 @@ export const PropertyAdsCampaignTargetingPlacement$outboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingPlacement$Outbound,
   z.ZodTypeDef,
   PropertyAdsCampaignTargetingPlacement
-> = z.object({
-  audienceNetworkPositions: z.array(z.string()).optional(),
-  facebookPositions: z.array(z.string()).optional(),
-  instagramPositions: z.array(z.string()).optional(),
-  messengerPositions: z.array(z.string()).optional(),
-  platforms: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    audienceNetworkPositions: "audience_network_positions",
-    facebookPositions: "facebook_positions",
-    instagramPositions: "instagram_positions",
-    messengerPositions: "messenger_positions",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    audienceNetworkPositions: z.array(z.string()).optional(),
+    facebookPositions: z.array(z.string()).optional(),
+    instagramPositions: z.array(z.string()).optional(),
+    messengerPositions: z.array(z.string()).optional(),
+    platforms: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      audienceNetworkPositions: "audience_network_positions",
+      facebookPositions: "facebook_positions",
+      instagramPositions: "instagram_positions",
+      messengerPositions: "messenger_positions",
+    });
+  })
+);
 
 export function propertyAdsCampaignTargetingPlacementToJSON(
   propertyAdsCampaignTargetingPlacement: PropertyAdsCampaignTargetingPlacement,

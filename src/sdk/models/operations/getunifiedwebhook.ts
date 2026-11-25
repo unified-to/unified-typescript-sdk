@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type GetUnifiedWebhookRequest = {
   /**
@@ -21,9 +22,11 @@ export const GetUnifiedWebhookRequest$outboundSchema: z.ZodType<
   GetUnifiedWebhookRequest$Outbound,
   z.ZodTypeDef,
   GetUnifiedWebhookRequest
-> = z.object({
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+  })
+);
 
 export function getUnifiedWebhookRequestToJSON(
   getUnifiedWebhookRequest: GetUnifiedWebhookRequest,

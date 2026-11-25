@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -78,28 +78,31 @@ export const ShippingRate$inboundSchema: z.ZodType<
   ShippingRate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  carrier_id: z.string().optional(),
-  currency: z.string().optional(),
-  from_address: PropertyShippingRateFromAddress$inboundSchema.optional(),
-  id: z.string().optional(),
-  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
-  packages: z.array(ShippingPackage$inboundSchema).optional(),
-  rates: z.array(ShippingRateRate$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  ship_by_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  shipment_id: z.string().optional(),
-  to_address: PropertyShippingRateToAddress$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "carrier_id": "carrierId",
-    "from_address": "fromAddress",
-    "ship_by_at": "shipByAt",
-    "shipment_id": "shipmentId",
-    "to_address": "toAddress",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    carrier_id: z.string().optional(),
+    currency: z.string().optional(),
+    from_address: PropertyShippingRateFromAddress$inboundSchema.optional(),
+    id: z.string().optional(),
+    metadata: z.array(ShippingMetadata$inboundSchema).optional(),
+    packages: z.array(ShippingPackage$inboundSchema).optional(),
+    rates: z.array(ShippingRateRate$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    ship_by_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    shipment_id: z.string().optional(),
+    to_address: PropertyShippingRateToAddress$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "carrier_id": "carrierId",
+      "from_address": "fromAddress",
+      "ship_by_at": "shipByAt",
+      "shipment_id": "shipmentId",
+      "to_address": "toAddress",
+    });
+  })
+);
 /** @internal */
 export type ShippingRate$Outbound = {
   carrier_id?: string | undefined;
@@ -120,27 +123,29 @@ export const ShippingRate$outboundSchema: z.ZodType<
   ShippingRate$Outbound,
   z.ZodTypeDef,
   ShippingRate
-> = z.object({
-  carrierId: z.string().optional(),
-  currency: z.string().optional(),
-  fromAddress: PropertyShippingRateFromAddress$outboundSchema.optional(),
-  id: z.string().optional(),
-  metadata: z.array(ShippingMetadata$outboundSchema).optional(),
-  packages: z.array(ShippingPackage$outboundSchema).optional(),
-  rates: z.array(ShippingRateRate$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  shipByAt: z.date().transform(v => v.toISOString()).optional(),
-  shipmentId: z.string().optional(),
-  toAddress: PropertyShippingRateToAddress$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    carrierId: "carrier_id",
-    fromAddress: "from_address",
-    shipByAt: "ship_by_at",
-    shipmentId: "shipment_id",
-    toAddress: "to_address",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    carrierId: z.string().optional(),
+    currency: z.string().optional(),
+    fromAddress: PropertyShippingRateFromAddress$outboundSchema.optional(),
+    id: z.string().optional(),
+    metadata: z.array(ShippingMetadata$outboundSchema).optional(),
+    packages: z.array(ShippingPackage$outboundSchema).optional(),
+    rates: z.array(ShippingRateRate$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    shipByAt: z.date().transform(v => v.toISOString()).optional(),
+    shipmentId: z.string().optional(),
+    toAddress: PropertyShippingRateToAddress$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      carrierId: "carrier_id",
+      fromAddress: "from_address",
+      shipByAt: "ship_by_at",
+      shipmentId: "shipment_id",
+      toAddress: "to_address",
+    });
+  })
+);
 
 export function shippingRateToJSON(shippingRate: ShippingRate): string {
   return JSON.stringify(ShippingRate$outboundSchema.parse(shippingRate));

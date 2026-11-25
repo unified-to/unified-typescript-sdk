@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,9 +48,10 @@ export type UpdateAdsOrganizationRequest = {
 
 /** @internal */
 export const UpdateAdsOrganizationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateAdsOrganizationQueryParamFields> = z.nativeEnum(
-    UpdateAdsOrganizationQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateAdsOrganizationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAdsOrganizationQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAdsOrganizationRequest$Outbound = {
@@ -65,19 +67,21 @@ export const UpdateAdsOrganizationRequest$outboundSchema: z.ZodType<
   UpdateAdsOrganizationRequest$Outbound,
   z.ZodTypeDef,
   UpdateAdsOrganizationRequest
-> = z.object({
-  adsOrganization: shared.AdsOrganization$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateAdsOrganizationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    adsOrganization: "AdsOrganization",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    adsOrganization: shared.AdsOrganization$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateAdsOrganizationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      adsOrganization: "AdsOrganization",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateAdsOrganizationRequestToJSON(
   updateAdsOrganizationRequest: UpdateAdsOrganizationRequest,

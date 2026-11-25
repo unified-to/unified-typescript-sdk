@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -37,26 +37,30 @@ export const GenaiAgent$inboundSchema: z.ZodType<
   GenaiAgent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  instructions: z.string().optional(),
-  is_active: z.boolean().optional(),
-  model_id: z.string().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "model_id": "modelId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    instructions: z.string().optional(),
+    is_active: z.boolean().optional(),
+    model_id: z.string().optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "model_id": "modelId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type GenaiAgent$Outbound = {
   created_at?: string | undefined;
@@ -75,24 +79,26 @@ export const GenaiAgent$outboundSchema: z.ZodType<
   GenaiAgent$Outbound,
   z.ZodTypeDef,
   GenaiAgent
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  instructions: z.string().optional(),
-  isActive: z.boolean().optional(),
-  modelId: z.string().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isActive: "is_active",
-    modelId: "model_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    instructions: z.string().optional(),
+    isActive: z.boolean().optional(),
+    modelId: z.string().optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isActive: "is_active",
+      modelId: "model_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function genaiAgentToJSON(genaiAgent: GenaiAgent): string {
   return JSON.stringify(GenaiAgent$outboundSchema.parse(genaiAgent));

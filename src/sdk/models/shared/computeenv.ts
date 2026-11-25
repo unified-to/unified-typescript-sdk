@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -23,10 +23,12 @@ export const ComputeEnv$inboundSchema: z.ZodType<
   ComputeEnv,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string(),
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    value: z.string().optional(),
+  })
+);
 /** @internal */
 export type ComputeEnv$Outbound = {
   name: string;
@@ -38,10 +40,12 @@ export const ComputeEnv$outboundSchema: z.ZodType<
   ComputeEnv$Outbound,
   z.ZodTypeDef,
   ComputeEnv
-> = z.object({
-  name: z.string(),
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    value: z.string().optional(),
+  })
+);
 
 export function computeEnvToJSON(computeEnv: ComputeEnv): string {
   return JSON.stringify(ComputeEnv$outboundSchema.parse(computeEnv));

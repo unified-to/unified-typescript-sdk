@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -185,72 +185,81 @@ export const HealthcarePatientGender$inboundSchema: z.ZodType<
   HealthcarePatientGender,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcarePatientGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcarePatientGender)
+);
 /** @internal */
 export const HealthcarePatientGender$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcarePatientGender
-> = openEnums.outboundSchema(HealthcarePatientGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcarePatientGender)
+);
 
 /** @internal */
 export const MaritalStatus$inboundSchema: z.ZodType<
   MaritalStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MaritalStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(MaritalStatus));
 /** @internal */
 export const MaritalStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   MaritalStatus
-> = openEnums.outboundSchema(MaritalStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(MaritalStatus));
 
 /** @internal */
 export const HealthcarePatient$inboundSchema: z.ZodType<
   HealthcarePatient,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyHealthcarePatientAddress$inboundSchema.optional(),
-  birthdate: z.string().optional(),
-  contacts: z.array(HealthcarePatientContact$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  deceased_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  emails: z.array(HealthcareEmail$inboundSchema).optional(),
-  ethnicities: z.array(HealthcareCode$inboundSchema).optional(),
-  first_name: z.string().optional(),
-  gender: HealthcarePatientGender$inboundSchema.optional(),
-  id: z.string().optional(),
-  identifiers: z.array(HealthcareIdentifier$inboundSchema).optional(),
-  is_active: z.boolean().optional(),
-  is_deceased: z.boolean().optional(),
-  language: z.string().optional(),
-  last_name: z.string().optional(),
-  marital_status: MaritalStatus$inboundSchema.optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  practitioner_ids: z.array(z.string()).optional(),
-  races: z.array(HealthcareCode$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "deceased_at": "deceasedAt",
-    "first_name": "firstName",
-    "is_active": "isActive",
-    "is_deceased": "isDeceased",
-    "last_name": "lastName",
-    "marital_status": "maritalStatus",
-    "practitioner_ids": "practitionerIds",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHealthcarePatientAddress$inboundSchema.optional(),
+    birthdate: z.string().optional(),
+    contacts: z.array(HealthcarePatientContact$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    deceased_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    emails: z.array(HealthcareEmail$inboundSchema).optional(),
+    ethnicities: z.array(HealthcareCode$inboundSchema).optional(),
+    first_name: z.string().optional(),
+    gender: HealthcarePatientGender$inboundSchema.optional(),
+    id: z.string().optional(),
+    identifiers: z.array(HealthcareIdentifier$inboundSchema).optional(),
+    is_active: z.boolean().optional(),
+    is_deceased: z.boolean().optional(),
+    language: z.string().optional(),
+    last_name: z.string().optional(),
+    marital_status: MaritalStatus$inboundSchema.optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    practitioner_ids: z.array(z.string()).optional(),
+    races: z.array(HealthcareCode$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "deceased_at": "deceasedAt",
+      "first_name": "firstName",
+      "is_active": "isActive",
+      "is_deceased": "isDeceased",
+      "last_name": "lastName",
+      "marital_status": "maritalStatus",
+      "practitioner_ids": "practitionerIds",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HealthcarePatient$Outbound = {
   address?: PropertyHealthcarePatientAddress$Outbound | undefined;
@@ -283,43 +292,45 @@ export const HealthcarePatient$outboundSchema: z.ZodType<
   HealthcarePatient$Outbound,
   z.ZodTypeDef,
   HealthcarePatient
-> = z.object({
-  address: PropertyHealthcarePatientAddress$outboundSchema.optional(),
-  birthdate: z.string().optional(),
-  contacts: z.array(HealthcarePatientContact$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  deceasedAt: z.date().transform(v => v.toISOString()).optional(),
-  emails: z.array(HealthcareEmail$outboundSchema).optional(),
-  ethnicities: z.array(HealthcareCode$outboundSchema).optional(),
-  firstName: z.string().optional(),
-  gender: HealthcarePatientGender$outboundSchema.optional(),
-  id: z.string().optional(),
-  identifiers: z.array(HealthcareIdentifier$outboundSchema).optional(),
-  isActive: z.boolean().optional(),
-  isDeceased: z.boolean().optional(),
-  language: z.string().optional(),
-  lastName: z.string().optional(),
-  maritalStatus: MaritalStatus$outboundSchema.optional(),
-  metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  practitionerIds: z.array(z.string()).optional(),
-  races: z.array(HealthcareCode$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(HealthcareTelephone$outboundSchema).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    deceasedAt: "deceased_at",
-    firstName: "first_name",
-    isActive: "is_active",
-    isDeceased: "is_deceased",
-    lastName: "last_name",
-    maritalStatus: "marital_status",
-    practitionerIds: "practitioner_ids",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHealthcarePatientAddress$outboundSchema.optional(),
+    birthdate: z.string().optional(),
+    contacts: z.array(HealthcarePatientContact$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    deceasedAt: z.date().transform(v => v.toISOString()).optional(),
+    emails: z.array(HealthcareEmail$outboundSchema).optional(),
+    ethnicities: z.array(HealthcareCode$outboundSchema).optional(),
+    firstName: z.string().optional(),
+    gender: HealthcarePatientGender$outboundSchema.optional(),
+    id: z.string().optional(),
+    identifiers: z.array(HealthcareIdentifier$outboundSchema).optional(),
+    isActive: z.boolean().optional(),
+    isDeceased: z.boolean().optional(),
+    language: z.string().optional(),
+    lastName: z.string().optional(),
+    maritalStatus: MaritalStatus$outboundSchema.optional(),
+    metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    practitionerIds: z.array(z.string()).optional(),
+    races: z.array(HealthcareCode$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(HealthcareTelephone$outboundSchema).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      deceasedAt: "deceased_at",
+      firstName: "first_name",
+      isActive: "is_active",
+      isDeceased: "is_deceased",
+      lastName: "last_name",
+      maritalStatus: "marital_status",
+      practitionerIds: "practitioner_ids",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function healthcarePatientToJSON(
   healthcarePatient: HealthcarePatient,

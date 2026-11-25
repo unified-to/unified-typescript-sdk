@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -55,7 +56,9 @@ export type UpdateLegalExpenseRequest = {
 /** @internal */
 export const UpdateLegalExpenseQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdateLegalExpenseQueryParamFields
-> = z.nativeEnum(UpdateLegalExpenseQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdateLegalExpenseQueryParamFields)
+);
 
 /** @internal */
 export type UpdateLegalExpenseRequest$Outbound = {
@@ -71,18 +74,21 @@ export const UpdateLegalExpenseRequest$outboundSchema: z.ZodType<
   UpdateLegalExpenseRequest$Outbound,
   z.ZodTypeDef,
   UpdateLegalExpenseRequest
-> = z.object({
-  legalExpense: shared.LegalExpense$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateLegalExpenseQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    legalExpense: "LegalExpense",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    legalExpense: shared.LegalExpense$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateLegalExpenseQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      legalExpense: "LegalExpense",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateLegalExpenseRequestToJSON(
   updateLegalExpenseRequest: UpdateLegalExpenseRequest,

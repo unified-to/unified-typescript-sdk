@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,12 +22,14 @@ export const ScimRole$inboundSchema: z.ZodType<
   ScimRole,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: z.string().optional(),
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: z.string().optional(),
+    value: z.string(),
+  })
+);
 /** @internal */
 export type ScimRole$Outbound = {
   display?: string | undefined;
@@ -41,12 +43,14 @@ export const ScimRole$outboundSchema: z.ZodType<
   ScimRole$Outbound,
   z.ZodTypeDef,
   ScimRole
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: z.string().optional(),
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: z.string().optional(),
+    value: z.string(),
+  })
+);
 
 export function scimRoleToJSON(scimRole: ScimRole): string {
   return JSON.stringify(ScimRole$outboundSchema.parse(scimRole));

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAdsAssetsQueryParamFields = {
@@ -61,7 +62,9 @@ export type ListAdsAssetsRequest = {
 /** @internal */
 export const ListAdsAssetsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAdsAssetsQueryParamFields
-> = z.nativeEnum(ListAdsAssetsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAdsAssetsQueryParamFields)
+);
 
 /** @internal */
 export type ListAdsAssetsRequest$Outbound = {
@@ -83,25 +86,27 @@ export const ListAdsAssetsRequest$outboundSchema: z.ZodType<
   ListAdsAssetsRequest$Outbound,
   z.ZodTypeDef,
   ListAdsAssetsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAdsAssetsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAdsAssetsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAdsAssetsRequestToJSON(
   listAdsAssetsRequest: ListAdsAssetsRequest,

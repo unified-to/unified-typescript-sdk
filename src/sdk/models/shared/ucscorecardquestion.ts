@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -21,18 +21,20 @@ export const UcScorecardQuestion$inboundSchema: z.ZodType<
   UcScorecardQuestion,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  answer: z.string().optional(),
-  is_not_applicable: z.boolean().optional(),
-  question_identifier: z.string().optional(),
-  score: z.number().optional(),
-  text: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_not_applicable": "isNotApplicable",
-    "question_identifier": "questionIdentifier",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answer: z.string().optional(),
+    is_not_applicable: z.boolean().optional(),
+    question_identifier: z.string().optional(),
+    score: z.number().optional(),
+    text: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_not_applicable": "isNotApplicable",
+      "question_identifier": "questionIdentifier",
+    });
+  })
+);
 
 export function ucScorecardQuestionFromJSON(
   jsonString: string,

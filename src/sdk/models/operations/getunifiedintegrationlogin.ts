@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type GetUnifiedIntegrationLoginRequest = {
   env?: string | undefined;
@@ -46,22 +47,24 @@ export const GetUnifiedIntegrationLoginRequest$outboundSchema: z.ZodType<
   GetUnifiedIntegrationLoginRequest$Outbound,
   z.ZodTypeDef,
   GetUnifiedIntegrationLoginRequest
-> = z.object({
-  env: z.string().optional(),
-  failureRedirect: z.string().optional(),
-  integrationType: z.string(),
-  redirect: z.boolean().optional(),
-  state: z.string().optional(),
-  successRedirect: z.string().optional(),
-  workspaceId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    failureRedirect: "failure_redirect",
-    integrationType: "integration_type",
-    successRedirect: "success_redirect",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    env: z.string().optional(),
+    failureRedirect: z.string().optional(),
+    integrationType: z.string(),
+    redirect: z.boolean().optional(),
+    state: z.string().optional(),
+    successRedirect: z.string().optional(),
+    workspaceId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      failureRedirect: "failure_redirect",
+      integrationType: "integration_type",
+      successRedirect: "success_redirect",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function getUnifiedIntegrationLoginRequestToJSON(
   getUnifiedIntegrationLoginRequest: GetUnifiedIntegrationLoginRequest,

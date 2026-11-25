@@ -8,7 +8,9 @@ import { computeListComputeTemplates } from "../funcs/computeListComputeTemplate
 import { computePatchComputeTemplate } from "../funcs/computePatchComputeTemplate.js";
 import { computeRemoveComputeTemplate } from "../funcs/computeRemoveComputeTemplate.js";
 import { computeUpdateComputeTemplate } from "../funcs/computeUpdateComputeTemplate.js";
+import { templateGetPrintingTemplate } from "../funcs/templateGetPrintingTemplate.js";
 import { templateGetSigningTemplate } from "../funcs/templateGetSigningTemplate.js";
+import { templateListPrintingTemplates } from "../funcs/templateListPrintingTemplates.js";
 import { templateListSigningTemplates } from "../funcs/templateListSigningTemplates.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -54,6 +56,23 @@ export class Template extends ClientSDK {
    * Retrieve a template
    *
    * @remarks
+   * Retrieves a single PrintingTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPrintingTemplate(
+    request: operations.GetPrintingTemplateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PrintingTemplate> {
+    return unwrapAsync(templateGetPrintingTemplate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a template
+   *
+   * @remarks
    * Retrieves a single SigningTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
    */
   async getSigningTemplate(
@@ -78,6 +97,23 @@ export class Template extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.ComputeTemplate>> {
     return unwrapAsync(computeListComputeTemplates(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all templates
+   *
+   * @remarks
+   * Returns a list of PrintingTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPrintingTemplates(
+    request: operations.ListPrintingTemplatesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PrintingTemplate>> {
+    return unwrapAsync(templateListPrintingTemplates(
       this,
       request,
       options,

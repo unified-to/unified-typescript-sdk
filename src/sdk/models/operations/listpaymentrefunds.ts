@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPaymentRefundsQueryParamFields = {
@@ -60,7 +61,9 @@ export type ListPaymentRefundsRequest = {
 /** @internal */
 export const ListPaymentRefundsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListPaymentRefundsQueryParamFields
-> = z.nativeEnum(ListPaymentRefundsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListPaymentRefundsQueryParamFields)
+);
 
 /** @internal */
 export type ListPaymentRefundsRequest$Outbound = {
@@ -81,24 +84,27 @@ export const ListPaymentRefundsRequest$outboundSchema: z.ZodType<
   ListPaymentRefundsRequest$Outbound,
   z.ZodTypeDef,
   ListPaymentRefundsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPaymentRefundsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  paymentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    paymentId: "payment_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPaymentRefundsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    paymentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      paymentId: "payment_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPaymentRefundsRequestToJSON(
   listPaymentRefundsRequest: ListPaymentRefundsRequest,

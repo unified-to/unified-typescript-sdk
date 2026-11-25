@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -105,7 +105,7 @@ export const KmsPageMetadata1$inboundSchema: z.ZodType<
   KmsPageMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type KmsPageMetadata1$Outbound = {};
 
@@ -114,7 +114,7 @@ export const KmsPageMetadata1$outboundSchema: z.ZodType<
   KmsPageMetadata1$Outbound,
   z.ZodTypeDef,
   KmsPageMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function kmsPageMetadata1ToJSON(
   kmsPageMetadata1: KmsPageMetadata1,
@@ -138,12 +138,14 @@ export const KmsPageMetadata5$inboundSchema: z.ZodType<
   KmsPageMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => KmsPageMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => KmsPageMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type KmsPageMetadata5$Outbound =
   | KmsPageMetadata1$Outbound
@@ -156,12 +158,14 @@ export const KmsPageMetadata5$outboundSchema: z.ZodType<
   KmsPageMetadata5$Outbound,
   z.ZodTypeDef,
   KmsPageMetadata5
-> = z.union([
-  z.lazy(() => KmsPageMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => KmsPageMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function kmsPageMetadata5ToJSON(
   kmsPageMetadata5: KmsPageMetadata5,
@@ -185,20 +189,22 @@ export const KmsPageMetadataExtraData$inboundSchema: z.ZodType<
   KmsPageMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => KmsPageMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => KmsPageMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type KmsPageMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -212,20 +218,22 @@ export const KmsPageMetadataExtraData$outboundSchema: z.ZodType<
   KmsPageMetadataExtraData$Outbound,
   z.ZodTypeDef,
   KmsPageMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => KmsPageMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => KmsPageMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function kmsPageMetadataExtraDataToJSON(
   kmsPageMetadataExtraData: KmsPageMetadataExtraData,
@@ -249,20 +257,24 @@ export const KmsPageMetadataFormat$inboundSchema: z.ZodType<
   KmsPageMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(KmsPageMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(KmsPageMetadataFormat)
+);
 /** @internal */
 export const KmsPageMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   KmsPageMetadataFormat
-> = openEnums.outboundSchema(KmsPageMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(KmsPageMetadataFormat)
+);
 
 /** @internal */
 export const KmsPageMetadataSchemas1$inboundSchema: z.ZodType<
   KmsPageMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type KmsPageMetadataSchemas1$Outbound = {};
 
@@ -271,7 +283,7 @@ export const KmsPageMetadataSchemas1$outboundSchema: z.ZodType<
   KmsPageMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   KmsPageMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function kmsPageMetadataSchemas1ToJSON(
   kmsPageMetadataSchemas1: KmsPageMetadataSchemas1,
@@ -295,12 +307,14 @@ export const KmsPageMetadataSchemas5$inboundSchema: z.ZodType<
   KmsPageMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => KmsPageMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => KmsPageMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type KmsPageMetadataSchemas5$Outbound =
   | KmsPageMetadataSchemas1$Outbound
@@ -313,12 +327,14 @@ export const KmsPageMetadataSchemas5$outboundSchema: z.ZodType<
   KmsPageMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   KmsPageMetadataSchemas5
-> = z.union([
-  z.lazy(() => KmsPageMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => KmsPageMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function kmsPageMetadataSchemas5ToJSON(
   kmsPageMetadataSchemas5: KmsPageMetadataSchemas5,
@@ -342,20 +358,22 @@ export const KmsPageMetadataValue$inboundSchema: z.ZodType<
   KmsPageMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => KmsPageMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => KmsPageMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type KmsPageMetadataValue$Outbound =
   | { [k: string]: any }
@@ -369,20 +387,22 @@ export const KmsPageMetadataValue$outboundSchema: z.ZodType<
   KmsPageMetadataValue$Outbound,
   z.ZodTypeDef,
   KmsPageMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => KmsPageMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => KmsPageMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function kmsPageMetadataValueToJSON(
   kmsPageMetadataValue: KmsPageMetadataValue,
@@ -406,44 +426,46 @@ export const KmsPageMetadata$inboundSchema: z.ZodType<
   KmsPageMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => KmsPageMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: KmsPageMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => KmsPageMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => KmsPageMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: KmsPageMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => KmsPageMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type KmsPageMetadata$Outbound = {
   extra_data?:
@@ -471,44 +493,46 @@ export const KmsPageMetadata$outboundSchema: z.ZodType<
   KmsPageMetadata$Outbound,
   z.ZodTypeDef,
   KmsPageMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => KmsPageMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: KmsPageMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => KmsPageMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => KmsPageMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: KmsPageMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => KmsPageMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function kmsPageMetadataToJSON(
   kmsPageMetadata: KmsPageMetadata,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -76,9 +77,10 @@ export type UpdateShippingShipmentRequest = {
 
 /** @internal */
 export const UpdateShippingShipmentQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateShippingShipmentQueryParamFields> = z.nativeEnum(
-    UpdateShippingShipmentQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateShippingShipmentQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateShippingShipmentQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateShippingShipmentRequest$Outbound = {
@@ -94,19 +96,21 @@ export const UpdateShippingShipmentRequest$outboundSchema: z.ZodType<
   UpdateShippingShipmentRequest$Outbound,
   z.ZodTypeDef,
   UpdateShippingShipmentRequest
-> = z.object({
-  shippingShipment: shared.ShippingShipment$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateShippingShipmentQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    shippingShipment: "ShippingShipment",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    shippingShipment: shared.ShippingShipment$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateShippingShipmentQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      shippingShipment: "ShippingShipment",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateShippingShipmentRequestToJSON(
   updateShippingShipmentRequest: UpdateShippingShipmentRequest,

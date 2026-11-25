@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -180,8 +180,10 @@ export const PropertyAdsReportMetricsCampaignAdvertisingChannelType$inboundSchem
     PropertyAdsReportMetricsCampaignAdvertisingChannelType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsCampaignAdvertisingChannelType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsReportMetricsCampaignAdvertisingChannelType,
+    )
   );
 
 /** @internal */
@@ -190,12 +192,16 @@ export const PropertyAdsReportMetricsCampaignBudgetPeriod$inboundSchema:
     PropertyAdsReportMetricsCampaignBudgetPeriod,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsCampaignBudgetPeriod);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsCampaignBudgetPeriod)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsCampaignBudgetUnit$inboundSchema:
   z.ZodType<PropertyAdsReportMetricsCampaignBudgetUnit, z.ZodTypeDef, unknown> =
-    openEnums.inboundSchema(PropertyAdsReportMetricsCampaignBudgetUnit);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(PropertyAdsReportMetricsCampaignBudgetUnit)
+    );
 
 /** @internal */
 export const PropertyAdsReportMetricsCampaignEffectiveStatus$inboundSchema:
@@ -203,83 +209,94 @@ export const PropertyAdsReportMetricsCampaignEffectiveStatus$inboundSchema:
     PropertyAdsReportMetricsCampaignEffectiveStatus,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsCampaignEffectiveStatus);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsCampaignEffectiveStatus)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsCampaignGoal$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsCampaignGoal,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsCampaignGoal);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsCampaignGoal)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsCampaignStatus$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsCampaignStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsCampaignStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsCampaignStatus)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsCampaign$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsCampaign,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  advertising_channel_type:
-    PropertyAdsReportMetricsCampaignAdvertisingChannelType$inboundSchema
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    advertising_channel_type:
+      PropertyAdsReportMetricsCampaignAdvertisingChannelType$inboundSchema
+        .optional(),
+    budget_amount: z.number().optional(),
+    budget_period: PropertyAdsReportMetricsCampaignBudgetPeriod$inboundSchema
       .optional(),
-  budget_amount: z.number().optional(),
-  budget_period: PropertyAdsReportMetricsCampaignBudgetPeriod$inboundSchema
-    .optional(),
-  budget_unit: PropertyAdsReportMetricsCampaignBudgetUnit$inboundSchema
-    .optional(),
-  campaign_budget_identifier: z.string().optional(),
-  category: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  effective_status:
-    PropertyAdsReportMetricsCampaignEffectiveStatus$inboundSchema.optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  frequency_cap: PropertyAdsReportMetricsCampaignFrequencyCap$inboundSchema
-    .optional(),
-  goal: PropertyAdsReportMetricsCampaignGoal$inboundSchema.optional(),
-  has_eu_political_ads: z.boolean().optional(),
-  id: z.string().optional(),
-  kpi: PropertyAdsReportMetricsCampaignKpi$inboundSchema.optional(),
-  labels: z.array(z.string()).optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  planned_spend_amount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: PropertyAdsReportMetricsCampaignStatus$inboundSchema.optional(),
-  targeting: PropertyAdsReportMetricsCampaignTargeting$inboundSchema.optional(),
-  total_spend_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "advertising_channel_type": "advertisingChannelType",
-    "budget_amount": "budgetAmount",
-    "budget_period": "budgetPeriod",
-    "budget_unit": "budgetUnit",
-    "campaign_budget_identifier": "campaignBudgetIdentifier",
-    "created_at": "createdAt",
-    "effective_status": "effectiveStatus",
-    "end_at": "endAt",
-    "frequency_cap": "frequencyCap",
-    "has_eu_political_ads": "hasEuPoliticalAds",
-    "organization_id": "organizationId",
-    "planned_spend_amount": "plannedSpendAmount",
-    "start_at": "startAt",
-    "total_spend_amount": "totalSpendAmount",
-    "updated_at": "updatedAt",
-  });
-});
+    budget_unit: PropertyAdsReportMetricsCampaignBudgetUnit$inboundSchema
+      .optional(),
+    campaign_budget_identifier: z.string().optional(),
+    category: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    effective_status:
+      PropertyAdsReportMetricsCampaignEffectiveStatus$inboundSchema.optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    frequency_cap: PropertyAdsReportMetricsCampaignFrequencyCap$inboundSchema
+      .optional(),
+    goal: PropertyAdsReportMetricsCampaignGoal$inboundSchema.optional(),
+    has_eu_political_ads: z.boolean().optional(),
+    id: z.string().optional(),
+    kpi: PropertyAdsReportMetricsCampaignKpi$inboundSchema.optional(),
+    labels: z.array(z.string()).optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    planned_spend_amount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: PropertyAdsReportMetricsCampaignStatus$inboundSchema.optional(),
+    targeting: PropertyAdsReportMetricsCampaignTargeting$inboundSchema
+      .optional(),
+    total_spend_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "advertising_channel_type": "advertisingChannelType",
+      "budget_amount": "budgetAmount",
+      "budget_period": "budgetPeriod",
+      "budget_unit": "budgetUnit",
+      "campaign_budget_identifier": "campaignBudgetIdentifier",
+      "created_at": "createdAt",
+      "effective_status": "effectiveStatus",
+      "end_at": "endAt",
+      "frequency_cap": "frequencyCap",
+      "has_eu_political_ads": "hasEuPoliticalAds",
+      "organization_id": "organizationId",
+      "planned_spend_amount": "plannedSpendAmount",
+      "start_at": "startAt",
+      "total_spend_amount": "totalSpendAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function propertyAdsReportMetricsCampaignFromJSON(
   jsonString: string,

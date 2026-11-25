@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCommerceCollectionsQueryParamFields = {
@@ -71,8 +72,10 @@ export type ListCommerceCollectionsRequest = {
 
 /** @internal */
 export const ListCommerceCollectionsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCommerceCollectionsQueryParamFields> = z
-    .nativeEnum(ListCommerceCollectionsQueryParamFields);
+  z.ZodNativeEnum<typeof ListCommerceCollectionsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCommerceCollectionsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCommerceCollectionsRequest$Outbound = {
@@ -96,30 +99,32 @@ export const ListCommerceCollectionsRequest$outboundSchema: z.ZodType<
   ListCommerceCollectionsRequest$Outbound,
   z.ZodTypeDef,
   ListCommerceCollectionsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCommerceCollectionsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  saleschannelId: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orgId: "org_id",
-    parentId: "parent_id",
-    saleschannelId: "saleschannel_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCommerceCollectionsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    saleschannelId: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orgId: "org_id",
+      parentId: "parent_id",
+      saleschannelId: "saleschannel_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCommerceCollectionsRequestToJSON(
   listCommerceCollectionsRequest: ListCommerceCollectionsRequest,

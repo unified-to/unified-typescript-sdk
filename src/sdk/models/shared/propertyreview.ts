@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -100,43 +100,47 @@ export const PropertyReview$inboundSchema: z.ZodType<
   PropertyReview,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  author_name: z.string().optional(),
-  category_ratings: z.array(PropertyCategoryrating$inboundSchema).optional(),
-  content: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  guest_id: z.string().optional(),
-  id: z.string().optional(),
-  is_public: z.boolean().optional(),
-  listing_id: z.string().optional(),
-  metadata: z.array(PropertyMetadata$inboundSchema).optional(),
-  private_feedback: z.string().optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reservation_id: z.string().optional(),
-  responded_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  response: z.string().optional(),
-  source: z.string().optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "author_name": "authorName",
-    "category_ratings": "categoryRatings",
-    "created_at": "createdAt",
-    "guest_id": "guestId",
-    "is_public": "isPublic",
-    "listing_id": "listingId",
-    "private_feedback": "privateFeedback",
-    "reservation_id": "reservationId",
-    "responded_at": "respondedAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    author_name: z.string().optional(),
+    category_ratings: z.array(PropertyCategoryrating$inboundSchema).optional(),
+    content: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    guest_id: z.string().optional(),
+    id: z.string().optional(),
+    is_public: z.boolean().optional(),
+    listing_id: z.string().optional(),
+    metadata: z.array(PropertyMetadata$inboundSchema).optional(),
+    private_feedback: z.string().optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reservation_id: z.string().optional(),
+    responded_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    response: z.string().optional(),
+    source: z.string().optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "author_name": "authorName",
+      "category_ratings": "categoryRatings",
+      "created_at": "createdAt",
+      "guest_id": "guestId",
+      "is_public": "isPublic",
+      "listing_id": "listingId",
+      "private_feedback": "privateFeedback",
+      "reservation_id": "reservationId",
+      "responded_at": "respondedAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type PropertyReview$Outbound = {
   author_name?: string | undefined;
@@ -164,39 +168,41 @@ export const PropertyReview$outboundSchema: z.ZodType<
   PropertyReview$Outbound,
   z.ZodTypeDef,
   PropertyReview
-> = z.object({
-  authorName: z.string().optional(),
-  categoryRatings: z.array(PropertyCategoryrating$outboundSchema).optional(),
-  content: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  guestId: z.string().optional(),
-  id: z.string().optional(),
-  isPublic: z.boolean().optional(),
-  listingId: z.string().optional(),
-  metadata: z.array(PropertyMetadata$outboundSchema).optional(),
-  privateFeedback: z.string().optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reservationId: z.string().optional(),
-  respondedAt: z.date().transform(v => v.toISOString()).optional(),
-  response: z.string().optional(),
-  source: z.string().optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    authorName: "author_name",
-    categoryRatings: "category_ratings",
-    createdAt: "created_at",
-    guestId: "guest_id",
-    isPublic: "is_public",
-    listingId: "listing_id",
-    privateFeedback: "private_feedback",
-    reservationId: "reservation_id",
-    respondedAt: "responded_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authorName: z.string().optional(),
+    categoryRatings: z.array(PropertyCategoryrating$outboundSchema).optional(),
+    content: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    guestId: z.string().optional(),
+    id: z.string().optional(),
+    isPublic: z.boolean().optional(),
+    listingId: z.string().optional(),
+    metadata: z.array(PropertyMetadata$outboundSchema).optional(),
+    privateFeedback: z.string().optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reservationId: z.string().optional(),
+    respondedAt: z.date().transform(v => v.toISOString()).optional(),
+    response: z.string().optional(),
+    source: z.string().optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      authorName: "author_name",
+      categoryRatings: "category_ratings",
+      createdAt: "created_at",
+      guestId: "guest_id",
+      isPublic: "is_public",
+      listingId: "listing_id",
+      privateFeedback: "private_feedback",
+      reservationId: "reservation_id",
+      respondedAt: "responded_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function propertyReviewToJSON(propertyReview: PropertyReview): string {
   return JSON.stringify(PropertyReview$outboundSchema.parse(propertyReview));

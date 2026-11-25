@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -38,35 +38,41 @@ export const AtsJobOpeningStatus$inboundSchema: z.ZodType<
   AtsJobOpeningStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsJobOpeningStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AtsJobOpeningStatus)
+);
 /** @internal */
 export const AtsJobOpeningStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsJobOpeningStatus
-> = openEnums.outboundSchema(AtsJobOpeningStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsJobOpeningStatus)
+);
 
 /** @internal */
 export const AtsJobOpening$inboundSchema: z.ZodType<
   AtsJobOpening,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  application_id: z.string().optional(),
-  close_reason: z.string().optional(),
-  closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  opened_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: AtsJobOpeningStatus$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "application_id": "applicationId",
-    "close_reason": "closeReason",
-    "closed_at": "closedAt",
-    "opened_at": "openedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    application_id: z.string().optional(),
+    close_reason: z.string().optional(),
+    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    opened_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: AtsJobOpeningStatus$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "application_id": "applicationId",
+      "close_reason": "closeReason",
+      "closed_at": "closedAt",
+      "opened_at": "openedAt",
+    });
+  })
+);
 /** @internal */
 export type AtsJobOpening$Outbound = {
   application_id?: string | undefined;
@@ -81,20 +87,22 @@ export const AtsJobOpening$outboundSchema: z.ZodType<
   AtsJobOpening$Outbound,
   z.ZodTypeDef,
   AtsJobOpening
-> = z.object({
-  applicationId: z.string().optional(),
-  closeReason: z.string().optional(),
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  openedAt: z.date().transform(v => v.toISOString()).optional(),
-  status: AtsJobOpeningStatus$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    applicationId: "application_id",
-    closeReason: "close_reason",
-    closedAt: "closed_at",
-    openedAt: "opened_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applicationId: z.string().optional(),
+    closeReason: z.string().optional(),
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    openedAt: z.date().transform(v => v.toISOString()).optional(),
+    status: AtsJobOpeningStatus$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      applicationId: "application_id",
+      closeReason: "close_reason",
+      closedAt: "closed_at",
+      openedAt: "opened_at",
+    });
+  })
+);
 
 export function atsJobOpeningToJSON(atsJobOpening: AtsJobOpening): string {
   return JSON.stringify(AtsJobOpening$outboundSchema.parse(atsJobOpening));

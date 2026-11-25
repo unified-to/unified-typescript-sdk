@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -48,6 +49,9 @@ export const PropertyConnectionCategories = {
   Property: "property",
   Plm: "plm",
   Qms: "qms",
+  Dms: "dms",
+  Fhir: "fhir",
+  Printing: "printing",
 } as const;
 export type PropertyConnectionCategories = OpenEnum<
   typeof PropertyConnectionCategories
@@ -58,10 +62,14 @@ export const PropertyConnectionCategories$inboundSchema: z.ZodType<
   PropertyConnectionCategories,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyConnectionCategories);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyConnectionCategories)
+);
 /** @internal */
 export const PropertyConnectionCategories$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyConnectionCategories
-> = openEnums.outboundSchema(PropertyConnectionCategories);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyConnectionCategories)
+);

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -34,14 +34,16 @@ export const RemoveKmsCommentRequest$outboundSchema: z.ZodType<
   RemoveKmsCommentRequest$Outbound,
   z.ZodTypeDef,
   RemoveKmsCommentRequest
-> = z.object({
-  connectionId: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function removeKmsCommentRequestToJSON(
   removeKmsCommentRequest: RemoveKmsCommentRequest,
@@ -56,13 +58,15 @@ export const RemoveKmsCommentResponse$inboundSchema: z.ZodType<
   RemoveKmsCommentResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+    });
+  })
+);
 
 export function removeKmsCommentResponseFromJSON(
   jsonString: string,

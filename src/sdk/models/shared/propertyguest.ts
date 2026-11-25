@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -104,35 +104,39 @@ export const PropertyGuest$inboundSchema: z.ZodType<
   PropertyGuest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyPropertyGuestAddress$inboundSchema.optional(),
-  company_name: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  emails: z.array(PropertyEmail$inboundSchema).optional(),
-  first_name: z.string().optional(),
-  id: z.string().optional(),
-  image_url: z.string().optional(),
-  language: z.string().optional(),
-  last_name: z.string().optional(),
-  metadata: z.array(PropertyMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  nationality: z.string().optional(),
-  notes: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(PropertyTelephone$inboundSchema).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_name": "companyName",
-    "created_at": "createdAt",
-    "first_name": "firstName",
-    "image_url": "imageUrl",
-    "last_name": "lastName",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyPropertyGuestAddress$inboundSchema.optional(),
+    company_name: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    emails: z.array(PropertyEmail$inboundSchema).optional(),
+    first_name: z.string().optional(),
+    id: z.string().optional(),
+    image_url: z.string().optional(),
+    language: z.string().optional(),
+    last_name: z.string().optional(),
+    metadata: z.array(PropertyMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    nationality: z.string().optional(),
+    notes: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(PropertyTelephone$inboundSchema).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_name": "companyName",
+      "created_at": "createdAt",
+      "first_name": "firstName",
+      "image_url": "imageUrl",
+      "last_name": "lastName",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type PropertyGuest$Outbound = {
   address?: PropertyPropertyGuestAddress$Outbound | undefined;
@@ -158,33 +162,35 @@ export const PropertyGuest$outboundSchema: z.ZodType<
   PropertyGuest$Outbound,
   z.ZodTypeDef,
   PropertyGuest
-> = z.object({
-  address: PropertyPropertyGuestAddress$outboundSchema.optional(),
-  companyName: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  emails: z.array(PropertyEmail$outboundSchema).optional(),
-  firstName: z.string().optional(),
-  id: z.string().optional(),
-  imageUrl: z.string().optional(),
-  language: z.string().optional(),
-  lastName: z.string().optional(),
-  metadata: z.array(PropertyMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  nationality: z.string().optional(),
-  notes: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(PropertyTelephone$outboundSchema).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyName: "company_name",
-    createdAt: "created_at",
-    firstName: "first_name",
-    imageUrl: "image_url",
-    lastName: "last_name",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyPropertyGuestAddress$outboundSchema.optional(),
+    companyName: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    emails: z.array(PropertyEmail$outboundSchema).optional(),
+    firstName: z.string().optional(),
+    id: z.string().optional(),
+    imageUrl: z.string().optional(),
+    language: z.string().optional(),
+    lastName: z.string().optional(),
+    metadata: z.array(PropertyMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    nationality: z.string().optional(),
+    notes: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(PropertyTelephone$outboundSchema).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyName: "company_name",
+      createdAt: "created_at",
+      firstName: "first_name",
+      imageUrl: "image_url",
+      lastName: "last_name",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function propertyGuestToJSON(propertyGuest: PropertyGuest): string {
   return JSON.stringify(PropertyGuest$outboundSchema.parse(propertyGuest));

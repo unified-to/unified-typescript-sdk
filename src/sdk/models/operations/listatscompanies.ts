@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAtsCompaniesQueryParamFields = {
@@ -17,6 +18,7 @@ export const ListAtsCompaniesQueryParamFields = {
   ParentId: "parent_id",
   RecruiterIds: "recruiter_ids",
   Metadata: "metadata",
+  Fees: "fees",
   Raw: "raw",
 } as const;
 export type ListAtsCompaniesQueryParamFields = ClosedEnum<
@@ -53,7 +55,9 @@ export type ListAtsCompaniesRequest = {
 /** @internal */
 export const ListAtsCompaniesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAtsCompaniesQueryParamFields
-> = z.nativeEnum(ListAtsCompaniesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAtsCompaniesQueryParamFields)
+);
 
 /** @internal */
 export type ListAtsCompaniesRequest$Outbound = {
@@ -73,22 +77,24 @@ export const ListAtsCompaniesRequest$outboundSchema: z.ZodType<
   ListAtsCompaniesRequest$Outbound,
   z.ZodTypeDef,
   ListAtsCompaniesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAtsCompaniesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAtsCompaniesQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAtsCompaniesRequestToJSON(
   listAtsCompaniesRequest: ListAtsCompaniesRequest,

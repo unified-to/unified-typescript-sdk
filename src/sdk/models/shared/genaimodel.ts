@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -37,25 +37,27 @@ export const GenaiModel$inboundSchema: z.ZodType<
   GenaiModel,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  description: z.string().optional(),
-  has_questions: z.boolean().optional(),
-  has_temperature: z.boolean().optional(),
-  has_vision: z.boolean().optional(),
-  id: z.string().optional(),
-  max_tokens: z.number().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "has_questions": "hasQuestions",
-    "has_temperature": "hasTemperature",
-    "has_vision": "hasVision",
-    "max_tokens": "maxTokens",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    has_questions: z.boolean().optional(),
+    has_temperature: z.boolean().optional(),
+    has_vision: z.boolean().optional(),
+    id: z.string().optional(),
+    max_tokens: z.number().optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "has_questions": "hasQuestions",
+      "has_temperature": "hasTemperature",
+      "has_vision": "hasVision",
+      "max_tokens": "maxTokens",
+      "web_url": "webUrl",
+    });
+  })
+);
 
 export function genaiModelFromJSON(
   jsonString: string,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -50,7 +51,9 @@ export type UpdateSocialReviewRequest = {
 /** @internal */
 export const UpdateSocialReviewQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdateSocialReviewQueryParamFields
-> = z.nativeEnum(UpdateSocialReviewQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdateSocialReviewQueryParamFields)
+);
 
 /** @internal */
 export type UpdateSocialReviewRequest$Outbound = {
@@ -66,18 +69,21 @@ export const UpdateSocialReviewRequest$outboundSchema: z.ZodType<
   UpdateSocialReviewRequest$Outbound,
   z.ZodTypeDef,
   UpdateSocialReviewRequest
-> = z.object({
-  socialReview: shared.SocialReview$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateSocialReviewQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    socialReview: "SocialReview",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    socialReview: shared.SocialReview$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateSocialReviewQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      socialReview: "SocialReview",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateSocialReviewRequestToJSON(
   updateSocialReviewRequest: UpdateSocialReviewRequest,

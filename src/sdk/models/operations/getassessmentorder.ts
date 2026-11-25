@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetAssessmentOrderQueryParamFields = {
@@ -76,7 +77,9 @@ export type GetAssessmentOrderRequest = {
 /** @internal */
 export const GetAssessmentOrderQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetAssessmentOrderQueryParamFields
-> = z.nativeEnum(GetAssessmentOrderQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetAssessmentOrderQueryParamFields)
+);
 
 /** @internal */
 export type GetAssessmentOrderRequest$Outbound = {
@@ -91,16 +94,19 @@ export const GetAssessmentOrderRequest$outboundSchema: z.ZodType<
   GetAssessmentOrderRequest$Outbound,
   z.ZodTypeDef,
   GetAssessmentOrderRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetAssessmentOrderQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetAssessmentOrderQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getAssessmentOrderRequestToJSON(
   getAssessmentOrderRequest: GetAssessmentOrderRequest,

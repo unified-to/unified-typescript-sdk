@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListMartechReportsQueryParamFields = {
@@ -87,7 +88,9 @@ export type ListMartechReportsRequest = {
 /** @internal */
 export const ListMartechReportsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListMartechReportsQueryParamFields
-> = z.nativeEnum(ListMartechReportsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListMartechReportsQueryParamFields)
+);
 
 /** @internal */
 export type ListMartechReportsRequest$Outbound = {
@@ -111,30 +114,33 @@ export const ListMartechReportsRequest$outboundSchema: z.ZodType<
   ListMartechReportsRequest$Outbound,
   z.ZodTypeDef,
   ListMartechReportsRequest
-> = z.object({
-  campaignId: z.string().optional(),
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListMartechReportsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  listId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    campaignId: "campaign_id",
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    listId: "list_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    campaignId: z.string().optional(),
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListMartechReportsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    listId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      campaignId: "campaign_id",
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      listId: "list_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listMartechReportsRequestToJSON(
   listMartechReportsRequest: ListMartechReportsRequest,

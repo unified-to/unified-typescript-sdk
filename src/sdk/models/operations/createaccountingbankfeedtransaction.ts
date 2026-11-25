@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -54,7 +55,9 @@ export type CreateAccountingBankfeedtransactionRequest = {
 /** @internal */
 export const CreateAccountingBankfeedtransactionQueryParamFields$outboundSchema:
   z.ZodNativeEnum<typeof CreateAccountingBankfeedtransactionQueryParamFields> =
-    z.nativeEnum(CreateAccountingBankfeedtransactionQueryParamFields);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingBankfeedtransactionQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingBankfeedtransactionRequest$Outbound = {
@@ -70,20 +73,22 @@ export const CreateAccountingBankfeedtransactionRequest$outboundSchema:
     CreateAccountingBankfeedtransactionRequest$Outbound,
     z.ZodTypeDef,
     CreateAccountingBankfeedtransactionRequest
-  > = z.object({
-    accountingBankfeedtransaction:
-      shared.AccountingBankfeedtransaction$outboundSchema,
-    connectionId: z.string(),
-    fields: z.array(
-      CreateAccountingBankfeedtransactionQueryParamFields$outboundSchema,
-    ).optional(),
-    raw: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      accountingBankfeedtransaction: "AccountingBankfeedtransaction",
-      connectionId: "connection_id",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      accountingBankfeedtransaction:
+        shared.AccountingBankfeedtransaction$outboundSchema,
+      connectionId: z.string(),
+      fields: z.array(
+        CreateAccountingBankfeedtransactionQueryParamFields$outboundSchema,
+      ).optional(),
+      raw: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        accountingBankfeedtransaction: "AccountingBankfeedtransaction",
+        connectionId: "connection_id",
+      });
+    })
+  );
 
 export function createAccountingBankfeedtransactionRequestToJSON(
   createAccountingBankfeedtransactionRequest:

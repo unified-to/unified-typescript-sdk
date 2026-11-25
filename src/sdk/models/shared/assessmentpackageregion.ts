@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -29,17 +29,19 @@ export const AssessmentPackageRegion$inboundSchema: z.ZodType<
   AssessmentPackageRegion,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  cost_amount: z.number().optional(),
-  currency: z.string().optional(),
-  processing_time: z.number().optional(),
-  regions: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "cost_amount": "costAmount",
-    "processing_time": "processingTime",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cost_amount: z.number().optional(),
+    currency: z.string().optional(),
+    processing_time: z.number().optional(),
+    regions: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "cost_amount": "costAmount",
+      "processing_time": "processingTime",
+    });
+  })
+);
 /** @internal */
 export type AssessmentPackageRegion$Outbound = {
   cost_amount?: number | undefined;
@@ -53,17 +55,19 @@ export const AssessmentPackageRegion$outboundSchema: z.ZodType<
   AssessmentPackageRegion$Outbound,
   z.ZodTypeDef,
   AssessmentPackageRegion
-> = z.object({
-  costAmount: z.number().optional(),
-  currency: z.string().optional(),
-  processingTime: z.number().optional(),
-  regions: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    costAmount: "cost_amount",
-    processingTime: "processing_time",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    costAmount: z.number().optional(),
+    currency: z.string().optional(),
+    processingTime: z.number().optional(),
+    regions: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      costAmount: "cost_amount",
+      processingTime: "processing_time",
+    });
+  })
+);
 
 export function assessmentPackageRegionToJSON(
   assessmentPackageRegion: AssessmentPackageRegion,

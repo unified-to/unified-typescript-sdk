@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -23,17 +23,19 @@ export const PropertyAdsCampaignTargetingDemographic$inboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingDemographic,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  age_max: z.number().optional(),
-  age_min: z.number().optional(),
-  female: z.boolean().optional(),
-  male: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "age_max": "ageMax",
-    "age_min": "ageMin",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    age_max: z.number().optional(),
+    age_min: z.number().optional(),
+    female: z.boolean().optional(),
+    male: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "age_max": "ageMax",
+      "age_min": "ageMin",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsCampaignTargetingDemographic$Outbound = {
   age_max?: number | undefined;
@@ -47,17 +49,19 @@ export const PropertyAdsCampaignTargetingDemographic$outboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingDemographic$Outbound,
   z.ZodTypeDef,
   PropertyAdsCampaignTargetingDemographic
-> = z.object({
-  ageMax: z.number().optional(),
-  ageMin: z.number().optional(),
-  female: z.boolean().optional(),
-  male: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    ageMax: "age_max",
-    ageMin: "age_min",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    ageMax: z.number().optional(),
+    ageMin: z.number().optional(),
+    female: z.boolean().optional(),
+    male: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      ageMax: "age_max",
+      ageMin: "age_min",
+    });
+  })
+);
 
 export function propertyAdsCampaignTargetingDemographicToJSON(
   propertyAdsCampaignTargetingDemographic:

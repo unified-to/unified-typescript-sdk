@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -32,23 +32,27 @@ export const UcScorecardtemplateQuestionType$inboundSchema: z.ZodType<
   UcScorecardtemplateQuestionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(UcScorecardtemplateQuestionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(UcScorecardtemplateQuestionType)
+);
 
 /** @internal */
 export const UcScorecardtemplateQuestion$inboundSchema: z.ZodType<
   UcScorecardtemplateQuestion,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  options: z.array(z.string()).optional(),
-  question_identifier: z.string().optional(),
-  text: z.string().optional(),
-  type: UcScorecardtemplateQuestionType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "question_identifier": "questionIdentifier",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    options: z.array(z.string()).optional(),
+    question_identifier: z.string().optional(),
+    text: z.string().optional(),
+    type: UcScorecardtemplateQuestionType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "question_identifier": "questionIdentifier",
+    });
+  })
+);
 
 export function ucScorecardtemplateQuestionFromJSON(
   jsonString: string,

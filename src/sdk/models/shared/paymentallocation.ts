@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -60,36 +60,42 @@ export const PaymentAllocationObjectType$inboundSchema: z.ZodType<
   PaymentAllocationObjectType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentAllocationObjectType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PaymentAllocationObjectType)
+);
 /** @internal */
 export const PaymentAllocationObjectType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PaymentAllocationObjectType
-> = openEnums.outboundSchema(PaymentAllocationObjectType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PaymentAllocationObjectType)
+);
 
 /** @internal */
 export const PaymentAllocation$inboundSchema: z.ZodType<
   PaymentAllocation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  allocated_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  amount: z.number().optional(),
-  currency: z.string().optional(),
-  exchange_rate: z.number().optional(),
-  object_id: z.string().optional(),
-  object_type: PaymentAllocationObjectType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "allocated_at": "allocatedAt",
-    "exchange_rate": "exchangeRate",
-    "object_id": "objectId",
-    "object_type": "objectType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    allocated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    amount: z.number().optional(),
+    currency: z.string().optional(),
+    exchange_rate: z.number().optional(),
+    object_id: z.string().optional(),
+    object_type: PaymentAllocationObjectType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "allocated_at": "allocatedAt",
+      "exchange_rate": "exchangeRate",
+      "object_id": "objectId",
+      "object_type": "objectType",
+    });
+  })
+);
 /** @internal */
 export type PaymentAllocation$Outbound = {
   allocated_at?: string | undefined;
@@ -105,21 +111,23 @@ export const PaymentAllocation$outboundSchema: z.ZodType<
   PaymentAllocation$Outbound,
   z.ZodTypeDef,
   PaymentAllocation
-> = z.object({
-  allocatedAt: z.date().transform(v => v.toISOString()).optional(),
-  amount: z.number().optional(),
-  currency: z.string().optional(),
-  exchangeRate: z.number().optional(),
-  objectId: z.string().optional(),
-  objectType: PaymentAllocationObjectType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    allocatedAt: "allocated_at",
-    exchangeRate: "exchange_rate",
-    objectId: "object_id",
-    objectType: "object_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    allocatedAt: z.date().transform(v => v.toISOString()).optional(),
+    amount: z.number().optional(),
+    currency: z.string().optional(),
+    exchangeRate: z.number().optional(),
+    objectId: z.string().optional(),
+    objectType: PaymentAllocationObjectType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      allocatedAt: "allocated_at",
+      exchangeRate: "exchange_rate",
+      objectId: "object_id",
+      objectType: "object_type",
+    });
+  })
+);
 
 export function paymentAllocationToJSON(
   paymentAllocation: PaymentAllocation,

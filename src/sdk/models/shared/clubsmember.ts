@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -82,40 +82,46 @@ export const ClubsMemberMembershipStatus$inboundSchema: z.ZodType<
   ClubsMemberMembershipStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ClubsMemberMembershipStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ClubsMemberMembershipStatus)
+);
 
 /** @internal */
 export const ClubsMember$inboundSchema: z.ZodType<
   ClubsMember,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  first_name: z.string().optional(),
-  group_id: z.string().optional(),
-  id: z.string().optional(),
-  is_admin: z.boolean().optional(),
-  is_owner: z.boolean().optional(),
-  last_name: z.string().optional(),
-  membership_status: ClubsMemberMembershipStatus$inboundSchema.optional(),
-  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "first_name": "firstName",
-    "group_id": "groupId",
-    "is_admin": "isAdmin",
-    "is_owner": "isOwner",
-    "last_name": "lastName",
-    "membership_status": "membershipStatus",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    first_name: z.string().optional(),
+    group_id: z.string().optional(),
+    id: z.string().optional(),
+    is_admin: z.boolean().optional(),
+    is_owner: z.boolean().optional(),
+    last_name: z.string().optional(),
+    membership_status: ClubsMemberMembershipStatus$inboundSchema.optional(),
+    metadata: z.array(ClubsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "first_name": "firstName",
+      "group_id": "groupId",
+      "is_admin": "isAdmin",
+      "is_owner": "isOwner",
+      "last_name": "lastName",
+      "membership_status": "membershipStatus",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function clubsMemberFromJSON(
   jsonString: string,

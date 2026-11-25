@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -44,27 +44,31 @@ export const LmsCollection$inboundSchema: z.ZodType<
   LmsCollection,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  media: z.array(LmsMedia$inboundSchema).optional(),
-  metadata: z.array(LmsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    media: z.array(LmsMedia$inboundSchema).optional(),
+    metadata: z.array(LmsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type LmsCollection$Outbound = {
   created_at?: string | undefined;
@@ -84,25 +88,27 @@ export const LmsCollection$outboundSchema: z.ZodType<
   LmsCollection$Outbound,
   z.ZodTypeDef,
   LmsCollection
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  media: z.array(LmsMedia$outboundSchema).optional(),
-  metadata: z.array(LmsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isActive: "is_active",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    media: z.array(LmsMedia$outboundSchema).optional(),
+    metadata: z.array(LmsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isActive: "is_active",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function lmsCollectionToJSON(lmsCollection: LmsCollection): string {
   return JSON.stringify(LmsCollection$outboundSchema.parse(lmsCollection));

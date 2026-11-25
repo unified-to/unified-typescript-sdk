@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -238,6 +238,8 @@ import {
   ListUserId$inboundSchema,
   ListUserMentionedId,
   ListUserMentionedId$inboundSchema,
+  ListVehicleId,
+  ListVehicleId$inboundSchema,
   ListVisitorId,
   ListVisitorId$inboundSchema,
   NativeWebhookCalendarId,
@@ -312,9 +314,14 @@ import {
   VirtualWebhookAssignedUserId$inboundSchema,
   VirtualWebhookBankfeedaccountId,
   VirtualWebhookBankfeedaccountId$inboundSchema,
-  VirtualWebhookBenefitId,
-  VirtualWebhookBenefitId$inboundSchema,
-} from "./virtualwebhookbenefitid.js";
+} from "./virtualwebhookbankfeedaccountid.js";
+
+export const VirtualWebhookBenefitId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookBenefitId = OpenEnum<typeof VirtualWebhookBenefitId>;
 
 export const VirtualWebhookBillId = {
   SupportedRequired: "supported-required",
@@ -851,6 +858,13 @@ export type VirtualWebhookUserMentionedId = OpenEnum<
   typeof VirtualWebhookUserMentionedId
 >;
 
+export const VirtualWebhookVehicleId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookVehicleId = OpenEnum<typeof VirtualWebhookVehicleId>;
+
 export const VirtualWebhookVisitorId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -972,6 +986,7 @@ export type IntegrationSupport = {
   listUpdatedGte?: ListUpdatedGte | undefined;
   listUserId?: ListUserId | undefined;
   listUserMentionedId?: ListUserMentionedId | undefined;
+  listVehicleId?: ListVehicleId | undefined;
   listVisitorId?: ListVisitorId | undefined;
   methods?: { [k: string]: boolean } | undefined;
   nativeWebhookCalendarId?: NativeWebhookCalendarId | undefined;
@@ -1088,1003 +1103,1194 @@ export type IntegrationSupport = {
   virtualWebhookUpdatedGte?: VirtualWebhookUpdatedGte | undefined;
   virtualWebhookUserId?: VirtualWebhookUserId | undefined;
   virtualWebhookUserMentionedId?: VirtualWebhookUserMentionedId | undefined;
+  virtualWebhookVehicleId?: VirtualWebhookVehicleId | undefined;
   virtualWebhookVisitorId?: VirtualWebhookVisitorId | undefined;
   webhookEvents?: PropertyIntegrationSupportWebhookEvents | undefined;
 };
+
+/** @internal */
+export const VirtualWebhookBenefitId$inboundSchema: z.ZodType<
+  VirtualWebhookBenefitId,
+  z.ZodTypeDef,
+  unknown
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookBenefitId)
+);
 
 /** @internal */
 export const VirtualWebhookBillId$inboundSchema: z.ZodType<
   VirtualWebhookBillId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookBillId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookBillId)
+);
 
 /** @internal */
 export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
   VirtualWebhookBranchId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookBranchId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookBranchId)
+);
 
 /** @internal */
 export const VirtualWebhookCalendarId$inboundSchema: z.ZodType<
   VirtualWebhookCalendarId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCalendarId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCalendarId)
+);
 
 /** @internal */
 export const VirtualWebhookCallId$inboundSchema: z.ZodType<
   VirtualWebhookCallId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCallId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCallId)
+);
 
 /** @internal */
 export const VirtualWebhookCampaignId$inboundSchema: z.ZodType<
   VirtualWebhookCampaignId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCampaignId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCampaignId)
+);
 
 /** @internal */
 export const VirtualWebhookCandidateId$inboundSchema: z.ZodType<
   VirtualWebhookCandidateId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCandidateId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCandidateId)
+);
 
 /** @internal */
 export const VirtualWebhookCarrierId$inboundSchema: z.ZodType<
   VirtualWebhookCarrierId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCarrierId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCarrierId)
+);
 
 /** @internal */
 export const VirtualWebhookChannelId$inboundSchema: z.ZodType<
   VirtualWebhookChannelId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookChannelId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookChannelId)
+);
 
 /** @internal */
 export const VirtualWebhookCollectionId$inboundSchema: z.ZodType<
   VirtualWebhookCollectionId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCollectionId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCollectionId)
+);
 
 /** @internal */
 export const VirtualWebhookCompanyId$inboundSchema: z.ZodType<
   VirtualWebhookCompanyId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCompanyId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCompanyId)
+);
 
 /** @internal */
 export const VirtualWebhookContactId$inboundSchema: z.ZodType<
   VirtualWebhookContactId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookContactId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookContactId)
+);
 
 /** @internal */
 export const VirtualWebhookCourseId$inboundSchema: z.ZodType<
   VirtualWebhookCourseId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCourseId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCourseId)
+);
 
 /** @internal */
 export const VirtualWebhookCustomerId$inboundSchema: z.ZodType<
   VirtualWebhookCustomerId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCustomerId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCustomerId)
+);
 
 /** @internal */
 export const VirtualWebhookCycleId$inboundSchema: z.ZodType<
   VirtualWebhookCycleId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookCycleId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookCycleId)
+);
 
 /** @internal */
 export const VirtualWebhookDatabaseId$inboundSchema: z.ZodType<
   VirtualWebhookDatabaseId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookDatabaseId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookDatabaseId)
+);
 
 /** @internal */
 export const VirtualWebhookDealId$inboundSchema: z.ZodType<
   VirtualWebhookDealId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookDealId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookDealId)
+);
 
 /** @internal */
 export const VirtualWebhookEffectiveStatus$inboundSchema: z.ZodType<
   VirtualWebhookEffectiveStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookEffectiveStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookEffectiveStatus)
+);
 
 /** @internal */
 export const VirtualWebhookEndLt$inboundSchema: z.ZodType<
   VirtualWebhookEndLt,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookEndLt);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookEndLt)
+);
 
 /** @internal */
 export const VirtualWebhookEventId$inboundSchema: z.ZodType<
   VirtualWebhookEventId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookEventId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookEventId)
+);
 
 /** @internal */
 export const VirtualWebhookExpand$inboundSchema: z.ZodType<
   VirtualWebhookExpand,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookExpand);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookExpand)
+);
 
 /** @internal */
 export const VirtualWebhookFields$inboundSchema: z.ZodType<
   VirtualWebhookFields,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookFields)
+);
 
 /** @internal */
 export const VirtualWebhookFormId$inboundSchema: z.ZodType<
   VirtualWebhookFormId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookFormId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookFormId)
+);
 
 /** @internal */
 export const VirtualWebhookGroupId$inboundSchema: z.ZodType<
   VirtualWebhookGroupId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookGroupId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookGroupId)
+);
 
 /** @internal */
 export const VirtualWebhookGuestId$inboundSchema: z.ZodType<
   VirtualWebhookGuestId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookGuestId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookGuestId)
+);
 
 /** @internal */
 export const VirtualWebhookInvoiceId$inboundSchema: z.ZodType<
   VirtualWebhookInvoiceId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookInvoiceId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookInvoiceId)
+);
 
 /** @internal */
 export const VirtualWebhookIoId$inboundSchema: z.ZodType<
   VirtualWebhookIoId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookIoId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookIoId)
+);
 
 /** @internal */
 export const VirtualWebhookIssueId$inboundSchema: z.ZodType<
   VirtualWebhookIssueId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookIssueId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookIssueId)
+);
 
 /** @internal */
 export const VirtualWebhookItemId$inboundSchema: z.ZodType<
   VirtualWebhookItemId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookItemId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookItemId)
+);
 
 /** @internal */
 export const VirtualWebhookItemVariantId$inboundSchema: z.ZodType<
   VirtualWebhookItemVariantId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookItemVariantId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookItemVariantId)
+);
 
 /** @internal */
 export const VirtualWebhookJobId$inboundSchema: z.ZodType<
   VirtualWebhookJobId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookJobId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookJobId)
+);
 
 /** @internal */
 export const VirtualWebhookLabelId$inboundSchema: z.ZodType<
   VirtualWebhookLabelId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookLabelId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookLabelId)
+);
 
 /** @internal */
 export const VirtualWebhookLeadId$inboundSchema: z.ZodType<
   VirtualWebhookLeadId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookLeadId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookLeadId)
+);
 
 /** @internal */
 export const VirtualWebhookLimit$inboundSchema: z.ZodType<
   VirtualWebhookLimit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookLimit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookLimit)
+);
 
 /** @internal */
 export const VirtualWebhookLinkId$inboundSchema: z.ZodType<
   VirtualWebhookLinkId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookLinkId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookLinkId)
+);
 
 /** @internal */
 export const VirtualWebhookListId$inboundSchema: z.ZodType<
   VirtualWebhookListId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookListId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookListId)
+);
 
 /** @internal */
 export const VirtualWebhookListingId$inboundSchema: z.ZodType<
   VirtualWebhookListingId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookListingId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookListingId)
+);
 
 /** @internal */
 export const VirtualWebhookLocationId$inboundSchema: z.ZodType<
   VirtualWebhookLocationId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookLocationId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookLocationId)
+);
 
 /** @internal */
 export const VirtualWebhookMatterId$inboundSchema: z.ZodType<
   VirtualWebhookMatterId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookMatterId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookMatterId)
+);
 
 /** @internal */
 export const VirtualWebhookMemberId$inboundSchema: z.ZodType<
   VirtualWebhookMemberId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookMemberId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookMemberId)
+);
 
 /** @internal */
 export const VirtualWebhookOrderId$inboundSchema: z.ZodType<
   VirtualWebhookOrderId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookOrderId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookOrderId)
+);
 
 /** @internal */
 export const VirtualWebhookOrgId$inboundSchema: z.ZodType<
   VirtualWebhookOrgId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookOrgId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookOrgId)
+);
 
 /** @internal */
 export const VirtualWebhookPageId$inboundSchema: z.ZodType<
   VirtualWebhookPageId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPageId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPageId)
+);
 
 /** @internal */
 export const VirtualWebhookParentId$inboundSchema: z.ZodType<
   VirtualWebhookParentId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookParentId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookParentId)
+);
 
 /** @internal */
 export const VirtualWebhookPartId$inboundSchema: z.ZodType<
   VirtualWebhookPartId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPartId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPartId)
+);
 
 /** @internal */
 export const VirtualWebhookPatientId$inboundSchema: z.ZodType<
   VirtualWebhookPatientId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPatientId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPatientId)
+);
 
 /** @internal */
 export const VirtualWebhookPaymentId$inboundSchema: z.ZodType<
   VirtualWebhookPaymentId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPaymentId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPaymentId)
+);
 
 /** @internal */
 export const VirtualWebhookPipelineId$inboundSchema: z.ZodType<
   VirtualWebhookPipelineId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPipelineId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPipelineId)
+);
 
 /** @internal */
 export const VirtualWebhookPostId$inboundSchema: z.ZodType<
   VirtualWebhookPostId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPostId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPostId)
+);
 
 /** @internal */
 export const VirtualWebhookPracticeareaId$inboundSchema: z.ZodType<
   VirtualWebhookPracticeareaId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPracticeareaId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPracticeareaId)
+);
 
 /** @internal */
 export const VirtualWebhookPractitionerId$inboundSchema: z.ZodType<
   VirtualWebhookPractitionerId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPractitionerId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPractitionerId)
+);
 
 /** @internal */
 export const VirtualWebhookProfileId$inboundSchema: z.ZodType<
   VirtualWebhookProfileId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookProfileId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookProfileId)
+);
 
 /** @internal */
 export const VirtualWebhookProjectId$inboundSchema: z.ZodType<
   VirtualWebhookProjectId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookProjectId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookProjectId)
+);
 
 /** @internal */
 export const VirtualWebhookPropertyId$inboundSchema: z.ZodType<
   VirtualWebhookPropertyId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookPropertyId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookPropertyId)
+);
 
 /** @internal */
 export const VirtualWebhookReference$inboundSchema: z.ZodType<
   VirtualWebhookReference,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookReference);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookReference)
+);
 
 /** @internal */
 export const VirtualWebhookRepoId$inboundSchema: z.ZodType<
   VirtualWebhookRepoId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookRepoId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookRepoId)
+);
 
 /** @internal */
 export const VirtualWebhookReservationId$inboundSchema: z.ZodType<
   VirtualWebhookReservationId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookReservationId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookReservationId)
+);
 
 /** @internal */
 export const VirtualWebhookSaleschannelId$inboundSchema: z.ZodType<
   VirtualWebhookSaleschannelId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookSaleschannelId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookSaleschannelId)
+);
 
 /** @internal */
 export const VirtualWebhookSessionId$inboundSchema: z.ZodType<
   VirtualWebhookSessionId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookSessionId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookSessionId)
+);
 
 /** @internal */
 export const VirtualWebhookShipmentId$inboundSchema: z.ZodType<
   VirtualWebhookShipmentId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookShipmentId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookShipmentId)
+);
 
 /** @internal */
 export const VirtualWebhookSpaceId$inboundSchema: z.ZodType<
   VirtualWebhookSpaceId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookSpaceId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookSpaceId)
+);
 
 /** @internal */
 export const VirtualWebhookStartGte$inboundSchema: z.ZodType<
   VirtualWebhookStartGte,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookStartGte);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookStartGte)
+);
 
 /** @internal */
 export const VirtualWebhookStatus$inboundSchema: z.ZodType<
   VirtualWebhookStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookStatus)
+);
 
 /** @internal */
 export const VirtualWebhookStudentId$inboundSchema: z.ZodType<
   VirtualWebhookStudentId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookStudentId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookStudentId)
+);
 
 /** @internal */
 export const VirtualWebhookTableId$inboundSchema: z.ZodType<
   VirtualWebhookTableId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookTableId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookTableId)
+);
 
 /** @internal */
 export const VirtualWebhookTaskId$inboundSchema: z.ZodType<
   VirtualWebhookTaskId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookTaskId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookTaskId)
+);
 
 /** @internal */
 export const VirtualWebhookTemplateId$inboundSchema: z.ZodType<
   VirtualWebhookTemplateId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookTemplateId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookTemplateId)
+);
 
 /** @internal */
 export const VirtualWebhookTicketId$inboundSchema: z.ZodType<
   VirtualWebhookTicketId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookTicketId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookTicketId)
+);
 
 /** @internal */
 export const VirtualWebhookType$inboundSchema: z.ZodType<
   VirtualWebhookType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookType)
+);
 
 /** @internal */
 export const VirtualWebhookUpdatedGte$inboundSchema: z.ZodType<
   VirtualWebhookUpdatedGte,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookUpdatedGte);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookUpdatedGte)
+);
 
 /** @internal */
 export const VirtualWebhookUserId$inboundSchema: z.ZodType<
   VirtualWebhookUserId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookUserId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookUserId)
+);
 
 /** @internal */
 export const VirtualWebhookUserMentionedId$inboundSchema: z.ZodType<
   VirtualWebhookUserMentionedId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookUserMentionedId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookUserMentionedId)
+);
+
+/** @internal */
+export const VirtualWebhookVehicleId$inboundSchema: z.ZodType<
+  VirtualWebhookVehicleId,
+  z.ZodTypeDef,
+  unknown
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookVehicleId)
+);
 
 /** @internal */
 export const VirtualWebhookVisitorId$inboundSchema: z.ZodType<
   VirtualWebhookVisitorId,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VirtualWebhookVisitorId);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VirtualWebhookVisitorId)
+);
 
 /** @internal */
 export const IntegrationSupport$inboundSchema: z.ZodType<
   IntegrationSupport,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  from_webhook: FromWebhook$inboundSchema.optional(),
-  inbound_fields: z.record(z.string()).optional(),
-  list_account_id: ListAccountId$inboundSchema.optional(),
-  list_ad_id: ListAdId$inboundSchema.optional(),
-  list_agent_id: ListAgentId$inboundSchema.optional(),
-  list_application_id: ListApplicationId$inboundSchema.optional(),
-  list_approver_user_id: ListApproverUserId$inboundSchema.optional(),
-  list_assigned_user_id: ListAssignedUserId$inboundSchema.optional(),
-  list_bankfeedaccount_id: ListBankfeedaccountId$inboundSchema.optional(),
-  list_benefit_id: ListBenefitId$inboundSchema.optional(),
-  list_bill_id: ListBillId$inboundSchema.optional(),
-  list_branch_id: ListBranchId$inboundSchema.optional(),
-  list_calendar_id: ListCalendarId$inboundSchema.optional(),
-  list_call_id: ListCallId$inboundSchema.optional(),
-  list_campaign_id: ListCampaignId$inboundSchema.optional(),
-  list_candidate_id: ListCandidateId$inboundSchema.optional(),
-  list_carrier_id: ListCarrierId$inboundSchema.optional(),
-  list_category_id: ListCategoryId$inboundSchema.optional(),
-  list_channel_id: ListChannelId$inboundSchema.optional(),
-  list_class_id: ListClassId$inboundSchema.optional(),
-  list_collection_id: ListCollectionId$inboundSchema.optional(),
-  list_company_id: ListCompanyId$inboundSchema.optional(),
-  list_contact_id: ListContactId$inboundSchema.optional(),
-  list_content_id: ListContentId$inboundSchema.optional(),
-  list_course_id: ListCourseId$inboundSchema.optional(),
-  list_customer_id: ListCustomerId$inboundSchema.optional(),
-  list_cycle_id: ListCycleId$inboundSchema.optional(),
-  list_database_id: ListDatabaseId$inboundSchema.optional(),
-  list_deal_id: ListDealId$inboundSchema.optional(),
-  list_destination_id: ListDestinationId$inboundSchema.optional(),
-  list_dimension: ListDimension$inboundSchema.optional(),
-  list_document_id: ListDocumentId$inboundSchema.optional(),
-  list_effective_status: ListEffectiveStatus$inboundSchema.optional(),
-  list_email: ListEmail$inboundSchema.optional(),
-  list_end_lt: ListEndLt$inboundSchema.optional(),
-  list_event_id: ListEventId$inboundSchema.optional(),
-  list_expand: ListExpand$inboundSchema.optional(),
-  list_form_id: ListFormId$inboundSchema.optional(),
-  list_fulltext: ListFulltext$inboundSchema.optional(),
-  list_goal: ListGoal$inboundSchema.optional(),
-  list_group_id: ListGroupId$inboundSchema.optional(),
-  list_guest_id: ListGuestId$inboundSchema.optional(),
-  list_instance_id: ListInstanceId$inboundSchema.optional(),
-  list_instructor_id: ListInstructorId$inboundSchema.optional(),
-  list_interview_id: ListInterviewId$inboundSchema.optional(),
-  list_invoice_id: ListInvoiceId$inboundSchema.optional(),
-  list_io_id: ListIoId$inboundSchema.optional(),
-  list_issue_id: ListIssueId$inboundSchema.optional(),
-  list_item_id: ListItemId$inboundSchema.optional(),
-  list_item_variant_id: ListItemVariantId$inboundSchema.optional(),
-  list_job_id: ListJobId$inboundSchema.optional(),
-  list_label_id: ListLabelId$inboundSchema.optional(),
-  list_lead_id: ListLeadId$inboundSchema.optional(),
-  list_limit: ListLimit$inboundSchema.optional(),
-  list_link_id: ListLinkId$inboundSchema.optional(),
-  list_list_id: ListListId$inboundSchema.optional(),
-  list_listing_id: ListListingId$inboundSchema.optional(),
-  list_location_id: ListLocationId$inboundSchema.optional(),
-  list_matter_id: ListMatterId$inboundSchema.optional(),
-  list_medium: ListMedium$inboundSchema.optional(),
-  list_meeting_url: ListMeetingUrl$inboundSchema.optional(),
-  list_member_id: ListMemberId$inboundSchema.optional(),
-  list_offset: ListOffset$inboundSchema.optional(),
-  list_order: ListOrder$inboundSchema.optional(),
-  list_order_id: ListOrderId$inboundSchema.optional(),
-  list_org_id: ListOrgId$inboundSchema.optional(),
-  list_package_id: ListPackageId$inboundSchema.optional(),
-  list_page_id: ListPageId$inboundSchema.optional(),
-  list_parent_id: ListParentId$inboundSchema.optional(),
-  list_part_id: ListPartId$inboundSchema.optional(),
-  list_patient_id: ListPatientId$inboundSchema.optional(),
-  list_payment_id: ListPaymentId$inboundSchema.optional(),
-  list_payslip_id: ListPayslipId$inboundSchema.optional(),
-  list_pipeline_id: ListPipelineId$inboundSchema.optional(),
-  list_post_id: ListPostId$inboundSchema.optional(),
-  list_practicearea_id: ListPracticeareaId$inboundSchema.optional(),
-  list_practitioner_id: ListPractitionerId$inboundSchema.optional(),
-  list_profile_id: ListProfileId$inboundSchema.optional(),
-  list_project_id: ListProjectId$inboundSchema.optional(),
-  list_property_id: ListPropertyId$inboundSchema.optional(),
-  list_query: ListQuery$inboundSchema.optional(),
-  list_raw_fields: ListRawFields$inboundSchema.optional(),
-  list_reference: ListReference$inboundSchema.optional(),
-  list_region_id: ListRegionId$inboundSchema.optional(),
-  list_repo_id: ListRepoId$inboundSchema.optional(),
-  list_reservation_id: ListReservationId$inboundSchema.optional(),
-  list_role_id: ListRoleId$inboundSchema.optional(),
-  list_room_id: ListRoomId$inboundSchema.optional(),
-  list_root_id: ListRootId$inboundSchema.optional(),
-  list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
-  list_segment_id: ListSegmentId$inboundSchema.optional(),
-  list_service_id: ListServiceId$inboundSchema.optional(),
-  list_session_id: ListSessionId$inboundSchema.optional(),
-  list_shipment_id: ListShipmentId$inboundSchema.optional(),
-  list_size: ListSize$inboundSchema.optional(),
-  list_sort_by_created_at: ListSortByCreatedAt$inboundSchema.optional(),
-  list_sort_by_name: ListSortByName$inboundSchema.optional(),
-  list_sort_by_updated_at: ListSortByUpdatedAt$inboundSchema.optional(),
-  list_source: ListSource$inboundSchema.optional(),
-  list_space_id: ListSpaceId$inboundSchema.optional(),
-  list_start_gte: ListStartGte$inboundSchema.optional(),
-  list_status: ListStatus$inboundSchema.optional(),
-  list_student_id: ListStudentId$inboundSchema.optional(),
-  list_table_id: ListTableId$inboundSchema.optional(),
-  list_task_id: ListTaskId$inboundSchema.optional(),
-  list_teacher_id: ListTeacherId$inboundSchema.optional(),
-  list_template_id: ListTemplateId$inboundSchema.optional(),
-  list_ticket_id: ListTicketId$inboundSchema.optional(),
-  list_type: ListType$inboundSchema.optional(),
-  list_unittype_id: ListUnittypeId$inboundSchema.optional(),
-  list_updated_gte: ListUpdatedGte$inboundSchema.optional(),
-  list_user_id: ListUserId$inboundSchema.optional(),
-  list_user_mentioned_id: ListUserMentionedId$inboundSchema.optional(),
-  list_visitor_id: ListVisitorId$inboundSchema.optional(),
-  methods: z.record(z.boolean()).optional(),
-  native_webhook_calendar_id: NativeWebhookCalendarId$inboundSchema.optional(),
-  native_webhook_carrier_id: NativeWebhookCarrierId$inboundSchema.optional(),
-  native_webhook_channel_id: NativeWebhookChannelId$inboundSchema.optional(),
-  native_webhook_company_id: NativeWebhookCompanyId$inboundSchema.optional(),
-  native_webhook_course_id: NativeWebhookCourseId$inboundSchema.optional(),
-  native_webhook_database_id: NativeWebhookDatabaseId$inboundSchema.optional(),
-  native_webhook_event_id: NativeWebhookEventId$inboundSchema.optional(),
-  native_webhook_form_id: NativeWebhookFormId$inboundSchema.optional(),
-  native_webhook_io_id: NativeWebhookIoId$inboundSchema.optional(),
-  native_webhook_label_id: NativeWebhookLabelId$inboundSchema.optional(),
-  native_webhook_list_id: NativeWebhookListId$inboundSchema.optional(),
-  native_webhook_member_id: NativeWebhookMemberId$inboundSchema.optional(),
-  native_webhook_order_id: NativeWebhookOrderId$inboundSchema.optional(),
-  native_webhook_parent_id: NativeWebhookParentId$inboundSchema.optional(),
-  native_webhook_project_id: NativeWebhookProjectId$inboundSchema.optional(),
-  native_webhook_property_id: NativeWebhookPropertyId$inboundSchema.optional(),
-  native_webhook_session_id: NativeWebhookSessionId$inboundSchema.optional(),
-  native_webhook_shipment_id: NativeWebhookShipmentId$inboundSchema.optional(),
-  native_webhook_student_id: NativeWebhookStudentId$inboundSchema.optional(),
-  native_webhook_table_id: NativeWebhookTableId$inboundSchema.optional(),
-  native_webhook_task_id: NativeWebhookTaskId$inboundSchema.optional(),
-  native_webhook_template_id: NativeWebhookTemplateId$inboundSchema.optional(),
-  native_webhook_type: NativeWebhookType$inboundSchema.optional(),
-  native_webhook_updated_gte: NativeWebhookUpdatedGte$inboundSchema.optional(),
-  native_webhook_visitor_id: NativeWebhookVisitorId$inboundSchema.optional(),
-  outbound_fields: z.record(z.string()).optional(),
-  raw_objects: z.array(z.string()),
-  search_domain: SearchDomain$inboundSchema.optional(),
-  search_email: SearchEmail$inboundSchema.optional(),
-  search_linkedinurl: SearchLinkedinurl$inboundSchema.optional(),
-  search_name: SearchName$inboundSchema.optional(),
-  search_twitter: SearchTwitter$inboundSchema.optional(),
-  slow_fields: z.array(z.string()).optional(),
-  virtual_webhook_account_id: VirtualWebhookAccountId$inboundSchema.optional(),
-  virtual_webhook_ad_id: VirtualWebhookAdId$inboundSchema.optional(),
-  virtual_webhook_application_id: VirtualWebhookApplicationId$inboundSchema
-    .optional(),
-  virtual_webhook_approver_user_id: VirtualWebhookApproverUserId$inboundSchema
-    .optional(),
-  virtual_webhook_assigned_user_id: VirtualWebhookAssignedUserId$inboundSchema
-    .optional(),
-  virtual_webhook_bankfeedaccount_id:
-    VirtualWebhookBankfeedaccountId$inboundSchema.optional(),
-  virtual_webhook_benefit_id: VirtualWebhookBenefitId$inboundSchema.optional(),
-  virtual_webhook_bill_id: VirtualWebhookBillId$inboundSchema.optional(),
-  virtual_webhook_branch_id: VirtualWebhookBranchId$inboundSchema.optional(),
-  virtual_webhook_calendar_id: VirtualWebhookCalendarId$inboundSchema
-    .optional(),
-  virtual_webhook_call_id: VirtualWebhookCallId$inboundSchema.optional(),
-  virtual_webhook_campaign_id: VirtualWebhookCampaignId$inboundSchema
-    .optional(),
-  virtual_webhook_candidate_id: VirtualWebhookCandidateId$inboundSchema
-    .optional(),
-  virtual_webhook_carrier_id: VirtualWebhookCarrierId$inboundSchema.optional(),
-  virtual_webhook_channel_id: VirtualWebhookChannelId$inboundSchema.optional(),
-  virtual_webhook_collection_id: VirtualWebhookCollectionId$inboundSchema
-    .optional(),
-  virtual_webhook_company_id: VirtualWebhookCompanyId$inboundSchema.optional(),
-  virtual_webhook_contact_id: VirtualWebhookContactId$inboundSchema.optional(),
-  virtual_webhook_course_id: VirtualWebhookCourseId$inboundSchema.optional(),
-  virtual_webhook_customer_id: VirtualWebhookCustomerId$inboundSchema
-    .optional(),
-  virtual_webhook_cycle_id: VirtualWebhookCycleId$inboundSchema.optional(),
-  virtual_webhook_database_id: VirtualWebhookDatabaseId$inboundSchema
-    .optional(),
-  virtual_webhook_deal_id: VirtualWebhookDealId$inboundSchema.optional(),
-  virtual_webhook_effective_status: VirtualWebhookEffectiveStatus$inboundSchema
-    .optional(),
-  virtual_webhook_end_lt: VirtualWebhookEndLt$inboundSchema.optional(),
-  virtual_webhook_event_id: VirtualWebhookEventId$inboundSchema.optional(),
-  virtual_webhook_expand: VirtualWebhookExpand$inboundSchema.optional(),
-  virtual_webhook_fields: VirtualWebhookFields$inboundSchema.optional(),
-  virtual_webhook_form_id: VirtualWebhookFormId$inboundSchema.optional(),
-  virtual_webhook_group_id: VirtualWebhookGroupId$inboundSchema.optional(),
-  virtual_webhook_guest_id: VirtualWebhookGuestId$inboundSchema.optional(),
-  virtual_webhook_invoice_id: VirtualWebhookInvoiceId$inboundSchema.optional(),
-  virtual_webhook_io_id: VirtualWebhookIoId$inboundSchema.optional(),
-  virtual_webhook_issue_id: VirtualWebhookIssueId$inboundSchema.optional(),
-  virtual_webhook_item_id: VirtualWebhookItemId$inboundSchema.optional(),
-  virtual_webhook_item_variant_id: VirtualWebhookItemVariantId$inboundSchema
-    .optional(),
-  virtual_webhook_job_id: VirtualWebhookJobId$inboundSchema.optional(),
-  virtual_webhook_label_id: VirtualWebhookLabelId$inboundSchema.optional(),
-  virtual_webhook_lead_id: VirtualWebhookLeadId$inboundSchema.optional(),
-  virtual_webhook_limit: VirtualWebhookLimit$inboundSchema.optional(),
-  virtual_webhook_link_id: VirtualWebhookLinkId$inboundSchema.optional(),
-  virtual_webhook_list_id: VirtualWebhookListId$inboundSchema.optional(),
-  virtual_webhook_listing_id: VirtualWebhookListingId$inboundSchema.optional(),
-  virtual_webhook_location_id: VirtualWebhookLocationId$inboundSchema
-    .optional(),
-  virtual_webhook_matter_id: VirtualWebhookMatterId$inboundSchema.optional(),
-  virtual_webhook_member_id: VirtualWebhookMemberId$inboundSchema.optional(),
-  virtual_webhook_order_id: VirtualWebhookOrderId$inboundSchema.optional(),
-  virtual_webhook_org_id: VirtualWebhookOrgId$inboundSchema.optional(),
-  virtual_webhook_page_id: VirtualWebhookPageId$inboundSchema.optional(),
-  virtual_webhook_parent_id: VirtualWebhookParentId$inboundSchema.optional(),
-  virtual_webhook_part_id: VirtualWebhookPartId$inboundSchema.optional(),
-  virtual_webhook_patient_id: VirtualWebhookPatientId$inboundSchema.optional(),
-  virtual_webhook_payment_id: VirtualWebhookPaymentId$inboundSchema.optional(),
-  virtual_webhook_pipeline_id: VirtualWebhookPipelineId$inboundSchema
-    .optional(),
-  virtual_webhook_post_id: VirtualWebhookPostId$inboundSchema.optional(),
-  virtual_webhook_practicearea_id: VirtualWebhookPracticeareaId$inboundSchema
-    .optional(),
-  virtual_webhook_practitioner_id: VirtualWebhookPractitionerId$inboundSchema
-    .optional(),
-  virtual_webhook_profile_id: VirtualWebhookProfileId$inboundSchema.optional(),
-  virtual_webhook_project_id: VirtualWebhookProjectId$inboundSchema.optional(),
-  virtual_webhook_property_id: VirtualWebhookPropertyId$inboundSchema
-    .optional(),
-  virtual_webhook_reference: VirtualWebhookReference$inboundSchema.optional(),
-  virtual_webhook_repo_id: VirtualWebhookRepoId$inboundSchema.optional(),
-  virtual_webhook_reservation_id: VirtualWebhookReservationId$inboundSchema
-    .optional(),
-  virtual_webhook_saleschannel_id: VirtualWebhookSaleschannelId$inboundSchema
-    .optional(),
-  virtual_webhook_session_id: VirtualWebhookSessionId$inboundSchema.optional(),
-  virtual_webhook_shipment_id: VirtualWebhookShipmentId$inboundSchema
-    .optional(),
-  virtual_webhook_space_id: VirtualWebhookSpaceId$inboundSchema.optional(),
-  virtual_webhook_start_gte: VirtualWebhookStartGte$inboundSchema.optional(),
-  virtual_webhook_status: VirtualWebhookStatus$inboundSchema.optional(),
-  virtual_webhook_student_id: VirtualWebhookStudentId$inboundSchema.optional(),
-  virtual_webhook_table_id: VirtualWebhookTableId$inboundSchema.optional(),
-  virtual_webhook_task_id: VirtualWebhookTaskId$inboundSchema.optional(),
-  virtual_webhook_template_id: VirtualWebhookTemplateId$inboundSchema
-    .optional(),
-  virtual_webhook_ticket_id: VirtualWebhookTicketId$inboundSchema.optional(),
-  virtual_webhook_type: VirtualWebhookType$inboundSchema.optional(),
-  virtual_webhook_updated_gte: VirtualWebhookUpdatedGte$inboundSchema
-    .optional(),
-  virtual_webhook_user_id: VirtualWebhookUserId$inboundSchema.optional(),
-  virtual_webhook_user_mentioned_id: VirtualWebhookUserMentionedId$inboundSchema
-    .optional(),
-  virtual_webhook_visitor_id: VirtualWebhookVisitorId$inboundSchema.optional(),
-  webhook_events: PropertyIntegrationSupportWebhookEvents$inboundSchema
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "from_webhook": "fromWebhook",
-    "inbound_fields": "inboundFields",
-    "list_account_id": "listAccountId",
-    "list_ad_id": "listAdId",
-    "list_agent_id": "listAgentId",
-    "list_application_id": "listApplicationId",
-    "list_approver_user_id": "listApproverUserId",
-    "list_assigned_user_id": "listAssignedUserId",
-    "list_bankfeedaccount_id": "listBankfeedaccountId",
-    "list_benefit_id": "listBenefitId",
-    "list_bill_id": "listBillId",
-    "list_branch_id": "listBranchId",
-    "list_calendar_id": "listCalendarId",
-    "list_call_id": "listCallId",
-    "list_campaign_id": "listCampaignId",
-    "list_candidate_id": "listCandidateId",
-    "list_carrier_id": "listCarrierId",
-    "list_category_id": "listCategoryId",
-    "list_channel_id": "listChannelId",
-    "list_class_id": "listClassId",
-    "list_collection_id": "listCollectionId",
-    "list_company_id": "listCompanyId",
-    "list_contact_id": "listContactId",
-    "list_content_id": "listContentId",
-    "list_course_id": "listCourseId",
-    "list_customer_id": "listCustomerId",
-    "list_cycle_id": "listCycleId",
-    "list_database_id": "listDatabaseId",
-    "list_deal_id": "listDealId",
-    "list_destination_id": "listDestinationId",
-    "list_dimension": "listDimension",
-    "list_document_id": "listDocumentId",
-    "list_effective_status": "listEffectiveStatus",
-    "list_email": "listEmail",
-    "list_end_lt": "listEndLt",
-    "list_event_id": "listEventId",
-    "list_expand": "listExpand",
-    "list_form_id": "listFormId",
-    "list_fulltext": "listFulltext",
-    "list_goal": "listGoal",
-    "list_group_id": "listGroupId",
-    "list_guest_id": "listGuestId",
-    "list_instance_id": "listInstanceId",
-    "list_instructor_id": "listInstructorId",
-    "list_interview_id": "listInterviewId",
-    "list_invoice_id": "listInvoiceId",
-    "list_io_id": "listIoId",
-    "list_issue_id": "listIssueId",
-    "list_item_id": "listItemId",
-    "list_item_variant_id": "listItemVariantId",
-    "list_job_id": "listJobId",
-    "list_label_id": "listLabelId",
-    "list_lead_id": "listLeadId",
-    "list_limit": "listLimit",
-    "list_link_id": "listLinkId",
-    "list_list_id": "listListId",
-    "list_listing_id": "listListingId",
-    "list_location_id": "listLocationId",
-    "list_matter_id": "listMatterId",
-    "list_medium": "listMedium",
-    "list_meeting_url": "listMeetingUrl",
-    "list_member_id": "listMemberId",
-    "list_offset": "listOffset",
-    "list_order": "listOrder",
-    "list_order_id": "listOrderId",
-    "list_org_id": "listOrgId",
-    "list_package_id": "listPackageId",
-    "list_page_id": "listPageId",
-    "list_parent_id": "listParentId",
-    "list_part_id": "listPartId",
-    "list_patient_id": "listPatientId",
-    "list_payment_id": "listPaymentId",
-    "list_payslip_id": "listPayslipId",
-    "list_pipeline_id": "listPipelineId",
-    "list_post_id": "listPostId",
-    "list_practicearea_id": "listPracticeareaId",
-    "list_practitioner_id": "listPractitionerId",
-    "list_profile_id": "listProfileId",
-    "list_project_id": "listProjectId",
-    "list_property_id": "listPropertyId",
-    "list_query": "listQuery",
-    "list_raw_fields": "listRawFields",
-    "list_reference": "listReference",
-    "list_region_id": "listRegionId",
-    "list_repo_id": "listRepoId",
-    "list_reservation_id": "listReservationId",
-    "list_role_id": "listRoleId",
-    "list_room_id": "listRoomId",
-    "list_root_id": "listRootId",
-    "list_saleschannel_id": "listSaleschannelId",
-    "list_segment_id": "listSegmentId",
-    "list_service_id": "listServiceId",
-    "list_session_id": "listSessionId",
-    "list_shipment_id": "listShipmentId",
-    "list_size": "listSize",
-    "list_sort_by_created_at": "listSortByCreatedAt",
-    "list_sort_by_name": "listSortByName",
-    "list_sort_by_updated_at": "listSortByUpdatedAt",
-    "list_source": "listSource",
-    "list_space_id": "listSpaceId",
-    "list_start_gte": "listStartGte",
-    "list_status": "listStatus",
-    "list_student_id": "listStudentId",
-    "list_table_id": "listTableId",
-    "list_task_id": "listTaskId",
-    "list_teacher_id": "listTeacherId",
-    "list_template_id": "listTemplateId",
-    "list_ticket_id": "listTicketId",
-    "list_type": "listType",
-    "list_unittype_id": "listUnittypeId",
-    "list_updated_gte": "listUpdatedGte",
-    "list_user_id": "listUserId",
-    "list_user_mentioned_id": "listUserMentionedId",
-    "list_visitor_id": "listVisitorId",
-    "native_webhook_calendar_id": "nativeWebhookCalendarId",
-    "native_webhook_carrier_id": "nativeWebhookCarrierId",
-    "native_webhook_channel_id": "nativeWebhookChannelId",
-    "native_webhook_company_id": "nativeWebhookCompanyId",
-    "native_webhook_course_id": "nativeWebhookCourseId",
-    "native_webhook_database_id": "nativeWebhookDatabaseId",
-    "native_webhook_event_id": "nativeWebhookEventId",
-    "native_webhook_form_id": "nativeWebhookFormId",
-    "native_webhook_io_id": "nativeWebhookIoId",
-    "native_webhook_label_id": "nativeWebhookLabelId",
-    "native_webhook_list_id": "nativeWebhookListId",
-    "native_webhook_member_id": "nativeWebhookMemberId",
-    "native_webhook_order_id": "nativeWebhookOrderId",
-    "native_webhook_parent_id": "nativeWebhookParentId",
-    "native_webhook_project_id": "nativeWebhookProjectId",
-    "native_webhook_property_id": "nativeWebhookPropertyId",
-    "native_webhook_session_id": "nativeWebhookSessionId",
-    "native_webhook_shipment_id": "nativeWebhookShipmentId",
-    "native_webhook_student_id": "nativeWebhookStudentId",
-    "native_webhook_table_id": "nativeWebhookTableId",
-    "native_webhook_task_id": "nativeWebhookTaskId",
-    "native_webhook_template_id": "nativeWebhookTemplateId",
-    "native_webhook_type": "nativeWebhookType",
-    "native_webhook_updated_gte": "nativeWebhookUpdatedGte",
-    "native_webhook_visitor_id": "nativeWebhookVisitorId",
-    "outbound_fields": "outboundFields",
-    "raw_objects": "rawObjects",
-    "search_domain": "searchDomain",
-    "search_email": "searchEmail",
-    "search_linkedinurl": "searchLinkedinurl",
-    "search_name": "searchName",
-    "search_twitter": "searchTwitter",
-    "slow_fields": "slowFields",
-    "virtual_webhook_account_id": "virtualWebhookAccountId",
-    "virtual_webhook_ad_id": "virtualWebhookAdId",
-    "virtual_webhook_application_id": "virtualWebhookApplicationId",
-    "virtual_webhook_approver_user_id": "virtualWebhookApproverUserId",
-    "virtual_webhook_assigned_user_id": "virtualWebhookAssignedUserId",
-    "virtual_webhook_bankfeedaccount_id": "virtualWebhookBankfeedaccountId",
-    "virtual_webhook_benefit_id": "virtualWebhookBenefitId",
-    "virtual_webhook_bill_id": "virtualWebhookBillId",
-    "virtual_webhook_branch_id": "virtualWebhookBranchId",
-    "virtual_webhook_calendar_id": "virtualWebhookCalendarId",
-    "virtual_webhook_call_id": "virtualWebhookCallId",
-    "virtual_webhook_campaign_id": "virtualWebhookCampaignId",
-    "virtual_webhook_candidate_id": "virtualWebhookCandidateId",
-    "virtual_webhook_carrier_id": "virtualWebhookCarrierId",
-    "virtual_webhook_channel_id": "virtualWebhookChannelId",
-    "virtual_webhook_collection_id": "virtualWebhookCollectionId",
-    "virtual_webhook_company_id": "virtualWebhookCompanyId",
-    "virtual_webhook_contact_id": "virtualWebhookContactId",
-    "virtual_webhook_course_id": "virtualWebhookCourseId",
-    "virtual_webhook_customer_id": "virtualWebhookCustomerId",
-    "virtual_webhook_cycle_id": "virtualWebhookCycleId",
-    "virtual_webhook_database_id": "virtualWebhookDatabaseId",
-    "virtual_webhook_deal_id": "virtualWebhookDealId",
-    "virtual_webhook_effective_status": "virtualWebhookEffectiveStatus",
-    "virtual_webhook_end_lt": "virtualWebhookEndLt",
-    "virtual_webhook_event_id": "virtualWebhookEventId",
-    "virtual_webhook_expand": "virtualWebhookExpand",
-    "virtual_webhook_fields": "virtualWebhookFields",
-    "virtual_webhook_form_id": "virtualWebhookFormId",
-    "virtual_webhook_group_id": "virtualWebhookGroupId",
-    "virtual_webhook_guest_id": "virtualWebhookGuestId",
-    "virtual_webhook_invoice_id": "virtualWebhookInvoiceId",
-    "virtual_webhook_io_id": "virtualWebhookIoId",
-    "virtual_webhook_issue_id": "virtualWebhookIssueId",
-    "virtual_webhook_item_id": "virtualWebhookItemId",
-    "virtual_webhook_item_variant_id": "virtualWebhookItemVariantId",
-    "virtual_webhook_job_id": "virtualWebhookJobId",
-    "virtual_webhook_label_id": "virtualWebhookLabelId",
-    "virtual_webhook_lead_id": "virtualWebhookLeadId",
-    "virtual_webhook_limit": "virtualWebhookLimit",
-    "virtual_webhook_link_id": "virtualWebhookLinkId",
-    "virtual_webhook_list_id": "virtualWebhookListId",
-    "virtual_webhook_listing_id": "virtualWebhookListingId",
-    "virtual_webhook_location_id": "virtualWebhookLocationId",
-    "virtual_webhook_matter_id": "virtualWebhookMatterId",
-    "virtual_webhook_member_id": "virtualWebhookMemberId",
-    "virtual_webhook_order_id": "virtualWebhookOrderId",
-    "virtual_webhook_org_id": "virtualWebhookOrgId",
-    "virtual_webhook_page_id": "virtualWebhookPageId",
-    "virtual_webhook_parent_id": "virtualWebhookParentId",
-    "virtual_webhook_part_id": "virtualWebhookPartId",
-    "virtual_webhook_patient_id": "virtualWebhookPatientId",
-    "virtual_webhook_payment_id": "virtualWebhookPaymentId",
-    "virtual_webhook_pipeline_id": "virtualWebhookPipelineId",
-    "virtual_webhook_post_id": "virtualWebhookPostId",
-    "virtual_webhook_practicearea_id": "virtualWebhookPracticeareaId",
-    "virtual_webhook_practitioner_id": "virtualWebhookPractitionerId",
-    "virtual_webhook_profile_id": "virtualWebhookProfileId",
-    "virtual_webhook_project_id": "virtualWebhookProjectId",
-    "virtual_webhook_property_id": "virtualWebhookPropertyId",
-    "virtual_webhook_reference": "virtualWebhookReference",
-    "virtual_webhook_repo_id": "virtualWebhookRepoId",
-    "virtual_webhook_reservation_id": "virtualWebhookReservationId",
-    "virtual_webhook_saleschannel_id": "virtualWebhookSaleschannelId",
-    "virtual_webhook_session_id": "virtualWebhookSessionId",
-    "virtual_webhook_shipment_id": "virtualWebhookShipmentId",
-    "virtual_webhook_space_id": "virtualWebhookSpaceId",
-    "virtual_webhook_start_gte": "virtualWebhookStartGte",
-    "virtual_webhook_status": "virtualWebhookStatus",
-    "virtual_webhook_student_id": "virtualWebhookStudentId",
-    "virtual_webhook_table_id": "virtualWebhookTableId",
-    "virtual_webhook_task_id": "virtualWebhookTaskId",
-    "virtual_webhook_template_id": "virtualWebhookTemplateId",
-    "virtual_webhook_ticket_id": "virtualWebhookTicketId",
-    "virtual_webhook_type": "virtualWebhookType",
-    "virtual_webhook_updated_gte": "virtualWebhookUpdatedGte",
-    "virtual_webhook_user_id": "virtualWebhookUserId",
-    "virtual_webhook_user_mentioned_id": "virtualWebhookUserMentionedId",
-    "virtual_webhook_visitor_id": "virtualWebhookVisitorId",
-    "webhook_events": "webhookEvents",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    from_webhook: FromWebhook$inboundSchema.optional(),
+    inbound_fields: z.record(z.string()).optional(),
+    list_account_id: ListAccountId$inboundSchema.optional(),
+    list_ad_id: ListAdId$inboundSchema.optional(),
+    list_agent_id: ListAgentId$inboundSchema.optional(),
+    list_application_id: ListApplicationId$inboundSchema.optional(),
+    list_approver_user_id: ListApproverUserId$inboundSchema.optional(),
+    list_assigned_user_id: ListAssignedUserId$inboundSchema.optional(),
+    list_bankfeedaccount_id: ListBankfeedaccountId$inboundSchema.optional(),
+    list_benefit_id: ListBenefitId$inboundSchema.optional(),
+    list_bill_id: ListBillId$inboundSchema.optional(),
+    list_branch_id: ListBranchId$inboundSchema.optional(),
+    list_calendar_id: ListCalendarId$inboundSchema.optional(),
+    list_call_id: ListCallId$inboundSchema.optional(),
+    list_campaign_id: ListCampaignId$inboundSchema.optional(),
+    list_candidate_id: ListCandidateId$inboundSchema.optional(),
+    list_carrier_id: ListCarrierId$inboundSchema.optional(),
+    list_category_id: ListCategoryId$inboundSchema.optional(),
+    list_channel_id: ListChannelId$inboundSchema.optional(),
+    list_class_id: ListClassId$inboundSchema.optional(),
+    list_collection_id: ListCollectionId$inboundSchema.optional(),
+    list_company_id: ListCompanyId$inboundSchema.optional(),
+    list_contact_id: ListContactId$inboundSchema.optional(),
+    list_content_id: ListContentId$inboundSchema.optional(),
+    list_course_id: ListCourseId$inboundSchema.optional(),
+    list_customer_id: ListCustomerId$inboundSchema.optional(),
+    list_cycle_id: ListCycleId$inboundSchema.optional(),
+    list_database_id: ListDatabaseId$inboundSchema.optional(),
+    list_deal_id: ListDealId$inboundSchema.optional(),
+    list_destination_id: ListDestinationId$inboundSchema.optional(),
+    list_dimension: ListDimension$inboundSchema.optional(),
+    list_document_id: ListDocumentId$inboundSchema.optional(),
+    list_effective_status: ListEffectiveStatus$inboundSchema.optional(),
+    list_email: ListEmail$inboundSchema.optional(),
+    list_end_lt: ListEndLt$inboundSchema.optional(),
+    list_event_id: ListEventId$inboundSchema.optional(),
+    list_expand: ListExpand$inboundSchema.optional(),
+    list_form_id: ListFormId$inboundSchema.optional(),
+    list_fulltext: ListFulltext$inboundSchema.optional(),
+    list_goal: ListGoal$inboundSchema.optional(),
+    list_group_id: ListGroupId$inboundSchema.optional(),
+    list_guest_id: ListGuestId$inboundSchema.optional(),
+    list_instance_id: ListInstanceId$inboundSchema.optional(),
+    list_instructor_id: ListInstructorId$inboundSchema.optional(),
+    list_interview_id: ListInterviewId$inboundSchema.optional(),
+    list_invoice_id: ListInvoiceId$inboundSchema.optional(),
+    list_io_id: ListIoId$inboundSchema.optional(),
+    list_issue_id: ListIssueId$inboundSchema.optional(),
+    list_item_id: ListItemId$inboundSchema.optional(),
+    list_item_variant_id: ListItemVariantId$inboundSchema.optional(),
+    list_job_id: ListJobId$inboundSchema.optional(),
+    list_label_id: ListLabelId$inboundSchema.optional(),
+    list_lead_id: ListLeadId$inboundSchema.optional(),
+    list_limit: ListLimit$inboundSchema.optional(),
+    list_link_id: ListLinkId$inboundSchema.optional(),
+    list_list_id: ListListId$inboundSchema.optional(),
+    list_listing_id: ListListingId$inboundSchema.optional(),
+    list_location_id: ListLocationId$inboundSchema.optional(),
+    list_matter_id: ListMatterId$inboundSchema.optional(),
+    list_medium: ListMedium$inboundSchema.optional(),
+    list_meeting_url: ListMeetingUrl$inboundSchema.optional(),
+    list_member_id: ListMemberId$inboundSchema.optional(),
+    list_offset: ListOffset$inboundSchema.optional(),
+    list_order: ListOrder$inboundSchema.optional(),
+    list_order_id: ListOrderId$inboundSchema.optional(),
+    list_org_id: ListOrgId$inboundSchema.optional(),
+    list_package_id: ListPackageId$inboundSchema.optional(),
+    list_page_id: ListPageId$inboundSchema.optional(),
+    list_parent_id: ListParentId$inboundSchema.optional(),
+    list_part_id: ListPartId$inboundSchema.optional(),
+    list_patient_id: ListPatientId$inboundSchema.optional(),
+    list_payment_id: ListPaymentId$inboundSchema.optional(),
+    list_payslip_id: ListPayslipId$inboundSchema.optional(),
+    list_pipeline_id: ListPipelineId$inboundSchema.optional(),
+    list_post_id: ListPostId$inboundSchema.optional(),
+    list_practicearea_id: ListPracticeareaId$inboundSchema.optional(),
+    list_practitioner_id: ListPractitionerId$inboundSchema.optional(),
+    list_profile_id: ListProfileId$inboundSchema.optional(),
+    list_project_id: ListProjectId$inboundSchema.optional(),
+    list_property_id: ListPropertyId$inboundSchema.optional(),
+    list_query: ListQuery$inboundSchema.optional(),
+    list_raw_fields: ListRawFields$inboundSchema.optional(),
+    list_reference: ListReference$inboundSchema.optional(),
+    list_region_id: ListRegionId$inboundSchema.optional(),
+    list_repo_id: ListRepoId$inboundSchema.optional(),
+    list_reservation_id: ListReservationId$inboundSchema.optional(),
+    list_role_id: ListRoleId$inboundSchema.optional(),
+    list_room_id: ListRoomId$inboundSchema.optional(),
+    list_root_id: ListRootId$inboundSchema.optional(),
+    list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
+    list_segment_id: ListSegmentId$inboundSchema.optional(),
+    list_service_id: ListServiceId$inboundSchema.optional(),
+    list_session_id: ListSessionId$inboundSchema.optional(),
+    list_shipment_id: ListShipmentId$inboundSchema.optional(),
+    list_size: ListSize$inboundSchema.optional(),
+    list_sort_by_created_at: ListSortByCreatedAt$inboundSchema.optional(),
+    list_sort_by_name: ListSortByName$inboundSchema.optional(),
+    list_sort_by_updated_at: ListSortByUpdatedAt$inboundSchema.optional(),
+    list_source: ListSource$inboundSchema.optional(),
+    list_space_id: ListSpaceId$inboundSchema.optional(),
+    list_start_gte: ListStartGte$inboundSchema.optional(),
+    list_status: ListStatus$inboundSchema.optional(),
+    list_student_id: ListStudentId$inboundSchema.optional(),
+    list_table_id: ListTableId$inboundSchema.optional(),
+    list_task_id: ListTaskId$inboundSchema.optional(),
+    list_teacher_id: ListTeacherId$inboundSchema.optional(),
+    list_template_id: ListTemplateId$inboundSchema.optional(),
+    list_ticket_id: ListTicketId$inboundSchema.optional(),
+    list_type: ListType$inboundSchema.optional(),
+    list_unittype_id: ListUnittypeId$inboundSchema.optional(),
+    list_updated_gte: ListUpdatedGte$inboundSchema.optional(),
+    list_user_id: ListUserId$inboundSchema.optional(),
+    list_user_mentioned_id: ListUserMentionedId$inboundSchema.optional(),
+    list_vehicle_id: ListVehicleId$inboundSchema.optional(),
+    list_visitor_id: ListVisitorId$inboundSchema.optional(),
+    methods: z.record(z.boolean()).optional(),
+    native_webhook_calendar_id: NativeWebhookCalendarId$inboundSchema
+      .optional(),
+    native_webhook_carrier_id: NativeWebhookCarrierId$inboundSchema.optional(),
+    native_webhook_channel_id: NativeWebhookChannelId$inboundSchema.optional(),
+    native_webhook_company_id: NativeWebhookCompanyId$inboundSchema.optional(),
+    native_webhook_course_id: NativeWebhookCourseId$inboundSchema.optional(),
+    native_webhook_database_id: NativeWebhookDatabaseId$inboundSchema
+      .optional(),
+    native_webhook_event_id: NativeWebhookEventId$inboundSchema.optional(),
+    native_webhook_form_id: NativeWebhookFormId$inboundSchema.optional(),
+    native_webhook_io_id: NativeWebhookIoId$inboundSchema.optional(),
+    native_webhook_label_id: NativeWebhookLabelId$inboundSchema.optional(),
+    native_webhook_list_id: NativeWebhookListId$inboundSchema.optional(),
+    native_webhook_member_id: NativeWebhookMemberId$inboundSchema.optional(),
+    native_webhook_order_id: NativeWebhookOrderId$inboundSchema.optional(),
+    native_webhook_parent_id: NativeWebhookParentId$inboundSchema.optional(),
+    native_webhook_project_id: NativeWebhookProjectId$inboundSchema.optional(),
+    native_webhook_property_id: NativeWebhookPropertyId$inboundSchema
+      .optional(),
+    native_webhook_session_id: NativeWebhookSessionId$inboundSchema.optional(),
+    native_webhook_shipment_id: NativeWebhookShipmentId$inboundSchema
+      .optional(),
+    native_webhook_student_id: NativeWebhookStudentId$inboundSchema.optional(),
+    native_webhook_table_id: NativeWebhookTableId$inboundSchema.optional(),
+    native_webhook_task_id: NativeWebhookTaskId$inboundSchema.optional(),
+    native_webhook_template_id: NativeWebhookTemplateId$inboundSchema
+      .optional(),
+    native_webhook_type: NativeWebhookType$inboundSchema.optional(),
+    native_webhook_updated_gte: NativeWebhookUpdatedGte$inboundSchema
+      .optional(),
+    native_webhook_visitor_id: NativeWebhookVisitorId$inboundSchema.optional(),
+    outbound_fields: z.record(z.string()).optional(),
+    raw_objects: z.array(z.string()),
+    search_domain: SearchDomain$inboundSchema.optional(),
+    search_email: SearchEmail$inboundSchema.optional(),
+    search_linkedinurl: SearchLinkedinurl$inboundSchema.optional(),
+    search_name: SearchName$inboundSchema.optional(),
+    search_twitter: SearchTwitter$inboundSchema.optional(),
+    slow_fields: z.array(z.string()).optional(),
+    virtual_webhook_account_id: VirtualWebhookAccountId$inboundSchema
+      .optional(),
+    virtual_webhook_ad_id: VirtualWebhookAdId$inboundSchema.optional(),
+    virtual_webhook_application_id: VirtualWebhookApplicationId$inboundSchema
+      .optional(),
+    virtual_webhook_approver_user_id: VirtualWebhookApproverUserId$inboundSchema
+      .optional(),
+    virtual_webhook_assigned_user_id: VirtualWebhookAssignedUserId$inboundSchema
+      .optional(),
+    virtual_webhook_bankfeedaccount_id:
+      VirtualWebhookBankfeedaccountId$inboundSchema.optional(),
+    virtual_webhook_benefit_id: VirtualWebhookBenefitId$inboundSchema
+      .optional(),
+    virtual_webhook_bill_id: VirtualWebhookBillId$inboundSchema.optional(),
+    virtual_webhook_branch_id: VirtualWebhookBranchId$inboundSchema.optional(),
+    virtual_webhook_calendar_id: VirtualWebhookCalendarId$inboundSchema
+      .optional(),
+    virtual_webhook_call_id: VirtualWebhookCallId$inboundSchema.optional(),
+    virtual_webhook_campaign_id: VirtualWebhookCampaignId$inboundSchema
+      .optional(),
+    virtual_webhook_candidate_id: VirtualWebhookCandidateId$inboundSchema
+      .optional(),
+    virtual_webhook_carrier_id: VirtualWebhookCarrierId$inboundSchema
+      .optional(),
+    virtual_webhook_channel_id: VirtualWebhookChannelId$inboundSchema
+      .optional(),
+    virtual_webhook_collection_id: VirtualWebhookCollectionId$inboundSchema
+      .optional(),
+    virtual_webhook_company_id: VirtualWebhookCompanyId$inboundSchema
+      .optional(),
+    virtual_webhook_contact_id: VirtualWebhookContactId$inboundSchema
+      .optional(),
+    virtual_webhook_course_id: VirtualWebhookCourseId$inboundSchema.optional(),
+    virtual_webhook_customer_id: VirtualWebhookCustomerId$inboundSchema
+      .optional(),
+    virtual_webhook_cycle_id: VirtualWebhookCycleId$inboundSchema.optional(),
+    virtual_webhook_database_id: VirtualWebhookDatabaseId$inboundSchema
+      .optional(),
+    virtual_webhook_deal_id: VirtualWebhookDealId$inboundSchema.optional(),
+    virtual_webhook_effective_status:
+      VirtualWebhookEffectiveStatus$inboundSchema.optional(),
+    virtual_webhook_end_lt: VirtualWebhookEndLt$inboundSchema.optional(),
+    virtual_webhook_event_id: VirtualWebhookEventId$inboundSchema.optional(),
+    virtual_webhook_expand: VirtualWebhookExpand$inboundSchema.optional(),
+    virtual_webhook_fields: VirtualWebhookFields$inboundSchema.optional(),
+    virtual_webhook_form_id: VirtualWebhookFormId$inboundSchema.optional(),
+    virtual_webhook_group_id: VirtualWebhookGroupId$inboundSchema.optional(),
+    virtual_webhook_guest_id: VirtualWebhookGuestId$inboundSchema.optional(),
+    virtual_webhook_invoice_id: VirtualWebhookInvoiceId$inboundSchema
+      .optional(),
+    virtual_webhook_io_id: VirtualWebhookIoId$inboundSchema.optional(),
+    virtual_webhook_issue_id: VirtualWebhookIssueId$inboundSchema.optional(),
+    virtual_webhook_item_id: VirtualWebhookItemId$inboundSchema.optional(),
+    virtual_webhook_item_variant_id: VirtualWebhookItemVariantId$inboundSchema
+      .optional(),
+    virtual_webhook_job_id: VirtualWebhookJobId$inboundSchema.optional(),
+    virtual_webhook_label_id: VirtualWebhookLabelId$inboundSchema.optional(),
+    virtual_webhook_lead_id: VirtualWebhookLeadId$inboundSchema.optional(),
+    virtual_webhook_limit: VirtualWebhookLimit$inboundSchema.optional(),
+    virtual_webhook_link_id: VirtualWebhookLinkId$inboundSchema.optional(),
+    virtual_webhook_list_id: VirtualWebhookListId$inboundSchema.optional(),
+    virtual_webhook_listing_id: VirtualWebhookListingId$inboundSchema
+      .optional(),
+    virtual_webhook_location_id: VirtualWebhookLocationId$inboundSchema
+      .optional(),
+    virtual_webhook_matter_id: VirtualWebhookMatterId$inboundSchema.optional(),
+    virtual_webhook_member_id: VirtualWebhookMemberId$inboundSchema.optional(),
+    virtual_webhook_order_id: VirtualWebhookOrderId$inboundSchema.optional(),
+    virtual_webhook_org_id: VirtualWebhookOrgId$inboundSchema.optional(),
+    virtual_webhook_page_id: VirtualWebhookPageId$inboundSchema.optional(),
+    virtual_webhook_parent_id: VirtualWebhookParentId$inboundSchema.optional(),
+    virtual_webhook_part_id: VirtualWebhookPartId$inboundSchema.optional(),
+    virtual_webhook_patient_id: VirtualWebhookPatientId$inboundSchema
+      .optional(),
+    virtual_webhook_payment_id: VirtualWebhookPaymentId$inboundSchema
+      .optional(),
+    virtual_webhook_pipeline_id: VirtualWebhookPipelineId$inboundSchema
+      .optional(),
+    virtual_webhook_post_id: VirtualWebhookPostId$inboundSchema.optional(),
+    virtual_webhook_practicearea_id: VirtualWebhookPracticeareaId$inboundSchema
+      .optional(),
+    virtual_webhook_practitioner_id: VirtualWebhookPractitionerId$inboundSchema
+      .optional(),
+    virtual_webhook_profile_id: VirtualWebhookProfileId$inboundSchema
+      .optional(),
+    virtual_webhook_project_id: VirtualWebhookProjectId$inboundSchema
+      .optional(),
+    virtual_webhook_property_id: VirtualWebhookPropertyId$inboundSchema
+      .optional(),
+    virtual_webhook_reference: VirtualWebhookReference$inboundSchema.optional(),
+    virtual_webhook_repo_id: VirtualWebhookRepoId$inboundSchema.optional(),
+    virtual_webhook_reservation_id: VirtualWebhookReservationId$inboundSchema
+      .optional(),
+    virtual_webhook_saleschannel_id: VirtualWebhookSaleschannelId$inboundSchema
+      .optional(),
+    virtual_webhook_session_id: VirtualWebhookSessionId$inboundSchema
+      .optional(),
+    virtual_webhook_shipment_id: VirtualWebhookShipmentId$inboundSchema
+      .optional(),
+    virtual_webhook_space_id: VirtualWebhookSpaceId$inboundSchema.optional(),
+    virtual_webhook_start_gte: VirtualWebhookStartGte$inboundSchema.optional(),
+    virtual_webhook_status: VirtualWebhookStatus$inboundSchema.optional(),
+    virtual_webhook_student_id: VirtualWebhookStudentId$inboundSchema
+      .optional(),
+    virtual_webhook_table_id: VirtualWebhookTableId$inboundSchema.optional(),
+    virtual_webhook_task_id: VirtualWebhookTaskId$inboundSchema.optional(),
+    virtual_webhook_template_id: VirtualWebhookTemplateId$inboundSchema
+      .optional(),
+    virtual_webhook_ticket_id: VirtualWebhookTicketId$inboundSchema.optional(),
+    virtual_webhook_type: VirtualWebhookType$inboundSchema.optional(),
+    virtual_webhook_updated_gte: VirtualWebhookUpdatedGte$inboundSchema
+      .optional(),
+    virtual_webhook_user_id: VirtualWebhookUserId$inboundSchema.optional(),
+    virtual_webhook_user_mentioned_id:
+      VirtualWebhookUserMentionedId$inboundSchema.optional(),
+    virtual_webhook_vehicle_id: VirtualWebhookVehicleId$inboundSchema
+      .optional(),
+    virtual_webhook_visitor_id: VirtualWebhookVisitorId$inboundSchema
+      .optional(),
+    webhook_events: PropertyIntegrationSupportWebhookEvents$inboundSchema
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "from_webhook": "fromWebhook",
+      "inbound_fields": "inboundFields",
+      "list_account_id": "listAccountId",
+      "list_ad_id": "listAdId",
+      "list_agent_id": "listAgentId",
+      "list_application_id": "listApplicationId",
+      "list_approver_user_id": "listApproverUserId",
+      "list_assigned_user_id": "listAssignedUserId",
+      "list_bankfeedaccount_id": "listBankfeedaccountId",
+      "list_benefit_id": "listBenefitId",
+      "list_bill_id": "listBillId",
+      "list_branch_id": "listBranchId",
+      "list_calendar_id": "listCalendarId",
+      "list_call_id": "listCallId",
+      "list_campaign_id": "listCampaignId",
+      "list_candidate_id": "listCandidateId",
+      "list_carrier_id": "listCarrierId",
+      "list_category_id": "listCategoryId",
+      "list_channel_id": "listChannelId",
+      "list_class_id": "listClassId",
+      "list_collection_id": "listCollectionId",
+      "list_company_id": "listCompanyId",
+      "list_contact_id": "listContactId",
+      "list_content_id": "listContentId",
+      "list_course_id": "listCourseId",
+      "list_customer_id": "listCustomerId",
+      "list_cycle_id": "listCycleId",
+      "list_database_id": "listDatabaseId",
+      "list_deal_id": "listDealId",
+      "list_destination_id": "listDestinationId",
+      "list_dimension": "listDimension",
+      "list_document_id": "listDocumentId",
+      "list_effective_status": "listEffectiveStatus",
+      "list_email": "listEmail",
+      "list_end_lt": "listEndLt",
+      "list_event_id": "listEventId",
+      "list_expand": "listExpand",
+      "list_form_id": "listFormId",
+      "list_fulltext": "listFulltext",
+      "list_goal": "listGoal",
+      "list_group_id": "listGroupId",
+      "list_guest_id": "listGuestId",
+      "list_instance_id": "listInstanceId",
+      "list_instructor_id": "listInstructorId",
+      "list_interview_id": "listInterviewId",
+      "list_invoice_id": "listInvoiceId",
+      "list_io_id": "listIoId",
+      "list_issue_id": "listIssueId",
+      "list_item_id": "listItemId",
+      "list_item_variant_id": "listItemVariantId",
+      "list_job_id": "listJobId",
+      "list_label_id": "listLabelId",
+      "list_lead_id": "listLeadId",
+      "list_limit": "listLimit",
+      "list_link_id": "listLinkId",
+      "list_list_id": "listListId",
+      "list_listing_id": "listListingId",
+      "list_location_id": "listLocationId",
+      "list_matter_id": "listMatterId",
+      "list_medium": "listMedium",
+      "list_meeting_url": "listMeetingUrl",
+      "list_member_id": "listMemberId",
+      "list_offset": "listOffset",
+      "list_order": "listOrder",
+      "list_order_id": "listOrderId",
+      "list_org_id": "listOrgId",
+      "list_package_id": "listPackageId",
+      "list_page_id": "listPageId",
+      "list_parent_id": "listParentId",
+      "list_part_id": "listPartId",
+      "list_patient_id": "listPatientId",
+      "list_payment_id": "listPaymentId",
+      "list_payslip_id": "listPayslipId",
+      "list_pipeline_id": "listPipelineId",
+      "list_post_id": "listPostId",
+      "list_practicearea_id": "listPracticeareaId",
+      "list_practitioner_id": "listPractitionerId",
+      "list_profile_id": "listProfileId",
+      "list_project_id": "listProjectId",
+      "list_property_id": "listPropertyId",
+      "list_query": "listQuery",
+      "list_raw_fields": "listRawFields",
+      "list_reference": "listReference",
+      "list_region_id": "listRegionId",
+      "list_repo_id": "listRepoId",
+      "list_reservation_id": "listReservationId",
+      "list_role_id": "listRoleId",
+      "list_room_id": "listRoomId",
+      "list_root_id": "listRootId",
+      "list_saleschannel_id": "listSaleschannelId",
+      "list_segment_id": "listSegmentId",
+      "list_service_id": "listServiceId",
+      "list_session_id": "listSessionId",
+      "list_shipment_id": "listShipmentId",
+      "list_size": "listSize",
+      "list_sort_by_created_at": "listSortByCreatedAt",
+      "list_sort_by_name": "listSortByName",
+      "list_sort_by_updated_at": "listSortByUpdatedAt",
+      "list_source": "listSource",
+      "list_space_id": "listSpaceId",
+      "list_start_gte": "listStartGte",
+      "list_status": "listStatus",
+      "list_student_id": "listStudentId",
+      "list_table_id": "listTableId",
+      "list_task_id": "listTaskId",
+      "list_teacher_id": "listTeacherId",
+      "list_template_id": "listTemplateId",
+      "list_ticket_id": "listTicketId",
+      "list_type": "listType",
+      "list_unittype_id": "listUnittypeId",
+      "list_updated_gte": "listUpdatedGte",
+      "list_user_id": "listUserId",
+      "list_user_mentioned_id": "listUserMentionedId",
+      "list_vehicle_id": "listVehicleId",
+      "list_visitor_id": "listVisitorId",
+      "native_webhook_calendar_id": "nativeWebhookCalendarId",
+      "native_webhook_carrier_id": "nativeWebhookCarrierId",
+      "native_webhook_channel_id": "nativeWebhookChannelId",
+      "native_webhook_company_id": "nativeWebhookCompanyId",
+      "native_webhook_course_id": "nativeWebhookCourseId",
+      "native_webhook_database_id": "nativeWebhookDatabaseId",
+      "native_webhook_event_id": "nativeWebhookEventId",
+      "native_webhook_form_id": "nativeWebhookFormId",
+      "native_webhook_io_id": "nativeWebhookIoId",
+      "native_webhook_label_id": "nativeWebhookLabelId",
+      "native_webhook_list_id": "nativeWebhookListId",
+      "native_webhook_member_id": "nativeWebhookMemberId",
+      "native_webhook_order_id": "nativeWebhookOrderId",
+      "native_webhook_parent_id": "nativeWebhookParentId",
+      "native_webhook_project_id": "nativeWebhookProjectId",
+      "native_webhook_property_id": "nativeWebhookPropertyId",
+      "native_webhook_session_id": "nativeWebhookSessionId",
+      "native_webhook_shipment_id": "nativeWebhookShipmentId",
+      "native_webhook_student_id": "nativeWebhookStudentId",
+      "native_webhook_table_id": "nativeWebhookTableId",
+      "native_webhook_task_id": "nativeWebhookTaskId",
+      "native_webhook_template_id": "nativeWebhookTemplateId",
+      "native_webhook_type": "nativeWebhookType",
+      "native_webhook_updated_gte": "nativeWebhookUpdatedGte",
+      "native_webhook_visitor_id": "nativeWebhookVisitorId",
+      "outbound_fields": "outboundFields",
+      "raw_objects": "rawObjects",
+      "search_domain": "searchDomain",
+      "search_email": "searchEmail",
+      "search_linkedinurl": "searchLinkedinurl",
+      "search_name": "searchName",
+      "search_twitter": "searchTwitter",
+      "slow_fields": "slowFields",
+      "virtual_webhook_account_id": "virtualWebhookAccountId",
+      "virtual_webhook_ad_id": "virtualWebhookAdId",
+      "virtual_webhook_application_id": "virtualWebhookApplicationId",
+      "virtual_webhook_approver_user_id": "virtualWebhookApproverUserId",
+      "virtual_webhook_assigned_user_id": "virtualWebhookAssignedUserId",
+      "virtual_webhook_bankfeedaccount_id": "virtualWebhookBankfeedaccountId",
+      "virtual_webhook_benefit_id": "virtualWebhookBenefitId",
+      "virtual_webhook_bill_id": "virtualWebhookBillId",
+      "virtual_webhook_branch_id": "virtualWebhookBranchId",
+      "virtual_webhook_calendar_id": "virtualWebhookCalendarId",
+      "virtual_webhook_call_id": "virtualWebhookCallId",
+      "virtual_webhook_campaign_id": "virtualWebhookCampaignId",
+      "virtual_webhook_candidate_id": "virtualWebhookCandidateId",
+      "virtual_webhook_carrier_id": "virtualWebhookCarrierId",
+      "virtual_webhook_channel_id": "virtualWebhookChannelId",
+      "virtual_webhook_collection_id": "virtualWebhookCollectionId",
+      "virtual_webhook_company_id": "virtualWebhookCompanyId",
+      "virtual_webhook_contact_id": "virtualWebhookContactId",
+      "virtual_webhook_course_id": "virtualWebhookCourseId",
+      "virtual_webhook_customer_id": "virtualWebhookCustomerId",
+      "virtual_webhook_cycle_id": "virtualWebhookCycleId",
+      "virtual_webhook_database_id": "virtualWebhookDatabaseId",
+      "virtual_webhook_deal_id": "virtualWebhookDealId",
+      "virtual_webhook_effective_status": "virtualWebhookEffectiveStatus",
+      "virtual_webhook_end_lt": "virtualWebhookEndLt",
+      "virtual_webhook_event_id": "virtualWebhookEventId",
+      "virtual_webhook_expand": "virtualWebhookExpand",
+      "virtual_webhook_fields": "virtualWebhookFields",
+      "virtual_webhook_form_id": "virtualWebhookFormId",
+      "virtual_webhook_group_id": "virtualWebhookGroupId",
+      "virtual_webhook_guest_id": "virtualWebhookGuestId",
+      "virtual_webhook_invoice_id": "virtualWebhookInvoiceId",
+      "virtual_webhook_io_id": "virtualWebhookIoId",
+      "virtual_webhook_issue_id": "virtualWebhookIssueId",
+      "virtual_webhook_item_id": "virtualWebhookItemId",
+      "virtual_webhook_item_variant_id": "virtualWebhookItemVariantId",
+      "virtual_webhook_job_id": "virtualWebhookJobId",
+      "virtual_webhook_label_id": "virtualWebhookLabelId",
+      "virtual_webhook_lead_id": "virtualWebhookLeadId",
+      "virtual_webhook_limit": "virtualWebhookLimit",
+      "virtual_webhook_link_id": "virtualWebhookLinkId",
+      "virtual_webhook_list_id": "virtualWebhookListId",
+      "virtual_webhook_listing_id": "virtualWebhookListingId",
+      "virtual_webhook_location_id": "virtualWebhookLocationId",
+      "virtual_webhook_matter_id": "virtualWebhookMatterId",
+      "virtual_webhook_member_id": "virtualWebhookMemberId",
+      "virtual_webhook_order_id": "virtualWebhookOrderId",
+      "virtual_webhook_org_id": "virtualWebhookOrgId",
+      "virtual_webhook_page_id": "virtualWebhookPageId",
+      "virtual_webhook_parent_id": "virtualWebhookParentId",
+      "virtual_webhook_part_id": "virtualWebhookPartId",
+      "virtual_webhook_patient_id": "virtualWebhookPatientId",
+      "virtual_webhook_payment_id": "virtualWebhookPaymentId",
+      "virtual_webhook_pipeline_id": "virtualWebhookPipelineId",
+      "virtual_webhook_post_id": "virtualWebhookPostId",
+      "virtual_webhook_practicearea_id": "virtualWebhookPracticeareaId",
+      "virtual_webhook_practitioner_id": "virtualWebhookPractitionerId",
+      "virtual_webhook_profile_id": "virtualWebhookProfileId",
+      "virtual_webhook_project_id": "virtualWebhookProjectId",
+      "virtual_webhook_property_id": "virtualWebhookPropertyId",
+      "virtual_webhook_reference": "virtualWebhookReference",
+      "virtual_webhook_repo_id": "virtualWebhookRepoId",
+      "virtual_webhook_reservation_id": "virtualWebhookReservationId",
+      "virtual_webhook_saleschannel_id": "virtualWebhookSaleschannelId",
+      "virtual_webhook_session_id": "virtualWebhookSessionId",
+      "virtual_webhook_shipment_id": "virtualWebhookShipmentId",
+      "virtual_webhook_space_id": "virtualWebhookSpaceId",
+      "virtual_webhook_start_gte": "virtualWebhookStartGte",
+      "virtual_webhook_status": "virtualWebhookStatus",
+      "virtual_webhook_student_id": "virtualWebhookStudentId",
+      "virtual_webhook_table_id": "virtualWebhookTableId",
+      "virtual_webhook_task_id": "virtualWebhookTaskId",
+      "virtual_webhook_template_id": "virtualWebhookTemplateId",
+      "virtual_webhook_ticket_id": "virtualWebhookTicketId",
+      "virtual_webhook_type": "virtualWebhookType",
+      "virtual_webhook_updated_gte": "virtualWebhookUpdatedGte",
+      "virtual_webhook_user_id": "virtualWebhookUserId",
+      "virtual_webhook_user_mentioned_id": "virtualWebhookUserMentionedId",
+      "virtual_webhook_vehicle_id": "virtualWebhookVehicleId",
+      "virtual_webhook_visitor_id": "virtualWebhookVisitorId",
+      "webhook_events": "webhookEvents",
+    });
+  })
+);
 
 export function integrationSupportFromJSON(
   jsonString: string,

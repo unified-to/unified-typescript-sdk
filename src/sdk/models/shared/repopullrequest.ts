@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -58,50 +58,58 @@ export const RepoPullrequestStatus$inboundSchema: z.ZodType<
   RepoPullrequestStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(RepoPullrequestStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(RepoPullrequestStatus)
+);
 /** @internal */
 export const RepoPullrequestStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   RepoPullrequestStatus
-> = openEnums.outboundSchema(RepoPullrequestStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(RepoPullrequestStatus)
+);
 
 /** @internal */
 export const RepoPullrequest$inboundSchema: z.ZodType<
   RepoPullrequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  commit_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  labels: z.array(z.string()).optional(),
-  metadata: z.array(RepoMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  repo_id: z.string().optional(),
-  source_branch_id: z.string().optional(),
-  status: RepoPullrequestStatus$inboundSchema.optional(),
-  target_branch_id: z.string().optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "closed_at": "closedAt",
-    "commit_ids": "commitIds",
-    "created_at": "createdAt",
-    "repo_id": "repoId",
-    "source_branch_id": "sourceBranchId",
-    "target_branch_id": "targetBranchId",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    commit_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    labels: z.array(z.string()).optional(),
+    metadata: z.array(RepoMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    repo_id: z.string().optional(),
+    source_branch_id: z.string().optional(),
+    status: RepoPullrequestStatus$inboundSchema.optional(),
+    target_branch_id: z.string().optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "closed_at": "closedAt",
+      "commit_ids": "commitIds",
+      "created_at": "createdAt",
+      "repo_id": "repoId",
+      "source_branch_id": "sourceBranchId",
+      "target_branch_id": "targetBranchId",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+    });
+  })
+);
 /** @internal */
 export type RepoPullrequest$Outbound = {
   closed_at?: string | undefined;
@@ -126,34 +134,36 @@ export const RepoPullrequest$outboundSchema: z.ZodType<
   RepoPullrequest$Outbound,
   z.ZodTypeDef,
   RepoPullrequest
-> = z.object({
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  commitIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  labels: z.array(z.string()).optional(),
-  metadata: z.array(RepoMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  repoId: z.string().optional(),
-  sourceBranchId: z.string().optional(),
-  status: RepoPullrequestStatus$outboundSchema.optional(),
-  targetBranchId: z.string().optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    closedAt: "closed_at",
-    commitIds: "commit_ids",
-    createdAt: "created_at",
-    repoId: "repo_id",
-    sourceBranchId: "source_branch_id",
-    targetBranchId: "target_branch_id",
-    updatedAt: "updated_at",
-    userIds: "user_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    commitIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    labels: z.array(z.string()).optional(),
+    metadata: z.array(RepoMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    repoId: z.string().optional(),
+    sourceBranchId: z.string().optional(),
+    status: RepoPullrequestStatus$outboundSchema.optional(),
+    targetBranchId: z.string().optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIds: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      closedAt: "closed_at",
+      commitIds: "commit_ids",
+      createdAt: "created_at",
+      repoId: "repo_id",
+      sourceBranchId: "source_branch_id",
+      targetBranchId: "target_branch_id",
+      updatedAt: "updated_at",
+      userIds: "user_ids",
+    });
+  })
+);
 
 export function repoPullrequestToJSON(
   repoPullrequest: RepoPullrequest,

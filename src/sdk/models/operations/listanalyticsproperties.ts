@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAnalyticsPropertiesQueryParamFields = {
@@ -55,8 +56,10 @@ export type ListAnalyticsPropertiesRequest = {
 
 /** @internal */
 export const ListAnalyticsPropertiesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAnalyticsPropertiesQueryParamFields> = z
-    .nativeEnum(ListAnalyticsPropertiesQueryParamFields);
+  z.ZodNativeEnum<typeof ListAnalyticsPropertiesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAnalyticsPropertiesQueryParamFields)
+    );
 
 /** @internal */
 export type ListAnalyticsPropertiesRequest$Outbound = {
@@ -77,25 +80,27 @@ export const ListAnalyticsPropertiesRequest$outboundSchema: z.ZodType<
   ListAnalyticsPropertiesRequest$Outbound,
   z.ZodTypeDef,
   ListAnalyticsPropertiesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAnalyticsPropertiesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAnalyticsPropertiesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAnalyticsPropertiesRequestToJSON(
   listAnalyticsPropertiesRequest: ListAnalyticsPropertiesRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetAccountingSalesorderQueryParamFields = {
@@ -68,8 +69,10 @@ export type GetAccountingSalesorderRequest = {
 
 /** @internal */
 export const GetAccountingSalesorderQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetAccountingSalesorderQueryParamFields> = z
-    .nativeEnum(GetAccountingSalesorderQueryParamFields);
+  z.ZodNativeEnum<typeof GetAccountingSalesorderQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetAccountingSalesorderQueryParamFields)
+    );
 
 /** @internal */
 export type GetAccountingSalesorderRequest$Outbound = {
@@ -84,17 +87,19 @@ export const GetAccountingSalesorderRequest$outboundSchema: z.ZodType<
   GetAccountingSalesorderRequest$Outbound,
   z.ZodTypeDef,
   GetAccountingSalesorderRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetAccountingSalesorderQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetAccountingSalesorderQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getAccountingSalesorderRequestToJSON(
   getAccountingSalesorderRequest: GetAccountingSalesorderRequest,

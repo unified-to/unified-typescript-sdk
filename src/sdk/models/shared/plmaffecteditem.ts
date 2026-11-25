@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -28,22 +28,24 @@ export const PlmAffectedItem$inboundSchema: z.ZodType<
   PlmAffectedItem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  disposition: z.string().optional(),
-  document_id: z.string().optional(),
-  from_revision: z.string().optional(),
-  new_lifecycle_state: z.string().optional(),
-  part_id: z.string().optional(),
-  to_revision: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "document_id": "documentId",
-    "from_revision": "fromRevision",
-    "new_lifecycle_state": "newLifecycleState",
-    "part_id": "partId",
-    "to_revision": "toRevision",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    disposition: z.string().optional(),
+    document_id: z.string().optional(),
+    from_revision: z.string().optional(),
+    new_lifecycle_state: z.string().optional(),
+    part_id: z.string().optional(),
+    to_revision: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "document_id": "documentId",
+      "from_revision": "fromRevision",
+      "new_lifecycle_state": "newLifecycleState",
+      "part_id": "partId",
+      "to_revision": "toRevision",
+    });
+  })
+);
 /** @internal */
 export type PlmAffectedItem$Outbound = {
   disposition?: string | undefined;
@@ -59,22 +61,24 @@ export const PlmAffectedItem$outboundSchema: z.ZodType<
   PlmAffectedItem$Outbound,
   z.ZodTypeDef,
   PlmAffectedItem
-> = z.object({
-  disposition: z.string().optional(),
-  documentId: z.string().optional(),
-  fromRevision: z.string().optional(),
-  newLifecycleState: z.string().optional(),
-  partId: z.string().optional(),
-  toRevision: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    documentId: "document_id",
-    fromRevision: "from_revision",
-    newLifecycleState: "new_lifecycle_state",
-    partId: "part_id",
-    toRevision: "to_revision",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    disposition: z.string().optional(),
+    documentId: z.string().optional(),
+    fromRevision: z.string().optional(),
+    newLifecycleState: z.string().optional(),
+    partId: z.string().optional(),
+    toRevision: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      documentId: "document_id",
+      fromRevision: "from_revision",
+      newLifecycleState: "new_lifecycle_state",
+      partId: "part_id",
+      toRevision: "to_revision",
+    });
+  })
+);
 
 export function plmAffectedItemToJSON(
   plmAffectedItem: PlmAffectedItem,

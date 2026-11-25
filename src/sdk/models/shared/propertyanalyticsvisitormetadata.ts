@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +14,7 @@ export const PropertyAnalyticsVisitorMetadata$inboundSchema: z.ZodType<
   PropertyAnalyticsVisitorMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type PropertyAnalyticsVisitorMetadata$Outbound = {};
 
@@ -23,7 +23,7 @@ export const PropertyAnalyticsVisitorMetadata$outboundSchema: z.ZodType<
   PropertyAnalyticsVisitorMetadata$Outbound,
   z.ZodTypeDef,
   PropertyAnalyticsVisitorMetadata
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function propertyAnalyticsVisitorMetadataToJSON(
   propertyAnalyticsVisitorMetadata: PropertyAnalyticsVisitorMetadata,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -43,32 +43,34 @@ export const LmsMediaType$inboundSchema: z.ZodType<
   LmsMediaType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LmsMediaType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(LmsMediaType));
 /** @internal */
 export const LmsMediaType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LmsMediaType
-> = openEnums.outboundSchema(LmsMediaType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(LmsMediaType));
 
 /** @internal */
 export const LmsMedia$inboundSchema: z.ZodType<
   LmsMedia,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  content: z.string().optional(),
-  description: z.string().optional(),
-  languages: z.array(z.string()).optional(),
-  name: z.string().optional(),
-  thumbnail_url: z.string().optional(),
-  type: LmsMediaType$inboundSchema.optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "thumbnail_url": "thumbnailUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    description: z.string().optional(),
+    languages: z.array(z.string()).optional(),
+    name: z.string().optional(),
+    thumbnail_url: z.string().optional(),
+    type: LmsMediaType$inboundSchema.optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "thumbnail_url": "thumbnailUrl",
+    });
+  })
+);
 /** @internal */
 export type LmsMedia$Outbound = {
   content?: string | undefined;
@@ -85,19 +87,21 @@ export const LmsMedia$outboundSchema: z.ZodType<
   LmsMedia$Outbound,
   z.ZodTypeDef,
   LmsMedia
-> = z.object({
-  content: z.string().optional(),
-  description: z.string().optional(),
-  languages: z.array(z.string()).optional(),
-  name: z.string().optional(),
-  thumbnailUrl: z.string().optional(),
-  type: LmsMediaType$outboundSchema.optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    thumbnailUrl: "thumbnail_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    description: z.string().optional(),
+    languages: z.array(z.string()).optional(),
+    name: z.string().optional(),
+    thumbnailUrl: z.string().optional(),
+    type: LmsMediaType$outboundSchema.optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      thumbnailUrl: "thumbnail_url",
+    });
+  })
+);
 
 export function lmsMediaToJSON(lmsMedia: LmsMedia): string {
   return JSON.stringify(LmsMedia$outboundSchema.parse(lmsMedia));

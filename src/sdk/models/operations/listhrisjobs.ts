@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisJobsQueryParamFields = {
@@ -74,7 +75,9 @@ export type ListHrisJobsRequest = {
 /** @internal */
 export const ListHrisJobsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisJobsQueryParamFields
-> = z.nativeEnum(ListHrisJobsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisJobsQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisJobsRequest$Outbound = {
@@ -98,30 +101,32 @@ export const ListHrisJobsRequest$outboundSchema: z.ZodType<
   ListHrisJobsRequest$Outbound,
   z.ZodTypeDef,
   ListHrisJobsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListHrisJobsQueryParamFields$outboundSchema).optional(),
-  groupId: z.string().optional(),
-  limit: z.number().optional(),
-  locationId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    groupId: "group_id",
-    locationId: "location_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListHrisJobsQueryParamFields$outboundSchema).optional(),
+    groupId: z.string().optional(),
+    limit: z.number().optional(),
+    locationId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      groupId: "group_id",
+      locationId: "location_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listHrisJobsRequestToJSON(
   listHrisJobsRequest: ListHrisJobsRequest,

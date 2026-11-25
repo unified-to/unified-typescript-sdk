@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -115,66 +115,75 @@ export const HrisAttendanceStatus$inboundSchema: z.ZodType<
   HrisAttendanceStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisAttendanceStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisAttendanceStatus)
+);
 /** @internal */
 export const HrisAttendanceStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisAttendanceStatus
-> = openEnums.outboundSchema(HrisAttendanceStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisAttendanceStatus)
+);
 
 /** @internal */
 export const HrisAttendance$inboundSchema: z.ZodType<
   HrisAttendance,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyHrisAttendanceAddress$inboundSchema.optional(),
-  approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  approver_user_id: z.string().optional(),
-  breaks: z.array(HrisAttendanceBreak$inboundSchema).optional(),
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  declared_tips_amount: z.number().optional(),
-  employee_user_id: z.string(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  group_id: z.string().optional(),
-  hourly_rate: z.number().optional(),
-  hours: z.number().optional(),
-  id: z.string().optional(),
-  job_name: z.string().optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  non_cash_tips_amount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  status: HrisAttendanceStatus$inboundSchema.optional(),
-  timeshift_id: z.string().optional(),
-  timezone: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "approved_at": "approvedAt",
-    "approver_user_id": "approverUserId",
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "declared_tips_amount": "declaredTipsAmount",
-    "employee_user_id": "employeeUserId",
-    "end_at": "endAt",
-    "group_id": "groupId",
-    "hourly_rate": "hourlyRate",
-    "job_name": "jobName",
-    "location_id": "locationId",
-    "non_cash_tips_amount": "nonCashTipsAmount",
-    "start_at": "startAt",
-    "timeshift_id": "timeshiftId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHrisAttendanceAddress$inboundSchema.optional(),
+    approved_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    approver_user_id: z.string().optional(),
+    breaks: z.array(HrisAttendanceBreak$inboundSchema).optional(),
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    declared_tips_amount: z.number().optional(),
+    employee_user_id: z.string(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    group_id: z.string().optional(),
+    hourly_rate: z.number().optional(),
+    hours: z.number().optional(),
+    id: z.string().optional(),
+    job_name: z.string().optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    non_cash_tips_amount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    status: HrisAttendanceStatus$inboundSchema.optional(),
+    timeshift_id: z.string().optional(),
+    timezone: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "approved_at": "approvedAt",
+      "approver_user_id": "approverUserId",
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "declared_tips_amount": "declaredTipsAmount",
+      "employee_user_id": "employeeUserId",
+      "end_at": "endAt",
+      "group_id": "groupId",
+      "hourly_rate": "hourlyRate",
+      "job_name": "jobName",
+      "location_id": "locationId",
+      "non_cash_tips_amount": "nonCashTipsAmount",
+      "start_at": "startAt",
+      "timeshift_id": "timeshiftId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HrisAttendance$Outbound = {
   address?: PropertyHrisAttendanceAddress$Outbound | undefined;
@@ -208,50 +217,52 @@ export const HrisAttendance$outboundSchema: z.ZodType<
   HrisAttendance$Outbound,
   z.ZodTypeDef,
   HrisAttendance
-> = z.object({
-  address: PropertyHrisAttendanceAddress$outboundSchema.optional(),
-  approvedAt: z.date().transform(v => v.toISOString()).optional(),
-  approverUserId: z.string().optional(),
-  breaks: z.array(HrisAttendanceBreak$outboundSchema).optional(),
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  declaredTipsAmount: z.number().optional(),
-  employeeUserId: z.string(),
-  endAt: z.date().transform(v => v.toISOString()),
-  groupId: z.string().optional(),
-  hourlyRate: z.number().optional(),
-  hours: z.number().optional(),
-  id: z.string().optional(),
-  jobName: z.string().optional(),
-  locationId: z.string().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  nonCashTipsAmount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()),
-  status: HrisAttendanceStatus$outboundSchema.optional(),
-  timeshiftId: z.string().optional(),
-  timezone: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    approvedAt: "approved_at",
-    approverUserId: "approver_user_id",
-    companyId: "company_id",
-    createdAt: "created_at",
-    declaredTipsAmount: "declared_tips_amount",
-    employeeUserId: "employee_user_id",
-    endAt: "end_at",
-    groupId: "group_id",
-    hourlyRate: "hourly_rate",
-    jobName: "job_name",
-    locationId: "location_id",
-    nonCashTipsAmount: "non_cash_tips_amount",
-    startAt: "start_at",
-    timeshiftId: "timeshift_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHrisAttendanceAddress$outboundSchema.optional(),
+    approvedAt: z.date().transform(v => v.toISOString()).optional(),
+    approverUserId: z.string().optional(),
+    breaks: z.array(HrisAttendanceBreak$outboundSchema).optional(),
+    companyId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    declaredTipsAmount: z.number().optional(),
+    employeeUserId: z.string(),
+    endAt: z.date().transform(v => v.toISOString()),
+    groupId: z.string().optional(),
+    hourlyRate: z.number().optional(),
+    hours: z.number().optional(),
+    id: z.string().optional(),
+    jobName: z.string().optional(),
+    locationId: z.string().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    nonCashTipsAmount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()),
+    status: HrisAttendanceStatus$outboundSchema.optional(),
+    timeshiftId: z.string().optional(),
+    timezone: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      approvedAt: "approved_at",
+      approverUserId: "approver_user_id",
+      companyId: "company_id",
+      createdAt: "created_at",
+      declaredTipsAmount: "declared_tips_amount",
+      employeeUserId: "employee_user_id",
+      endAt: "end_at",
+      groupId: "group_id",
+      hourlyRate: "hourly_rate",
+      jobName: "job_name",
+      locationId: "location_id",
+      nonCashTipsAmount: "non_cash_tips_amount",
+      startAt: "start_at",
+      timeshiftId: "timeshift_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function hrisAttendanceToJSON(hrisAttendance: HrisAttendance): string {
   return JSON.stringify(HrisAttendance$outboundSchema.parse(hrisAttendance));

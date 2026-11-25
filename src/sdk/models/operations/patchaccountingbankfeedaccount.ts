@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,8 +53,10 @@ export type PatchAccountingBankfeedaccountRequest = {
 
 /** @internal */
 export const PatchAccountingBankfeedaccountQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchAccountingBankfeedaccountQueryParamFields> = z
-    .nativeEnum(PatchAccountingBankfeedaccountQueryParamFields);
+  z.ZodNativeEnum<typeof PatchAccountingBankfeedaccountQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchAccountingBankfeedaccountQueryParamFields)
+    );
 
 /** @internal */
 export type PatchAccountingBankfeedaccountRequest$Outbound = {
@@ -69,19 +72,22 @@ export const PatchAccountingBankfeedaccountRequest$outboundSchema: z.ZodType<
   PatchAccountingBankfeedaccountRequest$Outbound,
   z.ZodTypeDef,
   PatchAccountingBankfeedaccountRequest
-> = z.object({
-  accountingBankfeedaccount: shared.AccountingBankfeedaccount$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAccountingBankfeedaccountQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingBankfeedaccount: "AccountingBankfeedaccount",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingBankfeedaccount: shared.AccountingBankfeedaccount$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(
+      PatchAccountingBankfeedaccountQueryParamFields$outboundSchema,
+    ).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingBankfeedaccount: "AccountingBankfeedaccount",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAccountingBankfeedaccountRequestToJSON(
   patchAccountingBankfeedaccountRequest: PatchAccountingBankfeedaccountRequest,

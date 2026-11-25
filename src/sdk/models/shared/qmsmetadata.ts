@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -100,7 +100,7 @@ export const QmsMetadata1$inboundSchema: z.ZodType<
   QmsMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type QmsMetadata1$Outbound = {};
 
@@ -109,7 +109,7 @@ export const QmsMetadata1$outboundSchema: z.ZodType<
   QmsMetadata1$Outbound,
   z.ZodTypeDef,
   QmsMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function qmsMetadata1ToJSON(qmsMetadata1: QmsMetadata1): string {
   return JSON.stringify(QmsMetadata1$outboundSchema.parse(qmsMetadata1));
@@ -129,12 +129,14 @@ export const QmsMetadata5$inboundSchema: z.ZodType<
   QmsMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => QmsMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => QmsMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type QmsMetadata5$Outbound =
   | QmsMetadata1$Outbound
@@ -147,12 +149,14 @@ export const QmsMetadata5$outboundSchema: z.ZodType<
   QmsMetadata5$Outbound,
   z.ZodTypeDef,
   QmsMetadata5
-> = z.union([
-  z.lazy(() => QmsMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => QmsMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function qmsMetadata5ToJSON(qmsMetadata5: QmsMetadata5): string {
   return JSON.stringify(QmsMetadata5$outboundSchema.parse(qmsMetadata5));
@@ -172,20 +176,22 @@ export const QmsMetadataExtraData$inboundSchema: z.ZodType<
   QmsMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => QmsMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => QmsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type QmsMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -199,20 +205,22 @@ export const QmsMetadataExtraData$outboundSchema: z.ZodType<
   QmsMetadataExtraData$Outbound,
   z.ZodTypeDef,
   QmsMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => QmsMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => QmsMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function qmsMetadataExtraDataToJSON(
   qmsMetadataExtraData: QmsMetadataExtraData,
@@ -236,20 +244,24 @@ export const QmsMetadataFormat$inboundSchema: z.ZodType<
   QmsMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(QmsMetadataFormat)
+);
 /** @internal */
 export const QmsMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsMetadataFormat
-> = openEnums.outboundSchema(QmsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(QmsMetadataFormat)
+);
 
 /** @internal */
 export const QmsMetadataSchemas1$inboundSchema: z.ZodType<
   QmsMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type QmsMetadataSchemas1$Outbound = {};
 
@@ -258,7 +270,7 @@ export const QmsMetadataSchemas1$outboundSchema: z.ZodType<
   QmsMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   QmsMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function qmsMetadataSchemas1ToJSON(
   qmsMetadataSchemas1: QmsMetadataSchemas1,
@@ -282,12 +294,14 @@ export const QmsMetadataSchemas5$inboundSchema: z.ZodType<
   QmsMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => QmsMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => QmsMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type QmsMetadataSchemas5$Outbound =
   | QmsMetadataSchemas1$Outbound
@@ -300,12 +314,14 @@ export const QmsMetadataSchemas5$outboundSchema: z.ZodType<
   QmsMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   QmsMetadataSchemas5
-> = z.union([
-  z.lazy(() => QmsMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => QmsMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function qmsMetadataSchemas5ToJSON(
   qmsMetadataSchemas5: QmsMetadataSchemas5,
@@ -329,20 +345,22 @@ export const QmsMetadataValue$inboundSchema: z.ZodType<
   QmsMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => QmsMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => QmsMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type QmsMetadataValue$Outbound =
   | { [k: string]: any }
@@ -356,20 +374,22 @@ export const QmsMetadataValue$outboundSchema: z.ZodType<
   QmsMetadataValue$Outbound,
   z.ZodTypeDef,
   QmsMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => QmsMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => QmsMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function qmsMetadataValueToJSON(
   qmsMetadataValue: QmsMetadataValue,
@@ -393,44 +413,46 @@ export const QmsMetadata$inboundSchema: z.ZodType<
   QmsMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => QmsMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: QmsMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => QmsMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => QmsMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: QmsMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => QmsMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type QmsMetadata$Outbound = {
   extra_data?:
@@ -458,44 +480,46 @@ export const QmsMetadata$outboundSchema: z.ZodType<
   QmsMetadata$Outbound,
   z.ZodTypeDef,
   QmsMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => QmsMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: QmsMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => QmsMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => QmsMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: QmsMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => QmsMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function qmsMetadataToJSON(qmsMetadata: QmsMetadata): string {
   return JSON.stringify(QmsMetadata$outboundSchema.parse(qmsMetadata));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,14 +24,16 @@ export const PropertyChannel$inboundSchema: z.ZodType<
   PropertyChannel,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string().optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type PropertyChannel$Outbound = {
   name?: string | undefined;
@@ -43,14 +45,16 @@ export const PropertyChannel$outboundSchema: z.ZodType<
   PropertyChannel$Outbound,
   z.ZodTypeDef,
   PropertyChannel
-> = z.object({
-  name: z.string().optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function propertyChannelToJSON(
   propertyChannel: PropertyChannel,

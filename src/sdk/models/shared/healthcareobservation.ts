@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -186,87 +186,101 @@ export const Interpretation$inboundSchema: z.ZodType<
   Interpretation,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Interpretation);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Interpretation));
 /** @internal */
 export const Interpretation$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Interpretation
-> = openEnums.outboundSchema(Interpretation);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Interpretation));
 
 /** @internal */
 export const HealthcareObservationStatus$inboundSchema: z.ZodType<
   HealthcareObservationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareObservationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareObservationStatus)
+);
 /** @internal */
 export const HealthcareObservationStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareObservationStatus
-> = openEnums.outboundSchema(HealthcareObservationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareObservationStatus)
+);
 
 /** @internal */
 export const HealthcareObservationType$inboundSchema: z.ZodType<
   HealthcareObservationType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareObservationType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareObservationType)
+);
 /** @internal */
 export const HealthcareObservationType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareObservationType
-> = openEnums.outboundSchema(HealthcareObservationType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareObservationType)
+);
 
 /** @internal */
 export const HealthcareObservation$inboundSchema: z.ZodType<
   HealthcareObservation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  components: z.array(HealthcareObservationComponent$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  encounter_id: z.string().optional(),
-  id: z.string().optional(),
-  interpretation: Interpretation$inboundSchema.optional(),
-  issued_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  observed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  patient_id: z.string().optional(),
-  practitioner_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reference_range: PropertyHealthcareObservationReferenceRange$inboundSchema
-    .optional(),
-  status: HealthcareObservationStatus$inboundSchema.optional(),
-  type: HealthcareObservationType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  value_number: z.number().optional(),
-  value_text: z.string().optional(),
-  value_unit: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "encounter_id": "encounterId",
-    "issued_at": "issuedAt",
-    "observed_at": "observedAt",
-    "patient_id": "patientId",
-    "practitioner_id": "practitionerId",
-    "reference_range": "referenceRange",
-    "updated_at": "updatedAt",
-    "value_number": "valueNumber",
-    "value_text": "valueText",
-    "value_unit": "valueUnit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    components: z.array(HealthcareObservationComponent$inboundSchema)
+      .optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    encounter_id: z.string().optional(),
+    id: z.string().optional(),
+    interpretation: Interpretation$inboundSchema.optional(),
+    issued_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    observed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    patient_id: z.string().optional(),
+    practitioner_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reference_range: PropertyHealthcareObservationReferenceRange$inboundSchema
+      .optional(),
+    status: HealthcareObservationStatus$inboundSchema.optional(),
+    type: HealthcareObservationType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    value_number: z.number().optional(),
+    value_text: z.string().optional(),
+    value_unit: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "encounter_id": "encounterId",
+      "issued_at": "issuedAt",
+      "observed_at": "observedAt",
+      "patient_id": "patientId",
+      "practitioner_id": "practitionerId",
+      "reference_range": "referenceRange",
+      "updated_at": "updatedAt",
+      "value_number": "valueNumber",
+      "value_text": "valueText",
+      "value_unit": "valueUnit",
+    });
+  })
+);
 /** @internal */
 export type HealthcareObservation$Outbound = {
   codes?: Array<HealthcareCode$Outbound> | undefined;
@@ -299,44 +313,47 @@ export const HealthcareObservation$outboundSchema: z.ZodType<
   HealthcareObservation$Outbound,
   z.ZodTypeDef,
   HealthcareObservation
-> = z.object({
-  codes: z.array(HealthcareCode$outboundSchema).optional(),
-  components: z.array(HealthcareObservationComponent$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  encounterId: z.string().optional(),
-  id: z.string().optional(),
-  interpretation: Interpretation$outboundSchema.optional(),
-  issuedAt: z.date().transform(v => v.toISOString()).optional(),
-  metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  observedAt: z.date().transform(v => v.toISOString()).optional(),
-  patientId: z.string().optional(),
-  practitionerId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  referenceRange: PropertyHealthcareObservationReferenceRange$outboundSchema
-    .optional(),
-  status: HealthcareObservationStatus$outboundSchema.optional(),
-  type: HealthcareObservationType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  valueNumber: z.number().optional(),
-  valueText: z.string().optional(),
-  valueUnit: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    encounterId: "encounter_id",
-    issuedAt: "issued_at",
-    observedAt: "observed_at",
-    patientId: "patient_id",
-    practitionerId: "practitioner_id",
-    referenceRange: "reference_range",
-    updatedAt: "updated_at",
-    valueNumber: "value_number",
-    valueText: "value_text",
-    valueUnit: "value_unit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    codes: z.array(HealthcareCode$outboundSchema).optional(),
+    components: z.array(HealthcareObservationComponent$outboundSchema)
+      .optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    encounterId: z.string().optional(),
+    id: z.string().optional(),
+    interpretation: Interpretation$outboundSchema.optional(),
+    issuedAt: z.date().transform(v => v.toISOString()).optional(),
+    metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    observedAt: z.date().transform(v => v.toISOString()).optional(),
+    patientId: z.string().optional(),
+    practitionerId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    referenceRange: PropertyHealthcareObservationReferenceRange$outboundSchema
+      .optional(),
+    status: HealthcareObservationStatus$outboundSchema.optional(),
+    type: HealthcareObservationType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    valueNumber: z.number().optional(),
+    valueText: z.string().optional(),
+    valueUnit: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      encounterId: "encounter_id",
+      issuedAt: "issued_at",
+      observedAt: "observed_at",
+      patientId: "patient_id",
+      practitionerId: "practitioner_id",
+      referenceRange: "reference_range",
+      updatedAt: "updated_at",
+      valueNumber: "value_number",
+      valueText: "value_text",
+      valueUnit: "value_unit",
+    });
+  })
+);
 
 export function healthcareObservationToJSON(
   healthcareObservation: HealthcareObservation,

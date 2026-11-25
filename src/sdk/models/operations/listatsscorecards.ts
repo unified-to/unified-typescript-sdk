@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAtsScorecardsQueryParamFields = {
@@ -71,7 +72,9 @@ export type ListAtsScorecardsRequest = {
 /** @internal */
 export const ListAtsScorecardsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAtsScorecardsQueryParamFields
-> = z.nativeEnum(ListAtsScorecardsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAtsScorecardsQueryParamFields)
+);
 
 /** @internal */
 export type ListAtsScorecardsRequest$Outbound = {
@@ -95,30 +98,33 @@ export const ListAtsScorecardsRequest$outboundSchema: z.ZodType<
   ListAtsScorecardsRequest$Outbound,
   z.ZodTypeDef,
   ListAtsScorecardsRequest
-> = z.object({
-  applicationId: z.string().optional(),
-  candidateId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListAtsScorecardsQueryParamFields$outboundSchema).optional(),
-  interviewId: z.string().optional(),
-  jobId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    applicationId: "application_id",
-    candidateId: "candidate_id",
-    connectionId: "connection_id",
-    interviewId: "interview_id",
-    jobId: "job_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applicationId: z.string().optional(),
+    candidateId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListAtsScorecardsQueryParamFields$outboundSchema)
+      .optional(),
+    interviewId: z.string().optional(),
+    jobId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      applicationId: "application_id",
+      candidateId: "candidate_id",
+      connectionId: "connection_id",
+      interviewId: "interview_id",
+      jobId: "job_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAtsScorecardsRequestToJSON(
   listAtsScorecardsRequest: ListAtsScorecardsRequest,

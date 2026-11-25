@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingTaxratesQueryParamFields = {
@@ -62,9 +63,10 @@ export type ListAccountingTaxratesRequest = {
 
 /** @internal */
 export const ListAccountingTaxratesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingTaxratesQueryParamFields> = z.nativeEnum(
-    ListAccountingTaxratesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAccountingTaxratesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingTaxratesQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingTaxratesRequest$Outbound = {
@@ -85,25 +87,27 @@ export const ListAccountingTaxratesRequest$outboundSchema: z.ZodType<
   ListAccountingTaxratesRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingTaxratesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAccountingTaxratesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAccountingTaxratesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingTaxratesRequestToJSON(
   listAccountingTaxratesRequest: ListAccountingTaxratesRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListComputeVolumesQueryParamFields = {
@@ -63,7 +64,9 @@ export type ListComputeVolumesRequest = {
 /** @internal */
 export const ListComputeVolumesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListComputeVolumesQueryParamFields
-> = z.nativeEnum(ListComputeVolumesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListComputeVolumesQueryParamFields)
+);
 
 /** @internal */
 export type ListComputeVolumesRequest$Outbound = {
@@ -85,26 +88,29 @@ export const ListComputeVolumesRequest$outboundSchema: z.ZodType<
   ListComputeVolumesRequest$Outbound,
   z.ZodTypeDef,
   ListComputeVolumesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListComputeVolumesQueryParamFields$outboundSchema).optional(),
-  instanceId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  regionId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    instanceId: "instance_id",
-    regionId: "region_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListComputeVolumesQueryParamFields$outboundSchema)
+      .optional(),
+    instanceId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    regionId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      instanceId: "instance_id",
+      regionId: "region_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listComputeVolumesRequestToJSON(
   listComputeVolumesRequest: ListComputeVolumesRequest,

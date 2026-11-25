@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -98,67 +98,79 @@ export const AccountingOrderStatus$inboundSchema: z.ZodType<
   AccountingOrderStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingOrderStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingOrderStatus)
+);
 /** @internal */
 export const AccountingOrderStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingOrderStatus
-> = openEnums.outboundSchema(AccountingOrderStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingOrderStatus)
+);
 
 /** @internal */
 export const AccountingOrderType$inboundSchema: z.ZodType<
   AccountingOrderType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingOrderType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingOrderType)
+);
 /** @internal */
 export const AccountingOrderType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingOrderType
-> = openEnums.outboundSchema(AccountingOrderType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingOrderType)
+);
 
 /** @internal */
 export const AccountingOrder$inboundSchema: z.ZodType<
   AccountingOrder,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  billing_address: PropertyAccountingOrderBillingAddress$inboundSchema
-    .optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  organization_id: z.string().optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  shipping_address: PropertyAccountingOrderShippingAddress$inboundSchema
-    .optional(),
-  status: AccountingOrderStatus$inboundSchema.optional(),
-  total_amount: z.number().optional(),
-  type: AccountingOrderType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "billing_address": "billingAddress",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "organization_id": "organizationId",
-    "posted_at": "postedAt",
-    "shipping_address": "shippingAddress",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    billing_address: PropertyAccountingOrderBillingAddress$inboundSchema
+      .optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    organization_id: z.string().optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    raw: z.record(z.any()).optional(),
+    shipping_address: PropertyAccountingOrderShippingAddress$inboundSchema
+      .optional(),
+    status: AccountingOrderStatus$inboundSchema.optional(),
+    total_amount: z.number().optional(),
+    type: AccountingOrderType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "billing_address": "billingAddress",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "organization_id": "organizationId",
+      "posted_at": "postedAt",
+      "shipping_address": "shippingAddress",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingOrder$Outbound = {
   account_id?: string | undefined;
@@ -186,38 +198,40 @@ export const AccountingOrder$outboundSchema: z.ZodType<
   AccountingOrder$Outbound,
   z.ZodTypeDef,
   AccountingOrder
-> = z.object({
-  accountId: z.string().optional(),
-  billingAddress: PropertyAccountingOrderBillingAddress$outboundSchema
-    .optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  organizationId: z.string().optional(),
-  postedAt: z.date().transform(v => v.toISOString()).optional(),
-  raw: z.record(z.any()).optional(),
-  shippingAddress: PropertyAccountingOrderShippingAddress$outboundSchema
-    .optional(),
-  status: AccountingOrderStatus$outboundSchema.optional(),
-  totalAmount: z.number().optional(),
-  type: AccountingOrderType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    billingAddress: "billing_address",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    organizationId: "organization_id",
-    postedAt: "posted_at",
-    shippingAddress: "shipping_address",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    billingAddress: PropertyAccountingOrderBillingAddress$outboundSchema
+      .optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    organizationId: z.string().optional(),
+    postedAt: z.date().transform(v => v.toISOString()).optional(),
+    raw: z.record(z.any()).optional(),
+    shippingAddress: PropertyAccountingOrderShippingAddress$outboundSchema
+      .optional(),
+    status: AccountingOrderStatus$outboundSchema.optional(),
+    totalAmount: z.number().optional(),
+    type: AccountingOrderType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      billingAddress: "billing_address",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      organizationId: "organization_id",
+      postedAt: "posted_at",
+      shippingAddress: "shipping_address",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingOrderToJSON(
   accountingOrder: AccountingOrder,

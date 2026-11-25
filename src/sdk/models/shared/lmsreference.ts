@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,10 +17,12 @@ export const LmsReference$inboundSchema: z.ZodType<
   LmsReference,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string().optional(),
-  name: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+  })
+);
 /** @internal */
 export type LmsReference$Outbound = {
   id?: string | undefined;
@@ -32,10 +34,12 @@ export const LmsReference$outboundSchema: z.ZodType<
   LmsReference$Outbound,
   z.ZodTypeDef,
   LmsReference
-> = z.object({
-  id: z.string().optional(),
-  name: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+  })
+);
 
 export function lmsReferenceToJSON(lmsReference: LmsReference): string {
   return JSON.stringify(LmsReference$outboundSchema.parse(lmsReference));

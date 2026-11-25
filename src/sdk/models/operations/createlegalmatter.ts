@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -57,7 +58,9 @@ export type CreateLegalMatterRequest = {
 /** @internal */
 export const CreateLegalMatterQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateLegalMatterQueryParamFields
-> = z.nativeEnum(CreateLegalMatterQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateLegalMatterQueryParamFields)
+);
 
 /** @internal */
 export type CreateLegalMatterRequest$Outbound = {
@@ -72,17 +75,20 @@ export const CreateLegalMatterRequest$outboundSchema: z.ZodType<
   CreateLegalMatterRequest$Outbound,
   z.ZodTypeDef,
   CreateLegalMatterRequest
-> = z.object({
-  legalMatter: shared.LegalMatter$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateLegalMatterQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    legalMatter: "LegalMatter",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    legalMatter: shared.LegalMatter$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateLegalMatterQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      legalMatter: "LegalMatter",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createLegalMatterRequestToJSON(
   createLegalMatterRequest: CreateLegalMatterRequest,

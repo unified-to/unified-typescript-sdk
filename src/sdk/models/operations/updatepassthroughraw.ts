@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -62,22 +62,24 @@ export const UpdatePassthroughRawRequest$outboundSchema: z.ZodType<
   UpdatePassthroughRawRequest$Outbound,
   z.ZodTypeDef,
   UpdatePassthroughRawRequest
-> = z.object({
-  requestBody: z.union([
-    z.instanceof(ReadableStream<Uint8Array>),
-    z.instanceof(Blob),
-    z.instanceof(ArrayBuffer),
-    z.instanceof(Uint8Array),
-  ]).optional(),
-  connectionId: z.string(),
-  path: z.string(),
-  query: z.record(z.any()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    requestBody: "RequestBody",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    requestBody: z.union([
+      z.instanceof(ReadableStream<Uint8Array>),
+      z.instanceof(Blob),
+      z.instanceof(ArrayBuffer),
+      z.instanceof(Uint8Array),
+    ]).optional(),
+    connectionId: z.string(),
+    path: z.string(),
+    query: z.record(z.any()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      requestBody: "RequestBody",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updatePassthroughRawRequestToJSON(
   updatePassthroughRawRequest: UpdatePassthroughRawRequest,
@@ -94,13 +96,15 @@ export const UpdatePassthroughRawResponseResult$inboundSchema: z.ZodType<
   UpdatePassthroughRawResponseResult,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.instanceof(ReadableStream<Uint8Array>),
-  z.any(),
-  z.string(),
-  z.string(),
-  z.string(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ])
+);
 
 export function updatePassthroughRawResponseResultFromJSON(
   jsonString: string,
@@ -118,21 +122,23 @@ export const UpdatePassthroughRawResponse$inboundSchema: z.ZodType<
   UpdatePassthroughRawResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-  Result: z.union([
-    z.instanceof(ReadableStream<Uint8Array>),
-    z.any(),
-    z.string(),
-    z.string(),
-    z.string(),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-    "Result": "result",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+    Result: z.union([
+      z.instanceof(ReadableStream<Uint8Array>),
+      z.any(),
+      z.string(),
+      z.string(),
+      z.string(),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+      "Result": "result",
+    });
+  })
+);
 
 export function updatePassthroughRawResponseFromJSON(
   jsonString: string,

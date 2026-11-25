@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListRepoPullrequestsQueryParamFields = {
@@ -60,9 +61,10 @@ export type ListRepoPullrequestsRequest = {
 
 /** @internal */
 export const ListRepoPullrequestsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListRepoPullrequestsQueryParamFields> = z.nativeEnum(
-    ListRepoPullrequestsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListRepoPullrequestsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListRepoPullrequestsQueryParamFields)
+    );
 
 /** @internal */
 export type ListRepoPullrequestsRequest$Outbound = {
@@ -83,25 +85,27 @@ export const ListRepoPullrequestsRequest$outboundSchema: z.ZodType<
   ListRepoPullrequestsRequest$Outbound,
   z.ZodTypeDef,
   ListRepoPullrequestsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListRepoPullrequestsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  repoId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    repoId: "repo_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListRepoPullrequestsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    repoId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      repoId: "repo_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listRepoPullrequestsRequestToJSON(
   listRepoPullrequestsRequest: ListRepoPullrequestsRequest,

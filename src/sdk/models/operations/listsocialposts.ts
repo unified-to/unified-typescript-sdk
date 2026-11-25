@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListSocialPostsQueryParamFields = {
@@ -63,7 +64,9 @@ export type ListSocialPostsRequest = {
 /** @internal */
 export const ListSocialPostsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListSocialPostsQueryParamFields
-> = z.nativeEnum(ListSocialPostsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListSocialPostsQueryParamFields)
+);
 
 /** @internal */
 export type ListSocialPostsRequest$Outbound = {
@@ -84,24 +87,26 @@ export const ListSocialPostsRequest$outboundSchema: z.ZodType<
   ListSocialPostsRequest$Outbound,
   z.ZodTypeDef,
   ListSocialPostsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListSocialPostsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  profileId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    profileId: "profile_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListSocialPostsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    profileId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      profileId: "profile_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listSocialPostsRequestToJSON(
   listSocialPostsRequest: ListSocialPostsRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -133,7 +133,9 @@ export const PropertyAdsReportMetricsCreativeCreativeType$inboundSchema:
     PropertyAdsReportMetricsCreativeCreativeType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsCreativeCreativeType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsCreativeCreativeType)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsCreativeHostingSource$inboundSchema:
@@ -141,77 +143,85 @@ export const PropertyAdsReportMetricsCreativeHostingSource$inboundSchema:
     PropertyAdsReportMetricsCreativeHostingSource,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsCreativeHostingSource);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsCreativeHostingSource)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsCreativeStatus$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsCreativeStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsCreativeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsCreativeStatus)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsCreative$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsCreative,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  asset_urls: z.array(z.string()).optional(),
-  body: z.string().optional(),
-  campaign_id: z.string().optional(),
-  cards: z.array(AdsCreativeCard$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  creative_type: PropertyAdsReportMetricsCreativeCreativeType$inboundSchema
-    .optional(),
-  cta: z.string().optional(),
-  data: z.string().optional(),
-  external_ad_reference: z.string().optional(),
-  external_creative_reference: z.string().optional(),
-  external_placement_reference: z.string().optional(),
-  group_id: z.string().optional(),
-  height: z.number().optional(),
-  hosting_source: PropertyAdsReportMetricsCreativeHostingSource$inboundSchema
-    .optional(),
-  id: z.string().optional(),
-  item_id: z.string().optional(),
-  labels: z.array(z.string()).optional(),
-  link_url: z.string().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  path1: z.string().optional(),
-  path2: z.string().optional(),
-  promoted: z.array(AdsPromoted$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  status: PropertyAdsReportMetricsCreativeStatus$inboundSchema.optional(),
-  third_party_tag: z.string().optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url_tags: z.string().optional(),
-  vast_tag_url: z.string().optional(),
-  width: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "asset_urls": "assetUrls",
-    "campaign_id": "campaignId",
-    "created_at": "createdAt",
-    "creative_type": "creativeType",
-    "external_ad_reference": "externalAdReference",
-    "external_creative_reference": "externalCreativeReference",
-    "external_placement_reference": "externalPlacementReference",
-    "group_id": "groupId",
-    "hosting_source": "hostingSource",
-    "item_id": "itemId",
-    "link_url": "linkUrl",
-    "organization_id": "organizationId",
-    "third_party_tag": "thirdPartyTag",
-    "updated_at": "updatedAt",
-    "url_tags": "urlTags",
-    "vast_tag_url": "vastTagUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    asset_urls: z.array(z.string()).optional(),
+    body: z.string().optional(),
+    campaign_id: z.string().optional(),
+    cards: z.array(AdsCreativeCard$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    creative_type: PropertyAdsReportMetricsCreativeCreativeType$inboundSchema
+      .optional(),
+    cta: z.string().optional(),
+    data: z.string().optional(),
+    external_ad_reference: z.string().optional(),
+    external_creative_reference: z.string().optional(),
+    external_placement_reference: z.string().optional(),
+    group_id: z.string().optional(),
+    height: z.number().optional(),
+    hosting_source: PropertyAdsReportMetricsCreativeHostingSource$inboundSchema
+      .optional(),
+    id: z.string().optional(),
+    item_id: z.string().optional(),
+    labels: z.array(z.string()).optional(),
+    link_url: z.string().optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    path1: z.string().optional(),
+    path2: z.string().optional(),
+    promoted: z.array(AdsPromoted$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    status: PropertyAdsReportMetricsCreativeStatus$inboundSchema.optional(),
+    third_party_tag: z.string().optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url_tags: z.string().optional(),
+    vast_tag_url: z.string().optional(),
+    width: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "asset_urls": "assetUrls",
+      "campaign_id": "campaignId",
+      "created_at": "createdAt",
+      "creative_type": "creativeType",
+      "external_ad_reference": "externalAdReference",
+      "external_creative_reference": "externalCreativeReference",
+      "external_placement_reference": "externalPlacementReference",
+      "group_id": "groupId",
+      "hosting_source": "hostingSource",
+      "item_id": "itemId",
+      "link_url": "linkUrl",
+      "organization_id": "organizationId",
+      "third_party_tag": "thirdPartyTag",
+      "updated_at": "updatedAt",
+      "url_tags": "urlTags",
+      "vast_tag_url": "vastTagUrl",
+    });
+  })
+);
 
 export function propertyAdsReportMetricsCreativeFromJSON(
   jsonString: string,

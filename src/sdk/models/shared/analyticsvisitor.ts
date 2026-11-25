@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -67,60 +67,65 @@ export type AnalyticsVisitor = {
 
 /** @internal */
 export const Gender$inboundSchema: z.ZodType<Gender, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Gender);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Gender));
 /** @internal */
 export const Gender$outboundSchema: z.ZodType<string, z.ZodTypeDef, Gender> =
-  openEnums.outboundSchema(Gender);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Gender));
 
 /** @internal */
 export const AnalyticsVisitor$inboundSchema: z.ZodType<
   AnalyticsVisitor,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  age: z.number().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  country_code: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  email: z.string().optional(),
-  first_name: z.string().optional(),
-  first_seen_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  gender: Gender$inboundSchema.optional(),
-  id: z.string().optional(),
-  language: z.string().optional(),
-  last_name: z.string().optional(),
-  last_seen_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  metadata: z.record(PropertyAnalyticsVisitorMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  property_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  timezone: z.string().optional(),
-  total_events: z.number().optional(),
-  total_page_views: z.number().optional(),
-  total_sessions: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "country_code": "countryCode",
-    "created_at": "createdAt",
-    "first_name": "firstName",
-    "first_seen_at": "firstSeenAt",
-    "last_name": "lastName",
-    "last_seen_at": "lastSeenAt",
-    "property_id": "propertyId",
-    "total_events": "totalEvents",
-    "total_page_views": "totalPageViews",
-    "total_sessions": "totalSessions",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    age: z.number().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    country_code: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    email: z.string().optional(),
+    first_name: z.string().optional(),
+    first_seen_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    gender: Gender$inboundSchema.optional(),
+    id: z.string().optional(),
+    language: z.string().optional(),
+    last_name: z.string().optional(),
+    last_seen_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    metadata: z.record(PropertyAnalyticsVisitorMetadata$inboundSchema)
+      .optional(),
+    name: z.string().optional(),
+    property_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    timezone: z.string().optional(),
+    total_events: z.number().optional(),
+    total_page_views: z.number().optional(),
+    total_sessions: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "country_code": "countryCode",
+      "created_at": "createdAt",
+      "first_name": "firstName",
+      "first_seen_at": "firstSeenAt",
+      "last_name": "lastName",
+      "last_seen_at": "lastSeenAt",
+      "property_id": "propertyId",
+      "total_events": "totalEvents",
+      "total_page_views": "totalPageViews",
+      "total_sessions": "totalSessions",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AnalyticsVisitor$Outbound = {
   age?: number | undefined;
@@ -154,45 +159,47 @@ export const AnalyticsVisitor$outboundSchema: z.ZodType<
   AnalyticsVisitor$Outbound,
   z.ZodTypeDef,
   AnalyticsVisitor
-> = z.object({
-  age: z.number().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  countryCode: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  email: z.string().optional(),
-  firstName: z.string().optional(),
-  firstSeenAt: z.date().transform(v => v.toISOString()).optional(),
-  gender: Gender$outboundSchema.optional(),
-  id: z.string().optional(),
-  language: z.string().optional(),
-  lastName: z.string().optional(),
-  lastSeenAt: z.date().transform(v => v.toISOString()).optional(),
-  metadata: z.record(PropertyAnalyticsVisitorMetadata$outboundSchema)
-    .optional(),
-  name: z.string().optional(),
-  propertyId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  timezone: z.string().optional(),
-  totalEvents: z.number().optional(),
-  totalPageViews: z.number().optional(),
-  totalSessions: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    countryCode: "country_code",
-    createdAt: "created_at",
-    firstName: "first_name",
-    firstSeenAt: "first_seen_at",
-    lastName: "last_name",
-    lastSeenAt: "last_seen_at",
-    propertyId: "property_id",
-    totalEvents: "total_events",
-    totalPageViews: "total_page_views",
-    totalSessions: "total_sessions",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    age: z.number().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    countryCode: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    email: z.string().optional(),
+    firstName: z.string().optional(),
+    firstSeenAt: z.date().transform(v => v.toISOString()).optional(),
+    gender: Gender$outboundSchema.optional(),
+    id: z.string().optional(),
+    language: z.string().optional(),
+    lastName: z.string().optional(),
+    lastSeenAt: z.date().transform(v => v.toISOString()).optional(),
+    metadata: z.record(PropertyAnalyticsVisitorMetadata$outboundSchema)
+      .optional(),
+    name: z.string().optional(),
+    propertyId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    timezone: z.string().optional(),
+    totalEvents: z.number().optional(),
+    totalPageViews: z.number().optional(),
+    totalSessions: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      countryCode: "country_code",
+      createdAt: "created_at",
+      firstName: "first_name",
+      firstSeenAt: "first_seen_at",
+      lastName: "last_name",
+      lastSeenAt: "last_seen_at",
+      propertyId: "property_id",
+      totalEvents: "total_events",
+      totalPageViews: "total_page_views",
+      totalSessions: "total_sessions",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function analyticsVisitorToJSON(
   analyticsVisitor: AnalyticsVisitor,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -57,15 +57,17 @@ export const ScimGroup$inboundSchema: z.ZodType<
   ScimGroup,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  displayName: z.string(),
-  externalId: z.string().optional(),
-  groupType: z.string().optional(),
-  id: z.string().optional(),
-  members: z.array(ScimGroupMember$inboundSchema).optional(),
-  meta: PropertyScimGroupMeta$inboundSchema.optional(),
-  schemas: z.array(PropertyScimGroupSchemas$inboundSchema).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    displayName: z.string(),
+    externalId: z.string().optional(),
+    groupType: z.string().optional(),
+    id: z.string().optional(),
+    members: z.array(ScimGroupMember$inboundSchema).optional(),
+    meta: PropertyScimGroupMeta$inboundSchema.optional(),
+    schemas: z.array(PropertyScimGroupSchemas$inboundSchema).optional(),
+  })
+);
 /** @internal */
 export type ScimGroup$Outbound = {
   displayName: string;
@@ -82,15 +84,17 @@ export const ScimGroup$outboundSchema: z.ZodType<
   ScimGroup$Outbound,
   z.ZodTypeDef,
   ScimGroup
-> = z.object({
-  displayName: z.string(),
-  externalId: z.string().optional(),
-  groupType: z.string().optional(),
-  id: z.string().optional(),
-  members: z.array(ScimGroupMember$outboundSchema).optional(),
-  meta: PropertyScimGroupMeta$outboundSchema.optional(),
-  schemas: z.array(PropertyScimGroupSchemas$outboundSchema).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    displayName: z.string(),
+    externalId: z.string().optional(),
+    groupType: z.string().optional(),
+    id: z.string().optional(),
+    members: z.array(ScimGroupMember$outboundSchema).optional(),
+    meta: PropertyScimGroupMeta$outboundSchema.optional(),
+    schemas: z.array(PropertyScimGroupSchemas$outboundSchema).optional(),
+  })
+);
 
 export function scimGroupToJSON(scimGroup: ScimGroup): string {
   return JSON.stringify(ScimGroup$outboundSchema.parse(scimGroup));

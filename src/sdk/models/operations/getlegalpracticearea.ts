@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetLegalPracticeareaQueryParamFields = {
@@ -42,9 +43,10 @@ export type GetLegalPracticeareaRequest = {
 
 /** @internal */
 export const GetLegalPracticeareaQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetLegalPracticeareaQueryParamFields> = z.nativeEnum(
-    GetLegalPracticeareaQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetLegalPracticeareaQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetLegalPracticeareaQueryParamFields)
+    );
 
 /** @internal */
 export type GetLegalPracticeareaRequest$Outbound = {
@@ -59,17 +61,19 @@ export const GetLegalPracticeareaRequest$outboundSchema: z.ZodType<
   GetLegalPracticeareaRequest$Outbound,
   z.ZodTypeDef,
   GetLegalPracticeareaRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetLegalPracticeareaQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetLegalPracticeareaQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getLegalPracticeareaRequestToJSON(
   getLegalPracticeareaRequest: GetLegalPracticeareaRequest,

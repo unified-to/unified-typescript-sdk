@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -23,10 +23,12 @@ export const GenaiAnswerProbability$inboundSchema: z.ZodType<
   GenaiAnswerProbability,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  option: z.string(),
-  probability: z.number(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    option: z.string(),
+    probability: z.number(),
+  })
+);
 /** @internal */
 export type GenaiAnswerProbability$Outbound = {
   option: string;
@@ -38,10 +40,12 @@ export const GenaiAnswerProbability$outboundSchema: z.ZodType<
   GenaiAnswerProbability$Outbound,
   z.ZodTypeDef,
   GenaiAnswerProbability
-> = z.object({
-  option: z.string(),
-  probability: z.number(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    option: z.string(),
+    probability: z.number(),
+  })
+);
 
 export function genaiAnswerProbabilityToJSON(
   genaiAnswerProbability: GenaiAnswerProbability,

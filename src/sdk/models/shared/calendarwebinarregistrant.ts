@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -34,34 +34,40 @@ export const RegistrationStatus$inboundSchema: z.ZodType<
   RegistrationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(RegistrationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(RegistrationStatus)
+);
 /** @internal */
 export const RegistrationStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   RegistrationStatus
-> = openEnums.outboundSchema(RegistrationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(RegistrationStatus)
+);
 
 /** @internal */
 export const CalendarWebinarRegistrant$inboundSchema: z.ZodType<
   CalendarWebinarRegistrant,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string().optional(),
-  name: z.string().optional(),
-  registered_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  registration_reference: z.string().optional(),
-  registration_status: RegistrationStatus$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "registered_at": "registeredAt",
-    "registration_reference": "registrationReference",
-    "registration_status": "registrationStatus",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    name: z.string().optional(),
+    registered_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    registration_reference: z.string().optional(),
+    registration_status: RegistrationStatus$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "registered_at": "registeredAt",
+      "registration_reference": "registrationReference",
+      "registration_status": "registrationStatus",
+    });
+  })
+);
 /** @internal */
 export type CalendarWebinarRegistrant$Outbound = {
   email?: string | undefined;
@@ -76,19 +82,21 @@ export const CalendarWebinarRegistrant$outboundSchema: z.ZodType<
   CalendarWebinarRegistrant$Outbound,
   z.ZodTypeDef,
   CalendarWebinarRegistrant
-> = z.object({
-  email: z.string().optional(),
-  name: z.string().optional(),
-  registeredAt: z.date().transform(v => v.toISOString()).optional(),
-  registrationReference: z.string().optional(),
-  registrationStatus: RegistrationStatus$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    registeredAt: "registered_at",
-    registrationReference: "registration_reference",
-    registrationStatus: "registration_status",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    name: z.string().optional(),
+    registeredAt: z.date().transform(v => v.toISOString()).optional(),
+    registrationReference: z.string().optional(),
+    registrationStatus: RegistrationStatus$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      registeredAt: "registered_at",
+      registrationReference: "registration_reference",
+      registrationStatus: "registration_status",
+    });
+  })
+);
 
 export function calendarWebinarRegistrantToJSON(
   calendarWebinarRegistrant: CalendarWebinarRegistrant,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -66,9 +67,10 @@ export type UpdateQmsInspectionRequest = {
 
 /** @internal */
 export const UpdateQmsInspectionQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateQmsInspectionQueryParamFields> = z.nativeEnum(
-    UpdateQmsInspectionQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateQmsInspectionQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateQmsInspectionQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateQmsInspectionRequest$Outbound = {
@@ -84,19 +86,21 @@ export const UpdateQmsInspectionRequest$outboundSchema: z.ZodType<
   UpdateQmsInspectionRequest$Outbound,
   z.ZodTypeDef,
   UpdateQmsInspectionRequest
-> = z.object({
-  qmsInspection: shared.QmsInspection$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateQmsInspectionQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    qmsInspection: "QmsInspection",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    qmsInspection: shared.QmsInspection$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateQmsInspectionQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      qmsInspection: "QmsInspection",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateQmsInspectionRequestToJSON(
   updateQmsInspectionRequest: UpdateQmsInspectionRequest,

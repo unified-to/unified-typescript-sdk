@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListSigningTemplatesQueryParamFields = {
@@ -50,9 +51,10 @@ export type ListSigningTemplatesRequest = {
 
 /** @internal */
 export const ListSigningTemplatesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListSigningTemplatesQueryParamFields> = z.nativeEnum(
-    ListSigningTemplatesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListSigningTemplatesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListSigningTemplatesQueryParamFields)
+    );
 
 /** @internal */
 export type ListSigningTemplatesRequest$Outbound = {
@@ -72,23 +74,25 @@ export const ListSigningTemplatesRequest$outboundSchema: z.ZodType<
   ListSigningTemplatesRequest$Outbound,
   z.ZodTypeDef,
   ListSigningTemplatesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListSigningTemplatesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListSigningTemplatesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listSigningTemplatesRequestToJSON(
   listSigningTemplatesRequest: ListSigningTemplatesRequest,

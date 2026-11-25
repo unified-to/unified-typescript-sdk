@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -23,10 +23,12 @@ export const MessagingReaction$inboundSchema: z.ZodType<
   MessagingReaction,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  member: PropertyMessagingReactionMember$inboundSchema,
-  reaction: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    member: PropertyMessagingReactionMember$inboundSchema,
+    reaction: z.string(),
+  })
+);
 /** @internal */
 export type MessagingReaction$Outbound = {
   member: PropertyMessagingReactionMember$Outbound;
@@ -38,10 +40,12 @@ export const MessagingReaction$outboundSchema: z.ZodType<
   MessagingReaction$Outbound,
   z.ZodTypeDef,
   MessagingReaction
-> = z.object({
-  member: PropertyMessagingReactionMember$outboundSchema,
-  reaction: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    member: PropertyMessagingReactionMember$outboundSchema,
+    reaction: z.string(),
+  })
+);
 
 export function messagingReactionToJSON(
   messagingReaction: MessagingReaction,

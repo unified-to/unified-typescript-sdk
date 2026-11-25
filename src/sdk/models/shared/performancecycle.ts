@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -74,47 +74,55 @@ export const PerformanceCycleStatus$inboundSchema: z.ZodType<
   PerformanceCycleStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceCycleStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceCycleStatus)
+);
 
 /** @internal */
 export const PerformanceCycleType$inboundSchema: z.ZodType<
   PerformanceCycleType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceCycleType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceCycleType)
+);
 
 /** @internal */
 export const PerformanceCycle$inboundSchema: z.ZodType<
   PerformanceCycle,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: PerformanceCycleStatus$inboundSchema.optional(),
-  type: PerformanceCycleType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "due_at": "dueAt",
-    "end_at": "endAt",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: PerformanceCycleStatus$inboundSchema.optional(),
+    type: PerformanceCycleType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "due_at": "dueAt",
+      "end_at": "endAt",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function performanceCycleFromJSON(
   jsonString: string,

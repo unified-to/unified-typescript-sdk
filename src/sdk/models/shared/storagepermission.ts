@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -19,6 +19,10 @@ export type StoragePermission = {
    */
   groupId?: string | undefined;
   isHidden?: boolean | undefined;
+  /**
+   * Shared with everyone in the owner's organization/domain/enterprise (e.g. Google Drive domain, Box company or Microsoft organization sharing links)
+   */
+  isOrganization?: boolean | undefined;
   isPublic?: boolean | undefined;
   roles: Array<PropertyStoragePermissionRoles>;
   /**
@@ -32,24 +36,29 @@ export const StoragePermission$inboundSchema: z.ZodType<
   StoragePermission,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  group_id: z.string().optional(),
-  is_hidden: z.boolean().optional(),
-  is_public: z.boolean().optional(),
-  roles: z.array(PropertyStoragePermissionRoles$inboundSchema),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "group_id": "groupId",
-    "is_hidden": "isHidden",
-    "is_public": "isPublic",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    group_id: z.string().optional(),
+    is_hidden: z.boolean().optional(),
+    is_organization: z.boolean().optional(),
+    is_public: z.boolean().optional(),
+    roles: z.array(PropertyStoragePermissionRoles$inboundSchema),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "group_id": "groupId",
+      "is_hidden": "isHidden",
+      "is_organization": "isOrganization",
+      "is_public": "isPublic",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type StoragePermission$Outbound = {
   group_id?: string | undefined;
   is_hidden?: boolean | undefined;
+  is_organization?: boolean | undefined;
   is_public?: boolean | undefined;
   roles: Array<string>;
   user_id?: string | undefined;
@@ -60,20 +69,24 @@ export const StoragePermission$outboundSchema: z.ZodType<
   StoragePermission$Outbound,
   z.ZodTypeDef,
   StoragePermission
-> = z.object({
-  groupId: z.string().optional(),
-  isHidden: z.boolean().optional(),
-  isPublic: z.boolean().optional(),
-  roles: z.array(PropertyStoragePermissionRoles$outboundSchema),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    groupId: "group_id",
-    isHidden: "is_hidden",
-    isPublic: "is_public",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    groupId: z.string().optional(),
+    isHidden: z.boolean().optional(),
+    isOrganization: z.boolean().optional(),
+    isPublic: z.boolean().optional(),
+    roles: z.array(PropertyStoragePermissionRoles$outboundSchema),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      groupId: "group_id",
+      isHidden: "is_hidden",
+      isOrganization: "is_organization",
+      isPublic: "is_public",
+      userId: "user_id",
+    });
+  })
+);
 
 export function storagePermissionToJSON(
   storagePermission: StoragePermission,

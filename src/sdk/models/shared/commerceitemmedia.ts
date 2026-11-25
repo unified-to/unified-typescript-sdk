@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -40,29 +40,35 @@ export const CommerceItemMediaType$inboundSchema: z.ZodType<
   CommerceItemMediaType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CommerceItemMediaType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CommerceItemMediaType)
+);
 /** @internal */
 export const CommerceItemMediaType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CommerceItemMediaType
-> = openEnums.outboundSchema(CommerceItemMediaType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CommerceItemMediaType)
+);
 
 /** @internal */
 export const CommerceItemMedia$inboundSchema: z.ZodType<
   CommerceItemMedia,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  alt: z.string().optional(),
-  height: z.number().optional(),
-  id: z.string().optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  position: z.number().optional(),
-  type: CommerceItemMediaType$inboundSchema.optional(),
-  url: z.string(),
-  width: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    alt: z.string().optional(),
+    height: z.number().optional(),
+    id: z.string().optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    position: z.number().optional(),
+    type: CommerceItemMediaType$inboundSchema.optional(),
+    url: z.string(),
+    width: z.number().optional(),
+  })
+);
 /** @internal */
 export type CommerceItemMedia$Outbound = {
   alt?: string | undefined;
@@ -80,16 +86,18 @@ export const CommerceItemMedia$outboundSchema: z.ZodType<
   CommerceItemMedia$Outbound,
   z.ZodTypeDef,
   CommerceItemMedia
-> = z.object({
-  alt: z.string().optional(),
-  height: z.number().optional(),
-  id: z.string().optional(),
-  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
-  position: z.number().optional(),
-  type: CommerceItemMediaType$outboundSchema.optional(),
-  url: z.string(),
-  width: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    alt: z.string().optional(),
+    height: z.number().optional(),
+    id: z.string().optional(),
+    metadata: z.array(CommerceMetadata$outboundSchema).optional(),
+    position: z.number().optional(),
+    type: CommerceItemMediaType$outboundSchema.optional(),
+    url: z.string(),
+    width: z.number().optional(),
+  })
+);
 
 export function commerceItemMediaToJSON(
   commerceItemMedia: CommerceItemMedia,

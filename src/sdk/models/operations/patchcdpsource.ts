@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -46,7 +47,9 @@ export type PatchCdpSourceRequest = {
 /** @internal */
 export const PatchCdpSourceQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchCdpSourceQueryParamFields
-> = z.nativeEnum(PatchCdpSourceQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchCdpSourceQueryParamFields)
+);
 
 /** @internal */
 export type PatchCdpSourceRequest$Outbound = {
@@ -62,18 +65,20 @@ export const PatchCdpSourceRequest$outboundSchema: z.ZodType<
   PatchCdpSourceRequest$Outbound,
   z.ZodTypeDef,
   PatchCdpSourceRequest
-> = z.object({
-  cdpSource: shared.CdpSource$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchCdpSourceQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cdpSource: "CdpSource",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cdpSource: shared.CdpSource$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchCdpSourceQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      cdpSource: "CdpSource",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchCdpSourceRequestToJSON(
   patchCdpSourceRequest: PatchCdpSourceRequest,

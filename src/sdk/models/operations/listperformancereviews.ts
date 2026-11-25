@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPerformanceReviewsQueryParamFields = {
@@ -69,9 +70,10 @@ export type ListPerformanceReviewsRequest = {
 
 /** @internal */
 export const ListPerformanceReviewsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListPerformanceReviewsQueryParamFields> = z.nativeEnum(
-    ListPerformanceReviewsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListPerformanceReviewsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListPerformanceReviewsQueryParamFields)
+    );
 
 /** @internal */
 export type ListPerformanceReviewsRequest$Outbound = {
@@ -94,28 +96,30 @@ export const ListPerformanceReviewsRequest$outboundSchema: z.ZodType<
   ListPerformanceReviewsRequest$Outbound,
   z.ZodTypeDef,
   ListPerformanceReviewsRequest
-> = z.object({
-  connectionId: z.string(),
-  cycleId: z.string().optional(),
-  fields: z.array(ListPerformanceReviewsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    cycleId: "cycle_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    cycleId: z.string().optional(),
+    fields: z.array(ListPerformanceReviewsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      cycleId: "cycle_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listPerformanceReviewsRequestToJSON(
   listPerformanceReviewsRequest: ListPerformanceReviewsRequest,

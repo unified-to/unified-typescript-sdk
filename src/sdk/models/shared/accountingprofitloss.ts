@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -53,48 +53,52 @@ export const AccountingProfitloss$inboundSchema: z.ZodType<
   AccountingProfitloss,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  category_ids: z.array(z.string()).optional(),
-  cost_of_goods_sold_sections: z.array(
-    AccountingProfitlossSection$inboundSchema,
-  ).optional(),
-  cost_of_goods_sold_total_amount: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  expenses_sections: z.array(AccountingProfitlossSection$inboundSchema)
-    .optional(),
-  expenses_total_amount: z.number().optional(),
-  id: z.string().optional(),
-  income_sections: z.array(AccountingProfitlossSection$inboundSchema)
-    .optional(),
-  income_total_amount: z.number().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  net_income_amount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "category_ids": "categoryIds",
-    "cost_of_goods_sold_sections": "costOfGoodsSoldSections",
-    "cost_of_goods_sold_total_amount": "costOfGoodsSoldTotalAmount",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "expenses_sections": "expensesSections",
-    "expenses_total_amount": "expensesTotalAmount",
-    "income_sections": "incomeSections",
-    "income_total_amount": "incomeTotalAmount",
-    "net_income_amount": "netIncomeAmount",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category_ids: z.array(z.string()).optional(),
+    cost_of_goods_sold_sections: z.array(
+      AccountingProfitlossSection$inboundSchema,
+    ).optional(),
+    cost_of_goods_sold_total_amount: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    expenses_sections: z.array(AccountingProfitlossSection$inboundSchema)
+      .optional(),
+    expenses_total_amount: z.number().optional(),
+    id: z.string().optional(),
+    income_sections: z.array(AccountingProfitlossSection$inboundSchema)
+      .optional(),
+    income_total_amount: z.number().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    net_income_amount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "category_ids": "categoryIds",
+      "cost_of_goods_sold_sections": "costOfGoodsSoldSections",
+      "cost_of_goods_sold_total_amount": "costOfGoodsSoldTotalAmount",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "expenses_sections": "expensesSections",
+      "expenses_total_amount": "expensesTotalAmount",
+      "income_sections": "incomeSections",
+      "income_total_amount": "incomeTotalAmount",
+      "net_income_amount": "netIncomeAmount",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function accountingProfitlossFromJSON(
   jsonString: string,

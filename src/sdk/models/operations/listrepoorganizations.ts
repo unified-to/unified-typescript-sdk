@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListRepoOrganizationsQueryParamFields = {
@@ -51,9 +52,10 @@ export type ListRepoOrganizationsRequest = {
 
 /** @internal */
 export const ListRepoOrganizationsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListRepoOrganizationsQueryParamFields> = z.nativeEnum(
-    ListRepoOrganizationsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListRepoOrganizationsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListRepoOrganizationsQueryParamFields)
+    );
 
 /** @internal */
 export type ListRepoOrganizationsRequest$Outbound = {
@@ -73,23 +75,25 @@ export const ListRepoOrganizationsRequest$outboundSchema: z.ZodType<
   ListRepoOrganizationsRequest$Outbound,
   z.ZodTypeDef,
   ListRepoOrganizationsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListRepoOrganizationsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListRepoOrganizationsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listRepoOrganizationsRequestToJSON(
   listRepoOrganizationsRequest: ListRepoOrganizationsRequest,

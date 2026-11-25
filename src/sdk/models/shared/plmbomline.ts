@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -60,40 +60,45 @@ export const PlmBomline$inboundSchema: z.ZodType<
   PlmBomline,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  child_part_id: z.string().optional(),
-  child_revision: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  effective_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  line_number: z.string().optional(),
-  notes: z.string().optional(),
-  parent_part_id: z.string().optional(),
-  quantity: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reference_designators: z.array(z.string()).optional(),
-  unit_of_measure: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "child_part_id": "childPartId",
-    "child_revision": "childRevision",
-    "created_at": "createdAt",
-    "effective_at": "effectiveAt",
-    "expires_at": "expiresAt",
-    "line_number": "lineNumber",
-    "parent_part_id": "parentPartId",
-    "reference_designators": "referenceDesignators",
-    "unit_of_measure": "unitOfMeasure",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    child_part_id: z.string().optional(),
+    child_revision: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    effective_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    line_number: z.string().optional(),
+    notes: z.string().optional(),
+    parent_part_id: z.string().optional(),
+    quantity: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reference_designators: z.array(z.string()).optional(),
+    unit_of_measure: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "child_part_id": "childPartId",
+      "child_revision": "childRevision",
+      "created_at": "createdAt",
+      "effective_at": "effectiveAt",
+      "expires_at": "expiresAt",
+      "line_number": "lineNumber",
+      "parent_part_id": "parentPartId",
+      "reference_designators": "referenceDesignators",
+      "unit_of_measure": "unitOfMeasure",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type PlmBomline$Outbound = {
   child_part_id?: string | undefined;
@@ -117,35 +122,37 @@ export const PlmBomline$outboundSchema: z.ZodType<
   PlmBomline$Outbound,
   z.ZodTypeDef,
   PlmBomline
-> = z.object({
-  childPartId: z.string().optional(),
-  childRevision: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  effectiveAt: z.date().transform(v => v.toISOString()).optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  lineNumber: z.string().optional(),
-  notes: z.string().optional(),
-  parentPartId: z.string().optional(),
-  quantity: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  referenceDesignators: z.array(z.string()).optional(),
-  unitOfMeasure: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    childPartId: "child_part_id",
-    childRevision: "child_revision",
-    createdAt: "created_at",
-    effectiveAt: "effective_at",
-    expiresAt: "expires_at",
-    lineNumber: "line_number",
-    parentPartId: "parent_part_id",
-    referenceDesignators: "reference_designators",
-    unitOfMeasure: "unit_of_measure",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    childPartId: z.string().optional(),
+    childRevision: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    effectiveAt: z.date().transform(v => v.toISOString()).optional(),
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    lineNumber: z.string().optional(),
+    notes: z.string().optional(),
+    parentPartId: z.string().optional(),
+    quantity: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    referenceDesignators: z.array(z.string()).optional(),
+    unitOfMeasure: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      childPartId: "child_part_id",
+      childRevision: "child_revision",
+      createdAt: "created_at",
+      effectiveAt: "effective_at",
+      expiresAt: "expires_at",
+      lineNumber: "line_number",
+      parentPartId: "parent_part_id",
+      referenceDesignators: "reference_designators",
+      unitOfMeasure: "unit_of_measure",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function plmBomlineToJSON(plmBomline: PlmBomline): string {
   return JSON.stringify(PlmBomline$outboundSchema.parse(plmBomline));

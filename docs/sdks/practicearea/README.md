@@ -30,13 +30,13 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.practicearea.createLegalPracticearea({
     legalPracticearea: {
-      code: "QCA",
+      code: "TLV",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "1fcd6c4a-a684-4c71-ae66-b48e35f940d3",
+      id: "7ce1558f-8cdd-47e5-894b-366ce7abad32",
       metadata: [],
-      name: "witty Law",
+      name: "advanced Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-09-17T11:34:28.043Z"),
+      updatedAt: new Date("2025-09-21T13:06:41.748Z"),
     },
     connectionId: "<id>",
   });
@@ -66,13 +66,13 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await legalCreateLegalPracticearea(unifiedTo, {
     legalPracticearea: {
-      code: "QCA",
+      code: "TLV",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "1fcd6c4a-a684-4c71-ae66-b48e35f940d3",
+      id: "7ce1558f-8cdd-47e5-894b-366ce7abad32",
       metadata: [],
-      name: "witty Law",
+      name: "advanced Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-09-17T11:34:28.043Z"),
+      updatedAt: new Date("2025-09-21T13:06:41.748Z"),
     },
     connectionId: "<id>",
   });
@@ -281,13 +281,13 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.practicearea.patchLegalPracticearea({
     legalPracticearea: {
-      code: "QCA",
+      code: "TLV",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "88dbad89-1df9-41b8-9d01-03b76ce16107",
+      id: "d8c07055-76bb-4dcc-b0d3-372b982a6c6c",
       metadata: [],
-      name: "witty Law",
+      name: "advanced Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-09-17T11:34:28.049Z"),
+      updatedAt: new Date("2025-09-21T13:06:41.756Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -318,13 +318,13 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await legalPatchLegalPracticearea(unifiedTo, {
     legalPracticearea: {
-      code: "QCA",
+      code: "TLV",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "88dbad89-1df9-41b8-9d01-03b76ce16107",
+      id: "d8c07055-76bb-4dcc-b0d3-372b982a6c6c",
       metadata: [],
-      name: "witty Law",
+      name: "advanced Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-09-17T11:34:28.049Z"),
+      updatedAt: new Date("2025-09-21T13:06:41.756Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -457,13 +457,13 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.practicearea.updateLegalPracticearea({
     legalPracticearea: {
-      code: "QCA",
+      code: "TLV",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "88dbad89-1df9-41b8-9d01-03b76ce16107",
+      id: "d8c07055-76bb-4dcc-b0d3-372b982a6c6c",
       metadata: [],
-      name: "witty Law",
+      name: "advanced Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-09-17T11:34:28.049Z"),
+      updatedAt: new Date("2025-09-21T13:06:41.756Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -494,13 +494,13 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await legalUpdateLegalPracticearea(unifiedTo, {
     legalPracticearea: {
-      code: "QCA",
+      code: "TLV",
       createdAt: new Date("2023-01-28T21:00:26.264Z"),
-      id: "88dbad89-1df9-41b8-9d01-03b76ce16107",
+      id: "d8c07055-76bb-4dcc-b0d3-372b982a6c6c",
       metadata: [],
-      name: "witty Law",
+      name: "advanced Law",
       type: "EDUCATION",
-      updatedAt: new Date("2025-09-17T11:34:28.049Z"),
+      updatedAt: new Date("2025-09-21T13:06:41.756Z"),
     },
     connectionId: "<id>",
     id: "<id>",

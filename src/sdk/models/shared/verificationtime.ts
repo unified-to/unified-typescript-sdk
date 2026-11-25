@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -21,14 +21,16 @@ export const VerificationTime$inboundSchema: z.ZodType<
   VerificationTime,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  milliseconds: z.number().optional(),
-  valid_regions: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "valid_regions": "validRegions",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    milliseconds: z.number().optional(),
+    valid_regions: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "valid_regions": "validRegions",
+    });
+  })
+);
 
 export function verificationTimeFromJSON(
   jsonString: string,

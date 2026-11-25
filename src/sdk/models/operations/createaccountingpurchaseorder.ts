@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -48,8 +49,10 @@ export type CreateAccountingPurchaseorderRequest = {
 
 /** @internal */
 export const CreateAccountingPurchaseorderQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingPurchaseorderQueryParamFields> = z
-    .nativeEnum(CreateAccountingPurchaseorderQueryParamFields);
+  z.ZodNativeEnum<typeof CreateAccountingPurchaseorderQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingPurchaseorderQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingPurchaseorderRequest$Outbound = {
@@ -64,18 +67,21 @@ export const CreateAccountingPurchaseorderRequest$outboundSchema: z.ZodType<
   CreateAccountingPurchaseorderRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingPurchaseorderRequest
-> = z.object({
-  accountingPurchaseorder: shared.AccountingPurchaseorder$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAccountingPurchaseorderQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingPurchaseorder: "AccountingPurchaseorder",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingPurchaseorder: shared.AccountingPurchaseorder$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(
+      CreateAccountingPurchaseorderQueryParamFields$outboundSchema,
+    ).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingPurchaseorder: "AccountingPurchaseorder",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingPurchaseorderRequestToJSON(
   createAccountingPurchaseorderRequest: CreateAccountingPurchaseorderRequest,

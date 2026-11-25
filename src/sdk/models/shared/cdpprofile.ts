@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -143,52 +143,60 @@ export const CdpProfileGender$inboundSchema: z.ZodType<
   CdpProfileGender,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CdpProfileGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CdpProfileGender)
+);
 /** @internal */
 export const CdpProfileGender$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CdpProfileGender
-> = openEnums.outboundSchema(CdpProfileGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CdpProfileGender)
+);
 
 /** @internal */
 export const CdpProfile$inboundSchema: z.ZodType<
   CdpProfile,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyCdpProfileAddress$inboundSchema.optional(),
-  birthdate: z.string().optional(),
-  company: z.string().optional(),
-  consent: z.array(CdpConsent$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  email: z.string().optional(),
-  first_name: z.string().optional(),
-  gender: CdpProfileGender$inboundSchema.optional(),
-  id: z.string().optional(),
-  identifiers: z.array(CdpIdentifier$inboundSchema).optional(),
-  is_anonymous: z.boolean().optional(),
-  last_name: z.string().optional(),
-  metadata: z.array(CdpMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  segments: z.array(CdpProfileSegment$inboundSchema).optional(),
-  source_id: z.string().optional(),
-  telephone: z.string().optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "first_name": "firstName",
-    "is_anonymous": "isAnonymous",
-    "last_name": "lastName",
-    "source_id": "sourceId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCdpProfileAddress$inboundSchema.optional(),
+    birthdate: z.string().optional(),
+    company: z.string().optional(),
+    consent: z.array(CdpConsent$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    email: z.string().optional(),
+    first_name: z.string().optional(),
+    gender: CdpProfileGender$inboundSchema.optional(),
+    id: z.string().optional(),
+    identifiers: z.array(CdpIdentifier$inboundSchema).optional(),
+    is_anonymous: z.boolean().optional(),
+    last_name: z.string().optional(),
+    metadata: z.array(CdpMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    segments: z.array(CdpProfileSegment$inboundSchema).optional(),
+    source_id: z.string().optional(),
+    telephone: z.string().optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "first_name": "firstName",
+      "is_anonymous": "isAnonymous",
+      "last_name": "lastName",
+      "source_id": "sourceId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CdpProfile$Outbound = {
   address?: PropertyCdpProfileAddress$Outbound | undefined;
@@ -218,37 +226,39 @@ export const CdpProfile$outboundSchema: z.ZodType<
   CdpProfile$Outbound,
   z.ZodTypeDef,
   CdpProfile
-> = z.object({
-  address: PropertyCdpProfileAddress$outboundSchema.optional(),
-  birthdate: z.string().optional(),
-  company: z.string().optional(),
-  consent: z.array(CdpConsent$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  email: z.string().optional(),
-  firstName: z.string().optional(),
-  gender: CdpProfileGender$outboundSchema.optional(),
-  id: z.string().optional(),
-  identifiers: z.array(CdpIdentifier$outboundSchema).optional(),
-  isAnonymous: z.boolean().optional(),
-  lastName: z.string().optional(),
-  metadata: z.array(CdpMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  segments: z.array(CdpProfileSegment$outboundSchema).optional(),
-  sourceId: z.string().optional(),
-  telephone: z.string().optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    firstName: "first_name",
-    isAnonymous: "is_anonymous",
-    lastName: "last_name",
-    sourceId: "source_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCdpProfileAddress$outboundSchema.optional(),
+    birthdate: z.string().optional(),
+    company: z.string().optional(),
+    consent: z.array(CdpConsent$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    email: z.string().optional(),
+    firstName: z.string().optional(),
+    gender: CdpProfileGender$outboundSchema.optional(),
+    id: z.string().optional(),
+    identifiers: z.array(CdpIdentifier$outboundSchema).optional(),
+    isAnonymous: z.boolean().optional(),
+    lastName: z.string().optional(),
+    metadata: z.array(CdpMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    segments: z.array(CdpProfileSegment$outboundSchema).optional(),
+    sourceId: z.string().optional(),
+    telephone: z.string().optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      firstName: "first_name",
+      isAnonymous: "is_anonymous",
+      lastName: "last_name",
+      sourceId: "source_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function cdpProfileToJSON(cdpProfile: CdpProfile): string {
   return JSON.stringify(CdpProfile$outboundSchema.parse(cdpProfile));

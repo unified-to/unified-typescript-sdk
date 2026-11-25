@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -100,34 +100,38 @@ export const HealthcareLocation$inboundSchema: z.ZodType<
   HealthcareLocation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyHealthcareLocationAddress$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  emails: z.array(HealthcareEmail$inboundSchema).optional(),
-  id: z.string().optional(),
-  identifiers: z.array(HealthcareIdentifier$inboundSchema).optional(),
-  is_active: z.boolean().optional(),
-  latitude: z.number().optional(),
-  longitude: z.number().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "organization_name": "organizationName",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHealthcareLocationAddress$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    emails: z.array(HealthcareEmail$inboundSchema).optional(),
+    id: z.string().optional(),
+    identifiers: z.array(HealthcareIdentifier$inboundSchema).optional(),
+    is_active: z.boolean().optional(),
+    latitude: z.number().optional(),
+    longitude: z.number().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "organization_name": "organizationName",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcareLocationFromJSON(
   jsonString: string,

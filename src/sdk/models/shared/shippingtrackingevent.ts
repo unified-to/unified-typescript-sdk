@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -85,37 +85,42 @@ export const ShippingTrackingEventStatus$inboundSchema: z.ZodType<
   ShippingTrackingEventStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ShippingTrackingEventStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ShippingTrackingEventStatus)
+);
 
 /** @internal */
 export const ShippingTrackingEvent$inboundSchema: z.ZodType<
   ShippingTrackingEvent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  carrier_status_code: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  event_code: z.string().optional(),
-  location_address: PropertyShippingTrackingEventLocationAddress$inboundSchema
-    .optional(),
-  location_id: z.string().optional(),
-  location_name: z.string().optional(),
-  notes: z.string().optional(),
-  signed_by: z.string().optional(),
-  status: ShippingTrackingEventStatus$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "carrier_status_code": "carrierStatusCode",
-    "created_at": "createdAt",
-    "event_code": "eventCode",
-    "location_address": "locationAddress",
-    "location_id": "locationId",
-    "location_name": "locationName",
-    "signed_by": "signedBy",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    carrier_status_code: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    event_code: z.string().optional(),
+    location_address: PropertyShippingTrackingEventLocationAddress$inboundSchema
+      .optional(),
+    location_id: z.string().optional(),
+    location_name: z.string().optional(),
+    notes: z.string().optional(),
+    signed_by: z.string().optional(),
+    status: ShippingTrackingEventStatus$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "carrier_status_code": "carrierStatusCode",
+      "created_at": "createdAt",
+      "event_code": "eventCode",
+      "location_address": "locationAddress",
+      "location_id": "locationId",
+      "location_name": "locationName",
+      "signed_by": "signedBy",
+    });
+  })
+);
 
 export function shippingTrackingEventFromJSON(
   jsonString: string,

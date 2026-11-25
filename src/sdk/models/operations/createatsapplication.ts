@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -50,9 +51,10 @@ export type CreateAtsApplicationRequest = {
 
 /** @internal */
 export const CreateAtsApplicationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAtsApplicationQueryParamFields> = z.nativeEnum(
-    CreateAtsApplicationQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateAtsApplicationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAtsApplicationQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAtsApplicationRequest$Outbound = {
@@ -67,18 +69,20 @@ export const CreateAtsApplicationRequest$outboundSchema: z.ZodType<
   CreateAtsApplicationRequest$Outbound,
   z.ZodTypeDef,
   CreateAtsApplicationRequest
-> = z.object({
-  atsApplication: shared.AtsApplication$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAtsApplicationQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    atsApplication: "AtsApplication",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    atsApplication: shared.AtsApplication$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAtsApplicationQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      atsApplication: "AtsApplication",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAtsApplicationRequestToJSON(
   createAtsApplicationRequest: CreateAtsApplicationRequest,

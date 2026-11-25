@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -54,9 +55,10 @@ export type PatchLegalTimeentryRequest = {
 
 /** @internal */
 export const PatchLegalTimeentryQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchLegalTimeentryQueryParamFields> = z.nativeEnum(
-    PatchLegalTimeentryQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchLegalTimeentryQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchLegalTimeentryQueryParamFields)
+    );
 
 /** @internal */
 export type PatchLegalTimeentryRequest$Outbound = {
@@ -72,19 +74,21 @@ export const PatchLegalTimeentryRequest$outboundSchema: z.ZodType<
   PatchLegalTimeentryRequest$Outbound,
   z.ZodTypeDef,
   PatchLegalTimeentryRequest
-> = z.object({
-  legalTimeentry: shared.LegalTimeentry$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchLegalTimeentryQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    legalTimeentry: "LegalTimeentry",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    legalTimeentry: shared.LegalTimeentry$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchLegalTimeentryQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      legalTimeentry: "LegalTimeentry",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchLegalTimeentryRequestToJSON(
   patchLegalTimeentryRequest: PatchLegalTimeentryRequest,

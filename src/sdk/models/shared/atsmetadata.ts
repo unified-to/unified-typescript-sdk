@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -100,7 +100,7 @@ export const AtsMetadata1$inboundSchema: z.ZodType<
   AtsMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type AtsMetadata1$Outbound = {};
 
@@ -109,7 +109,7 @@ export const AtsMetadata1$outboundSchema: z.ZodType<
   AtsMetadata1$Outbound,
   z.ZodTypeDef,
   AtsMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function atsMetadata1ToJSON(atsMetadata1: AtsMetadata1): string {
   return JSON.stringify(AtsMetadata1$outboundSchema.parse(atsMetadata1));
@@ -129,12 +129,14 @@ export const AtsMetadata5$inboundSchema: z.ZodType<
   AtsMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => AtsMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AtsMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type AtsMetadata5$Outbound =
   | AtsMetadata1$Outbound
@@ -147,12 +149,14 @@ export const AtsMetadata5$outboundSchema: z.ZodType<
   AtsMetadata5$Outbound,
   z.ZodTypeDef,
   AtsMetadata5
-> = z.union([
-  z.lazy(() => AtsMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AtsMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function atsMetadata5ToJSON(atsMetadata5: AtsMetadata5): string {
   return JSON.stringify(AtsMetadata5$outboundSchema.parse(atsMetadata5));
@@ -172,20 +176,22 @@ export const AtsMetadataExtraData$inboundSchema: z.ZodType<
   AtsMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AtsMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AtsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type AtsMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -199,20 +205,22 @@ export const AtsMetadataExtraData$outboundSchema: z.ZodType<
   AtsMetadataExtraData$Outbound,
   z.ZodTypeDef,
   AtsMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AtsMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AtsMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function atsMetadataExtraDataToJSON(
   atsMetadataExtraData: AtsMetadataExtraData,
@@ -236,20 +244,24 @@ export const AtsMetadataFormat$inboundSchema: z.ZodType<
   AtsMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AtsMetadataFormat)
+);
 /** @internal */
 export const AtsMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsMetadataFormat
-> = openEnums.outboundSchema(AtsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsMetadataFormat)
+);
 
 /** @internal */
 export const AtsMetadataSchemas1$inboundSchema: z.ZodType<
   AtsMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type AtsMetadataSchemas1$Outbound = {};
 
@@ -258,7 +270,7 @@ export const AtsMetadataSchemas1$outboundSchema: z.ZodType<
   AtsMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   AtsMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function atsMetadataSchemas1ToJSON(
   atsMetadataSchemas1: AtsMetadataSchemas1,
@@ -282,12 +294,14 @@ export const AtsMetadataSchemas5$inboundSchema: z.ZodType<
   AtsMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => AtsMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AtsMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type AtsMetadataSchemas5$Outbound =
   | AtsMetadataSchemas1$Outbound
@@ -300,12 +314,14 @@ export const AtsMetadataSchemas5$outboundSchema: z.ZodType<
   AtsMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   AtsMetadataSchemas5
-> = z.union([
-  z.lazy(() => AtsMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AtsMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function atsMetadataSchemas5ToJSON(
   atsMetadataSchemas5: AtsMetadataSchemas5,
@@ -329,20 +345,22 @@ export const AtsMetadataValue$inboundSchema: z.ZodType<
   AtsMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AtsMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AtsMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type AtsMetadataValue$Outbound =
   | { [k: string]: any }
@@ -356,20 +374,22 @@ export const AtsMetadataValue$outboundSchema: z.ZodType<
   AtsMetadataValue$Outbound,
   z.ZodTypeDef,
   AtsMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AtsMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AtsMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function atsMetadataValueToJSON(
   atsMetadataValue: AtsMetadataValue,
@@ -393,44 +413,46 @@ export const AtsMetadata$inboundSchema: z.ZodType<
   AtsMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AtsMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: AtsMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AtsMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AtsMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: AtsMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AtsMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type AtsMetadata$Outbound = {
   extra_data?:
@@ -458,44 +480,46 @@ export const AtsMetadata$outboundSchema: z.ZodType<
   AtsMetadata$Outbound,
   z.ZodTypeDef,
   AtsMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AtsMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: AtsMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AtsMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AtsMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: AtsMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AtsMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function atsMetadataToJSON(atsMetadata: AtsMetadata): string {
   return JSON.stringify(AtsMetadata$outboundSchema.parse(atsMetadata));

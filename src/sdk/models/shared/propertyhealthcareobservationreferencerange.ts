@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -36,17 +36,19 @@ export const PropertyHealthcareObservationReferenceRange$inboundSchema:
     PropertyHealthcareObservationReferenceRange,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    high_value: z.number().optional(),
-    low_value: z.number().optional(),
-    text: z.string().optional(),
-    unit: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "high_value": "highValue",
-      "low_value": "lowValue",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      high_value: z.number().optional(),
+      low_value: z.number().optional(),
+      text: z.string().optional(),
+      unit: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "high_value": "highValue",
+        "low_value": "lowValue",
+      });
+    })
+  );
 /** @internal */
 export type PropertyHealthcareObservationReferenceRange$Outbound = {
   high_value?: number | undefined;
@@ -61,17 +63,19 @@ export const PropertyHealthcareObservationReferenceRange$outboundSchema:
     PropertyHealthcareObservationReferenceRange$Outbound,
     z.ZodTypeDef,
     PropertyHealthcareObservationReferenceRange
-  > = z.object({
-    highValue: z.number().optional(),
-    lowValue: z.number().optional(),
-    text: z.string().optional(),
-    unit: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      highValue: "high_value",
-      lowValue: "low_value",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      highValue: z.number().optional(),
+      lowValue: z.number().optional(),
+      text: z.string().optional(),
+      unit: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        highValue: "high_value",
+        lowValue: "low_value",
+      });
+    })
+  );
 
 export function propertyHealthcareObservationReferenceRangeToJSON(
   propertyHealthcareObservationReferenceRange:

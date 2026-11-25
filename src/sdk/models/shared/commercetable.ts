@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -98,48 +98,55 @@ export const CommerceTableStatus$inboundSchema: z.ZodType<
   CommerceTableStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CommerceTableStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CommerceTableStatus)
+);
 
 /** @internal */
 export const CommerceTable$inboundSchema: z.ZodType<
   CommerceTable,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  capacity: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  floorplan_identifier: z.string().optional(),
-  floorplan_name: z.string().optional(),
-  guest_count: z.number().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  layout: PropertyCommerceTableLayout$inboundSchema.optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  occupied_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  salesorder_ids: z.array(z.string()).optional(),
-  status: CommerceTableStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "floorplan_identifier": "floorplanIdentifier",
-    "floorplan_name": "floorplanName",
-    "guest_count": "guestCount",
-    "is_active": "isActive",
-    "location_id": "locationId",
-    "occupied_at": "occupiedAt",
-    "salesorder_ids": "salesorderIds",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    capacity: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    floorplan_identifier: z.string().optional(),
+    floorplan_name: z.string().optional(),
+    guest_count: z.number().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    layout: PropertyCommerceTableLayout$inboundSchema.optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    occupied_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    raw: z.record(z.any()).optional(),
+    salesorder_ids: z.array(z.string()).optional(),
+    status: CommerceTableStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "floorplan_identifier": "floorplanIdentifier",
+      "floorplan_name": "floorplanName",
+      "guest_count": "guestCount",
+      "is_active": "isActive",
+      "location_id": "locationId",
+      "occupied_at": "occupiedAt",
+      "salesorder_ids": "salesorderIds",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function commerceTableFromJSON(
   jsonString: string,

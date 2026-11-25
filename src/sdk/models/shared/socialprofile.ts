@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -101,39 +101,43 @@ export const SocialProfile$inboundSchema: z.ZodType<
   SocialProfile,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertySocialProfileAddress$inboundSchema.optional(),
-  avatar_url: z.string().optional(),
-  category: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_private: z.boolean().optional(),
-  is_verified: z.boolean().optional(),
-  location: z.string().optional(),
-  metadata: z.array(SocialMetadata$inboundSchema).optional(),
-  metrics: PropertySocialProfileMetrics$inboundSchema.optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  phone: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  username: z.string().optional(),
-  website_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "avatar_url": "avatarUrl",
-    "created_at": "createdAt",
-    "is_private": "isPrivate",
-    "is_verified": "isVerified",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-    "website_url": "websiteUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertySocialProfileAddress$inboundSchema.optional(),
+    avatar_url: z.string().optional(),
+    category: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_private: z.boolean().optional(),
+    is_verified: z.boolean().optional(),
+    location: z.string().optional(),
+    metadata: z.array(SocialMetadata$inboundSchema).optional(),
+    metrics: PropertySocialProfileMetrics$inboundSchema.optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    phone: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    username: z.string().optional(),
+    website_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "avatar_url": "avatarUrl",
+      "created_at": "createdAt",
+      "is_private": "isPrivate",
+      "is_verified": "isVerified",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+      "website_url": "websiteUrl",
+    });
+  })
+);
 
 export function socialProfileFromJSON(
   jsonString: string,

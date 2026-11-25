@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetCommerceReturnQueryParamFields = {
@@ -48,7 +49,9 @@ export type GetCommerceReturnRequest = {
 /** @internal */
 export const GetCommerceReturnQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetCommerceReturnQueryParamFields
-> = z.nativeEnum(GetCommerceReturnQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetCommerceReturnQueryParamFields)
+);
 
 /** @internal */
 export type GetCommerceReturnRequest$Outbound = {
@@ -63,16 +66,19 @@ export const GetCommerceReturnRequest$outboundSchema: z.ZodType<
   GetCommerceReturnRequest$Outbound,
   z.ZodTypeDef,
   GetCommerceReturnRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetCommerceReturnQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetCommerceReturnQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getCommerceReturnRequestToJSON(
   getCommerceReturnRequest: GetCommerceReturnRequest,

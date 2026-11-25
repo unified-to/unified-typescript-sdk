@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -95,28 +95,30 @@ export const PropertyDatastoreFilterCondition$inboundSchema: z.ZodType<
   PropertyDatastoreFilterCondition,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  contains: PropertyDatastoreFilterConditionContains$inboundSchema.optional(),
-  eq: PropertyDatastoreFilterConditionEq$inboundSchema.optional(),
-  gt: PropertyDatastoreFilterConditionGt$inboundSchema.optional(),
-  gte: PropertyDatastoreFilterConditionGte$inboundSchema.optional(),
-  ilike: PropertyDatastoreFilterConditionIlike$inboundSchema.optional(),
-  in: z.array(DatastoreFieldValue$inboundSchema).optional(),
-  is_not_null: z.boolean().optional(),
-  is_null: z.boolean().optional(),
-  like: PropertyDatastoreFilterConditionLike$inboundSchema.optional(),
-  lt: PropertyDatastoreFilterConditionLt$inboundSchema.optional(),
-  lte: PropertyDatastoreFilterConditionLte$inboundSchema.optional(),
-  neq: PropertyDatastoreFilterConditionNeq$inboundSchema.optional(),
-  not_contains: PropertyDatastoreFilterConditionNotContains$inboundSchema
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_not_null": "isNotNull",
-    "is_null": "isNull",
-    "not_contains": "notContains",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    contains: PropertyDatastoreFilterConditionContains$inboundSchema.optional(),
+    eq: PropertyDatastoreFilterConditionEq$inboundSchema.optional(),
+    gt: PropertyDatastoreFilterConditionGt$inboundSchema.optional(),
+    gte: PropertyDatastoreFilterConditionGte$inboundSchema.optional(),
+    ilike: PropertyDatastoreFilterConditionIlike$inboundSchema.optional(),
+    in: z.array(DatastoreFieldValue$inboundSchema).optional(),
+    is_not_null: z.boolean().optional(),
+    is_null: z.boolean().optional(),
+    like: PropertyDatastoreFilterConditionLike$inboundSchema.optional(),
+    lt: PropertyDatastoreFilterConditionLt$inboundSchema.optional(),
+    lte: PropertyDatastoreFilterConditionLte$inboundSchema.optional(),
+    neq: PropertyDatastoreFilterConditionNeq$inboundSchema.optional(),
+    not_contains: PropertyDatastoreFilterConditionNotContains$inboundSchema
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_not_null": "isNotNull",
+      "is_null": "isNull",
+      "not_contains": "notContains",
+    });
+  })
+);
 /** @internal */
 export type PropertyDatastoreFilterCondition$Outbound = {
   contains?: PropertyDatastoreFilterConditionContains$Outbound | undefined;
@@ -141,28 +143,31 @@ export const PropertyDatastoreFilterCondition$outboundSchema: z.ZodType<
   PropertyDatastoreFilterCondition$Outbound,
   z.ZodTypeDef,
   PropertyDatastoreFilterCondition
-> = z.object({
-  contains: PropertyDatastoreFilterConditionContains$outboundSchema.optional(),
-  eq: PropertyDatastoreFilterConditionEq$outboundSchema.optional(),
-  gt: PropertyDatastoreFilterConditionGt$outboundSchema.optional(),
-  gte: PropertyDatastoreFilterConditionGte$outboundSchema.optional(),
-  ilike: PropertyDatastoreFilterConditionIlike$outboundSchema.optional(),
-  in: z.array(DatastoreFieldValue$outboundSchema).optional(),
-  isNotNull: z.boolean().optional(),
-  isNull: z.boolean().optional(),
-  like: PropertyDatastoreFilterConditionLike$outboundSchema.optional(),
-  lt: PropertyDatastoreFilterConditionLt$outboundSchema.optional(),
-  lte: PropertyDatastoreFilterConditionLte$outboundSchema.optional(),
-  neq: PropertyDatastoreFilterConditionNeq$outboundSchema.optional(),
-  notContains: PropertyDatastoreFilterConditionNotContains$outboundSchema
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isNotNull: "is_not_null",
-    isNull: "is_null",
-    notContains: "not_contains",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    contains: PropertyDatastoreFilterConditionContains$outboundSchema
+      .optional(),
+    eq: PropertyDatastoreFilterConditionEq$outboundSchema.optional(),
+    gt: PropertyDatastoreFilterConditionGt$outboundSchema.optional(),
+    gte: PropertyDatastoreFilterConditionGte$outboundSchema.optional(),
+    ilike: PropertyDatastoreFilterConditionIlike$outboundSchema.optional(),
+    in: z.array(DatastoreFieldValue$outboundSchema).optional(),
+    isNotNull: z.boolean().optional(),
+    isNull: z.boolean().optional(),
+    like: PropertyDatastoreFilterConditionLike$outboundSchema.optional(),
+    lt: PropertyDatastoreFilterConditionLt$outboundSchema.optional(),
+    lte: PropertyDatastoreFilterConditionLte$outboundSchema.optional(),
+    neq: PropertyDatastoreFilterConditionNeq$outboundSchema.optional(),
+    notContains: PropertyDatastoreFilterConditionNotContains$outboundSchema
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isNotNull: "is_not_null",
+      isNull: "is_null",
+      notContains: "not_contains",
+    });
+  })
+);
 
 export function propertyDatastoreFilterConditionToJSON(
   propertyDatastoreFilterCondition: PropertyDatastoreFilterCondition,

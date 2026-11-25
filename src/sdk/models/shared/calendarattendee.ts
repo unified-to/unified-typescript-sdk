@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -34,32 +34,38 @@ export const CalendarAttendeeStatus$inboundSchema: z.ZodType<
   CalendarAttendeeStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarAttendeeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarAttendeeStatus)
+);
 /** @internal */
 export const CalendarAttendeeStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CalendarAttendeeStatus
-> = openEnums.outboundSchema(CalendarAttendeeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CalendarAttendeeStatus)
+);
 
 /** @internal */
 export const CalendarAttendee$inboundSchema: z.ZodType<
   CalendarAttendee,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string().optional(),
-  is_cohost: z.boolean().optional(),
-  name: z.string().optional(),
-  required: z.boolean().optional(),
-  status: CalendarAttendeeStatus$inboundSchema.optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_cohost": "isCohost",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    is_cohost: z.boolean().optional(),
+    name: z.string().optional(),
+    required: z.boolean().optional(),
+    status: CalendarAttendeeStatus$inboundSchema.optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_cohost": "isCohost",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type CalendarAttendee$Outbound = {
   email?: string | undefined;
@@ -75,19 +81,21 @@ export const CalendarAttendee$outboundSchema: z.ZodType<
   CalendarAttendee$Outbound,
   z.ZodTypeDef,
   CalendarAttendee
-> = z.object({
-  email: z.string().optional(),
-  isCohost: z.boolean().optional(),
-  name: z.string().optional(),
-  required: z.boolean().optional(),
-  status: CalendarAttendeeStatus$outboundSchema.optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isCohost: "is_cohost",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    isCohost: z.boolean().optional(),
+    name: z.string().optional(),
+    required: z.boolean().optional(),
+    status: CalendarAttendeeStatus$outboundSchema.optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isCohost: "is_cohost",
+      userId: "user_id",
+    });
+  })
+);
 
 export function calendarAttendeeToJSON(
   calendarAttendee: CalendarAttendee,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -138,47 +138,53 @@ export const HealthcarePractitionerGender$inboundSchema: z.ZodType<
   HealthcarePractitionerGender,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcarePractitionerGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcarePractitionerGender)
+);
 
 /** @internal */
 export const HealthcarePractitioner$inboundSchema: z.ZodType<
   HealthcarePractitioner,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyHealthcarePractitionerAddress$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  emails: z.array(HealthcareEmail$inboundSchema).optional(),
-  first_name: z.string().optional(),
-  gender: HealthcarePractitionerGender$inboundSchema.optional(),
-  id: z.string().optional(),
-  identifiers: z.array(HealthcareIdentifier$inboundSchema).optional(),
-  image_url: z.string().optional(),
-  is_active: z.boolean().optional(),
-  languages: z.array(z.string()).optional(),
-  last_name: z.string().optional(),
-  location_ids: z.array(z.string()).optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  qualifications: z.array(HealthcareCode$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  specialties: z.array(HealthcareCode$inboundSchema).optional(),
-  telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "first_name": "firstName",
-    "image_url": "imageUrl",
-    "is_active": "isActive",
-    "last_name": "lastName",
-    "location_ids": "locationIds",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHealthcarePractitionerAddress$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    emails: z.array(HealthcareEmail$inboundSchema).optional(),
+    first_name: z.string().optional(),
+    gender: HealthcarePractitionerGender$inboundSchema.optional(),
+    id: z.string().optional(),
+    identifiers: z.array(HealthcareIdentifier$inboundSchema).optional(),
+    image_url: z.string().optional(),
+    is_active: z.boolean().optional(),
+    languages: z.array(z.string()).optional(),
+    last_name: z.string().optional(),
+    location_ids: z.array(z.string()).optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    qualifications: z.array(HealthcareCode$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    specialties: z.array(HealthcareCode$inboundSchema).optional(),
+    telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "first_name": "firstName",
+      "image_url": "imageUrl",
+      "is_active": "isActive",
+      "last_name": "lastName",
+      "location_ids": "locationIds",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcarePractitionerFromJSON(
   jsonString: string,

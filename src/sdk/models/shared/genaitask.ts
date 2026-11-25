@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -112,71 +112,78 @@ export const GenaiTaskStatus$inboundSchema: z.ZodType<
   GenaiTaskStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GenaiTaskStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(GenaiTaskStatus));
 /** @internal */
 export const GenaiTaskStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   GenaiTaskStatus
-> = openEnums.outboundSchema(GenaiTaskStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(GenaiTaskStatus)
+);
 
 /** @internal */
 export const GenaiTask$inboundSchema: z.ZodType<
   GenaiTask,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  agent_id: z.string().optional(),
-  completed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  error: z.string().optional(),
-  files_changed: z.number().optional(),
-  id: z.string().optional(),
-  instructions: z.string().optional(),
-  lines_added: z.number().optional(),
-  lines_deleted: z.number().optional(),
-  messages: z.array(GenaiContent$inboundSchema).optional(),
-  model_id: z.string().optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  pullrequest_url: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  repo_url: z.string().optional(),
-  source_branch_identifier: z.string().optional(),
-  started_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: GenaiTaskStatus$inboundSchema.optional(),
-  summary: z.string().optional(),
-  target_branch_identifier: z.string().optional(),
-  tokens_used: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "agent_id": "agentId",
-    "completed_at": "completedAt",
-    "created_at": "createdAt",
-    "files_changed": "filesChanged",
-    "lines_added": "linesAdded",
-    "lines_deleted": "linesDeleted",
-    "model_id": "modelId",
-    "organization_id": "organizationId",
-    "pullrequest_url": "pullrequestUrl",
-    "repo_url": "repoUrl",
-    "source_branch_identifier": "sourceBranchIdentifier",
-    "started_at": "startedAt",
-    "target_branch_identifier": "targetBranchIdentifier",
-    "tokens_used": "tokensUsed",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    agent_id: z.string().optional(),
+    completed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    error: z.string().optional(),
+    files_changed: z.number().optional(),
+    id: z.string().optional(),
+    instructions: z.string().optional(),
+    lines_added: z.number().optional(),
+    lines_deleted: z.number().optional(),
+    messages: z.array(GenaiContent$inboundSchema).optional(),
+    model_id: z.string().optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    pullrequest_url: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    repo_url: z.string().optional(),
+    source_branch_identifier: z.string().optional(),
+    started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: GenaiTaskStatus$inboundSchema.optional(),
+    summary: z.string().optional(),
+    target_branch_identifier: z.string().optional(),
+    tokens_used: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "agent_id": "agentId",
+      "completed_at": "completedAt",
+      "created_at": "createdAt",
+      "files_changed": "filesChanged",
+      "lines_added": "linesAdded",
+      "lines_deleted": "linesDeleted",
+      "model_id": "modelId",
+      "organization_id": "organizationId",
+      "pullrequest_url": "pullrequestUrl",
+      "repo_url": "repoUrl",
+      "source_branch_identifier": "sourceBranchIdentifier",
+      "started_at": "startedAt",
+      "target_branch_identifier": "targetBranchIdentifier",
+      "tokens_used": "tokensUsed",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type GenaiTask$Outbound = {
   agent_id?: string | undefined;
@@ -211,53 +218,55 @@ export const GenaiTask$outboundSchema: z.ZodType<
   GenaiTask$Outbound,
   z.ZodTypeDef,
   GenaiTask
-> = z.object({
-  agentId: z.string().optional(),
-  completedAt: z.date().transform(v => v.toISOString()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  error: z.string().optional(),
-  filesChanged: z.number().optional(),
-  id: z.string().optional(),
-  instructions: z.string().optional(),
-  linesAdded: z.number().optional(),
-  linesDeleted: z.number().optional(),
-  messages: z.array(GenaiContent$outboundSchema).optional(),
-  modelId: z.string().optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  pullrequestUrl: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  repoUrl: z.string().optional(),
-  sourceBranchIdentifier: z.string().optional(),
-  startedAt: z.date().transform(v => v.toISOString()).optional(),
-  status: GenaiTaskStatus$outboundSchema.optional(),
-  summary: z.string().optional(),
-  targetBranchIdentifier: z.string().optional(),
-  tokensUsed: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    agentId: "agent_id",
-    completedAt: "completed_at",
-    createdAt: "created_at",
-    filesChanged: "files_changed",
-    linesAdded: "lines_added",
-    linesDeleted: "lines_deleted",
-    modelId: "model_id",
-    organizationId: "organization_id",
-    pullrequestUrl: "pullrequest_url",
-    repoUrl: "repo_url",
-    sourceBranchIdentifier: "source_branch_identifier",
-    startedAt: "started_at",
-    targetBranchIdentifier: "target_branch_identifier",
-    tokensUsed: "tokens_used",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    agentId: z.string().optional(),
+    completedAt: z.date().transform(v => v.toISOString()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    error: z.string().optional(),
+    filesChanged: z.number().optional(),
+    id: z.string().optional(),
+    instructions: z.string().optional(),
+    linesAdded: z.number().optional(),
+    linesDeleted: z.number().optional(),
+    messages: z.array(GenaiContent$outboundSchema).optional(),
+    modelId: z.string().optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    pullrequestUrl: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    repoUrl: z.string().optional(),
+    sourceBranchIdentifier: z.string().optional(),
+    startedAt: z.date().transform(v => v.toISOString()).optional(),
+    status: GenaiTaskStatus$outboundSchema.optional(),
+    summary: z.string().optional(),
+    targetBranchIdentifier: z.string().optional(),
+    tokensUsed: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      agentId: "agent_id",
+      completedAt: "completed_at",
+      createdAt: "created_at",
+      filesChanged: "files_changed",
+      linesAdded: "lines_added",
+      linesDeleted: "lines_deleted",
+      modelId: "model_id",
+      organizationId: "organization_id",
+      pullrequestUrl: "pullrequest_url",
+      repoUrl: "repo_url",
+      sourceBranchIdentifier: "source_branch_identifier",
+      startedAt: "started_at",
+      targetBranchIdentifier: "target_branch_identifier",
+      tokensUsed: "tokens_used",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function genaiTaskToJSON(genaiTask: GenaiTask): string {
   return JSON.stringify(GenaiTask$outboundSchema.parse(genaiTask));

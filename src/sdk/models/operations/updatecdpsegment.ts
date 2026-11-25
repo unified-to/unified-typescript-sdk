@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -50,7 +51,9 @@ export type UpdateCdpSegmentRequest = {
 /** @internal */
 export const UpdateCdpSegmentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdateCdpSegmentQueryParamFields
-> = z.nativeEnum(UpdateCdpSegmentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdateCdpSegmentQueryParamFields)
+);
 
 /** @internal */
 export type UpdateCdpSegmentRequest$Outbound = {
@@ -66,18 +69,20 @@ export const UpdateCdpSegmentRequest$outboundSchema: z.ZodType<
   UpdateCdpSegmentRequest$Outbound,
   z.ZodTypeDef,
   UpdateCdpSegmentRequest
-> = z.object({
-  cdpSegment: shared.CdpSegment$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateCdpSegmentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cdpSegment: "CdpSegment",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cdpSegment: shared.CdpSegment$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateCdpSegmentQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      cdpSegment: "CdpSegment",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateCdpSegmentRequestToJSON(
   updateCdpSegmentRequest: UpdateCdpSegmentRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -44,9 +45,10 @@ export type CreateCdpActivationRequest = {
 
 /** @internal */
 export const CreateCdpActivationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateCdpActivationQueryParamFields> = z.nativeEnum(
-    CreateCdpActivationQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateCdpActivationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateCdpActivationQueryParamFields)
+    );
 
 /** @internal */
 export type CreateCdpActivationRequest$Outbound = {
@@ -61,18 +63,20 @@ export const CreateCdpActivationRequest$outboundSchema: z.ZodType<
   CreateCdpActivationRequest$Outbound,
   z.ZodTypeDef,
   CreateCdpActivationRequest
-> = z.object({
-  cdpActivation: shared.CdpActivation$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateCdpActivationQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cdpActivation: "CdpActivation",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cdpActivation: shared.CdpActivation$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateCdpActivationQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      cdpActivation: "CdpActivation",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createCdpActivationRequestToJSON(
   createCdpActivationRequest: CreateCdpActivationRequest,

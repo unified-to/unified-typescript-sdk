@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -59,8 +60,10 @@ export type PatchAccountingExpensereportRequest = {
 
 /** @internal */
 export const PatchAccountingExpensereportQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchAccountingExpensereportQueryParamFields> = z
-    .nativeEnum(PatchAccountingExpensereportQueryParamFields);
+  z.ZodNativeEnum<typeof PatchAccountingExpensereportQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchAccountingExpensereportQueryParamFields)
+    );
 
 /** @internal */
 export type PatchAccountingExpensereportRequest$Outbound = {
@@ -76,19 +79,21 @@ export const PatchAccountingExpensereportRequest$outboundSchema: z.ZodType<
   PatchAccountingExpensereportRequest$Outbound,
   z.ZodTypeDef,
   PatchAccountingExpensereportRequest
-> = z.object({
-  accountingExpensereport: shared.AccountingExpensereport$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAccountingExpensereportQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingExpensereport: "AccountingExpensereport",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingExpensereport: shared.AccountingExpensereport$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchAccountingExpensereportQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingExpensereport: "AccountingExpensereport",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAccountingExpensereportRequestToJSON(
   patchAccountingExpensereportRequest: PatchAccountingExpensereportRequest,

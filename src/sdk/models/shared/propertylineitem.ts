@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -54,30 +54,36 @@ export const PropertyLineitemType$inboundSchema: z.ZodType<
   PropertyLineitemType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyLineitemType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyLineitemType)
+);
 /** @internal */
 export const PropertyLineitemType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyLineitemType
-> = openEnums.outboundSchema(PropertyLineitemType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyLineitemType)
+);
 
 /** @internal */
 export const PropertyLineitem$inboundSchema: z.ZodType<
   PropertyLineitem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  description: z.string().optional(),
-  is_mandatory: z.boolean().optional(),
-  name: z.string().optional(),
-  type: PropertyLineitemType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_mandatory": "isMandatory",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    description: z.string().optional(),
+    is_mandatory: z.boolean().optional(),
+    name: z.string().optional(),
+    type: PropertyLineitemType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_mandatory": "isMandatory",
+    });
+  })
+);
 /** @internal */
 export type PropertyLineitem$Outbound = {
   amount?: number | undefined;
@@ -92,17 +98,19 @@ export const PropertyLineitem$outboundSchema: z.ZodType<
   PropertyLineitem$Outbound,
   z.ZodTypeDef,
   PropertyLineitem
-> = z.object({
-  amount: z.number().optional(),
-  description: z.string().optional(),
-  isMandatory: z.boolean().optional(),
-  name: z.string().optional(),
-  type: PropertyLineitemType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isMandatory: "is_mandatory",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    description: z.string().optional(),
+    isMandatory: z.boolean().optional(),
+    name: z.string().optional(),
+    type: PropertyLineitemType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isMandatory: "is_mandatory",
+    });
+  })
+);
 
 export function propertyLineitemToJSON(
   propertyLineitem: PropertyLineitem,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -75,36 +75,40 @@ export const SocialComment$inboundSchema: z.ZodType<
   SocialComment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  author_avatar_url: z.string().optional(),
-  author_identifier: z.string().optional(),
-  author_name: z.string().optional(),
-  author_username: z.string().optional(),
-  content: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_hidden: z.boolean().optional(),
-  metrics: PropertySocialCommentMetrics$inboundSchema.optional(),
-  parent_id: z.string().optional(),
-  post_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "author_avatar_url": "authorAvatarUrl",
-    "author_identifier": "authorIdentifier",
-    "author_name": "authorName",
-    "author_username": "authorUsername",
-    "created_at": "createdAt",
-    "is_hidden": "isHidden",
-    "parent_id": "parentId",
-    "post_id": "postId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    author_avatar_url: z.string().optional(),
+    author_identifier: z.string().optional(),
+    author_name: z.string().optional(),
+    author_username: z.string().optional(),
+    content: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    is_hidden: z.boolean().optional(),
+    metrics: PropertySocialCommentMetrics$inboundSchema.optional(),
+    parent_id: z.string().optional(),
+    post_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "author_avatar_url": "authorAvatarUrl",
+      "author_identifier": "authorIdentifier",
+      "author_name": "authorName",
+      "author_username": "authorUsername",
+      "created_at": "createdAt",
+      "is_hidden": "isHidden",
+      "parent_id": "parentId",
+      "post_id": "postId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type SocialComment$Outbound = {
   author_avatar_url?: string | undefined;
@@ -128,34 +132,36 @@ export const SocialComment$outboundSchema: z.ZodType<
   SocialComment$Outbound,
   z.ZodTypeDef,
   SocialComment
-> = z.object({
-  authorAvatarUrl: z.string().optional(),
-  authorIdentifier: z.string().optional(),
-  authorName: z.string().optional(),
-  authorUsername: z.string().optional(),
-  content: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isHidden: z.boolean().optional(),
-  metrics: PropertySocialCommentMetrics$outboundSchema.optional(),
-  parentId: z.string().optional(),
-  postId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    authorAvatarUrl: "author_avatar_url",
-    authorIdentifier: "author_identifier",
-    authorName: "author_name",
-    authorUsername: "author_username",
-    createdAt: "created_at",
-    isHidden: "is_hidden",
-    parentId: "parent_id",
-    postId: "post_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authorAvatarUrl: z.string().optional(),
+    authorIdentifier: z.string().optional(),
+    authorName: z.string().optional(),
+    authorUsername: z.string().optional(),
+    content: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isHidden: z.boolean().optional(),
+    metrics: PropertySocialCommentMetrics$outboundSchema.optional(),
+    parentId: z.string().optional(),
+    postId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      authorAvatarUrl: "author_avatar_url",
+      authorIdentifier: "author_identifier",
+      authorName: "author_name",
+      authorUsername: "author_username",
+      createdAt: "created_at",
+      isHidden: "is_hidden",
+      parentId: "parent_id",
+      postId: "post_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function socialCommentToJSON(socialComment: SocialComment): string {
   return JSON.stringify(SocialComment$outboundSchema.parse(socialComment));

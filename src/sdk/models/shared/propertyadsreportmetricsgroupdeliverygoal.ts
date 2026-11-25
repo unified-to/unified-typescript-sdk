@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -45,7 +45,9 @@ export const PropertyAdsReportMetricsGroupDeliveryGoalPeriod$inboundSchema:
     PropertyAdsReportMetricsGroupDeliveryGoalPeriod,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupDeliveryGoalPeriod);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsGroupDeliveryGoalPeriod)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupDeliveryGoalUnit$inboundSchema:
@@ -53,19 +55,24 @@ export const PropertyAdsReportMetricsGroupDeliveryGoalUnit$inboundSchema:
     PropertyAdsReportMetricsGroupDeliveryGoalUnit,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupDeliveryGoalUnit);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsGroupDeliveryGoalUnit)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupDeliveryGoal$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupDeliveryGoal,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  period: PropertyAdsReportMetricsGroupDeliveryGoalPeriod$inboundSchema
-    .optional(),
-  quantity: z.number().optional(),
-  unit: PropertyAdsReportMetricsGroupDeliveryGoalUnit$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    period: PropertyAdsReportMetricsGroupDeliveryGoalPeriod$inboundSchema
+      .optional(),
+    quantity: z.number().optional(),
+    unit: PropertyAdsReportMetricsGroupDeliveryGoalUnit$inboundSchema
+      .optional(),
+  })
+);
 
 export function propertyAdsReportMetricsGroupDeliveryGoalFromJSON(
   jsonString: string,

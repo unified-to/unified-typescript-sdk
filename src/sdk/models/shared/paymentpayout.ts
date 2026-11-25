@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -69,40 +69,45 @@ export const PaymentPayoutStatus$inboundSchema: z.ZodType<
   PaymentPayoutStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentPayoutStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PaymentPayoutStatus)
+);
 
 /** @internal */
 export const PaymentPayout$inboundSchema: z.ZodType<
   PaymentPayout,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  arrival_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  created_at: z.string().optional(),
-  currency: z.string().optional(),
-  fee_amount: z.number().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(PaymentPayoutLineitem$inboundSchema).optional(),
-  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
-  net_amount: z.number().optional(),
-  notes: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: PaymentPayoutStatus$inboundSchema.optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "arrival_at": "arrivalAt",
-    "created_at": "createdAt",
-    "fee_amount": "feeAmount",
-    "net_amount": "netAmount",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    arrival_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    created_at: z.string().optional(),
+    currency: z.string().optional(),
+    fee_amount: z.number().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(PaymentPayoutLineitem$inboundSchema).optional(),
+    metadata: z.array(PaymentMetadata$inboundSchema).optional(),
+    net_amount: z.number().optional(),
+    notes: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: PaymentPayoutStatus$inboundSchema.optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "arrival_at": "arrivalAt",
+      "created_at": "createdAt",
+      "fee_amount": "feeAmount",
+      "net_amount": "netAmount",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function paymentPayoutFromJSON(
   jsonString: string,

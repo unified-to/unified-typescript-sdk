@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -135,66 +135,79 @@ export const HealthcareDocumentStatus$inboundSchema: z.ZodType<
   HealthcareDocumentStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareDocumentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareDocumentStatus)
+);
 /** @internal */
 export const HealthcareDocumentStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareDocumentStatus
-> = openEnums.outboundSchema(HealthcareDocumentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareDocumentStatus)
+);
 
 /** @internal */
 export const HealthcareDocumentType$inboundSchema: z.ZodType<
   HealthcareDocumentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareDocumentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareDocumentType)
+);
 /** @internal */
 export const HealthcareDocumentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareDocumentType
-> = openEnums.outboundSchema(HealthcareDocumentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareDocumentType)
+);
 
 /** @internal */
 export const HealthcareDocument$inboundSchema: z.ZodType<
   HealthcareDocument,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  authored_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  document_data: z.string().optional(),
-  document_url: z.string().optional(),
-  encounter_id: z.string().optional(),
-  filename: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  mime_type: z.string().optional(),
-  name: z.string().optional(),
-  patient_id: z.string().optional(),
-  practitioner_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: HealthcareDocumentStatus$inboundSchema.optional(),
-  type: HealthcareDocumentType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "authored_at": "authoredAt",
-    "created_at": "createdAt",
-    "document_data": "documentData",
-    "document_url": "documentUrl",
-    "encounter_id": "encounterId",
-    "mime_type": "mimeType",
-    "patient_id": "patientId",
-    "practitioner_id": "practitionerId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authored_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    document_data: z.string().optional(),
+    document_url: z.string().optional(),
+    encounter_id: z.string().optional(),
+    filename: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    mime_type: z.string().optional(),
+    name: z.string().optional(),
+    patient_id: z.string().optional(),
+    practitioner_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: HealthcareDocumentStatus$inboundSchema.optional(),
+    type: HealthcareDocumentType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "authored_at": "authoredAt",
+      "created_at": "createdAt",
+      "document_data": "documentData",
+      "document_url": "documentUrl",
+      "encounter_id": "encounterId",
+      "mime_type": "mimeType",
+      "patient_id": "patientId",
+      "practitioner_id": "practitionerId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HealthcareDocument$Outbound = {
   authored_at?: string | undefined;
@@ -221,37 +234,39 @@ export const HealthcareDocument$outboundSchema: z.ZodType<
   HealthcareDocument$Outbound,
   z.ZodTypeDef,
   HealthcareDocument
-> = z.object({
-  authoredAt: z.date().transform(v => v.toISOString()).optional(),
-  codes: z.array(HealthcareCode$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  documentData: z.string().optional(),
-  documentUrl: z.string().optional(),
-  encounterId: z.string().optional(),
-  filename: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
-  mimeType: z.string().optional(),
-  name: z.string().optional(),
-  patientId: z.string().optional(),
-  practitionerId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: HealthcareDocumentStatus$outboundSchema.optional(),
-  type: HealthcareDocumentType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    authoredAt: "authored_at",
-    createdAt: "created_at",
-    documentData: "document_data",
-    documentUrl: "document_url",
-    encounterId: "encounter_id",
-    mimeType: "mime_type",
-    patientId: "patient_id",
-    practitionerId: "practitioner_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authoredAt: z.date().transform(v => v.toISOString()).optional(),
+    codes: z.array(HealthcareCode$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    documentData: z.string().optional(),
+    documentUrl: z.string().optional(),
+    encounterId: z.string().optional(),
+    filename: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
+    mimeType: z.string().optional(),
+    name: z.string().optional(),
+    patientId: z.string().optional(),
+    practitionerId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: HealthcareDocumentStatus$outboundSchema.optional(),
+    type: HealthcareDocumentType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      authoredAt: "authored_at",
+      createdAt: "created_at",
+      documentData: "document_data",
+      documentUrl: "document_url",
+      encounterId: "encounter_id",
+      mimeType: "mime_type",
+      patientId: "patient_id",
+      practitionerId: "practitioner_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function healthcareDocumentToJSON(
   healthcareDocument: HealthcareDocument,

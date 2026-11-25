@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -45,9 +46,10 @@ export type PatchMessagingEventRequest = {
 
 /** @internal */
 export const PatchMessagingEventQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchMessagingEventQueryParamFields> = z.nativeEnum(
-    PatchMessagingEventQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchMessagingEventQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchMessagingEventQueryParamFields)
+    );
 
 /** @internal */
 export type PatchMessagingEventRequest$Outbound = {
@@ -63,19 +65,21 @@ export const PatchMessagingEventRequest$outboundSchema: z.ZodType<
   PatchMessagingEventRequest$Outbound,
   z.ZodTypeDef,
   PatchMessagingEventRequest
-> = z.object({
-  messagingEvent: shared.MessagingEvent$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchMessagingEventQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    messagingEvent: "MessagingEvent",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    messagingEvent: shared.MessagingEvent$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchMessagingEventQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      messagingEvent: "MessagingEvent",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchMessagingEventRequestToJSON(
   patchMessagingEventRequest: PatchMessagingEventRequest,

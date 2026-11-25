@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,8 +53,10 @@ export type CreateAccountingJournalRequest = {
 
 /** @internal */
 export const CreateAccountingJournalQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingJournalQueryParamFields> = z
-    .nativeEnum(CreateAccountingJournalQueryParamFields);
+  z.ZodNativeEnum<typeof CreateAccountingJournalQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingJournalQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingJournalRequest$Outbound = {
@@ -68,18 +71,20 @@ export const CreateAccountingJournalRequest$outboundSchema: z.ZodType<
   CreateAccountingJournalRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingJournalRequest
-> = z.object({
-  accountingJournal: shared.AccountingJournal$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAccountingJournalQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingJournal: "AccountingJournal",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingJournal: shared.AccountingJournal$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAccountingJournalQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingJournal: "AccountingJournal",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingJournalRequestToJSON(
   createAccountingJournalRequest: CreateAccountingJournalRequest,

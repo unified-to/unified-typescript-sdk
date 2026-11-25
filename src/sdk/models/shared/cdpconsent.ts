@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -43,29 +43,36 @@ export const CdpConsentStatus$inboundSchema: z.ZodType<
   CdpConsentStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CdpConsentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CdpConsentStatus)
+);
 /** @internal */
 export const CdpConsentStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CdpConsentStatus
-> = openEnums.outboundSchema(CdpConsentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CdpConsentStatus)
+);
 
 /** @internal */
 export const CdpConsent$inboundSchema: z.ZodType<
   CdpConsent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  purpose: z.string().optional(),
-  status: CdpConsentStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    purpose: z.string().optional(),
+    status: CdpConsentStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CdpConsent$Outbound = {
   purpose?: string | undefined;
@@ -78,15 +85,17 @@ export const CdpConsent$outboundSchema: z.ZodType<
   CdpConsent$Outbound,
   z.ZodTypeDef,
   CdpConsent
-> = z.object({
-  purpose: z.string().optional(),
-  status: CdpConsentStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    purpose: z.string().optional(),
+    status: CdpConsentStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function cdpConsentToJSON(cdpConsent: CdpConsent): string {
   return JSON.stringify(CdpConsent$outboundSchema.parse(cdpConsent));

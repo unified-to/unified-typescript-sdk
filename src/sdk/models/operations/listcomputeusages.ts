@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListComputeUsagesQueryParamFields = {
@@ -67,7 +68,9 @@ export type ListComputeUsagesRequest = {
 /** @internal */
 export const ListComputeUsagesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListComputeUsagesQueryParamFields
-> = z.nativeEnum(ListComputeUsagesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListComputeUsagesQueryParamFields)
+);
 
 /** @internal */
 export type ListComputeUsagesRequest$Outbound = {
@@ -90,28 +93,31 @@ export const ListComputeUsagesRequest$outboundSchema: z.ZodType<
   ListComputeUsagesRequest$Outbound,
   z.ZodTypeDef,
   ListComputeUsagesRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListComputeUsagesQueryParamFields$outboundSchema).optional(),
-  instanceId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    instanceId: "instance_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListComputeUsagesQueryParamFields$outboundSchema)
+      .optional(),
+    instanceId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      instanceId: "instance_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listComputeUsagesRequestToJSON(
   listComputeUsagesRequest: ListComputeUsagesRequest,

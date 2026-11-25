@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -21,10 +22,14 @@ export const PropertyComputeEnvvarEnvironments$inboundSchema: z.ZodType<
   PropertyComputeEnvvarEnvironments,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyComputeEnvvarEnvironments);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyComputeEnvvarEnvironments)
+);
 /** @internal */
 export const PropertyComputeEnvvarEnvironments$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyComputeEnvvarEnvironments
-> = openEnums.outboundSchema(PropertyComputeEnvvarEnvironments);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyComputeEnvvarEnvironments)
+);

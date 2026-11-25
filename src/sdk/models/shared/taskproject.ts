@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -49,32 +49,36 @@ export const TaskProject$inboundSchema: z.ZodType<
   TaskProject,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  group_ids: z.array(z.string()).optional(),
-  has_children: z.boolean().optional(),
-  has_tasks: z.boolean().optional(),
-  id: z.string().optional(),
-  metadata: z.array(TaskMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "group_ids": "groupIds",
-    "has_children": "hasChildren",
-    "has_tasks": "hasTasks",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    group_ids: z.array(z.string()).optional(),
+    has_children: z.boolean().optional(),
+    has_tasks: z.boolean().optional(),
+    id: z.string().optional(),
+    metadata: z.array(TaskMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "group_ids": "groupIds",
+      "has_children": "hasChildren",
+      "has_tasks": "hasTasks",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+    });
+  })
+);
 /** @internal */
 export type TaskProject$Outbound = {
   created_at?: string | undefined;
@@ -96,30 +100,32 @@ export const TaskProject$outboundSchema: z.ZodType<
   TaskProject$Outbound,
   z.ZodTypeDef,
   TaskProject
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  groupIds: z.array(z.string()).optional(),
-  hasChildren: z.boolean().optional(),
-  hasTasks: z.boolean().optional(),
-  id: z.string().optional(),
-  metadata: z.array(TaskMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    groupIds: "group_ids",
-    hasChildren: "has_children",
-    hasTasks: "has_tasks",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-    userIds: "user_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    groupIds: z.array(z.string()).optional(),
+    hasChildren: z.boolean().optional(),
+    hasTasks: z.boolean().optional(),
+    id: z.string().optional(),
+    metadata: z.array(TaskMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIds: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      groupIds: "group_ids",
+      hasChildren: "has_children",
+      hasTasks: "has_tasks",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+      userIds: "user_ids",
+    });
+  })
+);
 
 export function taskProjectToJSON(taskProject: TaskProject): string {
   return JSON.stringify(TaskProject$outboundSchema.parse(taskProject));

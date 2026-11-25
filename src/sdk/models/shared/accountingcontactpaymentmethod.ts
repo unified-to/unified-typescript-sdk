@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -36,25 +36,31 @@ export const AccountingContactPaymentMethodType$inboundSchema: z.ZodType<
   AccountingContactPaymentMethodType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingContactPaymentMethodType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingContactPaymentMethodType)
+);
 /** @internal */
 export const AccountingContactPaymentMethodType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingContactPaymentMethodType
-> = openEnums.outboundSchema(AccountingContactPaymentMethodType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingContactPaymentMethodType)
+);
 
 /** @internal */
 export const AccountingContactPaymentMethod$inboundSchema: z.ZodType<
   AccountingContactPaymentMethod,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  default: z.boolean().optional(),
-  id: z.string().optional(),
-  name: z.string().optional(),
-  type: AccountingContactPaymentMethodType$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    default: z.boolean().optional(),
+    id: z.string().optional(),
+    name: z.string().optional(),
+    type: AccountingContactPaymentMethodType$inboundSchema,
+  })
+);
 /** @internal */
 export type AccountingContactPaymentMethod$Outbound = {
   default?: boolean | undefined;
@@ -68,12 +74,14 @@ export const AccountingContactPaymentMethod$outboundSchema: z.ZodType<
   AccountingContactPaymentMethod$Outbound,
   z.ZodTypeDef,
   AccountingContactPaymentMethod
-> = z.object({
-  default: z.boolean().optional(),
-  id: z.string().optional(),
-  name: z.string().optional(),
-  type: AccountingContactPaymentMethodType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    default: z.boolean().optional(),
+    id: z.string().optional(),
+    name: z.string().optional(),
+    type: AccountingContactPaymentMethodType$outboundSchema,
+  })
+);
 
 export function accountingContactPaymentMethodToJSON(
   accountingContactPaymentMethod: AccountingContactPaymentMethod,

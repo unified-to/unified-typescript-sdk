@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -126,52 +126,60 @@ export const AchievementStatus$inboundSchema: z.ZodType<
   AchievementStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AchievementStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AchievementStatus)
+);
 
 /** @internal */
 export const HealthcareGoalStatus$inboundSchema: z.ZodType<
   HealthcareGoalStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareGoalStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareGoalStatus)
+);
 
 /** @internal */
 export const HealthcareGoal$inboundSchema: z.ZodType<
   HealthcareGoal,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  achievement_status: AchievementStatus$inboundSchema.optional(),
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  condition_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  patient_id: z.string().optional(),
-  practitioner_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HealthcareGoalStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "achievement_status": "achievementStatus",
-    "condition_ids": "conditionIds",
-    "created_at": "createdAt",
-    "due_at": "dueAt",
-    "patient_id": "patientId",
-    "practitioner_id": "practitionerId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    achievement_status: AchievementStatus$inboundSchema.optional(),
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    condition_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    patient_id: z.string().optional(),
+    practitioner_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HealthcareGoalStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "achievement_status": "achievementStatus",
+      "condition_ids": "conditionIds",
+      "created_at": "createdAt",
+      "due_at": "dueAt",
+      "patient_id": "patientId",
+      "practitioner_id": "practitionerId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcareGoalFromJSON(
   jsonString: string,

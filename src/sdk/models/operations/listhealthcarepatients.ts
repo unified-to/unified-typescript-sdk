@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHealthcarePatientsQueryParamFields = {
@@ -64,9 +65,10 @@ export type ListHealthcarePatientsRequest = {
 
 /** @internal */
 export const ListHealthcarePatientsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListHealthcarePatientsQueryParamFields> = z.nativeEnum(
-    ListHealthcarePatientsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListHealthcarePatientsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListHealthcarePatientsQueryParamFields)
+    );
 
 /** @internal */
 export type ListHealthcarePatientsRequest$Outbound = {
@@ -86,23 +88,25 @@ export const ListHealthcarePatientsRequest$outboundSchema: z.ZodType<
   ListHealthcarePatientsRequest$Outbound,
   z.ZodTypeDef,
   ListHealthcarePatientsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListHealthcarePatientsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListHealthcarePatientsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHealthcarePatientsRequestToJSON(
   listHealthcarePatientsRequest: ListHealthcarePatientsRequest,

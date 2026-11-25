@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -43,8 +43,10 @@ export const PropertyAdsReportMetricsGroupTargetingOptimizationMode$inboundSchem
     PropertyAdsReportMetricsGroupTargetingOptimizationMode,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsGroupTargetingOptimizationMode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsReportMetricsGroupTargetingOptimizationMode,
+    )
   );
 
 /** @internal */
@@ -53,20 +55,22 @@ export const PropertyAdsReportMetricsGroupTargetingOptimization$inboundSchema:
     PropertyAdsReportMetricsGroupTargetingOptimization,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    advantage_audience: z.boolean().optional(),
-    advantage_placements: z.boolean().optional(),
-    mode: PropertyAdsReportMetricsGroupTargetingOptimizationMode$inboundSchema
-      .optional(),
-    targeting_optimization_expansion_all: z.boolean().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "advantage_audience": "advantageAudience",
-      "advantage_placements": "advantagePlacements",
-      "targeting_optimization_expansion_all":
-        "targetingOptimizationExpansionAll",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      advantage_audience: z.boolean().optional(),
+      advantage_placements: z.boolean().optional(),
+      mode: PropertyAdsReportMetricsGroupTargetingOptimizationMode$inboundSchema
+        .optional(),
+      targeting_optimization_expansion_all: z.boolean().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "advantage_audience": "advantageAudience",
+        "advantage_placements": "advantagePlacements",
+        "targeting_optimization_expansion_all":
+          "targetingOptimizationExpansionAll",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsGroupTargetingOptimizationFromJSON(
   jsonString: string,

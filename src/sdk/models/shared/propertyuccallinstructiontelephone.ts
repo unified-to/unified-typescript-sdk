@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -33,23 +33,29 @@ export const PropertyUcCallInstructionTelephoneType$inboundSchema: z.ZodType<
   PropertyUcCallInstructionTelephoneType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyUcCallInstructionTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyUcCallInstructionTelephoneType)
+);
 /** @internal */
 export const PropertyUcCallInstructionTelephoneType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyUcCallInstructionTelephoneType
-> = openEnums.outboundSchema(PropertyUcCallInstructionTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyUcCallInstructionTelephoneType)
+);
 
 /** @internal */
 export const PropertyUcCallInstructionTelephone$inboundSchema: z.ZodType<
   PropertyUcCallInstructionTelephone,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  telephone: z.string(),
-  type: PropertyUcCallInstructionTelephoneType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: PropertyUcCallInstructionTelephoneType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type PropertyUcCallInstructionTelephone$Outbound = {
   telephone: string;
@@ -61,10 +67,12 @@ export const PropertyUcCallInstructionTelephone$outboundSchema: z.ZodType<
   PropertyUcCallInstructionTelephone$Outbound,
   z.ZodTypeDef,
   PropertyUcCallInstructionTelephone
-> = z.object({
-  telephone: z.string(),
-  type: PropertyUcCallInstructionTelephoneType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: PropertyUcCallInstructionTelephoneType$outboundSchema.optional(),
+  })
+);
 
 export function propertyUcCallInstructionTelephoneToJSON(
   propertyUcCallInstructionTelephone: PropertyUcCallInstructionTelephone,

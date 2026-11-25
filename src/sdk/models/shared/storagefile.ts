@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -95,53 +95,59 @@ export const StorageFileType$inboundSchema: z.ZodType<
   StorageFileType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(StorageFileType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(StorageFileType));
 /** @internal */
 export const StorageFileType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   StorageFileType
-> = openEnums.outboundSchema(StorageFileType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(StorageFileType)
+);
 
 /** @internal */
 export const StorageFile$inboundSchema: z.ZodType<
   StorageFile,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  data: z.string().optional(),
-  description: z.string().optional(),
-  download_url: z.string().optional(),
-  hash: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(StorageMetadata$inboundSchema).optional(),
-  mime_type: z.string().optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  permissions: z.array(StoragePermission$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  references: z.array(StorageReference$inboundSchema).optional(),
-  size: z.number().optional(),
-  tags: z.array(z.string()).optional(),
-  type: StorageFileType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  version: z.string().optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "download_url": "downloadUrl",
-    "mime_type": "mimeType",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    data: z.string().optional(),
+    description: z.string().optional(),
+    download_url: z.string().optional(),
+    hash: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(StorageMetadata$inboundSchema).optional(),
+    mime_type: z.string().optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    permissions: z.array(StoragePermission$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    references: z.array(StorageReference$inboundSchema).optional(),
+    size: z.number().optional(),
+    tags: z.array(z.string()).optional(),
+    type: StorageFileType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    version: z.string().optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "download_url": "downloadUrl",
+      "mime_type": "mimeType",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type StorageFile$Outbound = {
   created_at?: string | undefined;
@@ -171,38 +177,40 @@ export const StorageFile$outboundSchema: z.ZodType<
   StorageFile$Outbound,
   z.ZodTypeDef,
   StorageFile
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  data: z.string().optional(),
-  description: z.string().optional(),
-  downloadUrl: z.string().optional(),
-  hash: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(StorageMetadata$outboundSchema).optional(),
-  mimeType: z.string().optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  permissions: z.array(StoragePermission$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  references: z.array(StorageReference$outboundSchema).optional(),
-  size: z.number().optional(),
-  tags: z.array(z.string()).optional(),
-  type: StorageFileType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  version: z.string().optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    downloadUrl: "download_url",
-    mimeType: "mime_type",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    data: z.string().optional(),
+    description: z.string().optional(),
+    downloadUrl: z.string().optional(),
+    hash: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(StorageMetadata$outboundSchema).optional(),
+    mimeType: z.string().optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    permissions: z.array(StoragePermission$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    references: z.array(StorageReference$outboundSchema).optional(),
+    size: z.number().optional(),
+    tags: z.array(z.string()).optional(),
+    type: StorageFileType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    version: z.string().optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      downloadUrl: "download_url",
+      mimeType: "mime_type",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function storageFileToJSON(storageFile: StorageFile): string {
   return JSON.stringify(StorageFile$outboundSchema.parse(storageFile));

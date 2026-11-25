@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,7 +53,9 @@ export type PatchHrisJobRequest = {
 /** @internal */
 export const PatchHrisJobQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchHrisJobQueryParamFields
-> = z.nativeEnum(PatchHrisJobQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchHrisJobQueryParamFields)
+);
 
 /** @internal */
 export type PatchHrisJobRequest$Outbound = {
@@ -68,18 +71,20 @@ export const PatchHrisJobRequest$outboundSchema: z.ZodType<
   PatchHrisJobRequest$Outbound,
   z.ZodTypeDef,
   PatchHrisJobRequest
-> = z.object({
-  hrisJob: shared.HrisJob$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchHrisJobQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisJob: "HrisJob",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisJob: shared.HrisJob$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchHrisJobQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisJob: "HrisJob",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchHrisJobRequestToJSON(
   patchHrisJobRequest: PatchHrisJobRequest,

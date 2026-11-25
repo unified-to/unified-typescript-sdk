@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -30,11 +30,13 @@ export const PropertyComputeInstanceSsh$inboundSchema: z.ZodType<
   PropertyComputeInstanceSsh,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  host: z.string().optional(),
-  port: z.number().optional(),
-  username: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    host: z.string().optional(),
+    port: z.number().optional(),
+    username: z.string().optional(),
+  })
+);
 /** @internal */
 export type PropertyComputeInstanceSsh$Outbound = {
   host?: string | undefined;
@@ -47,11 +49,13 @@ export const PropertyComputeInstanceSsh$outboundSchema: z.ZodType<
   PropertyComputeInstanceSsh$Outbound,
   z.ZodTypeDef,
   PropertyComputeInstanceSsh
-> = z.object({
-  host: z.string().optional(),
-  port: z.number().optional(),
-  username: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    host: z.string().optional(),
+    port: z.number().optional(),
+    username: z.string().optional(),
+  })
+);
 
 export function propertyComputeInstanceSshToJSON(
   propertyComputeInstanceSsh: PropertyComputeInstanceSsh,

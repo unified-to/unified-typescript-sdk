@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -200,81 +200,89 @@ export const PropertyListingType$inboundSchema: z.ZodType<
   PropertyListingType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyListingType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyListingType)
+);
 /** @internal */
 export const PropertyListingType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyListingType
-> = openEnums.outboundSchema(PropertyListingType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyListingType)
+);
 
 /** @internal */
 export const PropertyListing$inboundSchema: z.ZodType<
   PropertyListing,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyPropertyListingAddress$inboundSchema.optional(),
-  amenities: z.array(z.string()).optional(),
-  bathrooms: z.number().optional(),
-  bedrooms: z.number().optional(),
-  beds: z.number().optional(),
-  cancellation_policy: z.string().optional(),
-  channels: z.array(PropertyChannel$inboundSchema).optional(),
-  check_in_end_time: z.string().optional(),
-  check_in_start_time: z.string().optional(),
-  check_out_time: z.string().optional(),
-  cleaning_fee_amount: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  house_rules: z.string().optional(),
-  id: z.string().optional(),
-  image_urls: z.array(z.string()).optional(),
-  internal_name: z.string().optional(),
-  is_active: z.boolean().optional(),
-  latitude: z.number().optional(),
-  longitude: z.number().optional(),
-  max_nights: z.number().optional(),
-  max_occupancy: z.number().optional(),
-  metadata: z.array(PropertyMetadata$inboundSchema).optional(),
-  min_nights: z.number().optional(),
-  name: z.string().optional(),
-  owner_user_ids: z.array(z.string()).optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  review_count: z.number().optional(),
-  start_price_amount: z.number().optional(),
-  timezone: z.string().optional(),
-  type: PropertyListingType$inboundSchema.optional(),
-  unittype_ids: z.array(z.string()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "cancellation_policy": "cancellationPolicy",
-    "check_in_end_time": "checkInEndTime",
-    "check_in_start_time": "checkInStartTime",
-    "check_out_time": "checkOutTime",
-    "cleaning_fee_amount": "cleaningFeeAmount",
-    "created_at": "createdAt",
-    "house_rules": "houseRules",
-    "image_urls": "imageUrls",
-    "internal_name": "internalName",
-    "is_active": "isActive",
-    "max_nights": "maxNights",
-    "max_occupancy": "maxOccupancy",
-    "min_nights": "minNights",
-    "owner_user_ids": "ownerUserIds",
-    "review_count": "reviewCount",
-    "start_price_amount": "startPriceAmount",
-    "unittype_ids": "unittypeIds",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyPropertyListingAddress$inboundSchema.optional(),
+    amenities: z.array(z.string()).optional(),
+    bathrooms: z.number().optional(),
+    bedrooms: z.number().optional(),
+    beds: z.number().optional(),
+    cancellation_policy: z.string().optional(),
+    channels: z.array(PropertyChannel$inboundSchema).optional(),
+    check_in_end_time: z.string().optional(),
+    check_in_start_time: z.string().optional(),
+    check_out_time: z.string().optional(),
+    cleaning_fee_amount: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    house_rules: z.string().optional(),
+    id: z.string().optional(),
+    image_urls: z.array(z.string()).optional(),
+    internal_name: z.string().optional(),
+    is_active: z.boolean().optional(),
+    latitude: z.number().optional(),
+    longitude: z.number().optional(),
+    max_nights: z.number().optional(),
+    max_occupancy: z.number().optional(),
+    metadata: z.array(PropertyMetadata$inboundSchema).optional(),
+    min_nights: z.number().optional(),
+    name: z.string().optional(),
+    owner_user_ids: z.array(z.string()).optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    review_count: z.number().optional(),
+    start_price_amount: z.number().optional(),
+    timezone: z.string().optional(),
+    type: PropertyListingType$inboundSchema.optional(),
+    unittype_ids: z.array(z.string()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "cancellation_policy": "cancellationPolicy",
+      "check_in_end_time": "checkInEndTime",
+      "check_in_start_time": "checkInStartTime",
+      "check_out_time": "checkOutTime",
+      "cleaning_fee_amount": "cleaningFeeAmount",
+      "created_at": "createdAt",
+      "house_rules": "houseRules",
+      "image_urls": "imageUrls",
+      "internal_name": "internalName",
+      "is_active": "isActive",
+      "max_nights": "maxNights",
+      "max_occupancy": "maxOccupancy",
+      "min_nights": "minNights",
+      "owner_user_ids": "ownerUserIds",
+      "review_count": "reviewCount",
+      "start_price_amount": "startPriceAmount",
+      "unittype_ids": "unittypeIds",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type PropertyListing$Outbound = {
   address?: PropertyPropertyListingAddress$Outbound | undefined;
@@ -320,66 +328,68 @@ export const PropertyListing$outboundSchema: z.ZodType<
   PropertyListing$Outbound,
   z.ZodTypeDef,
   PropertyListing
-> = z.object({
-  address: PropertyPropertyListingAddress$outboundSchema.optional(),
-  amenities: z.array(z.string()).optional(),
-  bathrooms: z.number().optional(),
-  bedrooms: z.number().optional(),
-  beds: z.number().optional(),
-  cancellationPolicy: z.string().optional(),
-  channels: z.array(PropertyChannel$outboundSchema).optional(),
-  checkInEndTime: z.string().optional(),
-  checkInStartTime: z.string().optional(),
-  checkOutTime: z.string().optional(),
-  cleaningFeeAmount: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  houseRules: z.string().optional(),
-  id: z.string().optional(),
-  imageUrls: z.array(z.string()).optional(),
-  internalName: z.string().optional(),
-  isActive: z.boolean().optional(),
-  latitude: z.number().optional(),
-  longitude: z.number().optional(),
-  maxNights: z.number().optional(),
-  maxOccupancy: z.number().optional(),
-  metadata: z.array(PropertyMetadata$outboundSchema).optional(),
-  minNights: z.number().optional(),
-  name: z.string().optional(),
-  ownerUserIds: z.array(z.string()).optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reviewCount: z.number().optional(),
-  startPriceAmount: z.number().optional(),
-  timezone: z.string().optional(),
-  type: PropertyListingType$outboundSchema.optional(),
-  unittypeIds: z.array(z.string()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cancellationPolicy: "cancellation_policy",
-    checkInEndTime: "check_in_end_time",
-    checkInStartTime: "check_in_start_time",
-    checkOutTime: "check_out_time",
-    cleaningFeeAmount: "cleaning_fee_amount",
-    createdAt: "created_at",
-    houseRules: "house_rules",
-    imageUrls: "image_urls",
-    internalName: "internal_name",
-    isActive: "is_active",
-    maxNights: "max_nights",
-    maxOccupancy: "max_occupancy",
-    minNights: "min_nights",
-    ownerUserIds: "owner_user_ids",
-    reviewCount: "review_count",
-    startPriceAmount: "start_price_amount",
-    unittypeIds: "unittype_ids",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyPropertyListingAddress$outboundSchema.optional(),
+    amenities: z.array(z.string()).optional(),
+    bathrooms: z.number().optional(),
+    bedrooms: z.number().optional(),
+    beds: z.number().optional(),
+    cancellationPolicy: z.string().optional(),
+    channels: z.array(PropertyChannel$outboundSchema).optional(),
+    checkInEndTime: z.string().optional(),
+    checkInStartTime: z.string().optional(),
+    checkOutTime: z.string().optional(),
+    cleaningFeeAmount: z.number().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    houseRules: z.string().optional(),
+    id: z.string().optional(),
+    imageUrls: z.array(z.string()).optional(),
+    internalName: z.string().optional(),
+    isActive: z.boolean().optional(),
+    latitude: z.number().optional(),
+    longitude: z.number().optional(),
+    maxNights: z.number().optional(),
+    maxOccupancy: z.number().optional(),
+    metadata: z.array(PropertyMetadata$outboundSchema).optional(),
+    minNights: z.number().optional(),
+    name: z.string().optional(),
+    ownerUserIds: z.array(z.string()).optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reviewCount: z.number().optional(),
+    startPriceAmount: z.number().optional(),
+    timezone: z.string().optional(),
+    type: PropertyListingType$outboundSchema.optional(),
+    unittypeIds: z.array(z.string()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      cancellationPolicy: "cancellation_policy",
+      checkInEndTime: "check_in_end_time",
+      checkInStartTime: "check_in_start_time",
+      checkOutTime: "check_out_time",
+      cleaningFeeAmount: "cleaning_fee_amount",
+      createdAt: "created_at",
+      houseRules: "house_rules",
+      imageUrls: "image_urls",
+      internalName: "internal_name",
+      isActive: "is_active",
+      maxNights: "max_nights",
+      maxOccupancy: "max_occupancy",
+      minNights: "min_nights",
+      ownerUserIds: "owner_user_ids",
+      reviewCount: "review_count",
+      startPriceAmount: "start_price_amount",
+      unittypeIds: "unittype_ids",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function propertyListingToJSON(
   propertyListing: PropertyListing,

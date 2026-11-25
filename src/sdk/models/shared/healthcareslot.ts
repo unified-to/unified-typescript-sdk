@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -94,43 +94,49 @@ export const HealthcareSlotStatus$inboundSchema: z.ZodType<
   HealthcareSlotStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareSlotStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareSlotStatus)
+);
 
 /** @internal */
 export const HealthcareSlot$inboundSchema: z.ZodType<
   HealthcareSlot,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_overbooked: z.boolean().optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  practitioner_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  service_types: z.array(HealthcareCode$inboundSchema).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HealthcareSlotStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "is_overbooked": "isOverbooked",
-    "location_id": "locationId",
-    "practitioner_id": "practitionerId",
-    "service_types": "serviceTypes",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    is_overbooked: z.boolean().optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    practitioner_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    service_types: z.array(HealthcareCode$inboundSchema).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HealthcareSlotStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "is_overbooked": "isOverbooked",
+      "location_id": "locationId",
+      "practitioner_id": "practitionerId",
+      "service_types": "serviceTypes",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcareSlotFromJSON(
   jsonString: string,

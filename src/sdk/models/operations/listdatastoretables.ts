@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListDatastoreTablesQueryParamFields = {
@@ -61,9 +62,10 @@ export type ListDatastoreTablesRequest = {
 
 /** @internal */
 export const ListDatastoreTablesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListDatastoreTablesQueryParamFields> = z.nativeEnum(
-    ListDatastoreTablesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListDatastoreTablesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListDatastoreTablesQueryParamFields)
+    );
 
 /** @internal */
 export type ListDatastoreTablesRequest$Outbound = {
@@ -85,27 +87,29 @@ export const ListDatastoreTablesRequest$outboundSchema: z.ZodType<
   ListDatastoreTablesRequest$Outbound,
   z.ZodTypeDef,
   ListDatastoreTablesRequest
-> = z.object({
-  connectionId: z.string(),
-  databaseId: z.string().optional(),
-  fields: z.array(ListDatastoreTablesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    databaseId: "database_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    databaseId: z.string().optional(),
+    fields: z.array(ListDatastoreTablesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      databaseId: "database_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listDatastoreTablesRequestToJSON(
   listDatastoreTablesRequest: ListDatastoreTablesRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -73,49 +73,55 @@ export const AtsJobQuestionType$inboundSchema: z.ZodType<
   AtsJobQuestionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsJobQuestionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AtsJobQuestionType)
+);
 /** @internal */
 export const AtsJobQuestionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsJobQuestionType
-> = openEnums.outboundSchema(AtsJobQuestionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsJobQuestionType)
+);
 
 /** @internal */
 export const AtsJobQuestion$inboundSchema: z.ZodType<
   AtsJobQuestion,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  description: z.string().optional(),
-  id: z.string().optional(),
-  max_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  max_length: z.number().optional(),
-  max_value: z.number().optional(),
-  min_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  min_length: z.number().optional(),
-  min_value: z.number().optional(),
-  options: z.array(z.string()).optional(),
-  parent_answer_values: z.array(z.string()).optional(),
-  parent_id: z.string().optional(),
-  prompt: z.string().optional(),
-  question: z.string(),
-  required: z.boolean().optional(),
-  type: AtsJobQuestionType$inboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    "max_at": "maxAt",
-    "max_length": "maxLength",
-    "max_value": "maxValue",
-    "min_at": "minAt",
-    "min_length": "minLength",
-    "min_value": "minValue",
-    "parent_answer_values": "parentAnswerValues",
-    "parent_id": "parentId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    id: z.string().optional(),
+    max_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    max_length: z.number().optional(),
+    max_value: z.number().optional(),
+    min_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    min_length: z.number().optional(),
+    min_value: z.number().optional(),
+    options: z.array(z.string()).optional(),
+    parent_answer_values: z.array(z.string()).optional(),
+    parent_id: z.string().optional(),
+    prompt: z.string().optional(),
+    question: z.string(),
+    required: z.boolean().optional(),
+    type: AtsJobQuestionType$inboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      "max_at": "maxAt",
+      "max_length": "maxLength",
+      "max_value": "maxValue",
+      "min_at": "minAt",
+      "min_length": "minLength",
+      "min_value": "minValue",
+      "parent_answer_values": "parentAnswerValues",
+      "parent_id": "parentId",
+    });
+  })
+);
 /** @internal */
 export type AtsJobQuestion$Outbound = {
   description?: string | undefined;
@@ -140,34 +146,36 @@ export const AtsJobQuestion$outboundSchema: z.ZodType<
   AtsJobQuestion$Outbound,
   z.ZodTypeDef,
   AtsJobQuestion
-> = z.object({
-  description: z.string().optional(),
-  id: z.string().optional(),
-  maxAt: z.date().transform(v => v.toISOString()).optional(),
-  maxLength: z.number().optional(),
-  maxValue: z.number().optional(),
-  minAt: z.date().transform(v => v.toISOString()).optional(),
-  minLength: z.number().optional(),
-  minValue: z.number().optional(),
-  options: z.array(z.string()).optional(),
-  parentAnswerValues: z.array(z.string()).optional(),
-  parentId: z.string().optional(),
-  prompt: z.string().optional(),
-  question: z.string(),
-  required: z.boolean().optional(),
-  type: AtsJobQuestionType$outboundSchema,
-}).transform((v) => {
-  return remap$(v, {
-    maxAt: "max_at",
-    maxLength: "max_length",
-    maxValue: "max_value",
-    minAt: "min_at",
-    minLength: "min_length",
-    minValue: "min_value",
-    parentAnswerValues: "parent_answer_values",
-    parentId: "parent_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    id: z.string().optional(),
+    maxAt: z.date().transform(v => v.toISOString()).optional(),
+    maxLength: z.number().optional(),
+    maxValue: z.number().optional(),
+    minAt: z.date().transform(v => v.toISOString()).optional(),
+    minLength: z.number().optional(),
+    minValue: z.number().optional(),
+    options: z.array(z.string()).optional(),
+    parentAnswerValues: z.array(z.string()).optional(),
+    parentId: z.string().optional(),
+    prompt: z.string().optional(),
+    question: z.string(),
+    required: z.boolean().optional(),
+    type: AtsJobQuestionType$outboundSchema,
+  }).transform((v) => {
+    return remap$(v, {
+      maxAt: "max_at",
+      maxLength: "max_length",
+      maxValue: "max_value",
+      minAt: "min_at",
+      minLength: "min_length",
+      minValue: "min_value",
+      parentAnswerValues: "parent_answer_values",
+      parentId: "parent_id",
+    });
+  })
+);
 
 export function atsJobQuestionToJSON(atsJobQuestion: AtsJobQuestion): string {
   return JSON.stringify(AtsJobQuestion$outboundSchema.parse(atsJobQuestion));

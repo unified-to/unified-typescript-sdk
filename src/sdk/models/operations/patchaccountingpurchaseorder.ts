@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,8 +53,10 @@ export type PatchAccountingPurchaseorderRequest = {
 
 /** @internal */
 export const PatchAccountingPurchaseorderQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchAccountingPurchaseorderQueryParamFields> = z
-    .nativeEnum(PatchAccountingPurchaseorderQueryParamFields);
+  z.ZodNativeEnum<typeof PatchAccountingPurchaseorderQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchAccountingPurchaseorderQueryParamFields)
+    );
 
 /** @internal */
 export type PatchAccountingPurchaseorderRequest$Outbound = {
@@ -69,19 +72,21 @@ export const PatchAccountingPurchaseorderRequest$outboundSchema: z.ZodType<
   PatchAccountingPurchaseorderRequest$Outbound,
   z.ZodTypeDef,
   PatchAccountingPurchaseorderRequest
-> = z.object({
-  accountingPurchaseorder: shared.AccountingPurchaseorder$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAccountingPurchaseorderQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingPurchaseorder: "AccountingPurchaseorder",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingPurchaseorder: shared.AccountingPurchaseorder$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchAccountingPurchaseorderQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingPurchaseorder: "AccountingPurchaseorder",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAccountingPurchaseorderRequestToJSON(
   patchAccountingPurchaseorderRequest: PatchAccountingPurchaseorderRequest,

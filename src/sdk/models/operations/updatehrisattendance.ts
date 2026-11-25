@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -62,9 +63,10 @@ export type UpdateHrisAttendanceRequest = {
 
 /** @internal */
 export const UpdateHrisAttendanceQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateHrisAttendanceQueryParamFields> = z.nativeEnum(
-    UpdateHrisAttendanceQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateHrisAttendanceQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateHrisAttendanceQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateHrisAttendanceRequest$Outbound = {
@@ -80,19 +82,21 @@ export const UpdateHrisAttendanceRequest$outboundSchema: z.ZodType<
   UpdateHrisAttendanceRequest$Outbound,
   z.ZodTypeDef,
   UpdateHrisAttendanceRequest
-> = z.object({
-  hrisAttendance: shared.HrisAttendance$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateHrisAttendanceQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisAttendance: "HrisAttendance",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisAttendance: shared.HrisAttendance$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateHrisAttendanceQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisAttendance: "HrisAttendance",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateHrisAttendanceRequestToJSON(
   updateHrisAttendanceRequest: UpdateHrisAttendanceRequest,

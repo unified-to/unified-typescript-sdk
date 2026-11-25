@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -47,27 +47,29 @@ export const AtsStatusStatus$inboundSchema: z.ZodType<
   AtsStatusStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsStatusStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AtsStatusStatus));
 
 /** @internal */
 export const AtsStatus$inboundSchema: z.ZodType<
   AtsStatus,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  description: z.string().optional(),
-  id: z.string().optional(),
-  job_id: z.string().optional(),
-  metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  original_status: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: AtsStatusStatus$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "job_id": "jobId",
-    "original_status": "originalStatus",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    id: z.string().optional(),
+    job_id: z.string().optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    original_status: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: AtsStatusStatus$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "job_id": "jobId",
+      "original_status": "originalStatus",
+    });
+  })
+);
 
 export function atsStatusFromJSON(
   jsonString: string,

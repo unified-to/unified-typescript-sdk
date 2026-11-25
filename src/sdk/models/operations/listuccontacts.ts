@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListUcContactsQueryParamFields = {
@@ -58,7 +59,9 @@ export type ListUcContactsRequest = {
 /** @internal */
 export const ListUcContactsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListUcContactsQueryParamFields
-> = z.nativeEnum(ListUcContactsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListUcContactsQueryParamFields)
+);
 
 /** @internal */
 export type ListUcContactsRequest$Outbound = {
@@ -79,24 +82,26 @@ export const ListUcContactsRequest$outboundSchema: z.ZodType<
   ListUcContactsRequest$Outbound,
   z.ZodTypeDef,
   ListUcContactsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListUcContactsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListUcContactsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listUcContactsRequestToJSON(
   listUcContactsRequest: ListUcContactsRequest,

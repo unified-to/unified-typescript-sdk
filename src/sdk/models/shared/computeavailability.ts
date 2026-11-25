@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -42,22 +42,24 @@ export type ComputeAvailability = {
 
 /** @internal */
 export const Level$inboundSchema: z.ZodType<Level, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Level);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Level));
 
 /** @internal */
 export const ComputeAvailability$inboundSchema: z.ZodType<
   ComputeAvailability,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  level: Level$inboundSchema.optional(),
-  quantity: z.number().optional(),
-  region_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "region_id": "regionId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    level: Level$inboundSchema.optional(),
+    quantity: z.number().optional(),
+    region_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "region_id": "regionId",
+    });
+  })
+);
 
 export function computeAvailabilityFromJSON(
   jsonString: string,

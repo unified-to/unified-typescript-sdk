@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -201,136 +201,145 @@ export const ProfileGender$inboundSchema: z.ZodType<
   ProfileGender,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ProfileGender);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ProfileGender));
 /** @internal */
 export const ProfileGender$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ProfileGender
-> = openEnums.outboundSchema(ProfileGender);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ProfileGender));
 
 /** @internal */
 export const ResponseStatus$inboundSchema: z.ZodType<
   ResponseStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ResponseStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ResponseStatus));
 /** @internal */
 export const ResponseStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ResponseStatus
-> = openEnums.outboundSchema(ResponseStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ResponseStatus));
 
 /** @internal */
 export const AssessmentOrderStatus$inboundSchema: z.ZodType<
   AssessmentOrderStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AssessmentOrderStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AssessmentOrderStatus)
+);
 /** @internal */
 export const AssessmentOrderStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AssessmentOrderStatus
-> = openEnums.outboundSchema(AssessmentOrderStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AssessmentOrderStatus)
+);
 
 /** @internal */
 export const AssessmentOrder$inboundSchema: z.ZodType<
   AssessmentOrder,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  application_id: z.string().optional(),
-  candidate_id: z.string().optional(),
-  company_id: z.string().optional(),
-  connection_id: z.string(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  employee_id: z.string().optional(),
-  id: z.string().optional(),
-  job_id: z.string().optional(),
-  metadata: z.array(AssessmentMetadata$inboundSchema).optional(),
-  package_id: z.string().optional(),
-  parameters: z.array(AssessmentParameterInput$inboundSchema).optional(),
-  profile_addresses: z.array(AssessmentAddress$inboundSchema).optional(),
-  profile_date_of_birth: z.string().optional(),
-  profile_emails: z.array(z.string()).optional(),
-  profile_first_name: z.string().optional(),
-  profile_gender: ProfileGender$inboundSchema.optional(),
-  profile_ip_address: z.string().optional(),
-  profile_last_name: z.string().optional(),
-  profile_name: z.string().optional(),
-  profile_national_identifier: z.string().optional(),
-  profile_resume_url: z.string().optional(),
-  profile_social_media_urls: z.array(z.string()).optional(),
-  profile_telephones: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  response_attributes: z.array(AssessmentAttribute$inboundSchema).optional(),
-  response_completed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  response_details: z.array(AssessmentResponseDetail$inboundSchema).optional(),
-  response_download_urls: z.array(z.string()).optional(),
-  response_expires_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  response_issued_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  response_max_score: z.number().optional(),
-  response_redirect_url: z.string().optional(),
-  response_score: z.number().optional(),
-  response_source: z.string().optional(),
-  response_status: ResponseStatus$inboundSchema.optional(),
-  response_url: z.string().optional(),
-  status: AssessmentOrderStatus$inboundSchema.optional(),
-  target_url: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  webhook_id: z.string().optional(),
-  workspace_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "application_id": "applicationId",
-    "candidate_id": "candidateId",
-    "company_id": "companyId",
-    "connection_id": "connectionId",
-    "created_at": "createdAt",
-    "employee_id": "employeeId",
-    "job_id": "jobId",
-    "package_id": "packageId",
-    "profile_addresses": "profileAddresses",
-    "profile_date_of_birth": "profileDateOfBirth",
-    "profile_emails": "profileEmails",
-    "profile_first_name": "profileFirstName",
-    "profile_gender": "profileGender",
-    "profile_ip_address": "profileIpAddress",
-    "profile_last_name": "profileLastName",
-    "profile_name": "profileName",
-    "profile_national_identifier": "profileNationalIdentifier",
-    "profile_resume_url": "profileResumeUrl",
-    "profile_social_media_urls": "profileSocialMediaUrls",
-    "profile_telephones": "profileTelephones",
-    "response_attributes": "responseAttributes",
-    "response_completed_at": "responseCompletedAt",
-    "response_details": "responseDetails",
-    "response_download_urls": "responseDownloadUrls",
-    "response_expires_at": "responseExpiresAt",
-    "response_issued_at": "responseIssuedAt",
-    "response_max_score": "responseMaxScore",
-    "response_redirect_url": "responseRedirectUrl",
-    "response_score": "responseScore",
-    "response_source": "responseSource",
-    "response_status": "responseStatus",
-    "response_url": "responseUrl",
-    "target_url": "targetUrl",
-    "updated_at": "updatedAt",
-    "webhook_id": "webhookId",
-    "workspace_id": "workspaceId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    application_id: z.string().optional(),
+    candidate_id: z.string().optional(),
+    company_id: z.string().optional(),
+    connection_id: z.string(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    employee_id: z.string().optional(),
+    id: z.string().optional(),
+    job_id: z.string().optional(),
+    metadata: z.array(AssessmentMetadata$inboundSchema).optional(),
+    package_id: z.string().optional(),
+    parameters: z.array(AssessmentParameterInput$inboundSchema).optional(),
+    profile_addresses: z.array(AssessmentAddress$inboundSchema).optional(),
+    profile_date_of_birth: z.string().optional(),
+    profile_emails: z.array(z.string()).optional(),
+    profile_first_name: z.string().optional(),
+    profile_gender: ProfileGender$inboundSchema.optional(),
+    profile_ip_address: z.string().optional(),
+    profile_last_name: z.string().optional(),
+    profile_name: z.string().optional(),
+    profile_national_identifier: z.string().optional(),
+    profile_resume_url: z.string().optional(),
+    profile_social_media_urls: z.array(z.string()).optional(),
+    profile_telephones: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    response_attributes: z.array(AssessmentAttribute$inboundSchema).optional(),
+    response_completed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    response_details: z.array(AssessmentResponseDetail$inboundSchema)
+      .optional(),
+    response_download_urls: z.array(z.string()).optional(),
+    response_expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    response_issued_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    response_max_score: z.number().optional(),
+    response_redirect_url: z.string().optional(),
+    response_score: z.number().optional(),
+    response_source: z.string().optional(),
+    response_status: ResponseStatus$inboundSchema.optional(),
+    response_url: z.string().optional(),
+    status: AssessmentOrderStatus$inboundSchema.optional(),
+    target_url: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    webhook_id: z.string().optional(),
+    workspace_id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "application_id": "applicationId",
+      "candidate_id": "candidateId",
+      "company_id": "companyId",
+      "connection_id": "connectionId",
+      "created_at": "createdAt",
+      "employee_id": "employeeId",
+      "job_id": "jobId",
+      "package_id": "packageId",
+      "profile_addresses": "profileAddresses",
+      "profile_date_of_birth": "profileDateOfBirth",
+      "profile_emails": "profileEmails",
+      "profile_first_name": "profileFirstName",
+      "profile_gender": "profileGender",
+      "profile_ip_address": "profileIpAddress",
+      "profile_last_name": "profileLastName",
+      "profile_name": "profileName",
+      "profile_national_identifier": "profileNationalIdentifier",
+      "profile_resume_url": "profileResumeUrl",
+      "profile_social_media_urls": "profileSocialMediaUrls",
+      "profile_telephones": "profileTelephones",
+      "response_attributes": "responseAttributes",
+      "response_completed_at": "responseCompletedAt",
+      "response_details": "responseDetails",
+      "response_download_urls": "responseDownloadUrls",
+      "response_expires_at": "responseExpiresAt",
+      "response_issued_at": "responseIssuedAt",
+      "response_max_score": "responseMaxScore",
+      "response_redirect_url": "responseRedirectUrl",
+      "response_score": "responseScore",
+      "response_source": "responseSource",
+      "response_status": "responseStatus",
+      "response_url": "responseUrl",
+      "target_url": "targetUrl",
+      "updated_at": "updatedAt",
+      "webhook_id": "webhookId",
+      "workspace_id": "workspaceId",
+    });
+  })
+);
 /** @internal */
 export type AssessmentOrder$Outbound = {
   application_id?: string | undefined;
@@ -382,89 +391,92 @@ export const AssessmentOrder$outboundSchema: z.ZodType<
   AssessmentOrder$Outbound,
   z.ZodTypeDef,
   AssessmentOrder
-> = z.object({
-  applicationId: z.string().optional(),
-  candidateId: z.string().optional(),
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  employeeId: z.string().optional(),
-  id: z.string().optional(),
-  jobId: z.string().optional(),
-  metadata: z.array(AssessmentMetadata$outboundSchema).optional(),
-  packageId: z.string().optional(),
-  parameters: z.array(AssessmentParameterInput$outboundSchema).optional(),
-  profileAddresses: z.array(AssessmentAddress$outboundSchema).optional(),
-  profileDateOfBirth: z.string().optional(),
-  profileEmails: z.array(z.string()).optional(),
-  profileFirstName: z.string().optional(),
-  profileGender: ProfileGender$outboundSchema.optional(),
-  profileIpAddress: z.string().optional(),
-  profileLastName: z.string().optional(),
-  profileName: z.string().optional(),
-  profileNationalIdentifier: z.string().optional(),
-  profileResumeUrl: z.string().optional(),
-  profileSocialMediaUrls: z.array(z.string()).optional(),
-  profileTelephones: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  responseAttributes: z.array(AssessmentAttribute$outboundSchema).optional(),
-  responseCompletedAt: z.date().transform(v => v.toISOString()).optional(),
-  responseDetails: z.array(AssessmentResponseDetail$outboundSchema).optional(),
-  responseDownloadUrls: z.array(z.string()).optional(),
-  responseExpiresAt: z.date().transform(v => v.toISOString()).optional(),
-  responseIssuedAt: z.date().transform(v => v.toISOString()).optional(),
-  responseMaxScore: z.number().optional(),
-  responseRedirectUrl: z.string().optional(),
-  responseScore: z.number().optional(),
-  responseSource: z.string().optional(),
-  responseStatus: ResponseStatus$outboundSchema.optional(),
-  responseUrl: z.string().optional(),
-  status: AssessmentOrderStatus$outboundSchema.optional(),
-  targetUrl: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webhookId: z.string().optional(),
-  workspaceId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    applicationId: "application_id",
-    candidateId: "candidate_id",
-    companyId: "company_id",
-    connectionId: "connection_id",
-    createdAt: "created_at",
-    employeeId: "employee_id",
-    jobId: "job_id",
-    packageId: "package_id",
-    profileAddresses: "profile_addresses",
-    profileDateOfBirth: "profile_date_of_birth",
-    profileEmails: "profile_emails",
-    profileFirstName: "profile_first_name",
-    profileGender: "profile_gender",
-    profileIpAddress: "profile_ip_address",
-    profileLastName: "profile_last_name",
-    profileName: "profile_name",
-    profileNationalIdentifier: "profile_national_identifier",
-    profileResumeUrl: "profile_resume_url",
-    profileSocialMediaUrls: "profile_social_media_urls",
-    profileTelephones: "profile_telephones",
-    responseAttributes: "response_attributes",
-    responseCompletedAt: "response_completed_at",
-    responseDetails: "response_details",
-    responseDownloadUrls: "response_download_urls",
-    responseExpiresAt: "response_expires_at",
-    responseIssuedAt: "response_issued_at",
-    responseMaxScore: "response_max_score",
-    responseRedirectUrl: "response_redirect_url",
-    responseScore: "response_score",
-    responseSource: "response_source",
-    responseStatus: "response_status",
-    responseUrl: "response_url",
-    targetUrl: "target_url",
-    updatedAt: "updated_at",
-    webhookId: "webhook_id",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applicationId: z.string().optional(),
+    candidateId: z.string().optional(),
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    employeeId: z.string().optional(),
+    id: z.string().optional(),
+    jobId: z.string().optional(),
+    metadata: z.array(AssessmentMetadata$outboundSchema).optional(),
+    packageId: z.string().optional(),
+    parameters: z.array(AssessmentParameterInput$outboundSchema).optional(),
+    profileAddresses: z.array(AssessmentAddress$outboundSchema).optional(),
+    profileDateOfBirth: z.string().optional(),
+    profileEmails: z.array(z.string()).optional(),
+    profileFirstName: z.string().optional(),
+    profileGender: ProfileGender$outboundSchema.optional(),
+    profileIpAddress: z.string().optional(),
+    profileLastName: z.string().optional(),
+    profileName: z.string().optional(),
+    profileNationalIdentifier: z.string().optional(),
+    profileResumeUrl: z.string().optional(),
+    profileSocialMediaUrls: z.array(z.string()).optional(),
+    profileTelephones: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    responseAttributes: z.array(AssessmentAttribute$outboundSchema).optional(),
+    responseCompletedAt: z.date().transform(v => v.toISOString()).optional(),
+    responseDetails: z.array(AssessmentResponseDetail$outboundSchema)
+      .optional(),
+    responseDownloadUrls: z.array(z.string()).optional(),
+    responseExpiresAt: z.date().transform(v => v.toISOString()).optional(),
+    responseIssuedAt: z.date().transform(v => v.toISOString()).optional(),
+    responseMaxScore: z.number().optional(),
+    responseRedirectUrl: z.string().optional(),
+    responseScore: z.number().optional(),
+    responseSource: z.string().optional(),
+    responseStatus: ResponseStatus$outboundSchema.optional(),
+    responseUrl: z.string().optional(),
+    status: AssessmentOrderStatus$outboundSchema.optional(),
+    targetUrl: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webhookId: z.string().optional(),
+    workspaceId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      applicationId: "application_id",
+      candidateId: "candidate_id",
+      companyId: "company_id",
+      connectionId: "connection_id",
+      createdAt: "created_at",
+      employeeId: "employee_id",
+      jobId: "job_id",
+      packageId: "package_id",
+      profileAddresses: "profile_addresses",
+      profileDateOfBirth: "profile_date_of_birth",
+      profileEmails: "profile_emails",
+      profileFirstName: "profile_first_name",
+      profileGender: "profile_gender",
+      profileIpAddress: "profile_ip_address",
+      profileLastName: "profile_last_name",
+      profileName: "profile_name",
+      profileNationalIdentifier: "profile_national_identifier",
+      profileResumeUrl: "profile_resume_url",
+      profileSocialMediaUrls: "profile_social_media_urls",
+      profileTelephones: "profile_telephones",
+      responseAttributes: "response_attributes",
+      responseCompletedAt: "response_completed_at",
+      responseDetails: "response_details",
+      responseDownloadUrls: "response_download_urls",
+      responseExpiresAt: "response_expires_at",
+      responseIssuedAt: "response_issued_at",
+      responseMaxScore: "response_max_score",
+      responseRedirectUrl: "response_redirect_url",
+      responseScore: "response_score",
+      responseSource: "response_source",
+      responseStatus: "response_status",
+      responseUrl: "response_url",
+      targetUrl: "target_url",
+      updatedAt: "updated_at",
+      webhookId: "webhook_id",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function assessmentOrderToJSON(
   assessmentOrder: AssessmentOrder,

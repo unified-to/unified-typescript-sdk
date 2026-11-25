@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -50,9 +51,10 @@ export type PatchMartechCampaignRequest = {
 
 /** @internal */
 export const PatchMartechCampaignQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchMartechCampaignQueryParamFields> = z.nativeEnum(
-    PatchMartechCampaignQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchMartechCampaignQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchMartechCampaignQueryParamFields)
+    );
 
 /** @internal */
 export type PatchMartechCampaignRequest$Outbound = {
@@ -68,19 +70,21 @@ export const PatchMartechCampaignRequest$outboundSchema: z.ZodType<
   PatchMartechCampaignRequest$Outbound,
   z.ZodTypeDef,
   PatchMartechCampaignRequest
-> = z.object({
-  marketingCampaign: shared.MarketingCampaign$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchMartechCampaignQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    marketingCampaign: "MarketingCampaign",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    marketingCampaign: shared.MarketingCampaign$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchMartechCampaignQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      marketingCampaign: "MarketingCampaign",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchMartechCampaignRequestToJSON(
   patchMartechCampaignRequest: PatchMartechCampaignRequest,

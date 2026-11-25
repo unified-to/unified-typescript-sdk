@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -129,59 +129,67 @@ export const HealthcareAppointmentStatus$inboundSchema: z.ZodType<
   HealthcareAppointmentStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareAppointmentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareAppointmentStatus)
+);
 /** @internal */
 export const HealthcareAppointmentStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareAppointmentStatus
-> = openEnums.outboundSchema(HealthcareAppointmentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareAppointmentStatus)
+);
 
 /** @internal */
 export const HealthcareAppointment$inboundSchema: z.ZodType<
   HealthcareAppointment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  cancellation_reason: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_virtual: z.boolean().optional(),
-  location_id: z.string().optional(),
-  meeting_url: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  patient_id: z.string().optional(),
-  practitioner_ids: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  reasons: z.array(HealthcareCode$inboundSchema).optional(),
-  service_types: z.array(HealthcareCode$inboundSchema).optional(),
-  slot_ids: z.array(z.string()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HealthcareAppointmentStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "cancellation_reason": "cancellationReason",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "is_virtual": "isVirtual",
-    "location_id": "locationId",
-    "meeting_url": "meetingUrl",
-    "patient_id": "patientId",
-    "practitioner_ids": "practitionerIds",
-    "service_types": "serviceTypes",
-    "slot_ids": "slotIds",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cancellation_reason: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    is_virtual: z.boolean().optional(),
+    location_id: z.string().optional(),
+    meeting_url: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    patient_id: z.string().optional(),
+    practitioner_ids: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    reasons: z.array(HealthcareCode$inboundSchema).optional(),
+    service_types: z.array(HealthcareCode$inboundSchema).optional(),
+    slot_ids: z.array(z.string()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HealthcareAppointmentStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "cancellation_reason": "cancellationReason",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "is_virtual": "isVirtual",
+      "location_id": "locationId",
+      "meeting_url": "meetingUrl",
+      "patient_id": "patientId",
+      "practitioner_ids": "practitionerIds",
+      "service_types": "serviceTypes",
+      "slot_ids": "slotIds",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HealthcareAppointment$Outbound = {
   cancellation_reason?: string | undefined;
@@ -210,42 +218,44 @@ export const HealthcareAppointment$outboundSchema: z.ZodType<
   HealthcareAppointment$Outbound,
   z.ZodTypeDef,
   HealthcareAppointment
-> = z.object({
-  cancellationReason: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isVirtual: z.boolean().optional(),
-  locationId: z.string().optional(),
-  meetingUrl: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  patientId: z.string().optional(),
-  practitionerIds: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  reasons: z.array(HealthcareCode$outboundSchema).optional(),
-  serviceTypes: z.array(HealthcareCode$outboundSchema).optional(),
-  slotIds: z.array(z.string()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: HealthcareAppointmentStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cancellationReason: "cancellation_reason",
-    createdAt: "created_at",
-    endAt: "end_at",
-    isVirtual: "is_virtual",
-    locationId: "location_id",
-    meetingUrl: "meeting_url",
-    patientId: "patient_id",
-    practitionerIds: "practitioner_ids",
-    serviceTypes: "service_types",
-    slotIds: "slot_ids",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cancellationReason: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isVirtual: z.boolean().optional(),
+    locationId: z.string().optional(),
+    meetingUrl: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    patientId: z.string().optional(),
+    practitionerIds: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    reasons: z.array(HealthcareCode$outboundSchema).optional(),
+    serviceTypes: z.array(HealthcareCode$outboundSchema).optional(),
+    slotIds: z.array(z.string()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: HealthcareAppointmentStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      cancellationReason: "cancellation_reason",
+      createdAt: "created_at",
+      endAt: "end_at",
+      isVirtual: "is_virtual",
+      locationId: "location_id",
+      meetingUrl: "meeting_url",
+      patientId: "patient_id",
+      practitionerIds: "practitioner_ids",
+      serviceTypes: "service_types",
+      slotIds: "slot_ids",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function healthcareAppointmentToJSON(
   healthcareAppointment: HealthcareAppointment,

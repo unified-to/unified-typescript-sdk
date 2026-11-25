@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAssessmentPackageRequest = {
@@ -28,15 +29,17 @@ export const CreateAssessmentPackageRequest$outboundSchema: z.ZodType<
   CreateAssessmentPackageRequest$Outbound,
   z.ZodTypeDef,
   CreateAssessmentPackageRequest
-> = z.object({
-  assessmentPackage: shared.AssessmentPackage$outboundSchema,
-  connectionId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    assessmentPackage: "AssessmentPackage",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    assessmentPackage: shared.AssessmentPackage$outboundSchema,
+    connectionId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      assessmentPackage: "AssessmentPackage",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAssessmentPackageRequestToJSON(
   createAssessmentPackageRequest: CreateAssessmentPackageRequest,

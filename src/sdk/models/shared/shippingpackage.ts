@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -90,52 +90,62 @@ export const ShippingPackageSizeUnit$inboundSchema: z.ZodType<
   ShippingPackageSizeUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ShippingPackageSizeUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ShippingPackageSizeUnit)
+);
 /** @internal */
 export const ShippingPackageSizeUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ShippingPackageSizeUnit
-> = openEnums.outboundSchema(ShippingPackageSizeUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ShippingPackageSizeUnit)
+);
 
 /** @internal */
 export const ShippingPackageWeightUnit$inboundSchema: z.ZodType<
   ShippingPackageWeightUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ShippingPackageWeightUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ShippingPackageWeightUnit)
+);
 /** @internal */
 export const ShippingPackageWeightUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ShippingPackageWeightUnit
-> = openEnums.outboundSchema(ShippingPackageWeightUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ShippingPackageWeightUnit)
+);
 
 /** @internal */
 export const ShippingPackage$inboundSchema: z.ZodType<
   ShippingPackage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  height: z.number().optional(),
-  insured_amount: z.number().optional(),
-  length: z.number().optional(),
-  size_unit: ShippingPackageSizeUnit$inboundSchema.optional(),
-  tracking_number: z.string().optional(),
-  value: z.number().optional(),
-  weight: z.number().optional(),
-  weight_unit: ShippingPackageWeightUnit$inboundSchema.optional(),
-  width: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "insured_amount": "insuredAmount",
-    "size_unit": "sizeUnit",
-    "tracking_number": "trackingNumber",
-    "weight_unit": "weightUnit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    height: z.number().optional(),
+    insured_amount: z.number().optional(),
+    length: z.number().optional(),
+    size_unit: ShippingPackageSizeUnit$inboundSchema.optional(),
+    tracking_number: z.string().optional(),
+    value: z.number().optional(),
+    weight: z.number().optional(),
+    weight_unit: ShippingPackageWeightUnit$inboundSchema.optional(),
+    width: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "insured_amount": "insuredAmount",
+      "size_unit": "sizeUnit",
+      "tracking_number": "trackingNumber",
+      "weight_unit": "weightUnit",
+    });
+  })
+);
 /** @internal */
 export type ShippingPackage$Outbound = {
   currency?: string | undefined;
@@ -156,26 +166,28 @@ export const ShippingPackage$outboundSchema: z.ZodType<
   ShippingPackage$Outbound,
   z.ZodTypeDef,
   ShippingPackage
-> = z.object({
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  height: z.number().optional(),
-  insuredAmount: z.number().optional(),
-  length: z.number().optional(),
-  sizeUnit: ShippingPackageSizeUnit$outboundSchema.optional(),
-  trackingNumber: z.string().optional(),
-  value: z.number().optional(),
-  weight: z.number().optional(),
-  weightUnit: ShippingPackageWeightUnit$outboundSchema.optional(),
-  width: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    insuredAmount: "insured_amount",
-    sizeUnit: "size_unit",
-    trackingNumber: "tracking_number",
-    weightUnit: "weight_unit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    height: z.number().optional(),
+    insuredAmount: z.number().optional(),
+    length: z.number().optional(),
+    sizeUnit: ShippingPackageSizeUnit$outboundSchema.optional(),
+    trackingNumber: z.string().optional(),
+    value: z.number().optional(),
+    weight: z.number().optional(),
+    weightUnit: ShippingPackageWeightUnit$outboundSchema.optional(),
+    width: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      insuredAmount: "insured_amount",
+      sizeUnit: "size_unit",
+      trackingNumber: "tracking_number",
+      weightUnit: "weight_unit",
+    });
+  })
+);
 
 export function shippingPackageToJSON(
   shippingPackage: ShippingPackage,

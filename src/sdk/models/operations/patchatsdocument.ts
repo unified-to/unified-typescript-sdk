@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -49,7 +50,9 @@ export type PatchAtsDocumentRequest = {
 /** @internal */
 export const PatchAtsDocumentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchAtsDocumentQueryParamFields
-> = z.nativeEnum(PatchAtsDocumentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchAtsDocumentQueryParamFields)
+);
 
 /** @internal */
 export type PatchAtsDocumentRequest$Outbound = {
@@ -65,18 +68,20 @@ export const PatchAtsDocumentRequest$outboundSchema: z.ZodType<
   PatchAtsDocumentRequest$Outbound,
   z.ZodTypeDef,
   PatchAtsDocumentRequest
-> = z.object({
-  atsDocument: shared.AtsDocument$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAtsDocumentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    atsDocument: "AtsDocument",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    atsDocument: shared.AtsDocument$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchAtsDocumentQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      atsDocument: "AtsDocument",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAtsDocumentRequestToJSON(
   patchAtsDocumentRequest: PatchAtsDocumentRequest,

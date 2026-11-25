@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -154,54 +154,58 @@ export const CrmEventType$inboundSchema: z.ZodType<
   CrmEventType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CrmEventType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CrmEventType));
 /** @internal */
 export const CrmEventType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CrmEventType
-> = openEnums.outboundSchema(CrmEventType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(CrmEventType));
 
 /** @internal */
 export const CrmEvent$inboundSchema: z.ZodType<
   CrmEvent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  call: PropertyCrmEventCall$inboundSchema.optional(),
-  company_ids: z.array(z.string()).optional(),
-  contact_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  deal_ids: z.array(z.string()).optional(),
-  email: PropertyCrmEventEmail$inboundSchema.optional(),
-  form: PropertyCrmEventForm$inboundSchema.optional(),
-  id: z.string().optional(),
-  lead_ids: z.array(z.string()).optional(),
-  marketing_email: PropertyCrmEventMarketingEmail$inboundSchema.optional(),
-  meeting: PropertyCrmEventMeeting$inboundSchema.optional(),
-  metadata: z.array(CrmMetadata$inboundSchema).optional(),
-  note: PropertyCrmEventNote$inboundSchema.optional(),
-  page_view: PropertyCrmEventPageView$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  task: PropertyCrmEventTask$inboundSchema.optional(),
-  type: CrmEventType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_ids": "companyIds",
-    "contact_ids": "contactIds",
-    "created_at": "createdAt",
-    "deal_ids": "dealIds",
-    "lead_ids": "leadIds",
-    "marketing_email": "marketingEmail",
-    "page_view": "pageView",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    call: PropertyCrmEventCall$inboundSchema.optional(),
+    company_ids: z.array(z.string()).optional(),
+    contact_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    deal_ids: z.array(z.string()).optional(),
+    email: PropertyCrmEventEmail$inboundSchema.optional(),
+    form: PropertyCrmEventForm$inboundSchema.optional(),
+    id: z.string().optional(),
+    lead_ids: z.array(z.string()).optional(),
+    marketing_email: PropertyCrmEventMarketingEmail$inboundSchema.optional(),
+    meeting: PropertyCrmEventMeeting$inboundSchema.optional(),
+    metadata: z.array(CrmMetadata$inboundSchema).optional(),
+    note: PropertyCrmEventNote$inboundSchema.optional(),
+    page_view: PropertyCrmEventPageView$inboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    task: PropertyCrmEventTask$inboundSchema.optional(),
+    type: CrmEventType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_ids": "companyIds",
+      "contact_ids": "contactIds",
+      "created_at": "createdAt",
+      "deal_ids": "dealIds",
+      "lead_ids": "leadIds",
+      "marketing_email": "marketingEmail",
+      "page_view": "pageView",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type CrmEvent$Outbound = {
   call?: PropertyCrmEventCall$Outbound | undefined;
@@ -230,39 +234,41 @@ export const CrmEvent$outboundSchema: z.ZodType<
   CrmEvent$Outbound,
   z.ZodTypeDef,
   CrmEvent
-> = z.object({
-  call: PropertyCrmEventCall$outboundSchema.optional(),
-  companyIds: z.array(z.string()).optional(),
-  contactIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dealIds: z.array(z.string()).optional(),
-  email: PropertyCrmEventEmail$outboundSchema.optional(),
-  form: PropertyCrmEventForm$outboundSchema.optional(),
-  id: z.string().optional(),
-  leadIds: z.array(z.string()).optional(),
-  marketingEmail: PropertyCrmEventMarketingEmail$outboundSchema.optional(),
-  meeting: PropertyCrmEventMeeting$outboundSchema.optional(),
-  metadata: z.array(CrmMetadata$outboundSchema).optional(),
-  note: PropertyCrmEventNote$outboundSchema.optional(),
-  pageView: PropertyCrmEventPageView$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  task: PropertyCrmEventTask$outboundSchema.optional(),
-  type: CrmEventType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyIds: "company_ids",
-    contactIds: "contact_ids",
-    createdAt: "created_at",
-    dealIds: "deal_ids",
-    leadIds: "lead_ids",
-    marketingEmail: "marketing_email",
-    pageView: "page_view",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    call: PropertyCrmEventCall$outboundSchema.optional(),
+    companyIds: z.array(z.string()).optional(),
+    contactIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dealIds: z.array(z.string()).optional(),
+    email: PropertyCrmEventEmail$outboundSchema.optional(),
+    form: PropertyCrmEventForm$outboundSchema.optional(),
+    id: z.string().optional(),
+    leadIds: z.array(z.string()).optional(),
+    marketingEmail: PropertyCrmEventMarketingEmail$outboundSchema.optional(),
+    meeting: PropertyCrmEventMeeting$outboundSchema.optional(),
+    metadata: z.array(CrmMetadata$outboundSchema).optional(),
+    note: PropertyCrmEventNote$outboundSchema.optional(),
+    pageView: PropertyCrmEventPageView$outboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    task: PropertyCrmEventTask$outboundSchema.optional(),
+    type: CrmEventType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyIds: "company_ids",
+      contactIds: "contact_ids",
+      createdAt: "created_at",
+      dealIds: "deal_ids",
+      leadIds: "lead_ids",
+      marketingEmail: "marketing_email",
+      pageView: "page_view",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function crmEventToJSON(crmEvent: CrmEvent): string {
   return JSON.stringify(CrmEvent$outboundSchema.parse(crmEvent));

@@ -1,0 +1,27 @@
+# PrintingTemplate
+
+A saved design template: a blank product with artwork placed on it
+
+## Example Usage
+
+```typescript
+import { PrintingTemplate } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PrintingTemplate = {};
+```
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                                                      |
+| `description`                                                                                 | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `metadata`                                                                                    | [shared.PrintingMetadata](../../../sdk/models/shared/printingmetadata.md)[]                   | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `name`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `placements`                                                                                  | [shared.PrintingPlacement](../../../sdk/models/shared/printingplacement.md)[]                 | :heavy_minus_sign:                                                                            | Print areas used by this template                                                             |
+| `previewUrl`                                                                                  | *string*                                                                                      | :heavy_minus_sign:                                                                            | Mockup or preview image URL                                                                   |
+| `productId`                                                                                   | *string*                                                                                      | :heavy_minus_sign:                                                                            | The PrintingProduct ID of the blank product                                                   |
+| `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | Raw data from integration                                                                     |
+| `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)                                                      |
+| `variantIdentifiers`                                                                          | *string*[]                                                                                    | :heavy_minus_sign:                                                                            | Identifiers of the product variants this template is available for                            |

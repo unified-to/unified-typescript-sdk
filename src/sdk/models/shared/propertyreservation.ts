@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -178,81 +178,89 @@ export const PropertyReservationStatus$inboundSchema: z.ZodType<
   PropertyReservationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyReservationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyReservationStatus)
+);
 /** @internal */
 export const PropertyReservationStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyReservationStatus
-> = openEnums.outboundSchema(PropertyReservationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyReservationStatus)
+);
 
 /** @internal */
 export const PropertyReservation$inboundSchema: z.ZodType<
   PropertyReservation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  adults: z.number().optional(),
-  balance_amount: z.number().optional(),
-  cancelled_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  children: z.number().optional(),
-  confirmation_code: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  estimated_arrival_time: z.string().optional(),
-  estimated_departure_time: z.string().optional(),
-  guest_email: z.string().optional(),
-  guest_id: z.string().optional(),
-  guest_name: z.string().optional(),
-  guest_phone: z.string().optional(),
-  guests: z.number().optional(),
-  id: z.string().optional(),
-  infants: z.number().optional(),
-  line_items: z.array(PropertyLineitem$inboundSchema).optional(),
-  listing_id: z.string().optional(),
-  metadata: z.array(PropertyMetadata$inboundSchema).optional(),
-  nights: z.number().optional(),
-  notes: z.string().optional(),
-  paid_amount: z.number().optional(),
-  pets: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: PropertyReservationStatus$inboundSchema.optional(),
-  total_amount: z.number().optional(),
-  unittype_ids: z.array(z.string()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "balance_amount": "balanceAmount",
-    "cancelled_at": "cancelledAt",
-    "confirmation_code": "confirmationCode",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "estimated_arrival_time": "estimatedArrivalTime",
-    "estimated_departure_time": "estimatedDepartureTime",
-    "guest_email": "guestEmail",
-    "guest_id": "guestId",
-    "guest_name": "guestName",
-    "guest_phone": "guestPhone",
-    "line_items": "lineItems",
-    "listing_id": "listingId",
-    "paid_amount": "paidAmount",
-    "start_at": "startAt",
-    "total_amount": "totalAmount",
-    "unittype_ids": "unittypeIds",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    adults: z.number().optional(),
+    balance_amount: z.number().optional(),
+    cancelled_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    children: z.number().optional(),
+    confirmation_code: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    estimated_arrival_time: z.string().optional(),
+    estimated_departure_time: z.string().optional(),
+    guest_email: z.string().optional(),
+    guest_id: z.string().optional(),
+    guest_name: z.string().optional(),
+    guest_phone: z.string().optional(),
+    guests: z.number().optional(),
+    id: z.string().optional(),
+    infants: z.number().optional(),
+    line_items: z.array(PropertyLineitem$inboundSchema).optional(),
+    listing_id: z.string().optional(),
+    metadata: z.array(PropertyMetadata$inboundSchema).optional(),
+    nights: z.number().optional(),
+    notes: z.string().optional(),
+    paid_amount: z.number().optional(),
+    pets: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: PropertyReservationStatus$inboundSchema.optional(),
+    total_amount: z.number().optional(),
+    unittype_ids: z.array(z.string()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "balance_amount": "balanceAmount",
+      "cancelled_at": "cancelledAt",
+      "confirmation_code": "confirmationCode",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "estimated_arrival_time": "estimatedArrivalTime",
+      "estimated_departure_time": "estimatedDepartureTime",
+      "guest_email": "guestEmail",
+      "guest_id": "guestId",
+      "guest_name": "guestName",
+      "guest_phone": "guestPhone",
+      "line_items": "lineItems",
+      "listing_id": "listingId",
+      "paid_amount": "paidAmount",
+      "start_at": "startAt",
+      "total_amount": "totalAmount",
+      "unittype_ids": "unittypeIds",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type PropertyReservation$Outbound = {
   adults?: number | undefined;
@@ -294,62 +302,64 @@ export const PropertyReservation$outboundSchema: z.ZodType<
   PropertyReservation$Outbound,
   z.ZodTypeDef,
   PropertyReservation
-> = z.object({
-  adults: z.number().optional(),
-  balanceAmount: z.number().optional(),
-  cancelledAt: z.date().transform(v => v.toISOString()).optional(),
-  children: z.number().optional(),
-  confirmationCode: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  estimatedArrivalTime: z.string().optional(),
-  estimatedDepartureTime: z.string().optional(),
-  guestEmail: z.string().optional(),
-  guestId: z.string().optional(),
-  guestName: z.string().optional(),
-  guestPhone: z.string().optional(),
-  guests: z.number().optional(),
-  id: z.string().optional(),
-  infants: z.number().optional(),
-  lineItems: z.array(PropertyLineitem$outboundSchema).optional(),
-  listingId: z.string().optional(),
-  metadata: z.array(PropertyMetadata$outboundSchema).optional(),
-  nights: z.number().optional(),
-  notes: z.string().optional(),
-  paidAmount: z.number().optional(),
-  pets: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: PropertyReservationStatus$outboundSchema.optional(),
-  totalAmount: z.number().optional(),
-  unittypeIds: z.array(z.string()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    balanceAmount: "balance_amount",
-    cancelledAt: "cancelled_at",
-    confirmationCode: "confirmation_code",
-    createdAt: "created_at",
-    endAt: "end_at",
-    estimatedArrivalTime: "estimated_arrival_time",
-    estimatedDepartureTime: "estimated_departure_time",
-    guestEmail: "guest_email",
-    guestId: "guest_id",
-    guestName: "guest_name",
-    guestPhone: "guest_phone",
-    lineItems: "line_items",
-    listingId: "listing_id",
-    paidAmount: "paid_amount",
-    startAt: "start_at",
-    totalAmount: "total_amount",
-    unittypeIds: "unittype_ids",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    adults: z.number().optional(),
+    balanceAmount: z.number().optional(),
+    cancelledAt: z.date().transform(v => v.toISOString()).optional(),
+    children: z.number().optional(),
+    confirmationCode: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    estimatedArrivalTime: z.string().optional(),
+    estimatedDepartureTime: z.string().optional(),
+    guestEmail: z.string().optional(),
+    guestId: z.string().optional(),
+    guestName: z.string().optional(),
+    guestPhone: z.string().optional(),
+    guests: z.number().optional(),
+    id: z.string().optional(),
+    infants: z.number().optional(),
+    lineItems: z.array(PropertyLineitem$outboundSchema).optional(),
+    listingId: z.string().optional(),
+    metadata: z.array(PropertyMetadata$outboundSchema).optional(),
+    nights: z.number().optional(),
+    notes: z.string().optional(),
+    paidAmount: z.number().optional(),
+    pets: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: PropertyReservationStatus$outboundSchema.optional(),
+    totalAmount: z.number().optional(),
+    unittypeIds: z.array(z.string()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      balanceAmount: "balance_amount",
+      cancelledAt: "cancelled_at",
+      confirmationCode: "confirmation_code",
+      createdAt: "created_at",
+      endAt: "end_at",
+      estimatedArrivalTime: "estimated_arrival_time",
+      estimatedDepartureTime: "estimated_departure_time",
+      guestEmail: "guest_email",
+      guestId: "guest_id",
+      guestName: "guest_name",
+      guestPhone: "guest_phone",
+      lineItems: "line_items",
+      listingId: "listing_id",
+      paidAmount: "paid_amount",
+      startAt: "start_at",
+      totalAmount: "total_amount",
+      unittypeIds: "unittype_ids",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function propertyReservationToJSON(
   propertyReservation: PropertyReservation,

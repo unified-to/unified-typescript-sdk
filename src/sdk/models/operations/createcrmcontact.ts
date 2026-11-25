@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -54,7 +55,9 @@ export type CreateCrmContactRequest = {
 /** @internal */
 export const CreateCrmContactQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateCrmContactQueryParamFields
-> = z.nativeEnum(CreateCrmContactQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateCrmContactQueryParamFields)
+);
 
 /** @internal */
 export type CreateCrmContactRequest$Outbound = {
@@ -69,17 +72,19 @@ export const CreateCrmContactRequest$outboundSchema: z.ZodType<
   CreateCrmContactRequest$Outbound,
   z.ZodTypeDef,
   CreateCrmContactRequest
-> = z.object({
-  crmContact: shared.CrmContact$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateCrmContactQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    crmContact: "CrmContact",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    crmContact: shared.CrmContact$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateCrmContactQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      crmContact: "CrmContact",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createCrmContactRequestToJSON(
   createCrmContactRequest: CreateCrmContactRequest,

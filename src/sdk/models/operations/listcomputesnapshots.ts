@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListComputeSnapshotsQueryParamFields = {
@@ -57,9 +58,10 @@ export type ListComputeSnapshotsRequest = {
 
 /** @internal */
 export const ListComputeSnapshotsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListComputeSnapshotsQueryParamFields> = z.nativeEnum(
-    ListComputeSnapshotsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListComputeSnapshotsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListComputeSnapshotsQueryParamFields)
+    );
 
 /** @internal */
 export type ListComputeSnapshotsRequest$Outbound = {
@@ -80,25 +82,27 @@ export const ListComputeSnapshotsRequest$outboundSchema: z.ZodType<
   ListComputeSnapshotsRequest$Outbound,
   z.ZodTypeDef,
   ListComputeSnapshotsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListComputeSnapshotsQueryParamFields$outboundSchema)
-    .optional(),
-  instanceId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    instanceId: "instance_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListComputeSnapshotsQueryParamFields$outboundSchema)
+      .optional(),
+    instanceId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      instanceId: "instance_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listComputeSnapshotsRequestToJSON(
   listComputeSnapshotsRequest: ListComputeSnapshotsRequest,

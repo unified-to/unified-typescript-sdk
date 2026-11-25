@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type GetUnifiedIntegrationAuthRequest = {
   /**
@@ -78,32 +79,34 @@ export const GetUnifiedIntegrationAuthRequest$outboundSchema: z.ZodType<
   GetUnifiedIntegrationAuthRequest$Outbound,
   z.ZodTypeDef,
   GetUnifiedIntegrationAuthRequest
-> = z.object({
-  connectionId: z.string().optional(),
-  env: z.string().optional(),
-  externalXref: z.string().optional(),
-  failureRedirect: z.string().optional(),
-  integrationType: z.string(),
-  lang: z.string().optional(),
-  reauthToken: z.string().optional(),
-  redirect: z.boolean().optional(),
-  region: z.string().optional(),
-  scopes: z.array(z.string()).optional(),
-  state: z.string().optional(),
-  subdomain: z.string().optional(),
-  successRedirect: z.string().optional(),
-  workspaceId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    externalXref: "external_xref",
-    failureRedirect: "failure_redirect",
-    integrationType: "integration_type",
-    reauthToken: "reauth_token",
-    successRedirect: "success_redirect",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string().optional(),
+    env: z.string().optional(),
+    externalXref: z.string().optional(),
+    failureRedirect: z.string().optional(),
+    integrationType: z.string(),
+    lang: z.string().optional(),
+    reauthToken: z.string().optional(),
+    redirect: z.boolean().optional(),
+    region: z.string().optional(),
+    scopes: z.array(z.string()).optional(),
+    state: z.string().optional(),
+    subdomain: z.string().optional(),
+    successRedirect: z.string().optional(),
+    workspaceId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      externalXref: "external_xref",
+      failureRedirect: "failure_redirect",
+      integrationType: "integration_type",
+      reauthToken: "reauth_token",
+      successRedirect: "success_redirect",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function getUnifiedIntegrationAuthRequestToJSON(
   getUnifiedIntegrationAuthRequest: GetUnifiedIntegrationAuthRequest,

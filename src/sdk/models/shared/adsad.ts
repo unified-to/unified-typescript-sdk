@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -96,72 +96,74 @@ export type AdsAd = {
 
 /** @internal */
 export const AdType$inboundSchema: z.ZodType<AdType, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(AdType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AdType));
 /** @internal */
 export const AdType$outboundSchema: z.ZodType<string, z.ZodTypeDef, AdType> =
-  openEnums.outboundSchema(AdType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(AdType));
 
 /** @internal */
 export const AdsAdStatus$inboundSchema: z.ZodType<
   AdsAdStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsAdStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AdsAdStatus));
 /** @internal */
 export const AdsAdStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsAdStatus
-> = openEnums.outboundSchema(AdsAdStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(AdsAdStatus));
 
 /** @internal */
-export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> = z
-  .object({
-    ad_copy: z.string().optional(),
-    ad_type: AdType$inboundSchema.optional(),
-    advertiser_name: z.string().optional(),
-    campaign_id: z.string().optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    creative_asset_url: z.string().optional(),
-    creative_ids: z.array(z.string()).optional(),
-    cta: z.string().optional(),
-    description: z.string().optional(),
-    display_url: z.string().optional(),
-    final_url: z.string().optional(),
-    group_id: z.string().optional(),
-    headline: z.string().optional(),
-    id: z.string().optional(),
-    logo_creative_id: z.string().optional(),
-    metadata: z.array(AdsMetadata$inboundSchema).optional(),
-    name: z.string().optional(),
-    organization_id: z.string().optional(),
-    path1: z.string().optional(),
-    path2: z.string().optional(),
-    promoted: z.array(AdsPromoted$inboundSchema).optional(),
-    raw: z.record(z.any()).optional(),
-    status: AdsAdStatus$inboundSchema.optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "ad_copy": "adCopy",
-      "ad_type": "adType",
-      "advertiser_name": "advertiserName",
-      "campaign_id": "campaignId",
-      "created_at": "createdAt",
-      "creative_asset_url": "creativeAssetUrl",
-      "creative_ids": "creativeIds",
-      "display_url": "displayUrl",
-      "final_url": "finalUrl",
-      "group_id": "groupId",
-      "logo_creative_id": "logoCreativeId",
-      "organization_id": "organizationId",
-      "updated_at": "updatedAt",
-    });
-  });
+export const AdsAd$inboundSchema: z.ZodType<AdsAd, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      ad_copy: z.string().optional(),
+      ad_type: AdType$inboundSchema.optional(),
+      advertiser_name: z.string().optional(),
+      campaign_id: z.string().optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      creative_asset_url: z.string().optional(),
+      creative_ids: z.array(z.string()).optional(),
+      cta: z.string().optional(),
+      description: z.string().optional(),
+      display_url: z.string().optional(),
+      final_url: z.string().optional(),
+      group_id: z.string().optional(),
+      headline: z.string().optional(),
+      id: z.string().optional(),
+      logo_creative_id: z.string().optional(),
+      metadata: z.array(AdsMetadata$inboundSchema).optional(),
+      name: z.string().optional(),
+      organization_id: z.string().optional(),
+      path1: z.string().optional(),
+      path2: z.string().optional(),
+      promoted: z.array(AdsPromoted$inboundSchema).optional(),
+      raw: z.record(z.any()).optional(),
+      status: AdsAdStatus$inboundSchema.optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "ad_copy": "adCopy",
+        "ad_type": "adType",
+        "advertiser_name": "advertiserName",
+        "campaign_id": "campaignId",
+        "created_at": "createdAt",
+        "creative_asset_url": "creativeAssetUrl",
+        "creative_ids": "creativeIds",
+        "display_url": "displayUrl",
+        "final_url": "finalUrl",
+        "group_id": "groupId",
+        "logo_creative_id": "logoCreativeId",
+        "organization_id": "organizationId",
+        "updated_at": "updatedAt",
+      });
+    })
+  );
 /** @internal */
 export type AdsAd$Outbound = {
   ad_copy?: string | undefined;
@@ -195,48 +197,50 @@ export const AdsAd$outboundSchema: z.ZodType<
   AdsAd$Outbound,
   z.ZodTypeDef,
   AdsAd
-> = z.object({
-  adCopy: z.string().optional(),
-  adType: AdType$outboundSchema.optional(),
-  advertiserName: z.string().optional(),
-  campaignId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  creativeAssetUrl: z.string().optional(),
-  creativeIds: z.array(z.string()).optional(),
-  cta: z.string().optional(),
-  description: z.string().optional(),
-  displayUrl: z.string().optional(),
-  finalUrl: z.string().optional(),
-  groupId: z.string().optional(),
-  headline: z.string().optional(),
-  id: z.string().optional(),
-  logoCreativeId: z.string().optional(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  path1: z.string().optional(),
-  path2: z.string().optional(),
-  promoted: z.array(AdsPromoted$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  status: AdsAdStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    adCopy: "ad_copy",
-    adType: "ad_type",
-    advertiserName: "advertiser_name",
-    campaignId: "campaign_id",
-    createdAt: "created_at",
-    creativeAssetUrl: "creative_asset_url",
-    creativeIds: "creative_ids",
-    displayUrl: "display_url",
-    finalUrl: "final_url",
-    groupId: "group_id",
-    logoCreativeId: "logo_creative_id",
-    organizationId: "organization_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    adCopy: z.string().optional(),
+    adType: AdType$outboundSchema.optional(),
+    advertiserName: z.string().optional(),
+    campaignId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    creativeAssetUrl: z.string().optional(),
+    creativeIds: z.array(z.string()).optional(),
+    cta: z.string().optional(),
+    description: z.string().optional(),
+    displayUrl: z.string().optional(),
+    finalUrl: z.string().optional(),
+    groupId: z.string().optional(),
+    headline: z.string().optional(),
+    id: z.string().optional(),
+    logoCreativeId: z.string().optional(),
+    metadata: z.array(AdsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    path1: z.string().optional(),
+    path2: z.string().optional(),
+    promoted: z.array(AdsPromoted$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    status: AdsAdStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      adCopy: "ad_copy",
+      adType: "ad_type",
+      advertiserName: "advertiser_name",
+      campaignId: "campaign_id",
+      createdAt: "created_at",
+      creativeAssetUrl: "creative_asset_url",
+      creativeIds: "creative_ids",
+      displayUrl: "display_url",
+      finalUrl: "final_url",
+      groupId: "group_id",
+      logoCreativeId: "logo_creative_id",
+      organizationId: "organization_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function adsAdToJSON(adsAd: AdsAd): string {
   return JSON.stringify(AdsAd$outboundSchema.parse(adsAd));

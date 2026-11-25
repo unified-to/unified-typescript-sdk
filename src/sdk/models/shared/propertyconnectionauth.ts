@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -57,58 +57,61 @@ export const PropertyConnectionAuth$inboundSchema: z.ZodType<
   PropertyConnectionAuth,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  access_token: z.string().optional(),
-  api_url: z.string().optional(),
-  app_id: z.string().optional(),
-  audience: z.string().optional(),
-  authorize_url: z.string().optional(),
-  client_id: z.string().optional(),
-  client_secret: z.string().optional(),
-  consumer_key: z.string().optional(),
-  consumer_secret: z.string().optional(),
-  dev_api_key: z.string().optional(),
-  emails: z.array(z.string()).optional(),
-  expires_in: z.number().optional(),
-  expiry_date: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  key: z.string().optional(),
-  meta: z.record(z.any()).optional(),
-  name: z.string().optional(),
-  other_auth_info: z.array(z.string()).optional(),
-  pem: z.string().optional(),
-  refresh_token: z.string().optional(),
-  refresh_token_expires_date: z.string().datetime({ offset: true }).transform(
-    v => new Date(v)
-  ).optional(),
-  refresh_token_expires_in: z.number().optional(),
-  refresh_url: z.string().optional(),
-  state: z.string().optional(),
-  token: z.string().optional(),
-  token_url: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "access_token": "accessToken",
-    "api_url": "apiUrl",
-    "app_id": "appId",
-    "authorize_url": "authorizeUrl",
-    "client_id": "clientId",
-    "client_secret": "clientSecret",
-    "consumer_key": "consumerKey",
-    "consumer_secret": "consumerSecret",
-    "dev_api_key": "devApiKey",
-    "expires_in": "expiresIn",
-    "expiry_date": "expiryDate",
-    "other_auth_info": "otherAuthInfo",
-    "refresh_token": "refreshToken",
-    "refresh_token_expires_date": "refreshTokenExpiresDate",
-    "refresh_token_expires_in": "refreshTokenExpiresIn",
-    "refresh_url": "refreshUrl",
-    "token_url": "tokenUrl",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    access_token: z.string().optional(),
+    api_url: z.string().optional(),
+    app_id: z.string().optional(),
+    audience: z.string().optional(),
+    authorize_url: z.string().optional(),
+    client_id: z.string().optional(),
+    client_secret: z.string().optional(),
+    consumer_key: z.string().optional(),
+    consumer_secret: z.string().optional(),
+    dev_api_key: z.string().optional(),
+    emails: z.array(z.string()).optional(),
+    expires_in: z.number().optional(),
+    expiry_date: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    key: z.string().optional(),
+    meta: z.record(z.any()).optional(),
+    name: z.string().optional(),
+    other_auth_info: z.array(z.string()).optional(),
+    pem: z.string().optional(),
+    refresh_token: z.string().optional(),
+    refresh_token_expires_date: z.string().datetime({ offset: true }).transform(
+      v => new Date(v)
+    ).optional(),
+    refresh_token_expires_in: z.number().optional(),
+    refresh_url: z.string().optional(),
+    state: z.string().optional(),
+    token: z.string().optional(),
+    token_url: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "access_token": "accessToken",
+      "api_url": "apiUrl",
+      "app_id": "appId",
+      "authorize_url": "authorizeUrl",
+      "client_id": "clientId",
+      "client_secret": "clientSecret",
+      "consumer_key": "consumerKey",
+      "consumer_secret": "consumerSecret",
+      "dev_api_key": "devApiKey",
+      "expires_in": "expiresIn",
+      "expiry_date": "expiryDate",
+      "other_auth_info": "otherAuthInfo",
+      "refresh_token": "refreshToken",
+      "refresh_token_expires_date": "refreshTokenExpiresDate",
+      "refresh_token_expires_in": "refreshTokenExpiresIn",
+      "refresh_url": "refreshUrl",
+      "token_url": "tokenUrl",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type PropertyConnectionAuth$Outbound = {
   access_token?: string | undefined;
@@ -144,55 +147,58 @@ export const PropertyConnectionAuth$outboundSchema: z.ZodType<
   PropertyConnectionAuth$Outbound,
   z.ZodTypeDef,
   PropertyConnectionAuth
-> = z.object({
-  accessToken: z.string().optional(),
-  apiUrl: z.string().optional(),
-  appId: z.string().optional(),
-  audience: z.string().optional(),
-  authorizeUrl: z.string().optional(),
-  clientId: z.string().optional(),
-  clientSecret: z.string().optional(),
-  consumerKey: z.string().optional(),
-  consumerSecret: z.string().optional(),
-  devApiKey: z.string().optional(),
-  emails: z.array(z.string()).optional(),
-  expiresIn: z.number().optional(),
-  expiryDate: z.date().transform(v => v.toISOString()).optional(),
-  key: z.string().optional(),
-  meta: z.record(z.any()).optional(),
-  name: z.string().optional(),
-  otherAuthInfo: z.array(z.string()).optional(),
-  pem: z.string().optional(),
-  refreshToken: z.string().optional(),
-  refreshTokenExpiresDate: z.date().transform(v => v.toISOString()).optional(),
-  refreshTokenExpiresIn: z.number().optional(),
-  refreshUrl: z.string().optional(),
-  state: z.string().optional(),
-  token: z.string().optional(),
-  tokenUrl: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accessToken: "access_token",
-    apiUrl: "api_url",
-    appId: "app_id",
-    authorizeUrl: "authorize_url",
-    clientId: "client_id",
-    clientSecret: "client_secret",
-    consumerKey: "consumer_key",
-    consumerSecret: "consumer_secret",
-    devApiKey: "dev_api_key",
-    expiresIn: "expires_in",
-    expiryDate: "expiry_date",
-    otherAuthInfo: "other_auth_info",
-    refreshToken: "refresh_token",
-    refreshTokenExpiresDate: "refresh_token_expires_date",
-    refreshTokenExpiresIn: "refresh_token_expires_in",
-    refreshUrl: "refresh_url",
-    tokenUrl: "token_url",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accessToken: z.string().optional(),
+    apiUrl: z.string().optional(),
+    appId: z.string().optional(),
+    audience: z.string().optional(),
+    authorizeUrl: z.string().optional(),
+    clientId: z.string().optional(),
+    clientSecret: z.string().optional(),
+    consumerKey: z.string().optional(),
+    consumerSecret: z.string().optional(),
+    devApiKey: z.string().optional(),
+    emails: z.array(z.string()).optional(),
+    expiresIn: z.number().optional(),
+    expiryDate: z.date().transform(v => v.toISOString()).optional(),
+    key: z.string().optional(),
+    meta: z.record(z.any()).optional(),
+    name: z.string().optional(),
+    otherAuthInfo: z.array(z.string()).optional(),
+    pem: z.string().optional(),
+    refreshToken: z.string().optional(),
+    refreshTokenExpiresDate: z.date().transform(v => v.toISOString())
+      .optional(),
+    refreshTokenExpiresIn: z.number().optional(),
+    refreshUrl: z.string().optional(),
+    state: z.string().optional(),
+    token: z.string().optional(),
+    tokenUrl: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accessToken: "access_token",
+      apiUrl: "api_url",
+      appId: "app_id",
+      authorizeUrl: "authorize_url",
+      clientId: "client_id",
+      clientSecret: "client_secret",
+      consumerKey: "consumer_key",
+      consumerSecret: "consumer_secret",
+      devApiKey: "dev_api_key",
+      expiresIn: "expires_in",
+      expiryDate: "expiry_date",
+      otherAuthInfo: "other_auth_info",
+      refreshToken: "refresh_token",
+      refreshTokenExpiresDate: "refresh_token_expires_date",
+      refreshTokenExpiresIn: "refresh_token_expires_in",
+      refreshUrl: "refresh_url",
+      tokenUrl: "token_url",
+      userId: "user_id",
+    });
+  })
+);
 
 export function propertyConnectionAuthToJSON(
   propertyConnectionAuth: PropertyConnectionAuth,

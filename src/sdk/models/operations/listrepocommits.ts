@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListRepoCommitsQueryParamFields = {
@@ -63,7 +64,9 @@ export type ListRepoCommitsRequest = {
 /** @internal */
 export const ListRepoCommitsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListRepoCommitsQueryParamFields
-> = z.nativeEnum(ListRepoCommitsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListRepoCommitsQueryParamFields)
+);
 
 /** @internal */
 export type ListRepoCommitsRequest$Outbound = {
@@ -85,26 +88,28 @@ export const ListRepoCommitsRequest$outboundSchema: z.ZodType<
   ListRepoCommitsRequest$Outbound,
   z.ZodTypeDef,
   ListRepoCommitsRequest
-> = z.object({
-  branchId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListRepoCommitsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  repoId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    branchId: "branch_id",
-    connectionId: "connection_id",
-    repoId: "repo_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    branchId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListRepoCommitsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    repoId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      branchId: "branch_id",
+      connectionId: "connection_id",
+      repoId: "repo_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listRepoCommitsRequestToJSON(
   listRepoCommitsRequest: ListRepoCommitsRequest,

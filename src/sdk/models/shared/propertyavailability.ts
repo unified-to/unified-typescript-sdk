@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -81,41 +81,45 @@ export const PropertyAvailabilityStatus$inboundSchema: z.ZodType<
   PropertyAvailabilityStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAvailabilityStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAvailabilityStatus)
+);
 
 /** @internal */
 export const PropertyAvailability$inboundSchema: z.ZodType<
   PropertyAvailability,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  currency: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  listing_id: z.string().optional(),
-  max_nights: z.number().optional(),
-  min_nights: z.number().optional(),
-  price_amount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reservation_ids: z.array(z.string()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: PropertyAvailabilityStatus$inboundSchema.optional(),
-  units_available: z.number().optional(),
-  unittype_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "listing_id": "listingId",
-    "max_nights": "maxNights",
-    "min_nights": "minNights",
-    "price_amount": "priceAmount",
-    "reservation_ids": "reservationIds",
-    "start_at": "startAt",
-    "units_available": "unitsAvailable",
-    "unittype_id": "unittypeId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    listing_id: z.string().optional(),
+    max_nights: z.number().optional(),
+    min_nights: z.number().optional(),
+    price_amount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reservation_ids: z.array(z.string()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: PropertyAvailabilityStatus$inboundSchema.optional(),
+    units_available: z.number().optional(),
+    unittype_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "listing_id": "listingId",
+      "max_nights": "maxNights",
+      "min_nights": "minNights",
+      "price_amount": "priceAmount",
+      "reservation_ids": "reservationIds",
+      "start_at": "startAt",
+      "units_available": "unitsAvailable",
+      "unittype_id": "unittypeId",
+    });
+  })
+);
 
 export function propertyAvailabilityFromJSON(
   jsonString: string,

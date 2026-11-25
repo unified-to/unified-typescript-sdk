@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -94,84 +94,90 @@ export const ContentsType$inboundSchema: z.ZodType<
   ContentsType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ContentsType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ContentsType));
 /** @internal */
 export const ContentsType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ContentsType
-> = openEnums.outboundSchema(ContentsType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ContentsType));
 
 /** @internal */
 export const DutiesPaidBy$inboundSchema: z.ZodType<
   DutiesPaidBy,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(DutiesPaidBy);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(DutiesPaidBy));
 /** @internal */
 export const DutiesPaidBy$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   DutiesPaidBy
-> = openEnums.outboundSchema(DutiesPaidBy);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(DutiesPaidBy));
 
 /** @internal */
 export const NonDeliveryOption$inboundSchema: z.ZodType<
   NonDeliveryOption,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(NonDeliveryOption);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(NonDeliveryOption)
+);
 /** @internal */
 export const NonDeliveryOption$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   NonDeliveryOption
-> = openEnums.outboundSchema(NonDeliveryOption);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(NonDeliveryOption)
+);
 
 /** @internal */
 export const TaxesPaidBy$inboundSchema: z.ZodType<
   TaxesPaidBy,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(TaxesPaidBy);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TaxesPaidBy));
 /** @internal */
 export const TaxesPaidBy$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   TaxesPaidBy
-> = openEnums.outboundSchema(TaxesPaidBy);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(TaxesPaidBy));
 
 /** @internal */
 export const PropertyShippingShipmentCustoms$inboundSchema: z.ZodType<
   PropertyShippingShipmentCustoms,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  contents_type: ContentsType$inboundSchema.optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  duties_paid_by: DutiesPaidBy$inboundSchema.optional(),
-  items: z.array(ShippingCustomsItem$inboundSchema).optional(),
-  non_delivery_option: NonDeliveryOption$inboundSchema.optional(),
-  recipient_eori: z.string().optional(),
-  recipient_tax_number: z.string().optional(),
-  restrictions: z.array(z.string()).optional(),
-  shipper_eori: z.string().optional(),
-  shipper_tax_number: z.string().optional(),
-  taxes_paid_by: TaxesPaidBy$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "contents_type": "contentsType",
-    "duties_paid_by": "dutiesPaidBy",
-    "non_delivery_option": "nonDeliveryOption",
-    "recipient_eori": "recipientEori",
-    "recipient_tax_number": "recipientTaxNumber",
-    "shipper_eori": "shipperEori",
-    "shipper_tax_number": "shipperTaxNumber",
-    "taxes_paid_by": "taxesPaidBy",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    contents_type: ContentsType$inboundSchema.optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    duties_paid_by: DutiesPaidBy$inboundSchema.optional(),
+    items: z.array(ShippingCustomsItem$inboundSchema).optional(),
+    non_delivery_option: NonDeliveryOption$inboundSchema.optional(),
+    recipient_eori: z.string().optional(),
+    recipient_tax_number: z.string().optional(),
+    restrictions: z.array(z.string()).optional(),
+    shipper_eori: z.string().optional(),
+    shipper_tax_number: z.string().optional(),
+    taxes_paid_by: TaxesPaidBy$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "contents_type": "contentsType",
+      "duties_paid_by": "dutiesPaidBy",
+      "non_delivery_option": "nonDeliveryOption",
+      "recipient_eori": "recipientEori",
+      "recipient_tax_number": "recipientTaxNumber",
+      "shipper_eori": "shipperEori",
+      "shipper_tax_number": "shipperTaxNumber",
+      "taxes_paid_by": "taxesPaidBy",
+    });
+  })
+);
 /** @internal */
 export type PropertyShippingShipmentCustoms$Outbound = {
   amount?: number | undefined;
@@ -194,32 +200,34 @@ export const PropertyShippingShipmentCustoms$outboundSchema: z.ZodType<
   PropertyShippingShipmentCustoms$Outbound,
   z.ZodTypeDef,
   PropertyShippingShipmentCustoms
-> = z.object({
-  amount: z.number().optional(),
-  contentsType: ContentsType$outboundSchema.optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  dutiesPaidBy: DutiesPaidBy$outboundSchema.optional(),
-  items: z.array(ShippingCustomsItem$outboundSchema).optional(),
-  nonDeliveryOption: NonDeliveryOption$outboundSchema.optional(),
-  recipientEori: z.string().optional(),
-  recipientTaxNumber: z.string().optional(),
-  restrictions: z.array(z.string()).optional(),
-  shipperEori: z.string().optional(),
-  shipperTaxNumber: z.string().optional(),
-  taxesPaidBy: TaxesPaidBy$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contentsType: "contents_type",
-    dutiesPaidBy: "duties_paid_by",
-    nonDeliveryOption: "non_delivery_option",
-    recipientEori: "recipient_eori",
-    recipientTaxNumber: "recipient_tax_number",
-    shipperEori: "shipper_eori",
-    shipperTaxNumber: "shipper_tax_number",
-    taxesPaidBy: "taxes_paid_by",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    contentsType: ContentsType$outboundSchema.optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    dutiesPaidBy: DutiesPaidBy$outboundSchema.optional(),
+    items: z.array(ShippingCustomsItem$outboundSchema).optional(),
+    nonDeliveryOption: NonDeliveryOption$outboundSchema.optional(),
+    recipientEori: z.string().optional(),
+    recipientTaxNumber: z.string().optional(),
+    restrictions: z.array(z.string()).optional(),
+    shipperEori: z.string().optional(),
+    shipperTaxNumber: z.string().optional(),
+    taxesPaidBy: TaxesPaidBy$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contentsType: "contents_type",
+      dutiesPaidBy: "duties_paid_by",
+      nonDeliveryOption: "non_delivery_option",
+      recipientEori: "recipient_eori",
+      recipientTaxNumber: "recipient_tax_number",
+      shipperEori: "shipper_eori",
+      shipperTaxNumber: "shipper_tax_number",
+      taxesPaidBy: "taxes_paid_by",
+    });
+  })
+);
 
 export function propertyShippingShipmentCustomsToJSON(
   propertyShippingShipmentCustoms: PropertyShippingShipmentCustoms,

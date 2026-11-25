@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -23,18 +23,20 @@ export const AccountingBalancesheetItem$inboundSchema: z.ZodType<
   AccountingBalancesheetItem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  amount: z.number().optional(),
-  name: z.string().optional(),
-  sub_items: z.array(z.lazy(() => AccountingBalancesheetItem$inboundSchema))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "sub_items": "subItems",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    amount: z.number().optional(),
+    name: z.string().optional(),
+    sub_items: z.array(z.lazy(() => AccountingBalancesheetItem$inboundSchema))
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "sub_items": "subItems",
+    });
+  })
+);
 
 export function accountingBalancesheetItemFromJSON(
   jsonString: string,

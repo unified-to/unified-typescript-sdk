@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -48,9 +49,10 @@ export type PatchMessagingChannelRequest = {
 
 /** @internal */
 export const PatchMessagingChannelQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchMessagingChannelQueryParamFields> = z.nativeEnum(
-    PatchMessagingChannelQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchMessagingChannelQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchMessagingChannelQueryParamFields)
+    );
 
 /** @internal */
 export type PatchMessagingChannelRequest$Outbound = {
@@ -66,19 +68,21 @@ export const PatchMessagingChannelRequest$outboundSchema: z.ZodType<
   PatchMessagingChannelRequest$Outbound,
   z.ZodTypeDef,
   PatchMessagingChannelRequest
-> = z.object({
-  messagingChannel: shared.MessagingChannel$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchMessagingChannelQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    messagingChannel: "MessagingChannel",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    messagingChannel: shared.MessagingChannel$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchMessagingChannelQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      messagingChannel: "MessagingChannel",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchMessagingChannelRequestToJSON(
   patchMessagingChannelRequest: PatchMessagingChannelRequest,

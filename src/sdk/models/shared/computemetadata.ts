@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -102,7 +102,7 @@ export const ComputeMetadata1$inboundSchema: z.ZodType<
   ComputeMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type ComputeMetadata1$Outbound = {};
 
@@ -111,7 +111,7 @@ export const ComputeMetadata1$outboundSchema: z.ZodType<
   ComputeMetadata1$Outbound,
   z.ZodTypeDef,
   ComputeMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function computeMetadata1ToJSON(
   computeMetadata1: ComputeMetadata1,
@@ -135,12 +135,14 @@ export const ComputeMetadata5$inboundSchema: z.ZodType<
   ComputeMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => ComputeMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => ComputeMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type ComputeMetadata5$Outbound =
   | ComputeMetadata1$Outbound
@@ -153,12 +155,14 @@ export const ComputeMetadata5$outboundSchema: z.ZodType<
   ComputeMetadata5$Outbound,
   z.ZodTypeDef,
   ComputeMetadata5
-> = z.union([
-  z.lazy(() => ComputeMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => ComputeMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function computeMetadata5ToJSON(
   computeMetadata5: ComputeMetadata5,
@@ -182,20 +186,22 @@ export const ComputeMetadataExtraData$inboundSchema: z.ZodType<
   ComputeMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => ComputeMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => ComputeMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type ComputeMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -209,20 +215,22 @@ export const ComputeMetadataExtraData$outboundSchema: z.ZodType<
   ComputeMetadataExtraData$Outbound,
   z.ZodTypeDef,
   ComputeMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => ComputeMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => ComputeMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function computeMetadataExtraDataToJSON(
   computeMetadataExtraData: ComputeMetadataExtraData,
@@ -246,20 +254,24 @@ export const ComputeMetadataFormat$inboundSchema: z.ZodType<
   ComputeMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeMetadataFormat)
+);
 /** @internal */
 export const ComputeMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeMetadataFormat
-> = openEnums.outboundSchema(ComputeMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeMetadataFormat)
+);
 
 /** @internal */
 export const ComputeMetadataSchemas1$inboundSchema: z.ZodType<
   ComputeMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type ComputeMetadataSchemas1$Outbound = {};
 
@@ -268,7 +280,7 @@ export const ComputeMetadataSchemas1$outboundSchema: z.ZodType<
   ComputeMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   ComputeMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function computeMetadataSchemas1ToJSON(
   computeMetadataSchemas1: ComputeMetadataSchemas1,
@@ -292,12 +304,14 @@ export const ComputeMetadataSchemas5$inboundSchema: z.ZodType<
   ComputeMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => ComputeMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => ComputeMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type ComputeMetadataSchemas5$Outbound =
   | ComputeMetadataSchemas1$Outbound
@@ -310,12 +324,14 @@ export const ComputeMetadataSchemas5$outboundSchema: z.ZodType<
   ComputeMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   ComputeMetadataSchemas5
-> = z.union([
-  z.lazy(() => ComputeMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => ComputeMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function computeMetadataSchemas5ToJSON(
   computeMetadataSchemas5: ComputeMetadataSchemas5,
@@ -339,20 +355,22 @@ export const ComputeMetadataValue$inboundSchema: z.ZodType<
   ComputeMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => ComputeMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => ComputeMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type ComputeMetadataValue$Outbound =
   | { [k: string]: any }
@@ -366,20 +384,22 @@ export const ComputeMetadataValue$outboundSchema: z.ZodType<
   ComputeMetadataValue$Outbound,
   z.ZodTypeDef,
   ComputeMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => ComputeMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => ComputeMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function computeMetadataValueToJSON(
   computeMetadataValue: ComputeMetadataValue,
@@ -403,44 +423,46 @@ export const ComputeMetadata$inboundSchema: z.ZodType<
   ComputeMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => ComputeMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: ComputeMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => ComputeMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => ComputeMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: ComputeMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => ComputeMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type ComputeMetadata$Outbound = {
   extra_data?:
@@ -468,44 +490,46 @@ export const ComputeMetadata$outboundSchema: z.ZodType<
   ComputeMetadata$Outbound,
   z.ZodTypeDef,
   ComputeMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => ComputeMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: ComputeMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => ComputeMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => ComputeMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: ComputeMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => ComputeMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function computeMetadataToJSON(
   computeMetadata: ComputeMetadata,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -36,25 +36,31 @@ export const DatastoreFilterGroupType$inboundSchema: z.ZodType<
   DatastoreFilterGroupType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(DatastoreFilterGroupType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(DatastoreFilterGroupType)
+);
 /** @internal */
 export const DatastoreFilterGroupType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   DatastoreFilterGroupType
-> = openEnums.outboundSchema(DatastoreFilterGroupType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(DatastoreFilterGroupType)
+);
 
 /** @internal */
 export const DatastoreFilterGroup$inboundSchema: z.ZodType<
   DatastoreFilterGroup,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  and: z.array(z.lazy(() => DatastoreFilterGroup$inboundSchema)).optional(),
-  filters: z.array(DatastoreFilter$inboundSchema).optional(),
-  or: z.array(z.lazy(() => DatastoreFilterGroup$inboundSchema)).optional(),
-  type: DatastoreFilterGroupType$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    and: z.array(z.lazy(() => DatastoreFilterGroup$inboundSchema)).optional(),
+    filters: z.array(DatastoreFilter$inboundSchema).optional(),
+    or: z.array(z.lazy(() => DatastoreFilterGroup$inboundSchema)).optional(),
+    type: DatastoreFilterGroupType$inboundSchema,
+  })
+);
 /** @internal */
 export type DatastoreFilterGroup$Outbound = {
   and?: Array<DatastoreFilterGroup$Outbound> | undefined;
@@ -68,12 +74,14 @@ export const DatastoreFilterGroup$outboundSchema: z.ZodType<
   DatastoreFilterGroup$Outbound,
   z.ZodTypeDef,
   DatastoreFilterGroup
-> = z.object({
-  and: z.array(z.lazy(() => DatastoreFilterGroup$outboundSchema)).optional(),
-  filters: z.array(DatastoreFilter$outboundSchema).optional(),
-  or: z.array(z.lazy(() => DatastoreFilterGroup$outboundSchema)).optional(),
-  type: DatastoreFilterGroupType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    and: z.array(z.lazy(() => DatastoreFilterGroup$outboundSchema)).optional(),
+    filters: z.array(DatastoreFilter$outboundSchema).optional(),
+    or: z.array(z.lazy(() => DatastoreFilterGroup$outboundSchema)).optional(),
+    type: DatastoreFilterGroupType$outboundSchema,
+  })
+);
 
 export function datastoreFilterGroupToJSON(
   datastoreFilterGroup: DatastoreFilterGroup,

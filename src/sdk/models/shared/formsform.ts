@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -50,39 +50,43 @@ export const FormsForm$inboundSchema: z.ZodType<
   FormsForm,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  confirmation_message: z.string().optional(),
-  confirmation_redirect_url: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  fields: z.array(FormField$inboundSchema).optional(),
-  has_multiple_submissions: z.boolean().optional(),
-  has_progress_bar: z.boolean().optional(),
-  has_shuffle_questions: z.boolean().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(FormsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  published_url: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  response_count: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "confirmation_message": "confirmationMessage",
-    "confirmation_redirect_url": "confirmationRedirectUrl",
-    "created_at": "createdAt",
-    "has_multiple_submissions": "hasMultipleSubmissions",
-    "has_progress_bar": "hasProgressBar",
-    "has_shuffle_questions": "hasShuffleQuestions",
-    "is_active": "isActive",
-    "published_url": "publishedUrl",
-    "response_count": "responseCount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    confirmation_message: z.string().optional(),
+    confirmation_redirect_url: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    fields: z.array(FormField$inboundSchema).optional(),
+    has_multiple_submissions: z.boolean().optional(),
+    has_progress_bar: z.boolean().optional(),
+    has_shuffle_questions: z.boolean().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(FormsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    published_url: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    response_count: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "confirmation_message": "confirmationMessage",
+      "confirmation_redirect_url": "confirmationRedirectUrl",
+      "created_at": "createdAt",
+      "has_multiple_submissions": "hasMultipleSubmissions",
+      "has_progress_bar": "hasProgressBar",
+      "has_shuffle_questions": "hasShuffleQuestions",
+      "is_active": "isActive",
+      "published_url": "publishedUrl",
+      "response_count": "responseCount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type FormsForm$Outbound = {
   confirmation_message?: string | undefined;
@@ -108,37 +112,39 @@ export const FormsForm$outboundSchema: z.ZodType<
   FormsForm$Outbound,
   z.ZodTypeDef,
   FormsForm
-> = z.object({
-  confirmationMessage: z.string().optional(),
-  confirmationRedirectUrl: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  fields: z.array(FormField$outboundSchema).optional(),
-  hasMultipleSubmissions: z.boolean().optional(),
-  hasProgressBar: z.boolean().optional(),
-  hasShuffleQuestions: z.boolean().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(FormsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  publishedUrl: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  responseCount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    confirmationMessage: "confirmation_message",
-    confirmationRedirectUrl: "confirmation_redirect_url",
-    createdAt: "created_at",
-    hasMultipleSubmissions: "has_multiple_submissions",
-    hasProgressBar: "has_progress_bar",
-    hasShuffleQuestions: "has_shuffle_questions",
-    isActive: "is_active",
-    publishedUrl: "published_url",
-    responseCount: "response_count",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    confirmationMessage: z.string().optional(),
+    confirmationRedirectUrl: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    fields: z.array(FormField$outboundSchema).optional(),
+    hasMultipleSubmissions: z.boolean().optional(),
+    hasProgressBar: z.boolean().optional(),
+    hasShuffleQuestions: z.boolean().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(FormsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    publishedUrl: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    responseCount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      confirmationMessage: "confirmation_message",
+      confirmationRedirectUrl: "confirmation_redirect_url",
+      createdAt: "created_at",
+      hasMultipleSubmissions: "has_multiple_submissions",
+      hasProgressBar: "has_progress_bar",
+      hasShuffleQuestions: "has_shuffle_questions",
+      isActive: "is_active",
+      publishedUrl: "published_url",
+      responseCount: "response_count",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function formsFormToJSON(formsForm: FormsForm): string {
   return JSON.stringify(FormsForm$outboundSchema.parse(formsForm));

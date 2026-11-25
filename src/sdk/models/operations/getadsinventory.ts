@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetAdsInventoryQueryParamFields = {
@@ -44,7 +45,9 @@ export type GetAdsInventoryRequest = {
 /** @internal */
 export const GetAdsInventoryQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetAdsInventoryQueryParamFields
-> = z.nativeEnum(GetAdsInventoryQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetAdsInventoryQueryParamFields)
+);
 
 /** @internal */
 export type GetAdsInventoryRequest$Outbound = {
@@ -59,16 +62,18 @@ export const GetAdsInventoryRequest$outboundSchema: z.ZodType<
   GetAdsInventoryRequest$Outbound,
   z.ZodTypeDef,
   GetAdsInventoryRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetAdsInventoryQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetAdsInventoryQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getAdsInventoryRequestToJSON(
   getAdsInventoryRequest: GetAdsInventoryRequest,

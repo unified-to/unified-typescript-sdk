@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -53,30 +53,32 @@ export const LegalPartyRole$inboundSchema: z.ZodType<
   LegalPartyRole,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LegalPartyRole);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(LegalPartyRole));
 /** @internal */
 export const LegalPartyRole$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LegalPartyRole
-> = openEnums.outboundSchema(LegalPartyRole);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(LegalPartyRole));
 
 /** @internal */
 export const LegalParty$inboundSchema: z.ZodType<
   LegalParty,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_id: z.string().optional(),
-  contact_id: z.string().optional(),
-  description: z.string().optional(),
-  role: LegalPartyRole$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "contact_id": "contactId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_id: z.string().optional(),
+    contact_id: z.string().optional(),
+    description: z.string().optional(),
+    role: LegalPartyRole$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "contact_id": "contactId",
+    });
+  })
+);
 /** @internal */
 export type LegalParty$Outbound = {
   company_id?: string | undefined;
@@ -90,17 +92,19 @@ export const LegalParty$outboundSchema: z.ZodType<
   LegalParty$Outbound,
   z.ZodTypeDef,
   LegalParty
-> = z.object({
-  companyId: z.string().optional(),
-  contactId: z.string().optional(),
-  description: z.string().optional(),
-  role: LegalPartyRole$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    contactId: "contact_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    contactId: z.string().optional(),
+    description: z.string().optional(),
+    role: LegalPartyRole$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      contactId: "contact_id",
+    });
+  })
+);
 
 export function legalPartyToJSON(legalParty: LegalParty): string {
   return JSON.stringify(LegalParty$outboundSchema.parse(legalParty));

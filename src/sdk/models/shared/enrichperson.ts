@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -141,60 +141,66 @@ export const EnrichPersonGender$inboundSchema: z.ZodType<
   EnrichPersonGender,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EnrichPersonGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(EnrichPersonGender)
+);
 
 /** @internal */
 export const EnrichPerson$inboundSchema: z.ZodType<
   EnrichPerson,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyEnrichPersonAddress$inboundSchema.optional(),
-  bio: z.string().optional(),
-  birthdate: z.string().optional(),
-  company: z.string().optional(),
-  company_domain: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  emails: z.array(EnrichEmail$inboundSchema).optional(),
-  facebook_url: z.string().optional(),
-  first_name: z.string().optional(),
-  gender: EnrichPersonGender$inboundSchema.optional(),
-  github_url: z.string().optional(),
-  github_username: z.string().optional(),
-  id: z.string().optional(),
-  image_url: z.string().optional(),
-  last_name: z.string().optional(),
-  linkedin_url: z.string().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(EnrichTelephone$inboundSchema).optional(),
-  timezone: z.string().optional(),
-  title: z.string().optional(),
-  twitter_handle: z.string().optional(),
-  twitter_url: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  utc_offset: z.number().optional(),
-  work_histories: z.array(EnrichPersonWorkHistory$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_domain": "companyDomain",
-    "created_at": "createdAt",
-    "facebook_url": "facebookUrl",
-    "first_name": "firstName",
-    "github_url": "githubUrl",
-    "github_username": "githubUsername",
-    "image_url": "imageUrl",
-    "last_name": "lastName",
-    "linkedin_url": "linkedinUrl",
-    "twitter_handle": "twitterHandle",
-    "twitter_url": "twitterUrl",
-    "updated_at": "updatedAt",
-    "utc_offset": "utcOffset",
-    "work_histories": "workHistories",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyEnrichPersonAddress$inboundSchema.optional(),
+    bio: z.string().optional(),
+    birthdate: z.string().optional(),
+    company: z.string().optional(),
+    company_domain: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    emails: z.array(EnrichEmail$inboundSchema).optional(),
+    facebook_url: z.string().optional(),
+    first_name: z.string().optional(),
+    gender: EnrichPersonGender$inboundSchema.optional(),
+    github_url: z.string().optional(),
+    github_username: z.string().optional(),
+    id: z.string().optional(),
+    image_url: z.string().optional(),
+    last_name: z.string().optional(),
+    linkedin_url: z.string().optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(EnrichTelephone$inboundSchema).optional(),
+    timezone: z.string().optional(),
+    title: z.string().optional(),
+    twitter_handle: z.string().optional(),
+    twitter_url: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    utc_offset: z.number().optional(),
+    work_histories: z.array(EnrichPersonWorkHistory$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_domain": "companyDomain",
+      "created_at": "createdAt",
+      "facebook_url": "facebookUrl",
+      "first_name": "firstName",
+      "github_url": "githubUrl",
+      "github_username": "githubUsername",
+      "image_url": "imageUrl",
+      "last_name": "lastName",
+      "linkedin_url": "linkedinUrl",
+      "twitter_handle": "twitterHandle",
+      "twitter_url": "twitterUrl",
+      "updated_at": "updatedAt",
+      "utc_offset": "utcOffset",
+      "work_histories": "workHistories",
+    });
+  })
+);
 
 export function enrichPersonFromJSON(
   jsonString: string,

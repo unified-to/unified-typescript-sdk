@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -85,8 +85,10 @@ export const PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalTyp
     PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType,
+    )
   );
 
 /** @internal */
@@ -95,8 +97,10 @@ export const PropertyAdsReportMetricsInsertionorderBidStrategyType$inboundSchema
     PropertyAdsReportMetricsInsertionorderBidStrategyType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsInsertionorderBidStrategyType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsReportMetricsInsertionorderBidStrategyType,
+    )
   );
 
 /** @internal */
@@ -105,8 +109,10 @@ export const PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartners
     PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType,
+    )
   );
 
 /** @internal */
@@ -115,34 +121,36 @@ export const PropertyAdsReportMetricsInsertionorderBidStrategy$inboundSchema:
     PropertyAdsReportMetricsInsertionorderBidStrategy,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    custom_bidding_algorithm_id: z.string().optional(),
-    fixed_bid_amount: z.number().optional(),
-    max_average_cpm_bid_amount: z.number().optional(),
-    performance_goal_amount: z.number().optional(),
-    performance_goal_type:
-      PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType$inboundSchema
-        .optional(),
-    raise_bid_for_deals: z.boolean().optional(),
-    target_roas: z.number().optional(),
-    type: PropertyAdsReportMetricsInsertionorderBidStrategyType$inboundSchema,
-    youtube_and_partners_type:
-      PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType$inboundSchema
-        .optional(),
-    youtube_and_partners_value: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "custom_bidding_algorithm_id": "customBiddingAlgorithmId",
-      "fixed_bid_amount": "fixedBidAmount",
-      "max_average_cpm_bid_amount": "maxAverageCpmBidAmount",
-      "performance_goal_amount": "performanceGoalAmount",
-      "performance_goal_type": "performanceGoalType",
-      "raise_bid_for_deals": "raiseBidForDeals",
-      "target_roas": "targetRoas",
-      "youtube_and_partners_type": "youtubeAndPartnersType",
-      "youtube_and_partners_value": "youtubeAndPartnersValue",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      custom_bidding_algorithm_id: z.string().optional(),
+      fixed_bid_amount: z.number().optional(),
+      max_average_cpm_bid_amount: z.number().optional(),
+      performance_goal_amount: z.number().optional(),
+      performance_goal_type:
+        PropertyAdsReportMetricsInsertionorderBidStrategyPerformanceGoalType$inboundSchema
+          .optional(),
+      raise_bid_for_deals: z.boolean().optional(),
+      target_roas: z.number().optional(),
+      type: PropertyAdsReportMetricsInsertionorderBidStrategyType$inboundSchema,
+      youtube_and_partners_type:
+        PropertyAdsReportMetricsInsertionorderBidStrategyYoutubeAndPartnersType$inboundSchema
+          .optional(),
+      youtube_and_partners_value: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "custom_bidding_algorithm_id": "customBiddingAlgorithmId",
+        "fixed_bid_amount": "fixedBidAmount",
+        "max_average_cpm_bid_amount": "maxAverageCpmBidAmount",
+        "performance_goal_amount": "performanceGoalAmount",
+        "performance_goal_type": "performanceGoalType",
+        "raise_bid_for_deals": "raiseBidForDeals",
+        "target_roas": "targetRoas",
+        "youtube_and_partners_type": "youtubeAndPartnersType",
+        "youtube_and_partners_value": "youtubeAndPartnersValue",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsInsertionorderBidStrategyFromJSON(
   jsonString: string,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -44,37 +44,47 @@ export const PropertyAdsGroupDeliveryGoalPeriod$inboundSchema: z.ZodType<
   PropertyAdsGroupDeliveryGoalPeriod,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsGroupDeliveryGoalPeriod);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsGroupDeliveryGoalPeriod)
+);
 /** @internal */
 export const PropertyAdsGroupDeliveryGoalPeriod$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyAdsGroupDeliveryGoalPeriod
-> = openEnums.outboundSchema(PropertyAdsGroupDeliveryGoalPeriod);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyAdsGroupDeliveryGoalPeriod)
+);
 
 /** @internal */
 export const PropertyAdsGroupDeliveryGoalUnit$inboundSchema: z.ZodType<
   PropertyAdsGroupDeliveryGoalUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsGroupDeliveryGoalUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsGroupDeliveryGoalUnit)
+);
 /** @internal */
 export const PropertyAdsGroupDeliveryGoalUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyAdsGroupDeliveryGoalUnit
-> = openEnums.outboundSchema(PropertyAdsGroupDeliveryGoalUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyAdsGroupDeliveryGoalUnit)
+);
 
 /** @internal */
 export const PropertyAdsGroupDeliveryGoal$inboundSchema: z.ZodType<
   PropertyAdsGroupDeliveryGoal,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  period: PropertyAdsGroupDeliveryGoalPeriod$inboundSchema.optional(),
-  quantity: z.number().optional(),
-  unit: PropertyAdsGroupDeliveryGoalUnit$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    period: PropertyAdsGroupDeliveryGoalPeriod$inboundSchema.optional(),
+    quantity: z.number().optional(),
+    unit: PropertyAdsGroupDeliveryGoalUnit$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type PropertyAdsGroupDeliveryGoal$Outbound = {
   period?: string | undefined;
@@ -87,11 +97,13 @@ export const PropertyAdsGroupDeliveryGoal$outboundSchema: z.ZodType<
   PropertyAdsGroupDeliveryGoal$Outbound,
   z.ZodTypeDef,
   PropertyAdsGroupDeliveryGoal
-> = z.object({
-  period: PropertyAdsGroupDeliveryGoalPeriod$outboundSchema.optional(),
-  quantity: z.number().optional(),
-  unit: PropertyAdsGroupDeliveryGoalUnit$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    period: PropertyAdsGroupDeliveryGoalPeriod$outboundSchema.optional(),
+    quantity: z.number().optional(),
+    unit: PropertyAdsGroupDeliveryGoalUnit$outboundSchema.optional(),
+  })
+);
 
 export function propertyAdsGroupDeliveryGoalToJSON(
   propertyAdsGroupDeliveryGoal: PropertyAdsGroupDeliveryGoal,

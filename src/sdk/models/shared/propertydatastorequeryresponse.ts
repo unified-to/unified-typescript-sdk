@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -31,15 +31,18 @@ export const PropertyDatastoreQueryResponse$inboundSchema: z.ZodType<
   PropertyDatastoreQueryResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  aggregates: PropertyDatastoreQueryResponseAggregates$inboundSchema.optional(),
-  items: z.array(DatastoreRecord$inboundSchema).optional(),
-  total_count: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "total_count": "totalCount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aggregates: PropertyDatastoreQueryResponseAggregates$inboundSchema
+      .optional(),
+    items: z.array(DatastoreRecord$inboundSchema).optional(),
+    total_count: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "total_count": "totalCount",
+    });
+  })
+);
 /** @internal */
 export type PropertyDatastoreQueryResponse$Outbound = {
   aggregates?: PropertyDatastoreQueryResponseAggregates$Outbound | undefined;
@@ -52,16 +55,18 @@ export const PropertyDatastoreQueryResponse$outboundSchema: z.ZodType<
   PropertyDatastoreQueryResponse$Outbound,
   z.ZodTypeDef,
   PropertyDatastoreQueryResponse
-> = z.object({
-  aggregates: PropertyDatastoreQueryResponseAggregates$outboundSchema
-    .optional(),
-  items: z.array(DatastoreRecord$outboundSchema).optional(),
-  totalCount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    totalCount: "total_count",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aggregates: PropertyDatastoreQueryResponseAggregates$outboundSchema
+      .optional(),
+    items: z.array(DatastoreRecord$outboundSchema).optional(),
+    totalCount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      totalCount: "total_count",
+    });
+  })
+);
 
 export function propertyDatastoreQueryResponseToJSON(
   propertyDatastoreQueryResponse: PropertyDatastoreQueryResponse,

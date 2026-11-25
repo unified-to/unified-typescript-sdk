@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListShippingCarriersQueryParamFields = {
@@ -51,9 +52,10 @@ export type ListShippingCarriersRequest = {
 
 /** @internal */
 export const ListShippingCarriersQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListShippingCarriersQueryParamFields> = z.nativeEnum(
-    ListShippingCarriersQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListShippingCarriersQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListShippingCarriersQueryParamFields)
+    );
 
 /** @internal */
 export type ListShippingCarriersRequest$Outbound = {
@@ -73,23 +75,25 @@ export const ListShippingCarriersRequest$outboundSchema: z.ZodType<
   ListShippingCarriersRequest$Outbound,
   z.ZodTypeDef,
   ListShippingCarriersRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListShippingCarriersQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListShippingCarriersQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listShippingCarriersRequestToJSON(
   listShippingCarriersRequest: ListShippingCarriersRequest,

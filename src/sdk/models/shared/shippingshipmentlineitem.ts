@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -44,22 +44,24 @@ export const ShippingShipmentLineitem$inboundSchema: z.ZodType<
   ShippingShipmentLineitem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string().optional(),
-  item_id: z.string().optional(),
-  item_name: z.string().optional(),
-  item_variant_id: z.string().optional(),
-  order_lineitem_id: z.string().optional(),
-  quantity: z.number().optional(),
-  sku: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "item_id": "itemId",
-    "item_name": "itemName",
-    "item_variant_id": "itemVariantId",
-    "order_lineitem_id": "orderLineitemId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    item_id: z.string().optional(),
+    item_name: z.string().optional(),
+    item_variant_id: z.string().optional(),
+    order_lineitem_id: z.string().optional(),
+    quantity: z.number().optional(),
+    sku: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "item_id": "itemId",
+      "item_name": "itemName",
+      "item_variant_id": "itemVariantId",
+      "order_lineitem_id": "orderLineitemId",
+    });
+  })
+);
 /** @internal */
 export type ShippingShipmentLineitem$Outbound = {
   id?: string | undefined;
@@ -76,22 +78,24 @@ export const ShippingShipmentLineitem$outboundSchema: z.ZodType<
   ShippingShipmentLineitem$Outbound,
   z.ZodTypeDef,
   ShippingShipmentLineitem
-> = z.object({
-  id: z.string().optional(),
-  itemId: z.string().optional(),
-  itemName: z.string().optional(),
-  itemVariantId: z.string().optional(),
-  orderLineitemId: z.string().optional(),
-  quantity: z.number().optional(),
-  sku: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    itemId: "item_id",
-    itemName: "item_name",
-    itemVariantId: "item_variant_id",
-    orderLineitemId: "order_lineitem_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    itemId: z.string().optional(),
+    itemName: z.string().optional(),
+    itemVariantId: z.string().optional(),
+    orderLineitemId: z.string().optional(),
+    quantity: z.number().optional(),
+    sku: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      itemId: "item_id",
+      itemName: "item_name",
+      itemVariantId: "item_variant_id",
+      orderLineitemId: "order_lineitem_id",
+    });
+  })
+);
 
 export function shippingShipmentLineitemToJSON(
   shippingShipmentLineitem: ShippingShipmentLineitem,

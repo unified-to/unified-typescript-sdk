@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -85,58 +85,64 @@ export const AtsActivityType$inboundSchema: z.ZodType<
   AtsActivityType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsActivityType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AtsActivityType));
 /** @internal */
 export const AtsActivityType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsActivityType
-> = openEnums.outboundSchema(AtsActivityType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsActivityType)
+);
 
 /** @internal */
 export const AtsActivity$inboundSchema: z.ZodType<
   AtsActivity,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  application_id: z.string().optional(),
-  bcc: z.array(AtsEmail$inboundSchema).optional(),
-  candidate_id: z.string().optional(),
-  cc: z.array(AtsEmail$inboundSchema).optional(),
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  document_ids: z.array(z.string()).optional(),
-  from: PropertyAtsActivityFrom$inboundSchema.optional(),
-  id: z.string().optional(),
-  interview_id: z.string().optional(),
-  is_private: z.boolean().optional(),
-  job_id: z.string().optional(),
-  metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  sub_type: z.string().optional(),
-  title: z.string().optional(),
-  to: z.array(AtsEmail$inboundSchema).optional(),
-  type: AtsActivityType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "application_id": "applicationId",
-    "candidate_id": "candidateId",
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "document_ids": "documentIds",
-    "interview_id": "interviewId",
-    "is_private": "isPrivate",
-    "job_id": "jobId",
-    "sub_type": "subType",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    application_id: z.string().optional(),
+    bcc: z.array(AtsEmail$inboundSchema).optional(),
+    candidate_id: z.string().optional(),
+    cc: z.array(AtsEmail$inboundSchema).optional(),
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    document_ids: z.array(z.string()).optional(),
+    from: PropertyAtsActivityFrom$inboundSchema.optional(),
+    id: z.string().optional(),
+    interview_id: z.string().optional(),
+    is_private: z.boolean().optional(),
+    job_id: z.string().optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    sub_type: z.string().optional(),
+    title: z.string().optional(),
+    to: z.array(AtsEmail$inboundSchema).optional(),
+    type: AtsActivityType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "application_id": "applicationId",
+      "candidate_id": "candidateId",
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "document_ids": "documentIds",
+      "interview_id": "interviewId",
+      "is_private": "isPrivate",
+      "job_id": "jobId",
+      "sub_type": "subType",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+    });
+  })
+);
 /** @internal */
 export type AtsActivity$Outbound = {
   application_id?: string | undefined;
@@ -167,43 +173,45 @@ export const AtsActivity$outboundSchema: z.ZodType<
   AtsActivity$Outbound,
   z.ZodTypeDef,
   AtsActivity
-> = z.object({
-  applicationId: z.string().optional(),
-  bcc: z.array(AtsEmail$outboundSchema).optional(),
-  candidateId: z.string().optional(),
-  cc: z.array(AtsEmail$outboundSchema).optional(),
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  documentIds: z.array(z.string()).optional(),
-  from: PropertyAtsActivityFrom$outboundSchema.optional(),
-  id: z.string().optional(),
-  interviewId: z.string().optional(),
-  isPrivate: z.boolean().optional(),
-  jobId: z.string().optional(),
-  metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  subType: z.string().optional(),
-  title: z.string().optional(),
-  to: z.array(AtsEmail$outboundSchema).optional(),
-  type: AtsActivityType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    applicationId: "application_id",
-    candidateId: "candidate_id",
-    companyId: "company_id",
-    createdAt: "created_at",
-    documentIds: "document_ids",
-    interviewId: "interview_id",
-    isPrivate: "is_private",
-    jobId: "job_id",
-    subType: "sub_type",
-    updatedAt: "updated_at",
-    userIds: "user_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applicationId: z.string().optional(),
+    bcc: z.array(AtsEmail$outboundSchema).optional(),
+    candidateId: z.string().optional(),
+    cc: z.array(AtsEmail$outboundSchema).optional(),
+    companyId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    documentIds: z.array(z.string()).optional(),
+    from: PropertyAtsActivityFrom$outboundSchema.optional(),
+    id: z.string().optional(),
+    interviewId: z.string().optional(),
+    isPrivate: z.boolean().optional(),
+    jobId: z.string().optional(),
+    metadata: z.array(AtsMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    subType: z.string().optional(),
+    title: z.string().optional(),
+    to: z.array(AtsEmail$outboundSchema).optional(),
+    type: AtsActivityType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIds: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      applicationId: "application_id",
+      candidateId: "candidate_id",
+      companyId: "company_id",
+      createdAt: "created_at",
+      documentIds: "document_ids",
+      interviewId: "interview_id",
+      isPrivate: "is_private",
+      jobId: "job_id",
+      subType: "sub_type",
+      updatedAt: "updated_at",
+      userIds: "user_ids",
+    });
+  })
+);
 
 export function atsActivityToJSON(atsActivity: AtsActivity): string {
   return JSON.stringify(AtsActivity$outboundSchema.parse(atsActivity));

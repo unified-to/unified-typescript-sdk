@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCommerceInventoriesQueryParamFields = {
@@ -62,8 +63,10 @@ export type ListCommerceInventoriesRequest = {
 
 /** @internal */
 export const ListCommerceInventoriesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCommerceInventoriesQueryParamFields> = z
-    .nativeEnum(ListCommerceInventoriesQueryParamFields);
+  z.ZodNativeEnum<typeof ListCommerceInventoriesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCommerceInventoriesQueryParamFields)
+    );
 
 /** @internal */
 export type ListCommerceInventoriesRequest$Outbound = {
@@ -86,29 +89,31 @@ export const ListCommerceInventoriesRequest$outboundSchema: z.ZodType<
   ListCommerceInventoriesRequest$Outbound,
   z.ZodTypeDef,
   ListCommerceInventoriesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCommerceInventoriesQueryParamFields$outboundSchema)
-    .optional(),
-  itemId: z.string().optional(),
-  itemVariantId: z.string().optional(),
-  limit: z.number().optional(),
-  locationId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    itemId: "item_id",
-    itemVariantId: "item_variant_id",
-    locationId: "location_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCommerceInventoriesQueryParamFields$outboundSchema)
+      .optional(),
+    itemId: z.string().optional(),
+    itemVariantId: z.string().optional(),
+    limit: z.number().optional(),
+    locationId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      itemId: "item_id",
+      itemVariantId: "item_variant_id",
+      locationId: "location_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCommerceInventoriesRequestToJSON(
   listCommerceInventoriesRequest: ListCommerceInventoriesRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingBalancesheetsQueryParamFields = {
@@ -70,8 +71,10 @@ export type ListAccountingBalancesheetsRequest = {
 
 /** @internal */
 export const ListAccountingBalancesheetsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingBalancesheetsQueryParamFields> = z
-    .nativeEnum(ListAccountingBalancesheetsQueryParamFields);
+  z.ZodNativeEnum<typeof ListAccountingBalancesheetsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingBalancesheetsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingBalancesheetsRequest$Outbound = {
@@ -95,31 +98,33 @@ export const ListAccountingBalancesheetsRequest$outboundSchema: z.ZodType<
   ListAccountingBalancesheetsRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingBalancesheetsRequest
-> = z.object({
-  categoryId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAccountingBalancesheetsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    categoryId: "category_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    endLt: "end_lt",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categoryId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAccountingBalancesheetsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      categoryId: "category_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      endLt: "end_lt",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingBalancesheetsRequestToJSON(
   listAccountingBalancesheetsRequest: ListAccountingBalancesheetsRequest,

@@ -5,11 +5,11 @@
 ```typescript
 import { CreateCrmDealQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreateCrmDealQueryParamFields = "contact_ids";
+let value: CreateCrmDealQueryParamFields = "company_ids";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "amount" | "currency" | "closed_at" | "closing_at" | "stages" | "pipelines" | "source" | "probability" | "tags" | "lost_reason" | "won_reason" | "user_id" | "contact_ids" | "company_ids" | "description" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "amount" | "currency" | "closed_at" | "closing_at" | "stages" | "pipelines" | "source" | "probability" | "tags" | "lost_reason" | "won_reason" | "user_id" | "contact_ids" | "company_ids" | "description" | "metadata" | "vehicle_ids" | "raw"
 ```

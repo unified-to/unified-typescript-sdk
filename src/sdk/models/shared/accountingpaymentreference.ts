@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -28,18 +28,20 @@ export const AccountingPaymentReference$inboundSchema: z.ZodType<
   AccountingPaymentReference,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  allocated_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  amount: z.number().optional(),
-  payment_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "allocated_at": "allocatedAt",
-    "payment_id": "paymentId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    allocated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    amount: z.number().optional(),
+    payment_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "allocated_at": "allocatedAt",
+      "payment_id": "paymentId",
+    });
+  })
+);
 /** @internal */
 export type AccountingPaymentReference$Outbound = {
   allocated_at?: string | undefined;
@@ -52,16 +54,18 @@ export const AccountingPaymentReference$outboundSchema: z.ZodType<
   AccountingPaymentReference$Outbound,
   z.ZodTypeDef,
   AccountingPaymentReference
-> = z.object({
-  allocatedAt: z.date().transform(v => v.toISOString()).optional(),
-  amount: z.number().optional(),
-  paymentId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    allocatedAt: "allocated_at",
-    paymentId: "payment_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    allocatedAt: z.date().transform(v => v.toISOString()).optional(),
+    amount: z.number().optional(),
+    paymentId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      allocatedAt: "allocated_at",
+      paymentId: "payment_id",
+    });
+  })
+);
 
 export function accountingPaymentReferenceToJSON(
   accountingPaymentReference: AccountingPaymentReference,

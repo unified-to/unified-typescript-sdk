@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -26,17 +26,19 @@ export const PropertyAdsCampaignTargetingDevice$inboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingDevice,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  carriers: z.array(TargetRef$inboundSchema).optional(),
-  types: z.array(TargetRef$inboundSchema).optional(),
-  user_device: z.array(TargetRef$inboundSchema).optional(),
-  user_os: z.array(TargetRef$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "user_device": "userDevice",
-    "user_os": "userOs",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    carriers: z.array(TargetRef$inboundSchema).optional(),
+    types: z.array(TargetRef$inboundSchema).optional(),
+    user_device: z.array(TargetRef$inboundSchema).optional(),
+    user_os: z.array(TargetRef$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "user_device": "userDevice",
+      "user_os": "userOs",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsCampaignTargetingDevice$Outbound = {
   carriers?: Array<TargetRef$Outbound> | undefined;
@@ -50,17 +52,19 @@ export const PropertyAdsCampaignTargetingDevice$outboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingDevice$Outbound,
   z.ZodTypeDef,
   PropertyAdsCampaignTargetingDevice
-> = z.object({
-  carriers: z.array(TargetRef$outboundSchema).optional(),
-  types: z.array(TargetRef$outboundSchema).optional(),
-  userDevice: z.array(TargetRef$outboundSchema).optional(),
-  userOs: z.array(TargetRef$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    userDevice: "user_device",
-    userOs: "user_os",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    carriers: z.array(TargetRef$outboundSchema).optional(),
+    types: z.array(TargetRef$outboundSchema).optional(),
+    userDevice: z.array(TargetRef$outboundSchema).optional(),
+    userOs: z.array(TargetRef$outboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      userDevice: "user_device",
+      userOs: "user_os",
+    });
+  })
+);
 
 export function propertyAdsCampaignTargetingDeviceToJSON(
   propertyAdsCampaignTargetingDevice: PropertyAdsCampaignTargetingDevice,

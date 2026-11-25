@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetComputeVolumeQueryParamFields = {
@@ -47,7 +48,9 @@ export type GetComputeVolumeRequest = {
 /** @internal */
 export const GetComputeVolumeQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetComputeVolumeQueryParamFields
-> = z.nativeEnum(GetComputeVolumeQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetComputeVolumeQueryParamFields)
+);
 
 /** @internal */
 export type GetComputeVolumeRequest$Outbound = {
@@ -62,16 +65,18 @@ export const GetComputeVolumeRequest$outboundSchema: z.ZodType<
   GetComputeVolumeRequest$Outbound,
   z.ZodTypeDef,
   GetComputeVolumeRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetComputeVolumeQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetComputeVolumeQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getComputeVolumeRequestToJSON(
   getComputeVolumeRequest: GetComputeVolumeRequest,

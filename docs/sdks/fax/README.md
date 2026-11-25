@@ -28,18 +28,18 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.fax.createUcFax({
     ucFax: {
-      costAmount: 1.2207,
+      costAmount: 1.8536,
       createdAt: new Date("2022-10-25T13:37:51.431Z"),
       currency: "USD",
-      fromTelephone: "+13605107540",
-      id: "96ffb54f-2b48-42ba-9d9c-e486142e0eaf",
-      mediaUrl: "https://doting-jump.biz",
+      fromTelephone: "+15108540908",
+      id: "df474fbd-7e8b-45f3-b5be-8f26197f9901",
+      mediaUrl: "https://pitiful-stranger.net/",
       metadata: [],
-      pages: 20,
+      pages: 10,
       status: "DELIVERED",
-      toTelephone: "+19083998866",
+      toTelephone: "+13999866972",
       type: "INBOUND",
-      updatedAt: new Date("2023-04-17T07:14:11.232Z"),
+      updatedAt: new Date("2023-04-17T23:42:41.381Z"),
     },
     connectionId: "<id>",
   });
@@ -69,18 +69,18 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await ucCreateUcFax(unifiedTo, {
     ucFax: {
-      costAmount: 1.2207,
+      costAmount: 1.8536,
       createdAt: new Date("2022-10-25T13:37:51.431Z"),
       currency: "USD",
-      fromTelephone: "+13605107540",
-      id: "96ffb54f-2b48-42ba-9d9c-e486142e0eaf",
-      mediaUrl: "https://doting-jump.biz",
+      fromTelephone: "+15108540908",
+      id: "df474fbd-7e8b-45f3-b5be-8f26197f9901",
+      mediaUrl: "https://pitiful-stranger.net/",
       metadata: [],
-      pages: 20,
+      pages: 10,
       status: "DELIVERED",
-      toTelephone: "+19083998866",
+      toTelephone: "+13999866972",
       type: "INBOUND",
-      updatedAt: new Date("2023-04-17T07:14:11.232Z"),
+      updatedAt: new Date("2023-04-17T23:42:41.381Z"),
     },
     connectionId: "<id>",
   });

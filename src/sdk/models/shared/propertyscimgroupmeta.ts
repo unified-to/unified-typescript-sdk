@@ -3,51 +3,59 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export const ResourceType = {
+export const PropertyScimGroupMetaResourceType = {
   User: "User",
   Group: "Group",
 } as const;
-export type ResourceType = OpenEnum<typeof ResourceType>;
+export type PropertyScimGroupMetaResourceType = OpenEnum<
+  typeof PropertyScimGroupMetaResourceType
+>;
 
 export type PropertyScimGroupMeta = {
   created?: string | undefined;
   lastModified?: string | undefined;
   location?: string | undefined;
-  resourceType?: ResourceType | undefined;
+  resourceType?: PropertyScimGroupMetaResourceType | undefined;
   version?: string | undefined;
 };
 
 /** @internal */
-export const ResourceType$inboundSchema: z.ZodType<
-  ResourceType,
+export const PropertyScimGroupMetaResourceType$inboundSchema: z.ZodType<
+  PropertyScimGroupMetaResourceType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ResourceType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyScimGroupMetaResourceType)
+);
 /** @internal */
-export const ResourceType$outboundSchema: z.ZodType<
+export const PropertyScimGroupMetaResourceType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  ResourceType
-> = openEnums.outboundSchema(ResourceType);
+  PropertyScimGroupMetaResourceType
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyScimGroupMetaResourceType)
+);
 
 /** @internal */
 export const PropertyScimGroupMeta$inboundSchema: z.ZodType<
   PropertyScimGroupMeta,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created: z.string().optional(),
-  lastModified: z.string().optional(),
-  location: z.string().optional(),
-  resourceType: ResourceType$inboundSchema.optional(),
-  version: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created: z.string().optional(),
+    lastModified: z.string().optional(),
+    location: z.string().optional(),
+    resourceType: PropertyScimGroupMetaResourceType$inboundSchema.optional(),
+    version: z.string().optional(),
+  })
+);
 /** @internal */
 export type PropertyScimGroupMeta$Outbound = {
   created?: string | undefined;
@@ -62,13 +70,15 @@ export const PropertyScimGroupMeta$outboundSchema: z.ZodType<
   PropertyScimGroupMeta$Outbound,
   z.ZodTypeDef,
   PropertyScimGroupMeta
-> = z.object({
-  created: z.string().optional(),
-  lastModified: z.string().optional(),
-  location: z.string().optional(),
-  resourceType: ResourceType$outboundSchema.optional(),
-  version: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created: z.string().optional(),
+    lastModified: z.string().optional(),
+    location: z.string().optional(),
+    resourceType: PropertyScimGroupMetaResourceType$outboundSchema.optional(),
+    version: z.string().optional(),
+  })
+);
 
 export function propertyScimGroupMetaToJSON(
   propertyScimGroupMeta: PropertyScimGroupMeta,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -43,7 +44,9 @@ export type CreateKmsSpaceRequest = {
 /** @internal */
 export const CreateKmsSpaceQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateKmsSpaceQueryParamFields
-> = z.nativeEnum(CreateKmsSpaceQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateKmsSpaceQueryParamFields)
+);
 
 /** @internal */
 export type CreateKmsSpaceRequest$Outbound = {
@@ -58,17 +61,19 @@ export const CreateKmsSpaceRequest$outboundSchema: z.ZodType<
   CreateKmsSpaceRequest$Outbound,
   z.ZodTypeDef,
   CreateKmsSpaceRequest
-> = z.object({
-  kmsSpace: shared.KmsSpace$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateKmsSpaceQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    kmsSpace: "KmsSpace",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    kmsSpace: shared.KmsSpace$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateKmsSpaceQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      kmsSpace: "KmsSpace",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createKmsSpaceRequestToJSON(
   createKmsSpaceRequest: CreateKmsSpaceRequest,

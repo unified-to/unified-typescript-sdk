@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -85,7 +85,7 @@ export const PerformanceMetadata1$inboundSchema: z.ZodType<
   PerformanceMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type PerformanceMetadata1$Outbound = {};
 
@@ -94,7 +94,7 @@ export const PerformanceMetadata1$outboundSchema: z.ZodType<
   PerformanceMetadata1$Outbound,
   z.ZodTypeDef,
   PerformanceMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function performanceMetadata1ToJSON(
   performanceMetadata1: PerformanceMetadata1,
@@ -118,12 +118,14 @@ export const PerformanceMetadata5$inboundSchema: z.ZodType<
   PerformanceMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => PerformanceMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PerformanceMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type PerformanceMetadata5$Outbound =
   | PerformanceMetadata1$Outbound
@@ -136,12 +138,14 @@ export const PerformanceMetadata5$outboundSchema: z.ZodType<
   PerformanceMetadata5$Outbound,
   z.ZodTypeDef,
   PerformanceMetadata5
-> = z.union([
-  z.lazy(() => PerformanceMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PerformanceMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function performanceMetadata5ToJSON(
   performanceMetadata5: PerformanceMetadata5,
@@ -165,20 +169,22 @@ export const PerformanceMetadataExtraData$inboundSchema: z.ZodType<
   PerformanceMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PerformanceMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PerformanceMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type PerformanceMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -192,20 +198,22 @@ export const PerformanceMetadataExtraData$outboundSchema: z.ZodType<
   PerformanceMetadataExtraData$Outbound,
   z.ZodTypeDef,
   PerformanceMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PerformanceMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PerformanceMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function performanceMetadataExtraDataToJSON(
   performanceMetadataExtraData: PerformanceMetadataExtraData,
@@ -231,20 +239,24 @@ export const PerformanceMetadataFormat$inboundSchema: z.ZodType<
   PerformanceMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceMetadataFormat)
+);
 /** @internal */
 export const PerformanceMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PerformanceMetadataFormat
-> = openEnums.outboundSchema(PerformanceMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PerformanceMetadataFormat)
+);
 
 /** @internal */
 export const PerformanceMetadataSchemas1$inboundSchema: z.ZodType<
   PerformanceMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type PerformanceMetadataSchemas1$Outbound = {};
 
@@ -253,7 +265,7 @@ export const PerformanceMetadataSchemas1$outboundSchema: z.ZodType<
   PerformanceMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   PerformanceMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function performanceMetadataSchemas1ToJSON(
   performanceMetadataSchemas1: PerformanceMetadataSchemas1,
@@ -279,12 +291,14 @@ export const PerformanceMetadataSchemas5$inboundSchema: z.ZodType<
   PerformanceMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => PerformanceMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PerformanceMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type PerformanceMetadataSchemas5$Outbound =
   | PerformanceMetadataSchemas1$Outbound
@@ -297,12 +311,14 @@ export const PerformanceMetadataSchemas5$outboundSchema: z.ZodType<
   PerformanceMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   PerformanceMetadataSchemas5
-> = z.union([
-  z.lazy(() => PerformanceMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PerformanceMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function performanceMetadataSchemas5ToJSON(
   performanceMetadataSchemas5: PerformanceMetadataSchemas5,
@@ -328,20 +344,22 @@ export const PerformanceMetadataValue$inboundSchema: z.ZodType<
   PerformanceMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PerformanceMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PerformanceMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type PerformanceMetadataValue$Outbound =
   | { [k: string]: any }
@@ -355,20 +373,22 @@ export const PerformanceMetadataValue$outboundSchema: z.ZodType<
   PerformanceMetadataValue$Outbound,
   z.ZodTypeDef,
   PerformanceMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PerformanceMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PerformanceMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function performanceMetadataValueToJSON(
   performanceMetadataValue: PerformanceMetadataValue,
@@ -392,44 +412,46 @@ export const PerformanceMetadata$inboundSchema: z.ZodType<
   PerformanceMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PerformanceMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: PerformanceMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PerformanceMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PerformanceMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: PerformanceMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PerformanceMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type PerformanceMetadata$Outbound = {
   extra_data?:
@@ -457,44 +479,46 @@ export const PerformanceMetadata$outboundSchema: z.ZodType<
   PerformanceMetadata$Outbound,
   z.ZodTypeDef,
   PerformanceMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PerformanceMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: PerformanceMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PerformanceMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PerformanceMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: PerformanceMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PerformanceMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function performanceMetadataToJSON(
   performanceMetadata: PerformanceMetadata,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingJournalsQueryParamFields = {
@@ -70,9 +71,10 @@ export type ListAccountingJournalsRequest = {
 
 /** @internal */
 export const ListAccountingJournalsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingJournalsQueryParamFields> = z.nativeEnum(
-    ListAccountingJournalsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAccountingJournalsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingJournalsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingJournalsRequest$Outbound = {
@@ -94,27 +96,29 @@ export const ListAccountingJournalsRequest$outboundSchema: z.ZodType<
   ListAccountingJournalsRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingJournalsRequest
-> = z.object({
-  accountId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListAccountingJournalsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    connectionId: "connection_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListAccountingJournalsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      connectionId: "connection_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingJournalsRequestToJSON(
   listAccountingJournalsRequest: ListAccountingJournalsRequest,

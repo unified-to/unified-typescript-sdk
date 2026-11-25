@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,9 +48,10 @@ export type CreateMartechMemberRequest = {
 
 /** @internal */
 export const CreateMartechMemberQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateMartechMemberQueryParamFields> = z.nativeEnum(
-    CreateMartechMemberQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateMartechMemberQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateMartechMemberQueryParamFields)
+    );
 
 /** @internal */
 export type CreateMartechMemberRequest$Outbound = {
@@ -64,18 +66,20 @@ export const CreateMartechMemberRequest$outboundSchema: z.ZodType<
   CreateMartechMemberRequest$Outbound,
   z.ZodTypeDef,
   CreateMartechMemberRequest
-> = z.object({
-  marketingMember: shared.MarketingMember$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateMartechMemberQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    marketingMember: "MarketingMember",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    marketingMember: shared.MarketingMember$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateMartechMemberQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      marketingMember: "MarketingMember",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createMartechMemberRequestToJSON(
   createMartechMemberRequest: CreateMartechMemberRequest,

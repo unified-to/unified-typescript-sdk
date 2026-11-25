@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -131,72 +131,76 @@ export type AtsCandidate = {
 
 /** @internal */
 export const Origin$inboundSchema: z.ZodType<Origin, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Origin);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Origin));
 /** @internal */
 export const Origin$outboundSchema: z.ZodType<string, z.ZodTypeDef, Origin> =
-  openEnums.outboundSchema(Origin);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Origin));
 
 /** @internal */
 export const AtsCandidate$inboundSchema: z.ZodType<
   AtsCandidate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyAtsCandidateAddress$inboundSchema.optional(),
-  company_id: z.string().optional(),
-  company_name: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  date_of_birth: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  education: z.array(AtsCandidateEducation$inboundSchema).optional(),
-  emails: z.array(AtsEmail$inboundSchema).optional(),
-  experiences: z.array(AtsCandidateExperience$inboundSchema).optional(),
-  external_identifier: z.string().optional(),
-  first_name: z.string().optional(),
-  has_do_not_contact: z.boolean().optional(),
-  id: z.string().optional(),
-  image_url: z.string().optional(),
-  is_private: z.boolean().optional(),
-  job_ids: z.array(z.string()).optional(),
-  last_name: z.string().optional(),
-  link_urls: z.array(z.string()).optional(),
-  metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  origin: Origin$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  skills: z.array(z.string()).optional(),
-  sources: z.array(z.string()).optional(),
-  summary: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-  telephones: z.array(AtsTelephone$inboundSchema).optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  user_ids: z.array(z.string()).optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "company_name": "companyName",
-    "created_at": "createdAt",
-    "date_of_birth": "dateOfBirth",
-    "external_identifier": "externalIdentifier",
-    "first_name": "firstName",
-    "has_do_not_contact": "hasDoNotContact",
-    "image_url": "imageUrl",
-    "is_private": "isPrivate",
-    "job_ids": "jobIds",
-    "last_name": "lastName",
-    "link_urls": "linkUrls",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "user_ids": "userIds",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyAtsCandidateAddress$inboundSchema.optional(),
+    company_id: z.string().optional(),
+    company_name: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    date_of_birth: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    education: z.array(AtsCandidateEducation$inboundSchema).optional(),
+    emails: z.array(AtsEmail$inboundSchema).optional(),
+    experiences: z.array(AtsCandidateExperience$inboundSchema).optional(),
+    external_identifier: z.string().optional(),
+    first_name: z.string().optional(),
+    has_do_not_contact: z.boolean().optional(),
+    id: z.string().optional(),
+    image_url: z.string().optional(),
+    is_private: z.boolean().optional(),
+    job_ids: z.array(z.string()).optional(),
+    last_name: z.string().optional(),
+    link_urls: z.array(z.string()).optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    origin: Origin$inboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    skills: z.array(z.string()).optional(),
+    sources: z.array(z.string()).optional(),
+    summary: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    telephones: z.array(AtsTelephone$inboundSchema).optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    user_ids: z.array(z.string()).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "company_name": "companyName",
+      "created_at": "createdAt",
+      "date_of_birth": "dateOfBirth",
+      "external_identifier": "externalIdentifier",
+      "first_name": "firstName",
+      "has_do_not_contact": "hasDoNotContact",
+      "image_url": "imageUrl",
+      "is_private": "isPrivate",
+      "job_ids": "jobIds",
+      "last_name": "lastName",
+      "link_urls": "linkUrls",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "user_ids": "userIds",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type AtsCandidate$Outbound = {
   address?: PropertyAtsCandidateAddress$Outbound | undefined;
@@ -237,58 +241,60 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   AtsCandidate$Outbound,
   z.ZodTypeDef,
   AtsCandidate
-> = z.object({
-  address: PropertyAtsCandidateAddress$outboundSchema.optional(),
-  companyId: z.string().optional(),
-  companyName: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dateOfBirth: z.date().transform(v => v.toISOString()).optional(),
-  education: z.array(AtsCandidateEducation$outboundSchema).optional(),
-  emails: z.array(AtsEmail$outboundSchema).optional(),
-  experiences: z.array(AtsCandidateExperience$outboundSchema).optional(),
-  externalIdentifier: z.string().optional(),
-  firstName: z.string().optional(),
-  hasDoNotContact: z.boolean().optional(),
-  id: z.string().optional(),
-  imageUrl: z.string().optional(),
-  isPrivate: z.boolean().optional(),
-  jobIds: z.array(z.string()).optional(),
-  lastName: z.string().optional(),
-  linkUrls: z.array(z.string()).optional(),
-  metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  origin: Origin$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  skills: z.array(z.string()).optional(),
-  sources: z.array(z.string()).optional(),
-  summary: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-  telephones: z.array(AtsTelephone$outboundSchema).optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  userIds: z.array(z.string()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    companyName: "company_name",
-    createdAt: "created_at",
-    dateOfBirth: "date_of_birth",
-    externalIdentifier: "external_identifier",
-    firstName: "first_name",
-    hasDoNotContact: "has_do_not_contact",
-    imageUrl: "image_url",
-    isPrivate: "is_private",
-    jobIds: "job_ids",
-    lastName: "last_name",
-    linkUrls: "link_urls",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    userIds: "user_ids",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyAtsCandidateAddress$outboundSchema.optional(),
+    companyId: z.string().optional(),
+    companyName: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dateOfBirth: z.date().transform(v => v.toISOString()).optional(),
+    education: z.array(AtsCandidateEducation$outboundSchema).optional(),
+    emails: z.array(AtsEmail$outboundSchema).optional(),
+    experiences: z.array(AtsCandidateExperience$outboundSchema).optional(),
+    externalIdentifier: z.string().optional(),
+    firstName: z.string().optional(),
+    hasDoNotContact: z.boolean().optional(),
+    id: z.string().optional(),
+    imageUrl: z.string().optional(),
+    isPrivate: z.boolean().optional(),
+    jobIds: z.array(z.string()).optional(),
+    lastName: z.string().optional(),
+    linkUrls: z.array(z.string()).optional(),
+    metadata: z.array(AtsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    origin: Origin$outboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    skills: z.array(z.string()).optional(),
+    sources: z.array(z.string()).optional(),
+    summary: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    telephones: z.array(AtsTelephone$outboundSchema).optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    userIds: z.array(z.string()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      companyName: "company_name",
+      createdAt: "created_at",
+      dateOfBirth: "date_of_birth",
+      externalIdentifier: "external_identifier",
+      firstName: "first_name",
+      hasDoNotContact: "has_do_not_contact",
+      imageUrl: "image_url",
+      isPrivate: "is_private",
+      jobIds: "job_ids",
+      lastName: "last_name",
+      linkUrls: "link_urls",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      userIds: "user_ids",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function atsCandidateToJSON(atsCandidate: AtsCandidate): string {
   return JSON.stringify(AtsCandidate$outboundSchema.parse(atsCandidate));

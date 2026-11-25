@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListUcRecordingsQueryParamFields = {
@@ -79,7 +80,9 @@ export type ListUcRecordingsRequest = {
 /** @internal */
 export const ListUcRecordingsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListUcRecordingsQueryParamFields
-> = z.nativeEnum(ListUcRecordingsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListUcRecordingsQueryParamFields)
+);
 
 /** @internal */
 export type ListUcRecordingsRequest$Outbound = {
@@ -104,32 +107,34 @@ export const ListUcRecordingsRequest$outboundSchema: z.ZodType<
   ListUcRecordingsRequest$Outbound,
   z.ZodTypeDef,
   ListUcRecordingsRequest
-> = z.object({
-  callId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListUcRecordingsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    callId: "call_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    endLt: "end_lt",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    callId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListUcRecordingsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      callId: "call_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      endLt: "end_lt",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listUcRecordingsRequestToJSON(
   listUcRecordingsRequest: ListUcRecordingsRequest,

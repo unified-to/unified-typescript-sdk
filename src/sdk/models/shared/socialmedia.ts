@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -59,28 +59,32 @@ export const SocialMediaType$inboundSchema: z.ZodType<
   SocialMediaType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SocialMediaType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SocialMediaType));
 /** @internal */
 export const SocialMediaType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SocialMediaType
-> = openEnums.outboundSchema(SocialMediaType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SocialMediaType)
+);
 
 /** @internal */
 export const SocialMedia$inboundSchema: z.ZodType<
   SocialMedia,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  alt: z.string().optional(),
-  height: z.number().optional(),
-  id: z.string().optional(),
-  position: z.number().optional(),
-  type: SocialMediaType$inboundSchema.optional(),
-  url: z.string(),
-  width: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    alt: z.string().optional(),
+    height: z.number().optional(),
+    id: z.string().optional(),
+    position: z.number().optional(),
+    type: SocialMediaType$inboundSchema.optional(),
+    url: z.string(),
+    width: z.number().optional(),
+  })
+);
 /** @internal */
 export type SocialMedia$Outbound = {
   alt?: string | undefined;
@@ -97,15 +101,17 @@ export const SocialMedia$outboundSchema: z.ZodType<
   SocialMedia$Outbound,
   z.ZodTypeDef,
   SocialMedia
-> = z.object({
-  alt: z.string().optional(),
-  height: z.number().optional(),
-  id: z.string().optional(),
-  position: z.number().optional(),
-  type: SocialMediaType$outboundSchema.optional(),
-  url: z.string(),
-  width: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    alt: z.string().optional(),
+    height: z.number().optional(),
+    id: z.string().optional(),
+    position: z.number().optional(),
+    type: SocialMediaType$outboundSchema.optional(),
+    url: z.string(),
+    width: z.number().optional(),
+  })
+);
 
 export function socialMediaToJSON(socialMedia: SocialMedia): string {
   return JSON.stringify(SocialMedia$outboundSchema.parse(socialMedia));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -101,66 +101,74 @@ export const Category$inboundSchema: z.ZodType<
   Category,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Category);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Category));
 /** @internal */
 export const Category$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Category
-> = openEnums.outboundSchema(Category);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Category));
 
 /** @internal */
 export const AccountingPaymenttermType$inboundSchema: z.ZodType<
   AccountingPaymenttermType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingPaymenttermType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingPaymenttermType)
+);
 /** @internal */
 export const AccountingPaymenttermType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingPaymenttermType
-> = openEnums.outboundSchema(AccountingPaymenttermType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingPaymenttermType)
+);
 
 /** @internal */
 export const AccountingPaymentterm$inboundSchema: z.ZodType<
   AccountingPaymentterm,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  category: Category$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  day_of_month_due: z.number().optional(),
-  description: z.string().optional(),
-  discount_day_of_month: z.number().optional(),
-  discount_days: z.number().optional(),
-  discount_percent: z.number().optional(),
-  due_days: z.number().optional(),
-  due_next_month_days: z.number().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: AccountingPaymenttermType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "day_of_month_due": "dayOfMonthDue",
-    "discount_day_of_month": "discountDayOfMonth",
-    "discount_days": "discountDays",
-    "discount_percent": "discountPercent",
-    "due_days": "dueDays",
-    "due_next_month_days": "dueNextMonthDays",
-    "is_active": "isActive",
-    "organization_id": "organizationId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category: Category$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    day_of_month_due: z.number().optional(),
+    description: z.string().optional(),
+    discount_day_of_month: z.number().optional(),
+    discount_days: z.number().optional(),
+    discount_percent: z.number().optional(),
+    due_days: z.number().optional(),
+    due_next_month_days: z.number().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: AccountingPaymenttermType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "day_of_month_due": "dayOfMonthDue",
+      "discount_day_of_month": "discountDayOfMonth",
+      "discount_days": "discountDays",
+      "discount_percent": "discountPercent",
+      "due_days": "dueDays",
+      "due_next_month_days": "dueNextMonthDays",
+      "is_active": "isActive",
+      "organization_id": "organizationId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingPaymentterm$Outbound = {
   category?: string | undefined;
@@ -187,38 +195,40 @@ export const AccountingPaymentterm$outboundSchema: z.ZodType<
   AccountingPaymentterm$Outbound,
   z.ZodTypeDef,
   AccountingPaymentterm
-> = z.object({
-  category: Category$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dayOfMonthDue: z.number().optional(),
-  description: z.string().optional(),
-  discountDayOfMonth: z.number().optional(),
-  discountDays: z.number().optional(),
-  discountPercent: z.number().optional(),
-  dueDays: z.number().optional(),
-  dueNextMonthDays: z.number().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: AccountingPaymenttermType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    dayOfMonthDue: "day_of_month_due",
-    discountDayOfMonth: "discount_day_of_month",
-    discountDays: "discount_days",
-    discountPercent: "discount_percent",
-    dueDays: "due_days",
-    dueNextMonthDays: "due_next_month_days",
-    isActive: "is_active",
-    organizationId: "organization_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category: Category$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dayOfMonthDue: z.number().optional(),
+    description: z.string().optional(),
+    discountDayOfMonth: z.number().optional(),
+    discountDays: z.number().optional(),
+    discountPercent: z.number().optional(),
+    dueDays: z.number().optional(),
+    dueNextMonthDays: z.number().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: AccountingPaymenttermType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      dayOfMonthDue: "day_of_month_due",
+      discountDayOfMonth: "discount_day_of_month",
+      discountDays: "discount_days",
+      discountPercent: "discount_percent",
+      dueDays: "due_days",
+      dueNextMonthDays: "due_next_month_days",
+      isActive: "is_active",
+      organizationId: "organization_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingPaymenttermToJSON(
   accountingPaymentterm: AccountingPaymentterm,

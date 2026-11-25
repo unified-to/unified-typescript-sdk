@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -291,203 +291,228 @@ export const EmploymentStatus$inboundSchema: z.ZodType<
   EmploymentStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EmploymentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(EmploymentStatus)
+);
 /** @internal */
 export const EmploymentStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   EmploymentStatus
-> = openEnums.outboundSchema(EmploymentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(EmploymentStatus)
+);
 
 /** @internal */
 export const EmploymentStatusReason$inboundSchema: z.ZodType<
   EmploymentStatusReason,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EmploymentStatusReason);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(EmploymentStatusReason)
+);
 /** @internal */
 export const EmploymentStatusReason$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   EmploymentStatusReason
-> = openEnums.outboundSchema(EmploymentStatusReason);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(EmploymentStatusReason)
+);
 
 /** @internal */
 export const HrisEmployeeEmploymentType$inboundSchema: z.ZodType<
   HrisEmployeeEmploymentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisEmployeeEmploymentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisEmployeeEmploymentType)
+);
 /** @internal */
 export const HrisEmployeeEmploymentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisEmployeeEmploymentType
-> = openEnums.outboundSchema(HrisEmployeeEmploymentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisEmployeeEmploymentType)
+);
 
 /** @internal */
 export const FlsaStatus$inboundSchema: z.ZodType<
   FlsaStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(FlsaStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(FlsaStatus));
 /** @internal */
 export const FlsaStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   FlsaStatus
-> = openEnums.outboundSchema(FlsaStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(FlsaStatus));
 
 /** @internal */
 export const HrisEmployeeGender$inboundSchema: z.ZodType<
   HrisEmployeeGender,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisEmployeeGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisEmployeeGender)
+);
 /** @internal */
 export const HrisEmployeeGender$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisEmployeeGender
-> = openEnums.outboundSchema(HrisEmployeeGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisEmployeeGender)
+);
 
 /** @internal */
 export const HrisEmployeeMaritalStatus$inboundSchema: z.ZodType<
   HrisEmployeeMaritalStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisEmployeeMaritalStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisEmployeeMaritalStatus)
+);
 /** @internal */
 export const HrisEmployeeMaritalStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisEmployeeMaritalStatus
-> = openEnums.outboundSchema(HrisEmployeeMaritalStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisEmployeeMaritalStatus)
+);
 
 /** @internal */
 export const PayFrequency$inboundSchema: z.ZodType<
   PayFrequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PayFrequency);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PayFrequency));
 /** @internal */
 export const PayFrequency$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PayFrequency
-> = openEnums.outboundSchema(PayFrequency);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(PayFrequency));
 
 /** @internal */
 export const HrisEmployee$inboundSchema: z.ZodType<
   HrisEmployee,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyHrisEmployeeAddress$inboundSchema.optional(),
-  bio: z.string().optional(),
-  company_id: z.string().optional(),
-  compensation: z.array(HrisCompensation$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  date_of_birth: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  emails: z.array(HrisEmail$inboundSchema).optional(),
-  employee_number: z.string().optional(),
-  employee_roles: z.array(PropertyHrisEmployeeEmployeeRoles$inboundSchema)
-    .optional(),
-  employment_status: EmploymentStatus$inboundSchema.optional(),
-  employment_status_reason: EmploymentStatusReason$inboundSchema.optional(),
-  employment_type: HrisEmployeeEmploymentType$inboundSchema.optional(),
-  first_name: z.string().optional(),
-  flsa_status: FlsaStatus$inboundSchema.optional(),
-  gender: HrisEmployeeGender$inboundSchema.optional(),
-  groups: z.array(HrisGroup$inboundSchema).optional(),
-  has_mfa: z.boolean().optional(),
-  hired_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  image_url: z.string().optional(),
-  job_id: z.string().optional(),
-  language_locale: z.string().optional(),
-  last_name: z.string().optional(),
-  leave_end_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  leave_start_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  locations: z.array(HrisLocation$inboundSchema).optional(),
-  manager_id: z.string().optional(),
-  marital_status: HrisEmployeeMaritalStatus$inboundSchema.optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  pay_frequency: PayFrequency$inboundSchema.optional(),
-  pronouns: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  rehired_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  relationships: z.array(HrisEmployeerelationship$inboundSchema).optional(),
-  salutation: z.string().optional(),
-  seniority_started_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  service_started_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  ssn_sin: z.string().optional(),
-  storage_quota_allocated: z.number().optional(),
-  storage_quota_available: z.number().optional(),
-  storage_quota_used: z.number().optional(),
-  telephones: z.array(HrisTelephone$inboundSchema).optional(),
-  terminated_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  termination_reason: z.string().optional(),
-  timeoff_days_total: z.number().optional(),
-  timeoff_days_used: z.number().optional(),
-  timezone: z.string().optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "date_of_birth": "dateOfBirth",
-    "employee_number": "employeeNumber",
-    "employee_roles": "employeeRoles",
-    "employment_status": "employmentStatus",
-    "employment_status_reason": "employmentStatusReason",
-    "employment_type": "employmentType",
-    "first_name": "firstName",
-    "flsa_status": "flsaStatus",
-    "has_mfa": "hasMfa",
-    "hired_at": "hiredAt",
-    "image_url": "imageUrl",
-    "job_id": "jobId",
-    "language_locale": "languageLocale",
-    "last_name": "lastName",
-    "leave_end_at": "leaveEndAt",
-    "leave_start_at": "leaveStartAt",
-    "manager_id": "managerId",
-    "marital_status": "maritalStatus",
-    "pay_frequency": "payFrequency",
-    "rehired_at": "rehiredAt",
-    "seniority_started_at": "seniorityStartedAt",
-    "service_started_at": "serviceStartedAt",
-    "ssn_sin": "ssnSin",
-    "storage_quota_allocated": "storageQuotaAllocated",
-    "storage_quota_available": "storageQuotaAvailable",
-    "storage_quota_used": "storageQuotaUsed",
-    "terminated_at": "terminatedAt",
-    "termination_reason": "terminationReason",
-    "timeoff_days_total": "timeoffDaysTotal",
-    "timeoff_days_used": "timeoffDaysUsed",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHrisEmployeeAddress$inboundSchema.optional(),
+    bio: z.string().optional(),
+    company_id: z.string().optional(),
+    compensation: z.array(HrisCompensation$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    date_of_birth: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    emails: z.array(HrisEmail$inboundSchema).optional(),
+    employee_number: z.string().optional(),
+    employee_roles: z.array(PropertyHrisEmployeeEmployeeRoles$inboundSchema)
+      .optional(),
+    employment_status: EmploymentStatus$inboundSchema.optional(),
+    employment_status_reason: EmploymentStatusReason$inboundSchema.optional(),
+    employment_type: HrisEmployeeEmploymentType$inboundSchema.optional(),
+    first_name: z.string().optional(),
+    flsa_status: FlsaStatus$inboundSchema.optional(),
+    gender: HrisEmployeeGender$inboundSchema.optional(),
+    groups: z.array(HrisGroup$inboundSchema).optional(),
+    has_mfa: z.boolean().optional(),
+    hired_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    image_url: z.string().optional(),
+    job_id: z.string().optional(),
+    language_locale: z.string().optional(),
+    last_name: z.string().optional(),
+    leave_end_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    leave_start_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    locations: z.array(HrisLocation$inboundSchema).optional(),
+    manager_id: z.string().optional(),
+    marital_status: HrisEmployeeMaritalStatus$inboundSchema.optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    pay_frequency: PayFrequency$inboundSchema.optional(),
+    pronouns: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    rehired_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    relationships: z.array(HrisEmployeerelationship$inboundSchema).optional(),
+    salutation: z.string().optional(),
+    seniority_started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    service_started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    ssn_sin: z.string().optional(),
+    storage_quota_allocated: z.number().optional(),
+    storage_quota_available: z.number().optional(),
+    storage_quota_used: z.number().optional(),
+    telephones: z.array(HrisTelephone$inboundSchema).optional(),
+    terminated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    termination_reason: z.string().optional(),
+    timeoff_days_total: z.number().optional(),
+    timeoff_days_used: z.number().optional(),
+    timezone: z.string().optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "date_of_birth": "dateOfBirth",
+      "employee_number": "employeeNumber",
+      "employee_roles": "employeeRoles",
+      "employment_status": "employmentStatus",
+      "employment_status_reason": "employmentStatusReason",
+      "employment_type": "employmentType",
+      "first_name": "firstName",
+      "flsa_status": "flsaStatus",
+      "has_mfa": "hasMfa",
+      "hired_at": "hiredAt",
+      "image_url": "imageUrl",
+      "job_id": "jobId",
+      "language_locale": "languageLocale",
+      "last_name": "lastName",
+      "leave_end_at": "leaveEndAt",
+      "leave_start_at": "leaveStartAt",
+      "manager_id": "managerId",
+      "marital_status": "maritalStatus",
+      "pay_frequency": "payFrequency",
+      "rehired_at": "rehiredAt",
+      "seniority_started_at": "seniorityStartedAt",
+      "service_started_at": "serviceStartedAt",
+      "ssn_sin": "ssnSin",
+      "storage_quota_allocated": "storageQuotaAllocated",
+      "storage_quota_available": "storageQuotaAvailable",
+      "storage_quota_used": "storageQuotaUsed",
+      "terminated_at": "terminatedAt",
+      "termination_reason": "terminationReason",
+      "timeoff_days_total": "timeoffDaysTotal",
+      "timeoff_days_used": "timeoffDaysUsed",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HrisEmployee$Outbound = {
   address?: PropertyHrisEmployeeAddress$Outbound | undefined;
@@ -548,96 +573,98 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   HrisEmployee$Outbound,
   z.ZodTypeDef,
   HrisEmployee
-> = z.object({
-  address: PropertyHrisEmployeeAddress$outboundSchema.optional(),
-  bio: z.string().optional(),
-  companyId: z.string().optional(),
-  compensation: z.array(HrisCompensation$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  dateOfBirth: z.date().transform(v => v.toISOString()).optional(),
-  emails: z.array(HrisEmail$outboundSchema).optional(),
-  employeeNumber: z.string().optional(),
-  employeeRoles: z.array(PropertyHrisEmployeeEmployeeRoles$outboundSchema)
-    .optional(),
-  employmentStatus: EmploymentStatus$outboundSchema.optional(),
-  employmentStatusReason: EmploymentStatusReason$outboundSchema.optional(),
-  employmentType: HrisEmployeeEmploymentType$outboundSchema.optional(),
-  firstName: z.string().optional(),
-  flsaStatus: FlsaStatus$outboundSchema.optional(),
-  gender: HrisEmployeeGender$outboundSchema.optional(),
-  groups: z.array(HrisGroup$outboundSchema).optional(),
-  hasMfa: z.boolean().optional(),
-  hiredAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  imageUrl: z.string().optional(),
-  jobId: z.string().optional(),
-  languageLocale: z.string().optional(),
-  lastName: z.string().optional(),
-  leaveEndAt: z.date().transform(v => v.toISOString()).optional(),
-  leaveStartAt: z.date().transform(v => v.toISOString()).optional(),
-  locations: z.array(HrisLocation$outboundSchema).optional(),
-  managerId: z.string().optional(),
-  maritalStatus: HrisEmployeeMaritalStatus$outboundSchema.optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  payFrequency: PayFrequency$outboundSchema.optional(),
-  pronouns: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  rehiredAt: z.date().transform(v => v.toISOString()).optional(),
-  relationships: z.array(HrisEmployeerelationship$outboundSchema).optional(),
-  salutation: z.string().optional(),
-  seniorityStartedAt: z.date().transform(v => v.toISOString()).optional(),
-  serviceStartedAt: z.date().transform(v => v.toISOString()).optional(),
-  ssnSin: z.string().optional(),
-  storageQuotaAllocated: z.number().optional(),
-  storageQuotaAvailable: z.number().optional(),
-  storageQuotaUsed: z.number().optional(),
-  telephones: z.array(HrisTelephone$outboundSchema).optional(),
-  terminatedAt: z.date().transform(v => v.toISOString()).optional(),
-  terminationReason: z.string().optional(),
-  timeoffDaysTotal: z.number().optional(),
-  timeoffDaysUsed: z.number().optional(),
-  timezone: z.string().optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    createdAt: "created_at",
-    dateOfBirth: "date_of_birth",
-    employeeNumber: "employee_number",
-    employeeRoles: "employee_roles",
-    employmentStatus: "employment_status",
-    employmentStatusReason: "employment_status_reason",
-    employmentType: "employment_type",
-    firstName: "first_name",
-    flsaStatus: "flsa_status",
-    hasMfa: "has_mfa",
-    hiredAt: "hired_at",
-    imageUrl: "image_url",
-    jobId: "job_id",
-    languageLocale: "language_locale",
-    lastName: "last_name",
-    leaveEndAt: "leave_end_at",
-    leaveStartAt: "leave_start_at",
-    managerId: "manager_id",
-    maritalStatus: "marital_status",
-    payFrequency: "pay_frequency",
-    rehiredAt: "rehired_at",
-    seniorityStartedAt: "seniority_started_at",
-    serviceStartedAt: "service_started_at",
-    ssnSin: "ssn_sin",
-    storageQuotaAllocated: "storage_quota_allocated",
-    storageQuotaAvailable: "storage_quota_available",
-    storageQuotaUsed: "storage_quota_used",
-    terminatedAt: "terminated_at",
-    terminationReason: "termination_reason",
-    timeoffDaysTotal: "timeoff_days_total",
-    timeoffDaysUsed: "timeoff_days_used",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHrisEmployeeAddress$outboundSchema.optional(),
+    bio: z.string().optional(),
+    companyId: z.string().optional(),
+    compensation: z.array(HrisCompensation$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    dateOfBirth: z.date().transform(v => v.toISOString()).optional(),
+    emails: z.array(HrisEmail$outboundSchema).optional(),
+    employeeNumber: z.string().optional(),
+    employeeRoles: z.array(PropertyHrisEmployeeEmployeeRoles$outboundSchema)
+      .optional(),
+    employmentStatus: EmploymentStatus$outboundSchema.optional(),
+    employmentStatusReason: EmploymentStatusReason$outboundSchema.optional(),
+    employmentType: HrisEmployeeEmploymentType$outboundSchema.optional(),
+    firstName: z.string().optional(),
+    flsaStatus: FlsaStatus$outboundSchema.optional(),
+    gender: HrisEmployeeGender$outboundSchema.optional(),
+    groups: z.array(HrisGroup$outboundSchema).optional(),
+    hasMfa: z.boolean().optional(),
+    hiredAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    imageUrl: z.string().optional(),
+    jobId: z.string().optional(),
+    languageLocale: z.string().optional(),
+    lastName: z.string().optional(),
+    leaveEndAt: z.date().transform(v => v.toISOString()).optional(),
+    leaveStartAt: z.date().transform(v => v.toISOString()).optional(),
+    locations: z.array(HrisLocation$outboundSchema).optional(),
+    managerId: z.string().optional(),
+    maritalStatus: HrisEmployeeMaritalStatus$outboundSchema.optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    payFrequency: PayFrequency$outboundSchema.optional(),
+    pronouns: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    rehiredAt: z.date().transform(v => v.toISOString()).optional(),
+    relationships: z.array(HrisEmployeerelationship$outboundSchema).optional(),
+    salutation: z.string().optional(),
+    seniorityStartedAt: z.date().transform(v => v.toISOString()).optional(),
+    serviceStartedAt: z.date().transform(v => v.toISOString()).optional(),
+    ssnSin: z.string().optional(),
+    storageQuotaAllocated: z.number().optional(),
+    storageQuotaAvailable: z.number().optional(),
+    storageQuotaUsed: z.number().optional(),
+    telephones: z.array(HrisTelephone$outboundSchema).optional(),
+    terminatedAt: z.date().transform(v => v.toISOString()).optional(),
+    terminationReason: z.string().optional(),
+    timeoffDaysTotal: z.number().optional(),
+    timeoffDaysUsed: z.number().optional(),
+    timezone: z.string().optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      createdAt: "created_at",
+      dateOfBirth: "date_of_birth",
+      employeeNumber: "employee_number",
+      employeeRoles: "employee_roles",
+      employmentStatus: "employment_status",
+      employmentStatusReason: "employment_status_reason",
+      employmentType: "employment_type",
+      firstName: "first_name",
+      flsaStatus: "flsa_status",
+      hasMfa: "has_mfa",
+      hiredAt: "hired_at",
+      imageUrl: "image_url",
+      jobId: "job_id",
+      languageLocale: "language_locale",
+      lastName: "last_name",
+      leaveEndAt: "leave_end_at",
+      leaveStartAt: "leave_start_at",
+      managerId: "manager_id",
+      maritalStatus: "marital_status",
+      payFrequency: "pay_frequency",
+      rehiredAt: "rehired_at",
+      seniorityStartedAt: "seniority_started_at",
+      serviceStartedAt: "service_started_at",
+      ssnSin: "ssn_sin",
+      storageQuotaAllocated: "storage_quota_allocated",
+      storageQuotaAvailable: "storage_quota_available",
+      storageQuotaUsed: "storage_quota_used",
+      terminatedAt: "terminated_at",
+      terminationReason: "termination_reason",
+      timeoffDaysTotal: "timeoff_days_total",
+      timeoffDaysUsed: "timeoff_days_used",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function hrisEmployeeToJSON(hrisEmployee: HrisEmployee): string {
   return JSON.stringify(HrisEmployee$outboundSchema.parse(hrisEmployee));

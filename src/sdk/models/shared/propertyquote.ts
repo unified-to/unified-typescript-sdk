@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -82,38 +82,41 @@ export const PropertyQuote$inboundSchema: z.ZodType<
   PropertyQuote,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  adults: z.number().optional(),
-  children: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  deposit_amount: z.number().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  guests: z.number().optional(),
-  id: z.string().optional(),
-  line_items: z.array(PropertyLineitem$inboundSchema).optional(),
-  listing_id: z.string().optional(),
-  promotion_code: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  total_amount: z.number().optional(),
-  unittype_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "deposit_amount": "depositAmount",
-    "end_at": "endAt",
-    "line_items": "lineItems",
-    "listing_id": "listingId",
-    "promotion_code": "promotionCode",
-    "start_at": "startAt",
-    "total_amount": "totalAmount",
-    "unittype_id": "unittypeId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    adults: z.number().optional(),
+    children: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    deposit_amount: z.number().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    guests: z.number().optional(),
+    id: z.string().optional(),
+    line_items: z.array(PropertyLineitem$inboundSchema).optional(),
+    listing_id: z.string().optional(),
+    promotion_code: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    total_amount: z.number().optional(),
+    unittype_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "deposit_amount": "depositAmount",
+      "end_at": "endAt",
+      "line_items": "lineItems",
+      "listing_id": "listingId",
+      "promotion_code": "promotionCode",
+      "start_at": "startAt",
+      "total_amount": "totalAmount",
+      "unittype_id": "unittypeId",
+    });
+  })
+);
 /** @internal */
 export type PropertyQuote$Outbound = {
   adults?: number | undefined;
@@ -138,35 +141,37 @@ export const PropertyQuote$outboundSchema: z.ZodType<
   PropertyQuote$Outbound,
   z.ZodTypeDef,
   PropertyQuote
-> = z.object({
-  adults: z.number().optional(),
-  children: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  depositAmount: z.number().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  guests: z.number().optional(),
-  id: z.string().optional(),
-  lineItems: z.array(PropertyLineitem$outboundSchema).optional(),
-  listingId: z.string().optional(),
-  promotionCode: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  totalAmount: z.number().optional(),
-  unittypeId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    depositAmount: "deposit_amount",
-    endAt: "end_at",
-    lineItems: "line_items",
-    listingId: "listing_id",
-    promotionCode: "promotion_code",
-    startAt: "start_at",
-    totalAmount: "total_amount",
-    unittypeId: "unittype_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    adults: z.number().optional(),
+    children: z.number().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    depositAmount: z.number().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    guests: z.number().optional(),
+    id: z.string().optional(),
+    lineItems: z.array(PropertyLineitem$outboundSchema).optional(),
+    listingId: z.string().optional(),
+    promotionCode: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    totalAmount: z.number().optional(),
+    unittypeId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      depositAmount: "deposit_amount",
+      endAt: "end_at",
+      lineItems: "line_items",
+      listingId: "listing_id",
+      promotionCode: "promotion_code",
+      startAt: "start_at",
+      totalAmount: "total_amount",
+      unittypeId: "unittype_id",
+    });
+  })
+);
 
 export function propertyQuoteToJSON(propertyQuote: PropertyQuote): string {
   return JSON.stringify(PropertyQuote$outboundSchema.parse(propertyQuote));

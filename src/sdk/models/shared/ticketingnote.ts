@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -46,27 +46,31 @@ export const TicketingNote$inboundSchema: z.ZodType<
   TicketingNote,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  customer_id: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(TicketingMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  ticket_id: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "customer_id": "customerId",
-    "ticket_id": "ticketId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    customer_id: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(TicketingMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    ticket_id: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "customer_id": "customerId",
+      "ticket_id": "ticketId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type TicketingNote$Outbound = {
   created_at?: string | undefined;
@@ -85,25 +89,27 @@ export const TicketingNote$outboundSchema: z.ZodType<
   TicketingNote$Outbound,
   z.ZodTypeDef,
   TicketingNote
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  customerId: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(TicketingMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  ticketId: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    customerId: "customer_id",
-    ticketId: "ticket_id",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    customerId: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(TicketingMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    ticketId: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      customerId: "customer_id",
+      ticketId: "ticket_id",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function ticketingNoteToJSON(ticketingNote: TicketingNote): string {
   return JSON.stringify(TicketingNote$outboundSchema.parse(ticketingNote));

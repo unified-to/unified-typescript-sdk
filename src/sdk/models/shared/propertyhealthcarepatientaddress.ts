@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -43,18 +43,20 @@ export const PropertyHealthcarePatientAddress$inboundSchema: z.ZodType<
   PropertyHealthcarePatientAddress,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address1: z.string().optional(),
-  address2: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  postal_code: z.string().optional(),
-  region: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "postal_code": "postalCode",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address1: z.string().optional(),
+    address2: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    postal_code: z.string().optional(),
+    region: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "postal_code": "postalCode",
+    });
+  })
+);
 /** @internal */
 export type PropertyHealthcarePatientAddress$Outbound = {
   address1?: string | undefined;
@@ -70,18 +72,20 @@ export const PropertyHealthcarePatientAddress$outboundSchema: z.ZodType<
   PropertyHealthcarePatientAddress$Outbound,
   z.ZodTypeDef,
   PropertyHealthcarePatientAddress
-> = z.object({
-  address1: z.string().optional(),
-  address2: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  postalCode: z.string().optional(),
-  region: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    postalCode: "postal_code",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address1: z.string().optional(),
+    address2: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    postalCode: z.string().optional(),
+    region: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      postalCode: "postal_code",
+    });
+  })
+);
 
 export function propertyHealthcarePatientAddressToJSON(
   propertyHealthcarePatientAddress: PropertyHealthcarePatientAddress,

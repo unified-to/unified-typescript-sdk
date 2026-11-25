@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -39,12 +39,20 @@ export type HrisCompensationType = OpenEnum<typeof HrisCompensationType>;
 export type HrisCompensation = {
   amount?: number | undefined;
   currency?: string | undefined;
+  /**
+   * date this pay stopped (empty = still current) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endAt?: Date | undefined;
   frequency?: HrisCompensationFrequency | undefined;
   /**
    * (reference to HrisGroup)
    */
   groupId?: string | undefined;
   notes?: string | undefined;
+  /**
+   * date this pay became effective (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startAt?: Date | undefined;
   type?: HrisCompensationType | undefined;
 };
 
@@ -53,51 +61,69 @@ export const HrisCompensationFrequency$inboundSchema: z.ZodType<
   HrisCompensationFrequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisCompensationFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisCompensationFrequency)
+);
 /** @internal */
 export const HrisCompensationFrequency$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisCompensationFrequency
-> = openEnums.outboundSchema(HrisCompensationFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisCompensationFrequency)
+);
 
 /** @internal */
 export const HrisCompensationType$inboundSchema: z.ZodType<
   HrisCompensationType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisCompensationType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisCompensationType)
+);
 /** @internal */
 export const HrisCompensationType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisCompensationType
-> = openEnums.outboundSchema(HrisCompensationType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisCompensationType)
+);
 
 /** @internal */
 export const HrisCompensation$inboundSchema: z.ZodType<
   HrisCompensation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  currency: z.string().optional(),
-  frequency: HrisCompensationFrequency$inboundSchema.optional(),
-  group_id: z.string().optional(),
-  notes: z.string().optional(),
-  type: HrisCompensationType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "group_id": "groupId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    frequency: HrisCompensationFrequency$inboundSchema.optional(),
+    group_id: z.string().optional(),
+    notes: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    type: HrisCompensationType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "group_id": "groupId",
+      "start_at": "startAt",
+    });
+  })
+);
 /** @internal */
 export type HrisCompensation$Outbound = {
   amount?: number | undefined;
   currency?: string | undefined;
+  end_at?: string | undefined;
   frequency?: string | undefined;
   group_id?: string | undefined;
   notes?: string | undefined;
+  start_at?: string | undefined;
   type?: string | undefined;
 };
 
@@ -106,18 +132,24 @@ export const HrisCompensation$outboundSchema: z.ZodType<
   HrisCompensation$Outbound,
   z.ZodTypeDef,
   HrisCompensation
-> = z.object({
-  amount: z.number().optional(),
-  currency: z.string().optional(),
-  frequency: HrisCompensationFrequency$outboundSchema.optional(),
-  groupId: z.string().optional(),
-  notes: z.string().optional(),
-  type: HrisCompensationType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    groupId: "group_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    currency: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    frequency: HrisCompensationFrequency$outboundSchema.optional(),
+    groupId: z.string().optional(),
+    notes: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    type: HrisCompensationType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      endAt: "end_at",
+      groupId: "group_id",
+      startAt: "start_at",
+    });
+  })
+);
 
 export function hrisCompensationToJSON(
   hrisCompensation: HrisCompensation,

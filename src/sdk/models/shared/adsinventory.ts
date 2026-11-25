@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -62,40 +62,48 @@ export const AdsInventoryStatus$inboundSchema: z.ZodType<
   AdsInventoryStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsInventoryStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsInventoryStatus)
+);
 
 /** @internal */
 export const AdsInventoryType$inboundSchema: z.ZodType<
   AdsInventoryType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsInventoryType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsInventoryType)
+);
 
 /** @internal */
 export const AdsInventory$inboundSchema: z.ZodType<
   AdsInventory,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  sizes: z.array(AdsSize$inboundSchema).optional(),
-  status: AdsInventoryStatus$inboundSchema.optional(),
-  type: AdsInventoryType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    sizes: z.array(AdsSize$inboundSchema).optional(),
+    status: AdsInventoryStatus$inboundSchema.optional(),
+    type: AdsInventoryType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function adsInventoryFromJSON(
   jsonString: string,

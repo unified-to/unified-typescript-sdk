@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingProjectsQueryParamFields = {
@@ -88,9 +89,10 @@ export type ListAccountingProjectsRequest = {
 
 /** @internal */
 export const ListAccountingProjectsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingProjectsQueryParamFields> = z.nativeEnum(
-    ListAccountingProjectsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAccountingProjectsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingProjectsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingProjectsRequest$Outbound = {
@@ -114,30 +116,32 @@ export const ListAccountingProjectsRequest$outboundSchema: z.ZodType<
   ListAccountingProjectsRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingProjectsRequest
-> = z.object({
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  fields: z.array(ListAccountingProjectsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    orgId: "org_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    fields: z.array(ListAccountingProjectsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      orgId: "org_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingProjectsRequestToJSON(
   listAccountingProjectsRequest: ListAccountingProjectsRequest,

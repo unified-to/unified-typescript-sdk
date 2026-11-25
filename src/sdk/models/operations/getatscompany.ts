@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetAtsCompanyQueryParamFields = {
@@ -17,6 +18,7 @@ export const GetAtsCompanyQueryParamFields = {
   ParentId: "parent_id",
   RecruiterIds: "recruiter_ids",
   Metadata: "metadata",
+  Fees: "fees",
   Raw: "raw",
 } as const;
 export type GetAtsCompanyQueryParamFields = ClosedEnum<
@@ -45,7 +47,9 @@ export type GetAtsCompanyRequest = {
 /** @internal */
 export const GetAtsCompanyQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetAtsCompanyQueryParamFields
-> = z.nativeEnum(GetAtsCompanyQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetAtsCompanyQueryParamFields)
+);
 
 /** @internal */
 export type GetAtsCompanyRequest$Outbound = {
@@ -60,16 +64,18 @@ export const GetAtsCompanyRequest$outboundSchema: z.ZodType<
   GetAtsCompanyRequest$Outbound,
   z.ZodTypeDef,
   GetAtsCompanyRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetAtsCompanyQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetAtsCompanyQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getAtsCompanyRequestToJSON(
   getAtsCompanyRequest: GetAtsCompanyRequest,

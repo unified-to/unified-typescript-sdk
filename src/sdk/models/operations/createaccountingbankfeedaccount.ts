@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -48,8 +49,10 @@ export type CreateAccountingBankfeedaccountRequest = {
 
 /** @internal */
 export const CreateAccountingBankfeedaccountQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingBankfeedaccountQueryParamFields> = z
-    .nativeEnum(CreateAccountingBankfeedaccountQueryParamFields);
+  z.ZodNativeEnum<typeof CreateAccountingBankfeedaccountQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingBankfeedaccountQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingBankfeedaccountRequest$Outbound = {
@@ -64,19 +67,21 @@ export const CreateAccountingBankfeedaccountRequest$outboundSchema: z.ZodType<
   CreateAccountingBankfeedaccountRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingBankfeedaccountRequest
-> = z.object({
-  accountingBankfeedaccount: shared.AccountingBankfeedaccount$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(
-    CreateAccountingBankfeedaccountQueryParamFields$outboundSchema,
-  ).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingBankfeedaccount: "AccountingBankfeedaccount",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingBankfeedaccount: shared.AccountingBankfeedaccount$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(
+      CreateAccountingBankfeedaccountQueryParamFields$outboundSchema,
+    ).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingBankfeedaccount: "AccountingBankfeedaccount",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingBankfeedaccountRequestToJSON(
   createAccountingBankfeedaccountRequest:

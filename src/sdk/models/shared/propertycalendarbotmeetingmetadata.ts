@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -36,27 +36,30 @@ export const PropertyCalendarBotMeetingMetadata$inboundSchema: z.ZodType<
   PropertyCalendarBotMeetingMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  ended_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  host_email: z.string().optional(),
-  host_name: z.string().optional(),
-  meeting_identifier: z.string().optional(),
-  participant_count: z.number().optional(),
-  platform: z.string().optional(),
-  started_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  title: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "ended_at": "endedAt",
-    "host_email": "hostEmail",
-    "host_name": "hostName",
-    "meeting_identifier": "meetingIdentifier",
-    "participant_count": "participantCount",
-    "started_at": "startedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    ended_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    host_email: z.string().optional(),
+    host_name: z.string().optional(),
+    meeting_identifier: z.string().optional(),
+    participant_count: z.number().optional(),
+    platform: z.string().optional(),
+    started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    title: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "ended_at": "endedAt",
+      "host_email": "hostEmail",
+      "host_name": "hostName",
+      "meeting_identifier": "meetingIdentifier",
+      "participant_count": "participantCount",
+      "started_at": "startedAt",
+    });
+  })
+);
 /** @internal */
 export type PropertyCalendarBotMeetingMetadata$Outbound = {
   ended_at?: string | undefined;
@@ -74,25 +77,27 @@ export const PropertyCalendarBotMeetingMetadata$outboundSchema: z.ZodType<
   PropertyCalendarBotMeetingMetadata$Outbound,
   z.ZodTypeDef,
   PropertyCalendarBotMeetingMetadata
-> = z.object({
-  endedAt: z.date().transform(v => v.toISOString()).optional(),
-  hostEmail: z.string().optional(),
-  hostName: z.string().optional(),
-  meetingIdentifier: z.string().optional(),
-  participantCount: z.number().optional(),
-  platform: z.string().optional(),
-  startedAt: z.date().transform(v => v.toISOString()).optional(),
-  title: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    endedAt: "ended_at",
-    hostEmail: "host_email",
-    hostName: "host_name",
-    meetingIdentifier: "meeting_identifier",
-    participantCount: "participant_count",
-    startedAt: "started_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    endedAt: z.date().transform(v => v.toISOString()).optional(),
+    hostEmail: z.string().optional(),
+    hostName: z.string().optional(),
+    meetingIdentifier: z.string().optional(),
+    participantCount: z.number().optional(),
+    platform: z.string().optional(),
+    startedAt: z.date().transform(v => v.toISOString()).optional(),
+    title: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      endedAt: "ended_at",
+      hostEmail: "host_email",
+      hostName: "host_name",
+      meetingIdentifier: "meeting_identifier",
+      participantCount: "participant_count",
+      startedAt: "started_at",
+    });
+  })
+);
 
 export function propertyCalendarBotMeetingMetadataToJSON(
   propertyCalendarBotMeetingMetadata: PropertyCalendarBotMeetingMetadata,

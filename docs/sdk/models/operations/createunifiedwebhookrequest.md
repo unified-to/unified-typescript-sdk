@@ -9,7 +9,7 @@ let value: CreateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "clubs_member",
+    objectType: "cdp_segment",
   },
 };
 ```

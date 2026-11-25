@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisTimeshiftsQueryParamFields = {
@@ -78,7 +79,9 @@ export type ListHrisTimeshiftsRequest = {
 /** @internal */
 export const ListHrisTimeshiftsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisTimeshiftsQueryParamFields
-> = z.nativeEnum(ListHrisTimeshiftsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisTimeshiftsQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisTimeshiftsRequest$Outbound = {
@@ -103,32 +106,35 @@ export const ListHrisTimeshiftsRequest$outboundSchema: z.ZodType<
   ListHrisTimeshiftsRequest$Outbound,
   z.ZodTypeDef,
   ListHrisTimeshiftsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListHrisTimeshiftsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  locationId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    locationId: "location_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListHrisTimeshiftsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    locationId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      locationId: "location_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listHrisTimeshiftsRequestToJSON(
   listHrisTimeshiftsRequest: ListHrisTimeshiftsRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -80,8 +80,10 @@ export const PropertyAdsInsertionorderBidStrategyPerformanceGoalType$inboundSche
     PropertyAdsInsertionorderBidStrategyPerformanceGoalType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsInsertionorderBidStrategyPerformanceGoalType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsInsertionorderBidStrategyPerformanceGoalType,
+    )
   );
 /** @internal */
 export const PropertyAdsInsertionorderBidStrategyPerformanceGoalType$outboundSchema:
@@ -89,8 +91,10 @@ export const PropertyAdsInsertionorderBidStrategyPerformanceGoalType$outboundSch
     string,
     z.ZodTypeDef,
     PropertyAdsInsertionorderBidStrategyPerformanceGoalType
-  > = openEnums.outboundSchema(
-    PropertyAdsInsertionorderBidStrategyPerformanceGoalType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyAdsInsertionorderBidStrategyPerformanceGoalType,
+    )
   );
 
 /** @internal */
@@ -98,13 +102,17 @@ export const PropertyAdsInsertionorderBidStrategyType$inboundSchema: z.ZodType<
   PropertyAdsInsertionorderBidStrategyType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsInsertionorderBidStrategyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsInsertionorderBidStrategyType)
+);
 /** @internal */
 export const PropertyAdsInsertionorderBidStrategyType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyAdsInsertionorderBidStrategyType
-> = openEnums.outboundSchema(PropertyAdsInsertionorderBidStrategyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyAdsInsertionorderBidStrategyType)
+);
 
 /** @internal */
 export const PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$inboundSchema:
@@ -112,8 +120,10 @@ export const PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$inboundS
     PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType,
+    )
   );
 /** @internal */
 export const PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$outboundSchema:
@@ -121,8 +131,10 @@ export const PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$outbound
     string,
     z.ZodTypeDef,
     PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType
-  > = openEnums.outboundSchema(
-    PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType,
+    )
   );
 
 /** @internal */
@@ -130,34 +142,36 @@ export const PropertyAdsInsertionorderBidStrategy$inboundSchema: z.ZodType<
   PropertyAdsInsertionorderBidStrategy,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  custom_bidding_algorithm_id: z.string().optional(),
-  fixed_bid_amount: z.number().optional(),
-  max_average_cpm_bid_amount: z.number().optional(),
-  performance_goal_amount: z.number().optional(),
-  performance_goal_type:
-    PropertyAdsInsertionorderBidStrategyPerformanceGoalType$inboundSchema
-      .optional(),
-  raise_bid_for_deals: z.boolean().optional(),
-  target_roas: z.number().optional(),
-  type: PropertyAdsInsertionorderBidStrategyType$inboundSchema,
-  youtube_and_partners_type:
-    PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$inboundSchema
-      .optional(),
-  youtube_and_partners_value: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "custom_bidding_algorithm_id": "customBiddingAlgorithmId",
-    "fixed_bid_amount": "fixedBidAmount",
-    "max_average_cpm_bid_amount": "maxAverageCpmBidAmount",
-    "performance_goal_amount": "performanceGoalAmount",
-    "performance_goal_type": "performanceGoalType",
-    "raise_bid_for_deals": "raiseBidForDeals",
-    "target_roas": "targetRoas",
-    "youtube_and_partners_type": "youtubeAndPartnersType",
-    "youtube_and_partners_value": "youtubeAndPartnersValue",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    custom_bidding_algorithm_id: z.string().optional(),
+    fixed_bid_amount: z.number().optional(),
+    max_average_cpm_bid_amount: z.number().optional(),
+    performance_goal_amount: z.number().optional(),
+    performance_goal_type:
+      PropertyAdsInsertionorderBidStrategyPerformanceGoalType$inboundSchema
+        .optional(),
+    raise_bid_for_deals: z.boolean().optional(),
+    target_roas: z.number().optional(),
+    type: PropertyAdsInsertionorderBidStrategyType$inboundSchema,
+    youtube_and_partners_type:
+      PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$inboundSchema
+        .optional(),
+    youtube_and_partners_value: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "custom_bidding_algorithm_id": "customBiddingAlgorithmId",
+      "fixed_bid_amount": "fixedBidAmount",
+      "max_average_cpm_bid_amount": "maxAverageCpmBidAmount",
+      "performance_goal_amount": "performanceGoalAmount",
+      "performance_goal_type": "performanceGoalType",
+      "raise_bid_for_deals": "raiseBidForDeals",
+      "target_roas": "targetRoas",
+      "youtube_and_partners_type": "youtubeAndPartnersType",
+      "youtube_and_partners_value": "youtubeAndPartnersValue",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsInsertionorderBidStrategy$Outbound = {
   custom_bidding_algorithm_id?: string | undefined;
@@ -177,34 +191,36 @@ export const PropertyAdsInsertionorderBidStrategy$outboundSchema: z.ZodType<
   PropertyAdsInsertionorderBidStrategy$Outbound,
   z.ZodTypeDef,
   PropertyAdsInsertionorderBidStrategy
-> = z.object({
-  customBiddingAlgorithmId: z.string().optional(),
-  fixedBidAmount: z.number().optional(),
-  maxAverageCpmBidAmount: z.number().optional(),
-  performanceGoalAmount: z.number().optional(),
-  performanceGoalType:
-    PropertyAdsInsertionorderBidStrategyPerformanceGoalType$outboundSchema
-      .optional(),
-  raiseBidForDeals: z.boolean().optional(),
-  targetRoas: z.number().optional(),
-  type: PropertyAdsInsertionorderBidStrategyType$outboundSchema,
-  youtubeAndPartnersType:
-    PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$outboundSchema
-      .optional(),
-  youtubeAndPartnersValue: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    customBiddingAlgorithmId: "custom_bidding_algorithm_id",
-    fixedBidAmount: "fixed_bid_amount",
-    maxAverageCpmBidAmount: "max_average_cpm_bid_amount",
-    performanceGoalAmount: "performance_goal_amount",
-    performanceGoalType: "performance_goal_type",
-    raiseBidForDeals: "raise_bid_for_deals",
-    targetRoas: "target_roas",
-    youtubeAndPartnersType: "youtube_and_partners_type",
-    youtubeAndPartnersValue: "youtube_and_partners_value",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    customBiddingAlgorithmId: z.string().optional(),
+    fixedBidAmount: z.number().optional(),
+    maxAverageCpmBidAmount: z.number().optional(),
+    performanceGoalAmount: z.number().optional(),
+    performanceGoalType:
+      PropertyAdsInsertionorderBidStrategyPerformanceGoalType$outboundSchema
+        .optional(),
+    raiseBidForDeals: z.boolean().optional(),
+    targetRoas: z.number().optional(),
+    type: PropertyAdsInsertionorderBidStrategyType$outboundSchema,
+    youtubeAndPartnersType:
+      PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType$outboundSchema
+        .optional(),
+    youtubeAndPartnersValue: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      customBiddingAlgorithmId: "custom_bidding_algorithm_id",
+      fixedBidAmount: "fixed_bid_amount",
+      maxAverageCpmBidAmount: "max_average_cpm_bid_amount",
+      performanceGoalAmount: "performance_goal_amount",
+      performanceGoalType: "performance_goal_type",
+      raiseBidForDeals: "raise_bid_for_deals",
+      targetRoas: "target_roas",
+      youtubeAndPartnersType: "youtube_and_partners_type",
+      youtubeAndPartnersValue: "youtube_and_partners_value",
+    });
+  })
+);
 
 export function propertyAdsInsertionorderBidStrategyToJSON(
   propertyAdsInsertionorderBidStrategy: PropertyAdsInsertionorderBidStrategy,

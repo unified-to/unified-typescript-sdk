@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -27,22 +27,24 @@ export const PropertyCalendarLocationAddress$inboundSchema: z.ZodType<
   PropertyCalendarLocationAddress,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address1: z.string().optional(),
-  address2: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  country_code: z.string().optional(),
-  postal_code: z.string().optional(),
-  region: z.string().optional(),
-  region_code: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "country_code": "countryCode",
-    "postal_code": "postalCode",
-    "region_code": "regionCode",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address1: z.string().optional(),
+    address2: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    country_code: z.string().optional(),
+    postal_code: z.string().optional(),
+    region: z.string().optional(),
+    region_code: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "country_code": "countryCode",
+      "postal_code": "postalCode",
+      "region_code": "regionCode",
+    });
+  })
+);
 
 export function propertyCalendarLocationAddressFromJSON(
   jsonString: string,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -45,7 +46,9 @@ export type CreateGenaiPromptRequest = {
 /** @internal */
 export const CreateGenaiPromptQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateGenaiPromptQueryParamFields
-> = z.nativeEnum(CreateGenaiPromptQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateGenaiPromptQueryParamFields)
+);
 
 /** @internal */
 export type CreateGenaiPromptRequest$Outbound = {
@@ -60,17 +63,20 @@ export const CreateGenaiPromptRequest$outboundSchema: z.ZodType<
   CreateGenaiPromptRequest$Outbound,
   z.ZodTypeDef,
   CreateGenaiPromptRequest
-> = z.object({
-  genaiPrompt: shared.GenaiPrompt$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateGenaiPromptQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    genaiPrompt: "GenaiPrompt",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    genaiPrompt: shared.GenaiPrompt$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateGenaiPromptQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      genaiPrompt: "GenaiPrompt",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createGenaiPromptRequestToJSON(
   createGenaiPromptRequest: CreateGenaiPromptRequest,

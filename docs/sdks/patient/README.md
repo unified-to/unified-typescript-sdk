@@ -5,7 +5,9 @@
 ### Available Operations
 
 * [createHealthcarePatient](#createhealthcarepatient) - Create a patient
+* [getFhirPatient](#getfhirpatient) - Read a Patient
 * [getHealthcarePatient](#gethealthcarepatient) - Retrieve a patient
+* [listFhirPatients](#listfhirpatients) - Search Patient resources
 * [listHealthcarePatients](#listhealthcarepatients) - List all patients
 * [patchHealthcarePatient](#patchhealthcarepatient) - Update a patient
 * [updateHealthcarePatient](#updatehealthcarepatient) - Update a patient
@@ -30,21 +32,21 @@ async function run() {
   const result = await unifiedTo.patient.createHealthcarePatient({
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -53,33 +55,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "5b64973c-47cb-4348-ba05-97fb9dd0e396",
+      id: "780efb28-b421-4271-b453-d1389a73efd1",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.570Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.863Z"),
     },
     connectionId: "<id>",
   });
@@ -96,7 +98,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareCreateHealthcarePatient } from "@unified-api/typescript-sdk/funcs/healthcareCreateHealthcarePatient.js";
+import { patientCreateHealthcarePatient } from "@unified-api/typescript-sdk/funcs/patientCreateHealthcarePatient.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -107,24 +109,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareCreateHealthcarePatient(unifiedTo, {
+  const res = await patientCreateHealthcarePatient(unifiedTo, {
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -133,33 +135,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "5b64973c-47cb-4348-ba05-97fb9dd0e396",
+      id: "780efb28-b421-4271-b453-d1389a73efd1",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.570Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.863Z"),
     },
     connectionId: "<id>",
   });
@@ -167,7 +169,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareCreateHealthcarePatient failed:", res.error);
+    console.log("patientCreateHealthcarePatient failed:", res.error);
   }
 }
 
@@ -186,6 +188,85 @@ run();
 ### Response
 
 **Promise\<[shared.HealthcarePatient](../../sdk/models/shared/healthcarepatient.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getFhirPatient
+
+Responses use the application/fhir+json media type; errors are OperationOutcome resources. Read-only (FHIR R4 4.0.1).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getFhirPatient" method="get" path="/fhir/{connection_id}/Patient/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.patient.getFhirPatient({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { fhirGetFhirPatient } from "@unified-api/typescript-sdk/funcs/fhirGetFhirPatient.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await fhirGetFhirPatient(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("fhirGetFhirPatient failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetFhirPatientRequest](../../sdk/models/operations/getfhirpatientrequest.md)                                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.FhirPatient](../../sdk/models/shared/fhirpatient.md)\>**
 
 ### Errors
 
@@ -227,7 +308,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareGetHealthcarePatient } from "@unified-api/typescript-sdk/funcs/healthcareGetHealthcarePatient.js";
+import { patientGetHealthcarePatient } from "@unified-api/typescript-sdk/funcs/patientGetHealthcarePatient.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -238,7 +319,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareGetHealthcarePatient(unifiedTo, {
+  const res = await patientGetHealthcarePatient(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -246,7 +327,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareGetHealthcarePatient failed:", res.error);
+    console.log("patientGetHealthcarePatient failed:", res.error);
   }
 }
 
@@ -265,6 +346,83 @@ run();
 ### Response
 
 **Promise\<[shared.HealthcarePatient](../../sdk/models/shared/healthcarepatient.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## listFhirPatients
+
+Returns a searchset Bundle; follow its next link for more pages. Responses use the application/fhir+json media type; errors are OperationOutcome resources. Read-only (FHIR R4 4.0.1).
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listFhirPatients" method="get" path="/fhir/{connection_id}/Patient" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.patient.listFhirPatients({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { fhirListFhirPatients } from "@unified-api/typescript-sdk/funcs/fhirListFhirPatients.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await fhirListFhirPatients(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("fhirListFhirPatients failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListFhirPatientsRequest](../../sdk/models/operations/listfhirpatientsrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.FhirBundle](../../sdk/models/shared/fhirbundle.md)\>**
 
 ### Errors
 
@@ -305,7 +463,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareListHealthcarePatients } from "@unified-api/typescript-sdk/funcs/healthcareListHealthcarePatients.js";
+import { patientListHealthcarePatients } from "@unified-api/typescript-sdk/funcs/patientListHealthcarePatients.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -316,14 +474,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareListHealthcarePatients(unifiedTo, {
+  const res = await patientListHealthcarePatients(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareListHealthcarePatients failed:", res.error);
+    console.log("patientListHealthcarePatients failed:", res.error);
   }
 }
 
@@ -369,21 +527,21 @@ async function run() {
   const result = await unifiedTo.patient.patchHealthcarePatient({
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -392,33 +550,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "ef574ab8-412a-46b3-bc6f-6aec809b601e",
+      id: "046dbc01-e433-4e1b-bf50-49ba74d30803",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.607Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.905Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -436,7 +594,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcarePatchHealthcarePatient } from "@unified-api/typescript-sdk/funcs/healthcarePatchHealthcarePatient.js";
+import { patientPatchHealthcarePatient } from "@unified-api/typescript-sdk/funcs/patientPatchHealthcarePatient.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,24 +605,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcarePatchHealthcarePatient(unifiedTo, {
+  const res = await patientPatchHealthcarePatient(unifiedTo, {
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -473,33 +631,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "ef574ab8-412a-46b3-bc6f-6aec809b601e",
+      id: "046dbc01-e433-4e1b-bf50-49ba74d30803",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.607Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.905Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -508,7 +666,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcarePatchHealthcarePatient failed:", res.error);
+    console.log("patientPatchHealthcarePatient failed:", res.error);
   }
 }
 
@@ -554,21 +712,21 @@ async function run() {
   const result = await unifiedTo.patient.updateHealthcarePatient({
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -577,33 +735,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "ef574ab8-412a-46b3-bc6f-6aec809b601e",
+      id: "046dbc01-e433-4e1b-bf50-49ba74d30803",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.607Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.905Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -621,7 +779,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { healthcareUpdateHealthcarePatient } from "@unified-api/typescript-sdk/funcs/healthcareUpdateHealthcarePatient.js";
+import { patientUpdateHealthcarePatient } from "@unified-api/typescript-sdk/funcs/patientUpdateHealthcarePatient.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -632,24 +790,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await healthcareUpdateHealthcarePatient(unifiedTo, {
+  const res = await patientUpdateHealthcarePatient(unifiedTo, {
     healthcarePatient: {
       address: {
-        address1: "162 Kirlin Mall",
-        city: "Dickinsonborough",
+        address1: "3645 Leonardo Place",
+        city: "Estelleland",
         country: "US",
-        postalCode: "54031",
-        region: "Nebraska",
+        postalCode: "99263-6004",
+        region: "New Jersey",
       },
-      birthdate: "2025-03-14",
+      birthdate: "1941-12-25",
       contacts: [
         {
           emails: [],
-          name: "Antonia Lebsack",
+          name: "Ambrose Welch",
           relationship: "Spouse",
           telephones: [
             {
-              telephone: "(695) 328-7029 x4412",
+              telephone: "323.524.3947 x89014",
               type: "MOBILE",
             },
           ],
@@ -658,33 +816,33 @@ async function run() {
       createdAt: new Date("2021-06-05T21:08:04.917Z"),
       emails: [
         {
-          email: "alejandrin.parker@icloud.com",
+          email: "monroe.bauch@icloud.com",
           type: "HOME",
         },
       ],
-      firstName: "Alejandrin",
+      firstName: "Monroe",
       gender: "FEMALE",
-      id: "ef574ab8-412a-46b3-bc6f-6aec809b601e",
+      id: "046dbc01-e433-4e1b-bf50-49ba74d30803",
       identifiers: [
         {
           type: "MRN",
-          value: "57992636",
+          value: "51559512",
         },
       ],
       isActive: true,
       isDeceased: false,
       language: "zh",
-      lastName: "Parker",
+      lastName: "Bauch",
       metadata: [],
-      name: "Alejandrin Parker",
+      name: "Monroe Bauch",
       practitionerIds: [],
       telephones: [
         {
-          telephone: "1-219-555-9023 x08295",
+          telephone: "1-555-902-3082 x9590",
           type: "MOBILE",
         },
       ],
-      updatedAt: new Date("2026-07-21T00:32:17.607Z"),
+      updatedAt: new Date("2026-07-26T12:52:07.905Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -693,7 +851,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("healthcareUpdateHealthcarePatient failed:", res.error);
+    console.log("patientUpdateHealthcarePatient failed:", res.error);
   }
 }
 

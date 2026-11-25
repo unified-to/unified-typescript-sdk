@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -126,78 +126,82 @@ export const PaymentType$inboundSchema: z.ZodType<
   PaymentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PaymentType));
 
 /** @internal */
 export const HrisPayslipType$inboundSchema: z.ZodType<
   HrisPayslipType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisPayslipType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(HrisPayslipType));
 
 /** @internal */
 export const HrisPayslip$inboundSchema: z.ZodType<
   HrisPayslip,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  deduction: PropertyHrisPayslipDeduction$inboundSchema.optional(),
-  deduction_amount: z.number().optional(),
-  details: z.array(HrisPayslipDetail$inboundSchema).optional(),
-  employee_tax_amount: z.number().optional(),
-  employer_contribution_amount: z.number().optional(),
-  employer_tax_amount: z.number().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  gross_amount: z.number().optional(),
-  gross_ytd_amount: z.number().optional(),
-  group_id: z.string().optional(),
-  hours: z.number().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  net_amount: z.number().optional(),
-  net_ytd_amount: z.number().optional(),
-  paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  payment_reference: z.string().optional(),
-  payment_type: PaymentType$inboundSchema.optional(),
-  payroll_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  type: HrisPayslipType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  ytd_hours: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "deduction_amount": "deductionAmount",
-    "employee_tax_amount": "employeeTaxAmount",
-    "employer_contribution_amount": "employerContributionAmount",
-    "employer_tax_amount": "employerTaxAmount",
-    "end_at": "endAt",
-    "gross_amount": "grossAmount",
-    "gross_ytd_amount": "grossYtdAmount",
-    "group_id": "groupId",
-    "net_amount": "netAmount",
-    "net_ytd_amount": "netYtdAmount",
-    "paid_at": "paidAt",
-    "payment_reference": "paymentReference",
-    "payment_type": "paymentType",
-    "payroll_id": "payrollId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "ytd_hours": "ytdHours",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    deduction: PropertyHrisPayslipDeduction$inboundSchema.optional(),
+    deduction_amount: z.number().optional(),
+    details: z.array(HrisPayslipDetail$inboundSchema).optional(),
+    employee_tax_amount: z.number().optional(),
+    employer_contribution_amount: z.number().optional(),
+    employer_tax_amount: z.number().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    gross_amount: z.number().optional(),
+    gross_ytd_amount: z.number().optional(),
+    group_id: z.string().optional(),
+    hours: z.number().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    net_amount: z.number().optional(),
+    net_ytd_amount: z.number().optional(),
+    paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    payment_reference: z.string().optional(),
+    payment_type: PaymentType$inboundSchema.optional(),
+    payroll_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    type: HrisPayslipType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    ytd_hours: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "deduction_amount": "deductionAmount",
+      "employee_tax_amount": "employeeTaxAmount",
+      "employer_contribution_amount": "employerContributionAmount",
+      "employer_tax_amount": "employerTaxAmount",
+      "end_at": "endAt",
+      "gross_amount": "grossAmount",
+      "gross_ytd_amount": "grossYtdAmount",
+      "group_id": "groupId",
+      "net_amount": "netAmount",
+      "net_ytd_amount": "netYtdAmount",
+      "paid_at": "paidAt",
+      "payment_reference": "paymentReference",
+      "payment_type": "paymentType",
+      "payroll_id": "payrollId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "ytd_hours": "ytdHours",
+    });
+  })
+);
 
 export function hrisPayslipFromJSON(
   jsonString: string,

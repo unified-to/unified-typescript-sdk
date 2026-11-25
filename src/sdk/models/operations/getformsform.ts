@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetFormsFormQueryParamFields = {
@@ -50,7 +51,9 @@ export type GetFormsFormRequest = {
 /** @internal */
 export const GetFormsFormQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetFormsFormQueryParamFields
-> = z.nativeEnum(GetFormsFormQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetFormsFormQueryParamFields)
+);
 
 /** @internal */
 export type GetFormsFormRequest$Outbound = {
@@ -65,16 +68,18 @@ export const GetFormsFormRequest$outboundSchema: z.ZodType<
   GetFormsFormRequest$Outbound,
   z.ZodTypeDef,
   GetFormsFormRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetFormsFormQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetFormsFormQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getFormsFormRequestToJSON(
   getFormsFormRequest: GetFormsFormRequest,

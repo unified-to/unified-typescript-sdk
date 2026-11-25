@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -94,46 +94,50 @@ export const Connection$inboundSchema: z.ZodType<
   Connection,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  auth: PropertyConnectionAuth$inboundSchema.optional(),
-  categories: z.array(PropertyConnectionCategories$inboundSchema),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  environment: z.string().default("Production"),
-  external_xref: z.string().optional(),
-  id: z.string().optional(),
-  integration_name: z.string().optional(),
-  integration_type: z.string(),
-  is_paused: z.boolean().optional(),
-  last_healthy_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  last_unhealthy_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  last_unhealthy_code: z.string().optional(),
-  permissions: z.array(PropertyConnectionPermissions$inboundSchema),
-  secretsmanager_id: z.string().optional(),
-  secretsmanager_key: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  workspace_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "external_xref": "externalXref",
-    "integration_name": "integrationName",
-    "integration_type": "integrationType",
-    "is_paused": "isPaused",
-    "last_healthy_at": "lastHealthyAt",
-    "last_unhealthy_at": "lastUnhealthyAt",
-    "last_unhealthy_code": "lastUnhealthyCode",
-    "secretsmanager_id": "secretsmanagerId",
-    "secretsmanager_key": "secretsmanagerKey",
-    "updated_at": "updatedAt",
-    "workspace_id": "workspaceId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    auth: PropertyConnectionAuth$inboundSchema.optional(),
+    categories: z.array(PropertyConnectionCategories$inboundSchema),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    environment: z.string().default("Production"),
+    external_xref: z.string().optional(),
+    id: z.string().optional(),
+    integration_name: z.string().optional(),
+    integration_type: z.string(),
+    is_paused: z.boolean().optional(),
+    last_healthy_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    last_unhealthy_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    last_unhealthy_code: z.string().optional(),
+    permissions: z.array(PropertyConnectionPermissions$inboundSchema),
+    secretsmanager_id: z.string().optional(),
+    secretsmanager_key: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    workspace_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "external_xref": "externalXref",
+      "integration_name": "integrationName",
+      "integration_type": "integrationType",
+      "is_paused": "isPaused",
+      "last_healthy_at": "lastHealthyAt",
+      "last_unhealthy_at": "lastUnhealthyAt",
+      "last_unhealthy_code": "lastUnhealthyCode",
+      "secretsmanager_id": "secretsmanagerId",
+      "secretsmanager_key": "secretsmanagerKey",
+      "updated_at": "updatedAt",
+      "workspace_id": "workspaceId",
+    });
+  })
+);
 /** @internal */
 export type Connection$Outbound = {
   auth?: PropertyConnectionAuth$Outbound | undefined;
@@ -160,40 +164,42 @@ export const Connection$outboundSchema: z.ZodType<
   Connection$Outbound,
   z.ZodTypeDef,
   Connection
-> = z.object({
-  auth: PropertyConnectionAuth$outboundSchema.optional(),
-  categories: z.array(PropertyConnectionCategories$outboundSchema),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  environment: z.string().default("Production"),
-  externalXref: z.string().optional(),
-  id: z.string().optional(),
-  integrationName: z.string().optional(),
-  integrationType: z.string(),
-  isPaused: z.boolean().optional(),
-  lastHealthyAt: z.date().transform(v => v.toISOString()).optional(),
-  lastUnhealthyAt: z.date().transform(v => v.toISOString()).optional(),
-  lastUnhealthyCode: z.string().optional(),
-  permissions: z.array(PropertyConnectionPermissions$outboundSchema),
-  secretsmanagerId: z.string().optional(),
-  secretsmanagerKey: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  workspaceId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    externalXref: "external_xref",
-    integrationName: "integration_name",
-    integrationType: "integration_type",
-    isPaused: "is_paused",
-    lastHealthyAt: "last_healthy_at",
-    lastUnhealthyAt: "last_unhealthy_at",
-    lastUnhealthyCode: "last_unhealthy_code",
-    secretsmanagerId: "secretsmanager_id",
-    secretsmanagerKey: "secretsmanager_key",
-    updatedAt: "updated_at",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    auth: PropertyConnectionAuth$outboundSchema.optional(),
+    categories: z.array(PropertyConnectionCategories$outboundSchema),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    environment: z.string().default("Production"),
+    externalXref: z.string().optional(),
+    id: z.string().optional(),
+    integrationName: z.string().optional(),
+    integrationType: z.string(),
+    isPaused: z.boolean().optional(),
+    lastHealthyAt: z.date().transform(v => v.toISOString()).optional(),
+    lastUnhealthyAt: z.date().transform(v => v.toISOString()).optional(),
+    lastUnhealthyCode: z.string().optional(),
+    permissions: z.array(PropertyConnectionPermissions$outboundSchema),
+    secretsmanagerId: z.string().optional(),
+    secretsmanagerKey: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    workspaceId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      externalXref: "external_xref",
+      integrationName: "integration_name",
+      integrationType: "integration_type",
+      isPaused: "is_paused",
+      lastHealthyAt: "last_healthy_at",
+      lastUnhealthyAt: "last_unhealthy_at",
+      lastUnhealthyCode: "last_unhealthy_code",
+      secretsmanagerId: "secretsmanager_id",
+      secretsmanagerKey: "secretsmanager_key",
+      updatedAt: "updated_at",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function connectionToJSON(connection: Connection): string {
   return JSON.stringify(Connection$outboundSchema.parse(connection));

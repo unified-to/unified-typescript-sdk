@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -98,59 +98,67 @@ export const AccountingJournalStatus$inboundSchema: z.ZodType<
   AccountingJournalStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingJournalStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingJournalStatus)
+);
 /** @internal */
 export const AccountingJournalStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingJournalStatus
-> = openEnums.outboundSchema(AccountingJournalStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingJournalStatus)
+);
 
 /** @internal */
 export const AccountingJournal$inboundSchema: z.ZodType<
   AccountingJournal,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
-  category_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  exchange_rate: z.number().optional(),
-  id: z.string().optional(),
-  is_inclusive_of_tax: z.boolean().optional(),
-  lineitems: z.array(AccountingJournalLineitem$inboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  organization_id: z.string().optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  project_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  source: z.string().optional(),
-  status: AccountingJournalStatus$inboundSchema.optional(),
-  tax_amount: z.number().optional(),
-  taxrate_id: z.string().optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "category_ids": "categoryIds",
-    "created_at": "createdAt",
-    "exchange_rate": "exchangeRate",
-    "is_inclusive_of_tax": "isInclusiveOfTax",
-    "organization_id": "organizationId",
-    "posted_at": "postedAt",
-    "project_id": "projectId",
-    "tax_amount": "taxAmount",
-    "taxrate_id": "taxrateId",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(AccountingAttachment$inboundSchema).optional(),
+    category_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    exchange_rate: z.number().optional(),
+    id: z.string().optional(),
+    is_inclusive_of_tax: z.boolean().optional(),
+    lineitems: z.array(AccountingJournalLineitem$inboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    organization_id: z.string().optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    project_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    source: z.string().optional(),
+    status: AccountingJournalStatus$inboundSchema.optional(),
+    tax_amount: z.number().optional(),
+    taxrate_id: z.string().optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "category_ids": "categoryIds",
+      "created_at": "createdAt",
+      "exchange_rate": "exchangeRate",
+      "is_inclusive_of_tax": "isInclusiveOfTax",
+      "organization_id": "organizationId",
+      "posted_at": "postedAt",
+      "project_id": "projectId",
+      "tax_amount": "taxAmount",
+      "taxrate_id": "taxrateId",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingJournal$Outbound = {
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
@@ -181,43 +189,45 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   AccountingJournal$Outbound,
   z.ZodTypeDef,
   AccountingJournal
-> = z.object({
-  attachments: z.array(AccountingAttachment$outboundSchema).optional(),
-  categoryIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  exchangeRate: z.number().optional(),
-  id: z.string().optional(),
-  isInclusiveOfTax: z.boolean().optional(),
-  lineitems: z.array(AccountingJournalLineitem$outboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  organizationId: z.string().optional(),
-  postedAt: z.date().transform(v => v.toISOString()).optional(),
-  projectId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  source: z.string().optional(),
-  status: AccountingJournalStatus$outboundSchema.optional(),
-  taxAmount: z.number().optional(),
-  taxrateId: z.string().optional(),
-  totalAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    categoryIds: "category_ids",
-    createdAt: "created_at",
-    exchangeRate: "exchange_rate",
-    isInclusiveOfTax: "is_inclusive_of_tax",
-    organizationId: "organization_id",
-    postedAt: "posted_at",
-    projectId: "project_id",
-    taxAmount: "tax_amount",
-    taxrateId: "taxrate_id",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(AccountingAttachment$outboundSchema).optional(),
+    categoryIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    exchangeRate: z.number().optional(),
+    id: z.string().optional(),
+    isInclusiveOfTax: z.boolean().optional(),
+    lineitems: z.array(AccountingJournalLineitem$outboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    organizationId: z.string().optional(),
+    postedAt: z.date().transform(v => v.toISOString()).optional(),
+    projectId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    source: z.string().optional(),
+    status: AccountingJournalStatus$outboundSchema.optional(),
+    taxAmount: z.number().optional(),
+    taxrateId: z.string().optional(),
+    totalAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      categoryIds: "category_ids",
+      createdAt: "created_at",
+      exchangeRate: "exchange_rate",
+      isInclusiveOfTax: "is_inclusive_of_tax",
+      organizationId: "organization_id",
+      postedAt: "posted_at",
+      projectId: "project_id",
+      taxAmount: "tax_amount",
+      taxrateId: "taxrate_id",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingJournalToJSON(
   accountingJournal: AccountingJournal,

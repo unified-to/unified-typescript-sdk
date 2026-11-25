@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisTaxonomiesQueryParamFields = {
@@ -67,7 +68,9 @@ export type ListHrisTaxonomiesRequest = {
 /** @internal */
 export const ListHrisTaxonomiesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisTaxonomiesQueryParamFields
-> = z.nativeEnum(ListHrisTaxonomiesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisTaxonomiesQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisTaxonomiesRequest$Outbound = {
@@ -90,27 +93,30 @@ export const ListHrisTaxonomiesRequest$outboundSchema: z.ZodType<
   ListHrisTaxonomiesRequest$Outbound,
   z.ZodTypeDef,
   ListHrisTaxonomiesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListHrisTaxonomiesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  roleId: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    roleId: "role_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListHrisTaxonomiesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    roleId: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      roleId: "role_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHrisTaxonomiesRequestToJSON(
   listHrisTaxonomiesRequest: ListHrisTaxonomiesRequest,

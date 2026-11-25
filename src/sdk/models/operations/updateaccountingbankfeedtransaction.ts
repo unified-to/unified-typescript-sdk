@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -58,7 +59,9 @@ export type UpdateAccountingBankfeedtransactionRequest = {
 /** @internal */
 export const UpdateAccountingBankfeedtransactionQueryParamFields$outboundSchema:
   z.ZodNativeEnum<typeof UpdateAccountingBankfeedtransactionQueryParamFields> =
-    z.nativeEnum(UpdateAccountingBankfeedtransactionQueryParamFields);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAccountingBankfeedtransactionQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAccountingBankfeedtransactionRequest$Outbound = {
@@ -75,21 +78,23 @@ export const UpdateAccountingBankfeedtransactionRequest$outboundSchema:
     UpdateAccountingBankfeedtransactionRequest$Outbound,
     z.ZodTypeDef,
     UpdateAccountingBankfeedtransactionRequest
-  > = z.object({
-    accountingBankfeedtransaction:
-      shared.AccountingBankfeedtransaction$outboundSchema,
-    connectionId: z.string(),
-    fields: z.array(
-      UpdateAccountingBankfeedtransactionQueryParamFields$outboundSchema,
-    ).optional(),
-    id: z.string(),
-    raw: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      accountingBankfeedtransaction: "AccountingBankfeedtransaction",
-      connectionId: "connection_id",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      accountingBankfeedtransaction:
+        shared.AccountingBankfeedtransaction$outboundSchema,
+      connectionId: z.string(),
+      fields: z.array(
+        UpdateAccountingBankfeedtransactionQueryParamFields$outboundSchema,
+      ).optional(),
+      id: z.string(),
+      raw: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        accountingBankfeedtransaction: "AccountingBankfeedtransaction",
+        connectionId: "connection_id",
+      });
+    })
+  );
 
 export function updateAccountingBankfeedtransactionRequestToJSON(
   updateAccountingBankfeedtransactionRequest:

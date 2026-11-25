@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -35,19 +35,23 @@ export const PerformanceReviewQuestionType$inboundSchema: z.ZodType<
   PerformanceReviewQuestionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceReviewQuestionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceReviewQuestionType)
+);
 
 /** @internal */
 export const PerformanceReviewQuestion$inboundSchema: z.ZodType<
   PerformanceReviewQuestion,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  answers: z.array(z.string()).optional(),
-  description: z.string().optional(),
-  question: z.string(),
-  type: PerformanceReviewQuestionType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answers: z.array(z.string()).optional(),
+    description: z.string().optional(),
+    question: z.string(),
+    type: PerformanceReviewQuestionType$inboundSchema.optional(),
+  })
+);
 
 export function performanceReviewQuestionFromJSON(
   jsonString: string,

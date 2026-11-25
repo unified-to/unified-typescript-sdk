@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -48,7 +49,9 @@ export type CreateHrisTaxonomyRequest = {
 /** @internal */
 export const CreateHrisTaxonomyQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateHrisTaxonomyQueryParamFields
-> = z.nativeEnum(CreateHrisTaxonomyQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateHrisTaxonomyQueryParamFields)
+);
 
 /** @internal */
 export type CreateHrisTaxonomyRequest$Outbound = {
@@ -63,17 +66,20 @@ export const CreateHrisTaxonomyRequest$outboundSchema: z.ZodType<
   CreateHrisTaxonomyRequest$Outbound,
   z.ZodTypeDef,
   CreateHrisTaxonomyRequest
-> = z.object({
-  hrisTaxonomy: shared.HrisTaxonomy$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateHrisTaxonomyQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisTaxonomy: "HrisTaxonomy",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisTaxonomy: shared.HrisTaxonomy$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateHrisTaxonomyQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisTaxonomy: "HrisTaxonomy",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createHrisTaxonomyRequestToJSON(
   createHrisTaxonomyRequest: CreateHrisTaxonomyRequest,

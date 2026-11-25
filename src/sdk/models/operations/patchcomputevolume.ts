@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -49,7 +50,9 @@ export type PatchComputeVolumeRequest = {
 /** @internal */
 export const PatchComputeVolumeQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchComputeVolumeQueryParamFields
-> = z.nativeEnum(PatchComputeVolumeQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchComputeVolumeQueryParamFields)
+);
 
 /** @internal */
 export type PatchComputeVolumeRequest$Outbound = {
@@ -65,18 +68,21 @@ export const PatchComputeVolumeRequest$outboundSchema: z.ZodType<
   PatchComputeVolumeRequest$Outbound,
   z.ZodTypeDef,
   PatchComputeVolumeRequest
-> = z.object({
-  computeVolume: shared.ComputeVolume$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchComputeVolumeQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    computeVolume: "ComputeVolume",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    computeVolume: shared.ComputeVolume$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchComputeVolumeQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      computeVolume: "ComputeVolume",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchComputeVolumeRequestToJSON(
   patchComputeVolumeRequest: PatchComputeVolumeRequest,

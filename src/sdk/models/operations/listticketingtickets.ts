@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListTicketingTicketsQueryParamFields = {
@@ -68,9 +69,10 @@ export type ListTicketingTicketsRequest = {
 
 /** @internal */
 export const ListTicketingTicketsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListTicketingTicketsQueryParamFields> = z.nativeEnum(
-    ListTicketingTicketsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListTicketingTicketsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListTicketingTicketsQueryParamFields)
+    );
 
 /** @internal */
 export type ListTicketingTicketsRequest$Outbound = {
@@ -92,27 +94,29 @@ export const ListTicketingTicketsRequest$outboundSchema: z.ZodType<
   ListTicketingTicketsRequest$Outbound,
   z.ZodTypeDef,
   ListTicketingTicketsRequest
-> = z.object({
-  connectionId: z.string(),
-  customerId: z.string().optional(),
-  fields: z.array(ListTicketingTicketsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    customerId: "customer_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    customerId: z.string().optional(),
+    fields: z.array(ListTicketingTicketsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      customerId: "customer_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listTicketingTicketsRequestToJSON(
   listTicketingTicketsRequest: ListTicketingTicketsRequest,

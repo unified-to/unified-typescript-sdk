@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type GetUnifiedWorkspaceintegrationRequest = {
   /**
@@ -21,9 +22,11 @@ export const GetUnifiedWorkspaceintegrationRequest$outboundSchema: z.ZodType<
   GetUnifiedWorkspaceintegrationRequest$Outbound,
   z.ZodTypeDef,
   GetUnifiedWorkspaceintegrationRequest
-> = z.object({
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+  })
+);
 
 export function getUnifiedWorkspaceintegrationRequestToJSON(
   getUnifiedWorkspaceintegrationRequest: GetUnifiedWorkspaceintegrationRequest,

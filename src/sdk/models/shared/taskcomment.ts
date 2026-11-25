@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -48,31 +48,35 @@ export const TaskComment$inboundSchema: z.ZodType<
   TaskComment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  has_children: z.boolean().optional(),
-  id: z.string().optional(),
-  metadata: z.array(TaskMetadata$inboundSchema).optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  task_id: z.string().optional(),
-  text: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  user_name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "has_children": "hasChildren",
-    "parent_id": "parentId",
-    "task_id": "taskId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "user_name": "userName",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    has_children: z.boolean().optional(),
+    id: z.string().optional(),
+    metadata: z.array(TaskMetadata$inboundSchema).optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    task_id: z.string().optional(),
+    text: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    user_name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "has_children": "hasChildren",
+      "parent_id": "parentId",
+      "task_id": "taskId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "user_name": "userName",
+    });
+  })
+);
 /** @internal */
 export type TaskComment$Outbound = {
   created_at?: string | undefined;
@@ -93,29 +97,31 @@ export const TaskComment$outboundSchema: z.ZodType<
   TaskComment$Outbound,
   z.ZodTypeDef,
   TaskComment
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  hasChildren: z.boolean().optional(),
-  id: z.string().optional(),
-  metadata: z.array(TaskMetadata$outboundSchema).optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  taskId: z.string().optional(),
-  text: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  userName: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    hasChildren: "has_children",
-    parentId: "parent_id",
-    taskId: "task_id",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    userName: "user_name",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    hasChildren: z.boolean().optional(),
+    id: z.string().optional(),
+    metadata: z.array(TaskMetadata$outboundSchema).optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    taskId: z.string().optional(),
+    text: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    userName: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      hasChildren: "has_children",
+      parentId: "parent_id",
+      taskId: "task_id",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      userName: "user_name",
+    });
+  })
+);
 
 export function taskCommentToJSON(taskComment: TaskComment): string {
   return JSON.stringify(TaskComment$outboundSchema.parse(taskComment));

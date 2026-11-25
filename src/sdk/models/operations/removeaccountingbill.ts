@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -34,14 +34,16 @@ export const RemoveAccountingBillRequest$outboundSchema: z.ZodType<
   RemoveAccountingBillRequest$Outbound,
   z.ZodTypeDef,
   RemoveAccountingBillRequest
-> = z.object({
-  connectionId: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function removeAccountingBillRequestToJSON(
   removeAccountingBillRequest: RemoveAccountingBillRequest,
@@ -58,13 +60,15 @@ export const RemoveAccountingBillResponse$inboundSchema: z.ZodType<
   RemoveAccountingBillResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+    });
+  })
+);
 
 export function removeAccountingBillResponseFromJSON(
   jsonString: string,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -92,8 +92,10 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGe
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
+    )
   );
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$outboundSchema:
@@ -101,8 +103,10 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGe
     string,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender
-  > = openEnums.outboundSchema(
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
+    )
   );
 
 /** @internal */
@@ -111,29 +115,33 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$i
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    additionalManagers: z.array(ScimManager$inboundSchema).optional(),
-    birthday: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-    costCenter: z.string().optional(),
-    currency: z.string().optional(),
-    department: z.string().optional(),
-    division: z.string().optional(),
-    employeeNumber: z.string().optional(),
-    endDate: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-    gender:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$inboundSchema
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      additionalManagers: z.array(ScimManager$inboundSchema).optional(),
+      birthday: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      costCenter: z.string().optional(),
+      currency: z.string().optional(),
+      department: z.string().optional(),
+      division: z.string().optional(),
+      employeeNumber: z.string().optional(),
+      endDate: z.string().datetime({ offset: true }).transform(v => new Date(v))
         .optional(),
-    level: z.string().optional(),
-    location: z.string().optional(),
-    manager:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$inboundSchema
-        .optional(),
-    organization: z.string().optional(),
-    startDate: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-  });
+      gender:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$inboundSchema
+          .optional(),
+      level: z.string().optional(),
+      location: z.string().optional(),
+      manager:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$inboundSchema
+          .optional(),
+      organization: z.string().optional(),
+      startDate: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+    })
+  );
 /** @internal */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$Outbound =
   {
@@ -161,26 +169,28 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$o
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$Outbound,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User
-  > = z.object({
-    additionalManagers: z.array(ScimManager$outboundSchema).optional(),
-    birthday: z.date().transform(v => v.toISOString()).optional(),
-    costCenter: z.string().optional(),
-    currency: z.string().optional(),
-    department: z.string().optional(),
-    division: z.string().optional(),
-    employeeNumber: z.string().optional(),
-    endDate: z.date().transform(v => v.toISOString()).optional(),
-    gender:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$outboundSchema
-        .optional(),
-    level: z.string().optional(),
-    location: z.string().optional(),
-    manager:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$outboundSchema
-        .optional(),
-    organization: z.string().optional(),
-    startDate: z.date().transform(v => v.toISOString()).optional(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      additionalManagers: z.array(ScimManager$outboundSchema).optional(),
+      birthday: z.date().transform(v => v.toISOString()).optional(),
+      costCenter: z.string().optional(),
+      currency: z.string().optional(),
+      department: z.string().optional(),
+      division: z.string().optional(),
+      employeeNumber: z.string().optional(),
+      endDate: z.date().transform(v => v.toISOString()).optional(),
+      gender:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$outboundSchema
+          .optional(),
+      level: z.string().optional(),
+      location: z.string().optional(),
+      manager:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$outboundSchema
+          .optional(),
+      organization: z.string().optional(),
+      startDate: z.date().transform(v => v.toISOString()).optional(),
+    })
+  );
 
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserToJSON(
   propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User:

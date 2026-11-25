@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListStorageFilesQueryParamFields = {
@@ -82,7 +83,9 @@ export type ListStorageFilesRequest = {
 /** @internal */
 export const ListStorageFilesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListStorageFilesQueryParamFields
-> = z.nativeEnum(ListStorageFilesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListStorageFilesQueryParamFields)
+);
 
 /** @internal */
 export type ListStorageFilesRequest$Outbound = {
@@ -107,28 +110,30 @@ export const ListStorageFilesRequest$outboundSchema: z.ZodType<
   ListStorageFilesRequest$Outbound,
   z.ZodTypeDef,
   ListStorageFilesRequest
-> = z.object({
-  connectionId: z.string(),
-  expand: z.boolean().optional(),
-  fields: z.array(ListStorageFilesQueryParamFields$outboundSchema).optional(),
-  fulltext: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  reference: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    expand: z.boolean().optional(),
+    fields: z.array(ListStorageFilesQueryParamFields$outboundSchema).optional(),
+    fulltext: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    reference: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listStorageFilesRequestToJSON(
   listStorageFilesRequest: ListStorageFilesRequest,

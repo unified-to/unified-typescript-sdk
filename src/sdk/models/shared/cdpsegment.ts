@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -102,58 +102,62 @@ export const ComputeMode$inboundSchema: z.ZodType<
   ComputeMode,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeMode);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ComputeMode));
 /** @internal */
 export const ComputeMode$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeMode
-> = openEnums.outboundSchema(ComputeMode);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ComputeMode));
 
 /** @internal */
 export const CdpSegmentType$inboundSchema: z.ZodType<
   CdpSegmentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CdpSegmentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CdpSegmentType));
 /** @internal */
 export const CdpSegmentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CdpSegmentType
-> = openEnums.outboundSchema(CdpSegmentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(CdpSegmentType));
 
 /** @internal */
 export const CdpSegment$inboundSchema: z.ZodType<
   CdpSegment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  compute_mode: ComputeMode$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  definition: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(CdpMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  size: z.number().optional(),
-  slug: z.string().optional(),
-  source_id: z.string().optional(),
-  type: CdpSegmentType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "compute_mode": "computeMode",
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "source_id": "sourceId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    compute_mode: ComputeMode$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    definition: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(CdpMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    size: z.number().optional(),
+    slug: z.string().optional(),
+    source_id: z.string().optional(),
+    type: CdpSegmentType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "compute_mode": "computeMode",
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "source_id": "sourceId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CdpSegment$Outbound = {
   compute_mode?: string | undefined;
@@ -177,30 +181,32 @@ export const CdpSegment$outboundSchema: z.ZodType<
   CdpSegment$Outbound,
   z.ZodTypeDef,
   CdpSegment
-> = z.object({
-  computeMode: ComputeMode$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  definition: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(CdpMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  size: z.number().optional(),
-  slug: z.string().optional(),
-  sourceId: z.string().optional(),
-  type: CdpSegmentType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    computeMode: "compute_mode",
-    createdAt: "created_at",
-    isActive: "is_active",
-    sourceId: "source_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    computeMode: ComputeMode$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    definition: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(CdpMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    size: z.number().optional(),
+    slug: z.string().optional(),
+    sourceId: z.string().optional(),
+    type: CdpSegmentType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      computeMode: "compute_mode",
+      createdAt: "created_at",
+      isActive: "is_active",
+      sourceId: "source_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function cdpSegmentToJSON(cdpSegment: CdpSegment): string {
   return JSON.stringify(CdpSegment$outboundSchema.parse(cdpSegment));

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -51,9 +52,10 @@ export type UpdateMartechMemberRequest = {
 
 /** @internal */
 export const UpdateMartechMemberQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateMartechMemberQueryParamFields> = z.nativeEnum(
-    UpdateMartechMemberQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateMartechMemberQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateMartechMemberQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateMartechMemberRequest$Outbound = {
@@ -69,19 +71,21 @@ export const UpdateMartechMemberRequest$outboundSchema: z.ZodType<
   UpdateMartechMemberRequest$Outbound,
   z.ZodTypeDef,
   UpdateMartechMemberRequest
-> = z.object({
-  marketingMember: shared.MarketingMember$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateMartechMemberQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    marketingMember: "MarketingMember",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    marketingMember: shared.MarketingMember$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateMartechMemberQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      marketingMember: "MarketingMember",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateMartechMemberRequestToJSON(
   updateMartechMemberRequest: UpdateMartechMemberRequest,

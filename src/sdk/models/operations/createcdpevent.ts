@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -43,7 +44,9 @@ export type CreateCdpEventRequest = {
 /** @internal */
 export const CreateCdpEventQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateCdpEventQueryParamFields
-> = z.nativeEnum(CreateCdpEventQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateCdpEventQueryParamFields)
+);
 
 /** @internal */
 export type CreateCdpEventRequest$Outbound = {
@@ -58,17 +61,19 @@ export const CreateCdpEventRequest$outboundSchema: z.ZodType<
   CreateCdpEventRequest$Outbound,
   z.ZodTypeDef,
   CreateCdpEventRequest
-> = z.object({
-  cdpEvent: shared.CdpEvent$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateCdpEventQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cdpEvent: "CdpEvent",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cdpEvent: shared.CdpEvent$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateCdpEventQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      cdpEvent: "CdpEvent",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createCdpEventRequestToJSON(
   createCdpEventRequest: CreateCdpEventRequest,

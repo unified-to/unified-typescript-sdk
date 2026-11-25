@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -104,61 +104,69 @@ export const PerformanceReviewStatus$inboundSchema: z.ZodType<
   PerformanceReviewStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceReviewStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceReviewStatus)
+);
 
 /** @internal */
 export const PerformanceReviewType$inboundSchema: z.ZodType<
   PerformanceReviewType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceReviewType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceReviewType)
+);
 
 /** @internal */
 export const PerformanceReview$inboundSchema: z.ZodType<
   PerformanceReview,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  comment: z.string().optional(),
-  completed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  cycle_id: z.string().optional(),
-  id: z.string().optional(),
-  is_acknowledged: z.boolean().optional(),
-  metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
-  questions: z.array(PerformanceReviewQuestion$inboundSchema).optional(),
-  rating: z.number().optional(),
-  rating_description: z.string().optional(),
-  rating_maximum: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reviewer_user_id: z.string().optional(),
-  status: PerformanceReviewStatus$inboundSchema.optional(),
-  submitted_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  template_identifier: z.string().optional(),
-  type: PerformanceReviewType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "completed_at": "completedAt",
-    "created_at": "createdAt",
-    "cycle_id": "cycleId",
-    "is_acknowledged": "isAcknowledged",
-    "rating_description": "ratingDescription",
-    "rating_maximum": "ratingMaximum",
-    "reviewer_user_id": "reviewerUserId",
-    "submitted_at": "submittedAt",
-    "template_identifier": "templateIdentifier",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    comment: z.string().optional(),
+    completed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    cycle_id: z.string().optional(),
+    id: z.string().optional(),
+    is_acknowledged: z.boolean().optional(),
+    metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
+    questions: z.array(PerformanceReviewQuestion$inboundSchema).optional(),
+    rating: z.number().optional(),
+    rating_description: z.string().optional(),
+    rating_maximum: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reviewer_user_id: z.string().optional(),
+    status: PerformanceReviewStatus$inboundSchema.optional(),
+    submitted_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    template_identifier: z.string().optional(),
+    type: PerformanceReviewType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "completed_at": "completedAt",
+      "created_at": "createdAt",
+      "cycle_id": "cycleId",
+      "is_acknowledged": "isAcknowledged",
+      "rating_description": "ratingDescription",
+      "rating_maximum": "ratingMaximum",
+      "reviewer_user_id": "reviewerUserId",
+      "submitted_at": "submittedAt",
+      "template_identifier": "templateIdentifier",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 
 export function performanceReviewFromJSON(
   jsonString: string,

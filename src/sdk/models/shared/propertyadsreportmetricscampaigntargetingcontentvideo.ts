@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -42,29 +42,31 @@ export const PropertyAdsReportMetricsCampaignTargetingContentVideo$inboundSchema
     PropertyAdsReportMetricsCampaignTargetingContentVideo,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    durations: z.array(
-      PropertyAdsReportMetricsCampaignTargetingContentVideoDurations$inboundSchema,
-    ).optional(),
-    excluded_youtube_channels: z.array(z.string()).optional(),
-    excluded_youtube_videos: z.array(z.string()).optional(),
-    player_sizes: z.array(
-      PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes$inboundSchema,
-    ).optional(),
-    positions: z.array(
-      PropertyAdsReportMetricsCampaignTargetingContentVideoPositions$inboundSchema,
-    ).optional(),
-    youtube_channels: z.array(z.string()).optional(),
-    youtube_videos: z.array(z.string()).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "excluded_youtube_channels": "excludedYoutubeChannels",
-      "excluded_youtube_videos": "excludedYoutubeVideos",
-      "player_sizes": "playerSizes",
-      "youtube_channels": "youtubeChannels",
-      "youtube_videos": "youtubeVideos",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      durations: z.array(
+        PropertyAdsReportMetricsCampaignTargetingContentVideoDurations$inboundSchema,
+      ).optional(),
+      excluded_youtube_channels: z.array(z.string()).optional(),
+      excluded_youtube_videos: z.array(z.string()).optional(),
+      player_sizes: z.array(
+        PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes$inboundSchema,
+      ).optional(),
+      positions: z.array(
+        PropertyAdsReportMetricsCampaignTargetingContentVideoPositions$inboundSchema,
+      ).optional(),
+      youtube_channels: z.array(z.string()).optional(),
+      youtube_videos: z.array(z.string()).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "excluded_youtube_channels": "excludedYoutubeChannels",
+        "excluded_youtube_videos": "excludedYoutubeVideos",
+        "player_sizes": "playerSizes",
+        "youtube_channels": "youtubeChannels",
+        "youtube_videos": "youtubeVideos",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsCampaignTargetingContentVideoFromJSON(
   jsonString: string,

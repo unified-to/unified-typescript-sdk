@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListLmsInstructorsQueryParamFields = {
@@ -66,7 +67,9 @@ export type ListLmsInstructorsRequest = {
 /** @internal */
 export const ListLmsInstructorsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListLmsInstructorsQueryParamFields
-> = z.nativeEnum(ListLmsInstructorsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListLmsInstructorsQueryParamFields)
+);
 
 /** @internal */
 export type ListLmsInstructorsRequest$Outbound = {
@@ -89,28 +92,31 @@ export const ListLmsInstructorsRequest$outboundSchema: z.ZodType<
   ListLmsInstructorsRequest$Outbound,
   z.ZodTypeDef,
   ListLmsInstructorsRequest
-> = z.object({
-  classId: z.string().optional(),
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  courseId: z.string().optional(),
-  fields: z.array(ListLmsInstructorsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    classId: "class_id",
-    companyId: "company_id",
-    connectionId: "connection_id",
-    courseId: "course_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    classId: z.string().optional(),
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    courseId: z.string().optional(),
+    fields: z.array(ListLmsInstructorsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      classId: "class_id",
+      companyId: "company_id",
+      connectionId: "connection_id",
+      courseId: "course_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listLmsInstructorsRequestToJSON(
   listLmsInstructorsRequest: ListLmsInstructorsRequest,

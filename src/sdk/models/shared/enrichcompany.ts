@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -135,55 +135,59 @@ export const EnrichCompany$inboundSchema: z.ZodType<
   EnrichCompany,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyEnrichCompanyAddress$inboundSchema.optional(),
-  alexa_rank: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  crunchbase_url: z.string().optional(),
-  description: z.string().optional(),
-  domain: z.string().optional(),
-  employees: z.string().optional(),
-  exchange: z.string().optional(),
-  facebook_url: z.string().optional(),
-  id: z.string().optional(),
-  industry: z.string().optional(),
-  instagram_url: z.string().optional(),
-  linkedin_url: z.string().optional(),
-  logo_url: z.string().optional(),
-  naics_code: z.number().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  revenue: z.string().optional(),
-  sic_code: z.number().optional(),
-  stock: z.string().optional(),
-  telephones: z.array(EnrichTelephone$inboundSchema).optional(),
-  twitter_handle: z.string().optional(),
-  twitter_url: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  year_founded: z.number().optional(),
-  yelp_url: z.string().optional(),
-  youtube_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "alexa_rank": "alexaRank",
-    "created_at": "createdAt",
-    "crunchbase_url": "crunchbaseUrl",
-    "facebook_url": "facebookUrl",
-    "instagram_url": "instagramUrl",
-    "linkedin_url": "linkedinUrl",
-    "logo_url": "logoUrl",
-    "naics_code": "naicsCode",
-    "sic_code": "sicCode",
-    "twitter_handle": "twitterHandle",
-    "twitter_url": "twitterUrl",
-    "updated_at": "updatedAt",
-    "year_founded": "yearFounded",
-    "yelp_url": "yelpUrl",
-    "youtube_url": "youtubeUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyEnrichCompanyAddress$inboundSchema.optional(),
+    alexa_rank: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    crunchbase_url: z.string().optional(),
+    description: z.string().optional(),
+    domain: z.string().optional(),
+    employees: z.string().optional(),
+    exchange: z.string().optional(),
+    facebook_url: z.string().optional(),
+    id: z.string().optional(),
+    industry: z.string().optional(),
+    instagram_url: z.string().optional(),
+    linkedin_url: z.string().optional(),
+    logo_url: z.string().optional(),
+    naics_code: z.number().optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    revenue: z.string().optional(),
+    sic_code: z.number().optional(),
+    stock: z.string().optional(),
+    telephones: z.array(EnrichTelephone$inboundSchema).optional(),
+    twitter_handle: z.string().optional(),
+    twitter_url: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    year_founded: z.number().optional(),
+    yelp_url: z.string().optional(),
+    youtube_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "alexa_rank": "alexaRank",
+      "created_at": "createdAt",
+      "crunchbase_url": "crunchbaseUrl",
+      "facebook_url": "facebookUrl",
+      "instagram_url": "instagramUrl",
+      "linkedin_url": "linkedinUrl",
+      "logo_url": "logoUrl",
+      "naics_code": "naicsCode",
+      "sic_code": "sicCode",
+      "twitter_handle": "twitterHandle",
+      "twitter_url": "twitterUrl",
+      "updated_at": "updatedAt",
+      "year_founded": "yearFounded",
+      "yelp_url": "yelpUrl",
+      "youtube_url": "youtubeUrl",
+    });
+  })
+);
 
 export function enrichCompanyFromJSON(
   jsonString: string,

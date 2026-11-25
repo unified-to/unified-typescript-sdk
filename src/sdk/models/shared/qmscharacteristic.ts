@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -40,35 +40,37 @@ export type QmsCharacteristic = {
 
 /** @internal */
 export const Result$inboundSchema: z.ZodType<Result, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Result);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Result));
 /** @internal */
 export const Result$outboundSchema: z.ZodType<string, z.ZodTypeDef, Result> =
-  openEnums.outboundSchema(Result);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Result));
 
 /** @internal */
 export const QmsCharacteristic$inboundSchema: z.ZodType<
   QmsCharacteristic,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  lower_limit: z.number().optional(),
-  measured_value: z.string().optional(),
-  name: z.string().optional(),
-  nominal_value: z.number().optional(),
-  notes: z.string().optional(),
-  result: Result$inboundSchema.optional(),
-  specification: z.string().optional(),
-  unit_of_measure: z.string().optional(),
-  upper_limit: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "lower_limit": "lowerLimit",
-    "measured_value": "measuredValue",
-    "nominal_value": "nominalValue",
-    "unit_of_measure": "unitOfMeasure",
-    "upper_limit": "upperLimit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    lower_limit: z.number().optional(),
+    measured_value: z.string().optional(),
+    name: z.string().optional(),
+    nominal_value: z.number().optional(),
+    notes: z.string().optional(),
+    result: Result$inboundSchema.optional(),
+    specification: z.string().optional(),
+    unit_of_measure: z.string().optional(),
+    upper_limit: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "lower_limit": "lowerLimit",
+      "measured_value": "measuredValue",
+      "nominal_value": "nominalValue",
+      "unit_of_measure": "unitOfMeasure",
+      "upper_limit": "upperLimit",
+    });
+  })
+);
 /** @internal */
 export type QmsCharacteristic$Outbound = {
   lower_limit?: number | undefined;
@@ -87,25 +89,27 @@ export const QmsCharacteristic$outboundSchema: z.ZodType<
   QmsCharacteristic$Outbound,
   z.ZodTypeDef,
   QmsCharacteristic
-> = z.object({
-  lowerLimit: z.number().optional(),
-  measuredValue: z.string().optional(),
-  name: z.string().optional(),
-  nominalValue: z.number().optional(),
-  notes: z.string().optional(),
-  result: Result$outboundSchema.optional(),
-  specification: z.string().optional(),
-  unitOfMeasure: z.string().optional(),
-  upperLimit: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    lowerLimit: "lower_limit",
-    measuredValue: "measured_value",
-    nominalValue: "nominal_value",
-    unitOfMeasure: "unit_of_measure",
-    upperLimit: "upper_limit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    lowerLimit: z.number().optional(),
+    measuredValue: z.string().optional(),
+    name: z.string().optional(),
+    nominalValue: z.number().optional(),
+    notes: z.string().optional(),
+    result: Result$outboundSchema.optional(),
+    specification: z.string().optional(),
+    unitOfMeasure: z.string().optional(),
+    upperLimit: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      lowerLimit: "lower_limit",
+      measuredValue: "measured_value",
+      nominalValue: "nominal_value",
+      unitOfMeasure: "unit_of_measure",
+      upperLimit: "upper_limit",
+    });
+  })
+);
 
 export function qmsCharacteristicToJSON(
   qmsCharacteristic: QmsCharacteristic,

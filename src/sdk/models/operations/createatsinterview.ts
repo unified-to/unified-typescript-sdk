@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,7 +48,9 @@ export type CreateAtsInterviewRequest = {
 /** @internal */
 export const CreateAtsInterviewQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateAtsInterviewQueryParamFields
-> = z.nativeEnum(CreateAtsInterviewQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateAtsInterviewQueryParamFields)
+);
 
 /** @internal */
 export type CreateAtsInterviewRequest$Outbound = {
@@ -62,17 +65,20 @@ export const CreateAtsInterviewRequest$outboundSchema: z.ZodType<
   CreateAtsInterviewRequest$Outbound,
   z.ZodTypeDef,
   CreateAtsInterviewRequest
-> = z.object({
-  atsInterview: shared.AtsInterview$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAtsInterviewQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    atsInterview: "AtsInterview",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    atsInterview: shared.AtsInterview$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAtsInterviewQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      atsInterview: "AtsInterview",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAtsInterviewRequestToJSON(
   createAtsInterviewRequest: CreateAtsInterviewRequest,

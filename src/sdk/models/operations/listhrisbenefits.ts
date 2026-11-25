@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisBenefitsQueryParamFields = {
@@ -66,7 +67,9 @@ export type ListHrisBenefitsRequest = {
 /** @internal */
 export const ListHrisBenefitsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisBenefitsQueryParamFields
-> = z.nativeEnum(ListHrisBenefitsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisBenefitsQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisBenefitsRequest$Outbound = {
@@ -87,24 +90,26 @@ export const ListHrisBenefitsRequest$outboundSchema: z.ZodType<
   ListHrisBenefitsRequest$Outbound,
   z.ZodTypeDef,
   ListHrisBenefitsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListHrisBenefitsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListHrisBenefitsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHrisBenefitsRequestToJSON(
   listHrisBenefitsRequest: ListHrisBenefitsRequest,

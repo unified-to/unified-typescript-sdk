@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -43,28 +43,30 @@ export const CalendarLink$inboundSchema: z.ZodType<
   CalendarLink,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().optional(),
-  description: z.string().optional(),
-  duration: z.number().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  price_amount: z.number().optional(),
-  price_currency: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().optional(),
-  url: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "price_amount": "priceAmount",
-    "price_currency": "priceCurrency",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().optional(),
+    description: z.string().optional(),
+    duration: z.number().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(CalendarMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    price_amount: z.number().optional(),
+    price_currency: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().optional(),
+    url: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "price_amount": "priceAmount",
+      "price_currency": "priceCurrency",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CalendarLink$Outbound = {
   created_at?: string | undefined;
@@ -86,28 +88,30 @@ export const CalendarLink$outboundSchema: z.ZodType<
   CalendarLink$Outbound,
   z.ZodTypeDef,
   CalendarLink
-> = z.object({
-  createdAt: z.string().optional(),
-  description: z.string().optional(),
-  duration: z.number().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(CalendarMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  priceAmount: z.number().optional(),
-  priceCurrency: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.string().optional(),
-  url: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isActive: "is_active",
-    priceAmount: "price_amount",
-    priceCurrency: "price_currency",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.string().optional(),
+    description: z.string().optional(),
+    duration: z.number().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(CalendarMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    priceAmount: z.number().optional(),
+    priceCurrency: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.string().optional(),
+    url: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isActive: "is_active",
+      priceAmount: "price_amount",
+      priceCurrency: "price_currency",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function calendarLinkToJSON(calendarLink: CalendarLink): string {
   return JSON.stringify(CalendarLink$outboundSchema.parse(calendarLink));

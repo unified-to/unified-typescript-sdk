@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetPaymentPayoutQueryParamFields = {
@@ -48,7 +49,9 @@ export type GetPaymentPayoutRequest = {
 /** @internal */
 export const GetPaymentPayoutQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetPaymentPayoutQueryParamFields
-> = z.nativeEnum(GetPaymentPayoutQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetPaymentPayoutQueryParamFields)
+);
 
 /** @internal */
 export type GetPaymentPayoutRequest$Outbound = {
@@ -63,16 +66,18 @@ export const GetPaymentPayoutRequest$outboundSchema: z.ZodType<
   GetPaymentPayoutRequest$Outbound,
   z.ZodTypeDef,
   GetPaymentPayoutRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetPaymentPayoutQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetPaymentPayoutQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getPaymentPayoutRequestToJSON(
   getPaymentPayoutRequest: GetPaymentPayoutRequest,

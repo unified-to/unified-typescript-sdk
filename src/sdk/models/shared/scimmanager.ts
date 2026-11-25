@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -44,30 +44,34 @@ export const ScimManagerType$inboundSchema: z.ZodType<
   ScimManagerType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ScimManagerType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ScimManagerType));
 /** @internal */
 export const ScimManagerType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ScimManagerType
-> = openEnums.outboundSchema(ScimManagerType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ScimManagerType)
+);
 
 /** @internal */
 export const ScimManager$inboundSchema: z.ZodType<
   ScimManager,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  $ref: z.string().optional(),
-  displayName: z.string().optional(),
-  managerId: z.string().optional(),
-  type: ScimManagerType$inboundSchema.optional(),
-  value: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "$ref": "dollarRef",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    $ref: z.string().optional(),
+    displayName: z.string().optional(),
+    managerId: z.string().optional(),
+    type: ScimManagerType$inboundSchema.optional(),
+    value: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "$ref": "dollarRef",
+    });
+  })
+);
 /** @internal */
 export type ScimManager$Outbound = {
   $ref?: string | undefined;
@@ -82,17 +86,19 @@ export const ScimManager$outboundSchema: z.ZodType<
   ScimManager$Outbound,
   z.ZodTypeDef,
   ScimManager
-> = z.object({
-  dollarRef: z.string().optional(),
-  displayName: z.string().optional(),
-  managerId: z.string().optional(),
-  type: ScimManagerType$outboundSchema.optional(),
-  value: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    dollarRef: "$ref",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    dollarRef: z.string().optional(),
+    displayName: z.string().optional(),
+    managerId: z.string().optional(),
+    type: ScimManagerType$outboundSchema.optional(),
+    value: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      dollarRef: "$ref",
+    });
+  })
+);
 
 export function scimManagerToJSON(scimManager: ScimManager): string {
   return JSON.stringify(ScimManager$outboundSchema.parse(scimManager));

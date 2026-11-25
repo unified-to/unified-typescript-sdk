@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -103,64 +103,77 @@ export const AdsInsertionorderBudgetUnit$inboundSchema: z.ZodType<
   AdsInsertionorderBudgetUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsInsertionorderBudgetUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsInsertionorderBudgetUnit)
+);
 /** @internal */
 export const AdsInsertionorderBudgetUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsInsertionorderBudgetUnit
-> = openEnums.outboundSchema(AdsInsertionorderBudgetUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AdsInsertionorderBudgetUnit)
+);
 
 /** @internal */
 export const AdsInsertionorderStatus$inboundSchema: z.ZodType<
   AdsInsertionorderStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsInsertionorderStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsInsertionorderStatus)
+);
 /** @internal */
 export const AdsInsertionorderStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsInsertionorderStatus
-> = openEnums.outboundSchema(AdsInsertionorderStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AdsInsertionorderStatus)
+);
 
 /** @internal */
 export const AdsInsertionorder$inboundSchema: z.ZodType<
   AdsInsertionorder,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  bid_strategy: PropertyAdsInsertionorderBidStrategy$inboundSchema.optional(),
-  budget_segments: z.array(AdsInsertionorderBudgetSegment$inboundSchema)
-    .optional(),
-  budget_unit: AdsInsertionorderBudgetUnit$inboundSchema.optional(),
-  campaign_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  frequency_cap: PropertyAdsInsertionorderFrequencyCap$inboundSchema.optional(),
-  id: z.string().optional(),
-  kpi: PropertyAdsInsertionorderKpi$inboundSchema.optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  pacing: PropertyAdsInsertionorderPacing$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  status: AdsInsertionorderStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "bid_strategy": "bidStrategy",
-    "budget_segments": "budgetSegments",
-    "budget_unit": "budgetUnit",
-    "campaign_id": "campaignId",
-    "created_at": "createdAt",
-    "frequency_cap": "frequencyCap",
-    "organization_id": "organizationId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bid_strategy: PropertyAdsInsertionorderBidStrategy$inboundSchema.optional(),
+    budget_segments: z.array(AdsInsertionorderBudgetSegment$inboundSchema)
+      .optional(),
+    budget_unit: AdsInsertionorderBudgetUnit$inboundSchema.optional(),
+    campaign_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    frequency_cap: PropertyAdsInsertionorderFrequencyCap$inboundSchema
+      .optional(),
+    id: z.string().optional(),
+    kpi: PropertyAdsInsertionorderKpi$inboundSchema.optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    pacing: PropertyAdsInsertionorderPacing$inboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    status: AdsInsertionorderStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "bid_strategy": "bidStrategy",
+      "budget_segments": "budgetSegments",
+      "budget_unit": "budgetUnit",
+      "campaign_id": "campaignId",
+      "created_at": "createdAt",
+      "frequency_cap": "frequencyCap",
+      "organization_id": "organizationId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AdsInsertionorder$Outbound = {
   bid_strategy?: PropertyAdsInsertionorderBidStrategy$Outbound | undefined;
@@ -186,36 +199,39 @@ export const AdsInsertionorder$outboundSchema: z.ZodType<
   AdsInsertionorder$Outbound,
   z.ZodTypeDef,
   AdsInsertionorder
-> = z.object({
-  bidStrategy: PropertyAdsInsertionorderBidStrategy$outboundSchema.optional(),
-  budgetSegments: z.array(AdsInsertionorderBudgetSegment$outboundSchema)
-    .optional(),
-  budgetUnit: AdsInsertionorderBudgetUnit$outboundSchema.optional(),
-  campaignId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  frequencyCap: PropertyAdsInsertionorderFrequencyCap$outboundSchema.optional(),
-  id: z.string().optional(),
-  kpi: PropertyAdsInsertionorderKpi$outboundSchema.optional(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  pacing: PropertyAdsInsertionorderPacing$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  status: AdsInsertionorderStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    bidStrategy: "bid_strategy",
-    budgetSegments: "budget_segments",
-    budgetUnit: "budget_unit",
-    campaignId: "campaign_id",
-    createdAt: "created_at",
-    frequencyCap: "frequency_cap",
-    organizationId: "organization_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bidStrategy: PropertyAdsInsertionorderBidStrategy$outboundSchema.optional(),
+    budgetSegments: z.array(AdsInsertionorderBudgetSegment$outboundSchema)
+      .optional(),
+    budgetUnit: AdsInsertionorderBudgetUnit$outboundSchema.optional(),
+    campaignId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    frequencyCap: PropertyAdsInsertionorderFrequencyCap$outboundSchema
+      .optional(),
+    id: z.string().optional(),
+    kpi: PropertyAdsInsertionorderKpi$outboundSchema.optional(),
+    metadata: z.array(AdsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    pacing: PropertyAdsInsertionorderPacing$outboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    status: AdsInsertionorderStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      bidStrategy: "bid_strategy",
+      budgetSegments: "budget_segments",
+      budgetUnit: "budget_unit",
+      campaignId: "campaign_id",
+      createdAt: "created_at",
+      frequencyCap: "frequency_cap",
+      organizationId: "organization_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function adsInsertionorderToJSON(
   adsInsertionorder: AdsInsertionorder,

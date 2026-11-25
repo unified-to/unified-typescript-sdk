@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListShippingLabelsQueryParamFields = {
@@ -61,7 +62,9 @@ export type ListShippingLabelsRequest = {
 /** @internal */
 export const ListShippingLabelsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListShippingLabelsQueryParamFields
-> = z.nativeEnum(ListShippingLabelsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListShippingLabelsQueryParamFields)
+);
 
 /** @internal */
 export type ListShippingLabelsRequest$Outbound = {
@@ -82,24 +85,27 @@ export const ListShippingLabelsRequest$outboundSchema: z.ZodType<
   ListShippingLabelsRequest$Outbound,
   z.ZodTypeDef,
   ListShippingLabelsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListShippingLabelsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  shipmentId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    shipmentId: "shipment_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListShippingLabelsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    shipmentId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      shipmentId: "shipment_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listShippingLabelsRequestToJSON(
   listShippingLabelsRequest: ListShippingLabelsRequest,

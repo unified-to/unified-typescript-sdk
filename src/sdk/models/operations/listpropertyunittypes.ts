@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPropertyUnittypesQueryParamFields = {
@@ -66,9 +67,10 @@ export type ListPropertyUnittypesRequest = {
 
 /** @internal */
 export const ListPropertyUnittypesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListPropertyUnittypesQueryParamFields> = z.nativeEnum(
-    ListPropertyUnittypesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListPropertyUnittypesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListPropertyUnittypesQueryParamFields)
+    );
 
 /** @internal */
 export type ListPropertyUnittypesRequest$Outbound = {
@@ -89,25 +91,27 @@ export const ListPropertyUnittypesRequest$outboundSchema: z.ZodType<
   ListPropertyUnittypesRequest$Outbound,
   z.ZodTypeDef,
   ListPropertyUnittypesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPropertyUnittypesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  listingId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    listingId: "listing_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPropertyUnittypesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    listingId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      listingId: "listing_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPropertyUnittypesRequestToJSON(
   listPropertyUnittypesRequest: ListPropertyUnittypesRequest,

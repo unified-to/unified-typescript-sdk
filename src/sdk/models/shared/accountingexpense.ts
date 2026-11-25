@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -136,93 +136,106 @@ export const AccountingExpenseStatus$inboundSchema: z.ZodType<
   AccountingExpenseStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingExpenseStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingExpenseStatus)
+);
 /** @internal */
 export const AccountingExpenseStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingExpenseStatus
-> = openEnums.outboundSchema(AccountingExpenseStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingExpenseStatus)
+);
 
 /** @internal */
 export const AccountingExpenseType$inboundSchema: z.ZodType<
   AccountingExpenseType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingExpenseType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingExpenseType)
+);
 /** @internal */
 export const AccountingExpenseType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingExpenseType
-> = openEnums.outboundSchema(AccountingExpenseType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingExpenseType)
+);
 
 /** @internal */
 export const AccountingExpense$inboundSchema: z.ZodType<
   AccountingExpense,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  approver_user_id: z.string().optional(),
-  approver_users: z.array(AccountingReference$inboundSchema).optional(),
-  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
-  category_ids: z.array(z.string()).optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  exchange_rate: z.number().optional(),
-  external_number: z.string().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  payment_method: z.string().optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  project_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reimbursed_amount: z.number().optional(),
-  reimbursed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  status: AccountingExpenseStatus$inboundSchema.optional(),
-  tax_amount: z.number().optional(),
-  taxrate_id: z.string().optional(),
-  total_amount: z.number().optional(),
-  type: AccountingExpenseType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  users: z.array(AccountingReference$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "approved_at": "approvedAt",
-    "approver_user_id": "approverUserId",
-    "approver_users": "approverUsers",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "exchange_rate": "exchangeRate",
-    "external_number": "externalNumber",
-    "organization_id": "organizationId",
-    "payment_method": "paymentMethod",
-    "posted_at": "postedAt",
-    "project_id": "projectId",
-    "reimbursed_amount": "reimbursedAmount",
-    "reimbursed_at": "reimbursedAt",
-    "tax_amount": "taxAmount",
-    "taxrate_id": "taxrateId",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    approved_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    approver_user_id: z.string().optional(),
+    approver_users: z.array(AccountingReference$inboundSchema).optional(),
+    attachments: z.array(AccountingAttachment$inboundSchema).optional(),
+    category_ids: z.array(z.string()).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    exchange_rate: z.number().optional(),
+    external_number: z.string().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    payment_method: z.string().optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    project_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reimbursed_amount: z.number().optional(),
+    reimbursed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: AccountingExpenseStatus$inboundSchema.optional(),
+    tax_amount: z.number().optional(),
+    taxrate_id: z.string().optional(),
+    total_amount: z.number().optional(),
+    type: AccountingExpenseType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    users: z.array(AccountingReference$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "approved_at": "approvedAt",
+      "approver_user_id": "approverUserId",
+      "approver_users": "approverUsers",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "exchange_rate": "exchangeRate",
+      "external_number": "externalNumber",
+      "organization_id": "organizationId",
+      "payment_method": "paymentMethod",
+      "posted_at": "postedAt",
+      "project_id": "projectId",
+      "reimbursed_amount": "reimbursedAmount",
+      "reimbursed_at": "reimbursedAt",
+      "tax_amount": "taxAmount",
+      "taxrate_id": "taxrateId",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type AccountingExpense$Outbound = {
   account_id?: string | undefined;
@@ -262,61 +275,63 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   AccountingExpense$Outbound,
   z.ZodTypeDef,
   AccountingExpense
-> = z.object({
-  accountId: z.string().optional(),
-  approvedAt: z.date().transform(v => v.toISOString()).optional(),
-  approverUserId: z.string().optional(),
-  approverUsers: z.array(AccountingReference$outboundSchema).optional(),
-  attachments: z.array(AccountingAttachment$outboundSchema).optional(),
-  categoryIds: z.array(z.string()).optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  exchangeRate: z.number().optional(),
-  externalNumber: z.string().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  paymentMethod: z.string().optional(),
-  postedAt: z.date().transform(v => v.toISOString()).optional(),
-  projectId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reimbursedAmount: z.number().optional(),
-  reimbursedAt: z.date().transform(v => v.toISOString()).optional(),
-  status: AccountingExpenseStatus$outboundSchema.optional(),
-  taxAmount: z.number().optional(),
-  taxrateId: z.string().optional(),
-  totalAmount: z.number().optional(),
-  type: AccountingExpenseType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  users: z.array(AccountingReference$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    approvedAt: "approved_at",
-    approverUserId: "approver_user_id",
-    approverUsers: "approver_users",
-    categoryIds: "category_ids",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    exchangeRate: "exchange_rate",
-    externalNumber: "external_number",
-    organizationId: "organization_id",
-    paymentMethod: "payment_method",
-    postedAt: "posted_at",
-    projectId: "project_id",
-    reimbursedAmount: "reimbursed_amount",
-    reimbursedAt: "reimbursed_at",
-    taxAmount: "tax_amount",
-    taxrateId: "taxrate_id",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    approvedAt: z.date().transform(v => v.toISOString()).optional(),
+    approverUserId: z.string().optional(),
+    approverUsers: z.array(AccountingReference$outboundSchema).optional(),
+    attachments: z.array(AccountingAttachment$outboundSchema).optional(),
+    categoryIds: z.array(z.string()).optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    exchangeRate: z.number().optional(),
+    externalNumber: z.string().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    paymentMethod: z.string().optional(),
+    postedAt: z.date().transform(v => v.toISOString()).optional(),
+    projectId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reimbursedAmount: z.number().optional(),
+    reimbursedAt: z.date().transform(v => v.toISOString()).optional(),
+    status: AccountingExpenseStatus$outboundSchema.optional(),
+    taxAmount: z.number().optional(),
+    taxrateId: z.string().optional(),
+    totalAmount: z.number().optional(),
+    type: AccountingExpenseType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    users: z.array(AccountingReference$outboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      approvedAt: "approved_at",
+      approverUserId: "approver_user_id",
+      approverUsers: "approver_users",
+      categoryIds: "category_ids",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      exchangeRate: "exchange_rate",
+      externalNumber: "external_number",
+      organizationId: "organization_id",
+      paymentMethod: "payment_method",
+      postedAt: "posted_at",
+      projectId: "project_id",
+      reimbursedAmount: "reimbursed_amount",
+      reimbursedAt: "reimbursed_at",
+      taxAmount: "tax_amount",
+      taxrateId: "taxrate_id",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function accountingExpenseToJSON(
   accountingExpense: AccountingExpense,

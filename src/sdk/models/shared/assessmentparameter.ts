@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -48,36 +48,42 @@ export const AssessmentParameterType$inboundSchema: z.ZodType<
   AssessmentParameterType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AssessmentParameterType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AssessmentParameterType)
+);
 /** @internal */
 export const AssessmentParameterType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AssessmentParameterType
-> = openEnums.outboundSchema(AssessmentParameterType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AssessmentParameterType)
+);
 
 /** @internal */
 export const AssessmentParameter$inboundSchema: z.ZodType<
   AssessmentParameter,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  file_types: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  is_required: z.boolean().optional(),
-  name: z.string().optional(),
-  options: z.array(z.string()).optional(),
-  public_question: z.string().optional(),
-  type: AssessmentParameterType$inboundSchema.optional(),
-  valid_regions: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "file_types": "fileTypes",
-    "is_required": "isRequired",
-    "public_question": "publicQuestion",
-    "valid_regions": "validRegions",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    file_types: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    is_required: z.boolean().optional(),
+    name: z.string().optional(),
+    options: z.array(z.string()).optional(),
+    public_question: z.string().optional(),
+    type: AssessmentParameterType$inboundSchema.optional(),
+    valid_regions: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "file_types": "fileTypes",
+      "is_required": "isRequired",
+      "public_question": "publicQuestion",
+      "valid_regions": "validRegions",
+    });
+  })
+);
 /** @internal */
 export type AssessmentParameter$Outbound = {
   file_types?: Array<string> | undefined;
@@ -95,23 +101,25 @@ export const AssessmentParameter$outboundSchema: z.ZodType<
   AssessmentParameter$Outbound,
   z.ZodTypeDef,
   AssessmentParameter
-> = z.object({
-  fileTypes: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  isRequired: z.boolean().optional(),
-  name: z.string().optional(),
-  options: z.array(z.string()).optional(),
-  publicQuestion: z.string().optional(),
-  type: AssessmentParameterType$outboundSchema.optional(),
-  validRegions: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    fileTypes: "file_types",
-    isRequired: "is_required",
-    publicQuestion: "public_question",
-    validRegions: "valid_regions",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    fileTypes: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    isRequired: z.boolean().optional(),
+    name: z.string().optional(),
+    options: z.array(z.string()).optional(),
+    publicQuestion: z.string().optional(),
+    type: AssessmentParameterType$outboundSchema.optional(),
+    validRegions: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      fileTypes: "file_types",
+      isRequired: "is_required",
+      publicQuestion: "public_question",
+      validRegions: "valid_regions",
+    });
+  })
+);
 
 export function assessmentParameterToJSON(
   assessmentParameter: AssessmentParameter,

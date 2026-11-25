@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -84,51 +84,59 @@ export type CrmLead = {
    * (reference to HrisEmployee)
    */
   userId?: string | undefined;
+  /**
+   * DMS Vehicles the lead is interested in
+   */
+  vehicleIds?: Array<string> | undefined;
 };
 
 /** @internal */
 export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
-  z.object({
-    address: PropertyCrmLeadAddress$inboundSchema.optional(),
-    company_id: z.string().optional(),
-    company_name: z.string().optional(),
-    contact_id: z.string().optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    creator_user_id: z.string().optional(),
-    emails: z.array(CrmEmail$inboundSchema).optional(),
-    first_name: z.string().optional(),
-    id: z.string().optional(),
-    is_active: z.boolean().optional(),
-    last_name: z.string().optional(),
-    link_urls: z.array(z.string()).optional(),
-    metadata: z.array(CrmMetadata$inboundSchema).optional(),
-    name: z.string().optional(),
-    raw: z.record(z.any()).optional(),
-    source: z.string().optional(),
-    status: z.string().optional(),
-    telephones: z.array(CrmTelephone$inboundSchema).optional(),
-    title: z.string().optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    user_id: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "company_id": "companyId",
-      "company_name": "companyName",
-      "contact_id": "contactId",
-      "created_at": "createdAt",
-      "creator_user_id": "creatorUserId",
-      "first_name": "firstName",
-      "is_active": "isActive",
-      "last_name": "lastName",
-      "link_urls": "linkUrls",
-      "updated_at": "updatedAt",
-      "user_id": "userId",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      address: PropertyCrmLeadAddress$inboundSchema.optional(),
+      company_id: z.string().optional(),
+      company_name: z.string().optional(),
+      contact_id: z.string().optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      creator_user_id: z.string().optional(),
+      emails: z.array(CrmEmail$inboundSchema).optional(),
+      first_name: z.string().optional(),
+      id: z.string().optional(),
+      is_active: z.boolean().optional(),
+      last_name: z.string().optional(),
+      link_urls: z.array(z.string()).optional(),
+      metadata: z.array(CrmMetadata$inboundSchema).optional(),
+      name: z.string().optional(),
+      raw: z.record(z.any()).optional(),
+      source: z.string().optional(),
+      status: z.string().optional(),
+      telephones: z.array(CrmTelephone$inboundSchema).optional(),
+      title: z.string().optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      user_id: z.string().optional(),
+      vehicle_ids: z.array(z.string()).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "company_id": "companyId",
+        "company_name": "companyName",
+        "contact_id": "contactId",
+        "created_at": "createdAt",
+        "creator_user_id": "creatorUserId",
+        "first_name": "firstName",
+        "is_active": "isActive",
+        "last_name": "lastName",
+        "link_urls": "linkUrls",
+        "updated_at": "updatedAt",
+        "user_id": "userId",
+        "vehicle_ids": "vehicleIds",
+      });
+    })
+  );
 /** @internal */
 export type CrmLead$Outbound = {
   address?: PropertyCrmLeadAddress$Outbound | undefined;
@@ -152,6 +160,7 @@ export type CrmLead$Outbound = {
   title?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
+  vehicle_ids?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -159,43 +168,47 @@ export const CrmLead$outboundSchema: z.ZodType<
   CrmLead$Outbound,
   z.ZodTypeDef,
   CrmLead
-> = z.object({
-  address: PropertyCrmLeadAddress$outboundSchema.optional(),
-  companyId: z.string().optional(),
-  companyName: z.string().optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  creatorUserId: z.string().optional(),
-  emails: z.array(CrmEmail$outboundSchema).optional(),
-  firstName: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  lastName: z.string().optional(),
-  linkUrls: z.array(z.string()).optional(),
-  metadata: z.array(CrmMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  status: z.string().optional(),
-  telephones: z.array(CrmTelephone$outboundSchema).optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    companyName: "company_name",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    creatorUserId: "creator_user_id",
-    firstName: "first_name",
-    isActive: "is_active",
-    lastName: "last_name",
-    linkUrls: "link_urls",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCrmLeadAddress$outboundSchema.optional(),
+    companyId: z.string().optional(),
+    companyName: z.string().optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    creatorUserId: z.string().optional(),
+    emails: z.array(CrmEmail$outboundSchema).optional(),
+    firstName: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    lastName: z.string().optional(),
+    linkUrls: z.array(z.string()).optional(),
+    metadata: z.array(CrmMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    status: z.string().optional(),
+    telephones: z.array(CrmTelephone$outboundSchema).optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    vehicleIds: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      companyName: "company_name",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      creatorUserId: "creator_user_id",
+      firstName: "first_name",
+      isActive: "is_active",
+      lastName: "last_name",
+      linkUrls: "link_urls",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      vehicleIds: "vehicle_ids",
+    });
+  })
+);
 
 export function crmLeadToJSON(crmLead: CrmLead): string {
   return JSON.stringify(CrmLead$outboundSchema.parse(crmLead));

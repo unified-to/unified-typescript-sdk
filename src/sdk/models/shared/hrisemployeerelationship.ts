@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -66,43 +66,49 @@ export const HrisEmployeerelationshipType$inboundSchema: z.ZodType<
   HrisEmployeerelationshipType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisEmployeerelationshipType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisEmployeerelationshipType)
+);
 /** @internal */
 export const HrisEmployeerelationshipType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisEmployeerelationshipType
-> = openEnums.outboundSchema(HrisEmployeerelationshipType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisEmployeerelationshipType)
+);
 
 /** @internal */
 export const HrisEmployeerelationship$inboundSchema: z.ZodType<
   HrisEmployeerelationship,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyHrisEmployeerelationshipAddress$inboundSchema.optional(),
-  emails: z.array(HrisEmail$inboundSchema).optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  first_name: z.string().optional(),
-  is_beneficiary: z.boolean().optional(),
-  is_dependent: z.boolean().optional(),
-  last_name: z.string().optional(),
-  name: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  telephones: z.array(HrisTelephone$inboundSchema).optional(),
-  type: HrisEmployeerelationshipType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "first_name": "firstName",
-    "is_beneficiary": "isBeneficiary",
-    "is_dependent": "isDependent",
-    "last_name": "lastName",
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHrisEmployeerelationshipAddress$inboundSchema.optional(),
+    emails: z.array(HrisEmail$inboundSchema).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    first_name: z.string().optional(),
+    is_beneficiary: z.boolean().optional(),
+    is_dependent: z.boolean().optional(),
+    last_name: z.string().optional(),
+    name: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    telephones: z.array(HrisTelephone$inboundSchema).optional(),
+    type: HrisEmployeerelationshipType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "first_name": "firstName",
+      "is_beneficiary": "isBeneficiary",
+      "is_dependent": "isDependent",
+      "last_name": "lastName",
+      "start_at": "startAt",
+    });
+  })
+);
 /** @internal */
 export type HrisEmployeerelationship$Outbound = {
   address?: PropertyHrisEmployeerelationshipAddress$Outbound | undefined;
@@ -123,28 +129,30 @@ export const HrisEmployeerelationship$outboundSchema: z.ZodType<
   HrisEmployeerelationship$Outbound,
   z.ZodTypeDef,
   HrisEmployeerelationship
-> = z.object({
-  address: PropertyHrisEmployeerelationshipAddress$outboundSchema.optional(),
-  emails: z.array(HrisEmail$outboundSchema).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  firstName: z.string().optional(),
-  isBeneficiary: z.boolean().optional(),
-  isDependent: z.boolean().optional(),
-  lastName: z.string().optional(),
-  name: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  telephones: z.array(HrisTelephone$outboundSchema).optional(),
-  type: HrisEmployeerelationshipType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    endAt: "end_at",
-    firstName: "first_name",
-    isBeneficiary: "is_beneficiary",
-    isDependent: "is_dependent",
-    lastName: "last_name",
-    startAt: "start_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHrisEmployeerelationshipAddress$outboundSchema.optional(),
+    emails: z.array(HrisEmail$outboundSchema).optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    firstName: z.string().optional(),
+    isBeneficiary: z.boolean().optional(),
+    isDependent: z.boolean().optional(),
+    lastName: z.string().optional(),
+    name: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    telephones: z.array(HrisTelephone$outboundSchema).optional(),
+    type: HrisEmployeerelationshipType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      endAt: "end_at",
+      firstName: "first_name",
+      isBeneficiary: "is_beneficiary",
+      isDependent: "is_dependent",
+      lastName: "last_name",
+      startAt: "start_at",
+    });
+  })
+);
 
 export function hrisEmployeerelationshipToJSON(
   hrisEmployeerelationship: HrisEmployeerelationship,

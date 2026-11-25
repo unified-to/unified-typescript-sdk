@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -26,23 +26,29 @@ export const MarketingEmailType$inboundSchema: z.ZodType<
   MarketingEmailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MarketingEmailType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MarketingEmailType)
+);
 /** @internal */
 export const MarketingEmailType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   MarketingEmailType
-> = openEnums.outboundSchema(MarketingEmailType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(MarketingEmailType)
+);
 
 /** @internal */
 export const MarketingEmail$inboundSchema: z.ZodType<
   MarketingEmail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string(),
-  type: MarketingEmailType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    type: MarketingEmailType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type MarketingEmail$Outbound = {
   email: string;
@@ -54,10 +60,12 @@ export const MarketingEmail$outboundSchema: z.ZodType<
   MarketingEmail$Outbound,
   z.ZodTypeDef,
   MarketingEmail
-> = z.object({
-  email: z.string(),
-  type: MarketingEmailType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    type: MarketingEmailType$outboundSchema.optional(),
+  })
+);
 
 export function marketingEmailToJSON(marketingEmail: MarketingEmail): string {
   return JSON.stringify(MarketingEmail$outboundSchema.parse(marketingEmail));

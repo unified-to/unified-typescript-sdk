@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListKmsSpacesQueryParamFields = {
@@ -57,7 +58,9 @@ export type ListKmsSpacesRequest = {
 /** @internal */
 export const ListKmsSpacesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListKmsSpacesQueryParamFields
-> = z.nativeEnum(ListKmsSpacesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListKmsSpacesQueryParamFields)
+);
 
 /** @internal */
 export type ListKmsSpacesRequest$Outbound = {
@@ -78,24 +81,26 @@ export const ListKmsSpacesRequest$outboundSchema: z.ZodType<
   ListKmsSpacesRequest$Outbound,
   z.ZodTypeDef,
   ListKmsSpacesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListKmsSpacesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListKmsSpacesQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listKmsSpacesRequestToJSON(
   listKmsSpacesRequest: ListKmsSpacesRequest,

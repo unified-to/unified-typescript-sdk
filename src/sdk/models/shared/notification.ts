@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -77,46 +77,50 @@ export type Notification = {
 
 /** @internal */
 export const Event$inboundSchema: z.ZodType<Event, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Event);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Event));
 
 /** @internal */
 export const Notification$inboundSchema: z.ZodType<
   Notification,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  connection_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  event: Event$inboundSchema.optional(),
-  id: z.string().optional(),
-  integration_name: z.string().optional(),
-  integration_type: z.string().optional(),
-  sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  user_name: z.string().optional(),
-  webhook_id: z.string().optional(),
-  workspace_id: z.string().optional(),
-  workspace_name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "created_at": "createdAt",
-    "integration_name": "integrationName",
-    "integration_type": "integrationType",
-    "sent_at": "sentAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "user_name": "userName",
-    "webhook_id": "webhookId",
-    "workspace_id": "workspaceId",
-    "workspace_name": "workspaceName",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connection_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    event: Event$inboundSchema.optional(),
+    id: z.string().optional(),
+    integration_name: z.string().optional(),
+    integration_type: z.string().optional(),
+    sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    user_name: z.string().optional(),
+    webhook_id: z.string().optional(),
+    workspace_id: z.string().optional(),
+    workspace_name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "connection_id": "connectionId",
+      "created_at": "createdAt",
+      "integration_name": "integrationName",
+      "integration_type": "integrationType",
+      "sent_at": "sentAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "user_name": "userName",
+      "webhook_id": "webhookId",
+      "workspace_id": "workspaceId",
+      "workspace_name": "workspaceName",
+    });
+  })
+);
 
 export function notificationFromJSON(
   jsonString: string,

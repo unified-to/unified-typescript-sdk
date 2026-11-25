@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListKmsCommentsQueryParamFields = {
@@ -65,7 +66,9 @@ export type ListKmsCommentsRequest = {
 /** @internal */
 export const ListKmsCommentsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListKmsCommentsQueryParamFields
-> = z.nativeEnum(ListKmsCommentsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListKmsCommentsQueryParamFields)
+);
 
 /** @internal */
 export type ListKmsCommentsRequest$Outbound = {
@@ -88,27 +91,29 @@ export const ListKmsCommentsRequest$outboundSchema: z.ZodType<
   ListKmsCommentsRequest$Outbound,
   z.ZodTypeDef,
   ListKmsCommentsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListKmsCommentsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  pageId: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    pageId: "page_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListKmsCommentsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    pageId: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      pageId: "page_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listKmsCommentsRequestToJSON(
   listKmsCommentsRequest: ListKmsCommentsRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import {
@@ -106,7 +107,9 @@ export const WorkspaceIntegrationPatchAuthType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   WorkspaceIntegrationPatchAuthType
-> = openEnums.outboundSchema(WorkspaceIntegrationPatchAuthType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(WorkspaceIntegrationPatchAuthType)
+);
 
 /** @internal */
 export type WorkspaceIntegrationPatch$Outbound = {
@@ -142,57 +145,60 @@ export const WorkspaceIntegrationPatch$outboundSchema: z.ZodType<
   WorkspaceIntegrationPatch$Outbound,
   z.ZodTypeDef,
   WorkspaceIntegrationPatch
-> = z.object({
-  apiUrl: z.string().optional(),
-  auth: PropertyWorkspaceIntegrationPatchAuth$outboundSchema.optional(),
-  authType: WorkspaceIntegrationPatchAuthType$outboundSchema.optional(),
-  authorizeUrl: z.string().optional(),
-  baseUrl: z.string().optional(),
-  categories: z.array(
-    PropertyWorkspaceIntegrationPatchCategories$outboundSchema,
-  ).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  environment: z.string().optional(),
-  failureRedirect: z.string().optional(),
-  id: z.string().optional(),
-  integrationType: z.string().optional(),
-  isActive: z.boolean().optional(),
-  overridenScopes:
-    PropertyWorkspaceIntegrationPatchOverridenScopes$outboundSchema.optional(),
-  permissions: z.array(
-    PropertyWorkspaceIntegrationPatchPermissions$outboundSchema,
-  ).optional(),
-  promptRegion: z.boolean().optional(),
-  refreshUrl: z.string().optional(),
-  secretsmanagerId: z.string().optional(),
-  secretsmanagerKey: z.string().optional(),
-  successRedirect: z.string().optional(),
-  tokenUrl: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  useUnifiedRedirect: z.boolean().optional(),
-  workspaceId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    apiUrl: "api_url",
-    authType: "auth_type",
-    authorizeUrl: "authorize_url",
-    baseUrl: "base_url",
-    createdAt: "created_at",
-    failureRedirect: "failure_redirect",
-    integrationType: "integration_type",
-    isActive: "is_active",
-    overridenScopes: "overriden_scopes",
-    promptRegion: "prompt_region",
-    refreshUrl: "refresh_url",
-    secretsmanagerId: "secretsmanager_id",
-    secretsmanagerKey: "secretsmanager_key",
-    successRedirect: "success_redirect",
-    tokenUrl: "token_url",
-    updatedAt: "updated_at",
-    useUnifiedRedirect: "use_unified_redirect",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    apiUrl: z.string().optional(),
+    auth: PropertyWorkspaceIntegrationPatchAuth$outboundSchema.optional(),
+    authType: WorkspaceIntegrationPatchAuthType$outboundSchema.optional(),
+    authorizeUrl: z.string().optional(),
+    baseUrl: z.string().optional(),
+    categories: z.array(
+      PropertyWorkspaceIntegrationPatchCategories$outboundSchema,
+    ).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    environment: z.string().optional(),
+    failureRedirect: z.string().optional(),
+    id: z.string().optional(),
+    integrationType: z.string().optional(),
+    isActive: z.boolean().optional(),
+    overridenScopes:
+      PropertyWorkspaceIntegrationPatchOverridenScopes$outboundSchema
+        .optional(),
+    permissions: z.array(
+      PropertyWorkspaceIntegrationPatchPermissions$outboundSchema,
+    ).optional(),
+    promptRegion: z.boolean().optional(),
+    refreshUrl: z.string().optional(),
+    secretsmanagerId: z.string().optional(),
+    secretsmanagerKey: z.string().optional(),
+    successRedirect: z.string().optional(),
+    tokenUrl: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    useUnifiedRedirect: z.boolean().optional(),
+    workspaceId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      apiUrl: "api_url",
+      authType: "auth_type",
+      authorizeUrl: "authorize_url",
+      baseUrl: "base_url",
+      createdAt: "created_at",
+      failureRedirect: "failure_redirect",
+      integrationType: "integration_type",
+      isActive: "is_active",
+      overridenScopes: "overriden_scopes",
+      promptRegion: "prompt_region",
+      refreshUrl: "refresh_url",
+      secretsmanagerId: "secretsmanager_id",
+      secretsmanagerKey: "secretsmanager_key",
+      successRedirect: "success_redirect",
+      tokenUrl: "token_url",
+      updatedAt: "updated_at",
+      useUnifiedRedirect: "use_unified_redirect",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function workspaceIntegrationPatchToJSON(
   workspaceIntegrationPatch: WorkspaceIntegrationPatch,

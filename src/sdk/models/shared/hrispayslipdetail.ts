@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -60,6 +60,7 @@ export const HrisPayslipDetailType = {
   PosttaxDeductionCollegeSavings: "POSTTAX_DEDUCTION_COLLEGE_SAVINGS",
   PosttaxDeductionUnionDues: "POSTTAX_DEDUCTION_UNION_DUES",
   PosttaxDeductionEwaRepayment: "POSTTAX_DEDUCTION_EWA_REPAYMENT",
+  EarningTaxableBenefit: "EARNING_TAXABLE_BENEFIT",
 } as const;
 export type HrisPayslipDetailType = OpenEnum<typeof HrisPayslipDetailType>;
 
@@ -113,49 +114,53 @@ export const HrisPayslipDetailType$inboundSchema: z.ZodType<
   HrisPayslipDetailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisPayslipDetailType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisPayslipDetailType)
+);
 
 /** @internal */
 export const HrisPayslipDetail$inboundSchema: z.ZodType<
   HrisPayslipDetail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number(),
-  benefit_id: z.string().optional(),
-  company_amount: z.number().optional(),
-  deduction_id: z.string().optional(),
-  description: z.string().optional(),
-  employee_amount: z.number().optional(),
-  hours: z.number().optional(),
-  is_employer: z.boolean().optional(),
-  is_pre_tax: z.boolean().optional(),
-  is_retirement_eligible: z.boolean().optional(),
-  loan_identifier: z.string().optional(),
-  name: z.string().optional(),
-  original_type: z.string().optional(),
-  paycode_id: z.string().optional(),
-  rate_amount: z.number().optional(),
-  type: HrisPayslipDetailType$inboundSchema.optional(),
-  ytd_amount: z.number().optional(),
-  ytd_hours: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "benefit_id": "benefitId",
-    "company_amount": "companyAmount",
-    "deduction_id": "deductionId",
-    "employee_amount": "employeeAmount",
-    "is_employer": "isEmployer",
-    "is_pre_tax": "isPreTax",
-    "is_retirement_eligible": "isRetirementEligible",
-    "loan_identifier": "loanIdentifier",
-    "original_type": "originalType",
-    "paycode_id": "paycodeId",
-    "rate_amount": "rateAmount",
-    "ytd_amount": "ytdAmount",
-    "ytd_hours": "ytdHours",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number(),
+    benefit_id: z.string().optional(),
+    company_amount: z.number().optional(),
+    deduction_id: z.string().optional(),
+    description: z.string().optional(),
+    employee_amount: z.number().optional(),
+    hours: z.number().optional(),
+    is_employer: z.boolean().optional(),
+    is_pre_tax: z.boolean().optional(),
+    is_retirement_eligible: z.boolean().optional(),
+    loan_identifier: z.string().optional(),
+    name: z.string().optional(),
+    original_type: z.string().optional(),
+    paycode_id: z.string().optional(),
+    rate_amount: z.number().optional(),
+    type: HrisPayslipDetailType$inboundSchema.optional(),
+    ytd_amount: z.number().optional(),
+    ytd_hours: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "benefit_id": "benefitId",
+      "company_amount": "companyAmount",
+      "deduction_id": "deductionId",
+      "employee_amount": "employeeAmount",
+      "is_employer": "isEmployer",
+      "is_pre_tax": "isPreTax",
+      "is_retirement_eligible": "isRetirementEligible",
+      "loan_identifier": "loanIdentifier",
+      "original_type": "originalType",
+      "paycode_id": "paycodeId",
+      "rate_amount": "rateAmount",
+      "ytd_amount": "ytdAmount",
+      "ytd_hours": "ytdHours",
+    });
+  })
+);
 
 export function hrisPayslipDetailFromJSON(
   jsonString: string,

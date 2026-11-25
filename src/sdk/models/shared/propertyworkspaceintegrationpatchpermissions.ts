@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -464,6 +465,30 @@ export const PropertyWorkspaceIntegrationPatchPermissions = {
   QmsInspectionWrite: "qms_inspection_write",
   QmsAuditRead: "qms_audit_read",
   QmsAuditWrite: "qms_audit_write",
+  DmsVehicleRead: "dms_vehicle_read",
+  DmsVehicleWrite: "dms_vehicle_write",
+  DmsVehiclesaleRead: "dms_vehiclesale_read",
+  DmsVehiclesaleWrite: "dms_vehiclesale_write",
+  DmsRepairorderRead: "dms_repairorder_read",
+  DmsRepairorderWrite: "dms_repairorder_write",
+  DmsAppointmentRead: "dms_appointment_read",
+  DmsAppointmentWrite: "dms_appointment_write",
+  DmsPartRead: "dms_part_read",
+  DmsPartWrite: "dms_part_write",
+  DmsPartsaleRead: "dms_partsale_read",
+  DmsPartsaleWrite: "dms_partsale_write",
+  DmsOpcodeRead: "dms_opcode_read",
+  DmsOpcodeWrite: "dms_opcode_write",
+  PrintingProductRead: "printing_product_read",
+  PrintingProductWrite: "printing_product_write",
+  PrintingTemplateRead: "printing_template_read",
+  PrintingTemplateWrite: "printing_template_write",
+  PrintingFileRead: "printing_file_read",
+  PrintingFileWrite: "printing_file_write",
+  PrintingQuoteRead: "printing_quote_read",
+  PrintingQuoteWrite: "printing_quote_write",
+  PrintingOrderRead: "printing_order_read",
+  PrintingOrderWrite: "printing_order_write",
 } as const;
 export type PropertyWorkspaceIntegrationPatchPermissions = OpenEnum<
   typeof PropertyWorkspaceIntegrationPatchPermissions
@@ -475,4 +500,6 @@ export const PropertyWorkspaceIntegrationPatchPermissions$outboundSchema:
     string,
     z.ZodTypeDef,
     PropertyWorkspaceIntegrationPatchPermissions
-  > = openEnums.outboundSchema(PropertyWorkspaceIntegrationPatchPermissions);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(PropertyWorkspaceIntegrationPatchPermissions)
+  );

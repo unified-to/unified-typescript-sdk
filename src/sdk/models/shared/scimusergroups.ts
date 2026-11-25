@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -31,29 +31,35 @@ export const ScimUserGroupsType$inboundSchema: z.ZodType<
   ScimUserGroupsType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ScimUserGroupsType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ScimUserGroupsType)
+);
 /** @internal */
 export const ScimUserGroupsType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ScimUserGroupsType
-> = openEnums.outboundSchema(ScimUserGroupsType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ScimUserGroupsType)
+);
 
 /** @internal */
 export const ScimUserGroups$inboundSchema: z.ZodType<
   ScimUserGroups,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  $ref: z.string().optional(),
-  display: z.string().optional(),
-  type: ScimUserGroupsType$inboundSchema.optional(),
-  value: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "$ref": "dollarRef",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    $ref: z.string().optional(),
+    display: z.string().optional(),
+    type: ScimUserGroupsType$inboundSchema.optional(),
+    value: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "$ref": "dollarRef",
+    });
+  })
+);
 /** @internal */
 export type ScimUserGroups$Outbound = {
   $ref?: string | undefined;
@@ -67,16 +73,18 @@ export const ScimUserGroups$outboundSchema: z.ZodType<
   ScimUserGroups$Outbound,
   z.ZodTypeDef,
   ScimUserGroups
-> = z.object({
-  dollarRef: z.string().optional(),
-  display: z.string().optional(),
-  type: ScimUserGroupsType$outboundSchema.optional(),
-  value: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    dollarRef: "$ref",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    dollarRef: z.string().optional(),
+    display: z.string().optional(),
+    type: ScimUserGroupsType$outboundSchema.optional(),
+    value: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      dollarRef: "$ref",
+    });
+  })
+);
 
 export function scimUserGroupsToJSON(scimUserGroups: ScimUserGroups): string {
   return JSON.stringify(ScimUserGroups$outboundSchema.parse(scimUserGroups));

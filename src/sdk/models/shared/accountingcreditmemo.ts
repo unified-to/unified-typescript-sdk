@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -145,95 +145,108 @@ export const AccountingCreditmemoPaymentCollectionMethod$inboundSchema:
     AccountingCreditmemoPaymentCollectionMethod,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(AccountingCreditmemoPaymentCollectionMethod);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(AccountingCreditmemoPaymentCollectionMethod)
+  );
 /** @internal */
 export const AccountingCreditmemoPaymentCollectionMethod$outboundSchema:
   z.ZodType<string, z.ZodTypeDef, AccountingCreditmemoPaymentCollectionMethod> =
-    openEnums.outboundSchema(AccountingCreditmemoPaymentCollectionMethod);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(AccountingCreditmemoPaymentCollectionMethod)
+    );
 
 /** @internal */
 export const AccountingCreditmemoStatus$inboundSchema: z.ZodType<
   AccountingCreditmemoStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingCreditmemoStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingCreditmemoStatus)
+);
 /** @internal */
 export const AccountingCreditmemoStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingCreditmemoStatus
-> = openEnums.outboundSchema(AccountingCreditmemoStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingCreditmemoStatus)
+);
 
 /** @internal */
 export const AccountingCreditmemo$inboundSchema: z.ZodType<
   AccountingCreditmemo,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  applications: z.array(AccountingCreditApplication$inboundSchema).optional(),
-  apply_amount: z.number().optional(),
-  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
-  balance_amount: z.number().optional(),
-  cancelled_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  creditmemo_number: z.string().optional(),
-  currency: z.string().optional(),
-  discount_amount: z.number().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  invoice_id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  organization_id: z.string().optional(),
-  paid_amount: z.number().optional(),
-  paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  payment_collection_method:
-    AccountingCreditmemoPaymentCollectionMethod$inboundSchema.optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  refund_amount: z.number().optional(),
-  refund_reason: z.string().optional(),
-  refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  send: z.boolean().optional(),
-  status: AccountingCreditmemoStatus$inboundSchema.optional(),
-  tax_amount: z.number().optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "apply_amount": "applyAmount",
-    "balance_amount": "balanceAmount",
-    "cancelled_at": "cancelledAt",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "creditmemo_number": "creditmemoNumber",
-    "discount_amount": "discountAmount",
-    "due_at": "dueAt",
-    "invoice_id": "invoiceId",
-    "organization_id": "organizationId",
-    "paid_amount": "paidAmount",
-    "paid_at": "paidAt",
-    "payment_collection_method": "paymentCollectionMethod",
-    "posted_at": "postedAt",
-    "refund_amount": "refundAmount",
-    "refund_reason": "refundReason",
-    "refunded_at": "refundedAt",
-    "tax_amount": "taxAmount",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applications: z.array(AccountingCreditApplication$inboundSchema).optional(),
+    apply_amount: z.number().optional(),
+    attachments: z.array(AccountingAttachment$inboundSchema).optional(),
+    balance_amount: z.number().optional(),
+    cancelled_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    creditmemo_number: z.string().optional(),
+    currency: z.string().optional(),
+    discount_amount: z.number().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    invoice_id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    organization_id: z.string().optional(),
+    paid_amount: z.number().optional(),
+    paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    payment_collection_method:
+      AccountingCreditmemoPaymentCollectionMethod$inboundSchema.optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    raw: z.record(z.any()).optional(),
+    refund_amount: z.number().optional(),
+    refund_reason: z.string().optional(),
+    refunded_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    send: z.boolean().optional(),
+    status: AccountingCreditmemoStatus$inboundSchema.optional(),
+    tax_amount: z.number().optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "apply_amount": "applyAmount",
+      "balance_amount": "balanceAmount",
+      "cancelled_at": "cancelledAt",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "creditmemo_number": "creditmemoNumber",
+      "discount_amount": "discountAmount",
+      "due_at": "dueAt",
+      "invoice_id": "invoiceId",
+      "organization_id": "organizationId",
+      "paid_amount": "paidAmount",
+      "paid_at": "paidAt",
+      "payment_collection_method": "paymentCollectionMethod",
+      "posted_at": "postedAt",
+      "refund_amount": "refundAmount",
+      "refund_reason": "refundReason",
+      "refunded_at": "refundedAt",
+      "tax_amount": "taxAmount",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingCreditmemo$Outbound = {
   applications?: Array<AccountingCreditApplication$Outbound> | undefined;
@@ -274,63 +287,66 @@ export const AccountingCreditmemo$outboundSchema: z.ZodType<
   AccountingCreditmemo$Outbound,
   z.ZodTypeDef,
   AccountingCreditmemo
-> = z.object({
-  applications: z.array(AccountingCreditApplication$outboundSchema).optional(),
-  applyAmount: z.number().optional(),
-  attachments: z.array(AccountingAttachment$outboundSchema).optional(),
-  balanceAmount: z.number().optional(),
-  cancelledAt: z.date().transform(v => v.toISOString()).optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  creditmemoNumber: z.string().optional(),
-  currency: z.string().optional(),
-  discountAmount: z.number().optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  invoiceId: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  organizationId: z.string().optional(),
-  paidAmount: z.number().optional(),
-  paidAt: z.date().transform(v => v.toISOString()).optional(),
-  paymentCollectionMethod:
-    AccountingCreditmemoPaymentCollectionMethod$outboundSchema.optional(),
-  postedAt: z.date().transform(v => v.toISOString()).optional(),
-  raw: z.record(z.any()).optional(),
-  refundAmount: z.number().optional(),
-  refundReason: z.string().optional(),
-  refundedAt: z.date().transform(v => v.toISOString()).optional(),
-  send: z.boolean().optional(),
-  status: AccountingCreditmemoStatus$outboundSchema.optional(),
-  taxAmount: z.number().optional(),
-  totalAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    applyAmount: "apply_amount",
-    balanceAmount: "balance_amount",
-    cancelledAt: "cancelled_at",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    creditmemoNumber: "creditmemo_number",
-    discountAmount: "discount_amount",
-    dueAt: "due_at",
-    invoiceId: "invoice_id",
-    organizationId: "organization_id",
-    paidAmount: "paid_amount",
-    paidAt: "paid_at",
-    paymentCollectionMethod: "payment_collection_method",
-    postedAt: "posted_at",
-    refundAmount: "refund_amount",
-    refundReason: "refund_reason",
-    refundedAt: "refunded_at",
-    taxAmount: "tax_amount",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applications: z.array(AccountingCreditApplication$outboundSchema)
+      .optional(),
+    applyAmount: z.number().optional(),
+    attachments: z.array(AccountingAttachment$outboundSchema).optional(),
+    balanceAmount: z.number().optional(),
+    cancelledAt: z.date().transform(v => v.toISOString()).optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    creditmemoNumber: z.string().optional(),
+    currency: z.string().optional(),
+    discountAmount: z.number().optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    invoiceId: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    organizationId: z.string().optional(),
+    paidAmount: z.number().optional(),
+    paidAt: z.date().transform(v => v.toISOString()).optional(),
+    paymentCollectionMethod:
+      AccountingCreditmemoPaymentCollectionMethod$outboundSchema.optional(),
+    postedAt: z.date().transform(v => v.toISOString()).optional(),
+    raw: z.record(z.any()).optional(),
+    refundAmount: z.number().optional(),
+    refundReason: z.string().optional(),
+    refundedAt: z.date().transform(v => v.toISOString()).optional(),
+    send: z.boolean().optional(),
+    status: AccountingCreditmemoStatus$outboundSchema.optional(),
+    taxAmount: z.number().optional(),
+    totalAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      applyAmount: "apply_amount",
+      balanceAmount: "balance_amount",
+      cancelledAt: "cancelled_at",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      creditmemoNumber: "creditmemo_number",
+      discountAmount: "discount_amount",
+      dueAt: "due_at",
+      invoiceId: "invoice_id",
+      organizationId: "organization_id",
+      paidAmount: "paid_amount",
+      paidAt: "paid_at",
+      paymentCollectionMethod: "payment_collection_method",
+      postedAt: "posted_at",
+      refundAmount: "refund_amount",
+      refundReason: "refund_reason",
+      refundedAt: "refunded_at",
+      taxAmount: "tax_amount",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingCreditmemoToJSON(
   accountingCreditmemo: AccountingCreditmemo,

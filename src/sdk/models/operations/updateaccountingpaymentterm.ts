@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,8 +53,10 @@ export type UpdateAccountingPaymenttermRequest = {
 
 /** @internal */
 export const UpdateAccountingPaymenttermQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateAccountingPaymenttermQueryParamFields> = z
-    .nativeEnum(UpdateAccountingPaymenttermQueryParamFields);
+  z.ZodNativeEnum<typeof UpdateAccountingPaymenttermQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAccountingPaymenttermQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAccountingPaymenttermRequest$Outbound = {
@@ -69,19 +72,21 @@ export const UpdateAccountingPaymenttermRequest$outboundSchema: z.ZodType<
   UpdateAccountingPaymenttermRequest$Outbound,
   z.ZodTypeDef,
   UpdateAccountingPaymenttermRequest
-> = z.object({
-  accountingPaymentterm: shared.AccountingPaymentterm$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateAccountingPaymenttermQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingPaymentterm: "AccountingPaymentterm",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingPaymentterm: shared.AccountingPaymentterm$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateAccountingPaymenttermQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingPaymentterm: "AccountingPaymentterm",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateAccountingPaymenttermRequestToJSON(
   updateAccountingPaymenttermRequest: UpdateAccountingPaymenttermRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -67,7 +68,9 @@ export type PatchAtsCandidateRequest = {
 /** @internal */
 export const PatchAtsCandidateQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchAtsCandidateQueryParamFields
-> = z.nativeEnum(PatchAtsCandidateQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchAtsCandidateQueryParamFields)
+);
 
 /** @internal */
 export type PatchAtsCandidateRequest$Outbound = {
@@ -83,18 +86,21 @@ export const PatchAtsCandidateRequest$outboundSchema: z.ZodType<
   PatchAtsCandidateRequest$Outbound,
   z.ZodTypeDef,
   PatchAtsCandidateRequest
-> = z.object({
-  atsCandidate: shared.AtsCandidate$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAtsCandidateQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    atsCandidate: "AtsCandidate",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    atsCandidate: shared.AtsCandidate$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchAtsCandidateQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      atsCandidate: "AtsCandidate",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAtsCandidateRequestToJSON(
   patchAtsCandidateRequest: PatchAtsCandidateRequest,

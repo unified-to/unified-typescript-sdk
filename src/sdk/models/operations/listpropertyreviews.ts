@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPropertyReviewsQueryParamFields = {
@@ -67,9 +68,10 @@ export type ListPropertyReviewsRequest = {
 
 /** @internal */
 export const ListPropertyReviewsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListPropertyReviewsQueryParamFields> = z.nativeEnum(
-    ListPropertyReviewsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListPropertyReviewsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListPropertyReviewsQueryParamFields)
+    );
 
 /** @internal */
 export type ListPropertyReviewsRequest$Outbound = {
@@ -91,27 +93,29 @@ export const ListPropertyReviewsRequest$outboundSchema: z.ZodType<
   ListPropertyReviewsRequest$Outbound,
   z.ZodTypeDef,
   ListPropertyReviewsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPropertyReviewsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  listingId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  reservationId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    listingId: "listing_id",
-    reservationId: "reservation_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPropertyReviewsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    listingId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    reservationId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      listingId: "listing_id",
+      reservationId: "reservation_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPropertyReviewsRequestToJSON(
   listPropertyReviewsRequest: ListPropertyReviewsRequest,

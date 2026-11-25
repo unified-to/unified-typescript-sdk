@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -46,9 +47,10 @@ export type CreateShippingLabelRequest = {
 
 /** @internal */
 export const CreateShippingLabelQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateShippingLabelQueryParamFields> = z.nativeEnum(
-    CreateShippingLabelQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateShippingLabelQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateShippingLabelQueryParamFields)
+    );
 
 /** @internal */
 export type CreateShippingLabelRequest$Outbound = {
@@ -63,18 +65,20 @@ export const CreateShippingLabelRequest$outboundSchema: z.ZodType<
   CreateShippingLabelRequest$Outbound,
   z.ZodTypeDef,
   CreateShippingLabelRequest
-> = z.object({
-  shippingLabel: shared.ShippingLabel$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateShippingLabelQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    shippingLabel: "ShippingLabel",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    shippingLabel: shared.ShippingLabel$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateShippingLabelQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      shippingLabel: "ShippingLabel",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createShippingLabelRequestToJSON(
   createShippingLabelRequest: CreateShippingLabelRequest,

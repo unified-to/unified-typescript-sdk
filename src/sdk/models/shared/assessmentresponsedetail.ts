@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -25,21 +25,23 @@ export const AssessmentResponseDetail$inboundSchema: z.ZodType<
   AssessmentResponseDetail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  download_url: z.string().optional(),
-  is_failed_reason: z.boolean().optional(),
-  is_private: z.boolean().optional(),
-  parameter_id: z.string().optional(),
-  text: z.string().optional(),
-  title: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "download_url": "downloadUrl",
-    "is_failed_reason": "isFailedReason",
-    "is_private": "isPrivate",
-    "parameter_id": "parameterId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    download_url: z.string().optional(),
+    is_failed_reason: z.boolean().optional(),
+    is_private: z.boolean().optional(),
+    parameter_id: z.string().optional(),
+    text: z.string().optional(),
+    title: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "download_url": "downloadUrl",
+      "is_failed_reason": "isFailedReason",
+      "is_private": "isPrivate",
+      "parameter_id": "parameterId",
+    });
+  })
+);
 /** @internal */
 export type AssessmentResponseDetail$Outbound = {
   download_url?: string | undefined;
@@ -55,21 +57,23 @@ export const AssessmentResponseDetail$outboundSchema: z.ZodType<
   AssessmentResponseDetail$Outbound,
   z.ZodTypeDef,
   AssessmentResponseDetail
-> = z.object({
-  downloadUrl: z.string().optional(),
-  isFailedReason: z.boolean().optional(),
-  isPrivate: z.boolean().optional(),
-  parameterId: z.string().optional(),
-  text: z.string().optional(),
-  title: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    downloadUrl: "download_url",
-    isFailedReason: "is_failed_reason",
-    isPrivate: "is_private",
-    parameterId: "parameter_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    downloadUrl: z.string().optional(),
+    isFailedReason: z.boolean().optional(),
+    isPrivate: z.boolean().optional(),
+    parameterId: z.string().optional(),
+    text: z.string().optional(),
+    title: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      downloadUrl: "download_url",
+      isFailedReason: "is_failed_reason",
+      isPrivate: "is_private",
+      parameterId: "parameter_id",
+    });
+  })
+);
 
 export function assessmentResponseDetailToJSON(
   assessmentResponseDetail: AssessmentResponseDetail,

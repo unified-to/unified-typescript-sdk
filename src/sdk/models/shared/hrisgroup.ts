@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -88,65 +88,73 @@ export const HrisGroupPayFrequency$inboundSchema: z.ZodType<
   HrisGroupPayFrequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisGroupPayFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisGroupPayFrequency)
+);
 /** @internal */
 export const HrisGroupPayFrequency$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisGroupPayFrequency
-> = openEnums.outboundSchema(HrisGroupPayFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisGroupPayFrequency)
+);
 
 /** @internal */
 export const HrisGroupType$inboundSchema: z.ZodType<
   HrisGroupType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisGroupType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(HrisGroupType));
 /** @internal */
 export const HrisGroupType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisGroupType
-> = openEnums.outboundSchema(HrisGroupType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(HrisGroupType));
 
 /** @internal */
 export const HrisGroup$inboundSchema: z.ZodType<
   HrisGroup,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  manager_ids: z.array(z.string()).optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  next_paid_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  parent_id: z.string().optional(),
-  pay_frequency: HrisGroupPayFrequency$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  type: HrisGroupType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "manager_ids": "managerIds",
-    "next_paid_at": "nextPaidAt",
-    "parent_id": "parentId",
-    "pay_frequency": "payFrequency",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    manager_ids: z.array(z.string()).optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    next_paid_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    parent_id: z.string().optional(),
+    pay_frequency: HrisGroupPayFrequency$inboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    type: HrisGroupType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "manager_ids": "managerIds",
+      "next_paid_at": "nextPaidAt",
+      "parent_id": "parentId",
+      "pay_frequency": "payFrequency",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+    });
+  })
+);
 /** @internal */
 export type HrisGroup$Outbound = {
   company_id?: string | undefined;
@@ -171,35 +179,37 @@ export const HrisGroup$outboundSchema: z.ZodType<
   HrisGroup$Outbound,
   z.ZodTypeDef,
   HrisGroup
-> = z.object({
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  managerIds: z.array(z.string()).optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  nextPaidAt: z.date().transform(v => v.toISOString()).optional(),
-  parentId: z.string().optional(),
-  payFrequency: HrisGroupPayFrequency$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  type: HrisGroupType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    createdAt: "created_at",
-    isActive: "is_active",
-    managerIds: "manager_ids",
-    nextPaidAt: "next_paid_at",
-    parentId: "parent_id",
-    payFrequency: "pay_frequency",
-    updatedAt: "updated_at",
-    userIds: "user_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    managerIds: z.array(z.string()).optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    nextPaidAt: z.date().transform(v => v.toISOString()).optional(),
+    parentId: z.string().optional(),
+    payFrequency: HrisGroupPayFrequency$outboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    type: HrisGroupType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIds: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      createdAt: "created_at",
+      isActive: "is_active",
+      managerIds: "manager_ids",
+      nextPaidAt: "next_paid_at",
+      parentId: "parent_id",
+      payFrequency: "pay_frequency",
+      updatedAt: "updated_at",
+      userIds: "user_ids",
+    });
+  })
+);
 
 export function hrisGroupToJSON(hrisGroup: HrisGroup): string {
   return JSON.stringify(HrisGroup$outboundSchema.parse(hrisGroup));

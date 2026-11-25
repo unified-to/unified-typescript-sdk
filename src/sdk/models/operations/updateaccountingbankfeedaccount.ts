@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,8 +53,10 @@ export type UpdateAccountingBankfeedaccountRequest = {
 
 /** @internal */
 export const UpdateAccountingBankfeedaccountQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateAccountingBankfeedaccountQueryParamFields> = z
-    .nativeEnum(UpdateAccountingBankfeedaccountQueryParamFields);
+  z.ZodNativeEnum<typeof UpdateAccountingBankfeedaccountQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAccountingBankfeedaccountQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAccountingBankfeedaccountRequest$Outbound = {
@@ -69,20 +72,22 @@ export const UpdateAccountingBankfeedaccountRequest$outboundSchema: z.ZodType<
   UpdateAccountingBankfeedaccountRequest$Outbound,
   z.ZodTypeDef,
   UpdateAccountingBankfeedaccountRequest
-> = z.object({
-  accountingBankfeedaccount: shared.AccountingBankfeedaccount$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(
-    UpdateAccountingBankfeedaccountQueryParamFields$outboundSchema,
-  ).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingBankfeedaccount: "AccountingBankfeedaccount",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingBankfeedaccount: shared.AccountingBankfeedaccount$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(
+      UpdateAccountingBankfeedaccountQueryParamFields$outboundSchema,
+    ).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingBankfeedaccount: "AccountingBankfeedaccount",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateAccountingBankfeedaccountRequestToJSON(
   updateAccountingBankfeedaccountRequest:

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingProfitlossesQueryParamFields = {
@@ -74,8 +75,10 @@ export type ListAccountingProfitlossesRequest = {
 
 /** @internal */
 export const ListAccountingProfitlossesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingProfitlossesQueryParamFields> = z
-    .nativeEnum(ListAccountingProfitlossesQueryParamFields);
+  z.ZodNativeEnum<typeof ListAccountingProfitlossesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingProfitlossesQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingProfitlossesRequest$Outbound = {
@@ -99,31 +102,33 @@ export const ListAccountingProfitlossesRequest$outboundSchema: z.ZodType<
   ListAccountingProfitlossesRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingProfitlossesRequest
-> = z.object({
-  categoryId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAccountingProfitlossesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    categoryId: "category_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    endLt: "end_lt",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categoryId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAccountingProfitlossesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      categoryId: "category_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      endLt: "end_lt",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingProfitlossesRequestToJSON(
   listAccountingProfitlossesRequest: ListAccountingProfitlossesRequest,

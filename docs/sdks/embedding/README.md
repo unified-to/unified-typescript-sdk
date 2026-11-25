@@ -27,13 +27,13 @@ async function run() {
     genaiEmbedding: {
       content: [
         {
-          text: "Utrimque temptatio pecco demulceo.",
+          text: "Demulceo adulescens est delectatio solitudo videlicet volo.",
         },
       ],
       dimension: 423,
-      embeddings: "Est.",
-      encondingFormat: "FLOAT",
-      id: "902d5b17-867b-4d19-8b36-f1aadb8c65b7",
+      embeddings: "Venia tutis cernuus viscus officiis utilis porro utique.",
+      encodingFormat: "FLOAT",
+      id: "d2e92fcd-1ba8-45ca-8c3d-f8895d965a48",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -68,13 +68,13 @@ async function run() {
     genaiEmbedding: {
       content: [
         {
-          text: "Utrimque temptatio pecco demulceo.",
+          text: "Demulceo adulescens est delectatio solitudo videlicet volo.",
         },
       ],
       dimension: 423,
-      embeddings: "Est.",
-      encondingFormat: "FLOAT",
-      id: "902d5b17-867b-4d19-8b36-f1aadb8c65b7",
+      embeddings: "Venia tutis cernuus viscus officiis utilis porro utique.",
+      encodingFormat: "FLOAT",
+      id: "d2e92fcd-1ba8-45ca-8c3d-f8895d965a48",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",

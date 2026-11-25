@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingSalesordersQueryParamFields = {
@@ -88,8 +89,10 @@ export type ListAccountingSalesordersRequest = {
 
 /** @internal */
 export const ListAccountingSalesordersQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingSalesordersQueryParamFields> = z
-    .nativeEnum(ListAccountingSalesordersQueryParamFields);
+  z.ZodNativeEnum<typeof ListAccountingSalesordersQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingSalesordersQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingSalesordersRequest$Outbound = {
@@ -112,28 +115,30 @@ export const ListAccountingSalesordersRequest$outboundSchema: z.ZodType<
   ListAccountingSalesordersRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingSalesordersRequest
-> = z.object({
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  fields: z.array(ListAccountingSalesordersQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    fields: z.array(ListAccountingSalesordersQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingSalesordersRequestToJSON(
   listAccountingSalesordersRequest: ListAccountingSalesordersRequest,

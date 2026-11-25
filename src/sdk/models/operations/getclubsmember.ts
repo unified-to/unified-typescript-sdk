@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetClubsMemberQueryParamFields = {
@@ -46,7 +47,9 @@ export type GetClubsMemberRequest = {
 /** @internal */
 export const GetClubsMemberQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetClubsMemberQueryParamFields
-> = z.nativeEnum(GetClubsMemberQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetClubsMemberQueryParamFields)
+);
 
 /** @internal */
 export type GetClubsMemberRequest$Outbound = {
@@ -61,16 +64,18 @@ export const GetClubsMemberRequest$outboundSchema: z.ZodType<
   GetClubsMemberRequest$Outbound,
   z.ZodTypeDef,
   GetClubsMemberRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetClubsMemberQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetClubsMemberQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getClubsMemberRequestToJSON(
   getClubsMemberRequest: GetClubsMemberRequest,

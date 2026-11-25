@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetHrisDeviceQueryParamFields = {
@@ -55,7 +56,9 @@ export type GetHrisDeviceRequest = {
 /** @internal */
 export const GetHrisDeviceQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetHrisDeviceQueryParamFields
-> = z.nativeEnum(GetHrisDeviceQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetHrisDeviceQueryParamFields)
+);
 
 /** @internal */
 export type GetHrisDeviceRequest$Outbound = {
@@ -70,16 +73,18 @@ export const GetHrisDeviceRequest$outboundSchema: z.ZodType<
   GetHrisDeviceRequest$Outbound,
   z.ZodTypeDef,
   GetHrisDeviceRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetHrisDeviceQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetHrisDeviceQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getHrisDeviceRequestToJSON(
   getHrisDeviceRequest: GetHrisDeviceRequest,

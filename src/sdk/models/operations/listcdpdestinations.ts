@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCdpDestinationsQueryParamFields = {
@@ -51,9 +52,10 @@ export type ListCdpDestinationsRequest = {
 
 /** @internal */
 export const ListCdpDestinationsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCdpDestinationsQueryParamFields> = z.nativeEnum(
-    ListCdpDestinationsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListCdpDestinationsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCdpDestinationsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCdpDestinationsRequest$Outbound = {
@@ -73,23 +75,25 @@ export const ListCdpDestinationsRequest$outboundSchema: z.ZodType<
   ListCdpDestinationsRequest$Outbound,
   z.ZodTypeDef,
   ListCdpDestinationsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCdpDestinationsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCdpDestinationsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCdpDestinationsRequestToJSON(
   listCdpDestinationsRequest: ListCdpDestinationsRequest,

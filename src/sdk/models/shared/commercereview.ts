@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -93,66 +93,74 @@ export const CommerceReviewStatus$inboundSchema: z.ZodType<
   CommerceReviewStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CommerceReviewStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CommerceReviewStatus)
+);
 /** @internal */
 export const CommerceReviewStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CommerceReviewStatus
-> = openEnums.outboundSchema(CommerceReviewStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CommerceReviewStatus)
+);
 
 /** @internal */
 export const CommerceReview$inboundSchema: z.ZodType<
   CommerceReview,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  author_avatar_url: z.string().optional(),
-  author_email: z.string().optional(),
-  author_location: z.string().optional(),
-  author_name: z.string().optional(),
-  comments: z.array(CommerceReviewComment$inboundSchema).optional(),
-  content: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  helpful_votes: z.number().optional(),
-  id: z.string().optional(),
-  is_featured: z.boolean().optional(),
-  is_public: z.boolean().optional(),
-  is_verified: z.boolean().optional(),
-  item_id: z.string().optional(),
-  item_variant_id: z.string().optional(),
-  location_id: z.string().optional(),
-  media: z.array(CommerceItemMedia$inboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  status: CommerceReviewStatus$inboundSchema.optional(),
-  title: z.string().optional(),
-  unhelpful_votes: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  verified_purchase: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "author_avatar_url": "authorAvatarUrl",
-    "author_email": "authorEmail",
-    "author_location": "authorLocation",
-    "author_name": "authorName",
-    "created_at": "createdAt",
-    "helpful_votes": "helpfulVotes",
-    "is_featured": "isFeatured",
-    "is_public": "isPublic",
-    "is_verified": "isVerified",
-    "item_id": "itemId",
-    "item_variant_id": "itemVariantId",
-    "location_id": "locationId",
-    "unhelpful_votes": "unhelpfulVotes",
-    "updated_at": "updatedAt",
-    "verified_purchase": "verifiedPurchase",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    author_avatar_url: z.string().optional(),
+    author_email: z.string().optional(),
+    author_location: z.string().optional(),
+    author_name: z.string().optional(),
+    comments: z.array(CommerceReviewComment$inboundSchema).optional(),
+    content: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    helpful_votes: z.number().optional(),
+    id: z.string().optional(),
+    is_featured: z.boolean().optional(),
+    is_public: z.boolean().optional(),
+    is_verified: z.boolean().optional(),
+    item_id: z.string().optional(),
+    item_variant_id: z.string().optional(),
+    location_id: z.string().optional(),
+    media: z.array(CommerceItemMedia$inboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    status: CommerceReviewStatus$inboundSchema.optional(),
+    title: z.string().optional(),
+    unhelpful_votes: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    verified_purchase: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "author_avatar_url": "authorAvatarUrl",
+      "author_email": "authorEmail",
+      "author_location": "authorLocation",
+      "author_name": "authorName",
+      "created_at": "createdAt",
+      "helpful_votes": "helpfulVotes",
+      "is_featured": "isFeatured",
+      "is_public": "isPublic",
+      "is_verified": "isVerified",
+      "item_id": "itemId",
+      "item_variant_id": "itemVariantId",
+      "location_id": "locationId",
+      "unhelpful_votes": "unhelpfulVotes",
+      "updated_at": "updatedAt",
+      "verified_purchase": "verifiedPurchase",
+    });
+  })
+);
 /** @internal */
 export type CommerceReview$Outbound = {
   author_avatar_url?: string | undefined;
@@ -187,51 +195,53 @@ export const CommerceReview$outboundSchema: z.ZodType<
   CommerceReview$Outbound,
   z.ZodTypeDef,
   CommerceReview
-> = z.object({
-  authorAvatarUrl: z.string().optional(),
-  authorEmail: z.string().optional(),
-  authorLocation: z.string().optional(),
-  authorName: z.string().optional(),
-  comments: z.array(CommerceReviewComment$outboundSchema).optional(),
-  content: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  helpfulVotes: z.number().optional(),
-  id: z.string().optional(),
-  isFeatured: z.boolean().optional(),
-  isPublic: z.boolean().optional(),
-  isVerified: z.boolean().optional(),
-  itemId: z.string().optional(),
-  itemVariantId: z.string().optional(),
-  locationId: z.string().optional(),
-  media: z.array(CommerceItemMedia$outboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  status: CommerceReviewStatus$outboundSchema.optional(),
-  title: z.string().optional(),
-  unhelpfulVotes: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  verifiedPurchase: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    authorAvatarUrl: "author_avatar_url",
-    authorEmail: "author_email",
-    authorLocation: "author_location",
-    authorName: "author_name",
-    createdAt: "created_at",
-    helpfulVotes: "helpful_votes",
-    isFeatured: "is_featured",
-    isPublic: "is_public",
-    isVerified: "is_verified",
-    itemId: "item_id",
-    itemVariantId: "item_variant_id",
-    locationId: "location_id",
-    unhelpfulVotes: "unhelpful_votes",
-    updatedAt: "updated_at",
-    verifiedPurchase: "verified_purchase",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authorAvatarUrl: z.string().optional(),
+    authorEmail: z.string().optional(),
+    authorLocation: z.string().optional(),
+    authorName: z.string().optional(),
+    comments: z.array(CommerceReviewComment$outboundSchema).optional(),
+    content: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    helpfulVotes: z.number().optional(),
+    id: z.string().optional(),
+    isFeatured: z.boolean().optional(),
+    isPublic: z.boolean().optional(),
+    isVerified: z.boolean().optional(),
+    itemId: z.string().optional(),
+    itemVariantId: z.string().optional(),
+    locationId: z.string().optional(),
+    media: z.array(CommerceItemMedia$outboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$outboundSchema).optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    status: CommerceReviewStatus$outboundSchema.optional(),
+    title: z.string().optional(),
+    unhelpfulVotes: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    verifiedPurchase: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      authorAvatarUrl: "author_avatar_url",
+      authorEmail: "author_email",
+      authorLocation: "author_location",
+      authorName: "author_name",
+      createdAt: "created_at",
+      helpfulVotes: "helpful_votes",
+      isFeatured: "is_featured",
+      isPublic: "is_public",
+      isVerified: "is_verified",
+      itemId: "item_id",
+      itemVariantId: "item_variant_id",
+      locationId: "location_id",
+      unhelpfulVotes: "unhelpful_votes",
+      updatedAt: "updated_at",
+      verifiedPurchase: "verified_purchase",
+    });
+  })
+);
 
 export function commerceReviewToJSON(commerceReview: CommerceReview): string {
   return JSON.stringify(CommerceReview$outboundSchema.parse(commerceReview));

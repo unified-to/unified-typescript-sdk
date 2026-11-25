@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingCashflowsQueryParamFields = {
@@ -74,8 +75,10 @@ export type ListAccountingCashflowsRequest = {
 
 /** @internal */
 export const ListAccountingCashflowsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingCashflowsQueryParamFields> = z
-    .nativeEnum(ListAccountingCashflowsQueryParamFields);
+  z.ZodNativeEnum<typeof ListAccountingCashflowsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingCashflowsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingCashflowsRequest$Outbound = {
@@ -99,31 +102,33 @@ export const ListAccountingCashflowsRequest$outboundSchema: z.ZodType<
   ListAccountingCashflowsRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingCashflowsRequest
-> = z.object({
-  categoryId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAccountingCashflowsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    categoryId: "category_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    endLt: "end_lt",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categoryId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAccountingCashflowsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      categoryId: "category_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      endLt: "end_lt",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingCashflowsRequestToJSON(
   listAccountingCashflowsRequest: ListAccountingCashflowsRequest,

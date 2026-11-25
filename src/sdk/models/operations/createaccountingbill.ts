@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -69,9 +70,10 @@ export type CreateAccountingBillRequest = {
 
 /** @internal */
 export const CreateAccountingBillQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingBillQueryParamFields> = z.nativeEnum(
-    CreateAccountingBillQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateAccountingBillQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingBillQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingBillRequest$Outbound = {
@@ -86,18 +88,20 @@ export const CreateAccountingBillRequest$outboundSchema: z.ZodType<
   CreateAccountingBillRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingBillRequest
-> = z.object({
-  accountingBill: shared.AccountingBill$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAccountingBillQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingBill: "AccountingBill",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingBill: shared.AccountingBill$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAccountingBillQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingBill: "AccountingBill",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingBillRequestToJSON(
   createAccountingBillRequest: CreateAccountingBillRequest,

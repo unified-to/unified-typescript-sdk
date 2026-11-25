@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -137,59 +137,65 @@ export const Relationship$inboundSchema: z.ZodType<
   Relationship,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Relationship);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Relationship));
 
 /** @internal */
 export const HealthcareCoverageStatus$inboundSchema: z.ZodType<
   HealthcareCoverageStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareCoverageStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareCoverageStatus)
+);
 
 /** @internal */
 export const HealthcareCoverage$inboundSchema: z.ZodType<
   HealthcareCoverage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  group_identifier: z.string().optional(),
-  group_name: z.string().optional(),
-  id: z.string().optional(),
-  identifiers: z.array(HealthcareIdentifier$inboundSchema).optional(),
-  member_identifier: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  patient_id: z.string().optional(),
-  payer_name: z.string().optional(),
-  plan_name: z.string().optional(),
-  priority: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  relationship: Relationship$inboundSchema.optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HealthcareCoverageStatus$inboundSchema.optional(),
-  subscriber_name: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "group_identifier": "groupIdentifier",
-    "group_name": "groupName",
-    "member_identifier": "memberIdentifier",
-    "patient_id": "patientId",
-    "payer_name": "payerName",
-    "plan_name": "planName",
-    "start_at": "startAt",
-    "subscriber_name": "subscriberName",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    group_identifier: z.string().optional(),
+    group_name: z.string().optional(),
+    id: z.string().optional(),
+    identifiers: z.array(HealthcareIdentifier$inboundSchema).optional(),
+    member_identifier: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    patient_id: z.string().optional(),
+    payer_name: z.string().optional(),
+    plan_name: z.string().optional(),
+    priority: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    relationship: Relationship$inboundSchema.optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HealthcareCoverageStatus$inboundSchema.optional(),
+    subscriber_name: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "group_identifier": "groupIdentifier",
+      "group_name": "groupName",
+      "member_identifier": "memberIdentifier",
+      "patient_id": "patientId",
+      "payer_name": "payerName",
+      "plan_name": "planName",
+      "start_at": "startAt",
+      "subscriber_name": "subscriberName",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcareCoverageFromJSON(
   jsonString: string,

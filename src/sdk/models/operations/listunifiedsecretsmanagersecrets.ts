@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type ListUnifiedSecretsmanagerSecretsRequest = {
   /**
@@ -37,16 +38,18 @@ export const ListUnifiedSecretsmanagerSecretsRequest$outboundSchema: z.ZodType<
   ListUnifiedSecretsmanagerSecretsRequest$Outbound,
   z.ZodTypeDef,
   ListUnifiedSecretsmanagerSecretsRequest
-> = z.object({
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  query: z.string().optional(),
-  secretsmanagerId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    secretsmanagerId: "secretsmanager_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    query: z.string().optional(),
+    secretsmanagerId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      secretsmanagerId: "secretsmanager_id",
+    });
+  })
+);
 
 export function listUnifiedSecretsmanagerSecretsRequestToJSON(
   listUnifiedSecretsmanagerSecretsRequest:

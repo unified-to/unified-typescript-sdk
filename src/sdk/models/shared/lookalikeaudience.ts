@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -20,16 +20,18 @@ export const LookalikeAudience$inboundSchema: z.ZodType<
   LookalikeAudience,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string(),
-  name: z.string().optional(),
-  similarity: z.number().optional(),
-  source_audience_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "source_audience_id": "sourceAudienceId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    name: z.string().optional(),
+    similarity: z.number().optional(),
+    source_audience_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "source_audience_id": "sourceAudienceId",
+    });
+  })
+);
 /** @internal */
 export type LookalikeAudience$Outbound = {
   id: string;
@@ -43,16 +45,18 @@ export const LookalikeAudience$outboundSchema: z.ZodType<
   LookalikeAudience$Outbound,
   z.ZodTypeDef,
   LookalikeAudience
-> = z.object({
-  id: z.string(),
-  name: z.string().optional(),
-  similarity: z.number().optional(),
-  sourceAudienceId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    sourceAudienceId: "source_audience_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    name: z.string().optional(),
+    similarity: z.number().optional(),
+    sourceAudienceId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      sourceAudienceId: "source_audience_id",
+    });
+  })
+);
 
 export function lookalikeAudienceToJSON(
   lookalikeAudience: LookalikeAudience,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListMessagingMessagesQueryParamFields = {
@@ -93,9 +94,10 @@ export type ListMessagingMessagesRequest = {
 
 /** @internal */
 export const ListMessagingMessagesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListMessagingMessagesQueryParamFields> = z.nativeEnum(
-    ListMessagingMessagesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListMessagingMessagesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListMessagingMessagesQueryParamFields)
+    );
 
 /** @internal */
 export type ListMessagingMessagesRequest$Outbound = {
@@ -123,37 +125,39 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
   ListMessagingMessagesRequest$Outbound,
   z.ZodTypeDef,
   ListMessagingMessagesRequest
-> = z.object({
-  channelId: z.string().optional(),
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  expand: z.boolean().optional(),
-  fields: z.array(ListMessagingMessagesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-  userMentionedId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    channelId: "channel_id",
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    parentId: "parent_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-    userMentionedId: "user_mentioned_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    channelId: z.string().optional(),
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    expand: z.boolean().optional(),
+    fields: z.array(ListMessagingMessagesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+    userMentionedId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      channelId: "channel_id",
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      parentId: "parent_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+      userMentionedId: "user_mentioned_id",
+    });
+  })
+);
 
 export function listMessagingMessagesRequestToJSON(
   listMessagingMessagesRequest: ListMessagingMessagesRequest,

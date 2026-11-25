@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetPropertyConversationQueryParamFields = {
@@ -47,8 +48,10 @@ export type GetPropertyConversationRequest = {
 
 /** @internal */
 export const GetPropertyConversationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetPropertyConversationQueryParamFields> = z
-    .nativeEnum(GetPropertyConversationQueryParamFields);
+  z.ZodNativeEnum<typeof GetPropertyConversationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetPropertyConversationQueryParamFields)
+    );
 
 /** @internal */
 export type GetPropertyConversationRequest$Outbound = {
@@ -63,17 +66,19 @@ export const GetPropertyConversationRequest$outboundSchema: z.ZodType<
   GetPropertyConversationRequest$Outbound,
   z.ZodTypeDef,
   GetPropertyConversationRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetPropertyConversationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetPropertyConversationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getPropertyConversationRequestToJSON(
   getPropertyConversationRequest: GetPropertyConversationRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,16 +31,18 @@ export const PropertyCrmEventCall$inboundSchema: z.ZodType<
   PropertyCrmEventCall,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  description: z.string().optional(),
-  duration: z.number().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    duration: z.number().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "start_at": "startAt",
+    });
+  })
+);
 /** @internal */
 export type PropertyCrmEventCall$Outbound = {
   description?: string | undefined;
@@ -53,15 +55,17 @@ export const PropertyCrmEventCall$outboundSchema: z.ZodType<
   PropertyCrmEventCall$Outbound,
   z.ZodTypeDef,
   PropertyCrmEventCall
-> = z.object({
-  description: z.string().optional(),
-  duration: z.number().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    startAt: "start_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    duration: z.number().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      startAt: "start_at",
+    });
+  })
+);
 
 export function propertyCrmEventCallToJSON(
   propertyCrmEventCall: PropertyCrmEventCall,

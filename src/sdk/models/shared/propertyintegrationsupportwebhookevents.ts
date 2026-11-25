@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -30,14 +30,19 @@ export const PropertyIntegrationSupportWebhookEvents$inboundSchema: z.ZodType<
   PropertyIntegrationSupportWebhookEvents,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created: z.array(PropertyIntegrationSupportWebhookEventsCreated$inboundSchema)
-    .optional(),
-  deleted: z.array(PropertyIntegrationSupportWebhookEventsDeleted$inboundSchema)
-    .optional(),
-  updated: z.array(PropertyIntegrationSupportWebhookEventsUpdated$inboundSchema)
-    .optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created: z.array(
+      PropertyIntegrationSupportWebhookEventsCreated$inboundSchema,
+    ).optional(),
+    deleted: z.array(
+      PropertyIntegrationSupportWebhookEventsDeleted$inboundSchema,
+    ).optional(),
+    updated: z.array(
+      PropertyIntegrationSupportWebhookEventsUpdated$inboundSchema,
+    ).optional(),
+  })
+);
 
 export function propertyIntegrationSupportWebhookEventsFromJSON(
   jsonString: string,

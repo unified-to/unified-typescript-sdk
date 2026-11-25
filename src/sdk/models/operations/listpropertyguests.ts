@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPropertyGuestsQueryParamFields = {
@@ -62,7 +63,9 @@ export type ListPropertyGuestsRequest = {
 /** @internal */
 export const ListPropertyGuestsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListPropertyGuestsQueryParamFields
-> = z.nativeEnum(ListPropertyGuestsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListPropertyGuestsQueryParamFields)
+);
 
 /** @internal */
 export type ListPropertyGuestsRequest$Outbound = {
@@ -83,24 +86,27 @@ export const ListPropertyGuestsRequest$outboundSchema: z.ZodType<
   ListPropertyGuestsRequest$Outbound,
   z.ZodTypeDef,
   ListPropertyGuestsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPropertyGuestsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  listingId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    listingId: "listing_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPropertyGuestsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    listingId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      listingId: "listing_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPropertyGuestsRequestToJSON(
   listPropertyGuestsRequest: ListPropertyGuestsRequest,

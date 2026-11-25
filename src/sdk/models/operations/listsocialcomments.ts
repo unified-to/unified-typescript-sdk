@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListSocialCommentsQueryParamFields = {
@@ -64,7 +65,9 @@ export type ListSocialCommentsRequest = {
 /** @internal */
 export const ListSocialCommentsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListSocialCommentsQueryParamFields
-> = z.nativeEnum(ListSocialCommentsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListSocialCommentsQueryParamFields)
+);
 
 /** @internal */
 export type ListSocialCommentsRequest$Outbound = {
@@ -86,26 +89,29 @@ export const ListSocialCommentsRequest$outboundSchema: z.ZodType<
   ListSocialCommentsRequest$Outbound,
   z.ZodTypeDef,
   ListSocialCommentsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListSocialCommentsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  postId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    postId: "post_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListSocialCommentsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    postId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      postId: "post_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listSocialCommentsRequestToJSON(
   listSocialCommentsRequest: ListSocialCommentsRequest,

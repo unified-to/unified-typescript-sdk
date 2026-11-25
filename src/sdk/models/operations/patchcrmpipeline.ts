@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -46,7 +47,9 @@ export type PatchCrmPipelineRequest = {
 /** @internal */
 export const PatchCrmPipelineQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchCrmPipelineQueryParamFields
-> = z.nativeEnum(PatchCrmPipelineQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchCrmPipelineQueryParamFields)
+);
 
 /** @internal */
 export type PatchCrmPipelineRequest$Outbound = {
@@ -62,18 +65,20 @@ export const PatchCrmPipelineRequest$outboundSchema: z.ZodType<
   PatchCrmPipelineRequest$Outbound,
   z.ZodTypeDef,
   PatchCrmPipelineRequest
-> = z.object({
-  crmPipeline: shared.CrmPipeline$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchCrmPipelineQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    crmPipeline: "CrmPipeline",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    crmPipeline: shared.CrmPipeline$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchCrmPipelineQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      crmPipeline: "CrmPipeline",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchCrmPipelineRequestToJSON(
   patchCrmPipelineRequest: PatchCrmPipelineRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -87,47 +87,56 @@ export const CdpActivationStatus$inboundSchema: z.ZodType<
   CdpActivationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CdpActivationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CdpActivationStatus)
+);
 /** @internal */
 export const CdpActivationStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CdpActivationStatus
-> = openEnums.outboundSchema(CdpActivationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CdpActivationStatus)
+);
 
 /** @internal */
 export const CdpActivation$inboundSchema: z.ZodType<
   CdpActivation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  destination_id: z.string().optional(),
-  id: z.string().optional(),
-  is_enabled: z.boolean().optional(),
-  last_run_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  metadata: z.array(CdpMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  schedule: z.string().optional(),
-  segment_id: z.string().optional(),
-  source_id: z.string().optional(),
-  status: CdpActivationStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "destination_id": "destinationId",
-    "is_enabled": "isEnabled",
-    "last_run_at": "lastRunAt",
-    "segment_id": "segmentId",
-    "source_id": "sourceId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    destination_id: z.string().optional(),
+    id: z.string().optional(),
+    is_enabled: z.boolean().optional(),
+    last_run_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    metadata: z.array(CdpMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    schedule: z.string().optional(),
+    segment_id: z.string().optional(),
+    source_id: z.string().optional(),
+    status: CdpActivationStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "destination_id": "destinationId",
+      "is_enabled": "isEnabled",
+      "last_run_at": "lastRunAt",
+      "segment_id": "segmentId",
+      "source_id": "sourceId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CdpActivation$Outbound = {
   created_at?: string | undefined;
@@ -150,31 +159,33 @@ export const CdpActivation$outboundSchema: z.ZodType<
   CdpActivation$Outbound,
   z.ZodTypeDef,
   CdpActivation
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  destinationId: z.string().optional(),
-  id: z.string().optional(),
-  isEnabled: z.boolean().optional(),
-  lastRunAt: z.date().transform(v => v.toISOString()).optional(),
-  metadata: z.array(CdpMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  schedule: z.string().optional(),
-  segmentId: z.string().optional(),
-  sourceId: z.string().optional(),
-  status: CdpActivationStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    destinationId: "destination_id",
-    isEnabled: "is_enabled",
-    lastRunAt: "last_run_at",
-    segmentId: "segment_id",
-    sourceId: "source_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    destinationId: z.string().optional(),
+    id: z.string().optional(),
+    isEnabled: z.boolean().optional(),
+    lastRunAt: z.date().transform(v => v.toISOString()).optional(),
+    metadata: z.array(CdpMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    schedule: z.string().optional(),
+    segmentId: z.string().optional(),
+    sourceId: z.string().optional(),
+    status: CdpActivationStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      destinationId: "destination_id",
+      isEnabled: "is_enabled",
+      lastRunAt: "last_run_at",
+      segmentId: "segment_id",
+      sourceId: "source_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function cdpActivationToJSON(cdpActivation: CdpActivation): string {
   return JSON.stringify(CdpActivation$outboundSchema.parse(cdpActivation));

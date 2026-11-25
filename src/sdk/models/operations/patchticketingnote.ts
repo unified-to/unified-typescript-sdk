@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -45,7 +46,9 @@ export type PatchTicketingNoteRequest = {
 /** @internal */
 export const PatchTicketingNoteQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchTicketingNoteQueryParamFields
-> = z.nativeEnum(PatchTicketingNoteQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchTicketingNoteQueryParamFields)
+);
 
 /** @internal */
 export type PatchTicketingNoteRequest$Outbound = {
@@ -61,18 +64,21 @@ export const PatchTicketingNoteRequest$outboundSchema: z.ZodType<
   PatchTicketingNoteRequest$Outbound,
   z.ZodTypeDef,
   PatchTicketingNoteRequest
-> = z.object({
-  ticketingNote: shared.TicketingNote$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchTicketingNoteQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    ticketingNote: "TicketingNote",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    ticketingNote: shared.TicketingNote$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchTicketingNoteQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      ticketingNote: "TicketingNote",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchTicketingNoteRequestToJSON(
   patchTicketingNoteRequest: PatchTicketingNoteRequest,

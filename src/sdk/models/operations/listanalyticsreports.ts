@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAnalyticsReportsQueryParamFields = {
@@ -64,9 +65,10 @@ export type ListAnalyticsReportsRequest = {
 
 /** @internal */
 export const ListAnalyticsReportsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAnalyticsReportsQueryParamFields> = z.nativeEnum(
-    ListAnalyticsReportsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAnalyticsReportsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAnalyticsReportsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAnalyticsReportsRequest$Outbound = {
@@ -91,31 +93,33 @@ export const ListAnalyticsReportsRequest$outboundSchema: z.ZodType<
   ListAnalyticsReportsRequest$Outbound,
   z.ZodTypeDef,
   ListAnalyticsReportsRequest
-> = z.object({
-  connectionId: z.string(),
-  dimension: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAnalyticsReportsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  propertyId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    propertyId: "property_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    dimension: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAnalyticsReportsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    propertyId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      propertyId: "property_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAnalyticsReportsRequestToJSON(
   listAnalyticsReportsRequest: ListAnalyticsReportsRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListMartechCampaignsQueryParamFields = {
@@ -64,9 +65,10 @@ export type ListMartechCampaignsRequest = {
 
 /** @internal */
 export const ListMartechCampaignsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListMartechCampaignsQueryParamFields> = z.nativeEnum(
-    ListMartechCampaignsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListMartechCampaignsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListMartechCampaignsQueryParamFields)
+    );
 
 /** @internal */
 export type ListMartechCampaignsRequest$Outbound = {
@@ -88,27 +90,29 @@ export const ListMartechCampaignsRequest$outboundSchema: z.ZodType<
   ListMartechCampaignsRequest$Outbound,
   z.ZodTypeDef,
   ListMartechCampaignsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListMartechCampaignsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  listId: z.string().optional(),
-  memberId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    listId: "list_id",
-    memberId: "member_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListMartechCampaignsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    listId: z.string().optional(),
+    memberId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      listId: "list_id",
+      memberId: "member_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listMartechCampaignsRequestToJSON(
   listMartechCampaignsRequest: ListMartechCampaignsRequest,

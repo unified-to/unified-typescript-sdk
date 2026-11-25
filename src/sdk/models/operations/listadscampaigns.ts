@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAdsCampaignsQueryParamFields = {
@@ -86,7 +87,9 @@ export type ListAdsCampaignsRequest = {
 /** @internal */
 export const ListAdsCampaignsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAdsCampaignsQueryParamFields
-> = z.nativeEnum(ListAdsCampaignsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAdsCampaignsQueryParamFields)
+);
 
 /** @internal */
 export type ListAdsCampaignsRequest$Outbound = {
@@ -112,32 +115,34 @@ export const ListAdsCampaignsRequest$outboundSchema: z.ZodType<
   ListAdsCampaignsRequest$Outbound,
   z.ZodTypeDef,
   ListAdsCampaignsRequest
-> = z.object({
-  connectionId: z.string(),
-  effectiveStatus: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAdsCampaignsQueryParamFields$outboundSchema).optional(),
-  goal: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    effectiveStatus: "effective_status",
-    endLt: "end_lt",
-    orgId: "org_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    effectiveStatus: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAdsCampaignsQueryParamFields$outboundSchema).optional(),
+    goal: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      effectiveStatus: "effective_status",
+      endLt: "end_lt",
+      orgId: "org_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAdsCampaignsRequestToJSON(
   listAdsCampaignsRequest: ListAdsCampaignsRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListKmsPagesQueryParamFields = {
@@ -69,7 +70,9 @@ export type ListKmsPagesRequest = {
 /** @internal */
 export const ListKmsPagesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListKmsPagesQueryParamFields
-> = z.nativeEnum(ListKmsPagesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListKmsPagesQueryParamFields)
+);
 
 /** @internal */
 export type ListKmsPagesRequest$Outbound = {
@@ -92,28 +95,30 @@ export const ListKmsPagesRequest$outboundSchema: z.ZodType<
   ListKmsPagesRequest$Outbound,
   z.ZodTypeDef,
   ListKmsPagesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListKmsPagesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  spaceId: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    spaceId: "space_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListKmsPagesQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    spaceId: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      spaceId: "space_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listKmsPagesRequestToJSON(
   listKmsPagesRequest: ListKmsPagesRequest,

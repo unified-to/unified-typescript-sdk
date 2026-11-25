@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListSocialProfilesQueryParamFields = {
@@ -65,7 +66,9 @@ export type ListSocialProfilesRequest = {
 /** @internal */
 export const ListSocialProfilesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListSocialProfilesQueryParamFields
-> = z.nativeEnum(ListSocialProfilesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListSocialProfilesQueryParamFields)
+);
 
 /** @internal */
 export type ListSocialProfilesRequest$Outbound = {
@@ -86,24 +89,27 @@ export const ListSocialProfilesRequest$outboundSchema: z.ZodType<
   ListSocialProfilesRequest$Outbound,
   z.ZodTypeDef,
   ListSocialProfilesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListSocialProfilesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListSocialProfilesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listSocialProfilesRequestToJSON(
   listSocialProfilesRequest: ListSocialProfilesRequest,

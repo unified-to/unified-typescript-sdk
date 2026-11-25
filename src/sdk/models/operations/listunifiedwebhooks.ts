@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type ListUnifiedWebhooksRequest = {
   /**
@@ -57,27 +58,29 @@ export const ListUnifiedWebhooksRequest$outboundSchema: z.ZodType<
   ListUnifiedWebhooksRequest$Outbound,
   z.ZodTypeDef,
   ListUnifiedWebhooksRequest
-> = z.object({
-  connectionId: z.string().optional(),
-  createdLte: z.string().optional(),
-  env: z.string().optional(),
-  integrationType: z.string().optional(),
-  isHealthy: z.boolean().optional(),
-  limit: z.number().optional(),
-  object: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    createdLte: "created_lte",
-    integrationType: "integration_type",
-    isHealthy: "is_healthy",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string().optional(),
+    createdLte: z.string().optional(),
+    env: z.string().optional(),
+    integrationType: z.string().optional(),
+    isHealthy: z.boolean().optional(),
+    limit: z.number().optional(),
+    object: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      createdLte: "created_lte",
+      integrationType: "integration_type",
+      isHealthy: "is_healthy",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listUnifiedWebhooksRequestToJSON(
   listUnifiedWebhooksRequest: ListUnifiedWebhooksRequest,

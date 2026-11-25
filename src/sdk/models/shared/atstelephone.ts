@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -28,23 +28,29 @@ export const AtsTelephoneType$inboundSchema: z.ZodType<
   AtsTelephoneType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AtsTelephoneType)
+);
 /** @internal */
 export const AtsTelephoneType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsTelephoneType
-> = openEnums.outboundSchema(AtsTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsTelephoneType)
+);
 
 /** @internal */
 export const AtsTelephone$inboundSchema: z.ZodType<
   AtsTelephone,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  telephone: z.string(),
-  type: AtsTelephoneType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: AtsTelephoneType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type AtsTelephone$Outbound = {
   telephone: string;
@@ -56,10 +62,12 @@ export const AtsTelephone$outboundSchema: z.ZodType<
   AtsTelephone$Outbound,
   z.ZodTypeDef,
   AtsTelephone
-> = z.object({
-  telephone: z.string(),
-  type: AtsTelephoneType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: AtsTelephoneType$outboundSchema.optional(),
+  })
+);
 
 export function atsTelephoneToJSON(atsTelephone: AtsTelephone): string {
   return JSON.stringify(AtsTelephone$outboundSchema.parse(atsTelephone));

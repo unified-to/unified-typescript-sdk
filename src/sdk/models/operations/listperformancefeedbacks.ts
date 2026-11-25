@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPerformanceFeedbacksQueryParamFields = {
@@ -57,8 +58,10 @@ export type ListPerformanceFeedbacksRequest = {
 
 /** @internal */
 export const ListPerformanceFeedbacksQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListPerformanceFeedbacksQueryParamFields> = z
-    .nativeEnum(ListPerformanceFeedbacksQueryParamFields);
+  z.ZodNativeEnum<typeof ListPerformanceFeedbacksQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListPerformanceFeedbacksQueryParamFields)
+    );
 
 /** @internal */
 export type ListPerformanceFeedbacksRequest$Outbound = {
@@ -80,26 +83,28 @@ export const ListPerformanceFeedbacksRequest$outboundSchema: z.ZodType<
   ListPerformanceFeedbacksRequest$Outbound,
   z.ZodTypeDef,
   ListPerformanceFeedbacksRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPerformanceFeedbacksQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPerformanceFeedbacksQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listPerformanceFeedbacksRequestToJSON(
   listPerformanceFeedbacksRequest: ListPerformanceFeedbacksRequest,

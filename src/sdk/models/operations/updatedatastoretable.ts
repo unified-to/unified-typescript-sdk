@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,9 +48,10 @@ export type UpdateDatastoreTableRequest = {
 
 /** @internal */
 export const UpdateDatastoreTableQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateDatastoreTableQueryParamFields> = z.nativeEnum(
-    UpdateDatastoreTableQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateDatastoreTableQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateDatastoreTableQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateDatastoreTableRequest$Outbound = {
@@ -65,19 +67,21 @@ export const UpdateDatastoreTableRequest$outboundSchema: z.ZodType<
   UpdateDatastoreTableRequest$Outbound,
   z.ZodTypeDef,
   UpdateDatastoreTableRequest
-> = z.object({
-  datastoreTable: shared.DatastoreTable$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateDatastoreTableQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    datastoreTable: "DatastoreTable",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    datastoreTable: shared.DatastoreTable$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateDatastoreTableQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      datastoreTable: "DatastoreTable",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateDatastoreTableRequestToJSON(
   updateDatastoreTableRequest: UpdateDatastoreTableRequest,

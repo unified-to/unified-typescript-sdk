@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,10 +17,12 @@ export const CrmEventFormOption$inboundSchema: z.ZodType<
   CrmEventFormOption,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  label: z.string().optional(),
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    label: z.string().optional(),
+    value: z.string().optional(),
+  })
+);
 /** @internal */
 export type CrmEventFormOption$Outbound = {
   label?: string | undefined;
@@ -32,10 +34,12 @@ export const CrmEventFormOption$outboundSchema: z.ZodType<
   CrmEventFormOption$Outbound,
   z.ZodTypeDef,
   CrmEventFormOption
-> = z.object({
-  label: z.string().optional(),
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    label: z.string().optional(),
+    value: z.string().optional(),
+  })
+);
 
 export function crmEventFormOptionToJSON(
   crmEventFormOption: CrmEventFormOption,

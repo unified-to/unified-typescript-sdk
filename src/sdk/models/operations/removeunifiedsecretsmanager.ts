@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -29,9 +29,11 @@ export const RemoveUnifiedSecretsmanagerRequest$outboundSchema: z.ZodType<
   RemoveUnifiedSecretsmanagerRequest$Outbound,
   z.ZodTypeDef,
   RemoveUnifiedSecretsmanagerRequest
-> = z.object({
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+  })
+);
 
 export function removeUnifiedSecretsmanagerRequestToJSON(
   removeUnifiedSecretsmanagerRequest: RemoveUnifiedSecretsmanagerRequest,
@@ -48,13 +50,15 @@ export const RemoveUnifiedSecretsmanagerResponse$inboundSchema: z.ZodType<
   RemoveUnifiedSecretsmanagerResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+    });
+  })
+);
 
 export function removeUnifiedSecretsmanagerResponseFromJSON(
   jsonString: string,

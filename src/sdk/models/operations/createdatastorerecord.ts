@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -40,9 +41,10 @@ export type CreateDatastoreRecordRequest = {
 
 /** @internal */
 export const CreateDatastoreRecordQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateDatastoreRecordQueryParamFields> = z.nativeEnum(
-    CreateDatastoreRecordQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateDatastoreRecordQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateDatastoreRecordQueryParamFields)
+    );
 
 /** @internal */
 export type CreateDatastoreRecordRequest$Outbound = {
@@ -57,18 +59,20 @@ export const CreateDatastoreRecordRequest$outboundSchema: z.ZodType<
   CreateDatastoreRecordRequest$Outbound,
   z.ZodTypeDef,
   CreateDatastoreRecordRequest
-> = z.object({
-  datastoreRecord: shared.DatastoreRecord$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateDatastoreRecordQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    datastoreRecord: "DatastoreRecord",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    datastoreRecord: shared.DatastoreRecord$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateDatastoreRecordQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      datastoreRecord: "DatastoreRecord",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createDatastoreRecordRequestToJSON(
   createDatastoreRecordRequest: CreateDatastoreRecordRequest,

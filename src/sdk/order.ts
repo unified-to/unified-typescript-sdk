@@ -9,9 +9,15 @@ import { accountingPatchAccountingOrder } from "../funcs/accountingPatchAccounti
 import { accountingRemoveAccountingOrder } from "../funcs/accountingRemoveAccountingOrder.js";
 import { accountingUpdateAccountingOrder } from "../funcs/accountingUpdateAccountingOrder.js";
 import { orderCreateAssessmentOrder } from "../funcs/orderCreateAssessmentOrder.js";
+import { orderCreatePrintingOrder } from "../funcs/orderCreatePrintingOrder.js";
 import { orderGetAssessmentOrder } from "../funcs/orderGetAssessmentOrder.js";
+import { orderGetPrintingOrder } from "../funcs/orderGetPrintingOrder.js";
+import { orderListPrintingOrders } from "../funcs/orderListPrintingOrders.js";
 import { orderPatchAssessmentOrder } from "../funcs/orderPatchAssessmentOrder.js";
+import { orderPatchPrintingOrder } from "../funcs/orderPatchPrintingOrder.js";
+import { orderRemovePrintingOrder } from "../funcs/orderRemovePrintingOrder.js";
 import { orderUpdateAssessmentOrder } from "../funcs/orderUpdateAssessmentOrder.js";
+import { orderUpdatePrintingOrder } from "../funcs/orderUpdatePrintingOrder.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -55,6 +61,23 @@ export class Order extends ClientSDK {
   }
 
   /**
+   * Create an order
+   *
+   * @remarks
+   * Creates a PrintingOrder. Provide the unified PrintingOrder fields in the request body; they are mapped to the provider's API. Returns the created PrintingOrder.
+   */
+  async createPrintingOrder(
+    request: operations.CreatePrintingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PrintingOrder> {
+    return unwrapAsync(orderCreatePrintingOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve an order
    *
    * @remarks
@@ -91,6 +114,23 @@ export class Order extends ClientSDK {
   }
 
   /**
+   * Retrieve an order
+   *
+   * @remarks
+   * Retrieves a single PrintingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+   */
+  async getPrintingOrder(
+    request: operations.GetPrintingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PrintingOrder> {
+    return unwrapAsync(orderGetPrintingOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all orders
    *
    * @remarks
@@ -103,6 +143,23 @@ export class Order extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AccountingOrder>> {
     return unwrapAsync(accountingListAccountingOrders(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all orders
+   *
+   * @remarks
+   * Returns a list of PrintingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+   */
+  async listPrintingOrders(
+    request: operations.ListPrintingOrdersRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PrintingOrder>> {
+    return unwrapAsync(orderListPrintingOrders(
       this,
       request,
       options,
@@ -146,6 +203,23 @@ export class Order extends ClientSDK {
   }
 
   /**
+   * Update an order
+   *
+   * @remarks
+   * Updates the PrintingOrder identified by `id`. Provide the unified PrintingOrder fields to change in the request body.
+   */
+  async patchPrintingOrder(
+    request: operations.PatchPrintingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PrintingOrder> {
+    return unwrapAsync(orderPatchPrintingOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove an order
    *
    * @remarks
@@ -158,6 +232,23 @@ export class Order extends ClientSDK {
     options?: RequestOptions,
   ): Promise<operations.RemoveAccountingOrderResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove an order
+   *
+   * @remarks
+   * Deletes the PrintingOrder identified by `id`.
+   */
+  async removePrintingOrder(
+    request: operations.RemovePrintingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePrintingOrderResponse | undefined> {
+    return unwrapAsync(orderRemovePrintingOrder(
       this,
       request,
       options,
@@ -194,6 +285,23 @@ export class Order extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AssessmentOrder> {
     return unwrapAsync(orderUpdateAssessmentOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an order
+   *
+   * @remarks
+   * Updates the PrintingOrder identified by `id`. Provide the unified PrintingOrder fields to change in the request body.
+   */
+  async updatePrintingOrder(
+    request: operations.UpdatePrintingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PrintingOrder> {
+    return unwrapAsync(orderUpdatePrintingOrder(
       this,
       request,
       options,

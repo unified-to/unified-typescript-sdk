@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCommerceReservationsQueryParamFields = {
@@ -80,8 +81,10 @@ export type ListCommerceReservationsRequest = {
 
 /** @internal */
 export const ListCommerceReservationsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCommerceReservationsQueryParamFields> = z
-    .nativeEnum(ListCommerceReservationsQueryParamFields);
+  z.ZodNativeEnum<typeof ListCommerceReservationsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCommerceReservationsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCommerceReservationsRequest$Outbound = {
@@ -106,33 +109,35 @@ export const ListCommerceReservationsRequest$outboundSchema: z.ZodType<
   ListCommerceReservationsRequest$Outbound,
   z.ZodTypeDef,
   ListCommerceReservationsRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListCommerceReservationsQueryParamFields$outboundSchema)
-    .optional(),
-  itemId: z.string().optional(),
-  limit: z.number().optional(),
-  locationId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    itemId: "item_id",
-    locationId: "location_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListCommerceReservationsQueryParamFields$outboundSchema)
+      .optional(),
+    itemId: z.string().optional(),
+    limit: z.number().optional(),
+    locationId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      itemId: "item_id",
+      locationId: "location_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listCommerceReservationsRequestToJSON(
   listCommerceReservationsRequest: ListCommerceReservationsRequest,

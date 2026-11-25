@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -21,7 +21,7 @@ import {
 /**
  * Potential severity of future reactions
  */
-export const Criticality = {
+export const HealthcareAllergyCriticality = {
   Low: "LOW",
   High: "HIGH",
   UnableToAssess: "UNABLE_TO_ASSESS",
@@ -30,7 +30,9 @@ export const Criticality = {
 /**
  * Potential severity of future reactions
  */
-export type Criticality = OpenEnum<typeof Criticality>;
+export type HealthcareAllergyCriticality = OpenEnum<
+  typeof HealthcareAllergyCriticality
+>;
 
 /**
  * Clinical status of the allergy
@@ -73,7 +75,7 @@ export type HealthcareAllergy = {
   /**
    * Potential severity of future reactions
    */
-  criticality?: Criticality | undefined;
+  criticality?: HealthcareAllergyCriticality | undefined;
   /**
    * The encounter in which the allergy was recorded
    */
@@ -133,64 +135,75 @@ export type HealthcareAllergy = {
 };
 
 /** @internal */
-export const Criticality$inboundSchema: z.ZodType<
-  Criticality,
+export const HealthcareAllergyCriticality$inboundSchema: z.ZodType<
+  HealthcareAllergyCriticality,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Criticality);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareAllergyCriticality)
+);
 
 /** @internal */
 export const HealthcareAllergyStatus$inboundSchema: z.ZodType<
   HealthcareAllergyStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareAllergyStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareAllergyStatus)
+);
 
 /** @internal */
 export const HealthcareAllergyType$inboundSchema: z.ZodType<
   HealthcareAllergyType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareAllergyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareAllergyType)
+);
 
 /** @internal */
 export const HealthcareAllergy$inboundSchema: z.ZodType<
   HealthcareAllergy,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  criticality: Criticality$inboundSchema.optional(),
-  encounter_id: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  onset_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  patient_id: z.string().optional(),
-  practitioner_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reactions: z.array(HealthcareCode$inboundSchema).optional(),
-  recorded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HealthcareAllergyStatus$inboundSchema.optional(),
-  type: HealthcareAllergyType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "encounter_id": "encounterId",
-    "onset_at": "onsetAt",
-    "patient_id": "patientId",
-    "practitioner_id": "practitionerId",
-    "recorded_at": "recordedAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    criticality: HealthcareAllergyCriticality$inboundSchema.optional(),
+    encounter_id: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    onset_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    patient_id: z.string().optional(),
+    practitioner_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reactions: z.array(HealthcareCode$inboundSchema).optional(),
+    recorded_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: HealthcareAllergyStatus$inboundSchema.optional(),
+    type: HealthcareAllergyType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "encounter_id": "encounterId",
+      "onset_at": "onsetAt",
+      "patient_id": "patientId",
+      "practitioner_id": "practitionerId",
+      "recorded_at": "recordedAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcareAllergyFromJSON(
   jsonString: string,

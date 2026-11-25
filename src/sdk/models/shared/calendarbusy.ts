@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -33,20 +33,22 @@ export const CalendarBusy$inboundSchema: z.ZodType<
   CalendarBusy,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  description: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  id: z.string().optional(),
-  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
-  timezone: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    id: z.string().optional(),
+    metadata: z.array(CalendarMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
+    timezone: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "start_at": "startAt",
+    });
+  })
+);
 
 export function calendarBusyFromJSON(
   jsonString: string,

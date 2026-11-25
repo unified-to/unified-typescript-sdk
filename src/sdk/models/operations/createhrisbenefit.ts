@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -55,7 +56,9 @@ export type CreateHrisBenefitRequest = {
 /** @internal */
 export const CreateHrisBenefitQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateHrisBenefitQueryParamFields
-> = z.nativeEnum(CreateHrisBenefitQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateHrisBenefitQueryParamFields)
+);
 
 /** @internal */
 export type CreateHrisBenefitRequest$Outbound = {
@@ -70,17 +73,20 @@ export const CreateHrisBenefitRequest$outboundSchema: z.ZodType<
   CreateHrisBenefitRequest$Outbound,
   z.ZodTypeDef,
   CreateHrisBenefitRequest
-> = z.object({
-  hrisBenefit: shared.HrisBenefit$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateHrisBenefitQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisBenefit: "HrisBenefit",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisBenefit: shared.HrisBenefit$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateHrisBenefitQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisBenefit: "HrisBenefit",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createHrisBenefitRequestToJSON(
   createHrisBenefitRequest: CreateHrisBenefitRequest,

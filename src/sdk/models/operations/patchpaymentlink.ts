@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -23,6 +24,9 @@ export const PatchPaymentLinkQueryParamFields = {
   SuccessUrl: "success_url",
   Metadata: "metadata",
   Raw: "raw",
+  ContactName: "contact_name",
+  ContactEmail: "contact_email",
+  ContactPhone: "contact_phone",
 } as const;
 export type PatchPaymentLinkQueryParamFields = ClosedEnum<
   typeof PatchPaymentLinkQueryParamFields
@@ -51,7 +55,9 @@ export type PatchPaymentLinkRequest = {
 /** @internal */
 export const PatchPaymentLinkQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchPaymentLinkQueryParamFields
-> = z.nativeEnum(PatchPaymentLinkQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchPaymentLinkQueryParamFields)
+);
 
 /** @internal */
 export type PatchPaymentLinkRequest$Outbound = {
@@ -67,18 +73,20 @@ export const PatchPaymentLinkRequest$outboundSchema: z.ZodType<
   PatchPaymentLinkRequest$Outbound,
   z.ZodTypeDef,
   PatchPaymentLinkRequest
-> = z.object({
-  paymentLink: shared.PaymentLink$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchPaymentLinkQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    paymentLink: "PaymentLink",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    paymentLink: shared.PaymentLink$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchPaymentLinkQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      paymentLink: "PaymentLink",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchPaymentLinkRequestToJSON(
   patchPaymentLinkRequest: PatchPaymentLinkRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListClubsActivitiesQueryParamFields = {
@@ -97,9 +98,10 @@ export type ListClubsActivitiesRequest = {
 
 /** @internal */
 export const ListClubsActivitiesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListClubsActivitiesQueryParamFields> = z.nativeEnum(
-    ListClubsActivitiesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListClubsActivitiesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListClubsActivitiesQueryParamFields)
+    );
 
 /** @internal */
 export type ListClubsActivitiesRequest$Outbound = {
@@ -122,29 +124,31 @@ export const ListClubsActivitiesRequest$outboundSchema: z.ZodType<
   ListClubsActivitiesRequest$Outbound,
   z.ZodTypeDef,
   ListClubsActivitiesRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListClubsActivitiesQueryParamFields$outboundSchema)
-    .optional(),
-  groupId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    groupId: "group_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListClubsActivitiesQueryParamFields$outboundSchema)
+      .optional(),
+    groupId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      groupId: "group_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listClubsActivitiesRequestToJSON(
   listClubsActivitiesRequest: ListClubsActivitiesRequest,

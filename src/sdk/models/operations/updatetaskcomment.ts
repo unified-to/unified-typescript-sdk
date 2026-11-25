@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,7 +48,9 @@ export type UpdateTaskCommentRequest = {
 /** @internal */
 export const UpdateTaskCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdateTaskCommentQueryParamFields
-> = z.nativeEnum(UpdateTaskCommentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdateTaskCommentQueryParamFields)
+);
 
 /** @internal */
 export type UpdateTaskCommentRequest$Outbound = {
@@ -63,18 +66,21 @@ export const UpdateTaskCommentRequest$outboundSchema: z.ZodType<
   UpdateTaskCommentRequest$Outbound,
   z.ZodTypeDef,
   UpdateTaskCommentRequest
-> = z.object({
-  taskComment: shared.TaskComment$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateTaskCommentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    taskComment: "TaskComment",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    taskComment: shared.TaskComment$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateTaskCommentQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      taskComment: "TaskComment",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateTaskCommentRequestToJSON(
   updateTaskCommentRequest: UpdateTaskCommentRequest,

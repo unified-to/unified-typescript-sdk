@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const ShippingMetadata1$inboundSchema: z.ZodType<
   ShippingMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type ShippingMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const ShippingMetadata1$outboundSchema: z.ZodType<
   ShippingMetadata1$Outbound,
   z.ZodTypeDef,
   ShippingMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function shippingMetadata1ToJSON(
   shippingMetadata1: ShippingMetadata1,
@@ -112,12 +112,14 @@ export const ShippingMetadata5$inboundSchema: z.ZodType<
   ShippingMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => ShippingMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => ShippingMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type ShippingMetadata5$Outbound =
   | ShippingMetadata1$Outbound
@@ -130,12 +132,14 @@ export const ShippingMetadata5$outboundSchema: z.ZodType<
   ShippingMetadata5$Outbound,
   z.ZodTypeDef,
   ShippingMetadata5
-> = z.union([
-  z.lazy(() => ShippingMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => ShippingMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function shippingMetadata5ToJSON(
   shippingMetadata5: ShippingMetadata5,
@@ -159,20 +163,22 @@ export const ShippingMetadataExtraData$inboundSchema: z.ZodType<
   ShippingMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => ShippingMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => ShippingMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type ShippingMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -186,20 +192,22 @@ export const ShippingMetadataExtraData$outboundSchema: z.ZodType<
   ShippingMetadataExtraData$Outbound,
   z.ZodTypeDef,
   ShippingMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => ShippingMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => ShippingMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function shippingMetadataExtraDataToJSON(
   shippingMetadataExtraData: ShippingMetadataExtraData,
@@ -223,20 +231,24 @@ export const ShippingMetadataFormat$inboundSchema: z.ZodType<
   ShippingMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ShippingMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ShippingMetadataFormat)
+);
 /** @internal */
 export const ShippingMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ShippingMetadataFormat
-> = openEnums.outboundSchema(ShippingMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ShippingMetadataFormat)
+);
 
 /** @internal */
 export const ShippingMetadataSchemas1$inboundSchema: z.ZodType<
   ShippingMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type ShippingMetadataSchemas1$Outbound = {};
 
@@ -245,7 +257,7 @@ export const ShippingMetadataSchemas1$outboundSchema: z.ZodType<
   ShippingMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   ShippingMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function shippingMetadataSchemas1ToJSON(
   shippingMetadataSchemas1: ShippingMetadataSchemas1,
@@ -269,12 +281,14 @@ export const ShippingMetadataSchemas5$inboundSchema: z.ZodType<
   ShippingMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => ShippingMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => ShippingMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type ShippingMetadataSchemas5$Outbound =
   | ShippingMetadataSchemas1$Outbound
@@ -287,12 +301,14 @@ export const ShippingMetadataSchemas5$outboundSchema: z.ZodType<
   ShippingMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   ShippingMetadataSchemas5
-> = z.union([
-  z.lazy(() => ShippingMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => ShippingMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function shippingMetadataSchemas5ToJSON(
   shippingMetadataSchemas5: ShippingMetadataSchemas5,
@@ -316,20 +332,22 @@ export const ShippingMetadataValue$inboundSchema: z.ZodType<
   ShippingMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => ShippingMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => ShippingMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type ShippingMetadataValue$Outbound =
   | { [k: string]: any }
@@ -343,20 +361,22 @@ export const ShippingMetadataValue$outboundSchema: z.ZodType<
   ShippingMetadataValue$Outbound,
   z.ZodTypeDef,
   ShippingMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => ShippingMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => ShippingMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function shippingMetadataValueToJSON(
   shippingMetadataValue: ShippingMetadataValue,
@@ -380,44 +400,46 @@ export const ShippingMetadata$inboundSchema: z.ZodType<
   ShippingMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => ShippingMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: ShippingMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => ShippingMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => ShippingMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: ShippingMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => ShippingMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type ShippingMetadata$Outbound = {
   extra_data?:
@@ -445,44 +467,46 @@ export const ShippingMetadata$outboundSchema: z.ZodType<
   ShippingMetadata$Outbound,
   z.ZodTypeDef,
   ShippingMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => ShippingMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: ShippingMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => ShippingMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => ShippingMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: ShippingMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => ShippingMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function shippingMetadataToJSON(
   shippingMetadata: ShippingMetadata,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -140,94 +140,106 @@ export const VerificationRequestProfileGender$inboundSchema: z.ZodType<
   VerificationRequestProfileGender,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VerificationRequestProfileGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VerificationRequestProfileGender)
+);
 /** @internal */
 export const VerificationRequestProfileGender$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   VerificationRequestProfileGender
-> = openEnums.outboundSchema(VerificationRequestProfileGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(VerificationRequestProfileGender)
+);
 
 /** @internal */
 export const VerificationRequestResponseStatus$inboundSchema: z.ZodType<
   VerificationRequestResponseStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VerificationRequestResponseStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VerificationRequestResponseStatus)
+);
 /** @internal */
 export const VerificationRequestResponseStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   VerificationRequestResponseStatus
-> = openEnums.outboundSchema(VerificationRequestResponseStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(VerificationRequestResponseStatus)
+);
 
 /** @internal */
 export const VerificationRequest$inboundSchema: z.ZodType<
   VerificationRequest,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  candidate_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(VerificationMetadata$inboundSchema).optional(),
-  package_id: z.string().optional(),
-  parameters: z.array(VerificationParameterInput$inboundSchema).optional(),
-  profile_addresses: z.array(VerificationAddress$inboundSchema).optional(),
-  profile_date_of_birth: z.string().optional(),
-  profile_emails: z.array(z.string()).optional(),
-  profile_gender: VerificationRequestProfileGender$inboundSchema.optional(),
-  profile_ip_address: z.string().optional(),
-  profile_name: z.string().optional(),
-  profile_national_identifier: z.string().optional(),
-  profile_telephones: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  response_completed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  response_details: z.array(VerificationResponseDetail$inboundSchema)
-    .optional(),
-  response_download_urls: z.array(z.string()).optional(),
-  response_expires_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  response_issued_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  response_redirect_url: z.string().optional(),
-  response_score: z.number().optional(),
-  response_source: z.string().optional(),
-  response_status: VerificationRequestResponseStatus$inboundSchema.optional(),
-  target_url: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "candidate_id": "candidateId",
-    "created_at": "createdAt",
-    "package_id": "packageId",
-    "profile_addresses": "profileAddresses",
-    "profile_date_of_birth": "profileDateOfBirth",
-    "profile_emails": "profileEmails",
-    "profile_gender": "profileGender",
-    "profile_ip_address": "profileIpAddress",
-    "profile_name": "profileName",
-    "profile_national_identifier": "profileNationalIdentifier",
-    "profile_telephones": "profileTelephones",
-    "response_completed_at": "responseCompletedAt",
-    "response_details": "responseDetails",
-    "response_download_urls": "responseDownloadUrls",
-    "response_expires_at": "responseExpiresAt",
-    "response_issued_at": "responseIssuedAt",
-    "response_redirect_url": "responseRedirectUrl",
-    "response_score": "responseScore",
-    "response_source": "responseSource",
-    "response_status": "responseStatus",
-    "target_url": "targetUrl",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    candidate_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    metadata: z.array(VerificationMetadata$inboundSchema).optional(),
+    package_id: z.string().optional(),
+    parameters: z.array(VerificationParameterInput$inboundSchema).optional(),
+    profile_addresses: z.array(VerificationAddress$inboundSchema).optional(),
+    profile_date_of_birth: z.string().optional(),
+    profile_emails: z.array(z.string()).optional(),
+    profile_gender: VerificationRequestProfileGender$inboundSchema.optional(),
+    profile_ip_address: z.string().optional(),
+    profile_name: z.string().optional(),
+    profile_national_identifier: z.string().optional(),
+    profile_telephones: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    response_completed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    response_details: z.array(VerificationResponseDetail$inboundSchema)
+      .optional(),
+    response_download_urls: z.array(z.string()).optional(),
+    response_expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    response_issued_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    response_redirect_url: z.string().optional(),
+    response_score: z.number().optional(),
+    response_source: z.string().optional(),
+    response_status: VerificationRequestResponseStatus$inboundSchema.optional(),
+    target_url: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "candidate_id": "candidateId",
+      "created_at": "createdAt",
+      "package_id": "packageId",
+      "profile_addresses": "profileAddresses",
+      "profile_date_of_birth": "profileDateOfBirth",
+      "profile_emails": "profileEmails",
+      "profile_gender": "profileGender",
+      "profile_ip_address": "profileIpAddress",
+      "profile_name": "profileName",
+      "profile_national_identifier": "profileNationalIdentifier",
+      "profile_telephones": "profileTelephones",
+      "response_completed_at": "responseCompletedAt",
+      "response_details": "responseDetails",
+      "response_download_urls": "responseDownloadUrls",
+      "response_expires_at": "responseExpiresAt",
+      "response_issued_at": "responseIssuedAt",
+      "response_redirect_url": "responseRedirectUrl",
+      "response_score": "responseScore",
+      "response_source": "responseSource",
+      "response_status": "responseStatus",
+      "target_url": "targetUrl",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type VerificationRequest$Outbound = {
   candidate_id?: string | undefined;
@@ -263,60 +275,62 @@ export const VerificationRequest$outboundSchema: z.ZodType<
   VerificationRequest$Outbound,
   z.ZodTypeDef,
   VerificationRequest
-> = z.object({
-  candidateId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(VerificationMetadata$outboundSchema).optional(),
-  packageId: z.string().optional(),
-  parameters: z.array(VerificationParameterInput$outboundSchema).optional(),
-  profileAddresses: z.array(VerificationAddress$outboundSchema).optional(),
-  profileDateOfBirth: z.string().optional(),
-  profileEmails: z.array(z.string()).optional(),
-  profileGender: VerificationRequestProfileGender$outboundSchema.optional(),
-  profileIpAddress: z.string().optional(),
-  profileName: z.string().optional(),
-  profileNationalIdentifier: z.string().optional(),
-  profileTelephones: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  responseCompletedAt: z.date().transform(v => v.toISOString()).optional(),
-  responseDetails: z.array(VerificationResponseDetail$outboundSchema)
-    .optional(),
-  responseDownloadUrls: z.array(z.string()).optional(),
-  responseExpiresAt: z.date().transform(v => v.toISOString()).optional(),
-  responseIssuedAt: z.date().transform(v => v.toISOString()).optional(),
-  responseRedirectUrl: z.string().optional(),
-  responseScore: z.number().optional(),
-  responseSource: z.string().optional(),
-  responseStatus: VerificationRequestResponseStatus$outboundSchema.optional(),
-  targetUrl: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    candidateId: "candidate_id",
-    createdAt: "created_at",
-    packageId: "package_id",
-    profileAddresses: "profile_addresses",
-    profileDateOfBirth: "profile_date_of_birth",
-    profileEmails: "profile_emails",
-    profileGender: "profile_gender",
-    profileIpAddress: "profile_ip_address",
-    profileName: "profile_name",
-    profileNationalIdentifier: "profile_national_identifier",
-    profileTelephones: "profile_telephones",
-    responseCompletedAt: "response_completed_at",
-    responseDetails: "response_details",
-    responseDownloadUrls: "response_download_urls",
-    responseExpiresAt: "response_expires_at",
-    responseIssuedAt: "response_issued_at",
-    responseRedirectUrl: "response_redirect_url",
-    responseScore: "response_score",
-    responseSource: "response_source",
-    responseStatus: "response_status",
-    targetUrl: "target_url",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    candidateId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    metadata: z.array(VerificationMetadata$outboundSchema).optional(),
+    packageId: z.string().optional(),
+    parameters: z.array(VerificationParameterInput$outboundSchema).optional(),
+    profileAddresses: z.array(VerificationAddress$outboundSchema).optional(),
+    profileDateOfBirth: z.string().optional(),
+    profileEmails: z.array(z.string()).optional(),
+    profileGender: VerificationRequestProfileGender$outboundSchema.optional(),
+    profileIpAddress: z.string().optional(),
+    profileName: z.string().optional(),
+    profileNationalIdentifier: z.string().optional(),
+    profileTelephones: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    responseCompletedAt: z.date().transform(v => v.toISOString()).optional(),
+    responseDetails: z.array(VerificationResponseDetail$outboundSchema)
+      .optional(),
+    responseDownloadUrls: z.array(z.string()).optional(),
+    responseExpiresAt: z.date().transform(v => v.toISOString()).optional(),
+    responseIssuedAt: z.date().transform(v => v.toISOString()).optional(),
+    responseRedirectUrl: z.string().optional(),
+    responseScore: z.number().optional(),
+    responseSource: z.string().optional(),
+    responseStatus: VerificationRequestResponseStatus$outboundSchema.optional(),
+    targetUrl: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      candidateId: "candidate_id",
+      createdAt: "created_at",
+      packageId: "package_id",
+      profileAddresses: "profile_addresses",
+      profileDateOfBirth: "profile_date_of_birth",
+      profileEmails: "profile_emails",
+      profileGender: "profile_gender",
+      profileIpAddress: "profile_ip_address",
+      profileName: "profile_name",
+      profileNationalIdentifier: "profile_national_identifier",
+      profileTelephones: "profile_telephones",
+      responseCompletedAt: "response_completed_at",
+      responseDetails: "response_details",
+      responseDownloadUrls: "response_download_urls",
+      responseExpiresAt: "response_expires_at",
+      responseIssuedAt: "response_issued_at",
+      responseRedirectUrl: "response_redirect_url",
+      responseScore: "response_score",
+      responseSource: "response_source",
+      responseStatus: "response_status",
+      targetUrl: "target_url",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function verificationRequestToJSON(
   verificationRequest: VerificationRequest,

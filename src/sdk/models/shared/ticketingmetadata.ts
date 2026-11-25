@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -100,7 +100,7 @@ export const TicketingMetadata1$inboundSchema: z.ZodType<
   TicketingMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type TicketingMetadata1$Outbound = {};
 
@@ -109,7 +109,7 @@ export const TicketingMetadata1$outboundSchema: z.ZodType<
   TicketingMetadata1$Outbound,
   z.ZodTypeDef,
   TicketingMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function ticketingMetadata1ToJSON(
   ticketingMetadata1: TicketingMetadata1,
@@ -133,12 +133,14 @@ export const TicketingMetadata5$inboundSchema: z.ZodType<
   TicketingMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => TicketingMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => TicketingMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type TicketingMetadata5$Outbound =
   | TicketingMetadata1$Outbound
@@ -151,12 +153,14 @@ export const TicketingMetadata5$outboundSchema: z.ZodType<
   TicketingMetadata5$Outbound,
   z.ZodTypeDef,
   TicketingMetadata5
-> = z.union([
-  z.lazy(() => TicketingMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => TicketingMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function ticketingMetadata5ToJSON(
   ticketingMetadata5: TicketingMetadata5,
@@ -180,20 +184,22 @@ export const TicketingMetadataExtraData$inboundSchema: z.ZodType<
   TicketingMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => TicketingMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => TicketingMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type TicketingMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -207,20 +213,22 @@ export const TicketingMetadataExtraData$outboundSchema: z.ZodType<
   TicketingMetadataExtraData$Outbound,
   z.ZodTypeDef,
   TicketingMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => TicketingMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => TicketingMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function ticketingMetadataExtraDataToJSON(
   ticketingMetadataExtraData: TicketingMetadataExtraData,
@@ -244,20 +252,24 @@ export const TicketingMetadataFormat$inboundSchema: z.ZodType<
   TicketingMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(TicketingMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(TicketingMetadataFormat)
+);
 /** @internal */
 export const TicketingMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   TicketingMetadataFormat
-> = openEnums.outboundSchema(TicketingMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(TicketingMetadataFormat)
+);
 
 /** @internal */
 export const TicketingMetadataSchemas1$inboundSchema: z.ZodType<
   TicketingMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type TicketingMetadataSchemas1$Outbound = {};
 
@@ -266,7 +278,7 @@ export const TicketingMetadataSchemas1$outboundSchema: z.ZodType<
   TicketingMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   TicketingMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function ticketingMetadataSchemas1ToJSON(
   ticketingMetadataSchemas1: TicketingMetadataSchemas1,
@@ -290,12 +302,14 @@ export const TicketingMetadataSchemas5$inboundSchema: z.ZodType<
   TicketingMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => TicketingMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => TicketingMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type TicketingMetadataSchemas5$Outbound =
   | TicketingMetadataSchemas1$Outbound
@@ -308,12 +322,14 @@ export const TicketingMetadataSchemas5$outboundSchema: z.ZodType<
   TicketingMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   TicketingMetadataSchemas5
-> = z.union([
-  z.lazy(() => TicketingMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => TicketingMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function ticketingMetadataSchemas5ToJSON(
   ticketingMetadataSchemas5: TicketingMetadataSchemas5,
@@ -337,20 +353,22 @@ export const TicketingMetadataValue$inboundSchema: z.ZodType<
   TicketingMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => TicketingMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => TicketingMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type TicketingMetadataValue$Outbound =
   | { [k: string]: any }
@@ -364,20 +382,22 @@ export const TicketingMetadataValue$outboundSchema: z.ZodType<
   TicketingMetadataValue$Outbound,
   z.ZodTypeDef,
   TicketingMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => TicketingMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => TicketingMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function ticketingMetadataValueToJSON(
   ticketingMetadataValue: TicketingMetadataValue,
@@ -401,44 +421,46 @@ export const TicketingMetadata$inboundSchema: z.ZodType<
   TicketingMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => TicketingMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: TicketingMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => TicketingMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => TicketingMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: TicketingMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => TicketingMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type TicketingMetadata$Outbound = {
   extra_data?:
@@ -466,44 +488,46 @@ export const TicketingMetadata$outboundSchema: z.ZodType<
   TicketingMetadata$Outbound,
   z.ZodTypeDef,
   TicketingMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => TicketingMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: TicketingMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => TicketingMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => TicketingMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: TicketingMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => TicketingMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function ticketingMetadataToJSON(
   ticketingMetadata: TicketingMetadata,

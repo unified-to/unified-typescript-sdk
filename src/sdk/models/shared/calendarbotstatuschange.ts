@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -47,31 +47,38 @@ export const CalendarBotStatusChangeStatus$inboundSchema: z.ZodType<
   CalendarBotStatusChangeStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarBotStatusChangeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarBotStatusChangeStatus)
+);
 /** @internal */
 export const CalendarBotStatusChangeStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CalendarBotStatusChangeStatus
-> = openEnums.outboundSchema(CalendarBotStatusChangeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CalendarBotStatusChangeStatus)
+);
 
 /** @internal */
 export const CalendarBotStatusChange$inboundSchema: z.ZodType<
   CalendarBotStatusChange,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  changed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  message: z.string().optional(),
-  status: CalendarBotStatusChangeStatus$inboundSchema.optional(),
-  sub_code: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "changed_at": "changedAt",
-    "sub_code": "subCode",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    changed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    message: z.string().optional(),
+    status: CalendarBotStatusChangeStatus$inboundSchema.optional(),
+    sub_code: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "changed_at": "changedAt",
+      "sub_code": "subCode",
+    });
+  })
+);
 /** @internal */
 export type CalendarBotStatusChange$Outbound = {
   changed_at?: string | undefined;
@@ -85,17 +92,19 @@ export const CalendarBotStatusChange$outboundSchema: z.ZodType<
   CalendarBotStatusChange$Outbound,
   z.ZodTypeDef,
   CalendarBotStatusChange
-> = z.object({
-  changedAt: z.date().transform(v => v.toISOString()).optional(),
-  message: z.string().optional(),
-  status: CalendarBotStatusChangeStatus$outboundSchema.optional(),
-  subCode: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    changedAt: "changed_at",
-    subCode: "sub_code",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    changedAt: z.date().transform(v => v.toISOString()).optional(),
+    message: z.string().optional(),
+    status: CalendarBotStatusChangeStatus$outboundSchema.optional(),
+    subCode: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      changedAt: "changed_at",
+      subCode: "sub_code",
+    });
+  })
+);
 
 export function calendarBotStatusChangeToJSON(
   calendarBotStatusChange: CalendarBotStatusChange,

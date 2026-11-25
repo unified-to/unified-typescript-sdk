@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -36,23 +36,25 @@ export const PropertyAdsReportMetricsGroupTargetingBrandSafety$inboundSchema:
     PropertyAdsReportMetricsGroupTargetingBrandSafety,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    block_list_ids: z.array(z.string()).optional(),
-    brand_safety_content_filter_levels: z.array(z.string()).optional(),
-    excluded_content_labels: z.array(z.string()).optional(),
-    excluded_publisher_categories: z.array(z.string()).optional(),
-    publisher_visibility_categories: z.array(
-      PropertyAdsReportMetricsGroupTargetingBrandSafetyPublisherVisibilityCategories$inboundSchema,
-    ).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "block_list_ids": "blockListIds",
-      "brand_safety_content_filter_levels": "brandSafetyContentFilterLevels",
-      "excluded_content_labels": "excludedContentLabels",
-      "excluded_publisher_categories": "excludedPublisherCategories",
-      "publisher_visibility_categories": "publisherVisibilityCategories",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      block_list_ids: z.array(z.string()).optional(),
+      brand_safety_content_filter_levels: z.array(z.string()).optional(),
+      excluded_content_labels: z.array(z.string()).optional(),
+      excluded_publisher_categories: z.array(z.string()).optional(),
+      publisher_visibility_categories: z.array(
+        PropertyAdsReportMetricsGroupTargetingBrandSafetyPublisherVisibilityCategories$inboundSchema,
+      ).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "block_list_ids": "blockListIds",
+        "brand_safety_content_filter_levels": "brandSafetyContentFilterLevels",
+        "excluded_content_labels": "excludedContentLabels",
+        "excluded_publisher_categories": "excludedPublisherCategories",
+        "publisher_visibility_categories": "publisherVisibilityCategories",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsGroupTargetingBrandSafetyFromJSON(
   jsonString: string,

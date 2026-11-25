@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -57,46 +57,50 @@ export const Recommendation$inboundSchema: z.ZodType<
   Recommendation,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Recommendation);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Recommendation));
 /** @internal */
 export const Recommendation$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Recommendation
-> = openEnums.outboundSchema(Recommendation);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Recommendation));
 
 /** @internal */
 export const AtsScorecard$inboundSchema: z.ZodType<
   AtsScorecard,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  application_id: z.string().optional(),
-  candidate_id: z.string().optional(),
-  comment: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  interview_id: z.string().optional(),
-  interviewer_id: z.string().optional(),
-  job_id: z.string().optional(),
-  metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  questions: z.array(AtsScorecardQuestion$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  recommendation: Recommendation$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "application_id": "applicationId",
-    "candidate_id": "candidateId",
-    "created_at": "createdAt",
-    "interview_id": "interviewId",
-    "interviewer_id": "interviewerId",
-    "job_id": "jobId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    application_id: z.string().optional(),
+    candidate_id: z.string().optional(),
+    comment: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    interview_id: z.string().optional(),
+    interviewer_id: z.string().optional(),
+    job_id: z.string().optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    questions: z.array(AtsScorecardQuestion$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    recommendation: Recommendation$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "application_id": "applicationId",
+      "candidate_id": "candidateId",
+      "created_at": "createdAt",
+      "interview_id": "interviewId",
+      "interviewer_id": "interviewerId",
+      "job_id": "jobId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AtsScorecard$Outbound = {
   application_id?: string | undefined;
@@ -119,31 +123,33 @@ export const AtsScorecard$outboundSchema: z.ZodType<
   AtsScorecard$Outbound,
   z.ZodTypeDef,
   AtsScorecard
-> = z.object({
-  applicationId: z.string().optional(),
-  candidateId: z.string().optional(),
-  comment: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  interviewId: z.string().optional(),
-  interviewerId: z.string().optional(),
-  jobId: z.string().optional(),
-  metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  questions: z.array(AtsScorecardQuestion$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  recommendation: Recommendation$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    applicationId: "application_id",
-    candidateId: "candidate_id",
-    createdAt: "created_at",
-    interviewId: "interview_id",
-    interviewerId: "interviewer_id",
-    jobId: "job_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applicationId: z.string().optional(),
+    candidateId: z.string().optional(),
+    comment: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    interviewId: z.string().optional(),
+    interviewerId: z.string().optional(),
+    jobId: z.string().optional(),
+    metadata: z.array(AtsMetadata$outboundSchema).optional(),
+    questions: z.array(AtsScorecardQuestion$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    recommendation: Recommendation$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      applicationId: "application_id",
+      candidateId: "candidate_id",
+      createdAt: "created_at",
+      interviewId: "interview_id",
+      interviewerId: "interviewer_id",
+      jobId: "job_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function atsScorecardToJSON(atsScorecard: AtsScorecard): string {
   return JSON.stringify(AtsScorecard$outboundSchema.parse(atsScorecard));

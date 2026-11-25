@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -91,48 +91,56 @@ export const HrisTaxonomyType$inboundSchema: z.ZodType<
   HrisTaxonomyType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisTaxonomyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisTaxonomyType)
+);
 /** @internal */
 export const HrisTaxonomyType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisTaxonomyType
-> = openEnums.outboundSchema(HrisTaxonomyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisTaxonomyType)
+);
 
 /** @internal */
 export const HrisTaxonomy$inboundSchema: z.ZodType<
   HrisTaxonomy,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  alternative_names: z.array(z.string()).optional(),
-  category: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  domain: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  role_ids: z.array(z.string()).optional(),
-  subcategory: z.string().optional(),
-  type: HrisTaxonomyType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "alternative_names": "alternativeNames",
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "parent_id": "parentId",
-    "role_ids": "roleIds",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    alternative_names: z.array(z.string()).optional(),
+    category: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    domain: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    role_ids: z.array(z.string()).optional(),
+    subcategory: z.string().optional(),
+    type: HrisTaxonomyType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "alternative_names": "alternativeNames",
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "parent_id": "parentId",
+      "role_ids": "roleIds",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HrisTaxonomy$Outbound = {
   alternative_names?: Array<string> | undefined;
@@ -158,33 +166,35 @@ export const HrisTaxonomy$outboundSchema: z.ZodType<
   HrisTaxonomy$Outbound,
   z.ZodTypeDef,
   HrisTaxonomy
-> = z.object({
-  alternativeNames: z.array(z.string()).optional(),
-  category: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  domain: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  roleIds: z.array(z.string()).optional(),
-  subcategory: z.string().optional(),
-  type: HrisTaxonomyType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    alternativeNames: "alternative_names",
-    createdAt: "created_at",
-    isActive: "is_active",
-    parentId: "parent_id",
-    roleIds: "role_ids",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    alternativeNames: z.array(z.string()).optional(),
+    category: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    domain: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    roleIds: z.array(z.string()).optional(),
+    subcategory: z.string().optional(),
+    type: HrisTaxonomyType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      alternativeNames: "alternative_names",
+      createdAt: "created_at",
+      isActive: "is_active",
+      parentId: "parent_id",
+      roleIds: "role_ids",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function hrisTaxonomyToJSON(hrisTaxonomy: HrisTaxonomy): string {
   return JSON.stringify(HrisTaxonomy$outboundSchema.parse(hrisTaxonomy));

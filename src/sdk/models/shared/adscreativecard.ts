@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,18 +24,20 @@ export const AdsCreativeCard$inboundSchema: z.ZodType<
   AdsCreativeCard,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  asset_url: z.string().optional(),
-  cta: z.string().optional(),
-  description: z.string().optional(),
-  link_url: z.string().optional(),
-  title: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "asset_url": "assetUrl",
-    "link_url": "linkUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    asset_url: z.string().optional(),
+    cta: z.string().optional(),
+    description: z.string().optional(),
+    link_url: z.string().optional(),
+    title: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "asset_url": "assetUrl",
+      "link_url": "linkUrl",
+    });
+  })
+);
 /** @internal */
 export type AdsCreativeCard$Outbound = {
   asset_url?: string | undefined;
@@ -50,18 +52,20 @@ export const AdsCreativeCard$outboundSchema: z.ZodType<
   AdsCreativeCard$Outbound,
   z.ZodTypeDef,
   AdsCreativeCard
-> = z.object({
-  assetUrl: z.string().optional(),
-  cta: z.string().optional(),
-  description: z.string().optional(),
-  linkUrl: z.string().optional(),
-  title: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    assetUrl: "asset_url",
-    linkUrl: "link_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    assetUrl: z.string().optional(),
+    cta: z.string().optional(),
+    description: z.string().optional(),
+    linkUrl: z.string().optional(),
+    title: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      assetUrl: "asset_url",
+      linkUrl: "link_url",
+    });
+  })
+);
 
 export function adsCreativeCardToJSON(
   adsCreativeCard: AdsCreativeCard,

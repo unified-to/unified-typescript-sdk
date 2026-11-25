@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -51,25 +51,30 @@ export const PropertyAdsReportMetricsInsertionorderKpiType$inboundSchema:
     PropertyAdsReportMetricsInsertionorderKpiType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsInsertionorderKpiType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsInsertionorderKpiType)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsInsertionorderKpi$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsInsertionorderKpi,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  algorithm_id: z.string().optional(),
-  amount: z.number().optional(),
-  percentage: z.number().optional(),
-  string_value: z.string().optional(),
-  type: PropertyAdsReportMetricsInsertionorderKpiType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "algorithm_id": "algorithmId",
-    "string_value": "stringValue",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    algorithm_id: z.string().optional(),
+    amount: z.number().optional(),
+    percentage: z.number().optional(),
+    string_value: z.string().optional(),
+    type: PropertyAdsReportMetricsInsertionorderKpiType$inboundSchema
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "algorithm_id": "algorithmId",
+      "string_value": "stringValue",
+    });
+  })
+);
 
 export function propertyAdsReportMetricsInsertionorderKpiFromJSON(
   jsonString: string,

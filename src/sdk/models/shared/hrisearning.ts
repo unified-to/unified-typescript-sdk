@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -108,70 +108,82 @@ export const HrisEarningFrequency$inboundSchema: z.ZodType<
   HrisEarningFrequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisEarningFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisEarningFrequency)
+);
 /** @internal */
 export const HrisEarningFrequency$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisEarningFrequency
-> = openEnums.outboundSchema(HrisEarningFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisEarningFrequency)
+);
 
 /** @internal */
 export const HrisEarningStatus$inboundSchema: z.ZodType<
   HrisEarningStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisEarningStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisEarningStatus)
+);
 /** @internal */
 export const HrisEarningStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisEarningStatus
-> = openEnums.outboundSchema(HrisEarningStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisEarningStatus)
+);
 
 /** @internal */
 export const HrisEarning$inboundSchema: z.ZodType<
   HrisEarning,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  frequency: HrisEarningFrequency$inboundSchema.optional(),
-  hours: z.number().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  paycode_id: z.string().optional(),
-  payroll_id: z.string().optional(),
-  payslip_id: z.string().optional(),
-  rate_amount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HrisEarningStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "paycode_id": "paycodeId",
-    "payroll_id": "payrollId",
-    "payslip_id": "payslipId",
-    "rate_amount": "rateAmount",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    frequency: HrisEarningFrequency$inboundSchema.optional(),
+    hours: z.number().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    paycode_id: z.string().optional(),
+    payroll_id: z.string().optional(),
+    payslip_id: z.string().optional(),
+    rate_amount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HrisEarningStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "paycode_id": "paycodeId",
+      "payroll_id": "payrollId",
+      "payslip_id": "payslipId",
+      "rate_amount": "rateAmount",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type HrisEarning$Outbound = {
   amount?: number | undefined;
@@ -200,40 +212,42 @@ export const HrisEarning$outboundSchema: z.ZodType<
   HrisEarning$Outbound,
   z.ZodTypeDef,
   HrisEarning
-> = z.object({
-  amount: z.number().optional(),
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  frequency: HrisEarningFrequency$outboundSchema.optional(),
-  hours: z.number().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  paycodeId: z.string().optional(),
-  payrollId: z.string().optional(),
-  payslipId: z.string().optional(),
-  rateAmount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: HrisEarningStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    createdAt: "created_at",
-    endAt: "end_at",
-    paycodeId: "paycode_id",
-    payrollId: "payroll_id",
-    payslipId: "payslip_id",
-    rateAmount: "rate_amount",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    companyId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    frequency: HrisEarningFrequency$outboundSchema.optional(),
+    hours: z.number().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    paycodeId: z.string().optional(),
+    payrollId: z.string().optional(),
+    payslipId: z.string().optional(),
+    rateAmount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: HrisEarningStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      createdAt: "created_at",
+      endAt: "end_at",
+      paycodeId: "paycode_id",
+      payrollId: "payroll_id",
+      payslipId: "payslip_id",
+      rateAmount: "rate_amount",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function hrisEarningToJSON(hrisEarning: HrisEarning): string {
   return JSON.stringify(HrisEarning$outboundSchema.parse(hrisEarning));

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -54,8 +55,10 @@ export type UpdateCommerceReservationRequest = {
 
 /** @internal */
 export const UpdateCommerceReservationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateCommerceReservationQueryParamFields> = z
-    .nativeEnum(UpdateCommerceReservationQueryParamFields);
+  z.ZodNativeEnum<typeof UpdateCommerceReservationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateCommerceReservationQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateCommerceReservationRequest$Outbound = {
@@ -71,19 +74,21 @@ export const UpdateCommerceReservationRequest$outboundSchema: z.ZodType<
   UpdateCommerceReservationRequest$Outbound,
   z.ZodTypeDef,
   UpdateCommerceReservationRequest
-> = z.object({
-  commerceReservation: shared.CommerceReservation$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateCommerceReservationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    commerceReservation: "CommerceReservation",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    commerceReservation: shared.CommerceReservation$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateCommerceReservationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      commerceReservation: "CommerceReservation",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateCommerceReservationRequestToJSON(
   updateCommerceReservationRequest: UpdateCommerceReservationRequest,

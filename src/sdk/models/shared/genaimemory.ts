@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -71,41 +71,47 @@ export const GenaiMemoryType$inboundSchema: z.ZodType<
   GenaiMemoryType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GenaiMemoryType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(GenaiMemoryType));
 /** @internal */
 export const GenaiMemoryType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   GenaiMemoryType
-> = openEnums.outboundSchema(GenaiMemoryType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(GenaiMemoryType)
+);
 
 /** @internal */
 export const GenaiMemory$inboundSchema: z.ZodType<
   GenaiMemory,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  content: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(GenaiMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: GenaiMemoryType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_identifier: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-    "user_identifier": "userIdentifier",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(GenaiMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: GenaiMemoryType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_identifier: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+      "user_identifier": "userIdentifier",
+    });
+  })
+);
 /** @internal */
 export type GenaiMemory$Outbound = {
   content?: string | undefined;
@@ -126,26 +132,28 @@ export const GenaiMemory$outboundSchema: z.ZodType<
   GenaiMemory$Outbound,
   z.ZodTypeDef,
   GenaiMemory
-> = z.object({
-  content: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(GenaiMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: GenaiMemoryType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIdentifier: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-    userIdentifier: "user_identifier",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(GenaiMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: GenaiMemoryType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIdentifier: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+      userIdentifier: "user_identifier",
+    });
+  })
+);
 
 export function genaiMemoryToJSON(genaiMemory: GenaiMemory): string {
   return JSON.stringify(GenaiMemory$outboundSchema.parse(genaiMemory));

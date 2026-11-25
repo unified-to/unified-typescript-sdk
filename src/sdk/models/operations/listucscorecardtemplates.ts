@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListUcScorecardtemplatesQueryParamFields = {
@@ -50,8 +51,10 @@ export type ListUcScorecardtemplatesRequest = {
 
 /** @internal */
 export const ListUcScorecardtemplatesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListUcScorecardtemplatesQueryParamFields> = z
-    .nativeEnum(ListUcScorecardtemplatesQueryParamFields);
+  z.ZodNativeEnum<typeof ListUcScorecardtemplatesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListUcScorecardtemplatesQueryParamFields)
+    );
 
 /** @internal */
 export type ListUcScorecardtemplatesRequest$Outbound = {
@@ -71,23 +74,25 @@ export const ListUcScorecardtemplatesRequest$outboundSchema: z.ZodType<
   ListUcScorecardtemplatesRequest$Outbound,
   z.ZodTypeDef,
   ListUcScorecardtemplatesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListUcScorecardtemplatesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListUcScorecardtemplatesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listUcScorecardtemplatesRequestToJSON(
   listUcScorecardtemplatesRequest: ListUcScorecardtemplatesRequest,

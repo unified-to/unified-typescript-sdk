@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -50,8 +50,10 @@ export const PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType$inb
     PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType,
+    )
   );
 
 /** @internal */
@@ -60,36 +62,38 @@ export const PropertyAdsReportMetricsCampaignTargetingGeographic$inboundSchema:
     PropertyAdsReportMetricsCampaignTargetingGeographic,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    cities: z.array(CityTarget$inboundSchema).optional(),
-    countries: z.array(TargetRef$inboundSchema).optional(),
-    excluded_cities: z.array(CityTarget$inboundSchema).optional(),
-    excluded_countries: z.array(TargetRef$inboundSchema).optional(),
-    excluded_postal_codes: z.array(TargetRef$inboundSchema).optional(),
-    excluded_regions: z.array(TargetRef$inboundSchema).optional(),
-    excluded_us_dmas: z.array(TargetRef$inboundSchema).optional(),
-    location_types: z.array(
-      PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes$inboundSchema,
-    ).optional(),
-    postal_codes: z.array(TargetRef$inboundSchema).optional(),
-    presence_type:
-      PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType$inboundSchema
-        .optional(),
-    regions: z.array(TargetRef$inboundSchema).optional(),
-    us_dmas: z.array(TargetRef$inboundSchema).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "excluded_cities": "excludedCities",
-      "excluded_countries": "excludedCountries",
-      "excluded_postal_codes": "excludedPostalCodes",
-      "excluded_regions": "excludedRegions",
-      "excluded_us_dmas": "excludedUsDmas",
-      "location_types": "locationTypes",
-      "postal_codes": "postalCodes",
-      "presence_type": "presenceType",
-      "us_dmas": "usDmas",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      cities: z.array(CityTarget$inboundSchema).optional(),
+      countries: z.array(TargetRef$inboundSchema).optional(),
+      excluded_cities: z.array(CityTarget$inboundSchema).optional(),
+      excluded_countries: z.array(TargetRef$inboundSchema).optional(),
+      excluded_postal_codes: z.array(TargetRef$inboundSchema).optional(),
+      excluded_regions: z.array(TargetRef$inboundSchema).optional(),
+      excluded_us_dmas: z.array(TargetRef$inboundSchema).optional(),
+      location_types: z.array(
+        PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes$inboundSchema,
+      ).optional(),
+      postal_codes: z.array(TargetRef$inboundSchema).optional(),
+      presence_type:
+        PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType$inboundSchema
+          .optional(),
+      regions: z.array(TargetRef$inboundSchema).optional(),
+      us_dmas: z.array(TargetRef$inboundSchema).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "excluded_cities": "excludedCities",
+        "excluded_countries": "excludedCountries",
+        "excluded_postal_codes": "excludedPostalCodes",
+        "excluded_regions": "excludedRegions",
+        "excluded_us_dmas": "excludedUsDmas",
+        "location_types": "locationTypes",
+        "postal_codes": "postalCodes",
+        "presence_type": "presenceType",
+        "us_dmas": "usDmas",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsCampaignTargetingGeographicFromJSON(
   jsonString: string,

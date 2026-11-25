@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -167,71 +167,83 @@ export const ComputeTemplateGpuModel$inboundSchema: z.ZodType<
   ComputeTemplateGpuModel,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeTemplateGpuModel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeTemplateGpuModel)
+);
 /** @internal */
 export const ComputeTemplateGpuModel$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeTemplateGpuModel
-> = openEnums.outboundSchema(ComputeTemplateGpuModel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeTemplateGpuModel)
+);
 
 /** @internal */
 export const ComputeTemplateStatus$inboundSchema: z.ZodType<
   ComputeTemplateStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeTemplateStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeTemplateStatus)
+);
 /** @internal */
 export const ComputeTemplateStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeTemplateStatus
-> = openEnums.outboundSchema(ComputeTemplateStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeTemplateStatus)
+);
 
 /** @internal */
 export const ComputeTemplate$inboundSchema: z.ZodType<
   ComputeTemplate,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  aliases: z.array(z.string()).optional(),
-  cpu_count: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  disk_mb: z.number().optional(),
-  dockerfile: z.string().optional(),
-  env: z.array(ComputeEnv$inboundSchema).optional(),
-  gpu_count: z.number().optional(),
-  gpu_model: ComputeTemplateGpuModel$inboundSchema.optional(),
-  id: z.string().optional(),
-  image: z.string().optional(),
-  is_public: z.boolean().optional(),
-  last_used_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  memory_mb: z.number().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  ports: z.array(z.number()).optional(),
-  raw: z.record(z.any()).optional(),
-  start_command: z.string().optional(),
-  status: ComputeTemplateStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "cpu_count": "cpuCount",
-    "created_at": "createdAt",
-    "disk_mb": "diskMb",
-    "gpu_count": "gpuCount",
-    "gpu_model": "gpuModel",
-    "is_public": "isPublic",
-    "last_used_at": "lastUsedAt",
-    "memory_mb": "memoryMb",
-    "start_command": "startCommand",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aliases: z.array(z.string()).optional(),
+    cpu_count: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    disk_mb: z.number().optional(),
+    dockerfile: z.string().optional(),
+    env: z.array(ComputeEnv$inboundSchema).optional(),
+    gpu_count: z.number().optional(),
+    gpu_model: ComputeTemplateGpuModel$inboundSchema.optional(),
+    id: z.string().optional(),
+    image: z.string().optional(),
+    is_public: z.boolean().optional(),
+    last_used_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    memory_mb: z.number().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    ports: z.array(z.number()).optional(),
+    raw: z.record(z.any()).optional(),
+    start_command: z.string().optional(),
+    status: ComputeTemplateStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "cpu_count": "cpuCount",
+      "created_at": "createdAt",
+      "disk_mb": "diskMb",
+      "gpu_count": "gpuCount",
+      "gpu_model": "gpuModel",
+      "is_public": "isPublic",
+      "last_used_at": "lastUsedAt",
+      "memory_mb": "memoryMb",
+      "start_command": "startCommand",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type ComputeTemplate$Outbound = {
   aliases?: Array<string> | undefined;
@@ -261,41 +273,43 @@ export const ComputeTemplate$outboundSchema: z.ZodType<
   ComputeTemplate$Outbound,
   z.ZodTypeDef,
   ComputeTemplate
-> = z.object({
-  aliases: z.array(z.string()).optional(),
-  cpuCount: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  diskMb: z.number().optional(),
-  dockerfile: z.string().optional(),
-  env: z.array(ComputeEnv$outboundSchema).optional(),
-  gpuCount: z.number().optional(),
-  gpuModel: ComputeTemplateGpuModel$outboundSchema.optional(),
-  id: z.string().optional(),
-  image: z.string().optional(),
-  isPublic: z.boolean().optional(),
-  lastUsedAt: z.date().transform(v => v.toISOString()).optional(),
-  memoryMb: z.number().optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  ports: z.array(z.number()).optional(),
-  raw: z.record(z.any()).optional(),
-  startCommand: z.string().optional(),
-  status: ComputeTemplateStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cpuCount: "cpu_count",
-    createdAt: "created_at",
-    diskMb: "disk_mb",
-    gpuCount: "gpu_count",
-    gpuModel: "gpu_model",
-    isPublic: "is_public",
-    lastUsedAt: "last_used_at",
-    memoryMb: "memory_mb",
-    startCommand: "start_command",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aliases: z.array(z.string()).optional(),
+    cpuCount: z.number().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    diskMb: z.number().optional(),
+    dockerfile: z.string().optional(),
+    env: z.array(ComputeEnv$outboundSchema).optional(),
+    gpuCount: z.number().optional(),
+    gpuModel: ComputeTemplateGpuModel$outboundSchema.optional(),
+    id: z.string().optional(),
+    image: z.string().optional(),
+    isPublic: z.boolean().optional(),
+    lastUsedAt: z.date().transform(v => v.toISOString()).optional(),
+    memoryMb: z.number().optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    ports: z.array(z.number()).optional(),
+    raw: z.record(z.any()).optional(),
+    startCommand: z.string().optional(),
+    status: ComputeTemplateStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      cpuCount: "cpu_count",
+      createdAt: "created_at",
+      diskMb: "disk_mb",
+      gpuCount: "gpu_count",
+      gpuModel: "gpu_model",
+      isPublic: "is_public",
+      lastUsedAt: "last_used_at",
+      memoryMb: "memory_mb",
+      startCommand: "start_command",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function computeTemplateToJSON(
   computeTemplate: ComputeTemplate,

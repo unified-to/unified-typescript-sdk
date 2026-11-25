@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -43,23 +43,25 @@ export const PropertySocialPostMetrics$inboundSchema: z.ZodType<
   PropertySocialPostMetrics,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  bookmark_count: z.number().optional(),
-  comment_count: z.number().optional(),
-  like_count: z.number().optional(),
-  quote_count: z.number().optional(),
-  share_count: z.number().optional(),
-  view_count: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "bookmark_count": "bookmarkCount",
-    "comment_count": "commentCount",
-    "like_count": "likeCount",
-    "quote_count": "quoteCount",
-    "share_count": "shareCount",
-    "view_count": "viewCount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bookmark_count: z.number().optional(),
+    comment_count: z.number().optional(),
+    like_count: z.number().optional(),
+    quote_count: z.number().optional(),
+    share_count: z.number().optional(),
+    view_count: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "bookmark_count": "bookmarkCount",
+      "comment_count": "commentCount",
+      "like_count": "likeCount",
+      "quote_count": "quoteCount",
+      "share_count": "shareCount",
+      "view_count": "viewCount",
+    });
+  })
+);
 /** @internal */
 export type PropertySocialPostMetrics$Outbound = {
   bookmark_count?: number | undefined;
@@ -75,23 +77,25 @@ export const PropertySocialPostMetrics$outboundSchema: z.ZodType<
   PropertySocialPostMetrics$Outbound,
   z.ZodTypeDef,
   PropertySocialPostMetrics
-> = z.object({
-  bookmarkCount: z.number().optional(),
-  commentCount: z.number().optional(),
-  likeCount: z.number().optional(),
-  quoteCount: z.number().optional(),
-  shareCount: z.number().optional(),
-  viewCount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    bookmarkCount: "bookmark_count",
-    commentCount: "comment_count",
-    likeCount: "like_count",
-    quoteCount: "quote_count",
-    shareCount: "share_count",
-    viewCount: "view_count",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bookmarkCount: z.number().optional(),
+    commentCount: z.number().optional(),
+    likeCount: z.number().optional(),
+    quoteCount: z.number().optional(),
+    shareCount: z.number().optional(),
+    viewCount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      bookmarkCount: "bookmark_count",
+      commentCount: "comment_count",
+      likeCount: "like_count",
+      quoteCount: "quote_count",
+      shareCount: "share_count",
+      viewCount: "view_count",
+    });
+  })
+);
 
 export function propertySocialPostMetricsToJSON(
   propertySocialPostMetrics: PropertySocialPostMetrics,

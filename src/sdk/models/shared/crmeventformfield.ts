@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -45,25 +45,31 @@ export const CrmEventFormFieldType$inboundSchema: z.ZodType<
   CrmEventFormFieldType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CrmEventFormFieldType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CrmEventFormFieldType)
+);
 /** @internal */
 export const CrmEventFormFieldType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CrmEventFormFieldType
-> = openEnums.outboundSchema(CrmEventFormFieldType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CrmEventFormFieldType)
+);
 
 /** @internal */
 export const CrmEventFormField$inboundSchema: z.ZodType<
   CrmEventFormField,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string().optional(),
-  options: z.array(CrmEventFormOption$inboundSchema).optional(),
-  required: z.boolean().optional(),
-  type: CrmEventFormFieldType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    options: z.array(CrmEventFormOption$inboundSchema).optional(),
+    required: z.boolean().optional(),
+    type: CrmEventFormFieldType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type CrmEventFormField$Outbound = {
   name?: string | undefined;
@@ -77,12 +83,14 @@ export const CrmEventFormField$outboundSchema: z.ZodType<
   CrmEventFormField$Outbound,
   z.ZodTypeDef,
   CrmEventFormField
-> = z.object({
-  name: z.string().optional(),
-  options: z.array(CrmEventFormOption$outboundSchema).optional(),
-  required: z.boolean().optional(),
-  type: CrmEventFormFieldType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    options: z.array(CrmEventFormOption$outboundSchema).optional(),
+    required: z.boolean().optional(),
+    type: CrmEventFormFieldType$outboundSchema.optional(),
+  })
+);
 
 export function crmEventFormFieldToJSON(
   crmEventFormField: CrmEventFormField,

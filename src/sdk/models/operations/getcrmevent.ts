@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetCrmEventQueryParamFields = {
@@ -53,7 +54,9 @@ export type GetCrmEventRequest = {
 /** @internal */
 export const GetCrmEventQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetCrmEventQueryParamFields
-> = z.nativeEnum(GetCrmEventQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetCrmEventQueryParamFields)
+);
 
 /** @internal */
 export type GetCrmEventRequest$Outbound = {
@@ -68,16 +71,18 @@ export const GetCrmEventRequest$outboundSchema: z.ZodType<
   GetCrmEventRequest$Outbound,
   z.ZodTypeDef,
   GetCrmEventRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetCrmEventQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetCrmEventQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getCrmEventRequestToJSON(
   getCrmEventRequest: GetCrmEventRequest,

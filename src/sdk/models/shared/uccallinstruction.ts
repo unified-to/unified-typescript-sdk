@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -66,37 +66,43 @@ export const UcCallInstructionType$inboundSchema: z.ZodType<
   UcCallInstructionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(UcCallInstructionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(UcCallInstructionType)
+);
 /** @internal */
 export const UcCallInstructionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   UcCallInstructionType
-> = openEnums.outboundSchema(UcCallInstructionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(UcCallInstructionType)
+);
 
 /** @internal */
 export const UcCallInstruction$inboundSchema: z.ZodType<
   UcCallInstruction,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  audio_url: z.string().optional(),
-  language: z.string().optional(),
-  seconds: z.number().optional(),
-  sip_uri: z.string().optional(),
-  telephone: PropertyUcCallInstructionTelephone$inboundSchema.optional(),
-  text: z.string().optional(),
-  timeout_seconds: z.number().optional(),
-  type: UcCallInstructionType$inboundSchema,
-  user_phone: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "audio_url": "audioUrl",
-    "sip_uri": "sipUri",
-    "timeout_seconds": "timeoutSeconds",
-    "user_phone": "userPhone",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    audio_url: z.string().optional(),
+    language: z.string().optional(),
+    seconds: z.number().optional(),
+    sip_uri: z.string().optional(),
+    telephone: PropertyUcCallInstructionTelephone$inboundSchema.optional(),
+    text: z.string().optional(),
+    timeout_seconds: z.number().optional(),
+    type: UcCallInstructionType$inboundSchema,
+    user_phone: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "audio_url": "audioUrl",
+      "sip_uri": "sipUri",
+      "timeout_seconds": "timeoutSeconds",
+      "user_phone": "userPhone",
+    });
+  })
+);
 /** @internal */
 export type UcCallInstruction$Outbound = {
   audio_url?: string | undefined;
@@ -115,24 +121,26 @@ export const UcCallInstruction$outboundSchema: z.ZodType<
   UcCallInstruction$Outbound,
   z.ZodTypeDef,
   UcCallInstruction
-> = z.object({
-  audioUrl: z.string().optional(),
-  language: z.string().optional(),
-  seconds: z.number().optional(),
-  sipUri: z.string().optional(),
-  telephone: PropertyUcCallInstructionTelephone$outboundSchema.optional(),
-  text: z.string().optional(),
-  timeoutSeconds: z.number().optional(),
-  type: UcCallInstructionType$outboundSchema,
-  userPhone: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    audioUrl: "audio_url",
-    sipUri: "sip_uri",
-    timeoutSeconds: "timeout_seconds",
-    userPhone: "user_phone",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    audioUrl: z.string().optional(),
+    language: z.string().optional(),
+    seconds: z.number().optional(),
+    sipUri: z.string().optional(),
+    telephone: PropertyUcCallInstructionTelephone$outboundSchema.optional(),
+    text: z.string().optional(),
+    timeoutSeconds: z.number().optional(),
+    type: UcCallInstructionType$outboundSchema,
+    userPhone: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      audioUrl: "audio_url",
+      sipUri: "sip_uri",
+      timeoutSeconds: "timeout_seconds",
+      userPhone: "user_phone",
+    });
+  })
+);
 
 export function ucCallInstructionToJSON(
   ucCallInstruction: UcCallInstruction,

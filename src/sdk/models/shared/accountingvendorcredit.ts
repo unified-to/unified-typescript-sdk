@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -92,58 +92,66 @@ export const AccountingVendorcreditStatus$inboundSchema: z.ZodType<
   AccountingVendorcreditStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingVendorcreditStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingVendorcreditStatus)
+);
 /** @internal */
 export const AccountingVendorcreditStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingVendorcreditStatus
-> = openEnums.outboundSchema(AccountingVendorcreditStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingVendorcreditStatus)
+);
 
 /** @internal */
 export const AccountingVendorcredit$inboundSchema: z.ZodType<
   AccountingVendorcredit,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  applications: z.array(AccountingCreditApplication$inboundSchema).optional(),
-  apply_amount: z.number().optional(),
-  balance_amount: z.number().optional(),
-  bill_id: z.string().optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  organization_id: z.string().optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  status: AccountingVendorcreditStatus$inboundSchema.optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "apply_amount": "applyAmount",
-    "balance_amount": "balanceAmount",
-    "bill_id": "billId",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "due_at": "dueAt",
-    "organization_id": "organizationId",
-    "posted_at": "postedAt",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    applications: z.array(AccountingCreditApplication$inboundSchema).optional(),
+    apply_amount: z.number().optional(),
+    balance_amount: z.number().optional(),
+    bill_id: z.string().optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    organization_id: z.string().optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    raw: z.record(z.any()).optional(),
+    status: AccountingVendorcreditStatus$inboundSchema.optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "apply_amount": "applyAmount",
+      "balance_amount": "balanceAmount",
+      "bill_id": "billId",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "due_at": "dueAt",
+      "organization_id": "organizationId",
+      "posted_at": "postedAt",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingVendorcredit$Outbound = {
   account_id?: string | undefined;
@@ -172,41 +180,44 @@ export const AccountingVendorcredit$outboundSchema: z.ZodType<
   AccountingVendorcredit$Outbound,
   z.ZodTypeDef,
   AccountingVendorcredit
-> = z.object({
-  accountId: z.string().optional(),
-  applications: z.array(AccountingCreditApplication$outboundSchema).optional(),
-  applyAmount: z.number().optional(),
-  balanceAmount: z.number().optional(),
-  billId: z.string().optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  organizationId: z.string().optional(),
-  postedAt: z.date().transform(v => v.toISOString()).optional(),
-  raw: z.record(z.any()).optional(),
-  status: AccountingVendorcreditStatus$outboundSchema.optional(),
-  totalAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    applyAmount: "apply_amount",
-    balanceAmount: "balance_amount",
-    billId: "bill_id",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    dueAt: "due_at",
-    organizationId: "organization_id",
-    postedAt: "posted_at",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    applications: z.array(AccountingCreditApplication$outboundSchema)
+      .optional(),
+    applyAmount: z.number().optional(),
+    balanceAmount: z.number().optional(),
+    billId: z.string().optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    organizationId: z.string().optional(),
+    postedAt: z.date().transform(v => v.toISOString()).optional(),
+    raw: z.record(z.any()).optional(),
+    status: AccountingVendorcreditStatus$outboundSchema.optional(),
+    totalAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      applyAmount: "apply_amount",
+      balanceAmount: "balance_amount",
+      billId: "bill_id",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      dueAt: "due_at",
+      organizationId: "organization_id",
+      postedAt: "posted_at",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingVendorcreditToJSON(
   accountingVendorcredit: AccountingVendorcredit,

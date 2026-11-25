@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -56,37 +56,45 @@ export const SecretsManagerType$inboundSchema: z.ZodType<
   SecretsManagerType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SecretsManagerType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SecretsManagerType)
+);
 /** @internal */
 export const SecretsManagerType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SecretsManagerType
-> = openEnums.outboundSchema(SecretsManagerType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SecretsManagerType)
+);
 
 /** @internal */
 export const SecretsManager$inboundSchema: z.ZodType<
   SecretsManager,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  auth: z.record(z.string()),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  dcs: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  name: z.string(),
-  type: SecretsManagerType$inboundSchema,
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  workspace_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "updated_at": "updatedAt",
-    "workspace_id": "workspaceId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    auth: z.record(z.string()),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    dcs: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    name: z.string(),
+    type: SecretsManagerType$inboundSchema,
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    workspace_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "updated_at": "updatedAt",
+      "workspace_id": "workspaceId",
+    });
+  })
+);
 /** @internal */
 export type SecretsManager$Outbound = {
   auth: { [k: string]: string };
@@ -104,22 +112,24 @@ export const SecretsManager$outboundSchema: z.ZodType<
   SecretsManager$Outbound,
   z.ZodTypeDef,
   SecretsManager
-> = z.object({
-  auth: z.record(z.string()),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dcs: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  name: z.string(),
-  type: SecretsManagerType$outboundSchema,
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  workspaceId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    auth: z.record(z.string()),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dcs: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    name: z.string(),
+    type: SecretsManagerType$outboundSchema,
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    workspaceId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function secretsManagerToJSON(secretsManager: SecretsManager): string {
   return JSON.stringify(SecretsManager$outboundSchema.parse(secretsManager));

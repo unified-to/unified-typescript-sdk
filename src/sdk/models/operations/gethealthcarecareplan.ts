@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetHealthcareCareplanQueryParamFields = {
@@ -50,9 +51,10 @@ export type GetHealthcareCareplanRequest = {
 
 /** @internal */
 export const GetHealthcareCareplanQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetHealthcareCareplanQueryParamFields> = z.nativeEnum(
-    GetHealthcareCareplanQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetHealthcareCareplanQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetHealthcareCareplanQueryParamFields)
+    );
 
 /** @internal */
 export type GetHealthcareCareplanRequest$Outbound = {
@@ -67,17 +69,19 @@ export const GetHealthcareCareplanRequest$outboundSchema: z.ZodType<
   GetHealthcareCareplanRequest$Outbound,
   z.ZodTypeDef,
   GetHealthcareCareplanRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetHealthcareCareplanQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetHealthcareCareplanQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getHealthcareCareplanRequestToJSON(
   getHealthcareCareplanRequest: GetHealthcareCareplanRequest,

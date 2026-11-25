@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -33,26 +33,28 @@ export const Visibility$inboundSchema: z.ZodType<
   Visibility,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Visibility);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Visibility));
 /** @internal */
 export const Visibility$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Visibility
-> = openEnums.outboundSchema(Visibility);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Visibility));
 
 /** @internal */
 export const AccountingExtendedNote$inboundSchema: z.ZodType<
   AccountingExtendedNote,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  date: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  note: z.string().optional(),
-  user: PropertyAccountingExtendedNoteUser$inboundSchema.optional(),
-  visibility: Visibility$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    date: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    note: z.string().optional(),
+    user: PropertyAccountingExtendedNoteUser$inboundSchema.optional(),
+    visibility: Visibility$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type AccountingExtendedNote$Outbound = {
   date?: string | undefined;
@@ -66,12 +68,14 @@ export const AccountingExtendedNote$outboundSchema: z.ZodType<
   AccountingExtendedNote$Outbound,
   z.ZodTypeDef,
   AccountingExtendedNote
-> = z.object({
-  date: z.date().transform(v => v.toISOString()).optional(),
-  note: z.string().optional(),
-  user: PropertyAccountingExtendedNoteUser$outboundSchema.optional(),
-  visibility: Visibility$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    date: z.date().transform(v => v.toISOString()).optional(),
+    note: z.string().optional(),
+    user: PropertyAccountingExtendedNoteUser$outboundSchema.optional(),
+    visibility: Visibility$outboundSchema.optional(),
+  })
+);
 
 export function accountingExtendedNoteToJSON(
   accountingExtendedNote: AccountingExtendedNote,

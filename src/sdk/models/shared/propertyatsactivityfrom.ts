@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -29,24 +29,30 @@ export const PropertyAtsActivityFromType$inboundSchema: z.ZodType<
   PropertyAtsActivityFromType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAtsActivityFromType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAtsActivityFromType)
+);
 /** @internal */
 export const PropertyAtsActivityFromType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyAtsActivityFromType
-> = openEnums.outboundSchema(PropertyAtsActivityFromType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyAtsActivityFromType)
+);
 
 /** @internal */
 export const PropertyAtsActivityFrom$inboundSchema: z.ZodType<
   PropertyAtsActivityFrom,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string(),
-  name: z.string().optional(),
-  type: PropertyAtsActivityFromType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    name: z.string().optional(),
+    type: PropertyAtsActivityFromType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type PropertyAtsActivityFrom$Outbound = {
   email: string;
@@ -59,11 +65,13 @@ export const PropertyAtsActivityFrom$outboundSchema: z.ZodType<
   PropertyAtsActivityFrom$Outbound,
   z.ZodTypeDef,
   PropertyAtsActivityFrom
-> = z.object({
-  email: z.string(),
-  name: z.string().optional(),
-  type: PropertyAtsActivityFromType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    name: z.string().optional(),
+    type: PropertyAtsActivityFromType$outboundSchema.optional(),
+  })
+);
 
 export function propertyAtsActivityFromToJSON(
   propertyAtsActivityFrom: PropertyAtsActivityFrom,

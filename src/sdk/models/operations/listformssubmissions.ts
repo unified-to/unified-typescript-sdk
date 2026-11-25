@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListFormsSubmissionsQueryParamFields = {
@@ -54,9 +55,10 @@ export type ListFormsSubmissionsRequest = {
 
 /** @internal */
 export const ListFormsSubmissionsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListFormsSubmissionsQueryParamFields> = z.nativeEnum(
-    ListFormsSubmissionsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListFormsSubmissionsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListFormsSubmissionsQueryParamFields)
+    );
 
 /** @internal */
 export type ListFormsSubmissionsRequest$Outbound = {
@@ -77,25 +79,27 @@ export const ListFormsSubmissionsRequest$outboundSchema: z.ZodType<
   ListFormsSubmissionsRequest$Outbound,
   z.ZodTypeDef,
   ListFormsSubmissionsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListFormsSubmissionsQueryParamFields$outboundSchema)
-    .optional(),
-  formId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    formId: "form_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListFormsSubmissionsQueryParamFields$outboundSchema)
+      .optional(),
+    formId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      formId: "form_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listFormsSubmissionsRequestToJSON(
   listFormsSubmissionsRequest: ListFormsSubmissionsRequest,

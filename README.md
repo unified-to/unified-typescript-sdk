@@ -104,21 +104,21 @@ async function run() {
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
       currency: "CAD",
       customerDefinedCode: "6170",
-      description: "Voluptatibus valde spoliatio.",
-      id: "61e870bc-37ba-402b-a902-0be740fb279f",
+      description: "Comedo vilitas harum cupiditate animus quo iste.",
+      id: "ad4ddbeb-fdc1-40da-8901-e45cc8f52e33",
       isPayable: false,
       metadata: [],
-      name: "Auto Loan Account",
+      name: "Savings Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vilitas",
+          originalType: "peccatus",
           type: "SUBGROUP",
-          value: "comedo",
+          value: "vesper",
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-14T12:47:06.571Z"),
+      updatedAt: new Date("2023-08-16T00:36:59.687Z"),
     },
     connectionId: "<id>",
   });
@@ -150,21 +150,21 @@ async function run() {
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
       currency: "CAD",
       customerDefinedCode: "6170",
-      description: "Voluptatibus valde spoliatio.",
-      id: "61e870bc-37ba-402b-a902-0be740fb279f",
+      description: "Comedo vilitas harum cupiditate animus quo iste.",
+      id: "ad4ddbeb-fdc1-40da-8901-e45cc8f52e33",
       isPayable: false,
       metadata: [],
-      name: "Auto Loan Account",
+      name: "Savings Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vilitas",
+          originalType: "peccatus",
           type: "SUBGROUP",
-          value: "comedo",
+          value: "vesper",
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-14T12:47:06.571Z"),
+      updatedAt: new Date("2023-08-16T00:36:59.687Z"),
     },
     connectionId: "<id>",
   });
@@ -262,21 +262,21 @@ async function run() {
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
       currency: "CAD",
       customerDefinedCode: "6170",
-      description: "Voluptatibus valde spoliatio.",
-      id: "61e870bc-37ba-402b-a902-0be740fb279f",
+      description: "Comedo vilitas harum cupiditate animus quo iste.",
+      id: "ad4ddbeb-fdc1-40da-8901-e45cc8f52e33",
       isPayable: false,
       metadata: [],
-      name: "Auto Loan Account",
+      name: "Savings Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vilitas",
+          originalType: "peccatus",
           type: "SUBGROUP",
-          value: "comedo",
+          value: "vesper",
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-14T12:47:06.571Z"),
+      updatedAt: new Date("2023-08-16T00:36:59.687Z"),
     },
     connectionId: "<id>",
   });
@@ -324,21 +324,21 @@ async function run() {
         createdAt: new Date("2022-07-03T17:57:07.391Z"),
         currency: "CAD",
         customerDefinedCode: "6170",
-        description: "Voluptatibus valde spoliatio.",
-        id: "61e870bc-37ba-402b-a902-0be740fb279f",
+        description: "Comedo vilitas harum cupiditate animus quo iste.",
+        id: "ad4ddbeb-fdc1-40da-8901-e45cc8f52e33",
         isPayable: false,
         metadata: [],
-        name: "Auto Loan Account",
+        name: "Savings Account",
         status: "ARCHIVED",
         taxonomy: [
           {
-            originalType: "vilitas",
+            originalType: "peccatus",
             type: "SUBGROUP",
-            value: "comedo",
+            value: "vesper",
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-14T12:47:06.571Z"),
+        updatedAt: new Date("2023-08-16T00:36:59.687Z"),
       },
       connectionId: "<id>",
     });
@@ -384,6 +384,26 @@ run();
 ## Requirements
 
 For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
+
+### Lazy operation loading in Node.js
+
+The `/node` entry point and its lazy SDK classes are generated for every SDK. No `gen.yaml` flag is needed; Node.js applications opt in to loading operation functions on first use by changing their import:
+
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk/node";
+
+const sdk = new UnifiedTo();
+```
+
+The `/node` entry point keeps the same method signatures, pagination behaviour, and response helpers. Operation modules load through dynamic imports when a method is called. Models and error classes are shared with the standard entry points, rather than bundled into separate copies.
+
+The standard package entry point and SDK subpaths retain their static imports. Keep using those entry points in browser bundles, including IIFE and UMD builds, to avoid dynamic-import chunks. Custom root exports may still load additional modules.
+
+The Node SDK classes live in `src/sdk/*.lazy.ts`. Custom code regions in the standard SDK classes are not copied to these classes; apply any required customisations to their separate regions. Accept-header enums have the same values, but their enum objects are specific to each entry point.
+
+Generated model schemas are constructed synchronously and cached on first use with either entry point. Importing a model does not construct its schema; parsing or inspecting a schema does. This does not require changing the configured Zod version.
+
+`Object.freeze`, `Object.seal`, and `Object.preventExtensions` construct the schema and apply to the cached Zod object. Zod's own restrictions on frozen schemas still apply, including methods that install properties on first access.
 <!-- End Requirements [requirements] -->
 
 <!-- Start File uploads [file-upload] -->
@@ -445,21 +465,21 @@ async function run() {
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
       currency: "CAD",
       customerDefinedCode: "6170",
-      description: "Voluptatibus valde spoliatio.",
-      id: "61e870bc-37ba-402b-a902-0be740fb279f",
+      description: "Comedo vilitas harum cupiditate animus quo iste.",
+      id: "ad4ddbeb-fdc1-40da-8901-e45cc8f52e33",
       isPayable: false,
       metadata: [],
-      name: "Auto Loan Account",
+      name: "Savings Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vilitas",
+          originalType: "peccatus",
           type: "SUBGROUP",
-          value: "comedo",
+          value: "vesper",
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-14T12:47:06.571Z"),
+      updatedAt: new Date("2023-08-16T00:36:59.687Z"),
     },
     connectionId: "<id>",
   }, {
@@ -509,21 +529,21 @@ async function run() {
       createdAt: new Date("2022-07-03T17:57:07.391Z"),
       currency: "CAD",
       customerDefinedCode: "6170",
-      description: "Voluptatibus valde spoliatio.",
-      id: "61e870bc-37ba-402b-a902-0be740fb279f",
+      description: "Comedo vilitas harum cupiditate animus quo iste.",
+      id: "ad4ddbeb-fdc1-40da-8901-e45cc8f52e33",
       isPayable: false,
       metadata: [],
-      name: "Auto Loan Account",
+      name: "Savings Account",
       status: "ARCHIVED",
       taxonomy: [
         {
-          originalType: "vilitas",
+          originalType: "peccatus",
           type: "SUBGROUP",
-          value: "comedo",
+          value: "vesper",
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-14T12:47:06.571Z"),
+      updatedAt: new Date("2023-08-16T00:36:59.687Z"),
     },
     connectionId: "<id>",
   });
@@ -962,6 +982,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`analyticsUpdateAnalyticsProperty`](docs/sdks/property/README.md#updateanalyticsproperty) - Update a property
 - [`analyticsUpdateAnalyticsVisitor`](docs/sdks/analytics/README.md#updateanalyticsvisitor) - Update a visitor
 - [`analyticsUpdateAnalyticsVisitor`](docs/sdks/visitor/README.md#updateanalyticsvisitor) - Update a visitor
+- [`appointmentCreateHealthcareAppointment`](docs/sdks/appointment/README.md#createhealthcareappointment) - Create an appointment
+- [`appointmentCreateHealthcareAppointment`](docs/sdks/healthcare/README.md#createhealthcareappointment) - Create an appointment
+- [`appointmentGetHealthcareAppointment`](docs/sdks/appointment/README.md#gethealthcareappointment) - Retrieve an appointment
+- [`appointmentGetHealthcareAppointment`](docs/sdks/healthcare/README.md#gethealthcareappointment) - Retrieve an appointment
+- [`appointmentListHealthcareAppointments`](docs/sdks/appointment/README.md#listhealthcareappointments) - List all appointments
+- [`appointmentListHealthcareAppointments`](docs/sdks/healthcare/README.md#listhealthcareappointments) - List all appointments
+- [`appointmentPatchHealthcareAppointment`](docs/sdks/appointment/README.md#patchhealthcareappointment) - Update an appointment
+- [`appointmentPatchHealthcareAppointment`](docs/sdks/healthcare/README.md#patchhealthcareappointment) - Update an appointment
+- [`appointmentRemoveHealthcareAppointment`](docs/sdks/appointment/README.md#removehealthcareappointment) - Remove an appointment
+- [`appointmentRemoveHealthcareAppointment`](docs/sdks/healthcare/README.md#removehealthcareappointment) - Remove an appointment
+- [`appointmentUpdateHealthcareAppointment`](docs/sdks/appointment/README.md#updatehealthcareappointment) - Update an appointment
+- [`appointmentUpdateHealthcareAppointment`](docs/sdks/healthcare/README.md#updatehealthcareappointment) - Update an appointment
 - [`assessmentCreateAssessmentPackage`](docs/sdks/assessment/README.md#createassessmentpackage) - Create an assessment package
 - [`assessmentCreateAssessmentPackage`](docs/sdks/package/README.md#createassessmentpackage) - Create an assessment package
 - [`assessmentGetAssessmentPackage`](docs/sdks/assessment/README.md#getassessmentpackage) - Get an assessment package
@@ -1488,6 +1520,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`computeUpdateComputeTemplate`](docs/sdks/template/README.md#updatecomputetemplate) - Update a template
 - [`computeUpdateComputeVolume`](docs/sdks/compute/README.md#updatecomputevolume) - Update a volume
 - [`computeUpdateComputeVolume`](docs/sdks/volume/README.md#updatecomputevolume) - Update a volume
+- [`conditionGetHealthcareCondition`](docs/sdks/condition/README.md#gethealthcarecondition) - Retrieve a condition
+- [`conditionGetHealthcareCondition`](docs/sdks/healthcare/README.md#gethealthcarecondition) - Retrieve a condition
+- [`conditionListHealthcareConditions`](docs/sdks/condition/README.md#listhealthcareconditions) - List all conditions
+- [`conditionListHealthcareConditions`](docs/sdks/healthcare/README.md#listhealthcareconditions) - List all conditions
 - [`contactCreateCrmContact`](docs/sdks/contact/README.md#createcrmcontact) - Create a contact
 - [`contactCreateCrmContact`](docs/sdks/crm/README.md#createcrmcontact) - Create a contact
 - [`contactCreateUcContact`](docs/sdks/contact/README.md#createuccontact) - Create a contact
@@ -1576,6 +1612,78 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`datastoreUpdateDatastoreDatabase`](docs/sdks/datastore/README.md#updatedatastoredatabase) - Update a database
 - [`datastoreUpdateDatastoreRecord`](docs/sdks/datastore/README.md#updatedatastorerecord) - Update a record
 - [`datastoreUpdateDatastoreRecord`](docs/sdks/record/README.md#updatedatastorerecord) - Update a record
+- [`dmsCreateDmsAppointment`](docs/sdks/appointment/README.md#createdmsappointment) - Create an appointment
+- [`dmsCreateDmsAppointment`](docs/sdks/dms/README.md#createdmsappointment) - Create an appointment
+- [`dmsCreateDmsOpcode`](docs/sdks/dms/README.md#createdmsopcode) - Create an opcode
+- [`dmsCreateDmsOpcode`](docs/sdks/opcode/README.md#createdmsopcode) - Create an opcode
+- [`dmsCreateDmsPart`](docs/sdks/dms/README.md#createdmspart) - Create a part
+- [`dmsCreateDmsPart`](docs/sdks/part/README.md#createdmspart) - Create a part
+- [`dmsCreateDmsPartsale`](docs/sdks/dms/README.md#createdmspartsale) - Create a partsale
+- [`dmsCreateDmsPartsale`](docs/sdks/partsale/README.md#createdmspartsale) - Create a partsale
+- [`dmsCreateDmsRepairorder`](docs/sdks/dms/README.md#createdmsrepairorder) - Create a repairorder
+- [`dmsCreateDmsRepairorder`](docs/sdks/repairorder/README.md#createdmsrepairorder) - Create a repairorder
+- [`dmsCreateDmsVehicle`](docs/sdks/dms/README.md#createdmsvehicle) - Create a vehicle
+- [`dmsCreateDmsVehicle`](docs/sdks/vehicle/README.md#createdmsvehicle) - Create a vehicle
+- [`dmsCreateDmsVehiclesale`](docs/sdks/dms/README.md#createdmsvehiclesale) - Create a vehiclesale
+- [`dmsCreateDmsVehiclesale`](docs/sdks/vehiclesale/README.md#createdmsvehiclesale) - Create a vehiclesale
+- [`dmsGetDmsAppointment`](docs/sdks/appointment/README.md#getdmsappointment) - Retrieve an appointment
+- [`dmsGetDmsAppointment`](docs/sdks/dms/README.md#getdmsappointment) - Retrieve an appointment
+- [`dmsGetDmsOpcode`](docs/sdks/dms/README.md#getdmsopcode) - Retrieve an opcode
+- [`dmsGetDmsOpcode`](docs/sdks/opcode/README.md#getdmsopcode) - Retrieve an opcode
+- [`dmsGetDmsPart`](docs/sdks/dms/README.md#getdmspart) - Retrieve a part
+- [`dmsGetDmsPart`](docs/sdks/part/README.md#getdmspart) - Retrieve a part
+- [`dmsGetDmsPartsale`](docs/sdks/dms/README.md#getdmspartsale) - Retrieve a partsale
+- [`dmsGetDmsPartsale`](docs/sdks/partsale/README.md#getdmspartsale) - Retrieve a partsale
+- [`dmsGetDmsRepairorder`](docs/sdks/dms/README.md#getdmsrepairorder) - Retrieve a repairorder
+- [`dmsGetDmsRepairorder`](docs/sdks/repairorder/README.md#getdmsrepairorder) - Retrieve a repairorder
+- [`dmsGetDmsVehicle`](docs/sdks/dms/README.md#getdmsvehicle) - Retrieve a vehicle
+- [`dmsGetDmsVehicle`](docs/sdks/vehicle/README.md#getdmsvehicle) - Retrieve a vehicle
+- [`dmsGetDmsVehiclesale`](docs/sdks/dms/README.md#getdmsvehiclesale) - Retrieve a vehiclesale
+- [`dmsGetDmsVehiclesale`](docs/sdks/vehiclesale/README.md#getdmsvehiclesale) - Retrieve a vehiclesale
+- [`dmsListDmsAppointments`](docs/sdks/appointment/README.md#listdmsappointments) - List all appointments
+- [`dmsListDmsAppointments`](docs/sdks/dms/README.md#listdmsappointments) - List all appointments
+- [`dmsListDmsOpcodes`](docs/sdks/dms/README.md#listdmsopcodes) - List all opcodes
+- [`dmsListDmsOpcodes`](docs/sdks/opcode/README.md#listdmsopcodes) - List all opcodes
+- [`dmsListDmsParts`](docs/sdks/dms/README.md#listdmsparts) - List all parts
+- [`dmsListDmsParts`](docs/sdks/part/README.md#listdmsparts) - List all parts
+- [`dmsListDmsPartsales`](docs/sdks/dms/README.md#listdmspartsales) - List all partsales
+- [`dmsListDmsPartsales`](docs/sdks/partsale/README.md#listdmspartsales) - List all partsales
+- [`dmsListDmsRepairorders`](docs/sdks/dms/README.md#listdmsrepairorders) - List all repairorders
+- [`dmsListDmsRepairorders`](docs/sdks/repairorder/README.md#listdmsrepairorders) - List all repairorders
+- [`dmsListDmsVehicles`](docs/sdks/dms/README.md#listdmsvehicles) - List all vehicles
+- [`dmsListDmsVehicles`](docs/sdks/vehicle/README.md#listdmsvehicles) - List all vehicles
+- [`dmsListDmsVehiclesales`](docs/sdks/dms/README.md#listdmsvehiclesales) - List all vehiclesales
+- [`dmsListDmsVehiclesales`](docs/sdks/vehiclesale/README.md#listdmsvehiclesales) - List all vehiclesales
+- [`dmsPatchDmsAppointment`](docs/sdks/appointment/README.md#patchdmsappointment) - Update an appointment
+- [`dmsPatchDmsAppointment`](docs/sdks/dms/README.md#patchdmsappointment) - Update an appointment
+- [`dmsPatchDmsOpcode`](docs/sdks/dms/README.md#patchdmsopcode) - Update an opcode
+- [`dmsPatchDmsOpcode`](docs/sdks/opcode/README.md#patchdmsopcode) - Update an opcode
+- [`dmsPatchDmsPart`](docs/sdks/dms/README.md#patchdmspart) - Update a part
+- [`dmsPatchDmsPart`](docs/sdks/part/README.md#patchdmspart) - Update a part
+- [`dmsPatchDmsPartsale`](docs/sdks/dms/README.md#patchdmspartsale) - Update a partsale
+- [`dmsPatchDmsPartsale`](docs/sdks/partsale/README.md#patchdmspartsale) - Update a partsale
+- [`dmsPatchDmsRepairorder`](docs/sdks/dms/README.md#patchdmsrepairorder) - Update a repairorder
+- [`dmsPatchDmsRepairorder`](docs/sdks/repairorder/README.md#patchdmsrepairorder) - Update a repairorder
+- [`dmsPatchDmsVehicle`](docs/sdks/dms/README.md#patchdmsvehicle) - Update a vehicle
+- [`dmsPatchDmsVehicle`](docs/sdks/vehicle/README.md#patchdmsvehicle) - Update a vehicle
+- [`dmsPatchDmsVehiclesale`](docs/sdks/dms/README.md#patchdmsvehiclesale) - Update a vehiclesale
+- [`dmsPatchDmsVehiclesale`](docs/sdks/vehiclesale/README.md#patchdmsvehiclesale) - Update a vehiclesale
+- [`dmsRemoveDmsAppointment`](docs/sdks/appointment/README.md#removedmsappointment) - Remove an appointment
+- [`dmsRemoveDmsAppointment`](docs/sdks/dms/README.md#removedmsappointment) - Remove an appointment
+- [`dmsUpdateDmsAppointment`](docs/sdks/appointment/README.md#updatedmsappointment) - Update an appointment
+- [`dmsUpdateDmsAppointment`](docs/sdks/dms/README.md#updatedmsappointment) - Update an appointment
+- [`dmsUpdateDmsOpcode`](docs/sdks/dms/README.md#updatedmsopcode) - Update an opcode
+- [`dmsUpdateDmsOpcode`](docs/sdks/opcode/README.md#updatedmsopcode) - Update an opcode
+- [`dmsUpdateDmsPart`](docs/sdks/dms/README.md#updatedmspart) - Update a part
+- [`dmsUpdateDmsPart`](docs/sdks/part/README.md#updatedmspart) - Update a part
+- [`dmsUpdateDmsPartsale`](docs/sdks/dms/README.md#updatedmspartsale) - Update a partsale
+- [`dmsUpdateDmsPartsale`](docs/sdks/partsale/README.md#updatedmspartsale) - Update a partsale
+- [`dmsUpdateDmsRepairorder`](docs/sdks/dms/README.md#updatedmsrepairorder) - Update a repairorder
+- [`dmsUpdateDmsRepairorder`](docs/sdks/repairorder/README.md#updatedmsrepairorder) - Update a repairorder
+- [`dmsUpdateDmsVehicle`](docs/sdks/dms/README.md#updatedmsvehicle) - Update a vehicle
+- [`dmsUpdateDmsVehicle`](docs/sdks/vehicle/README.md#updatedmsvehicle) - Update a vehicle
+- [`dmsUpdateDmsVehiclesale`](docs/sdks/dms/README.md#updatedmsvehiclesale) - Update a vehiclesale
+- [`dmsUpdateDmsVehiclesale`](docs/sdks/vehiclesale/README.md#updatedmsvehiclesale) - Update a vehiclesale
 - [`documentCreateHealthcareDocument`](docs/sdks/document/README.md#createhealthcaredocument) - Create a document
 - [`documentCreateHealthcareDocument`](docs/sdks/healthcare/README.md#createhealthcaredocument) - Create a document
 - [`documentCreateHrisDocument`](docs/sdks/document/README.md#createhrisdocument) - Create a document
@@ -1616,6 +1724,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`documentUpdatePlmDocument`](docs/sdks/plm/README.md#updateplmdocument) - Update a document
 - [`documentUpdateSigningDocument`](docs/sdks/document/README.md#updatesigningdocument) - Update a document
 - [`documentUpdateSigningDocument`](docs/sdks/signing/README.md#updatesigningdocument) - Update a document
+- [`encounterGetHealthcareEncounter`](docs/sdks/encounter/README.md#gethealthcareencounter) - Retrieve an encounter
+- [`encounterGetHealthcareEncounter`](docs/sdks/healthcare/README.md#gethealthcareencounter) - Retrieve an encounter
+- [`encounterListHealthcareEncounters`](docs/sdks/encounter/README.md#listhealthcareencounters) - List all encounters
+- [`encounterListHealthcareEncounters`](docs/sdks/healthcare/README.md#listhealthcareencounters) - List all encounters
 - [`enrichListEnrichPeople`](docs/sdks/enrich/README.md#listenrichpeople) - Retrieve enrichment information for a person
 - [`enrichListEnrichPeople`](docs/sdks/person/README.md#listenrichpeople) - Retrieve enrichment information for a person
 - [`eventCreateCalendarEvent`](docs/sdks/calendar/README.md#createcalendarevent) - Create an event
@@ -1674,6 +1786,56 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`expenseRemoveLegalExpense`](docs/sdks/legal/README.md#removelegalexpense) - Remove an expense
 - [`expenseUpdateLegalExpense`](docs/sdks/expense/README.md#updatelegalexpense) - Update an expense
 - [`expenseUpdateLegalExpense`](docs/sdks/legal/README.md#updatelegalexpense) - Update an expense
+- [`fhirGetFhirAllergyintolerance`](docs/sdks/allergyintolerance/README.md#getfhirallergyintolerance) - Read a AllergyIntolerance
+- [`fhirGetFhirAllergyintolerance`](docs/sdks/fhir/README.md#getfhirallergyintolerance) - Read a AllergyIntolerance
+- [`fhirGetFhirCondition`](docs/sdks/condition/README.md#getfhircondition) - Read a Condition
+- [`fhirGetFhirCondition`](docs/sdks/fhir/README.md#getfhircondition) - Read a Condition
+- [`fhirGetFhirDiagnosticreport`](docs/sdks/diagnosticreport/README.md#getfhirdiagnosticreport) - Read a DiagnosticReport
+- [`fhirGetFhirDiagnosticreport`](docs/sdks/fhir/README.md#getfhirdiagnosticreport) - Read a DiagnosticReport
+- [`fhirGetFhirEncounter`](docs/sdks/encounter/README.md#getfhirencounter) - Read a Encounter
+- [`fhirGetFhirEncounter`](docs/sdks/fhir/README.md#getfhirencounter) - Read a Encounter
+- [`fhirGetFhirImmunization`](docs/sdks/fhir/README.md#getfhirimmunization) - Read a Immunization
+- [`fhirGetFhirImmunization`](docs/sdks/immunization/README.md#getfhirimmunization) - Read a Immunization
+- [`fhirGetFhirMedicationrequest`](docs/sdks/fhir/README.md#getfhirmedicationrequest) - Read a MedicationRequest
+- [`fhirGetFhirMedicationrequest`](docs/sdks/medicationrequest/README.md#getfhirmedicationrequest) - Read a MedicationRequest
+- [`fhirGetFhirObservation`](docs/sdks/fhir/README.md#getfhirobservation) - Read a Observation
+- [`fhirGetFhirObservation`](docs/sdks/observation/README.md#getfhirobservation) - Read a Observation
+- [`fhirGetFhirPatient`](docs/sdks/fhir/README.md#getfhirpatient) - Read a Patient
+- [`fhirGetFhirPatient`](docs/sdks/patient/README.md#getfhirpatient) - Read a Patient
+- [`fhirGetFhirPractitioner`](docs/sdks/fhir/README.md#getfhirpractitioner) - Read a Practitioner
+- [`fhirGetFhirPractitioner`](docs/sdks/practitioner/README.md#getfhirpractitioner) - Read a Practitioner
+- [`fhirListFhirAllergyintolerances`](docs/sdks/allergyintolerance/README.md#listfhirallergyintolerances) - Search AllergyIntolerance resources
+- [`fhirListFhirAllergyintolerances`](docs/sdks/fhir/README.md#listfhirallergyintolerances) - Search AllergyIntolerance resources
+- [`fhirListFhirConditions`](docs/sdks/condition/README.md#listfhirconditions) - Search Condition resources
+- [`fhirListFhirConditions`](docs/sdks/fhir/README.md#listfhirconditions) - Search Condition resources
+- [`fhirListFhirDiagnosticreports`](docs/sdks/diagnosticreport/README.md#listfhirdiagnosticreports) - Search DiagnosticReport resources
+- [`fhirListFhirDiagnosticreports`](docs/sdks/fhir/README.md#listfhirdiagnosticreports) - Search DiagnosticReport resources
+- [`fhirListFhirEncounters`](docs/sdks/encounter/README.md#listfhirencounters) - Search Encounter resources
+- [`fhirListFhirEncounters`](docs/sdks/fhir/README.md#listfhirencounters) - Search Encounter resources
+- [`fhirListFhirImmunizations`](docs/sdks/fhir/README.md#listfhirimmunizations) - Search Immunization resources
+- [`fhirListFhirImmunizations`](docs/sdks/immunization/README.md#listfhirimmunizations) - Search Immunization resources
+- [`fhirListFhirMedicationrequests`](docs/sdks/fhir/README.md#listfhirmedicationrequests) - Search MedicationRequest resources
+- [`fhirListFhirMedicationrequests`](docs/sdks/medicationrequest/README.md#listfhirmedicationrequests) - Search MedicationRequest resources
+- [`fhirListFhirMetadatas`](docs/sdks/fhir/README.md#listfhirmetadatas) - Get the CapabilityStatement
+- [`fhirListFhirMetadatas`](docs/sdks/metadata/README.md#listfhirmetadatas) - Get the CapabilityStatement
+- [`fhirListFhirObservations`](docs/sdks/fhir/README.md#listfhirobservations) - Search Observation resources
+- [`fhirListFhirObservations`](docs/sdks/observation/README.md#listfhirobservations) - Search Observation resources
+- [`fhirListFhirPatients`](docs/sdks/fhir/README.md#listfhirpatients) - Search Patient resources
+- [`fhirListFhirPatients`](docs/sdks/patient/README.md#listfhirpatients) - Search Patient resources
+- [`fhirListFhirPractitioners`](docs/sdks/fhir/README.md#listfhirpractitioners) - Search Practitioner resources
+- [`fhirListFhirPractitioners`](docs/sdks/practitioner/README.md#listfhirpractitioners) - Search Practitioner resources
+- [`fileCreateStorageFile`](docs/sdks/file/README.md#createstoragefile) - Create a file
+- [`fileCreateStorageFile`](docs/sdks/storage/README.md#createstoragefile) - Create a file
+- [`fileGetStorageFile`](docs/sdks/file/README.md#getstoragefile) - Retrieve a file
+- [`fileGetStorageFile`](docs/sdks/storage/README.md#getstoragefile) - Retrieve a file
+- [`fileListStorageFiles`](docs/sdks/file/README.md#liststoragefiles) - List all files
+- [`fileListStorageFiles`](docs/sdks/storage/README.md#liststoragefiles) - List all files
+- [`filePatchStorageFile`](docs/sdks/file/README.md#patchstoragefile) - Update a file
+- [`filePatchStorageFile`](docs/sdks/storage/README.md#patchstoragefile) - Update a file
+- [`fileRemoveStorageFile`](docs/sdks/file/README.md#removestoragefile) - Remove a file
+- [`fileRemoveStorageFile`](docs/sdks/storage/README.md#removestoragefile) - Remove a file
+- [`fileUpdateStorageFile`](docs/sdks/file/README.md#updatestoragefile) - Update a file
+- [`fileUpdateStorageFile`](docs/sdks/storage/README.md#updatestoragefile) - Update a file
 - [`formsCreateFormsForm`](docs/sdks/form/README.md#createformsform) - Create a form
 - [`formsCreateFormsForm`](docs/sdks/forms/README.md#createformsform) - Create a form
 - [`formsGetFormsForm`](docs/sdks/form/README.md#getformsform) - Retrieve a form
@@ -1780,78 +1942,34 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`groupUpdateHrisGroup`](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 - [`groupUpdateScimGroups`](docs/sdks/group/README.md#updatescimgroups) - Update group
 - [`groupUpdateScimGroups`](docs/sdks/scim/README.md#updatescimgroups) - Update group
-- [`healthcareCreateHealthcareAppointment`](docs/sdks/appointment/README.md#createhealthcareappointment) - Create an appointment
-- [`healthcareCreateHealthcareAppointment`](docs/sdks/healthcare/README.md#createhealthcareappointment) - Create an appointment
-- [`healthcareCreateHealthcareObservation`](docs/sdks/healthcare/README.md#createhealthcareobservation) - Create an observation
-- [`healthcareCreateHealthcareObservation`](docs/sdks/observation/README.md#createhealthcareobservation) - Create an observation
-- [`healthcareCreateHealthcarePatient`](docs/sdks/healthcare/README.md#createhealthcarepatient) - Create a patient
-- [`healthcareCreateHealthcarePatient`](docs/sdks/patient/README.md#createhealthcarepatient) - Create a patient
 - [`healthcareGetHealthcareAllergy`](docs/sdks/allergy/README.md#gethealthcareallergy) - Retrieve an allergy
 - [`healthcareGetHealthcareAllergy`](docs/sdks/healthcare/README.md#gethealthcareallergy) - Retrieve an allergy
-- [`healthcareGetHealthcareAppointment`](docs/sdks/appointment/README.md#gethealthcareappointment) - Retrieve an appointment
-- [`healthcareGetHealthcareAppointment`](docs/sdks/healthcare/README.md#gethealthcareappointment) - Retrieve an appointment
 - [`healthcareGetHealthcareCareplan`](docs/sdks/careplan/README.md#gethealthcarecareplan) - Retrieve a careplan
 - [`healthcareGetHealthcareCareplan`](docs/sdks/healthcare/README.md#gethealthcarecareplan) - Retrieve a careplan
-- [`healthcareGetHealthcareCondition`](docs/sdks/condition/README.md#gethealthcarecondition) - Retrieve a condition
-- [`healthcareGetHealthcareCondition`](docs/sdks/healthcare/README.md#gethealthcarecondition) - Retrieve a condition
 - [`healthcareGetHealthcareCoverage`](docs/sdks/coverage/README.md#gethealthcarecoverage) - Retrieve a coverage
 - [`healthcareGetHealthcareCoverage`](docs/sdks/healthcare/README.md#gethealthcarecoverage) - Retrieve a coverage
-- [`healthcareGetHealthcareEncounter`](docs/sdks/encounter/README.md#gethealthcareencounter) - Retrieve an encounter
-- [`healthcareGetHealthcareEncounter`](docs/sdks/healthcare/README.md#gethealthcareencounter) - Retrieve an encounter
 - [`healthcareGetHealthcareGoal`](docs/sdks/goal/README.md#gethealthcaregoal) - Retrieve a goal
 - [`healthcareGetHealthcareGoal`](docs/sdks/healthcare/README.md#gethealthcaregoal) - Retrieve a goal
-- [`healthcareGetHealthcareImmunization`](docs/sdks/healthcare/README.md#gethealthcareimmunization) - Retrieve an immunization
-- [`healthcareGetHealthcareImmunization`](docs/sdks/immunization/README.md#gethealthcareimmunization) - Retrieve an immunization
 - [`healthcareGetHealthcareMedication`](docs/sdks/healthcare/README.md#gethealthcaremedication) - Retrieve a medication
 - [`healthcareGetHealthcareMedication`](docs/sdks/medication/README.md#gethealthcaremedication) - Retrieve a medication
-- [`healthcareGetHealthcareObservation`](docs/sdks/healthcare/README.md#gethealthcareobservation) - Retrieve an observation
-- [`healthcareGetHealthcareObservation`](docs/sdks/observation/README.md#gethealthcareobservation) - Retrieve an observation
-- [`healthcareGetHealthcarePatient`](docs/sdks/healthcare/README.md#gethealthcarepatient) - Retrieve a patient
-- [`healthcareGetHealthcarePatient`](docs/sdks/patient/README.md#gethealthcarepatient) - Retrieve a patient
-- [`healthcareGetHealthcarePractitioner`](docs/sdks/healthcare/README.md#gethealthcarepractitioner) - Retrieve a practitioner
-- [`healthcareGetHealthcarePractitioner`](docs/sdks/practitioner/README.md#gethealthcarepractitioner) - Retrieve a practitioner
 - [`healthcareGetHealthcareProcedure`](docs/sdks/healthcare/README.md#gethealthcareprocedure) - Retrieve a procedure
 - [`healthcareGetHealthcareProcedure`](docs/sdks/procedure/README.md#gethealthcareprocedure) - Retrieve a procedure
 - [`healthcareGetHealthcareSlot`](docs/sdks/healthcare/README.md#gethealthcareslot) - Retrieve a slot
 - [`healthcareGetHealthcareSlot`](docs/sdks/slot/README.md#gethealthcareslot) - Retrieve a slot
 - [`healthcareListHealthcareAllergies`](docs/sdks/allergy/README.md#listhealthcareallergies) - List all allergies
 - [`healthcareListHealthcareAllergies`](docs/sdks/healthcare/README.md#listhealthcareallergies) - List all allergies
-- [`healthcareListHealthcareAppointments`](docs/sdks/appointment/README.md#listhealthcareappointments) - List all appointments
-- [`healthcareListHealthcareAppointments`](docs/sdks/healthcare/README.md#listhealthcareappointments) - List all appointments
 - [`healthcareListHealthcareCareplans`](docs/sdks/careplan/README.md#listhealthcarecareplans) - List all careplans
 - [`healthcareListHealthcareCareplans`](docs/sdks/healthcare/README.md#listhealthcarecareplans) - List all careplans
-- [`healthcareListHealthcareConditions`](docs/sdks/condition/README.md#listhealthcareconditions) - List all conditions
-- [`healthcareListHealthcareConditions`](docs/sdks/healthcare/README.md#listhealthcareconditions) - List all conditions
 - [`healthcareListHealthcareCoverages`](docs/sdks/coverage/README.md#listhealthcarecoverages) - List all coverages
 - [`healthcareListHealthcareCoverages`](docs/sdks/healthcare/README.md#listhealthcarecoverages) - List all coverages
-- [`healthcareListHealthcareEncounters`](docs/sdks/encounter/README.md#listhealthcareencounters) - List all encounters
-- [`healthcareListHealthcareEncounters`](docs/sdks/healthcare/README.md#listhealthcareencounters) - List all encounters
 - [`healthcareListHealthcareGoals`](docs/sdks/goal/README.md#listhealthcaregoals) - List all goals
 - [`healthcareListHealthcareGoals`](docs/sdks/healthcare/README.md#listhealthcaregoals) - List all goals
-- [`healthcareListHealthcareImmunizations`](docs/sdks/healthcare/README.md#listhealthcareimmunizations) - List all immunizations
-- [`healthcareListHealthcareImmunizations`](docs/sdks/immunization/README.md#listhealthcareimmunizations) - List all immunizations
 - [`healthcareListHealthcareMedications`](docs/sdks/healthcare/README.md#listhealthcaremedications) - List all medications
 - [`healthcareListHealthcareMedications`](docs/sdks/medication/README.md#listhealthcaremedications) - List all medications
-- [`healthcareListHealthcareObservations`](docs/sdks/healthcare/README.md#listhealthcareobservations) - List all observations
-- [`healthcareListHealthcareObservations`](docs/sdks/observation/README.md#listhealthcareobservations) - List all observations
-- [`healthcareListHealthcarePatients`](docs/sdks/healthcare/README.md#listhealthcarepatients) - List all patients
-- [`healthcareListHealthcarePatients`](docs/sdks/patient/README.md#listhealthcarepatients) - List all patients
-- [`healthcareListHealthcarePractitioners`](docs/sdks/healthcare/README.md#listhealthcarepractitioners) - List all practitioners
-- [`healthcareListHealthcarePractitioners`](docs/sdks/practitioner/README.md#listhealthcarepractitioners) - List all practitioners
 - [`healthcareListHealthcareProcedures`](docs/sdks/healthcare/README.md#listhealthcareprocedures) - List all procedures
 - [`healthcareListHealthcareProcedures`](docs/sdks/procedure/README.md#listhealthcareprocedures) - List all procedures
 - [`healthcareListHealthcareSlots`](docs/sdks/healthcare/README.md#listhealthcareslots) - List all slots
 - [`healthcareListHealthcareSlots`](docs/sdks/slot/README.md#listhealthcareslots) - List all slots
-- [`healthcarePatchHealthcareAppointment`](docs/sdks/appointment/README.md#patchhealthcareappointment) - Update an appointment
-- [`healthcarePatchHealthcareAppointment`](docs/sdks/healthcare/README.md#patchhealthcareappointment) - Update an appointment
-- [`healthcarePatchHealthcarePatient`](docs/sdks/healthcare/README.md#patchhealthcarepatient) - Update a patient
-- [`healthcarePatchHealthcarePatient`](docs/sdks/patient/README.md#patchhealthcarepatient) - Update a patient
-- [`healthcareRemoveHealthcareAppointment`](docs/sdks/appointment/README.md#removehealthcareappointment) - Remove an appointment
-- [`healthcareRemoveHealthcareAppointment`](docs/sdks/healthcare/README.md#removehealthcareappointment) - Remove an appointment
-- [`healthcareUpdateHealthcareAppointment`](docs/sdks/appointment/README.md#updatehealthcareappointment) - Update an appointment
-- [`healthcareUpdateHealthcareAppointment`](docs/sdks/healthcare/README.md#updatehealthcareappointment) - Update an appointment
-- [`healthcareUpdateHealthcarePatient`](docs/sdks/healthcare/README.md#updatehealthcarepatient) - Update a patient
-- [`healthcareUpdateHealthcarePatient`](docs/sdks/patient/README.md#updatehealthcarepatient) - Update a patient
 - [`hrisCreateHrisAttendance`](docs/sdks/attendance/README.md#createhrisattendance) - Create an attendance
 - [`hrisCreateHrisAttendance`](docs/sdks/hris/README.md#createhrisattendance) - Create an attendance
 - [`hrisCreateHrisBankaccount`](docs/sdks/bankaccount/README.md#createhrisbankaccount) - Create a bankaccount
@@ -1984,6 +2102,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisUpdateHrisTimeoff`](docs/sdks/timeoff/README.md#updatehristimeoff) - Update a timeoff
 - [`hrisUpdateHrisTimeshift`](docs/sdks/hris/README.md#updatehristimeshift) - Update a timeshift
 - [`hrisUpdateHrisTimeshift`](docs/sdks/timeshift/README.md#updatehristimeshift) - Update a timeshift
+- [`immunizationGetHealthcareImmunization`](docs/sdks/healthcare/README.md#gethealthcareimmunization) - Retrieve an immunization
+- [`immunizationGetHealthcareImmunization`](docs/sdks/immunization/README.md#gethealthcareimmunization) - Retrieve an immunization
+- [`immunizationListHealthcareImmunizations`](docs/sdks/healthcare/README.md#listhealthcareimmunizations) - List all immunizations
+- [`immunizationListHealthcareImmunizations`](docs/sdks/immunization/README.md#listhealthcareimmunizations) - List all immunizations
 - [`inventoryCreateCommerceInventory`](docs/sdks/commerce/README.md#createcommerceinventory) - Create an inventory
 - [`inventoryCreateCommerceInventory`](docs/sdks/inventory/README.md#createcommerceinventory) - Create an inventory
 - [`inventoryGetCommerceInventory`](docs/sdks/commerce/README.md#getcommerceinventory) - Retrieve an inventory
@@ -2242,14 +2364,32 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`metadataPatchMetadataMetadata`](docs/sdks/metadata/README.md#patchmetadatametadata) - Update a metadata
 - [`metadataRemoveMetadataMetadata`](docs/sdks/metadata/README.md#removemetadatametadata) - Remove a metadata
 - [`metadataUpdateMetadataMetadata`](docs/sdks/metadata/README.md#updatemetadatametadata) - Update a metadata
+- [`observationCreateHealthcareObservation`](docs/sdks/healthcare/README.md#createhealthcareobservation) - Create an observation
+- [`observationCreateHealthcareObservation`](docs/sdks/observation/README.md#createhealthcareobservation) - Create an observation
+- [`observationGetHealthcareObservation`](docs/sdks/healthcare/README.md#gethealthcareobservation) - Retrieve an observation
+- [`observationGetHealthcareObservation`](docs/sdks/observation/README.md#gethealthcareobservation) - Retrieve an observation
+- [`observationListHealthcareObservations`](docs/sdks/healthcare/README.md#listhealthcareobservations) - List all observations
+- [`observationListHealthcareObservations`](docs/sdks/observation/README.md#listhealthcareobservations) - List all observations
 - [`orderCreateAssessmentOrder`](docs/sdks/assessment/README.md#createassessmentorder) - Create an order
 - [`orderCreateAssessmentOrder`](docs/sdks/order/README.md#createassessmentorder) - Create an order
+- [`orderCreatePrintingOrder`](docs/sdks/order/README.md#createprintingorder) - Create an order
+- [`orderCreatePrintingOrder`](docs/sdks/printing/README.md#createprintingorder) - Create an order
 - [`orderGetAssessmentOrder`](docs/sdks/assessment/README.md#getassessmentorder) - Retrieve an order
 - [`orderGetAssessmentOrder`](docs/sdks/order/README.md#getassessmentorder) - Retrieve an order
+- [`orderGetPrintingOrder`](docs/sdks/order/README.md#getprintingorder) - Retrieve an order
+- [`orderGetPrintingOrder`](docs/sdks/printing/README.md#getprintingorder) - Retrieve an order
+- [`orderListPrintingOrders`](docs/sdks/order/README.md#listprintingorders) - List all orders
+- [`orderListPrintingOrders`](docs/sdks/printing/README.md#listprintingorders) - List all orders
 - [`orderPatchAssessmentOrder`](docs/sdks/assessment/README.md#patchassessmentorder) - Update an order
 - [`orderPatchAssessmentOrder`](docs/sdks/order/README.md#patchassessmentorder) - Update an order
+- [`orderPatchPrintingOrder`](docs/sdks/order/README.md#patchprintingorder) - Update an order
+- [`orderPatchPrintingOrder`](docs/sdks/printing/README.md#patchprintingorder) - Update an order
+- [`orderRemovePrintingOrder`](docs/sdks/order/README.md#removeprintingorder) - Remove an order
+- [`orderRemovePrintingOrder`](docs/sdks/printing/README.md#removeprintingorder) - Remove an order
 - [`orderUpdateAssessmentOrder`](docs/sdks/assessment/README.md#updateassessmentorder) - Update an order
 - [`orderUpdateAssessmentOrder`](docs/sdks/order/README.md#updateassessmentorder) - Update an order
+- [`orderUpdatePrintingOrder`](docs/sdks/order/README.md#updateprintingorder) - Update an order
+- [`orderUpdatePrintingOrder`](docs/sdks/printing/README.md#updateprintingorder) - Update an order
 - [`organizationCreateAdsOrganization`](docs/sdks/ads/README.md#createadsorganization) - Create an organization
 - [`organizationCreateAdsOrganization`](docs/sdks/organization/README.md#createadsorganization) - Create an organization
 - [`organizationCreateGenaiOrganization`](docs/sdks/genai/README.md#creategenaiorganization) - Create an organization
@@ -2290,6 +2430,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`packageGetVerificationPackage`](docs/sdks/verification/README.md#getverificationpackage) - Retrieve a package
 - [`packageListVerificationPackages`](docs/sdks/package/README.md#listverificationpackages) - List all packages
 - [`packageListVerificationPackages`](docs/sdks/verification/README.md#listverificationpackages) - List all packages
+- [`partCreatePlmPart`](docs/sdks/part/README.md#createplmpart) - Create a part
+- [`partCreatePlmPart`](docs/sdks/plm/README.md#createplmpart) - Create a part
+- [`partGetPlmPart`](docs/sdks/part/README.md#getplmpart) - Retrieve a part
+- [`partGetPlmPart`](docs/sdks/plm/README.md#getplmpart) - Retrieve a part
+- [`partListPlmParts`](docs/sdks/part/README.md#listplmparts) - List all parts
+- [`partListPlmParts`](docs/sdks/plm/README.md#listplmparts) - List all parts
+- [`partPatchPlmPart`](docs/sdks/part/README.md#patchplmpart) - Update a part
+- [`partPatchPlmPart`](docs/sdks/plm/README.md#patchplmpart) - Update a part
+- [`partRemovePlmPart`](docs/sdks/part/README.md#removeplmpart) - Remove a part
+- [`partRemovePlmPart`](docs/sdks/plm/README.md#removeplmpart) - Remove a part
+- [`partUpdatePlmPart`](docs/sdks/part/README.md#updateplmpart) - Update a part
+- [`partUpdatePlmPart`](docs/sdks/plm/README.md#updateplmpart) - Update a part
 - [`passthroughCreatePassthroughJson`](docs/sdks/passthrough/README.md#createpassthroughjson) - Passthrough POST
 - [`passthroughCreatePassthroughRaw`](docs/sdks/passthrough/README.md#createpassthroughraw) - Passthrough POST
 - [`passthroughListPassthroughs`](docs/sdks/passthrough/README.md#listpassthroughs) - Passthrough GET
@@ -2298,6 +2450,16 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`passthroughRemovePassthrough`](docs/sdks/passthrough/README.md#removepassthrough) - Passthrough DELETE
 - [`passthroughUpdatePassthroughJson`](docs/sdks/passthrough/README.md#updatepassthroughjson) - Passthrough PUT
 - [`passthroughUpdatePassthroughRaw`](docs/sdks/passthrough/README.md#updatepassthroughraw) - Passthrough PUT
+- [`patientCreateHealthcarePatient`](docs/sdks/healthcare/README.md#createhealthcarepatient) - Create a patient
+- [`patientCreateHealthcarePatient`](docs/sdks/patient/README.md#createhealthcarepatient) - Create a patient
+- [`patientGetHealthcarePatient`](docs/sdks/healthcare/README.md#gethealthcarepatient) - Retrieve a patient
+- [`patientGetHealthcarePatient`](docs/sdks/patient/README.md#gethealthcarepatient) - Retrieve a patient
+- [`patientListHealthcarePatients`](docs/sdks/healthcare/README.md#listhealthcarepatients) - List all patients
+- [`patientListHealthcarePatients`](docs/sdks/patient/README.md#listhealthcarepatients) - List all patients
+- [`patientPatchHealthcarePatient`](docs/sdks/healthcare/README.md#patchhealthcarepatient) - Update a patient
+- [`patientPatchHealthcarePatient`](docs/sdks/patient/README.md#patchhealthcarepatient) - Update a patient
+- [`patientUpdateHealthcarePatient`](docs/sdks/healthcare/README.md#updatehealthcarepatient) - Update a patient
+- [`patientUpdateHealthcarePatient`](docs/sdks/patient/README.md#updatehealthcarepatient) - Update a patient
 - [`paymentCreatePaymentPayment`](docs/sdks/payment/README.md#createpaymentpayment) - Create a payment
 - [`paymentCreatePaymentSubscription`](docs/sdks/payment/README.md#createpaymentsubscription) - Create a subscription
 - [`paymentCreatePaymentSubscription`](docs/sdks/subscription/README.md#createpaymentsubscription) - Create a subscription
@@ -2338,36 +2500,38 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`plmCreatePlmBomline`](docs/sdks/plm/README.md#createplmbomline) - Create a bomline
 - [`plmCreatePlmChange`](docs/sdks/change/README.md#createplmchange) - Create a change
 - [`plmCreatePlmChange`](docs/sdks/plm/README.md#createplmchange) - Create a change
-- [`plmCreatePlmPart`](docs/sdks/part/README.md#createplmpart) - Create a part
-- [`plmCreatePlmPart`](docs/sdks/plm/README.md#createplmpart) - Create a part
 - [`plmGetPlmBomline`](docs/sdks/bomline/README.md#getplmbomline) - Retrieve a bomline
 - [`plmGetPlmBomline`](docs/sdks/plm/README.md#getplmbomline) - Retrieve a bomline
 - [`plmGetPlmChange`](docs/sdks/change/README.md#getplmchange) - Retrieve a change
 - [`plmGetPlmChange`](docs/sdks/plm/README.md#getplmchange) - Retrieve a change
-- [`plmGetPlmPart`](docs/sdks/part/README.md#getplmpart) - Retrieve a part
-- [`plmGetPlmPart`](docs/sdks/plm/README.md#getplmpart) - Retrieve a part
 - [`plmListPlmBomlines`](docs/sdks/bomline/README.md#listplmbomlines) - List all bomlines
 - [`plmListPlmBomlines`](docs/sdks/plm/README.md#listplmbomlines) - List all bomlines
 - [`plmListPlmChanges`](docs/sdks/change/README.md#listplmchanges) - List all changes
 - [`plmListPlmChanges`](docs/sdks/plm/README.md#listplmchanges) - List all changes
-- [`plmListPlmParts`](docs/sdks/part/README.md#listplmparts) - List all parts
-- [`plmListPlmParts`](docs/sdks/plm/README.md#listplmparts) - List all parts
 - [`plmPatchPlmBomline`](docs/sdks/bomline/README.md#patchplmbomline) - Update a bomline
 - [`plmPatchPlmBomline`](docs/sdks/plm/README.md#patchplmbomline) - Update a bomline
 - [`plmPatchPlmChange`](docs/sdks/change/README.md#patchplmchange) - Update a change
 - [`plmPatchPlmChange`](docs/sdks/plm/README.md#patchplmchange) - Update a change
-- [`plmPatchPlmPart`](docs/sdks/part/README.md#patchplmpart) - Update a part
-- [`plmPatchPlmPart`](docs/sdks/plm/README.md#patchplmpart) - Update a part
 - [`plmRemovePlmBomline`](docs/sdks/bomline/README.md#removeplmbomline) - Remove a bomline
 - [`plmRemovePlmBomline`](docs/sdks/plm/README.md#removeplmbomline) - Remove a bomline
-- [`plmRemovePlmPart`](docs/sdks/part/README.md#removeplmpart) - Remove a part
-- [`plmRemovePlmPart`](docs/sdks/plm/README.md#removeplmpart) - Remove a part
 - [`plmUpdatePlmBomline`](docs/sdks/bomline/README.md#updateplmbomline) - Update a bomline
 - [`plmUpdatePlmBomline`](docs/sdks/plm/README.md#updateplmbomline) - Update a bomline
 - [`plmUpdatePlmChange`](docs/sdks/change/README.md#updateplmchange) - Update a change
 - [`plmUpdatePlmChange`](docs/sdks/plm/README.md#updateplmchange) - Update a change
-- [`plmUpdatePlmPart`](docs/sdks/part/README.md#updateplmpart) - Update a part
-- [`plmUpdatePlmPart`](docs/sdks/plm/README.md#updateplmpart) - Update a part
+- [`practitionerGetHealthcarePractitioner`](docs/sdks/healthcare/README.md#gethealthcarepractitioner) - Retrieve a practitioner
+- [`practitionerGetHealthcarePractitioner`](docs/sdks/practitioner/README.md#gethealthcarepractitioner) - Retrieve a practitioner
+- [`practitionerListHealthcarePractitioners`](docs/sdks/healthcare/README.md#listhealthcarepractitioners) - List all practitioners
+- [`practitionerListHealthcarePractitioners`](docs/sdks/practitioner/README.md#listhealthcarepractitioners) - List all practitioners
+- [`printingCreatePrintingFile`](docs/sdks/file/README.md#createprintingfile) - Create a file
+- [`printingCreatePrintingFile`](docs/sdks/printing/README.md#createprintingfile) - Create a file
+- [`printingGetPrintingFile`](docs/sdks/file/README.md#getprintingfile) - Retrieve a file
+- [`printingGetPrintingFile`](docs/sdks/printing/README.md#getprintingfile) - Retrieve a file
+- [`printingGetPrintingProduct`](docs/sdks/printing/README.md#getprintingproduct) - Retrieve a product
+- [`printingGetPrintingProduct`](docs/sdks/product/README.md#getprintingproduct) - Retrieve a product
+- [`printingListPrintingFiles`](docs/sdks/file/README.md#listprintingfiles) - List all files
+- [`printingListPrintingFiles`](docs/sdks/printing/README.md#listprintingfiles) - List all files
+- [`printingListPrintingProducts`](docs/sdks/printing/README.md#listprintingproducts) - List all products
+- [`printingListPrintingProducts`](docs/sdks/product/README.md#listprintingproducts) - List all products
 - [`profileGetSocialProfile`](docs/sdks/profile/README.md#getsocialprofile) - Retrieve a profile
 - [`profileGetSocialProfile`](docs/sdks/social/README.md#getsocialprofile) - Retrieve a profile
 - [`profileListSocialProfiles`](docs/sdks/profile/README.md#listsocialprofiles) - List all profiles
@@ -2480,6 +2644,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`qmsUpdateQmsInspection`](docs/sdks/qms/README.md#updateqmsinspection) - Update an inspection
 - [`qmsUpdateQmsIssue`](docs/sdks/issue/README.md#updateqmsissue) - Update an issue
 - [`qmsUpdateQmsIssue`](docs/sdks/qms/README.md#updateqmsissue) - Update an issue
+- [`quoteCreatePrintingQuote`](docs/sdks/printing/README.md#createprintingquote) - Create a quote
+- [`quoteCreatePrintingQuote`](docs/sdks/quote/README.md#createprintingquote) - Create a quote
 - [`quoteCreatePropertyQuote`](docs/sdks/property/README.md#createpropertyquote) - Create a quote
 - [`quoteCreatePropertyQuote`](docs/sdks/quote/README.md#createpropertyquote) - Create a quote
 - [`recordingCreateUcRecording`](docs/sdks/recording/README.md#createucrecording) - Create a recording
@@ -2640,18 +2806,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`socialRemoveSocialPost`](docs/sdks/social/README.md#removesocialpost) - Remove a post
 - [`socialUpdateSocialPost`](docs/sdks/post/README.md#updatesocialpost) - Update a post
 - [`socialUpdateSocialPost`](docs/sdks/social/README.md#updatesocialpost) - Update a post
-- [`storageCreateStorageFile`](docs/sdks/file/README.md#createstoragefile) - Create a file
-- [`storageCreateStorageFile`](docs/sdks/storage/README.md#createstoragefile) - Create a file
-- [`storageGetStorageFile`](docs/sdks/file/README.md#getstoragefile) - Retrieve a file
-- [`storageGetStorageFile`](docs/sdks/storage/README.md#getstoragefile) - Retrieve a file
-- [`storageListStorageFiles`](docs/sdks/file/README.md#liststoragefiles) - List all files
-- [`storageListStorageFiles`](docs/sdks/storage/README.md#liststoragefiles) - List all files
-- [`storagePatchStorageFile`](docs/sdks/file/README.md#patchstoragefile) - Update a file
-- [`storagePatchStorageFile`](docs/sdks/storage/README.md#patchstoragefile) - Update a file
-- [`storageRemoveStorageFile`](docs/sdks/file/README.md#removestoragefile) - Remove a file
-- [`storageRemoveStorageFile`](docs/sdks/storage/README.md#removestoragefile) - Remove a file
-- [`storageUpdateStorageFile`](docs/sdks/file/README.md#updatestoragefile) - Update a file
-- [`storageUpdateStorageFile`](docs/sdks/storage/README.md#updatestoragefile) - Update a file
 - [`tableCreateDatastoreTable`](docs/sdks/datastore/README.md#createdatastoretable) - Create a table
 - [`tableCreateDatastoreTable`](docs/sdks/table/README.md#createdatastoretable) - Create a table
 - [`tableGetDatastoreTable`](docs/sdks/datastore/README.md#getdatastoretable) - Retrieve a table
@@ -2698,8 +2852,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`taxonomyRemoveHrisTaxonomy`](docs/sdks/taxonomy/README.md#removehristaxonomy) - Remove a taxonomy
 - [`taxonomyUpdateHrisTaxonomy`](docs/sdks/hris/README.md#updatehristaxonomy) - Update a taxonomy
 - [`taxonomyUpdateHrisTaxonomy`](docs/sdks/taxonomy/README.md#updatehristaxonomy) - Update a taxonomy
+- [`templateGetPrintingTemplate`](docs/sdks/printing/README.md#getprintingtemplate) - Retrieve a template
+- [`templateGetPrintingTemplate`](docs/sdks/template/README.md#getprintingtemplate) - Retrieve a template
 - [`templateGetSigningTemplate`](docs/sdks/signing/README.md#getsigningtemplate) - Retrieve a template
 - [`templateGetSigningTemplate`](docs/sdks/template/README.md#getsigningtemplate) - Retrieve a template
+- [`templateListPrintingTemplates`](docs/sdks/printing/README.md#listprintingtemplates) - List all templates
+- [`templateListPrintingTemplates`](docs/sdks/template/README.md#listprintingtemplates) - List all templates
 - [`templateListSigningTemplates`](docs/sdks/signing/README.md#listsigningtemplates) - List all templates
 - [`templateListSigningTemplates`](docs/sdks/template/README.md#listsigningtemplates) - List all templates
 - [`ticketingCreateTicketingCustomer`](docs/sdks/customer/README.md#createticketingcustomer) - Create a customer

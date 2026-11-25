@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { FormAnswer, FormAnswer$inboundSchema } from "./formanswer.js";
@@ -33,27 +33,31 @@ export const FormsSubmission$inboundSchema: z.ZodType<
   FormsSubmission,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  answers: z.array(FormAnswer$inboundSchema),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  form_id: z.string(),
-  id: z.string().optional(),
-  metadata: z.array(FormsMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  respondent_email: z.string().optional(),
-  respondent_name: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "form_id": "formId",
-    "respondent_email": "respondentEmail",
-    "respondent_name": "respondentName",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answers: z.array(FormAnswer$inboundSchema),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    form_id: z.string(),
+    id: z.string().optional(),
+    metadata: z.array(FormsMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    respondent_email: z.string().optional(),
+    respondent_name: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "form_id": "formId",
+      "respondent_email": "respondentEmail",
+      "respondent_name": "respondentName",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function formsSubmissionFromJSON(
   jsonString: string,

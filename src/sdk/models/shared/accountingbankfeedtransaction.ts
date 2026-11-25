@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -112,61 +112,69 @@ export const AccountingBankfeedtransactionType$inboundSchema: z.ZodType<
   AccountingBankfeedtransactionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingBankfeedtransactionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingBankfeedtransactionType)
+);
 /** @internal */
 export const AccountingBankfeedtransactionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingBankfeedtransactionType
-> = openEnums.outboundSchema(AccountingBankfeedtransactionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingBankfeedtransactionType)
+);
 
 /** @internal */
 export const AccountingBankfeedtransaction$inboundSchema: z.ZodType<
   AccountingBankfeedtransaction,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  amount: z.number().optional(),
-  bank_category: z.string().optional(),
-  bankfeedaccount_id: z.string().optional(),
-  category_ids: z.array(z.string()).optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_pending: z.boolean().optional(),
-  merchant_name: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  organization_id: z.string().optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  transaction_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  type: AccountingBankfeedtransactionType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "bank_category": "bankCategory",
-    "bankfeedaccount_id": "bankfeedaccountId",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "is_pending": "isPending",
-    "merchant_name": "merchantName",
-    "organization_id": "organizationId",
-    "posted_at": "postedAt",
-    "transaction_at": "transactionAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    amount: z.number().optional(),
+    bank_category: z.string().optional(),
+    bankfeedaccount_id: z.string().optional(),
+    category_ids: z.array(z.string()).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_pending: z.boolean().optional(),
+    merchant_name: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    organization_id: z.string().optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    transaction_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    type: AccountingBankfeedtransactionType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "bank_category": "bankCategory",
+      "bankfeedaccount_id": "bankfeedaccountId",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "is_pending": "isPending",
+      "merchant_name": "merchantName",
+      "organization_id": "organizationId",
+      "posted_at": "postedAt",
+      "transaction_at": "transactionAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingBankfeedtransaction$Outbound = {
   account_id?: string | undefined;
@@ -196,43 +204,45 @@ export const AccountingBankfeedtransaction$outboundSchema: z.ZodType<
   AccountingBankfeedtransaction$Outbound,
   z.ZodTypeDef,
   AccountingBankfeedtransaction
-> = z.object({
-  accountId: z.string().optional(),
-  amount: z.number().optional(),
-  bankCategory: z.string().optional(),
-  bankfeedaccountId: z.string().optional(),
-  categoryIds: z.array(z.string()).optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isPending: z.boolean().optional(),
-  merchantName: z.string().optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  organizationId: z.string().optional(),
-  postedAt: z.date().transform(v => v.toISOString()).optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  transactionAt: z.date().transform(v => v.toISOString()).optional(),
-  type: AccountingBankfeedtransactionType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    bankCategory: "bank_category",
-    bankfeedaccountId: "bankfeedaccount_id",
-    categoryIds: "category_ids",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    isPending: "is_pending",
-    merchantName: "merchant_name",
-    organizationId: "organization_id",
-    postedAt: "posted_at",
-    transactionAt: "transaction_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    amount: z.number().optional(),
+    bankCategory: z.string().optional(),
+    bankfeedaccountId: z.string().optional(),
+    categoryIds: z.array(z.string()).optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isPending: z.boolean().optional(),
+    merchantName: z.string().optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    organizationId: z.string().optional(),
+    postedAt: z.date().transform(v => v.toISOString()).optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    transactionAt: z.date().transform(v => v.toISOString()).optional(),
+    type: AccountingBankfeedtransactionType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      bankCategory: "bank_category",
+      bankfeedaccountId: "bankfeedaccount_id",
+      categoryIds: "category_ids",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      isPending: "is_pending",
+      merchantName: "merchant_name",
+      organizationId: "organization_id",
+      postedAt: "posted_at",
+      transactionAt: "transaction_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingBankfeedtransactionToJSON(
   accountingBankfeedtransaction: AccountingBankfeedtransaction,

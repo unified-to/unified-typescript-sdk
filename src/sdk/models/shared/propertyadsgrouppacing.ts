@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -31,30 +31,36 @@ export const PropertyAdsGroupPacingPeriod$inboundSchema: z.ZodType<
   PropertyAdsGroupPacingPeriod,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsGroupPacingPeriod);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsGroupPacingPeriod)
+);
 /** @internal */
 export const PropertyAdsGroupPacingPeriod$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyAdsGroupPacingPeriod
-> = openEnums.outboundSchema(PropertyAdsGroupPacingPeriod);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyAdsGroupPacingPeriod)
+);
 
 /** @internal */
 export const PropertyAdsGroupPacing$inboundSchema: z.ZodType<
   PropertyAdsGroupPacing,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  daily_max_amount: z.number().optional(),
-  daily_max_impressions: z.number().optional(),
-  period: PropertyAdsGroupPacingPeriod$inboundSchema.optional(),
-  type: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "daily_max_amount": "dailyMaxAmount",
-    "daily_max_impressions": "dailyMaxImpressions",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    daily_max_amount: z.number().optional(),
+    daily_max_impressions: z.number().optional(),
+    period: PropertyAdsGroupPacingPeriod$inboundSchema.optional(),
+    type: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "daily_max_amount": "dailyMaxAmount",
+      "daily_max_impressions": "dailyMaxImpressions",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsGroupPacing$Outbound = {
   daily_max_amount?: number | undefined;
@@ -68,17 +74,19 @@ export const PropertyAdsGroupPacing$outboundSchema: z.ZodType<
   PropertyAdsGroupPacing$Outbound,
   z.ZodTypeDef,
   PropertyAdsGroupPacing
-> = z.object({
-  dailyMaxAmount: z.number().optional(),
-  dailyMaxImpressions: z.number().optional(),
-  period: PropertyAdsGroupPacingPeriod$outboundSchema.optional(),
-  type: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    dailyMaxAmount: "daily_max_amount",
-    dailyMaxImpressions: "daily_max_impressions",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    dailyMaxAmount: z.number().optional(),
+    dailyMaxImpressions: z.number().optional(),
+    period: PropertyAdsGroupPacingPeriod$outboundSchema.optional(),
+    type: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      dailyMaxAmount: "daily_max_amount",
+      dailyMaxImpressions: "daily_max_impressions",
+    });
+  })
+);
 
 export function propertyAdsGroupPacingToJSON(
   propertyAdsGroupPacing: PropertyAdsGroupPacing,

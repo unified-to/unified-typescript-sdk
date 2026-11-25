@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetAnalyticsPropertyQueryParamFields = {
@@ -43,9 +44,10 @@ export type GetAnalyticsPropertyRequest = {
 
 /** @internal */
 export const GetAnalyticsPropertyQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetAnalyticsPropertyQueryParamFields> = z.nativeEnum(
-    GetAnalyticsPropertyQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetAnalyticsPropertyQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetAnalyticsPropertyQueryParamFields)
+    );
 
 /** @internal */
 export type GetAnalyticsPropertyRequest$Outbound = {
@@ -60,17 +62,19 @@ export const GetAnalyticsPropertyRequest$outboundSchema: z.ZodType<
   GetAnalyticsPropertyRequest$Outbound,
   z.ZodTypeDef,
   GetAnalyticsPropertyRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetAnalyticsPropertyQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetAnalyticsPropertyQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getAnalyticsPropertyRequestToJSON(
   getAnalyticsPropertyRequest: GetAnalyticsPropertyRequest,

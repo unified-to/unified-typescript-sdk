@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const GenaiMetadata1$inboundSchema: z.ZodType<
   GenaiMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type GenaiMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const GenaiMetadata1$outboundSchema: z.ZodType<
   GenaiMetadata1$Outbound,
   z.ZodTypeDef,
   GenaiMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function genaiMetadata1ToJSON(genaiMetadata1: GenaiMetadata1): string {
   return JSON.stringify(GenaiMetadata1$outboundSchema.parse(genaiMetadata1));
@@ -108,12 +108,14 @@ export const GenaiMetadata5$inboundSchema: z.ZodType<
   GenaiMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => GenaiMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => GenaiMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type GenaiMetadata5$Outbound =
   | GenaiMetadata1$Outbound
@@ -126,12 +128,14 @@ export const GenaiMetadata5$outboundSchema: z.ZodType<
   GenaiMetadata5$Outbound,
   z.ZodTypeDef,
   GenaiMetadata5
-> = z.union([
-  z.lazy(() => GenaiMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => GenaiMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function genaiMetadata5ToJSON(genaiMetadata5: GenaiMetadata5): string {
   return JSON.stringify(GenaiMetadata5$outboundSchema.parse(genaiMetadata5));
@@ -151,20 +155,22 @@ export const GenaiMetadataExtraData$inboundSchema: z.ZodType<
   GenaiMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => GenaiMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => GenaiMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type GenaiMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -178,20 +184,22 @@ export const GenaiMetadataExtraData$outboundSchema: z.ZodType<
   GenaiMetadataExtraData$Outbound,
   z.ZodTypeDef,
   GenaiMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => GenaiMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => GenaiMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function genaiMetadataExtraDataToJSON(
   genaiMetadataExtraData: GenaiMetadataExtraData,
@@ -215,20 +223,24 @@ export const GenaiMetadataFormat$inboundSchema: z.ZodType<
   GenaiMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GenaiMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GenaiMetadataFormat)
+);
 /** @internal */
 export const GenaiMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   GenaiMetadataFormat
-> = openEnums.outboundSchema(GenaiMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(GenaiMetadataFormat)
+);
 
 /** @internal */
 export const GenaiMetadataSchemas1$inboundSchema: z.ZodType<
   GenaiMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type GenaiMetadataSchemas1$Outbound = {};
 
@@ -237,7 +249,7 @@ export const GenaiMetadataSchemas1$outboundSchema: z.ZodType<
   GenaiMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   GenaiMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function genaiMetadataSchemas1ToJSON(
   genaiMetadataSchemas1: GenaiMetadataSchemas1,
@@ -261,12 +273,14 @@ export const GenaiMetadataSchemas5$inboundSchema: z.ZodType<
   GenaiMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => GenaiMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => GenaiMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type GenaiMetadataSchemas5$Outbound =
   | GenaiMetadataSchemas1$Outbound
@@ -279,12 +293,14 @@ export const GenaiMetadataSchemas5$outboundSchema: z.ZodType<
   GenaiMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   GenaiMetadataSchemas5
-> = z.union([
-  z.lazy(() => GenaiMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => GenaiMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function genaiMetadataSchemas5ToJSON(
   genaiMetadataSchemas5: GenaiMetadataSchemas5,
@@ -308,20 +324,22 @@ export const GenaiMetadataValue$inboundSchema: z.ZodType<
   GenaiMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => GenaiMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => GenaiMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type GenaiMetadataValue$Outbound =
   | { [k: string]: any }
@@ -335,20 +353,22 @@ export const GenaiMetadataValue$outboundSchema: z.ZodType<
   GenaiMetadataValue$Outbound,
   z.ZodTypeDef,
   GenaiMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => GenaiMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => GenaiMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function genaiMetadataValueToJSON(
   genaiMetadataValue: GenaiMetadataValue,
@@ -372,44 +392,46 @@ export const GenaiMetadata$inboundSchema: z.ZodType<
   GenaiMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => GenaiMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: GenaiMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => GenaiMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => GenaiMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: GenaiMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => GenaiMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type GenaiMetadata$Outbound = {
   extra_data?:
@@ -437,44 +459,46 @@ export const GenaiMetadata$outboundSchema: z.ZodType<
   GenaiMetadata$Outbound,
   z.ZodTypeDef,
   GenaiMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => GenaiMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: GenaiMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => GenaiMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => GenaiMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: GenaiMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => GenaiMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function genaiMetadataToJSON(genaiMetadata: GenaiMetadata): string {
   return JSON.stringify(GenaiMetadata$outboundSchema.parse(genaiMetadata));

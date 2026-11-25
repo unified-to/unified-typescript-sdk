@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetGenaiSkillQueryParamFields = {
@@ -41,7 +42,9 @@ export type GetGenaiSkillRequest = {
 /** @internal */
 export const GetGenaiSkillQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetGenaiSkillQueryParamFields
-> = z.nativeEnum(GetGenaiSkillQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetGenaiSkillQueryParamFields)
+);
 
 /** @internal */
 export type GetGenaiSkillRequest$Outbound = {
@@ -56,16 +59,18 @@ export const GetGenaiSkillRequest$outboundSchema: z.ZodType<
   GetGenaiSkillRequest$Outbound,
   z.ZodTypeDef,
   GetGenaiSkillRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetGenaiSkillQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetGenaiSkillQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getGenaiSkillRequestToJSON(
   getGenaiSkillRequest: GetGenaiSkillRequest,

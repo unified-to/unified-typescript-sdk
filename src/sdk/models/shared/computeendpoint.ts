@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -49,29 +49,31 @@ export const Protocol$inboundSchema: z.ZodType<
   Protocol,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Protocol);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Protocol));
 /** @internal */
 export const Protocol$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Protocol
-> = openEnums.outboundSchema(Protocol);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Protocol));
 
 /** @internal */
 export const ComputeEndpoint$inboundSchema: z.ZodType<
   ComputeEndpoint,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  is_auth_required: z.boolean().optional(),
-  port: z.number().optional(),
-  protocol: Protocol$inboundSchema.optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_auth_required": "isAuthRequired",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    is_auth_required: z.boolean().optional(),
+    port: z.number().optional(),
+    protocol: Protocol$inboundSchema.optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_auth_required": "isAuthRequired",
+    });
+  })
+);
 /** @internal */
 export type ComputeEndpoint$Outbound = {
   is_auth_required?: boolean | undefined;
@@ -85,16 +87,18 @@ export const ComputeEndpoint$outboundSchema: z.ZodType<
   ComputeEndpoint$Outbound,
   z.ZodTypeDef,
   ComputeEndpoint
-> = z.object({
-  isAuthRequired: z.boolean().optional(),
-  port: z.number().optional(),
-  protocol: Protocol$outboundSchema.optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isAuthRequired: "is_auth_required",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    isAuthRequired: z.boolean().optional(),
+    port: z.number().optional(),
+    protocol: Protocol$outboundSchema.optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isAuthRequired: "is_auth_required",
+    });
+  })
+);
 
 export function computeEndpointToJSON(
   computeEndpoint: ComputeEndpoint,

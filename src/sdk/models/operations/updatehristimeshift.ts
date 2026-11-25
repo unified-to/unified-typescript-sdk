@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -51,9 +52,10 @@ export type UpdateHrisTimeshiftRequest = {
 
 /** @internal */
 export const UpdateHrisTimeshiftQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateHrisTimeshiftQueryParamFields> = z.nativeEnum(
-    UpdateHrisTimeshiftQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateHrisTimeshiftQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateHrisTimeshiftQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateHrisTimeshiftRequest$Outbound = {
@@ -69,19 +71,21 @@ export const UpdateHrisTimeshiftRequest$outboundSchema: z.ZodType<
   UpdateHrisTimeshiftRequest$Outbound,
   z.ZodTypeDef,
   UpdateHrisTimeshiftRequest
-> = z.object({
-  hrisTimeshift: shared.HrisTimeshift$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateHrisTimeshiftQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisTimeshift: "HrisTimeshift",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisTimeshift: shared.HrisTimeshift$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateHrisTimeshiftQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisTimeshift: "HrisTimeshift",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateHrisTimeshiftRequestToJSON(
   updateHrisTimeshiftRequest: UpdateHrisTimeshiftRequest,

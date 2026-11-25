@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -74,43 +74,48 @@ export const HrisTimeshift$inboundSchema: z.ZodType<
   HrisTimeshift,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  approver_user_id: z.string().optional(),
-  company_id: z.string().optional(),
-  compensation: z.array(HrisCompensation$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  employee_user_id: z.string(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  group_id: z.string().optional(),
-  hours: z.number().optional(),
-  id: z.string().optional(),
-  is_approved: z.boolean().optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "approved_at": "approvedAt",
-    "approver_user_id": "approverUserId",
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "employee_user_id": "employeeUserId",
-    "end_at": "endAt",
-    "group_id": "groupId",
-    "is_approved": "isApproved",
-    "location_id": "locationId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    approved_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    approver_user_id: z.string().optional(),
+    company_id: z.string().optional(),
+    compensation: z.array(HrisCompensation$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    employee_user_id: z.string(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    group_id: z.string().optional(),
+    hours: z.number().optional(),
+    id: z.string().optional(),
+    is_approved: z.boolean().optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "approved_at": "approvedAt",
+      "approver_user_id": "approverUserId",
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "employee_user_id": "employeeUserId",
+      "end_at": "endAt",
+      "group_id": "groupId",
+      "is_approved": "isApproved",
+      "location_id": "locationId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type HrisTimeshift$Outbound = {
   approved_at?: string | undefined;
@@ -136,38 +141,40 @@ export const HrisTimeshift$outboundSchema: z.ZodType<
   HrisTimeshift$Outbound,
   z.ZodTypeDef,
   HrisTimeshift
-> = z.object({
-  approvedAt: z.date().transform(v => v.toISOString()).optional(),
-  approverUserId: z.string().optional(),
-  companyId: z.string().optional(),
-  compensation: z.array(HrisCompensation$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  employeeUserId: z.string(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  groupId: z.string().optional(),
-  hours: z.number().optional(),
-  id: z.string().optional(),
-  isApproved: z.boolean().optional(),
-  locationId: z.string().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    approvedAt: "approved_at",
-    approverUserId: "approver_user_id",
-    companyId: "company_id",
-    createdAt: "created_at",
-    employeeUserId: "employee_user_id",
-    endAt: "end_at",
-    groupId: "group_id",
-    isApproved: "is_approved",
-    locationId: "location_id",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    approvedAt: z.date().transform(v => v.toISOString()).optional(),
+    approverUserId: z.string().optional(),
+    companyId: z.string().optional(),
+    compensation: z.array(HrisCompensation$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    employeeUserId: z.string(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    groupId: z.string().optional(),
+    hours: z.number().optional(),
+    id: z.string().optional(),
+    isApproved: z.boolean().optional(),
+    locationId: z.string().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      approvedAt: "approved_at",
+      approverUserId: "approver_user_id",
+      companyId: "company_id",
+      createdAt: "created_at",
+      employeeUserId: "employee_user_id",
+      endAt: "end_at",
+      groupId: "group_id",
+      isApproved: "is_approved",
+      locationId: "location_id",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function hrisTimeshiftToJSON(hrisTimeshift: HrisTimeshift): string {
   return JSON.stringify(HrisTimeshift$outboundSchema.parse(hrisTimeshift));

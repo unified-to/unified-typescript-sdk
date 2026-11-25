@@ -31,21 +31,21 @@ async function run() {
   const result = await unifiedTo.storage.createStorageFile({
     storageFile: {
       createdAt: new Date("2021-09-12T16:48:23.774Z"),
-      description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
-      downloadUrl: "https://clueless-laughter.biz",
-      hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "8cdbe6c0-b62f-4941-a151-d764f1bcd4c8",
+      description: "Debilito cimentarius virgo acidus thymbra.",
+      downloadUrl: "https://messy-clamp.net/",
+      hash: "9d88dda7bc0acaa8472fdef2307f94a1fc355cef",
+      id: "c8c71869-2d6f-4285-91e1-0fd976febbb0",
       metadata: [],
       mimeType: "application/pdf",
-      name: "softly.pdf",
+      name: "joshingly.pdf",
       size: 1134456,
       tags: [
-        "suasoria",
+        "derelinquo",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-13T18:22:51.664Z"),
+      updatedAt: new Date("2023-02-15T09:00:19.302Z"),
       version: "1",
-      webUrl: "https://faraway-inspection.org",
+      webUrl: "https://likable-widow.org/",
     },
     connectionId: "<id>",
   });
@@ -62,7 +62,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { storageCreateStorageFile } from "@unified-api/typescript-sdk/funcs/storageCreateStorageFile.js";
+import { fileCreateStorageFile } from "@unified-api/typescript-sdk/funcs/fileCreateStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -73,24 +73,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await storageCreateStorageFile(unifiedTo, {
+  const res = await fileCreateStorageFile(unifiedTo, {
     storageFile: {
       createdAt: new Date("2021-09-12T16:48:23.774Z"),
-      description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
-      downloadUrl: "https://clueless-laughter.biz",
-      hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "8cdbe6c0-b62f-4941-a151-d764f1bcd4c8",
+      description: "Debilito cimentarius virgo acidus thymbra.",
+      downloadUrl: "https://messy-clamp.net/",
+      hash: "9d88dda7bc0acaa8472fdef2307f94a1fc355cef",
+      id: "c8c71869-2d6f-4285-91e1-0fd976febbb0",
       metadata: [],
       mimeType: "application/pdf",
-      name: "softly.pdf",
+      name: "joshingly.pdf",
       size: 1134456,
       tags: [
-        "suasoria",
+        "derelinquo",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-13T18:22:51.664Z"),
+      updatedAt: new Date("2023-02-15T09:00:19.302Z"),
       version: "1",
-      webUrl: "https://faraway-inspection.org",
+      webUrl: "https://likable-widow.org/",
     },
     connectionId: "<id>",
   });
@@ -98,7 +98,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("storageCreateStorageFile failed:", res.error);
+    console.log("fileCreateStorageFile failed:", res.error);
   }
 }
 
@@ -158,7 +158,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { storageGetStorageFile } from "@unified-api/typescript-sdk/funcs/storageGetStorageFile.js";
+import { fileGetStorageFile } from "@unified-api/typescript-sdk/funcs/fileGetStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -169,7 +169,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await storageGetStorageFile(unifiedTo, {
+  const res = await fileGetStorageFile(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -177,7 +177,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("storageGetStorageFile failed:", res.error);
+    console.log("fileGetStorageFile failed:", res.error);
   }
 }
 
@@ -236,7 +236,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { storageListStorageFiles } from "@unified-api/typescript-sdk/funcs/storageListStorageFiles.js";
+import { fileListStorageFiles } from "@unified-api/typescript-sdk/funcs/fileListStorageFiles.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -247,14 +247,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await storageListStorageFiles(unifiedTo, {
+  const res = await fileListStorageFiles(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("storageListStorageFiles failed:", res.error);
+    console.log("fileListStorageFiles failed:", res.error);
   }
 }
 
@@ -300,21 +300,21 @@ async function run() {
   const result = await unifiedTo.storage.patchStorageFile({
     storageFile: {
       createdAt: new Date("2021-09-12T16:48:23.774Z"),
-      description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
-      downloadUrl: "https://clueless-laughter.biz",
-      hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "957136b1-a2a3-4337-8cbd-e6c188273af1",
+      description: "Debilito cimentarius virgo acidus thymbra.",
+      downloadUrl: "https://messy-clamp.net/",
+      hash: "9d88dda7bc0acaa8472fdef2307f94a1fc355cef",
+      id: "6ac7c031-96a6-4fb9-a76f-44f34b52658d",
       metadata: [],
       mimeType: "application/pdf",
-      name: "softly.pdf",
+      name: "joshingly.pdf",
       size: 1134456,
       tags: [
-        "suasoria",
+        "derelinquo",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-13T18:22:51.670Z"),
+      updatedAt: new Date("2023-02-15T09:00:19.307Z"),
       version: "1",
-      webUrl: "https://faraway-inspection.org",
+      webUrl: "https://likable-widow.org/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -332,7 +332,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { storagePatchStorageFile } from "@unified-api/typescript-sdk/funcs/storagePatchStorageFile.js";
+import { filePatchStorageFile } from "@unified-api/typescript-sdk/funcs/filePatchStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -343,24 +343,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await storagePatchStorageFile(unifiedTo, {
+  const res = await filePatchStorageFile(unifiedTo, {
     storageFile: {
       createdAt: new Date("2021-09-12T16:48:23.774Z"),
-      description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
-      downloadUrl: "https://clueless-laughter.biz",
-      hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "957136b1-a2a3-4337-8cbd-e6c188273af1",
+      description: "Debilito cimentarius virgo acidus thymbra.",
+      downloadUrl: "https://messy-clamp.net/",
+      hash: "9d88dda7bc0acaa8472fdef2307f94a1fc355cef",
+      id: "6ac7c031-96a6-4fb9-a76f-44f34b52658d",
       metadata: [],
       mimeType: "application/pdf",
-      name: "softly.pdf",
+      name: "joshingly.pdf",
       size: 1134456,
       tags: [
-        "suasoria",
+        "derelinquo",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-13T18:22:51.670Z"),
+      updatedAt: new Date("2023-02-15T09:00:19.307Z"),
       version: "1",
-      webUrl: "https://faraway-inspection.org",
+      webUrl: "https://likable-widow.org/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -369,7 +369,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("storagePatchStorageFile failed:", res.error);
+    console.log("filePatchStorageFile failed:", res.error);
   }
 }
 
@@ -429,7 +429,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { storageRemoveStorageFile } from "@unified-api/typescript-sdk/funcs/storageRemoveStorageFile.js";
+import { fileRemoveStorageFile } from "@unified-api/typescript-sdk/funcs/fileRemoveStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -440,7 +440,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await storageRemoveStorageFile(unifiedTo, {
+  const res = await fileRemoveStorageFile(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -448,7 +448,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("storageRemoveStorageFile failed:", res.error);
+    console.log("fileRemoveStorageFile failed:", res.error);
   }
 }
 
@@ -494,21 +494,21 @@ async function run() {
   const result = await unifiedTo.storage.updateStorageFile({
     storageFile: {
       createdAt: new Date("2021-09-12T16:48:23.774Z"),
-      description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
-      downloadUrl: "https://clueless-laughter.biz",
-      hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "957136b1-a2a3-4337-8cbd-e6c188273af1",
+      description: "Debilito cimentarius virgo acidus thymbra.",
+      downloadUrl: "https://messy-clamp.net/",
+      hash: "9d88dda7bc0acaa8472fdef2307f94a1fc355cef",
+      id: "6ac7c031-96a6-4fb9-a76f-44f34b52658d",
       metadata: [],
       mimeType: "application/pdf",
-      name: "softly.pdf",
+      name: "joshingly.pdf",
       size: 1134456,
       tags: [
-        "suasoria",
+        "derelinquo",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-13T18:22:51.670Z"),
+      updatedAt: new Date("2023-02-15T09:00:19.307Z"),
       version: "1",
-      webUrl: "https://faraway-inspection.org",
+      webUrl: "https://likable-widow.org/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -526,7 +526,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { storageUpdateStorageFile } from "@unified-api/typescript-sdk/funcs/storageUpdateStorageFile.js";
+import { fileUpdateStorageFile } from "@unified-api/typescript-sdk/funcs/fileUpdateStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -537,24 +537,24 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await storageUpdateStorageFile(unifiedTo, {
+  const res = await fileUpdateStorageFile(unifiedTo, {
     storageFile: {
       createdAt: new Date("2021-09-12T16:48:23.774Z"),
-      description: "Deprimo crastinus cupiditate debilito cimentarius virgo acidus.",
-      downloadUrl: "https://clueless-laughter.biz",
-      hash: "d9d88dda7bc0acaa8472fdef2307f94a1fc355ce",
-      id: "957136b1-a2a3-4337-8cbd-e6c188273af1",
+      description: "Debilito cimentarius virgo acidus thymbra.",
+      downloadUrl: "https://messy-clamp.net/",
+      hash: "9d88dda7bc0acaa8472fdef2307f94a1fc355cef",
+      id: "6ac7c031-96a6-4fb9-a76f-44f34b52658d",
       metadata: [],
       mimeType: "application/pdf",
-      name: "softly.pdf",
+      name: "joshingly.pdf",
       size: 1134456,
       tags: [
-        "suasoria",
+        "derelinquo",
       ],
       type: "FOLDER",
-      updatedAt: new Date("2023-02-13T18:22:51.670Z"),
+      updatedAt: new Date("2023-02-15T09:00:19.307Z"),
       version: "1",
-      webUrl: "https://faraway-inspection.org",
+      webUrl: "https://likable-widow.org/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -563,7 +563,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("storageUpdateStorageFile failed:", res.error);
+    console.log("fileUpdateStorageFile failed:", res.error);
   }
 }
 

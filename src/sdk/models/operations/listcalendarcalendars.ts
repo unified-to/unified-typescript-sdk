@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCalendarCalendarsQueryParamFields = {
@@ -50,9 +51,10 @@ export type ListCalendarCalendarsRequest = {
 
 /** @internal */
 export const ListCalendarCalendarsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCalendarCalendarsQueryParamFields> = z.nativeEnum(
-    ListCalendarCalendarsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListCalendarCalendarsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCalendarCalendarsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCalendarCalendarsRequest$Outbound = {
@@ -72,23 +74,25 @@ export const ListCalendarCalendarsRequest$outboundSchema: z.ZodType<
   ListCalendarCalendarsRequest$Outbound,
   z.ZodTypeDef,
   ListCalendarCalendarsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCalendarCalendarsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCalendarCalendarsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCalendarCalendarsRequestToJSON(
   listCalendarCalendarsRequest: ListCalendarCalendarsRequest,

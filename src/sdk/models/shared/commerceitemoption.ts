@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,12 +19,14 @@ export const CommerceItemOption$inboundSchema: z.ZodType<
   CommerceItemOption,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string().optional(),
-  name: z.string(),
-  position: z.number().optional(),
-  values: z.array(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string(),
+    position: z.number().optional(),
+    values: z.array(z.string()),
+  })
+);
 /** @internal */
 export type CommerceItemOption$Outbound = {
   id?: string | undefined;
@@ -38,12 +40,14 @@ export const CommerceItemOption$outboundSchema: z.ZodType<
   CommerceItemOption$Outbound,
   z.ZodTypeDef,
   CommerceItemOption
-> = z.object({
-  id: z.string().optional(),
-  name: z.string(),
-  position: z.number().optional(),
-  values: z.array(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string(),
+    position: z.number().optional(),
+    values: z.array(z.string()),
+  })
+);
 
 export function commerceItemOptionToJSON(
   commerceItemOption: CommerceItemOption,

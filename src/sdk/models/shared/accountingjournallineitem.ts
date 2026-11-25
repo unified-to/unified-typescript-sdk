@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -61,39 +61,41 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
   AccountingJournalLineitem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  category_ids: z.array(z.string()).optional(),
-  contact_id: z.string().optional(),
-  credit_amount: z.number().optional(),
-  debit_amount: z.number().optional(),
-  description: z.string().optional(),
-  group_id: z.string().optional(),
-  id: z.string().optional(),
-  invoice_id: z.string().optional(),
-  organization_id: z.string().optional(),
-  payment_id: z.string().optional(),
-  project_id: z.string().optional(),
-  tax_amount: z.number().optional(),
-  taxrate_id: z.string().optional(),
-  total_amount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "credit_amount": "creditAmount",
-    "debit_amount": "debitAmount",
-    "group_id": "groupId",
-    "invoice_id": "invoiceId",
-    "organization_id": "organizationId",
-    "payment_id": "paymentId",
-    "project_id": "projectId",
-    "tax_amount": "taxAmount",
-    "taxrate_id": "taxrateId",
-    "total_amount": "totalAmount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    category_ids: z.array(z.string()).optional(),
+    contact_id: z.string().optional(),
+    credit_amount: z.number().optional(),
+    debit_amount: z.number().optional(),
+    description: z.string().optional(),
+    group_id: z.string().optional(),
+    id: z.string().optional(),
+    invoice_id: z.string().optional(),
+    organization_id: z.string().optional(),
+    payment_id: z.string().optional(),
+    project_id: z.string().optional(),
+    tax_amount: z.number().optional(),
+    taxrate_id: z.string().optional(),
+    total_amount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "credit_amount": "creditAmount",
+      "debit_amount": "debitAmount",
+      "group_id": "groupId",
+      "invoice_id": "invoiceId",
+      "organization_id": "organizationId",
+      "payment_id": "paymentId",
+      "project_id": "projectId",
+      "tax_amount": "taxAmount",
+      "taxrate_id": "taxrateId",
+      "total_amount": "totalAmount",
+    });
+  })
+);
 /** @internal */
 export type AccountingJournalLineitem$Outbound = {
   account_id?: string | undefined;
@@ -118,39 +120,41 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
   AccountingJournalLineitem$Outbound,
   z.ZodTypeDef,
   AccountingJournalLineitem
-> = z.object({
-  accountId: z.string().optional(),
-  categoryIds: z.array(z.string()).optional(),
-  contactId: z.string().optional(),
-  creditAmount: z.number().optional(),
-  debitAmount: z.number().optional(),
-  description: z.string().optional(),
-  groupId: z.string().optional(),
-  id: z.string().optional(),
-  invoiceId: z.string().optional(),
-  organizationId: z.string().optional(),
-  paymentId: z.string().optional(),
-  projectId: z.string().optional(),
-  taxAmount: z.number().optional(),
-  taxrateId: z.string().optional(),
-  totalAmount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    categoryIds: "category_ids",
-    contactId: "contact_id",
-    creditAmount: "credit_amount",
-    debitAmount: "debit_amount",
-    groupId: "group_id",
-    invoiceId: "invoice_id",
-    organizationId: "organization_id",
-    paymentId: "payment_id",
-    projectId: "project_id",
-    taxAmount: "tax_amount",
-    taxrateId: "taxrate_id",
-    totalAmount: "total_amount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    categoryIds: z.array(z.string()).optional(),
+    contactId: z.string().optional(),
+    creditAmount: z.number().optional(),
+    debitAmount: z.number().optional(),
+    description: z.string().optional(),
+    groupId: z.string().optional(),
+    id: z.string().optional(),
+    invoiceId: z.string().optional(),
+    organizationId: z.string().optional(),
+    paymentId: z.string().optional(),
+    projectId: z.string().optional(),
+    taxAmount: z.number().optional(),
+    taxrateId: z.string().optional(),
+    totalAmount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      categoryIds: "category_ids",
+      contactId: "contact_id",
+      creditAmount: "credit_amount",
+      debitAmount: "debit_amount",
+      groupId: "group_id",
+      invoiceId: "invoice_id",
+      organizationId: "organization_id",
+      paymentId: "payment_id",
+      projectId: "project_id",
+      taxAmount: "tax_amount",
+      taxrateId: "taxrate_id",
+      totalAmount: "total_amount",
+    });
+  })
+);
 
 export function accountingJournalLineitemToJSON(
   accountingJournalLineitem: AccountingJournalLineitem,

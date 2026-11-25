@@ -1,13 +1,13 @@
 # Criticality
 
-Potential severity of future reactions
+low | high | unable-to-assess
 
 ## Example Usage
 
 ```typescript
 import { Criticality } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Criticality = "LOW";
+let value: Criticality = "low";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -15,5 +15,5 @@ let value: Criticality = "LOW";
 ## Values
 
 ```typescript
-"LOW" | "HIGH" | "UNABLE_TO_ASSESS" | "OTHER" | Unrecognized<string>
+"low" | "high" | "unable-to-assess" | Unrecognized<string>
 ```

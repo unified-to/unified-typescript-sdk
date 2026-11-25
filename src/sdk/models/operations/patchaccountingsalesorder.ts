@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -70,8 +71,10 @@ export type PatchAccountingSalesorderRequest = {
 
 /** @internal */
 export const PatchAccountingSalesorderQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchAccountingSalesorderQueryParamFields> = z
-    .nativeEnum(PatchAccountingSalesorderQueryParamFields);
+  z.ZodNativeEnum<typeof PatchAccountingSalesorderQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchAccountingSalesorderQueryParamFields)
+    );
 
 /** @internal */
 export type PatchAccountingSalesorderRequest$Outbound = {
@@ -87,19 +90,21 @@ export const PatchAccountingSalesorderRequest$outboundSchema: z.ZodType<
   PatchAccountingSalesorderRequest$Outbound,
   z.ZodTypeDef,
   PatchAccountingSalesorderRequest
-> = z.object({
-  accountingSalesorder: shared.AccountingSalesorder$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAccountingSalesorderQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingSalesorder: "AccountingSalesorder",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingSalesorder: shared.AccountingSalesorder$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchAccountingSalesorderQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingSalesorder: "AccountingSalesorder",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAccountingSalesorderRequestToJSON(
   patchAccountingSalesorderRequest: PatchAccountingSalesorderRequest,

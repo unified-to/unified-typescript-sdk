@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -30,27 +30,29 @@ export const MatchType$inboundSchema: z.ZodType<
   MatchType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MatchType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(MatchType));
 /** @internal */
 export const MatchType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   MatchType
-> = openEnums.outboundSchema(MatchType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(MatchType));
 
 /** @internal */
 export const AdsKeyword$inboundSchema: z.ZodType<
   AdsKeyword,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  match_type: MatchType$inboundSchema.optional(),
-  text: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "match_type": "matchType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    match_type: MatchType$inboundSchema.optional(),
+    text: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "match_type": "matchType",
+    });
+  })
+);
 /** @internal */
 export type AdsKeyword$Outbound = {
   match_type?: string | undefined;
@@ -62,14 +64,16 @@ export const AdsKeyword$outboundSchema: z.ZodType<
   AdsKeyword$Outbound,
   z.ZodTypeDef,
   AdsKeyword
-> = z.object({
-  matchType: MatchType$outboundSchema.optional(),
-  text: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    matchType: "match_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    matchType: MatchType$outboundSchema.optional(),
+    text: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      matchType: "match_type",
+    });
+  })
+);
 
 export function adsKeywordToJSON(adsKeyword: AdsKeyword): string {
   return JSON.stringify(AdsKeyword$outboundSchema.parse(adsKeyword));

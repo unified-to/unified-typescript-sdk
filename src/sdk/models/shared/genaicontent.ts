@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -27,21 +27,23 @@ export type GenaiContent = {
 
 /** @internal */
 export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Role);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Role));
 /** @internal */
 export const Role$outboundSchema: z.ZodType<string, z.ZodTypeDef, Role> =
-  openEnums.outboundSchema(Role);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Role));
 
 /** @internal */
 export const GenaiContent$inboundSchema: z.ZodType<
   GenaiContent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  content: z.string(),
-  images: z.array(z.string()).optional(),
-  role: Role$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string(),
+    images: z.array(z.string()).optional(),
+    role: Role$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type GenaiContent$Outbound = {
   content: string;
@@ -54,11 +56,13 @@ export const GenaiContent$outboundSchema: z.ZodType<
   GenaiContent$Outbound,
   z.ZodTypeDef,
   GenaiContent
-> = z.object({
-  content: z.string(),
-  images: z.array(z.string()).optional(),
-  role: Role$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string(),
+    images: z.array(z.string()).optional(),
+    role: Role$outboundSchema.optional(),
+  })
+);
 
 export function genaiContentToJSON(genaiContent: GenaiContent): string {
   return JSON.stringify(GenaiContent$outboundSchema.parse(genaiContent));

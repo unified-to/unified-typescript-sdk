@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -66,33 +66,39 @@ export const ComputePriceMarket$inboundSchema: z.ZodType<
   ComputePriceMarket,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputePriceMarket);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputePriceMarket)
+);
 
 /** @internal */
 export const ComputePricePriceUnit$inboundSchema: z.ZodType<
   ComputePricePriceUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputePricePriceUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputePricePriceUnit)
+);
 
 /** @internal */
 export const ComputePrice$inboundSchema: z.ZodType<
   ComputePrice,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  currency: z.string().optional(),
-  market: ComputePriceMarket$inboundSchema.optional(),
-  price_amount: z.number().optional(),
-  price_unit: ComputePricePriceUnit$inboundSchema.optional(),
-  region_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "price_amount": "priceAmount",
-    "price_unit": "priceUnit",
-    "region_id": "regionId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    currency: z.string().optional(),
+    market: ComputePriceMarket$inboundSchema.optional(),
+    price_amount: z.number().optional(),
+    price_unit: ComputePricePriceUnit$inboundSchema.optional(),
+    region_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "price_amount": "priceAmount",
+      "price_unit": "priceUnit",
+      "region_id": "regionId",
+    });
+  })
+);
 
 export function computePriceFromJSON(
   jsonString: string,

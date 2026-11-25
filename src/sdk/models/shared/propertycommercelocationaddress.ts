@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -27,22 +27,24 @@ export const PropertyCommerceLocationAddress$inboundSchema: z.ZodType<
   PropertyCommerceLocationAddress,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address1: z.string().optional(),
-  address2: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  country_code: z.string().optional(),
-  postal_code: z.string().optional(),
-  region: z.string().optional(),
-  region_code: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "country_code": "countryCode",
-    "postal_code": "postalCode",
-    "region_code": "regionCode",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address1: z.string().optional(),
+    address2: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    country_code: z.string().optional(),
+    postal_code: z.string().optional(),
+    region: z.string().optional(),
+    region_code: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "country_code": "countryCode",
+      "postal_code": "postalCode",
+      "region_code": "regionCode",
+    });
+  })
+);
 /** @internal */
 export type PropertyCommerceLocationAddress$Outbound = {
   address1?: string | undefined;
@@ -60,22 +62,24 @@ export const PropertyCommerceLocationAddress$outboundSchema: z.ZodType<
   PropertyCommerceLocationAddress$Outbound,
   z.ZodTypeDef,
   PropertyCommerceLocationAddress
-> = z.object({
-  address1: z.string().optional(),
-  address2: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  countryCode: z.string().optional(),
-  postalCode: z.string().optional(),
-  region: z.string().optional(),
-  regionCode: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    countryCode: "country_code",
-    postalCode: "postal_code",
-    regionCode: "region_code",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address1: z.string().optional(),
+    address2: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    countryCode: z.string().optional(),
+    postalCode: z.string().optional(),
+    region: z.string().optional(),
+    regionCode: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      countryCode: "country_code",
+      postalCode: "postal_code",
+      regionCode: "region_code",
+    });
+  })
+);
 
 export function propertyCommerceLocationAddressToJSON(
   propertyCommerceLocationAddress: PropertyCommerceLocationAddress,

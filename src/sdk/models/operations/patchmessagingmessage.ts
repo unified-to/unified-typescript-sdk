@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -58,9 +59,10 @@ export type PatchMessagingMessageRequest = {
 
 /** @internal */
 export const PatchMessagingMessageQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchMessagingMessageQueryParamFields> = z.nativeEnum(
-    PatchMessagingMessageQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchMessagingMessageQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchMessagingMessageQueryParamFields)
+    );
 
 /** @internal */
 export type PatchMessagingMessageRequest$Outbound = {
@@ -76,19 +78,21 @@ export const PatchMessagingMessageRequest$outboundSchema: z.ZodType<
   PatchMessagingMessageRequest$Outbound,
   z.ZodTypeDef,
   PatchMessagingMessageRequest
-> = z.object({
-  messagingMessage: shared.MessagingMessage$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchMessagingMessageQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    messagingMessage: "MessagingMessage",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    messagingMessage: shared.MessagingMessage$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchMessagingMessageQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      messagingMessage: "MessagingMessage",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchMessagingMessageRequestToJSON(
   patchMessagingMessageRequest: PatchMessagingMessageRequest,

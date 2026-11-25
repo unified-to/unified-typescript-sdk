@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingExpensesQueryParamFields = {
@@ -105,9 +106,10 @@ export type ListAccountingExpensesRequest = {
 
 /** @internal */
 export const ListAccountingExpensesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingExpensesQueryParamFields> = z.nativeEnum(
-    ListAccountingExpensesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAccountingExpensesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingExpensesQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingExpensesRequest$Outbound = {
@@ -137,41 +139,43 @@ export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
   ListAccountingExpensesRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingExpensesRequest
-> = z.object({
-  approverUserId: z.string().optional(),
-  categoryId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAccountingExpensesQueryParamFields$outboundSchema)
-    .optional(),
-  groupId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  status: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    approverUserId: "approver_user_id",
-    categoryId: "category_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    endLt: "end_lt",
-    groupId: "group_id",
-    orgId: "org_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    approverUserId: z.string().optional(),
+    categoryId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAccountingExpensesQueryParamFields$outboundSchema)
+      .optional(),
+    groupId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    status: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      approverUserId: "approver_user_id",
+      categoryId: "category_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      endLt: "end_lt",
+      groupId: "group_id",
+      orgId: "org_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listAccountingExpensesRequestToJSON(
   listAccountingExpensesRequest: ListAccountingExpensesRequest,

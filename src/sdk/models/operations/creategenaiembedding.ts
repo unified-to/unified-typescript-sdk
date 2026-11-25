@@ -4,13 +4,14 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
 export const CreateGenaiEmbeddingQueryParamFields = {
   ModelId: "model_id",
   Content: "content",
-  EncondingFormat: "enconding_format",
+  EncodingFormat: "encoding_format",
   Type: "type",
   Dimension: "dimension",
   MaxTokens: "max_tokens",
@@ -41,9 +42,10 @@ export type CreateGenaiEmbeddingRequest = {
 
 /** @internal */
 export const CreateGenaiEmbeddingQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateGenaiEmbeddingQueryParamFields> = z.nativeEnum(
-    CreateGenaiEmbeddingQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateGenaiEmbeddingQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateGenaiEmbeddingQueryParamFields)
+    );
 
 /** @internal */
 export type CreateGenaiEmbeddingRequest$Outbound = {
@@ -58,18 +60,20 @@ export const CreateGenaiEmbeddingRequest$outboundSchema: z.ZodType<
   CreateGenaiEmbeddingRequest$Outbound,
   z.ZodTypeDef,
   CreateGenaiEmbeddingRequest
-> = z.object({
-  genaiEmbedding: shared.GenaiEmbedding$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateGenaiEmbeddingQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    genaiEmbedding: "GenaiEmbedding",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    genaiEmbedding: shared.GenaiEmbedding$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateGenaiEmbeddingQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      genaiEmbedding: "GenaiEmbedding",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createGenaiEmbeddingRequestToJSON(
   createGenaiEmbeddingRequest: CreateGenaiEmbeddingRequest,

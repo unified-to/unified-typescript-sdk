@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisDeductionsQueryParamFields = {
@@ -88,7 +89,9 @@ export type ListHrisDeductionsRequest = {
 /** @internal */
 export const ListHrisDeductionsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisDeductionsQueryParamFields
-> = z.nativeEnum(ListHrisDeductionsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisDeductionsQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisDeductionsRequest$Outbound = {
@@ -114,34 +117,37 @@ export const ListHrisDeductionsRequest$outboundSchema: z.ZodType<
   ListHrisDeductionsRequest$Outbound,
   z.ZodTypeDef,
   ListHrisDeductionsRequest
-> = z.object({
-  benefitId: z.string().optional(),
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListHrisDeductionsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  payslipId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    benefitId: "benefit_id",
-    companyId: "company_id",
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    payslipId: "payslip_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    benefitId: z.string().optional(),
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListHrisDeductionsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    payslipId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      benefitId: "benefit_id",
+      companyId: "company_id",
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      payslipId: "payslip_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listHrisDeductionsRequestToJSON(
   listHrisDeductionsRequest: ListHrisDeductionsRequest,

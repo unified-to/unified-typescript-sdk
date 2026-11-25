@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,25 +31,27 @@ export const CalendarConference$inboundSchema: z.ZodType<
   CalendarConference,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  conference_identifier: z.string().optional(),
-  country_code: z.string().optional(),
-  host_access_code: z.string().optional(),
-  label: z.string().optional(),
-  notes: z.string().optional(),
-  participant_access_code: z.string().optional(),
-  region_code: z.string().optional(),
-  telephone: z.string().optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "conference_identifier": "conferenceIdentifier",
-    "country_code": "countryCode",
-    "host_access_code": "hostAccessCode",
-    "participant_access_code": "participantAccessCode",
-    "region_code": "regionCode",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    conference_identifier: z.string().optional(),
+    country_code: z.string().optional(),
+    host_access_code: z.string().optional(),
+    label: z.string().optional(),
+    notes: z.string().optional(),
+    participant_access_code: z.string().optional(),
+    region_code: z.string().optional(),
+    telephone: z.string().optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "conference_identifier": "conferenceIdentifier",
+      "country_code": "countryCode",
+      "host_access_code": "hostAccessCode",
+      "participant_access_code": "participantAccessCode",
+      "region_code": "regionCode",
+    });
+  })
+);
 /** @internal */
 export type CalendarConference$Outbound = {
   conference_identifier?: string | undefined;
@@ -68,25 +70,27 @@ export const CalendarConference$outboundSchema: z.ZodType<
   CalendarConference$Outbound,
   z.ZodTypeDef,
   CalendarConference
-> = z.object({
-  conferenceIdentifier: z.string().optional(),
-  countryCode: z.string().optional(),
-  hostAccessCode: z.string().optional(),
-  label: z.string().optional(),
-  notes: z.string().optional(),
-  participantAccessCode: z.string().optional(),
-  regionCode: z.string().optional(),
-  telephone: z.string().optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    conferenceIdentifier: "conference_identifier",
-    countryCode: "country_code",
-    hostAccessCode: "host_access_code",
-    participantAccessCode: "participant_access_code",
-    regionCode: "region_code",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    conferenceIdentifier: z.string().optional(),
+    countryCode: z.string().optional(),
+    hostAccessCode: z.string().optional(),
+    label: z.string().optional(),
+    notes: z.string().optional(),
+    participantAccessCode: z.string().optional(),
+    regionCode: z.string().optional(),
+    telephone: z.string().optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      conferenceIdentifier: "conference_identifier",
+      countryCode: "country_code",
+      hostAccessCode: "host_access_code",
+      participantAccessCode: "participant_access_code",
+      regionCode: "region_code",
+    });
+  })
+);
 
 export function calendarConferenceToJSON(
   calendarConference: CalendarConference,

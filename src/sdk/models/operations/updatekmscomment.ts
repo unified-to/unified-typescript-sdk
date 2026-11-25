@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,7 +48,9 @@ export type UpdateKmsCommentRequest = {
 /** @internal */
 export const UpdateKmsCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdateKmsCommentQueryParamFields
-> = z.nativeEnum(UpdateKmsCommentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdateKmsCommentQueryParamFields)
+);
 
 /** @internal */
 export type UpdateKmsCommentRequest$Outbound = {
@@ -63,18 +66,20 @@ export const UpdateKmsCommentRequest$outboundSchema: z.ZodType<
   UpdateKmsCommentRequest$Outbound,
   z.ZodTypeDef,
   UpdateKmsCommentRequest
-> = z.object({
-  kmsComment: shared.KmsComment$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateKmsCommentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    kmsComment: "KmsComment",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    kmsComment: shared.KmsComment$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateKmsCommentQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      kmsComment: "KmsComment",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateKmsCommentRequestToJSON(
   updateKmsCommentRequest: UpdateKmsCommentRequest,

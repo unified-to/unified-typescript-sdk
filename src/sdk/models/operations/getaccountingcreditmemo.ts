@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetAccountingCreditmemoQueryParamFields = {
@@ -64,8 +65,10 @@ export type GetAccountingCreditmemoRequest = {
 
 /** @internal */
 export const GetAccountingCreditmemoQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetAccountingCreditmemoQueryParamFields> = z
-    .nativeEnum(GetAccountingCreditmemoQueryParamFields);
+  z.ZodNativeEnum<typeof GetAccountingCreditmemoQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetAccountingCreditmemoQueryParamFields)
+    );
 
 /** @internal */
 export type GetAccountingCreditmemoRequest$Outbound = {
@@ -80,17 +83,19 @@ export const GetAccountingCreditmemoRequest$outboundSchema: z.ZodType<
   GetAccountingCreditmemoRequest$Outbound,
   z.ZodTypeDef,
   GetAccountingCreditmemoRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetAccountingCreditmemoQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetAccountingCreditmemoQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getAccountingCreditmemoRequestToJSON(
   getAccountingCreditmemoRequest: GetAccountingCreditmemoRequest,

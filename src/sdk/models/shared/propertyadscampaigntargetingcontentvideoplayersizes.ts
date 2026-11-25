@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -21,8 +22,8 @@ export const PropertyAdsCampaignTargetingContentVideoPlayerSizes$inboundSchema:
     PropertyAdsCampaignTargetingContentVideoPlayerSizes,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsCampaignTargetingContentVideoPlayerSizes,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsCampaignTargetingContentVideoPlayerSizes)
   );
 /** @internal */
 export const PropertyAdsCampaignTargetingContentVideoPlayerSizes$outboundSchema:
@@ -30,6 +31,8 @@ export const PropertyAdsCampaignTargetingContentVideoPlayerSizes$outboundSchema:
     string,
     z.ZodTypeDef,
     PropertyAdsCampaignTargetingContentVideoPlayerSizes
-  > = openEnums.outboundSchema(
-    PropertyAdsCampaignTargetingContentVideoPlayerSizes,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyAdsCampaignTargetingContentVideoPlayerSizes,
+    )
   );

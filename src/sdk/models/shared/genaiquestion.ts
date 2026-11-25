@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -37,25 +37,31 @@ export const GenaiQuestionType$inboundSchema: z.ZodType<
   GenaiQuestionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GenaiQuestionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GenaiQuestionType)
+);
 /** @internal */
 export const GenaiQuestionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   GenaiQuestionType
-> = openEnums.outboundSchema(GenaiQuestionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(GenaiQuestionType)
+);
 
 /** @internal */
 export const GenaiQuestion$inboundSchema: z.ZodType<
   GenaiQuestion,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string(),
-  instructions: z.string(),
-  options: z.array(z.string()).optional(),
-  type: GenaiQuestionType$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    instructions: z.string(),
+    options: z.array(z.string()).optional(),
+    type: GenaiQuestionType$inboundSchema,
+  })
+);
 /** @internal */
 export type GenaiQuestion$Outbound = {
   id: string;
@@ -69,12 +75,14 @@ export const GenaiQuestion$outboundSchema: z.ZodType<
   GenaiQuestion$Outbound,
   z.ZodTypeDef,
   GenaiQuestion
-> = z.object({
-  id: z.string(),
-  instructions: z.string(),
-  options: z.array(z.string()).optional(),
-  type: GenaiQuestionType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    instructions: z.string(),
+    options: z.array(z.string()).optional(),
+    type: GenaiQuestionType$outboundSchema,
+  })
+);
 
 export function genaiQuestionToJSON(genaiQuestion: GenaiQuestion): string {
   return JSON.stringify(GenaiQuestion$outboundSchema.parse(genaiQuestion));

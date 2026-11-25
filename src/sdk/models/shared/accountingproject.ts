@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -112,102 +112,111 @@ export const BillingType$inboundSchema: z.ZodType<
   BillingType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(BillingType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(BillingType));
 /** @internal */
 export const BillingType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   BillingType
-> = openEnums.outboundSchema(BillingType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(BillingType));
 
 /** @internal */
 export const AccountingProjectStatus$inboundSchema: z.ZodType<
   AccountingProjectStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingProjectStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingProjectStatus)
+);
 /** @internal */
 export const AccountingProjectStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingProjectStatus
-> = openEnums.outboundSchema(AccountingProjectStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingProjectStatus)
+);
 
 /** @internal */
 export const AccountingProject$inboundSchema: z.ZodType<
   AccountingProject,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  actual_cost_amount: z.number().optional(),
-  billing_type: BillingType$inboundSchema.optional(),
-  category_ids: z.array(z.string()).optional(),
-  code: z.string().optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  credit_note_amount: z.number().optional(),
-  currency: z.string().optional(),
-  deposit_amount: z.number().optional(),
-  deposit_applied_amount: z.number().optional(),
-  description: z.string().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  ended_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  estimate_amount: z.number().optional(),
-  estimated_cost_amount: z.number().optional(),
-  expense_amount: z.number().optional(),
-  id: z.string().optional(),
-  invoiced_amount: z.number().optional(),
-  is_active: z.boolean().optional(),
-  is_billable: z.boolean().optional(),
-  location_id: z.string().optional(),
-  manager_user_id: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  minutes_logged: z.number().optional(),
-  minutes_to_be_invoiced: z.number().optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  parent_id: z.string().optional(),
-  percent_complete: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  started_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: AccountingProjectStatus$inboundSchema.optional(),
-  to_be_invoiced_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "actual_cost_amount": "actualCostAmount",
-    "billing_type": "billingType",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "credit_note_amount": "creditNoteAmount",
-    "deposit_amount": "depositAmount",
-    "deposit_applied_amount": "depositAppliedAmount",
-    "due_at": "dueAt",
-    "ended_at": "endedAt",
-    "estimate_amount": "estimateAmount",
-    "estimated_cost_amount": "estimatedCostAmount",
-    "expense_amount": "expenseAmount",
-    "invoiced_amount": "invoicedAmount",
-    "is_active": "isActive",
-    "is_billable": "isBillable",
-    "location_id": "locationId",
-    "manager_user_id": "managerUserId",
-    "minutes_logged": "minutesLogged",
-    "minutes_to_be_invoiced": "minutesToBeInvoiced",
-    "organization_id": "organizationId",
-    "parent_id": "parentId",
-    "percent_complete": "percentComplete",
-    "started_at": "startedAt",
-    "to_be_invoiced_amount": "toBeInvoicedAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    actual_cost_amount: z.number().optional(),
+    billing_type: BillingType$inboundSchema.optional(),
+    category_ids: z.array(z.string()).optional(),
+    code: z.string().optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    credit_note_amount: z.number().optional(),
+    currency: z.string().optional(),
+    deposit_amount: z.number().optional(),
+    deposit_applied_amount: z.number().optional(),
+    description: z.string().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    ended_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    estimate_amount: z.number().optional(),
+    estimated_cost_amount: z.number().optional(),
+    expense_amount: z.number().optional(),
+    id: z.string().optional(),
+    invoiced_amount: z.number().optional(),
+    is_active: z.boolean().optional(),
+    is_billable: z.boolean().optional(),
+    location_id: z.string().optional(),
+    manager_user_id: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    minutes_logged: z.number().optional(),
+    minutes_to_be_invoiced: z.number().optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    parent_id: z.string().optional(),
+    percent_complete: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: AccountingProjectStatus$inboundSchema.optional(),
+    to_be_invoiced_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "actual_cost_amount": "actualCostAmount",
+      "billing_type": "billingType",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "credit_note_amount": "creditNoteAmount",
+      "deposit_amount": "depositAmount",
+      "deposit_applied_amount": "depositAppliedAmount",
+      "due_at": "dueAt",
+      "ended_at": "endedAt",
+      "estimate_amount": "estimateAmount",
+      "estimated_cost_amount": "estimatedCostAmount",
+      "expense_amount": "expenseAmount",
+      "invoiced_amount": "invoicedAmount",
+      "is_active": "isActive",
+      "is_billable": "isBillable",
+      "location_id": "locationId",
+      "manager_user_id": "managerUserId",
+      "minutes_logged": "minutesLogged",
+      "minutes_to_be_invoiced": "minutesToBeInvoiced",
+      "organization_id": "organizationId",
+      "parent_id": "parentId",
+      "percent_complete": "percentComplete",
+      "started_at": "startedAt",
+      "to_be_invoiced_amount": "toBeInvoicedAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingProject$Outbound = {
   actual_cost_amount?: number | undefined;
@@ -251,71 +260,73 @@ export const AccountingProject$outboundSchema: z.ZodType<
   AccountingProject$Outbound,
   z.ZodTypeDef,
   AccountingProject
-> = z.object({
-  actualCostAmount: z.number().optional(),
-  billingType: BillingType$outboundSchema.optional(),
-  categoryIds: z.array(z.string()).optional(),
-  code: z.string().optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  creditNoteAmount: z.number().optional(),
-  currency: z.string().optional(),
-  depositAmount: z.number().optional(),
-  depositAppliedAmount: z.number().optional(),
-  description: z.string().optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  endedAt: z.date().transform(v => v.toISOString()).optional(),
-  estimateAmount: z.number().optional(),
-  estimatedCostAmount: z.number().optional(),
-  expenseAmount: z.number().optional(),
-  id: z.string().optional(),
-  invoicedAmount: z.number().optional(),
-  isActive: z.boolean().optional(),
-  isBillable: z.boolean().optional(),
-  locationId: z.string().optional(),
-  managerUserId: z.string().optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  minutesLogged: z.number().optional(),
-  minutesToBeInvoiced: z.number().optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  parentId: z.string().optional(),
-  percentComplete: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startedAt: z.date().transform(v => v.toISOString()).optional(),
-  status: AccountingProjectStatus$outboundSchema.optional(),
-  toBeInvoicedAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    actualCostAmount: "actual_cost_amount",
-    billingType: "billing_type",
-    categoryIds: "category_ids",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    creditNoteAmount: "credit_note_amount",
-    depositAmount: "deposit_amount",
-    depositAppliedAmount: "deposit_applied_amount",
-    dueAt: "due_at",
-    endedAt: "ended_at",
-    estimateAmount: "estimate_amount",
-    estimatedCostAmount: "estimated_cost_amount",
-    expenseAmount: "expense_amount",
-    invoicedAmount: "invoiced_amount",
-    isActive: "is_active",
-    isBillable: "is_billable",
-    locationId: "location_id",
-    managerUserId: "manager_user_id",
-    minutesLogged: "minutes_logged",
-    minutesToBeInvoiced: "minutes_to_be_invoiced",
-    organizationId: "organization_id",
-    parentId: "parent_id",
-    percentComplete: "percent_complete",
-    startedAt: "started_at",
-    toBeInvoicedAmount: "to_be_invoiced_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    actualCostAmount: z.number().optional(),
+    billingType: BillingType$outboundSchema.optional(),
+    categoryIds: z.array(z.string()).optional(),
+    code: z.string().optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    creditNoteAmount: z.number().optional(),
+    currency: z.string().optional(),
+    depositAmount: z.number().optional(),
+    depositAppliedAmount: z.number().optional(),
+    description: z.string().optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    endedAt: z.date().transform(v => v.toISOString()).optional(),
+    estimateAmount: z.number().optional(),
+    estimatedCostAmount: z.number().optional(),
+    expenseAmount: z.number().optional(),
+    id: z.string().optional(),
+    invoicedAmount: z.number().optional(),
+    isActive: z.boolean().optional(),
+    isBillable: z.boolean().optional(),
+    locationId: z.string().optional(),
+    managerUserId: z.string().optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    minutesLogged: z.number().optional(),
+    minutesToBeInvoiced: z.number().optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    parentId: z.string().optional(),
+    percentComplete: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    startedAt: z.date().transform(v => v.toISOString()).optional(),
+    status: AccountingProjectStatus$outboundSchema.optional(),
+    toBeInvoicedAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      actualCostAmount: "actual_cost_amount",
+      billingType: "billing_type",
+      categoryIds: "category_ids",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      creditNoteAmount: "credit_note_amount",
+      depositAmount: "deposit_amount",
+      depositAppliedAmount: "deposit_applied_amount",
+      dueAt: "due_at",
+      endedAt: "ended_at",
+      estimateAmount: "estimate_amount",
+      estimatedCostAmount: "estimated_cost_amount",
+      expenseAmount: "expense_amount",
+      invoicedAmount: "invoiced_amount",
+      isActive: "is_active",
+      isBillable: "is_billable",
+      locationId: "location_id",
+      managerUserId: "manager_user_id",
+      minutesLogged: "minutes_logged",
+      minutesToBeInvoiced: "minutes_to_be_invoiced",
+      organizationId: "organization_id",
+      parentId: "parent_id",
+      percentComplete: "percent_complete",
+      startedAt: "started_at",
+      toBeInvoicedAmount: "to_be_invoiced_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingProjectToJSON(
   accountingProject: AccountingProject,

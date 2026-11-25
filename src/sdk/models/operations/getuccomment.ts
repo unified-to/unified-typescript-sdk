@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetUcCommentQueryParamFields = {
@@ -42,7 +43,9 @@ export type GetUcCommentRequest = {
 /** @internal */
 export const GetUcCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetUcCommentQueryParamFields
-> = z.nativeEnum(GetUcCommentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetUcCommentQueryParamFields)
+);
 
 /** @internal */
 export type GetUcCommentRequest$Outbound = {
@@ -57,16 +60,18 @@ export const GetUcCommentRequest$outboundSchema: z.ZodType<
   GetUcCommentRequest$Outbound,
   z.ZodTypeDef,
   GetUcCommentRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetUcCommentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetUcCommentQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getUcCommentRequestToJSON(
   getUcCommentRequest: GetUcCommentRequest,

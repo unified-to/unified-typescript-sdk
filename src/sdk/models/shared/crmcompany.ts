@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -91,41 +91,45 @@ export const CrmCompany$inboundSchema: z.ZodType<
   CrmCompany,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyCrmCompanyAddress$inboundSchema.optional(),
-  contact_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  deal_ids: z.array(z.string()).optional(),
-  description: z.string().optional(),
-  domains: z.array(z.string()).optional(),
-  emails: z.array(CrmEmail$inboundSchema).optional(),
-  employees: z.number().optional(),
-  id: z.string().optional(),
-  industry: z.string().optional(),
-  is_active: z.boolean().optional(),
-  link_urls: z.array(z.string()).optional(),
-  metadata: z.array(CrmMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  tags: z.array(z.string()).optional(),
-  telephones: z.array(CrmTelephone$inboundSchema).optional(),
-  timezone: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  websites: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "contact_ids": "contactIds",
-    "created_at": "createdAt",
-    "deal_ids": "dealIds",
-    "is_active": "isActive",
-    "link_urls": "linkUrls",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCrmCompanyAddress$inboundSchema.optional(),
+    contact_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    deal_ids: z.array(z.string()).optional(),
+    description: z.string().optional(),
+    domains: z.array(z.string()).optional(),
+    emails: z.array(CrmEmail$inboundSchema).optional(),
+    employees: z.number().optional(),
+    id: z.string().optional(),
+    industry: z.string().optional(),
+    is_active: z.boolean().optional(),
+    link_urls: z.array(z.string()).optional(),
+    metadata: z.array(CrmMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    tags: z.array(z.string()).optional(),
+    telephones: z.array(CrmTelephone$inboundSchema).optional(),
+    timezone: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    websites: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "contact_ids": "contactIds",
+      "created_at": "createdAt",
+      "deal_ids": "dealIds",
+      "is_active": "isActive",
+      "link_urls": "linkUrls",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type CrmCompany$Outbound = {
   address?: PropertyCrmCompanyAddress$Outbound | undefined;
@@ -156,39 +160,41 @@ export const CrmCompany$outboundSchema: z.ZodType<
   CrmCompany$Outbound,
   z.ZodTypeDef,
   CrmCompany
-> = z.object({
-  address: PropertyCrmCompanyAddress$outboundSchema.optional(),
-  contactIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dealIds: z.array(z.string()).optional(),
-  description: z.string().optional(),
-  domains: z.array(z.string()).optional(),
-  emails: z.array(CrmEmail$outboundSchema).optional(),
-  employees: z.number().optional(),
-  id: z.string().optional(),
-  industry: z.string().optional(),
-  isActive: z.boolean().optional(),
-  linkUrls: z.array(z.string()).optional(),
-  metadata: z.array(CrmMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  tags: z.array(z.string()).optional(),
-  telephones: z.array(CrmTelephone$outboundSchema).optional(),
-  timezone: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  websites: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contactIds: "contact_ids",
-    createdAt: "created_at",
-    dealIds: "deal_ids",
-    isActive: "is_active",
-    linkUrls: "link_urls",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCrmCompanyAddress$outboundSchema.optional(),
+    contactIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dealIds: z.array(z.string()).optional(),
+    description: z.string().optional(),
+    domains: z.array(z.string()).optional(),
+    emails: z.array(CrmEmail$outboundSchema).optional(),
+    employees: z.number().optional(),
+    id: z.string().optional(),
+    industry: z.string().optional(),
+    isActive: z.boolean().optional(),
+    linkUrls: z.array(z.string()).optional(),
+    metadata: z.array(CrmMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    tags: z.array(z.string()).optional(),
+    telephones: z.array(CrmTelephone$outboundSchema).optional(),
+    timezone: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    websites: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contactIds: "contact_ids",
+      createdAt: "created_at",
+      dealIds: "deal_ids",
+      isActive: "is_active",
+      linkUrls: "link_urls",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function crmCompanyToJSON(crmCompany: CrmCompany): string {
   return JSON.stringify(CrmCompany$outboundSchema.parse(crmCompany));

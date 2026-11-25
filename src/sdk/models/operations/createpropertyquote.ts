@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -46,9 +47,10 @@ export type CreatePropertyQuoteRequest = {
 
 /** @internal */
 export const CreatePropertyQuoteQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreatePropertyQuoteQueryParamFields> = z.nativeEnum(
-    CreatePropertyQuoteQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreatePropertyQuoteQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreatePropertyQuoteQueryParamFields)
+    );
 
 /** @internal */
 export type CreatePropertyQuoteRequest$Outbound = {
@@ -63,18 +65,20 @@ export const CreatePropertyQuoteRequest$outboundSchema: z.ZodType<
   CreatePropertyQuoteRequest$Outbound,
   z.ZodTypeDef,
   CreatePropertyQuoteRequest
-> = z.object({
-  propertyQuote: shared.PropertyQuote$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreatePropertyQuoteQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    propertyQuote: "PropertyQuote",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    propertyQuote: shared.PropertyQuote$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreatePropertyQuoteQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      propertyQuote: "PropertyQuote",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createPropertyQuoteRequestToJSON(
   createPropertyQuoteRequest: CreatePropertyQuoteRequest,

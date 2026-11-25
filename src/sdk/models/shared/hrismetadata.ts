@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -100,7 +100,7 @@ export const HrisMetadata1$inboundSchema: z.ZodType<
   HrisMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type HrisMetadata1$Outbound = {};
 
@@ -109,7 +109,7 @@ export const HrisMetadata1$outboundSchema: z.ZodType<
   HrisMetadata1$Outbound,
   z.ZodTypeDef,
   HrisMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function hrisMetadata1ToJSON(hrisMetadata1: HrisMetadata1): string {
   return JSON.stringify(HrisMetadata1$outboundSchema.parse(hrisMetadata1));
@@ -129,12 +129,14 @@ export const HrisMetadata5$inboundSchema: z.ZodType<
   HrisMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => HrisMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => HrisMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type HrisMetadata5$Outbound =
   | HrisMetadata1$Outbound
@@ -147,12 +149,14 @@ export const HrisMetadata5$outboundSchema: z.ZodType<
   HrisMetadata5$Outbound,
   z.ZodTypeDef,
   HrisMetadata5
-> = z.union([
-  z.lazy(() => HrisMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => HrisMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function hrisMetadata5ToJSON(hrisMetadata5: HrisMetadata5): string {
   return JSON.stringify(HrisMetadata5$outboundSchema.parse(hrisMetadata5));
@@ -172,20 +176,22 @@ export const HrisMetadataExtraData$inboundSchema: z.ZodType<
   HrisMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => HrisMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HrisMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type HrisMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -199,20 +205,22 @@ export const HrisMetadataExtraData$outboundSchema: z.ZodType<
   HrisMetadataExtraData$Outbound,
   z.ZodTypeDef,
   HrisMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => HrisMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HrisMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function hrisMetadataExtraDataToJSON(
   hrisMetadataExtraData: HrisMetadataExtraData,
@@ -236,20 +244,24 @@ export const HrisMetadataFormat$inboundSchema: z.ZodType<
   HrisMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisMetadataFormat)
+);
 /** @internal */
 export const HrisMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisMetadataFormat
-> = openEnums.outboundSchema(HrisMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisMetadataFormat)
+);
 
 /** @internal */
 export const HrisMetadataSchemas1$inboundSchema: z.ZodType<
   HrisMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type HrisMetadataSchemas1$Outbound = {};
 
@@ -258,7 +270,7 @@ export const HrisMetadataSchemas1$outboundSchema: z.ZodType<
   HrisMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   HrisMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function hrisMetadataSchemas1ToJSON(
   hrisMetadataSchemas1: HrisMetadataSchemas1,
@@ -282,12 +294,14 @@ export const HrisMetadataSchemas5$inboundSchema: z.ZodType<
   HrisMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => HrisMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type HrisMetadataSchemas5$Outbound =
   | HrisMetadataSchemas1$Outbound
@@ -300,12 +314,14 @@ export const HrisMetadataSchemas5$outboundSchema: z.ZodType<
   HrisMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   HrisMetadataSchemas5
-> = z.union([
-  z.lazy(() => HrisMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => HrisMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function hrisMetadataSchemas5ToJSON(
   hrisMetadataSchemas5: HrisMetadataSchemas5,
@@ -329,20 +345,22 @@ export const HrisMetadataValue$inboundSchema: z.ZodType<
   HrisMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => HrisMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HrisMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type HrisMetadataValue$Outbound =
   | { [k: string]: any }
@@ -356,20 +374,22 @@ export const HrisMetadataValue$outboundSchema: z.ZodType<
   HrisMetadataValue$Outbound,
   z.ZodTypeDef,
   HrisMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => HrisMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HrisMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function hrisMetadataValueToJSON(
   hrisMetadataValue: HrisMetadataValue,
@@ -393,44 +413,46 @@ export const HrisMetadata$inboundSchema: z.ZodType<
   HrisMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => HrisMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: HrisMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => HrisMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => HrisMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: HrisMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => HrisMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type HrisMetadata$Outbound = {
   extra_data?:
@@ -458,44 +480,46 @@ export const HrisMetadata$outboundSchema: z.ZodType<
   HrisMetadata$Outbound,
   z.ZodTypeDef,
   HrisMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => HrisMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: HrisMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => HrisMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => HrisMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: HrisMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => HrisMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function hrisMetadataToJSON(hrisMetadata: HrisMetadata): string {
   return JSON.stringify(HrisMetadata$outboundSchema.parse(hrisMetadata));

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -30,14 +30,16 @@ export const PropertyDatastoreQueryResponseAggregates$inboundSchema: z.ZodType<
   PropertyDatastoreQueryResponseAggregates,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  avg: z.record(z.number()).optional(),
-  count: z.number().optional(),
-  groups: z.array(z.record(DatastoreFieldValue$inboundSchema)).optional(),
-  max: z.record(z.number()).optional(),
-  min: z.record(z.number()).optional(),
-  sum: z.record(z.number()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    avg: z.record(z.number()).optional(),
+    count: z.number().optional(),
+    groups: z.array(z.record(DatastoreFieldValue$inboundSchema)).optional(),
+    max: z.record(z.number()).optional(),
+    min: z.record(z.number()).optional(),
+    sum: z.record(z.number()).optional(),
+  })
+);
 /** @internal */
 export type PropertyDatastoreQueryResponseAggregates$Outbound = {
   avg?: { [k: string]: number } | undefined;
@@ -53,14 +55,16 @@ export const PropertyDatastoreQueryResponseAggregates$outboundSchema: z.ZodType<
   PropertyDatastoreQueryResponseAggregates$Outbound,
   z.ZodTypeDef,
   PropertyDatastoreQueryResponseAggregates
-> = z.object({
-  avg: z.record(z.number()).optional(),
-  count: z.number().optional(),
-  groups: z.array(z.record(DatastoreFieldValue$outboundSchema)).optional(),
-  max: z.record(z.number()).optional(),
-  min: z.record(z.number()).optional(),
-  sum: z.record(z.number()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    avg: z.record(z.number()).optional(),
+    count: z.number().optional(),
+    groups: z.array(z.record(DatastoreFieldValue$outboundSchema)).optional(),
+    max: z.record(z.number()).optional(),
+    min: z.record(z.number()).optional(),
+    sum: z.record(z.number()).optional(),
+  })
+);
 
 export function propertyDatastoreQueryResponseAggregatesToJSON(
   propertyDatastoreQueryResponseAggregates:

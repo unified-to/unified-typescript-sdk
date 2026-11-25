@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type GetUnifiedIssueRequest = {
   /**
@@ -21,9 +22,11 @@ export const GetUnifiedIssueRequest$outboundSchema: z.ZodType<
   GetUnifiedIssueRequest$Outbound,
   z.ZodTypeDef,
   GetUnifiedIssueRequest
-> = z.object({
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+  })
+);
 
 export function getUnifiedIssueRequestToJSON(
   getUnifiedIssueRequest: GetUnifiedIssueRequest,

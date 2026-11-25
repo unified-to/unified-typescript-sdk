@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListComputeInstancesQueryParamFields = {
@@ -96,9 +97,10 @@ export type ListComputeInstancesRequest = {
 
 /** @internal */
 export const ListComputeInstancesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListComputeInstancesQueryParamFields> = z.nativeEnum(
-    ListComputeInstancesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListComputeInstancesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListComputeInstancesQueryParamFields)
+    );
 
 /** @internal */
 export type ListComputeInstancesRequest$Outbound = {
@@ -123,31 +125,33 @@ export const ListComputeInstancesRequest$outboundSchema: z.ZodType<
   ListComputeInstancesRequest$Outbound,
   z.ZodTypeDef,
   ListComputeInstancesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListComputeInstancesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  regionId: z.string().optional(),
-  serviceId: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  templateId: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    regionId: "region_id",
-    serviceId: "service_id",
-    templateId: "template_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListComputeInstancesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    regionId: z.string().optional(),
+    serviceId: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    templateId: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      regionId: "region_id",
+      serviceId: "service_id",
+      templateId: "template_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listComputeInstancesRequestToJSON(
   listComputeInstancesRequest: ListComputeInstancesRequest,

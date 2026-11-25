@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -160,73 +160,79 @@ export const GroupType$inboundSchema: z.ZodType<
   GroupType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GroupType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(GroupType));
 
 /** @internal */
 export const MembershipStatus$inboundSchema: z.ZodType<
   MembershipStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MembershipStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MembershipStatus)
+);
 
 /** @internal */
 export const SportType$inboundSchema: z.ZodType<
   SportType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SportType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SportType));
 
 /** @internal */
 export const ClubsGroup$inboundSchema: z.ZodType<
   ClubsGroup,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  activity_types: z.array(z.string()).optional(),
-  address: PropertyClubsGroupAddress$inboundSchema.optional(),
-  cover_image_url: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  following_count: z.number().optional(),
-  group_type: GroupType$inboundSchema.optional(),
-  id: z.string().optional(),
-  is_admin: z.boolean().optional(),
-  is_featured: z.boolean().optional(),
-  is_owner: z.boolean().optional(),
-  is_private: z.boolean().optional(),
-  is_verified: z.boolean().optional(),
-  member_count: z.number().optional(),
-  membership_status: MembershipStatus$inboundSchema.optional(),
-  metadata: z.array(ClubsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  post_count: z.number().optional(),
-  profile_image_url: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  sport_type: SportType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "activity_types": "activityTypes",
-    "cover_image_url": "coverImageUrl",
-    "created_at": "createdAt",
-    "following_count": "followingCount",
-    "group_type": "groupType",
-    "is_admin": "isAdmin",
-    "is_featured": "isFeatured",
-    "is_owner": "isOwner",
-    "is_private": "isPrivate",
-    "is_verified": "isVerified",
-    "member_count": "memberCount",
-    "membership_status": "membershipStatus",
-    "post_count": "postCount",
-    "profile_image_url": "profileImageUrl",
-    "sport_type": "sportType",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    activity_types: z.array(z.string()).optional(),
+    address: PropertyClubsGroupAddress$inboundSchema.optional(),
+    cover_image_url: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    following_count: z.number().optional(),
+    group_type: GroupType$inboundSchema.optional(),
+    id: z.string().optional(),
+    is_admin: z.boolean().optional(),
+    is_featured: z.boolean().optional(),
+    is_owner: z.boolean().optional(),
+    is_private: z.boolean().optional(),
+    is_verified: z.boolean().optional(),
+    member_count: z.number().optional(),
+    membership_status: MembershipStatus$inboundSchema.optional(),
+    metadata: z.array(ClubsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    post_count: z.number().optional(),
+    profile_image_url: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    sport_type: SportType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "activity_types": "activityTypes",
+      "cover_image_url": "coverImageUrl",
+      "created_at": "createdAt",
+      "following_count": "followingCount",
+      "group_type": "groupType",
+      "is_admin": "isAdmin",
+      "is_featured": "isFeatured",
+      "is_owner": "isOwner",
+      "is_private": "isPrivate",
+      "is_verified": "isVerified",
+      "member_count": "memberCount",
+      "membership_status": "membershipStatus",
+      "post_count": "postCount",
+      "profile_image_url": "profileImageUrl",
+      "sport_type": "sportType",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function clubsGroupFromJSON(
   jsonString: string,

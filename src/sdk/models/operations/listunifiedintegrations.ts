@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListUnifiedIntegrationsQueryParamCategories = {
@@ -48,6 +49,9 @@ export const ListUnifiedIntegrationsQueryParamCategories = {
   Property: "property",
   Plm: "plm",
   Qms: "qms",
+  Dms: "dms",
+  Fhir: "fhir",
+  Printing: "printing",
 } as const;
 export type ListUnifiedIntegrationsQueryParamCategories = ClosedEnum<
   typeof ListUnifiedIntegrationsQueryParamCategories
@@ -83,8 +87,10 @@ export type ListUnifiedIntegrationsRequest = {
 
 /** @internal */
 export const ListUnifiedIntegrationsQueryParamCategories$outboundSchema:
-  z.ZodNativeEnum<typeof ListUnifiedIntegrationsQueryParamCategories> = z
-    .nativeEnum(ListUnifiedIntegrationsQueryParamCategories);
+  z.ZodNativeEnum<typeof ListUnifiedIntegrationsQueryParamCategories> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListUnifiedIntegrationsQueryParamCategories)
+    );
 
 /** @internal */
 export type ListUnifiedIntegrationsRequest$Outbound = {
@@ -105,25 +111,27 @@ export const ListUnifiedIntegrationsRequest$outboundSchema: z.ZodType<
   ListUnifiedIntegrationsRequest$Outbound,
   z.ZodTypeDef,
   ListUnifiedIntegrationsRequest
-> = z.object({
-  active: z.boolean().optional(),
-  categories: z.array(
-    ListUnifiedIntegrationsQueryParamCategories$outboundSchema,
-  ).optional(),
-  env: z.string().optional(),
-  limit: z.number().optional(),
-  objectTypes: z.array(z.string()).optional(),
-  offset: z.number().optional(),
-  summary: z.boolean().optional(),
-  type: z.string().optional(),
-  types: z.array(z.string()).optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    objectTypes: "object_types",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    active: z.boolean().optional(),
+    categories: z.array(
+      ListUnifiedIntegrationsQueryParamCategories$outboundSchema,
+    ).optional(),
+    env: z.string().optional(),
+    limit: z.number().optional(),
+    objectTypes: z.array(z.string()).optional(),
+    offset: z.number().optional(),
+    summary: z.boolean().optional(),
+    type: z.string().optional(),
+    types: z.array(z.string()).optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      objectTypes: "object_types",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listUnifiedIntegrationsRequestToJSON(
   listUnifiedIntegrationsRequest: ListUnifiedIntegrationsRequest,

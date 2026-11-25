@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -54,8 +55,10 @@ export type PatchAccountingVendorcreditRequest = {
 
 /** @internal */
 export const PatchAccountingVendorcreditQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchAccountingVendorcreditQueryParamFields> = z
-    .nativeEnum(PatchAccountingVendorcreditQueryParamFields);
+  z.ZodNativeEnum<typeof PatchAccountingVendorcreditQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchAccountingVendorcreditQueryParamFields)
+    );
 
 /** @internal */
 export type PatchAccountingVendorcreditRequest$Outbound = {
@@ -71,19 +74,21 @@ export const PatchAccountingVendorcreditRequest$outboundSchema: z.ZodType<
   PatchAccountingVendorcreditRequest$Outbound,
   z.ZodTypeDef,
   PatchAccountingVendorcreditRequest
-> = z.object({
-  accountingVendorcredit: shared.AccountingVendorcredit$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAccountingVendorcreditQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingVendorcredit: "AccountingVendorcredit",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingVendorcredit: shared.AccountingVendorcredit$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchAccountingVendorcreditQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingVendorcredit: "AccountingVendorcredit",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAccountingVendorcreditRequestToJSON(
   patchAccountingVendorcreditRequest: PatchAccountingVendorcreditRequest,

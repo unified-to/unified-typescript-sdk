@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,20 +22,22 @@ export const PropertyAdsReportMetricsGroupTargetingPlacement$inboundSchema:
     PropertyAdsReportMetricsGroupTargetingPlacement,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    audience_network_positions: z.array(z.string()).optional(),
-    facebook_positions: z.array(z.string()).optional(),
-    instagram_positions: z.array(z.string()).optional(),
-    messenger_positions: z.array(z.string()).optional(),
-    platforms: z.array(z.string()).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "audience_network_positions": "audienceNetworkPositions",
-      "facebook_positions": "facebookPositions",
-      "instagram_positions": "instagramPositions",
-      "messenger_positions": "messengerPositions",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      audience_network_positions: z.array(z.string()).optional(),
+      facebook_positions: z.array(z.string()).optional(),
+      instagram_positions: z.array(z.string()).optional(),
+      messenger_positions: z.array(z.string()).optional(),
+      platforms: z.array(z.string()).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "audience_network_positions": "audienceNetworkPositions",
+        "facebook_positions": "facebookPositions",
+        "instagram_positions": "instagramPositions",
+        "messenger_positions": "messengerPositions",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsGroupTargetingPlacementFromJSON(
   jsonString: string,

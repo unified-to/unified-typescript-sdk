@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -139,72 +139,82 @@ export const Environment$inboundSchema: z.ZodType<
   Environment,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Environment);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Environment));
 /** @internal */
 export const Environment$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Environment
-> = openEnums.outboundSchema(Environment);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Environment));
 
 /** @internal */
 export const ComputeDeploymentStatus$inboundSchema: z.ZodType<
   ComputeDeploymentStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeDeploymentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeDeploymentStatus)
+);
 /** @internal */
 export const ComputeDeploymentStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeDeploymentStatus
-> = openEnums.outboundSchema(ComputeDeploymentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeDeploymentStatus)
+);
 
 /** @internal */
 export const Trigger$inboundSchema: z.ZodType<Trigger, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Trigger);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Trigger));
 /** @internal */
 export const Trigger$outboundSchema: z.ZodType<string, z.ZodTypeDef, Trigger> =
-  openEnums.outboundSchema(Trigger);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Trigger));
 
 /** @internal */
 export const ComputeDeployment$inboundSchema: z.ZodType<
   ComputeDeployment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  branch: z.string().optional(),
-  commit_identifier: z.string().optional(),
-  commit_message: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  environment: Environment$inboundSchema.optional(),
-  error: z.string().optional(),
-  finished_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  image: z.string().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  service_id: z.string().optional(),
-  started_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: ComputeDeploymentStatus$inboundSchema.optional(),
-  trigger: Trigger$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "commit_identifier": "commitIdentifier",
-    "commit_message": "commitMessage",
-    "created_at": "createdAt",
-    "finished_at": "finishedAt",
-    "service_id": "serviceId",
-    "started_at": "startedAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    branch: z.string().optional(),
+    commit_identifier: z.string().optional(),
+    commit_message: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    environment: Environment$inboundSchema.optional(),
+    error: z.string().optional(),
+    finished_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    image: z.string().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    service_id: z.string().optional(),
+    started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: ComputeDeploymentStatus$inboundSchema.optional(),
+    trigger: Trigger$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "commit_identifier": "commitIdentifier",
+      "commit_message": "commitMessage",
+      "created_at": "createdAt",
+      "finished_at": "finishedAt",
+      "service_id": "serviceId",
+      "started_at": "startedAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type ComputeDeployment$Outbound = {
   branch?: string | undefined;
@@ -231,35 +241,37 @@ export const ComputeDeployment$outboundSchema: z.ZodType<
   ComputeDeployment$Outbound,
   z.ZodTypeDef,
   ComputeDeployment
-> = z.object({
-  branch: z.string().optional(),
-  commitIdentifier: z.string().optional(),
-  commitMessage: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  environment: Environment$outboundSchema.optional(),
-  error: z.string().optional(),
-  finishedAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  image: z.string().optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  serviceId: z.string().optional(),
-  startedAt: z.date().transform(v => v.toISOString()).optional(),
-  status: ComputeDeploymentStatus$outboundSchema.optional(),
-  trigger: Trigger$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    commitIdentifier: "commit_identifier",
-    commitMessage: "commit_message",
-    createdAt: "created_at",
-    finishedAt: "finished_at",
-    serviceId: "service_id",
-    startedAt: "started_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    branch: z.string().optional(),
+    commitIdentifier: z.string().optional(),
+    commitMessage: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    environment: Environment$outboundSchema.optional(),
+    error: z.string().optional(),
+    finishedAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    image: z.string().optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    serviceId: z.string().optional(),
+    startedAt: z.date().transform(v => v.toISOString()).optional(),
+    status: ComputeDeploymentStatus$outboundSchema.optional(),
+    trigger: Trigger$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      commitIdentifier: "commit_identifier",
+      commitMessage: "commit_message",
+      createdAt: "created_at",
+      finishedAt: "finished_at",
+      serviceId: "service_id",
+      startedAt: "started_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function computeDeploymentToJSON(
   computeDeployment: ComputeDeployment,

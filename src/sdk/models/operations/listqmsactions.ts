@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListQmsActionsQueryParamFields = {
@@ -75,7 +76,9 @@ export type ListQmsActionsRequest = {
 /** @internal */
 export const ListQmsActionsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListQmsActionsQueryParamFields
-> = z.nativeEnum(ListQmsActionsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListQmsActionsQueryParamFields)
+);
 
 /** @internal */
 export type ListQmsActionsRequest$Outbound = {
@@ -99,28 +102,30 @@ export const ListQmsActionsRequest$outboundSchema: z.ZodType<
   ListQmsActionsRequest$Outbound,
   z.ZodTypeDef,
   ListQmsActionsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListQmsActionsQueryParamFields$outboundSchema).optional(),
-  issueId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    issueId: "issue_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListQmsActionsQueryParamFields$outboundSchema).optional(),
+    issueId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      issueId: "issue_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listQmsActionsRequestToJSON(
   listQmsActionsRequest: ListQmsActionsRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetPropertyReservationQueryParamFields = {
@@ -65,9 +66,10 @@ export type GetPropertyReservationRequest = {
 
 /** @internal */
 export const GetPropertyReservationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetPropertyReservationQueryParamFields> = z.nativeEnum(
-    GetPropertyReservationQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetPropertyReservationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetPropertyReservationQueryParamFields)
+    );
 
 /** @internal */
 export type GetPropertyReservationRequest$Outbound = {
@@ -82,17 +84,19 @@ export const GetPropertyReservationRequest$outboundSchema: z.ZodType<
   GetPropertyReservationRequest$Outbound,
   z.ZodTypeDef,
   GetPropertyReservationRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetPropertyReservationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetPropertyReservationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getPropertyReservationRequestToJSON(
   getPropertyReservationRequest: GetPropertyReservationRequest,

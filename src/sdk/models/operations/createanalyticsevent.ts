@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -58,9 +59,10 @@ export type CreateAnalyticsEventRequest = {
 
 /** @internal */
 export const CreateAnalyticsEventQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAnalyticsEventQueryParamFields> = z.nativeEnum(
-    CreateAnalyticsEventQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateAnalyticsEventQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAnalyticsEventQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAnalyticsEventRequest$Outbound = {
@@ -75,18 +77,20 @@ export const CreateAnalyticsEventRequest$outboundSchema: z.ZodType<
   CreateAnalyticsEventRequest$Outbound,
   z.ZodTypeDef,
   CreateAnalyticsEventRequest
-> = z.object({
-  analyticsEvent: shared.AnalyticsEvent$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAnalyticsEventQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    analyticsEvent: "AnalyticsEvent",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    analyticsEvent: shared.AnalyticsEvent$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAnalyticsEventQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      analyticsEvent: "AnalyticsEvent",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAnalyticsEventRequestToJSON(
   createAnalyticsEventRequest: CreateAnalyticsEventRequest,

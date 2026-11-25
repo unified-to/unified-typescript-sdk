@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -107,59 +107,71 @@ export const ComputeVolumeStatus$inboundSchema: z.ZodType<
   ComputeVolumeStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeVolumeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeVolumeStatus)
+);
 /** @internal */
 export const ComputeVolumeStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeVolumeStatus
-> = openEnums.outboundSchema(ComputeVolumeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeVolumeStatus)
+);
 
 /** @internal */
 export const ComputeVolumeType$inboundSchema: z.ZodType<
   ComputeVolumeType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeVolumeType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeVolumeType)
+);
 /** @internal */
 export const ComputeVolumeType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeVolumeType
-> = openEnums.outboundSchema(ComputeVolumeType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeVolumeType)
+);
 
 /** @internal */
 export const ComputeVolume$inboundSchema: z.ZodType<
   ComputeVolume,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  availability_zone: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  instance_ids: z.array(z.string()).optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  region_id: z.string().optional(),
-  size_mb: z.number().optional(),
-  status: ComputeVolumeStatus$inboundSchema.optional(),
-  type: ComputeVolumeType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  used_mb: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "availability_zone": "availabilityZone",
-    "created_at": "createdAt",
-    "instance_ids": "instanceIds",
-    "region_id": "regionId",
-    "size_mb": "sizeMb",
-    "updated_at": "updatedAt",
-    "used_mb": "usedMb",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    availability_zone: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    instance_ids: z.array(z.string()).optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    region_id: z.string().optional(),
+    size_mb: z.number().optional(),
+    status: ComputeVolumeStatus$inboundSchema.optional(),
+    type: ComputeVolumeType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    used_mb: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "availability_zone": "availabilityZone",
+      "created_at": "createdAt",
+      "instance_ids": "instanceIds",
+      "region_id": "regionId",
+      "size_mb": "sizeMb",
+      "updated_at": "updatedAt",
+      "used_mb": "usedMb",
+    });
+  })
+);
 /** @internal */
 export type ComputeVolume$Outbound = {
   availability_zone?: string | undefined;
@@ -182,31 +194,33 @@ export const ComputeVolume$outboundSchema: z.ZodType<
   ComputeVolume$Outbound,
   z.ZodTypeDef,
   ComputeVolume
-> = z.object({
-  availabilityZone: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  instanceIds: z.array(z.string()).optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  regionId: z.string().optional(),
-  sizeMb: z.number().optional(),
-  status: ComputeVolumeStatus$outboundSchema.optional(),
-  type: ComputeVolumeType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  usedMb: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    availabilityZone: "availability_zone",
-    createdAt: "created_at",
-    instanceIds: "instance_ids",
-    regionId: "region_id",
-    sizeMb: "size_mb",
-    updatedAt: "updated_at",
-    usedMb: "used_mb",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    availabilityZone: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    instanceIds: z.array(z.string()).optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    regionId: z.string().optional(),
+    sizeMb: z.number().optional(),
+    status: ComputeVolumeStatus$outboundSchema.optional(),
+    type: ComputeVolumeType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    usedMb: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      availabilityZone: "availability_zone",
+      createdAt: "created_at",
+      instanceIds: "instance_ids",
+      regionId: "region_id",
+      sizeMb: "size_mb",
+      updatedAt: "updated_at",
+      usedMb: "used_mb",
+    });
+  })
+);
 
 export function computeVolumeToJSON(computeVolume: ComputeVolume): string {
   return JSON.stringify(ComputeVolume$outboundSchema.parse(computeVolume));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -109,7 +109,7 @@ export const LegalMetadata1$inboundSchema: z.ZodType<
   LegalMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type LegalMetadata1$Outbound = {};
 
@@ -118,7 +118,7 @@ export const LegalMetadata1$outboundSchema: z.ZodType<
   LegalMetadata1$Outbound,
   z.ZodTypeDef,
   LegalMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function legalMetadata1ToJSON(legalMetadata1: LegalMetadata1): string {
   return JSON.stringify(LegalMetadata1$outboundSchema.parse(legalMetadata1));
@@ -138,12 +138,14 @@ export const LegalMetadata5$inboundSchema: z.ZodType<
   LegalMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => LegalMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => LegalMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type LegalMetadata5$Outbound =
   | LegalMetadata1$Outbound
@@ -156,12 +158,14 @@ export const LegalMetadata5$outboundSchema: z.ZodType<
   LegalMetadata5$Outbound,
   z.ZodTypeDef,
   LegalMetadata5
-> = z.union([
-  z.lazy(() => LegalMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => LegalMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function legalMetadata5ToJSON(legalMetadata5: LegalMetadata5): string {
   return JSON.stringify(LegalMetadata5$outboundSchema.parse(legalMetadata5));
@@ -181,20 +185,22 @@ export const LegalMetadataExtraData$inboundSchema: z.ZodType<
   LegalMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => LegalMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => LegalMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type LegalMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -208,20 +214,22 @@ export const LegalMetadataExtraData$outboundSchema: z.ZodType<
   LegalMetadataExtraData$Outbound,
   z.ZodTypeDef,
   LegalMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => LegalMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => LegalMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function legalMetadataExtraDataToJSON(
   legalMetadataExtraData: LegalMetadataExtraData,
@@ -245,20 +253,24 @@ export const LegalMetadataFormat$inboundSchema: z.ZodType<
   LegalMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LegalMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(LegalMetadataFormat)
+);
 /** @internal */
 export const LegalMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LegalMetadataFormat
-> = openEnums.outboundSchema(LegalMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(LegalMetadataFormat)
+);
 
 /** @internal */
 export const LegalMetadataSchemas1$inboundSchema: z.ZodType<
   LegalMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type LegalMetadataSchemas1$Outbound = {};
 
@@ -267,7 +279,7 @@ export const LegalMetadataSchemas1$outboundSchema: z.ZodType<
   LegalMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   LegalMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function legalMetadataSchemas1ToJSON(
   legalMetadataSchemas1: LegalMetadataSchemas1,
@@ -291,12 +303,14 @@ export const LegalMetadataSchemas5$inboundSchema: z.ZodType<
   LegalMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => LegalMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => LegalMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type LegalMetadataSchemas5$Outbound =
   | LegalMetadataSchemas1$Outbound
@@ -309,12 +323,14 @@ export const LegalMetadataSchemas5$outboundSchema: z.ZodType<
   LegalMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   LegalMetadataSchemas5
-> = z.union([
-  z.lazy(() => LegalMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => LegalMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function legalMetadataSchemas5ToJSON(
   legalMetadataSchemas5: LegalMetadataSchemas5,
@@ -338,20 +354,22 @@ export const LegalMetadataValue$inboundSchema: z.ZodType<
   LegalMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => LegalMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => LegalMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type LegalMetadataValue$Outbound =
   | { [k: string]: any }
@@ -365,20 +383,22 @@ export const LegalMetadataValue$outboundSchema: z.ZodType<
   LegalMetadataValue$Outbound,
   z.ZodTypeDef,
   LegalMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => LegalMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => LegalMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function legalMetadataValueToJSON(
   legalMetadataValue: LegalMetadataValue,
@@ -402,44 +422,46 @@ export const LegalMetadata$inboundSchema: z.ZodType<
   LegalMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => LegalMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: LegalMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => LegalMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => LegalMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: LegalMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => LegalMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type LegalMetadata$Outbound = {
   extra_data?:
@@ -467,44 +489,46 @@ export const LegalMetadata$outboundSchema: z.ZodType<
   LegalMetadata$Outbound,
   z.ZodTypeDef,
   LegalMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => LegalMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: LegalMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => LegalMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => LegalMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: LegalMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => LegalMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function legalMetadataToJSON(legalMetadata: LegalMetadata): string {
   return JSON.stringify(LegalMetadata$outboundSchema.parse(legalMetadata));

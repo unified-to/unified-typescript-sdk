@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,12 +19,14 @@ export const ScimEntitlement$inboundSchema: z.ZodType<
   ScimEntitlement,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: z.string().optional(),
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: z.string().optional(),
+    value: z.string(),
+  })
+);
 /** @internal */
 export type ScimEntitlement$Outbound = {
   display?: string | undefined;
@@ -38,12 +40,14 @@ export const ScimEntitlement$outboundSchema: z.ZodType<
   ScimEntitlement$Outbound,
   z.ZodTypeDef,
   ScimEntitlement
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: z.string().optional(),
-  value: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: z.string().optional(),
+    value: z.string(),
+  })
+);
 
 export function scimEntitlementToJSON(
   scimEntitlement: ScimEntitlement,

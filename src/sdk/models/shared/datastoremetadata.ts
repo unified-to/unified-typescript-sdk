@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -100,7 +100,7 @@ export const DatastoreMetadata1$inboundSchema: z.ZodType<
   DatastoreMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type DatastoreMetadata1$Outbound = {};
 
@@ -109,7 +109,7 @@ export const DatastoreMetadata1$outboundSchema: z.ZodType<
   DatastoreMetadata1$Outbound,
   z.ZodTypeDef,
   DatastoreMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function datastoreMetadata1ToJSON(
   datastoreMetadata1: DatastoreMetadata1,
@@ -133,12 +133,14 @@ export const DatastoreMetadata5$inboundSchema: z.ZodType<
   DatastoreMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => DatastoreMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => DatastoreMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type DatastoreMetadata5$Outbound =
   | DatastoreMetadata1$Outbound
@@ -151,12 +153,14 @@ export const DatastoreMetadata5$outboundSchema: z.ZodType<
   DatastoreMetadata5$Outbound,
   z.ZodTypeDef,
   DatastoreMetadata5
-> = z.union([
-  z.lazy(() => DatastoreMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => DatastoreMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function datastoreMetadata5ToJSON(
   datastoreMetadata5: DatastoreMetadata5,
@@ -180,20 +184,22 @@ export const DatastoreMetadataExtraData$inboundSchema: z.ZodType<
   DatastoreMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => DatastoreMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => DatastoreMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type DatastoreMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -207,20 +213,22 @@ export const DatastoreMetadataExtraData$outboundSchema: z.ZodType<
   DatastoreMetadataExtraData$Outbound,
   z.ZodTypeDef,
   DatastoreMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => DatastoreMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => DatastoreMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function datastoreMetadataExtraDataToJSON(
   datastoreMetadataExtraData: DatastoreMetadataExtraData,
@@ -244,20 +252,24 @@ export const DatastoreMetadataFormat$inboundSchema: z.ZodType<
   DatastoreMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(DatastoreMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(DatastoreMetadataFormat)
+);
 /** @internal */
 export const DatastoreMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   DatastoreMetadataFormat
-> = openEnums.outboundSchema(DatastoreMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(DatastoreMetadataFormat)
+);
 
 /** @internal */
 export const DatastoreMetadataSchemas1$inboundSchema: z.ZodType<
   DatastoreMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type DatastoreMetadataSchemas1$Outbound = {};
 
@@ -266,7 +278,7 @@ export const DatastoreMetadataSchemas1$outboundSchema: z.ZodType<
   DatastoreMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   DatastoreMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function datastoreMetadataSchemas1ToJSON(
   datastoreMetadataSchemas1: DatastoreMetadataSchemas1,
@@ -290,12 +302,14 @@ export const DatastoreMetadataSchemas5$inboundSchema: z.ZodType<
   DatastoreMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => DatastoreMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => DatastoreMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type DatastoreMetadataSchemas5$Outbound =
   | DatastoreMetadataSchemas1$Outbound
@@ -308,12 +322,14 @@ export const DatastoreMetadataSchemas5$outboundSchema: z.ZodType<
   DatastoreMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   DatastoreMetadataSchemas5
-> = z.union([
-  z.lazy(() => DatastoreMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => DatastoreMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function datastoreMetadataSchemas5ToJSON(
   datastoreMetadataSchemas5: DatastoreMetadataSchemas5,
@@ -337,20 +353,22 @@ export const DatastoreMetadataValue$inboundSchema: z.ZodType<
   DatastoreMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => DatastoreMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => DatastoreMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type DatastoreMetadataValue$Outbound =
   | { [k: string]: any }
@@ -364,20 +382,22 @@ export const DatastoreMetadataValue$outboundSchema: z.ZodType<
   DatastoreMetadataValue$Outbound,
   z.ZodTypeDef,
   DatastoreMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => DatastoreMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => DatastoreMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function datastoreMetadataValueToJSON(
   datastoreMetadataValue: DatastoreMetadataValue,
@@ -401,44 +421,46 @@ export const DatastoreMetadata$inboundSchema: z.ZodType<
   DatastoreMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => DatastoreMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: DatastoreMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => DatastoreMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => DatastoreMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: DatastoreMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => DatastoreMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type DatastoreMetadata$Outbound = {
   extra_data?:
@@ -466,44 +488,46 @@ export const DatastoreMetadata$outboundSchema: z.ZodType<
   DatastoreMetadata$Outbound,
   z.ZodTypeDef,
   DatastoreMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => DatastoreMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: DatastoreMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => DatastoreMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => DatastoreMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: DatastoreMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => DatastoreMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function datastoreMetadataToJSON(
   datastoreMetadata: DatastoreMetadata,

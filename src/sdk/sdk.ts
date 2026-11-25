@@ -14,6 +14,7 @@ import { Agedpayable } from "./agedpayable.js";
 import { Agedreceivable } from "./agedreceivable.js";
 import { Agent } from "./agent.js";
 import { Allergy } from "./allergy.js";
+import { Allergyintolerance } from "./allergyintolerance.js";
 import { Analytics } from "./analytics.js";
 import { Apicall } from "./apicall.js";
 import { Application } from "./application.js";
@@ -74,6 +75,8 @@ import { Deduction } from "./deduction.js";
 import { Deployment } from "./deployment.js";
 import { Destination } from "./destination.js";
 import { Device } from "./device.js";
+import { Diagnosticreport } from "./diagnosticreport.js";
+import { Dms } from "./dms.js";
 import { Document } from "./document.js";
 import { Domain } from "./domain.js";
 import { Earning } from "./earning.js";
@@ -88,6 +91,7 @@ import { Expense } from "./expense.js";
 import { Expensereport } from "./expensereport.js";
 import { Fax } from "./fax.js";
 import { Feedback } from "./feedback.js";
+import { Fhir } from "./fhir.js";
 import { FileT } from "./file.js";
 import { Form } from "./form.js";
 import { Forms } from "./forms.js";
@@ -127,6 +131,7 @@ import { Login } from "./login.js";
 import { Martech } from "./martech.js";
 import { Matter } from "./matter.js";
 import { Medication } from "./medication.js";
+import { Medicationrequest } from "./medicationrequest.js";
 import { Member } from "./member.js";
 import { Memory } from "./memory.js";
 import { Message } from "./message.js";
@@ -136,11 +141,13 @@ import { Model } from "./model.js";
 import { Note } from "./note.js";
 import { Notification } from "./notification.js";
 import { Observation } from "./observation.js";
+import { Opcode } from "./opcode.js";
 import { Order } from "./order.js";
 import { Organization } from "./organization.js";
 import { Package } from "./package.js";
 import { Page } from "./page.js";
 import { Part } from "./part.js";
+import { Partsale } from "./partsale.js";
 import { Passthrough } from "./passthrough.js";
 import { Patient } from "./patient.js";
 import { Paycode } from "./paycode.js";
@@ -156,7 +163,9 @@ import { Plm } from "./plm.js";
 import { Post } from "./post.js";
 import { Practicearea } from "./practicearea.js";
 import { Practitioner } from "./practitioner.js";
+import { Printing } from "./printing.js";
 import { Procedure } from "./procedure.js";
+import { Product } from "./product.js";
 import { Profile } from "./profile.js";
 import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
@@ -174,6 +183,7 @@ import { RecordT } from "./record.js";
 import { Recording } from "./recording.js";
 import { Refund } from "./refund.js";
 import { Region } from "./region.js";
+import { Repairorder } from "./repairorder.js";
 import { Repo } from "./repo.js";
 import { Report } from "./report.js";
 import { Repository } from "./repository.js";
@@ -227,6 +237,8 @@ import { Unified } from "./unified.js";
 import { Unittype } from "./unittype.js";
 import { Usage } from "./usage.js";
 import { User } from "./user.js";
+import { Vehicle } from "./vehicle.js";
+import { Vehiclesale } from "./vehiclesale.js";
 import { Vendorcredit } from "./vendorcredit.js";
 import { Verification } from "./verification.js";
 import { Visitor } from "./visitor.js";
@@ -768,6 +780,46 @@ export class UnifiedTo extends ClientSDK {
     return (this._record ??= new RecordT(this._options));
   }
 
+  private _dms?: Dms;
+  get dms(): Dms {
+    return (this._dms ??= new Dms(this._options));
+  }
+
+  private _appointment?: Appointment;
+  get appointment(): Appointment {
+    return (this._appointment ??= new Appointment(this._options));
+  }
+
+  private _opcode?: Opcode;
+  get opcode(): Opcode {
+    return (this._opcode ??= new Opcode(this._options));
+  }
+
+  private _part?: Part;
+  get part(): Part {
+    return (this._part ??= new Part(this._options));
+  }
+
+  private _partsale?: Partsale;
+  get partsale(): Partsale {
+    return (this._partsale ??= new Partsale(this._options));
+  }
+
+  private _repairorder?: Repairorder;
+  get repairorder(): Repairorder {
+    return (this._repairorder ??= new Repairorder(this._options));
+  }
+
+  private _vehicle?: Vehicle;
+  get vehicle(): Vehicle {
+    return (this._vehicle ??= new Vehicle(this._options));
+  }
+
+  private _vehiclesale?: Vehiclesale;
+  get vehiclesale(): Vehiclesale {
+    return (this._vehiclesale ??= new Vehiclesale(this._options));
+  }
+
   private _enrich?: Enrich;
   get enrich(): Enrich {
     return (this._enrich ??= new Enrich(this._options));
@@ -776,6 +828,61 @@ export class UnifiedTo extends ClientSDK {
   private _person?: Person;
   get person(): Person {
     return (this._person ??= new Person(this._options));
+  }
+
+  private _fhir?: Fhir;
+  get fhir(): Fhir {
+    return (this._fhir ??= new Fhir(this._options));
+  }
+
+  private _allergyintolerance?: Allergyintolerance;
+  get allergyintolerance(): Allergyintolerance {
+    return (this._allergyintolerance ??= new Allergyintolerance(this._options));
+  }
+
+  private _condition?: Condition;
+  get condition(): Condition {
+    return (this._condition ??= new Condition(this._options));
+  }
+
+  private _diagnosticreport?: Diagnosticreport;
+  get diagnosticreport(): Diagnosticreport {
+    return (this._diagnosticreport ??= new Diagnosticreport(this._options));
+  }
+
+  private _encounter?: Encounter;
+  get encounter(): Encounter {
+    return (this._encounter ??= new Encounter(this._options));
+  }
+
+  private _immunization?: Immunization;
+  get immunization(): Immunization {
+    return (this._immunization ??= new Immunization(this._options));
+  }
+
+  private _medicationrequest?: Medicationrequest;
+  get medicationrequest(): Medicationrequest {
+    return (this._medicationrequest ??= new Medicationrequest(this._options));
+  }
+
+  private _observation?: Observation;
+  get observation(): Observation {
+    return (this._observation ??= new Observation(this._options));
+  }
+
+  private _patient?: Patient;
+  get patient(): Patient {
+    return (this._patient ??= new Patient(this._options));
+  }
+
+  private _practitioner?: Practitioner;
+  get practitioner(): Practitioner {
+    return (this._practitioner ??= new Practitioner(this._options));
+  }
+
+  private _metadata?: Metadata;
+  get metadata(): Metadata {
+    return (this._metadata ??= new Metadata(this._options));
   }
 
   private _forms?: Forms;
@@ -843,19 +950,9 @@ export class UnifiedTo extends ClientSDK {
     return (this._allergy ??= new Allergy(this._options));
   }
 
-  private _appointment?: Appointment;
-  get appointment(): Appointment {
-    return (this._appointment ??= new Appointment(this._options));
-  }
-
   private _careplan?: Careplan;
   get careplan(): Careplan {
     return (this._careplan ??= new Careplan(this._options));
-  }
-
-  private _condition?: Condition;
-  get condition(): Condition {
-    return (this._condition ??= new Condition(this._options));
   }
 
   private _coverage?: Coverage;
@@ -863,39 +960,14 @@ export class UnifiedTo extends ClientSDK {
     return (this._coverage ??= new Coverage(this._options));
   }
 
-  private _encounter?: Encounter;
-  get encounter(): Encounter {
-    return (this._encounter ??= new Encounter(this._options));
-  }
-
   private _goal?: Goal;
   get goal(): Goal {
     return (this._goal ??= new Goal(this._options));
   }
 
-  private _immunization?: Immunization;
-  get immunization(): Immunization {
-    return (this._immunization ??= new Immunization(this._options));
-  }
-
   private _medication?: Medication;
   get medication(): Medication {
     return (this._medication ??= new Medication(this._options));
-  }
-
-  private _observation?: Observation;
-  get observation(): Observation {
-    return (this._observation ??= new Observation(this._options));
-  }
-
-  private _patient?: Patient;
-  get patient(): Patient {
-    return (this._patient ??= new Patient(this._options));
-  }
-
-  private _practitioner?: Practitioner;
-  get practitioner(): Practitioner {
-    return (this._practitioner ??= new Practitioner(this._options));
   }
 
   private _procedure?: Procedure;
@@ -1073,11 +1145,6 @@ export class UnifiedTo extends ClientSDK {
     return (this._message ??= new Message(this._options));
   }
 
-  private _metadata?: Metadata;
-  get metadata(): Metadata {
-    return (this._metadata ??= new Metadata(this._options));
-  }
-
   private _passthrough?: Passthrough;
   get passthrough(): Passthrough {
     return (this._passthrough ??= new Passthrough(this._options));
@@ -1133,9 +1200,19 @@ export class UnifiedTo extends ClientSDK {
     return (this._change ??= new Change(this._options));
   }
 
-  private _part?: Part;
-  get part(): Part {
-    return (this._part ??= new Part(this._options));
+  private _printing?: Printing;
+  get printing(): Printing {
+    return (this._printing ??= new Printing(this._options));
+  }
+
+  private _file?: FileT;
+  get file(): FileT {
+    return (this._file ??= new FileT(this._options));
+  }
+
+  private _product?: Product;
+  get product(): Product {
+    return (this._product ??= new Product(this._options));
   }
 
   private _conversation?: Conversation;
@@ -1276,11 +1353,6 @@ export class UnifiedTo extends ClientSDK {
   private _storage?: Storage;
   get storage(): Storage {
     return (this._storage ??= new Storage(this._options));
-  }
-
-  private _file?: FileT;
-  get file(): FileT {
-    return (this._file ??= new FileT(this._options));
   }
 
   private _ticketing?: Ticketing;

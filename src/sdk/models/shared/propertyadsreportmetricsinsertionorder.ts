@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -91,7 +91,9 @@ export const PropertyAdsReportMetricsInsertionorderBudgetUnit$inboundSchema:
     PropertyAdsReportMetricsInsertionorderBudgetUnit,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsInsertionorderBudgetUnit);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsInsertionorderBudgetUnit)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsInsertionorderStatus$inboundSchema:
@@ -99,48 +101,58 @@ export const PropertyAdsReportMetricsInsertionorderStatus$inboundSchema:
     PropertyAdsReportMetricsInsertionorderStatus,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsInsertionorderStatus);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsInsertionorderStatus)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsInsertionorder$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsInsertionorder,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  bid_strategy: PropertyAdsReportMetricsInsertionorderBidStrategy$inboundSchema
-    .optional(),
-  budget_segments: z.array(AdsInsertionorderBudgetSegment$inboundSchema)
-    .optional(),
-  budget_unit: PropertyAdsReportMetricsInsertionorderBudgetUnit$inboundSchema
-    .optional(),
-  campaign_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  frequency_cap:
-    PropertyAdsReportMetricsInsertionorderFrequencyCap$inboundSchema.optional(),
-  id: z.string().optional(),
-  kpi: PropertyAdsReportMetricsInsertionorderKpi$inboundSchema.optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  pacing: PropertyAdsReportMetricsInsertionorderPacing$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  status: PropertyAdsReportMetricsInsertionorderStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "bid_strategy": "bidStrategy",
-    "budget_segments": "budgetSegments",
-    "budget_unit": "budgetUnit",
-    "campaign_id": "campaignId",
-    "created_at": "createdAt",
-    "frequency_cap": "frequencyCap",
-    "organization_id": "organizationId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bid_strategy:
+      PropertyAdsReportMetricsInsertionorderBidStrategy$inboundSchema
+        .optional(),
+    budget_segments: z.array(AdsInsertionorderBudgetSegment$inboundSchema)
+      .optional(),
+    budget_unit: PropertyAdsReportMetricsInsertionorderBudgetUnit$inboundSchema
+      .optional(),
+    campaign_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    frequency_cap:
+      PropertyAdsReportMetricsInsertionorderFrequencyCap$inboundSchema
+        .optional(),
+    id: z.string().optional(),
+    kpi: PropertyAdsReportMetricsInsertionorderKpi$inboundSchema.optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    pacing: PropertyAdsReportMetricsInsertionorderPacing$inboundSchema
+      .optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    status: PropertyAdsReportMetricsInsertionorderStatus$inboundSchema
+      .optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "bid_strategy": "bidStrategy",
+      "budget_segments": "budgetSegments",
+      "budget_unit": "budgetUnit",
+      "campaign_id": "campaignId",
+      "created_at": "createdAt",
+      "frequency_cap": "frequencyCap",
+      "organization_id": "organizationId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function propertyAdsReportMetricsInsertionorderFromJSON(
   jsonString: string,

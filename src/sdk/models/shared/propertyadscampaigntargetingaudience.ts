@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -42,25 +42,27 @@ export const PropertyAdsCampaignTargetingAudience$inboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingAudience,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  behaviors: z.array(TargetRef$inboundSchema).optional(),
-  combination_spec: z.array(AudienceCombination$inboundSchema).optional(),
-  custom_audiences: z.array(TargetRef$inboundSchema).optional(),
-  excluded_behaviors: z.array(TargetRef$inboundSchema).optional(),
-  excluded_custom_audiences: z.array(TargetRef$inboundSchema).optional(),
-  excluded_interests: z.array(TargetRef$inboundSchema).optional(),
-  interests: z.array(TargetRef$inboundSchema).optional(),
-  lookalike_audiences: z.array(LookalikeAudience$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "combination_spec": "combinationSpec",
-    "custom_audiences": "customAudiences",
-    "excluded_behaviors": "excludedBehaviors",
-    "excluded_custom_audiences": "excludedCustomAudiences",
-    "excluded_interests": "excludedInterests",
-    "lookalike_audiences": "lookalikeAudiences",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    behaviors: z.array(TargetRef$inboundSchema).optional(),
+    combination_spec: z.array(AudienceCombination$inboundSchema).optional(),
+    custom_audiences: z.array(TargetRef$inboundSchema).optional(),
+    excluded_behaviors: z.array(TargetRef$inboundSchema).optional(),
+    excluded_custom_audiences: z.array(TargetRef$inboundSchema).optional(),
+    excluded_interests: z.array(TargetRef$inboundSchema).optional(),
+    interests: z.array(TargetRef$inboundSchema).optional(),
+    lookalike_audiences: z.array(LookalikeAudience$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "combination_spec": "combinationSpec",
+      "custom_audiences": "customAudiences",
+      "excluded_behaviors": "excludedBehaviors",
+      "excluded_custom_audiences": "excludedCustomAudiences",
+      "excluded_interests": "excludedInterests",
+      "lookalike_audiences": "lookalikeAudiences",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsCampaignTargetingAudience$Outbound = {
   behaviors?: Array<TargetRef$Outbound> | undefined;
@@ -78,25 +80,27 @@ export const PropertyAdsCampaignTargetingAudience$outboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingAudience$Outbound,
   z.ZodTypeDef,
   PropertyAdsCampaignTargetingAudience
-> = z.object({
-  behaviors: z.array(TargetRef$outboundSchema).optional(),
-  combinationSpec: z.array(AudienceCombination$outboundSchema).optional(),
-  customAudiences: z.array(TargetRef$outboundSchema).optional(),
-  excludedBehaviors: z.array(TargetRef$outboundSchema).optional(),
-  excludedCustomAudiences: z.array(TargetRef$outboundSchema).optional(),
-  excludedInterests: z.array(TargetRef$outboundSchema).optional(),
-  interests: z.array(TargetRef$outboundSchema).optional(),
-  lookalikeAudiences: z.array(LookalikeAudience$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    combinationSpec: "combination_spec",
-    customAudiences: "custom_audiences",
-    excludedBehaviors: "excluded_behaviors",
-    excludedCustomAudiences: "excluded_custom_audiences",
-    excludedInterests: "excluded_interests",
-    lookalikeAudiences: "lookalike_audiences",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    behaviors: z.array(TargetRef$outboundSchema).optional(),
+    combinationSpec: z.array(AudienceCombination$outboundSchema).optional(),
+    customAudiences: z.array(TargetRef$outboundSchema).optional(),
+    excludedBehaviors: z.array(TargetRef$outboundSchema).optional(),
+    excludedCustomAudiences: z.array(TargetRef$outboundSchema).optional(),
+    excludedInterests: z.array(TargetRef$outboundSchema).optional(),
+    interests: z.array(TargetRef$outboundSchema).optional(),
+    lookalikeAudiences: z.array(LookalikeAudience$outboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      combinationSpec: "combination_spec",
+      customAudiences: "custom_audiences",
+      excludedBehaviors: "excluded_behaviors",
+      excludedCustomAudiences: "excluded_custom_audiences",
+      excludedInterests: "excluded_interests",
+      lookalikeAudiences: "lookalike_audiences",
+    });
+  })
+);
 
 export function propertyAdsCampaignTargetingAudienceToJSON(
   propertyAdsCampaignTargetingAudience: PropertyAdsCampaignTargetingAudience,

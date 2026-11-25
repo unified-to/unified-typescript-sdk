@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -284,6 +284,18 @@ export const WebhookObjectType = {
   QmsAction: "qms_action",
   QmsInspection: "qms_inspection",
   QmsAudit: "qms_audit",
+  DmsVehicle: "dms_vehicle",
+  DmsVehiclesale: "dms_vehiclesale",
+  DmsRepairorder: "dms_repairorder",
+  DmsAppointment: "dms_appointment",
+  DmsPart: "dms_part",
+  DmsPartsale: "dms_partsale",
+  DmsOpcode: "dms_opcode",
+  PrintingProduct: "printing_product",
+  PrintingTemplate: "printing_template",
+  PrintingFile: "printing_file",
+  PrintingQuote: "printing_quote",
+  PrintingOrder: "printing_order",
 } as const;
 /**
  * The object to return (eg. CRM "contact")
@@ -370,104 +382,110 @@ export type Webhook = {
 
 /** @internal */
 export const DbType$inboundSchema: z.ZodType<DbType, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(DbType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(DbType));
 /** @internal */
 export const DbType$outboundSchema: z.ZodType<string, z.ZodTypeDef, DbType> =
-  openEnums.outboundSchema(DbType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(DbType));
 
 /** @internal */
 export const WebhookEvent$inboundSchema: z.ZodType<
   WebhookEvent,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(WebhookEvent);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(WebhookEvent));
 /** @internal */
 export const WebhookEvent$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   WebhookEvent
-> = openEnums.outboundSchema(WebhookEvent);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(WebhookEvent));
 
 /** @internal */
 export const WebhookObjectType$inboundSchema: z.ZodType<
   WebhookObjectType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(WebhookObjectType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(WebhookObjectType)
+);
 /** @internal */
 export const WebhookObjectType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   WebhookObjectType
-> = openEnums.outboundSchema(WebhookObjectType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(WebhookObjectType)
+);
 
 /** @internal */
 export const WebhookType$inboundSchema: z.ZodType<
   WebhookType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(WebhookType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(WebhookType));
 /** @internal */
 export const WebhookType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   WebhookType
-> = openEnums.outboundSchema(WebhookType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(WebhookType));
 
 /** @internal */
 export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
-  z.object({
-    checked_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    connection_id: z.string(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    db_name_prefix: z.string().optional(),
-    db_schema: z.string().optional(),
-    db_type: DbType$inboundSchema.optional(),
-    db_url: z.string().optional(),
-    environment: z.string().default("Production"),
-    event: WebhookEvent$inboundSchema,
-    fields: z.string().optional(),
-    filters: z.record(z.string()).optional(),
-    hook_url: z.string().optional(),
-    id: z.string().optional(),
-    integration_type: z.string().optional(),
-    interval: z.number().optional(),
-    is_beta: z.boolean().optional(),
-    is_healthy: z.boolean().optional(),
-    is_paused: z.boolean().optional(),
-    object_type: WebhookObjectType$inboundSchema,
-    page_max_limit: z.number().optional(),
-    runs: z.array(z.string()).optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    webhook_type: WebhookType$inboundSchema.optional(),
-    workspace_id: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "checked_at": "checkedAt",
-      "connection_id": "connectionId",
-      "created_at": "createdAt",
-      "db_name_prefix": "dbNamePrefix",
-      "db_schema": "dbSchema",
-      "db_type": "dbType",
-      "db_url": "dbUrl",
-      "hook_url": "hookUrl",
-      "integration_type": "integrationType",
-      "is_beta": "isBeta",
-      "is_healthy": "isHealthy",
-      "is_paused": "isPaused",
-      "object_type": "objectType",
-      "page_max_limit": "pageMaxLimit",
-      "updated_at": "updatedAt",
-      "webhook_type": "webhookType",
-      "workspace_id": "workspaceId",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      checked_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      connection_id: z.string(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      db_name_prefix: z.string().optional(),
+      db_schema: z.string().optional(),
+      db_type: DbType$inboundSchema.optional(),
+      db_url: z.string().optional(),
+      environment: z.string().default("Production"),
+      event: WebhookEvent$inboundSchema,
+      fields: z.string().optional(),
+      filters: z.record(z.string()).optional(),
+      hook_url: z.string().optional(),
+      id: z.string().optional(),
+      integration_type: z.string().optional(),
+      interval: z.number().optional(),
+      is_beta: z.boolean().optional(),
+      is_healthy: z.boolean().optional(),
+      is_paused: z.boolean().optional(),
+      object_type: WebhookObjectType$inboundSchema,
+      page_max_limit: z.number().optional(),
+      runs: z.array(z.string()).optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      webhook_type: WebhookType$inboundSchema.optional(),
+      workspace_id: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "checked_at": "checkedAt",
+        "connection_id": "connectionId",
+        "created_at": "createdAt",
+        "db_name_prefix": "dbNamePrefix",
+        "db_schema": "dbSchema",
+        "db_type": "dbType",
+        "db_url": "dbUrl",
+        "hook_url": "hookUrl",
+        "integration_type": "integrationType",
+        "is_beta": "isBeta",
+        "is_healthy": "isHealthy",
+        "is_paused": "isPaused",
+        "object_type": "objectType",
+        "page_max_limit": "pageMaxLimit",
+        "updated_at": "updatedAt",
+        "webhook_type": "webhookType",
+        "workspace_id": "workspaceId",
+      });
+    })
+  );
 /** @internal */
 export type Webhook$Outbound = {
   checked_at?: string | undefined;
@@ -501,52 +519,54 @@ export const Webhook$outboundSchema: z.ZodType<
   Webhook$Outbound,
   z.ZodTypeDef,
   Webhook
-> = z.object({
-  checkedAt: z.date().transform(v => v.toISOString()).optional(),
-  connectionId: z.string(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dbNamePrefix: z.string().optional(),
-  dbSchema: z.string().optional(),
-  dbType: DbType$outboundSchema.optional(),
-  dbUrl: z.string().optional(),
-  environment: z.string().default("Production"),
-  event: WebhookEvent$outboundSchema,
-  fields: z.string().optional(),
-  filters: z.record(z.string()).optional(),
-  hookUrl: z.string().optional(),
-  id: z.string().optional(),
-  integrationType: z.string().optional(),
-  interval: z.number().optional(),
-  isBeta: z.boolean().optional(),
-  isHealthy: z.boolean().optional(),
-  isPaused: z.boolean().optional(),
-  objectType: WebhookObjectType$outboundSchema,
-  pageMaxLimit: z.number().optional(),
-  runs: z.array(z.string()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webhookType: WebhookType$outboundSchema.optional(),
-  workspaceId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    checkedAt: "checked_at",
-    connectionId: "connection_id",
-    createdAt: "created_at",
-    dbNamePrefix: "db_name_prefix",
-    dbSchema: "db_schema",
-    dbType: "db_type",
-    dbUrl: "db_url",
-    hookUrl: "hook_url",
-    integrationType: "integration_type",
-    isBeta: "is_beta",
-    isHealthy: "is_healthy",
-    isPaused: "is_paused",
-    objectType: "object_type",
-    pageMaxLimit: "page_max_limit",
-    updatedAt: "updated_at",
-    webhookType: "webhook_type",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    checkedAt: z.date().transform(v => v.toISOString()).optional(),
+    connectionId: z.string(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dbNamePrefix: z.string().optional(),
+    dbSchema: z.string().optional(),
+    dbType: DbType$outboundSchema.optional(),
+    dbUrl: z.string().optional(),
+    environment: z.string().default("Production"),
+    event: WebhookEvent$outboundSchema,
+    fields: z.string().optional(),
+    filters: z.record(z.string()).optional(),
+    hookUrl: z.string().optional(),
+    id: z.string().optional(),
+    integrationType: z.string().optional(),
+    interval: z.number().optional(),
+    isBeta: z.boolean().optional(),
+    isHealthy: z.boolean().optional(),
+    isPaused: z.boolean().optional(),
+    objectType: WebhookObjectType$outboundSchema,
+    pageMaxLimit: z.number().optional(),
+    runs: z.array(z.string()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webhookType: WebhookType$outboundSchema.optional(),
+    workspaceId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      checkedAt: "checked_at",
+      connectionId: "connection_id",
+      createdAt: "created_at",
+      dbNamePrefix: "db_name_prefix",
+      dbSchema: "db_schema",
+      dbType: "db_type",
+      dbUrl: "db_url",
+      hookUrl: "hook_url",
+      integrationType: "integration_type",
+      isBeta: "is_beta",
+      isHealthy: "is_healthy",
+      isPaused: "is_paused",
+      objectType: "object_type",
+      pageMaxLimit: "page_max_limit",
+      updatedAt: "updated_at",
+      webhookType: "webhook_type",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function webhookToJSON(webhook: Webhook): string {
   return JSON.stringify(Webhook$outboundSchema.parse(webhook));

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListTicketingCategoriesQueryParamFields = {
@@ -54,8 +55,10 @@ export type ListTicketingCategoriesRequest = {
 
 /** @internal */
 export const ListTicketingCategoriesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListTicketingCategoriesQueryParamFields> = z
-    .nativeEnum(ListTicketingCategoriesQueryParamFields);
+  z.ZodNativeEnum<typeof ListTicketingCategoriesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListTicketingCategoriesQueryParamFields)
+    );
 
 /** @internal */
 export type ListTicketingCategoriesRequest$Outbound = {
@@ -76,25 +79,27 @@ export const ListTicketingCategoriesRequest$outboundSchema: z.ZodType<
   ListTicketingCategoriesRequest$Outbound,
   z.ZodTypeDef,
   ListTicketingCategoriesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListTicketingCategoriesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListTicketingCategoriesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listTicketingCategoriesRequestToJSON(
   listTicketingCategoriesRequest: ListTicketingCategoriesRequest,

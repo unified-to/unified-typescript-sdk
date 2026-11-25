@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -32,28 +32,34 @@ export const AccountingAccountTaxonomyType$inboundSchema: z.ZodType<
   AccountingAccountTaxonomyType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingAccountTaxonomyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingAccountTaxonomyType)
+);
 /** @internal */
 export const AccountingAccountTaxonomyType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingAccountTaxonomyType
-> = openEnums.outboundSchema(AccountingAccountTaxonomyType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingAccountTaxonomyType)
+);
 
 /** @internal */
 export const AccountingAccountTaxonomy$inboundSchema: z.ZodType<
   AccountingAccountTaxonomy,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  original_type: z.string().optional(),
-  type: AccountingAccountTaxonomyType$inboundSchema,
-  value: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "original_type": "originalType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    original_type: z.string().optional(),
+    type: AccountingAccountTaxonomyType$inboundSchema,
+    value: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "original_type": "originalType",
+    });
+  })
+);
 /** @internal */
 export type AccountingAccountTaxonomy$Outbound = {
   original_type?: string | undefined;
@@ -66,15 +72,17 @@ export const AccountingAccountTaxonomy$outboundSchema: z.ZodType<
   AccountingAccountTaxonomy$Outbound,
   z.ZodTypeDef,
   AccountingAccountTaxonomy
-> = z.object({
-  originalType: z.string().optional(),
-  type: AccountingAccountTaxonomyType$outboundSchema,
-  value: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    originalType: "original_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    originalType: z.string().optional(),
+    type: AccountingAccountTaxonomyType$outboundSchema,
+    value: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      originalType: "original_type",
+    });
+  })
+);
 
 export function accountingAccountTaxonomyToJSON(
   accountingAccountTaxonomy: AccountingAccountTaxonomy,

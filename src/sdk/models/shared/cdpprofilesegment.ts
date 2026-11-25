@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -32,20 +32,23 @@ export const CdpProfileSegment$inboundSchema: z.ZodType<
   CdpProfileSegment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  joined_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  name: z.string().optional(),
-  segment_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "expires_at": "expiresAt",
-    "joined_at": "joinedAt",
-    "segment_id": "segmentId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    joined_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    name: z.string().optional(),
+    segment_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "expires_at": "expiresAt",
+      "joined_at": "joinedAt",
+      "segment_id": "segmentId",
+    });
+  })
+);
 /** @internal */
 export type CdpProfileSegment$Outbound = {
   expires_at?: string | undefined;
@@ -59,18 +62,20 @@ export const CdpProfileSegment$outboundSchema: z.ZodType<
   CdpProfileSegment$Outbound,
   z.ZodTypeDef,
   CdpProfileSegment
-> = z.object({
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  joinedAt: z.date().transform(v => v.toISOString()).optional(),
-  name: z.string().optional(),
-  segmentId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    expiresAt: "expires_at",
-    joinedAt: "joined_at",
-    segmentId: "segment_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    joinedAt: z.date().transform(v => v.toISOString()).optional(),
+    name: z.string().optional(),
+    segmentId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      expiresAt: "expires_at",
+      joinedAt: "joined_at",
+      segmentId: "segment_id",
+    });
+  })
+);
 
 export function cdpProfileSegmentToJSON(
   cdpProfileSegment: CdpProfileSegment,

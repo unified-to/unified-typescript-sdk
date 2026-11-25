@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -28,25 +28,27 @@ export const ScimEmailType$inboundSchema: z.ZodType<
   ScimEmailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ScimEmailType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ScimEmailType));
 /** @internal */
 export const ScimEmailType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ScimEmailType
-> = openEnums.outboundSchema(ScimEmailType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ScimEmailType));
 
 /** @internal */
 export const ScimEmail$inboundSchema: z.ZodType<
   ScimEmail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: ScimEmailType$inboundSchema,
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: ScimEmailType$inboundSchema,
+    value: z.string().optional(),
+  })
+);
 /** @internal */
 export type ScimEmail$Outbound = {
   display?: string | undefined;
@@ -60,12 +62,14 @@ export const ScimEmail$outboundSchema: z.ZodType<
   ScimEmail$Outbound,
   z.ZodTypeDef,
   ScimEmail
-> = z.object({
-  display: z.string().optional(),
-  primary: z.boolean().optional(),
-  type: ScimEmailType$outboundSchema,
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    display: z.string().optional(),
+    primary: z.boolean().optional(),
+    type: ScimEmailType$outboundSchema,
+    value: z.string().optional(),
+  })
+);
 
 export function scimEmailToJSON(scimEmail: ScimEmail): string {
   return JSON.stringify(ScimEmail$outboundSchema.parse(scimEmail));

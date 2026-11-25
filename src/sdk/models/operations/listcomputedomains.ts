@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListComputeDomainsQueryParamFields = {
@@ -56,7 +57,9 @@ export type ListComputeDomainsRequest = {
 /** @internal */
 export const ListComputeDomainsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListComputeDomainsQueryParamFields
-> = z.nativeEnum(ListComputeDomainsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListComputeDomainsQueryParamFields)
+);
 
 /** @internal */
 export type ListComputeDomainsRequest$Outbound = {
@@ -77,24 +80,27 @@ export const ListComputeDomainsRequest$outboundSchema: z.ZodType<
   ListComputeDomainsRequest$Outbound,
   z.ZodTypeDef,
   ListComputeDomainsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListComputeDomainsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  serviceId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    serviceId: "service_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListComputeDomainsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    serviceId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      serviceId: "service_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listComputeDomainsRequestToJSON(
   listComputeDomainsRequest: ListComputeDomainsRequest,

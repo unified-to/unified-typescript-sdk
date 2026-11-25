@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -28,29 +28,31 @@ export const RadiusUnit$inboundSchema: z.ZodType<
   RadiusUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(RadiusUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(RadiusUnit));
 /** @internal */
 export const RadiusUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   RadiusUnit
-> = openEnums.outboundSchema(RadiusUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(RadiusUnit));
 
 /** @internal */
 export const CityTarget$inboundSchema: z.ZodType<
   CityTarget,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string(),
-  name: z.string().optional(),
-  radius: z.number().optional(),
-  radius_unit: RadiusUnit$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "radius_unit": "radiusUnit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    name: z.string().optional(),
+    radius: z.number().optional(),
+    radius_unit: RadiusUnit$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "radius_unit": "radiusUnit",
+    });
+  })
+);
 /** @internal */
 export type CityTarget$Outbound = {
   id: string;
@@ -64,16 +66,18 @@ export const CityTarget$outboundSchema: z.ZodType<
   CityTarget$Outbound,
   z.ZodTypeDef,
   CityTarget
-> = z.object({
-  id: z.string(),
-  name: z.string().optional(),
-  radius: z.number().optional(),
-  radiusUnit: RadiusUnit$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    radiusUnit: "radius_unit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    name: z.string().optional(),
+    radius: z.number().optional(),
+    radiusUnit: RadiusUnit$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      radiusUnit: "radius_unit",
+    });
+  })
+);
 
 export function cityTargetToJSON(cityTarget: CityTarget): string {
   return JSON.stringify(CityTarget$outboundSchema.parse(cityTarget));

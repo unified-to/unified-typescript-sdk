@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -53,13 +53,15 @@ export const HealthcarePatientContact$inboundSchema: z.ZodType<
   HealthcarePatientContact,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyHealthcarePatientContactAddress$inboundSchema.optional(),
-  emails: z.array(HealthcareEmail$inboundSchema).optional(),
-  name: z.string().optional(),
-  relationship: z.string().optional(),
-  telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHealthcarePatientContactAddress$inboundSchema.optional(),
+    emails: z.array(HealthcareEmail$inboundSchema).optional(),
+    name: z.string().optional(),
+    relationship: z.string().optional(),
+    telephones: z.array(HealthcareTelephone$inboundSchema).optional(),
+  })
+);
 /** @internal */
 export type HealthcarePatientContact$Outbound = {
   address?: PropertyHealthcarePatientContactAddress$Outbound | undefined;
@@ -74,13 +76,15 @@ export const HealthcarePatientContact$outboundSchema: z.ZodType<
   HealthcarePatientContact$Outbound,
   z.ZodTypeDef,
   HealthcarePatientContact
-> = z.object({
-  address: PropertyHealthcarePatientContactAddress$outboundSchema.optional(),
-  emails: z.array(HealthcareEmail$outboundSchema).optional(),
-  name: z.string().optional(),
-  relationship: z.string().optional(),
-  telephones: z.array(HealthcareTelephone$outboundSchema).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyHealthcarePatientContactAddress$outboundSchema.optional(),
+    emails: z.array(HealthcareEmail$outboundSchema).optional(),
+    name: z.string().optional(),
+    relationship: z.string().optional(),
+    telephones: z.array(HealthcareTelephone$outboundSchema).optional(),
+  })
+);
 
 export function healthcarePatientContactToJSON(
   healthcarePatientContact: HealthcarePatientContact,

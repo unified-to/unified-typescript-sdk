@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -45,7 +46,9 @@ export type CreateRepoCommitRequest = {
 /** @internal */
 export const CreateRepoCommitQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateRepoCommitQueryParamFields
-> = z.nativeEnum(CreateRepoCommitQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateRepoCommitQueryParamFields)
+);
 
 /** @internal */
 export type CreateRepoCommitRequest$Outbound = {
@@ -60,17 +63,19 @@ export const CreateRepoCommitRequest$outboundSchema: z.ZodType<
   CreateRepoCommitRequest$Outbound,
   z.ZodTypeDef,
   CreateRepoCommitRequest
-> = z.object({
-  repoCommit: shared.RepoCommit$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateRepoCommitQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    repoCommit: "RepoCommit",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    repoCommit: shared.RepoCommit$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateRepoCommitQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      repoCommit: "RepoCommit",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createRepoCommitRequestToJSON(
   createRepoCommitRequest: CreateRepoCommitRequest,

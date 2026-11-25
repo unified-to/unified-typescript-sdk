@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -41,9 +42,10 @@ export type CreateLmsCollectionRequest = {
 
 /** @internal */
 export const CreateLmsCollectionQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateLmsCollectionQueryParamFields> = z.nativeEnum(
-    CreateLmsCollectionQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateLmsCollectionQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateLmsCollectionQueryParamFields)
+    );
 
 /** @internal */
 export type CreateLmsCollectionRequest$Outbound = {
@@ -58,18 +60,20 @@ export const CreateLmsCollectionRequest$outboundSchema: z.ZodType<
   CreateLmsCollectionRequest$Outbound,
   z.ZodTypeDef,
   CreateLmsCollectionRequest
-> = z.object({
-  lmsCollection: shared.LmsCollection$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateLmsCollectionQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    lmsCollection: "LmsCollection",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    lmsCollection: shared.LmsCollection$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateLmsCollectionQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      lmsCollection: "LmsCollection",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createLmsCollectionRequestToJSON(
   createLmsCollectionRequest: CreateLmsCollectionRequest,

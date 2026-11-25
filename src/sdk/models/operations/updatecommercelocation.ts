@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -58,9 +59,10 @@ export type UpdateCommerceLocationRequest = {
 
 /** @internal */
 export const UpdateCommerceLocationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateCommerceLocationQueryParamFields> = z.nativeEnum(
-    UpdateCommerceLocationQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateCommerceLocationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateCommerceLocationQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateCommerceLocationRequest$Outbound = {
@@ -76,19 +78,21 @@ export const UpdateCommerceLocationRequest$outboundSchema: z.ZodType<
   UpdateCommerceLocationRequest$Outbound,
   z.ZodTypeDef,
   UpdateCommerceLocationRequest
-> = z.object({
-  commerceLocation: shared.CommerceLocation$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateCommerceLocationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    commerceLocation: "CommerceLocation",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    commerceLocation: shared.CommerceLocation$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateCommerceLocationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      commerceLocation: "CommerceLocation",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateCommerceLocationRequestToJSON(
   updateCommerceLocationRequest: UpdateCommerceLocationRequest,

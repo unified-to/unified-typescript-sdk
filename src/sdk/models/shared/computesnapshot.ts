@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -100,58 +100,71 @@ export const ComputeSnapshotStatus$inboundSchema: z.ZodType<
   ComputeSnapshotStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeSnapshotStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeSnapshotStatus)
+);
 /** @internal */
 export const ComputeSnapshotStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeSnapshotStatus
-> = openEnums.outboundSchema(ComputeSnapshotStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeSnapshotStatus)
+);
 
 /** @internal */
 export const ComputeSnapshotType$inboundSchema: z.ZodType<
   ComputeSnapshotType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeSnapshotType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeSnapshotType)
+);
 /** @internal */
 export const ComputeSnapshotType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeSnapshotType
-> = openEnums.outboundSchema(ComputeSnapshotType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeSnapshotType)
+);
 
 /** @internal */
 export const ComputeSnapshot$inboundSchema: z.ZodType<
   ComputeSnapshot,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  instance_id: z.string().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  size_mb: z.number().optional(),
-  status: ComputeSnapshotStatus$inboundSchema.optional(),
-  type: ComputeSnapshotType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  volume_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "expires_at": "expiresAt",
-    "instance_id": "instanceId",
-    "size_mb": "sizeMb",
-    "updated_at": "updatedAt",
-    "volume_id": "volumeId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    instance_id: z.string().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    size_mb: z.number().optional(),
+    status: ComputeSnapshotStatus$inboundSchema.optional(),
+    type: ComputeSnapshotType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    volume_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "expires_at": "expiresAt",
+      "instance_id": "instanceId",
+      "size_mb": "sizeMb",
+      "updated_at": "updatedAt",
+      "volume_id": "volumeId",
+    });
+  })
+);
 /** @internal */
 export type ComputeSnapshot$Outbound = {
   created_at?: string | undefined;
@@ -173,29 +186,31 @@ export const ComputeSnapshot$outboundSchema: z.ZodType<
   ComputeSnapshot$Outbound,
   z.ZodTypeDef,
   ComputeSnapshot
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  instanceId: z.string().optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  sizeMb: z.number().optional(),
-  status: ComputeSnapshotStatus$outboundSchema.optional(),
-  type: ComputeSnapshotType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  volumeId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    expiresAt: "expires_at",
-    instanceId: "instance_id",
-    sizeMb: "size_mb",
-    updatedAt: "updated_at",
-    volumeId: "volume_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    instanceId: z.string().optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    sizeMb: z.number().optional(),
+    status: ComputeSnapshotStatus$outboundSchema.optional(),
+    type: ComputeSnapshotType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    volumeId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      expiresAt: "expires_at",
+      instanceId: "instance_id",
+      sizeMb: "size_mb",
+      updatedAt: "updated_at",
+      volumeId: "volume_id",
+    });
+  })
+);
 
 export function computeSnapshotToJSON(
   computeSnapshot: ComputeSnapshot,

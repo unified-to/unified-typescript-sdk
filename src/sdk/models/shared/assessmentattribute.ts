@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -58,46 +58,56 @@ export const AssessmentAttributeStatus$inboundSchema: z.ZodType<
   AssessmentAttributeStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AssessmentAttributeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AssessmentAttributeStatus)
+);
 /** @internal */
 export const AssessmentAttributeStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AssessmentAttributeStatus
-> = openEnums.outboundSchema(AssessmentAttributeStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AssessmentAttributeStatus)
+);
 
 /** @internal */
 export const AssessmentAttributeType$inboundSchema: z.ZodType<
   AssessmentAttributeType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AssessmentAttributeType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AssessmentAttributeType)
+);
 /** @internal */
 export const AssessmentAttributeType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AssessmentAttributeType
-> = openEnums.outboundSchema(AssessmentAttributeType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AssessmentAttributeType)
+);
 
 /** @internal */
 export const AssessmentAttribute$inboundSchema: z.ZodType<
   AssessmentAttribute,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  label: z.string(),
-  reference: z.string().optional(),
-  score_max: z.number().optional(),
-  score_value: z.number().optional(),
-  status: AssessmentAttributeStatus$inboundSchema.optional(),
-  type: AssessmentAttributeType$inboundSchema,
-  value: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "score_max": "scoreMax",
-    "score_value": "scoreValue",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    label: z.string(),
+    reference: z.string().optional(),
+    score_max: z.number().optional(),
+    score_value: z.number().optional(),
+    status: AssessmentAttributeStatus$inboundSchema.optional(),
+    type: AssessmentAttributeType$inboundSchema,
+    value: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "score_max": "scoreMax",
+      "score_value": "scoreValue",
+    });
+  })
+);
 /** @internal */
 export type AssessmentAttribute$Outbound = {
   label: string;
@@ -114,20 +124,22 @@ export const AssessmentAttribute$outboundSchema: z.ZodType<
   AssessmentAttribute$Outbound,
   z.ZodTypeDef,
   AssessmentAttribute
-> = z.object({
-  label: z.string(),
-  reference: z.string().optional(),
-  scoreMax: z.number().optional(),
-  scoreValue: z.number().optional(),
-  status: AssessmentAttributeStatus$outboundSchema.optional(),
-  type: AssessmentAttributeType$outboundSchema,
-  value: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    scoreMax: "score_max",
-    scoreValue: "score_value",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    label: z.string(),
+    reference: z.string().optional(),
+    scoreMax: z.number().optional(),
+    scoreValue: z.number().optional(),
+    status: AssessmentAttributeStatus$outboundSchema.optional(),
+    type: AssessmentAttributeType$outboundSchema,
+    value: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      scoreMax: "score_max",
+      scoreValue: "score_value",
+    });
+  })
+);
 
 export function assessmentAttributeToJSON(
   assessmentAttribute: AssessmentAttribute,

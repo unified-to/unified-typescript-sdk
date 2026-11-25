@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -77,42 +77,46 @@ export const SenderType$inboundSchema: z.ZodType<
   SenderType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SenderType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SenderType));
 /** @internal */
 export const SenderType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SenderType
-> = openEnums.outboundSchema(SenderType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(SenderType));
 
 /** @internal */
 export const PropertyMessage$inboundSchema: z.ZodType<
   PropertyMessage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attachments: z.array(PropertyAttachment$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_automatic: z.boolean().optional(),
-  is_unread: z.boolean().optional(),
-  message: z.string().optional(),
-  sender_name: z.string().optional(),
-  sender_type: SenderType$inboundSchema.optional(),
-  subject: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_automatic": "isAutomatic",
-    "is_unread": "isUnread",
-    "sender_name": "senderName",
-    "sender_type": "senderType",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(PropertyAttachment$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    is_automatic: z.boolean().optional(),
+    is_unread: z.boolean().optional(),
+    message: z.string().optional(),
+    sender_name: z.string().optional(),
+    sender_type: SenderType$inboundSchema.optional(),
+    subject: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_automatic": "isAutomatic",
+      "is_unread": "isUnread",
+      "sender_name": "senderName",
+      "sender_type": "senderType",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type PropertyMessage$Outbound = {
   attachments?: Array<PropertyAttachment$Outbound> | undefined;
@@ -132,27 +136,29 @@ export const PropertyMessage$outboundSchema: z.ZodType<
   PropertyMessage$Outbound,
   z.ZodTypeDef,
   PropertyMessage
-> = z.object({
-  attachments: z.array(PropertyAttachment$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isAutomatic: z.boolean().optional(),
-  isUnread: z.boolean().optional(),
-  message: z.string().optional(),
-  senderName: z.string().optional(),
-  senderType: SenderType$outboundSchema.optional(),
-  subject: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isAutomatic: "is_automatic",
-    isUnread: "is_unread",
-    senderName: "sender_name",
-    senderType: "sender_type",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(PropertyAttachment$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isAutomatic: z.boolean().optional(),
+    isUnread: z.boolean().optional(),
+    message: z.string().optional(),
+    senderName: z.string().optional(),
+    senderType: SenderType$outboundSchema.optional(),
+    subject: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isAutomatic: "is_automatic",
+      isUnread: "is_unread",
+      senderName: "sender_name",
+      senderType: "sender_type",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function propertyMessageToJSON(
   propertyMessage: PropertyMessage,

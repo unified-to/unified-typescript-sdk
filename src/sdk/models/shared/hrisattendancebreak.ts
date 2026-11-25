@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,23 +31,25 @@ export const HrisAttendanceBreak$inboundSchema: z.ZodType<
   HrisAttendanceBreak,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  duration_minutes: z.number().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_paid: z.boolean().optional(),
-  name: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "duration_minutes": "durationMinutes",
-    "end_at": "endAt",
-    "is_paid": "isPaid",
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    duration_minutes: z.number().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    is_paid: z.boolean().optional(),
+    name: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "duration_minutes": "durationMinutes",
+      "end_at": "endAt",
+      "is_paid": "isPaid",
+      "start_at": "startAt",
+    });
+  })
+);
 /** @internal */
 export type HrisAttendanceBreak$Outbound = {
   duration_minutes?: number | undefined;
@@ -63,21 +65,23 @@ export const HrisAttendanceBreak$outboundSchema: z.ZodType<
   HrisAttendanceBreak$Outbound,
   z.ZodTypeDef,
   HrisAttendanceBreak
-> = z.object({
-  durationMinutes: z.number().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isPaid: z.boolean().optional(),
-  name: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    durationMinutes: "duration_minutes",
-    endAt: "end_at",
-    isPaid: "is_paid",
-    startAt: "start_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    durationMinutes: z.number().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isPaid: z.boolean().optional(),
+    name: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      durationMinutes: "duration_minutes",
+      endAt: "end_at",
+      isPaid: "is_paid",
+      startAt: "start_at",
+    });
+  })
+);
 
 export function hrisAttendanceBreakToJSON(
   hrisAttendanceBreak: HrisAttendanceBreak,

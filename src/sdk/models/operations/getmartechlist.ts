@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetMartechListQueryParamFields = {
@@ -52,7 +53,9 @@ export type GetMartechListRequest = {
 /** @internal */
 export const GetMartechListQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetMartechListQueryParamFields
-> = z.nativeEnum(GetMartechListQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetMartechListQueryParamFields)
+);
 
 /** @internal */
 export type GetMartechListRequest$Outbound = {
@@ -67,16 +70,18 @@ export const GetMartechListRequest$outboundSchema: z.ZodType<
   GetMartechListRequest$Outbound,
   z.ZodTypeDef,
   GetMartechListRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetMartechListQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetMartechListQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getMartechListRequestToJSON(
   getMartechListRequest: GetMartechListRequest,

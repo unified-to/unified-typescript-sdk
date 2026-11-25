@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,11 +18,13 @@ export const PropertyCrmEventPageView$inboundSchema: z.ZodType<
   PropertyCrmEventPageView,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  average: z.number().optional(),
-  count: z.number().optional(),
-  url: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    average: z.number().optional(),
+    count: z.number().optional(),
+    url: z.string().optional(),
+  })
+);
 /** @internal */
 export type PropertyCrmEventPageView$Outbound = {
   average?: number | undefined;
@@ -35,11 +37,13 @@ export const PropertyCrmEventPageView$outboundSchema: z.ZodType<
   PropertyCrmEventPageView$Outbound,
   z.ZodTypeDef,
   PropertyCrmEventPageView
-> = z.object({
-  average: z.number().optional(),
-  count: z.number().optional(),
-  url: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    average: z.number().optional(),
+    count: z.number().optional(),
+    url: z.string().optional(),
+  })
+);
 
 export function propertyCrmEventPageViewToJSON(
   propertyCrmEventPageView: PropertyCrmEventPageView,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHealthcareSlotsQueryParamFields = {
@@ -70,9 +71,10 @@ export type ListHealthcareSlotsRequest = {
 
 /** @internal */
 export const ListHealthcareSlotsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListHealthcareSlotsQueryParamFields> = z.nativeEnum(
-    ListHealthcareSlotsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListHealthcareSlotsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListHealthcareSlotsQueryParamFields)
+    );
 
 /** @internal */
 export type ListHealthcareSlotsRequest$Outbound = {
@@ -96,31 +98,33 @@ export const ListHealthcareSlotsRequest$outboundSchema: z.ZodType<
   ListHealthcareSlotsRequest$Outbound,
   z.ZodTypeDef,
   ListHealthcareSlotsRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListHealthcareSlotsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  locationId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  practitionerId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    locationId: "location_id",
-    practitionerId: "practitioner_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListHealthcareSlotsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    locationId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    practitionerId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      locationId: "location_id",
+      practitionerId: "practitioner_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHealthcareSlotsRequestToJSON(
   listHealthcareSlotsRequest: ListHealthcareSlotsRequest,

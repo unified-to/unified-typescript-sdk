@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -106,59 +106,69 @@ export const AtsApplicationStatus$inboundSchema: z.ZodType<
   AtsApplicationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsApplicationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AtsApplicationStatus)
+);
 /** @internal */
 export const AtsApplicationStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsApplicationStatus
-> = openEnums.outboundSchema(AtsApplicationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsApplicationStatus)
+);
 
 /** @internal */
 export const AtsApplication$inboundSchema: z.ZodType<
   AtsApplication,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  answers: z.array(AtsApplicationAnswer$inboundSchema).optional(),
-  applied_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  candidate_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  hired_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  job_id: z.string().optional(),
-  metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  offers: z.array(AtsOffer$inboundSchema).optional(),
-  original_status: z.string().optional(),
-  original_substatus: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  rejected_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  rejected_reason: z.string().optional(),
-  source: z.string().optional(),
-  status: AtsApplicationStatus$inboundSchema.optional(),
-  summary: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "applied_at": "appliedAt",
-    "candidate_id": "candidateId",
-    "created_at": "createdAt",
-    "hired_at": "hiredAt",
-    "job_id": "jobId",
-    "original_status": "originalStatus",
-    "original_substatus": "originalSubstatus",
-    "rejected_at": "rejectedAt",
-    "rejected_reason": "rejectedReason",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answers: z.array(AtsApplicationAnswer$inboundSchema).optional(),
+    applied_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    candidate_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    hired_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    job_id: z.string().optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    offers: z.array(AtsOffer$inboundSchema).optional(),
+    original_status: z.string().optional(),
+    original_substatus: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    rejected_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    rejected_reason: z.string().optional(),
+    source: z.string().optional(),
+    status: AtsApplicationStatus$inboundSchema.optional(),
+    summary: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "applied_at": "appliedAt",
+      "candidate_id": "candidateId",
+      "created_at": "createdAt",
+      "hired_at": "hiredAt",
+      "job_id": "jobId",
+      "original_status": "originalStatus",
+      "original_substatus": "originalSubstatus",
+      "rejected_at": "rejectedAt",
+      "rejected_reason": "rejectedReason",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type AtsApplication$Outbound = {
   answers?: Array<AtsApplicationAnswer$Outbound> | undefined;
@@ -187,41 +197,43 @@ export const AtsApplication$outboundSchema: z.ZodType<
   AtsApplication$Outbound,
   z.ZodTypeDef,
   AtsApplication
-> = z.object({
-  answers: z.array(AtsApplicationAnswer$outboundSchema).optional(),
-  appliedAt: z.date().transform(v => v.toISOString()).optional(),
-  candidateId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  hiredAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  jobId: z.string().optional(),
-  metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  offers: z.array(AtsOffer$outboundSchema).optional(),
-  originalStatus: z.string().optional(),
-  originalSubstatus: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  rejectedAt: z.date().transform(v => v.toISOString()).optional(),
-  rejectedReason: z.string().optional(),
-  source: z.string().optional(),
-  status: AtsApplicationStatus$outboundSchema.optional(),
-  summary: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    appliedAt: "applied_at",
-    candidateId: "candidate_id",
-    createdAt: "created_at",
-    hiredAt: "hired_at",
-    jobId: "job_id",
-    originalStatus: "original_status",
-    originalSubstatus: "original_substatus",
-    rejectedAt: "rejected_at",
-    rejectedReason: "rejected_reason",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answers: z.array(AtsApplicationAnswer$outboundSchema).optional(),
+    appliedAt: z.date().transform(v => v.toISOString()).optional(),
+    candidateId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    hiredAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    jobId: z.string().optional(),
+    metadata: z.array(AtsMetadata$outboundSchema).optional(),
+    offers: z.array(AtsOffer$outboundSchema).optional(),
+    originalStatus: z.string().optional(),
+    originalSubstatus: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    rejectedAt: z.date().transform(v => v.toISOString()).optional(),
+    rejectedReason: z.string().optional(),
+    source: z.string().optional(),
+    status: AtsApplicationStatus$outboundSchema.optional(),
+    summary: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      appliedAt: "applied_at",
+      candidateId: "candidate_id",
+      createdAt: "created_at",
+      hiredAt: "hired_at",
+      jobId: "job_id",
+      originalStatus: "original_status",
+      originalSubstatus: "original_substatus",
+      rejectedAt: "rejected_at",
+      rejectedReason: "rejected_reason",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function atsApplicationToJSON(atsApplication: AtsApplication): string {
   return JSON.stringify(AtsApplication$outboundSchema.parse(atsApplication));

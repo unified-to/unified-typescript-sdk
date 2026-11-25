@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -50,36 +50,38 @@ export const DayOfWeek$inboundSchema: z.ZodType<
   DayOfWeek,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(DayOfWeek);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(DayOfWeek));
 /** @internal */
 export const DayOfWeek$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   DayOfWeek
-> = openEnums.outboundSchema(DayOfWeek);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(DayOfWeek));
 
 /** @internal */
 export const AdSchedule$inboundSchema: z.ZodType<
   AdSchedule,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  bid_modifier: z.number().optional(),
-  day_of_week: DayOfWeek$inboundSchema,
-  end_hour: z.number(),
-  end_minute: z.number().optional(),
-  start_hour: z.number(),
-  start_minute: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "bid_modifier": "bidModifier",
-    "day_of_week": "dayOfWeek",
-    "end_hour": "endHour",
-    "end_minute": "endMinute",
-    "start_hour": "startHour",
-    "start_minute": "startMinute",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bid_modifier: z.number().optional(),
+    day_of_week: DayOfWeek$inboundSchema,
+    end_hour: z.number(),
+    end_minute: z.number().optional(),
+    start_hour: z.number(),
+    start_minute: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "bid_modifier": "bidModifier",
+      "day_of_week": "dayOfWeek",
+      "end_hour": "endHour",
+      "end_minute": "endMinute",
+      "start_hour": "startHour",
+      "start_minute": "startMinute",
+    });
+  })
+);
 /** @internal */
 export type AdSchedule$Outbound = {
   bid_modifier?: number | undefined;
@@ -95,23 +97,25 @@ export const AdSchedule$outboundSchema: z.ZodType<
   AdSchedule$Outbound,
   z.ZodTypeDef,
   AdSchedule
-> = z.object({
-  bidModifier: z.number().optional(),
-  dayOfWeek: DayOfWeek$outboundSchema,
-  endHour: z.number(),
-  endMinute: z.number().optional(),
-  startHour: z.number(),
-  startMinute: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    bidModifier: "bid_modifier",
-    dayOfWeek: "day_of_week",
-    endHour: "end_hour",
-    endMinute: "end_minute",
-    startHour: "start_hour",
-    startMinute: "start_minute",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bidModifier: z.number().optional(),
+    dayOfWeek: DayOfWeek$outboundSchema,
+    endHour: z.number(),
+    endMinute: z.number().optional(),
+    startHour: z.number(),
+    startMinute: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      bidModifier: "bid_modifier",
+      dayOfWeek: "day_of_week",
+      endHour: "end_hour",
+      endMinute: "end_minute",
+      startHour: "start_hour",
+      startMinute: "start_minute",
+    });
+  })
+);
 
 export function adScheduleToJSON(adSchedule: AdSchedule): string {
   return JSON.stringify(AdSchedule$outboundSchema.parse(adSchedule));

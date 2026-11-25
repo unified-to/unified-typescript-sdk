@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -66,8 +67,10 @@ export type PatchAccountingCreditmemoRequest = {
 
 /** @internal */
 export const PatchAccountingCreditmemoQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchAccountingCreditmemoQueryParamFields> = z
-    .nativeEnum(PatchAccountingCreditmemoQueryParamFields);
+  z.ZodNativeEnum<typeof PatchAccountingCreditmemoQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchAccountingCreditmemoQueryParamFields)
+    );
 
 /** @internal */
 export type PatchAccountingCreditmemoRequest$Outbound = {
@@ -83,19 +86,21 @@ export const PatchAccountingCreditmemoRequest$outboundSchema: z.ZodType<
   PatchAccountingCreditmemoRequest$Outbound,
   z.ZodTypeDef,
   PatchAccountingCreditmemoRequest
-> = z.object({
-  accountingCreditmemo: shared.AccountingCreditmemo$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchAccountingCreditmemoQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingCreditmemo: "AccountingCreditmemo",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingCreditmemo: shared.AccountingCreditmemo$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchAccountingCreditmemoQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingCreditmemo: "AccountingCreditmemo",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchAccountingCreditmemoRequestToJSON(
   patchAccountingCreditmemoRequest: PatchAccountingCreditmemoRequest,

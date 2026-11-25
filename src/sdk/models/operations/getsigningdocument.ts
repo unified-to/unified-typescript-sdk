@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetSigningDocumentQueryParamFields = {
@@ -48,7 +49,9 @@ export type GetSigningDocumentRequest = {
 /** @internal */
 export const GetSigningDocumentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetSigningDocumentQueryParamFields
-> = z.nativeEnum(GetSigningDocumentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetSigningDocumentQueryParamFields)
+);
 
 /** @internal */
 export type GetSigningDocumentRequest$Outbound = {
@@ -63,16 +66,19 @@ export const GetSigningDocumentRequest$outboundSchema: z.ZodType<
   GetSigningDocumentRequest$Outbound,
   z.ZodTypeDef,
   GetSigningDocumentRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetSigningDocumentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetSigningDocumentQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getSigningDocumentRequestToJSON(
   getSigningDocumentRequest: GetSigningDocumentRequest,

@@ -32,23 +32,23 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.scorecard.createAtsScorecard({
     atsScorecard: {
-      comment: "Maiores enim.",
+      comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "ed9235fb-14d1-44cb-84af-86b9c45ae14c",
+      id: "4eda298c-b6fe-408d-a388-29087bf78534",
       metadata: [],
       questions: [
         {
-          description: "Sulum textor eveniet facere vita.",
-          text: "Aliquam.",
+          description: "Pecto vulpes libero vomer comburo.",
+          text: "Desidero modi tamdiu auxilium defessus adimpleo clementia tero.",
         },
         {
-          answer: "Decretum.",
-          description: "Conatus cicuta doloremque statua bonus.",
-          text: "Pecto vulpes libero vomer comburo.",
+          answer: "Conatus cicuta doloremque statua bonus.",
+          description: "Aduro viscus celebrer.",
+          text: "Decretum.",
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-13T20:22:07.273Z"),
+      updatedAt: new Date("2023-06-15T11:15:08.464Z"),
     },
     connectionId: "<id>",
   });
@@ -78,23 +78,23 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await atsCreateAtsScorecard(unifiedTo, {
     atsScorecard: {
-      comment: "Maiores enim.",
+      comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "ed9235fb-14d1-44cb-84af-86b9c45ae14c",
+      id: "4eda298c-b6fe-408d-a388-29087bf78534",
       metadata: [],
       questions: [
         {
-          description: "Sulum textor eveniet facere vita.",
-          text: "Aliquam.",
+          description: "Pecto vulpes libero vomer comburo.",
+          text: "Desidero modi tamdiu auxilium defessus adimpleo clementia tero.",
         },
         {
-          answer: "Decretum.",
-          description: "Conatus cicuta doloremque statua bonus.",
-          text: "Pecto vulpes libero vomer comburo.",
+          answer: "Conatus cicuta doloremque statua bonus.",
+          description: "Aduro viscus celebrer.",
+          text: "Decretum.",
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-13T20:22:07.273Z"),
+      updatedAt: new Date("2023-06-15T11:15:08.464Z"),
     },
     connectionId: "<id>",
   });
@@ -459,23 +459,23 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.scorecard.patchAtsScorecard({
     atsScorecard: {
-      comment: "Maiores enim.",
+      comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "83554f19-5b81-453c-bb67-8b8096df7f0c",
+      id: "a4b52bf9-2c52-4b80-8c1c-aba5e11220d8",
       metadata: [],
       questions: [
         {
-          description: "Sulum textor eveniet facere vita.",
-          text: "Aliquam.",
+          description: "Pecto vulpes libero vomer comburo.",
+          text: "Desidero modi tamdiu auxilium defessus adimpleo clementia tero.",
         },
         {
-          answer: "Decretum.",
-          description: "Conatus cicuta doloremque statua bonus.",
-          text: "Pecto vulpes libero vomer comburo.",
+          answer: "Conatus cicuta doloremque statua bonus.",
+          description: "Aduro viscus celebrer.",
+          text: "Decretum.",
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-13T20:22:07.277Z"),
+      updatedAt: new Date("2023-06-15T11:15:08.468Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -506,23 +506,23 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await atsPatchAtsScorecard(unifiedTo, {
     atsScorecard: {
-      comment: "Maiores enim.",
+      comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "83554f19-5b81-453c-bb67-8b8096df7f0c",
+      id: "a4b52bf9-2c52-4b80-8c1c-aba5e11220d8",
       metadata: [],
       questions: [
         {
-          description: "Sulum textor eveniet facere vita.",
-          text: "Aliquam.",
+          description: "Pecto vulpes libero vomer comburo.",
+          text: "Desidero modi tamdiu auxilium defessus adimpleo clementia tero.",
         },
         {
-          answer: "Decretum.",
-          description: "Conatus cicuta doloremque statua bonus.",
-          text: "Pecto vulpes libero vomer comburo.",
+          answer: "Conatus cicuta doloremque statua bonus.",
+          description: "Aduro viscus celebrer.",
+          text: "Decretum.",
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-13T20:22:07.277Z"),
+      updatedAt: new Date("2023-06-15T11:15:08.468Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -655,23 +655,23 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.scorecard.updateAtsScorecard({
     atsScorecard: {
-      comment: "Maiores enim.",
+      comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "83554f19-5b81-453c-bb67-8b8096df7f0c",
+      id: "a4b52bf9-2c52-4b80-8c1c-aba5e11220d8",
       metadata: [],
       questions: [
         {
-          description: "Sulum textor eveniet facere vita.",
-          text: "Aliquam.",
+          description: "Pecto vulpes libero vomer comburo.",
+          text: "Desidero modi tamdiu auxilium defessus adimpleo clementia tero.",
         },
         {
-          answer: "Decretum.",
-          description: "Conatus cicuta doloremque statua bonus.",
-          text: "Pecto vulpes libero vomer comburo.",
+          answer: "Conatus cicuta doloremque statua bonus.",
+          description: "Aduro viscus celebrer.",
+          text: "Decretum.",
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-13T20:22:07.277Z"),
+      updatedAt: new Date("2023-06-15T11:15:08.468Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -702,23 +702,23 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await atsUpdateAtsScorecard(unifiedTo, {
     atsScorecard: {
-      comment: "Maiores enim.",
+      comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "83554f19-5b81-453c-bb67-8b8096df7f0c",
+      id: "a4b52bf9-2c52-4b80-8c1c-aba5e11220d8",
       metadata: [],
       questions: [
         {
-          description: "Sulum textor eveniet facere vita.",
-          text: "Aliquam.",
+          description: "Pecto vulpes libero vomer comburo.",
+          text: "Desidero modi tamdiu auxilium defessus adimpleo clementia tero.",
         },
         {
-          answer: "Decretum.",
-          description: "Conatus cicuta doloremque statua bonus.",
-          text: "Pecto vulpes libero vomer comburo.",
+          answer: "Conatus cicuta doloremque statua bonus.",
+          description: "Aduro viscus celebrer.",
+          text: "Decretum.",
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-13T20:22:07.277Z"),
+      updatedAt: new Date("2023-06-15T11:15:08.468Z"),
     },
     connectionId: "<id>",
     id: "<id>",

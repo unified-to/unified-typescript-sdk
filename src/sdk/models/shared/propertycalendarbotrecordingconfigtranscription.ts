@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -46,8 +46,8 @@ export const PropertyCalendarBotRecordingConfigTranscriptionMode$inboundSchema:
     PropertyCalendarBotRecordingConfigTranscriptionMode,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyCalendarBotRecordingConfigTranscriptionMode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyCalendarBotRecordingConfigTranscriptionMode)
   );
 /** @internal */
 export const PropertyCalendarBotRecordingConfigTranscriptionMode$outboundSchema:
@@ -55,8 +55,10 @@ export const PropertyCalendarBotRecordingConfigTranscriptionMode$outboundSchema:
     string,
     z.ZodTypeDef,
     PropertyCalendarBotRecordingConfigTranscriptionMode
-  > = openEnums.outboundSchema(
-    PropertyCalendarBotRecordingConfigTranscriptionMode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyCalendarBotRecordingConfigTranscriptionMode,
+    )
   );
 
 /** @internal */
@@ -64,13 +66,13 @@ export const Provider$inboundSchema: z.ZodType<
   Provider,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Provider);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Provider));
 /** @internal */
 export const Provider$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Provider
-> = openEnums.outboundSchema(Provider);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Provider));
 
 /** @internal */
 export const PropertyCalendarBotRecordingConfigTranscription$inboundSchema:
@@ -78,19 +80,21 @@ export const PropertyCalendarBotRecordingConfigTranscription$inboundSchema:
     PropertyCalendarBotRecordingConfigTranscription,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    enable_speaker_labels: z.boolean().optional(),
-    enable_word_timestamps: z.boolean().optional(),
-    language: z.string().optional(),
-    mode: PropertyCalendarBotRecordingConfigTranscriptionMode$inboundSchema
-      .optional(),
-    provider: Provider$inboundSchema.optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "enable_speaker_labels": "enableSpeakerLabels",
-      "enable_word_timestamps": "enableWordTimestamps",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      enable_speaker_labels: z.boolean().optional(),
+      enable_word_timestamps: z.boolean().optional(),
+      language: z.string().optional(),
+      mode: PropertyCalendarBotRecordingConfigTranscriptionMode$inboundSchema
+        .optional(),
+      provider: Provider$inboundSchema.optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "enable_speaker_labels": "enableSpeakerLabels",
+        "enable_word_timestamps": "enableWordTimestamps",
+      });
+    })
+  );
 /** @internal */
 export type PropertyCalendarBotRecordingConfigTranscription$Outbound = {
   enable_speaker_labels?: boolean | undefined;
@@ -106,19 +110,21 @@ export const PropertyCalendarBotRecordingConfigTranscription$outboundSchema:
     PropertyCalendarBotRecordingConfigTranscription$Outbound,
     z.ZodTypeDef,
     PropertyCalendarBotRecordingConfigTranscription
-  > = z.object({
-    enableSpeakerLabels: z.boolean().optional(),
-    enableWordTimestamps: z.boolean().optional(),
-    language: z.string().optional(),
-    mode: PropertyCalendarBotRecordingConfigTranscriptionMode$outboundSchema
-      .optional(),
-    provider: Provider$outboundSchema.optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      enableSpeakerLabels: "enable_speaker_labels",
-      enableWordTimestamps: "enable_word_timestamps",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      enableSpeakerLabels: z.boolean().optional(),
+      enableWordTimestamps: z.boolean().optional(),
+      language: z.string().optional(),
+      mode: PropertyCalendarBotRecordingConfigTranscriptionMode$outboundSchema
+        .optional(),
+      provider: Provider$outboundSchema.optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        enableSpeakerLabels: "enable_speaker_labels",
+        enableWordTimestamps: "enable_word_timestamps",
+      });
+    })
+  );
 
 export function propertyCalendarBotRecordingConfigTranscriptionToJSON(
   propertyCalendarBotRecordingConfigTranscription:

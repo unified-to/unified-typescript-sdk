@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -127,54 +127,61 @@ export const HealthcareMedicationStatus$inboundSchema: z.ZodType<
   HealthcareMedicationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareMedicationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareMedicationStatus)
+);
 
 /** @internal */
 export const HealthcareMedication$inboundSchema: z.ZodType<
   HealthcareMedication,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  authored_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  dosage: z.string().optional(),
-  dose_number: z.number().optional(),
-  dose_unit: z.string().optional(),
-  encounter_id: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  patient_id: z.string().optional(),
-  practitioner_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  refill_count: z.number().optional(),
-  route: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HealthcareMedicationStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "authored_at": "authoredAt",
-    "created_at": "createdAt",
-    "dose_number": "doseNumber",
-    "dose_unit": "doseUnit",
-    "encounter_id": "encounterId",
-    "end_at": "endAt",
-    "patient_id": "patientId",
-    "practitioner_id": "practitionerId",
-    "refill_count": "refillCount",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authored_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    dosage: z.string().optional(),
+    dose_number: z.number().optional(),
+    dose_unit: z.string().optional(),
+    encounter_id: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    patient_id: z.string().optional(),
+    practitioner_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    refill_count: z.number().optional(),
+    route: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HealthcareMedicationStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "authored_at": "authoredAt",
+      "created_at": "createdAt",
+      "dose_number": "doseNumber",
+      "dose_unit": "doseUnit",
+      "encounter_id": "encounterId",
+      "end_at": "endAt",
+      "patient_id": "patientId",
+      "practitioner_id": "practitionerId",
+      "refill_count": "refillCount",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcareMedicationFromJSON(
   jsonString: string,

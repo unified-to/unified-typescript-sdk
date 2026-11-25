@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type PropertyWorkspaceIntegrationAuth = {
   clientId?: string | undefined;
@@ -57,31 +58,33 @@ export const PropertyWorkspaceIntegrationAuth$outboundSchema: z.ZodType<
   PropertyWorkspaceIntegrationAuth$Outbound,
   z.ZodTypeDef,
   PropertyWorkspaceIntegrationAuth
-> = z.object({
-  clientId: z.string().optional(),
-  clientSecret: z.string().optional(),
-  consumerKey: z.string().optional(),
-  consumerSecret: z.string().optional(),
-  devApiKey: z.string().optional(),
-  key: z.string().optional(),
-  needsPkce: z.boolean().optional(),
-  pem: z.string().optional(),
-  samlIdpEntityId: z.string().optional(),
-  samlIdpUrl: z.string().optional(),
-  samlPem: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    clientId: "client_id",
-    clientSecret: "client_secret",
-    consumerKey: "consumer_key",
-    consumerSecret: "consumer_secret",
-    devApiKey: "dev_api_key",
-    needsPkce: "needs_pkce",
-    samlIdpEntityId: "saml_idp_entity_id",
-    samlIdpUrl: "saml_idp_url",
-    samlPem: "saml_pem",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    clientId: z.string().optional(),
+    clientSecret: z.string().optional(),
+    consumerKey: z.string().optional(),
+    consumerSecret: z.string().optional(),
+    devApiKey: z.string().optional(),
+    key: z.string().optional(),
+    needsPkce: z.boolean().optional(),
+    pem: z.string().optional(),
+    samlIdpEntityId: z.string().optional(),
+    samlIdpUrl: z.string().optional(),
+    samlPem: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      clientId: "client_id",
+      clientSecret: "client_secret",
+      consumerKey: "consumer_key",
+      consumerSecret: "consumer_secret",
+      devApiKey: "dev_api_key",
+      needsPkce: "needs_pkce",
+      samlIdpEntityId: "saml_idp_entity_id",
+      samlIdpUrl: "saml_idp_url",
+      samlPem: "saml_pem",
+    });
+  })
+);
 
 export function propertyWorkspaceIntegrationAuthToJSON(
   propertyWorkspaceIntegrationAuth: PropertyWorkspaceIntegrationAuth,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,11 +18,13 @@ export const LmsContentLocalization$inboundSchema: z.ZodType<
   LmsContentLocalization,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  description: z.string().optional(),
-  language: z.string().optional(),
-  name: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    language: z.string().optional(),
+    name: z.string().optional(),
+  })
+);
 /** @internal */
 export type LmsContentLocalization$Outbound = {
   description?: string | undefined;
@@ -35,11 +37,13 @@ export const LmsContentLocalization$outboundSchema: z.ZodType<
   LmsContentLocalization$Outbound,
   z.ZodTypeDef,
   LmsContentLocalization
-> = z.object({
-  description: z.string().optional(),
-  language: z.string().optional(),
-  name: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    language: z.string().optional(),
+    name: z.string().optional(),
+  })
+);
 
 export function lmsContentLocalizationToJSON(
   lmsContentLocalization: LmsContentLocalization,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -36,32 +36,38 @@ export const PropertyCalendarEventOrganizerStatus$inboundSchema: z.ZodType<
   PropertyCalendarEventOrganizerStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyCalendarEventOrganizerStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyCalendarEventOrganizerStatus)
+);
 /** @internal */
 export const PropertyCalendarEventOrganizerStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyCalendarEventOrganizerStatus
-> = openEnums.outboundSchema(PropertyCalendarEventOrganizerStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyCalendarEventOrganizerStatus)
+);
 
 /** @internal */
 export const PropertyCalendarEventOrganizer$inboundSchema: z.ZodType<
   PropertyCalendarEventOrganizer,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string().optional(),
-  is_cohost: z.boolean().optional(),
-  name: z.string().optional(),
-  required: z.boolean().optional(),
-  status: PropertyCalendarEventOrganizerStatus$inboundSchema.optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_cohost": "isCohost",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    is_cohost: z.boolean().optional(),
+    name: z.string().optional(),
+    required: z.boolean().optional(),
+    status: PropertyCalendarEventOrganizerStatus$inboundSchema.optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_cohost": "isCohost",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type PropertyCalendarEventOrganizer$Outbound = {
   email?: string | undefined;
@@ -77,19 +83,21 @@ export const PropertyCalendarEventOrganizer$outboundSchema: z.ZodType<
   PropertyCalendarEventOrganizer$Outbound,
   z.ZodTypeDef,
   PropertyCalendarEventOrganizer
-> = z.object({
-  email: z.string().optional(),
-  isCohost: z.boolean().optional(),
-  name: z.string().optional(),
-  required: z.boolean().optional(),
-  status: PropertyCalendarEventOrganizerStatus$outboundSchema.optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isCohost: "is_cohost",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    isCohost: z.boolean().optional(),
+    name: z.string().optional(),
+    required: z.boolean().optional(),
+    status: PropertyCalendarEventOrganizerStatus$outboundSchema.optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isCohost: "is_cohost",
+      userId: "user_id",
+    });
+  })
+);
 
 export function propertyCalendarEventOrganizerToJSON(
   propertyCalendarEventOrganizer: PropertyCalendarEventOrganizer,

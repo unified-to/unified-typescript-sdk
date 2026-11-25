@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -60,8 +61,10 @@ export type CreateHrisTaxwithholdingRequest = {
 
 /** @internal */
 export const CreateHrisTaxwithholdingQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateHrisTaxwithholdingQueryParamFields> = z
-    .nativeEnum(CreateHrisTaxwithholdingQueryParamFields);
+  z.ZodNativeEnum<typeof CreateHrisTaxwithholdingQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateHrisTaxwithholdingQueryParamFields)
+    );
 
 /** @internal */
 export type CreateHrisTaxwithholdingRequest$Outbound = {
@@ -76,18 +79,20 @@ export const CreateHrisTaxwithholdingRequest$outboundSchema: z.ZodType<
   CreateHrisTaxwithholdingRequest$Outbound,
   z.ZodTypeDef,
   CreateHrisTaxwithholdingRequest
-> = z.object({
-  hrisTaxwithholding: shared.HrisTaxwithholding$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateHrisTaxwithholdingQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisTaxwithholding: "HrisTaxwithholding",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisTaxwithholding: shared.HrisTaxwithholding$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateHrisTaxwithholdingQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisTaxwithholding: "HrisTaxwithholding",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createHrisTaxwithholdingRequestToJSON(
   createHrisTaxwithholdingRequest: CreateHrisTaxwithholdingRequest,

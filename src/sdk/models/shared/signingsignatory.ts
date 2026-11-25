@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -104,58 +104,70 @@ export const SigningSignatoryRole$inboundSchema: z.ZodType<
   SigningSignatoryRole,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SigningSignatoryRole);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SigningSignatoryRole)
+);
 /** @internal */
 export const SigningSignatoryRole$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SigningSignatoryRole
-> = openEnums.outboundSchema(SigningSignatoryRole);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SigningSignatoryRole)
+);
 
 /** @internal */
 export const SigningSignatoryStatus$inboundSchema: z.ZodType<
   SigningSignatoryStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SigningSignatoryStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SigningSignatoryStatus)
+);
 /** @internal */
 export const SigningSignatoryStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SigningSignatoryStatus
-> = openEnums.outboundSchema(SigningSignatoryStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SigningSignatoryStatus)
+);
 
 /** @internal */
 export const SigningSignatory$inboundSchema: z.ZodType<
   SigningSignatory,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  decline_reason: z.string().optional(),
-  document_id: z.string().optional(),
-  email: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(SigningMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  order: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  role: SigningSignatoryRole$inboundSchema.optional(),
-  signed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: SigningSignatoryStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "decline_reason": "declineReason",
-    "document_id": "documentId",
-    "signed_at": "signedAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    decline_reason: z.string().optional(),
+    document_id: z.string().optional(),
+    email: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(SigningMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    order: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    role: SigningSignatoryRole$inboundSchema.optional(),
+    signed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: SigningSignatoryStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "decline_reason": "declineReason",
+      "document_id": "documentId",
+      "signed_at": "signedAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type SigningSignatory$Outbound = {
   created_at?: string | undefined;
@@ -178,29 +190,31 @@ export const SigningSignatory$outboundSchema: z.ZodType<
   SigningSignatory$Outbound,
   z.ZodTypeDef,
   SigningSignatory
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  declineReason: z.string().optional(),
-  documentId: z.string().optional(),
-  email: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(SigningMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  order: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  role: SigningSignatoryRole$outboundSchema.optional(),
-  signedAt: z.date().transform(v => v.toISOString()).optional(),
-  status: SigningSignatoryStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    declineReason: "decline_reason",
-    documentId: "document_id",
-    signedAt: "signed_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    declineReason: z.string().optional(),
+    documentId: z.string().optional(),
+    email: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(SigningMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    order: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    role: SigningSignatoryRole$outboundSchema.optional(),
+    signedAt: z.date().transform(v => v.toISOString()).optional(),
+    status: SigningSignatoryStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      declineReason: "decline_reason",
+      documentId: "document_id",
+      signedAt: "signed_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function signingSignatoryToJSON(
   signingSignatory: SigningSignatory,

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -40,28 +40,32 @@ export const ScimAddressType$inboundSchema: z.ZodType<
   ScimAddressType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ScimAddressType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ScimAddressType));
 /** @internal */
 export const ScimAddressType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ScimAddressType
-> = openEnums.outboundSchema(ScimAddressType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ScimAddressType)
+);
 
 /** @internal */
 export const ScimAddress$inboundSchema: z.ZodType<
   ScimAddress,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  country: z.string().optional(),
-  formatted: z.string().optional(),
-  locality: z.string().optional(),
-  postalCode: z.string().optional(),
-  region: z.string().optional(),
-  streetAddress: z.string().optional(),
-  type: ScimAddressType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    country: z.string().optional(),
+    formatted: z.string().optional(),
+    locality: z.string().optional(),
+    postalCode: z.string().optional(),
+    region: z.string().optional(),
+    streetAddress: z.string().optional(),
+    type: ScimAddressType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type ScimAddress$Outbound = {
   country?: string | undefined;
@@ -78,15 +82,17 @@ export const ScimAddress$outboundSchema: z.ZodType<
   ScimAddress$Outbound,
   z.ZodTypeDef,
   ScimAddress
-> = z.object({
-  country: z.string().optional(),
-  formatted: z.string().optional(),
-  locality: z.string().optional(),
-  postalCode: z.string().optional(),
-  region: z.string().optional(),
-  streetAddress: z.string().optional(),
-  type: ScimAddressType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    country: z.string().optional(),
+    formatted: z.string().optional(),
+    locality: z.string().optional(),
+    postalCode: z.string().optional(),
+    region: z.string().optional(),
+    streetAddress: z.string().optional(),
+    type: ScimAddressType$outboundSchema.optional(),
+  })
+);
 
 export function scimAddressToJSON(scimAddress: ScimAddress): string {
   return JSON.stringify(ScimAddress$outboundSchema.parse(scimAddress));

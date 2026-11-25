@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -35,28 +35,30 @@ export const AccountingTransactionLineItem$inboundSchema: z.ZodType<
   AccountingTransactionLineItem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  category_ids: z.array(z.string()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  name: z.string().optional(),
-  object_type: z.string().optional(),
-  taxrate_id: z.string().optional(),
-  total_amount: z.number().optional(),
-  unit_amount: z.number().optional(),
-  unit_quantity: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "category_ids": "categoryIds",
-    "object_type": "objectType",
-    "taxrate_id": "taxrateId",
-    "total_amount": "totalAmount",
-    "unit_amount": "unitAmount",
-    "unit_quantity": "unitQuantity",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    category_ids: z.array(z.string()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    name: z.string().optional(),
+    object_type: z.string().optional(),
+    taxrate_id: z.string().optional(),
+    total_amount: z.number().optional(),
+    unit_amount: z.number().optional(),
+    unit_quantity: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "category_ids": "categoryIds",
+      "object_type": "objectType",
+      "taxrate_id": "taxrateId",
+      "total_amount": "totalAmount",
+      "unit_amount": "unitAmount",
+      "unit_quantity": "unitQuantity",
+    });
+  })
+);
 /** @internal */
 export type AccountingTransactionLineItem$Outbound = {
   account_id?: string | undefined;
@@ -76,28 +78,30 @@ export const AccountingTransactionLineItem$outboundSchema: z.ZodType<
   AccountingTransactionLineItem$Outbound,
   z.ZodTypeDef,
   AccountingTransactionLineItem
-> = z.object({
-  accountId: z.string().optional(),
-  categoryIds: z.array(z.string()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  name: z.string().optional(),
-  objectType: z.string().optional(),
-  taxrateId: z.string().optional(),
-  totalAmount: z.number().optional(),
-  unitAmount: z.number().optional(),
-  unitQuantity: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    categoryIds: "category_ids",
-    objectType: "object_type",
-    taxrateId: "taxrate_id",
-    totalAmount: "total_amount",
-    unitAmount: "unit_amount",
-    unitQuantity: "unit_quantity",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    categoryIds: z.array(z.string()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    name: z.string().optional(),
+    objectType: z.string().optional(),
+    taxrateId: z.string().optional(),
+    totalAmount: z.number().optional(),
+    unitAmount: z.number().optional(),
+    unitQuantity: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      categoryIds: "category_ids",
+      objectType: "object_type",
+      taxrateId: "taxrate_id",
+      totalAmount: "total_amount",
+      unitAmount: "unit_amount",
+      unitQuantity: "unit_quantity",
+    });
+  })
+);
 
 export function accountingTransactionLineItemToJSON(
   accountingTransactionLineItem: AccountingTransactionLineItem,

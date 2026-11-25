@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -58,7 +59,9 @@ export type CreateQmsActionRequest = {
 /** @internal */
 export const CreateQmsActionQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateQmsActionQueryParamFields
-> = z.nativeEnum(CreateQmsActionQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateQmsActionQueryParamFields)
+);
 
 /** @internal */
 export type CreateQmsActionRequest$Outbound = {
@@ -73,17 +76,19 @@ export const CreateQmsActionRequest$outboundSchema: z.ZodType<
   CreateQmsActionRequest$Outbound,
   z.ZodTypeDef,
   CreateQmsActionRequest
-> = z.object({
-  qmsAction: shared.QmsAction$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateQmsActionQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    qmsAction: "QmsAction",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    qmsAction: shared.QmsAction$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateQmsActionQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      qmsAction: "QmsAction",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createQmsActionRequestToJSON(
   createQmsActionRequest: CreateQmsActionRequest,

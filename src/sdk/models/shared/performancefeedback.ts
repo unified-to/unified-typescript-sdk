@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -70,42 +70,50 @@ export const PerformanceFeedbackType$inboundSchema: z.ZodType<
   PerformanceFeedbackType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceFeedbackType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceFeedbackType)
+);
 /** @internal */
 export const PerformanceFeedbackType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PerformanceFeedbackType
-> = openEnums.outboundSchema(PerformanceFeedbackType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PerformanceFeedbackType)
+);
 
 /** @internal */
 export const PerformanceFeedback$inboundSchema: z.ZodType<
   PerformanceFeedback,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  author_user_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_visible: z.boolean().optional(),
-  message: z.string().optional(),
-  metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  tags: z.array(z.string()).optional(),
-  type: PerformanceFeedbackType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "author_user_id": "authorUserId",
-    "created_at": "createdAt",
-    "is_visible": "isVisible",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    author_user_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    is_visible: z.boolean().optional(),
+    message: z.string().optional(),
+    metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    tags: z.array(z.string()).optional(),
+    type: PerformanceFeedbackType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "author_user_id": "authorUserId",
+      "created_at": "createdAt",
+      "is_visible": "isVisible",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type PerformanceFeedback$Outbound = {
   author_user_id?: string | undefined;
@@ -126,27 +134,29 @@ export const PerformanceFeedback$outboundSchema: z.ZodType<
   PerformanceFeedback$Outbound,
   z.ZodTypeDef,
   PerformanceFeedback
-> = z.object({
-  authorUserId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isVisible: z.boolean().optional(),
-  message: z.string().optional(),
-  metadata: z.array(PerformanceMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  tags: z.array(z.string()).optional(),
-  type: PerformanceFeedbackType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    authorUserId: "author_user_id",
-    createdAt: "created_at",
-    isVisible: "is_visible",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authorUserId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isVisible: z.boolean().optional(),
+    message: z.string().optional(),
+    metadata: z.array(PerformanceMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    tags: z.array(z.string()).optional(),
+    type: PerformanceFeedbackType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      authorUserId: "author_user_id",
+      createdAt: "created_at",
+      isVisible: "is_visible",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function performanceFeedbackToJSON(
   performanceFeedback: PerformanceFeedback,

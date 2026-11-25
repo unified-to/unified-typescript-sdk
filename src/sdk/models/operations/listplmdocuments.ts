@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPlmDocumentsQueryParamFields = {
@@ -66,7 +67,9 @@ export type ListPlmDocumentsRequest = {
 /** @internal */
 export const ListPlmDocumentsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListPlmDocumentsQueryParamFields
-> = z.nativeEnum(ListPlmDocumentsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListPlmDocumentsQueryParamFields)
+);
 
 /** @internal */
 export type ListPlmDocumentsRequest$Outbound = {
@@ -88,25 +91,27 @@ export const ListPlmDocumentsRequest$outboundSchema: z.ZodType<
   ListPlmDocumentsRequest$Outbound,
   z.ZodTypeDef,
   ListPlmDocumentsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPlmDocumentsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  partId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    partId: "part_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPlmDocumentsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    partId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      partId: "part_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPlmDocumentsRequestToJSON(
   listPlmDocumentsRequest: ListPlmDocumentsRequest,

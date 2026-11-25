@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -24,11 +24,13 @@ export const AccountingAssociatedContact$inboundSchema: z.ZodType<
   AccountingAssociatedContact,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  emails: z.array(AccountingEmail$inboundSchema).optional(),
-  id: z.string().optional(),
-  name: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    emails: z.array(AccountingEmail$inboundSchema).optional(),
+    id: z.string().optional(),
+    name: z.string().optional(),
+  })
+);
 /** @internal */
 export type AccountingAssociatedContact$Outbound = {
   emails?: Array<AccountingEmail$Outbound> | undefined;
@@ -41,11 +43,13 @@ export const AccountingAssociatedContact$outboundSchema: z.ZodType<
   AccountingAssociatedContact$Outbound,
   z.ZodTypeDef,
   AccountingAssociatedContact
-> = z.object({
-  emails: z.array(AccountingEmail$outboundSchema).optional(),
-  id: z.string().optional(),
-  name: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    emails: z.array(AccountingEmail$outboundSchema).optional(),
+    id: z.string().optional(),
+    name: z.string().optional(),
+  })
+);
 
 export function accountingAssociatedContactToJSON(
   accountingAssociatedContact: AccountingAssociatedContact,

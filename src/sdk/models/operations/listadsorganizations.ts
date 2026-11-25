@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAdsOrganizationsQueryParamFields = {
@@ -57,9 +58,10 @@ export type ListAdsOrganizationsRequest = {
 
 /** @internal */
 export const ListAdsOrganizationsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAdsOrganizationsQueryParamFields> = z.nativeEnum(
-    ListAdsOrganizationsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAdsOrganizationsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAdsOrganizationsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAdsOrganizationsRequest$Outbound = {
@@ -80,25 +82,27 @@ export const ListAdsOrganizationsRequest$outboundSchema: z.ZodType<
   ListAdsOrganizationsRequest$Outbound,
   z.ZodTypeDef,
   ListAdsOrganizationsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAdsOrganizationsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAdsOrganizationsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAdsOrganizationsRequestToJSON(
   listAdsOrganizationsRequest: ListAdsOrganizationsRequest,

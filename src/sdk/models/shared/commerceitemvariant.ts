@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -107,82 +107,90 @@ export const SizeUnit$inboundSchema: z.ZodType<
   SizeUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SizeUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SizeUnit));
 /** @internal */
 export const SizeUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SizeUnit
-> = openEnums.outboundSchema(SizeUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(SizeUnit));
 
 /** @internal */
 export const CommerceItemvariantWeightUnit$inboundSchema: z.ZodType<
   CommerceItemvariantWeightUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CommerceItemvariantWeightUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CommerceItemvariantWeightUnit)
+);
 /** @internal */
 export const CommerceItemvariantWeightUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CommerceItemvariantWeightUnit
-> = openEnums.outboundSchema(CommerceItemvariantWeightUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CommerceItemvariantWeightUnit)
+);
 
 /** @internal */
 export const CommerceItemvariant$inboundSchema: z.ZodType<
   CommerceItemvariant,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  available_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  height: z.number().optional(),
-  id: z.string().optional(),
-  inventory_id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_featured: z.boolean().optional(),
-  is_visible: z.boolean().optional(),
-  items: z.array(CommerceReference$inboundSchema).optional(),
-  length: z.number().optional(),
-  media: z.array(CommerceItemMedia$inboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  options: z.array(CommerceItemOption$inboundSchema).optional(),
-  prices: z.array(CommerceItemPrice$inboundSchema).optional(),
-  public_description: z.string().optional(),
-  public_name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  requires_shipping: z.boolean().optional(),
-  size_unit: SizeUnit$inboundSchema.optional(),
-  sku: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-  total_stock: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  weight: z.number().optional(),
-  weight_unit: CommerceItemvariantWeightUnit$inboundSchema.optional(),
-  width: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "available_at": "availableAt",
-    "created_at": "createdAt",
-    "inventory_id": "inventoryId",
-    "is_active": "isActive",
-    "is_featured": "isFeatured",
-    "is_visible": "isVisible",
-    "public_description": "publicDescription",
-    "public_name": "publicName",
-    "requires_shipping": "requiresShipping",
-    "size_unit": "sizeUnit",
-    "total_stock": "totalStock",
-    "updated_at": "updatedAt",
-    "weight_unit": "weightUnit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    available_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    height: z.number().optional(),
+    id: z.string().optional(),
+    inventory_id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_featured: z.boolean().optional(),
+    is_visible: z.boolean().optional(),
+    items: z.array(CommerceReference$inboundSchema).optional(),
+    length: z.number().optional(),
+    media: z.array(CommerceItemMedia$inboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    options: z.array(CommerceItemOption$inboundSchema).optional(),
+    prices: z.array(CommerceItemPrice$inboundSchema).optional(),
+    public_description: z.string().optional(),
+    public_name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    requires_shipping: z.boolean().optional(),
+    size_unit: SizeUnit$inboundSchema.optional(),
+    sku: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    total_stock: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    weight: z.number().optional(),
+    weight_unit: CommerceItemvariantWeightUnit$inboundSchema.optional(),
+    width: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "available_at": "availableAt",
+      "created_at": "createdAt",
+      "inventory_id": "inventoryId",
+      "is_active": "isActive",
+      "is_featured": "isFeatured",
+      "is_visible": "isVisible",
+      "public_description": "publicDescription",
+      "public_name": "publicName",
+      "requires_shipping": "requiresShipping",
+      "size_unit": "sizeUnit",
+      "total_stock": "totalStock",
+      "updated_at": "updatedAt",
+      "weight_unit": "weightUnit",
+    });
+  })
+);
 /** @internal */
 export type CommerceItemvariant$Outbound = {
   available_at?: string | undefined;
@@ -220,52 +228,54 @@ export const CommerceItemvariant$outboundSchema: z.ZodType<
   CommerceItemvariant$Outbound,
   z.ZodTypeDef,
   CommerceItemvariant
-> = z.object({
-  availableAt: z.date().transform(v => v.toISOString()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  height: z.number().optional(),
-  id: z.string().optional(),
-  inventoryId: z.string().optional(),
-  isActive: z.boolean().optional(),
-  isFeatured: z.boolean().optional(),
-  isVisible: z.boolean().optional(),
-  items: z.array(CommerceReference$outboundSchema).optional(),
-  length: z.number().optional(),
-  media: z.array(CommerceItemMedia$outboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  options: z.array(CommerceItemOption$outboundSchema).optional(),
-  prices: z.array(CommerceItemPrice$outboundSchema).optional(),
-  publicDescription: z.string().optional(),
-  publicName: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  requiresShipping: z.boolean().optional(),
-  sizeUnit: SizeUnit$outboundSchema.optional(),
-  sku: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-  totalStock: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  weight: z.number().optional(),
-  weightUnit: CommerceItemvariantWeightUnit$outboundSchema.optional(),
-  width: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    availableAt: "available_at",
-    createdAt: "created_at",
-    inventoryId: "inventory_id",
-    isActive: "is_active",
-    isFeatured: "is_featured",
-    isVisible: "is_visible",
-    publicDescription: "public_description",
-    publicName: "public_name",
-    requiresShipping: "requires_shipping",
-    sizeUnit: "size_unit",
-    totalStock: "total_stock",
-    updatedAt: "updated_at",
-    weightUnit: "weight_unit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    availableAt: z.date().transform(v => v.toISOString()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    height: z.number().optional(),
+    id: z.string().optional(),
+    inventoryId: z.string().optional(),
+    isActive: z.boolean().optional(),
+    isFeatured: z.boolean().optional(),
+    isVisible: z.boolean().optional(),
+    items: z.array(CommerceReference$outboundSchema).optional(),
+    length: z.number().optional(),
+    media: z.array(CommerceItemMedia$outboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    options: z.array(CommerceItemOption$outboundSchema).optional(),
+    prices: z.array(CommerceItemPrice$outboundSchema).optional(),
+    publicDescription: z.string().optional(),
+    publicName: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    requiresShipping: z.boolean().optional(),
+    sizeUnit: SizeUnit$outboundSchema.optional(),
+    sku: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    totalStock: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    weight: z.number().optional(),
+    weightUnit: CommerceItemvariantWeightUnit$outboundSchema.optional(),
+    width: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      availableAt: "available_at",
+      createdAt: "created_at",
+      inventoryId: "inventory_id",
+      isActive: "is_active",
+      isFeatured: "is_featured",
+      isVisible: "is_visible",
+      publicDescription: "public_description",
+      publicName: "public_name",
+      requiresShipping: "requires_shipping",
+      sizeUnit: "size_unit",
+      totalStock: "total_stock",
+      updatedAt: "updated_at",
+      weightUnit: "weight_unit",
+    });
+  })
+);
 
 export function commerceItemvariantToJSON(
   commerceItemvariant: CommerceItemvariant,

@@ -50,11 +50,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "49a0d31f-1814-40de-a74a-798d8e6249a2",
+      id: "bdd57387-c2f8-47c9-b20b-10be83c75e48",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-21T08:03:40.605Z"),
+      updatedAt: new Date("2023-04-22T16:02:29.097Z"),
     },
     connectionId: "<id>",
   });
@@ -86,11 +86,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "49a0d31f-1814-40de-a74a-798d8e6249a2",
+      id: "bdd57387-c2f8-47c9-b20b-10be83c75e48",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-21T08:03:40.605Z"),
+      updatedAt: new Date("2023-04-22T16:02:29.097Z"),
     },
     connectionId: "<id>",
   });
@@ -145,16 +145,16 @@ async function run() {
     plmChange: {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
-      description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "169260aa-fd1e-4630-a84b-e76585050f1e",
+      description: "Adipiscor callide caelestis vigilo.",
+      id: "aafb7c9e-22ec-465b-8531-7a91032cf981",
       metadata: [],
-      name: "Update goodwill",
+      name: "Update planula",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-10-03T06:44:54.647Z"),
-      url: "https://warmhearted-fraudster.biz/",
+      updatedAt: new Date("2026-10-09T00:13:51.005Z"),
+      url: "https://candid-integer.org/",
     },
     connectionId: "<id>",
   });
@@ -186,16 +186,16 @@ async function run() {
     plmChange: {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
-      description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "169260aa-fd1e-4630-a84b-e76585050f1e",
+      description: "Adipiscor callide caelestis vigilo.",
+      id: "aafb7c9e-22ec-465b-8531-7a91032cf981",
       metadata: [],
-      name: "Update goodwill",
+      name: "Update planula",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-10-03T06:44:54.647Z"),
-      url: "https://warmhearted-fraudster.biz/",
+      updatedAt: new Date("2026-10-09T00:13:51.005Z"),
+      url: "https://candid-integer.org/",
     },
     connectionId: "<id>",
   });
@@ -250,18 +250,18 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "2be7344b-f267-4cb6-9a3e-5244b210ca72",
+      id: "32f11673-633f-44ff-ab24-527d6a4d9cb7",
       lifecycleState: "Under Review",
-      masterIdentifier: "04234552-be46-434f-a998-ef1d0ae4d010",
+      masterIdentifier: "1fb8317f-9ab7-4856-a4a4-3a7fa0eec404",
       metadata: [],
-      name: "Procedure taxicab",
+      name: "Procedure going",
       number: "DOC-086886",
       originalType: "Procedure",
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-13T23:23:48.276Z"),
-      url: "https://uncommon-guide.info/",
+      updatedAt: new Date("2026-09-19T16:06:34.063Z"),
+      url: "https://young-corporation.name",
     },
     connectionId: "<id>",
   });
@@ -293,18 +293,18 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "2be7344b-f267-4cb6-9a3e-5244b210ca72",
+      id: "32f11673-633f-44ff-ab24-527d6a4d9cb7",
       lifecycleState: "Under Review",
-      masterIdentifier: "04234552-be46-434f-a998-ef1d0ae4d010",
+      masterIdentifier: "1fb8317f-9ab7-4856-a4a4-3a7fa0eec404",
       metadata: [],
-      name: "Procedure taxicab",
+      name: "Procedure going",
       number: "DOC-086886",
       originalType: "Procedure",
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-13T23:23:48.276Z"),
-      url: "https://uncommon-guide.info/",
+      updatedAt: new Date("2026-09-19T16:06:34.063Z"),
+      url: "https://young-corporation.name",
     },
     connectionId: "<id>",
   });
@@ -358,15 +358,15 @@ async function run() {
   const result = await unifiedTo.plm.createPlmPart({
     plmPart: {
       createdAt: new Date("2019-04-13T06:25:34.770Z"),
-      description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
+      description: "Aestivus talis tero ullam cruciamentum voluptatibus cumque degusto cui.",
       documentIds: [],
       fileIds: [],
-      id: "d7e65703-1292-40b7-bff6-5a11c1571711",
+      id: "083b738c-8086-4b7f-a125-d562bcd12b8b",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "906658a3-05f0-4b1c-b403-70436211bca7",
+      masterIdentifier: "017fc7c6-e78d-4d2a-9d0e-14692f29f82c",
       metadata: [],
-      name: "grumpy PCB",
+      name: "speedy PCB",
       number: "PRT-009154",
       originalType: "Software",
       revision: "B",
@@ -374,8 +374,8 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-14T00:15:52.154Z"),
-      url: "https://inborn-independence.info",
+      updatedAt: new Date("2021-04-15T13:23:49.479Z"),
+      url: "https://digital-pop.com",
     },
     connectionId: "<id>",
   });
@@ -392,7 +392,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { plmCreatePlmPart } from "@unified-api/typescript-sdk/funcs/plmCreatePlmPart.js";
+import { partCreatePlmPart } from "@unified-api/typescript-sdk/funcs/partCreatePlmPart.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -403,18 +403,18 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await plmCreatePlmPart(unifiedTo, {
+  const res = await partCreatePlmPart(unifiedTo, {
     plmPart: {
       createdAt: new Date("2019-04-13T06:25:34.770Z"),
-      description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
+      description: "Aestivus talis tero ullam cruciamentum voluptatibus cumque degusto cui.",
       documentIds: [],
       fileIds: [],
-      id: "d7e65703-1292-40b7-bff6-5a11c1571711",
+      id: "083b738c-8086-4b7f-a125-d562bcd12b8b",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "906658a3-05f0-4b1c-b403-70436211bca7",
+      masterIdentifier: "017fc7c6-e78d-4d2a-9d0e-14692f29f82c",
       metadata: [],
-      name: "grumpy PCB",
+      name: "speedy PCB",
       number: "PRT-009154",
       originalType: "Software",
       revision: "B",
@@ -422,8 +422,8 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-14T00:15:52.154Z"),
-      url: "https://inborn-independence.info",
+      updatedAt: new Date("2021-04-15T13:23:49.479Z"),
+      url: "https://digital-pop.com",
     },
     connectionId: "<id>",
   });
@@ -431,7 +431,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("plmCreatePlmPart failed:", res.error);
+    console.log("partCreatePlmPart failed:", res.error);
   }
 }
 
@@ -807,7 +807,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { plmGetPlmPart } from "@unified-api/typescript-sdk/funcs/plmGetPlmPart.js";
+import { partGetPlmPart } from "@unified-api/typescript-sdk/funcs/partGetPlmPart.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -818,7 +818,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await plmGetPlmPart(unifiedTo, {
+  const res = await partGetPlmPart(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -826,7 +826,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("plmGetPlmPart failed:", res.error);
+    console.log("partGetPlmPart failed:", res.error);
   }
 }
 
@@ -1193,7 +1193,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { plmListPlmParts } from "@unified-api/typescript-sdk/funcs/plmListPlmParts.js";
+import { partListPlmParts } from "@unified-api/typescript-sdk/funcs/partListPlmParts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1204,14 +1204,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await plmListPlmParts(unifiedTo, {
+  const res = await partListPlmParts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("plmListPlmParts failed:", res.error);
+    console.log("partListPlmParts failed:", res.error);
   }
 }
 
@@ -1258,11 +1258,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "e53bad05-b3b8-46c3-a421-16ee9968a093",
+      id: "e02b5de1-a780-475c-a733-5fb428f360a6",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-21T08:03:40.607Z"),
+      updatedAt: new Date("2023-04-22T16:02:29.099Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1295,11 +1295,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "e53bad05-b3b8-46c3-a421-16ee9968a093",
+      id: "e02b5de1-a780-475c-a733-5fb428f360a6",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-21T08:03:40.607Z"),
+      updatedAt: new Date("2023-04-22T16:02:29.099Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1355,16 +1355,16 @@ async function run() {
     plmChange: {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
-      description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "a4e1d3e9-5bbd-4e66-8112-73efccbc94ff",
+      description: "Adipiscor callide caelestis vigilo.",
+      id: "3275e79b-3dc2-49cc-bc20-a136b8d5962a",
       metadata: [],
-      name: "Update goodwill",
+      name: "Update planula",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-10-03T06:44:54.666Z"),
-      url: "https://warmhearted-fraudster.biz/",
+      updatedAt: new Date("2026-10-09T00:13:51.021Z"),
+      url: "https://candid-integer.org/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1397,16 +1397,16 @@ async function run() {
     plmChange: {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
-      description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "a4e1d3e9-5bbd-4e66-8112-73efccbc94ff",
+      description: "Adipiscor callide caelestis vigilo.",
+      id: "3275e79b-3dc2-49cc-bc20-a136b8d5962a",
       metadata: [],
-      name: "Update goodwill",
+      name: "Update planula",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-10-03T06:44:54.666Z"),
-      url: "https://warmhearted-fraudster.biz/",
+      updatedAt: new Date("2026-10-09T00:13:51.021Z"),
+      url: "https://candid-integer.org/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1462,18 +1462,18 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "da339944-694e-4593-95be-133374b9be28",
+      id: "2c03e219-1ec9-4cc9-86be-bd53ce9f7e8e",
       lifecycleState: "Under Review",
-      masterIdentifier: "7501fad2-b00b-466e-9d68-1a5dc125dd1f",
+      masterIdentifier: "72e0efb5-c305-43e7-969e-425bc5458f05",
       metadata: [],
-      name: "Procedure taxicab",
+      name: "Procedure going",
       number: "DOC-086886",
       originalType: "Procedure",
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-13T23:23:48.290Z"),
-      url: "https://uncommon-guide.info/",
+      updatedAt: new Date("2026-09-19T16:06:34.077Z"),
+      url: "https://young-corporation.name",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1506,18 +1506,18 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "da339944-694e-4593-95be-133374b9be28",
+      id: "2c03e219-1ec9-4cc9-86be-bd53ce9f7e8e",
       lifecycleState: "Under Review",
-      masterIdentifier: "7501fad2-b00b-466e-9d68-1a5dc125dd1f",
+      masterIdentifier: "72e0efb5-c305-43e7-969e-425bc5458f05",
       metadata: [],
-      name: "Procedure taxicab",
+      name: "Procedure going",
       number: "DOC-086886",
       originalType: "Procedure",
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-13T23:23:48.290Z"),
-      url: "https://uncommon-guide.info/",
+      updatedAt: new Date("2026-09-19T16:06:34.077Z"),
+      url: "https://young-corporation.name",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1572,15 +1572,15 @@ async function run() {
   const result = await unifiedTo.plm.patchPlmPart({
     plmPart: {
       createdAt: new Date("2019-04-13T06:25:34.770Z"),
-      description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
+      description: "Aestivus talis tero ullam cruciamentum voluptatibus cumque degusto cui.",
       documentIds: [],
       fileIds: [],
-      id: "cebc2b89-2490-402d-9957-52f937e1ad78",
+      id: "91d90af5-5a54-4468-8cda-5fb3387664c4",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "a1855136-2b23-4e08-a73d-cee79f932f44",
+      masterIdentifier: "79176f4d-1df6-4c40-87c8-c90f4194fae6",
       metadata: [],
-      name: "grumpy PCB",
+      name: "speedy PCB",
       number: "PRT-009154",
       originalType: "Software",
       revision: "B",
@@ -1588,8 +1588,8 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-14T00:15:52.158Z"),
-      url: "https://inborn-independence.info",
+      updatedAt: new Date("2021-04-15T13:23:49.483Z"),
+      url: "https://digital-pop.com",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1607,7 +1607,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { plmPatchPlmPart } from "@unified-api/typescript-sdk/funcs/plmPatchPlmPart.js";
+import { partPatchPlmPart } from "@unified-api/typescript-sdk/funcs/partPatchPlmPart.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1618,18 +1618,18 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await plmPatchPlmPart(unifiedTo, {
+  const res = await partPatchPlmPart(unifiedTo, {
     plmPart: {
       createdAt: new Date("2019-04-13T06:25:34.770Z"),
-      description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
+      description: "Aestivus talis tero ullam cruciamentum voluptatibus cumque degusto cui.",
       documentIds: [],
       fileIds: [],
-      id: "cebc2b89-2490-402d-9957-52f937e1ad78",
+      id: "91d90af5-5a54-4468-8cda-5fb3387664c4",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "a1855136-2b23-4e08-a73d-cee79f932f44",
+      masterIdentifier: "79176f4d-1df6-4c40-87c8-c90f4194fae6",
       metadata: [],
-      name: "grumpy PCB",
+      name: "speedy PCB",
       number: "PRT-009154",
       originalType: "Software",
       revision: "B",
@@ -1637,8 +1637,8 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-14T00:15:52.158Z"),
-      url: "https://inborn-independence.info",
+      updatedAt: new Date("2021-04-15T13:23:49.483Z"),
+      url: "https://digital-pop.com",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1647,7 +1647,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("plmPatchPlmPart failed:", res.error);
+    console.log("partPatchPlmPart failed:", res.error);
   }
 }
 
@@ -1786,7 +1786,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { plmRemovePlmPart } from "@unified-api/typescript-sdk/funcs/plmRemovePlmPart.js";
+import { partRemovePlmPart } from "@unified-api/typescript-sdk/funcs/partRemovePlmPart.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1797,7 +1797,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await plmRemovePlmPart(unifiedTo, {
+  const res = await partRemovePlmPart(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1805,7 +1805,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("plmRemovePlmPart failed:", res.error);
+    console.log("partRemovePlmPart failed:", res.error);
   }
 }
 
@@ -1852,11 +1852,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "e53bad05-b3b8-46c3-a421-16ee9968a093",
+      id: "e02b5de1-a780-475c-a733-5fb428f360a6",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-21T08:03:40.607Z"),
+      updatedAt: new Date("2023-04-22T16:02:29.099Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1889,11 +1889,11 @@ async function run() {
     plmBomline: {
       createdAt: new Date("2022-04-02T07:09:29.598Z"),
       effectiveAt: new Date("2022-04-02T07:09:29.598Z"),
-      id: "e53bad05-b3b8-46c3-a421-16ee9968a093",
+      id: "e02b5de1-a780-475c-a733-5fb428f360a6",
       quantity: 7,
       referenceDesignators: [],
       unitOfMeasure: "EA",
-      updatedAt: new Date("2023-04-21T08:03:40.607Z"),
+      updatedAt: new Date("2023-04-22T16:02:29.099Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1949,16 +1949,16 @@ async function run() {
     plmChange: {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
-      description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "a4e1d3e9-5bbd-4e66-8112-73efccbc94ff",
+      description: "Adipiscor callide caelestis vigilo.",
+      id: "3275e79b-3dc2-49cc-bc20-a136b8d5962a",
       metadata: [],
-      name: "Update goodwill",
+      name: "Update planula",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-10-03T06:44:54.666Z"),
-      url: "https://warmhearted-fraudster.biz/",
+      updatedAt: new Date("2026-10-09T00:13:51.021Z"),
+      url: "https://candid-integer.org/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1991,16 +1991,16 @@ async function run() {
     plmChange: {
       affectedItems: [],
       createdAt: new Date("2021-08-02T05:58:32.287Z"),
-      description: "Vorago spiculum avaritia adipiscor callide.",
-      id: "a4e1d3e9-5bbd-4e66-8112-73efccbc94ff",
+      description: "Adipiscor callide caelestis vigilo.",
+      id: "3275e79b-3dc2-49cc-bc20-a136b8d5962a",
       metadata: [],
-      name: "Update goodwill",
+      name: "Update planula",
       number: "ECO-6591",
       priority: "Medium",
       status: "IN_REVIEW",
       type: "ORDER",
-      updatedAt: new Date("2026-10-03T06:44:54.666Z"),
-      url: "https://warmhearted-fraudster.biz/",
+      updatedAt: new Date("2026-10-09T00:13:51.021Z"),
+      url: "https://candid-integer.org/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2056,18 +2056,18 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "da339944-694e-4593-95be-133374b9be28",
+      id: "2c03e219-1ec9-4cc9-86be-bd53ce9f7e8e",
       lifecycleState: "Under Review",
-      masterIdentifier: "7501fad2-b00b-466e-9d68-1a5dc125dd1f",
+      masterIdentifier: "72e0efb5-c305-43e7-969e-425bc5458f05",
       metadata: [],
-      name: "Procedure taxicab",
+      name: "Procedure going",
       number: "DOC-086886",
       originalType: "Procedure",
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-13T23:23:48.290Z"),
-      url: "https://uncommon-guide.info/",
+      updatedAt: new Date("2026-09-19T16:06:34.077Z"),
+      url: "https://young-corporation.name",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2100,18 +2100,18 @@ async function run() {
     plmDocument: {
       createdAt: new Date("2020-10-16T01:44:30.293Z"),
       fileIds: [],
-      id: "da339944-694e-4593-95be-133374b9be28",
+      id: "2c03e219-1ec9-4cc9-86be-bd53ce9f7e8e",
       lifecycleState: "Under Review",
-      masterIdentifier: "7501fad2-b00b-466e-9d68-1a5dc125dd1f",
+      masterIdentifier: "72e0efb5-c305-43e7-969e-425bc5458f05",
       metadata: [],
-      name: "Procedure taxicab",
+      name: "Procedure going",
       number: "DOC-086886",
       originalType: "Procedure",
       revision: "C",
       status: "IN_REVIEW",
       type: "PROCEDURE",
-      updatedAt: new Date("2026-09-13T23:23:48.290Z"),
-      url: "https://uncommon-guide.info/",
+      updatedAt: new Date("2026-09-19T16:06:34.077Z"),
+      url: "https://young-corporation.name",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2166,15 +2166,15 @@ async function run() {
   const result = await unifiedTo.plm.updatePlmPart({
     plmPart: {
       createdAt: new Date("2019-04-13T06:25:34.770Z"),
-      description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
+      description: "Aestivus talis tero ullam cruciamentum voluptatibus cumque degusto cui.",
       documentIds: [],
       fileIds: [],
-      id: "cebc2b89-2490-402d-9957-52f937e1ad78",
+      id: "91d90af5-5a54-4468-8cda-5fb3387664c4",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "a1855136-2b23-4e08-a73d-cee79f932f44",
+      masterIdentifier: "79176f4d-1df6-4c40-87c8-c90f4194fae6",
       metadata: [],
-      name: "grumpy PCB",
+      name: "speedy PCB",
       number: "PRT-009154",
       originalType: "Software",
       revision: "B",
@@ -2182,8 +2182,8 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-14T00:15:52.158Z"),
-      url: "https://inborn-independence.info",
+      updatedAt: new Date("2021-04-15T13:23:49.483Z"),
+      url: "https://digital-pop.com",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2201,7 +2201,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { plmUpdatePlmPart } from "@unified-api/typescript-sdk/funcs/plmUpdatePlmPart.js";
+import { partUpdatePlmPart } from "@unified-api/typescript-sdk/funcs/partUpdatePlmPart.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2212,18 +2212,18 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await plmUpdatePlmPart(unifiedTo, {
+  const res = await partUpdatePlmPart(unifiedTo, {
     plmPart: {
       createdAt: new Date("2019-04-13T06:25:34.770Z"),
-      description: "Pectus tero ulterius aestivus talis tero ullam cruciamentum.",
+      description: "Aestivus talis tero ullam cruciamentum voluptatibus cumque degusto cui.",
       documentIds: [],
       fileIds: [],
-      id: "cebc2b89-2490-402d-9957-52f937e1ad78",
+      id: "91d90af5-5a54-4468-8cda-5fb3387664c4",
       isAssembly: false,
       lifecycleState: "Design",
-      masterIdentifier: "a1855136-2b23-4e08-a73d-cee79f932f44",
+      masterIdentifier: "79176f4d-1df6-4c40-87c8-c90f4194fae6",
       metadata: [],
-      name: "grumpy PCB",
+      name: "speedy PCB",
       number: "PRT-009154",
       originalType: "Software",
       revision: "B",
@@ -2231,8 +2231,8 @@ async function run() {
       status: "IN_WORK",
       type: "SOFTWARE",
       unitOfMeasure: "EA",
-      updatedAt: new Date("2021-04-14T00:15:52.158Z"),
-      url: "https://inborn-independence.info",
+      updatedAt: new Date("2021-04-15T13:23:49.483Z"),
+      url: "https://digital-pop.com",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2241,7 +2241,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("plmUpdatePlmPart failed:", res.error);
+    console.log("partUpdatePlmPart failed:", res.error);
   }
 }
 

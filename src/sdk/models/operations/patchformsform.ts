@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,7 +53,9 @@ export type PatchFormsFormRequest = {
 /** @internal */
 export const PatchFormsFormQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchFormsFormQueryParamFields
-> = z.nativeEnum(PatchFormsFormQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchFormsFormQueryParamFields)
+);
 
 /** @internal */
 export type PatchFormsFormRequest$Outbound = {
@@ -68,18 +71,20 @@ export const PatchFormsFormRequest$outboundSchema: z.ZodType<
   PatchFormsFormRequest$Outbound,
   z.ZodTypeDef,
   PatchFormsFormRequest
-> = z.object({
-  formsForm: shared.FormsForm$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchFormsFormQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    formsForm: "FormsForm",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    formsForm: shared.FormsForm$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchFormsFormQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      formsForm: "FormsForm",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchFormsFormRequestToJSON(
   patchFormsFormRequest: PatchFormsFormRequest,

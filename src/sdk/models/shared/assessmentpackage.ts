@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -117,56 +117,64 @@ export const AssessmentPackageType$inboundSchema: z.ZodType<
   AssessmentPackageType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AssessmentPackageType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AssessmentPackageType)
+);
 /** @internal */
 export const AssessmentPackageType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AssessmentPackageType
-> = openEnums.outboundSchema(AssessmentPackageType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AssessmentPackageType)
+);
 
 /** @internal */
 export const AssessmentPackage$inboundSchema: z.ZodType<
   AssessmentPackage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  aliases: z.array(z.string()).optional(),
-  connection_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  has_redirect_url: z.boolean().optional(),
-  has_target_url: z.boolean().optional(),
-  id: z.string().optional(),
-  info_url: z.string().optional(),
-  integration_types: z.array(z.string()).optional(),
-  max_score: z.number().optional(),
-  metadata: z.array(AssessmentMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  needs_ip_address: z.boolean().optional(),
-  parameters: z.array(AssessmentParameter$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  regions: z.array(AssessmentPackageRegion$inboundSchema).optional(),
-  tags: z.array(z.string()).optional(),
-  type: AssessmentPackageType$inboundSchema,
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  workspace_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "created_at": "createdAt",
-    "has_redirect_url": "hasRedirectUrl",
-    "has_target_url": "hasTargetUrl",
-    "info_url": "infoUrl",
-    "integration_types": "integrationTypes",
-    "max_score": "maxScore",
-    "needs_ip_address": "needsIpAddress",
-    "updated_at": "updatedAt",
-    "workspace_id": "workspaceId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aliases: z.array(z.string()).optional(),
+    connection_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    has_redirect_url: z.boolean().optional(),
+    has_target_url: z.boolean().optional(),
+    id: z.string().optional(),
+    info_url: z.string().optional(),
+    integration_types: z.array(z.string()).optional(),
+    max_score: z.number().optional(),
+    metadata: z.array(AssessmentMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    needs_ip_address: z.boolean().optional(),
+    parameters: z.array(AssessmentParameter$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    regions: z.array(AssessmentPackageRegion$inboundSchema).optional(),
+    tags: z.array(z.string()).optional(),
+    type: AssessmentPackageType$inboundSchema,
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    workspace_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "connection_id": "connectionId",
+      "created_at": "createdAt",
+      "has_redirect_url": "hasRedirectUrl",
+      "has_target_url": "hasTargetUrl",
+      "info_url": "infoUrl",
+      "integration_types": "integrationTypes",
+      "max_score": "maxScore",
+      "needs_ip_address": "needsIpAddress",
+      "updated_at": "updatedAt",
+      "workspace_id": "workspaceId",
+    });
+  })
+);
 /** @internal */
 export type AssessmentPackage$Outbound = {
   aliases?: Array<string> | undefined;
@@ -196,41 +204,43 @@ export const AssessmentPackage$outboundSchema: z.ZodType<
   AssessmentPackage$Outbound,
   z.ZodTypeDef,
   AssessmentPackage
-> = z.object({
-  aliases: z.array(z.string()).optional(),
-  connectionId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  hasRedirectUrl: z.boolean().optional(),
-  hasTargetUrl: z.boolean().optional(),
-  id: z.string().optional(),
-  infoUrl: z.string().optional(),
-  integrationTypes: z.array(z.string()).optional(),
-  maxScore: z.number().optional(),
-  metadata: z.array(AssessmentMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  needsIpAddress: z.boolean().optional(),
-  parameters: z.array(AssessmentParameter$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  regions: z.array(AssessmentPackageRegion$outboundSchema).optional(),
-  tags: z.array(z.string()).optional(),
-  type: AssessmentPackageType$outboundSchema,
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  workspaceId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    createdAt: "created_at",
-    hasRedirectUrl: "has_redirect_url",
-    hasTargetUrl: "has_target_url",
-    infoUrl: "info_url",
-    integrationTypes: "integration_types",
-    maxScore: "max_score",
-    needsIpAddress: "needs_ip_address",
-    updatedAt: "updated_at",
-    workspaceId: "workspace_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aliases: z.array(z.string()).optional(),
+    connectionId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    hasRedirectUrl: z.boolean().optional(),
+    hasTargetUrl: z.boolean().optional(),
+    id: z.string().optional(),
+    infoUrl: z.string().optional(),
+    integrationTypes: z.array(z.string()).optional(),
+    maxScore: z.number().optional(),
+    metadata: z.array(AssessmentMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    needsIpAddress: z.boolean().optional(),
+    parameters: z.array(AssessmentParameter$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    regions: z.array(AssessmentPackageRegion$outboundSchema).optional(),
+    tags: z.array(z.string()).optional(),
+    type: AssessmentPackageType$outboundSchema,
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    workspaceId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      createdAt: "created_at",
+      hasRedirectUrl: "has_redirect_url",
+      hasTargetUrl: "has_target_url",
+      infoUrl: "info_url",
+      integrationTypes: "integration_types",
+      maxScore: "max_score",
+      needsIpAddress: "needs_ip_address",
+      updatedAt: "updated_at",
+      workspaceId: "workspace_id",
+    });
+  })
+);
 
 export function assessmentPackageToJSON(
   assessmentPackage: AssessmentPackage,

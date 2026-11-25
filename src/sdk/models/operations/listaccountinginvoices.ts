@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingInvoicesQueryParamFields = {
@@ -99,9 +100,10 @@ export type ListAccountingInvoicesRequest = {
 
 /** @internal */
 export const ListAccountingInvoicesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingInvoicesQueryParamFields> = z.nativeEnum(
-    ListAccountingInvoicesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAccountingInvoicesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingInvoicesQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingInvoicesRequest$Outbound = {
@@ -126,32 +128,34 @@ export const ListAccountingInvoicesRequest$outboundSchema: z.ZodType<
   ListAccountingInvoicesRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingInvoicesRequest
-> = z.object({
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAccountingInvoicesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    endLt: "end_lt",
-    orgId: "org_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAccountingInvoicesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      endLt: "end_lt",
+      orgId: "org_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingInvoicesRequestToJSON(
   listAccountingInvoicesRequest: ListAccountingInvoicesRequest,

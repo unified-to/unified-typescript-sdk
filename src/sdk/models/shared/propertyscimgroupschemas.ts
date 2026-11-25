@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 
@@ -19,10 +20,14 @@ export const PropertyScimGroupSchemas$inboundSchema: z.ZodType<
   PropertyScimGroupSchemas,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyScimGroupSchemas);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyScimGroupSchemas)
+);
 /** @internal */
 export const PropertyScimGroupSchemas$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyScimGroupSchemas
-> = openEnums.outboundSchema(PropertyScimGroupSchemas);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyScimGroupSchemas)
+);

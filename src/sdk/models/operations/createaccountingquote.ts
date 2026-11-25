@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -65,9 +66,10 @@ export type CreateAccountingQuoteRequest = {
 
 /** @internal */
 export const CreateAccountingQuoteQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingQuoteQueryParamFields> = z.nativeEnum(
-    CreateAccountingQuoteQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateAccountingQuoteQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingQuoteQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingQuoteRequest$Outbound = {
@@ -82,18 +84,20 @@ export const CreateAccountingQuoteRequest$outboundSchema: z.ZodType<
   CreateAccountingQuoteRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingQuoteRequest
-> = z.object({
-  accountingQuote: shared.AccountingQuote$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAccountingQuoteQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingQuote: "AccountingQuote",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingQuote: shared.AccountingQuote$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAccountingQuoteQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingQuote: "AccountingQuote",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingQuoteRequestToJSON(
   createAccountingQuoteRequest: CreateAccountingQuoteRequest,

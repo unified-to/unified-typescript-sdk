@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCrmContactsQueryParamFields = {
@@ -73,7 +74,9 @@ export type ListCrmContactsRequest = {
 /** @internal */
 export const ListCrmContactsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCrmContactsQueryParamFields
-> = z.nativeEnum(ListCrmContactsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCrmContactsQueryParamFields)
+);
 
 /** @internal */
 export type ListCrmContactsRequest$Outbound = {
@@ -96,28 +99,30 @@ export const ListCrmContactsRequest$outboundSchema: z.ZodType<
   ListCrmContactsRequest$Outbound,
   z.ZodTypeDef,
   ListCrmContactsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  dealId: z.string().optional(),
-  fields: z.array(ListCrmContactsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    dealId: "deal_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    dealId: z.string().optional(),
+    fields: z.array(ListCrmContactsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      dealId: "deal_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listCrmContactsRequestToJSON(
   listCrmContactsRequest: ListCrmContactsRequest,

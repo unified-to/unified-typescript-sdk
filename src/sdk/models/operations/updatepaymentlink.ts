@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -23,6 +24,9 @@ export const UpdatePaymentLinkQueryParamFields = {
   SuccessUrl: "success_url",
   Metadata: "metadata",
   Raw: "raw",
+  ContactName: "contact_name",
+  ContactEmail: "contact_email",
+  ContactPhone: "contact_phone",
 } as const;
 export type UpdatePaymentLinkQueryParamFields = ClosedEnum<
   typeof UpdatePaymentLinkQueryParamFields
@@ -51,7 +55,9 @@ export type UpdatePaymentLinkRequest = {
 /** @internal */
 export const UpdatePaymentLinkQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdatePaymentLinkQueryParamFields
-> = z.nativeEnum(UpdatePaymentLinkQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdatePaymentLinkQueryParamFields)
+);
 
 /** @internal */
 export type UpdatePaymentLinkRequest$Outbound = {
@@ -67,18 +73,21 @@ export const UpdatePaymentLinkRequest$outboundSchema: z.ZodType<
   UpdatePaymentLinkRequest$Outbound,
   z.ZodTypeDef,
   UpdatePaymentLinkRequest
-> = z.object({
-  paymentLink: shared.PaymentLink$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdatePaymentLinkQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    paymentLink: "PaymentLink",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    paymentLink: shared.PaymentLink$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdatePaymentLinkQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      paymentLink: "PaymentLink",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updatePaymentLinkRequestToJSON(
   updatePaymentLinkRequest: UpdatePaymentLinkRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -43,26 +43,29 @@ export const CommerceInventory$inboundSchema: z.ZodType<
   CommerceInventory,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  available: z.number().optional(),
-  id: z.string().optional(),
-  item_id: z.string().optional(),
-  item_option_id: z.string().optional(),
-  item_variant_id: z.string().optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "item_id": "itemId",
-    "item_option_id": "itemOptionId",
-    "item_variant_id": "itemVariantId",
-    "location_id": "locationId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    available: z.number().optional(),
+    id: z.string().optional(),
+    item_id: z.string().optional(),
+    item_option_id: z.string().optional(),
+    item_variant_id: z.string().optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "item_id": "itemId",
+      "item_option_id": "itemOptionId",
+      "item_variant_id": "itemVariantId",
+      "location_id": "locationId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CommerceInventory$Outbound = {
   available?: number | undefined;
@@ -81,25 +84,27 @@ export const CommerceInventory$outboundSchema: z.ZodType<
   CommerceInventory$Outbound,
   z.ZodTypeDef,
   CommerceInventory
-> = z.object({
-  available: z.number().optional(),
-  id: z.string().optional(),
-  itemId: z.string().optional(),
-  itemOptionId: z.string().optional(),
-  itemVariantId: z.string().optional(),
-  locationId: z.string().optional(),
-  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    itemId: "item_id",
-    itemOptionId: "item_option_id",
-    itemVariantId: "item_variant_id",
-    locationId: "location_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    available: z.number().optional(),
+    id: z.string().optional(),
+    itemId: z.string().optional(),
+    itemOptionId: z.string().optional(),
+    itemVariantId: z.string().optional(),
+    locationId: z.string().optional(),
+    metadata: z.array(CommerceMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      itemId: "item_id",
+      itemOptionId: "item_option_id",
+      itemVariantId: "item_variant_id",
+      locationId: "location_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function commerceInventoryToJSON(
   commerceInventory: CommerceInventory,

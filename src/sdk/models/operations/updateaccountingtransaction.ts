@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -60,8 +61,10 @@ export type UpdateAccountingTransactionRequest = {
 
 /** @internal */
 export const UpdateAccountingTransactionQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateAccountingTransactionQueryParamFields> = z
-    .nativeEnum(UpdateAccountingTransactionQueryParamFields);
+  z.ZodNativeEnum<typeof UpdateAccountingTransactionQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAccountingTransactionQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAccountingTransactionRequest$Outbound = {
@@ -77,19 +80,21 @@ export const UpdateAccountingTransactionRequest$outboundSchema: z.ZodType<
   UpdateAccountingTransactionRequest$Outbound,
   z.ZodTypeDef,
   UpdateAccountingTransactionRequest
-> = z.object({
-  accountingTransaction: shared.AccountingTransaction$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateAccountingTransactionQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingTransaction: "AccountingTransaction",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingTransaction: shared.AccountingTransaction$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateAccountingTransactionQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingTransaction: "AccountingTransaction",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateAccountingTransactionRequestToJSON(
   updateAccountingTransactionRequest: UpdateAccountingTransactionRequest,

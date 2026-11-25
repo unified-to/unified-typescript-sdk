@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -33,33 +33,39 @@ export const CalendarWebinarPanelistStatus$inboundSchema: z.ZodType<
   CalendarWebinarPanelistStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarWebinarPanelistStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarWebinarPanelistStatus)
+);
 /** @internal */
 export const CalendarWebinarPanelistStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CalendarWebinarPanelistStatus
-> = openEnums.outboundSchema(CalendarWebinarPanelistStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CalendarWebinarPanelistStatus)
+);
 
 /** @internal */
 export const CalendarWebinarPanelist$inboundSchema: z.ZodType<
   CalendarWebinarPanelist,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string().optional(),
-  is_required: z.boolean().optional(),
-  join_password: z.string().optional(),
-  join_url: z.string().optional(),
-  name: z.string().optional(),
-  status: CalendarWebinarPanelistStatus$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_required": "isRequired",
-    "join_password": "joinPassword",
-    "join_url": "joinUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    is_required: z.boolean().optional(),
+    join_password: z.string().optional(),
+    join_url: z.string().optional(),
+    name: z.string().optional(),
+    status: CalendarWebinarPanelistStatus$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_required": "isRequired",
+      "join_password": "joinPassword",
+      "join_url": "joinUrl",
+    });
+  })
+);
 /** @internal */
 export type CalendarWebinarPanelist$Outbound = {
   email?: string | undefined;
@@ -75,20 +81,22 @@ export const CalendarWebinarPanelist$outboundSchema: z.ZodType<
   CalendarWebinarPanelist$Outbound,
   z.ZodTypeDef,
   CalendarWebinarPanelist
-> = z.object({
-  email: z.string().optional(),
-  isRequired: z.boolean().optional(),
-  joinPassword: z.string().optional(),
-  joinUrl: z.string().optional(),
-  name: z.string().optional(),
-  status: CalendarWebinarPanelistStatus$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isRequired: "is_required",
-    joinPassword: "join_password",
-    joinUrl: "join_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    isRequired: z.boolean().optional(),
+    joinPassword: z.string().optional(),
+    joinUrl: z.string().optional(),
+    name: z.string().optional(),
+    status: CalendarWebinarPanelistStatus$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isRequired: "is_required",
+      joinPassword: "join_password",
+      joinUrl: "join_url",
+    });
+  })
+);
 
 export function calendarWebinarPanelistToJSON(
   calendarWebinarPanelist: CalendarWebinarPanelist,

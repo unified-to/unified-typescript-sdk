@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,7 +48,9 @@ export type PatchGenaiMemoryRequest = {
 /** @internal */
 export const PatchGenaiMemoryQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchGenaiMemoryQueryParamFields
-> = z.nativeEnum(PatchGenaiMemoryQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchGenaiMemoryQueryParamFields)
+);
 
 /** @internal */
 export type PatchGenaiMemoryRequest$Outbound = {
@@ -63,18 +66,20 @@ export const PatchGenaiMemoryRequest$outboundSchema: z.ZodType<
   PatchGenaiMemoryRequest$Outbound,
   z.ZodTypeDef,
   PatchGenaiMemoryRequest
-> = z.object({
-  genaiMemory: shared.GenaiMemory$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchGenaiMemoryQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    genaiMemory: "GenaiMemory",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    genaiMemory: shared.GenaiMemory$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchGenaiMemoryQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      genaiMemory: "GenaiMemory",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchGenaiMemoryRequestToJSON(
   patchGenaiMemoryRequest: PatchGenaiMemoryRequest,

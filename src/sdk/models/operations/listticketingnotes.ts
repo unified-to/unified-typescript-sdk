@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListTicketingNotesQueryParamFields = {
@@ -59,7 +60,9 @@ export type ListTicketingNotesRequest = {
 /** @internal */
 export const ListTicketingNotesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListTicketingNotesQueryParamFields
-> = z.nativeEnum(ListTicketingNotesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListTicketingNotesQueryParamFields)
+);
 
 /** @internal */
 export type ListTicketingNotesRequest$Outbound = {
@@ -81,26 +84,29 @@ export const ListTicketingNotesRequest$outboundSchema: z.ZodType<
   ListTicketingNotesRequest$Outbound,
   z.ZodTypeDef,
   ListTicketingNotesRequest
-> = z.object({
-  connectionId: z.string(),
-  customerId: z.string().optional(),
-  fields: z.array(ListTicketingNotesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  ticketId: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    customerId: "customer_id",
-    ticketId: "ticket_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    customerId: z.string().optional(),
+    fields: z.array(ListTicketingNotesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    ticketId: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      customerId: "customer_id",
+      ticketId: "ticket_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listTicketingNotesRequestToJSON(
   listTicketingNotesRequest: ListTicketingNotesRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPlmCategoriesQueryParamFields = {
@@ -57,7 +58,9 @@ export type ListPlmCategoriesRequest = {
 /** @internal */
 export const ListPlmCategoriesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListPlmCategoriesQueryParamFields
-> = z.nativeEnum(ListPlmCategoriesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListPlmCategoriesQueryParamFields)
+);
 
 /** @internal */
 export type ListPlmCategoriesRequest$Outbound = {
@@ -79,25 +82,28 @@ export const ListPlmCategoriesRequest$outboundSchema: z.ZodType<
   ListPlmCategoriesRequest$Outbound,
   z.ZodTypeDef,
   ListPlmCategoriesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPlmCategoriesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPlmCategoriesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPlmCategoriesRequestToJSON(
   listPlmCategoriesRequest: ListPlmCategoriesRequest,

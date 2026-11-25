@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -29,16 +29,18 @@ export const AccountingCashflowSection$inboundSchema: z.ZodType<
   AccountingCashflowSection,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  items: z.array(AccountingCashflowItem$inboundSchema).optional(),
-  section_name: z.string().optional(),
-  total_amount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "section_name": "sectionName",
-    "total_amount": "totalAmount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    items: z.array(AccountingCashflowItem$inboundSchema).optional(),
+    section_name: z.string().optional(),
+    total_amount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "section_name": "sectionName",
+      "total_amount": "totalAmount",
+    });
+  })
+);
 
 export function accountingCashflowSectionFromJSON(
   jsonString: string,

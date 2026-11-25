@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -48,9 +49,10 @@ export type UpdateSigningSignatoryRequest = {
 
 /** @internal */
 export const UpdateSigningSignatoryQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateSigningSignatoryQueryParamFields> = z.nativeEnum(
-    UpdateSigningSignatoryQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateSigningSignatoryQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateSigningSignatoryQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateSigningSignatoryRequest$Outbound = {
@@ -66,19 +68,21 @@ export const UpdateSigningSignatoryRequest$outboundSchema: z.ZodType<
   UpdateSigningSignatoryRequest$Outbound,
   z.ZodTypeDef,
   UpdateSigningSignatoryRequest
-> = z.object({
-  signingSignatory: shared.SigningSignatory$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateSigningSignatoryQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    signingSignatory: "SigningSignatory",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    signingSignatory: shared.SigningSignatory$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateSigningSignatoryQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      signingSignatory: "SigningSignatory",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateSigningSignatoryRequestToJSON(
   updateSigningSignatoryRequest: UpdateSigningSignatoryRequest,

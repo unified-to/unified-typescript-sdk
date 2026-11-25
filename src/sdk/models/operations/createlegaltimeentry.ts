@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -50,9 +51,10 @@ export type CreateLegalTimeentryRequest = {
 
 /** @internal */
 export const CreateLegalTimeentryQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateLegalTimeentryQueryParamFields> = z.nativeEnum(
-    CreateLegalTimeentryQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateLegalTimeentryQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateLegalTimeentryQueryParamFields)
+    );
 
 /** @internal */
 export type CreateLegalTimeentryRequest$Outbound = {
@@ -67,18 +69,20 @@ export const CreateLegalTimeentryRequest$outboundSchema: z.ZodType<
   CreateLegalTimeentryRequest$Outbound,
   z.ZodTypeDef,
   CreateLegalTimeentryRequest
-> = z.object({
-  legalTimeentry: shared.LegalTimeentry$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateLegalTimeentryQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    legalTimeentry: "LegalTimeentry",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    legalTimeentry: shared.LegalTimeentry$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateLegalTimeentryQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      legalTimeentry: "LegalTimeentry",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createLegalTimeentryRequestToJSON(
   createLegalTimeentryRequest: CreateLegalTimeentryRequest,

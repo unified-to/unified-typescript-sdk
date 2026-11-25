@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -45,7 +46,9 @@ export type CreateAtsScorecardRequest = {
 /** @internal */
 export const CreateAtsScorecardQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateAtsScorecardQueryParamFields
-> = z.nativeEnum(CreateAtsScorecardQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateAtsScorecardQueryParamFields)
+);
 
 /** @internal */
 export type CreateAtsScorecardRequest$Outbound = {
@@ -60,17 +63,20 @@ export const CreateAtsScorecardRequest$outboundSchema: z.ZodType<
   CreateAtsScorecardRequest$Outbound,
   z.ZodTypeDef,
   CreateAtsScorecardRequest
-> = z.object({
-  atsScorecard: shared.AtsScorecard$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAtsScorecardQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    atsScorecard: "AtsScorecard",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    atsScorecard: shared.AtsScorecard$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAtsScorecardQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      atsScorecard: "AtsScorecard",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAtsScorecardRequestToJSON(
   createAtsScorecardRequest: CreateAtsScorecardRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -25,21 +25,23 @@ export const MessagingAttachment$inboundSchema: z.ZodType<
   MessagingAttachment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  content_identifier: z.string().optional(),
-  content_type: z.string().optional(),
-  download_url: z.string().optional(),
-  filename: z.string().optional(),
-  message_id: z.string().optional(),
-  size: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "content_identifier": "contentIdentifier",
-    "content_type": "contentType",
-    "download_url": "downloadUrl",
-    "message_id": "messageId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content_identifier: z.string().optional(),
+    content_type: z.string().optional(),
+    download_url: z.string().optional(),
+    filename: z.string().optional(),
+    message_id: z.string().optional(),
+    size: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "content_identifier": "contentIdentifier",
+      "content_type": "contentType",
+      "download_url": "downloadUrl",
+      "message_id": "messageId",
+    });
+  })
+);
 /** @internal */
 export type MessagingAttachment$Outbound = {
   content_identifier?: string | undefined;
@@ -55,21 +57,23 @@ export const MessagingAttachment$outboundSchema: z.ZodType<
   MessagingAttachment$Outbound,
   z.ZodTypeDef,
   MessagingAttachment
-> = z.object({
-  contentIdentifier: z.string().optional(),
-  contentType: z.string().optional(),
-  downloadUrl: z.string().optional(),
-  filename: z.string().optional(),
-  messageId: z.string().optional(),
-  size: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contentIdentifier: "content_identifier",
-    contentType: "content_type",
-    downloadUrl: "download_url",
-    messageId: "message_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    contentIdentifier: z.string().optional(),
+    contentType: z.string().optional(),
+    downloadUrl: z.string().optional(),
+    filename: z.string().optional(),
+    messageId: z.string().optional(),
+    size: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contentIdentifier: "content_identifier",
+      contentType: "content_type",
+      downloadUrl: "download_url",
+      messageId: "message_id",
+    });
+  })
+);
 
 export function messagingAttachmentToJSON(
   messagingAttachment: MessagingAttachment,

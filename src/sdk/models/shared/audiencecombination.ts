@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -26,16 +26,18 @@ export const AudienceCombination$inboundSchema: z.ZodType<
   AudienceCombination,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  behaviors: z.array(TargetRef$inboundSchema).optional(),
-  interests: z.array(TargetRef$inboundSchema).optional(),
-  life_events: z.array(TargetRef$inboundSchema).optional(),
-  references: z.array(TargetRef$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "life_events": "lifeEvents",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    behaviors: z.array(TargetRef$inboundSchema).optional(),
+    interests: z.array(TargetRef$inboundSchema).optional(),
+    life_events: z.array(TargetRef$inboundSchema).optional(),
+    references: z.array(TargetRef$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "life_events": "lifeEvents",
+    });
+  })
+);
 /** @internal */
 export type AudienceCombination$Outbound = {
   behaviors?: Array<TargetRef$Outbound> | undefined;
@@ -49,16 +51,18 @@ export const AudienceCombination$outboundSchema: z.ZodType<
   AudienceCombination$Outbound,
   z.ZodTypeDef,
   AudienceCombination
-> = z.object({
-  behaviors: z.array(TargetRef$outboundSchema).optional(),
-  interests: z.array(TargetRef$outboundSchema).optional(),
-  lifeEvents: z.array(TargetRef$outboundSchema).optional(),
-  references: z.array(TargetRef$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    lifeEvents: "life_events",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    behaviors: z.array(TargetRef$outboundSchema).optional(),
+    interests: z.array(TargetRef$outboundSchema).optional(),
+    lifeEvents: z.array(TargetRef$outboundSchema).optional(),
+    references: z.array(TargetRef$outboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      lifeEvents: "life_events",
+    });
+  })
+);
 
 export function audienceCombinationToJSON(
   audienceCombination: AudienceCombination,

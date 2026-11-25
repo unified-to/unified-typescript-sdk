@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -106,86 +106,97 @@ export const DurationType$inboundSchema: z.ZodType<
   DurationType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(DurationType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(DurationType));
 /** @internal */
 export const DurationType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   DurationType
-> = openEnums.outboundSchema(DurationType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(DurationType));
 
 /** @internal */
 export const HrisTimeoffStatus$inboundSchema: z.ZodType<
   HrisTimeoffStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisTimeoffStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisTimeoffStatus)
+);
 /** @internal */
 export const HrisTimeoffStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisTimeoffStatus
-> = openEnums.outboundSchema(HrisTimeoffStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisTimeoffStatus)
+);
 
 /** @internal */
 export const HrisTimeoffType$inboundSchema: z.ZodType<
   HrisTimeoffType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisTimeoffType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(HrisTimeoffType));
 /** @internal */
 export const HrisTimeoffType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisTimeoffType
-> = openEnums.outboundSchema(HrisTimeoffType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisTimeoffType)
+);
 
 /** @internal */
 export const HrisTimeoff$inboundSchema: z.ZodType<
   HrisTimeoff,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  approved_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  approver_user_id: z.string().optional(),
-  attachments: z.array(HrisAttachment$inboundSchema).optional(),
-  comments: z.string().optional(),
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  duration: z.number().optional(),
-  duration_type: DurationType$inboundSchema.optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_paid: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  original_type: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reason: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: HrisTimeoffStatus$inboundSchema.optional(),
-  type: HrisTimeoffType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "approved_at": "approvedAt",
-    "approver_user_id": "approverUserId",
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "duration_type": "durationType",
-    "end_at": "endAt",
-    "is_paid": "isPaid",
-    "original_type": "originalType",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    approved_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    approver_user_id: z.string().optional(),
+    attachments: z.array(HrisAttachment$inboundSchema).optional(),
+    comments: z.string().optional(),
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    duration: z.number().optional(),
+    duration_type: DurationType$inboundSchema.optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    is_paid: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    original_type: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reason: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: HrisTimeoffStatus$inboundSchema.optional(),
+    type: HrisTimeoffType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "approved_at": "approvedAt",
+      "approver_user_id": "approverUserId",
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "duration_type": "durationType",
+      "end_at": "endAt",
+      "is_paid": "isPaid",
+      "original_type": "originalType",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type HrisTimeoff$Outbound = {
   approved_at?: string | undefined;
@@ -215,42 +226,44 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   HrisTimeoff$Outbound,
   z.ZodTypeDef,
   HrisTimeoff
-> = z.object({
-  approvedAt: z.date().transform(v => v.toISOString()).optional(),
-  approverUserId: z.string().optional(),
-  attachments: z.array(HrisAttachment$outboundSchema).optional(),
-  comments: z.string().optional(),
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  duration: z.number().optional(),
-  durationType: DurationType$outboundSchema.optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isPaid: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  originalType: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reason: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: HrisTimeoffStatus$outboundSchema.optional(),
-  type: HrisTimeoffType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    approvedAt: "approved_at",
-    approverUserId: "approver_user_id",
-    companyId: "company_id",
-    createdAt: "created_at",
-    durationType: "duration_type",
-    endAt: "end_at",
-    isPaid: "is_paid",
-    originalType: "original_type",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    approvedAt: z.date().transform(v => v.toISOString()).optional(),
+    approverUserId: z.string().optional(),
+    attachments: z.array(HrisAttachment$outboundSchema).optional(),
+    comments: z.string().optional(),
+    companyId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    duration: z.number().optional(),
+    durationType: DurationType$outboundSchema.optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isPaid: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    originalType: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reason: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: HrisTimeoffStatus$outboundSchema.optional(),
+    type: HrisTimeoffType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      approvedAt: "approved_at",
+      approverUserId: "approver_user_id",
+      companyId: "company_id",
+      createdAt: "created_at",
+      durationType: "duration_type",
+      endAt: "end_at",
+      isPaid: "is_paid",
+      originalType: "original_type",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function hrisTimeoffToJSON(hrisTimeoff: HrisTimeoff): string {
   return JSON.stringify(HrisTimeoff$outboundSchema.parse(hrisTimeoff));

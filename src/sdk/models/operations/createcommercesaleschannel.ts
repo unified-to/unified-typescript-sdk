@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -40,8 +41,10 @@ export type CreateCommerceSaleschannelRequest = {
 
 /** @internal */
 export const CreateCommerceSaleschannelQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateCommerceSaleschannelQueryParamFields> = z
-    .nativeEnum(CreateCommerceSaleschannelQueryParamFields);
+  z.ZodNativeEnum<typeof CreateCommerceSaleschannelQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateCommerceSaleschannelQueryParamFields)
+    );
 
 /** @internal */
 export type CreateCommerceSaleschannelRequest$Outbound = {
@@ -56,18 +59,20 @@ export const CreateCommerceSaleschannelRequest$outboundSchema: z.ZodType<
   CreateCommerceSaleschannelRequest$Outbound,
   z.ZodTypeDef,
   CreateCommerceSaleschannelRequest
-> = z.object({
-  commerceSaleschannel: shared.CommerceSaleschannel$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateCommerceSaleschannelQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    commerceSaleschannel: "CommerceSaleschannel",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    commerceSaleschannel: shared.CommerceSaleschannel$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateCommerceSaleschannelQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      commerceSaleschannel: "CommerceSaleschannel",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createCommerceSaleschannelRequestToJSON(
   createCommerceSaleschannelRequest: CreateCommerceSaleschannelRequest,

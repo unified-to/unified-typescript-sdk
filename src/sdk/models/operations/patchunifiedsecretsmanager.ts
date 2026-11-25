@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as shared from "../shared/index.js";
 
 export type PatchUnifiedSecretsmanagerRequest = {
@@ -25,14 +26,16 @@ export const PatchUnifiedSecretsmanagerRequest$outboundSchema: z.ZodType<
   PatchUnifiedSecretsmanagerRequest$Outbound,
   z.ZodTypeDef,
   PatchUnifiedSecretsmanagerRequest
-> = z.object({
-  secretsManager: shared.SecretsManager$outboundSchema,
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    secretsManager: "SecretsManager",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    secretsManager: shared.SecretsManager$outboundSchema,
+    id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      secretsManager: "SecretsManager",
+    });
+  })
+);
 
 export function patchUnifiedSecretsmanagerRequestToJSON(
   patchUnifiedSecretsmanagerRequest: PatchUnifiedSecretsmanagerRequest,

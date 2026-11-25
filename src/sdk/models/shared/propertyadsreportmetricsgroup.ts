@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -325,7 +325,9 @@ export const PropertyAdsReportMetricsGroupBillingEvent$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupBillingEvent,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBillingEvent);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsGroupBillingEvent)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema:
@@ -333,8 +335,8 @@ export const PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema:
     PropertyAdsReportMetricsGroupBudgetAllocationType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsGroupBudgetAllocationType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetAllocationType)
   );
 
 /** @internal */
@@ -342,21 +344,27 @@ export const PropertyAdsReportMetricsGroupBudgetPeriod$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupBudgetPeriod,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetPeriod);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetPeriod)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupBudgetUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetUnit)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupCostType$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupCostType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupCostType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsGroupCostType)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupCreativeSelection$inboundSchema:
@@ -364,14 +372,18 @@ export const PropertyAdsReportMetricsGroupCreativeSelection$inboundSchema:
     PropertyAdsReportMetricsGroupCreativeSelection,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupCreativeSelection);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsGroupCreativeSelection)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupDeliveryType$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupDeliveryType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupDeliveryType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsGroupDeliveryType)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema:
@@ -379,7 +391,9 @@ export const PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema:
     PropertyAdsReportMetricsGroupEffectiveStatus,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupEffectiveStatus);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsGroupEffectiveStatus)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema:
@@ -387,113 +401,126 @@ export const PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema:
     PropertyAdsReportMetricsGroupOptimizationGoal,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyAdsReportMetricsGroupOptimizationGoal);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyAdsReportMetricsGroupOptimizationGoal)
+  );
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupStatus$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsGroupStatus)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroupType$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroupType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsReportMetricsGroupType)
+);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsGroup,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  bid_amount: z.number().optional(),
-  bid_strategy: PropertyAdsReportMetricsGroupBidStrategy$inboundSchema
-    .optional(),
-  billing_event: PropertyAdsReportMetricsGroupBillingEvent$inboundSchema
-    .optional(),
-  budget_allocation_type:
-    PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema.optional(),
-  budget_amount: z.number().optional(),
-  budget_max_amount: z.number().optional(),
-  budget_period: PropertyAdsReportMetricsGroupBudgetPeriod$inboundSchema
-    .optional(),
-  budget_unit: PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema.optional(),
-  campaign_id: z.string().optional(),
-  conversion_tracking: z.array(AdsConversionTracking$inboundSchema).optional(),
-  cost_type: PropertyAdsReportMetricsGroupCostType$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  creative_ids: z.array(z.string()).optional(),
-  creative_selection:
-    PropertyAdsReportMetricsGroupCreativeSelection$inboundSchema.optional(),
-  creative_sizes: z.array(AdsSize$inboundSchema).optional(),
-  currency: z.string().optional(),
-  delivery_goal: PropertyAdsReportMetricsGroupDeliveryGoal$inboundSchema
-    .optional(),
-  delivery_type: PropertyAdsReportMetricsGroupDeliveryType$inboundSchema
-    .optional(),
-  effective_status: PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  frequency_cap: PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema
-    .optional(),
-  has_eu_political_ads: z.boolean().optional(),
-  id: z.string().optional(),
-  insertionorder_id: z.string().optional(),
-  language_locale: z.string().optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  optimization_goal: PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema
-    .optional(),
-  organization_id: z.string().optional(),
-  pacing: PropertyAdsReportMetricsGroupPacing$inboundSchema.optional(),
-  parent_id: z.string().optional(),
-  priority: z.number().optional(),
-  promoted: z.array(AdsPromoted$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: PropertyAdsReportMetricsGroupStatus$inboundSchema.optional(),
-  targeting: PropertyAdsReportMetricsGroupTargeting$inboundSchema.optional(),
-  type: PropertyAdsReportMetricsGroupType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "bid_amount": "bidAmount",
-    "bid_strategy": "bidStrategy",
-    "billing_event": "billingEvent",
-    "budget_allocation_type": "budgetAllocationType",
-    "budget_amount": "budgetAmount",
-    "budget_max_amount": "budgetMaxAmount",
-    "budget_period": "budgetPeriod",
-    "budget_unit": "budgetUnit",
-    "campaign_id": "campaignId",
-    "conversion_tracking": "conversionTracking",
-    "cost_type": "costType",
-    "created_at": "createdAt",
-    "creative_ids": "creativeIds",
-    "creative_selection": "creativeSelection",
-    "creative_sizes": "creativeSizes",
-    "delivery_goal": "deliveryGoal",
-    "delivery_type": "deliveryType",
-    "effective_status": "effectiveStatus",
-    "end_at": "endAt",
-    "frequency_cap": "frequencyCap",
-    "has_eu_political_ads": "hasEuPoliticalAds",
-    "insertionorder_id": "insertionorderId",
-    "language_locale": "languageLocale",
-    "optimization_goal": "optimizationGoal",
-    "organization_id": "organizationId",
-    "parent_id": "parentId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    bid_amount: z.number().optional(),
+    bid_strategy: PropertyAdsReportMetricsGroupBidStrategy$inboundSchema
+      .optional(),
+    billing_event: PropertyAdsReportMetricsGroupBillingEvent$inboundSchema
+      .optional(),
+    budget_allocation_type:
+      PropertyAdsReportMetricsGroupBudgetAllocationType$inboundSchema
+        .optional(),
+    budget_amount: z.number().optional(),
+    budget_max_amount: z.number().optional(),
+    budget_period: PropertyAdsReportMetricsGroupBudgetPeriod$inboundSchema
+      .optional(),
+    budget_unit: PropertyAdsReportMetricsGroupBudgetUnit$inboundSchema
+      .optional(),
+    campaign_id: z.string().optional(),
+    conversion_tracking: z.array(AdsConversionTracking$inboundSchema)
+      .optional(),
+    cost_type: PropertyAdsReportMetricsGroupCostType$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    creative_ids: z.array(z.string()).optional(),
+    creative_selection:
+      PropertyAdsReportMetricsGroupCreativeSelection$inboundSchema.optional(),
+    creative_sizes: z.array(AdsSize$inboundSchema).optional(),
+    currency: z.string().optional(),
+    delivery_goal: PropertyAdsReportMetricsGroupDeliveryGoal$inboundSchema
+      .optional(),
+    delivery_type: PropertyAdsReportMetricsGroupDeliveryType$inboundSchema
+      .optional(),
+    effective_status: PropertyAdsReportMetricsGroupEffectiveStatus$inboundSchema
+      .optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    frequency_cap: PropertyAdsReportMetricsGroupFrequencyCap$inboundSchema
+      .optional(),
+    has_eu_political_ads: z.boolean().optional(),
+    id: z.string().optional(),
+    insertionorder_id: z.string().optional(),
+    language_locale: z.string().optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    optimization_goal:
+      PropertyAdsReportMetricsGroupOptimizationGoal$inboundSchema.optional(),
+    organization_id: z.string().optional(),
+    pacing: PropertyAdsReportMetricsGroupPacing$inboundSchema.optional(),
+    parent_id: z.string().optional(),
+    priority: z.number().optional(),
+    promoted: z.array(AdsPromoted$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: PropertyAdsReportMetricsGroupStatus$inboundSchema.optional(),
+    targeting: PropertyAdsReportMetricsGroupTargeting$inboundSchema.optional(),
+    type: PropertyAdsReportMetricsGroupType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "bid_amount": "bidAmount",
+      "bid_strategy": "bidStrategy",
+      "billing_event": "billingEvent",
+      "budget_allocation_type": "budgetAllocationType",
+      "budget_amount": "budgetAmount",
+      "budget_max_amount": "budgetMaxAmount",
+      "budget_period": "budgetPeriod",
+      "budget_unit": "budgetUnit",
+      "campaign_id": "campaignId",
+      "conversion_tracking": "conversionTracking",
+      "cost_type": "costType",
+      "created_at": "createdAt",
+      "creative_ids": "creativeIds",
+      "creative_selection": "creativeSelection",
+      "creative_sizes": "creativeSizes",
+      "delivery_goal": "deliveryGoal",
+      "delivery_type": "deliveryType",
+      "effective_status": "effectiveStatus",
+      "end_at": "endAt",
+      "frequency_cap": "frequencyCap",
+      "has_eu_political_ads": "hasEuPoliticalAds",
+      "insertionorder_id": "insertionorderId",
+      "language_locale": "languageLocale",
+      "optimization_goal": "optimizationGoal",
+      "organization_id": "organizationId",
+      "parent_id": "parentId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function propertyAdsReportMetricsGroupFromJSON(
   jsonString: string,

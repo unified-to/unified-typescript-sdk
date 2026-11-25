@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -56,30 +56,36 @@ export const AuthorizedSellerStatus$inboundSchema: z.ZodType<
   AuthorizedSellerStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AuthorizedSellerStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AuthorizedSellerStatus)
+);
 /** @internal */
 export const AuthorizedSellerStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AuthorizedSellerStatus
-> = openEnums.outboundSchema(AuthorizedSellerStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AuthorizedSellerStatus)
+);
 
 /** @internal */
 export const PropertyAdsCampaignTargetingSupply$inboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingSupply,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  authorized_seller_status: AuthorizedSellerStatus$inboundSchema.optional(),
-  deal_groups: z.array(TargetRef$inboundSchema).optional(),
-  deals: z.array(TargetRef$inboundSchema).optional(),
-  exchanges: z.array(TargetRef$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "authorized_seller_status": "authorizedSellerStatus",
-    "deal_groups": "dealGroups",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authorized_seller_status: AuthorizedSellerStatus$inboundSchema.optional(),
+    deal_groups: z.array(TargetRef$inboundSchema).optional(),
+    deals: z.array(TargetRef$inboundSchema).optional(),
+    exchanges: z.array(TargetRef$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "authorized_seller_status": "authorizedSellerStatus",
+      "deal_groups": "dealGroups",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsCampaignTargetingSupply$Outbound = {
   authorized_seller_status?: string | undefined;
@@ -93,17 +99,19 @@ export const PropertyAdsCampaignTargetingSupply$outboundSchema: z.ZodType<
   PropertyAdsCampaignTargetingSupply$Outbound,
   z.ZodTypeDef,
   PropertyAdsCampaignTargetingSupply
-> = z.object({
-  authorizedSellerStatus: AuthorizedSellerStatus$outboundSchema.optional(),
-  dealGroups: z.array(TargetRef$outboundSchema).optional(),
-  deals: z.array(TargetRef$outboundSchema).optional(),
-  exchanges: z.array(TargetRef$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    authorizedSellerStatus: "authorized_seller_status",
-    dealGroups: "deal_groups",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    authorizedSellerStatus: AuthorizedSellerStatus$outboundSchema.optional(),
+    dealGroups: z.array(TargetRef$outboundSchema).optional(),
+    deals: z.array(TargetRef$outboundSchema).optional(),
+    exchanges: z.array(TargetRef$outboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      authorizedSellerStatus: "authorized_seller_status",
+      dealGroups: "deal_groups",
+    });
+  })
+);
 
 export function propertyAdsCampaignTargetingSupplyToJSON(
   propertyAdsCampaignTargetingSupply: PropertyAdsCampaignTargetingSupply,

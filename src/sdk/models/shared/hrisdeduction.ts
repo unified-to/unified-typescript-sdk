@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -157,117 +157,135 @@ export const HrisDeductionCoverageLevel$inboundSchema: z.ZodType<
   HrisDeductionCoverageLevel,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisDeductionCoverageLevel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisDeductionCoverageLevel)
+);
 /** @internal */
 export const HrisDeductionCoverageLevel$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisDeductionCoverageLevel
-> = openEnums.outboundSchema(HrisDeductionCoverageLevel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisDeductionCoverageLevel)
+);
 
 /** @internal */
 export const EmployerType$inboundSchema: z.ZodType<
   EmployerType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EmployerType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(EmployerType));
 /** @internal */
 export const EmployerType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   EmployerType
-> = openEnums.outboundSchema(EmployerType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(EmployerType));
 
 /** @internal */
 export const HrisDeductionFrequency$inboundSchema: z.ZodType<
   HrisDeductionFrequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisDeductionFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisDeductionFrequency)
+);
 /** @internal */
 export const HrisDeductionFrequency$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisDeductionFrequency
-> = openEnums.outboundSchema(HrisDeductionFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisDeductionFrequency)
+);
 
 /** @internal */
 export const GarnishmentType$inboundSchema: z.ZodType<
   GarnishmentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GarnishmentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(GarnishmentType));
 /** @internal */
 export const GarnishmentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   GarnishmentType
-> = openEnums.outboundSchema(GarnishmentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(GarnishmentType)
+);
 
 /** @internal */
 export const HrisDeductionType$inboundSchema: z.ZodType<
   HrisDeductionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisDeductionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisDeductionType)
+);
 /** @internal */
 export const HrisDeductionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisDeductionType
-> = openEnums.outboundSchema(HrisDeductionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisDeductionType)
+);
 
 /** @internal */
 export const HrisDeduction$inboundSchema: z.ZodType<
   HrisDeduction,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  benefit_id: z.string().optional(),
-  company_id: z.string().optional(),
-  coverage_level: HrisDeductionCoverageLevel$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  employer_amount: z.number().optional(),
-  employer_type: EmployerType$inboundSchema.optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  frequency: HrisDeductionFrequency$inboundSchema.optional(),
-  garnishment_type: GarnishmentType$inboundSchema.optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  loan_identifier: z.string().optional(),
-  max_amount: z.number().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  paycode_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  type: HrisDeductionType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "benefit_id": "benefitId",
-    "company_id": "companyId",
-    "coverage_level": "coverageLevel",
-    "created_at": "createdAt",
-    "employer_amount": "employerAmount",
-    "employer_type": "employerType",
-    "end_at": "endAt",
-    "garnishment_type": "garnishmentType",
-    "is_active": "isActive",
-    "loan_identifier": "loanIdentifier",
-    "max_amount": "maxAmount",
-    "paycode_id": "paycodeId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    benefit_id: z.string().optional(),
+    company_id: z.string().optional(),
+    coverage_level: HrisDeductionCoverageLevel$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    employer_amount: z.number().optional(),
+    employer_type: EmployerType$inboundSchema.optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    frequency: HrisDeductionFrequency$inboundSchema.optional(),
+    garnishment_type: GarnishmentType$inboundSchema.optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    loan_identifier: z.string().optional(),
+    max_amount: z.number().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    paycode_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    type: HrisDeductionType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "benefit_id": "benefitId",
+      "company_id": "companyId",
+      "coverage_level": "coverageLevel",
+      "created_at": "createdAt",
+      "employer_amount": "employerAmount",
+      "employer_type": "employerType",
+      "end_at": "endAt",
+      "garnishment_type": "garnishmentType",
+      "is_active": "isActive",
+      "loan_identifier": "loanIdentifier",
+      "max_amount": "maxAmount",
+      "paycode_id": "paycodeId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type HrisDeduction$Outbound = {
   amount?: number | undefined;
@@ -299,48 +317,50 @@ export const HrisDeduction$outboundSchema: z.ZodType<
   HrisDeduction$Outbound,
   z.ZodTypeDef,
   HrisDeduction
-> = z.object({
-  amount: z.number().optional(),
-  benefitId: z.string().optional(),
-  companyId: z.string().optional(),
-  coverageLevel: HrisDeductionCoverageLevel$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  employerAmount: z.number().optional(),
-  employerType: EmployerType$outboundSchema.optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  frequency: HrisDeductionFrequency$outboundSchema.optional(),
-  garnishmentType: GarnishmentType$outboundSchema.optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  loanIdentifier: z.string().optional(),
-  maxAmount: z.number().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  paycodeId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  type: HrisDeductionType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    benefitId: "benefit_id",
-    companyId: "company_id",
-    coverageLevel: "coverage_level",
-    createdAt: "created_at",
-    employerAmount: "employer_amount",
-    employerType: "employer_type",
-    endAt: "end_at",
-    garnishmentType: "garnishment_type",
-    isActive: "is_active",
-    loanIdentifier: "loan_identifier",
-    maxAmount: "max_amount",
-    paycodeId: "paycode_id",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    benefitId: z.string().optional(),
+    companyId: z.string().optional(),
+    coverageLevel: HrisDeductionCoverageLevel$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    employerAmount: z.number().optional(),
+    employerType: EmployerType$outboundSchema.optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    frequency: HrisDeductionFrequency$outboundSchema.optional(),
+    garnishmentType: GarnishmentType$outboundSchema.optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    loanIdentifier: z.string().optional(),
+    maxAmount: z.number().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    paycodeId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    type: HrisDeductionType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      benefitId: "benefit_id",
+      companyId: "company_id",
+      coverageLevel: "coverage_level",
+      createdAt: "created_at",
+      employerAmount: "employer_amount",
+      employerType: "employer_type",
+      endAt: "end_at",
+      garnishmentType: "garnishment_type",
+      isActive: "is_active",
+      loanIdentifier: "loan_identifier",
+      maxAmount: "max_amount",
+      paycodeId: "paycode_id",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function hrisDeductionToJSON(hrisDeduction: HrisDeduction): string {
   return JSON.stringify(HrisDeduction$outboundSchema.parse(hrisDeduction));

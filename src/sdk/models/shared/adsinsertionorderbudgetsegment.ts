@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -26,20 +26,22 @@ export const AdsInsertionorderBudgetSegment$inboundSchema: z.ZodType<
   AdsInsertionorderBudgetSegment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  budget_amount: z.number().optional(),
-  description: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "budget_amount": "budgetAmount",
-    "end_at": "endAt",
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    budget_amount: z.number().optional(),
+    description: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "budget_amount": "budgetAmount",
+      "end_at": "endAt",
+      "start_at": "startAt",
+    });
+  })
+);
 /** @internal */
 export type AdsInsertionorderBudgetSegment$Outbound = {
   budget_amount?: number | undefined;
@@ -53,18 +55,20 @@ export const AdsInsertionorderBudgetSegment$outboundSchema: z.ZodType<
   AdsInsertionorderBudgetSegment$Outbound,
   z.ZodTypeDef,
   AdsInsertionorderBudgetSegment
-> = z.object({
-  budgetAmount: z.number().optional(),
-  description: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    budgetAmount: "budget_amount",
-    endAt: "end_at",
-    startAt: "start_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    budgetAmount: z.number().optional(),
+    description: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      budgetAmount: "budget_amount",
+      endAt: "end_at",
+      startAt: "start_at",
+    });
+  })
+);
 
 export function adsInsertionorderBudgetSegmentToJSON(
   adsInsertionorderBudgetSegment: AdsInsertionorderBudgetSegment,

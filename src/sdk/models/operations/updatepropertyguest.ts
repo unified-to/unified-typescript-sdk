@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -51,9 +52,10 @@ export type UpdatePropertyGuestRequest = {
 
 /** @internal */
 export const UpdatePropertyGuestQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdatePropertyGuestQueryParamFields> = z.nativeEnum(
-    UpdatePropertyGuestQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdatePropertyGuestQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdatePropertyGuestQueryParamFields)
+    );
 
 /** @internal */
 export type UpdatePropertyGuestRequest$Outbound = {
@@ -69,19 +71,21 @@ export const UpdatePropertyGuestRequest$outboundSchema: z.ZodType<
   UpdatePropertyGuestRequest$Outbound,
   z.ZodTypeDef,
   UpdatePropertyGuestRequest
-> = z.object({
-  propertyGuest: shared.PropertyGuest$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdatePropertyGuestQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    propertyGuest: "PropertyGuest",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    propertyGuest: shared.PropertyGuest$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdatePropertyGuestQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      propertyGuest: "PropertyGuest",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updatePropertyGuestRequestToJSON(
   updatePropertyGuestRequest: UpdatePropertyGuestRequest,

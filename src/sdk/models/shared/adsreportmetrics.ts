@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -196,38 +196,42 @@ export const Dimension$inboundSchema: z.ZodType<
   Dimension,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Dimension);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Dimension));
 
 /** @internal */
 export const AdsReportMetricsType$inboundSchema: z.ZodType<
   AdsReportMetricsType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsReportMetricsType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsReportMetricsType)
+);
 
 /** @internal */
 export const AdsReportMetrics$inboundSchema: z.ZodType<
   AdsReportMetrics,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  ad: PropertyAdsReportMetricsAd$inboundSchema.optional(),
-  campaign: PropertyAdsReportMetricsCampaign$inboundSchema.optional(),
-  creative: PropertyAdsReportMetricsCreative$inboundSchema.optional(),
-  dimension: Dimension$inboundSchema.optional(),
-  dimension_value: z.string().optional(),
-  group: PropertyAdsReportMetricsGroup$inboundSchema.optional(),
-  insertionorder: PropertyAdsReportMetricsInsertionorder$inboundSchema
-    .optional(),
-  keyword: PropertyAdsReportMetricsKeyword$inboundSchema.optional(),
-  placement: PropertyAdsReportMetricsPlacement$inboundSchema.optional(),
-  type: AdsReportMetricsType$inboundSchema.optional(),
-  value: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "dimension_value": "dimensionValue",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    ad: PropertyAdsReportMetricsAd$inboundSchema.optional(),
+    campaign: PropertyAdsReportMetricsCampaign$inboundSchema.optional(),
+    creative: PropertyAdsReportMetricsCreative$inboundSchema.optional(),
+    dimension: Dimension$inboundSchema.optional(),
+    dimension_value: z.string().optional(),
+    group: PropertyAdsReportMetricsGroup$inboundSchema.optional(),
+    insertionorder: PropertyAdsReportMetricsInsertionorder$inboundSchema
+      .optional(),
+    keyword: PropertyAdsReportMetricsKeyword$inboundSchema.optional(),
+    placement: PropertyAdsReportMetricsPlacement$inboundSchema.optional(),
+    type: AdsReportMetricsType$inboundSchema.optional(),
+    value: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "dimension_value": "dimensionValue",
+    });
+  })
+);
 
 export function adsReportMetricsFromJSON(
   jsonString: string,

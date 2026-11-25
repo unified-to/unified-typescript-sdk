@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -40,8 +41,10 @@ export type CreateTicketingCategoryRequest = {
 
 /** @internal */
 export const CreateTicketingCategoryQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateTicketingCategoryQueryParamFields> = z
-    .nativeEnum(CreateTicketingCategoryQueryParamFields);
+  z.ZodNativeEnum<typeof CreateTicketingCategoryQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateTicketingCategoryQueryParamFields)
+    );
 
 /** @internal */
 export type CreateTicketingCategoryRequest$Outbound = {
@@ -56,18 +59,20 @@ export const CreateTicketingCategoryRequest$outboundSchema: z.ZodType<
   CreateTicketingCategoryRequest$Outbound,
   z.ZodTypeDef,
   CreateTicketingCategoryRequest
-> = z.object({
-  ticketingCategory: shared.TicketingCategory$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateTicketingCategoryQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    ticketingCategory: "TicketingCategory",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    ticketingCategory: shared.TicketingCategory$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateTicketingCategoryQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      ticketingCategory: "TicketingCategory",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createTicketingCategoryRequestToJSON(
   createTicketingCategoryRequest: CreateTicketingCategoryRequest,

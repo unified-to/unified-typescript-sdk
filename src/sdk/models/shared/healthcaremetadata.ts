@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -108,7 +108,7 @@ export const HealthcareMetadata1$inboundSchema: z.ZodType<
   HealthcareMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type HealthcareMetadata1$Outbound = {};
 
@@ -117,7 +117,7 @@ export const HealthcareMetadata1$outboundSchema: z.ZodType<
   HealthcareMetadata1$Outbound,
   z.ZodTypeDef,
   HealthcareMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function healthcareMetadata1ToJSON(
   healthcareMetadata1: HealthcareMetadata1,
@@ -141,12 +141,14 @@ export const HealthcareMetadata5$inboundSchema: z.ZodType<
   HealthcareMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => HealthcareMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => HealthcareMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type HealthcareMetadata5$Outbound =
   | HealthcareMetadata1$Outbound
@@ -159,12 +161,14 @@ export const HealthcareMetadata5$outboundSchema: z.ZodType<
   HealthcareMetadata5$Outbound,
   z.ZodTypeDef,
   HealthcareMetadata5
-> = z.union([
-  z.lazy(() => HealthcareMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => HealthcareMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function healthcareMetadata5ToJSON(
   healthcareMetadata5: HealthcareMetadata5,
@@ -188,20 +192,22 @@ export const HealthcareMetadataExtraData$inboundSchema: z.ZodType<
   HealthcareMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => HealthcareMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HealthcareMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type HealthcareMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -215,20 +221,22 @@ export const HealthcareMetadataExtraData$outboundSchema: z.ZodType<
   HealthcareMetadataExtraData$Outbound,
   z.ZodTypeDef,
   HealthcareMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => HealthcareMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HealthcareMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function healthcareMetadataExtraDataToJSON(
   healthcareMetadataExtraData: HealthcareMetadataExtraData,
@@ -254,20 +262,24 @@ export const HealthcareMetadataFormat$inboundSchema: z.ZodType<
   HealthcareMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareMetadataFormat)
+);
 /** @internal */
 export const HealthcareMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareMetadataFormat
-> = openEnums.outboundSchema(HealthcareMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareMetadataFormat)
+);
 
 /** @internal */
 export const HealthcareMetadataSchemas1$inboundSchema: z.ZodType<
   HealthcareMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type HealthcareMetadataSchemas1$Outbound = {};
 
@@ -276,7 +288,7 @@ export const HealthcareMetadataSchemas1$outboundSchema: z.ZodType<
   HealthcareMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   HealthcareMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function healthcareMetadataSchemas1ToJSON(
   healthcareMetadataSchemas1: HealthcareMetadataSchemas1,
@@ -300,12 +312,14 @@ export const HealthcareMetadataSchemas5$inboundSchema: z.ZodType<
   HealthcareMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => HealthcareMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => HealthcareMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type HealthcareMetadataSchemas5$Outbound =
   | HealthcareMetadataSchemas1$Outbound
@@ -318,12 +332,14 @@ export const HealthcareMetadataSchemas5$outboundSchema: z.ZodType<
   HealthcareMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   HealthcareMetadataSchemas5
-> = z.union([
-  z.lazy(() => HealthcareMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => HealthcareMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function healthcareMetadataSchemas5ToJSON(
   healthcareMetadataSchemas5: HealthcareMetadataSchemas5,
@@ -347,20 +363,22 @@ export const HealthcareMetadataValue$inboundSchema: z.ZodType<
   HealthcareMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => HealthcareMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HealthcareMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type HealthcareMetadataValue$Outbound =
   | { [k: string]: any }
@@ -374,20 +392,22 @@ export const HealthcareMetadataValue$outboundSchema: z.ZodType<
   HealthcareMetadataValue$Outbound,
   z.ZodTypeDef,
   HealthcareMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => HealthcareMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HealthcareMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function healthcareMetadataValueToJSON(
   healthcareMetadataValue: HealthcareMetadataValue,
@@ -411,44 +431,46 @@ export const HealthcareMetadata$inboundSchema: z.ZodType<
   HealthcareMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => HealthcareMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: HealthcareMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => HealthcareMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => HealthcareMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: HealthcareMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => HealthcareMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type HealthcareMetadata$Outbound = {
   extra_data?:
@@ -476,44 +498,46 @@ export const HealthcareMetadata$outboundSchema: z.ZodType<
   HealthcareMetadata$Outbound,
   z.ZodTypeDef,
   HealthcareMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => HealthcareMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: HealthcareMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => HealthcareMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => HealthcareMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: HealthcareMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => HealthcareMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function healthcareMetadataToJSON(
   healthcareMetadata: HealthcareMetadata,

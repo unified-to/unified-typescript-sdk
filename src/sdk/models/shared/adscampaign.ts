@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -176,128 +176,142 @@ export const AdvertisingChannelType$inboundSchema: z.ZodType<
   AdvertisingChannelType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdvertisingChannelType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdvertisingChannelType)
+);
 /** @internal */
 export const AdvertisingChannelType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdvertisingChannelType
-> = openEnums.outboundSchema(AdvertisingChannelType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AdvertisingChannelType)
+);
 
 /** @internal */
 export const BudgetPeriod$inboundSchema: z.ZodType<
   BudgetPeriod,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(BudgetPeriod);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(BudgetPeriod));
 /** @internal */
 export const BudgetPeriod$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   BudgetPeriod
-> = openEnums.outboundSchema(BudgetPeriod);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(BudgetPeriod));
 
 /** @internal */
 export const BudgetUnit$inboundSchema: z.ZodType<
   BudgetUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(BudgetUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(BudgetUnit));
 /** @internal */
 export const BudgetUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   BudgetUnit
-> = openEnums.outboundSchema(BudgetUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(BudgetUnit));
 
 /** @internal */
 export const EffectiveStatus$inboundSchema: z.ZodType<
   EffectiveStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EffectiveStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(EffectiveStatus));
 /** @internal */
 export const EffectiveStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   EffectiveStatus
-> = openEnums.outboundSchema(EffectiveStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(EffectiveStatus)
+);
 
 /** @internal */
 export const Goal$inboundSchema: z.ZodType<Goal, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Goal);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Goal));
 /** @internal */
 export const Goal$outboundSchema: z.ZodType<string, z.ZodTypeDef, Goal> =
-  openEnums.outboundSchema(Goal);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Goal));
 
 /** @internal */
 export const AdsCampaignStatus$inboundSchema: z.ZodType<
   AdsCampaignStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsCampaignStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsCampaignStatus)
+);
 /** @internal */
 export const AdsCampaignStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsCampaignStatus
-> = openEnums.outboundSchema(AdsCampaignStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AdsCampaignStatus)
+);
 
 /** @internal */
 export const AdsCampaign$inboundSchema: z.ZodType<
   AdsCampaign,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  advertising_channel_type: AdvertisingChannelType$inboundSchema.optional(),
-  budget_amount: z.number().optional(),
-  budget_period: BudgetPeriod$inboundSchema.optional(),
-  budget_unit: BudgetUnit$inboundSchema.optional(),
-  campaign_budget_identifier: z.string().optional(),
-  category: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  effective_status: EffectiveStatus$inboundSchema.optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  frequency_cap: PropertyAdsCampaignFrequencyCap$inboundSchema.optional(),
-  goal: Goal$inboundSchema.optional(),
-  has_eu_political_ads: z.boolean().optional(),
-  id: z.string().optional(),
-  kpi: PropertyAdsCampaignKpi$inboundSchema.optional(),
-  labels: z.array(z.string()).optional(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  planned_spend_amount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: AdsCampaignStatus$inboundSchema.optional(),
-  targeting: PropertyAdsCampaignTargeting$inboundSchema.optional(),
-  total_spend_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "advertising_channel_type": "advertisingChannelType",
-    "budget_amount": "budgetAmount",
-    "budget_period": "budgetPeriod",
-    "budget_unit": "budgetUnit",
-    "campaign_budget_identifier": "campaignBudgetIdentifier",
-    "created_at": "createdAt",
-    "effective_status": "effectiveStatus",
-    "end_at": "endAt",
-    "frequency_cap": "frequencyCap",
-    "has_eu_political_ads": "hasEuPoliticalAds",
-    "organization_id": "organizationId",
-    "planned_spend_amount": "plannedSpendAmount",
-    "start_at": "startAt",
-    "total_spend_amount": "totalSpendAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    advertising_channel_type: AdvertisingChannelType$inboundSchema.optional(),
+    budget_amount: z.number().optional(),
+    budget_period: BudgetPeriod$inboundSchema.optional(),
+    budget_unit: BudgetUnit$inboundSchema.optional(),
+    campaign_budget_identifier: z.string().optional(),
+    category: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    effective_status: EffectiveStatus$inboundSchema.optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    frequency_cap: PropertyAdsCampaignFrequencyCap$inboundSchema.optional(),
+    goal: Goal$inboundSchema.optional(),
+    has_eu_political_ads: z.boolean().optional(),
+    id: z.string().optional(),
+    kpi: PropertyAdsCampaignKpi$inboundSchema.optional(),
+    labels: z.array(z.string()).optional(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    planned_spend_amount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: AdsCampaignStatus$inboundSchema.optional(),
+    targeting: PropertyAdsCampaignTargeting$inboundSchema.optional(),
+    total_spend_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "advertising_channel_type": "advertisingChannelType",
+      "budget_amount": "budgetAmount",
+      "budget_period": "budgetPeriod",
+      "budget_unit": "budgetUnit",
+      "campaign_budget_identifier": "campaignBudgetIdentifier",
+      "created_at": "createdAt",
+      "effective_status": "effectiveStatus",
+      "end_at": "endAt",
+      "frequency_cap": "frequencyCap",
+      "has_eu_political_ads": "hasEuPoliticalAds",
+      "organization_id": "organizationId",
+      "planned_spend_amount": "plannedSpendAmount",
+      "start_at": "startAt",
+      "total_spend_amount": "totalSpendAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AdsCampaign$Outbound = {
   advertising_channel_type?: string | undefined;
@@ -333,52 +347,54 @@ export const AdsCampaign$outboundSchema: z.ZodType<
   AdsCampaign$Outbound,
   z.ZodTypeDef,
   AdsCampaign
-> = z.object({
-  advertisingChannelType: AdvertisingChannelType$outboundSchema.optional(),
-  budgetAmount: z.number().optional(),
-  budgetPeriod: BudgetPeriod$outboundSchema.optional(),
-  budgetUnit: BudgetUnit$outboundSchema.optional(),
-  campaignBudgetIdentifier: z.string().optional(),
-  category: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  effectiveStatus: EffectiveStatus$outboundSchema.optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  frequencyCap: PropertyAdsCampaignFrequencyCap$outboundSchema.optional(),
-  goal: Goal$outboundSchema.optional(),
-  hasEuPoliticalAds: z.boolean().optional(),
-  id: z.string().optional(),
-  kpi: PropertyAdsCampaignKpi$outboundSchema.optional(),
-  labels: z.array(z.string()).optional(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  plannedSpendAmount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: AdsCampaignStatus$outboundSchema.optional(),
-  targeting: PropertyAdsCampaignTargeting$outboundSchema.optional(),
-  totalSpendAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    advertisingChannelType: "advertising_channel_type",
-    budgetAmount: "budget_amount",
-    budgetPeriod: "budget_period",
-    budgetUnit: "budget_unit",
-    campaignBudgetIdentifier: "campaign_budget_identifier",
-    createdAt: "created_at",
-    effectiveStatus: "effective_status",
-    endAt: "end_at",
-    frequencyCap: "frequency_cap",
-    hasEuPoliticalAds: "has_eu_political_ads",
-    organizationId: "organization_id",
-    plannedSpendAmount: "planned_spend_amount",
-    startAt: "start_at",
-    totalSpendAmount: "total_spend_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    advertisingChannelType: AdvertisingChannelType$outboundSchema.optional(),
+    budgetAmount: z.number().optional(),
+    budgetPeriod: BudgetPeriod$outboundSchema.optional(),
+    budgetUnit: BudgetUnit$outboundSchema.optional(),
+    campaignBudgetIdentifier: z.string().optional(),
+    category: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    effectiveStatus: EffectiveStatus$outboundSchema.optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    frequencyCap: PropertyAdsCampaignFrequencyCap$outboundSchema.optional(),
+    goal: Goal$outboundSchema.optional(),
+    hasEuPoliticalAds: z.boolean().optional(),
+    id: z.string().optional(),
+    kpi: PropertyAdsCampaignKpi$outboundSchema.optional(),
+    labels: z.array(z.string()).optional(),
+    metadata: z.array(AdsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    plannedSpendAmount: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: AdsCampaignStatus$outboundSchema.optional(),
+    targeting: PropertyAdsCampaignTargeting$outboundSchema.optional(),
+    totalSpendAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      advertisingChannelType: "advertising_channel_type",
+      budgetAmount: "budget_amount",
+      budgetPeriod: "budget_period",
+      budgetUnit: "budget_unit",
+      campaignBudgetIdentifier: "campaign_budget_identifier",
+      createdAt: "created_at",
+      effectiveStatus: "effective_status",
+      endAt: "end_at",
+      frequencyCap: "frequency_cap",
+      hasEuPoliticalAds: "has_eu_political_ads",
+      organizationId: "organization_id",
+      plannedSpendAmount: "planned_spend_amount",
+      startAt: "start_at",
+      totalSpendAmount: "total_spend_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function adsCampaignToJSON(adsCampaign: AdsCampaign): string {
   return JSON.stringify(AdsCampaign$outboundSchema.parse(adsCampaign));

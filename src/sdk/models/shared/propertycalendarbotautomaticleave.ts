@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -28,17 +28,19 @@ export const PropertyCalendarBotAutomaticLeave$inboundSchema: z.ZodType<
   PropertyCalendarBotAutomaticLeave,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  detect_bots: z.boolean().optional(),
-  no_participants_timeout: z.number().optional(),
-  waiting_room_timeout: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "detect_bots": "detectBots",
-    "no_participants_timeout": "noParticipantsTimeout",
-    "waiting_room_timeout": "waitingRoomTimeout",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    detect_bots: z.boolean().optional(),
+    no_participants_timeout: z.number().optional(),
+    waiting_room_timeout: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "detect_bots": "detectBots",
+      "no_participants_timeout": "noParticipantsTimeout",
+      "waiting_room_timeout": "waitingRoomTimeout",
+    });
+  })
+);
 /** @internal */
 export type PropertyCalendarBotAutomaticLeave$Outbound = {
   detect_bots?: boolean | undefined;
@@ -51,17 +53,19 @@ export const PropertyCalendarBotAutomaticLeave$outboundSchema: z.ZodType<
   PropertyCalendarBotAutomaticLeave$Outbound,
   z.ZodTypeDef,
   PropertyCalendarBotAutomaticLeave
-> = z.object({
-  detectBots: z.boolean().optional(),
-  noParticipantsTimeout: z.number().optional(),
-  waitingRoomTimeout: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    detectBots: "detect_bots",
-    noParticipantsTimeout: "no_participants_timeout",
-    waitingRoomTimeout: "waiting_room_timeout",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    detectBots: z.boolean().optional(),
+    noParticipantsTimeout: z.number().optional(),
+    waitingRoomTimeout: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      detectBots: "detect_bots",
+      noParticipantsTimeout: "no_participants_timeout",
+      waitingRoomTimeout: "waiting_room_timeout",
+    });
+  })
+);
 
 export function propertyCalendarBotAutomaticLeaveToJSON(
   propertyCalendarBotAutomaticLeave: PropertyCalendarBotAutomaticLeave,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,7 +53,9 @@ export type CreateHrisTimeoffRequest = {
 /** @internal */
 export const CreateHrisTimeoffQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateHrisTimeoffQueryParamFields
-> = z.nativeEnum(CreateHrisTimeoffQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateHrisTimeoffQueryParamFields)
+);
 
 /** @internal */
 export type CreateHrisTimeoffRequest$Outbound = {
@@ -67,17 +70,20 @@ export const CreateHrisTimeoffRequest$outboundSchema: z.ZodType<
   CreateHrisTimeoffRequest$Outbound,
   z.ZodTypeDef,
   CreateHrisTimeoffRequest
-> = z.object({
-  hrisTimeoff: shared.HrisTimeoff$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateHrisTimeoffQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisTimeoff: "HrisTimeoff",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisTimeoff: shared.HrisTimeoff$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateHrisTimeoffQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisTimeoff: "HrisTimeoff",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createHrisTimeoffRequestToJSON(
   createHrisTimeoffRequest: CreateHrisTimeoffRequest,

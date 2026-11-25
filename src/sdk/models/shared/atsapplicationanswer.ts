@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,15 +19,17 @@ export const AtsApplicationAnswer$inboundSchema: z.ZodType<
   AtsApplicationAnswer,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  answers: z.array(z.string()),
-  question: z.string().optional(),
-  question_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "question_id": "questionId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answers: z.array(z.string()),
+    question: z.string().optional(),
+    question_id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "question_id": "questionId",
+    });
+  })
+);
 /** @internal */
 export type AtsApplicationAnswer$Outbound = {
   answers: Array<string>;
@@ -40,15 +42,17 @@ export const AtsApplicationAnswer$outboundSchema: z.ZodType<
   AtsApplicationAnswer$Outbound,
   z.ZodTypeDef,
   AtsApplicationAnswer
-> = z.object({
-  answers: z.array(z.string()),
-  question: z.string().optional(),
-  questionId: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    questionId: "question_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answers: z.array(z.string()),
+    question: z.string().optional(),
+    questionId: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      questionId: "question_id",
+    });
+  })
+);
 
 export function atsApplicationAnswerToJSON(
   atsApplicationAnswer: AtsApplicationAnswer,

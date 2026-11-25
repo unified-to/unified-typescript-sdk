@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListLegalPracticeareasQueryParamFields = {
@@ -50,9 +51,10 @@ export type ListLegalPracticeareasRequest = {
 
 /** @internal */
 export const ListLegalPracticeareasQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListLegalPracticeareasQueryParamFields> = z.nativeEnum(
-    ListLegalPracticeareasQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListLegalPracticeareasQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListLegalPracticeareasQueryParamFields)
+    );
 
 /** @internal */
 export type ListLegalPracticeareasRequest$Outbound = {
@@ -72,23 +74,25 @@ export const ListLegalPracticeareasRequest$outboundSchema: z.ZodType<
   ListLegalPracticeareasRequest$Outbound,
   z.ZodTypeDef,
   ListLegalPracticeareasRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListLegalPracticeareasQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListLegalPracticeareasQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listLegalPracticeareasRequestToJSON(
   listLegalPracticeareasRequest: ListLegalPracticeareasRequest,

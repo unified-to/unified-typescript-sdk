@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -196,107 +196,122 @@ export const AccountingQuotePaymentTerms$inboundSchema: z.ZodType<
   AccountingQuotePaymentTerms,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingQuotePaymentTerms);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingQuotePaymentTerms)
+);
 /** @internal */
 export const AccountingQuotePaymentTerms$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingQuotePaymentTerms
-> = openEnums.outboundSchema(AccountingQuotePaymentTerms);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingQuotePaymentTerms)
+);
 
 /** @internal */
 export const AccountingQuoteStatus$inboundSchema: z.ZodType<
   AccountingQuoteStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingQuoteStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingQuoteStatus)
+);
 /** @internal */
 export const AccountingQuoteStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AccountingQuoteStatus
-> = openEnums.outboundSchema(AccountingQuoteStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AccountingQuoteStatus)
+);
 
 /** @internal */
 export const TaxMode$inboundSchema: z.ZodType<TaxMode, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(TaxMode);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TaxMode));
 /** @internal */
 export const TaxMode$outboundSchema: z.ZodType<string, z.ZodTypeDef, TaxMode> =
-  openEnums.outboundSchema(TaxMode);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(TaxMode));
 
 /** @internal */
 export const AccountingQuote$inboundSchema: z.ZodType<
   AccountingQuote,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  accepted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  category_ids: z.array(z.string()).optional(),
-  contact_id: z.string().optional(),
-  contacts: z.array(AccountingTransactionContact$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  currency_rate: z.number().optional(),
-  customer_message: z.string().optional(),
-  declined_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  discount_amount: z.number().optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  group_id: z.string().optional(),
-  id: z.string().optional(),
-  invoice_id: z.string().optional(),
-  issued_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
-  memo: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  organization_id: z.string().optional(),
-  payment_terms: AccountingQuotePaymentTerms$inboundSchema.optional(),
-  project_id: z.string().optional(),
-  quote_number: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: AccountingQuoteStatus$inboundSchema.optional(),
-  sub_total_amount: z.number().optional(),
-  summary: z.string().optional(),
-  tax_amount: z.number().optional(),
-  tax_mode: TaxMode$inboundSchema.optional(),
-  title: z.string().optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "accepted_at": "acceptedAt",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "currency_rate": "currencyRate",
-    "customer_message": "customerMessage",
-    "declined_at": "declinedAt",
-    "discount_amount": "discountAmount",
-    "expires_at": "expiresAt",
-    "group_id": "groupId",
-    "invoice_id": "invoiceId",
-    "issued_at": "issuedAt",
-    "organization_id": "organizationId",
-    "payment_terms": "paymentTerms",
-    "project_id": "projectId",
-    "quote_number": "quoteNumber",
-    "sent_at": "sentAt",
-    "sub_total_amount": "subTotalAmount",
-    "tax_amount": "taxAmount",
-    "tax_mode": "taxMode",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accepted_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    category_ids: z.array(z.string()).optional(),
+    contact_id: z.string().optional(),
+    contacts: z.array(AccountingTransactionContact$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    currency_rate: z.number().optional(),
+    customer_message: z.string().optional(),
+    declined_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    discount_amount: z.number().optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    group_id: z.string().optional(),
+    id: z.string().optional(),
+    invoice_id: z.string().optional(),
+    issued_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+    memo: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    organization_id: z.string().optional(),
+    payment_terms: AccountingQuotePaymentTerms$inboundSchema.optional(),
+    project_id: z.string().optional(),
+    quote_number: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: AccountingQuoteStatus$inboundSchema.optional(),
+    sub_total_amount: z.number().optional(),
+    summary: z.string().optional(),
+    tax_amount: z.number().optional(),
+    tax_mode: TaxMode$inboundSchema.optional(),
+    title: z.string().optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "accepted_at": "acceptedAt",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "currency_rate": "currencyRate",
+      "customer_message": "customerMessage",
+      "declined_at": "declinedAt",
+      "discount_amount": "discountAmount",
+      "expires_at": "expiresAt",
+      "group_id": "groupId",
+      "invoice_id": "invoiceId",
+      "issued_at": "issuedAt",
+      "organization_id": "organizationId",
+      "payment_terms": "paymentTerms",
+      "project_id": "projectId",
+      "quote_number": "quoteNumber",
+      "sent_at": "sentAt",
+      "sub_total_amount": "subTotalAmount",
+      "tax_amount": "taxAmount",
+      "tax_mode": "taxMode",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingQuote$Outbound = {
   accepted_at?: string | undefined;
@@ -340,67 +355,69 @@ export const AccountingQuote$outboundSchema: z.ZodType<
   AccountingQuote$Outbound,
   z.ZodTypeDef,
   AccountingQuote
-> = z.object({
-  acceptedAt: z.date().transform(v => v.toISOString()).optional(),
-  categoryIds: z.array(z.string()).optional(),
-  contactId: z.string().optional(),
-  contacts: z.array(AccountingTransactionContact$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  currencyRate: z.number().optional(),
-  customerMessage: z.string().optional(),
-  declinedAt: z.date().transform(v => v.toISOString()).optional(),
-  discountAmount: z.number().optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  groupId: z.string().optional(),
-  id: z.string().optional(),
-  invoiceId: z.string().optional(),
-  issuedAt: z.date().transform(v => v.toISOString()).optional(),
-  lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
-  memo: z.string().optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  organizationId: z.string().optional(),
-  paymentTerms: AccountingQuotePaymentTerms$outboundSchema.optional(),
-  projectId: z.string().optional(),
-  quoteNumber: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  sentAt: z.date().transform(v => v.toISOString()).optional(),
-  status: AccountingQuoteStatus$outboundSchema.optional(),
-  subTotalAmount: z.number().optional(),
-  summary: z.string().optional(),
-  taxAmount: z.number().optional(),
-  taxMode: TaxMode$outboundSchema.optional(),
-  title: z.string().optional(),
-  totalAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    acceptedAt: "accepted_at",
-    categoryIds: "category_ids",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    currencyRate: "currency_rate",
-    customerMessage: "customer_message",
-    declinedAt: "declined_at",
-    discountAmount: "discount_amount",
-    expiresAt: "expires_at",
-    groupId: "group_id",
-    invoiceId: "invoice_id",
-    issuedAt: "issued_at",
-    organizationId: "organization_id",
-    paymentTerms: "payment_terms",
-    projectId: "project_id",
-    quoteNumber: "quote_number",
-    sentAt: "sent_at",
-    subTotalAmount: "sub_total_amount",
-    taxAmount: "tax_amount",
-    taxMode: "tax_mode",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    acceptedAt: z.date().transform(v => v.toISOString()).optional(),
+    categoryIds: z.array(z.string()).optional(),
+    contactId: z.string().optional(),
+    contacts: z.array(AccountingTransactionContact$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    currencyRate: z.number().optional(),
+    customerMessage: z.string().optional(),
+    declinedAt: z.date().transform(v => v.toISOString()).optional(),
+    discountAmount: z.number().optional(),
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    groupId: z.string().optional(),
+    id: z.string().optional(),
+    invoiceId: z.string().optional(),
+    issuedAt: z.date().transform(v => v.toISOString()).optional(),
+    lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+    memo: z.string().optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    organizationId: z.string().optional(),
+    paymentTerms: AccountingQuotePaymentTerms$outboundSchema.optional(),
+    projectId: z.string().optional(),
+    quoteNumber: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    sentAt: z.date().transform(v => v.toISOString()).optional(),
+    status: AccountingQuoteStatus$outboundSchema.optional(),
+    subTotalAmount: z.number().optional(),
+    summary: z.string().optional(),
+    taxAmount: z.number().optional(),
+    taxMode: TaxMode$outboundSchema.optional(),
+    title: z.string().optional(),
+    totalAmount: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      acceptedAt: "accepted_at",
+      categoryIds: "category_ids",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      currencyRate: "currency_rate",
+      customerMessage: "customer_message",
+      declinedAt: "declined_at",
+      discountAmount: "discount_amount",
+      expiresAt: "expires_at",
+      groupId: "group_id",
+      invoiceId: "invoice_id",
+      issuedAt: "issued_at",
+      organizationId: "organization_id",
+      paymentTerms: "payment_terms",
+      projectId: "project_id",
+      quoteNumber: "quote_number",
+      sentAt: "sent_at",
+      subTotalAmount: "sub_total_amount",
+      taxAmount: "tax_amount",
+      taxMode: "tax_mode",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingQuoteToJSON(
   accountingQuote: AccountingQuote,

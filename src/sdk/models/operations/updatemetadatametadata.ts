@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -47,9 +48,10 @@ export type UpdateMetadataMetadataRequest = {
 
 /** @internal */
 export const UpdateMetadataMetadataQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateMetadataMetadataQueryParamFields> = z.nativeEnum(
-    UpdateMetadataMetadataQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateMetadataMetadataQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateMetadataMetadataQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateMetadataMetadataRequest$Outbound = {
@@ -65,19 +67,21 @@ export const UpdateMetadataMetadataRequest$outboundSchema: z.ZodType<
   UpdateMetadataMetadataRequest$Outbound,
   z.ZodTypeDef,
   UpdateMetadataMetadataRequest
-> = z.object({
-  metadataMetadata: shared.MetadataMetadata$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateMetadataMetadataQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    metadataMetadata: "MetadataMetadata",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    metadataMetadata: shared.MetadataMetadata$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateMetadataMetadataQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      metadataMetadata: "MetadataMetadata",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateMetadataMetadataRequestToJSON(
   updateMetadataMetadataRequest: UpdateMetadataMetadataRequest,

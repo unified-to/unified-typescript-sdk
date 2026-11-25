@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListMetadataMetadatasQueryParamFields = {
@@ -57,9 +58,10 @@ export type ListMetadataMetadatasRequest = {
 
 /** @internal */
 export const ListMetadataMetadatasQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListMetadataMetadatasQueryParamFields> = z.nativeEnum(
-    ListMetadataMetadatasQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListMetadataMetadatasQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListMetadataMetadatasQueryParamFields)
+    );
 
 /** @internal */
 export type ListMetadataMetadatasRequest$Outbound = {
@@ -80,24 +82,26 @@ export const ListMetadataMetadatasRequest$outboundSchema: z.ZodType<
   ListMetadataMetadatasRequest$Outbound,
   z.ZodTypeDef,
   ListMetadataMetadatasRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListMetadataMetadatasQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListMetadataMetadatasQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listMetadataMetadatasRequestToJSON(
   listMetadataMetadatasRequest: ListMetadataMetadatasRequest,

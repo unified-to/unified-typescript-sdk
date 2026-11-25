@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -53,8 +54,10 @@ export type CreatePaymentSubscriptionRequest = {
 
 /** @internal */
 export const CreatePaymentSubscriptionQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreatePaymentSubscriptionQueryParamFields> = z
-    .nativeEnum(CreatePaymentSubscriptionQueryParamFields);
+  z.ZodNativeEnum<typeof CreatePaymentSubscriptionQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreatePaymentSubscriptionQueryParamFields)
+    );
 
 /** @internal */
 export type CreatePaymentSubscriptionRequest$Outbound = {
@@ -69,18 +72,20 @@ export const CreatePaymentSubscriptionRequest$outboundSchema: z.ZodType<
   CreatePaymentSubscriptionRequest$Outbound,
   z.ZodTypeDef,
   CreatePaymentSubscriptionRequest
-> = z.object({
-  paymentSubscription: shared.PaymentSubscription$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreatePaymentSubscriptionQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    paymentSubscription: "PaymentSubscription",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    paymentSubscription: shared.PaymentSubscription$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreatePaymentSubscriptionQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      paymentSubscription: "PaymentSubscription",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createPaymentSubscriptionRequestToJSON(
   createPaymentSubscriptionRequest: CreatePaymentSubscriptionRequest,

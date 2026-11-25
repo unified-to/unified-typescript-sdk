@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -16,9 +16,11 @@ export const GenaiEmbeddingContent$inboundSchema: z.ZodType<
   GenaiEmbeddingContent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  text: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    text: z.string(),
+  })
+);
 /** @internal */
 export type GenaiEmbeddingContent$Outbound = {
   text: string;
@@ -29,9 +31,11 @@ export const GenaiEmbeddingContent$outboundSchema: z.ZodType<
   GenaiEmbeddingContent$Outbound,
   z.ZodTypeDef,
   GenaiEmbeddingContent
-> = z.object({
-  text: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    text: z.string(),
+  })
+);
 
 export function genaiEmbeddingContentToJSON(
   genaiEmbeddingContent: GenaiEmbeddingContent,

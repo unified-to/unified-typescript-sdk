@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -74,31 +74,33 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
   GenaiPrompt,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  answers: z.array(GenaiAnswer$inboundSchema).optional(),
-  max_tokens: z.number().optional(),
-  mcp_authorization_token: z.string().optional(),
-  mcp_deferred_tools: z.array(z.string()).optional(),
-  mcp_url: z.string().optional(),
-  messages: z.array(GenaiContent$inboundSchema).optional(),
-  model_id: z.string().optional(),
-  questions: z.array(GenaiQuestion$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  responses: z.array(z.string()).optional(),
-  skill_ids: z.array(z.string()).optional(),
-  temperature: z.number().optional(),
-  tokens_used: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "max_tokens": "maxTokens",
-    "mcp_authorization_token": "mcpAuthorizationToken",
-    "mcp_deferred_tools": "mcpDeferredTools",
-    "mcp_url": "mcpUrl",
-    "model_id": "modelId",
-    "skill_ids": "skillIds",
-    "tokens_used": "tokensUsed",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answers: z.array(GenaiAnswer$inboundSchema).optional(),
+    max_tokens: z.number().optional(),
+    mcp_authorization_token: z.string().optional(),
+    mcp_deferred_tools: z.array(z.string()).optional(),
+    mcp_url: z.string().optional(),
+    messages: z.array(GenaiContent$inboundSchema).optional(),
+    model_id: z.string().optional(),
+    questions: z.array(GenaiQuestion$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    responses: z.array(z.string()).optional(),
+    skill_ids: z.array(z.string()).optional(),
+    temperature: z.number().optional(),
+    tokens_used: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "max_tokens": "maxTokens",
+      "mcp_authorization_token": "mcpAuthorizationToken",
+      "mcp_deferred_tools": "mcpDeferredTools",
+      "mcp_url": "mcpUrl",
+      "model_id": "modelId",
+      "skill_ids": "skillIds",
+      "tokens_used": "tokensUsed",
+    });
+  })
+);
 /** @internal */
 export type GenaiPrompt$Outbound = {
   answers?: Array<GenaiAnswer$Outbound> | undefined;
@@ -121,31 +123,33 @@ export const GenaiPrompt$outboundSchema: z.ZodType<
   GenaiPrompt$Outbound,
   z.ZodTypeDef,
   GenaiPrompt
-> = z.object({
-  answers: z.array(GenaiAnswer$outboundSchema).optional(),
-  maxTokens: z.number().optional(),
-  mcpAuthorizationToken: z.string().optional(),
-  mcpDeferredTools: z.array(z.string()).optional(),
-  mcpUrl: z.string().optional(),
-  messages: z.array(GenaiContent$outboundSchema).optional(),
-  modelId: z.string().optional(),
-  questions: z.array(GenaiQuestion$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  responses: z.array(z.string()).optional(),
-  skillIds: z.array(z.string()).optional(),
-  temperature: z.number().optional(),
-  tokensUsed: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    maxTokens: "max_tokens",
-    mcpAuthorizationToken: "mcp_authorization_token",
-    mcpDeferredTools: "mcp_deferred_tools",
-    mcpUrl: "mcp_url",
-    modelId: "model_id",
-    skillIds: "skill_ids",
-    tokensUsed: "tokens_used",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answers: z.array(GenaiAnswer$outboundSchema).optional(),
+    maxTokens: z.number().optional(),
+    mcpAuthorizationToken: z.string().optional(),
+    mcpDeferredTools: z.array(z.string()).optional(),
+    mcpUrl: z.string().optional(),
+    messages: z.array(GenaiContent$outboundSchema).optional(),
+    modelId: z.string().optional(),
+    questions: z.array(GenaiQuestion$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    responses: z.array(z.string()).optional(),
+    skillIds: z.array(z.string()).optional(),
+    temperature: z.number().optional(),
+    tokensUsed: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      maxTokens: "max_tokens",
+      mcpAuthorizationToken: "mcp_authorization_token",
+      mcpDeferredTools: "mcp_deferred_tools",
+      mcpUrl: "mcp_url",
+      modelId: "model_id",
+      skillIds: "skill_ids",
+      tokensUsed: "tokens_used",
+    });
+  })
+);
 
 export function genaiPromptToJSON(genaiPrompt: GenaiPrompt): string {
   return JSON.stringify(GenaiPrompt$outboundSchema.parse(genaiPrompt));

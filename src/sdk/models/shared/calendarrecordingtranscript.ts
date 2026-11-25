@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -34,21 +34,23 @@ export const CalendarRecordingTranscript$inboundSchema: z.ZodType<
   CalendarRecordingTranscript,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attendee: PropertyCalendarRecordingTranscriptAttendee$inboundSchema
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  language: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  text: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attendee: PropertyCalendarRecordingTranscriptAttendee$inboundSchema
+      .optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    language: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    text: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "start_at": "startAt",
+    });
+  })
+);
 
 export function calendarRecordingTranscriptFromJSON(
   jsonString: string,

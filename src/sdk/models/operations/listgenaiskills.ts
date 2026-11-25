@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListGenaiSkillsQueryParamFields = {
@@ -49,7 +50,9 @@ export type ListGenaiSkillsRequest = {
 /** @internal */
 export const ListGenaiSkillsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListGenaiSkillsQueryParamFields
-> = z.nativeEnum(ListGenaiSkillsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListGenaiSkillsQueryParamFields)
+);
 
 /** @internal */
 export type ListGenaiSkillsRequest$Outbound = {
@@ -69,22 +72,24 @@ export const ListGenaiSkillsRequest$outboundSchema: z.ZodType<
   ListGenaiSkillsRequest$Outbound,
   z.ZodTypeDef,
   ListGenaiSkillsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListGenaiSkillsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListGenaiSkillsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listGenaiSkillsRequestToJSON(
   listGenaiSkillsRequest: ListGenaiSkillsRequest,

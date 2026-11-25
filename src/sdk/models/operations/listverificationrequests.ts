@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListVerificationRequestsQueryParamFields = {
@@ -75,8 +76,10 @@ export type ListVerificationRequestsRequest = {
 
 /** @internal */
 export const ListVerificationRequestsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListVerificationRequestsQueryParamFields> = z
-    .nativeEnum(ListVerificationRequestsQueryParamFields);
+  z.ZodNativeEnum<typeof ListVerificationRequestsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListVerificationRequestsQueryParamFields)
+    );
 
 /** @internal */
 export type ListVerificationRequestsRequest$Outbound = {
@@ -98,27 +101,29 @@ export const ListVerificationRequestsRequest$outboundSchema: z.ZodType<
   ListVerificationRequestsRequest$Outbound,
   z.ZodTypeDef,
   ListVerificationRequestsRequest
-> = z.object({
-  candidateId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListVerificationRequestsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  packageId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    candidateId: "candidate_id",
-    connectionId: "connection_id",
-    packageId: "package_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    candidateId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListVerificationRequestsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    packageId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      candidateId: "candidate_id",
+      connectionId: "connection_id",
+      packageId: "package_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listVerificationRequestsRequestToJSON(
   listVerificationRequestsRequest: ListVerificationRequestsRequest,

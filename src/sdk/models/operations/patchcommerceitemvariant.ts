@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -63,8 +64,10 @@ export type PatchCommerceItemvariantRequest = {
 
 /** @internal */
 export const PatchCommerceItemvariantQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchCommerceItemvariantQueryParamFields> = z
-    .nativeEnum(PatchCommerceItemvariantQueryParamFields);
+  z.ZodNativeEnum<typeof PatchCommerceItemvariantQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchCommerceItemvariantQueryParamFields)
+    );
 
 /** @internal */
 export type PatchCommerceItemvariantRequest$Outbound = {
@@ -80,19 +83,21 @@ export const PatchCommerceItemvariantRequest$outboundSchema: z.ZodType<
   PatchCommerceItemvariantRequest$Outbound,
   z.ZodTypeDef,
   PatchCommerceItemvariantRequest
-> = z.object({
-  commerceItemvariant: shared.CommerceItemvariant$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchCommerceItemvariantQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    commerceItemvariant: "CommerceItemvariant",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    commerceItemvariant: shared.CommerceItemvariant$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchCommerceItemvariantQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      commerceItemvariant: "CommerceItemvariant",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchCommerceItemvariantRequestToJSON(
   patchCommerceItemvariantRequest: PatchCommerceItemvariantRequest,

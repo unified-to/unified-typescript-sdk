@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -40,18 +40,20 @@ export const PropertyCrmEventEmail$inboundSchema: z.ZodType<
   PropertyCrmEventEmail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attachment_file_ids: z.array(z.string()).optional(),
-  body: z.string().optional(),
-  cc: z.array(z.string()).optional(),
-  from: z.string().optional(),
-  subject: z.string().optional(),
-  to: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "attachment_file_ids": "attachmentFileIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachment_file_ids: z.array(z.string()).optional(),
+    body: z.string().optional(),
+    cc: z.array(z.string()).optional(),
+    from: z.string().optional(),
+    subject: z.string().optional(),
+    to: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "attachment_file_ids": "attachmentFileIds",
+    });
+  })
+);
 /** @internal */
 export type PropertyCrmEventEmail$Outbound = {
   attachment_file_ids?: Array<string> | undefined;
@@ -67,18 +69,20 @@ export const PropertyCrmEventEmail$outboundSchema: z.ZodType<
   PropertyCrmEventEmail$Outbound,
   z.ZodTypeDef,
   PropertyCrmEventEmail
-> = z.object({
-  attachmentFileIds: z.array(z.string()).optional(),
-  body: z.string().optional(),
-  cc: z.array(z.string()).optional(),
-  from: z.string().optional(),
-  subject: z.string().optional(),
-  to: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    attachmentFileIds: "attachment_file_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachmentFileIds: z.array(z.string()).optional(),
+    body: z.string().optional(),
+    cc: z.array(z.string()).optional(),
+    from: z.string().optional(),
+    subject: z.string().optional(),
+    to: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      attachmentFileIds: "attachment_file_ids",
+    });
+  })
+);
 
 export function propertyCrmEventEmailToJSON(
   propertyCrmEventEmail: PropertyCrmEventEmail,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -70,9 +71,10 @@ export type PatchCalendarWebinarRequest = {
 
 /** @internal */
 export const PatchCalendarWebinarQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchCalendarWebinarQueryParamFields> = z.nativeEnum(
-    PatchCalendarWebinarQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchCalendarWebinarQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchCalendarWebinarQueryParamFields)
+    );
 
 /** @internal */
 export type PatchCalendarWebinarRequest$Outbound = {
@@ -88,19 +90,21 @@ export const PatchCalendarWebinarRequest$outboundSchema: z.ZodType<
   PatchCalendarWebinarRequest$Outbound,
   z.ZodTypeDef,
   PatchCalendarWebinarRequest
-> = z.object({
-  calendarWebinar: shared.CalendarWebinar$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchCalendarWebinarQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    calendarWebinar: "CalendarWebinar",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    calendarWebinar: shared.CalendarWebinar$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchCalendarWebinarQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      calendarWebinar: "CalendarWebinar",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchCalendarWebinarRequestToJSON(
   patchCalendarWebinarRequest: PatchCalendarWebinarRequest,

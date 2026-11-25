@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as shared from "../shared/index.js";
 
 export type PatchScimUsersRequest = {
@@ -30,16 +31,18 @@ export const PatchScimUsersRequest$outboundSchema: z.ZodType<
   PatchScimUsersRequest$Outbound,
   z.ZodTypeDef,
   PatchScimUsersRequest
-> = z.object({
-  scimUser: shared.ScimUser$outboundSchema,
-  connectionId: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    scimUser: "ScimUser",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    scimUser: shared.ScimUser$outboundSchema,
+    connectionId: z.string(),
+    id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      scimUser: "ScimUser",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchScimUsersRequestToJSON(
   patchScimUsersRequest: PatchScimUsersRequest,

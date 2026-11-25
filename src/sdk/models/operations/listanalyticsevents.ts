@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAnalyticsEventsQueryParamFields = {
@@ -89,9 +90,10 @@ export type ListAnalyticsEventsRequest = {
 
 /** @internal */
 export const ListAnalyticsEventsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAnalyticsEventsQueryParamFields> = z.nativeEnum(
-    ListAnalyticsEventsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAnalyticsEventsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAnalyticsEventsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAnalyticsEventsRequest$Outbound = {
@@ -117,34 +119,36 @@ export const ListAnalyticsEventsRequest$outboundSchema: z.ZodType<
   ListAnalyticsEventsRequest$Outbound,
   z.ZodTypeDef,
   ListAnalyticsEventsRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAnalyticsEventsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  propertyId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sessionId: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  visitorId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    propertyId: "property_id",
-    sessionId: "session_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    visitorId: "visitor_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAnalyticsEventsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    propertyId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sessionId: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    visitorId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      propertyId: "property_id",
+      sessionId: "session_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      visitorId: "visitor_id",
+    });
+  })
+);
 
 export function listAnalyticsEventsRequestToJSON(
   listAnalyticsEventsRequest: ListAnalyticsEventsRequest,

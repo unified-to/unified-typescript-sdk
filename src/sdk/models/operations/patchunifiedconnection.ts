@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as shared from "../shared/index.js";
 
 export type PatchUnifiedConnectionRequest = {
@@ -28,14 +29,16 @@ export const PatchUnifiedConnectionRequest$outboundSchema: z.ZodType<
   PatchUnifiedConnectionRequest$Outbound,
   z.ZodTypeDef,
   PatchUnifiedConnectionRequest
-> = z.object({
-  connection: shared.Connection$outboundSchema,
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    connection: "Connection",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connection: shared.Connection$outboundSchema,
+    id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      connection: "Connection",
+    });
+  })
+);
 
 export function patchUnifiedConnectionRequestToJSON(
   patchUnifiedConnectionRequest: PatchUnifiedConnectionRequest,

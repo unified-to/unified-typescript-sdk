@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -43,8 +44,10 @@ export type CreateAccountingCategoryRequest = {
 
 /** @internal */
 export const CreateAccountingCategoryQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingCategoryQueryParamFields> = z
-    .nativeEnum(CreateAccountingCategoryQueryParamFields);
+  z.ZodNativeEnum<typeof CreateAccountingCategoryQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingCategoryQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingCategoryRequest$Outbound = {
@@ -59,18 +62,20 @@ export const CreateAccountingCategoryRequest$outboundSchema: z.ZodType<
   CreateAccountingCategoryRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingCategoryRequest
-> = z.object({
-  accountingCategory: shared.AccountingCategory$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAccountingCategoryQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingCategory: "AccountingCategory",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingCategory: shared.AccountingCategory$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAccountingCategoryQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingCategory: "AccountingCategory",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingCategoryRequestToJSON(
   createAccountingCategoryRequest: CreateAccountingCategoryRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -104,45 +104,49 @@ export const PropertyUnittype$inboundSchema: z.ZodType<
   PropertyUnittype,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amenities: z.array(z.string()).optional(),
-  bathrooms: z.number().optional(),
-  bedrooms: z.number().optional(),
-  beds: z.number().optional(),
-  cleaning_fee_amount: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  extra_person_fee_amount: z.number().optional(),
-  id: z.string().optional(),
-  image_urls: z.array(z.string()).optional(),
-  listing_id: z.string().optional(),
-  max_nights: z.number().optional(),
-  max_occupancy: z.number().optional(),
-  metadata: z.array(PropertyMetadata$inboundSchema).optional(),
-  min_nights: z.number().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_price_amount: z.number().optional(),
-  unit_count: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "cleaning_fee_amount": "cleaningFeeAmount",
-    "created_at": "createdAt",
-    "extra_person_fee_amount": "extraPersonFeeAmount",
-    "image_urls": "imageUrls",
-    "listing_id": "listingId",
-    "max_nights": "maxNights",
-    "max_occupancy": "maxOccupancy",
-    "min_nights": "minNights",
-    "start_price_amount": "startPriceAmount",
-    "unit_count": "unitCount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amenities: z.array(z.string()).optional(),
+    bathrooms: z.number().optional(),
+    bedrooms: z.number().optional(),
+    beds: z.number().optional(),
+    cleaning_fee_amount: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    extra_person_fee_amount: z.number().optional(),
+    id: z.string().optional(),
+    image_urls: z.array(z.string()).optional(),
+    listing_id: z.string().optional(),
+    max_nights: z.number().optional(),
+    max_occupancy: z.number().optional(),
+    metadata: z.array(PropertyMetadata$inboundSchema).optional(),
+    min_nights: z.number().optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_price_amount: z.number().optional(),
+    unit_count: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "cleaning_fee_amount": "cleaningFeeAmount",
+      "created_at": "createdAt",
+      "extra_person_fee_amount": "extraPersonFeeAmount",
+      "image_urls": "imageUrls",
+      "listing_id": "listingId",
+      "max_nights": "maxNights",
+      "max_occupancy": "maxOccupancy",
+      "min_nights": "minNights",
+      "start_price_amount": "startPriceAmount",
+      "unit_count": "unitCount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function propertyUnittypeFromJSON(
   jsonString: string,

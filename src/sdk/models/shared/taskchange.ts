@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -41,25 +41,29 @@ export const TaskChange$inboundSchema: z.ZodType<
   TaskChange,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  items: z.array(TaskChangeItem$inboundSchema).optional(),
-  metadata: z.array(TaskMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  task_id: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "task_id": "taskId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    items: z.array(TaskChangeItem$inboundSchema).optional(),
+    metadata: z.array(TaskMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    task_id: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "task_id": "taskId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 
 export function taskChangeFromJSON(
   jsonString: string,

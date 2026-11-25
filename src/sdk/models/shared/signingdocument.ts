@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -95,52 +95,61 @@ export const SigningDocumentStatus$inboundSchema: z.ZodType<
   SigningDocumentStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SigningDocumentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SigningDocumentStatus)
+);
 /** @internal */
 export const SigningDocumentStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SigningDocumentStatus
-> = openEnums.outboundSchema(SigningDocumentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SigningDocumentStatus)
+);
 
 /** @internal */
 export const SigningDocument$inboundSchema: z.ZodType<
   SigningDocument,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  completed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  creator_id: z.string().optional(),
-  description: z.string().optional(),
-  download_url: z.string().optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(SigningMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: SigningDocumentStatus$inboundSchema.optional(),
-  template_id: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "completed_at": "completedAt",
-    "created_at": "createdAt",
-    "creator_id": "creatorId",
-    "download_url": "downloadUrl",
-    "expires_at": "expiresAt",
-    "sent_at": "sentAt",
-    "template_id": "templateId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    completed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    creator_id: z.string().optional(),
+    description: z.string().optional(),
+    download_url: z.string().optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    metadata: z.array(SigningMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: SigningDocumentStatus$inboundSchema.optional(),
+    template_id: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "completed_at": "completedAt",
+      "created_at": "createdAt",
+      "creator_id": "creatorId",
+      "download_url": "downloadUrl",
+      "expires_at": "expiresAt",
+      "sent_at": "sentAt",
+      "template_id": "templateId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type SigningDocument$Outbound = {
   completed_at?: string | undefined;
@@ -164,33 +173,35 @@ export const SigningDocument$outboundSchema: z.ZodType<
   SigningDocument$Outbound,
   z.ZodTypeDef,
   SigningDocument
-> = z.object({
-  completedAt: z.date().transform(v => v.toISOString()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  creatorId: z.string().optional(),
-  description: z.string().optional(),
-  downloadUrl: z.string().optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(SigningMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  sentAt: z.date().transform(v => v.toISOString()).optional(),
-  status: SigningDocumentStatus$outboundSchema.optional(),
-  templateId: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    completedAt: "completed_at",
-    createdAt: "created_at",
-    creatorId: "creator_id",
-    downloadUrl: "download_url",
-    expiresAt: "expires_at",
-    sentAt: "sent_at",
-    templateId: "template_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    completedAt: z.date().transform(v => v.toISOString()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    creatorId: z.string().optional(),
+    description: z.string().optional(),
+    downloadUrl: z.string().optional(),
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    metadata: z.array(SigningMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    sentAt: z.date().transform(v => v.toISOString()).optional(),
+    status: SigningDocumentStatus$outboundSchema.optional(),
+    templateId: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      completedAt: "completed_at",
+      createdAt: "created_at",
+      creatorId: "creator_id",
+      downloadUrl: "download_url",
+      expiresAt: "expires_at",
+      sentAt: "sent_at",
+      templateId: "template_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function signingDocumentToJSON(
   signingDocument: SigningDocument,

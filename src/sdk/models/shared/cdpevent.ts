@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -90,41 +90,45 @@ export const CdpEventType$inboundSchema: z.ZodType<
   CdpEventType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CdpEventType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CdpEventType));
 /** @internal */
 export const CdpEventType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CdpEventType
-> = openEnums.outboundSchema(CdpEventType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(CdpEventType));
 
 /** @internal */
 export const CdpEvent$inboundSchema: z.ZodType<
   CdpEvent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  identifiers: z.array(CdpIdentifier$inboundSchema).optional(),
-  metadata: z.array(CdpMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  occurred_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  profile_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  source_id: z.string().optional(),
-  type: CdpEventType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "occurred_at": "occurredAt",
-    "profile_id": "profileId",
-    "source_id": "sourceId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    identifiers: z.array(CdpIdentifier$inboundSchema).optional(),
+    metadata: z.array(CdpMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    occurred_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    profile_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    source_id: z.string().optional(),
+    type: CdpEventType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "occurred_at": "occurredAt",
+      "profile_id": "profileId",
+      "source_id": "sourceId",
+    });
+  })
+);
 /** @internal */
 export type CdpEvent$Outbound = {
   created_at?: string | undefined;
@@ -145,26 +149,28 @@ export const CdpEvent$outboundSchema: z.ZodType<
   CdpEvent$Outbound,
   z.ZodTypeDef,
   CdpEvent
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  identifiers: z.array(CdpIdentifier$outboundSchema).optional(),
-  metadata: z.array(CdpMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  occurredAt: z.date().transform(v => v.toISOString()).optional(),
-  profileId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  sourceId: z.string().optional(),
-  type: CdpEventType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    occurredAt: "occurred_at",
-    profileId: "profile_id",
-    sourceId: "source_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    identifiers: z.array(CdpIdentifier$outboundSchema).optional(),
+    metadata: z.array(CdpMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    occurredAt: z.date().transform(v => v.toISOString()).optional(),
+    profileId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    sourceId: z.string().optional(),
+    type: CdpEventType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      occurredAt: "occurred_at",
+      profileId: "profile_id",
+      sourceId: "source_id",
+    });
+  })
+);
 
 export function cdpEventToJSON(cdpEvent: CdpEvent): string {
   return JSON.stringify(CdpEvent$outboundSchema.parse(cdpEvent));

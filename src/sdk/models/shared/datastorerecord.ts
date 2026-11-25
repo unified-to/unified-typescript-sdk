@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -52,27 +52,31 @@ export const DatastoreRecord$inboundSchema: z.ZodType<
   DatastoreRecord,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  database_id: z.string().optional(),
-  fields: z.record(DatastoreFieldValue$inboundSchema),
-  id: z.string().optional(),
-  metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  row_number: z.number().optional(),
-  table_id: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "database_id": "databaseId",
-    "row_number": "rowNumber",
-    "table_id": "tableId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    database_id: z.string().optional(),
+    fields: z.record(DatastoreFieldValue$inboundSchema),
+    id: z.string().optional(),
+    metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    row_number: z.number().optional(),
+    table_id: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "database_id": "databaseId",
+      "row_number": "rowNumber",
+      "table_id": "tableId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type DatastoreRecord$Outbound = {
   created_at?: string | undefined;
@@ -91,25 +95,27 @@ export const DatastoreRecord$outboundSchema: z.ZodType<
   DatastoreRecord$Outbound,
   z.ZodTypeDef,
   DatastoreRecord
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  databaseId: z.string().optional(),
-  fields: z.record(DatastoreFieldValue$outboundSchema),
-  id: z.string().optional(),
-  metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  rowNumber: z.number().optional(),
-  tableId: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    databaseId: "database_id",
-    rowNumber: "row_number",
-    tableId: "table_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    databaseId: z.string().optional(),
+    fields: z.record(DatastoreFieldValue$outboundSchema),
+    id: z.string().optional(),
+    metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    rowNumber: z.number().optional(),
+    tableId: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      databaseId: "database_id",
+      rowNumber: "row_number",
+      tableId: "table_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function datastoreRecordToJSON(
   datastoreRecord: DatastoreRecord,

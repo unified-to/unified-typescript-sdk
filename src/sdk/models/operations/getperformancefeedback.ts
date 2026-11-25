@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetPerformanceFeedbackQueryParamFields = {
@@ -44,9 +45,10 @@ export type GetPerformanceFeedbackRequest = {
 
 /** @internal */
 export const GetPerformanceFeedbackQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetPerformanceFeedbackQueryParamFields> = z.nativeEnum(
-    GetPerformanceFeedbackQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetPerformanceFeedbackQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetPerformanceFeedbackQueryParamFields)
+    );
 
 /** @internal */
 export type GetPerformanceFeedbackRequest$Outbound = {
@@ -61,17 +63,19 @@ export const GetPerformanceFeedbackRequest$outboundSchema: z.ZodType<
   GetPerformanceFeedbackRequest$Outbound,
   z.ZodTypeDef,
   GetPerformanceFeedbackRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetPerformanceFeedbackQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetPerformanceFeedbackQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getPerformanceFeedbackRequestToJSON(
   getPerformanceFeedbackRequest: GetPerformanceFeedbackRequest,

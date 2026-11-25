@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -32,25 +32,27 @@ export const EnrichPersonWorkHistory$inboundSchema: z.ZodType<
   EnrichPersonWorkHistory,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_domain: z.string().optional(),
-  company_id: z.string().optional(),
-  company_name: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  location: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  title: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_domain": "companyDomain",
-    "company_id": "companyId",
-    "company_name": "companyName",
-    "end_at": "endAt",
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_domain: z.string().optional(),
+    company_id: z.string().optional(),
+    company_name: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    location: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    title: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_domain": "companyDomain",
+      "company_id": "companyId",
+      "company_name": "companyName",
+      "end_at": "endAt",
+      "start_at": "startAt",
+    });
+  })
+);
 
 export function enrichPersonWorkHistoryFromJSON(
   jsonString: string,

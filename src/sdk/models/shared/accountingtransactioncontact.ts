@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,16 +19,18 @@ export const AccountingTransactionContact$inboundSchema: z.ZodType<
   AccountingTransactionContact,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string(),
-  is_customer: z.boolean().optional(),
-  is_supplier: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_customer": "isCustomer",
-    "is_supplier": "isSupplier",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    is_customer: z.boolean().optional(),
+    is_supplier: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_customer": "isCustomer",
+      "is_supplier": "isSupplier",
+    });
+  })
+);
 /** @internal */
 export type AccountingTransactionContact$Outbound = {
   id: string;
@@ -41,16 +43,18 @@ export const AccountingTransactionContact$outboundSchema: z.ZodType<
   AccountingTransactionContact$Outbound,
   z.ZodTypeDef,
   AccountingTransactionContact
-> = z.object({
-  id: z.string(),
-  isCustomer: z.boolean().optional(),
-  isSupplier: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isCustomer: "is_customer",
-    isSupplier: "is_supplier",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    isCustomer: z.boolean().optional(),
+    isSupplier: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      isCustomer: "is_customer",
+      isSupplier: "is_supplier",
+    });
+  })
+);
 
 export function accountingTransactionContactToJSON(
   accountingTransactionContact: AccountingTransactionContact,

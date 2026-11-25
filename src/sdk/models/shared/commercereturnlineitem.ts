@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -29,24 +29,26 @@ export const CommerceReturnLineitem$inboundSchema: z.ZodType<
   CommerceReturnLineitem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string().optional(),
-  item_id: z.string().optional(),
-  name: z.string().optional(),
-  order_line_id: z.string().optional(),
-  quantity: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reason: z.string().optional(),
-  refund_amount: z.number().optional(),
-  sku: z.string().optional(),
-  status: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "item_id": "itemId",
-    "order_line_id": "orderLineId",
-    "refund_amount": "refundAmount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    item_id: z.string().optional(),
+    name: z.string().optional(),
+    order_line_id: z.string().optional(),
+    quantity: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reason: z.string().optional(),
+    refund_amount: z.number().optional(),
+    sku: z.string().optional(),
+    status: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "item_id": "itemId",
+      "order_line_id": "orderLineId",
+      "refund_amount": "refundAmount",
+    });
+  })
+);
 
 export function commerceReturnLineitemFromJSON(
   jsonString: string,

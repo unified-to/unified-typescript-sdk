@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -74,39 +74,47 @@ export const CdpSourceDirection$inboundSchema: z.ZodType<
   CdpSourceDirection,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CdpSourceDirection);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CdpSourceDirection)
+);
 /** @internal */
 export const CdpSourceDirection$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CdpSourceDirection
-> = openEnums.outboundSchema(CdpSourceDirection);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CdpSourceDirection)
+);
 
 /** @internal */
 export const CdpSource$inboundSchema: z.ZodType<
   CdpSource,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  direction: CdpSourceDirection$inboundSchema.optional(),
-  id: z.string().optional(),
-  is_enabled: z.boolean().optional(),
-  metadata: z.array(CdpMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  slug: z.string().optional(),
-  type: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_enabled": "isEnabled",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    direction: CdpSourceDirection$inboundSchema.optional(),
+    id: z.string().optional(),
+    is_enabled: z.boolean().optional(),
+    metadata: z.array(CdpMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    slug: z.string().optional(),
+    type: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_enabled": "isEnabled",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CdpSource$Outbound = {
   created_at?: string | undefined;
@@ -126,24 +134,26 @@ export const CdpSource$outboundSchema: z.ZodType<
   CdpSource$Outbound,
   z.ZodTypeDef,
   CdpSource
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  direction: CdpSourceDirection$outboundSchema.optional(),
-  id: z.string().optional(),
-  isEnabled: z.boolean().optional(),
-  metadata: z.array(CdpMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  slug: z.string().optional(),
-  type: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isEnabled: "is_enabled",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    direction: CdpSourceDirection$outboundSchema.optional(),
+    id: z.string().optional(),
+    isEnabled: z.boolean().optional(),
+    metadata: z.array(CdpMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    slug: z.string().optional(),
+    type: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isEnabled: "is_enabled",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function cdpSourceToJSON(cdpSource: CdpSource): string {
   return JSON.stringify(CdpSource$outboundSchema.parse(cdpSource));

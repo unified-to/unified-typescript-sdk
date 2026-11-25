@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -150,106 +150,118 @@ export const PaymentPaymentStatus$inboundSchema: z.ZodType<
   PaymentPaymentStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentPaymentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PaymentPaymentStatus)
+);
 /** @internal */
 export const PaymentPaymentStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PaymentPaymentStatus
-> = openEnums.outboundSchema(PaymentPaymentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PaymentPaymentStatus)
+);
 
 /** @internal */
 export const TenderType$inboundSchema: z.ZodType<
   TenderType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(TenderType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TenderType));
 /** @internal */
 export const TenderType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   TenderType
-> = openEnums.outboundSchema(TenderType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(TenderType));
 
 /** @internal */
 export const PaymentPaymentType$inboundSchema: z.ZodType<
   PaymentPaymentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentPaymentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PaymentPaymentType)
+);
 /** @internal */
 export const PaymentPaymentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PaymentPaymentType
-> = openEnums.outboundSchema(PaymentPaymentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PaymentPaymentType)
+);
 
 /** @internal */
 export const PaymentPayment$inboundSchema: z.ZodType<
   PaymentPayment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  allocations: z.array(PaymentAllocation$inboundSchema).optional(),
-  bill_id: z.string().optional(),
-  card_brand: z.string().optional(),
-  card_last4: z.string().optional(),
-  category_ids: z.array(z.string()).optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().default("USD"),
-  device_id: z.string().optional(),
-  exchange_rate: z.number().optional(),
-  fee_amount: z.number().optional(),
-  id: z.string().optional(),
-  invoice_id: z.string().optional(),
-  link_id: z.string().optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
-  net_amount: z.number().optional(),
-  notes: z.string().optional(),
-  organization_id: z.string().optional(),
-  paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  payment_method: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  salesorder_id: z.string().optional(),
-  status: PaymentPaymentStatus$inboundSchema.optional(),
-  tender_type: TenderType$inboundSchema.optional(),
-  tip_amount: z.number().optional(),
-  total_amount: z.number().optional(),
-  type: PaymentPaymentType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "bill_id": "billId",
-    "card_brand": "cardBrand",
-    "card_last4": "cardLast4",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "device_id": "deviceId",
-    "exchange_rate": "exchangeRate",
-    "fee_amount": "feeAmount",
-    "invoice_id": "invoiceId",
-    "link_id": "linkId",
-    "location_id": "locationId",
-    "net_amount": "netAmount",
-    "organization_id": "organizationId",
-    "paid_at": "paidAt",
-    "payment_method": "paymentMethod",
-    "salesorder_id": "salesorderId",
-    "tender_type": "tenderType",
-    "tip_amount": "tipAmount",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    allocations: z.array(PaymentAllocation$inboundSchema).optional(),
+    bill_id: z.string().optional(),
+    card_brand: z.string().optional(),
+    card_last4: z.string().optional(),
+    category_ids: z.array(z.string()).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().default("USD"),
+    device_id: z.string().optional(),
+    exchange_rate: z.number().optional(),
+    fee_amount: z.number().optional(),
+    id: z.string().optional(),
+    invoice_id: z.string().optional(),
+    link_id: z.string().optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(PaymentMetadata$inboundSchema).optional(),
+    net_amount: z.number().optional(),
+    notes: z.string().optional(),
+    organization_id: z.string().optional(),
+    paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    payment_method: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    salesorder_id: z.string().optional(),
+    status: PaymentPaymentStatus$inboundSchema.optional(),
+    tender_type: TenderType$inboundSchema.optional(),
+    tip_amount: z.number().optional(),
+    total_amount: z.number().optional(),
+    type: PaymentPaymentType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "bill_id": "billId",
+      "card_brand": "cardBrand",
+      "card_last4": "cardLast4",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "device_id": "deviceId",
+      "exchange_rate": "exchangeRate",
+      "fee_amount": "feeAmount",
+      "invoice_id": "invoiceId",
+      "link_id": "linkId",
+      "location_id": "locationId",
+      "net_amount": "netAmount",
+      "organization_id": "organizationId",
+      "paid_at": "paidAt",
+      "payment_method": "paymentMethod",
+      "salesorder_id": "salesorderId",
+      "tender_type": "tenderType",
+      "tip_amount": "tipAmount",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type PaymentPayment$Outbound = {
   account_id?: string | undefined;
@@ -290,64 +302,66 @@ export const PaymentPayment$outboundSchema: z.ZodType<
   PaymentPayment$Outbound,
   z.ZodTypeDef,
   PaymentPayment
-> = z.object({
-  accountId: z.string().optional(),
-  allocations: z.array(PaymentAllocation$outboundSchema).optional(),
-  billId: z.string().optional(),
-  cardBrand: z.string().optional(),
-  cardLast4: z.string().optional(),
-  categoryIds: z.array(z.string()).optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().default("USD"),
-  deviceId: z.string().optional(),
-  exchangeRate: z.number().optional(),
-  feeAmount: z.number().optional(),
-  id: z.string().optional(),
-  invoiceId: z.string().optional(),
-  linkId: z.string().optional(),
-  locationId: z.string().optional(),
-  metadata: z.array(PaymentMetadata$outboundSchema).optional(),
-  netAmount: z.number().optional(),
-  notes: z.string().optional(),
-  organizationId: z.string().optional(),
-  paidAt: z.date().transform(v => v.toISOString()).optional(),
-  paymentMethod: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  salesorderId: z.string().optional(),
-  status: PaymentPaymentStatus$outboundSchema.optional(),
-  tenderType: TenderType$outboundSchema.optional(),
-  tipAmount: z.number().optional(),
-  totalAmount: z.number().optional(),
-  type: PaymentPaymentType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    billId: "bill_id",
-    cardBrand: "card_brand",
-    cardLast4: "card_last4",
-    categoryIds: "category_ids",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    deviceId: "device_id",
-    exchangeRate: "exchange_rate",
-    feeAmount: "fee_amount",
-    invoiceId: "invoice_id",
-    linkId: "link_id",
-    locationId: "location_id",
-    netAmount: "net_amount",
-    organizationId: "organization_id",
-    paidAt: "paid_at",
-    paymentMethod: "payment_method",
-    salesorderId: "salesorder_id",
-    tenderType: "tender_type",
-    tipAmount: "tip_amount",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    allocations: z.array(PaymentAllocation$outboundSchema).optional(),
+    billId: z.string().optional(),
+    cardBrand: z.string().optional(),
+    cardLast4: z.string().optional(),
+    categoryIds: z.array(z.string()).optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().default("USD"),
+    deviceId: z.string().optional(),
+    exchangeRate: z.number().optional(),
+    feeAmount: z.number().optional(),
+    id: z.string().optional(),
+    invoiceId: z.string().optional(),
+    linkId: z.string().optional(),
+    locationId: z.string().optional(),
+    metadata: z.array(PaymentMetadata$outboundSchema).optional(),
+    netAmount: z.number().optional(),
+    notes: z.string().optional(),
+    organizationId: z.string().optional(),
+    paidAt: z.date().transform(v => v.toISOString()).optional(),
+    paymentMethod: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reference: z.string().optional(),
+    salesorderId: z.string().optional(),
+    status: PaymentPaymentStatus$outboundSchema.optional(),
+    tenderType: TenderType$outboundSchema.optional(),
+    tipAmount: z.number().optional(),
+    totalAmount: z.number().optional(),
+    type: PaymentPaymentType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      billId: "bill_id",
+      cardBrand: "card_brand",
+      cardLast4: "card_last4",
+      categoryIds: "category_ids",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      deviceId: "device_id",
+      exchangeRate: "exchange_rate",
+      feeAmount: "fee_amount",
+      invoiceId: "invoice_id",
+      linkId: "link_id",
+      locationId: "location_id",
+      netAmount: "net_amount",
+      organizationId: "organization_id",
+      paidAt: "paid_at",
+      paymentMethod: "payment_method",
+      salesorderId: "salesorder_id",
+      tenderType: "tender_type",
+      tipAmount: "tip_amount",
+      totalAmount: "total_amount",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function paymentPaymentToJSON(paymentPayment: PaymentPayment): string {
   return JSON.stringify(PaymentPayment$outboundSchema.parse(paymentPayment));

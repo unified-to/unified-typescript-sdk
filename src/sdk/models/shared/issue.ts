@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -57,34 +57,36 @@ export const IssueStatus$inboundSchema: z.ZodType<
   IssueStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(IssueStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(IssueStatus));
 
 /** @internal */
-export const Issue$inboundSchema: z.ZodType<Issue, z.ZodTypeDef, unknown> = z
-  .object({
-    created_at: z.string().optional(),
-    customer_note: z.string().optional(),
-    id: z.string().optional(),
-    importance: z.number().optional(),
-    resolution_time: z.number().optional(),
-    size: z.number().optional(),
-    status: IssueStatus$inboundSchema,
-    ticket_ref: z.string(),
-    title: z.string(),
-    type: z.array(z.string()).optional(),
-    updated_at: z.string().optional(),
-    url: z.string().optional(),
-    workspace_id: z.string(),
-  }).transform((v) => {
-    return remap$(v, {
-      "created_at": "createdAt",
-      "customer_note": "customerNote",
-      "resolution_time": "resolutionTime",
-      "ticket_ref": "ticketRef",
-      "updated_at": "updatedAt",
-      "workspace_id": "workspaceId",
-    });
-  });
+export const Issue$inboundSchema: z.ZodType<Issue, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      created_at: z.string().optional(),
+      customer_note: z.string().optional(),
+      id: z.string().optional(),
+      importance: z.number().optional(),
+      resolution_time: z.number().optional(),
+      size: z.number().optional(),
+      status: IssueStatus$inboundSchema,
+      ticket_ref: z.string(),
+      title: z.string(),
+      type: z.array(z.string()).optional(),
+      updated_at: z.string().optional(),
+      url: z.string().optional(),
+      workspace_id: z.string(),
+    }).transform((v) => {
+      return remap$(v, {
+        "created_at": "createdAt",
+        "customer_note": "customerNote",
+        "resolution_time": "resolutionTime",
+        "ticket_ref": "ticketRef",
+        "updated_at": "updatedAt",
+        "workspace_id": "workspaceId",
+      });
+    })
+  );
 
 export function issueFromJSON(
   jsonString: string,

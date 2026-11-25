@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCalendarBotsQueryParamFields = {
@@ -71,7 +72,9 @@ export type ListCalendarBotsRequest = {
 /** @internal */
 export const ListCalendarBotsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCalendarBotsQueryParamFields
-> = z.nativeEnum(ListCalendarBotsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCalendarBotsQueryParamFields)
+);
 
 /** @internal */
 export type ListCalendarBotsRequest$Outbound = {
@@ -94,27 +97,29 @@ export const ListCalendarBotsRequest$outboundSchema: z.ZodType<
   ListCalendarBotsRequest$Outbound,
   z.ZodTypeDef,
   ListCalendarBotsRequest
-> = z.object({
-  connectionId: z.string(),
-  eventId: z.string().optional(),
-  fields: z.array(ListCalendarBotsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  meetingUrl: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    eventId: "event_id",
-    meetingUrl: "meeting_url",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    eventId: z.string().optional(),
+    fields: z.array(ListCalendarBotsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    meetingUrl: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      eventId: "event_id",
+      meetingUrl: "meeting_url",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCalendarBotsRequestToJSON(
   listCalendarBotsRequest: ListCalendarBotsRequest,

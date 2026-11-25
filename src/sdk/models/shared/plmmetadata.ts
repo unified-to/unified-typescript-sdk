@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -100,7 +100,7 @@ export const PlmMetadata1$inboundSchema: z.ZodType<
   PlmMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type PlmMetadata1$Outbound = {};
 
@@ -109,7 +109,7 @@ export const PlmMetadata1$outboundSchema: z.ZodType<
   PlmMetadata1$Outbound,
   z.ZodTypeDef,
   PlmMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function plmMetadata1ToJSON(plmMetadata1: PlmMetadata1): string {
   return JSON.stringify(PlmMetadata1$outboundSchema.parse(plmMetadata1));
@@ -129,12 +129,14 @@ export const PlmMetadata5$inboundSchema: z.ZodType<
   PlmMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => PlmMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PlmMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type PlmMetadata5$Outbound =
   | PlmMetadata1$Outbound
@@ -147,12 +149,14 @@ export const PlmMetadata5$outboundSchema: z.ZodType<
   PlmMetadata5$Outbound,
   z.ZodTypeDef,
   PlmMetadata5
-> = z.union([
-  z.lazy(() => PlmMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PlmMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function plmMetadata5ToJSON(plmMetadata5: PlmMetadata5): string {
   return JSON.stringify(PlmMetadata5$outboundSchema.parse(plmMetadata5));
@@ -172,20 +176,22 @@ export const PlmMetadataExtraData$inboundSchema: z.ZodType<
   PlmMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PlmMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PlmMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type PlmMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -199,20 +205,22 @@ export const PlmMetadataExtraData$outboundSchema: z.ZodType<
   PlmMetadataExtraData$Outbound,
   z.ZodTypeDef,
   PlmMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PlmMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PlmMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function plmMetadataExtraDataToJSON(
   plmMetadataExtraData: PlmMetadataExtraData,
@@ -236,20 +244,24 @@ export const PlmMetadataFormat$inboundSchema: z.ZodType<
   PlmMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PlmMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PlmMetadataFormat)
+);
 /** @internal */
 export const PlmMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PlmMetadataFormat
-> = openEnums.outboundSchema(PlmMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PlmMetadataFormat)
+);
 
 /** @internal */
 export const PlmMetadataSchemas1$inboundSchema: z.ZodType<
   PlmMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type PlmMetadataSchemas1$Outbound = {};
 
@@ -258,7 +270,7 @@ export const PlmMetadataSchemas1$outboundSchema: z.ZodType<
   PlmMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   PlmMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function plmMetadataSchemas1ToJSON(
   plmMetadataSchemas1: PlmMetadataSchemas1,
@@ -282,12 +294,14 @@ export const PlmMetadataSchemas5$inboundSchema: z.ZodType<
   PlmMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => PlmMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PlmMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type PlmMetadataSchemas5$Outbound =
   | PlmMetadataSchemas1$Outbound
@@ -300,12 +314,14 @@ export const PlmMetadataSchemas5$outboundSchema: z.ZodType<
   PlmMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   PlmMetadataSchemas5
-> = z.union([
-  z.lazy(() => PlmMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PlmMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function plmMetadataSchemas5ToJSON(
   plmMetadataSchemas5: PlmMetadataSchemas5,
@@ -329,20 +345,22 @@ export const PlmMetadataValue$inboundSchema: z.ZodType<
   PlmMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PlmMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PlmMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type PlmMetadataValue$Outbound =
   | { [k: string]: any }
@@ -356,20 +374,22 @@ export const PlmMetadataValue$outboundSchema: z.ZodType<
   PlmMetadataValue$Outbound,
   z.ZodTypeDef,
   PlmMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PlmMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PlmMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function plmMetadataValueToJSON(
   plmMetadataValue: PlmMetadataValue,
@@ -393,44 +413,46 @@ export const PlmMetadata$inboundSchema: z.ZodType<
   PlmMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PlmMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: PlmMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PlmMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PlmMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: PlmMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PlmMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type PlmMetadata$Outbound = {
   extra_data?:
@@ -458,44 +480,46 @@ export const PlmMetadata$outboundSchema: z.ZodType<
   PlmMetadata$Outbound,
   z.ZodTypeDef,
   PlmMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PlmMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: PlmMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PlmMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PlmMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: PlmMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PlmMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function plmMetadataToJSON(plmMetadata: PlmMetadata): string {
   return JSON.stringify(PlmMetadata$outboundSchema.parse(plmMetadata));

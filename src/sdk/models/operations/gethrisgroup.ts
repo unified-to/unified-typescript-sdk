@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetHrisGroupQueryParamFields = {
@@ -49,7 +50,9 @@ export type GetHrisGroupRequest = {
 /** @internal */
 export const GetHrisGroupQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetHrisGroupQueryParamFields
-> = z.nativeEnum(GetHrisGroupQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetHrisGroupQueryParamFields)
+);
 
 /** @internal */
 export type GetHrisGroupRequest$Outbound = {
@@ -64,16 +67,18 @@ export const GetHrisGroupRequest$outboundSchema: z.ZodType<
   GetHrisGroupRequest$Outbound,
   z.ZodTypeDef,
   GetHrisGroupRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetHrisGroupQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetHrisGroupQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getHrisGroupRequestToJSON(
   getHrisGroupRequest: GetHrisGroupRequest,

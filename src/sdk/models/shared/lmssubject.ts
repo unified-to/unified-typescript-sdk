@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -20,10 +20,12 @@ export const LmsSubject$inboundSchema: z.ZodType<
   LmsSubject,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  name: z.string().optional(),
-  rank: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    rank: z.number().optional(),
+  })
+);
 /** @internal */
 export type LmsSubject$Outbound = {
   name?: string | undefined;
@@ -35,10 +37,12 @@ export const LmsSubject$outboundSchema: z.ZodType<
   LmsSubject$Outbound,
   z.ZodTypeDef,
   LmsSubject
-> = z.object({
-  name: z.string().optional(),
-  rank: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string().optional(),
+    rank: z.number().optional(),
+  })
+);
 
 export function lmsSubjectToJSON(lmsSubject: LmsSubject): string {
   return JSON.stringify(LmsSubject$outboundSchema.parse(lmsSubject));

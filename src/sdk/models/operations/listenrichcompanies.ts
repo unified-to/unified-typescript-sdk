@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type ListEnrichCompaniesRequest = {
   /**
@@ -32,15 +33,17 @@ export const ListEnrichCompaniesRequest$outboundSchema: z.ZodType<
   ListEnrichCompaniesRequest$Outbound,
   z.ZodTypeDef,
   ListEnrichCompaniesRequest
-> = z.object({
-  connectionId: z.string(),
-  domain: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    domain: z.string().optional(),
+    name: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function listEnrichCompaniesRequestToJSON(
   listEnrichCompaniesRequest: ListEnrichCompaniesRequest,

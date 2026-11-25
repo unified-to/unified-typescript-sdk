@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -56,33 +56,35 @@ export const PropertyShippingTrackingEventLocationAddress$inboundSchema:
     PropertyShippingTrackingEventLocationAddress,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    address1: z.string().optional(),
-    address2: z.string().optional(),
-    city: z.string().optional(),
-    company_name: z.string().optional(),
-    country: z.string().optional(),
-    country_code: z.string().optional(),
-    delivery_instructions: z.string().optional(),
-    email: z.string().optional(),
-    is_residential: z.boolean().optional(),
-    is_validated: z.boolean().optional(),
-    name: z.string().optional(),
-    postal_code: z.string().optional(),
-    region: z.string().optional(),
-    region_code: z.string().optional(),
-    telephone: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "company_name": "companyName",
-      "country_code": "countryCode",
-      "delivery_instructions": "deliveryInstructions",
-      "is_residential": "isResidential",
-      "is_validated": "isValidated",
-      "postal_code": "postalCode",
-      "region_code": "regionCode",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      address1: z.string().optional(),
+      address2: z.string().optional(),
+      city: z.string().optional(),
+      company_name: z.string().optional(),
+      country: z.string().optional(),
+      country_code: z.string().optional(),
+      delivery_instructions: z.string().optional(),
+      email: z.string().optional(),
+      is_residential: z.boolean().optional(),
+      is_validated: z.boolean().optional(),
+      name: z.string().optional(),
+      postal_code: z.string().optional(),
+      region: z.string().optional(),
+      region_code: z.string().optional(),
+      telephone: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "company_name": "companyName",
+        "country_code": "countryCode",
+        "delivery_instructions": "deliveryInstructions",
+        "is_residential": "isResidential",
+        "is_validated": "isValidated",
+        "postal_code": "postalCode",
+        "region_code": "regionCode",
+      });
+    })
+  );
 
 export function propertyShippingTrackingEventLocationAddressFromJSON(
   jsonString: string,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -50,8 +51,10 @@ export type CreateAccountingVendorcreditRequest = {
 
 /** @internal */
 export const CreateAccountingVendorcreditQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingVendorcreditQueryParamFields> = z
-    .nativeEnum(CreateAccountingVendorcreditQueryParamFields);
+  z.ZodNativeEnum<typeof CreateAccountingVendorcreditQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingVendorcreditQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingVendorcreditRequest$Outbound = {
@@ -66,18 +69,20 @@ export const CreateAccountingVendorcreditRequest$outboundSchema: z.ZodType<
   CreateAccountingVendorcreditRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingVendorcreditRequest
-> = z.object({
-  accountingVendorcredit: shared.AccountingVendorcredit$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAccountingVendorcreditQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingVendorcredit: "AccountingVendorcredit",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingVendorcredit: shared.AccountingVendorcredit$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAccountingVendorcreditQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingVendorcredit: "AccountingVendorcredit",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingVendorcreditRequestToJSON(
   createAccountingVendorcreditRequest: CreateAccountingVendorcreditRequest,

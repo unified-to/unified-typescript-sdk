@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v3";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetUnifiedConnectionQueryParamFields = {
@@ -41,9 +42,10 @@ export type GetUnifiedConnectionRequest = {
 
 /** @internal */
 export const GetUnifiedConnectionQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetUnifiedConnectionQueryParamFields> = z.nativeEnum(
-    GetUnifiedConnectionQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetUnifiedConnectionQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetUnifiedConnectionQueryParamFields)
+    );
 
 /** @internal */
 export type GetUnifiedConnectionRequest$Outbound = {
@@ -56,11 +58,13 @@ export const GetUnifiedConnectionRequest$outboundSchema: z.ZodType<
   GetUnifiedConnectionRequest$Outbound,
   z.ZodTypeDef,
   GetUnifiedConnectionRequest
-> = z.object({
-  fields: z.array(GetUnifiedConnectionQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    fields: z.array(GetUnifiedConnectionQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+  })
+);
 
 export function getUnifiedConnectionRequestToJSON(
   getUnifiedConnectionRequest: GetUnifiedConnectionRequest,

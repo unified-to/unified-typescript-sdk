@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPropertyListingsQueryParamFields = {
@@ -77,9 +78,10 @@ export type ListPropertyListingsRequest = {
 
 /** @internal */
 export const ListPropertyListingsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListPropertyListingsQueryParamFields> = z.nativeEnum(
-    ListPropertyListingsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListPropertyListingsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListPropertyListingsQueryParamFields)
+    );
 
 /** @internal */
 export type ListPropertyListingsRequest$Outbound = {
@@ -99,23 +101,25 @@ export const ListPropertyListingsRequest$outboundSchema: z.ZodType<
   ListPropertyListingsRequest$Outbound,
   z.ZodTypeDef,
   ListPropertyListingsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListPropertyListingsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListPropertyListingsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listPropertyListingsRequestToJSON(
   listPropertyListingsRequest: ListPropertyListingsRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -93,68 +93,74 @@ export const AccountingSalesreceiptStatus$inboundSchema: z.ZodType<
   AccountingSalesreceiptStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingSalesreceiptStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingSalesreceiptStatus)
+);
 
 /** @internal */
 export const AccountingSalesreceipt$inboundSchema: z.ZodType<
   AccountingSalesreceipt,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
-  billing_address: PropertyAccountingSalesreceiptBillingAddress$inboundSchema
-    .optional(),
-  category_ids: z.array(z.string()).optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  discount_amount: z.number().optional(),
-  exchange_rate: z.number().optional(),
-  id: z.string().optional(),
-  is_inclusive_of_tax: z.boolean().optional(),
-  lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  organization_id: z.string().optional(),
-  payment_method: z.string().optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  project_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  receipt_number: z.string().optional(),
-  reference: z.string().optional(),
-  shipping_address: PropertyAccountingSalesreceiptShippingAddress$inboundSchema
-    .optional(),
-  status: AccountingSalesreceiptStatus$inboundSchema.optional(),
-  sub_total_amount: z.number().optional(),
-  tax_amount: z.number().optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "billing_address": "billingAddress",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "discount_amount": "discountAmount",
-    "exchange_rate": "exchangeRate",
-    "is_inclusive_of_tax": "isInclusiveOfTax",
-    "organization_id": "organizationId",
-    "payment_method": "paymentMethod",
-    "posted_at": "postedAt",
-    "project_id": "projectId",
-    "receipt_number": "receiptNumber",
-    "shipping_address": "shippingAddress",
-    "sub_total_amount": "subTotalAmount",
-    "tax_amount": "taxAmount",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    attachments: z.array(AccountingAttachment$inboundSchema).optional(),
+    billing_address: PropertyAccountingSalesreceiptBillingAddress$inboundSchema
+      .optional(),
+    category_ids: z.array(z.string()).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    discount_amount: z.number().optional(),
+    exchange_rate: z.number().optional(),
+    id: z.string().optional(),
+    is_inclusive_of_tax: z.boolean().optional(),
+    lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    organization_id: z.string().optional(),
+    payment_method: z.string().optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    project_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    receipt_number: z.string().optional(),
+    reference: z.string().optional(),
+    shipping_address:
+      PropertyAccountingSalesreceiptShippingAddress$inboundSchema.optional(),
+    status: AccountingSalesreceiptStatus$inboundSchema.optional(),
+    sub_total_amount: z.number().optional(),
+    tax_amount: z.number().optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "billing_address": "billingAddress",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "discount_amount": "discountAmount",
+      "exchange_rate": "exchangeRate",
+      "is_inclusive_of_tax": "isInclusiveOfTax",
+      "organization_id": "organizationId",
+      "payment_method": "paymentMethod",
+      "posted_at": "postedAt",
+      "project_id": "projectId",
+      "receipt_number": "receiptNumber",
+      "shipping_address": "shippingAddress",
+      "sub_total_amount": "subTotalAmount",
+      "tax_amount": "taxAmount",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function accountingSalesreceiptFromJSON(
   jsonString: string,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const AdsMetadata1$inboundSchema: z.ZodType<
   AdsMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type AdsMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const AdsMetadata1$outboundSchema: z.ZodType<
   AdsMetadata1$Outbound,
   z.ZodTypeDef,
   AdsMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function adsMetadata1ToJSON(adsMetadata1: AdsMetadata1): string {
   return JSON.stringify(AdsMetadata1$outboundSchema.parse(adsMetadata1));
@@ -108,12 +108,14 @@ export const AdsMetadata5$inboundSchema: z.ZodType<
   AdsMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => AdsMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AdsMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type AdsMetadata5$Outbound =
   | AdsMetadata1$Outbound
@@ -126,12 +128,14 @@ export const AdsMetadata5$outboundSchema: z.ZodType<
   AdsMetadata5$Outbound,
   z.ZodTypeDef,
   AdsMetadata5
-> = z.union([
-  z.lazy(() => AdsMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AdsMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function adsMetadata5ToJSON(adsMetadata5: AdsMetadata5): string {
   return JSON.stringify(AdsMetadata5$outboundSchema.parse(adsMetadata5));
@@ -151,20 +155,22 @@ export const AdsMetadataExtraData$inboundSchema: z.ZodType<
   AdsMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AdsMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AdsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type AdsMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -178,20 +184,22 @@ export const AdsMetadataExtraData$outboundSchema: z.ZodType<
   AdsMetadataExtraData$Outbound,
   z.ZodTypeDef,
   AdsMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AdsMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AdsMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function adsMetadataExtraDataToJSON(
   adsMetadataExtraData: AdsMetadataExtraData,
@@ -215,20 +223,24 @@ export const AdsMetadataFormat$inboundSchema: z.ZodType<
   AdsMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsMetadataFormat)
+);
 /** @internal */
 export const AdsMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsMetadataFormat
-> = openEnums.outboundSchema(AdsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AdsMetadataFormat)
+);
 
 /** @internal */
 export const AdsMetadataSchemas1$inboundSchema: z.ZodType<
   AdsMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type AdsMetadataSchemas1$Outbound = {};
 
@@ -237,7 +249,7 @@ export const AdsMetadataSchemas1$outboundSchema: z.ZodType<
   AdsMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   AdsMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function adsMetadataSchemas1ToJSON(
   adsMetadataSchemas1: AdsMetadataSchemas1,
@@ -261,12 +273,14 @@ export const AdsMetadataSchemas5$inboundSchema: z.ZodType<
   AdsMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => AdsMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AdsMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type AdsMetadataSchemas5$Outbound =
   | AdsMetadataSchemas1$Outbound
@@ -279,12 +293,14 @@ export const AdsMetadataSchemas5$outboundSchema: z.ZodType<
   AdsMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   AdsMetadataSchemas5
-> = z.union([
-  z.lazy(() => AdsMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AdsMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function adsMetadataSchemas5ToJSON(
   adsMetadataSchemas5: AdsMetadataSchemas5,
@@ -308,20 +324,22 @@ export const AdsMetadataValue$inboundSchema: z.ZodType<
   AdsMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AdsMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AdsMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type AdsMetadataValue$Outbound =
   | { [k: string]: any }
@@ -335,20 +353,22 @@ export const AdsMetadataValue$outboundSchema: z.ZodType<
   AdsMetadataValue$Outbound,
   z.ZodTypeDef,
   AdsMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AdsMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AdsMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function adsMetadataValueToJSON(
   adsMetadataValue: AdsMetadataValue,
@@ -372,44 +392,46 @@ export const AdsMetadata$inboundSchema: z.ZodType<
   AdsMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AdsMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: AdsMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AdsMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AdsMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: AdsMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AdsMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type AdsMetadata$Outbound = {
   extra_data?:
@@ -437,44 +459,46 @@ export const AdsMetadata$outboundSchema: z.ZodType<
   AdsMetadata$Outbound,
   z.ZodTypeDef,
   AdsMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AdsMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: AdsMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AdsMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AdsMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: AdsMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AdsMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function adsMetadataToJSON(adsMetadata: AdsMetadata): string {
   return JSON.stringify(AdsMetadata$outboundSchema.parse(adsMetadata));

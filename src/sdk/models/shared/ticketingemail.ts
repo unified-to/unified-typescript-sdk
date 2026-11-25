@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -26,23 +26,29 @@ export const TicketingEmailType$inboundSchema: z.ZodType<
   TicketingEmailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(TicketingEmailType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(TicketingEmailType)
+);
 /** @internal */
 export const TicketingEmailType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   TicketingEmailType
-> = openEnums.outboundSchema(TicketingEmailType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(TicketingEmailType)
+);
 
 /** @internal */
 export const TicketingEmail$inboundSchema: z.ZodType<
   TicketingEmail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string(),
-  type: TicketingEmailType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    type: TicketingEmailType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type TicketingEmail$Outbound = {
   email: string;
@@ -54,10 +60,12 @@ export const TicketingEmail$outboundSchema: z.ZodType<
   TicketingEmail$Outbound,
   z.ZodTypeDef,
   TicketingEmail
-> = z.object({
-  email: z.string(),
-  type: TicketingEmailType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    type: TicketingEmailType$outboundSchema.optional(),
+  })
+);
 
 export function ticketingEmailToJSON(ticketingEmail: TicketingEmail): string {
   return JSON.stringify(TicketingEmail$outboundSchema.parse(ticketingEmail));

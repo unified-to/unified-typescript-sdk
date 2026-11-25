@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListMartechMembersQueryParamFields = {
@@ -59,7 +60,9 @@ export type ListMartechMembersRequest = {
 /** @internal */
 export const ListMartechMembersQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListMartechMembersQueryParamFields
-> = z.nativeEnum(ListMartechMembersQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListMartechMembersQueryParamFields)
+);
 
 /** @internal */
 export type ListMartechMembersRequest$Outbound = {
@@ -80,24 +83,27 @@ export const ListMartechMembersRequest$outboundSchema: z.ZodType<
   ListMartechMembersRequest$Outbound,
   z.ZodTypeDef,
   ListMartechMembersRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListMartechMembersQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  listId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    listId: "list_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListMartechMembersQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    listId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      listId: "list_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listMartechMembersRequestToJSON(
   listMartechMembersRequest: ListMartechMembersRequest,

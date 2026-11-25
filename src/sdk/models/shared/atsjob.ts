@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -21,6 +21,12 @@ import {
   AtsCompensation$Outbound,
   AtsCompensation$outboundSchema,
 } from "./atscompensation.js";
+import {
+  AtsFee,
+  AtsFee$inboundSchema,
+  AtsFee$Outbound,
+  AtsFee$outboundSchema,
+} from "./atsfee.js";
 import {
   AtsGroup,
   AtsGroup$inboundSchema,
@@ -99,6 +105,10 @@ export type AtsJob = {
   description?: string | undefined;
   employmentType?: EmploymentType | undefined;
   /**
+   * The placement fee agreed with the client for this job
+   */
+  fees?: Array<AtsFee> | undefined;
+  /**
    * The departments/divisions/teams that this job belongs to
    */
   groups?: Array<AtsGroup> | undefined;
@@ -155,83 +165,87 @@ export const EmploymentType$inboundSchema: z.ZodType<
   EmploymentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EmploymentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(EmploymentType));
 /** @internal */
 export const EmploymentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   EmploymentType
-> = openEnums.outboundSchema(EmploymentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(EmploymentType));
 
 /** @internal */
 export const AtsJobStatus$inboundSchema: z.ZodType<
   AtsJobStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsJobStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AtsJobStatus));
 /** @internal */
 export const AtsJobStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsJobStatus
-> = openEnums.outboundSchema(AtsJobStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(AtsJobStatus));
 
 /** @internal */
-export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
-  .object({
-    addresses: z.array(AtsAddress$inboundSchema).optional(),
-    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-    company_id: z.string().optional(),
-    compensation: z.array(AtsCompensation$inboundSchema).optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    description: z.string().optional(),
-    employment_type: EmploymentType$inboundSchema.optional(),
-    groups: z.array(AtsGroup$inboundSchema).optional(),
-    hiring_manager_ids: z.array(z.string()).optional(),
-    hiring_managers: z.array(AtsReference$inboundSchema).optional(),
-    id: z.string().optional(),
-    industry: z.string().optional(),
-    language_locale: z.string().optional(),
-    metadata: z.array(AtsMetadata$inboundSchema).optional(),
-    minimum_degree: z.string().optional(),
-    minimum_experience_years: z.number().optional(),
-    name: z.string().optional(),
-    number_of_openings: z.number().optional(),
-    openings: z.array(AtsJobOpening$inboundSchema).optional(),
-    postings: z.array(AtsJobPosting$inboundSchema).optional(),
-    public_job_urls: z.array(z.string()).optional(),
-    questions: z.array(AtsJobQuestion$inboundSchema).optional(),
-    raw: z.record(z.any()).optional(),
-    recruiter_ids: z.array(z.string()).optional(),
-    remote: z.boolean().optional(),
-    skills: z.array(z.string()).optional(),
-    status: AtsJobStatus$inboundSchema.optional(),
-    summary: z.string().optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    user_id: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "closed_at": "closedAt",
-      "company_id": "companyId",
-      "created_at": "createdAt",
-      "employment_type": "employmentType",
-      "hiring_manager_ids": "hiringManagerIds",
-      "hiring_managers": "hiringManagers",
-      "language_locale": "languageLocale",
-      "minimum_degree": "minimumDegree",
-      "minimum_experience_years": "minimumExperienceYears",
-      "number_of_openings": "numberOfOpenings",
-      "public_job_urls": "publicJobUrls",
-      "recruiter_ids": "recruiterIds",
-      "updated_at": "updatedAt",
-      "user_id": "userId",
-    });
-  });
+export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      addresses: z.array(AtsAddress$inboundSchema).optional(),
+      closed_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      company_id: z.string().optional(),
+      compensation: z.array(AtsCompensation$inboundSchema).optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      description: z.string().optional(),
+      employment_type: EmploymentType$inboundSchema.optional(),
+      fees: z.array(AtsFee$inboundSchema).optional(),
+      groups: z.array(AtsGroup$inboundSchema).optional(),
+      hiring_manager_ids: z.array(z.string()).optional(),
+      hiring_managers: z.array(AtsReference$inboundSchema).optional(),
+      id: z.string().optional(),
+      industry: z.string().optional(),
+      language_locale: z.string().optional(),
+      metadata: z.array(AtsMetadata$inboundSchema).optional(),
+      minimum_degree: z.string().optional(),
+      minimum_experience_years: z.number().optional(),
+      name: z.string().optional(),
+      number_of_openings: z.number().optional(),
+      openings: z.array(AtsJobOpening$inboundSchema).optional(),
+      postings: z.array(AtsJobPosting$inboundSchema).optional(),
+      public_job_urls: z.array(z.string()).optional(),
+      questions: z.array(AtsJobQuestion$inboundSchema).optional(),
+      raw: z.record(z.any()).optional(),
+      recruiter_ids: z.array(z.string()).optional(),
+      remote: z.boolean().optional(),
+      skills: z.array(z.string()).optional(),
+      status: AtsJobStatus$inboundSchema.optional(),
+      summary: z.string().optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      user_id: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "closed_at": "closedAt",
+        "company_id": "companyId",
+        "created_at": "createdAt",
+        "employment_type": "employmentType",
+        "hiring_manager_ids": "hiringManagerIds",
+        "hiring_managers": "hiringManagers",
+        "language_locale": "languageLocale",
+        "minimum_degree": "minimumDegree",
+        "minimum_experience_years": "minimumExperienceYears",
+        "number_of_openings": "numberOfOpenings",
+        "public_job_urls": "publicJobUrls",
+        "recruiter_ids": "recruiterIds",
+        "updated_at": "updatedAt",
+        "user_id": "userId",
+      });
+    })
+  );
 /** @internal */
 export type AtsJob$Outbound = {
   addresses?: Array<AtsAddress$Outbound> | undefined;
@@ -241,6 +255,7 @@ export type AtsJob$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
   employment_type?: string | undefined;
+  fees?: Array<AtsFee$Outbound> | undefined;
   groups?: Array<AtsGroup$Outbound> | undefined;
   hiring_manager_ids?: Array<string> | undefined;
   hiring_managers?: Array<AtsReference$Outbound> | undefined;
@@ -271,55 +286,58 @@ export const AtsJob$outboundSchema: z.ZodType<
   AtsJob$Outbound,
   z.ZodTypeDef,
   AtsJob
-> = z.object({
-  addresses: z.array(AtsAddress$outboundSchema).optional(),
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  companyId: z.string().optional(),
-  compensation: z.array(AtsCompensation$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  employmentType: EmploymentType$outboundSchema.optional(),
-  groups: z.array(AtsGroup$outboundSchema).optional(),
-  hiringManagerIds: z.array(z.string()).optional(),
-  hiringManagers: z.array(AtsReference$outboundSchema).optional(),
-  id: z.string().optional(),
-  industry: z.string().optional(),
-  languageLocale: z.string().optional(),
-  metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  minimumDegree: z.string().optional(),
-  minimumExperienceYears: z.number().optional(),
-  name: z.string().optional(),
-  numberOfOpenings: z.number().optional(),
-  openings: z.array(AtsJobOpening$outboundSchema).optional(),
-  postings: z.array(AtsJobPosting$outboundSchema).optional(),
-  publicJobUrls: z.array(z.string()).optional(),
-  questions: z.array(AtsJobQuestion$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  recruiterIds: z.array(z.string()).optional(),
-  remote: z.boolean().optional(),
-  skills: z.array(z.string()).optional(),
-  status: AtsJobStatus$outboundSchema.optional(),
-  summary: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    closedAt: "closed_at",
-    companyId: "company_id",
-    createdAt: "created_at",
-    employmentType: "employment_type",
-    hiringManagerIds: "hiring_manager_ids",
-    hiringManagers: "hiring_managers",
-    languageLocale: "language_locale",
-    minimumDegree: "minimum_degree",
-    minimumExperienceYears: "minimum_experience_years",
-    numberOfOpenings: "number_of_openings",
-    publicJobUrls: "public_job_urls",
-    recruiterIds: "recruiter_ids",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    addresses: z.array(AtsAddress$outboundSchema).optional(),
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    companyId: z.string().optional(),
+    compensation: z.array(AtsCompensation$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    employmentType: EmploymentType$outboundSchema.optional(),
+    fees: z.array(AtsFee$outboundSchema).optional(),
+    groups: z.array(AtsGroup$outboundSchema).optional(),
+    hiringManagerIds: z.array(z.string()).optional(),
+    hiringManagers: z.array(AtsReference$outboundSchema).optional(),
+    id: z.string().optional(),
+    industry: z.string().optional(),
+    languageLocale: z.string().optional(),
+    metadata: z.array(AtsMetadata$outboundSchema).optional(),
+    minimumDegree: z.string().optional(),
+    minimumExperienceYears: z.number().optional(),
+    name: z.string().optional(),
+    numberOfOpenings: z.number().optional(),
+    openings: z.array(AtsJobOpening$outboundSchema).optional(),
+    postings: z.array(AtsJobPosting$outboundSchema).optional(),
+    publicJobUrls: z.array(z.string()).optional(),
+    questions: z.array(AtsJobQuestion$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    recruiterIds: z.array(z.string()).optional(),
+    remote: z.boolean().optional(),
+    skills: z.array(z.string()).optional(),
+    status: AtsJobStatus$outboundSchema.optional(),
+    summary: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      closedAt: "closed_at",
+      companyId: "company_id",
+      createdAt: "created_at",
+      employmentType: "employment_type",
+      hiringManagerIds: "hiring_manager_ids",
+      hiringManagers: "hiring_managers",
+      languageLocale: "language_locale",
+      minimumDegree: "minimum_degree",
+      minimumExperienceYears: "minimum_experience_years",
+      numberOfOpenings: "number_of_openings",
+      publicJobUrls: "public_job_urls",
+      recruiterIds: "recruiter_ids",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function atsJobToJSON(atsJob: AtsJob): string {
   return JSON.stringify(AtsJob$outboundSchema.parse(atsJob));

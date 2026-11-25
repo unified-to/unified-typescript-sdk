@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -39,7 +40,9 @@ export type CreateRepoBranchRequest = {
 /** @internal */
 export const CreateRepoBranchQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateRepoBranchQueryParamFields
-> = z.nativeEnum(CreateRepoBranchQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateRepoBranchQueryParamFields)
+);
 
 /** @internal */
 export type CreateRepoBranchRequest$Outbound = {
@@ -54,17 +57,19 @@ export const CreateRepoBranchRequest$outboundSchema: z.ZodType<
   CreateRepoBranchRequest$Outbound,
   z.ZodTypeDef,
   CreateRepoBranchRequest
-> = z.object({
-  repoBranch: shared.RepoBranch$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateRepoBranchQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    repoBranch: "RepoBranch",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    repoBranch: shared.RepoBranch$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateRepoBranchQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      repoBranch: "RepoBranch",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createRepoBranchRequestToJSON(
   createRepoBranchRequest: CreateRepoBranchRequest,

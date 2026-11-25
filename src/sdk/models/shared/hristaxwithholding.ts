@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -161,106 +161,114 @@ export const FilingStatus$inboundSchema: z.ZodType<
   FilingStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(FilingStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(FilingStatus));
 /** @internal */
 export const FilingStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   FilingStatus
-> = openEnums.outboundSchema(FilingStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(FilingStatus));
 
 /** @internal */
 export const Form$inboundSchema: z.ZodType<Form, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Form);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Form));
 /** @internal */
 export const Form$outboundSchema: z.ZodType<string, z.ZodTypeDef, Form> =
-  openEnums.outboundSchema(Form);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Form));
 
 /** @internal */
 export const JurisdictionType$inboundSchema: z.ZodType<
   JurisdictionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(JurisdictionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(JurisdictionType)
+);
 /** @internal */
 export const JurisdictionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   JurisdictionType
-> = openEnums.outboundSchema(JurisdictionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(JurisdictionType)
+);
 
 /** @internal */
 export const OverrideType$inboundSchema: z.ZodType<
   OverrideType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(OverrideType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(OverrideType));
 /** @internal */
 export const OverrideType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   OverrideType
-> = openEnums.outboundSchema(OverrideType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(OverrideType));
 
 /** @internal */
 export const HrisTaxwithholding$inboundSchema: z.ZodType<
   HrisTaxwithholding,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  allowances: z.number().optional(),
-  claim_amount: z.number().optional(),
-  company_id: z.string().optional(),
-  country: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  dependents_amount: z.number().optional(),
-  effective_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  extra_withholding_amount: z.number().optional(),
-  extra_withholding_percent: z.number().optional(),
-  filing_status: FilingStatus$inboundSchema.optional(),
-  form: Form$inboundSchema.optional(),
-  has_multiple_jobs: z.boolean().optional(),
-  id: z.string().optional(),
-  is_exempt: z.boolean().optional(),
-  is_resident: z.boolean().optional(),
-  jurisdiction: z.string().optional(),
-  jurisdiction_type: JurisdictionType$inboundSchema.optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  other_deductions_amount: z.number().optional(),
-  other_income_amount: z.number().optional(),
-  override_amount: z.number().optional(),
-  override_type: OverrideType$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  tax_code: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "claim_amount": "claimAmount",
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "dependents_amount": "dependentsAmount",
-    "effective_at": "effectiveAt",
-    "extra_withholding_amount": "extraWithholdingAmount",
-    "extra_withholding_percent": "extraWithholdingPercent",
-    "filing_status": "filingStatus",
-    "has_multiple_jobs": "hasMultipleJobs",
-    "is_exempt": "isExempt",
-    "is_resident": "isResident",
-    "jurisdiction_type": "jurisdictionType",
-    "other_deductions_amount": "otherDeductionsAmount",
-    "other_income_amount": "otherIncomeAmount",
-    "override_amount": "overrideAmount",
-    "override_type": "overrideType",
-    "tax_code": "taxCode",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    allowances: z.number().optional(),
+    claim_amount: z.number().optional(),
+    company_id: z.string().optional(),
+    country: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    dependents_amount: z.number().optional(),
+    effective_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    extra_withholding_amount: z.number().optional(),
+    extra_withholding_percent: z.number().optional(),
+    filing_status: FilingStatus$inboundSchema.optional(),
+    form: Form$inboundSchema.optional(),
+    has_multiple_jobs: z.boolean().optional(),
+    id: z.string().optional(),
+    is_exempt: z.boolean().optional(),
+    is_resident: z.boolean().optional(),
+    jurisdiction: z.string().optional(),
+    jurisdiction_type: JurisdictionType$inboundSchema.optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    other_deductions_amount: z.number().optional(),
+    other_income_amount: z.number().optional(),
+    override_amount: z.number().optional(),
+    override_type: OverrideType$inboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    tax_code: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "claim_amount": "claimAmount",
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "dependents_amount": "dependentsAmount",
+      "effective_at": "effectiveAt",
+      "extra_withholding_amount": "extraWithholdingAmount",
+      "extra_withholding_percent": "extraWithholdingPercent",
+      "filing_status": "filingStatus",
+      "has_multiple_jobs": "hasMultipleJobs",
+      "is_exempt": "isExempt",
+      "is_resident": "isResident",
+      "jurisdiction_type": "jurisdictionType",
+      "other_deductions_amount": "otherDeductionsAmount",
+      "other_income_amount": "otherIncomeAmount",
+      "override_amount": "overrideAmount",
+      "override_type": "overrideType",
+      "tax_code": "taxCode",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type HrisTaxwithholding$Outbound = {
   allowances?: number | undefined;
@@ -296,56 +304,58 @@ export const HrisTaxwithholding$outboundSchema: z.ZodType<
   HrisTaxwithholding$Outbound,
   z.ZodTypeDef,
   HrisTaxwithholding
-> = z.object({
-  allowances: z.number().optional(),
-  claimAmount: z.number().optional(),
-  companyId: z.string().optional(),
-  country: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dependentsAmount: z.number().optional(),
-  effectiveAt: z.date().transform(v => v.toISOString()).optional(),
-  extraWithholdingAmount: z.number().optional(),
-  extraWithholdingPercent: z.number().optional(),
-  filingStatus: FilingStatus$outboundSchema.optional(),
-  form: Form$outboundSchema.optional(),
-  hasMultipleJobs: z.boolean().optional(),
-  id: z.string().optional(),
-  isExempt: z.boolean().optional(),
-  isResident: z.boolean().optional(),
-  jurisdiction: z.string().optional(),
-  jurisdictionType: JurisdictionType$outboundSchema.optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  otherDeductionsAmount: z.number().optional(),
-  otherIncomeAmount: z.number().optional(),
-  overrideAmount: z.number().optional(),
-  overrideType: OverrideType$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
-  taxCode: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    claimAmount: "claim_amount",
-    companyId: "company_id",
-    createdAt: "created_at",
-    dependentsAmount: "dependents_amount",
-    effectiveAt: "effective_at",
-    extraWithholdingAmount: "extra_withholding_amount",
-    extraWithholdingPercent: "extra_withholding_percent",
-    filingStatus: "filing_status",
-    hasMultipleJobs: "has_multiple_jobs",
-    isExempt: "is_exempt",
-    isResident: "is_resident",
-    jurisdictionType: "jurisdiction_type",
-    otherDeductionsAmount: "other_deductions_amount",
-    otherIncomeAmount: "other_income_amount",
-    overrideAmount: "override_amount",
-    overrideType: "override_type",
-    taxCode: "tax_code",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    allowances: z.number().optional(),
+    claimAmount: z.number().optional(),
+    companyId: z.string().optional(),
+    country: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dependentsAmount: z.number().optional(),
+    effectiveAt: z.date().transform(v => v.toISOString()).optional(),
+    extraWithholdingAmount: z.number().optional(),
+    extraWithholdingPercent: z.number().optional(),
+    filingStatus: FilingStatus$outboundSchema.optional(),
+    form: Form$outboundSchema.optional(),
+    hasMultipleJobs: z.boolean().optional(),
+    id: z.string().optional(),
+    isExempt: z.boolean().optional(),
+    isResident: z.boolean().optional(),
+    jurisdiction: z.string().optional(),
+    jurisdictionType: JurisdictionType$outboundSchema.optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    otherDeductionsAmount: z.number().optional(),
+    otherIncomeAmount: z.number().optional(),
+    overrideAmount: z.number().optional(),
+    overrideType: OverrideType$outboundSchema.optional(),
+    raw: z.record(z.any()).optional(),
+    taxCode: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      claimAmount: "claim_amount",
+      companyId: "company_id",
+      createdAt: "created_at",
+      dependentsAmount: "dependents_amount",
+      effectiveAt: "effective_at",
+      extraWithholdingAmount: "extra_withholding_amount",
+      extraWithholdingPercent: "extra_withholding_percent",
+      filingStatus: "filing_status",
+      hasMultipleJobs: "has_multiple_jobs",
+      isExempt: "is_exempt",
+      isResident: "is_resident",
+      jurisdictionType: "jurisdiction_type",
+      otherDeductionsAmount: "other_deductions_amount",
+      otherIncomeAmount: "other_income_amount",
+      overrideAmount: "override_amount",
+      overrideType: "override_type",
+      taxCode: "tax_code",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function hrisTaxwithholdingToJSON(
   hrisTaxwithholding: HrisTaxwithholding,

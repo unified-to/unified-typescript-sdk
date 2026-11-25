@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -54,8 +55,10 @@ export type UpdateAccountingVendorcreditRequest = {
 
 /** @internal */
 export const UpdateAccountingVendorcreditQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateAccountingVendorcreditQueryParamFields> = z
-    .nativeEnum(UpdateAccountingVendorcreditQueryParamFields);
+  z.ZodNativeEnum<typeof UpdateAccountingVendorcreditQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAccountingVendorcreditQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAccountingVendorcreditRequest$Outbound = {
@@ -71,19 +74,21 @@ export const UpdateAccountingVendorcreditRequest$outboundSchema: z.ZodType<
   UpdateAccountingVendorcreditRequest$Outbound,
   z.ZodTypeDef,
   UpdateAccountingVendorcreditRequest
-> = z.object({
-  accountingVendorcredit: shared.AccountingVendorcredit$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateAccountingVendorcreditQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingVendorcredit: "AccountingVendorcredit",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingVendorcredit: shared.AccountingVendorcredit$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateAccountingVendorcreditQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingVendorcredit: "AccountingVendorcredit",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateAccountingVendorcreditRequestToJSON(
   updateAccountingVendorcreditRequest: UpdateAccountingVendorcreditRequest,

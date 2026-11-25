@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type ListUnifiedIssuesRequest = {
   limit?: number | undefined;
@@ -30,17 +31,19 @@ export const ListUnifiedIssuesRequest$outboundSchema: z.ZodType<
   ListUnifiedIssuesRequest$Outbound,
   z.ZodTypeDef,
   ListUnifiedIssuesRequest
-> = z.object({
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listUnifiedIssuesRequestToJSON(
   listUnifiedIssuesRequest: ListUnifiedIssuesRequest,

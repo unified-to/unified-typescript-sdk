@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -54,9 +55,10 @@ export type UpdatePerformanceGoalRequest = {
 
 /** @internal */
 export const UpdatePerformanceGoalQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdatePerformanceGoalQueryParamFields> = z.nativeEnum(
-    UpdatePerformanceGoalQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdatePerformanceGoalQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdatePerformanceGoalQueryParamFields)
+    );
 
 /** @internal */
 export type UpdatePerformanceGoalRequest$Outbound = {
@@ -72,19 +74,21 @@ export const UpdatePerformanceGoalRequest$outboundSchema: z.ZodType<
   UpdatePerformanceGoalRequest$Outbound,
   z.ZodTypeDef,
   UpdatePerformanceGoalRequest
-> = z.object({
-  performanceGoal: shared.PerformanceGoal$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdatePerformanceGoalQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    performanceGoal: "PerformanceGoal",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    performanceGoal: shared.PerformanceGoal$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdatePerformanceGoalQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      performanceGoal: "PerformanceGoal",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updatePerformanceGoalRequestToJSON(
   updatePerformanceGoalRequest: UpdatePerformanceGoalRequest,

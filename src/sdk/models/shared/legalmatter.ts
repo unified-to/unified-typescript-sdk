@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -158,84 +158,93 @@ export const BillingMethod$inboundSchema: z.ZodType<
   BillingMethod,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(BillingMethod);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(BillingMethod));
 /** @internal */
 export const BillingMethod$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   BillingMethod
-> = openEnums.outboundSchema(BillingMethod);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(BillingMethod));
 
 /** @internal */
 export const LegalMatterStatus$inboundSchema: z.ZodType<
   LegalMatterStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LegalMatterStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(LegalMatterStatus)
+);
 /** @internal */
 export const LegalMatterStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LegalMatterStatus
-> = openEnums.outboundSchema(LegalMatterStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(LegalMatterStatus)
+);
 
 /** @internal */
 export const LegalMatter$inboundSchema: z.ZodType<
   LegalMatter,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  billing_method: BillingMethod$inboundSchema.optional(),
-  client_reference: z.string().optional(),
-  closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  company_ids: z.array(z.string()).optional(),
-  contact_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_billable: z.boolean().optional(),
-  metadata: z.array(LegalMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  opened_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  originating_user_id: z.string().optional(),
-  parties: z.array(LegalParty$inboundSchema).optional(),
-  pending_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  practicearea_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  stage: z.string().optional(),
-  status: LegalMatterStatus$inboundSchema.optional(),
-  statute_of_limitations_at: z.string().datetime({ offset: true }).transform(
-    v => new Date(v)
-  ).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  user_ids: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "billing_method": "billingMethod",
-    "client_reference": "clientReference",
-    "closed_at": "closedAt",
-    "company_ids": "companyIds",
-    "contact_ids": "contactIds",
-    "created_at": "createdAt",
-    "is_billable": "isBillable",
-    "opened_at": "openedAt",
-    "originating_user_id": "originatingUserId",
-    "pending_at": "pendingAt",
-    "practicearea_id": "practiceareaId",
-    "statute_of_limitations_at": "statuteOfLimitationsAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    billing_method: BillingMethod$inboundSchema.optional(),
+    client_reference: z.string().optional(),
+    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    company_ids: z.array(z.string()).optional(),
+    contact_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_billable: z.boolean().optional(),
+    metadata: z.array(LegalMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    opened_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    originating_user_id: z.string().optional(),
+    parties: z.array(LegalParty$inboundSchema).optional(),
+    pending_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    practicearea_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    stage: z.string().optional(),
+    status: LegalMatterStatus$inboundSchema.optional(),
+    statute_of_limitations_at: z.string().datetime({ offset: true }).transform(
+      v => new Date(v)
+    ).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    user_ids: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "billing_method": "billingMethod",
+      "client_reference": "clientReference",
+      "closed_at": "closedAt",
+      "company_ids": "companyIds",
+      "contact_ids": "contactIds",
+      "created_at": "createdAt",
+      "is_billable": "isBillable",
+      "opened_at": "openedAt",
+      "originating_user_id": "originatingUserId",
+      "pending_at": "pendingAt",
+      "practicearea_id": "practiceareaId",
+      "statute_of_limitations_at": "statuteOfLimitationsAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "user_ids": "userIds",
+    });
+  })
+);
 /** @internal */
 export type LegalMatter$Outbound = {
   billing_method?: string | undefined;
@@ -270,51 +279,53 @@ export const LegalMatter$outboundSchema: z.ZodType<
   LegalMatter$Outbound,
   z.ZodTypeDef,
   LegalMatter
-> = z.object({
-  billingMethod: BillingMethod$outboundSchema.optional(),
-  clientReference: z.string().optional(),
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  companyIds: z.array(z.string()).optional(),
-  contactIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isBillable: z.boolean().optional(),
-  metadata: z.array(LegalMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  openedAt: z.date().transform(v => v.toISOString()).optional(),
-  originatingUserId: z.string().optional(),
-  parties: z.array(LegalParty$outboundSchema).optional(),
-  pendingAt: z.date().transform(v => v.toISOString()).optional(),
-  practiceareaId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  stage: z.string().optional(),
-  status: LegalMatterStatus$outboundSchema.optional(),
-  statuteOfLimitationsAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  userIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    billingMethod: "billing_method",
-    clientReference: "client_reference",
-    closedAt: "closed_at",
-    companyIds: "company_ids",
-    contactIds: "contact_ids",
-    createdAt: "created_at",
-    isBillable: "is_billable",
-    openedAt: "opened_at",
-    originatingUserId: "originating_user_id",
-    pendingAt: "pending_at",
-    practiceareaId: "practicearea_id",
-    statuteOfLimitationsAt: "statute_of_limitations_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    userIds: "user_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    billingMethod: BillingMethod$outboundSchema.optional(),
+    clientReference: z.string().optional(),
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    companyIds: z.array(z.string()).optional(),
+    contactIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isBillable: z.boolean().optional(),
+    metadata: z.array(LegalMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    openedAt: z.date().transform(v => v.toISOString()).optional(),
+    originatingUserId: z.string().optional(),
+    parties: z.array(LegalParty$outboundSchema).optional(),
+    pendingAt: z.date().transform(v => v.toISOString()).optional(),
+    practiceareaId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    stage: z.string().optional(),
+    status: LegalMatterStatus$outboundSchema.optional(),
+    statuteOfLimitationsAt: z.date().transform(v => v.toISOString()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    userIds: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      billingMethod: "billing_method",
+      clientReference: "client_reference",
+      closedAt: "closed_at",
+      companyIds: "company_ids",
+      contactIds: "contact_ids",
+      createdAt: "created_at",
+      isBillable: "is_billable",
+      openedAt: "opened_at",
+      originatingUserId: "originating_user_id",
+      pendingAt: "pending_at",
+      practiceareaId: "practicearea_id",
+      statuteOfLimitationsAt: "statute_of_limitations_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      userIds: "user_ids",
+    });
+  })
+);
 
 export function legalMatterToJSON(legalMatter: LegalMatter): string {
   return JSON.stringify(LegalMatter$outboundSchema.parse(legalMatter));

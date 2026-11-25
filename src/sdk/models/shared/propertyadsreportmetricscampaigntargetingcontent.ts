@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { AdsKeyword, AdsKeyword$inboundSchema } from "./adskeyword.js";
@@ -30,22 +30,24 @@ export const PropertyAdsReportMetricsCampaignTargetingContent$inboundSchema:
     PropertyAdsReportMetricsCampaignTargetingContent,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    excluded_keywords: z.array(AdsKeyword$inboundSchema).optional(),
-    excluded_topics: z.array(TargetRef$inboundSchema).optional(),
-    excluded_urls: z.array(z.string()).optional(),
-    keywords: z.array(AdsKeyword$inboundSchema).optional(),
-    topics: z.array(TargetRef$inboundSchema).optional(),
-    urls: z.array(z.string()).optional(),
-    video: PropertyAdsReportMetricsCampaignTargetingContentVideo$inboundSchema
-      .optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "excluded_keywords": "excludedKeywords",
-      "excluded_topics": "excludedTopics",
-      "excluded_urls": "excludedUrls",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      excluded_keywords: z.array(AdsKeyword$inboundSchema).optional(),
+      excluded_topics: z.array(TargetRef$inboundSchema).optional(),
+      excluded_urls: z.array(z.string()).optional(),
+      keywords: z.array(AdsKeyword$inboundSchema).optional(),
+      topics: z.array(TargetRef$inboundSchema).optional(),
+      urls: z.array(z.string()).optional(),
+      video: PropertyAdsReportMetricsCampaignTargetingContentVideo$inboundSchema
+        .optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "excluded_keywords": "excludedKeywords",
+        "excluded_topics": "excludedTopics",
+        "excluded_urls": "excludedUrls",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsCampaignTargetingContentFromJSON(
   jsonString: string,

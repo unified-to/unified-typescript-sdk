@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { TargetRef, TargetRef$inboundSchema } from "./targetref.js";
@@ -22,17 +22,19 @@ export const PropertyAdsReportMetricsCampaignTargetingDevice$inboundSchema:
     PropertyAdsReportMetricsCampaignTargetingDevice,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    carriers: z.array(TargetRef$inboundSchema).optional(),
-    types: z.array(TargetRef$inboundSchema).optional(),
-    user_device: z.array(TargetRef$inboundSchema).optional(),
-    user_os: z.array(TargetRef$inboundSchema).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "user_device": "userDevice",
-      "user_os": "userOs",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      carriers: z.array(TargetRef$inboundSchema).optional(),
+      types: z.array(TargetRef$inboundSchema).optional(),
+      user_device: z.array(TargetRef$inboundSchema).optional(),
+      user_os: z.array(TargetRef$inboundSchema).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "user_device": "userDevice",
+        "user_os": "userOs",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsCampaignTargetingDeviceFromJSON(
   jsonString: string,

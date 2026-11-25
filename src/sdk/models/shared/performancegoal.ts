@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -102,71 +102,83 @@ export const PerformanceGoalStatus$inboundSchema: z.ZodType<
   PerformanceGoalStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceGoalStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceGoalStatus)
+);
 /** @internal */
 export const PerformanceGoalStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PerformanceGoalStatus
-> = openEnums.outboundSchema(PerformanceGoalStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PerformanceGoalStatus)
+);
 
 /** @internal */
 export const PerformanceGoalSchemasType$inboundSchema: z.ZodType<
   PerformanceGoalSchemasType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PerformanceGoalSchemasType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PerformanceGoalSchemasType)
+);
 /** @internal */
 export const PerformanceGoalSchemasType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PerformanceGoalSchemasType
-> = openEnums.outboundSchema(PerformanceGoalSchemasType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PerformanceGoalSchemasType)
+);
 
 /** @internal */
 export const PerformanceGoal$inboundSchema: z.ZodType<
   PerformanceGoal,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_id: z.string().optional(),
-  completed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  cycle_id: z.string().optional(),
-  description: z.string().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
-  milestones: z.array(PerformanceGoalMilestone$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  progress: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: PerformanceGoalStatus$inboundSchema.optional(),
-  type: PerformanceGoalSchemasType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-  weight: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "completed_at": "completedAt",
-    "created_at": "createdAt",
-    "cycle_id": "cycleId",
-    "due_at": "dueAt",
-    "parent_id": "parentId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_id: z.string().optional(),
+    completed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    cycle_id: z.string().optional(),
+    description: z.string().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(PerformanceMetadata$inboundSchema).optional(),
+    milestones: z.array(PerformanceGoalMilestone$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    progress: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: PerformanceGoalStatus$inboundSchema.optional(),
+    type: PerformanceGoalSchemasType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+    weight: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "completed_at": "completedAt",
+      "created_at": "createdAt",
+      "cycle_id": "cycleId",
+      "due_at": "dueAt",
+      "parent_id": "parentId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+    });
+  })
+);
 /** @internal */
 export type PerformanceGoal$Outbound = {
   company_id?: string | undefined;
@@ -195,39 +207,41 @@ export const PerformanceGoal$outboundSchema: z.ZodType<
   PerformanceGoal$Outbound,
   z.ZodTypeDef,
   PerformanceGoal
-> = z.object({
-  companyId: z.string().optional(),
-  completedAt: z.date().transform(v => v.toISOString()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  cycleId: z.string().optional(),
-  description: z.string().optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(PerformanceMetadata$outboundSchema).optional(),
-  milestones: z.array(PerformanceGoalMilestone$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  progress: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: PerformanceGoalStatus$outboundSchema.optional(),
-  type: PerformanceGoalSchemasType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIds: z.array(z.string()).optional(),
-  weight: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    completedAt: "completed_at",
-    createdAt: "created_at",
-    cycleId: "cycle_id",
-    dueAt: "due_at",
-    parentId: "parent_id",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userIds: "user_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    completedAt: z.date().transform(v => v.toISOString()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    cycleId: z.string().optional(),
+    description: z.string().optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    metadata: z.array(PerformanceMetadata$outboundSchema).optional(),
+    milestones: z.array(PerformanceGoalMilestone$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    progress: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: PerformanceGoalStatus$outboundSchema.optional(),
+    type: PerformanceGoalSchemasType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIds: z.array(z.string()).optional(),
+    weight: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      completedAt: "completed_at",
+      createdAt: "created_at",
+      cycleId: "cycle_id",
+      dueAt: "due_at",
+      parentId: "parent_id",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      userIds: "user_ids",
+    });
+  })
+);
 
 export function performanceGoalToJSON(
   performanceGoal: PerformanceGoal,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -100,7 +100,7 @@ export const CrmMetadata1$inboundSchema: z.ZodType<
   CrmMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CrmMetadata1$Outbound = {};
 
@@ -109,7 +109,7 @@ export const CrmMetadata1$outboundSchema: z.ZodType<
   CrmMetadata1$Outbound,
   z.ZodTypeDef,
   CrmMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function crmMetadata1ToJSON(crmMetadata1: CrmMetadata1): string {
   return JSON.stringify(CrmMetadata1$outboundSchema.parse(crmMetadata1));
@@ -129,12 +129,14 @@ export const CrmMetadata5$inboundSchema: z.ZodType<
   CrmMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CrmMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CrmMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CrmMetadata5$Outbound =
   | CrmMetadata1$Outbound
@@ -147,12 +149,14 @@ export const CrmMetadata5$outboundSchema: z.ZodType<
   CrmMetadata5$Outbound,
   z.ZodTypeDef,
   CrmMetadata5
-> = z.union([
-  z.lazy(() => CrmMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CrmMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function crmMetadata5ToJSON(crmMetadata5: CrmMetadata5): string {
   return JSON.stringify(CrmMetadata5$outboundSchema.parse(crmMetadata5));
@@ -172,20 +176,22 @@ export const CrmMetadataExtraData$inboundSchema: z.ZodType<
   CrmMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CrmMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CrmMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type CrmMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -199,20 +205,22 @@ export const CrmMetadataExtraData$outboundSchema: z.ZodType<
   CrmMetadataExtraData$Outbound,
   z.ZodTypeDef,
   CrmMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CrmMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CrmMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function crmMetadataExtraDataToJSON(
   crmMetadataExtraData: CrmMetadataExtraData,
@@ -236,20 +244,24 @@ export const CrmMetadataFormat$inboundSchema: z.ZodType<
   CrmMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CrmMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CrmMetadataFormat)
+);
 /** @internal */
 export const CrmMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CrmMetadataFormat
-> = openEnums.outboundSchema(CrmMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CrmMetadataFormat)
+);
 
 /** @internal */
 export const CrmMetadataSchemas1$inboundSchema: z.ZodType<
   CrmMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CrmMetadataSchemas1$Outbound = {};
 
@@ -258,7 +270,7 @@ export const CrmMetadataSchemas1$outboundSchema: z.ZodType<
   CrmMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   CrmMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function crmMetadataSchemas1ToJSON(
   crmMetadataSchemas1: CrmMetadataSchemas1,
@@ -282,12 +294,14 @@ export const CrmMetadataSchemas5$inboundSchema: z.ZodType<
   CrmMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CrmMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CrmMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CrmMetadataSchemas5$Outbound =
   | CrmMetadataSchemas1$Outbound
@@ -300,12 +314,14 @@ export const CrmMetadataSchemas5$outboundSchema: z.ZodType<
   CrmMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   CrmMetadataSchemas5
-> = z.union([
-  z.lazy(() => CrmMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CrmMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function crmMetadataSchemas5ToJSON(
   crmMetadataSchemas5: CrmMetadataSchemas5,
@@ -329,20 +345,22 @@ export const CrmMetadataValue$inboundSchema: z.ZodType<
   CrmMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CrmMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CrmMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type CrmMetadataValue$Outbound =
   | { [k: string]: any }
@@ -356,20 +374,22 @@ export const CrmMetadataValue$outboundSchema: z.ZodType<
   CrmMetadataValue$Outbound,
   z.ZodTypeDef,
   CrmMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CrmMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CrmMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function crmMetadataValueToJSON(
   crmMetadataValue: CrmMetadataValue,
@@ -393,44 +413,46 @@ export const CrmMetadata$inboundSchema: z.ZodType<
   CrmMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CrmMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: CrmMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CrmMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CrmMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: CrmMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CrmMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type CrmMetadata$Outbound = {
   extra_data?:
@@ -458,44 +480,46 @@ export const CrmMetadata$outboundSchema: z.ZodType<
   CrmMetadata$Outbound,
   z.ZodTypeDef,
   CrmMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CrmMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: CrmMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CrmMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CrmMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: CrmMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CrmMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function crmMetadataToJSON(crmMetadata: CrmMetadata): string {
   return JSON.stringify(CrmMetadata$outboundSchema.parse(crmMetadata));

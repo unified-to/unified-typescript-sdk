@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListLegalExpensesQueryParamFields = {
@@ -70,7 +71,9 @@ export type ListLegalExpensesRequest = {
 /** @internal */
 export const ListLegalExpensesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListLegalExpensesQueryParamFields
-> = z.nativeEnum(ListLegalExpensesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListLegalExpensesQueryParamFields)
+);
 
 /** @internal */
 export type ListLegalExpensesRequest$Outbound = {
@@ -93,27 +96,30 @@ export const ListLegalExpensesRequest$outboundSchema: z.ZodType<
   ListLegalExpensesRequest$Outbound,
   z.ZodTypeDef,
   ListLegalExpensesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListLegalExpensesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  matterId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    matterId: "matter_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListLegalExpensesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    matterId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      matterId: "matter_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listLegalExpensesRequestToJSON(
   listLegalExpensesRequest: ListLegalExpensesRequest,

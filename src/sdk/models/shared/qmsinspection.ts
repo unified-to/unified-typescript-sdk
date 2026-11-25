@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -123,99 +123,115 @@ export const QmsInspectionResult$inboundSchema: z.ZodType<
   QmsInspectionResult,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsInspectionResult);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(QmsInspectionResult)
+);
 /** @internal */
 export const QmsInspectionResult$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsInspectionResult
-> = openEnums.outboundSchema(QmsInspectionResult);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(QmsInspectionResult)
+);
 
 /** @internal */
 export const QmsInspectionStatus$inboundSchema: z.ZodType<
   QmsInspectionStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsInspectionStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(QmsInspectionStatus)
+);
 /** @internal */
 export const QmsInspectionStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsInspectionStatus
-> = openEnums.outboundSchema(QmsInspectionStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(QmsInspectionStatus)
+);
 
 /** @internal */
 export const QmsInspectionType$inboundSchema: z.ZodType<
   QmsInspectionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsInspectionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(QmsInspectionType)
+);
 /** @internal */
 export const QmsInspectionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsInspectionType
-> = openEnums.outboundSchema(QmsInspectionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(QmsInspectionType)
+);
 
 /** @internal */
 export const QmsInspection$inboundSchema: z.ZodType<
   QmsInspection,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  characteristics: z.array(QmsCharacteristic$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  file_ids: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  inspected_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  issue_ids: z.array(z.string()).optional(),
-  lifecycle_state: z.string().optional(),
-  lot_number: z.string().optional(),
-  metadata: z.array(QmsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  original_type: z.string().optional(),
-  part_id: z.string().optional(),
-  part_number: z.string().optional(),
-  plan_name: z.string().optional(),
-  quantity_accepted: z.number().optional(),
-  quantity_inspected: z.number().optional(),
-  quantity_rejected: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  result: QmsInspectionResult$inboundSchema.optional(),
-  revision: z.string().optional(),
-  serial_number: z.string().optional(),
-  status: QmsInspectionStatus$inboundSchema.optional(),
-  supplier_name: z.string().optional(),
-  type: QmsInspectionType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "file_ids": "fileIds",
-    "inspected_at": "inspectedAt",
-    "issue_ids": "issueIds",
-    "lifecycle_state": "lifecycleState",
-    "lot_number": "lotNumber",
-    "original_type": "originalType",
-    "part_id": "partId",
-    "part_number": "partNumber",
-    "plan_name": "planName",
-    "quantity_accepted": "quantityAccepted",
-    "quantity_inspected": "quantityInspected",
-    "quantity_rejected": "quantityRejected",
-    "serial_number": "serialNumber",
-    "supplier_name": "supplierName",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    characteristics: z.array(QmsCharacteristic$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    file_ids: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    inspected_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    issue_ids: z.array(z.string()).optional(),
+    lifecycle_state: z.string().optional(),
+    lot_number: z.string().optional(),
+    metadata: z.array(QmsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    original_type: z.string().optional(),
+    part_id: z.string().optional(),
+    part_number: z.string().optional(),
+    plan_name: z.string().optional(),
+    quantity_accepted: z.number().optional(),
+    quantity_inspected: z.number().optional(),
+    quantity_rejected: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    result: QmsInspectionResult$inboundSchema.optional(),
+    revision: z.string().optional(),
+    serial_number: z.string().optional(),
+    status: QmsInspectionStatus$inboundSchema.optional(),
+    supplier_name: z.string().optional(),
+    type: QmsInspectionType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "file_ids": "fileIds",
+      "inspected_at": "inspectedAt",
+      "issue_ids": "issueIds",
+      "lifecycle_state": "lifecycleState",
+      "lot_number": "lotNumber",
+      "original_type": "originalType",
+      "part_id": "partId",
+      "part_number": "partNumber",
+      "plan_name": "planName",
+      "quantity_accepted": "quantityAccepted",
+      "quantity_inspected": "quantityInspected",
+      "quantity_rejected": "quantityRejected",
+      "serial_number": "serialNumber",
+      "supplier_name": "supplierName",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type QmsInspection$Outbound = {
   characteristics?: Array<QmsCharacteristic$Outbound> | undefined;
@@ -253,56 +269,58 @@ export const QmsInspection$outboundSchema: z.ZodType<
   QmsInspection$Outbound,
   z.ZodTypeDef,
   QmsInspection
-> = z.object({
-  characteristics: z.array(QmsCharacteristic$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  fileIds: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  inspectedAt: z.date().transform(v => v.toISOString()).optional(),
-  issueIds: z.array(z.string()).optional(),
-  lifecycleState: z.string().optional(),
-  lotNumber: z.string().optional(),
-  metadata: z.array(QmsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  originalType: z.string().optional(),
-  partId: z.string().optional(),
-  partNumber: z.string().optional(),
-  planName: z.string().optional(),
-  quantityAccepted: z.number().optional(),
-  quantityInspected: z.number().optional(),
-  quantityRejected: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  result: QmsInspectionResult$outboundSchema.optional(),
-  revision: z.string().optional(),
-  serialNumber: z.string().optional(),
-  status: QmsInspectionStatus$outboundSchema.optional(),
-  supplierName: z.string().optional(),
-  type: QmsInspectionType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    fileIds: "file_ids",
-    inspectedAt: "inspected_at",
-    issueIds: "issue_ids",
-    lifecycleState: "lifecycle_state",
-    lotNumber: "lot_number",
-    originalType: "original_type",
-    partId: "part_id",
-    partNumber: "part_number",
-    planName: "plan_name",
-    quantityAccepted: "quantity_accepted",
-    quantityInspected: "quantity_inspected",
-    quantityRejected: "quantity_rejected",
-    serialNumber: "serial_number",
-    supplierName: "supplier_name",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    characteristics: z.array(QmsCharacteristic$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    fileIds: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    inspectedAt: z.date().transform(v => v.toISOString()).optional(),
+    issueIds: z.array(z.string()).optional(),
+    lifecycleState: z.string().optional(),
+    lotNumber: z.string().optional(),
+    metadata: z.array(QmsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    originalType: z.string().optional(),
+    partId: z.string().optional(),
+    partNumber: z.string().optional(),
+    planName: z.string().optional(),
+    quantityAccepted: z.number().optional(),
+    quantityInspected: z.number().optional(),
+    quantityRejected: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    result: QmsInspectionResult$outboundSchema.optional(),
+    revision: z.string().optional(),
+    serialNumber: z.string().optional(),
+    status: QmsInspectionStatus$outboundSchema.optional(),
+    supplierName: z.string().optional(),
+    type: QmsInspectionType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      fileIds: "file_ids",
+      inspectedAt: "inspected_at",
+      issueIds: "issue_ids",
+      lifecycleState: "lifecycle_state",
+      lotNumber: "lot_number",
+      originalType: "original_type",
+      partId: "part_id",
+      partNumber: "part_number",
+      planName: "plan_name",
+      quantityAccepted: "quantity_accepted",
+      quantityInspected: "quantity_inspected",
+      quantityRejected: "quantity_rejected",
+      serialNumber: "serial_number",
+      supplierName: "supplier_name",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function qmsInspectionToJSON(qmsInspection: QmsInspection): string {
   return JSON.stringify(QmsInspection$outboundSchema.parse(qmsInspection));

@@ -6,14 +6,20 @@
 
 * [~~createAccountingOrder~~](#createaccountingorder) - Create an order :warning: **Deprecated**
 * [createAssessmentOrder](#createassessmentorder) - Create an order
+* [createPrintingOrder](#createprintingorder) - Create an order
 * [~~getAccountingOrder~~](#getaccountingorder) - Retrieve an order :warning: **Deprecated**
 * [getAssessmentOrder](#getassessmentorder) - Retrieve an order
+* [getPrintingOrder](#getprintingorder) - Retrieve an order
 * [~~listAccountingOrders~~](#listaccountingorders) - List all orders :warning: **Deprecated**
+* [listPrintingOrders](#listprintingorders) - List all orders
 * [~~patchAccountingOrder~~](#patchaccountingorder) - Update an order :warning: **Deprecated**
 * [patchAssessmentOrder](#patchassessmentorder) - Update an order
+* [patchPrintingOrder](#patchprintingorder) - Update an order
 * [~~removeAccountingOrder~~](#removeaccountingorder) - Remove an order :warning: **Deprecated**
+* [removePrintingOrder](#removeprintingorder) - Remove an order
 * [~~updateAccountingOrder~~](#updateaccountingorder) - Update an order :warning: **Deprecated**
 * [updateAssessmentOrder](#updateassessmentorder) - Update an order
+* [updatePrintingOrder](#updateprintingorder) - Update an order
 
 ## ~~createAccountingOrder~~
 
@@ -37,31 +43,31 @@ async function run() {
   const result = await unifiedTo.order.createAccountingOrder({
     accountingOrder: {
       billingAddress: {
-        address1: "7654 Treutel Square",
-        city: "Forrestport",
+        address1: "125 Hayden Highway",
+        city: "Altoona",
         countryCode: "US",
-        postalCode: "42190-3694",
-        region: "Maine",
-        regionCode: "OR",
+        postalCode: "94706-7691",
+        region: "Louisiana",
+        regionCode: "VT",
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "f88e2361-9fd5-4308-9b74-69dd5a0a7b0f",
+      id: "51f9c6dd-d9cb-4c77-a521-27a745802334",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
       shippingAddress: {
-        address1: "4974 Beatty Corners",
-        city: "Alizeport",
+        address1: "450 Garett Mall",
+        city: "New Kamronburgh",
         countryCode: "US",
-        postalCode: "56252",
-        region: "Alaska",
-        regionCode: "VT",
+        postalCode: "76546",
+        region: "Oregon",
+        regionCode: "VA",
       },
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-14T11:42:15.320Z"),
+      updatedAt: new Date("2022-02-15T16:44:33.130Z"),
     },
     connectionId: "<id>",
   });
@@ -92,31 +98,31 @@ async function run() {
   const res = await accountingCreateAccountingOrder(unifiedTo, {
     accountingOrder: {
       billingAddress: {
-        address1: "7654 Treutel Square",
-        city: "Forrestport",
+        address1: "125 Hayden Highway",
+        city: "Altoona",
         countryCode: "US",
-        postalCode: "42190-3694",
-        region: "Maine",
-        regionCode: "OR",
+        postalCode: "94706-7691",
+        region: "Louisiana",
+        regionCode: "VT",
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "f88e2361-9fd5-4308-9b74-69dd5a0a7b0f",
+      id: "51f9c6dd-d9cb-4c77-a521-27a745802334",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
       shippingAddress: {
-        address1: "4974 Beatty Corners",
-        city: "Alizeport",
+        address1: "450 Garett Mall",
+        city: "New Kamronburgh",
         countryCode: "US",
-        postalCode: "56252",
-        region: "Alaska",
-        regionCode: "VT",
+        postalCode: "76546",
+        region: "Oregon",
+        regionCode: "VA",
       },
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-14T11:42:15.320Z"),
+      updatedAt: new Date("2022-02-15T16:44:33.130Z"),
     },
     connectionId: "<id>",
   });
@@ -171,34 +177,34 @@ async function run() {
     assessmentOrder: {
       connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "7c5d340c-d7d4-4911-8e63-9ba58f90e148",
+      id: "cb5e6afa-6ee0-485c-aa6a-14e69e14b987",
       metadata: [],
       parameters: [],
       profileAddresses: [],
       profileDateOfBirth: "1989-07-22T16:18:37.650Z",
       profileEmails: [
-        "amy.kris.windler@icloud.com",
+        "jordan.braun@icloud.com",
       ],
-      profileFirstName: "Amy",
+      profileFirstName: "Jordan",
       profileGender: "NON_BINARY",
-      profileLastName: "Kris-Windler",
-      profileName: "Amy Kris-Windler",
-      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileLastName: "Braun",
+      profileName: "Jordan Braun",
+      profileResumeUrl: "https://astonishing-bug.com/",
       profileSocialMediaUrls: [],
       profileTelephones: [
-        "(341) 425-5828",
+        "322.658.2806 x3159",
       ],
-      reference: "ab",
+      reference: "calcar",
       responseAttributes: [],
       responseDetails: [],
       responseDownloadUrls: [],
       responseMaxScore: 84,
       responseScore: 82,
       responseStatus: "REJECTED",
-      responseUrl: "https://rowdy-fisherman.biz/",
+      responseUrl: "https://nervous-daughter.info/",
       status: "REJECTED",
-      targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T20:11:57.252Z"),
+      targetUrl: "https://idolized-suv.info",
+      updatedAt: new Date("2023-02-04T09:41:49.987Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -231,34 +237,34 @@ async function run() {
     assessmentOrder: {
       connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "7c5d340c-d7d4-4911-8e63-9ba58f90e148",
+      id: "cb5e6afa-6ee0-485c-aa6a-14e69e14b987",
       metadata: [],
       parameters: [],
       profileAddresses: [],
       profileDateOfBirth: "1989-07-22T16:18:37.650Z",
       profileEmails: [
-        "amy.kris.windler@icloud.com",
+        "jordan.braun@icloud.com",
       ],
-      profileFirstName: "Amy",
+      profileFirstName: "Jordan",
       profileGender: "NON_BINARY",
-      profileLastName: "Kris-Windler",
-      profileName: "Amy Kris-Windler",
-      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileLastName: "Braun",
+      profileName: "Jordan Braun",
+      profileResumeUrl: "https://astonishing-bug.com/",
       profileSocialMediaUrls: [],
       profileTelephones: [
-        "(341) 425-5828",
+        "322.658.2806 x3159",
       ],
-      reference: "ab",
+      reference: "calcar",
       responseAttributes: [],
       responseDetails: [],
       responseDownloadUrls: [],
       responseMaxScore: 84,
       responseScore: 82,
       responseStatus: "REJECTED",
-      responseUrl: "https://rowdy-fisherman.biz/",
+      responseUrl: "https://nervous-daughter.info/",
       status: "REJECTED",
-      targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T20:11:57.252Z"),
+      targetUrl: "https://idolized-suv.info",
+      updatedAt: new Date("2023-02-04T09:41:49.987Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -286,6 +292,195 @@ run();
 ### Response
 
 **Promise\<[shared.AssessmentOrder](../../sdk/models/shared/assessmentorder.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## createPrintingOrder
+
+Creates a PrintingOrder. Provide the unified PrintingOrder fields in the request body; they are mapped to the provider's API. Returns the created PrintingOrder.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createPrintingOrder" method="post" path="/printing/{connection_id}/order" example="printing_order" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.order.createPrintingOrder({
+    printingOrder: {
+      createdAt: new Date("2022-03-14T11:16:15.147Z"),
+      currency: "USD",
+      discountAmount: 0,
+      id: "05773c0e-35cc-4964-856d-f55ef89ff9f2",
+      lineitems: [
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/y54e6o9hYi/191/3357",
+            },
+          ],
+          id: "1",
+          name: "Bespoke Marble Chair",
+          quantity: 2,
+          retailPriceAmount: 54.89,
+          sku: "IBDIE3XR",
+          unitPriceAmount: 26.37,
+        },
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/T7S5xf/3521/1221",
+            },
+          ],
+          id: "2",
+          name: "Electronic Cotton Hat",
+          quantity: 1,
+          retailPriceAmount: 23.94,
+          unitPriceAmount: 10.04,
+        },
+      ],
+      metadata: [],
+      shipments: [],
+      shippingAddress: {
+        address1: "651 Main Street",
+        city: "Euclid",
+        country: "United States",
+        countryCode: "US",
+        email: "gary_leffler28@gmail.com",
+        name: "Angelita Denesik",
+        postalCode: "80301",
+        region: "Colorado",
+        regionCode: "AR",
+        telephone: "808-831-6489 x62979",
+      },
+      shippingAmount: 4.69,
+      shippingMethod: "STANDARD",
+      status: "OTHER",
+      subtotalAmount: 62.78,
+      taxAmount: 5.02,
+      totalAmount: 72.49,
+      updatedAt: new Date("2025-01-22T23:27:16.807Z"),
+    },
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { orderCreatePrintingOrder } from "@unified-api/typescript-sdk/funcs/orderCreatePrintingOrder.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await orderCreatePrintingOrder(unifiedTo, {
+    printingOrder: {
+      createdAt: new Date("2022-03-14T11:16:15.147Z"),
+      currency: "USD",
+      discountAmount: 0,
+      id: "05773c0e-35cc-4964-856d-f55ef89ff9f2",
+      lineitems: [
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/y54e6o9hYi/191/3357",
+            },
+          ],
+          id: "1",
+          name: "Bespoke Marble Chair",
+          quantity: 2,
+          retailPriceAmount: 54.89,
+          sku: "IBDIE3XR",
+          unitPriceAmount: 26.37,
+        },
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/T7S5xf/3521/1221",
+            },
+          ],
+          id: "2",
+          name: "Electronic Cotton Hat",
+          quantity: 1,
+          retailPriceAmount: 23.94,
+          unitPriceAmount: 10.04,
+        },
+      ],
+      metadata: [],
+      shipments: [],
+      shippingAddress: {
+        address1: "651 Main Street",
+        city: "Euclid",
+        country: "United States",
+        countryCode: "US",
+        email: "gary_leffler28@gmail.com",
+        name: "Angelita Denesik",
+        postalCode: "80301",
+        region: "Colorado",
+        regionCode: "AR",
+        telephone: "808-831-6489 x62979",
+      },
+      shippingAmount: 4.69,
+      shippingMethod: "STANDARD",
+      status: "OTHER",
+      subtotalAmount: 62.78,
+      taxAmount: 5.02,
+      totalAmount: 72.49,
+      updatedAt: new Date("2025-01-22T23:27:16.807Z"),
+    },
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("orderCreatePrintingOrder failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreatePrintingOrderRequest](../../sdk/models/operations/createprintingorderrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PrintingOrder](../../sdk/models/shared/printingorder.md)\>**
 
 ### Errors
 
@@ -453,6 +648,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getPrintingOrder
+
+Retrieves a single PrintingOrder by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getPrintingOrder" method="get" path="/printing/{connection_id}/order/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.order.getPrintingOrder({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { orderGetPrintingOrder } from "@unified-api/typescript-sdk/funcs/orderGetPrintingOrder.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await orderGetPrintingOrder(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("orderGetPrintingOrder failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetPrintingOrderRequest](../../sdk/models/operations/getprintingorderrequest.md)                                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PrintingOrder](../../sdk/models/shared/printingorder.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## ~~listAccountingOrders~~
 
 Returns a list of AccountingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -532,6 +806,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listPrintingOrders
+
+Returns a list of PrintingOrders. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listPrintingOrders" method="get" path="/printing/{connection_id}/order" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.order.listPrintingOrders({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { orderListPrintingOrders } from "@unified-api/typescript-sdk/funcs/orderListPrintingOrders.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await orderListPrintingOrders(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("orderListPrintingOrders failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListPrintingOrdersRequest](../../sdk/models/operations/listprintingordersrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PrintingOrder[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## ~~patchAccountingOrder~~
 
 Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
@@ -554,31 +905,31 @@ async function run() {
   const result = await unifiedTo.order.patchAccountingOrder({
     accountingOrder: {
       billingAddress: {
-        address1: "7654 Treutel Square",
-        city: "Forrestport",
+        address1: "125 Hayden Highway",
+        city: "Altoona",
         countryCode: "US",
-        postalCode: "42190-3694",
-        region: "Maine",
-        regionCode: "OR",
+        postalCode: "94706-7691",
+        region: "Louisiana",
+        regionCode: "VT",
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "6f0ac459-439a-4260-81b2-828e59c108b4",
+      id: "6181a9a4-1c9a-4c48-8ec8-35e9f70390f3",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
       shippingAddress: {
-        address1: "4974 Beatty Corners",
-        city: "Alizeport",
+        address1: "450 Garett Mall",
+        city: "New Kamronburgh",
         countryCode: "US",
-        postalCode: "56252",
-        region: "Alaska",
-        regionCode: "VT",
+        postalCode: "76546",
+        region: "Oregon",
+        regionCode: "VA",
       },
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-14T11:42:15.329Z"),
+      updatedAt: new Date("2022-02-15T16:44:33.140Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -610,31 +961,31 @@ async function run() {
   const res = await accountingPatchAccountingOrder(unifiedTo, {
     accountingOrder: {
       billingAddress: {
-        address1: "7654 Treutel Square",
-        city: "Forrestport",
+        address1: "125 Hayden Highway",
+        city: "Altoona",
         countryCode: "US",
-        postalCode: "42190-3694",
-        region: "Maine",
-        regionCode: "OR",
+        postalCode: "94706-7691",
+        region: "Louisiana",
+        regionCode: "VT",
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "6f0ac459-439a-4260-81b2-828e59c108b4",
+      id: "6181a9a4-1c9a-4c48-8ec8-35e9f70390f3",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
       shippingAddress: {
-        address1: "4974 Beatty Corners",
-        city: "Alizeport",
+        address1: "450 Garett Mall",
+        city: "New Kamronburgh",
         countryCode: "US",
-        postalCode: "56252",
-        region: "Alaska",
-        regionCode: "VT",
+        postalCode: "76546",
+        region: "Oregon",
+        regionCode: "VA",
       },
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-14T11:42:15.329Z"),
+      updatedAt: new Date("2022-02-15T16:44:33.140Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -690,34 +1041,34 @@ async function run() {
     assessmentOrder: {
       connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "88d1ab61-99ab-40b0-b9ab-13747e2b4a83",
+      id: "80017161-416d-4b6d-951c-465d6daa65ae",
       metadata: [],
       parameters: [],
       profileAddresses: [],
       profileDateOfBirth: "1989-07-22T16:18:37.650Z",
       profileEmails: [
-        "amy.kris.windler@icloud.com",
+        "jordan.braun@icloud.com",
       ],
-      profileFirstName: "Amy",
+      profileFirstName: "Jordan",
       profileGender: "NON_BINARY",
-      profileLastName: "Kris-Windler",
-      profileName: "Amy Kris-Windler",
-      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileLastName: "Braun",
+      profileName: "Jordan Braun",
+      profileResumeUrl: "https://astonishing-bug.com/",
       profileSocialMediaUrls: [],
       profileTelephones: [
-        "(341) 425-5828",
+        "322.658.2806 x3159",
       ],
-      reference: "ab",
+      reference: "calcar",
       responseAttributes: [],
       responseDetails: [],
       responseDownloadUrls: [],
       responseMaxScore: 84,
       responseScore: 82,
       responseStatus: "REJECTED",
-      responseUrl: "https://rowdy-fisherman.biz/",
+      responseUrl: "https://nervous-daughter.info/",
       status: "REJECTED",
-      targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T20:11:57.262Z"),
+      targetUrl: "https://idolized-suv.info",
+      updatedAt: new Date("2023-02-04T09:41:49.998Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -751,34 +1102,34 @@ async function run() {
     assessmentOrder: {
       connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "88d1ab61-99ab-40b0-b9ab-13747e2b4a83",
+      id: "80017161-416d-4b6d-951c-465d6daa65ae",
       metadata: [],
       parameters: [],
       profileAddresses: [],
       profileDateOfBirth: "1989-07-22T16:18:37.650Z",
       profileEmails: [
-        "amy.kris.windler@icloud.com",
+        "jordan.braun@icloud.com",
       ],
-      profileFirstName: "Amy",
+      profileFirstName: "Jordan",
       profileGender: "NON_BINARY",
-      profileLastName: "Kris-Windler",
-      profileName: "Amy Kris-Windler",
-      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileLastName: "Braun",
+      profileName: "Jordan Braun",
+      profileResumeUrl: "https://astonishing-bug.com/",
       profileSocialMediaUrls: [],
       profileTelephones: [
-        "(341) 425-5828",
+        "322.658.2806 x3159",
       ],
-      reference: "ab",
+      reference: "calcar",
       responseAttributes: [],
       responseDetails: [],
       responseDownloadUrls: [],
       responseMaxScore: 84,
       responseScore: 82,
       responseStatus: "REJECTED",
-      responseUrl: "https://rowdy-fisherman.biz/",
+      responseUrl: "https://nervous-daughter.info/",
       status: "REJECTED",
-      targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T20:11:57.262Z"),
+      targetUrl: "https://idolized-suv.info",
+      updatedAt: new Date("2023-02-04T09:41:49.998Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -807,6 +1158,197 @@ run();
 ### Response
 
 **Promise\<[shared.AssessmentOrder](../../sdk/models/shared/assessmentorder.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## patchPrintingOrder
+
+Updates the PrintingOrder identified by `id`. Provide the unified PrintingOrder fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchPrintingOrder" method="patch" path="/printing/{connection_id}/order/{id}" example="printing_order" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.order.patchPrintingOrder({
+    printingOrder: {
+      createdAt: new Date("2022-03-14T11:16:15.147Z"),
+      currency: "USD",
+      discountAmount: 0,
+      id: "b6b0699f-1a95-4d44-9224-d6a2dfbab39d",
+      lineitems: [
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/y54e6o9hYi/191/3357",
+            },
+          ],
+          id: "1",
+          name: "Bespoke Marble Chair",
+          quantity: 2,
+          retailPriceAmount: 54.89,
+          sku: "IBDIE3XR",
+          unitPriceAmount: 26.37,
+        },
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/T7S5xf/3521/1221",
+            },
+          ],
+          id: "2",
+          name: "Electronic Cotton Hat",
+          quantity: 1,
+          retailPriceAmount: 23.94,
+          unitPriceAmount: 10.04,
+        },
+      ],
+      metadata: [],
+      shipments: [],
+      shippingAddress: {
+        address1: "651 Main Street",
+        city: "Euclid",
+        country: "United States",
+        countryCode: "US",
+        email: "gary_leffler28@gmail.com",
+        name: "Angelita Denesik",
+        postalCode: "80301",
+        region: "Colorado",
+        regionCode: "AR",
+        telephone: "808-831-6489 x62979",
+      },
+      shippingAmount: 4.69,
+      shippingMethod: "STANDARD",
+      status: "OTHER",
+      subtotalAmount: 62.78,
+      taxAmount: 5.02,
+      totalAmount: 72.49,
+      updatedAt: new Date("2025-01-22T23:27:16.823Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { orderPatchPrintingOrder } from "@unified-api/typescript-sdk/funcs/orderPatchPrintingOrder.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await orderPatchPrintingOrder(unifiedTo, {
+    printingOrder: {
+      createdAt: new Date("2022-03-14T11:16:15.147Z"),
+      currency: "USD",
+      discountAmount: 0,
+      id: "b6b0699f-1a95-4d44-9224-d6a2dfbab39d",
+      lineitems: [
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/y54e6o9hYi/191/3357",
+            },
+          ],
+          id: "1",
+          name: "Bespoke Marble Chair",
+          quantity: 2,
+          retailPriceAmount: 54.89,
+          sku: "IBDIE3XR",
+          unitPriceAmount: 26.37,
+        },
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/T7S5xf/3521/1221",
+            },
+          ],
+          id: "2",
+          name: "Electronic Cotton Hat",
+          quantity: 1,
+          retailPriceAmount: 23.94,
+          unitPriceAmount: 10.04,
+        },
+      ],
+      metadata: [],
+      shipments: [],
+      shippingAddress: {
+        address1: "651 Main Street",
+        city: "Euclid",
+        country: "United States",
+        countryCode: "US",
+        email: "gary_leffler28@gmail.com",
+        name: "Angelita Denesik",
+        postalCode: "80301",
+        region: "Colorado",
+        regionCode: "AR",
+        telephone: "808-831-6489 x62979",
+      },
+      shippingAmount: 4.69,
+      shippingMethod: "STANDARD",
+      status: "OTHER",
+      subtotalAmount: 62.78,
+      taxAmount: 5.02,
+      totalAmount: 72.49,
+      updatedAt: new Date("2025-01-22T23:27:16.823Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("orderPatchPrintingOrder failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchPrintingOrderRequest](../../sdk/models/operations/patchprintingorderrequest.md)                                                                               | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PrintingOrder](../../sdk/models/shared/printingorder.md)\>**
 
 ### Errors
 
@@ -895,6 +1437,85 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removePrintingOrder
+
+Deletes the PrintingOrder identified by `id`.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removePrintingOrder" method="delete" path="/printing/{connection_id}/order/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.order.removePrintingOrder({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { orderRemovePrintingOrder } from "@unified-api/typescript-sdk/funcs/orderRemovePrintingOrder.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await orderRemovePrintingOrder(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("orderRemovePrintingOrder failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemovePrintingOrderRequest](../../sdk/models/operations/removeprintingorderrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemovePrintingOrderResponse](../../sdk/models/operations/removeprintingorderresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## ~~updateAccountingOrder~~
 
 Updates the AccountingOrder identified by `id`. Provide the unified AccountingOrder fields to change in the request body.
@@ -917,31 +1538,31 @@ async function run() {
   const result = await unifiedTo.order.updateAccountingOrder({
     accountingOrder: {
       billingAddress: {
-        address1: "7654 Treutel Square",
-        city: "Forrestport",
+        address1: "125 Hayden Highway",
+        city: "Altoona",
         countryCode: "US",
-        postalCode: "42190-3694",
-        region: "Maine",
-        regionCode: "OR",
+        postalCode: "94706-7691",
+        region: "Louisiana",
+        regionCode: "VT",
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "6f0ac459-439a-4260-81b2-828e59c108b4",
+      id: "6181a9a4-1c9a-4c48-8ec8-35e9f70390f3",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
       shippingAddress: {
-        address1: "4974 Beatty Corners",
-        city: "Alizeport",
+        address1: "450 Garett Mall",
+        city: "New Kamronburgh",
         countryCode: "US",
-        postalCode: "56252",
-        region: "Alaska",
-        regionCode: "VT",
+        postalCode: "76546",
+        region: "Oregon",
+        regionCode: "VA",
       },
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-14T11:42:15.329Z"),
+      updatedAt: new Date("2022-02-15T16:44:33.140Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -973,31 +1594,31 @@ async function run() {
   const res = await accountingUpdateAccountingOrder(unifiedTo, {
     accountingOrder: {
       billingAddress: {
-        address1: "7654 Treutel Square",
-        city: "Forrestport",
+        address1: "125 Hayden Highway",
+        city: "Altoona",
         countryCode: "US",
-        postalCode: "42190-3694",
-        region: "Maine",
-        regionCode: "OR",
+        postalCode: "94706-7691",
+        region: "Louisiana",
+        regionCode: "VT",
       },
       createdAt: new Date("2020-11-20T03:46:49.837Z"),
       currency: "GBP",
-      id: "6f0ac459-439a-4260-81b2-828e59c108b4",
+      id: "6181a9a4-1c9a-4c48-8ec8-35e9f70390f3",
       lineitems: [],
       metadata: [],
       postedAt: new Date("2020-11-20T03:46:49.837Z"),
       shippingAddress: {
-        address1: "4974 Beatty Corners",
-        city: "Alizeport",
+        address1: "450 Garett Mall",
+        city: "New Kamronburgh",
         countryCode: "US",
-        postalCode: "56252",
-        region: "Alaska",
-        regionCode: "VT",
+        postalCode: "76546",
+        region: "Oregon",
+        regionCode: "VA",
       },
       status: "AUTHORIZED",
       totalAmount: 0,
       type: "SALES",
-      updatedAt: new Date("2022-02-14T11:42:15.329Z"),
+      updatedAt: new Date("2022-02-15T16:44:33.140Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1053,34 +1674,34 @@ async function run() {
     assessmentOrder: {
       connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "88d1ab61-99ab-40b0-b9ab-13747e2b4a83",
+      id: "80017161-416d-4b6d-951c-465d6daa65ae",
       metadata: [],
       parameters: [],
       profileAddresses: [],
       profileDateOfBirth: "1989-07-22T16:18:37.650Z",
       profileEmails: [
-        "amy.kris.windler@icloud.com",
+        "jordan.braun@icloud.com",
       ],
-      profileFirstName: "Amy",
+      profileFirstName: "Jordan",
       profileGender: "NON_BINARY",
-      profileLastName: "Kris-Windler",
-      profileName: "Amy Kris-Windler",
-      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileLastName: "Braun",
+      profileName: "Jordan Braun",
+      profileResumeUrl: "https://astonishing-bug.com/",
       profileSocialMediaUrls: [],
       profileTelephones: [
-        "(341) 425-5828",
+        "322.658.2806 x3159",
       ],
-      reference: "ab",
+      reference: "calcar",
       responseAttributes: [],
       responseDetails: [],
       responseDownloadUrls: [],
       responseMaxScore: 84,
       responseScore: 82,
       responseStatus: "REJECTED",
-      responseUrl: "https://rowdy-fisherman.biz/",
+      responseUrl: "https://nervous-daughter.info/",
       status: "REJECTED",
-      targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T20:11:57.262Z"),
+      targetUrl: "https://idolized-suv.info",
+      updatedAt: new Date("2023-02-04T09:41:49.998Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -1114,34 +1735,34 @@ async function run() {
     assessmentOrder: {
       connectionId: "",
       createdAt: new Date("2021-09-18T10:33:57.803Z"),
-      id: "88d1ab61-99ab-40b0-b9ab-13747e2b4a83",
+      id: "80017161-416d-4b6d-951c-465d6daa65ae",
       metadata: [],
       parameters: [],
       profileAddresses: [],
       profileDateOfBirth: "1989-07-22T16:18:37.650Z",
       profileEmails: [
-        "amy.kris.windler@icloud.com",
+        "jordan.braun@icloud.com",
       ],
-      profileFirstName: "Amy",
+      profileFirstName: "Jordan",
       profileGender: "NON_BINARY",
-      profileLastName: "Kris-Windler",
-      profileName: "Amy Kris-Windler",
-      profileResumeUrl: "https://enchanted-cycle.biz/",
+      profileLastName: "Braun",
+      profileName: "Jordan Braun",
+      profileResumeUrl: "https://astonishing-bug.com/",
       profileSocialMediaUrls: [],
       profileTelephones: [
-        "(341) 425-5828",
+        "322.658.2806 x3159",
       ],
-      reference: "ab",
+      reference: "calcar",
       responseAttributes: [],
       responseDetails: [],
       responseDownloadUrls: [],
       responseMaxScore: 84,
       responseScore: 82,
       responseStatus: "REJECTED",
-      responseUrl: "https://rowdy-fisherman.biz/",
+      responseUrl: "https://nervous-daughter.info/",
       status: "REJECTED",
-      targetUrl: "https://cautious-turret.info",
-      updatedAt: new Date("2023-02-02T20:11:57.262Z"),
+      targetUrl: "https://idolized-suv.info",
+      updatedAt: new Date("2023-02-04T09:41:49.998Z"),
       workspaceId: "<id>",
     },
     connectionId: "<id>",
@@ -1170,6 +1791,197 @@ run();
 ### Response
 
 **Promise\<[shared.AssessmentOrder](../../sdk/models/shared/assessmentorder.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## updatePrintingOrder
+
+Updates the PrintingOrder identified by `id`. Provide the unified PrintingOrder fields to change in the request body.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updatePrintingOrder" method="put" path="/printing/{connection_id}/order/{id}" example="printing_order" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.order.updatePrintingOrder({
+    printingOrder: {
+      createdAt: new Date("2022-03-14T11:16:15.147Z"),
+      currency: "USD",
+      discountAmount: 0,
+      id: "b6b0699f-1a95-4d44-9224-d6a2dfbab39d",
+      lineitems: [
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/y54e6o9hYi/191/3357",
+            },
+          ],
+          id: "1",
+          name: "Bespoke Marble Chair",
+          quantity: 2,
+          retailPriceAmount: 54.89,
+          sku: "IBDIE3XR",
+          unitPriceAmount: 26.37,
+        },
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/T7S5xf/3521/1221",
+            },
+          ],
+          id: "2",
+          name: "Electronic Cotton Hat",
+          quantity: 1,
+          retailPriceAmount: 23.94,
+          unitPriceAmount: 10.04,
+        },
+      ],
+      metadata: [],
+      shipments: [],
+      shippingAddress: {
+        address1: "651 Main Street",
+        city: "Euclid",
+        country: "United States",
+        countryCode: "US",
+        email: "gary_leffler28@gmail.com",
+        name: "Angelita Denesik",
+        postalCode: "80301",
+        region: "Colorado",
+        regionCode: "AR",
+        telephone: "808-831-6489 x62979",
+      },
+      shippingAmount: 4.69,
+      shippingMethod: "STANDARD",
+      status: "OTHER",
+      subtotalAmount: 62.78,
+      taxAmount: 5.02,
+      totalAmount: 72.49,
+      updatedAt: new Date("2025-01-22T23:27:16.823Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { orderUpdatePrintingOrder } from "@unified-api/typescript-sdk/funcs/orderUpdatePrintingOrder.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await orderUpdatePrintingOrder(unifiedTo, {
+    printingOrder: {
+      createdAt: new Date("2022-03-14T11:16:15.147Z"),
+      currency: "USD",
+      discountAmount: 0,
+      id: "b6b0699f-1a95-4d44-9224-d6a2dfbab39d",
+      lineitems: [
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/y54e6o9hYi/191/3357",
+            },
+          ],
+          id: "1",
+          name: "Bespoke Marble Chair",
+          quantity: 2,
+          retailPriceAmount: 54.89,
+          sku: "IBDIE3XR",
+          unitPriceAmount: 26.37,
+        },
+        {
+          files: [
+            {
+              placement: "default",
+              url: "https://picsum.photos/seed/T7S5xf/3521/1221",
+            },
+          ],
+          id: "2",
+          name: "Electronic Cotton Hat",
+          quantity: 1,
+          retailPriceAmount: 23.94,
+          unitPriceAmount: 10.04,
+        },
+      ],
+      metadata: [],
+      shipments: [],
+      shippingAddress: {
+        address1: "651 Main Street",
+        city: "Euclid",
+        country: "United States",
+        countryCode: "US",
+        email: "gary_leffler28@gmail.com",
+        name: "Angelita Denesik",
+        postalCode: "80301",
+        region: "Colorado",
+        regionCode: "AR",
+        telephone: "808-831-6489 x62979",
+      },
+      shippingAmount: 4.69,
+      shippingMethod: "STANDARD",
+      status: "OTHER",
+      subtotalAmount: 62.78,
+      taxAmount: 5.02,
+      totalAmount: 72.49,
+      updatedAt: new Date("2025-01-22T23:27:16.823Z"),
+    },
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("orderUpdatePrintingOrder failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdatePrintingOrderRequest](../../sdk/models/operations/updateprintingorderrequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PrintingOrder](../../sdk/models/shared/printingorder.md)\>**
 
 ### Errors
 

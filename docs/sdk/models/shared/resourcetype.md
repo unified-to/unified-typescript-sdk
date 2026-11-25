@@ -1,11 +1,13 @@
 # ResourceType
 
+Always AllergyIntolerance
+
 ## Example Usage
 
 ```typescript
 import { ResourceType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ResourceType = "User";
+let value: ResourceType = "Observation";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -13,5 +15,5 @@ let value: ResourceType = "User";
 ## Values
 
 ```typescript
-"User" | "Group" | Unrecognized<string>
+"Patient" | "Practitioner" | "Encounter" | "Observation" | "Condition" | "AllergyIntolerance" | "MedicationRequest" | "Immunization" | "Bundle" | "OperationOutcome" | "CapabilityStatement" | "DiagnosticReport" | Unrecognized<string>
 ```

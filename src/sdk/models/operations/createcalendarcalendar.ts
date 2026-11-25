@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -40,9 +41,10 @@ export type CreateCalendarCalendarRequest = {
 
 /** @internal */
 export const CreateCalendarCalendarQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateCalendarCalendarQueryParamFields> = z.nativeEnum(
-    CreateCalendarCalendarQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateCalendarCalendarQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateCalendarCalendarQueryParamFields)
+    );
 
 /** @internal */
 export type CreateCalendarCalendarRequest$Outbound = {
@@ -57,18 +59,20 @@ export const CreateCalendarCalendarRequest$outboundSchema: z.ZodType<
   CreateCalendarCalendarRequest$Outbound,
   z.ZodTypeDef,
   CreateCalendarCalendarRequest
-> = z.object({
-  calendarCalendar: shared.CalendarCalendar$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateCalendarCalendarQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    calendarCalendar: "CalendarCalendar",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    calendarCalendar: shared.CalendarCalendar$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateCalendarCalendarQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      calendarCalendar: "CalendarCalendar",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createCalendarCalendarRequestToJSON(
   createCalendarCalendarRequest: CreateCalendarCalendarRequest,

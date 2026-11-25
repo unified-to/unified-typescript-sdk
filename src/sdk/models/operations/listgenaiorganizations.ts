@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListGenaiOrganizationsQueryParamFields = {
@@ -48,9 +49,10 @@ export type ListGenaiOrganizationsRequest = {
 
 /** @internal */
 export const ListGenaiOrganizationsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListGenaiOrganizationsQueryParamFields> = z.nativeEnum(
-    ListGenaiOrganizationsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListGenaiOrganizationsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListGenaiOrganizationsQueryParamFields)
+    );
 
 /** @internal */
 export type ListGenaiOrganizationsRequest$Outbound = {
@@ -70,23 +72,25 @@ export const ListGenaiOrganizationsRequest$outboundSchema: z.ZodType<
   ListGenaiOrganizationsRequest$Outbound,
   z.ZodTypeDef,
   ListGenaiOrganizationsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListGenaiOrganizationsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListGenaiOrganizationsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listGenaiOrganizationsRequestToJSON(
   listGenaiOrganizationsRequest: ListGenaiOrganizationsRequest,

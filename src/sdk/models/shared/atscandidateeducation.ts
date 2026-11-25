@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -28,22 +28,24 @@ export const AtsCandidateEducation$inboundSchema: z.ZodType<
   AtsCandidateEducation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  degree: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  field_of_study: z.string().optional(),
-  institution: z.string().optional(),
-  level: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "field_of_study": "fieldOfStudy",
-    "start_at": "startAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    degree: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    field_of_study: z.string().optional(),
+    institution: z.string().optional(),
+    level: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "field_of_study": "fieldOfStudy",
+      "start_at": "startAt",
+    });
+  })
+);
 /** @internal */
 export type AtsCandidateEducation$Outbound = {
   degree?: string | undefined;
@@ -59,20 +61,22 @@ export const AtsCandidateEducation$outboundSchema: z.ZodType<
   AtsCandidateEducation$Outbound,
   z.ZodTypeDef,
   AtsCandidateEducation
-> = z.object({
-  degree: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  fieldOfStudy: z.string().optional(),
-  institution: z.string().optional(),
-  level: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    endAt: "end_at",
-    fieldOfStudy: "field_of_study",
-    startAt: "start_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    degree: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    fieldOfStudy: z.string().optional(),
+    institution: z.string().optional(),
+    level: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      endAt: "end_at",
+      fieldOfStudy: "field_of_study",
+      startAt: "start_at",
+    });
+  })
+);
 
 export function atsCandidateEducationToJSON(
   atsCandidateEducation: AtsCandidateEducation,

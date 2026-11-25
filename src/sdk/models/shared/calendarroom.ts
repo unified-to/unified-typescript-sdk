@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -62,45 +62,51 @@ export const CalendarRoomType$inboundSchema: z.ZodType<
   CalendarRoomType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarRoomType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarRoomType)
+);
 
 /** @internal */
 export const CalendarRoom$inboundSchema: z.ZodType<
   CalendarRoom,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  calendar_id: z.string().optional(),
-  capacity: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  email: z.string().optional(),
-  features: z.array(z.string()).optional(),
-  floor: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_bookable: z.boolean().optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(CalendarMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  timezone: z.string().optional(),
-  type: CalendarRoomType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "calendar_id": "calendarId",
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "is_bookable": "isBookable",
-    "location_id": "locationId",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    calendar_id: z.string().optional(),
+    capacity: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    email: z.string().optional(),
+    features: z.array(z.string()).optional(),
+    floor: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_bookable: z.boolean().optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(CalendarMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    timezone: z.string().optional(),
+    type: CalendarRoomType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "calendar_id": "calendarId",
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "is_bookable": "isBookable",
+      "location_id": "locationId",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 
 export function calendarRoomFromJSON(
   jsonString: string,

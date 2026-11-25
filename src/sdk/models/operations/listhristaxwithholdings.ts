@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisTaxwithholdingsQueryParamFields = {
@@ -75,8 +76,10 @@ export type ListHrisTaxwithholdingsRequest = {
 
 /** @internal */
 export const ListHrisTaxwithholdingsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListHrisTaxwithholdingsQueryParamFields> = z
-    .nativeEnum(ListHrisTaxwithholdingsQueryParamFields);
+  z.ZodNativeEnum<typeof ListHrisTaxwithholdingsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListHrisTaxwithholdingsQueryParamFields)
+    );
 
 /** @internal */
 export type ListHrisTaxwithholdingsRequest$Outbound = {
@@ -98,27 +101,29 @@ export const ListHrisTaxwithholdingsRequest$outboundSchema: z.ZodType<
   ListHrisTaxwithholdingsRequest$Outbound,
   z.ZodTypeDef,
   ListHrisTaxwithholdingsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListHrisTaxwithholdingsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListHrisTaxwithholdingsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listHrisTaxwithholdingsRequestToJSON(
   listHrisTaxwithholdingsRequest: ListHrisTaxwithholdingsRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -80,57 +80,64 @@ export const UcRecordingType$inboundSchema: z.ZodType<
   UcRecordingType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(UcRecordingType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(UcRecordingType));
 /** @internal */
 export const UcRecordingType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   UcRecordingType
-> = openEnums.outboundSchema(UcRecordingType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(UcRecordingType)
+);
 
 /** @internal */
 export const UcRecording$inboundSchema: z.ZodType<
   UcRecording,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  call_id: z.string().optional(),
-  contacts: z.array(UcContact$inboundSchema).optional(),
-  conversation_identifier: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  media: z.array(UcRecordingMedia$inboundSchema).optional(),
-  metadata: z.array(UcMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  type: UcRecordingType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-  user_name: z.string().optional(),
-  user_phone: z.string().optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "call_id": "callId",
-    "conversation_identifier": "conversationIdentifier",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "expires_at": "expiresAt",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-    "user_name": "userName",
-    "user_phone": "userPhone",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    call_id: z.string().optional(),
+    contacts: z.array(UcContact$inboundSchema).optional(),
+    conversation_identifier: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    media: z.array(UcRecordingMedia$inboundSchema).optional(),
+    metadata: z.array(UcMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    type: UcRecordingType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+    user_name: z.string().optional(),
+    user_phone: z.string().optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "call_id": "callId",
+      "conversation_identifier": "conversationIdentifier",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "expires_at": "expiresAt",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+      "user_name": "userName",
+      "user_phone": "userPhone",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type UcRecording$Outbound = {
   call_id?: string | undefined;
@@ -157,39 +164,41 @@ export const UcRecording$outboundSchema: z.ZodType<
   UcRecording$Outbound,
   z.ZodTypeDef,
   UcRecording
-> = z.object({
-  callId: z.string().optional(),
-  contacts: z.array(UcContact$outboundSchema).optional(),
-  conversationIdentifier: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  media: z.array(UcRecordingMedia$outboundSchema).optional(),
-  metadata: z.array(UcMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  type: UcRecordingType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  userName: z.string().optional(),
-  userPhone: z.string().optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    callId: "call_id",
-    conversationIdentifier: "conversation_identifier",
-    createdAt: "created_at",
-    endAt: "end_at",
-    expiresAt: "expires_at",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    userName: "user_name",
-    userPhone: "user_phone",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    callId: z.string().optional(),
+    contacts: z.array(UcContact$outboundSchema).optional(),
+    conversationIdentifier: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    media: z.array(UcRecordingMedia$outboundSchema).optional(),
+    metadata: z.array(UcMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    type: UcRecordingType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    userName: z.string().optional(),
+    userPhone: z.string().optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      callId: "call_id",
+      conversationIdentifier: "conversation_identifier",
+      createdAt: "created_at",
+      endAt: "end_at",
+      expiresAt: "expires_at",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      userName: "user_name",
+      userPhone: "user_phone",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function ucRecordingToJSON(ucRecording: UcRecording): string {
   return JSON.stringify(UcRecording$outboundSchema.parse(ucRecording));

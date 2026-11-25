@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -53,7 +54,9 @@ export type UpdateHrisLocationRequest = {
 /** @internal */
 export const UpdateHrisLocationQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof UpdateHrisLocationQueryParamFields
-> = z.nativeEnum(UpdateHrisLocationQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(UpdateHrisLocationQueryParamFields)
+);
 
 /** @internal */
 export type UpdateHrisLocationRequest$Outbound = {
@@ -69,18 +72,21 @@ export const UpdateHrisLocationRequest$outboundSchema: z.ZodType<
   UpdateHrisLocationRequest$Outbound,
   z.ZodTypeDef,
   UpdateHrisLocationRequest
-> = z.object({
-  hrisLocation: shared.HrisLocation$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateHrisLocationQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisLocation: "HrisLocation",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisLocation: shared.HrisLocation$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateHrisLocationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisLocation: "HrisLocation",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateHrisLocationRequestToJSON(
   updateHrisLocationRequest: UpdateHrisLocationRequest,

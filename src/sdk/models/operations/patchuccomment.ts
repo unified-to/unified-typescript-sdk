@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -44,7 +45,9 @@ export type PatchUcCommentRequest = {
 /** @internal */
 export const PatchUcCommentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchUcCommentQueryParamFields
-> = z.nativeEnum(PatchUcCommentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchUcCommentQueryParamFields)
+);
 
 /** @internal */
 export type PatchUcCommentRequest$Outbound = {
@@ -60,18 +63,20 @@ export const PatchUcCommentRequest$outboundSchema: z.ZodType<
   PatchUcCommentRequest$Outbound,
   z.ZodTypeDef,
   PatchUcCommentRequest
-> = z.object({
-  ucComment: shared.UcComment$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchUcCommentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    ucComment: "UcComment",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    ucComment: shared.UcComment$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchUcCommentQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      ucComment: "UcComment",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchUcCommentRequestToJSON(
   patchUcCommentRequest: PatchUcCommentRequest,

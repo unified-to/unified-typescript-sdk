@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -61,56 +61,60 @@ export const ContentType$inboundSchema: z.ZodType<
   ContentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ContentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ContentType));
 /** @internal */
 export const ContentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ContentType
-> = openEnums.outboundSchema(ContentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ContentType));
 
 /** @internal */
 export const KmsCommentType$inboundSchema: z.ZodType<
   KmsCommentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(KmsCommentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(KmsCommentType));
 /** @internal */
 export const KmsCommentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   KmsCommentType
-> = openEnums.outboundSchema(KmsCommentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(KmsCommentType));
 
 /** @internal */
 export const KmsComment$inboundSchema: z.ZodType<
   KmsComment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  content: z.string().optional(),
-  content_type: ContentType$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
-  page_id: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: KmsCommentType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "content_type": "contentType",
-    "created_at": "createdAt",
-    "page_id": "pageId",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    content_type: ContentType$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
+    page_id: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: KmsCommentType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "content_type": "contentType",
+      "created_at": "createdAt",
+      "page_id": "pageId",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type KmsComment$Outbound = {
   content?: string | undefined;
@@ -131,28 +135,30 @@ export const KmsComment$outboundSchema: z.ZodType<
   KmsComment$Outbound,
   z.ZodTypeDef,
   KmsComment
-> = z.object({
-  content: z.string().optional(),
-  contentType: ContentType$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
-  pageId: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: KmsCommentType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contentType: "content_type",
-    createdAt: "created_at",
-    pageId: "page_id",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    contentType: ContentType$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
+    pageId: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: KmsCommentType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contentType: "content_type",
+      createdAt: "created_at",
+      pageId: "page_id",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function kmsCommentToJSON(kmsComment: KmsComment): string {
   return JSON.stringify(KmsComment$outboundSchema.parse(kmsComment));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -108,73 +108,81 @@ export const HrisBankaccountAccountType$inboundSchema: z.ZodType<
   HrisBankaccountAccountType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisBankaccountAccountType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisBankaccountAccountType)
+);
 /** @internal */
 export const HrisBankaccountAccountType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisBankaccountAccountType
-> = openEnums.outboundSchema(HrisBankaccountAccountType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisBankaccountAccountType)
+);
 
 /** @internal */
 export const SplitType$inboundSchema: z.ZodType<
   SplitType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SplitType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SplitType));
 /** @internal */
 export const SplitType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SplitType
-> = openEnums.outboundSchema(SplitType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(SplitType));
 
 /** @internal */
 export const HrisBankaccount$inboundSchema: z.ZodType<
   HrisBankaccount,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_number: z.string().optional(),
-  account_number_last4: z.string().optional(),
-  account_type: HrisBankaccountAccountType$inboundSchema.optional(),
-  bank_name: z.string().optional(),
-  bic: z.string().optional(),
-  company_id: z.string().optional(),
-  country_code: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  iban: z.string().optional(),
-  id: z.string().optional(),
-  is_primary: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  priority: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  routing_number: z.string().optional(),
-  split_amount: z.number().optional(),
-  split_type: SplitType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_number": "accountNumber",
-    "account_number_last4": "accountNumberLast4",
-    "account_type": "accountType",
-    "bank_name": "bankName",
-    "company_id": "companyId",
-    "country_code": "countryCode",
-    "created_at": "createdAt",
-    "is_primary": "isPrimary",
-    "routing_number": "routingNumber",
-    "split_amount": "splitAmount",
-    "split_type": "splitType",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_number: z.string().optional(),
+    account_number_last4: z.string().optional(),
+    account_type: HrisBankaccountAccountType$inboundSchema.optional(),
+    bank_name: z.string().optional(),
+    bic: z.string().optional(),
+    company_id: z.string().optional(),
+    country_code: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    iban: z.string().optional(),
+    id: z.string().optional(),
+    is_primary: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    priority: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    routing_number: z.string().optional(),
+    split_amount: z.number().optional(),
+    split_type: SplitType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_number": "accountNumber",
+      "account_number_last4": "accountNumberLast4",
+      "account_type": "accountType",
+      "bank_name": "bankName",
+      "company_id": "companyId",
+      "country_code": "countryCode",
+      "created_at": "createdAt",
+      "is_primary": "isPrimary",
+      "routing_number": "routingNumber",
+      "split_amount": "splitAmount",
+      "split_type": "splitType",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type HrisBankaccount$Outbound = {
   account_number?: string | undefined;
@@ -205,45 +213,47 @@ export const HrisBankaccount$outboundSchema: z.ZodType<
   HrisBankaccount$Outbound,
   z.ZodTypeDef,
   HrisBankaccount
-> = z.object({
-  accountNumber: z.string().optional(),
-  accountNumberLast4: z.string().optional(),
-  accountType: HrisBankaccountAccountType$outboundSchema.optional(),
-  bankName: z.string().optional(),
-  bic: z.string().optional(),
-  companyId: z.string().optional(),
-  countryCode: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  iban: z.string().optional(),
-  id: z.string().optional(),
-  isPrimary: z.boolean().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  priority: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  routingNumber: z.string().optional(),
-  splitAmount: z.number().optional(),
-  splitType: SplitType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountNumber: "account_number",
-    accountNumberLast4: "account_number_last4",
-    accountType: "account_type",
-    bankName: "bank_name",
-    companyId: "company_id",
-    countryCode: "country_code",
-    createdAt: "created_at",
-    isPrimary: "is_primary",
-    routingNumber: "routing_number",
-    splitAmount: "split_amount",
-    splitType: "split_type",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountNumber: z.string().optional(),
+    accountNumberLast4: z.string().optional(),
+    accountType: HrisBankaccountAccountType$outboundSchema.optional(),
+    bankName: z.string().optional(),
+    bic: z.string().optional(),
+    companyId: z.string().optional(),
+    countryCode: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    iban: z.string().optional(),
+    id: z.string().optional(),
+    isPrimary: z.boolean().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    priority: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    routingNumber: z.string().optional(),
+    splitAmount: z.number().optional(),
+    splitType: SplitType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountNumber: "account_number",
+      accountNumberLast4: "account_number_last4",
+      accountType: "account_type",
+      bankName: "bank_name",
+      companyId: "company_id",
+      countryCode: "country_code",
+      createdAt: "created_at",
+      isPrimary: "is_primary",
+      routingNumber: "routing_number",
+      splitAmount: "split_amount",
+      splitType: "split_type",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function hrisBankaccountToJSON(
   hrisBankaccount: HrisBankaccount,

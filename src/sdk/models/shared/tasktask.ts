@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -95,76 +95,80 @@ export const TaskTaskStatus$inboundSchema: z.ZodType<
   TaskTaskStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(TaskTaskStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TaskTaskStatus));
 /** @internal */
 export const TaskTaskStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   TaskTaskStatus
-> = openEnums.outboundSchema(TaskTaskStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(TaskTaskStatus));
 
 /** @internal */
 export const TaskTask$inboundSchema: z.ZodType<
   TaskTask,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  assigned_user_ids: z.array(z.string()).optional(),
-  attachment_ids: z.array(z.string()).optional(),
-  completed_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  creator_user_id: z.string().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  follower_user_ids: z.array(z.string()).optional(),
-  group_ids: z.array(z.string()).optional(),
-  has_children: z.boolean().optional(),
-  id: z.string().optional(),
-  metadata: z.array(TaskMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  parent_id: z.string().optional(),
-  priority: z.string().optional(),
-  progress: z.number().optional(),
-  project_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: TaskTaskStatus$inboundSchema.optional(),
-  story_points: z.number().optional(),
-  tags: z.array(z.string()).optional(),
-  time_spent: z.number().optional(),
-  time_spent_unit: z.string().optional(),
-  type: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "assigned_user_ids": "assignedUserIds",
-    "attachment_ids": "attachmentIds",
-    "completed_at": "completedAt",
-    "created_at": "createdAt",
-    "creator_user_id": "creatorUserId",
-    "due_at": "dueAt",
-    "end_at": "endAt",
-    "follower_user_ids": "followerUserIds",
-    "group_ids": "groupIds",
-    "has_children": "hasChildren",
-    "parent_id": "parentId",
-    "project_id": "projectId",
-    "start_at": "startAt",
-    "story_points": "storyPoints",
-    "time_spent": "timeSpent",
-    "time_spent_unit": "timeSpentUnit",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    assigned_user_ids: z.array(z.string()).optional(),
+    attachment_ids: z.array(z.string()).optional(),
+    completed_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    creator_user_id: z.string().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    follower_user_ids: z.array(z.string()).optional(),
+    group_ids: z.array(z.string()).optional(),
+    has_children: z.boolean().optional(),
+    id: z.string().optional(),
+    metadata: z.array(TaskMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    parent_id: z.string().optional(),
+    priority: z.string().optional(),
+    progress: z.number().optional(),
+    project_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: TaskTaskStatus$inboundSchema.optional(),
+    story_points: z.number().optional(),
+    tags: z.array(z.string()).optional(),
+    time_spent: z.number().optional(),
+    time_spent_unit: z.string().optional(),
+    type: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "assigned_user_ids": "assignedUserIds",
+      "attachment_ids": "attachmentIds",
+      "completed_at": "completedAt",
+      "created_at": "createdAt",
+      "creator_user_id": "creatorUserId",
+      "due_at": "dueAt",
+      "end_at": "endAt",
+      "follower_user_ids": "followerUserIds",
+      "group_ids": "groupIds",
+      "has_children": "hasChildren",
+      "parent_id": "parentId",
+      "project_id": "projectId",
+      "start_at": "startAt",
+      "story_points": "storyPoints",
+      "time_spent": "timeSpent",
+      "time_spent_unit": "timeSpentUnit",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type TaskTask$Outbound = {
   assigned_user_ids?: Array<string> | undefined;
@@ -202,56 +206,58 @@ export const TaskTask$outboundSchema: z.ZodType<
   TaskTask$Outbound,
   z.ZodTypeDef,
   TaskTask
-> = z.object({
-  assignedUserIds: z.array(z.string()).optional(),
-  attachmentIds: z.array(z.string()).optional(),
-  completedAt: z.date().transform(v => v.toISOString()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  creatorUserId: z.string().optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  followerUserIds: z.array(z.string()).optional(),
-  groupIds: z.array(z.string()).optional(),
-  hasChildren: z.boolean().optional(),
-  id: z.string().optional(),
-  metadata: z.array(TaskMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  parentId: z.string().optional(),
-  priority: z.string().optional(),
-  progress: z.number().optional(),
-  projectId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: TaskTaskStatus$outboundSchema.optional(),
-  storyPoints: z.number().optional(),
-  tags: z.array(z.string()).optional(),
-  timeSpent: z.number().optional(),
-  timeSpentUnit: z.string().optional(),
-  type: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    assignedUserIds: "assigned_user_ids",
-    attachmentIds: "attachment_ids",
-    completedAt: "completed_at",
-    createdAt: "created_at",
-    creatorUserId: "creator_user_id",
-    dueAt: "due_at",
-    endAt: "end_at",
-    followerUserIds: "follower_user_ids",
-    groupIds: "group_ids",
-    hasChildren: "has_children",
-    parentId: "parent_id",
-    projectId: "project_id",
-    startAt: "start_at",
-    storyPoints: "story_points",
-    timeSpent: "time_spent",
-    timeSpentUnit: "time_spent_unit",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    assignedUserIds: z.array(z.string()).optional(),
+    attachmentIds: z.array(z.string()).optional(),
+    completedAt: z.date().transform(v => v.toISOString()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    creatorUserId: z.string().optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    followerUserIds: z.array(z.string()).optional(),
+    groupIds: z.array(z.string()).optional(),
+    hasChildren: z.boolean().optional(),
+    id: z.string().optional(),
+    metadata: z.array(TaskMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    parentId: z.string().optional(),
+    priority: z.string().optional(),
+    progress: z.number().optional(),
+    projectId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: TaskTaskStatus$outboundSchema.optional(),
+    storyPoints: z.number().optional(),
+    tags: z.array(z.string()).optional(),
+    timeSpent: z.number().optional(),
+    timeSpentUnit: z.string().optional(),
+    type: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      assignedUserIds: "assigned_user_ids",
+      attachmentIds: "attachment_ids",
+      completedAt: "completed_at",
+      createdAt: "created_at",
+      creatorUserId: "creator_user_id",
+      dueAt: "due_at",
+      endAt: "end_at",
+      followerUserIds: "follower_user_ids",
+      groupIds: "group_ids",
+      hasChildren: "has_children",
+      parentId: "parent_id",
+      projectId: "project_id",
+      startAt: "start_at",
+      storyPoints: "story_points",
+      timeSpent: "time_spent",
+      timeSpentUnit: "time_spent_unit",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function taskTaskToJSON(taskTask: TaskTask): string {
   return JSON.stringify(TaskTask$outboundSchema.parse(taskTask));

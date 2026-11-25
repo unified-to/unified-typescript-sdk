@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -51,27 +51,31 @@ export const GenaiAnswerType$inboundSchema: z.ZodType<
   GenaiAnswerType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(GenaiAnswerType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(GenaiAnswerType));
 /** @internal */
 export const GenaiAnswerType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   GenaiAnswerType
-> = openEnums.outboundSchema(GenaiAnswerType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(GenaiAnswerType)
+);
 
 /** @internal */
 export const GenaiAnswer$inboundSchema: z.ZodType<
   GenaiAnswer,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  confidence: z.number().optional(),
-  id: z.string(),
-  probabilities: z.array(GenaiAnswerProbability$inboundSchema).optional(),
-  score: z.number().optional(),
-  type: GenaiAnswerType$inboundSchema,
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    confidence: z.number().optional(),
+    id: z.string(),
+    probabilities: z.array(GenaiAnswerProbability$inboundSchema).optional(),
+    score: z.number().optional(),
+    type: GenaiAnswerType$inboundSchema,
+    value: z.string().optional(),
+  })
+);
 /** @internal */
 export type GenaiAnswer$Outbound = {
   confidence?: number | undefined;
@@ -87,14 +91,16 @@ export const GenaiAnswer$outboundSchema: z.ZodType<
   GenaiAnswer$Outbound,
   z.ZodTypeDef,
   GenaiAnswer
-> = z.object({
-  confidence: z.number().optional(),
-  id: z.string(),
-  probabilities: z.array(GenaiAnswerProbability$outboundSchema).optional(),
-  score: z.number().optional(),
-  type: GenaiAnswerType$outboundSchema,
-  value: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    confidence: z.number().optional(),
+    id: z.string(),
+    probabilities: z.array(GenaiAnswerProbability$outboundSchema).optional(),
+    score: z.number().optional(),
+    type: GenaiAnswerType$outboundSchema,
+    value: z.string().optional(),
+  })
+);
 
 export function genaiAnswerToJSON(genaiAnswer: GenaiAnswer): string {
   return JSON.stringify(GenaiAnswer$outboundSchema.parse(genaiAnswer));

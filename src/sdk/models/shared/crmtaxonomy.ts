@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -29,21 +29,23 @@ export const CrmTaxonomyType$inboundSchema: z.ZodType<
   CrmTaxonomyType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CrmTaxonomyType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CrmTaxonomyType));
 
 /** @internal */
 export const CrmTaxonomy$inboundSchema: z.ZodType<
   CrmTaxonomy,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string(),
-  label: z.string().optional(),
-  metadata: z.array(CrmMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: CrmTaxonomyType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    label: z.string().optional(),
+    metadata: z.array(CrmMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: CrmTaxonomyType$inboundSchema.optional(),
+  })
+);
 
 export function crmTaxonomyFromJSON(
   jsonString: string,

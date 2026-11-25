@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -79,7 +79,7 @@ export const LmsMetadata1$inboundSchema: z.ZodType<
   LmsMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type LmsMetadata1$Outbound = {};
 
@@ -88,7 +88,7 @@ export const LmsMetadata1$outboundSchema: z.ZodType<
   LmsMetadata1$Outbound,
   z.ZodTypeDef,
   LmsMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function lmsMetadata1ToJSON(lmsMetadata1: LmsMetadata1): string {
   return JSON.stringify(LmsMetadata1$outboundSchema.parse(lmsMetadata1));
@@ -108,12 +108,14 @@ export const LmsMetadata5$inboundSchema: z.ZodType<
   LmsMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => LmsMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => LmsMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type LmsMetadata5$Outbound =
   | LmsMetadata1$Outbound
@@ -126,12 +128,14 @@ export const LmsMetadata5$outboundSchema: z.ZodType<
   LmsMetadata5$Outbound,
   z.ZodTypeDef,
   LmsMetadata5
-> = z.union([
-  z.lazy(() => LmsMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => LmsMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function lmsMetadata5ToJSON(lmsMetadata5: LmsMetadata5): string {
   return JSON.stringify(LmsMetadata5$outboundSchema.parse(lmsMetadata5));
@@ -151,20 +155,22 @@ export const LmsMetadataExtraData$inboundSchema: z.ZodType<
   LmsMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => LmsMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => LmsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type LmsMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -178,20 +184,22 @@ export const LmsMetadataExtraData$outboundSchema: z.ZodType<
   LmsMetadataExtraData$Outbound,
   z.ZodTypeDef,
   LmsMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => LmsMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => LmsMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function lmsMetadataExtraDataToJSON(
   lmsMetadataExtraData: LmsMetadataExtraData,
@@ -215,20 +223,24 @@ export const LmsMetadataFormat$inboundSchema: z.ZodType<
   LmsMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LmsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(LmsMetadataFormat)
+);
 /** @internal */
 export const LmsMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LmsMetadataFormat
-> = openEnums.outboundSchema(LmsMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(LmsMetadataFormat)
+);
 
 /** @internal */
 export const LmsMetadataSchemas1$inboundSchema: z.ZodType<
   LmsMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type LmsMetadataSchemas1$Outbound = {};
 
@@ -237,7 +249,7 @@ export const LmsMetadataSchemas1$outboundSchema: z.ZodType<
   LmsMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   LmsMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function lmsMetadataSchemas1ToJSON(
   lmsMetadataSchemas1: LmsMetadataSchemas1,
@@ -261,12 +273,14 @@ export const LmsMetadataSchemas5$inboundSchema: z.ZodType<
   LmsMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => LmsMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => LmsMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type LmsMetadataSchemas5$Outbound =
   | LmsMetadataSchemas1$Outbound
@@ -279,12 +293,14 @@ export const LmsMetadataSchemas5$outboundSchema: z.ZodType<
   LmsMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   LmsMetadataSchemas5
-> = z.union([
-  z.lazy(() => LmsMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => LmsMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function lmsMetadataSchemas5ToJSON(
   lmsMetadataSchemas5: LmsMetadataSchemas5,
@@ -308,20 +324,22 @@ export const LmsMetadataValue$inboundSchema: z.ZodType<
   LmsMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => LmsMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => LmsMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type LmsMetadataValue$Outbound =
   | { [k: string]: any }
@@ -335,20 +353,22 @@ export const LmsMetadataValue$outboundSchema: z.ZodType<
   LmsMetadataValue$Outbound,
   z.ZodTypeDef,
   LmsMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => LmsMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => LmsMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function lmsMetadataValueToJSON(
   lmsMetadataValue: LmsMetadataValue,
@@ -372,44 +392,46 @@ export const LmsMetadata$inboundSchema: z.ZodType<
   LmsMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => LmsMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: LmsMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => LmsMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => LmsMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: LmsMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => LmsMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type LmsMetadata$Outbound = {
   extra_data?:
@@ -437,44 +459,46 @@ export const LmsMetadata$outboundSchema: z.ZodType<
   LmsMetadata$Outbound,
   z.ZodTypeDef,
   LmsMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => LmsMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: LmsMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => LmsMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => LmsMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: LmsMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => LmsMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function lmsMetadataToJSON(lmsMetadata: LmsMetadata): string {
   return JSON.stringify(LmsMetadata$outboundSchema.parse(lmsMetadata));

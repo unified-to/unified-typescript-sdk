@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -106,48 +106,55 @@ export const HealthcareImmunizationStatus$inboundSchema: z.ZodType<
   HealthcareImmunizationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareImmunizationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareImmunizationStatus)
+);
 
 /** @internal */
 export const HealthcareImmunization$inboundSchema: z.ZodType<
   HealthcareImmunization,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  administered_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  codes: z.array(HealthcareCode$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  encounter_id: z.string().optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  location_id: z.string().optional(),
-  lot_number: z.string().optional(),
-  metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  notes: z.string().optional(),
-  patient_id: z.string().optional(),
-  practitioner_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: HealthcareImmunizationStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "administered_at": "administeredAt",
-    "created_at": "createdAt",
-    "encounter_id": "encounterId",
-    "expires_at": "expiresAt",
-    "location_id": "locationId",
-    "lot_number": "lotNumber",
-    "patient_id": "patientId",
-    "practitioner_id": "practitionerId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    administered_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    codes: z.array(HealthcareCode$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    encounter_id: z.string().optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    location_id: z.string().optional(),
+    lot_number: z.string().optional(),
+    metadata: z.array(HealthcareMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    notes: z.string().optional(),
+    patient_id: z.string().optional(),
+    practitioner_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: HealthcareImmunizationStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "administered_at": "administeredAt",
+      "created_at": "createdAt",
+      "encounter_id": "encounterId",
+      "expires_at": "expiresAt",
+      "location_id": "locationId",
+      "lot_number": "lotNumber",
+      "patient_id": "patientId",
+      "practitioner_id": "practitionerId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function healthcareImmunizationFromJSON(
   jsonString: string,

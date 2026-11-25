@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -41,30 +41,36 @@ export const AdsConversionTrackingType$inboundSchema: z.ZodType<
   AdsConversionTrackingType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsConversionTrackingType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AdsConversionTrackingType)
+);
 /** @internal */
 export const AdsConversionTrackingType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsConversionTrackingType
-> = openEnums.outboundSchema(AdsConversionTrackingType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AdsConversionTrackingType)
+);
 
 /** @internal */
 export const AdsConversionTracking$inboundSchema: z.ZodType<
   AdsConversionTracking,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  identifier: z.string(),
-  post_click_window_days: z.number().optional(),
-  post_view_window_days: z.number().optional(),
-  type: AdsConversionTrackingType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "post_click_window_days": "postClickWindowDays",
-    "post_view_window_days": "postViewWindowDays",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    identifier: z.string(),
+    post_click_window_days: z.number().optional(),
+    post_view_window_days: z.number().optional(),
+    type: AdsConversionTrackingType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "post_click_window_days": "postClickWindowDays",
+      "post_view_window_days": "postViewWindowDays",
+    });
+  })
+);
 /** @internal */
 export type AdsConversionTracking$Outbound = {
   identifier: string;
@@ -78,17 +84,19 @@ export const AdsConversionTracking$outboundSchema: z.ZodType<
   AdsConversionTracking$Outbound,
   z.ZodTypeDef,
   AdsConversionTracking
-> = z.object({
-  identifier: z.string(),
-  postClickWindowDays: z.number().optional(),
-  postViewWindowDays: z.number().optional(),
-  type: AdsConversionTrackingType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    postClickWindowDays: "post_click_window_days",
-    postViewWindowDays: "post_view_window_days",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    identifier: z.string(),
+    postClickWindowDays: z.number().optional(),
+    postViewWindowDays: z.number().optional(),
+    type: AdsConversionTrackingType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      postClickWindowDays: "post_click_window_days",
+      postViewWindowDays: "post_view_window_days",
+    });
+  })
+);
 
 export function adsConversionTrackingToJSON(
   adsConversionTracking: AdsConversionTracking,

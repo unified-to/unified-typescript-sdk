@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,18 +24,20 @@ export const HrisAttachment$inboundSchema: z.ZodType<
   HrisAttachment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  content_type: z.string().optional(),
-  download_url: z.string().optional(),
-  filename: z.string().optional(),
-  id: z.string().optional(),
-  size: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "content_type": "contentType",
-    "download_url": "downloadUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content_type: z.string().optional(),
+    download_url: z.string().optional(),
+    filename: z.string().optional(),
+    id: z.string().optional(),
+    size: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "content_type": "contentType",
+      "download_url": "downloadUrl",
+    });
+  })
+);
 /** @internal */
 export type HrisAttachment$Outbound = {
   content_type?: string | undefined;
@@ -50,18 +52,20 @@ export const HrisAttachment$outboundSchema: z.ZodType<
   HrisAttachment$Outbound,
   z.ZodTypeDef,
   HrisAttachment
-> = z.object({
-  contentType: z.string().optional(),
-  downloadUrl: z.string().optional(),
-  filename: z.string().optional(),
-  id: z.string().optional(),
-  size: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contentType: "content_type",
-    downloadUrl: "download_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    contentType: z.string().optional(),
+    downloadUrl: z.string().optional(),
+    filename: z.string().optional(),
+    id: z.string().optional(),
+    size: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contentType: "content_type",
+      downloadUrl: "download_url",
+    });
+  })
+);
 
 export function hrisAttachmentToJSON(hrisAttachment: HrisAttachment): string {
   return JSON.stringify(HrisAttachment$outboundSchema.parse(hrisAttachment));

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -38,19 +38,23 @@ export const SecretsManagerInstructionsType$inboundSchema: z.ZodType<
   SecretsManagerInstructionsType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SecretsManagerInstructionsType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SecretsManagerInstructionsType)
+);
 
 /** @internal */
 export const SecretsManagerInstructions$inboundSchema: z.ZodType<
   SecretsManagerInstructions,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  instructions: z.string().optional(),
-  key: z.string(),
-  label: z.string(),
-  type: SecretsManagerInstructionsType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    instructions: z.string().optional(),
+    key: z.string(),
+    label: z.string(),
+    type: SecretsManagerInstructionsType$inboundSchema.optional(),
+  })
+);
 
 export function secretsManagerInstructionsFromJSON(
   jsonString: string,

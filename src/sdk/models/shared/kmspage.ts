@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -65,49 +65,51 @@ export const KmsPageType$inboundSchema: z.ZodType<
   KmsPageType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(KmsPageType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(KmsPageType));
 /** @internal */
 export const KmsPageType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   KmsPageType
-> = openEnums.outboundSchema(KmsPageType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(KmsPageType));
 
 /** @internal */
 export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
-  z.object({
-    content: z.string().optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    download_url: z.string().optional(),
-    has_children: z.boolean().optional(),
-    id: z.string().optional(),
-    is_active: z.boolean().optional(),
-    metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
-    parent_id: z.string().optional(),
-    raw: z.record(z.any()).optional(),
-    space_id: z.string().optional(),
-    title: z.string().optional(),
-    type: KmsPageType$inboundSchema,
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    user_id: z.string().optional(),
-    web_url: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "created_at": "createdAt",
-      "download_url": "downloadUrl",
-      "has_children": "hasChildren",
-      "is_active": "isActive",
-      "parent_id": "parentId",
-      "space_id": "spaceId",
-      "updated_at": "updatedAt",
-      "user_id": "userId",
-      "web_url": "webUrl",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      content: z.string().optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      download_url: z.string().optional(),
+      has_children: z.boolean().optional(),
+      id: z.string().optional(),
+      is_active: z.boolean().optional(),
+      metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
+      parent_id: z.string().optional(),
+      raw: z.record(z.any()).optional(),
+      space_id: z.string().optional(),
+      title: z.string().optional(),
+      type: KmsPageType$inboundSchema,
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      user_id: z.string().optional(),
+      web_url: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "created_at": "createdAt",
+        "download_url": "downloadUrl",
+        "has_children": "hasChildren",
+        "is_active": "isActive",
+        "parent_id": "parentId",
+        "space_id": "spaceId",
+        "updated_at": "updatedAt",
+        "user_id": "userId",
+        "web_url": "webUrl",
+      });
+    })
+  );
 /** @internal */
 export type KmsPage$Outbound = {
   content?: string | undefined;
@@ -132,35 +134,37 @@ export const KmsPage$outboundSchema: z.ZodType<
   KmsPage$Outbound,
   z.ZodTypeDef,
   KmsPage
-> = z.object({
-  content: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  downloadUrl: z.string().optional(),
-  hasChildren: z.boolean().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  spaceId: z.string().optional(),
-  title: z.string().optional(),
-  type: KmsPageType$outboundSchema,
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    downloadUrl: "download_url",
-    hasChildren: "has_children",
-    isActive: "is_active",
-    parentId: "parent_id",
-    spaceId: "space_id",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    downloadUrl: z.string().optional(),
+    hasChildren: z.boolean().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    spaceId: z.string().optional(),
+    title: z.string().optional(),
+    type: KmsPageType$outboundSchema,
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      downloadUrl: "download_url",
+      hasChildren: "has_children",
+      isActive: "is_active",
+      parentId: "parent_id",
+      spaceId: "space_id",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function kmsPageToJSON(kmsPage: KmsPage): string {
   return JSON.stringify(KmsPage$outboundSchema.parse(kmsPage));

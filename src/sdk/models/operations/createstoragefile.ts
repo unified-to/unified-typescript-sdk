@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,7 +53,9 @@ export type CreateStorageFileRequest = {
 /** @internal */
 export const CreateStorageFileQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateStorageFileQueryParamFields
-> = z.nativeEnum(CreateStorageFileQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateStorageFileQueryParamFields)
+);
 
 /** @internal */
 export type CreateStorageFileRequest$Outbound = {
@@ -67,17 +70,20 @@ export const CreateStorageFileRequest$outboundSchema: z.ZodType<
   CreateStorageFileRequest$Outbound,
   z.ZodTypeDef,
   CreateStorageFileRequest
-> = z.object({
-  storageFile: shared.StorageFile$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateStorageFileQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    storageFile: "StorageFile",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    storageFile: shared.StorageFile$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateStorageFileQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      storageFile: "StorageFile",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createStorageFileRequestToJSON(
   createStorageFileRequest: CreateStorageFileRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -57,8 +58,10 @@ export type CreateVerificationRequestRequest = {
 
 /** @internal */
 export const CreateVerificationRequestQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateVerificationRequestQueryParamFields> = z
-    .nativeEnum(CreateVerificationRequestQueryParamFields);
+  z.ZodNativeEnum<typeof CreateVerificationRequestQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateVerificationRequestQueryParamFields)
+    );
 
 /** @internal */
 export type CreateVerificationRequestRequest$Outbound = {
@@ -73,18 +76,20 @@ export const CreateVerificationRequestRequest$outboundSchema: z.ZodType<
   CreateVerificationRequestRequest$Outbound,
   z.ZodTypeDef,
   CreateVerificationRequestRequest
-> = z.object({
-  verificationRequest: shared.VerificationRequest$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateVerificationRequestQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    verificationRequest: "VerificationRequest",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    verificationRequest: shared.VerificationRequest$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateVerificationRequestQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      verificationRequest: "VerificationRequest",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createVerificationRequestRequestToJSON(
   createVerificationRequestRequest: CreateVerificationRequestRequest,

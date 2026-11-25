@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -59,26 +59,30 @@ export const AdsPromotedType$inboundSchema: z.ZodType<
   AdsPromotedType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AdsPromotedType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AdsPromotedType));
 /** @internal */
 export const AdsPromotedType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AdsPromotedType
-> = openEnums.outboundSchema(AdsPromotedType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AdsPromotedType)
+);
 
 /** @internal */
 export const AdsPromoted$inboundSchema: z.ZodType<
   AdsPromoted,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string(),
-  metadata: z.array(AdsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: AdsPromotedType$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    metadata: z.array(AdsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: AdsPromotedType$inboundSchema,
+  })
+);
 /** @internal */
 export type AdsPromoted$Outbound = {
   id: string;
@@ -93,13 +97,15 @@ export const AdsPromoted$outboundSchema: z.ZodType<
   AdsPromoted$Outbound,
   z.ZodTypeDef,
   AdsPromoted
-> = z.object({
-  id: z.string(),
-  metadata: z.array(AdsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: AdsPromotedType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    metadata: z.array(AdsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: AdsPromotedType$outboundSchema,
+  })
+);
 
 export function adsPromotedToJSON(adsPromoted: AdsPromoted): string {
   return JSON.stringify(AdsPromoted$outboundSchema.parse(adsPromoted));

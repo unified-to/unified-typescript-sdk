@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -48,8 +49,10 @@ export type CreateAccountingTaxrateRequest = {
 
 /** @internal */
 export const CreateAccountingTaxrateQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateAccountingTaxrateQueryParamFields> = z
-    .nativeEnum(CreateAccountingTaxrateQueryParamFields);
+  z.ZodNativeEnum<typeof CreateAccountingTaxrateQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateAccountingTaxrateQueryParamFields)
+    );
 
 /** @internal */
 export type CreateAccountingTaxrateRequest$Outbound = {
@@ -64,18 +67,20 @@ export const CreateAccountingTaxrateRequest$outboundSchema: z.ZodType<
   CreateAccountingTaxrateRequest$Outbound,
   z.ZodTypeDef,
   CreateAccountingTaxrateRequest
-> = z.object({
-  accountingTaxrate: shared.AccountingTaxrate$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateAccountingTaxrateQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountingTaxrate: "AccountingTaxrate",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountingTaxrate: shared.AccountingTaxrate$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateAccountingTaxrateQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountingTaxrate: "AccountingTaxrate",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createAccountingTaxrateRequestToJSON(
   createAccountingTaxrateRequest: CreateAccountingTaxrateRequest,

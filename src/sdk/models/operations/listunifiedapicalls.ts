@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 
 export type ListUnifiedApicallsRequest = {
   /**
@@ -67,30 +68,32 @@ export const ListUnifiedApicallsRequest$outboundSchema: z.ZodType<
   ListUnifiedApicallsRequest$Outbound,
   z.ZodTypeDef,
   ListUnifiedApicallsRequest
-> = z.object({
-  connectionId: z.string().optional(),
-  env: z.string().optional(),
-  error: z.boolean().optional(),
-  externalXref: z.string().optional(),
-  integrationType: z.string().optional(),
-  isBillable: z.boolean().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  webhookId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    externalXref: "external_xref",
-    integrationType: "integration_type",
-    isBillable: "is_billable",
-    updatedGte: "updated_gte",
-    webhookId: "webhook_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string().optional(),
+    env: z.string().optional(),
+    error: z.boolean().optional(),
+    externalXref: z.string().optional(),
+    integrationType: z.string().optional(),
+    isBillable: z.boolean().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    webhookId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      externalXref: "external_xref",
+      integrationType: "integration_type",
+      isBillable: "is_billable",
+      updatedGte: "updated_gte",
+      webhookId: "webhook_id",
+    });
+  })
+);
 
 export function listUnifiedApicallsRequestToJSON(
   listUnifiedApicallsRequest: ListUnifiedApicallsRequest,

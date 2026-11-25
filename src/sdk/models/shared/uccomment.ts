@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -39,23 +39,25 @@ export const UcComment$inboundSchema: z.ZodType<
   UcComment,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  call_id: z.string().optional(),
-  content: z.string().optional(),
-  created_at: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(UcMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "call_id": "callId",
-    "created_at": "createdAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    call_id: z.string().optional(),
+    content: z.string().optional(),
+    created_at: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(UcMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "call_id": "callId",
+      "created_at": "createdAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type UcComment$Outbound = {
   call_id?: string | undefined;
@@ -73,23 +75,25 @@ export const UcComment$outboundSchema: z.ZodType<
   UcComment$Outbound,
   z.ZodTypeDef,
   UcComment
-> = z.object({
-  callId: z.string().optional(),
-  content: z.string().optional(),
-  createdAt: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(UcMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    callId: "call_id",
-    createdAt: "created_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    callId: z.string().optional(),
+    content: z.string().optional(),
+    createdAt: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(UcMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      callId: "call_id",
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function ucCommentToJSON(ucComment: UcComment): string {
   return JSON.stringify(UcComment$outboundSchema.parse(ucComment));

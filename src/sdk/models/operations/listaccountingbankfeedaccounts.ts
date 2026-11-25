@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingBankfeedaccountsQueryParamFields = {
@@ -63,8 +64,10 @@ export type ListAccountingBankfeedaccountsRequest = {
 
 /** @internal */
 export const ListAccountingBankfeedaccountsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingBankfeedaccountsQueryParamFields> = z
-    .nativeEnum(ListAccountingBankfeedaccountsQueryParamFields);
+  z.ZodNativeEnum<typeof ListAccountingBankfeedaccountsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingBankfeedaccountsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingBankfeedaccountsRequest$Outbound = {
@@ -86,26 +89,29 @@ export const ListAccountingBankfeedaccountsRequest$outboundSchema: z.ZodType<
   ListAccountingBankfeedaccountsRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingBankfeedaccountsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAccountingBankfeedaccountsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(
+      ListAccountingBankfeedaccountsQueryParamFields$outboundSchema,
+    ).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingBankfeedaccountsRequestToJSON(
   listAccountingBankfeedaccountsRequest: ListAccountingBankfeedaccountsRequest,

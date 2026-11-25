@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAccountingOrganizationsQueryParamFields = {
@@ -59,8 +60,10 @@ export type ListAccountingOrganizationsRequest = {
 
 /** @internal */
 export const ListAccountingOrganizationsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAccountingOrganizationsQueryParamFields> = z
-    .nativeEnum(ListAccountingOrganizationsQueryParamFields);
+  z.ZodNativeEnum<typeof ListAccountingOrganizationsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAccountingOrganizationsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAccountingOrganizationsRequest$Outbound = {
@@ -80,23 +83,25 @@ export const ListAccountingOrganizationsRequest$outboundSchema: z.ZodType<
   ListAccountingOrganizationsRequest$Outbound,
   z.ZodTypeDef,
   ListAccountingOrganizationsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListAccountingOrganizationsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListAccountingOrganizationsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAccountingOrganizationsRequestToJSON(
   listAccountingOrganizationsRequest: ListAccountingOrganizationsRequest,

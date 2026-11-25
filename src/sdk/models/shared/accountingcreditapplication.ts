@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -46,32 +46,35 @@ export const ObjectType$inboundSchema: z.ZodType<
   ObjectType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ObjectType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ObjectType));
 /** @internal */
 export const ObjectType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ObjectType
-> = openEnums.outboundSchema(ObjectType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ObjectType));
 
 /** @internal */
 export const AccountingCreditApplication$inboundSchema: z.ZodType<
   AccountingCreditApplication,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  applied_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  object_id: z.string().optional(),
-  object_type: ObjectType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "applied_at": "appliedAt",
-    "object_id": "objectId",
-    "object_type": "objectType",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    applied_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    object_id: z.string().optional(),
+    object_type: ObjectType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "applied_at": "appliedAt",
+      "object_id": "objectId",
+      "object_type": "objectType",
+    });
+  })
+);
 /** @internal */
 export type AccountingCreditApplication$Outbound = {
   amount?: number | undefined;
@@ -85,18 +88,20 @@ export const AccountingCreditApplication$outboundSchema: z.ZodType<
   AccountingCreditApplication$Outbound,
   z.ZodTypeDef,
   AccountingCreditApplication
-> = z.object({
-  amount: z.number().optional(),
-  appliedAt: z.date().transform(v => v.toISOString()).optional(),
-  objectId: z.string().optional(),
-  objectType: ObjectType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    appliedAt: "applied_at",
-    objectId: "object_id",
-    objectType: "object_type",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    appliedAt: z.date().transform(v => v.toISOString()).optional(),
+    objectId: z.string().optional(),
+    objectType: ObjectType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      appliedAt: "applied_at",
+      objectId: "object_id",
+      objectType: "object_type",
+    });
+  })
+);
 
 export function accountingCreditApplicationToJSON(
   accountingCreditApplication: AccountingCreditApplication,

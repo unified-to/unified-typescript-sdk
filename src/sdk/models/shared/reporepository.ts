@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -42,29 +42,33 @@ export const RepoRepository$inboundSchema: z.ZodType<
   RepoRepository,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_private: z.boolean().optional(),
-  metadata: z.array(RepoMetadata$inboundSchema).optional(),
-  name: z.string(),
-  org_id: z.string().optional(),
-  owner: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_private": "isPrivate",
-    "org_id": "orgId",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_private: z.boolean().optional(),
+    metadata: z.array(RepoMetadata$inboundSchema).optional(),
+    name: z.string(),
+    org_id: z.string().optional(),
+    owner: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_private": "isPrivate",
+      "org_id": "orgId",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type RepoRepository$Outbound = {
   created_at?: string | undefined;
@@ -85,27 +89,29 @@ export const RepoRepository$outboundSchema: z.ZodType<
   RepoRepository$Outbound,
   z.ZodTypeDef,
   RepoRepository
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isPrivate: z.boolean().optional(),
-  metadata: z.array(RepoMetadata$outboundSchema).optional(),
-  name: z.string(),
-  orgId: z.string().optional(),
-  owner: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isPrivate: "is_private",
-    orgId: "org_id",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isPrivate: z.boolean().optional(),
+    metadata: z.array(RepoMetadata$outboundSchema).optional(),
+    name: z.string(),
+    orgId: z.string().optional(),
+    owner: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isPrivate: "is_private",
+      orgId: "org_id",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function repoRepositoryToJSON(repoRepository: RepoRepository): string {
   return JSON.stringify(RepoRepository$outboundSchema.parse(repoRepository));

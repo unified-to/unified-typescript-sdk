@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateUnifiedWorkspaceintegrationRequest = {
@@ -25,14 +26,16 @@ export const UpdateUnifiedWorkspaceintegrationRequest$outboundSchema: z.ZodType<
   UpdateUnifiedWorkspaceintegrationRequest$Outbound,
   z.ZodTypeDef,
   UpdateUnifiedWorkspaceintegrationRequest
-> = z.object({
-  workspaceIntegration: shared.WorkspaceIntegration$outboundSchema,
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    workspaceIntegration: "WorkspaceIntegration",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    workspaceIntegration: shared.WorkspaceIntegration$outboundSchema,
+    id: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      workspaceIntegration: "WorkspaceIntegration",
+    });
+  })
+);
 
 export function updateUnifiedWorkspaceintegrationRequestToJSON(
   updateUnifiedWorkspaceintegrationRequest:

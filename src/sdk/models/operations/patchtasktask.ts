@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -64,7 +65,9 @@ export type PatchTaskTaskRequest = {
 /** @internal */
 export const PatchTaskTaskQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchTaskTaskQueryParamFields
-> = z.nativeEnum(PatchTaskTaskQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchTaskTaskQueryParamFields)
+);
 
 /** @internal */
 export type PatchTaskTaskRequest$Outbound = {
@@ -80,18 +83,20 @@ export const PatchTaskTaskRequest$outboundSchema: z.ZodType<
   PatchTaskTaskRequest$Outbound,
   z.ZodTypeDef,
   PatchTaskTaskRequest
-> = z.object({
-  taskTask: shared.TaskTask$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchTaskTaskQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    taskTask: "TaskTask",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    taskTask: shared.TaskTask$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchTaskTaskQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      taskTask: "TaskTask",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchTaskTaskRequestToJSON(
   patchTaskTaskRequest: PatchTaskTaskRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetCdpProfileQueryParamFields = {
@@ -54,7 +55,9 @@ export type GetCdpProfileRequest = {
 /** @internal */
 export const GetCdpProfileQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetCdpProfileQueryParamFields
-> = z.nativeEnum(GetCdpProfileQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetCdpProfileQueryParamFields)
+);
 
 /** @internal */
 export type GetCdpProfileRequest$Outbound = {
@@ -69,16 +72,18 @@ export const GetCdpProfileRequest$outboundSchema: z.ZodType<
   GetCdpProfileRequest$Outbound,
   z.ZodTypeDef,
   GetCdpProfileRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetCdpProfileQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetCdpProfileQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getCdpProfileRequestToJSON(
   getCdpProfileRequest: GetCdpProfileRequest,

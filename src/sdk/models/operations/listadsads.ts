@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAdsAdsQueryParamFields = {
@@ -82,7 +83,7 @@ export type ListAdsAdsRequest = {
 /** @internal */
 export const ListAdsAdsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAdsAdsQueryParamFields
-> = z.nativeEnum(ListAdsAdsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(ListAdsAdsQueryParamFields));
 
 /** @internal */
 export type ListAdsAdsRequest$Outbound = {
@@ -106,29 +107,31 @@ export const ListAdsAdsRequest$outboundSchema: z.ZodType<
   ListAdsAdsRequest$Outbound,
   z.ZodTypeDef,
   ListAdsAdsRequest
-> = z.object({
-  campaignId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListAdsAdsQueryParamFields$outboundSchema).optional(),
-  groupId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    campaignId: "campaign_id",
-    connectionId: "connection_id",
-    groupId: "group_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    campaignId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListAdsAdsQueryParamFields$outboundSchema).optional(),
+    groupId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      campaignId: "campaign_id",
+      connectionId: "connection_id",
+      groupId: "group_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAdsAdsRequestToJSON(
   listAdsAdsRequest: ListAdsAdsRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -153,123 +153,127 @@ export const Disposition$inboundSchema: z.ZodType<
   Disposition,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Disposition);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Disposition));
 /** @internal */
 export const Disposition$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Disposition
-> = openEnums.outboundSchema(Disposition);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Disposition));
 
 /** @internal */
 export const Severity$inboundSchema: z.ZodType<
   Severity,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Severity);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Severity));
 /** @internal */
 export const Severity$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Severity
-> = openEnums.outboundSchema(Severity);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Severity));
 
 /** @internal */
 export const QmsIssueSource$inboundSchema: z.ZodType<
   QmsIssueSource,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsIssueSource);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(QmsIssueSource));
 /** @internal */
 export const QmsIssueSource$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsIssueSource
-> = openEnums.outboundSchema(QmsIssueSource);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(QmsIssueSource));
 
 /** @internal */
 export const QmsIssueStatus$inboundSchema: z.ZodType<
   QmsIssueStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsIssueStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(QmsIssueStatus));
 /** @internal */
 export const QmsIssueStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsIssueStatus
-> = openEnums.outboundSchema(QmsIssueStatus);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(QmsIssueStatus));
 
 /** @internal */
 export const QmsIssueType$inboundSchema: z.ZodType<
   QmsIssueType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(QmsIssueType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(QmsIssueType));
 /** @internal */
 export const QmsIssueType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   QmsIssueType
-> = openEnums.outboundSchema(QmsIssueType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(QmsIssueType));
 
 /** @internal */
 export const QmsIssue$inboundSchema: z.ZodType<
   QmsIssue,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  action_ids: z.array(z.string()).optional(),
-  affected_items: z.array(QmsAffectedItem$inboundSchema).optional(),
-  change_ids: z.array(z.string()).optional(),
-  closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  disposition: Disposition$inboundSchema.optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  file_ids: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  lifecycle_state: z.string().optional(),
-  metadata: z.array(QmsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  opened_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  original_disposition: z.string().optional(),
-  original_type: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reporter_user_id: z.string().optional(),
-  severity: Severity$inboundSchema.optional(),
-  source: QmsIssueSource$inboundSchema.optional(),
-  status: QmsIssueStatus$inboundSchema.optional(),
-  supplier_name: z.string().optional(),
-  type: QmsIssueType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "action_ids": "actionIds",
-    "affected_items": "affectedItems",
-    "change_ids": "changeIds",
-    "closed_at": "closedAt",
-    "created_at": "createdAt",
-    "due_at": "dueAt",
-    "file_ids": "fileIds",
-    "lifecycle_state": "lifecycleState",
-    "opened_at": "openedAt",
-    "original_disposition": "originalDisposition",
-    "original_type": "originalType",
-    "reporter_user_id": "reporterUserId",
-    "supplier_name": "supplierName",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    action_ids: z.array(z.string()).optional(),
+    affected_items: z.array(QmsAffectedItem$inboundSchema).optional(),
+    change_ids: z.array(z.string()).optional(),
+    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    disposition: Disposition$inboundSchema.optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    file_ids: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    lifecycle_state: z.string().optional(),
+    metadata: z.array(QmsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    opened_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    original_disposition: z.string().optional(),
+    original_type: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reporter_user_id: z.string().optional(),
+    severity: Severity$inboundSchema.optional(),
+    source: QmsIssueSource$inboundSchema.optional(),
+    status: QmsIssueStatus$inboundSchema.optional(),
+    supplier_name: z.string().optional(),
+    type: QmsIssueType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "action_ids": "actionIds",
+      "affected_items": "affectedItems",
+      "change_ids": "changeIds",
+      "closed_at": "closedAt",
+      "created_at": "createdAt",
+      "due_at": "dueAt",
+      "file_ids": "fileIds",
+      "lifecycle_state": "lifecycleState",
+      "opened_at": "openedAt",
+      "original_disposition": "originalDisposition",
+      "original_type": "originalType",
+      "reporter_user_id": "reporterUserId",
+      "supplier_name": "supplierName",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type QmsIssue$Outbound = {
   action_ids?: Array<string> | undefined;
@@ -306,53 +310,55 @@ export const QmsIssue$outboundSchema: z.ZodType<
   QmsIssue$Outbound,
   z.ZodTypeDef,
   QmsIssue
-> = z.object({
-  actionIds: z.array(z.string()).optional(),
-  affectedItems: z.array(QmsAffectedItem$outboundSchema).optional(),
-  changeIds: z.array(z.string()).optional(),
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  disposition: Disposition$outboundSchema.optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  fileIds: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  lifecycleState: z.string().optional(),
-  metadata: z.array(QmsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  openedAt: z.date().transform(v => v.toISOString()).optional(),
-  originalDisposition: z.string().optional(),
-  originalType: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reporterUserId: z.string().optional(),
-  severity: Severity$outboundSchema.optional(),
-  source: QmsIssueSource$outboundSchema.optional(),
-  status: QmsIssueStatus$outboundSchema.optional(),
-  supplierName: z.string().optional(),
-  type: QmsIssueType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    actionIds: "action_ids",
-    affectedItems: "affected_items",
-    changeIds: "change_ids",
-    closedAt: "closed_at",
-    createdAt: "created_at",
-    dueAt: "due_at",
-    fileIds: "file_ids",
-    lifecycleState: "lifecycle_state",
-    openedAt: "opened_at",
-    originalDisposition: "original_disposition",
-    originalType: "original_type",
-    reporterUserId: "reporter_user_id",
-    supplierName: "supplier_name",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    actionIds: z.array(z.string()).optional(),
+    affectedItems: z.array(QmsAffectedItem$outboundSchema).optional(),
+    changeIds: z.array(z.string()).optional(),
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    disposition: Disposition$outboundSchema.optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    fileIds: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    lifecycleState: z.string().optional(),
+    metadata: z.array(QmsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    openedAt: z.date().transform(v => v.toISOString()).optional(),
+    originalDisposition: z.string().optional(),
+    originalType: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reporterUserId: z.string().optional(),
+    severity: Severity$outboundSchema.optional(),
+    source: QmsIssueSource$outboundSchema.optional(),
+    status: QmsIssueStatus$outboundSchema.optional(),
+    supplierName: z.string().optional(),
+    type: QmsIssueType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      actionIds: "action_ids",
+      affectedItems: "affected_items",
+      changeIds: "change_ids",
+      closedAt: "closed_at",
+      createdAt: "created_at",
+      dueAt: "due_at",
+      fileIds: "file_ids",
+      lifecycleState: "lifecycle_state",
+      openedAt: "opened_at",
+      originalDisposition: "original_disposition",
+      originalType: "original_type",
+      reporterUserId: "reporter_user_id",
+      supplierName: "supplier_name",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function qmsIssueToJSON(qmsIssue: QmsIssue): string {
   return JSON.stringify(QmsIssue$outboundSchema.parse(qmsIssue));

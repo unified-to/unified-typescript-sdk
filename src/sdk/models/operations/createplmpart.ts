@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -57,7 +58,9 @@ export type CreatePlmPartRequest = {
 /** @internal */
 export const CreatePlmPartQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreatePlmPartQueryParamFields
-> = z.nativeEnum(CreatePlmPartQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreatePlmPartQueryParamFields)
+);
 
 /** @internal */
 export type CreatePlmPartRequest$Outbound = {
@@ -72,17 +75,19 @@ export const CreatePlmPartRequest$outboundSchema: z.ZodType<
   CreatePlmPartRequest$Outbound,
   z.ZodTypeDef,
   CreatePlmPartRequest
-> = z.object({
-  plmPart: shared.PlmPart$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreatePlmPartQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    plmPart: "PlmPart",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    plmPart: shared.PlmPart$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreatePlmPartQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      plmPart: "PlmPart",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createPlmPartRequestToJSON(
   createPlmPartRequest: CreatePlmPartRequest,

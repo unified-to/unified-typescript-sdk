@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListShippingTrackingsQueryParamFields = {
@@ -60,9 +61,10 @@ export type ListShippingTrackingsRequest = {
 
 /** @internal */
 export const ListShippingTrackingsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListShippingTrackingsQueryParamFields> = z.nativeEnum(
-    ListShippingTrackingsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListShippingTrackingsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListShippingTrackingsQueryParamFields)
+    );
 
 /** @internal */
 export type ListShippingTrackingsRequest$Outbound = {
@@ -83,25 +85,27 @@ export const ListShippingTrackingsRequest$outboundSchema: z.ZodType<
   ListShippingTrackingsRequest$Outbound,
   z.ZodTypeDef,
   ListShippingTrackingsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListShippingTrackingsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orderId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orderId: "order_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListShippingTrackingsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orderId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orderId: "order_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listShippingTrackingsRequestToJSON(
   listShippingTrackingsRequest: ListShippingTrackingsRequest,

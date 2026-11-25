@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHealthcareConditionsQueryParamFields = {
@@ -61,8 +62,10 @@ export type ListHealthcareConditionsRequest = {
 
 /** @internal */
 export const ListHealthcareConditionsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListHealthcareConditionsQueryParamFields> = z
-    .nativeEnum(ListHealthcareConditionsQueryParamFields);
+  z.ZodNativeEnum<typeof ListHealthcareConditionsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListHealthcareConditionsQueryParamFields)
+    );
 
 /** @internal */
 export type ListHealthcareConditionsRequest$Outbound = {
@@ -83,25 +86,27 @@ export const ListHealthcareConditionsRequest$outboundSchema: z.ZodType<
   ListHealthcareConditionsRequest$Outbound,
   z.ZodTypeDef,
   ListHealthcareConditionsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListHealthcareConditionsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  patientId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    patientId: "patient_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListHealthcareConditionsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    patientId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      patientId: "patient_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHealthcareConditionsRequestToJSON(
   listHealthcareConditionsRequest: ListHealthcareConditionsRequest,

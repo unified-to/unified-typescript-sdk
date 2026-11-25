@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -43,9 +44,10 @@ export type CreateComputeSnapshotRequest = {
 
 /** @internal */
 export const CreateComputeSnapshotQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateComputeSnapshotQueryParamFields> = z.nativeEnum(
-    CreateComputeSnapshotQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateComputeSnapshotQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateComputeSnapshotQueryParamFields)
+    );
 
 /** @internal */
 export type CreateComputeSnapshotRequest$Outbound = {
@@ -60,18 +62,20 @@ export const CreateComputeSnapshotRequest$outboundSchema: z.ZodType<
   CreateComputeSnapshotRequest$Outbound,
   z.ZodTypeDef,
   CreateComputeSnapshotRequest
-> = z.object({
-  computeSnapshot: shared.ComputeSnapshot$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateComputeSnapshotQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    computeSnapshot: "ComputeSnapshot",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    computeSnapshot: shared.ComputeSnapshot$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateComputeSnapshotQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      computeSnapshot: "ComputeSnapshot",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createComputeSnapshotRequestToJSON(
   createComputeSnapshotRequest: CreateComputeSnapshotRequest,

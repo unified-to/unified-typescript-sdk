@@ -11,5 +11,5 @@ let value: CreateGenaiEmbeddingQueryParamFields = "type";
 ## Values
 
 ```typescript
-"model_id" | "content" | "enconding_format" | "type" | "dimension" | "max_tokens" | "embeddings" | "tokens_used" | "raw" | "id"
+"model_id" | "content" | "encoding_format" | "type" | "dimension" | "max_tokens" | "embeddings" | "tokens_used" | "raw" | "id"
 ```

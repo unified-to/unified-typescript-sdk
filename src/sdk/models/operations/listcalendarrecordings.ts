@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCalendarRecordingsQueryParamFields = {
@@ -64,9 +65,10 @@ export type ListCalendarRecordingsRequest = {
 
 /** @internal */
 export const ListCalendarRecordingsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCalendarRecordingsQueryParamFields> = z.nativeEnum(
-    ListCalendarRecordingsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListCalendarRecordingsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCalendarRecordingsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCalendarRecordingsRequest$Outbound = {
@@ -89,29 +91,31 @@ export const ListCalendarRecordingsRequest$outboundSchema: z.ZodType<
   ListCalendarRecordingsRequest$Outbound,
   z.ZodTypeDef,
   ListCalendarRecordingsRequest
-> = z.object({
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  eventId: z.string().optional(),
-  fields: z.array(ListCalendarRecordingsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    eventId: "event_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    eventId: z.string().optional(),
+    fields: z.array(ListCalendarRecordingsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      eventId: "event_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCalendarRecordingsRequestToJSON(
   listCalendarRecordingsRequest: ListCalendarRecordingsRequest,

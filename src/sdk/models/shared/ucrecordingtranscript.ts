@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -33,22 +33,24 @@ export const UcRecordingTranscript$inboundSchema: z.ZodType<
   UcRecordingTranscript,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  contact_id: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  text: z.string(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "contact_id": "contactId",
-    "end_at": "endAt",
-    "start_at": "startAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    contact_id: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    text: z.string(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "contact_id": "contactId",
+      "end_at": "endAt",
+      "start_at": "startAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type UcRecordingTranscript$Outbound = {
   contact_id?: string | undefined;
@@ -63,20 +65,22 @@ export const UcRecordingTranscript$outboundSchema: z.ZodType<
   UcRecordingTranscript$Outbound,
   z.ZodTypeDef,
   UcRecordingTranscript
-> = z.object({
-  contactId: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  text: z.string(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contactId: "contact_id",
-    endAt: "end_at",
-    startAt: "start_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    contactId: z.string().optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    text: z.string(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contactId: "contact_id",
+      endAt: "end_at",
+      startAt: "start_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function ucRecordingTranscriptToJSON(
   ucRecordingTranscript: UcRecordingTranscript,

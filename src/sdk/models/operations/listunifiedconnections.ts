@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const Categories = {
@@ -48,6 +49,9 @@ export const Categories = {
   Property: "property",
   Plm: "plm",
   Qms: "qms",
+  Dms: "dms",
+  Fhir: "fhir",
+  Printing: "printing",
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 
@@ -99,14 +103,15 @@ export type ListUnifiedConnectionsRequest = {
 };
 
 /** @internal */
-export const Categories$outboundSchema: z.ZodNativeEnum<typeof Categories> = z
-  .nativeEnum(Categories);
+export const Categories$outboundSchema: z.ZodNativeEnum<typeof Categories> =
+  /* @__PURE__ */ lazySchema$(() => z.nativeEnum(Categories));
 
 /** @internal */
 export const ListUnifiedConnectionsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListUnifiedConnectionsQueryParamFields> = z.nativeEnum(
-    ListUnifiedConnectionsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListUnifiedConnectionsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListUnifiedConnectionsQueryParamFields)
+    );
 
 /** @internal */
 export type ListUnifiedConnectionsRequest$Outbound = {
@@ -126,23 +131,25 @@ export const ListUnifiedConnectionsRequest$outboundSchema: z.ZodType<
   ListUnifiedConnectionsRequest$Outbound,
   z.ZodTypeDef,
   ListUnifiedConnectionsRequest
-> = z.object({
-  categories: z.array(Categories$outboundSchema).optional(),
-  env: z.string().optional(),
-  externalXref: z.string().optional(),
-  fields: z.array(ListUnifiedConnectionsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    externalXref: "external_xref",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categories: z.array(Categories$outboundSchema).optional(),
+    env: z.string().optional(),
+    externalXref: z.string().optional(),
+    fields: z.array(ListUnifiedConnectionsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      externalXref: "external_xref",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listUnifiedConnectionsRequestToJSON(
   listUnifiedConnectionsRequest: ListUnifiedConnectionsRequest,

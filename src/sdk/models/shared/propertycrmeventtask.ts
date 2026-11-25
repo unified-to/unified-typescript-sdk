@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -61,44 +61,50 @@ export const Priority$inboundSchema: z.ZodType<
   Priority,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Priority);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Priority));
 /** @internal */
 export const Priority$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Priority
-> = openEnums.outboundSchema(Priority);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Priority));
 
 /** @internal */
 export const PropertyCrmEventTaskStatus$inboundSchema: z.ZodType<
   PropertyCrmEventTaskStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyCrmEventTaskStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyCrmEventTaskStatus)
+);
 /** @internal */
 export const PropertyCrmEventTaskStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyCrmEventTaskStatus
-> = openEnums.outboundSchema(PropertyCrmEventTaskStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyCrmEventTaskStatus)
+);
 
 /** @internal */
 export const PropertyCrmEventTask$inboundSchema: z.ZodType<
   PropertyCrmEventTask,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  description: z.string().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  name: z.string().optional(),
-  priority: Priority$inboundSchema.optional(),
-  status: PropertyCrmEventTaskStatus$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "due_at": "dueAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    name: z.string().optional(),
+    priority: Priority$inboundSchema.optional(),
+    status: PropertyCrmEventTaskStatus$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "due_at": "dueAt",
+    });
+  })
+);
 /** @internal */
 export type PropertyCrmEventTask$Outbound = {
   description?: string | undefined;
@@ -113,17 +119,19 @@ export const PropertyCrmEventTask$outboundSchema: z.ZodType<
   PropertyCrmEventTask$Outbound,
   z.ZodTypeDef,
   PropertyCrmEventTask
-> = z.object({
-  description: z.string().optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  name: z.string().optional(),
-  priority: Priority$outboundSchema.optional(),
-  status: PropertyCrmEventTaskStatus$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    dueAt: "due_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    name: z.string().optional(),
+    priority: Priority$outboundSchema.optional(),
+    status: PropertyCrmEventTaskStatus$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      dueAt: "due_at",
+    });
+  })
+);
 
 export function propertyCrmEventTaskToJSON(
   propertyCrmEventTask: PropertyCrmEventTask,

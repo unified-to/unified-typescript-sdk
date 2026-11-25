@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisDevicesQueryParamFields = {
@@ -75,7 +76,9 @@ export type ListHrisDevicesRequest = {
 /** @internal */
 export const ListHrisDevicesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisDevicesQueryParamFields
-> = z.nativeEnum(ListHrisDevicesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisDevicesQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisDevicesRequest$Outbound = {
@@ -98,27 +101,29 @@ export const ListHrisDevicesRequest$outboundSchema: z.ZodType<
   ListHrisDevicesRequest$Outbound,
   z.ZodTypeDef,
   ListHrisDevicesRequest
-> = z.object({
-  connectionId: z.string(),
-  email: z.string().optional(),
-  fields: z.array(ListHrisDevicesQueryParamFields$outboundSchema).optional(),
-  groupId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    groupId: "group_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    email: z.string().optional(),
+    fields: z.array(ListHrisDevicesQueryParamFields$outboundSchema).optional(),
+    groupId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      groupId: "group_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listHrisDevicesRequestToJSON(
   listHrisDevicesRequest: ListHrisDevicesRequest,

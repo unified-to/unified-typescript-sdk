@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -109,7 +109,7 @@ export const PropertyMetadata1$inboundSchema: z.ZodType<
   PropertyMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type PropertyMetadata1$Outbound = {};
 
@@ -118,7 +118,7 @@ export const PropertyMetadata1$outboundSchema: z.ZodType<
   PropertyMetadata1$Outbound,
   z.ZodTypeDef,
   PropertyMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function propertyMetadata1ToJSON(
   propertyMetadata1: PropertyMetadata1,
@@ -142,12 +142,14 @@ export const PropertyMetadata5$inboundSchema: z.ZodType<
   PropertyMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => PropertyMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PropertyMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type PropertyMetadata5$Outbound =
   | PropertyMetadata1$Outbound
@@ -160,12 +162,14 @@ export const PropertyMetadata5$outboundSchema: z.ZodType<
   PropertyMetadata5$Outbound,
   z.ZodTypeDef,
   PropertyMetadata5
-> = z.union([
-  z.lazy(() => PropertyMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PropertyMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function propertyMetadata5ToJSON(
   propertyMetadata5: PropertyMetadata5,
@@ -189,20 +193,22 @@ export const PropertyMetadataExtraData$inboundSchema: z.ZodType<
   PropertyMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PropertyMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PropertyMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type PropertyMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -216,20 +222,22 @@ export const PropertyMetadataExtraData$outboundSchema: z.ZodType<
   PropertyMetadataExtraData$Outbound,
   z.ZodTypeDef,
   PropertyMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PropertyMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PropertyMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function propertyMetadataExtraDataToJSON(
   propertyMetadataExtraData: PropertyMetadataExtraData,
@@ -253,20 +261,24 @@ export const PropertyMetadataFormat$inboundSchema: z.ZodType<
   PropertyMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyMetadataFormat)
+);
 /** @internal */
 export const PropertyMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyMetadataFormat
-> = openEnums.outboundSchema(PropertyMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyMetadataFormat)
+);
 
 /** @internal */
 export const PropertyMetadataSchemas1$inboundSchema: z.ZodType<
   PropertyMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type PropertyMetadataSchemas1$Outbound = {};
 
@@ -275,7 +287,7 @@ export const PropertyMetadataSchemas1$outboundSchema: z.ZodType<
   PropertyMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   PropertyMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function propertyMetadataSchemas1ToJSON(
   propertyMetadataSchemas1: PropertyMetadataSchemas1,
@@ -299,12 +311,14 @@ export const PropertyMetadataSchemas5$inboundSchema: z.ZodType<
   PropertyMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => PropertyMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PropertyMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type PropertyMetadataSchemas5$Outbound =
   | PropertyMetadataSchemas1$Outbound
@@ -317,12 +331,14 @@ export const PropertyMetadataSchemas5$outboundSchema: z.ZodType<
   PropertyMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   PropertyMetadataSchemas5
-> = z.union([
-  z.lazy(() => PropertyMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => PropertyMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function propertyMetadataSchemas5ToJSON(
   propertyMetadataSchemas5: PropertyMetadataSchemas5,
@@ -346,20 +362,22 @@ export const PropertyMetadataValue$inboundSchema: z.ZodType<
   PropertyMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PropertyMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PropertyMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type PropertyMetadataValue$Outbound =
   | { [k: string]: any }
@@ -373,20 +391,22 @@ export const PropertyMetadataValue$outboundSchema: z.ZodType<
   PropertyMetadataValue$Outbound,
   z.ZodTypeDef,
   PropertyMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => PropertyMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => PropertyMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function propertyMetadataValueToJSON(
   propertyMetadataValue: PropertyMetadataValue,
@@ -410,44 +430,46 @@ export const PropertyMetadata$inboundSchema: z.ZodType<
   PropertyMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PropertyMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: PropertyMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PropertyMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PropertyMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: PropertyMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PropertyMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type PropertyMetadata$Outbound = {
   extra_data?:
@@ -475,44 +497,46 @@ export const PropertyMetadata$outboundSchema: z.ZodType<
   PropertyMetadata$Outbound,
   z.ZodTypeDef,
   PropertyMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PropertyMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: PropertyMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => PropertyMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PropertyMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: PropertyMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => PropertyMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function propertyMetadataToJSON(
   propertyMetadata: PropertyMetadata,

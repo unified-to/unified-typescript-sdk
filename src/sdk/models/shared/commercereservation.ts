@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -75,59 +75,67 @@ export const CommerceReservationStatus$inboundSchema: z.ZodType<
   CommerceReservationStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CommerceReservationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CommerceReservationStatus)
+);
 /** @internal */
 export const CommerceReservationStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CommerceReservationStatus
-> = openEnums.outboundSchema(CommerceReservationStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CommerceReservationStatus)
+);
 
 /** @internal */
 export const CommerceReservation$inboundSchema: z.ZodType<
   CommerceReservation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  guest_email: z.string().optional(),
-  guest_name: z.string().optional(),
-  guest_phone: z.string().optional(),
-  id: z.string().optional(),
-  item_id: z.string().optional(),
-  item_name: z.string().optional(),
-  location_id: z.string().optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  size: z.number().optional(),
-  staff_name: z.string().optional(),
-  staff_user_id: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: CommerceReservationStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "guest_email": "guestEmail",
-    "guest_name": "guestName",
-    "guest_phone": "guestPhone",
-    "item_id": "itemId",
-    "item_name": "itemName",
-    "location_id": "locationId",
-    "staff_name": "staffName",
-    "staff_user_id": "staffUserId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    guest_email: z.string().optional(),
+    guest_name: z.string().optional(),
+    guest_phone: z.string().optional(),
+    id: z.string().optional(),
+    item_id: z.string().optional(),
+    item_name: z.string().optional(),
+    location_id: z.string().optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    size: z.number().optional(),
+    staff_name: z.string().optional(),
+    staff_user_id: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: CommerceReservationStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "guest_email": "guestEmail",
+      "guest_name": "guestName",
+      "guest_phone": "guestPhone",
+      "item_id": "itemId",
+      "item_name": "itemName",
+      "location_id": "locationId",
+      "staff_name": "staffName",
+      "staff_user_id": "staffUserId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CommerceReservation$Outbound = {
   created_at?: string | undefined;
@@ -156,42 +164,44 @@ export const CommerceReservation$outboundSchema: z.ZodType<
   CommerceReservation$Outbound,
   z.ZodTypeDef,
   CommerceReservation
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  guestEmail: z.string().optional(),
-  guestName: z.string().optional(),
-  guestPhone: z.string().optional(),
-  id: z.string().optional(),
-  itemId: z.string().optional(),
-  itemName: z.string().optional(),
-  locationId: z.string().optional(),
-  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
-  notes: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  size: z.number().optional(),
-  staffName: z.string().optional(),
-  staffUserId: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: CommerceReservationStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    endAt: "end_at",
-    guestEmail: "guest_email",
-    guestName: "guest_name",
-    guestPhone: "guest_phone",
-    itemId: "item_id",
-    itemName: "item_name",
-    locationId: "location_id",
-    staffName: "staff_name",
-    staffUserId: "staff_user_id",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    guestEmail: z.string().optional(),
+    guestName: z.string().optional(),
+    guestPhone: z.string().optional(),
+    id: z.string().optional(),
+    itemId: z.string().optional(),
+    itemName: z.string().optional(),
+    locationId: z.string().optional(),
+    metadata: z.array(CommerceMetadata$outboundSchema).optional(),
+    notes: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    size: z.number().optional(),
+    staffName: z.string().optional(),
+    staffUserId: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: CommerceReservationStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      endAt: "end_at",
+      guestEmail: "guest_email",
+      guestName: "guest_name",
+      guestPhone: "guest_phone",
+      itemId: "item_id",
+      itemName: "item_name",
+      locationId: "location_id",
+      staffName: "staff_name",
+      staffUserId: "staff_user_id",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function commerceReservationToJSON(
   commerceReservation: CommerceReservation,

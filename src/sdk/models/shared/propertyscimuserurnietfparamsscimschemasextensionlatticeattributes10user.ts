@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -80,13 +80,13 @@ export const Ethnicity$inboundSchema: z.ZodType<
   Ethnicity,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(Ethnicity);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Ethnicity));
 /** @internal */
 export const Ethnicity$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   Ethnicity
-> = openEnums.outboundSchema(Ethnicity);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Ethnicity));
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$inboundSchema:
@@ -94,8 +94,10 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
+    )
   );
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$outboundSchema:
@@ -103,8 +105,10 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
     string,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender
-  > = openEnums.outboundSchema(
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
+    )
   );
 
 /** @internal */
@@ -112,13 +116,17 @@ export const SexualOrientation$inboundSchema: z.ZodType<
   SexualOrientation,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SexualOrientation);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SexualOrientation)
+);
 /** @internal */
 export const SexualOrientation$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SexualOrientation
-> = openEnums.outboundSchema(SexualOrientation);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SexualOrientation)
+);
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$inboundSchema:
@@ -126,30 +134,34 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    "Job Level": z.string().optional(),
-    "People Manager (Reviews)": z.string().optional(),
-    "Remote Work - Location": z.string().optional(),
-    "Salary Information": z.string().optional(),
-    "Sub Departments": z.string().optional(),
-    birthDate: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-    ethnicity: Ethnicity$inboundSchema.optional(),
-    gender:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$inboundSchema
-        .optional(),
-    sexualOrientation: SexualOrientation$inboundSchema.optional(),
-    startDate: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "Job Level": "jobLevel",
-      "People Manager (Reviews)": "peopleManagerReviews",
-      "Remote Work - Location": "remoteWorkLocation",
-      "Salary Information": "salaryInformation",
-      "Sub Departments": "subDepartments",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      "Job Level": z.string().optional(),
+      "People Manager (Reviews)": z.string().optional(),
+      "Remote Work - Location": z.string().optional(),
+      "Salary Information": z.string().optional(),
+      "Sub Departments": z.string().optional(),
+      birthDate: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      ethnicity: Ethnicity$inboundSchema.optional(),
+      gender:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$inboundSchema
+          .optional(),
+      sexualOrientation: SexualOrientation$inboundSchema.optional(),
+      startDate: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "Job Level": "jobLevel",
+        "People Manager (Reviews)": "peopleManagerReviews",
+        "Remote Work - Location": "remoteWorkLocation",
+        "Salary Information": "salaryInformation",
+        "Sub Departments": "subDepartments",
+      });
+    })
+  );
 /** @internal */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$Outbound =
   {
@@ -171,28 +183,30 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$Outbound,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User
-  > = z.object({
-    jobLevel: z.string().optional(),
-    peopleManagerReviews: z.string().optional(),
-    remoteWorkLocation: z.string().optional(),
-    salaryInformation: z.string().optional(),
-    subDepartments: z.string().optional(),
-    birthDate: z.date().transform(v => v.toISOString()).optional(),
-    ethnicity: Ethnicity$outboundSchema.optional(),
-    gender:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$outboundSchema
-        .optional(),
-    sexualOrientation: SexualOrientation$outboundSchema.optional(),
-    startDate: z.date().transform(v => v.toISOString()).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      jobLevel: "Job Level",
-      peopleManagerReviews: "People Manager (Reviews)",
-      remoteWorkLocation: "Remote Work - Location",
-      salaryInformation: "Salary Information",
-      subDepartments: "Sub Departments",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      jobLevel: z.string().optional(),
+      peopleManagerReviews: z.string().optional(),
+      remoteWorkLocation: z.string().optional(),
+      salaryInformation: z.string().optional(),
+      subDepartments: z.string().optional(),
+      birthDate: z.date().transform(v => v.toISOString()).optional(),
+      ethnicity: Ethnicity$outboundSchema.optional(),
+      gender:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$outboundSchema
+          .optional(),
+      sexualOrientation: SexualOrientation$outboundSchema.optional(),
+      startDate: z.date().transform(v => v.toISOString()).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        jobLevel: "Job Level",
+        peopleManagerReviews: "People Manager (Reviews)",
+        remoteWorkLocation: "Remote Work - Location",
+        salaryInformation: "Salary Information",
+        subDepartments: "Sub Departments",
+      });
+    })
+  );
 
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserToJSON(
   propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User:

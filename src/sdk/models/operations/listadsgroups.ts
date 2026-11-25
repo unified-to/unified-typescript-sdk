@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAdsGroupsQueryParamFields = {
@@ -110,7 +111,9 @@ export type ListAdsGroupsRequest = {
 /** @internal */
 export const ListAdsGroupsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListAdsGroupsQueryParamFields
-> = z.nativeEnum(ListAdsGroupsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListAdsGroupsQueryParamFields)
+);
 
 /** @internal */
 export type ListAdsGroupsRequest$Outbound = {
@@ -138,37 +141,39 @@ export const ListAdsGroupsRequest$outboundSchema: z.ZodType<
   ListAdsGroupsRequest$Outbound,
   z.ZodTypeDef,
   ListAdsGroupsRequest
-> = z.object({
-  campaignId: z.string().optional(),
-  connectionId: z.string(),
-  effectiveStatus: z.string().optional(),
-  endLt: z.string().optional(),
-  fields: z.array(ListAdsGroupsQueryParamFields$outboundSchema).optional(),
-  ioId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    campaignId: "campaign_id",
-    connectionId: "connection_id",
-    effectiveStatus: "effective_status",
-    endLt: "end_lt",
-    ioId: "io_id",
-    orgId: "org_id",
-    parentId: "parent_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    campaignId: z.string().optional(),
+    connectionId: z.string(),
+    effectiveStatus: z.string().optional(),
+    endLt: z.string().optional(),
+    fields: z.array(ListAdsGroupsQueryParamFields$outboundSchema).optional(),
+    ioId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      campaignId: "campaign_id",
+      connectionId: "connection_id",
+      effectiveStatus: "effective_status",
+      endLt: "end_lt",
+      ioId: "io_id",
+      orgId: "org_id",
+      parentId: "parent_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAdsGroupsRequestToJSON(
   listAdsGroupsRequest: ListAdsGroupsRequest,

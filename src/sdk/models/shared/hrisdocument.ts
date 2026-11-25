@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -80,43 +80,51 @@ export const HrisDocumentType$inboundSchema: z.ZodType<
   HrisDocumentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisDocumentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisDocumentType)
+);
 /** @internal */
 export const HrisDocumentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisDocumentType
-> = openEnums.outboundSchema(HrisDocumentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisDocumentType)
+);
 
 /** @internal */
 export const HrisDocument$inboundSchema: z.ZodType<
   HrisDocument,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  document_data: z.string().optional(),
-  document_url: z.string().optional(),
-  filename: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  type: HrisDocumentType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "created_at": "createdAt",
-    "document_data": "documentData",
-    "document_url": "documentUrl",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    document_data: z.string().optional(),
+    document_url: z.string().optional(),
+    filename: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    type: HrisDocumentType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_id": "companyId",
+      "created_at": "createdAt",
+      "document_data": "documentData",
+      "document_url": "documentUrl",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type HrisDocument$Outbound = {
   company_id?: string | undefined;
@@ -137,28 +145,30 @@ export const HrisDocument$outboundSchema: z.ZodType<
   HrisDocument$Outbound,
   z.ZodTypeDef,
   HrisDocument
-> = z.object({
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  documentData: z.string().optional(),
-  documentUrl: z.string().optional(),
-  filename: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  type: HrisDocumentType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    createdAt: "created_at",
-    documentData: "document_data",
-    documentUrl: "document_url",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    documentData: z.string().optional(),
+    documentUrl: z.string().optional(),
+    filename: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    type: HrisDocumentType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      createdAt: "created_at",
+      documentData: "document_data",
+      documentUrl: "document_url",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function hrisDocumentToJSON(hrisDocument: HrisDocument): string {
   return JSON.stringify(HrisDocument$outboundSchema.parse(hrisDocument));

@@ -9,23 +9,23 @@ import { documentGetPlmDocument } from "../funcs/documentGetPlmDocument.js";
 import { documentListPlmDocuments } from "../funcs/documentListPlmDocuments.js";
 import { documentPatchPlmDocument } from "../funcs/documentPatchPlmDocument.js";
 import { documentUpdatePlmDocument } from "../funcs/documentUpdatePlmDocument.js";
+import { partCreatePlmPart } from "../funcs/partCreatePlmPart.js";
+import { partGetPlmPart } from "../funcs/partGetPlmPart.js";
+import { partListPlmParts } from "../funcs/partListPlmParts.js";
+import { partPatchPlmPart } from "../funcs/partPatchPlmPart.js";
+import { partRemovePlmPart } from "../funcs/partRemovePlmPart.js";
+import { partUpdatePlmPart } from "../funcs/partUpdatePlmPart.js";
 import { plmCreatePlmBomline } from "../funcs/plmCreatePlmBomline.js";
 import { plmCreatePlmChange } from "../funcs/plmCreatePlmChange.js";
-import { plmCreatePlmPart } from "../funcs/plmCreatePlmPart.js";
 import { plmGetPlmBomline } from "../funcs/plmGetPlmBomline.js";
 import { plmGetPlmChange } from "../funcs/plmGetPlmChange.js";
-import { plmGetPlmPart } from "../funcs/plmGetPlmPart.js";
 import { plmListPlmBomlines } from "../funcs/plmListPlmBomlines.js";
 import { plmListPlmChanges } from "../funcs/plmListPlmChanges.js";
-import { plmListPlmParts } from "../funcs/plmListPlmParts.js";
 import { plmPatchPlmBomline } from "../funcs/plmPatchPlmBomline.js";
 import { plmPatchPlmChange } from "../funcs/plmPatchPlmChange.js";
-import { plmPatchPlmPart } from "../funcs/plmPatchPlmPart.js";
 import { plmRemovePlmBomline } from "../funcs/plmRemovePlmBomline.js";
-import { plmRemovePlmPart } from "../funcs/plmRemovePlmPart.js";
 import { plmUpdatePlmBomline } from "../funcs/plmUpdatePlmBomline.js";
 import { plmUpdatePlmChange } from "../funcs/plmUpdatePlmChange.js";
-import { plmUpdatePlmPart } from "../funcs/plmUpdatePlmPart.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -93,7 +93,7 @@ export class Plm extends ClientSDK {
     request: operations.CreatePlmPartRequest,
     options?: RequestOptions,
   ): Promise<shared.PlmPart> {
-    return unwrapAsync(plmCreatePlmPart(
+    return unwrapAsync(partCreatePlmPart(
       this,
       request,
       options,
@@ -178,7 +178,7 @@ export class Plm extends ClientSDK {
     request: operations.GetPlmPartRequest,
     options?: RequestOptions,
   ): Promise<shared.PlmPart> {
-    return unwrapAsync(plmGetPlmPart(
+    return unwrapAsync(partGetPlmPart(
       this,
       request,
       options,
@@ -263,7 +263,7 @@ export class Plm extends ClientSDK {
     request: operations.ListPlmPartsRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.PlmPart>> {
-    return unwrapAsync(plmListPlmParts(
+    return unwrapAsync(partListPlmParts(
       this,
       request,
       options,
@@ -331,7 +331,7 @@ export class Plm extends ClientSDK {
     request: operations.PatchPlmPartRequest,
     options?: RequestOptions,
   ): Promise<shared.PlmPart> {
-    return unwrapAsync(plmPatchPlmPart(
+    return unwrapAsync(partPatchPlmPart(
       this,
       request,
       options,
@@ -365,7 +365,7 @@ export class Plm extends ClientSDK {
     request: operations.RemovePlmPartRequest,
     options?: RequestOptions,
   ): Promise<operations.RemovePlmPartResponse | undefined> {
-    return unwrapAsync(plmRemovePlmPart(
+    return unwrapAsync(partRemovePlmPart(
       this,
       request,
       options,
@@ -433,7 +433,7 @@ export class Plm extends ClientSDK {
     request: operations.UpdatePlmPartRequest,
     options?: RequestOptions,
   ): Promise<shared.PlmPart> {
-    return unwrapAsync(plmUpdatePlmPart(
+    return unwrapAsync(partUpdatePlmPart(
       this,
       request,
       options,

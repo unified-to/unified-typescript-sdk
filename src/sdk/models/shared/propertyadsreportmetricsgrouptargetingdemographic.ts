@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,17 +24,19 @@ export const PropertyAdsReportMetricsGroupTargetingDemographic$inboundSchema:
     PropertyAdsReportMetricsGroupTargetingDemographic,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    age_max: z.number().optional(),
-    age_min: z.number().optional(),
-    female: z.boolean().optional(),
-    male: z.boolean().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "age_max": "ageMax",
-      "age_min": "ageMin",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      age_max: z.number().optional(),
+      age_min: z.number().optional(),
+      female: z.boolean().optional(),
+      male: z.boolean().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "age_max": "ageMax",
+        "age_min": "ageMin",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsGroupTargetingDemographicFromJSON(
   jsonString: string,

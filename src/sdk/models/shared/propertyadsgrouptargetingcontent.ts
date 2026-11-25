@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -41,21 +41,23 @@ export const PropertyAdsGroupTargetingContent$inboundSchema: z.ZodType<
   PropertyAdsGroupTargetingContent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  excluded_keywords: z.array(AdsKeyword$inboundSchema).optional(),
-  excluded_topics: z.array(TargetRef$inboundSchema).optional(),
-  excluded_urls: z.array(z.string()).optional(),
-  keywords: z.array(AdsKeyword$inboundSchema).optional(),
-  topics: z.array(TargetRef$inboundSchema).optional(),
-  urls: z.array(z.string()).optional(),
-  video: PropertyAdsGroupTargetingContentVideo$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "excluded_keywords": "excludedKeywords",
-    "excluded_topics": "excludedTopics",
-    "excluded_urls": "excludedUrls",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    excluded_keywords: z.array(AdsKeyword$inboundSchema).optional(),
+    excluded_topics: z.array(TargetRef$inboundSchema).optional(),
+    excluded_urls: z.array(z.string()).optional(),
+    keywords: z.array(AdsKeyword$inboundSchema).optional(),
+    topics: z.array(TargetRef$inboundSchema).optional(),
+    urls: z.array(z.string()).optional(),
+    video: PropertyAdsGroupTargetingContentVideo$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "excluded_keywords": "excludedKeywords",
+      "excluded_topics": "excludedTopics",
+      "excluded_urls": "excludedUrls",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsGroupTargetingContent$Outbound = {
   excluded_keywords?: Array<AdsKeyword$Outbound> | undefined;
@@ -72,21 +74,23 @@ export const PropertyAdsGroupTargetingContent$outboundSchema: z.ZodType<
   PropertyAdsGroupTargetingContent$Outbound,
   z.ZodTypeDef,
   PropertyAdsGroupTargetingContent
-> = z.object({
-  excludedKeywords: z.array(AdsKeyword$outboundSchema).optional(),
-  excludedTopics: z.array(TargetRef$outboundSchema).optional(),
-  excludedUrls: z.array(z.string()).optional(),
-  keywords: z.array(AdsKeyword$outboundSchema).optional(),
-  topics: z.array(TargetRef$outboundSchema).optional(),
-  urls: z.array(z.string()).optional(),
-  video: PropertyAdsGroupTargetingContentVideo$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    excludedKeywords: "excluded_keywords",
-    excludedTopics: "excluded_topics",
-    excludedUrls: "excluded_urls",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    excludedKeywords: z.array(AdsKeyword$outboundSchema).optional(),
+    excludedTopics: z.array(TargetRef$outboundSchema).optional(),
+    excludedUrls: z.array(z.string()).optional(),
+    keywords: z.array(AdsKeyword$outboundSchema).optional(),
+    topics: z.array(TargetRef$outboundSchema).optional(),
+    urls: z.array(z.string()).optional(),
+    video: PropertyAdsGroupTargetingContentVideo$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      excludedKeywords: "excluded_keywords",
+      excludedTopics: "excluded_topics",
+      excludedUrls: "excluded_urls",
+    });
+  })
+);
 
 export function propertyAdsGroupTargetingContentToJSON(
   propertyAdsGroupTargetingContent: PropertyAdsGroupTargetingContent,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -49,7 +50,9 @@ export type CreateSocialPostRequest = {
 /** @internal */
 export const CreateSocialPostQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateSocialPostQueryParamFields
-> = z.nativeEnum(CreateSocialPostQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateSocialPostQueryParamFields)
+);
 
 /** @internal */
 export type CreateSocialPostRequest$Outbound = {
@@ -64,17 +67,19 @@ export const CreateSocialPostRequest$outboundSchema: z.ZodType<
   CreateSocialPostRequest$Outbound,
   z.ZodTypeDef,
   CreateSocialPostRequest
-> = z.object({
-  socialPost: shared.SocialPost$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateSocialPostQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    socialPost: "SocialPost",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    socialPost: shared.SocialPost$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateSocialPostQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      socialPost: "SocialPost",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createSocialPostRequestToJSON(
   createSocialPostRequest: CreateSocialPostRequest,

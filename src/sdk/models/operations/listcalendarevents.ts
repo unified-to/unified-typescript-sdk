@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCalendarEventsQueryParamFields = {
@@ -93,7 +94,9 @@ export type ListCalendarEventsRequest = {
 /** @internal */
 export const ListCalendarEventsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCalendarEventsQueryParamFields
-> = z.nativeEnum(ListCalendarEventsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCalendarEventsQueryParamFields)
+);
 
 /** @internal */
 export type ListCalendarEventsRequest$Outbound = {
@@ -119,33 +122,36 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
   ListCalendarEventsRequest$Outbound,
   z.ZodTypeDef,
   ListCalendarEventsRequest
-> = z.object({
-  calendarId: z.string().optional(),
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  expand: z.boolean().optional(),
-  fields: z.array(ListCalendarEventsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  matterId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  roomId: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    calendarId: "calendar_id",
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    matterId: "matter_id",
-    roomId: "room_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    calendarId: z.string().optional(),
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    expand: z.boolean().optional(),
+    fields: z.array(ListCalendarEventsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    matterId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    roomId: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      calendarId: "calendar_id",
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      matterId: "matter_id",
+      roomId: "room_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCalendarEventsRequestToJSON(
   listCalendarEventsRequest: ListCalendarEventsRequest,

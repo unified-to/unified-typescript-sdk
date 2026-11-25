@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -40,24 +40,26 @@ export const MarketingReportLink$inboundSchema: z.ZodType<
   MarketingReportLink,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  click_percentage: z.number().optional(),
-  last_click_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  total_clicks: z.number().optional(),
-  unique_click_percentage: z.number().optional(),
-  unique_clicks: z.number().optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "click_percentage": "clickPercentage",
-    "last_click_at": "lastClickAt",
-    "total_clicks": "totalClicks",
-    "unique_click_percentage": "uniqueClickPercentage",
-    "unique_clicks": "uniqueClicks",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    click_percentage: z.number().optional(),
+    last_click_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    total_clicks: z.number().optional(),
+    unique_click_percentage: z.number().optional(),
+    unique_clicks: z.number().optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "click_percentage": "clickPercentage",
+      "last_click_at": "lastClickAt",
+      "total_clicks": "totalClicks",
+      "unique_click_percentage": "uniqueClickPercentage",
+      "unique_clicks": "uniqueClicks",
+    });
+  })
+);
 
 export function marketingReportLinkFromJSON(
   jsonString: string,

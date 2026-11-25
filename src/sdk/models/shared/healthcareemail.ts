@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -38,23 +38,29 @@ export const HealthcareEmailType$inboundSchema: z.ZodType<
   HealthcareEmailType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareEmailType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareEmailType)
+);
 /** @internal */
 export const HealthcareEmailType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareEmailType
-> = openEnums.outboundSchema(HealthcareEmailType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareEmailType)
+);
 
 /** @internal */
 export const HealthcareEmail$inboundSchema: z.ZodType<
   HealthcareEmail,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string(),
-  type: HealthcareEmailType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    type: HealthcareEmailType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type HealthcareEmail$Outbound = {
   email: string;
@@ -66,10 +72,12 @@ export const HealthcareEmail$outboundSchema: z.ZodType<
   HealthcareEmail$Outbound,
   z.ZodTypeDef,
   HealthcareEmail
-> = z.object({
-  email: z.string(),
-  type: HealthcareEmailType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string(),
+    type: HealthcareEmailType$outboundSchema.optional(),
+  })
+);
 
 export function healthcareEmailToJSON(
   healthcareEmail: HealthcareEmail,

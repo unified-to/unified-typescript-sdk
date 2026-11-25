@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -142,51 +142,53 @@ export const ScimUser$inboundSchema: z.ZodType<
   ScimUser,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  active: z.boolean().optional(),
-  addresses: z.array(ScimAddress$inboundSchema).optional(),
-  displayName: z.string().optional(),
-  emails: z.array(ScimEmail$inboundSchema).optional(),
-  entitlements: z.array(ScimEntitlement$inboundSchema).optional(),
-  externalId: z.string().optional(),
-  groups: z.array(ScimUserGroups$inboundSchema).optional(),
-  id: z.string().optional(),
-  ims: z.array(ScimIms$inboundSchema).optional(),
-  locale: z.string().optional(),
-  meta: PropertyScimUserMeta$inboundSchema.optional(),
-  name: PropertyScimUserName$inboundSchema.optional(),
-  nickName: z.string().optional(),
-  password: z.string().optional(),
-  phoneNumbers: z.array(ScimPhoneNumber$inboundSchema).optional(),
-  photos: z.array(ScimPhoto$inboundSchema).optional(),
-  preferredLanguage: z.string().optional(),
-  profileUrl: z.string().optional(),
-  roles: z.array(ScimRole$inboundSchema).optional(),
-  schemas: z.array(PropertyScimUserSchemas$inboundSchema).optional(),
-  timezone: z.string().optional(),
-  title: z.string().optional(),
-  "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User":
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$inboundSchema
-      .optional(),
-  "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User":
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$inboundSchema
-      .optional(),
-  "urn:ietf:params:scim:schemas:extension:peakon:2.0:User":
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$inboundSchema
-      .optional(),
-  userName: z.string().optional(),
-  userType: z.string().optional(),
-  x509Certificates: z.array(ScimRole$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    active: z.boolean().optional(),
+    addresses: z.array(ScimAddress$inboundSchema).optional(),
+    displayName: z.string().optional(),
+    emails: z.array(ScimEmail$inboundSchema).optional(),
+    entitlements: z.array(ScimEntitlement$inboundSchema).optional(),
+    externalId: z.string().optional(),
+    groups: z.array(ScimUserGroups$inboundSchema).optional(),
+    id: z.string().optional(),
+    ims: z.array(ScimIms$inboundSchema).optional(),
+    locale: z.string().optional(),
+    meta: PropertyScimUserMeta$inboundSchema.optional(),
+    name: PropertyScimUserName$inboundSchema.optional(),
+    nickName: z.string().optional(),
+    password: z.string().optional(),
+    phoneNumbers: z.array(ScimPhoneNumber$inboundSchema).optional(),
+    photos: z.array(ScimPhoto$inboundSchema).optional(),
+    preferredLanguage: z.string().optional(),
+    profileUrl: z.string().optional(),
+    roles: z.array(ScimRole$inboundSchema).optional(),
+    schemas: z.array(PropertyScimUserSchemas$inboundSchema).optional(),
+    timezone: z.string().optional(),
+    title: z.string().optional(),
     "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User":
-      "urnIetfParamsScimSchemasExtensionEnterprise20User",
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$inboundSchema
+        .optional(),
     "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User":
-      "urnIetfParamsScimSchemasExtensionLatticeAttributes10User",
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$inboundSchema
+        .optional(),
     "urn:ietf:params:scim:schemas:extension:peakon:2.0:User":
-      "urnIetfParamsScimSchemasExtensionPeakon20User",
-  });
-});
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$inboundSchema
+        .optional(),
+    userName: z.string().optional(),
+    userType: z.string().optional(),
+    x509Certificates: z.array(ScimRole$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User":
+        "urnIetfParamsScimSchemasExtensionEnterprise20User",
+      "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User":
+        "urnIetfParamsScimSchemasExtensionLatticeAttributes10User",
+      "urn:ietf:params:scim:schemas:extension:peakon:2.0:User":
+        "urnIetfParamsScimSchemasExtensionPeakon20User",
+    });
+  })
+);
 /** @internal */
 export type ScimUser$Outbound = {
   active?: boolean | undefined;
@@ -230,51 +232,53 @@ export const ScimUser$outboundSchema: z.ZodType<
   ScimUser$Outbound,
   z.ZodTypeDef,
   ScimUser
-> = z.object({
-  active: z.boolean().optional(),
-  addresses: z.array(ScimAddress$outboundSchema).optional(),
-  displayName: z.string().optional(),
-  emails: z.array(ScimEmail$outboundSchema).optional(),
-  entitlements: z.array(ScimEntitlement$outboundSchema).optional(),
-  externalId: z.string().optional(),
-  groups: z.array(ScimUserGroups$outboundSchema).optional(),
-  id: z.string().optional(),
-  ims: z.array(ScimIms$outboundSchema).optional(),
-  locale: z.string().optional(),
-  meta: PropertyScimUserMeta$outboundSchema.optional(),
-  name: PropertyScimUserName$outboundSchema.optional(),
-  nickName: z.string().optional(),
-  password: z.string().optional(),
-  phoneNumbers: z.array(ScimPhoneNumber$outboundSchema).optional(),
-  photos: z.array(ScimPhoto$outboundSchema).optional(),
-  preferredLanguage: z.string().optional(),
-  profileUrl: z.string().optional(),
-  roles: z.array(ScimRole$outboundSchema).optional(),
-  schemas: z.array(PropertyScimUserSchemas$outboundSchema).optional(),
-  timezone: z.string().optional(),
-  title: z.string().optional(),
-  urnIetfParamsScimSchemasExtensionEnterprise20User:
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$outboundSchema
-      .optional(),
-  urnIetfParamsScimSchemasExtensionLatticeAttributes10User:
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$outboundSchema
-      .optional(),
-  urnIetfParamsScimSchemasExtensionPeakon20User:
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$outboundSchema
-      .optional(),
-  userName: z.string().optional(),
-  userType: z.string().optional(),
-  x509Certificates: z.array(ScimRole$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    active: z.boolean().optional(),
+    addresses: z.array(ScimAddress$outboundSchema).optional(),
+    displayName: z.string().optional(),
+    emails: z.array(ScimEmail$outboundSchema).optional(),
+    entitlements: z.array(ScimEntitlement$outboundSchema).optional(),
+    externalId: z.string().optional(),
+    groups: z.array(ScimUserGroups$outboundSchema).optional(),
+    id: z.string().optional(),
+    ims: z.array(ScimIms$outboundSchema).optional(),
+    locale: z.string().optional(),
+    meta: PropertyScimUserMeta$outboundSchema.optional(),
+    name: PropertyScimUserName$outboundSchema.optional(),
+    nickName: z.string().optional(),
+    password: z.string().optional(),
+    phoneNumbers: z.array(ScimPhoneNumber$outboundSchema).optional(),
+    photos: z.array(ScimPhoto$outboundSchema).optional(),
+    preferredLanguage: z.string().optional(),
+    profileUrl: z.string().optional(),
+    roles: z.array(ScimRole$outboundSchema).optional(),
+    schemas: z.array(PropertyScimUserSchemas$outboundSchema).optional(),
+    timezone: z.string().optional(),
+    title: z.string().optional(),
     urnIetfParamsScimSchemasExtensionEnterprise20User:
-      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$outboundSchema
+        .optional(),
     urnIetfParamsScimSchemasExtensionLatticeAttributes10User:
-      "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User",
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$outboundSchema
+        .optional(),
     urnIetfParamsScimSchemasExtensionPeakon20User:
-      "urn:ietf:params:scim:schemas:extension:peakon:2.0:User",
-  });
-});
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$outboundSchema
+        .optional(),
+    userName: z.string().optional(),
+    userType: z.string().optional(),
+    x509Certificates: z.array(ScimRole$outboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      urnIetfParamsScimSchemasExtensionEnterprise20User:
+        "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+      urnIetfParamsScimSchemasExtensionLatticeAttributes10User:
+        "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User",
+      urnIetfParamsScimSchemasExtensionPeakon20User:
+        "urn:ietf:params:scim:schemas:extension:peakon:2.0:User",
+    });
+  })
+);
 
 export function scimUserToJSON(scimUser: ScimUser): string {
   return JSON.stringify(ScimUser$outboundSchema.parse(scimUser));

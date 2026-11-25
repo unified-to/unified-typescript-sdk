@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -77,9 +78,10 @@ export type UpdateAssessmentOrderRequest = {
 
 /** @internal */
 export const UpdateAssessmentOrderQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateAssessmentOrderQueryParamFields> = z.nativeEnum(
-    UpdateAssessmentOrderQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateAssessmentOrderQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAssessmentOrderQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAssessmentOrderRequest$Outbound = {
@@ -95,19 +97,21 @@ export const UpdateAssessmentOrderRequest$outboundSchema: z.ZodType<
   UpdateAssessmentOrderRequest$Outbound,
   z.ZodTypeDef,
   UpdateAssessmentOrderRequest
-> = z.object({
-  assessmentOrder: shared.AssessmentOrder$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateAssessmentOrderQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    assessmentOrder: "AssessmentOrder",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    assessmentOrder: shared.AssessmentOrder$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateAssessmentOrderQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      assessmentOrder: "AssessmentOrder",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateAssessmentOrderRequestToJSON(
   updateAssessmentOrderRequest: UpdateAssessmentOrderRequest,

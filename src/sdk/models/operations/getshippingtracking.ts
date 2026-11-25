@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetShippingTrackingQueryParamFields = {
@@ -48,9 +49,10 @@ export type GetShippingTrackingRequest = {
 
 /** @internal */
 export const GetShippingTrackingQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetShippingTrackingQueryParamFields> = z.nativeEnum(
-    GetShippingTrackingQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetShippingTrackingQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetShippingTrackingQueryParamFields)
+    );
 
 /** @internal */
 export type GetShippingTrackingRequest$Outbound = {
@@ -65,17 +67,19 @@ export const GetShippingTrackingRequest$outboundSchema: z.ZodType<
   GetShippingTrackingRequest$Outbound,
   z.ZodTypeDef,
   GetShippingTrackingRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetShippingTrackingQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetShippingTrackingQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getShippingTrackingRequestToJSON(
   getShippingTrackingRequest: GetShippingTrackingRequest,

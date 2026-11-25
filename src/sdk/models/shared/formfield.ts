@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -65,49 +65,53 @@ export const FormFieldType$inboundSchema: z.ZodType<
   FormFieldType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(FormFieldType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(FormFieldType));
 /** @internal */
 export const FormFieldType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   FormFieldType
-> = openEnums.outboundSchema(FormFieldType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(FormFieldType));
 
 /** @internal */
 export const FormField$inboundSchema: z.ZodType<
   FormField,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  choices: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  default_value: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_required: z.boolean().optional(),
-  max: z.number().optional(),
-  max_length: z.number().optional(),
-  min: z.number().optional(),
-  min_length: z.number().optional(),
-  name: z.string(),
-  order: z.number().optional(),
-  pattern: z.string().optional(),
-  type: FormFieldType$inboundSchema,
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "default_value": "defaultValue",
-    "is_active": "isActive",
-    "is_required": "isRequired",
-    "max_length": "maxLength",
-    "min_length": "minLength",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    choices: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    default_value: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_required: z.boolean().optional(),
+    max: z.number().optional(),
+    max_length: z.number().optional(),
+    min: z.number().optional(),
+    min_length: z.number().optional(),
+    name: z.string(),
+    order: z.number().optional(),
+    pattern: z.string().optional(),
+    type: FormFieldType$inboundSchema,
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "default_value": "defaultValue",
+      "is_active": "isActive",
+      "is_required": "isRequired",
+      "max_length": "maxLength",
+      "min_length": "minLength",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type FormField$Outbound = {
   choices?: Array<string> | undefined;
@@ -133,34 +137,36 @@ export const FormField$outboundSchema: z.ZodType<
   FormField$Outbound,
   z.ZodTypeDef,
   FormField
-> = z.object({
-  choices: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  defaultValue: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  isRequired: z.boolean().optional(),
-  max: z.number().optional(),
-  maxLength: z.number().optional(),
-  min: z.number().optional(),
-  minLength: z.number().optional(),
-  name: z.string(),
-  order: z.number().optional(),
-  pattern: z.string().optional(),
-  type: FormFieldType$outboundSchema,
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    defaultValue: "default_value",
-    isActive: "is_active",
-    isRequired: "is_required",
-    maxLength: "max_length",
-    minLength: "min_length",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    choices: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    defaultValue: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    isRequired: z.boolean().optional(),
+    max: z.number().optional(),
+    maxLength: z.number().optional(),
+    min: z.number().optional(),
+    minLength: z.number().optional(),
+    name: z.string(),
+    order: z.number().optional(),
+    pattern: z.string().optional(),
+    type: FormFieldType$outboundSchema,
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      defaultValue: "default_value",
+      isActive: "is_active",
+      isRequired: "is_required",
+      maxLength: "max_length",
+      minLength: "min_length",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function formFieldToJSON(formField: FormField): string {
   return JSON.stringify(FormField$outboundSchema.parse(formField));

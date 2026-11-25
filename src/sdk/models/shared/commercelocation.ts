@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -80,59 +80,63 @@ export const LocationType$inboundSchema: z.ZodType<
   LocationType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LocationType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(LocationType));
 /** @internal */
 export const LocationType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LocationType
-> = openEnums.outboundSchema(LocationType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(LocationType));
 
 /** @internal */
 export const CommerceLocation$inboundSchema: z.ZodType<
   CommerceLocation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyCommerceLocationAddress$inboundSchema.optional(),
-  categories: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  image_url: z.string().optional(),
-  is_active: z.boolean().optional(),
-  language_locale: z.string().optional(),
-  latitude: z.number().optional(),
-  location_type: LocationType$inboundSchema.optional(),
-  longitude: z.number().optional(),
-  media: z.array(CommerceItemMedia$inboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  price_level: z.string().optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  review_count: z.number().optional(),
-  telephones: z.array(CommerceTelephone$inboundSchema).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "image_url": "imageUrl",
-    "is_active": "isActive",
-    "language_locale": "languageLocale",
-    "location_type": "locationType",
-    "parent_id": "parentId",
-    "price_level": "priceLevel",
-    "review_count": "reviewCount",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCommerceLocationAddress$inboundSchema.optional(),
+    categories: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    image_url: z.string().optional(),
+    is_active: z.boolean().optional(),
+    language_locale: z.string().optional(),
+    latitude: z.number().optional(),
+    location_type: LocationType$inboundSchema.optional(),
+    longitude: z.number().optional(),
+    media: z.array(CommerceItemMedia$inboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    price_level: z.string().optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    review_count: z.number().optional(),
+    telephones: z.array(CommerceTelephone$inboundSchema).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "image_url": "imageUrl",
+      "is_active": "isActive",
+      "language_locale": "languageLocale",
+      "location_type": "locationType",
+      "parent_id": "parentId",
+      "price_level": "priceLevel",
+      "review_count": "reviewCount",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type CommerceLocation$Outbound = {
   address?: PropertyCommerceLocationAddress$Outbound | undefined;
@@ -165,44 +169,46 @@ export const CommerceLocation$outboundSchema: z.ZodType<
   CommerceLocation$Outbound,
   z.ZodTypeDef,
   CommerceLocation
-> = z.object({
-  address: PropertyCommerceLocationAddress$outboundSchema.optional(),
-  categories: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  imageUrl: z.string().optional(),
-  isActive: z.boolean().optional(),
-  languageLocale: z.string().optional(),
-  latitude: z.number().optional(),
-  locationType: LocationType$outboundSchema.optional(),
-  longitude: z.number().optional(),
-  media: z.array(CommerceItemMedia$outboundSchema).optional(),
-  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  priceLevel: z.string().optional(),
-  rating: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  reviewCount: z.number().optional(),
-  telephones: z.array(CommerceTelephone$outboundSchema).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    imageUrl: "image_url",
-    isActive: "is_active",
-    languageLocale: "language_locale",
-    locationType: "location_type",
-    parentId: "parent_id",
-    priceLevel: "price_level",
-    reviewCount: "review_count",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCommerceLocationAddress$outboundSchema.optional(),
+    categories: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    imageUrl: z.string().optional(),
+    isActive: z.boolean().optional(),
+    languageLocale: z.string().optional(),
+    latitude: z.number().optional(),
+    locationType: LocationType$outboundSchema.optional(),
+    longitude: z.number().optional(),
+    media: z.array(CommerceItemMedia$outboundSchema).optional(),
+    metadata: z.array(CommerceMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    priceLevel: z.string().optional(),
+    rating: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    reviewCount: z.number().optional(),
+    telephones: z.array(CommerceTelephone$outboundSchema).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      imageUrl: "image_url",
+      isActive: "is_active",
+      languageLocale: "language_locale",
+      locationType: "location_type",
+      parentId: "parent_id",
+      priceLevel: "price_level",
+      reviewCount: "review_count",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function commerceLocationToJSON(
   commerceLocation: CommerceLocation,

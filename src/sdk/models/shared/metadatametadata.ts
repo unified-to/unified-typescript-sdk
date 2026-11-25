@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -71,43 +71,51 @@ export const MetadataMetadataFormat$inboundSchema: z.ZodType<
   MetadataMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(MetadataMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MetadataMetadataFormat)
+);
 /** @internal */
 export const MetadataMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   MetadataMetadataFormat
-> = openEnums.outboundSchema(MetadataMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(MetadataMetadataFormat)
+);
 
 /** @internal */
 export const MetadataMetadata$inboundSchema: z.ZodType<
   MetadataMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  format: MetadataMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  is_required: z.boolean().optional(),
-  name: z.string(),
-  object_type: z.string(),
-  objects: z.record(z.string()).optional(),
-  options: z.array(z.string()).optional(),
-  original_format: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  slug: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_required": "isRequired",
-    "object_type": "objectType",
-    "original_format": "originalFormat",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    format: MetadataMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    is_required: z.boolean().optional(),
+    name: z.string(),
+    object_type: z.string(),
+    objects: z.record(z.string()).optional(),
+    options: z.array(z.string()).optional(),
+    original_format: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    slug: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_required": "isRequired",
+      "object_type": "objectType",
+      "original_format": "originalFormat",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type MetadataMetadata$Outbound = {
   created_at?: string | undefined;
@@ -129,28 +137,30 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   MetadataMetadata$Outbound,
   z.ZodTypeDef,
   MetadataMetadata
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  format: MetadataMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  isRequired: z.boolean().optional(),
-  name: z.string(),
-  objectType: z.string(),
-  objects: z.record(z.string()).optional(),
-  options: z.array(z.string()).optional(),
-  originalFormat: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  slug: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isRequired: "is_required",
-    objectType: "object_type",
-    originalFormat: "original_format",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    format: MetadataMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    isRequired: z.boolean().optional(),
+    name: z.string(),
+    objectType: z.string(),
+    objects: z.record(z.string()).optional(),
+    options: z.array(z.string()).optional(),
+    originalFormat: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    slug: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isRequired: "is_required",
+      objectType: "object_type",
+      originalFormat: "original_format",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function metadataMetadataToJSON(
   metadataMetadata: MetadataMetadata,

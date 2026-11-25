@@ -32,25 +32,25 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.member.createMartechMember({
     marketingMember: {
-      company: "Miller - Franecki",
+      company: "Abernathy - Carter",
       createdAt: new Date("2022-04-15T15:32:38.496Z"),
       emails: [
         {
-          email: "jude.leffler@hotmail.com",
+          email: "jeremy.franecki@hotmail.com",
           type: "HOME",
         },
       ],
-      firstName: "Jude",
-      id: "7dee3635-3462-4cb1-a9f4-90d30e8832ad",
-      lastName: "Leffler",
+      firstName: "Jeremy",
+      id: "36593168-bfc8-428f-b80c-aeee825fc261",
+      lastName: "Franecki",
       metadata: [],
-      name: "Jude Leffler",
+      name: "Jeremy Franecki",
       status: "UNSUBSCRIBED",
       tags: [
-        "adnuo",
-        "verumtamen",
+        "deleniti",
+        "subvenio",
       ],
-      updatedAt: new Date("2025-07-30T07:17:28.961Z"),
+      updatedAt: new Date("2025-08-03T12:09:11.008Z"),
     },
     connectionId: "<id>",
   });
@@ -80,25 +80,25 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await memberCreateMartechMember(unifiedTo, {
     marketingMember: {
-      company: "Miller - Franecki",
+      company: "Abernathy - Carter",
       createdAt: new Date("2022-04-15T15:32:38.496Z"),
       emails: [
         {
-          email: "jude.leffler@hotmail.com",
+          email: "jeremy.franecki@hotmail.com",
           type: "HOME",
         },
       ],
-      firstName: "Jude",
-      id: "7dee3635-3462-4cb1-a9f4-90d30e8832ad",
-      lastName: "Leffler",
+      firstName: "Jeremy",
+      id: "36593168-bfc8-428f-b80c-aeee825fc261",
+      lastName: "Franecki",
       metadata: [],
-      name: "Jude Leffler",
+      name: "Jeremy Franecki",
       status: "UNSUBSCRIBED",
       tags: [
-        "adnuo",
-        "verumtamen",
+        "deleniti",
+        "subvenio",
       ],
-      updatedAt: new Date("2025-07-30T07:17:28.961Z"),
+      updatedAt: new Date("2025-08-03T12:09:11.008Z"),
     },
     connectionId: "<id>",
   });
@@ -463,25 +463,25 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.member.patchMartechMember({
     marketingMember: {
-      company: "Miller - Franecki",
+      company: "Abernathy - Carter",
       createdAt: new Date("2022-04-15T15:32:38.496Z"),
       emails: [
         {
-          email: "jude.leffler@hotmail.com",
+          email: "jeremy.franecki@hotmail.com",
           type: "HOME",
         },
       ],
-      firstName: "Jude",
-      id: "d38dd2c4-04b9-480e-8515-ef8cbbfd155d",
-      lastName: "Leffler",
+      firstName: "Jeremy",
+      id: "f5b53e1a-2e6b-4d8c-9850-f016140bd9c9",
+      lastName: "Franecki",
       metadata: [],
-      name: "Jude Leffler",
+      name: "Jeremy Franecki",
       status: "UNSUBSCRIBED",
       tags: [
-        "adnuo",
-        "verumtamen",
+        "deleniti",
+        "subvenio",
       ],
-      updatedAt: new Date("2025-07-30T07:17:28.978Z"),
+      updatedAt: new Date("2025-08-03T12:09:11.018Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -512,25 +512,25 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await memberPatchMartechMember(unifiedTo, {
     marketingMember: {
-      company: "Miller - Franecki",
+      company: "Abernathy - Carter",
       createdAt: new Date("2022-04-15T15:32:38.496Z"),
       emails: [
         {
-          email: "jude.leffler@hotmail.com",
+          email: "jeremy.franecki@hotmail.com",
           type: "HOME",
         },
       ],
-      firstName: "Jude",
-      id: "d38dd2c4-04b9-480e-8515-ef8cbbfd155d",
-      lastName: "Leffler",
+      firstName: "Jeremy",
+      id: "f5b53e1a-2e6b-4d8c-9850-f016140bd9c9",
+      lastName: "Franecki",
       metadata: [],
-      name: "Jude Leffler",
+      name: "Jeremy Franecki",
       status: "UNSUBSCRIBED",
       tags: [
-        "adnuo",
-        "verumtamen",
+        "deleniti",
+        "subvenio",
       ],
-      updatedAt: new Date("2025-07-30T07:17:28.978Z"),
+      updatedAt: new Date("2025-08-03T12:09:11.018Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -663,25 +663,25 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.member.updateMartechMember({
     marketingMember: {
-      company: "Miller - Franecki",
+      company: "Abernathy - Carter",
       createdAt: new Date("2022-04-15T15:32:38.496Z"),
       emails: [
         {
-          email: "jude.leffler@hotmail.com",
+          email: "jeremy.franecki@hotmail.com",
           type: "HOME",
         },
       ],
-      firstName: "Jude",
-      id: "d38dd2c4-04b9-480e-8515-ef8cbbfd155d",
-      lastName: "Leffler",
+      firstName: "Jeremy",
+      id: "f5b53e1a-2e6b-4d8c-9850-f016140bd9c9",
+      lastName: "Franecki",
       metadata: [],
-      name: "Jude Leffler",
+      name: "Jeremy Franecki",
       status: "UNSUBSCRIBED",
       tags: [
-        "adnuo",
-        "verumtamen",
+        "deleniti",
+        "subvenio",
       ],
-      updatedAt: new Date("2025-07-30T07:17:28.978Z"),
+      updatedAt: new Date("2025-08-03T12:09:11.018Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -712,25 +712,25 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await memberUpdateMartechMember(unifiedTo, {
     marketingMember: {
-      company: "Miller - Franecki",
+      company: "Abernathy - Carter",
       createdAt: new Date("2022-04-15T15:32:38.496Z"),
       emails: [
         {
-          email: "jude.leffler@hotmail.com",
+          email: "jeremy.franecki@hotmail.com",
           type: "HOME",
         },
       ],
-      firstName: "Jude",
-      id: "d38dd2c4-04b9-480e-8515-ef8cbbfd155d",
-      lastName: "Leffler",
+      firstName: "Jeremy",
+      id: "f5b53e1a-2e6b-4d8c-9850-f016140bd9c9",
+      lastName: "Franecki",
       metadata: [],
-      name: "Jude Leffler",
+      name: "Jeremy Franecki",
       status: "UNSUBSCRIBED",
       tags: [
-        "adnuo",
-        "verumtamen",
+        "deleniti",
+        "subvenio",
       ],
-      updatedAt: new Date("2025-07-30T07:17:28.978Z"),
+      updatedAt: new Date("2025-08-03T12:09:11.018Z"),
     },
     connectionId: "<id>",
     id: "<id>",

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -66,53 +66,61 @@ export const AtsInterviewStatus$inboundSchema: z.ZodType<
   AtsInterviewStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsInterviewStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AtsInterviewStatus)
+);
 /** @internal */
 export const AtsInterviewStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsInterviewStatus
-> = openEnums.outboundSchema(AtsInterviewStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsInterviewStatus)
+);
 
 /** @internal */
 export const AtsInterview$inboundSchema: z.ZodType<
   AtsInterview,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  application_id: z.string().optional(),
-  candidate_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  external_event_xref: z.string().optional(),
-  id: z.string().optional(),
-  job_id: z.string().optional(),
-  location: z.string().optional(),
-  meeting_url: z.string().optional(),
-  metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: AtsInterviewStatus$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_ids: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "application_id": "applicationId",
-    "candidate_id": "candidateId",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "external_event_xref": "externalEventXref",
-    "job_id": "jobId",
-    "meeting_url": "meetingUrl",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_ids": "userIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    application_id: z.string().optional(),
+    candidate_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    external_event_xref: z.string().optional(),
+    id: z.string().optional(),
+    job_id: z.string().optional(),
+    location: z.string().optional(),
+    meeting_url: z.string().optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    status: AtsInterviewStatus$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_ids: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "application_id": "applicationId",
+      "candidate_id": "candidateId",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "external_event_xref": "externalEventXref",
+      "job_id": "jobId",
+      "meeting_url": "meetingUrl",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_ids": "userIds",
+    });
+  })
+);
 /** @internal */
 export type AtsInterview$Outbound = {
   application_id?: string | undefined;
@@ -137,36 +145,38 @@ export const AtsInterview$outboundSchema: z.ZodType<
   AtsInterview$Outbound,
   z.ZodTypeDef,
   AtsInterview
-> = z.object({
-  applicationId: z.string().optional(),
-  candidateId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  externalEventXref: z.string().optional(),
-  id: z.string().optional(),
-  jobId: z.string().optional(),
-  location: z.string().optional(),
-  meetingUrl: z.string().optional(),
-  metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  status: AtsInterviewStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    applicationId: "application_id",
-    candidateId: "candidate_id",
-    createdAt: "created_at",
-    endAt: "end_at",
-    externalEventXref: "external_event_xref",
-    jobId: "job_id",
-    meetingUrl: "meeting_url",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userIds: "user_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applicationId: z.string().optional(),
+    candidateId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    externalEventXref: z.string().optional(),
+    id: z.string().optional(),
+    jobId: z.string().optional(),
+    location: z.string().optional(),
+    meetingUrl: z.string().optional(),
+    metadata: z.array(AtsMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    status: AtsInterviewStatus$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userIds: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      applicationId: "application_id",
+      candidateId: "candidate_id",
+      createdAt: "created_at",
+      endAt: "end_at",
+      externalEventXref: "external_event_xref",
+      jobId: "job_id",
+      meetingUrl: "meeting_url",
+      startAt: "start_at",
+      updatedAt: "updated_at",
+      userIds: "user_ids",
+    });
+  })
+);
 
 export function atsInterviewToJSON(atsInterview: AtsInterview): string {
   return JSON.stringify(AtsInterview$outboundSchema.parse(atsInterview));

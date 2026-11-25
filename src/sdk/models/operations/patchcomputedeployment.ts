@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,9 +53,10 @@ export type PatchComputeDeploymentRequest = {
 
 /** @internal */
 export const PatchComputeDeploymentQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof PatchComputeDeploymentQueryParamFields> = z.nativeEnum(
-    PatchComputeDeploymentQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof PatchComputeDeploymentQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(PatchComputeDeploymentQueryParamFields)
+    );
 
 /** @internal */
 export type PatchComputeDeploymentRequest$Outbound = {
@@ -70,19 +72,21 @@ export const PatchComputeDeploymentRequest$outboundSchema: z.ZodType<
   PatchComputeDeploymentRequest$Outbound,
   z.ZodTypeDef,
   PatchComputeDeploymentRequest
-> = z.object({
-  computeDeployment: shared.ComputeDeployment$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchComputeDeploymentQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    computeDeployment: "ComputeDeployment",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    computeDeployment: shared.ComputeDeployment$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchComputeDeploymentQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      computeDeployment: "ComputeDeployment",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchComputeDeploymentRequestToJSON(
   patchComputeDeploymentRequest: PatchComputeDeploymentRequest,

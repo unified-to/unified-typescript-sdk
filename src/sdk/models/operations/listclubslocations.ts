@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListClubsLocationsQueryParamFields = {
@@ -58,7 +59,9 @@ export type ListClubsLocationsRequest = {
 /** @internal */
 export const ListClubsLocationsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListClubsLocationsQueryParamFields
-> = z.nativeEnum(ListClubsLocationsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListClubsLocationsQueryParamFields)
+);
 
 /** @internal */
 export type ListClubsLocationsRequest$Outbound = {
@@ -79,24 +82,27 @@ export const ListClubsLocationsRequest$outboundSchema: z.ZodType<
   ListClubsLocationsRequest$Outbound,
   z.ZodTypeDef,
   ListClubsLocationsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListClubsLocationsQueryParamFields$outboundSchema).optional(),
-  groupId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    groupId: "group_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListClubsLocationsQueryParamFields$outboundSchema)
+      .optional(),
+    groupId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      groupId: "group_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listClubsLocationsRequestToJSON(
   listClubsLocationsRequest: ListClubsLocationsRequest,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -45,8 +46,10 @@ export type UpdateAnalyticsPropertyRequest = {
 
 /** @internal */
 export const UpdateAnalyticsPropertyQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateAnalyticsPropertyQueryParamFields> = z
-    .nativeEnum(UpdateAnalyticsPropertyQueryParamFields);
+  z.ZodNativeEnum<typeof UpdateAnalyticsPropertyQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateAnalyticsPropertyQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateAnalyticsPropertyRequest$Outbound = {
@@ -62,19 +65,21 @@ export const UpdateAnalyticsPropertyRequest$outboundSchema: z.ZodType<
   UpdateAnalyticsPropertyRequest$Outbound,
   z.ZodTypeDef,
   UpdateAnalyticsPropertyRequest
-> = z.object({
-  analyticsProperty: shared.AnalyticsProperty$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateAnalyticsPropertyQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    analyticsProperty: "AnalyticsProperty",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    analyticsProperty: shared.AnalyticsProperty$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateAnalyticsPropertyQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      analyticsProperty: "AnalyticsProperty",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateAnalyticsPropertyRequestToJSON(
   updateAnalyticsPropertyRequest: UpdateAnalyticsPropertyRequest,

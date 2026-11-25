@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -45,35 +45,37 @@ export const AccountingPurchasereceiptLineitem$inboundSchema: z.ZodType<
   AccountingPurchasereceiptLineitem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  id: z.string().optional(),
-  item_description: z.string().optional(),
-  item_id: z.string().optional(),
-  item_name: z.string().optional(),
-  item_sku: z.string().optional(),
-  locations: z.array(AccountingReference$inboundSchema).optional(),
-  purchaseorder_id: z.string().optional(),
-  purchaseorder_line_identifier: z.string().optional(),
-  total_amount: z.number().optional(),
-  unit_amount: z.number().optional(),
-  unit_quantity_ordered: z.number().optional(),
-  unit_quantity_received: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "item_description": "itemDescription",
-    "item_id": "itemId",
-    "item_name": "itemName",
-    "item_sku": "itemSku",
-    "purchaseorder_id": "purchaseorderId",
-    "purchaseorder_line_identifier": "purchaseorderLineIdentifier",
-    "total_amount": "totalAmount",
-    "unit_amount": "unitAmount",
-    "unit_quantity_ordered": "unitQuantityOrdered",
-    "unit_quantity_received": "unitQuantityReceived",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    id: z.string().optional(),
+    item_description: z.string().optional(),
+    item_id: z.string().optional(),
+    item_name: z.string().optional(),
+    item_sku: z.string().optional(),
+    locations: z.array(AccountingReference$inboundSchema).optional(),
+    purchaseorder_id: z.string().optional(),
+    purchaseorder_line_identifier: z.string().optional(),
+    total_amount: z.number().optional(),
+    unit_amount: z.number().optional(),
+    unit_quantity_ordered: z.number().optional(),
+    unit_quantity_received: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "item_description": "itemDescription",
+      "item_id": "itemId",
+      "item_name": "itemName",
+      "item_sku": "itemSku",
+      "purchaseorder_id": "purchaseorderId",
+      "purchaseorder_line_identifier": "purchaseorderLineIdentifier",
+      "total_amount": "totalAmount",
+      "unit_amount": "unitAmount",
+      "unit_quantity_ordered": "unitQuantityOrdered",
+      "unit_quantity_received": "unitQuantityReceived",
+    });
+  })
+);
 
 export function accountingPurchasereceiptLineitemFromJSON(
   jsonString: string,

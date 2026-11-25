@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -25,12 +25,15 @@ export const DatastoreQueryExpand$inboundSchema: z.ZodType<
   DatastoreQueryExpand,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  expand: z.record(z.lazy(() => DatastoreQueryExpand$inboundSchema)).optional(),
-  filter: PropertyDatastoreQueryExpandFilter$inboundSchema.optional(),
-  limit: z.number().optional(),
-  select: z.array(z.string()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    expand: z.record(z.lazy(() => DatastoreQueryExpand$inboundSchema))
+      .optional(),
+    filter: PropertyDatastoreQueryExpandFilter$inboundSchema.optional(),
+    limit: z.number().optional(),
+    select: z.array(z.string()).optional(),
+  })
+);
 /** @internal */
 export type DatastoreQueryExpand$Outbound = {
   expand?: { [k: string]: DatastoreQueryExpand$Outbound } | undefined;
@@ -44,13 +47,15 @@ export const DatastoreQueryExpand$outboundSchema: z.ZodType<
   DatastoreQueryExpand$Outbound,
   z.ZodTypeDef,
   DatastoreQueryExpand
-> = z.object({
-  expand: z.record(z.lazy(() => DatastoreQueryExpand$outboundSchema))
-    .optional(),
-  filter: PropertyDatastoreQueryExpandFilter$outboundSchema.optional(),
-  limit: z.number().optional(),
-  select: z.array(z.string()).optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    expand: z.record(z.lazy(() => DatastoreQueryExpand$outboundSchema))
+      .optional(),
+    filter: PropertyDatastoreQueryExpandFilter$outboundSchema.optional(),
+    limit: z.number().optional(),
+    select: z.array(z.string()).optional(),
+  })
+);
 
 export function datastoreQueryExpandToJSON(
   datastoreQueryExpand: DatastoreQueryExpand,

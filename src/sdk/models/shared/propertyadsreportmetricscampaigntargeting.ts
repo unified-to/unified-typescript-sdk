@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { AdSchedule, AdSchedule$inboundSchema } from "./adschedule.js";
@@ -99,38 +99,41 @@ export const PropertyAdsReportMetricsCampaignTargeting$inboundSchema: z.ZodType<
   PropertyAdsReportMetricsCampaignTargeting,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  audience: PropertyAdsReportMetricsCampaignTargetingAudience$inboundSchema
-    .optional(),
-  brand_safety:
-    PropertyAdsReportMetricsCampaignTargetingBrandSafety$inboundSchema
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    audience: PropertyAdsReportMetricsCampaignTargetingAudience$inboundSchema
       .optional(),
-  content: PropertyAdsReportMetricsCampaignTargetingContent$inboundSchema
-    .optional(),
-  custom: z.array(CustomTargeting$inboundSchema).optional(),
-  demographic:
-    PropertyAdsReportMetricsCampaignTargetingDemographic$inboundSchema
+    brand_safety:
+      PropertyAdsReportMetricsCampaignTargetingBrandSafety$inboundSchema
+        .optional(),
+    content: PropertyAdsReportMetricsCampaignTargetingContent$inboundSchema
       .optional(),
-  device: PropertyAdsReportMetricsCampaignTargetingDevice$inboundSchema
-    .optional(),
-  geographic: PropertyAdsReportMetricsCampaignTargetingGeographic$inboundSchema
-    .optional(),
-  inventory: PropertyAdsReportMetricsCampaignTargetingInventory$inboundSchema
-    .optional(),
-  language: z.array(TargetRef$inboundSchema).optional(),
-  optimization:
-    PropertyAdsReportMetricsCampaignTargetingOptimization$inboundSchema
+    custom: z.array(CustomTargeting$inboundSchema).optional(),
+    demographic:
+      PropertyAdsReportMetricsCampaignTargetingDemographic$inboundSchema
+        .optional(),
+    device: PropertyAdsReportMetricsCampaignTargetingDevice$inboundSchema
       .optional(),
-  placement: PropertyAdsReportMetricsCampaignTargetingPlacement$inboundSchema
-    .optional(),
-  schedule: z.array(AdSchedule$inboundSchema).optional(),
-  supply: PropertyAdsReportMetricsCampaignTargetingSupply$inboundSchema
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "brand_safety": "brandSafety",
-  });
-});
+    geographic:
+      PropertyAdsReportMetricsCampaignTargetingGeographic$inboundSchema
+        .optional(),
+    inventory: PropertyAdsReportMetricsCampaignTargetingInventory$inboundSchema
+      .optional(),
+    language: z.array(TargetRef$inboundSchema).optional(),
+    optimization:
+      PropertyAdsReportMetricsCampaignTargetingOptimization$inboundSchema
+        .optional(),
+    placement: PropertyAdsReportMetricsCampaignTargetingPlacement$inboundSchema
+      .optional(),
+    schedule: z.array(AdSchedule$inboundSchema).optional(),
+    supply: PropertyAdsReportMetricsCampaignTargetingSupply$inboundSchema
+      .optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "brand_safety": "brandSafety",
+    });
+  })
+);
 
 export function propertyAdsReportMetricsCampaignTargetingFromJSON(
   jsonString: string,

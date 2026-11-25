@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListAtsApplicationsQueryParamFields = {
@@ -76,9 +77,10 @@ export type ListAtsApplicationsRequest = {
 
 /** @internal */
 export const ListAtsApplicationsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListAtsApplicationsQueryParamFields> = z.nativeEnum(
-    ListAtsApplicationsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListAtsApplicationsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListAtsApplicationsQueryParamFields)
+    );
 
 /** @internal */
 export type ListAtsApplicationsRequest$Outbound = {
@@ -102,30 +104,32 @@ export const ListAtsApplicationsRequest$outboundSchema: z.ZodType<
   ListAtsApplicationsRequest$Outbound,
   z.ZodTypeDef,
   ListAtsApplicationsRequest
-> = z.object({
-  candidateId: z.string().optional(),
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListAtsApplicationsQueryParamFields$outboundSchema)
-    .optional(),
-  jobId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    candidateId: "candidate_id",
-    companyId: "company_id",
-    connectionId: "connection_id",
-    jobId: "job_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    candidateId: z.string().optional(),
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListAtsApplicationsQueryParamFields$outboundSchema)
+      .optional(),
+    jobId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      candidateId: "candidate_id",
+      companyId: "company_id",
+      connectionId: "connection_id",
+      jobId: "job_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listAtsApplicationsRequestToJSON(
   listAtsApplicationsRequest: ListAtsApplicationsRequest,

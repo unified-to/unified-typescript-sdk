@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,11 +18,13 @@ export const CrmReference$inboundSchema: z.ZodType<
   CrmReference,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  id: z.string().optional(),
-  name: z.string().optional(),
-  type: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    type: z.string().optional(),
+  })
+);
 /** @internal */
 export type CrmReference$Outbound = {
   id?: string | undefined;
@@ -35,11 +37,13 @@ export const CrmReference$outboundSchema: z.ZodType<
   CrmReference$Outbound,
   z.ZodTypeDef,
   CrmReference
-> = z.object({
-  id: z.string().optional(),
-  name: z.string().optional(),
-  type: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string().optional(),
+    name: z.string().optional(),
+    type: z.string().optional(),
+  })
+);
 
 export function crmReferenceToJSON(crmReference: CrmReference): string {
   return JSON.stringify(CrmReference$outboundSchema.parse(crmReference));

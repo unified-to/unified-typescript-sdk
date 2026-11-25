@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListPerformanceGoalsQueryParamFields = {
@@ -73,9 +74,10 @@ export type ListPerformanceGoalsRequest = {
 
 /** @internal */
 export const ListPerformanceGoalsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListPerformanceGoalsQueryParamFields> = z.nativeEnum(
-    ListPerformanceGoalsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListPerformanceGoalsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListPerformanceGoalsQueryParamFields)
+    );
 
 /** @internal */
 export type ListPerformanceGoalsRequest$Outbound = {
@@ -99,30 +101,32 @@ export const ListPerformanceGoalsRequest$outboundSchema: z.ZodType<
   ListPerformanceGoalsRequest$Outbound,
   z.ZodTypeDef,
   ListPerformanceGoalsRequest
-> = z.object({
-  connectionId: z.string(),
-  cycleId: z.string().optional(),
-  fields: z.array(ListPerformanceGoalsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    cycleId: "cycle_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    cycleId: z.string().optional(),
+    fields: z.array(ListPerformanceGoalsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      cycleId: "cycle_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listPerformanceGoalsRequestToJSON(
   listPerformanceGoalsRequest: ListPerformanceGoalsRequest,

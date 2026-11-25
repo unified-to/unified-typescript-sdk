@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -76,29 +76,33 @@ export const UcContact$inboundSchema: z.ZodType<
   UcContact,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  company: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  emails: z.array(UcEmail$inboundSchema).optional(),
-  first_name: z.string().optional(),
-  id: z.string().optional(),
-  last_name: z.string().optional(),
-  metadata: z.array(UcMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(UcTelephone$inboundSchema).optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "first_name": "firstName",
-    "last_name": "lastName",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    emails: z.array(UcEmail$inboundSchema).optional(),
+    first_name: z.string().optional(),
+    id: z.string().optional(),
+    last_name: z.string().optional(),
+    metadata: z.array(UcMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(UcTelephone$inboundSchema).optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "first_name": "firstName",
+      "last_name": "lastName",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type UcContact$Outbound = {
   company?: string | undefined;
@@ -120,27 +124,29 @@ export const UcContact$outboundSchema: z.ZodType<
   UcContact$Outbound,
   z.ZodTypeDef,
   UcContact
-> = z.object({
-  company: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  emails: z.array(UcEmail$outboundSchema).optional(),
-  firstName: z.string().optional(),
-  id: z.string().optional(),
-  lastName: z.string().optional(),
-  metadata: z.array(UcMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(UcTelephone$outboundSchema).optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    firstName: "first_name",
-    lastName: "last_name",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    company: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    emails: z.array(UcEmail$outboundSchema).optional(),
+    firstName: z.string().optional(),
+    id: z.string().optional(),
+    lastName: z.string().optional(),
+    metadata: z.array(UcMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(UcTelephone$outboundSchema).optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      firstName: "first_name",
+      lastName: "last_name",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function ucContactToJSON(ucContact: UcContact): string {
   return JSON.stringify(UcContact$outboundSchema.parse(ucContact));

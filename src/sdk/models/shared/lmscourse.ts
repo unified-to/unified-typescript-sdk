@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -71,47 +71,51 @@ export const LmsCourse$inboundSchema: z.ZodType<
   LmsCourse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  categories: z.array(z.string()).optional(),
-  content_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  duration_minutes: z.number().optional(),
-  id: z.string().optional(),
-  instructors: z.array(LmsReference$inboundSchema).optional(),
-  is_active: z.boolean().optional(),
-  is_private: z.boolean().optional(),
-  languages: z.array(z.string()).optional(),
-  media: z.array(LmsMedia$inboundSchema).optional(),
-  metadata: z.array(LmsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  price_amount: z.number().optional(),
-  provider_name: z.string().optional(),
-  published_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  raw: z.record(z.any()).optional(),
-  skills: z.array(z.string()).optional(),
-  students: z.array(LmsReference$inboundSchema).optional(),
-  time_estimate_minutes: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "content_ids": "contentIds",
-    "created_at": "createdAt",
-    "duration_minutes": "durationMinutes",
-    "is_active": "isActive",
-    "is_private": "isPrivate",
-    "price_amount": "priceAmount",
-    "provider_name": "providerName",
-    "published_at": "publishedAt",
-    "time_estimate_minutes": "timeEstimateMinutes",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categories: z.array(z.string()).optional(),
+    content_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    duration_minutes: z.number().optional(),
+    id: z.string().optional(),
+    instructors: z.array(LmsReference$inboundSchema).optional(),
+    is_active: z.boolean().optional(),
+    is_private: z.boolean().optional(),
+    languages: z.array(z.string()).optional(),
+    media: z.array(LmsMedia$inboundSchema).optional(),
+    metadata: z.array(LmsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    price_amount: z.number().optional(),
+    provider_name: z.string().optional(),
+    published_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    raw: z.record(z.any()).optional(),
+    skills: z.array(z.string()).optional(),
+    students: z.array(LmsReference$inboundSchema).optional(),
+    time_estimate_minutes: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "content_ids": "contentIds",
+      "created_at": "createdAt",
+      "duration_minutes": "durationMinutes",
+      "is_active": "isActive",
+      "is_private": "isPrivate",
+      "price_amount": "priceAmount",
+      "provider_name": "providerName",
+      "published_at": "publishedAt",
+      "time_estimate_minutes": "timeEstimateMinutes",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type LmsCourse$Outbound = {
   categories?: Array<string> | undefined;
@@ -143,43 +147,45 @@ export const LmsCourse$outboundSchema: z.ZodType<
   LmsCourse$Outbound,
   z.ZodTypeDef,
   LmsCourse
-> = z.object({
-  categories: z.array(z.string()).optional(),
-  contentIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  durationMinutes: z.number().optional(),
-  id: z.string().optional(),
-  instructors: z.array(LmsReference$outboundSchema).optional(),
-  isActive: z.boolean().optional(),
-  isPrivate: z.boolean().optional(),
-  languages: z.array(z.string()).optional(),
-  media: z.array(LmsMedia$outboundSchema).optional(),
-  metadata: z.array(LmsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  priceAmount: z.number().optional(),
-  providerName: z.string().optional(),
-  publishedAt: z.date().transform(v => v.toISOString()).optional(),
-  raw: z.record(z.any()).optional(),
-  skills: z.array(z.string()).optional(),
-  students: z.array(LmsReference$outboundSchema).optional(),
-  timeEstimateMinutes: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contentIds: "content_ids",
-    createdAt: "created_at",
-    durationMinutes: "duration_minutes",
-    isActive: "is_active",
-    isPrivate: "is_private",
-    priceAmount: "price_amount",
-    providerName: "provider_name",
-    publishedAt: "published_at",
-    timeEstimateMinutes: "time_estimate_minutes",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categories: z.array(z.string()).optional(),
+    contentIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    durationMinutes: z.number().optional(),
+    id: z.string().optional(),
+    instructors: z.array(LmsReference$outboundSchema).optional(),
+    isActive: z.boolean().optional(),
+    isPrivate: z.boolean().optional(),
+    languages: z.array(z.string()).optional(),
+    media: z.array(LmsMedia$outboundSchema).optional(),
+    metadata: z.array(LmsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    priceAmount: z.number().optional(),
+    providerName: z.string().optional(),
+    publishedAt: z.date().transform(v => v.toISOString()).optional(),
+    raw: z.record(z.any()).optional(),
+    skills: z.array(z.string()).optional(),
+    students: z.array(LmsReference$outboundSchema).optional(),
+    timeEstimateMinutes: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      contentIds: "content_ids",
+      createdAt: "created_at",
+      durationMinutes: "duration_minutes",
+      isActive: "is_active",
+      isPrivate: "is_private",
+      priceAmount: "price_amount",
+      providerName: "provider_name",
+      publishedAt: "published_at",
+      timeEstimateMinutes: "time_estimate_minutes",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function lmsCourseToJSON(lmsCourse: LmsCourse): string {
   return JSON.stringify(LmsCourse$outboundSchema.parse(lmsCourse));

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCrmDealsQueryParamFields = {
@@ -27,6 +28,7 @@ export const ListCrmDealsQueryParamFields = {
   CompanyIds: "company_ids",
   Description: "description",
   Metadata: "metadata",
+  VehicleIds: "vehicle_ids",
   Raw: "raw",
 } as const;
 export type ListCrmDealsQueryParamFields = ClosedEnum<
@@ -79,7 +81,9 @@ export type ListCrmDealsRequest = {
 /** @internal */
 export const ListCrmDealsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCrmDealsQueryParamFields
-> = z.nativeEnum(ListCrmDealsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCrmDealsQueryParamFields)
+);
 
 /** @internal */
 export type ListCrmDealsRequest$Outbound = {
@@ -103,30 +107,32 @@ export const ListCrmDealsRequest$outboundSchema: z.ZodType<
   ListCrmDealsRequest$Outbound,
   z.ZodTypeDef,
   ListCrmDealsRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  contactId: z.string().optional(),
-  fields: z.array(ListCrmDealsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  pipelineId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    contactId: "contact_id",
-    pipelineId: "pipeline_id",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    contactId: z.string().optional(),
+    fields: z.array(ListCrmDealsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    pipelineId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      contactId: "contact_id",
+      pipelineId: "pipeline_id",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listCrmDealsRequestToJSON(
   listCrmDealsRequest: ListCrmDealsRequest,

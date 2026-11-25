@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetHrisEarningQueryParamFields = {
@@ -53,7 +54,9 @@ export type GetHrisEarningRequest = {
 /** @internal */
 export const GetHrisEarningQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetHrisEarningQueryParamFields
-> = z.nativeEnum(GetHrisEarningQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetHrisEarningQueryParamFields)
+);
 
 /** @internal */
 export type GetHrisEarningRequest$Outbound = {
@@ -68,16 +71,18 @@ export const GetHrisEarningRequest$outboundSchema: z.ZodType<
   GetHrisEarningRequest$Outbound,
   z.ZodTypeDef,
   GetHrisEarningRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetHrisEarningQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetHrisEarningQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getHrisEarningRequestToJSON(
   getHrisEarningRequest: GetHrisEarningRequest,

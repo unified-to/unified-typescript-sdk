@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -73,46 +73,52 @@ export const AccountingPurchasereceiptStatus$inboundSchema: z.ZodType<
   AccountingPurchasereceiptStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingPurchasereceiptStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingPurchasereceiptStatus)
+);
 
 /** @internal */
 export const AccountingPurchasereceipt$inboundSchema: z.ZodType<
   AccountingPurchasereceipt,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  id: z.string().optional(),
-  lineitems: z.array(AccountingPurchasereceiptLineitem$inboundSchema)
-    .optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  organization_id: z.string().optional(),
-  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  purchaseorder_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  receipt_number: z.string().optional(),
-  status: AccountingPurchasereceiptStatus$inboundSchema.optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "organization_id": "organizationId",
-    "posted_at": "postedAt",
-    "purchaseorder_id": "purchaseorderId",
-    "receipt_number": "receiptNumber",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(AccountingAttachment$inboundSchema).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    id: z.string().optional(),
+    lineitems: z.array(AccountingPurchasereceiptLineitem$inboundSchema)
+      .optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    organization_id: z.string().optional(),
+    posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    purchaseorder_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    receipt_number: z.string().optional(),
+    status: AccountingPurchasereceiptStatus$inboundSchema.optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "organization_id": "organizationId",
+      "posted_at": "postedAt",
+      "purchaseorder_id": "purchaseorderId",
+      "receipt_number": "receiptNumber",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function accountingPurchasereceiptFromJSON(
   jsonString: string,

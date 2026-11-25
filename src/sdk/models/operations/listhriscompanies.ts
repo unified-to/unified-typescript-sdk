@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisCompaniesQueryParamFields = {
@@ -50,7 +51,9 @@ export type ListHrisCompaniesRequest = {
 /** @internal */
 export const ListHrisCompaniesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisCompaniesQueryParamFields
-> = z.nativeEnum(ListHrisCompaniesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisCompaniesQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisCompaniesRequest$Outbound = {
@@ -70,22 +73,25 @@ export const ListHrisCompaniesRequest$outboundSchema: z.ZodType<
   ListHrisCompaniesRequest$Outbound,
   z.ZodTypeDef,
   ListHrisCompaniesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListHrisCompaniesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListHrisCompaniesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHrisCompaniesRequestToJSON(
   listHrisCompaniesRequest: ListHrisCompaniesRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -77,53 +77,62 @@ export type CrmDeal = {
    * (reference to HrisEmployee)
    */
   userId?: string | undefined;
+  /**
+   * DMS Vehicles this deal is for
+   */
+  vehicleIds?: Array<string> | undefined;
   wonReason?: string | undefined;
 };
 
 /** @internal */
 export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
-  z.object({
-    amount: z.number().optional(),
-    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-      .optional(),
-    closing_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    company_ids: z.array(z.string()).optional(),
-    contact_ids: z.array(z.string()).optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    currency: z.string().optional(),
-    description: z.string().optional(),
-    id: z.string().optional(),
-    lost_reason: z.string().optional(),
-    metadata: z.array(CrmMetadata$inboundSchema).optional(),
-    name: z.string().optional(),
-    pipelines: z.array(CrmReference$inboundSchema).optional(),
-    probability: z.number().optional(),
-    raw: z.record(z.any()).optional(),
-    source: z.string().optional(),
-    stages: z.array(CrmReference$inboundSchema).optional(),
-    tags: z.array(z.string()).optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    user_id: z.string().optional(),
-    won_reason: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "closed_at": "closedAt",
-      "closing_at": "closingAt",
-      "company_ids": "companyIds",
-      "contact_ids": "contactIds",
-      "created_at": "createdAt",
-      "lost_reason": "lostReason",
-      "updated_at": "updatedAt",
-      "user_id": "userId",
-      "won_reason": "wonReason",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      amount: z.number().optional(),
+      closed_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      closing_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      company_ids: z.array(z.string()).optional(),
+      contact_ids: z.array(z.string()).optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      currency: z.string().optional(),
+      description: z.string().optional(),
+      id: z.string().optional(),
+      lost_reason: z.string().optional(),
+      metadata: z.array(CrmMetadata$inboundSchema).optional(),
+      name: z.string().optional(),
+      pipelines: z.array(CrmReference$inboundSchema).optional(),
+      probability: z.number().optional(),
+      raw: z.record(z.any()).optional(),
+      source: z.string().optional(),
+      stages: z.array(CrmReference$inboundSchema).optional(),
+      tags: z.array(z.string()).optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      user_id: z.string().optional(),
+      vehicle_ids: z.array(z.string()).optional(),
+      won_reason: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "closed_at": "closedAt",
+        "closing_at": "closingAt",
+        "company_ids": "companyIds",
+        "contact_ids": "contactIds",
+        "created_at": "createdAt",
+        "lost_reason": "lostReason",
+        "updated_at": "updatedAt",
+        "user_id": "userId",
+        "vehicle_ids": "vehicleIds",
+        "won_reason": "wonReason",
+      });
+    })
+  );
 /** @internal */
 export type CrmDeal$Outbound = {
   amount?: number | undefined;
@@ -146,6 +155,7 @@ export type CrmDeal$Outbound = {
   tags?: Array<string> | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
+  vehicle_ids?: Array<string> | undefined;
   won_reason?: string | undefined;
 };
 
@@ -154,41 +164,45 @@ export const CrmDeal$outboundSchema: z.ZodType<
   CrmDeal$Outbound,
   z.ZodTypeDef,
   CrmDeal
-> = z.object({
-  amount: z.number().optional(),
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  closingAt: z.date().transform(v => v.toISOString()).optional(),
-  companyIds: z.array(z.string()).optional(),
-  contactIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  lostReason: z.string().optional(),
-  metadata: z.array(CrmMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  pipelines: z.array(CrmReference$outboundSchema).optional(),
-  probability: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  stages: z.array(CrmReference$outboundSchema).optional(),
-  tags: z.array(z.string()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-  wonReason: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    closedAt: "closed_at",
-    closingAt: "closing_at",
-    companyIds: "company_ids",
-    contactIds: "contact_ids",
-    createdAt: "created_at",
-    lostReason: "lost_reason",
-    updatedAt: "updated_at",
-    userId: "user_id",
-    wonReason: "won_reason",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    closingAt: z.date().transform(v => v.toISOString()).optional(),
+    companyIds: z.array(z.string()).optional(),
+    contactIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    lostReason: z.string().optional(),
+    metadata: z.array(CrmMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    pipelines: z.array(CrmReference$outboundSchema).optional(),
+    probability: z.number().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    stages: z.array(CrmReference$outboundSchema).optional(),
+    tags: z.array(z.string()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+    vehicleIds: z.array(z.string()).optional(),
+    wonReason: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      closedAt: "closed_at",
+      closingAt: "closing_at",
+      companyIds: "company_ids",
+      contactIds: "contact_ids",
+      createdAt: "created_at",
+      lostReason: "lost_reason",
+      updatedAt: "updated_at",
+      userId: "user_id",
+      vehicleIds: "vehicle_ids",
+      wonReason: "won_reason",
+    });
+  })
+);
 
 export function crmDealToJSON(crmDeal: CrmDeal): string {
   return JSON.stringify(CrmDeal$outboundSchema.parse(crmDeal));

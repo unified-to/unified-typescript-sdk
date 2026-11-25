@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -48,27 +48,29 @@ export const CalendarRecordingMedia$inboundSchema: z.ZodType<
   CalendarRecordingMedia,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attendees: z.array(CalendarAttendee$inboundSchema).optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  language: z.string().optional(),
-  recording_download_url: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  summary: z.string().optional(),
-  summary_download_url: z.string().optional(),
-  transcript_download_url: z.string().optional(),
-  transcripts: z.array(CalendarRecordingTranscript$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "recording_download_url": "recordingDownloadUrl",
-    "start_at": "startAt",
-    "summary_download_url": "summaryDownloadUrl",
-    "transcript_download_url": "transcriptDownloadUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attendees: z.array(CalendarAttendee$inboundSchema).optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    language: z.string().optional(),
+    recording_download_url: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    summary: z.string().optional(),
+    summary_download_url: z.string().optional(),
+    transcript_download_url: z.string().optional(),
+    transcripts: z.array(CalendarRecordingTranscript$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "recording_download_url": "recordingDownloadUrl",
+      "start_at": "startAt",
+      "summary_download_url": "summaryDownloadUrl",
+      "transcript_download_url": "transcriptDownloadUrl",
+    });
+  })
+);
 
 export function calendarRecordingMediaFromJSON(
   jsonString: string,

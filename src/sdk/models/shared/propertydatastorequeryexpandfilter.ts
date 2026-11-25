@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -42,25 +42,31 @@ export const PropertyDatastoreQueryExpandFilterType$inboundSchema: z.ZodType<
   PropertyDatastoreQueryExpandFilterType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyDatastoreQueryExpandFilterType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyDatastoreQueryExpandFilterType)
+);
 /** @internal */
 export const PropertyDatastoreQueryExpandFilterType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyDatastoreQueryExpandFilterType
-> = openEnums.outboundSchema(PropertyDatastoreQueryExpandFilterType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyDatastoreQueryExpandFilterType)
+);
 
 /** @internal */
 export const PropertyDatastoreQueryExpandFilter$inboundSchema: z.ZodType<
   PropertyDatastoreQueryExpandFilter,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  and: z.array(DatastoreFilterGroup$inboundSchema).optional(),
-  filters: z.array(DatastoreFilter$inboundSchema).optional(),
-  or: z.array(DatastoreFilterGroup$inboundSchema).optional(),
-  type: PropertyDatastoreQueryExpandFilterType$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    and: z.array(DatastoreFilterGroup$inboundSchema).optional(),
+    filters: z.array(DatastoreFilter$inboundSchema).optional(),
+    or: z.array(DatastoreFilterGroup$inboundSchema).optional(),
+    type: PropertyDatastoreQueryExpandFilterType$inboundSchema,
+  })
+);
 /** @internal */
 export type PropertyDatastoreQueryExpandFilter$Outbound = {
   and?: Array<DatastoreFilterGroup$Outbound> | undefined;
@@ -74,12 +80,14 @@ export const PropertyDatastoreQueryExpandFilter$outboundSchema: z.ZodType<
   PropertyDatastoreQueryExpandFilter$Outbound,
   z.ZodTypeDef,
   PropertyDatastoreQueryExpandFilter
-> = z.object({
-  and: z.array(DatastoreFilterGroup$outboundSchema).optional(),
-  filters: z.array(DatastoreFilter$outboundSchema).optional(),
-  or: z.array(DatastoreFilterGroup$outboundSchema).optional(),
-  type: PropertyDatastoreQueryExpandFilterType$outboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    and: z.array(DatastoreFilterGroup$outboundSchema).optional(),
+    filters: z.array(DatastoreFilter$outboundSchema).optional(),
+    or: z.array(DatastoreFilterGroup$outboundSchema).optional(),
+    type: PropertyDatastoreQueryExpandFilterType$outboundSchema,
+  })
+);
 
 export function propertyDatastoreQueryExpandFilterToJSON(
   propertyDatastoreQueryExpandFilter: PropertyDatastoreQueryExpandFilter,

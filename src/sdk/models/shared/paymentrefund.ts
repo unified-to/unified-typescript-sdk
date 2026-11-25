@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -93,55 +93,64 @@ export type PaymentRefund = {
 
 /** @internal */
 export const Reason$inboundSchema: z.ZodType<Reason, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Reason);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Reason));
 
 /** @internal */
 export const PaymentRefundStatus$inboundSchema: z.ZodType<
   PaymentRefundStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentRefundStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PaymentRefundStatus)
+);
 
 /** @internal */
 export const PaymentRefundTenderType$inboundSchema: z.ZodType<
   PaymentRefundTenderType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PaymentRefundTenderType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PaymentRefundTenderType)
+);
 
 /** @internal */
 export const PaymentRefund$inboundSchema: z.ZodType<
   PaymentRefund,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  id: z.string().optional(),
-  metadata: z.array(PaymentMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  payment_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reason: Reason$inboundSchema.optional(),
-  reference: z.string().optional(),
-  refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: PaymentRefundStatus$inboundSchema.optional(),
-  tender_type: PaymentRefundTenderType$inboundSchema.optional(),
-  total_amount: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "payment_id": "paymentId",
-    "refunded_at": "refundedAt",
-    "tender_type": "tenderType",
-    "total_amount": "totalAmount",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    id: z.string().optional(),
+    metadata: z.array(PaymentMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    payment_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reason: Reason$inboundSchema.optional(),
+    reference: z.string().optional(),
+    refunded_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: PaymentRefundStatus$inboundSchema.optional(),
+    tender_type: PaymentRefundTenderType$inboundSchema.optional(),
+    total_amount: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "payment_id": "paymentId",
+      "refunded_at": "refundedAt",
+      "tender_type": "tenderType",
+      "total_amount": "totalAmount",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function paymentRefundFromJSON(
   jsonString: string,

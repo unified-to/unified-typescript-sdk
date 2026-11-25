@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -96,37 +96,40 @@ export type SocialInsight = {
 
 /** @internal */
 export const Metric$inboundSchema: z.ZodType<Metric, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Metric);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Metric));
 
 /** @internal */
 export const Period$inboundSchema: z.ZodType<Period, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Period);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Period));
 
 /** @internal */
 export const SocialInsight$inboundSchema: z.ZodType<
   SocialInsight,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  date: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(SocialMetadata$inboundSchema).optional(),
-  metric: Metric$inboundSchema.optional(),
-  period: Period$inboundSchema.optional(),
-  post_id: z.string().optional(),
-  profile_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  value: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "post_id": "postId",
-    "profile_id": "profileId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    date: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(SocialMetadata$inboundSchema).optional(),
+    metric: Metric$inboundSchema.optional(),
+    period: Period$inboundSchema.optional(),
+    post_id: z.string().optional(),
+    profile_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    value: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "post_id": "postId",
+      "profile_id": "profileId",
+    });
+  })
+);
 
 export function socialInsightFromJSON(
   jsonString: string,

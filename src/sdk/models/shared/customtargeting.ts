@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,15 +19,17 @@ export const CustomTargeting$inboundSchema: z.ZodType<
   CustomTargeting,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  is_excluded: z.boolean().optional(),
-  key: z.string(),
-  values: z.array(z.string()),
-}).transform((v) => {
-  return remap$(v, {
-    "is_excluded": "isExcluded",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    is_excluded: z.boolean().optional(),
+    key: z.string(),
+    values: z.array(z.string()),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_excluded": "isExcluded",
+    });
+  })
+);
 /** @internal */
 export type CustomTargeting$Outbound = {
   is_excluded?: boolean | undefined;
@@ -40,15 +42,17 @@ export const CustomTargeting$outboundSchema: z.ZodType<
   CustomTargeting$Outbound,
   z.ZodTypeDef,
   CustomTargeting
-> = z.object({
-  isExcluded: z.boolean().optional(),
-  key: z.string(),
-  values: z.array(z.string()),
-}).transform((v) => {
-  return remap$(v, {
-    isExcluded: "is_excluded",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    isExcluded: z.boolean().optional(),
+    key: z.string(),
+    values: z.array(z.string()),
+  }).transform((v) => {
+    return remap$(v, {
+      isExcluded: "is_excluded",
+    });
+  })
+);
 
 export function customTargetingToJSON(
   customTargeting: CustomTargeting,

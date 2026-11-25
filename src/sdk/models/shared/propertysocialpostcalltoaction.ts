@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -47,23 +47,29 @@ export const PropertySocialPostCallToActionType$inboundSchema: z.ZodType<
   PropertySocialPostCallToActionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertySocialPostCallToActionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertySocialPostCallToActionType)
+);
 /** @internal */
 export const PropertySocialPostCallToActionType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertySocialPostCallToActionType
-> = openEnums.outboundSchema(PropertySocialPostCallToActionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertySocialPostCallToActionType)
+);
 
 /** @internal */
 export const PropertySocialPostCallToAction$inboundSchema: z.ZodType<
   PropertySocialPostCallToAction,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  type: PropertySocialPostCallToActionType$inboundSchema.optional(),
-  url: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    type: PropertySocialPostCallToActionType$inboundSchema.optional(),
+    url: z.string().optional(),
+  })
+);
 /** @internal */
 export type PropertySocialPostCallToAction$Outbound = {
   type?: string | undefined;
@@ -75,10 +81,12 @@ export const PropertySocialPostCallToAction$outboundSchema: z.ZodType<
   PropertySocialPostCallToAction$Outbound,
   z.ZodTypeDef,
   PropertySocialPostCallToAction
-> = z.object({
-  type: PropertySocialPostCallToActionType$outboundSchema.optional(),
-  url: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    type: PropertySocialPostCallToActionType$outboundSchema.optional(),
+    url: z.string().optional(),
+  })
+);
 
 export function propertySocialPostCallToActionToJSON(
   propertySocialPostCallToAction: PropertySocialPostCallToAction,

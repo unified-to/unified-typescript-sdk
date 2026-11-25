@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -16,7 +16,7 @@ import {
   GenaiEmbeddingContent$outboundSchema,
 } from "./genaiembeddingcontent.js";
 
-export const EncondingFormat = {
+export const EncodingFormat = {
   Float: "FLOAT",
   Uint8: "UINT8",
   Int8: "INT8",
@@ -24,7 +24,7 @@ export const EncondingFormat = {
   Ubinary: "UBINARY",
   Base64: "BASE64",
 } as const;
-export type EncondingFormat = OpenEnum<typeof EncondingFormat>;
+export type EncodingFormat = OpenEnum<typeof EncodingFormat>;
 
 export type GenaiEmbedding = {
   /**
@@ -39,7 +39,7 @@ export type GenaiEmbedding = {
    * JSON string based off of the format
    */
   embeddings?: string | undefined;
-  encondingFormat?: EncondingFormat | undefined;
+  encodingFormat?: EncodingFormat | undefined;
   id?: string | undefined;
   maxTokens?: number | undefined;
   modelId?: string | undefined;
@@ -52,48 +52,50 @@ export type GenaiEmbedding = {
 };
 
 /** @internal */
-export const EncondingFormat$inboundSchema: z.ZodType<
-  EncondingFormat,
+export const EncodingFormat$inboundSchema: z.ZodType<
+  EncodingFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EncondingFormat);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(EncodingFormat));
 /** @internal */
-export const EncondingFormat$outboundSchema: z.ZodType<
+export const EncodingFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
-  EncondingFormat
-> = openEnums.outboundSchema(EncondingFormat);
+  EncodingFormat
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(EncodingFormat));
 
 /** @internal */
 export const GenaiEmbedding$inboundSchema: z.ZodType<
   GenaiEmbedding,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  content: z.array(GenaiEmbeddingContent$inboundSchema).optional(),
-  dimension: z.number().optional(),
-  embeddings: z.string().optional(),
-  enconding_format: EncondingFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  max_tokens: z.number().optional(),
-  model_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  tokens_used: z.number().optional(),
-  type: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "enconding_format": "encondingFormat",
-    "max_tokens": "maxTokens",
-    "model_id": "modelId",
-    "tokens_used": "tokensUsed",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.array(GenaiEmbeddingContent$inboundSchema).optional(),
+    dimension: z.number().optional(),
+    embeddings: z.string().optional(),
+    encoding_format: EncodingFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    max_tokens: z.number().optional(),
+    model_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    tokens_used: z.number().optional(),
+    type: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "encoding_format": "encodingFormat",
+      "max_tokens": "maxTokens",
+      "model_id": "modelId",
+      "tokens_used": "tokensUsed",
+    });
+  })
+);
 /** @internal */
 export type GenaiEmbedding$Outbound = {
   content?: Array<GenaiEmbeddingContent$Outbound> | undefined;
   dimension?: number | undefined;
   embeddings?: string | undefined;
-  enconding_format?: string | undefined;
+  encoding_format?: string | undefined;
   id?: string | undefined;
   max_tokens?: number | undefined;
   model_id?: string | undefined;
@@ -107,25 +109,27 @@ export const GenaiEmbedding$outboundSchema: z.ZodType<
   GenaiEmbedding$Outbound,
   z.ZodTypeDef,
   GenaiEmbedding
-> = z.object({
-  content: z.array(GenaiEmbeddingContent$outboundSchema).optional(),
-  dimension: z.number().optional(),
-  embeddings: z.string().optional(),
-  encondingFormat: EncondingFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  maxTokens: z.number().optional(),
-  modelId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  tokensUsed: z.number().optional(),
-  type: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    encondingFormat: "enconding_format",
-    maxTokens: "max_tokens",
-    modelId: "model_id",
-    tokensUsed: "tokens_used",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: z.array(GenaiEmbeddingContent$outboundSchema).optional(),
+    dimension: z.number().optional(),
+    embeddings: z.string().optional(),
+    encodingFormat: EncodingFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    maxTokens: z.number().optional(),
+    modelId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    tokensUsed: z.number().optional(),
+    type: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      encodingFormat: "encoding_format",
+      maxTokens: "max_tokens",
+      modelId: "model_id",
+      tokensUsed: "tokens_used",
+    });
+  })
+);
 
 export function genaiEmbeddingToJSON(genaiEmbedding: GenaiEmbedding): string {
   return JSON.stringify(GenaiEmbedding$outboundSchema.parse(genaiEmbedding));

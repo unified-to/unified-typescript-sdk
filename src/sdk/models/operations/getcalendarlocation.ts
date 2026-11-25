@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetCalendarLocationQueryParamFields = {
@@ -43,9 +44,10 @@ export type GetCalendarLocationRequest = {
 
 /** @internal */
 export const GetCalendarLocationQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetCalendarLocationQueryParamFields> = z.nativeEnum(
-    GetCalendarLocationQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetCalendarLocationQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetCalendarLocationQueryParamFields)
+    );
 
 /** @internal */
 export type GetCalendarLocationRequest$Outbound = {
@@ -60,17 +62,19 @@ export const GetCalendarLocationRequest$outboundSchema: z.ZodType<
   GetCalendarLocationRequest$Outbound,
   z.ZodTypeDef,
   GetCalendarLocationRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetCalendarLocationQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetCalendarLocationQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getCalendarLocationRequestToJSON(
   getCalendarLocationRequest: GetCalendarLocationRequest,

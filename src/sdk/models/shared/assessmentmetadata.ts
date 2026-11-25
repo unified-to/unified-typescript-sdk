@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -106,7 +106,7 @@ export const AssessmentMetadata1$inboundSchema: z.ZodType<
   AssessmentMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type AssessmentMetadata1$Outbound = {};
 
@@ -115,7 +115,7 @@ export const AssessmentMetadata1$outboundSchema: z.ZodType<
   AssessmentMetadata1$Outbound,
   z.ZodTypeDef,
   AssessmentMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function assessmentMetadata1ToJSON(
   assessmentMetadata1: AssessmentMetadata1,
@@ -139,12 +139,14 @@ export const AssessmentMetadata5$inboundSchema: z.ZodType<
   AssessmentMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => AssessmentMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AssessmentMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type AssessmentMetadata5$Outbound =
   | AssessmentMetadata1$Outbound
@@ -157,12 +159,14 @@ export const AssessmentMetadata5$outboundSchema: z.ZodType<
   AssessmentMetadata5$Outbound,
   z.ZodTypeDef,
   AssessmentMetadata5
-> = z.union([
-  z.lazy(() => AssessmentMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AssessmentMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function assessmentMetadata5ToJSON(
   assessmentMetadata5: AssessmentMetadata5,
@@ -186,20 +190,22 @@ export const AssessmentMetadataExtraData$inboundSchema: z.ZodType<
   AssessmentMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AssessmentMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AssessmentMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type AssessmentMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -213,20 +219,22 @@ export const AssessmentMetadataExtraData$outboundSchema: z.ZodType<
   AssessmentMetadataExtraData$Outbound,
   z.ZodTypeDef,
   AssessmentMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AssessmentMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AssessmentMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function assessmentMetadataExtraDataToJSON(
   assessmentMetadataExtraData: AssessmentMetadataExtraData,
@@ -252,20 +260,24 @@ export const AssessmentMetadataFormat$inboundSchema: z.ZodType<
   AssessmentMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AssessmentMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AssessmentMetadataFormat)
+);
 /** @internal */
 export const AssessmentMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AssessmentMetadataFormat
-> = openEnums.outboundSchema(AssessmentMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AssessmentMetadataFormat)
+);
 
 /** @internal */
 export const AssessmentMetadataSchemas1$inboundSchema: z.ZodType<
   AssessmentMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type AssessmentMetadataSchemas1$Outbound = {};
 
@@ -274,7 +286,7 @@ export const AssessmentMetadataSchemas1$outboundSchema: z.ZodType<
   AssessmentMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   AssessmentMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function assessmentMetadataSchemas1ToJSON(
   assessmentMetadataSchemas1: AssessmentMetadataSchemas1,
@@ -298,12 +310,14 @@ export const AssessmentMetadataSchemas5$inboundSchema: z.ZodType<
   AssessmentMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => AssessmentMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AssessmentMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type AssessmentMetadataSchemas5$Outbound =
   | AssessmentMetadataSchemas1$Outbound
@@ -316,12 +330,14 @@ export const AssessmentMetadataSchemas5$outboundSchema: z.ZodType<
   AssessmentMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   AssessmentMetadataSchemas5
-> = z.union([
-  z.lazy(() => AssessmentMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => AssessmentMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function assessmentMetadataSchemas5ToJSON(
   assessmentMetadataSchemas5: AssessmentMetadataSchemas5,
@@ -345,20 +361,22 @@ export const AssessmentMetadataValue$inboundSchema: z.ZodType<
   AssessmentMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AssessmentMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AssessmentMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type AssessmentMetadataValue$Outbound =
   | { [k: string]: any }
@@ -372,20 +390,22 @@ export const AssessmentMetadataValue$outboundSchema: z.ZodType<
   AssessmentMetadataValue$Outbound,
   z.ZodTypeDef,
   AssessmentMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => AssessmentMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AssessmentMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function assessmentMetadataValueToJSON(
   assessmentMetadataValue: AssessmentMetadataValue,
@@ -409,44 +429,46 @@ export const AssessmentMetadata$inboundSchema: z.ZodType<
   AssessmentMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AssessmentMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: AssessmentMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AssessmentMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AssessmentMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: AssessmentMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AssessmentMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type AssessmentMetadata$Outbound = {
   extra_data?:
@@ -474,44 +496,46 @@ export const AssessmentMetadata$outboundSchema: z.ZodType<
   AssessmentMetadata$Outbound,
   z.ZodTypeDef,
   AssessmentMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AssessmentMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: AssessmentMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => AssessmentMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AssessmentMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: AssessmentMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => AssessmentMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function assessmentMetadataToJSON(
   assessmentMetadata: AssessmentMetadata,

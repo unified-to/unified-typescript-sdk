@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -38,23 +38,27 @@ export const RepoBranch$inboundSchema: z.ZodType<
   RepoBranch,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(RepoMetadata$inboundSchema).optional(),
-  name: z.string(),
-  raw: z.record(z.any()).optional(),
-  repo_id: z.string(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "repo_id": "repoId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    metadata: z.array(RepoMetadata$inboundSchema).optional(),
+    name: z.string(),
+    raw: z.record(z.any()).optional(),
+    repo_id: z.string(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "repo_id": "repoId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type RepoBranch$Outbound = {
   created_at?: string | undefined;
@@ -71,21 +75,23 @@ export const RepoBranch$outboundSchema: z.ZodType<
   RepoBranch$Outbound,
   z.ZodTypeDef,
   RepoBranch
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(RepoMetadata$outboundSchema).optional(),
-  name: z.string(),
-  raw: z.record(z.any()).optional(),
-  repoId: z.string(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    repoId: "repo_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    metadata: z.array(RepoMetadata$outboundSchema).optional(),
+    name: z.string(),
+    raw: z.record(z.any()).optional(),
+    repoId: z.string(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      repoId: "repo_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function repoBranchToJSON(repoBranch: RepoBranch): string {
   return JSON.stringify(RepoBranch$outboundSchema.parse(repoBranch));

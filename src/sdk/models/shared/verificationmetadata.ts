@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -85,7 +85,7 @@ export const VerificationMetadata1$inboundSchema: z.ZodType<
   VerificationMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type VerificationMetadata1$Outbound = {};
 
@@ -94,7 +94,7 @@ export const VerificationMetadata1$outboundSchema: z.ZodType<
   VerificationMetadata1$Outbound,
   z.ZodTypeDef,
   VerificationMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function verificationMetadata1ToJSON(
   verificationMetadata1: VerificationMetadata1,
@@ -118,12 +118,14 @@ export const VerificationMetadata5$inboundSchema: z.ZodType<
   VerificationMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => VerificationMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => VerificationMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type VerificationMetadata5$Outbound =
   | VerificationMetadata1$Outbound
@@ -136,12 +138,14 @@ export const VerificationMetadata5$outboundSchema: z.ZodType<
   VerificationMetadata5$Outbound,
   z.ZodTypeDef,
   VerificationMetadata5
-> = z.union([
-  z.lazy(() => VerificationMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => VerificationMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function verificationMetadata5ToJSON(
   verificationMetadata5: VerificationMetadata5,
@@ -165,20 +169,22 @@ export const VerificationMetadataExtraData$inboundSchema: z.ZodType<
   VerificationMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => VerificationMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => VerificationMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type VerificationMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -192,20 +198,22 @@ export const VerificationMetadataExtraData$outboundSchema: z.ZodType<
   VerificationMetadataExtraData$Outbound,
   z.ZodTypeDef,
   VerificationMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => VerificationMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => VerificationMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function verificationMetadataExtraDataToJSON(
   verificationMetadataExtraData: VerificationMetadataExtraData,
@@ -231,20 +239,24 @@ export const VerificationMetadataFormat$inboundSchema: z.ZodType<
   VerificationMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VerificationMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VerificationMetadataFormat)
+);
 /** @internal */
 export const VerificationMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   VerificationMetadataFormat
-> = openEnums.outboundSchema(VerificationMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(VerificationMetadataFormat)
+);
 
 /** @internal */
 export const VerificationMetadataSchemas1$inboundSchema: z.ZodType<
   VerificationMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type VerificationMetadataSchemas1$Outbound = {};
 
@@ -253,7 +265,7 @@ export const VerificationMetadataSchemas1$outboundSchema: z.ZodType<
   VerificationMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   VerificationMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function verificationMetadataSchemas1ToJSON(
   verificationMetadataSchemas1: VerificationMetadataSchemas1,
@@ -279,12 +291,14 @@ export const VerificationMetadataSchemas5$inboundSchema: z.ZodType<
   VerificationMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => VerificationMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => VerificationMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type VerificationMetadataSchemas5$Outbound =
   | VerificationMetadataSchemas1$Outbound
@@ -297,12 +311,14 @@ export const VerificationMetadataSchemas5$outboundSchema: z.ZodType<
   VerificationMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   VerificationMetadataSchemas5
-> = z.union([
-  z.lazy(() => VerificationMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => VerificationMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function verificationMetadataSchemas5ToJSON(
   verificationMetadataSchemas5: VerificationMetadataSchemas5,
@@ -328,20 +344,22 @@ export const VerificationMetadataValue$inboundSchema: z.ZodType<
   VerificationMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => VerificationMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => VerificationMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type VerificationMetadataValue$Outbound =
   | { [k: string]: any }
@@ -355,20 +373,22 @@ export const VerificationMetadataValue$outboundSchema: z.ZodType<
   VerificationMetadataValue$Outbound,
   z.ZodTypeDef,
   VerificationMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => VerificationMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => VerificationMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function verificationMetadataValueToJSON(
   verificationMetadataValue: VerificationMetadataValue,
@@ -392,44 +412,46 @@ export const VerificationMetadata$inboundSchema: z.ZodType<
   VerificationMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => VerificationMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: VerificationMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => VerificationMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => VerificationMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: VerificationMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => VerificationMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type VerificationMetadata$Outbound = {
   extra_data?:
@@ -457,44 +479,46 @@ export const VerificationMetadata$outboundSchema: z.ZodType<
   VerificationMetadata$Outbound,
   z.ZodTypeDef,
   VerificationMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => VerificationMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: VerificationMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => VerificationMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => VerificationMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: VerificationMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => VerificationMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function verificationMetadataToJSON(
   verificationMetadata: VerificationMetadata,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCommerceLocationsQueryParamFields = {
@@ -68,9 +69,10 @@ export type ListCommerceLocationsRequest = {
 
 /** @internal */
 export const ListCommerceLocationsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCommerceLocationsQueryParamFields> = z.nativeEnum(
-    ListCommerceLocationsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListCommerceLocationsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCommerceLocationsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCommerceLocationsRequest$Outbound = {
@@ -91,25 +93,27 @@ export const ListCommerceLocationsRequest$outboundSchema: z.ZodType<
   ListCommerceLocationsRequest$Outbound,
   z.ZodTypeDef,
   ListCommerceLocationsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCommerceLocationsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  orgId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    orgId: "org_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCommerceLocationsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    orgId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      orgId: "org_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCommerceLocationsRequestToJSON(
   listCommerceLocationsRequest: ListCommerceLocationsRequest,

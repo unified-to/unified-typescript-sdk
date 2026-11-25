@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetVerificationPackageQueryParamFields = {
@@ -53,9 +54,10 @@ export type GetVerificationPackageRequest = {
 
 /** @internal */
 export const GetVerificationPackageQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetVerificationPackageQueryParamFields> = z.nativeEnum(
-    GetVerificationPackageQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetVerificationPackageQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetVerificationPackageQueryParamFields)
+    );
 
 /** @internal */
 export type GetVerificationPackageRequest$Outbound = {
@@ -70,17 +72,19 @@ export const GetVerificationPackageRequest$outboundSchema: z.ZodType<
   GetVerificationPackageRequest$Outbound,
   z.ZodTypeDef,
   GetVerificationPackageRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetVerificationPackageQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetVerificationPackageQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getVerificationPackageRequestToJSON(
   getVerificationPackageRequest: GetVerificationPackageRequest,

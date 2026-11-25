@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -58,8 +58,10 @@ export const PropertyAdsReportMetricsCampaignTargetingSupplyAuthorizedSellerStat
     PropertyAdsReportMetricsCampaignTargetingSupplyAuthorizedSellerStatus,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyAdsReportMetricsCampaignTargetingSupplyAuthorizedSellerStatus,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyAdsReportMetricsCampaignTargetingSupplyAuthorizedSellerStatus,
+    )
   );
 
 /** @internal */
@@ -68,19 +70,21 @@ export const PropertyAdsReportMetricsCampaignTargetingSupply$inboundSchema:
     PropertyAdsReportMetricsCampaignTargetingSupply,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    authorized_seller_status:
-      PropertyAdsReportMetricsCampaignTargetingSupplyAuthorizedSellerStatus$inboundSchema
-        .optional(),
-    deal_groups: z.array(TargetRef$inboundSchema).optional(),
-    deals: z.array(TargetRef$inboundSchema).optional(),
-    exchanges: z.array(TargetRef$inboundSchema).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "authorized_seller_status": "authorizedSellerStatus",
-      "deal_groups": "dealGroups",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      authorized_seller_status:
+        PropertyAdsReportMetricsCampaignTargetingSupplyAuthorizedSellerStatus$inboundSchema
+          .optional(),
+      deal_groups: z.array(TargetRef$inboundSchema).optional(),
+      deals: z.array(TargetRef$inboundSchema).optional(),
+      exchanges: z.array(TargetRef$inboundSchema).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "authorized_seller_status": "authorizedSellerStatus",
+        "deal_groups": "dealGroups",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsCampaignTargetingSupplyFromJSON(
   jsonString: string,

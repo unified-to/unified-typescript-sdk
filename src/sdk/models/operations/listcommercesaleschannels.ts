@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCommerceSaleschannelsQueryParamFields = {
@@ -50,8 +51,10 @@ export type ListCommerceSaleschannelsRequest = {
 
 /** @internal */
 export const ListCommerceSaleschannelsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListCommerceSaleschannelsQueryParamFields> = z
-    .nativeEnum(ListCommerceSaleschannelsQueryParamFields);
+  z.ZodNativeEnum<typeof ListCommerceSaleschannelsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListCommerceSaleschannelsQueryParamFields)
+    );
 
 /** @internal */
 export type ListCommerceSaleschannelsRequest$Outbound = {
@@ -71,23 +74,25 @@ export const ListCommerceSaleschannelsRequest$outboundSchema: z.ZodType<
   ListCommerceSaleschannelsRequest$Outbound,
   z.ZodTypeDef,
   ListCommerceSaleschannelsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCommerceSaleschannelsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCommerceSaleschannelsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCommerceSaleschannelsRequestToJSON(
   listCommerceSaleschannelsRequest: ListCommerceSaleschannelsRequest,

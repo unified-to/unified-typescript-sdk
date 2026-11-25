@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -29,9 +29,11 @@ export const UpdateUnifiedWebhookTriggerRequest$outboundSchema: z.ZodType<
   UpdateUnifiedWebhookTriggerRequest$Outbound,
   z.ZodTypeDef,
   UpdateUnifiedWebhookTriggerRequest
-> = z.object({
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+  })
+);
 
 export function updateUnifiedWebhookTriggerRequestToJSON(
   updateUnifiedWebhookTriggerRequest: UpdateUnifiedWebhookTriggerRequest,
@@ -48,13 +50,15 @@ export const UpdateUnifiedWebhookTriggerResponse$inboundSchema: z.ZodType<
   UpdateUnifiedWebhookTriggerResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+    });
+  })
+);
 
 export function updateUnifiedWebhookTriggerResponseFromJSON(
   jsonString: string,

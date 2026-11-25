@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -49,7 +50,9 @@ export type CreatePlmBomlineRequest = {
 /** @internal */
 export const CreatePlmBomlineQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreatePlmBomlineQueryParamFields
-> = z.nativeEnum(CreatePlmBomlineQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreatePlmBomlineQueryParamFields)
+);
 
 /** @internal */
 export type CreatePlmBomlineRequest$Outbound = {
@@ -64,17 +67,19 @@ export const CreatePlmBomlineRequest$outboundSchema: z.ZodType<
   CreatePlmBomlineRequest$Outbound,
   z.ZodTypeDef,
   CreatePlmBomlineRequest
-> = z.object({
-  plmBomline: shared.PlmBomline$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreatePlmBomlineQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    plmBomline: "PlmBomline",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    plmBomline: shared.PlmBomline$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreatePlmBomlineQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      plmBomline: "PlmBomline",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createPlmBomlineRequestToJSON(
   createPlmBomlineRequest: CreatePlmBomlineRequest,

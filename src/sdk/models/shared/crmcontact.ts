@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -107,41 +107,45 @@ export const CrmContact$inboundSchema: z.ZodType<
   CrmContact,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyCrmContactAddress$inboundSchema.optional(),
-  company: z.string().optional(),
-  company_ids: z.array(z.string()).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  deal_ids: z.array(z.string()).optional(),
-  department: z.string().optional(),
-  emails: z.array(CrmEmail$inboundSchema).optional(),
-  first_name: z.string().optional(),
-  id: z.string().optional(),
-  image_url: z.string().optional(),
-  last_name: z.string().optional(),
-  link_urls: z.array(z.string()).optional(),
-  metadata: z.array(CrmMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(CrmTelephone$inboundSchema).optional(),
-  title: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_ids": "companyIds",
-    "created_at": "createdAt",
-    "deal_ids": "dealIds",
-    "first_name": "firstName",
-    "image_url": "imageUrl",
-    "last_name": "lastName",
-    "link_urls": "linkUrls",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCrmContactAddress$inboundSchema.optional(),
+    company: z.string().optional(),
+    company_ids: z.array(z.string()).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    deal_ids: z.array(z.string()).optional(),
+    department: z.string().optional(),
+    emails: z.array(CrmEmail$inboundSchema).optional(),
+    first_name: z.string().optional(),
+    id: z.string().optional(),
+    image_url: z.string().optional(),
+    last_name: z.string().optional(),
+    link_urls: z.array(z.string()).optional(),
+    metadata: z.array(CrmMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(CrmTelephone$inboundSchema).optional(),
+    title: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "company_ids": "companyIds",
+      "created_at": "createdAt",
+      "deal_ids": "dealIds",
+      "first_name": "firstName",
+      "image_url": "imageUrl",
+      "last_name": "lastName",
+      "link_urls": "linkUrls",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type CrmContact$Outbound = {
   address?: PropertyCrmContactAddress$Outbound | undefined;
@@ -170,39 +174,41 @@ export const CrmContact$outboundSchema: z.ZodType<
   CrmContact$Outbound,
   z.ZodTypeDef,
   CrmContact
-> = z.object({
-  address: PropertyCrmContactAddress$outboundSchema.optional(),
-  company: z.string().optional(),
-  companyIds: z.array(z.string()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  dealIds: z.array(z.string()).optional(),
-  department: z.string().optional(),
-  emails: z.array(CrmEmail$outboundSchema).optional(),
-  firstName: z.string().optional(),
-  id: z.string().optional(),
-  imageUrl: z.string().optional(),
-  lastName: z.string().optional(),
-  linkUrls: z.array(z.string()).optional(),
-  metadata: z.array(CrmMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(CrmTelephone$outboundSchema).optional(),
-  title: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyIds: "company_ids",
-    createdAt: "created_at",
-    dealIds: "deal_ids",
-    firstName: "first_name",
-    imageUrl: "image_url",
-    lastName: "last_name",
-    linkUrls: "link_urls",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyCrmContactAddress$outboundSchema.optional(),
+    company: z.string().optional(),
+    companyIds: z.array(z.string()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    dealIds: z.array(z.string()).optional(),
+    department: z.string().optional(),
+    emails: z.array(CrmEmail$outboundSchema).optional(),
+    firstName: z.string().optional(),
+    id: z.string().optional(),
+    imageUrl: z.string().optional(),
+    lastName: z.string().optional(),
+    linkUrls: z.array(z.string()).optional(),
+    metadata: z.array(CrmMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    telephones: z.array(CrmTelephone$outboundSchema).optional(),
+    title: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyIds: "company_ids",
+      createdAt: "created_at",
+      dealIds: "deal_ids",
+      firstName: "first_name",
+      imageUrl: "image_url",
+      lastName: "last_name",
+      linkUrls: "link_urls",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function crmContactToJSON(crmContact: CrmContact): string {
   return JSON.stringify(CrmContact$outboundSchema.parse(crmContact));

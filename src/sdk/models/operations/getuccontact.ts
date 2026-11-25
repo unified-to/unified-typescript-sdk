@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetUcContactQueryParamFields = {
@@ -46,7 +47,9 @@ export type GetUcContactRequest = {
 /** @internal */
 export const GetUcContactQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetUcContactQueryParamFields
-> = z.nativeEnum(GetUcContactQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetUcContactQueryParamFields)
+);
 
 /** @internal */
 export type GetUcContactRequest$Outbound = {
@@ -61,16 +64,18 @@ export const GetUcContactRequest$outboundSchema: z.ZodType<
   GetUcContactRequest$Outbound,
   z.ZodTypeDef,
   GetUcContactRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetUcContactQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetUcContactQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getUcContactRequestToJSON(
   getUcContactRequest: GetUcContactRequest,

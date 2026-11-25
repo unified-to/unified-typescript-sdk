@@ -4,9 +4,15 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AtsFee,
+  AtsFee$inboundSchema,
+  AtsFee$Outbound,
+  AtsFee$outboundSchema,
+} from "./atsfee.js";
 import {
   AtsMetadata,
   AtsMetadata$inboundSchema,
@@ -26,6 +32,10 @@ export type AtsCompany = {
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
+  /**
+   * The client's default placement fee agreement
+   */
+  fees?: Array<AtsFee> | undefined;
   id?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
   /**
@@ -48,33 +58,39 @@ export const AtsCompany$inboundSchema: z.ZodType<
   AtsCompany,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyAtsCompanyAddress$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  phone: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  recruiter_ids: z.array(z.string()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  website_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "parent_id": "parentId",
-    "recruiter_ids": "recruiterIds",
-    "updated_at": "updatedAt",
-    "website_url": "websiteUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyAtsCompanyAddress$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    fees: z.array(AtsFee$inboundSchema).optional(),
+    id: z.string().optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    phone: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    recruiter_ids: z.array(z.string()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    website_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "parent_id": "parentId",
+      "recruiter_ids": "recruiterIds",
+      "updated_at": "updatedAt",
+      "website_url": "websiteUrl",
+    });
+  })
+);
 /** @internal */
 export type AtsCompany$Outbound = {
   address?: PropertyAtsCompanyAddress$Outbound | undefined;
   created_at?: string | undefined;
+  fees?: Array<AtsFee$Outbound> | undefined;
   id?: string | undefined;
   metadata?: Array<AtsMetadata$Outbound> | undefined;
   name?: string | undefined;
@@ -91,27 +107,30 @@ export const AtsCompany$outboundSchema: z.ZodType<
   AtsCompany$Outbound,
   z.ZodTypeDef,
   AtsCompany
-> = z.object({
-  address: PropertyAtsCompanyAddress$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  phone: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  recruiterIds: z.array(z.string()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  websiteUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    parentId: "parent_id",
-    recruiterIds: "recruiter_ids",
-    updatedAt: "updated_at",
-    websiteUrl: "website_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyAtsCompanyAddress$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    fees: z.array(AtsFee$outboundSchema).optional(),
+    id: z.string().optional(),
+    metadata: z.array(AtsMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    phone: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    recruiterIds: z.array(z.string()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    websiteUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      parentId: "parent_id",
+      recruiterIds: "recruiter_ids",
+      updatedAt: "updated_at",
+      websiteUrl: "website_url",
+    });
+  })
+);
 
 export function atsCompanyToJSON(atsCompany: AtsCompany): string {
   return JSON.stringify(AtsCompany$outboundSchema.parse(atsCompany));

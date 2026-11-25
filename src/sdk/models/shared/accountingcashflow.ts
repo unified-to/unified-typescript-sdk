@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -77,47 +77,51 @@ export const AccountingCashflow$inboundSchema: z.ZodType<
   AccountingCashflow,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  cash_beginning_amount: z.number().optional(),
-  cash_ending_amount: z.number().optional(),
-  category_ids: z.array(z.string()).optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  financing_sections: z.array(AccountingCashflowSection$inboundSchema)
-    .optional(),
-  id: z.string().optional(),
-  investing_sections: z.array(AccountingCashflowSection$inboundSchema)
-    .optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  net_change_in_cash_amount: z.number().optional(),
-  operating_sections: z.array(AccountingCashflowSection$inboundSchema)
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "cash_beginning_amount": "cashBeginningAmount",
-    "cash_ending_amount": "cashEndingAmount",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "end_at": "endAt",
-    "financing_sections": "financingSections",
-    "investing_sections": "investingSections",
-    "net_change_in_cash_amount": "netChangeInCashAmount",
-    "operating_sections": "operatingSections",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    cash_beginning_amount: z.number().optional(),
+    cash_ending_amount: z.number().optional(),
+    category_ids: z.array(z.string()).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    financing_sections: z.array(AccountingCashflowSection$inboundSchema)
+      .optional(),
+    id: z.string().optional(),
+    investing_sections: z.array(AccountingCashflowSection$inboundSchema)
+      .optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    net_change_in_cash_amount: z.number().optional(),
+    operating_sections: z.array(AccountingCashflowSection$inboundSchema)
+      .optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "cash_beginning_amount": "cashBeginningAmount",
+      "cash_ending_amount": "cashEndingAmount",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "end_at": "endAt",
+      "financing_sections": "financingSections",
+      "investing_sections": "investingSections",
+      "net_change_in_cash_amount": "netChangeInCashAmount",
+      "operating_sections": "operatingSections",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function accountingCashflowFromJSON(
   jsonString: string,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -129,38 +129,46 @@ export const LegalPracticeareaType$inboundSchema: z.ZodType<
   LegalPracticeareaType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(LegalPracticeareaType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(LegalPracticeareaType)
+);
 /** @internal */
 export const LegalPracticeareaType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   LegalPracticeareaType
-> = openEnums.outboundSchema(LegalPracticeareaType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(LegalPracticeareaType)
+);
 
 /** @internal */
 export const LegalPracticearea$inboundSchema: z.ZodType<
   LegalPracticearea,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  code: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  metadata: z.array(LegalMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: LegalPracticeareaType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_active": "isActive",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    metadata: z.array(LegalMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: LegalPracticeareaType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_active": "isActive",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type LegalPracticearea$Outbound = {
   code?: string | undefined;
@@ -179,23 +187,25 @@ export const LegalPracticearea$outboundSchema: z.ZodType<
   LegalPracticearea$Outbound,
   z.ZodTypeDef,
   LegalPracticearea
-> = z.object({
-  code: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  metadata: z.array(LegalMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  type: LegalPracticeareaType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isActive: "is_active",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    metadata: z.array(LegalMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    type: LegalPracticeareaType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isActive: "is_active",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function legalPracticeareaToJSON(
   legalPracticearea: LegalPracticearea,

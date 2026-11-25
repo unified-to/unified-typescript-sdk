@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -143,64 +143,72 @@ export const SocialPostStatus$inboundSchema: z.ZodType<
   SocialPostStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SocialPostStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SocialPostStatus)
+);
 /** @internal */
 export const SocialPostStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SocialPostStatus
-> = openEnums.outboundSchema(SocialPostStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(SocialPostStatus)
+);
 
 /** @internal */
 export const SocialPostType$inboundSchema: z.ZodType<
   SocialPostType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(SocialPostType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SocialPostType));
 /** @internal */
 export const SocialPostType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   SocialPostType
-> = openEnums.outboundSchema(SocialPostType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(SocialPostType));
 
 /** @internal */
 export const SocialPost$inboundSchema: z.ZodType<
   SocialPost,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  body: z.string().optional(),
-  call_to_action: PropertySocialPostCallToAction$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  language: z.string().optional(),
-  media: z.array(SocialMedia$inboundSchema).optional(),
-  metadata: z.array(SocialMetadata$inboundSchema).optional(),
-  metrics: PropertySocialPostMetrics$inboundSchema.optional(),
-  parent_id: z.string().optional(),
-  profile_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  scheduled_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  status: SocialPostStatus$inboundSchema.optional(),
-  title: z.string().optional(),
-  type: SocialPostType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "call_to_action": "callToAction",
-    "created_at": "createdAt",
-    "parent_id": "parentId",
-    "profile_id": "profileId",
-    "scheduled_at": "scheduledAt",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    body: z.string().optional(),
+    call_to_action: PropertySocialPostCallToAction$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    id: z.string().optional(),
+    language: z.string().optional(),
+    media: z.array(SocialMedia$inboundSchema).optional(),
+    metadata: z.array(SocialMetadata$inboundSchema).optional(),
+    metrics: PropertySocialPostMetrics$inboundSchema.optional(),
+    parent_id: z.string().optional(),
+    profile_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    scheduled_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: SocialPostStatus$inboundSchema.optional(),
+    title: z.string().optional(),
+    type: SocialPostType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "call_to_action": "callToAction",
+      "created_at": "createdAt",
+      "parent_id": "parentId",
+      "profile_id": "profileId",
+      "scheduled_at": "scheduledAt",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type SocialPost$Outbound = {
   body?: string | undefined;
@@ -227,34 +235,36 @@ export const SocialPost$outboundSchema: z.ZodType<
   SocialPost$Outbound,
   z.ZodTypeDef,
   SocialPost
-> = z.object({
-  body: z.string().optional(),
-  callToAction: PropertySocialPostCallToAction$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  language: z.string().optional(),
-  media: z.array(SocialMedia$outboundSchema).optional(),
-  metadata: z.array(SocialMetadata$outboundSchema).optional(),
-  metrics: PropertySocialPostMetrics$outboundSchema.optional(),
-  parentId: z.string().optional(),
-  profileId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  scheduledAt: z.date().transform(v => v.toISOString()).optional(),
-  status: SocialPostStatus$outboundSchema.optional(),
-  title: z.string().optional(),
-  type: SocialPostType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    callToAction: "call_to_action",
-    createdAt: "created_at",
-    parentId: "parent_id",
-    profileId: "profile_id",
-    scheduledAt: "scheduled_at",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    body: z.string().optional(),
+    callToAction: PropertySocialPostCallToAction$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    language: z.string().optional(),
+    media: z.array(SocialMedia$outboundSchema).optional(),
+    metadata: z.array(SocialMetadata$outboundSchema).optional(),
+    metrics: PropertySocialPostMetrics$outboundSchema.optional(),
+    parentId: z.string().optional(),
+    profileId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    scheduledAt: z.date().transform(v => v.toISOString()).optional(),
+    status: SocialPostStatus$outboundSchema.optional(),
+    title: z.string().optional(),
+    type: SocialPostType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      callToAction: "call_to_action",
+      createdAt: "created_at",
+      parentId: "parent_id",
+      profileId: "profile_id",
+      scheduledAt: "scheduled_at",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function socialPostToJSON(socialPost: SocialPost): string {
   return JSON.stringify(SocialPost$outboundSchema.parse(socialPost));

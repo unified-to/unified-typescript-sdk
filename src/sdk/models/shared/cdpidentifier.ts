@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -56,30 +56,36 @@ export const CdpIdentifierType$inboundSchema: z.ZodType<
   CdpIdentifierType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CdpIdentifierType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CdpIdentifierType)
+);
 /** @internal */
 export const CdpIdentifierType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CdpIdentifierType
-> = openEnums.outboundSchema(CdpIdentifierType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CdpIdentifierType)
+);
 
 /** @internal */
 export const CdpIdentifier$inboundSchema: z.ZodType<
   CdpIdentifier,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  encoding: z.string().optional(),
-  is_primary: z.boolean().optional(),
-  source: z.string().optional(),
-  type: CdpIdentifierType$inboundSchema.optional(),
-  value: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "is_primary": "isPrimary",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    encoding: z.string().optional(),
+    is_primary: z.boolean().optional(),
+    source: z.string().optional(),
+    type: CdpIdentifierType$inboundSchema.optional(),
+    value: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      "is_primary": "isPrimary",
+    });
+  })
+);
 /** @internal */
 export type CdpIdentifier$Outbound = {
   encoding?: string | undefined;
@@ -94,17 +100,19 @@ export const CdpIdentifier$outboundSchema: z.ZodType<
   CdpIdentifier$Outbound,
   z.ZodTypeDef,
   CdpIdentifier
-> = z.object({
-  encoding: z.string().optional(),
-  isPrimary: z.boolean().optional(),
-  source: z.string().optional(),
-  type: CdpIdentifierType$outboundSchema.optional(),
-  value: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    isPrimary: "is_primary",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    encoding: z.string().optional(),
+    isPrimary: z.boolean().optional(),
+    source: z.string().optional(),
+    type: CdpIdentifierType$outboundSchema.optional(),
+    value: z.string(),
+  }).transform((v) => {
+    return remap$(v, {
+      isPrimary: "is_primary",
+    });
+  })
+);
 
 export function cdpIdentifierToJSON(cdpIdentifier: CdpIdentifier): string {
   return JSON.stringify(CdpIdentifier$outboundSchema.parse(cdpIdentifier));

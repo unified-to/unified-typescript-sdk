@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListFormsFormsQueryParamFields = {
@@ -58,7 +59,9 @@ export type ListFormsFormsRequest = {
 /** @internal */
 export const ListFormsFormsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListFormsFormsQueryParamFields
-> = z.nativeEnum(ListFormsFormsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListFormsFormsQueryParamFields)
+);
 
 /** @internal */
 export type ListFormsFormsRequest$Outbound = {
@@ -78,22 +81,24 @@ export const ListFormsFormsRequest$outboundSchema: z.ZodType<
   ListFormsFormsRequest$Outbound,
   z.ZodTypeDef,
   ListFormsFormsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListFormsFormsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListFormsFormsQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listFormsFormsRequestToJSON(
   listFormsFormsRequest: ListFormsFormsRequest,

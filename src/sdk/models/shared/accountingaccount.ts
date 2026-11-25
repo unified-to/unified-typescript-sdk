@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -117,52 +117,56 @@ export type AccountingAccount = {
 
 /** @internal */
 export const Status$inboundSchema: z.ZodType<Status, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Status);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Status));
 /** @internal */
 export const Status$outboundSchema: z.ZodType<string, z.ZodTypeDef, Status> =
-  openEnums.outboundSchema(Status);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Status));
 
 /** @internal */
 export const Type$inboundSchema: z.ZodType<Type, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Type);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Type));
 /** @internal */
 export const Type$outboundSchema: z.ZodType<string, z.ZodTypeDef, Type> =
-  openEnums.outboundSchema(Type);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Type));
 
 /** @internal */
 export const AccountingAccount$inboundSchema: z.ZodType<
   AccountingAccount,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  balance: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  customer_defined_code: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  is_payable: z.boolean().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_id: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: Status$inboundSchema.optional(),
-  taxonomy: z.array(AccountingAccountTaxonomy$inboundSchema).optional(),
-  type: Type$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "customer_defined_code": "customerDefinedCode",
-    "is_payable": "isPayable",
-    "organization_id": "organizationId",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    balance: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    customer_defined_code: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    is_payable: z.boolean().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_id: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: Status$inboundSchema.optional(),
+    taxonomy: z.array(AccountingAccountTaxonomy$inboundSchema).optional(),
+    type: Type$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "customer_defined_code": "customerDefinedCode",
+      "is_payable": "isPayable",
+      "organization_id": "organizationId",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingAccount$Outbound = {
   balance?: number | undefined;
@@ -188,33 +192,35 @@ export const AccountingAccount$outboundSchema: z.ZodType<
   AccountingAccount$Outbound,
   z.ZodTypeDef,
   AccountingAccount
-> = z.object({
-  balance: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  customerDefinedCode: z.string().optional(),
-  description: z.string().optional(),
-  id: z.string().optional(),
-  isPayable: z.boolean().optional(),
-  metadata: z.array(AccountingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  organizationId: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: Status$outboundSchema.optional(),
-  taxonomy: z.array(AccountingAccountTaxonomy$outboundSchema).optional(),
-  type: Type$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    customerDefinedCode: "customer_defined_code",
-    isPayable: "is_payable",
-    organizationId: "organization_id",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    balance: z.number().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    customerDefinedCode: z.string().optional(),
+    description: z.string().optional(),
+    id: z.string().optional(),
+    isPayable: z.boolean().optional(),
+    metadata: z.array(AccountingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    organizationId: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    status: Status$outboundSchema.optional(),
+    taxonomy: z.array(AccountingAccountTaxonomy$outboundSchema).optional(),
+    type: Type$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      customerDefinedCode: "customer_defined_code",
+      isPayable: "is_payable",
+      organizationId: "organization_id",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingAccountToJSON(
   accountingAccount: AccountingAccount,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -34,23 +34,25 @@ export const PropertyWorkspaceIntegrationAuthOutput$inboundSchema: z.ZodType<
   PropertyWorkspaceIntegrationAuthOutput,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  client_id: z.string().optional(),
-  consumer_key: z.string().optional(),
-  needs_pkce: z.boolean().optional(),
-  saml_idp_entity_id: z.string().optional(),
-  saml_idp_url: z.string().optional(),
-  saml_pem: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "client_id": "clientId",
-    "consumer_key": "consumerKey",
-    "needs_pkce": "needsPkce",
-    "saml_idp_entity_id": "samlIdpEntityId",
-    "saml_idp_url": "samlIdpUrl",
-    "saml_pem": "samlPem",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    client_id: z.string().optional(),
+    consumer_key: z.string().optional(),
+    needs_pkce: z.boolean().optional(),
+    saml_idp_entity_id: z.string().optional(),
+    saml_idp_url: z.string().optional(),
+    saml_pem: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "client_id": "clientId",
+      "consumer_key": "consumerKey",
+      "needs_pkce": "needsPkce",
+      "saml_idp_entity_id": "samlIdpEntityId",
+      "saml_idp_url": "samlIdpUrl",
+      "saml_pem": "samlPem",
+    });
+  })
+);
 
 export function propertyWorkspaceIntegrationAuthOutputFromJSON(
   jsonString: string,

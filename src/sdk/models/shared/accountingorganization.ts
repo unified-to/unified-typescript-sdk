@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -87,49 +87,55 @@ export const AccountingOrganizationType$inboundSchema: z.ZodType<
   AccountingOrganizationType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AccountingOrganizationType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AccountingOrganizationType)
+);
 
 /** @internal */
 export const AccountingOrganization$inboundSchema: z.ZodType<
   AccountingOrganization,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  address: PropertyAccountingOrganizationAddress$inboundSchema.optional(),
-  books_close_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  fiscal_year_end_month: z.number().optional(),
-  id: z.string().optional(),
-  is_elimination: z.boolean().optional(),
-  legal_name: z.string().optional(),
-  metadata: z.array(AccountingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  organization_code: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  tax_number: z.string().optional(),
-  timezone: z.string().optional(),
-  type: AccountingOrganizationType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  website: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "books_close_at": "booksCloseAt",
-    "created_at": "createdAt",
-    "fiscal_year_end_month": "fiscalYearEndMonth",
-    "is_elimination": "isElimination",
-    "legal_name": "legalName",
-    "organization_code": "organizationCode",
-    "parent_id": "parentId",
-    "tax_number": "taxNumber",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    address: PropertyAccountingOrganizationAddress$inboundSchema.optional(),
+    books_close_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    fiscal_year_end_month: z.number().optional(),
+    id: z.string().optional(),
+    is_elimination: z.boolean().optional(),
+    legal_name: z.string().optional(),
+    metadata: z.array(AccountingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    organization_code: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    tax_number: z.string().optional(),
+    timezone: z.string().optional(),
+    type: AccountingOrganizationType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    website: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "books_close_at": "booksCloseAt",
+      "created_at": "createdAt",
+      "fiscal_year_end_month": "fiscalYearEndMonth",
+      "is_elimination": "isElimination",
+      "legal_name": "legalName",
+      "organization_code": "organizationCode",
+      "parent_id": "parentId",
+      "tax_number": "taxNumber",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function accountingOrganizationFromJSON(
   jsonString: string,

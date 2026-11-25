@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCommerceTablesQueryParamFields = {
@@ -64,7 +65,9 @@ export type ListCommerceTablesRequest = {
 /** @internal */
 export const ListCommerceTablesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCommerceTablesQueryParamFields
-> = z.nativeEnum(ListCommerceTablesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCommerceTablesQueryParamFields)
+);
 
 /** @internal */
 export type ListCommerceTablesRequest$Outbound = {
@@ -85,24 +88,27 @@ export const ListCommerceTablesRequest$outboundSchema: z.ZodType<
   ListCommerceTablesRequest$Outbound,
   z.ZodTypeDef,
   ListCommerceTablesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListCommerceTablesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  locationId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    locationId: "location_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListCommerceTablesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    locationId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      locationId: "location_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCommerceTablesRequestToJSON(
   listCommerceTablesRequest: ListCommerceTablesRequest,

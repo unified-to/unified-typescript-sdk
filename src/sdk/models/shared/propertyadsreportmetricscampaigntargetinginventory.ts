@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,15 +22,17 @@ export const PropertyAdsReportMetricsCampaignTargetingInventory$inboundSchema:
     PropertyAdsReportMetricsCampaignTargetingInventory,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    excluded_inventory_ids: z.array(z.string()).optional(),
-    inventory_ids: z.array(z.string()).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "excluded_inventory_ids": "excludedInventoryIds",
-      "inventory_ids": "inventoryIds",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      excluded_inventory_ids: z.array(z.string()).optional(),
+      inventory_ids: z.array(z.string()).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "excluded_inventory_ids": "excludedInventoryIds",
+        "inventory_ids": "inventoryIds",
+      });
+    })
+  );
 
 export function propertyAdsReportMetricsCampaignTargetingInventoryFromJSON(
   jsonString: string,

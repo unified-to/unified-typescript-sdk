@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListCdpActivationsQueryParamFields = {
@@ -63,7 +64,9 @@ export type ListCdpActivationsRequest = {
 /** @internal */
 export const ListCdpActivationsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListCdpActivationsQueryParamFields
-> = z.nativeEnum(ListCdpActivationsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListCdpActivationsQueryParamFields)
+);
 
 /** @internal */
 export type ListCdpActivationsRequest$Outbound = {
@@ -85,26 +88,29 @@ export const ListCdpActivationsRequest$outboundSchema: z.ZodType<
   ListCdpActivationsRequest$Outbound,
   z.ZodTypeDef,
   ListCdpActivationsRequest
-> = z.object({
-  connectionId: z.string(),
-  destinationId: z.string().optional(),
-  fields: z.array(ListCdpActivationsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  segmentId: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    destinationId: "destination_id",
-    segmentId: "segment_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    destinationId: z.string().optional(),
+    fields: z.array(ListCdpActivationsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    segmentId: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      destinationId: "destination_id",
+      segmentId: "segment_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listCdpActivationsRequestToJSON(
   listCdpActivationsRequest: ListCdpActivationsRequest,

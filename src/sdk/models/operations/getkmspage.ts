@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetKmsPageQueryParamFields = {
@@ -49,7 +50,7 @@ export type GetKmsPageRequest = {
 /** @internal */
 export const GetKmsPageQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetKmsPageQueryParamFields
-> = z.nativeEnum(GetKmsPageQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() => z.nativeEnum(GetKmsPageQueryParamFields));
 
 /** @internal */
 export type GetKmsPageRequest$Outbound = {
@@ -64,16 +65,18 @@ export const GetKmsPageRequest$outboundSchema: z.ZodType<
   GetKmsPageRequest$Outbound,
   z.ZodTypeDef,
   GetKmsPageRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetKmsPageQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetKmsPageQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getKmsPageRequestToJSON(
   getKmsPageRequest: GetKmsPageRequest,

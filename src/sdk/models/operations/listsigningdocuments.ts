@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListSigningDocumentsQueryParamFields = {
@@ -63,9 +64,10 @@ export type ListSigningDocumentsRequest = {
 
 /** @internal */
 export const ListSigningDocumentsQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListSigningDocumentsQueryParamFields> = z.nativeEnum(
-    ListSigningDocumentsQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListSigningDocumentsQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListSigningDocumentsQueryParamFields)
+    );
 
 /** @internal */
 export type ListSigningDocumentsRequest$Outbound = {
@@ -87,26 +89,28 @@ export const ListSigningDocumentsRequest$outboundSchema: z.ZodType<
   ListSigningDocumentsRequest$Outbound,
   z.ZodTypeDef,
   ListSigningDocumentsRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListSigningDocumentsQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  status: z.string().optional(),
-  templateId: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    templateId: "template_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListSigningDocumentsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    status: z.string().optional(),
+    templateId: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      templateId: "template_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listSigningDocumentsRequestToJSON(
   listSigningDocumentsRequest: ListSigningDocumentsRequest,

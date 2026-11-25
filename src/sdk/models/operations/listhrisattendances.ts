@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisAttendancesQueryParamFields = {
@@ -85,9 +86,10 @@ export type ListHrisAttendancesRequest = {
 
 /** @internal */
 export const ListHrisAttendancesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListHrisAttendancesQueryParamFields> = z.nativeEnum(
-    ListHrisAttendancesQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListHrisAttendancesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListHrisAttendancesQueryParamFields)
+    );
 
 /** @internal */
 export type ListHrisAttendancesRequest$Outbound = {
@@ -112,33 +114,35 @@ export const ListHrisAttendancesRequest$outboundSchema: z.ZodType<
   ListHrisAttendancesRequest$Outbound,
   z.ZodTypeDef,
   ListHrisAttendancesRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  endLt: z.string().optional(),
-  fields: z.array(ListHrisAttendancesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  locationId: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  startGte: z.string().optional(),
-  updatedGte: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    endLt: "end_lt",
-    locationId: "location_id",
-    startGte: "start_gte",
-    updatedGte: "updated_gte",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    endLt: z.string().optional(),
+    fields: z.array(ListHrisAttendancesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    locationId: z.string().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    startGte: z.string().optional(),
+    updatedGte: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      endLt: "end_lt",
+      locationId: "location_id",
+      startGte: "start_gte",
+      updatedGte: "updated_gte",
+      userId: "user_id",
+    });
+  })
+);
 
 export function listHrisAttendancesRequestToJSON(
   listHrisAttendancesRequest: ListHrisAttendancesRequest,

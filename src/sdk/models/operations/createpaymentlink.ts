@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -23,6 +24,9 @@ export const CreatePaymentLinkQueryParamFields = {
   SuccessUrl: "success_url",
   Metadata: "metadata",
   Raw: "raw",
+  ContactName: "contact_name",
+  ContactEmail: "contact_email",
+  ContactPhone: "contact_phone",
 } as const;
 export type CreatePaymentLinkQueryParamFields = ClosedEnum<
   typeof CreatePaymentLinkQueryParamFields
@@ -47,7 +51,9 @@ export type CreatePaymentLinkRequest = {
 /** @internal */
 export const CreatePaymentLinkQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreatePaymentLinkQueryParamFields
-> = z.nativeEnum(CreatePaymentLinkQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreatePaymentLinkQueryParamFields)
+);
 
 /** @internal */
 export type CreatePaymentLinkRequest$Outbound = {
@@ -62,17 +68,20 @@ export const CreatePaymentLinkRequest$outboundSchema: z.ZodType<
   CreatePaymentLinkRequest$Outbound,
   z.ZodTypeDef,
   CreatePaymentLinkRequest
-> = z.object({
-  paymentLink: shared.PaymentLink$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreatePaymentLinkQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    paymentLink: "PaymentLink",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    paymentLink: shared.PaymentLink$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreatePaymentLinkQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      paymentLink: "PaymentLink",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createPaymentLinkRequestToJSON(
   createPaymentLinkRequest: CreatePaymentLinkRequest,

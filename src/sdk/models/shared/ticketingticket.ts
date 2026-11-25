@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -82,56 +82,64 @@ export const TicketingTicketStatus$inboundSchema: z.ZodType<
   TicketingTicketStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(TicketingTicketStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(TicketingTicketStatus)
+);
 /** @internal */
 export const TicketingTicketStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   TicketingTicketStatus
-> = openEnums.outboundSchema(TicketingTicketStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(TicketingTicketStatus)
+);
 
 /** @internal */
 export const TicketingTicket$inboundSchema: z.ZodType<
   TicketingTicket,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attachment_ids: z.array(z.string()).optional(),
-  category_id: z.string().optional(),
-  closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  customer_id: z.string().optional(),
-  description: z.string().optional(),
-  due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  id: z.string().optional(),
-  metadata: z.array(TicketingMetadata$inboundSchema).optional(),
-  priority: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  source_ref: z.string().optional(),
-  status: TicketingTicketStatus$inboundSchema.optional(),
-  subject: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "attachment_ids": "attachmentIds",
-    "category_id": "categoryId",
-    "closed_at": "closedAt",
-    "created_at": "createdAt",
-    "customer_id": "customerId",
-    "due_at": "dueAt",
-    "source_ref": "sourceRef",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachment_ids: z.array(z.string()).optional(),
+    category_id: z.string().optional(),
+    closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    customer_id: z.string().optional(),
+    description: z.string().optional(),
+    due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    id: z.string().optional(),
+    metadata: z.array(TicketingMetadata$inboundSchema).optional(),
+    priority: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    source_ref: z.string().optional(),
+    status: TicketingTicketStatus$inboundSchema.optional(),
+    subject: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "attachment_ids": "attachmentIds",
+      "category_id": "categoryId",
+      "closed_at": "closedAt",
+      "created_at": "createdAt",
+      "customer_id": "customerId",
+      "due_at": "dueAt",
+      "source_ref": "sourceRef",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type TicketingTicket$Outbound = {
   attachment_ids?: Array<string> | undefined;
@@ -160,39 +168,41 @@ export const TicketingTicket$outboundSchema: z.ZodType<
   TicketingTicket$Outbound,
   z.ZodTypeDef,
   TicketingTicket
-> = z.object({
-  attachmentIds: z.array(z.string()).optional(),
-  categoryId: z.string().optional(),
-  closedAt: z.date().transform(v => v.toISOString()).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  customerId: z.string().optional(),
-  description: z.string().optional(),
-  dueAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  metadata: z.array(TicketingMetadata$outboundSchema).optional(),
-  priority: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  source: z.string().optional(),
-  sourceRef: z.string().optional(),
-  status: TicketingTicketStatus$outboundSchema.optional(),
-  subject: z.string().optional(),
-  tags: z.array(z.string()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    attachmentIds: "attachment_ids",
-    categoryId: "category_id",
-    closedAt: "closed_at",
-    createdAt: "created_at",
-    customerId: "customer_id",
-    dueAt: "due_at",
-    sourceRef: "source_ref",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachmentIds: z.array(z.string()).optional(),
+    categoryId: z.string().optional(),
+    closedAt: z.date().transform(v => v.toISOString()).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    customerId: z.string().optional(),
+    description: z.string().optional(),
+    dueAt: z.date().transform(v => v.toISOString()).optional(),
+    id: z.string().optional(),
+    metadata: z.array(TicketingMetadata$outboundSchema).optional(),
+    priority: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    source: z.string().optional(),
+    sourceRef: z.string().optional(),
+    status: TicketingTicketStatus$outboundSchema.optional(),
+    subject: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      attachmentIds: "attachment_ids",
+      categoryId: "category_id",
+      closedAt: "closed_at",
+      createdAt: "created_at",
+      customerId: "customer_id",
+      dueAt: "due_at",
+      sourceRef: "source_ref",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function ticketingTicketToJSON(
   ticketingTicket: TicketingTicket,

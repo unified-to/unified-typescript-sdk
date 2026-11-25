@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListTicketingCustomersQueryParamFields = {
@@ -50,9 +51,10 @@ export type ListTicketingCustomersRequest = {
 
 /** @internal */
 export const ListTicketingCustomersQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListTicketingCustomersQueryParamFields> = z.nativeEnum(
-    ListTicketingCustomersQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof ListTicketingCustomersQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListTicketingCustomersQueryParamFields)
+    );
 
 /** @internal */
 export type ListTicketingCustomersRequest$Outbound = {
@@ -72,23 +74,25 @@ export const ListTicketingCustomersRequest$outboundSchema: z.ZodType<
   ListTicketingCustomersRequest$Outbound,
   z.ZodTypeDef,
   ListTicketingCustomersRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListTicketingCustomersQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListTicketingCustomersQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listTicketingCustomersRequestToJSON(
   listTicketingCustomersRequest: ListTicketingCustomersRequest,

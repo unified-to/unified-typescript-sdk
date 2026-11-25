@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -58,36 +58,42 @@ export const ShippingCustomsItemWeightUnit$inboundSchema: z.ZodType<
   ShippingCustomsItemWeightUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ShippingCustomsItemWeightUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ShippingCustomsItemWeightUnit)
+);
 /** @internal */
 export const ShippingCustomsItemWeightUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ShippingCustomsItemWeightUnit
-> = openEnums.outboundSchema(ShippingCustomsItemWeightUnit);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ShippingCustomsItemWeightUnit)
+);
 
 /** @internal */
 export const ShippingCustomsItem$inboundSchema: z.ZodType<
   ShippingCustomsItem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  country_of_origin: z.string().optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  harmonized_tariff_code: z.string().optional(),
-  quantity: z.number().optional(),
-  sku: z.string().optional(),
-  weight: z.number().optional(),
-  weight_unit: ShippingCustomsItemWeightUnit$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "country_of_origin": "countryOfOrigin",
-    "harmonized_tariff_code": "harmonizedTariffCode",
-    "weight_unit": "weightUnit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    country_of_origin: z.string().optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    harmonized_tariff_code: z.string().optional(),
+    quantity: z.number().optional(),
+    sku: z.string().optional(),
+    weight: z.number().optional(),
+    weight_unit: ShippingCustomsItemWeightUnit$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "country_of_origin": "countryOfOrigin",
+      "harmonized_tariff_code": "harmonizedTariffCode",
+      "weight_unit": "weightUnit",
+    });
+  })
+);
 /** @internal */
 export type ShippingCustomsItem$Outbound = {
   amount?: number | undefined;
@@ -106,23 +112,25 @@ export const ShippingCustomsItem$outboundSchema: z.ZodType<
   ShippingCustomsItem$Outbound,
   z.ZodTypeDef,
   ShippingCustomsItem
-> = z.object({
-  amount: z.number().optional(),
-  countryOfOrigin: z.string().optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  harmonizedTariffCode: z.string().optional(),
-  quantity: z.number().optional(),
-  sku: z.string().optional(),
-  weight: z.number().optional(),
-  weightUnit: ShippingCustomsItemWeightUnit$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    countryOfOrigin: "country_of_origin",
-    harmonizedTariffCode: "harmonized_tariff_code",
-    weightUnit: "weight_unit",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    countryOfOrigin: z.string().optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    harmonizedTariffCode: z.string().optional(),
+    quantity: z.number().optional(),
+    sku: z.string().optional(),
+    weight: z.number().optional(),
+    weightUnit: ShippingCustomsItemWeightUnit$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      countryOfOrigin: "country_of_origin",
+      harmonizedTariffCode: "harmonized_tariff_code",
+      weightUnit: "weight_unit",
+    });
+  })
+);
 
 export function shippingCustomsItemToJSON(
   shippingCustomsItem: ShippingCustomsItem,

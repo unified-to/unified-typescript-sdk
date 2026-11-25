@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -40,23 +40,29 @@ export const HealthcareTelephoneType$inboundSchema: z.ZodType<
   HealthcareTelephoneType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HealthcareTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HealthcareTelephoneType)
+);
 /** @internal */
 export const HealthcareTelephoneType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HealthcareTelephoneType
-> = openEnums.outboundSchema(HealthcareTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HealthcareTelephoneType)
+);
 
 /** @internal */
 export const HealthcareTelephone$inboundSchema: z.ZodType<
   HealthcareTelephone,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  telephone: z.string(),
-  type: HealthcareTelephoneType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: HealthcareTelephoneType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type HealthcareTelephone$Outbound = {
   telephone: string;
@@ -68,10 +74,12 @@ export const HealthcareTelephone$outboundSchema: z.ZodType<
   HealthcareTelephone$Outbound,
   z.ZodTypeDef,
   HealthcareTelephone
-> = z.object({
-  telephone: z.string(),
-  type: HealthcareTelephoneType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: HealthcareTelephoneType$outboundSchema.optional(),
+  })
+);
 
 export function healthcareTelephoneToJSON(
   healthcareTelephone: HealthcareTelephone,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -83,60 +83,65 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
   AccountingLineitem,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  account_id: z.string().optional(),
-  category_ids: z.array(z.string()).optional(),
-  contact_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  discount_amount: z.number().optional(),
-  exchange_rate: z.number().optional(),
-  fees: z.array(AccountingFee$inboundSchema).optional(),
-  id: z.string().optional(),
-  is_billable: z.boolean().optional(),
-  item_description: z.string().optional(),
-  item_id: z.string().optional(),
-  item_name: z.string().optional(),
-  item_sku: z.string().optional(),
-  item_variants: z.array(AccountingReference$inboundSchema).optional(),
-  locations: z.array(AccountingReference$inboundSchema).optional(),
-  notes: z.string().optional(),
-  project_id: z.string().optional(),
-  refund_amount: z.number().optional(),
-  refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  tax_amount: z.number().optional(),
-  taxrate_id: z.string().optional(),
-  total_amount: z.number().optional(),
-  unit_amount: z.number().optional(),
-  unit_quantity: z.number().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "account_id": "accountId",
-    "category_ids": "categoryIds",
-    "contact_id": "contactId",
-    "created_at": "createdAt",
-    "discount_amount": "discountAmount",
-    "exchange_rate": "exchangeRate",
-    "is_billable": "isBillable",
-    "item_description": "itemDescription",
-    "item_id": "itemId",
-    "item_name": "itemName",
-    "item_sku": "itemSku",
-    "item_variants": "itemVariants",
-    "project_id": "projectId",
-    "refund_amount": "refundAmount",
-    "refunded_at": "refundedAt",
-    "tax_amount": "taxAmount",
-    "taxrate_id": "taxrateId",
-    "total_amount": "totalAmount",
-    "unit_amount": "unitAmount",
-    "unit_quantity": "unitQuantity",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    account_id: z.string().optional(),
+    category_ids: z.array(z.string()).optional(),
+    contact_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    discount_amount: z.number().optional(),
+    exchange_rate: z.number().optional(),
+    fees: z.array(AccountingFee$inboundSchema).optional(),
+    id: z.string().optional(),
+    is_billable: z.boolean().optional(),
+    item_description: z.string().optional(),
+    item_id: z.string().optional(),
+    item_name: z.string().optional(),
+    item_sku: z.string().optional(),
+    item_variants: z.array(AccountingReference$inboundSchema).optional(),
+    locations: z.array(AccountingReference$inboundSchema).optional(),
+    notes: z.string().optional(),
+    project_id: z.string().optional(),
+    refund_amount: z.number().optional(),
+    refunded_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    tax_amount: z.number().optional(),
+    taxrate_id: z.string().optional(),
+    total_amount: z.number().optional(),
+    unit_amount: z.number().optional(),
+    unit_quantity: z.number().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "account_id": "accountId",
+      "category_ids": "categoryIds",
+      "contact_id": "contactId",
+      "created_at": "createdAt",
+      "discount_amount": "discountAmount",
+      "exchange_rate": "exchangeRate",
+      "is_billable": "isBillable",
+      "item_description": "itemDescription",
+      "item_id": "itemId",
+      "item_name": "itemName",
+      "item_sku": "itemSku",
+      "item_variants": "itemVariants",
+      "project_id": "projectId",
+      "refund_amount": "refundAmount",
+      "refunded_at": "refundedAt",
+      "tax_amount": "taxAmount",
+      "taxrate_id": "taxrateId",
+      "total_amount": "totalAmount",
+      "unit_amount": "unitAmount",
+      "unit_quantity": "unitQuantity",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type AccountingLineitem$Outbound = {
   account_id?: string | undefined;
@@ -171,57 +176,59 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   AccountingLineitem$Outbound,
   z.ZodTypeDef,
   AccountingLineitem
-> = z.object({
-  accountId: z.string().optional(),
-  categoryIds: z.array(z.string()).optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  discountAmount: z.number().optional(),
-  exchangeRate: z.number().optional(),
-  fees: z.array(AccountingFee$outboundSchema).optional(),
-  id: z.string().optional(),
-  isBillable: z.boolean().optional(),
-  itemDescription: z.string().optional(),
-  itemId: z.string().optional(),
-  itemName: z.string().optional(),
-  itemSku: z.string().optional(),
-  itemVariants: z.array(AccountingReference$outboundSchema).optional(),
-  locations: z.array(AccountingReference$outboundSchema).optional(),
-  notes: z.string().optional(),
-  projectId: z.string().optional(),
-  refundAmount: z.number().optional(),
-  refundedAt: z.date().transform(v => v.toISOString()).optional(),
-  taxAmount: z.number().optional(),
-  taxrateId: z.string().optional(),
-  totalAmount: z.number().optional(),
-  unitAmount: z.number().optional(),
-  unitQuantity: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    categoryIds: "category_ids",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    discountAmount: "discount_amount",
-    exchangeRate: "exchange_rate",
-    isBillable: "is_billable",
-    itemDescription: "item_description",
-    itemId: "item_id",
-    itemName: "item_name",
-    itemSku: "item_sku",
-    itemVariants: "item_variants",
-    projectId: "project_id",
-    refundAmount: "refund_amount",
-    refundedAt: "refunded_at",
-    taxAmount: "tax_amount",
-    taxrateId: "taxrate_id",
-    totalAmount: "total_amount",
-    unitAmount: "unit_amount",
-    unitQuantity: "unit_quantity",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accountId: z.string().optional(),
+    categoryIds: z.array(z.string()).optional(),
+    contactId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    discountAmount: z.number().optional(),
+    exchangeRate: z.number().optional(),
+    fees: z.array(AccountingFee$outboundSchema).optional(),
+    id: z.string().optional(),
+    isBillable: z.boolean().optional(),
+    itemDescription: z.string().optional(),
+    itemId: z.string().optional(),
+    itemName: z.string().optional(),
+    itemSku: z.string().optional(),
+    itemVariants: z.array(AccountingReference$outboundSchema).optional(),
+    locations: z.array(AccountingReference$outboundSchema).optional(),
+    notes: z.string().optional(),
+    projectId: z.string().optional(),
+    refundAmount: z.number().optional(),
+    refundedAt: z.date().transform(v => v.toISOString()).optional(),
+    taxAmount: z.number().optional(),
+    taxrateId: z.string().optional(),
+    totalAmount: z.number().optional(),
+    unitAmount: z.number().optional(),
+    unitQuantity: z.number().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      accountId: "account_id",
+      categoryIds: "category_ids",
+      contactId: "contact_id",
+      createdAt: "created_at",
+      discountAmount: "discount_amount",
+      exchangeRate: "exchange_rate",
+      isBillable: "is_billable",
+      itemDescription: "item_description",
+      itemId: "item_id",
+      itemName: "item_name",
+      itemSku: "item_sku",
+      itemVariants: "item_variants",
+      projectId: "project_id",
+      refundAmount: "refund_amount",
+      refundedAt: "refunded_at",
+      taxAmount: "tax_amount",
+      taxrateId: "taxrate_id",
+      totalAmount: "total_amount",
+      unitAmount: "unit_amount",
+      unitQuantity: "unit_quantity",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function accountingLineitemToJSON(
   accountingLineitem: AccountingLineitem,

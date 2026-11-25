@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -160,21 +160,27 @@ export const PropertyHrisPayslipDeductionCoverageLevel$inboundSchema: z.ZodType<
   PropertyHrisPayslipDeductionCoverageLevel,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyHrisPayslipDeductionCoverageLevel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyHrisPayslipDeductionCoverageLevel)
+);
 
 /** @internal */
 export const PropertyHrisPayslipDeductionEmployerType$inboundSchema: z.ZodType<
   PropertyHrisPayslipDeductionEmployerType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyHrisPayslipDeductionEmployerType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyHrisPayslipDeductionEmployerType)
+);
 
 /** @internal */
 export const PropertyHrisPayslipDeductionFrequency$inboundSchema: z.ZodType<
   PropertyHrisPayslipDeductionFrequency,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyHrisPayslipDeductionFrequency);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyHrisPayslipDeductionFrequency)
+);
 
 /** @internal */
 export const PropertyHrisPayslipDeductionGarnishmentType$inboundSchema:
@@ -182,69 +188,77 @@ export const PropertyHrisPayslipDeductionGarnishmentType$inboundSchema:
     PropertyHrisPayslipDeductionGarnishmentType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(PropertyHrisPayslipDeductionGarnishmentType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(PropertyHrisPayslipDeductionGarnishmentType)
+  );
 
 /** @internal */
 export const PropertyHrisPayslipDeductionType$inboundSchema: z.ZodType<
   PropertyHrisPayslipDeductionType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyHrisPayslipDeductionType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyHrisPayslipDeductionType)
+);
 
 /** @internal */
 export const PropertyHrisPayslipDeduction$inboundSchema: z.ZodType<
   PropertyHrisPayslipDeduction,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  amount: z.number().optional(),
-  benefit_id: z.string().optional(),
-  company_id: z.string().optional(),
-  coverage_level: PropertyHrisPayslipDeductionCoverageLevel$inboundSchema
-    .optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  employer_amount: z.number().optional(),
-  employer_type: PropertyHrisPayslipDeductionEmployerType$inboundSchema
-    .optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  frequency: PropertyHrisPayslipDeductionFrequency$inboundSchema.optional(),
-  garnishment_type: PropertyHrisPayslipDeductionGarnishmentType$inboundSchema
-    .optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  loan_identifier: z.string().optional(),
-  max_amount: z.number().optional(),
-  metadata: z.array(HrisMetadata$inboundSchema).optional(),
-  notes: z.string().optional(),
-  paycode_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  type: PropertyHrisPayslipDeductionType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "benefit_id": "benefitId",
-    "company_id": "companyId",
-    "coverage_level": "coverageLevel",
-    "created_at": "createdAt",
-    "employer_amount": "employerAmount",
-    "employer_type": "employerType",
-    "end_at": "endAt",
-    "garnishment_type": "garnishmentType",
-    "is_active": "isActive",
-    "loan_identifier": "loanIdentifier",
-    "max_amount": "maxAmount",
-    "paycode_id": "paycodeId",
-    "start_at": "startAt",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: z.number().optional(),
+    benefit_id: z.string().optional(),
+    company_id: z.string().optional(),
+    coverage_level: PropertyHrisPayslipDeductionCoverageLevel$inboundSchema
+      .optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    employer_amount: z.number().optional(),
+    employer_type: PropertyHrisPayslipDeductionEmployerType$inboundSchema
+      .optional(),
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    frequency: PropertyHrisPayslipDeductionFrequency$inboundSchema.optional(),
+    garnishment_type: PropertyHrisPayslipDeductionGarnishmentType$inboundSchema
+      .optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    loan_identifier: z.string().optional(),
+    max_amount: z.number().optional(),
+    metadata: z.array(HrisMetadata$inboundSchema).optional(),
+    notes: z.string().optional(),
+    paycode_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    type: PropertyHrisPayslipDeductionType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "benefit_id": "benefitId",
+      "company_id": "companyId",
+      "coverage_level": "coverageLevel",
+      "created_at": "createdAt",
+      "employer_amount": "employerAmount",
+      "employer_type": "employerType",
+      "end_at": "endAt",
+      "garnishment_type": "garnishmentType",
+      "is_active": "isActive",
+      "loan_identifier": "loanIdentifier",
+      "max_amount": "maxAmount",
+      "paycode_id": "paycodeId",
+      "start_at": "startAt",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 
 export function propertyHrisPayslipDeductionFromJSON(
   jsonString: string,

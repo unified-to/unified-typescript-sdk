@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListComputeKeysQueryParamFields = {
@@ -62,7 +63,9 @@ export type ListComputeKeysRequest = {
 /** @internal */
 export const ListComputeKeysQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListComputeKeysQueryParamFields
-> = z.nativeEnum(ListComputeKeysQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListComputeKeysQueryParamFields)
+);
 
 /** @internal */
 export type ListComputeKeysRequest$Outbound = {
@@ -84,25 +87,27 @@ export const ListComputeKeysRequest$outboundSchema: z.ZodType<
   ListComputeKeysRequest$Outbound,
   z.ZodTypeDef,
   ListComputeKeysRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListComputeKeysQueryParamFields$outboundSchema).optional(),
-  instanceId: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    instanceId: "instance_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListComputeKeysQueryParamFields$outboundSchema).optional(),
+    instanceId: z.string().optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      instanceId: "instance_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listComputeKeysRequestToJSON(
   listComputeKeysRequest: ListComputeKeysRequest,

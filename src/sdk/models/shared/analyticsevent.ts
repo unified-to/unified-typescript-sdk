@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -86,68 +86,72 @@ export const EventType$inboundSchema: z.ZodType<
   EventType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(EventType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(EventType));
 /** @internal */
 export const EventType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   EventType
-> = openEnums.outboundSchema(EventType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(EventType));
 
 /** @internal */
 export const AnalyticsEvent$inboundSchema: z.ZodType<
   AnalyticsEvent,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  browser: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  country_code: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  device: z.string().optional(),
-  event_type: EventType$inboundSchema.optional(),
-  id: z.string().optional(),
-  metadata: z.record(PropertyAnalyticsEventMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  os: z.string().optional(),
-  page_referrer: z.string().optional(),
-  page_title: z.string().optional(),
-  page_url: z.string().optional(),
-  property_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  region: z.string().optional(),
-  session_id: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  utm_campaign: z.string().optional(),
-  utm_content: z.string().optional(),
-  utm_medium: z.string().optional(),
-  utm_source: z.string().optional(),
-  utm_term: z.string().optional(),
-  value: z.number().optional(),
-  visitor_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "country_code": "countryCode",
-    "created_at": "createdAt",
-    "event_type": "eventType",
-    "page_referrer": "pageReferrer",
-    "page_title": "pageTitle",
-    "page_url": "pageUrl",
-    "property_id": "propertyId",
-    "session_id": "sessionId",
-    "updated_at": "updatedAt",
-    "utm_campaign": "utmCampaign",
-    "utm_content": "utmContent",
-    "utm_medium": "utmMedium",
-    "utm_source": "utmSource",
-    "utm_term": "utmTerm",
-    "visitor_id": "visitorId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    browser: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    country_code: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    device: z.string().optional(),
+    event_type: EventType$inboundSchema.optional(),
+    id: z.string().optional(),
+    metadata: z.record(PropertyAnalyticsEventMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    os: z.string().optional(),
+    page_referrer: z.string().optional(),
+    page_title: z.string().optional(),
+    page_url: z.string().optional(),
+    property_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    region: z.string().optional(),
+    session_id: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    utm_campaign: z.string().optional(),
+    utm_content: z.string().optional(),
+    utm_medium: z.string().optional(),
+    utm_source: z.string().optional(),
+    utm_term: z.string().optional(),
+    value: z.number().optional(),
+    visitor_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "country_code": "countryCode",
+      "created_at": "createdAt",
+      "event_type": "eventType",
+      "page_referrer": "pageReferrer",
+      "page_title": "pageTitle",
+      "page_url": "pageUrl",
+      "property_id": "propertyId",
+      "session_id": "sessionId",
+      "updated_at": "updatedAt",
+      "utm_campaign": "utmCampaign",
+      "utm_content": "utmContent",
+      "utm_medium": "utmMedium",
+      "utm_source": "utmSource",
+      "utm_term": "utmTerm",
+      "visitor_id": "visitorId",
+    });
+  })
+);
 /** @internal */
 export type AnalyticsEvent$Outbound = {
   browser?: string | undefined;
@@ -186,53 +190,56 @@ export const AnalyticsEvent$outboundSchema: z.ZodType<
   AnalyticsEvent$Outbound,
   z.ZodTypeDef,
   AnalyticsEvent
-> = z.object({
-  browser: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  countryCode: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  device: z.string().optional(),
-  eventType: EventType$outboundSchema.optional(),
-  id: z.string().optional(),
-  metadata: z.record(PropertyAnalyticsEventMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  os: z.string().optional(),
-  pageReferrer: z.string().optional(),
-  pageTitle: z.string().optional(),
-  pageUrl: z.string().optional(),
-  propertyId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  region: z.string().optional(),
-  sessionId: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  utmCampaign: z.string().optional(),
-  utmContent: z.string().optional(),
-  utmMedium: z.string().optional(),
-  utmSource: z.string().optional(),
-  utmTerm: z.string().optional(),
-  value: z.number().optional(),
-  visitorId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    countryCode: "country_code",
-    createdAt: "created_at",
-    eventType: "event_type",
-    pageReferrer: "page_referrer",
-    pageTitle: "page_title",
-    pageUrl: "page_url",
-    propertyId: "property_id",
-    sessionId: "session_id",
-    updatedAt: "updated_at",
-    utmCampaign: "utm_campaign",
-    utmContent: "utm_content",
-    utmMedium: "utm_medium",
-    utmSource: "utm_source",
-    utmTerm: "utm_term",
-    visitorId: "visitor_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    browser: z.string().optional(),
+    city: z.string().optional(),
+    country: z.string().optional(),
+    countryCode: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    device: z.string().optional(),
+    eventType: EventType$outboundSchema.optional(),
+    id: z.string().optional(),
+    metadata: z.record(PropertyAnalyticsEventMetadata$outboundSchema)
+      .optional(),
+    name: z.string().optional(),
+    os: z.string().optional(),
+    pageReferrer: z.string().optional(),
+    pageTitle: z.string().optional(),
+    pageUrl: z.string().optional(),
+    propertyId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    region: z.string().optional(),
+    sessionId: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    utmCampaign: z.string().optional(),
+    utmContent: z.string().optional(),
+    utmMedium: z.string().optional(),
+    utmSource: z.string().optional(),
+    utmTerm: z.string().optional(),
+    value: z.number().optional(),
+    visitorId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      countryCode: "country_code",
+      createdAt: "created_at",
+      eventType: "event_type",
+      pageReferrer: "page_referrer",
+      pageTitle: "page_title",
+      pageUrl: "page_url",
+      propertyId: "property_id",
+      sessionId: "session_id",
+      updatedAt: "updated_at",
+      utmCampaign: "utm_campaign",
+      utmContent: "utm_content",
+      utmMedium: "utm_medium",
+      utmSource: "utm_source",
+      utmTerm: "utm_term",
+      visitorId: "visitor_id",
+    });
+  })
+);
 
 export function analyticsEventToJSON(analyticsEvent: AnalyticsEvent): string {
   return JSON.stringify(AnalyticsEvent$outboundSchema.parse(analyticsEvent));

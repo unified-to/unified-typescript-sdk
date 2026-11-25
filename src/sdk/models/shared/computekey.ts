@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -95,49 +95,54 @@ export const ComputeKeyType$inboundSchema: z.ZodType<
   ComputeKeyType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeKeyType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ComputeKeyType));
 /** @internal */
 export const ComputeKeyType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeKeyType
-> = openEnums.outboundSchema(ComputeKeyType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(ComputeKeyType));
 
 /** @internal */
 export const ComputeKey$inboundSchema: z.ZodType<
   ComputeKey,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  fingerprint: z.string().optional(),
-  id: z.string().optional(),
-  instance_id: z.string().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  private_key: z.string().optional(),
-  public_key: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  registry_url: z.string().optional(),
-  secret: z.string().optional(),
-  type: ComputeKeyType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  username: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "expires_at": "expiresAt",
-    "instance_id": "instanceId",
-    "private_key": "privateKey",
-    "public_key": "publicKey",
-    "registry_url": "registryUrl",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    fingerprint: z.string().optional(),
+    id: z.string().optional(),
+    instance_id: z.string().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    private_key: z.string().optional(),
+    public_key: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    registry_url: z.string().optional(),
+    secret: z.string().optional(),
+    type: ComputeKeyType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    username: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "expires_at": "expiresAt",
+      "instance_id": "instanceId",
+      "private_key": "privateKey",
+      "public_key": "publicKey",
+      "registry_url": "registryUrl",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type ComputeKey$Outbound = {
   created_at?: string | undefined;
@@ -162,33 +167,35 @@ export const ComputeKey$outboundSchema: z.ZodType<
   ComputeKey$Outbound,
   z.ZodTypeDef,
   ComputeKey
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  fingerprint: z.string().optional(),
-  id: z.string().optional(),
-  instanceId: z.string().optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  privateKey: z.string().optional(),
-  publicKey: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  registryUrl: z.string().optional(),
-  secret: z.string().optional(),
-  type: ComputeKeyType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  username: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    expiresAt: "expires_at",
-    instanceId: "instance_id",
-    privateKey: "private_key",
-    publicKey: "public_key",
-    registryUrl: "registry_url",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    fingerprint: z.string().optional(),
+    id: z.string().optional(),
+    instanceId: z.string().optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    privateKey: z.string().optional(),
+    publicKey: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    registryUrl: z.string().optional(),
+    secret: z.string().optional(),
+    type: ComputeKeyType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    username: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      expiresAt: "expires_at",
+      instanceId: "instance_id",
+      privateKey: "private_key",
+      publicKey: "public_key",
+      registryUrl: "registry_url",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function computeKeyToJSON(computeKey: ComputeKey): string {
   return JSON.stringify(ComputeKey$outboundSchema.parse(computeKey));

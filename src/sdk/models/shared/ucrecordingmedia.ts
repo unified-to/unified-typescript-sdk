@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -37,23 +37,25 @@ export const UcRecordingMedia$inboundSchema: z.ZodType<
   UcRecordingMedia,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  language: z.string().optional(),
-  recording_download_url: z.string().optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  transcript_download_url: z.string().optional(),
-  transcripts: z.array(UcRecordingTranscript$inboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "end_at": "endAt",
-    "recording_download_url": "recordingDownloadUrl",
-    "start_at": "startAt",
-    "transcript_download_url": "transcriptDownloadUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    language: z.string().optional(),
+    recording_download_url: z.string().optional(),
+    start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    transcript_download_url: z.string().optional(),
+    transcripts: z.array(UcRecordingTranscript$inboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "end_at": "endAt",
+      "recording_download_url": "recordingDownloadUrl",
+      "start_at": "startAt",
+      "transcript_download_url": "transcriptDownloadUrl",
+    });
+  })
+);
 /** @internal */
 export type UcRecordingMedia$Outbound = {
   end_at?: string | undefined;
@@ -69,21 +71,23 @@ export const UcRecordingMedia$outboundSchema: z.ZodType<
   UcRecordingMedia$Outbound,
   z.ZodTypeDef,
   UcRecordingMedia
-> = z.object({
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  language: z.string().optional(),
-  recordingDownloadUrl: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  transcriptDownloadUrl: z.string().optional(),
-  transcripts: z.array(UcRecordingTranscript$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    endAt: "end_at",
-    recordingDownloadUrl: "recording_download_url",
-    startAt: "start_at",
-    transcriptDownloadUrl: "transcript_download_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    endAt: z.date().transform(v => v.toISOString()).optional(),
+    language: z.string().optional(),
+    recordingDownloadUrl: z.string().optional(),
+    startAt: z.date().transform(v => v.toISOString()).optional(),
+    transcriptDownloadUrl: z.string().optional(),
+    transcripts: z.array(UcRecordingTranscript$outboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      endAt: "end_at",
+      recordingDownloadUrl: "recording_download_url",
+      startAt: "start_at",
+      transcriptDownloadUrl: "transcript_download_url",
+    });
+  })
+);
 
 export function ucRecordingMediaToJSON(
   ucRecordingMedia: UcRecordingMedia,

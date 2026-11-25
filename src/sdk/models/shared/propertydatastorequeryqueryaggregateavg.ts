@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,10 +17,12 @@ export const PropertyDatastoreQueryQueryAggregateAvg$inboundSchema: z.ZodType<
   PropertyDatastoreQueryQueryAggregateAvg,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  alias: z.string().optional(),
-  field: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    alias: z.string().optional(),
+    field: z.string(),
+  })
+);
 /** @internal */
 export type PropertyDatastoreQueryQueryAggregateAvg$Outbound = {
   alias?: string | undefined;
@@ -32,10 +34,12 @@ export const PropertyDatastoreQueryQueryAggregateAvg$outboundSchema: z.ZodType<
   PropertyDatastoreQueryQueryAggregateAvg$Outbound,
   z.ZodTypeDef,
   PropertyDatastoreQueryQueryAggregateAvg
-> = z.object({
-  alias: z.string().optional(),
-  field: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    alias: z.string().optional(),
+    field: z.string(),
+  })
+);
 
 export function propertyDatastoreQueryQueryAggregateAvgToJSON(
   propertyDatastoreQueryQueryAggregateAvg:

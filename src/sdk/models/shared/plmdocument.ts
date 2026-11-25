@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -110,67 +110,77 @@ export const PlmDocumentStatus$inboundSchema: z.ZodType<
   PlmDocumentStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PlmDocumentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PlmDocumentStatus)
+);
 /** @internal */
 export const PlmDocumentStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PlmDocumentStatus
-> = openEnums.outboundSchema(PlmDocumentStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PlmDocumentStatus)
+);
 
 /** @internal */
 export const PlmDocumentType$inboundSchema: z.ZodType<
   PlmDocumentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PlmDocumentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PlmDocumentType));
 /** @internal */
 export const PlmDocumentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PlmDocumentType
-> = openEnums.outboundSchema(PlmDocumentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PlmDocumentType)
+);
 
 /** @internal */
 export const PlmDocument$inboundSchema: z.ZodType<
   PlmDocument,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  category_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  file_ids: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  lifecycle_state: z.string().optional(),
-  master_identifier: z.string().optional(),
-  metadata: z.array(PlmMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  original_type: z.string().optional(),
-  part_ids: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  revision: z.string().optional(),
-  status: PlmDocumentStatus$inboundSchema.optional(),
-  type: PlmDocumentType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  url: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "category_id": "categoryId",
-    "created_at": "createdAt",
-    "file_ids": "fileIds",
-    "lifecycle_state": "lifecycleState",
-    "master_identifier": "masterIdentifier",
-    "original_type": "originalType",
-    "part_ids": "partIds",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    category_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    file_ids: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    lifecycle_state: z.string().optional(),
+    master_identifier: z.string().optional(),
+    metadata: z.array(PlmMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    original_type: z.string().optional(),
+    part_ids: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    revision: z.string().optional(),
+    status: PlmDocumentStatus$inboundSchema.optional(),
+    type: PlmDocumentType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    url: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "category_id": "categoryId",
+      "created_at": "createdAt",
+      "file_ids": "fileIds",
+      "lifecycle_state": "lifecycleState",
+      "master_identifier": "masterIdentifier",
+      "original_type": "originalType",
+      "part_ids": "partIds",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type PlmDocument$Outbound = {
   category_id?: string | undefined;
@@ -199,39 +209,41 @@ export const PlmDocument$outboundSchema: z.ZodType<
   PlmDocument$Outbound,
   z.ZodTypeDef,
   PlmDocument
-> = z.object({
-  categoryId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  fileIds: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  lifecycleState: z.string().optional(),
-  masterIdentifier: z.string().optional(),
-  metadata: z.array(PlmMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  number: z.string().optional(),
-  originalType: z.string().optional(),
-  partIds: z.array(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  revision: z.string().optional(),
-  status: PlmDocumentStatus$outboundSchema.optional(),
-  type: PlmDocumentType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  url: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    categoryId: "category_id",
-    createdAt: "created_at",
-    fileIds: "file_ids",
-    lifecycleState: "lifecycle_state",
-    masterIdentifier: "master_identifier",
-    originalType: "original_type",
-    partIds: "part_ids",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    categoryId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    fileIds: z.array(z.string()).optional(),
+    id: z.string().optional(),
+    lifecycleState: z.string().optional(),
+    masterIdentifier: z.string().optional(),
+    metadata: z.array(PlmMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    number: z.string().optional(),
+    originalType: z.string().optional(),
+    partIds: z.array(z.string()).optional(),
+    raw: z.record(z.any()).optional(),
+    revision: z.string().optional(),
+    status: PlmDocumentStatus$outboundSchema.optional(),
+    type: PlmDocumentType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    url: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      categoryId: "category_id",
+      createdAt: "created_at",
+      fileIds: "file_ids",
+      lifecycleState: "lifecycle_state",
+      masterIdentifier: "master_identifier",
+      originalType: "original_type",
+      partIds: "part_ids",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function plmDocumentToJSON(plmDocument: PlmDocument): string {
   return JSON.stringify(PlmDocument$outboundSchema.parse(plmDocument));

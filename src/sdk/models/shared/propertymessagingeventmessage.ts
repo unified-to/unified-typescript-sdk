@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -114,50 +114,54 @@ export const PropertyMessagingEventMessage$inboundSchema: z.ZodType<
   PropertyMessagingEventMessage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  attachments: z.array(MessagingAttachment$inboundSchema).optional(),
-  author_member: PropertyMessagingEventMessageAuthorMember$inboundSchema
-    .optional(),
-  buttons: z.array(MessagingButton$inboundSchema).optional(),
-  channels: z.array(MessagingReference$inboundSchema).optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  destination_members: z.array(MessagingMember$inboundSchema).optional(),
-  has_children: z.boolean().optional(),
-  hidden_members: z.array(MessagingMember$inboundSchema).optional(),
-  id: z.string().optional(),
-  is_unread: z.boolean().optional(),
-  mentioned_members: z.array(MessagingMember$inboundSchema).optional(),
-  message: z.string().optional(),
-  message_html: z.string().optional(),
-  message_markdown: z.string().optional(),
-  message_thread_identifier: z.string().optional(),
-  metadata: z.array(MessagingMetadata$inboundSchema).optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reactions: z.array(MessagingReaction$inboundSchema).optional(),
-  reference: z.string().optional(),
-  subject: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "author_member": "authorMember",
-    "created_at": "createdAt",
-    "destination_members": "destinationMembers",
-    "has_children": "hasChildren",
-    "hidden_members": "hiddenMembers",
-    "is_unread": "isUnread",
-    "mentioned_members": "mentionedMembers",
-    "message_html": "messageHtml",
-    "message_markdown": "messageMarkdown",
-    "message_thread_identifier": "messageThreadIdentifier",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(MessagingAttachment$inboundSchema).optional(),
+    author_member: PropertyMessagingEventMessageAuthorMember$inboundSchema
+      .optional(),
+    buttons: z.array(MessagingButton$inboundSchema).optional(),
+    channels: z.array(MessagingReference$inboundSchema).optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    destination_members: z.array(MessagingMember$inboundSchema).optional(),
+    has_children: z.boolean().optional(),
+    hidden_members: z.array(MessagingMember$inboundSchema).optional(),
+    id: z.string().optional(),
+    is_unread: z.boolean().optional(),
+    mentioned_members: z.array(MessagingMember$inboundSchema).optional(),
+    message: z.string().optional(),
+    message_html: z.string().optional(),
+    message_markdown: z.string().optional(),
+    message_thread_identifier: z.string().optional(),
+    metadata: z.array(MessagingMetadata$inboundSchema).optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reactions: z.array(MessagingReaction$inboundSchema).optional(),
+    reference: z.string().optional(),
+    subject: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "author_member": "authorMember",
+      "created_at": "createdAt",
+      "destination_members": "destinationMembers",
+      "has_children": "hasChildren",
+      "hidden_members": "hiddenMembers",
+      "is_unread": "isUnread",
+      "mentioned_members": "mentionedMembers",
+      "message_html": "messageHtml",
+      "message_markdown": "messageMarkdown",
+      "message_thread_identifier": "messageThreadIdentifier",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type PropertyMessagingEventMessage$Outbound = {
   attachments?: Array<MessagingAttachment$Outbound> | undefined;
@@ -192,48 +196,50 @@ export const PropertyMessagingEventMessage$outboundSchema: z.ZodType<
   PropertyMessagingEventMessage$Outbound,
   z.ZodTypeDef,
   PropertyMessagingEventMessage
-> = z.object({
-  attachments: z.array(MessagingAttachment$outboundSchema).optional(),
-  authorMember: PropertyMessagingEventMessageAuthorMember$outboundSchema
-    .optional(),
-  buttons: z.array(MessagingButton$outboundSchema).optional(),
-  channels: z.array(MessagingReference$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  destinationMembers: z.array(MessagingMember$outboundSchema).optional(),
-  hasChildren: z.boolean().optional(),
-  hiddenMembers: z.array(MessagingMember$outboundSchema).optional(),
-  id: z.string().optional(),
-  isUnread: z.boolean().optional(),
-  mentionedMembers: z.array(MessagingMember$outboundSchema).optional(),
-  message: z.string().optional(),
-  messageHtml: z.string().optional(),
-  messageMarkdown: z.string().optional(),
-  messageThreadIdentifier: z.string().optional(),
-  metadata: z.array(MessagingMetadata$outboundSchema).optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  reactions: z.array(MessagingReaction$outboundSchema).optional(),
-  reference: z.string().optional(),
-  subject: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    authorMember: "author_member",
-    createdAt: "created_at",
-    destinationMembers: "destination_members",
-    hasChildren: "has_children",
-    hiddenMembers: "hidden_members",
-    isUnread: "is_unread",
-    mentionedMembers: "mentioned_members",
-    messageHtml: "message_html",
-    messageMarkdown: "message_markdown",
-    messageThreadIdentifier: "message_thread_identifier",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    attachments: z.array(MessagingAttachment$outboundSchema).optional(),
+    authorMember: PropertyMessagingEventMessageAuthorMember$outboundSchema
+      .optional(),
+    buttons: z.array(MessagingButton$outboundSchema).optional(),
+    channels: z.array(MessagingReference$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    destinationMembers: z.array(MessagingMember$outboundSchema).optional(),
+    hasChildren: z.boolean().optional(),
+    hiddenMembers: z.array(MessagingMember$outboundSchema).optional(),
+    id: z.string().optional(),
+    isUnread: z.boolean().optional(),
+    mentionedMembers: z.array(MessagingMember$outboundSchema).optional(),
+    message: z.string().optional(),
+    messageHtml: z.string().optional(),
+    messageMarkdown: z.string().optional(),
+    messageThreadIdentifier: z.string().optional(),
+    metadata: z.array(MessagingMetadata$outboundSchema).optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    reactions: z.array(MessagingReaction$outboundSchema).optional(),
+    reference: z.string().optional(),
+    subject: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      authorMember: "author_member",
+      createdAt: "created_at",
+      destinationMembers: "destination_members",
+      hasChildren: "has_children",
+      hiddenMembers: "hidden_members",
+      isUnread: "is_unread",
+      mentionedMembers: "mentioned_members",
+      messageHtml: "message_html",
+      messageMarkdown: "message_markdown",
+      messageThreadIdentifier: "message_thread_identifier",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function propertyMessagingEventMessageToJSON(
   propertyMessagingEventMessage: PropertyMessagingEventMessage,

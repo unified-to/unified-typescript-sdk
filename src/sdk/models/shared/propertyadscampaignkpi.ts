@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -50,31 +50,37 @@ export const PropertyAdsCampaignKpiType$inboundSchema: z.ZodType<
   PropertyAdsCampaignKpiType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsCampaignKpiType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsCampaignKpiType)
+);
 /** @internal */
 export const PropertyAdsCampaignKpiType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PropertyAdsCampaignKpiType
-> = openEnums.outboundSchema(PropertyAdsCampaignKpiType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(PropertyAdsCampaignKpiType)
+);
 
 /** @internal */
 export const PropertyAdsCampaignKpi$inboundSchema: z.ZodType<
   PropertyAdsCampaignKpi,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  algorithm_id: z.string().optional(),
-  amount: z.number().optional(),
-  percentage: z.number().optional(),
-  string_value: z.string().optional(),
-  type: PropertyAdsCampaignKpiType$inboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "algorithm_id": "algorithmId",
-    "string_value": "stringValue",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    algorithm_id: z.string().optional(),
+    amount: z.number().optional(),
+    percentage: z.number().optional(),
+    string_value: z.string().optional(),
+    type: PropertyAdsCampaignKpiType$inboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "algorithm_id": "algorithmId",
+      "string_value": "stringValue",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsCampaignKpi$Outbound = {
   algorithm_id?: string | undefined;
@@ -89,18 +95,20 @@ export const PropertyAdsCampaignKpi$outboundSchema: z.ZodType<
   PropertyAdsCampaignKpi$Outbound,
   z.ZodTypeDef,
   PropertyAdsCampaignKpi
-> = z.object({
-  algorithmId: z.string().optional(),
-  amount: z.number().optional(),
-  percentage: z.number().optional(),
-  stringValue: z.string().optional(),
-  type: PropertyAdsCampaignKpiType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    algorithmId: "algorithm_id",
-    stringValue: "string_value",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    algorithmId: z.string().optional(),
+    amount: z.number().optional(),
+    percentage: z.number().optional(),
+    stringValue: z.string().optional(),
+    type: PropertyAdsCampaignKpiType$outboundSchema.optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      algorithmId: "algorithm_id",
+      stringValue: "string_value",
+    });
+  })
+);
 
 export function propertyAdsCampaignKpiToJSON(
   propertyAdsCampaignKpi: PropertyAdsCampaignKpi,

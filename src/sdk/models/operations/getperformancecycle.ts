@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetPerformanceCycleQueryParamFields = {
@@ -45,9 +46,10 @@ export type GetPerformanceCycleRequest = {
 
 /** @internal */
 export const GetPerformanceCycleQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof GetPerformanceCycleQueryParamFields> = z.nativeEnum(
-    GetPerformanceCycleQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof GetPerformanceCycleQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(GetPerformanceCycleQueryParamFields)
+    );
 
 /** @internal */
 export type GetPerformanceCycleRequest$Outbound = {
@@ -62,17 +64,19 @@ export const GetPerformanceCycleRequest$outboundSchema: z.ZodType<
   GetPerformanceCycleRequest$Outbound,
   z.ZodTypeDef,
   GetPerformanceCycleRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetPerformanceCycleQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetPerformanceCycleQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getPerformanceCycleRequestToJSON(
   getPerformanceCycleRequest: GetPerformanceCycleRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -108,47 +108,53 @@ export const HrisJobEmploymentType$inboundSchema: z.ZodType<
   HrisJobEmploymentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(HrisJobEmploymentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(HrisJobEmploymentType)
+);
 /** @internal */
 export const HrisJobEmploymentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   HrisJobEmploymentType
-> = openEnums.outboundSchema(HrisJobEmploymentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(HrisJobEmploymentType)
+);
 
 /** @internal */
 export const HrisJob$inboundSchema: z.ZodType<HrisJob, z.ZodTypeDef, unknown> =
-  z.object({
-    code: z.string().optional(),
-    company_id: z.string().optional(),
-    compensation: z.array(HrisCompensation$inboundSchema).optional(),
-    created_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    description: z.string().optional(),
-    employment_type: HrisJobEmploymentType$inboundSchema.optional(),
-    groups: z.array(HrisGroup$inboundSchema).optional(),
-    id: z.string().optional(),
-    is_active: z.boolean().optional(),
-    locations: z.array(HrisLocation$inboundSchema).optional(),
-    metadata: z.array(HrisMetadata$inboundSchema).optional(),
-    name: z.string().optional(),
-    parent_id: z.string().optional(),
-    raw: z.record(z.any()).optional(),
-    updated_at: z.string().datetime({ offset: true }).transform(v =>
-      new Date(v)
-    ).optional(),
-    users: z.array(HrisEmployee$inboundSchema).optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "company_id": "companyId",
-      "created_at": "createdAt",
-      "employment_type": "employmentType",
-      "is_active": "isActive",
-      "parent_id": "parentId",
-      "updated_at": "updatedAt",
-    });
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      code: z.string().optional(),
+      company_id: z.string().optional(),
+      compensation: z.array(HrisCompensation$inboundSchema).optional(),
+      created_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      description: z.string().optional(),
+      employment_type: HrisJobEmploymentType$inboundSchema.optional(),
+      groups: z.array(HrisGroup$inboundSchema).optional(),
+      id: z.string().optional(),
+      is_active: z.boolean().optional(),
+      locations: z.array(HrisLocation$inboundSchema).optional(),
+      metadata: z.array(HrisMetadata$inboundSchema).optional(),
+      name: z.string().optional(),
+      parent_id: z.string().optional(),
+      raw: z.record(z.any()).optional(),
+      updated_at: z.string().datetime({ offset: true }).transform(v =>
+        new Date(v)
+      ).optional(),
+      users: z.array(HrisEmployee$inboundSchema).optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "company_id": "companyId",
+        "created_at": "createdAt",
+        "employment_type": "employmentType",
+        "is_active": "isActive",
+        "parent_id": "parentId",
+        "updated_at": "updatedAt",
+      });
+    })
+  );
 /** @internal */
 export type HrisJob$Outbound = {
   code?: string | undefined;
@@ -174,33 +180,35 @@ export const HrisJob$outboundSchema: z.ZodType<
   HrisJob$Outbound,
   z.ZodTypeDef,
   HrisJob
-> = z.object({
-  code: z.string().optional(),
-  companyId: z.string().optional(),
-  compensation: z.array(HrisCompensation$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  employmentType: HrisJobEmploymentType$outboundSchema.optional(),
-  groups: z.array(HrisGroup$outboundSchema).optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  locations: z.array(HrisLocation$outboundSchema).optional(),
-  metadata: z.array(HrisMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  users: z.array(HrisEmployee$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    createdAt: "created_at",
-    employmentType: "employment_type",
-    isActive: "is_active",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    code: z.string().optional(),
+    companyId: z.string().optional(),
+    compensation: z.array(HrisCompensation$outboundSchema).optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    employmentType: HrisJobEmploymentType$outboundSchema.optional(),
+    groups: z.array(HrisGroup$outboundSchema).optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    locations: z.array(HrisLocation$outboundSchema).optional(),
+    metadata: z.array(HrisMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    users: z.array(HrisEmployee$outboundSchema).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      createdAt: "created_at",
+      employmentType: "employment_type",
+      isActive: "is_active",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function hrisJobToJSON(hrisJob: HrisJob): string {
   return JSON.stringify(HrisJob$outboundSchema.parse(hrisJob));

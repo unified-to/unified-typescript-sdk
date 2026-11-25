@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -23,17 +23,19 @@ export const PropertyMessagingReactionMember$inboundSchema: z.ZodType<
   PropertyMessagingReactionMember,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  email: z.string().optional(),
-  image_url: z.string().optional(),
-  name: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "image_url": "imageUrl",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    image_url: z.string().optional(),
+    name: z.string().optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "image_url": "imageUrl",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type PropertyMessagingReactionMember$Outbound = {
   email?: string | undefined;
@@ -47,17 +49,19 @@ export const PropertyMessagingReactionMember$outboundSchema: z.ZodType<
   PropertyMessagingReactionMember$Outbound,
   z.ZodTypeDef,
   PropertyMessagingReactionMember
-> = z.object({
-  email: z.string().optional(),
-  imageUrl: z.string().optional(),
-  name: z.string().optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    imageUrl: "image_url",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    email: z.string().optional(),
+    imageUrl: z.string().optional(),
+    name: z.string().optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      imageUrl: "image_url",
+      userId: "user_id",
+    });
+  })
+);
 
 export function propertyMessagingReactionMemberToJSON(
   propertyMessagingReactionMember: PropertyMessagingReactionMember,

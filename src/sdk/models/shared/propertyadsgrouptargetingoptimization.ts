@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -42,29 +42,36 @@ export const PropertyAdsGroupTargetingOptimizationMode$inboundSchema: z.ZodType<
   PropertyAdsGroupTargetingOptimizationMode,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PropertyAdsGroupTargetingOptimizationMode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PropertyAdsGroupTargetingOptimizationMode)
+);
 /** @internal */
 export const PropertyAdsGroupTargetingOptimizationMode$outboundSchema:
   z.ZodType<string, z.ZodTypeDef, PropertyAdsGroupTargetingOptimizationMode> =
-    openEnums.outboundSchema(PropertyAdsGroupTargetingOptimizationMode);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.outboundSchema(PropertyAdsGroupTargetingOptimizationMode)
+    );
 
 /** @internal */
 export const PropertyAdsGroupTargetingOptimization$inboundSchema: z.ZodType<
   PropertyAdsGroupTargetingOptimization,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  advantage_audience: z.boolean().optional(),
-  advantage_placements: z.boolean().optional(),
-  mode: PropertyAdsGroupTargetingOptimizationMode$inboundSchema.optional(),
-  targeting_optimization_expansion_all: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "advantage_audience": "advantageAudience",
-    "advantage_placements": "advantagePlacements",
-    "targeting_optimization_expansion_all": "targetingOptimizationExpansionAll",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    advantage_audience: z.boolean().optional(),
+    advantage_placements: z.boolean().optional(),
+    mode: PropertyAdsGroupTargetingOptimizationMode$inboundSchema.optional(),
+    targeting_optimization_expansion_all: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "advantage_audience": "advantageAudience",
+      "advantage_placements": "advantagePlacements",
+      "targeting_optimization_expansion_all":
+        "targetingOptimizationExpansionAll",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsGroupTargetingOptimization$Outbound = {
   advantage_audience?: boolean | undefined;
@@ -78,18 +85,20 @@ export const PropertyAdsGroupTargetingOptimization$outboundSchema: z.ZodType<
   PropertyAdsGroupTargetingOptimization$Outbound,
   z.ZodTypeDef,
   PropertyAdsGroupTargetingOptimization
-> = z.object({
-  advantageAudience: z.boolean().optional(),
-  advantagePlacements: z.boolean().optional(),
-  mode: PropertyAdsGroupTargetingOptimizationMode$outboundSchema.optional(),
-  targetingOptimizationExpansionAll: z.boolean().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    advantageAudience: "advantage_audience",
-    advantagePlacements: "advantage_placements",
-    targetingOptimizationExpansionAll: "targeting_optimization_expansion_all",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    advantageAudience: z.boolean().optional(),
+    advantagePlacements: z.boolean().optional(),
+    mode: PropertyAdsGroupTargetingOptimizationMode$outboundSchema.optional(),
+    targetingOptimizationExpansionAll: z.boolean().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      advantageAudience: "advantage_audience",
+      advantagePlacements: "advantage_placements",
+      targetingOptimizationExpansionAll: "targeting_optimization_expansion_all",
+    });
+  })
+);
 
 export function propertyAdsGroupTargetingOptimizationToJSON(
   propertyAdsGroupTargetingOptimization: PropertyAdsGroupTargetingOptimization,

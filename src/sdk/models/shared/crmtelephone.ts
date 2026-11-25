@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -28,23 +28,29 @@ export const CrmTelephoneType$inboundSchema: z.ZodType<
   CrmTelephoneType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CrmTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CrmTelephoneType)
+);
 /** @internal */
 export const CrmTelephoneType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CrmTelephoneType
-> = openEnums.outboundSchema(CrmTelephoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CrmTelephoneType)
+);
 
 /** @internal */
 export const CrmTelephone$inboundSchema: z.ZodType<
   CrmTelephone,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  telephone: z.string(),
-  type: CrmTelephoneType$inboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: CrmTelephoneType$inboundSchema.optional(),
+  })
+);
 /** @internal */
 export type CrmTelephone$Outbound = {
   telephone: string;
@@ -56,10 +62,12 @@ export const CrmTelephone$outboundSchema: z.ZodType<
   CrmTelephone$Outbound,
   z.ZodTypeDef,
   CrmTelephone
-> = z.object({
-  telephone: z.string(),
-  type: CrmTelephoneType$outboundSchema.optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    telephone: z.string(),
+    type: CrmTelephoneType$outboundSchema.optional(),
+  })
+);
 
 export function crmTelephoneToJSON(crmTelephone: CrmTelephone): string {
   return JSON.stringify(CrmTelephone$outboundSchema.parse(crmTelephone));

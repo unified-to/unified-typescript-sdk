@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -58,7 +59,9 @@ export type PatchPlmChangeRequest = {
 /** @internal */
 export const PatchPlmChangeQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchPlmChangeQueryParamFields
-> = z.nativeEnum(PatchPlmChangeQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchPlmChangeQueryParamFields)
+);
 
 /** @internal */
 export type PatchPlmChangeRequest$Outbound = {
@@ -74,18 +77,20 @@ export const PatchPlmChangeRequest$outboundSchema: z.ZodType<
   PatchPlmChangeRequest$Outbound,
   z.ZodTypeDef,
   PatchPlmChangeRequest
-> = z.object({
-  plmChange: shared.PlmChange$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchPlmChangeQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    plmChange: "PlmChange",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    plmChange: shared.PlmChange$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchPlmChangeQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      plmChange: "PlmChange",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchPlmChangeRequestToJSON(
   patchPlmChangeRequest: PatchPlmChangeRequest,

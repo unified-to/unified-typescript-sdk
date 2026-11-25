@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -41,21 +41,23 @@ export type PropertyCommerceTableLayout = {
 
 /** @internal */
 export const Shape$inboundSchema: z.ZodType<Shape, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Shape);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Shape));
 
 /** @internal */
 export const PropertyCommerceTableLayout$inboundSchema: z.ZodType<
   PropertyCommerceTableLayout,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  height: z.number().optional(),
-  rotation: z.number().optional(),
-  shape: Shape$inboundSchema.optional(),
-  width: z.number().optional(),
-  x: z.number().optional(),
-  y: z.number().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    height: z.number().optional(),
+    rotation: z.number().optional(),
+    shape: Shape$inboundSchema.optional(),
+    width: z.number().optional(),
+    x: z.number().optional(),
+    y: z.number().optional(),
+  })
+);
 
 export function propertyCommerceTableLayoutFromJSON(
   jsonString: string,

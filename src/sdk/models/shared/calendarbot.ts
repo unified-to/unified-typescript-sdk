@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -109,58 +109,69 @@ export const CalendarBotStatus$inboundSchema: z.ZodType<
   CalendarBotStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CalendarBotStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CalendarBotStatus)
+);
 /** @internal */
 export const CalendarBotStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CalendarBotStatus
-> = openEnums.outboundSchema(CalendarBotStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CalendarBotStatus)
+);
 
 /** @internal */
 export const CalendarBot$inboundSchema: z.ZodType<
   CalendarBot,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  automatic_leave: PropertyCalendarBotAutomaticLeave$inboundSchema.optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  ended_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  event_id: z.string().optional(),
-  id: z.string().optional(),
-  join_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  meeting_metadata: PropertyCalendarBotMeetingMetadata$inboundSchema.optional(),
-  meeting_url: z.string().optional(),
-  name: z.string().optional(),
-  participants: z.array(CalendarBotParticipant$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  recording_config: PropertyCalendarBotRecordingConfig$inboundSchema.optional(),
-  recording_id: z.string().optional(),
-  started_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: CalendarBotStatus$inboundSchema.optional(),
-  status_changes: z.array(CalendarBotStatusChange$inboundSchema).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "automatic_leave": "automaticLeave",
-    "created_at": "createdAt",
-    "ended_at": "endedAt",
-    "event_id": "eventId",
-    "join_at": "joinAt",
-    "meeting_metadata": "meetingMetadata",
-    "meeting_url": "meetingUrl",
-    "recording_config": "recordingConfig",
-    "recording_id": "recordingId",
-    "started_at": "startedAt",
-    "status_changes": "statusChanges",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    automatic_leave: PropertyCalendarBotAutomaticLeave$inboundSchema.optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    ended_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    event_id: z.string().optional(),
+    id: z.string().optional(),
+    join_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+      .optional(),
+    meeting_metadata: PropertyCalendarBotMeetingMetadata$inboundSchema
+      .optional(),
+    meeting_url: z.string().optional(),
+    name: z.string().optional(),
+    participants: z.array(CalendarBotParticipant$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    recording_config: PropertyCalendarBotRecordingConfig$inboundSchema
+      .optional(),
+    recording_id: z.string().optional(),
+    started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: CalendarBotStatus$inboundSchema.optional(),
+    status_changes: z.array(CalendarBotStatusChange$inboundSchema).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "automatic_leave": "automaticLeave",
+      "created_at": "createdAt",
+      "ended_at": "endedAt",
+      "event_id": "eventId",
+      "join_at": "joinAt",
+      "meeting_metadata": "meetingMetadata",
+      "meeting_url": "meetingUrl",
+      "recording_config": "recordingConfig",
+      "recording_id": "recordingId",
+      "started_at": "startedAt",
+      "status_changes": "statusChanges",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type CalendarBot$Outbound = {
   automatic_leave?: PropertyCalendarBotAutomaticLeave$Outbound | undefined;
@@ -187,40 +198,44 @@ export const CalendarBot$outboundSchema: z.ZodType<
   CalendarBot$Outbound,
   z.ZodTypeDef,
   CalendarBot
-> = z.object({
-  automaticLeave: PropertyCalendarBotAutomaticLeave$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  endedAt: z.date().transform(v => v.toISOString()).optional(),
-  eventId: z.string().optional(),
-  id: z.string().optional(),
-  joinAt: z.date().transform(v => v.toISOString()).optional(),
-  meetingMetadata: PropertyCalendarBotMeetingMetadata$outboundSchema.optional(),
-  meetingUrl: z.string().optional(),
-  name: z.string().optional(),
-  participants: z.array(CalendarBotParticipant$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  recordingConfig: PropertyCalendarBotRecordingConfig$outboundSchema.optional(),
-  recordingId: z.string().optional(),
-  startedAt: z.date().transform(v => v.toISOString()).optional(),
-  status: CalendarBotStatus$outboundSchema.optional(),
-  statusChanges: z.array(CalendarBotStatusChange$outboundSchema).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    automaticLeave: "automatic_leave",
-    createdAt: "created_at",
-    endedAt: "ended_at",
-    eventId: "event_id",
-    joinAt: "join_at",
-    meetingMetadata: "meeting_metadata",
-    meetingUrl: "meeting_url",
-    recordingConfig: "recording_config",
-    recordingId: "recording_id",
-    startedAt: "started_at",
-    statusChanges: "status_changes",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    automaticLeave: PropertyCalendarBotAutomaticLeave$outboundSchema.optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    endedAt: z.date().transform(v => v.toISOString()).optional(),
+    eventId: z.string().optional(),
+    id: z.string().optional(),
+    joinAt: z.date().transform(v => v.toISOString()).optional(),
+    meetingMetadata: PropertyCalendarBotMeetingMetadata$outboundSchema
+      .optional(),
+    meetingUrl: z.string().optional(),
+    name: z.string().optional(),
+    participants: z.array(CalendarBotParticipant$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    recordingConfig: PropertyCalendarBotRecordingConfig$outboundSchema
+      .optional(),
+    recordingId: z.string().optional(),
+    startedAt: z.date().transform(v => v.toISOString()).optional(),
+    status: CalendarBotStatus$outboundSchema.optional(),
+    statusChanges: z.array(CalendarBotStatusChange$outboundSchema).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      automaticLeave: "automatic_leave",
+      createdAt: "created_at",
+      endedAt: "ended_at",
+      eventId: "event_id",
+      joinAt: "join_at",
+      meetingMetadata: "meeting_metadata",
+      meetingUrl: "meeting_url",
+      recordingConfig: "recording_config",
+      recordingId: "recording_id",
+      startedAt: "started_at",
+      statusChanges: "status_changes",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function calendarBotToJSON(calendarBot: CalendarBot): string {
   return JSON.stringify(CalendarBot$outboundSchema.parse(calendarBot));

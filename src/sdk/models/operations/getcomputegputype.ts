@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const GetComputeGputypeQueryParamFields = {
@@ -51,7 +52,9 @@ export type GetComputeGputypeRequest = {
 /** @internal */
 export const GetComputeGputypeQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof GetComputeGputypeQueryParamFields
-> = z.nativeEnum(GetComputeGputypeQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(GetComputeGputypeQueryParamFields)
+);
 
 /** @internal */
 export type GetComputeGputypeRequest$Outbound = {
@@ -66,16 +69,19 @@ export const GetComputeGputypeRequest$outboundSchema: z.ZodType<
   GetComputeGputypeRequest$Outbound,
   z.ZodTypeDef,
   GetComputeGputypeRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(GetComputeGputypeQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(GetComputeGputypeQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function getComputeGputypeRequestToJSON(
   getComputeGputypeRequest: GetComputeGputypeRequest,

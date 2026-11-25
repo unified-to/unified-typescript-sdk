@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -51,39 +51,41 @@ export const CoverageType$inboundSchema: z.ZodType<
   CoverageType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CoverageType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CoverageType));
 /** @internal */
 export const CoverageType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CoverageType
-> = openEnums.outboundSchema(CoverageType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(CoverageType));
 
 /** @internal */
 export const PropertyShippingShipmentInsurance$inboundSchema: z.ZodType<
   PropertyShippingShipmentInsurance,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  coverage_amount: z.number().optional(),
-  coverage_type: CoverageType$inboundSchema.optional(),
-  currency: z.string().optional(),
-  insurance_cost: z.number().optional(),
-  insurance_cost_currency: z.string().optional(),
-  insurance_provider: z.string().optional(),
-  insurance_provider_code: z.string().optional(),
-  insured_value: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "coverage_amount": "coverageAmount",
-    "coverage_type": "coverageType",
-    "insurance_cost": "insuranceCost",
-    "insurance_cost_currency": "insuranceCostCurrency",
-    "insurance_provider": "insuranceProvider",
-    "insurance_provider_code": "insuranceProviderCode",
-    "insured_value": "insuredValue",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    coverage_amount: z.number().optional(),
+    coverage_type: CoverageType$inboundSchema.optional(),
+    currency: z.string().optional(),
+    insurance_cost: z.number().optional(),
+    insurance_cost_currency: z.string().optional(),
+    insurance_provider: z.string().optional(),
+    insurance_provider_code: z.string().optional(),
+    insured_value: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "coverage_amount": "coverageAmount",
+      "coverage_type": "coverageType",
+      "insurance_cost": "insuranceCost",
+      "insurance_cost_currency": "insuranceCostCurrency",
+      "insurance_provider": "insuranceProvider",
+      "insurance_provider_code": "insuranceProviderCode",
+      "insured_value": "insuredValue",
+    });
+  })
+);
 /** @internal */
 export type PropertyShippingShipmentInsurance$Outbound = {
   coverage_amount?: number | undefined;
@@ -101,26 +103,28 @@ export const PropertyShippingShipmentInsurance$outboundSchema: z.ZodType<
   PropertyShippingShipmentInsurance$Outbound,
   z.ZodTypeDef,
   PropertyShippingShipmentInsurance
-> = z.object({
-  coverageAmount: z.number().optional(),
-  coverageType: CoverageType$outboundSchema.optional(),
-  currency: z.string().optional(),
-  insuranceCost: z.number().optional(),
-  insuranceCostCurrency: z.string().optional(),
-  insuranceProvider: z.string().optional(),
-  insuranceProviderCode: z.string().optional(),
-  insuredValue: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    coverageAmount: "coverage_amount",
-    coverageType: "coverage_type",
-    insuranceCost: "insurance_cost",
-    insuranceCostCurrency: "insurance_cost_currency",
-    insuranceProvider: "insurance_provider",
-    insuranceProviderCode: "insurance_provider_code",
-    insuredValue: "insured_value",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    coverageAmount: z.number().optional(),
+    coverageType: CoverageType$outboundSchema.optional(),
+    currency: z.string().optional(),
+    insuranceCost: z.number().optional(),
+    insuranceCostCurrency: z.string().optional(),
+    insuranceProvider: z.string().optional(),
+    insuranceProviderCode: z.string().optional(),
+    insuredValue: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      coverageAmount: "coverage_amount",
+      coverageType: "coverage_type",
+      insuranceCost: "insurance_cost",
+      insuranceCostCurrency: "insurance_cost_currency",
+      insuranceProvider: "insurance_provider",
+      insuranceProviderCode: "insurance_provider_code",
+      insuredValue: "insured_value",
+    });
+  })
+);
 
 export function propertyShippingShipmentInsuranceToJSON(
   propertyShippingShipmentInsurance: PropertyShippingShipmentInsurance,

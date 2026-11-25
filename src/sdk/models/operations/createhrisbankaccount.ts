@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -52,9 +53,10 @@ export type CreateHrisBankaccountRequest = {
 
 /** @internal */
 export const CreateHrisBankaccountQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof CreateHrisBankaccountQueryParamFields> = z.nativeEnum(
-    CreateHrisBankaccountQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof CreateHrisBankaccountQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(CreateHrisBankaccountQueryParamFields)
+    );
 
 /** @internal */
 export type CreateHrisBankaccountRequest$Outbound = {
@@ -69,18 +71,20 @@ export const CreateHrisBankaccountRequest$outboundSchema: z.ZodType<
   CreateHrisBankaccountRequest$Outbound,
   z.ZodTypeDef,
   CreateHrisBankaccountRequest
-> = z.object({
-  hrisBankaccount: shared.HrisBankaccount$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateHrisBankaccountQueryParamFields$outboundSchema)
-    .optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hrisBankaccount: "HrisBankaccount",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    hrisBankaccount: shared.HrisBankaccount$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateHrisBankaccountQueryParamFields$outboundSchema)
+      .optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      hrisBankaccount: "HrisBankaccount",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createHrisBankaccountRequestToJSON(
   createHrisBankaccountRequest: CreateHrisBankaccountRequest,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -64,28 +64,32 @@ export const ComputeEnvvar$inboundSchema: z.ZodType<
   ComputeEnvvar,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  environments: z.array(PropertyComputeEnvvarEnvironments$inboundSchema)
-    .optional(),
-  id: z.string().optional(),
-  is_secret: z.boolean().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  service_id: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  value: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "is_secret": "isSecret",
-    "service_id": "serviceId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    environments: z.array(PropertyComputeEnvvarEnvironments$inboundSchema)
+      .optional(),
+    id: z.string().optional(),
+    is_secret: z.boolean().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    service_id: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    value: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "is_secret": "isSecret",
+      "service_id": "serviceId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type ComputeEnvvar$Outbound = {
   created_at?: string | undefined;
@@ -105,26 +109,28 @@ export const ComputeEnvvar$outboundSchema: z.ZodType<
   ComputeEnvvar$Outbound,
   z.ZodTypeDef,
   ComputeEnvvar
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  environments: z.array(PropertyComputeEnvvarEnvironments$outboundSchema)
-    .optional(),
-  id: z.string().optional(),
-  isSecret: z.boolean().optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  serviceId: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  value: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    isSecret: "is_secret",
-    serviceId: "service_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    environments: z.array(PropertyComputeEnvvarEnvironments$outboundSchema)
+      .optional(),
+    id: z.string().optional(),
+    isSecret: z.boolean().optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    serviceId: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    value: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      isSecret: "is_secret",
+      serviceId: "service_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function computeEnvvarToJSON(computeEnvvar: ComputeEnvvar): string {
   return JSON.stringify(ComputeEnvvar$outboundSchema.parse(computeEnvvar));

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -77,47 +77,53 @@ export const AtsDocumentType$inboundSchema: z.ZodType<
   AtsDocumentType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(AtsDocumentType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AtsDocumentType));
 /** @internal */
 export const AtsDocumentType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   AtsDocumentType
-> = openEnums.outboundSchema(AtsDocumentType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(AtsDocumentType)
+);
 
 /** @internal */
 export const AtsDocument$inboundSchema: z.ZodType<
   AtsDocument,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  application_id: z.string().optional(),
-  candidate_id: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  document_data: z.string().optional(),
-  document_url: z.string().optional(),
-  filename: z.string().optional(),
-  id: z.string().optional(),
-  job_id: z.string().optional(),
-  metadata: z.array(AtsMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  type: AtsDocumentType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "application_id": "applicationId",
-    "candidate_id": "candidateId",
-    "created_at": "createdAt",
-    "document_data": "documentData",
-    "document_url": "documentUrl",
-    "job_id": "jobId",
-    "updated_at": "updatedAt",
-    "user_id": "userId",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    application_id: z.string().optional(),
+    candidate_id: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    document_data: z.string().optional(),
+    document_url: z.string().optional(),
+    filename: z.string().optional(),
+    id: z.string().optional(),
+    job_id: z.string().optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    type: AtsDocumentType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    user_id: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "application_id": "applicationId",
+      "candidate_id": "candidateId",
+      "created_at": "createdAt",
+      "document_data": "documentData",
+      "document_url": "documentUrl",
+      "job_id": "jobId",
+      "updated_at": "updatedAt",
+      "user_id": "userId",
+    });
+  })
+);
 /** @internal */
 export type AtsDocument$Outbound = {
   application_id?: string | undefined;
@@ -140,32 +146,34 @@ export const AtsDocument$outboundSchema: z.ZodType<
   AtsDocument$Outbound,
   z.ZodTypeDef,
   AtsDocument
-> = z.object({
-  applicationId: z.string().optional(),
-  candidateId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  documentData: z.string().optional(),
-  documentUrl: z.string().optional(),
-  filename: z.string().optional(),
-  id: z.string().optional(),
-  jobId: z.string().optional(),
-  metadata: z.array(AtsMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  type: AtsDocumentType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    applicationId: "application_id",
-    candidateId: "candidate_id",
-    createdAt: "created_at",
-    documentData: "document_data",
-    documentUrl: "document_url",
-    jobId: "job_id",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    applicationId: z.string().optional(),
+    candidateId: z.string().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    documentData: z.string().optional(),
+    documentUrl: z.string().optional(),
+    filename: z.string().optional(),
+    id: z.string().optional(),
+    jobId: z.string().optional(),
+    metadata: z.array(AtsMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    type: AtsDocumentType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    userId: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      applicationId: "application_id",
+      candidateId: "candidate_id",
+      createdAt: "created_at",
+      documentData: "document_data",
+      documentUrl: "document_url",
+      jobId: "job_id",
+      updatedAt: "updated_at",
+      userId: "user_id",
+    });
+  })
+);
 
 export function atsDocumentToJSON(atsDocument: AtsDocument): string {
   return JSON.stringify(AtsDocument$outboundSchema.parse(atsDocument));

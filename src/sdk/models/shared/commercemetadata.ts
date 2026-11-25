@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -102,7 +102,7 @@ export const CommerceMetadata1$inboundSchema: z.ZodType<
   CommerceMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CommerceMetadata1$Outbound = {};
 
@@ -111,7 +111,7 @@ export const CommerceMetadata1$outboundSchema: z.ZodType<
   CommerceMetadata1$Outbound,
   z.ZodTypeDef,
   CommerceMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function commerceMetadata1ToJSON(
   commerceMetadata1: CommerceMetadata1,
@@ -135,12 +135,14 @@ export const CommerceMetadata5$inboundSchema: z.ZodType<
   CommerceMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CommerceMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CommerceMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CommerceMetadata5$Outbound =
   | CommerceMetadata1$Outbound
@@ -153,12 +155,14 @@ export const CommerceMetadata5$outboundSchema: z.ZodType<
   CommerceMetadata5$Outbound,
   z.ZodTypeDef,
   CommerceMetadata5
-> = z.union([
-  z.lazy(() => CommerceMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CommerceMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function commerceMetadata5ToJSON(
   commerceMetadata5: CommerceMetadata5,
@@ -182,20 +186,22 @@ export const CommerceMetadataExtraData$inboundSchema: z.ZodType<
   CommerceMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CommerceMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CommerceMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type CommerceMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -209,20 +215,22 @@ export const CommerceMetadataExtraData$outboundSchema: z.ZodType<
   CommerceMetadataExtraData$Outbound,
   z.ZodTypeDef,
   CommerceMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CommerceMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CommerceMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function commerceMetadataExtraDataToJSON(
   commerceMetadataExtraData: CommerceMetadataExtraData,
@@ -246,20 +254,24 @@ export const CommerceMetadataFormat$inboundSchema: z.ZodType<
   CommerceMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CommerceMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CommerceMetadataFormat)
+);
 /** @internal */
 export const CommerceMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CommerceMetadataFormat
-> = openEnums.outboundSchema(CommerceMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CommerceMetadataFormat)
+);
 
 /** @internal */
 export const CommerceMetadataSchemas1$inboundSchema: z.ZodType<
   CommerceMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CommerceMetadataSchemas1$Outbound = {};
 
@@ -268,7 +280,7 @@ export const CommerceMetadataSchemas1$outboundSchema: z.ZodType<
   CommerceMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   CommerceMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function commerceMetadataSchemas1ToJSON(
   commerceMetadataSchemas1: CommerceMetadataSchemas1,
@@ -292,12 +304,14 @@ export const CommerceMetadataSchemas5$inboundSchema: z.ZodType<
   CommerceMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CommerceMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CommerceMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CommerceMetadataSchemas5$Outbound =
   | CommerceMetadataSchemas1$Outbound
@@ -310,12 +324,14 @@ export const CommerceMetadataSchemas5$outboundSchema: z.ZodType<
   CommerceMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   CommerceMetadataSchemas5
-> = z.union([
-  z.lazy(() => CommerceMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CommerceMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function commerceMetadataSchemas5ToJSON(
   commerceMetadataSchemas5: CommerceMetadataSchemas5,
@@ -339,20 +355,22 @@ export const CommerceMetadataValue$inboundSchema: z.ZodType<
   CommerceMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CommerceMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CommerceMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type CommerceMetadataValue$Outbound =
   | { [k: string]: any }
@@ -366,20 +384,22 @@ export const CommerceMetadataValue$outboundSchema: z.ZodType<
   CommerceMetadataValue$Outbound,
   z.ZodTypeDef,
   CommerceMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CommerceMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CommerceMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function commerceMetadataValueToJSON(
   commerceMetadataValue: CommerceMetadataValue,
@@ -403,47 +423,49 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   CommerceMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  description: z.string().optional(),
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CommerceMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: CommerceMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  is_required: z.boolean().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CommerceMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-    "is_required": "isRequired",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CommerceMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: CommerceMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    is_required: z.boolean().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CommerceMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+      "is_required": "isRequired",
+    });
+  })
+);
 /** @internal */
 export type CommerceMetadata$Outbound = {
   description?: string | undefined;
@@ -473,47 +495,49 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   CommerceMetadata$Outbound,
   z.ZodTypeDef,
   CommerceMetadata
-> = z.object({
-  description: z.string().optional(),
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CommerceMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: CommerceMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  isRequired: z.boolean().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CommerceMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-    isRequired: "is_required",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    description: z.string().optional(),
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CommerceMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: CommerceMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    isRequired: z.boolean().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CommerceMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+      isRequired: "is_required",
+    });
+  })
+);
 
 export function commerceMetadataToJSON(
   commerceMetadata: CommerceMetadata,

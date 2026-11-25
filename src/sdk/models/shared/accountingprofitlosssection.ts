@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -24,18 +24,20 @@ export const AccountingProfitlossSection$inboundSchema: z.ZodType<
   AccountingProfitlossSection,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  accounts: z.array(AccountingProfitlossAccount$inboundSchema).optional(),
-  section_name: z.string().optional(),
-  section_type: z.string().optional(),
-  total_amount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "section_name": "sectionName",
-    "section_type": "sectionType",
-    "total_amount": "totalAmount",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    accounts: z.array(AccountingProfitlossAccount$inboundSchema).optional(),
+    section_name: z.string().optional(),
+    section_type: z.string().optional(),
+    total_amount: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "section_name": "sectionName",
+      "section_type": "sectionType",
+      "total_amount": "totalAmount",
+    });
+  })
+);
 
 export function accountingProfitlossSectionFromJSON(
   jsonString: string,

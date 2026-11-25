@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -52,8 +52,10 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
     z.ZodTypeDef,
     unknown
-  > = openEnums.inboundSchema(
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+    )
   );
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$outboundSchema:
@@ -61,8 +63,10 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
     string,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType
-  > = openEnums.outboundSchema(
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.outboundSchema(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+    )
   );
 
 /** @internal */
@@ -71,19 +75,21 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager,
     z.ZodTypeDef,
     unknown
-  > = z.object({
-    $ref: z.string().optional(),
-    displayName: z.string().optional(),
-    managerId: z.string().optional(),
-    type:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$inboundSchema
-        .optional(),
-    value: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      "$ref": "dollarRef",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      $ref: z.string().optional(),
+      displayName: z.string().optional(),
+      managerId: z.string().optional(),
+      type:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$inboundSchema
+          .optional(),
+      value: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        "$ref": "dollarRef",
+      });
+    })
+  );
 /** @internal */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$Outbound =
   {
@@ -100,19 +106,21 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$Outbound,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager
-  > = z.object({
-    dollarRef: z.string().optional(),
-    displayName: z.string().optional(),
-    managerId: z.string().optional(),
-    type:
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$outboundSchema
-        .optional(),
-    value: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      dollarRef: "$ref",
-    });
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      dollarRef: z.string().optional(),
+      displayName: z.string().optional(),
+      managerId: z.string().optional(),
+      type:
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$outboundSchema
+          .optional(),
+      value: z.string().optional(),
+    }).transform((v) => {
+      return remap$(v, {
+        dollarRef: "$ref",
+      });
+    })
+  );
 
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerToJSON(
   propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager:

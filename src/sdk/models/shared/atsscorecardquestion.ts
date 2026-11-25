@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,11 +24,13 @@ export const AtsScorecardQuestion$inboundSchema: z.ZodType<
   AtsScorecardQuestion,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  answer: z.string().optional(),
-  description: z.string().optional(),
-  text: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answer: z.string().optional(),
+    description: z.string().optional(),
+    text: z.string(),
+  })
+);
 /** @internal */
 export type AtsScorecardQuestion$Outbound = {
   answer?: string | undefined;
@@ -41,11 +43,13 @@ export const AtsScorecardQuestion$outboundSchema: z.ZodType<
   AtsScorecardQuestion$Outbound,
   z.ZodTypeDef,
   AtsScorecardQuestion
-> = z.object({
-  answer: z.string().optional(),
-  description: z.string().optional(),
-  text: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    answer: z.string().optional(),
+    description: z.string().optional(),
+    text: z.string(),
+  })
+);
 
 export function atsScorecardQuestionToJSON(
   atsScorecardQuestion: AtsScorecardQuestion,

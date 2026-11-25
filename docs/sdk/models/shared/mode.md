@@ -1,13 +1,13 @@
 # Mode
 
-Google: bid_only falsetrue
+server
 
 ## Example Usage
 
 ```typescript
 import { Mode } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Mode = "OBSERVATION";
+let value: Mode = "server";
 
 // Open enum: unrecognized values are captured as Unrecognized<string>
 ```
@@ -15,5 +15,5 @@ let value: Mode = "OBSERVATION";
 ## Values
 
 ```typescript
-"TARGETING" | "OBSERVATION" | Unrecognized<string>
+"server" | Unrecognized<string>
 ```

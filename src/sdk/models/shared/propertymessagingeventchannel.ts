@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -47,33 +47,37 @@ export const PropertyMessagingEventChannel$inboundSchema: z.ZodType<
   PropertyMessagingEventChannel,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  description: z.string().optional(),
-  has_subchannels: z.boolean().optional(),
-  id: z.string().optional(),
-  is_active: z.boolean().optional(),
-  is_private: z.boolean().optional(),
-  members: z.array(MessagingMember$inboundSchema).optional(),
-  metadata: z.array(MessagingMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "has_subchannels": "hasSubchannels",
-    "is_active": "isActive",
-    "is_private": "isPrivate",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    description: z.string().optional(),
+    has_subchannels: z.boolean().optional(),
+    id: z.string().optional(),
+    is_active: z.boolean().optional(),
+    is_private: z.boolean().optional(),
+    members: z.array(MessagingMember$inboundSchema).optional(),
+    metadata: z.array(MessagingMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "has_subchannels": "hasSubchannels",
+      "is_active": "isActive",
+      "is_private": "isPrivate",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type PropertyMessagingEventChannel$Outbound = {
   created_at?: string | undefined;
@@ -96,31 +100,33 @@ export const PropertyMessagingEventChannel$outboundSchema: z.ZodType<
   PropertyMessagingEventChannel$Outbound,
   z.ZodTypeDef,
   PropertyMessagingEventChannel
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  description: z.string().optional(),
-  hasSubchannels: z.boolean().optional(),
-  id: z.string().optional(),
-  isActive: z.boolean().optional(),
-  isPrivate: z.boolean().optional(),
-  members: z.array(MessagingMember$outboundSchema).optional(),
-  metadata: z.array(MessagingMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    hasSubchannels: "has_subchannels",
-    isActive: "is_active",
-    isPrivate: "is_private",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    description: z.string().optional(),
+    hasSubchannels: z.boolean().optional(),
+    id: z.string().optional(),
+    isActive: z.boolean().optional(),
+    isPrivate: z.boolean().optional(),
+    members: z.array(MessagingMember$outboundSchema).optional(),
+    metadata: z.array(MessagingMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      hasSubchannels: "has_subchannels",
+      isActive: "is_active",
+      isPrivate: "is_private",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function propertyMessagingEventChannelToJSON(
   propertyMessagingEventChannel: PropertyMessagingEventChannel,

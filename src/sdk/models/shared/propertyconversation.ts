@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -84,36 +84,40 @@ export const PropertyConversation$inboundSchema: z.ZodType<
   PropertyConversation,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  guest_email: z.string().optional(),
-  guest_id: z.string().optional(),
-  guest_name: z.string().optional(),
-  guest_phone: z.string().optional(),
-  id: z.string().optional(),
-  is_unread: z.boolean().optional(),
-  listing_id: z.string().optional(),
-  messages: z.array(PropertyMessage$inboundSchema).optional(),
-  metadata: z.array(PropertyMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  reservation_id: z.string().optional(),
-  source: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "guest_email": "guestEmail",
-    "guest_id": "guestId",
-    "guest_name": "guestName",
-    "guest_phone": "guestPhone",
-    "is_unread": "isUnread",
-    "listing_id": "listingId",
-    "reservation_id": "reservationId",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    guest_email: z.string().optional(),
+    guest_id: z.string().optional(),
+    guest_name: z.string().optional(),
+    guest_phone: z.string().optional(),
+    id: z.string().optional(),
+    is_unread: z.boolean().optional(),
+    listing_id: z.string().optional(),
+    messages: z.array(PropertyMessage$inboundSchema).optional(),
+    metadata: z.array(PropertyMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    reservation_id: z.string().optional(),
+    source: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "guest_email": "guestEmail",
+      "guest_id": "guestId",
+      "guest_name": "guestName",
+      "guest_phone": "guestPhone",
+      "is_unread": "isUnread",
+      "listing_id": "listingId",
+      "reservation_id": "reservationId",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 /** @internal */
 export type PropertyConversation$Outbound = {
   created_at?: string | undefined;
@@ -137,34 +141,36 @@ export const PropertyConversation$outboundSchema: z.ZodType<
   PropertyConversation$Outbound,
   z.ZodTypeDef,
   PropertyConversation
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  guestEmail: z.string().optional(),
-  guestId: z.string().optional(),
-  guestName: z.string().optional(),
-  guestPhone: z.string().optional(),
-  id: z.string().optional(),
-  isUnread: z.boolean().optional(),
-  listingId: z.string().optional(),
-  messages: z.array(PropertyMessage$outboundSchema).optional(),
-  metadata: z.array(PropertyMetadata$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  reservationId: z.string().optional(),
-  source: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    guestEmail: "guest_email",
-    guestId: "guest_id",
-    guestName: "guest_name",
-    guestPhone: "guest_phone",
-    isUnread: "is_unread",
-    listingId: "listing_id",
-    reservationId: "reservation_id",
-    updatedAt: "updated_at",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    guestEmail: z.string().optional(),
+    guestId: z.string().optional(),
+    guestName: z.string().optional(),
+    guestPhone: z.string().optional(),
+    id: z.string().optional(),
+    isUnread: z.boolean().optional(),
+    listingId: z.string().optional(),
+    messages: z.array(PropertyMessage$outboundSchema).optional(),
+    metadata: z.array(PropertyMetadata$outboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    reservationId: z.string().optional(),
+    source: z.string().optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      guestEmail: "guest_email",
+      guestId: "guest_id",
+      guestName: "guest_name",
+      guestPhone: "guest_phone",
+      isUnread: "is_unread",
+      listingId: "listing_id",
+      reservationId: "reservation_id",
+      updatedAt: "updated_at",
+    });
+  })
+);
 
 export function propertyConversationToJSON(
   propertyConversation: PropertyConversation,

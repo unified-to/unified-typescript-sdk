@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -93,7 +93,7 @@ export const CdpMetadata1$inboundSchema: z.ZodType<
   CdpMetadata1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CdpMetadata1$Outbound = {};
 
@@ -102,7 +102,7 @@ export const CdpMetadata1$outboundSchema: z.ZodType<
   CdpMetadata1$Outbound,
   z.ZodTypeDef,
   CdpMetadata1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function cdpMetadata1ToJSON(cdpMetadata1: CdpMetadata1): string {
   return JSON.stringify(CdpMetadata1$outboundSchema.parse(cdpMetadata1));
@@ -122,12 +122,14 @@ export const CdpMetadata5$inboundSchema: z.ZodType<
   CdpMetadata5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CdpMetadata1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CdpMetadata1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CdpMetadata5$Outbound =
   | CdpMetadata1$Outbound
@@ -140,12 +142,14 @@ export const CdpMetadata5$outboundSchema: z.ZodType<
   CdpMetadata5$Outbound,
   z.ZodTypeDef,
   CdpMetadata5
-> = z.union([
-  z.lazy(() => CdpMetadata1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CdpMetadata1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function cdpMetadata5ToJSON(cdpMetadata5: CdpMetadata5): string {
   return JSON.stringify(CdpMetadata5$outboundSchema.parse(cdpMetadata5));
@@ -165,20 +169,22 @@ export const CdpMetadataExtraData$inboundSchema: z.ZodType<
   CdpMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CdpMetadata1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CdpMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type CdpMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -192,20 +198,22 @@ export const CdpMetadataExtraData$outboundSchema: z.ZodType<
   CdpMetadataExtraData$Outbound,
   z.ZodTypeDef,
   CdpMetadataExtraData
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CdpMetadata1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CdpMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function cdpMetadataExtraDataToJSON(
   cdpMetadataExtraData: CdpMetadataExtraData,
@@ -229,20 +237,24 @@ export const CdpMetadataFormat$inboundSchema: z.ZodType<
   CdpMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(CdpMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CdpMetadataFormat)
+);
 /** @internal */
 export const CdpMetadataFormat$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   CdpMetadataFormat
-> = openEnums.outboundSchema(CdpMetadataFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(CdpMetadataFormat)
+);
 
 /** @internal */
 export const CdpMetadataSchemas1$inboundSchema: z.ZodType<
   CdpMetadataSchemas1,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 /** @internal */
 export type CdpMetadataSchemas1$Outbound = {};
 
@@ -251,7 +263,7 @@ export const CdpMetadataSchemas1$outboundSchema: z.ZodType<
   CdpMetadataSchemas1$Outbound,
   z.ZodTypeDef,
   CdpMetadataSchemas1
-> = z.object({});
+> = /* @__PURE__ */ lazySchema$(() => z.object({}));
 
 export function cdpMetadataSchemas1ToJSON(
   cdpMetadataSchemas1: CdpMetadataSchemas1,
@@ -275,12 +287,14 @@ export const CdpMetadataSchemas5$inboundSchema: z.ZodType<
   CdpMetadataSchemas5,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.lazy(() => CdpMetadataSchemas1$inboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CdpMetadataSchemas1$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 /** @internal */
 export type CdpMetadataSchemas5$Outbound =
   | CdpMetadataSchemas1$Outbound
@@ -293,12 +307,14 @@ export const CdpMetadataSchemas5$outboundSchema: z.ZodType<
   CdpMetadataSchemas5$Outbound,
   z.ZodTypeDef,
   CdpMetadataSchemas5
-> = z.union([
-  z.lazy(() => CdpMetadataSchemas1$outboundSchema),
-  z.string(),
-  z.number(),
-  z.boolean(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.lazy(() => CdpMetadataSchemas1$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ])
+);
 
 export function cdpMetadataSchemas5ToJSON(
   cdpMetadataSchemas5: CdpMetadataSchemas5,
@@ -322,20 +338,22 @@ export const CdpMetadataValue$inboundSchema: z.ZodType<
   CdpMetadataValue,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CdpMetadataSchemas1$inboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CdpMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 /** @internal */
 export type CdpMetadataValue$Outbound =
   | { [k: string]: any }
@@ -349,20 +367,22 @@ export const CdpMetadataValue$outboundSchema: z.ZodType<
   CdpMetadataValue$Outbound,
   z.ZodTypeDef,
   CdpMetadataValue
-> = z.union([
-  z.record(z.any()),
-  z.string(),
-  z.number(),
-  z.boolean(),
-  z.array(
-    z.union([
-      z.lazy(() => CdpMetadataSchemas1$outboundSchema),
-      z.string(),
-      z.number(),
-      z.boolean(),
-    ]),
-  ),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => CdpMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ])
+);
 
 export function cdpMetadataValueToJSON(
   cdpMetadataValue: CdpMetadataValue,
@@ -386,44 +406,46 @@ export const CdpMetadata$inboundSchema: z.ZodType<
   CdpMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CdpMetadata1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: CdpMetadataFormat$inboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CdpMetadataSchemas1$inboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extra_data: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CdpMetadata1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: CdpMetadataFormat$inboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CdpMetadataSchemas1$inboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "extra_data": "extraData",
+    });
+  })
+);
 /** @internal */
 export type CdpMetadata$Outbound = {
   extra_data?:
@@ -451,44 +473,46 @@ export const CdpMetadata$outboundSchema: z.ZodType<
   CdpMetadata$Outbound,
   z.ZodTypeDef,
   CdpMetadata
-> = z.object({
-  extraData: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CdpMetadata1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-  format: CdpMetadataFormat$outboundSchema.optional(),
-  id: z.string().optional(),
-  namespace: z.string().optional(),
-  slug: z.string().optional(),
-  value: z.union([
-    z.record(z.any()),
-    z.string(),
-    z.number(),
-    z.boolean(),
-    z.array(
-      z.union([
-        z.lazy(() => CdpMetadataSchemas1$outboundSchema),
-        z.string(),
-        z.number(),
-        z.boolean(),
-      ]),
-    ),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extraData: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CdpMetadata1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+    format: CdpMetadataFormat$outboundSchema.optional(),
+    id: z.string().optional(),
+    namespace: z.string().optional(),
+    slug: z.string().optional(),
+    value: z.union([
+      z.record(z.any()),
+      z.string(),
+      z.number(),
+      z.boolean(),
+      z.array(
+        z.union([
+          z.lazy(() => CdpMetadataSchemas1$outboundSchema),
+          z.string(),
+          z.number(),
+          z.boolean(),
+        ]),
+      ),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      extraData: "extra_data",
+    });
+  })
+);
 
 export function cdpMetadataToJSON(cdpMetadata: CdpMetadata): string {
   return JSON.stringify(CdpMetadata$outboundSchema.parse(cdpMetadata));

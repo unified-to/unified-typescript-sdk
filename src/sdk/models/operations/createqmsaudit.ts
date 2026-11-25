@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -58,7 +59,9 @@ export type CreateQmsAuditRequest = {
 /** @internal */
 export const CreateQmsAuditQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof CreateQmsAuditQueryParamFields
-> = z.nativeEnum(CreateQmsAuditQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(CreateQmsAuditQueryParamFields)
+);
 
 /** @internal */
 export type CreateQmsAuditRequest$Outbound = {
@@ -73,17 +76,19 @@ export const CreateQmsAuditRequest$outboundSchema: z.ZodType<
   CreateQmsAuditRequest$Outbound,
   z.ZodTypeDef,
   CreateQmsAuditRequest
-> = z.object({
-  qmsAudit: shared.QmsAudit$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(CreateQmsAuditQueryParamFields$outboundSchema).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    qmsAudit: "QmsAudit",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    qmsAudit: shared.QmsAudit$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(CreateQmsAuditQueryParamFields$outboundSchema).optional(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      qmsAudit: "QmsAudit",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createQmsAuditRequestToJSON(
   createQmsAuditRequest: CreateQmsAuditRequest,

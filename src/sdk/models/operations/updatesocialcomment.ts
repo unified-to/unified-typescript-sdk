@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -49,9 +50,10 @@ export type UpdateSocialCommentRequest = {
 
 /** @internal */
 export const UpdateSocialCommentQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof UpdateSocialCommentQueryParamFields> = z.nativeEnum(
-    UpdateSocialCommentQueryParamFields,
-  );
+  z.ZodNativeEnum<typeof UpdateSocialCommentQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(UpdateSocialCommentQueryParamFields)
+    );
 
 /** @internal */
 export type UpdateSocialCommentRequest$Outbound = {
@@ -67,19 +69,21 @@ export const UpdateSocialCommentRequest$outboundSchema: z.ZodType<
   UpdateSocialCommentRequest$Outbound,
   z.ZodTypeDef,
   UpdateSocialCommentRequest
-> = z.object({
-  socialComment: shared.SocialComment$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(UpdateSocialCommentQueryParamFields$outboundSchema)
-    .optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    socialComment: "SocialComment",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    socialComment: shared.SocialComment$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(UpdateSocialCommentQueryParamFields$outboundSchema)
+      .optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      socialComment: "SocialComment",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updateSocialCommentRequestToJSON(
   updateSocialCommentRequest: UpdateSocialCommentRequest,

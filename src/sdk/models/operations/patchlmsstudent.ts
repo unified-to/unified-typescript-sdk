@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import * as shared from "../shared/index.js";
 
@@ -48,7 +49,9 @@ export type PatchLmsStudentRequest = {
 /** @internal */
 export const PatchLmsStudentQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof PatchLmsStudentQueryParamFields
-> = z.nativeEnum(PatchLmsStudentQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(PatchLmsStudentQueryParamFields)
+);
 
 /** @internal */
 export type PatchLmsStudentRequest$Outbound = {
@@ -64,18 +67,20 @@ export const PatchLmsStudentRequest$outboundSchema: z.ZodType<
   PatchLmsStudentRequest$Outbound,
   z.ZodTypeDef,
   PatchLmsStudentRequest
-> = z.object({
-  lmsStudent: shared.LmsStudent$outboundSchema,
-  connectionId: z.string(),
-  fields: z.array(PatchLmsStudentQueryParamFields$outboundSchema).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    lmsStudent: "LmsStudent",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    lmsStudent: shared.LmsStudent$outboundSchema,
+    connectionId: z.string(),
+    fields: z.array(PatchLmsStudentQueryParamFields$outboundSchema).optional(),
+    id: z.string(),
+    raw: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      lmsStudent: "LmsStudent",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function patchLmsStudentRequestToJSON(
   patchLmsStudentRequest: PatchLmsStudentRequest,

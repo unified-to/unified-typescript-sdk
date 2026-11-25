@@ -6,8 +6,10 @@
 
 * [createComputeTemplate](#createcomputetemplate) - Create a template
 * [getComputeTemplate](#getcomputetemplate) - Retrieve a template
+* [getPrintingTemplate](#getprintingtemplate) - Retrieve a template
 * [getSigningTemplate](#getsigningtemplate) - Retrieve a template
 * [listComputeTemplates](#listcomputetemplates) - List all templates
+* [listPrintingTemplates](#listprintingtemplates) - List all templates
 * [listSigningTemplates](#listsigningtemplates) - List all templates
 * [patchComputeTemplate](#patchcomputetemplate) - Update a template
 * [removeComputeTemplate](#removecomputetemplate) - Remove a template
@@ -38,18 +40,18 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "90a301fe-ef0f-45c6-a5f0-9c872516fe83",
-      image: "perfumed-molasses/cohibeo:5.2",
+      id: "458dbc62-f033-42eb-b9f6-2f55c8848b9b",
+      image: "jaunty-tarragon/demum:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-18T02:55:05.203Z"),
+      lastUsedAt: new Date("2026-04-23T01:35:47.275Z"),
       memoryMb: 8192,
       metadata: [],
-      name: "multi-byte-card",
+      name: "online-matrix",
       ports: [
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-28T23:13:34.034Z"),
+      updatedAt: new Date("2025-03-04T03:16:00.180Z"),
     },
     connectionId: "<id>",
   });
@@ -85,18 +87,18 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "90a301fe-ef0f-45c6-a5f0-9c872516fe83",
-      image: "perfumed-molasses/cohibeo:5.2",
+      id: "458dbc62-f033-42eb-b9f6-2f55c8848b9b",
+      image: "jaunty-tarragon/demum:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-18T02:55:05.203Z"),
+      lastUsedAt: new Date("2026-04-23T01:35:47.275Z"),
       memoryMb: 8192,
       metadata: [],
-      name: "multi-byte-card",
+      name: "online-matrix",
       ports: [
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-28T23:13:34.034Z"),
+      updatedAt: new Date("2025-03-04T03:16:00.180Z"),
     },
     connectionId: "<id>",
   });
@@ -202,6 +204,85 @@ run();
 ### Response
 
 **Promise\<[shared.ComputeTemplate](../../sdk/models/shared/computetemplate.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
+## getPrintingTemplate
+
+Retrieves a single PrintingTemplate by its `id`. Obtain `id` values from the corresponding list endpoint. Use `fields` to return only the fields you need.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getPrintingTemplate" method="get" path="/printing/{connection_id}/template/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.template.getPrintingTemplate({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { templateGetPrintingTemplate } from "@unified-api/typescript-sdk/funcs/templateGetPrintingTemplate.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await templateGetPrintingTemplate(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("templateGetPrintingTemplate failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetPrintingTemplateRequest](../../sdk/models/operations/getprintingtemplaterequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PrintingTemplate](../../sdk/models/shared/printingtemplate.md)\>**
 
 ### Errors
 
@@ -365,6 +446,83 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listPrintingTemplates
+
+Returns a list of PrintingTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listPrintingTemplates" method="get" path="/printing/{connection_id}/template" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.template.listPrintingTemplates({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { templateListPrintingTemplates } from "@unified-api/typescript-sdk/funcs/templateListPrintingTemplates.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await templateListPrintingTemplates(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("templateListPrintingTemplates failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListPrintingTemplatesRequest](../../sdk/models/operations/listprintingtemplatesrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.PrintingTemplate[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listSigningTemplates
 
 Returns a list of SigningTemplates. Narrow the results with the query parameters before paging, then page through them with `limit` and `offset` (the default and maximum page size depend on the integration). Use `fields` to return only the fields you need and reduce the response size. When the integration supports a total count, it is returned in the `X-Total-Count` response header. Use each item's `id` to retrieve, update, or delete it where those operations are supported.
@@ -467,18 +625,18 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "6d8f4592-0d83-40b7-91f3-10aa3afca95c",
-      image: "perfumed-molasses/cohibeo:5.2",
+      id: "a414af88-8648-4141-9f8c-5c0bd95240a3",
+      image: "jaunty-tarragon/demum:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-18T02:55:05.220Z"),
+      lastUsedAt: new Date("2026-04-23T01:35:47.290Z"),
       memoryMb: 8192,
       metadata: [],
-      name: "multi-byte-card",
+      name: "online-matrix",
       ports: [
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-28T23:13:34.044Z"),
+      updatedAt: new Date("2025-03-04T03:16:00.189Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -515,18 +673,18 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "6d8f4592-0d83-40b7-91f3-10aa3afca95c",
-      image: "perfumed-molasses/cohibeo:5.2",
+      id: "a414af88-8648-4141-9f8c-5c0bd95240a3",
+      image: "jaunty-tarragon/demum:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-18T02:55:05.220Z"),
+      lastUsedAt: new Date("2026-04-23T01:35:47.290Z"),
       memoryMb: 8192,
       metadata: [],
-      name: "multi-byte-card",
+      name: "online-matrix",
       ports: [
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-28T23:13:34.044Z"),
+      updatedAt: new Date("2025-03-04T03:16:00.189Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -665,18 +823,18 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "6d8f4592-0d83-40b7-91f3-10aa3afca95c",
-      image: "perfumed-molasses/cohibeo:5.2",
+      id: "a414af88-8648-4141-9f8c-5c0bd95240a3",
+      image: "jaunty-tarragon/demum:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-18T02:55:05.220Z"),
+      lastUsedAt: new Date("2026-04-23T01:35:47.290Z"),
       memoryMb: 8192,
       metadata: [],
-      name: "multi-byte-card",
+      name: "online-matrix",
       ports: [
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-28T23:13:34.044Z"),
+      updatedAt: new Date("2025-03-04T03:16:00.189Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -713,18 +871,18 @@ async function run() {
       dockerfile: "FROM ubuntu:24.04\nRUN apt-get update",
       gpuCount: 2,
       gpuModel: "NVIDIA_GH200",
-      id: "6d8f4592-0d83-40b7-91f3-10aa3afca95c",
-      image: "perfumed-molasses/cohibeo:5.2",
+      id: "a414af88-8648-4141-9f8c-5c0bd95240a3",
+      image: "jaunty-tarragon/demum:5.2",
       isPublic: false,
-      lastUsedAt: new Date("2026-04-18T02:55:05.220Z"),
+      lastUsedAt: new Date("2026-04-23T01:35:47.290Z"),
       memoryMb: 8192,
       metadata: [],
-      name: "multi-byte-card",
+      name: "online-matrix",
       ports: [
         8080,
       ],
       status: "OTHER",
-      updatedAt: new Date("2025-02-28T23:13:34.044Z"),
+      updatedAt: new Date("2025-03-04T03:16:00.189Z"),
     },
     connectionId: "<id>",
     id: "<id>",

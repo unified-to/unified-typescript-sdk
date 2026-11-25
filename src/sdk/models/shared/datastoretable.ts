@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -55,30 +55,34 @@ export const DatastoreTable$inboundSchema: z.ZodType<
   DatastoreTable,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  database_id: z.string().optional(),
-  description: z.string().optional(),
-  fields: z.array(DatastoreField$inboundSchema).optional(),
-  id: z.string().optional(),
-  metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  relationships: z.array(DatastoreRelationship$inboundSchema).optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  web_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "created_at": "createdAt",
-    "database_id": "databaseId",
-    "parent_id": "parentId",
-    "updated_at": "updatedAt",
-    "web_url": "webUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    database_id: z.string().optional(),
+    description: z.string().optional(),
+    fields: z.array(DatastoreField$inboundSchema).optional(),
+    id: z.string().optional(),
+    metadata: z.array(DatastoreMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    parent_id: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    relationships: z.array(DatastoreRelationship$inboundSchema).optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    web_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "created_at": "createdAt",
+      "database_id": "databaseId",
+      "parent_id": "parentId",
+      "updated_at": "updatedAt",
+      "web_url": "webUrl",
+    });
+  })
+);
 /** @internal */
 export type DatastoreTable$Outbound = {
   created_at?: string | undefined;
@@ -100,28 +104,30 @@ export const DatastoreTable$outboundSchema: z.ZodType<
   DatastoreTable$Outbound,
   z.ZodTypeDef,
   DatastoreTable
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  databaseId: z.string().optional(),
-  description: z.string().optional(),
-  fields: z.array(DatastoreField$outboundSchema).optional(),
-  id: z.string().optional(),
-  metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  relationships: z.array(DatastoreRelationship$outboundSchema).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    databaseId: "database_id",
-    parentId: "parent_id",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    databaseId: z.string().optional(),
+    description: z.string().optional(),
+    fields: z.array(DatastoreField$outboundSchema).optional(),
+    id: z.string().optional(),
+    metadata: z.array(DatastoreMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    parentId: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    relationships: z.array(DatastoreRelationship$outboundSchema).optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    webUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      createdAt: "created_at",
+      databaseId: "database_id",
+      parentId: "parent_id",
+      updatedAt: "updated_at",
+      webUrl: "web_url",
+    });
+  })
+);
 
 export function datastoreTableToJSON(datastoreTable: DatastoreTable): string {
   return JSON.stringify(DatastoreTable$outboundSchema.parse(datastoreTable));

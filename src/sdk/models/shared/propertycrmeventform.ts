@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -29,18 +29,21 @@ export const PropertyCrmEventForm$inboundSchema: z.ZodType<
   PropertyCrmEventForm,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  archived_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  fields: z.array(CrmEventFormField$inboundSchema).optional(),
-  name: z.string().optional(),
-  redirect_url: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "archived_at": "archivedAt",
-    "redirect_url": "redirectUrl",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    archived_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    fields: z.array(CrmEventFormField$inboundSchema).optional(),
+    name: z.string().optional(),
+    redirect_url: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "archived_at": "archivedAt",
+      "redirect_url": "redirectUrl",
+    });
+  })
+);
 /** @internal */
 export type PropertyCrmEventForm$Outbound = {
   archived_at?: string | undefined;
@@ -54,17 +57,19 @@ export const PropertyCrmEventForm$outboundSchema: z.ZodType<
   PropertyCrmEventForm$Outbound,
   z.ZodTypeDef,
   PropertyCrmEventForm
-> = z.object({
-  archivedAt: z.date().transform(v => v.toISOString()).optional(),
-  fields: z.array(CrmEventFormField$outboundSchema).optional(),
-  name: z.string().optional(),
-  redirectUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    archivedAt: "archived_at",
-    redirectUrl: "redirect_url",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    archivedAt: z.date().transform(v => v.toISOString()).optional(),
+    fields: z.array(CrmEventFormField$outboundSchema).optional(),
+    name: z.string().optional(),
+    redirectUrl: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      archivedAt: "archived_at",
+      redirectUrl: "redirect_url",
+    });
+  })
+);
 
 export function propertyCrmEventFormToJSON(
   propertyCrmEventForm: PropertyCrmEventForm,

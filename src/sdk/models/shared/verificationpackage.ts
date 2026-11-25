@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -101,50 +101,57 @@ export const VerificationPackageType$inboundSchema: z.ZodType<
   VerificationPackageType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(VerificationPackageType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VerificationPackageType)
+);
 
 /** @internal */
 export const VerificationPackage$inboundSchema: z.ZodType<
   VerificationPackage,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  aliases: z.array(z.string()).optional(),
-  average_processing_times: z.array(VerificationTime$inboundSchema).optional(),
-  cost_amount: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  has_redirect_url: z.boolean().optional(),
-  has_target_url: z.boolean().optional(),
-  id: z.string().optional(),
-  info_url: z.string().optional(),
-  max_score: z.number().optional(),
-  metadata: z.array(VerificationMetadata$inboundSchema).optional(),
-  name: z.string(),
-  needs_ip_address: z.boolean().optional(),
-  parameters: z.array(VerificationParameter$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  tags: z.array(z.string()).optional(),
-  type: VerificationPackageType$inboundSchema,
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  valid_regions: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "average_processing_times": "averageProcessingTimes",
-    "cost_amount": "costAmount",
-    "created_at": "createdAt",
-    "has_redirect_url": "hasRedirectUrl",
-    "has_target_url": "hasTargetUrl",
-    "info_url": "infoUrl",
-    "max_score": "maxScore",
-    "needs_ip_address": "needsIpAddress",
-    "updated_at": "updatedAt",
-    "valid_regions": "validRegions",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    aliases: z.array(z.string()).optional(),
+    average_processing_times: z.array(VerificationTime$inboundSchema)
+      .optional(),
+    cost_amount: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    description: z.string().optional(),
+    has_redirect_url: z.boolean().optional(),
+    has_target_url: z.boolean().optional(),
+    id: z.string().optional(),
+    info_url: z.string().optional(),
+    max_score: z.number().optional(),
+    metadata: z.array(VerificationMetadata$inboundSchema).optional(),
+    name: z.string(),
+    needs_ip_address: z.boolean().optional(),
+    parameters: z.array(VerificationParameter$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    tags: z.array(z.string()).optional(),
+    type: VerificationPackageType$inboundSchema,
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    valid_regions: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "average_processing_times": "averageProcessingTimes",
+      "cost_amount": "costAmount",
+      "created_at": "createdAt",
+      "has_redirect_url": "hasRedirectUrl",
+      "has_target_url": "hasTargetUrl",
+      "info_url": "infoUrl",
+      "max_score": "maxScore",
+      "needs_ip_address": "needsIpAddress",
+      "updated_at": "updatedAt",
+      "valid_regions": "validRegions",
+    });
+  })
+);
 
 export function verificationPackageFromJSON(
   jsonString: string,

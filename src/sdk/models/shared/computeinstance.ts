@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -363,178 +363,201 @@ export const ComputeInstanceArchitecture$inboundSchema: z.ZodType<
   ComputeInstanceArchitecture,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeInstanceArchitecture);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeInstanceArchitecture)
+);
 /** @internal */
 export const ComputeInstanceArchitecture$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeInstanceArchitecture
-> = openEnums.outboundSchema(ComputeInstanceArchitecture);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeInstanceArchitecture)
+);
 
 /** @internal */
 export const ComputeInstanceGpuModel$inboundSchema: z.ZodType<
   ComputeInstanceGpuModel,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeInstanceGpuModel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeInstanceGpuModel)
+);
 /** @internal */
 export const ComputeInstanceGpuModel$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeInstanceGpuModel
-> = openEnums.outboundSchema(ComputeInstanceGpuModel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeInstanceGpuModel)
+);
 
 /** @internal */
 export const Market$inboundSchema: z.ZodType<Market, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(Market);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Market));
 /** @internal */
 export const Market$outboundSchema: z.ZodType<string, z.ZodTypeDef, Market> =
-  openEnums.outboundSchema(Market);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(Market));
 
 /** @internal */
 export const OnExpire$inboundSchema: z.ZodType<
   OnExpire,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(OnExpire);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(OnExpire));
 /** @internal */
 export const OnExpire$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   OnExpire
-> = openEnums.outboundSchema(OnExpire);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(OnExpire));
 
 /** @internal */
 export const OnIdle$inboundSchema: z.ZodType<OnIdle, z.ZodTypeDef, unknown> =
-  openEnums.inboundSchema(OnIdle);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(OnIdle));
 /** @internal */
 export const OnIdle$outboundSchema: z.ZodType<string, z.ZodTypeDef, OnIdle> =
-  openEnums.outboundSchema(OnIdle);
+  /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(OnIdle));
 
 /** @internal */
 export const PriceUnit$inboundSchema: z.ZodType<
   PriceUnit,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(PriceUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PriceUnit));
 /** @internal */
 export const PriceUnit$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   PriceUnit
-> = openEnums.outboundSchema(PriceUnit);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.outboundSchema(PriceUnit));
 
 /** @internal */
 export const ComputeInstanceStatus$inboundSchema: z.ZodType<
   ComputeInstanceStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeInstanceStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeInstanceStatus)
+);
 /** @internal */
 export const ComputeInstanceStatus$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeInstanceStatus
-> = openEnums.outboundSchema(ComputeInstanceStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeInstanceStatus)
+);
 
 /** @internal */
 export const ComputeInstanceType$inboundSchema: z.ZodType<
   ComputeInstanceType,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ComputeInstanceType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ComputeInstanceType)
+);
 /** @internal */
 export const ComputeInstanceType$outboundSchema: z.ZodType<
   string,
   z.ZodTypeDef,
   ComputeInstanceType
-> = openEnums.outboundSchema(ComputeInstanceType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.outboundSchema(ComputeInstanceType)
+);
 
 /** @internal */
 export const ComputeInstance$inboundSchema: z.ZodType<
   ComputeInstance,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  allowed_actions: z.array(PropertyComputeInstanceAllowedActions$inboundSchema)
-    .optional(),
-  architecture: ComputeInstanceArchitecture$inboundSchema.optional(),
-  cpu_count: z.number().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  currency: z.string().optional(),
-  disk_mb: z.number().optional(),
-  endpoints: z.array(ComputeEndpoint$inboundSchema).optional(),
-  env: z.array(ComputeEnv$inboundSchema).optional(),
-  expires_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  gpu_count: z.number().optional(),
-  gpu_model: ComputeInstanceGpuModel$inboundSchema.optional(),
-  gputype_id: z.string().optional(),
-  has_internet_access: z.boolean().optional(),
-  id: z.string().optional(),
-  idle_timeout_seconds: z.number().optional(),
-  image: z.string().optional(),
-  market: Market$inboundSchema.optional(),
-  memory_mb: z.number().optional(),
-  metadata: z.array(ComputeMetadata$inboundSchema).optional(),
-  name: z.string().optional(),
-  on_expire: OnExpire$inboundSchema.optional(),
-  on_idle: OnIdle$inboundSchema.optional(),
-  parent_instance_id: z.string().optional(),
-  price_amount: z.number().optional(),
-  price_unit: PriceUnit$inboundSchema.optional(),
-  project_identifier: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  region_id: z.string().optional(),
-  service_id: z.string().optional(),
-  sku: z.string().optional(),
-  source_snapshot_id: z.string().optional(),
-  ssh: PropertyComputeInstanceSsh$inboundSchema.optional(),
-  started_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  status: ComputeInstanceStatus$inboundSchema.optional(),
-  status_reason: z.string().optional(),
-  template_id: z.string().optional(),
-  terminated_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  timeout_seconds: z.number().optional(),
-  type: ComputeInstanceType$inboundSchema.optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  volume_ids: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "allowed_actions": "allowedActions",
-    "cpu_count": "cpuCount",
-    "created_at": "createdAt",
-    "disk_mb": "diskMb",
-    "expires_at": "expiresAt",
-    "gpu_count": "gpuCount",
-    "gpu_model": "gpuModel",
-    "gputype_id": "gputypeId",
-    "has_internet_access": "hasInternetAccess",
-    "idle_timeout_seconds": "idleTimeoutSeconds",
-    "memory_mb": "memoryMb",
-    "on_expire": "onExpire",
-    "on_idle": "onIdle",
-    "parent_instance_id": "parentInstanceId",
-    "price_amount": "priceAmount",
-    "price_unit": "priceUnit",
-    "project_identifier": "projectIdentifier",
-    "region_id": "regionId",
-    "service_id": "serviceId",
-    "source_snapshot_id": "sourceSnapshotId",
-    "started_at": "startedAt",
-    "status_reason": "statusReason",
-    "template_id": "templateId",
-    "terminated_at": "terminatedAt",
-    "timeout_seconds": "timeoutSeconds",
-    "updated_at": "updatedAt",
-    "volume_ids": "volumeIds",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    allowed_actions: z.array(
+      PropertyComputeInstanceAllowedActions$inboundSchema,
+    ).optional(),
+    architecture: ComputeInstanceArchitecture$inboundSchema.optional(),
+    cpu_count: z.number().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    currency: z.string().optional(),
+    disk_mb: z.number().optional(),
+    endpoints: z.array(ComputeEndpoint$inboundSchema).optional(),
+    env: z.array(ComputeEnv$inboundSchema).optional(),
+    expires_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    gpu_count: z.number().optional(),
+    gpu_model: ComputeInstanceGpuModel$inboundSchema.optional(),
+    gputype_id: z.string().optional(),
+    has_internet_access: z.boolean().optional(),
+    id: z.string().optional(),
+    idle_timeout_seconds: z.number().optional(),
+    image: z.string().optional(),
+    market: Market$inboundSchema.optional(),
+    memory_mb: z.number().optional(),
+    metadata: z.array(ComputeMetadata$inboundSchema).optional(),
+    name: z.string().optional(),
+    on_expire: OnExpire$inboundSchema.optional(),
+    on_idle: OnIdle$inboundSchema.optional(),
+    parent_instance_id: z.string().optional(),
+    price_amount: z.number().optional(),
+    price_unit: PriceUnit$inboundSchema.optional(),
+    project_identifier: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    region_id: z.string().optional(),
+    service_id: z.string().optional(),
+    sku: z.string().optional(),
+    source_snapshot_id: z.string().optional(),
+    ssh: PropertyComputeInstanceSsh$inboundSchema.optional(),
+    started_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    status: ComputeInstanceStatus$inboundSchema.optional(),
+    status_reason: z.string().optional(),
+    template_id: z.string().optional(),
+    terminated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    timeout_seconds: z.number().optional(),
+    type: ComputeInstanceType$inboundSchema.optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    volume_ids: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "allowed_actions": "allowedActions",
+      "cpu_count": "cpuCount",
+      "created_at": "createdAt",
+      "disk_mb": "diskMb",
+      "expires_at": "expiresAt",
+      "gpu_count": "gpuCount",
+      "gpu_model": "gpuModel",
+      "gputype_id": "gputypeId",
+      "has_internet_access": "hasInternetAccess",
+      "idle_timeout_seconds": "idleTimeoutSeconds",
+      "memory_mb": "memoryMb",
+      "on_expire": "onExpire",
+      "on_idle": "onIdle",
+      "parent_instance_id": "parentInstanceId",
+      "price_amount": "priceAmount",
+      "price_unit": "priceUnit",
+      "project_identifier": "projectIdentifier",
+      "region_id": "regionId",
+      "service_id": "serviceId",
+      "source_snapshot_id": "sourceSnapshotId",
+      "started_at": "startedAt",
+      "status_reason": "statusReason",
+      "template_id": "templateId",
+      "terminated_at": "terminatedAt",
+      "timeout_seconds": "timeoutSeconds",
+      "updated_at": "updatedAt",
+      "volume_ids": "volumeIds",
+    });
+  })
+);
 /** @internal */
 export type ComputeInstance$Outbound = {
   allowed_actions?: Array<string> | undefined;
@@ -585,80 +608,83 @@ export const ComputeInstance$outboundSchema: z.ZodType<
   ComputeInstance$Outbound,
   z.ZodTypeDef,
   ComputeInstance
-> = z.object({
-  allowedActions: z.array(PropertyComputeInstanceAllowedActions$outboundSchema)
-    .optional(),
-  architecture: ComputeInstanceArchitecture$outboundSchema.optional(),
-  cpuCount: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  diskMb: z.number().optional(),
-  endpoints: z.array(ComputeEndpoint$outboundSchema).optional(),
-  env: z.array(ComputeEnv$outboundSchema).optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  gpuCount: z.number().optional(),
-  gpuModel: ComputeInstanceGpuModel$outboundSchema.optional(),
-  gputypeId: z.string().optional(),
-  hasInternetAccess: z.boolean().optional(),
-  id: z.string().optional(),
-  idleTimeoutSeconds: z.number().optional(),
-  image: z.string().optional(),
-  market: Market$outboundSchema.optional(),
-  memoryMb: z.number().optional(),
-  metadata: z.array(ComputeMetadata$outboundSchema).optional(),
-  name: z.string().optional(),
-  onExpire: OnExpire$outboundSchema.optional(),
-  onIdle: OnIdle$outboundSchema.optional(),
-  parentInstanceId: z.string().optional(),
-  priceAmount: z.number().optional(),
-  priceUnit: PriceUnit$outboundSchema.optional(),
-  projectIdentifier: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  regionId: z.string().optional(),
-  serviceId: z.string().optional(),
-  sku: z.string().optional(),
-  sourceSnapshotId: z.string().optional(),
-  ssh: PropertyComputeInstanceSsh$outboundSchema.optional(),
-  startedAt: z.date().transform(v => v.toISOString()).optional(),
-  status: ComputeInstanceStatus$outboundSchema.optional(),
-  statusReason: z.string().optional(),
-  templateId: z.string().optional(),
-  terminatedAt: z.date().transform(v => v.toISOString()).optional(),
-  timeoutSeconds: z.number().optional(),
-  type: ComputeInstanceType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  volumeIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    allowedActions: "allowed_actions",
-    cpuCount: "cpu_count",
-    createdAt: "created_at",
-    diskMb: "disk_mb",
-    expiresAt: "expires_at",
-    gpuCount: "gpu_count",
-    gpuModel: "gpu_model",
-    gputypeId: "gputype_id",
-    hasInternetAccess: "has_internet_access",
-    idleTimeoutSeconds: "idle_timeout_seconds",
-    memoryMb: "memory_mb",
-    onExpire: "on_expire",
-    onIdle: "on_idle",
-    parentInstanceId: "parent_instance_id",
-    priceAmount: "price_amount",
-    priceUnit: "price_unit",
-    projectIdentifier: "project_identifier",
-    regionId: "region_id",
-    serviceId: "service_id",
-    sourceSnapshotId: "source_snapshot_id",
-    startedAt: "started_at",
-    statusReason: "status_reason",
-    templateId: "template_id",
-    terminatedAt: "terminated_at",
-    timeoutSeconds: "timeout_seconds",
-    updatedAt: "updated_at",
-    volumeIds: "volume_ids",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    allowedActions: z.array(
+      PropertyComputeInstanceAllowedActions$outboundSchema,
+    ).optional(),
+    architecture: ComputeInstanceArchitecture$outboundSchema.optional(),
+    cpuCount: z.number().optional(),
+    createdAt: z.date().transform(v => v.toISOString()).optional(),
+    currency: z.string().optional(),
+    diskMb: z.number().optional(),
+    endpoints: z.array(ComputeEndpoint$outboundSchema).optional(),
+    env: z.array(ComputeEnv$outboundSchema).optional(),
+    expiresAt: z.date().transform(v => v.toISOString()).optional(),
+    gpuCount: z.number().optional(),
+    gpuModel: ComputeInstanceGpuModel$outboundSchema.optional(),
+    gputypeId: z.string().optional(),
+    hasInternetAccess: z.boolean().optional(),
+    id: z.string().optional(),
+    idleTimeoutSeconds: z.number().optional(),
+    image: z.string().optional(),
+    market: Market$outboundSchema.optional(),
+    memoryMb: z.number().optional(),
+    metadata: z.array(ComputeMetadata$outboundSchema).optional(),
+    name: z.string().optional(),
+    onExpire: OnExpire$outboundSchema.optional(),
+    onIdle: OnIdle$outboundSchema.optional(),
+    parentInstanceId: z.string().optional(),
+    priceAmount: z.number().optional(),
+    priceUnit: PriceUnit$outboundSchema.optional(),
+    projectIdentifier: z.string().optional(),
+    raw: z.record(z.any()).optional(),
+    regionId: z.string().optional(),
+    serviceId: z.string().optional(),
+    sku: z.string().optional(),
+    sourceSnapshotId: z.string().optional(),
+    ssh: PropertyComputeInstanceSsh$outboundSchema.optional(),
+    startedAt: z.date().transform(v => v.toISOString()).optional(),
+    status: ComputeInstanceStatus$outboundSchema.optional(),
+    statusReason: z.string().optional(),
+    templateId: z.string().optional(),
+    terminatedAt: z.date().transform(v => v.toISOString()).optional(),
+    timeoutSeconds: z.number().optional(),
+    type: ComputeInstanceType$outboundSchema.optional(),
+    updatedAt: z.date().transform(v => v.toISOString()).optional(),
+    volumeIds: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      allowedActions: "allowed_actions",
+      cpuCount: "cpu_count",
+      createdAt: "created_at",
+      diskMb: "disk_mb",
+      expiresAt: "expires_at",
+      gpuCount: "gpu_count",
+      gpuModel: "gpu_model",
+      gputypeId: "gputype_id",
+      hasInternetAccess: "has_internet_access",
+      idleTimeoutSeconds: "idle_timeout_seconds",
+      memoryMb: "memory_mb",
+      onExpire: "on_expire",
+      onIdle: "on_idle",
+      parentInstanceId: "parent_instance_id",
+      priceAmount: "price_amount",
+      priceUnit: "price_unit",
+      projectIdentifier: "project_identifier",
+      regionId: "region_id",
+      serviceId: "service_id",
+      sourceSnapshotId: "source_snapshot_id",
+      startedAt: "started_at",
+      statusReason: "status_reason",
+      templateId: "template_id",
+      terminatedAt: "terminated_at",
+      timeoutSeconds: "timeout_seconds",
+      updatedAt: "updated_at",
+      volumeIds: "volume_ids",
+    });
+  })
+);
 
 export function computeInstanceToJSON(
   computeInstance: ComputeInstance,

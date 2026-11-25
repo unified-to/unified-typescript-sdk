@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -107,49 +107,55 @@ export const ShippingTrackingStatus$inboundSchema: z.ZodType<
   ShippingTrackingStatus,
   z.ZodTypeDef,
   unknown
-> = openEnums.inboundSchema(ShippingTrackingStatus);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ShippingTrackingStatus)
+);
 
 /** @internal */
 export const ShippingTracking$inboundSchema: z.ZodType<
   ShippingTracking,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  actual_delivery_at: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  carrier_id: z.string().optional(),
-  carrier_status_code: z.string().optional(),
-  carrier_status_description: z.string().optional(),
-  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-  estimated_delivery: z.string().datetime({ offset: true }).transform(v =>
-    new Date(v)
-  ).optional(),
-  events: z.array(ShippingTrackingEvent$inboundSchema).optional(),
-  id: z.string().optional(),
-  metadata: z.array(ShippingMetadata$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  shipment_id: z.string().optional(),
-  status: ShippingTrackingStatus$inboundSchema.optional(),
-  status_description: z.string().optional(),
-  tracking_number: z.string().optional(),
-  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "actual_delivery_at": "actualDeliveryAt",
-    "carrier_id": "carrierId",
-    "carrier_status_code": "carrierStatusCode",
-    "carrier_status_description": "carrierStatusDescription",
-    "created_at": "createdAt",
-    "estimated_delivery": "estimatedDelivery",
-    "shipment_id": "shipmentId",
-    "status_description": "statusDescription",
-    "tracking_number": "trackingNumber",
-    "updated_at": "updatedAt",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    actual_delivery_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    carrier_id: z.string().optional(),
+    carrier_status_code: z.string().optional(),
+    carrier_status_description: z.string().optional(),
+    created_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    estimated_delivery: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+    events: z.array(ShippingTrackingEvent$inboundSchema).optional(),
+    id: z.string().optional(),
+    metadata: z.array(ShippingMetadata$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
+    shipment_id: z.string().optional(),
+    status: ShippingTrackingStatus$inboundSchema.optional(),
+    status_description: z.string().optional(),
+    tracking_number: z.string().optional(),
+    updated_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "actual_delivery_at": "actualDeliveryAt",
+      "carrier_id": "carrierId",
+      "carrier_status_code": "carrierStatusCode",
+      "carrier_status_description": "carrierStatusDescription",
+      "created_at": "createdAt",
+      "estimated_delivery": "estimatedDelivery",
+      "shipment_id": "shipmentId",
+      "status_description": "statusDescription",
+      "tracking_number": "trackingNumber",
+      "updated_at": "updatedAt",
+    });
+  })
+);
 
 export function shippingTrackingFromJSON(
   jsonString: string,

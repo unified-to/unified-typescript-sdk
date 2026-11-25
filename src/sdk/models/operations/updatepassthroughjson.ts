@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -52,17 +52,19 @@ export const UpdatePassthroughJsonRequest$outboundSchema: z.ZodType<
   UpdatePassthroughJsonRequest$Outbound,
   z.ZodTypeDef,
   UpdatePassthroughJsonRequest
-> = z.object({
-  requestBody: z.any().optional(),
-  connectionId: z.string(),
-  path: z.string(),
-  query: z.record(z.any()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    requestBody: "RequestBody",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    requestBody: z.any().optional(),
+    connectionId: z.string(),
+    path: z.string(),
+    query: z.record(z.any()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      requestBody: "RequestBody",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function updatePassthroughJsonRequestToJSON(
   updatePassthroughJsonRequest: UpdatePassthroughJsonRequest,
@@ -79,13 +81,15 @@ export const UpdatePassthroughJsonResponseResult$inboundSchema: z.ZodType<
   UpdatePassthroughJsonResponseResult,
   z.ZodTypeDef,
   unknown
-> = z.union([
-  z.instanceof(ReadableStream<Uint8Array>),
-  z.any(),
-  z.string(),
-  z.string(),
-  z.string(),
-]);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ])
+);
 
 export function updatePassthroughJsonResponseResultFromJSON(
   jsonString: string,
@@ -103,21 +107,23 @@ export const UpdatePassthroughJsonResponse$inboundSchema: z.ZodType<
   UpdatePassthroughJsonResponse,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  Headers: z.record(z.array(z.string())).default({}),
-  Result: z.union([
-    z.instanceof(ReadableStream<Uint8Array>),
-    z.any(),
-    z.string(),
-    z.string(),
-    z.string(),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "Headers": "headers",
-    "Result": "result",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    Headers: z.record(z.array(z.string())).default({}),
+    Result: z.union([
+      z.instanceof(ReadableStream<Uint8Array>),
+      z.any(),
+      z.string(),
+      z.string(),
+      z.string(),
+    ]).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "Headers": "headers",
+      "Result": "result",
+    });
+  })
+);
 
 export function updatePassthroughJsonResponseFromJSON(
   jsonString: string,

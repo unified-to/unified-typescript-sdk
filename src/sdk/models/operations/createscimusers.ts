@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import * as shared from "../shared/index.js";
 
 export type CreateScimUsersRequest = {
@@ -35,20 +36,22 @@ export const CreateScimUsersRequest$outboundSchema: z.ZodType<
   CreateScimUsersRequest$Outbound,
   z.ZodTypeDef,
   CreateScimUsersRequest
-> = z.object({
-  scimUser: shared.ScimUser$outboundSchema,
-  connectionId: z.string(),
-  count: z.number().optional(),
-  filter: z.string().optional(),
-  sortBy: z.string().optional(),
-  sortOrder: z.string().optional(),
-  startIndex: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    scimUser: "ScimUser",
-    connectionId: "connection_id",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    scimUser: shared.ScimUser$outboundSchema,
+    connectionId: z.string(),
+    count: z.number().optional(),
+    filter: z.string().optional(),
+    sortBy: z.string().optional(),
+    sortOrder: z.string().optional(),
+    startIndex: z.number().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      scimUser: "ScimUser",
+      connectionId: "connection_id",
+    });
+  })
+);
 
 export function createScimUsersRequestToJSON(
   createScimUsersRequest: CreateScimUsersRequest,

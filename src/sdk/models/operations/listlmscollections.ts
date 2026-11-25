@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListLmsCollectionsQueryParamFields = {
@@ -60,7 +61,9 @@ export type ListLmsCollectionsRequest = {
 /** @internal */
 export const ListLmsCollectionsQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListLmsCollectionsQueryParamFields
-> = z.nativeEnum(ListLmsCollectionsQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListLmsCollectionsQueryParamFields)
+);
 
 /** @internal */
 export type ListLmsCollectionsRequest$Outbound = {
@@ -82,26 +85,29 @@ export const ListLmsCollectionsRequest$outboundSchema: z.ZodType<
   ListLmsCollectionsRequest$Outbound,
   z.ZodTypeDef,
   ListLmsCollectionsRequest
-> = z.object({
-  connectionId: z.string(),
-  courseId: z.string().optional(),
-  fields: z.array(ListLmsCollectionsQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parentId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    courseId: "course_id",
-    parentId: "parent_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    courseId: z.string().optional(),
+    fields: z.array(ListLmsCollectionsQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    parentId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      courseId: "course_id",
+      parentId: "parent_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listLmsCollectionsRequestToJSON(
   listLmsCollectionsRequest: ListLmsCollectionsRequest,

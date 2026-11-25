@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -21,14 +21,16 @@ export const PropertyScimUserName$inboundSchema: z.ZodType<
   PropertyScimUserName,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  familyName: z.string().optional(),
-  formatted: z.string().optional(),
-  givenName: z.string().optional(),
-  honorificPrefix: z.string().optional(),
-  honorificSuffix: z.string().optional(),
-  middleName: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    familyName: z.string().optional(),
+    formatted: z.string().optional(),
+    givenName: z.string().optional(),
+    honorificPrefix: z.string().optional(),
+    honorificSuffix: z.string().optional(),
+    middleName: z.string().optional(),
+  })
+);
 /** @internal */
 export type PropertyScimUserName$Outbound = {
   familyName?: string | undefined;
@@ -44,14 +46,16 @@ export const PropertyScimUserName$outboundSchema: z.ZodType<
   PropertyScimUserName$Outbound,
   z.ZodTypeDef,
   PropertyScimUserName
-> = z.object({
-  familyName: z.string().optional(),
-  formatted: z.string().optional(),
-  givenName: z.string().optional(),
-  honorificPrefix: z.string().optional(),
-  honorificSuffix: z.string().optional(),
-  middleName: z.string().optional(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    familyName: z.string().optional(),
+    formatted: z.string().optional(),
+    givenName: z.string().optional(),
+    honorificPrefix: z.string().optional(),
+    honorificSuffix: z.string().optional(),
+    middleName: z.string().optional(),
+  })
+);
 
 export function propertyScimUserNameToJSON(
   propertyScimUserName: PropertyScimUserName,

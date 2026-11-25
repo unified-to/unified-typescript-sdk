@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHrisPaycodesQueryParamFields = {
@@ -62,7 +63,9 @@ export type ListHrisPaycodesRequest = {
 /** @internal */
 export const ListHrisPaycodesQueryParamFields$outboundSchema: z.ZodNativeEnum<
   typeof ListHrisPaycodesQueryParamFields
-> = z.nativeEnum(ListHrisPaycodesQueryParamFields);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.nativeEnum(ListHrisPaycodesQueryParamFields)
+);
 
 /** @internal */
 export type ListHrisPaycodesRequest$Outbound = {
@@ -84,25 +87,27 @@ export const ListHrisPaycodesRequest$outboundSchema: z.ZodType<
   ListHrisPaycodesRequest$Outbound,
   z.ZodTypeDef,
   ListHrisPaycodesRequest
-> = z.object({
-  companyId: z.string().optional(),
-  connectionId: z.string(),
-  fields: z.array(ListHrisPaycodesQueryParamFields$outboundSchema).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    connectionId: "connection_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    companyId: z.string().optional(),
+    connectionId: z.string(),
+    fields: z.array(ListHrisPaycodesQueryParamFields$outboundSchema).optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    type: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      companyId: "company_id",
+      connectionId: "connection_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHrisPaycodesRequestToJSON(
   listHrisPaycodesRequest: ListHrisPaycodesRequest,

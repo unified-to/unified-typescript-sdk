@@ -4,6 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ListHealthcareAllergiesQueryParamFields = {
@@ -62,8 +63,10 @@ export type ListHealthcareAllergiesRequest = {
 
 /** @internal */
 export const ListHealthcareAllergiesQueryParamFields$outboundSchema:
-  z.ZodNativeEnum<typeof ListHealthcareAllergiesQueryParamFields> = z
-    .nativeEnum(ListHealthcareAllergiesQueryParamFields);
+  z.ZodNativeEnum<typeof ListHealthcareAllergiesQueryParamFields> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.nativeEnum(ListHealthcareAllergiesQueryParamFields)
+    );
 
 /** @internal */
 export type ListHealthcareAllergiesRequest$Outbound = {
@@ -84,25 +87,27 @@ export const ListHealthcareAllergiesRequest$outboundSchema: z.ZodType<
   ListHealthcareAllergiesRequest$Outbound,
   z.ZodTypeDef,
   ListHealthcareAllergiesRequest
-> = z.object({
-  connectionId: z.string(),
-  fields: z.array(ListHealthcareAllergiesQueryParamFields$outboundSchema)
-    .optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  patientId: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updatedGte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    patientId: "patient_id",
-    updatedGte: "updated_gte",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    connectionId: z.string(),
+    fields: z.array(ListHealthcareAllergiesQueryParamFields$outboundSchema)
+      .optional(),
+    limit: z.number().optional(),
+    offset: z.number().optional(),
+    order: z.string().optional(),
+    patientId: z.string().optional(),
+    query: z.string().optional(),
+    raw: z.string().optional(),
+    sort: z.string().optional(),
+    updatedGte: z.string().optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      connectionId: "connection_id",
+      patientId: "patient_id",
+      updatedGte: "updated_gte",
+    });
+  })
+);
 
 export function listHealthcareAllergiesRequestToJSON(
   listHealthcareAllergiesRequest: ListHealthcareAllergiesRequest,

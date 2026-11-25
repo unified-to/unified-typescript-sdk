@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -40,29 +40,31 @@ export const PropertyAdsGroupTargetingContentVideo$inboundSchema: z.ZodType<
   PropertyAdsGroupTargetingContentVideo,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  durations: z.array(
-    PropertyAdsGroupTargetingContentVideoDurations$inboundSchema,
-  ).optional(),
-  excluded_youtube_channels: z.array(z.string()).optional(),
-  excluded_youtube_videos: z.array(z.string()).optional(),
-  player_sizes: z.array(
-    PropertyAdsGroupTargetingContentVideoPlayerSizes$inboundSchema,
-  ).optional(),
-  positions: z.array(
-    PropertyAdsGroupTargetingContentVideoPositions$inboundSchema,
-  ).optional(),
-  youtube_channels: z.array(z.string()).optional(),
-  youtube_videos: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "excluded_youtube_channels": "excludedYoutubeChannels",
-    "excluded_youtube_videos": "excludedYoutubeVideos",
-    "player_sizes": "playerSizes",
-    "youtube_channels": "youtubeChannels",
-    "youtube_videos": "youtubeVideos",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    durations: z.array(
+      PropertyAdsGroupTargetingContentVideoDurations$inboundSchema,
+    ).optional(),
+    excluded_youtube_channels: z.array(z.string()).optional(),
+    excluded_youtube_videos: z.array(z.string()).optional(),
+    player_sizes: z.array(
+      PropertyAdsGroupTargetingContentVideoPlayerSizes$inboundSchema,
+    ).optional(),
+    positions: z.array(
+      PropertyAdsGroupTargetingContentVideoPositions$inboundSchema,
+    ).optional(),
+    youtube_channels: z.array(z.string()).optional(),
+    youtube_videos: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      "excluded_youtube_channels": "excludedYoutubeChannels",
+      "excluded_youtube_videos": "excludedYoutubeVideos",
+      "player_sizes": "playerSizes",
+      "youtube_channels": "youtubeChannels",
+      "youtube_videos": "youtubeVideos",
+    });
+  })
+);
 /** @internal */
 export type PropertyAdsGroupTargetingContentVideo$Outbound = {
   durations?: Array<string> | undefined;
@@ -79,29 +81,31 @@ export const PropertyAdsGroupTargetingContentVideo$outboundSchema: z.ZodType<
   PropertyAdsGroupTargetingContentVideo$Outbound,
   z.ZodTypeDef,
   PropertyAdsGroupTargetingContentVideo
-> = z.object({
-  durations: z.array(
-    PropertyAdsGroupTargetingContentVideoDurations$outboundSchema,
-  ).optional(),
-  excludedYoutubeChannels: z.array(z.string()).optional(),
-  excludedYoutubeVideos: z.array(z.string()).optional(),
-  playerSizes: z.array(
-    PropertyAdsGroupTargetingContentVideoPlayerSizes$outboundSchema,
-  ).optional(),
-  positions: z.array(
-    PropertyAdsGroupTargetingContentVideoPositions$outboundSchema,
-  ).optional(),
-  youtubeChannels: z.array(z.string()).optional(),
-  youtubeVideos: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    excludedYoutubeChannels: "excluded_youtube_channels",
-    excludedYoutubeVideos: "excluded_youtube_videos",
-    playerSizes: "player_sizes",
-    youtubeChannels: "youtube_channels",
-    youtubeVideos: "youtube_videos",
-  });
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    durations: z.array(
+      PropertyAdsGroupTargetingContentVideoDurations$outboundSchema,
+    ).optional(),
+    excludedYoutubeChannels: z.array(z.string()).optional(),
+    excludedYoutubeVideos: z.array(z.string()).optional(),
+    playerSizes: z.array(
+      PropertyAdsGroupTargetingContentVideoPlayerSizes$outboundSchema,
+    ).optional(),
+    positions: z.array(
+      PropertyAdsGroupTargetingContentVideoPositions$outboundSchema,
+    ).optional(),
+    youtubeChannels: z.array(z.string()).optional(),
+    youtubeVideos: z.array(z.string()).optional(),
+  }).transform((v) => {
+    return remap$(v, {
+      excludedYoutubeChannels: "excluded_youtube_channels",
+      excludedYoutubeVideos: "excluded_youtube_videos",
+      playerSizes: "player_sizes",
+      youtubeChannels: "youtube_channels",
+      youtubeVideos: "youtube_videos",
+    });
+  })
+);
 
 export function propertyAdsGroupTargetingContentVideoToJSON(
   propertyAdsGroupTargetingContentVideo: PropertyAdsGroupTargetingContentVideo,
