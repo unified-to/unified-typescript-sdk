@@ -38,7 +38,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Comedo vilitas harum cupiditate animus quo iste.",
-      id: "ad4ddbeb-fdc1-40da-8901-e45cc8f52e33",
+      id: "0f32f5c7-6b71-4bd7-9314-3d6200b660bc",
       isPayable: false,
       metadata: [],
       name: "Savings Account",
@@ -51,7 +51,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-16T00:36:59.687Z"),
+      updatedAt: new Date("2023-08-16T01:24:25.576Z"),
     },
     connectionId: "<id>",
   });

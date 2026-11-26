@@ -32,7 +32,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Animus callide corpus.",
-      id: "df86bd14-9ab4-4acb-aa0b-dedc727a993a",
+      id: "b119e126-2cea-43f1-9a72-42b18b8cac0e",
       instructors: [],
       languages: [
         "in",
@@ -54,7 +54,7 @@ async function run() {
       metadata: [],
       name: "sperno",
       students: [],
-      updatedAt: new Date("2025-09-02T06:01:03.196Z"),
+      updatedAt: new Date("2025-09-02T08:33:41.420Z"),
     },
     connectionId: "<id>",
   });
@@ -86,7 +86,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Animus callide corpus.",
-      id: "df86bd14-9ab4-4acb-aa0b-dedc727a993a",
+      id: "b119e126-2cea-43f1-9a72-42b18b8cac0e",
       instructors: [],
       languages: [
         "in",
@@ -108,7 +108,7 @@ async function run() {
       metadata: [],
       name: "sperno",
       students: [],
-      updatedAt: new Date("2025-09-02T06:01:03.196Z"),
+      updatedAt: new Date("2025-09-02T08:33:41.420Z"),
     },
     connectionId: "<id>",
   });
@@ -319,7 +319,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Animus callide corpus.",
-      id: "feba7e98-5ad1-461a-88b6-016c76e53356",
+      id: "844dba3e-64ce-492b-b7c3-4d1d1b4fbb70",
       instructors: [],
       languages: [
         "in",
@@ -341,7 +341,7 @@ async function run() {
       metadata: [],
       name: "sperno",
       students: [],
-      updatedAt: new Date("2025-09-02T06:01:03.208Z"),
+      updatedAt: new Date("2025-09-02T08:33:41.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -374,7 +374,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Animus callide corpus.",
-      id: "feba7e98-5ad1-461a-88b6-016c76e53356",
+      id: "844dba3e-64ce-492b-b7c3-4d1d1b4fbb70",
       instructors: [],
       languages: [
         "in",
@@ -396,7 +396,7 @@ async function run() {
       metadata: [],
       name: "sperno",
       students: [],
-      updatedAt: new Date("2025-09-02T06:01:03.208Z"),
+      updatedAt: new Date("2025-09-02T08:33:41.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -531,7 +531,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Animus callide corpus.",
-      id: "feba7e98-5ad1-461a-88b6-016c76e53356",
+      id: "844dba3e-64ce-492b-b7c3-4d1d1b4fbb70",
       instructors: [],
       languages: [
         "in",
@@ -553,7 +553,7 @@ async function run() {
       metadata: [],
       name: "sperno",
       students: [],
-      updatedAt: new Date("2025-09-02T06:01:03.208Z"),
+      updatedAt: new Date("2025-09-02T08:33:41.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -586,7 +586,7 @@ async function run() {
     lmsClass: {
       createdAt: new Date("2020-02-20T14:48:51.845Z"),
       description: "Animus callide corpus.",
-      id: "feba7e98-5ad1-461a-88b6-016c76e53356",
+      id: "844dba3e-64ce-492b-b7c3-4d1d1b4fbb70",
       instructors: [],
       languages: [
         "in",
@@ -608,7 +608,7 @@ async function run() {
       metadata: [],
       name: "sperno",
       students: [],
-      updatedAt: new Date("2025-09-02T06:01:03.208Z"),
+      updatedAt: new Date("2025-09-02T08:33:41.442Z"),
     },
     connectionId: "<id>",
     id: "<id>",

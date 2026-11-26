@@ -57,11 +57,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Sperno despecto.",
-      id: "e30869ca-3970-4ce4-ae7c-88edfaa9ef7e",
+      id: "eb6d7ad0-9982-408f-a369-363ec950281c",
       instructions: "Addo vita ver auctus corrumpo substantia conscendo auctus. Astrum sulum aufero bis stella sumptus non.",
       isActive: false,
       name: "testimonial suddenly",
-      updatedAt: new Date("2025-11-14T02:26:28.083Z"),
+      updatedAt: new Date("2025-11-14T05:00:38.922Z"),
     },
     connectionId: "<id>",
   });
@@ -93,11 +93,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Sperno despecto.",
-      id: "e30869ca-3970-4ce4-ae7c-88edfaa9ef7e",
+      id: "eb6d7ad0-9982-408f-a369-363ec950281c",
       instructions: "Addo vita ver auctus corrumpo substantia conscendo auctus. Astrum sulum aufero bis stella sumptus non.",
       isActive: false,
       name: "testimonial suddenly",
-      updatedAt: new Date("2025-11-14T02:26:28.083Z"),
+      updatedAt: new Date("2025-11-14T05:00:38.922Z"),
     },
     connectionId: "<id>",
   });
@@ -158,7 +158,7 @@ async function run() {
       dimension: 423,
       embeddings: "Venia tutis cernuus viscus officiis utilis porro utique.",
       encodingFormat: "FLOAT",
-      id: "d2e92fcd-1ba8-45ca-8c3d-f8895d965a48",
+      id: "8df04fa5-819a-4c3a-9af7-5292f897763f",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -199,7 +199,7 @@ async function run() {
       dimension: 423,
       embeddings: "Venia tutis cernuus viscus officiis utilis porro utique.",
       encodingFormat: "FLOAT",
-      id: "d2e92fcd-1ba8-45ca-8c3d-f8895d965a48",
+      id: "8df04fa5-819a-4c3a-9af7-5292f897763f",
       maxTokens: 223,
       tokensUsed: 836,
       type: "classification",
@@ -257,7 +257,7 @@ async function run() {
     genaiMemory: {
       content: "Spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "d3982bbd-d11a-44c7-b2c3-4f33d95bcf3e",
+      id: "2388057a-0f8c-4275-b66e-ae769830ecab",
       metadata: [
         {
           extraData: {
@@ -272,7 +272,7 @@ async function run() {
       ],
       name: "tabella.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-05-06T17:24:32.475Z"),
+      updatedAt: new Date("2023-05-06T18:20:51.324Z"),
       userIdentifier: "70613433-847d-4db6-a8ea-96a2d7513dad",
     },
     connectionId: "<id>",
@@ -305,7 +305,7 @@ async function run() {
     genaiMemory: {
       content: "Spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "d3982bbd-d11a-44c7-b2c3-4f33d95bcf3e",
+      id: "2388057a-0f8c-4275-b66e-ae769830ecab",
       metadata: [
         {
           extraData: {
@@ -320,7 +320,7 @@ async function run() {
       ],
       name: "tabella.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-05-06T17:24:32.475Z"),
+      updatedAt: new Date("2023-05-06T18:20:51.324Z"),
       userIdentifier: "70613433-847d-4db6-a8ea-96a2d7513dad",
     },
     connectionId: "<id>",
@@ -376,10 +376,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Subito teneo arbor.",
-      id: "e33e094f-fbf2-48a2-aaf1-845989f92854",
+      id: "48b12946-2fb6-4d14-8b11-5ee628cc1b9d",
       isActive: false,
       name: "yum yuck",
-      updatedAt: new Date("2023-02-08T22:16:16.733Z"),
+      updatedAt: new Date("2023-02-08T23:26:23.657Z"),
     },
     connectionId: "<id>",
   });
@@ -411,10 +411,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Subito teneo arbor.",
-      id: "e33e094f-fbf2-48a2-aaf1-845989f92854",
+      id: "48b12946-2fb6-4d14-8b11-5ee628cc1b9d",
       isActive: false,
       name: "yum yuck",
-      updatedAt: new Date("2023-02-08T22:16:16.733Z"),
+      updatedAt: new Date("2023-02-08T23:26:23.657Z"),
     },
     connectionId: "<id>",
   });
@@ -692,10 +692,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.createGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-30T20:22:42.013Z"),
+      completedAt: new Date("2025-10-30T22:56:27.640Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "8238cb79-1a0c-4b28-8f16-1b6fac463652",
+      id: "b358daaa-6a04-4c71-952c-88ab7cbe49a7",
       instructions: "Angustus cubo cupio abundans admoveo sumptus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -710,12 +710,12 @@ async function run() {
       pullrequestUrl: "https://github.com/felicity.rowe61/eek-save/pull/383",
       repoUrl: "https://github.com/felicity.rowe61/eek-save",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-06-11T20:04:16.536Z"),
+      startedAt: new Date("2024-06-11T21:55:32.584Z"),
       status: "BLOCKED",
       summary: "Tenus via tamisium denego teres adsidue cura crur. Coma defungo magnam delicate confero amaritudo varius.",
       targetBranchIdentifier: "agent/eek-save",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-12T07:29:13.381Z"),
+      updatedAt: new Date("2023-03-12T08:42:04.162Z"),
       webUrl: "https://monstrous-honesty.net",
     },
     connectionId: "<id>",
@@ -746,10 +746,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiCreateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-30T20:22:42.013Z"),
+      completedAt: new Date("2025-10-30T22:56:27.640Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "8238cb79-1a0c-4b28-8f16-1b6fac463652",
+      id: "b358daaa-6a04-4c71-952c-88ab7cbe49a7",
       instructions: "Angustus cubo cupio abundans admoveo sumptus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -764,12 +764,12 @@ async function run() {
       pullrequestUrl: "https://github.com/felicity.rowe61/eek-save/pull/383",
       repoUrl: "https://github.com/felicity.rowe61/eek-save",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-06-11T20:04:16.536Z"),
+      startedAt: new Date("2024-06-11T21:55:32.584Z"),
       status: "BLOCKED",
       summary: "Tenus via tamisium denego teres adsidue cura crur. Coma defungo magnam delicate confero amaritudo varius.",
       targetBranchIdentifier: "agent/eek-save",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-12T07:29:13.381Z"),
+      updatedAt: new Date("2023-03-12T08:42:04.162Z"),
       webUrl: "https://monstrous-honesty.net",
     },
     connectionId: "<id>",
@@ -1761,11 +1761,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Sperno despecto.",
-      id: "afdfdc9e-41bf-4039-b7ce-1a581f0b043c",
+      id: "59f95ee9-7073-4a9a-8248-fbd6458c5a7f",
       instructions: "Addo vita ver auctus corrumpo substantia conscendo auctus. Astrum sulum aufero bis stella sumptus non.",
       isActive: false,
       name: "testimonial suddenly",
-      updatedAt: new Date("2025-11-14T02:26:28.087Z"),
+      updatedAt: new Date("2025-11-14T05:00:38.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1798,11 +1798,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Sperno despecto.",
-      id: "afdfdc9e-41bf-4039-b7ce-1a581f0b043c",
+      id: "59f95ee9-7073-4a9a-8248-fbd6458c5a7f",
       instructions: "Addo vita ver auctus corrumpo substantia conscendo auctus. Astrum sulum aufero bis stella sumptus non.",
       isActive: false,
       name: "testimonial suddenly",
-      updatedAt: new Date("2025-11-14T02:26:28.087Z"),
+      updatedAt: new Date("2025-11-14T05:00:38.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1858,7 +1858,7 @@ async function run() {
     genaiMemory: {
       content: "Spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "9db4c02d-341c-49b4-882b-e354b152a77f",
+      id: "27be37cb-2abe-448c-9acb-1ec13f89a94b",
       metadata: [
         {
           extraData: {
@@ -1873,7 +1873,7 @@ async function run() {
       ],
       name: "tabella.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-05-06T17:24:32.478Z"),
+      updatedAt: new Date("2023-05-06T18:20:51.328Z"),
       userIdentifier: "70613433-847d-4db6-a8ea-96a2d7513dad",
     },
     connectionId: "<id>",
@@ -1907,7 +1907,7 @@ async function run() {
     genaiMemory: {
       content: "Spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "9db4c02d-341c-49b4-882b-e354b152a77f",
+      id: "27be37cb-2abe-448c-9acb-1ec13f89a94b",
       metadata: [
         {
           extraData: {
@@ -1922,7 +1922,7 @@ async function run() {
       ],
       name: "tabella.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-05-06T17:24:32.478Z"),
+      updatedAt: new Date("2023-05-06T18:20:51.328Z"),
       userIdentifier: "70613433-847d-4db6-a8ea-96a2d7513dad",
     },
     connectionId: "<id>",
@@ -1979,10 +1979,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Subito teneo arbor.",
-      id: "37e4befd-66cf-4936-bceb-5a4bd95bd988",
+      id: "bbf13414-cd35-4a64-8e1a-a8af786c5378",
       isActive: false,
       name: "yum yuck",
-      updatedAt: new Date("2023-02-08T22:16:16.735Z"),
+      updatedAt: new Date("2023-02-08T23:26:23.659Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2015,10 +2015,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Subito teneo arbor.",
-      id: "37e4befd-66cf-4936-bceb-5a4bd95bd988",
+      id: "bbf13414-cd35-4a64-8e1a-a8af786c5378",
       isActive: false,
       name: "yum yuck",
-      updatedAt: new Date("2023-02-08T22:16:16.735Z"),
+      updatedAt: new Date("2023-02-08T23:26:23.659Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2072,10 +2072,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.patchGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-30T20:22:42.024Z"),
+      completedAt: new Date("2025-10-30T22:56:27.665Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "9a21ccb0-4eb9-49af-8bbc-977f9d6183fd",
+      id: "e278a4ed-17e2-486a-a0e4-5f38e97d8962",
       instructions: "Angustus cubo cupio abundans admoveo sumptus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2090,12 +2090,12 @@ async function run() {
       pullrequestUrl: "https://github.com/felicity.rowe61/eek-save/pull/383",
       repoUrl: "https://github.com/felicity.rowe61/eek-save",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-06-11T20:04:16.544Z"),
+      startedAt: new Date("2024-06-11T21:55:32.602Z"),
       status: "BLOCKED",
       summary: "Tenus via tamisium denego teres adsidue cura crur. Coma defungo magnam delicate confero amaritudo varius.",
       targetBranchIdentifier: "agent/eek-save",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-12T07:29:13.386Z"),
+      updatedAt: new Date("2023-03-12T08:42:04.173Z"),
       webUrl: "https://monstrous-honesty.net",
     },
     connectionId: "<id>",
@@ -2127,10 +2127,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiPatchGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-30T20:22:42.024Z"),
+      completedAt: new Date("2025-10-30T22:56:27.665Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "9a21ccb0-4eb9-49af-8bbc-977f9d6183fd",
+      id: "e278a4ed-17e2-486a-a0e4-5f38e97d8962",
       instructions: "Angustus cubo cupio abundans admoveo sumptus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2145,12 +2145,12 @@ async function run() {
       pullrequestUrl: "https://github.com/felicity.rowe61/eek-save/pull/383",
       repoUrl: "https://github.com/felicity.rowe61/eek-save",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-06-11T20:04:16.544Z"),
+      startedAt: new Date("2024-06-11T21:55:32.602Z"),
       status: "BLOCKED",
       summary: "Tenus via tamisium denego teres adsidue cura crur. Coma defungo magnam delicate confero amaritudo varius.",
       targetBranchIdentifier: "agent/eek-save",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-12T07:29:13.386Z"),
+      updatedAt: new Date("2023-03-12T08:42:04.173Z"),
       webUrl: "https://monstrous-honesty.net",
     },
     connectionId: "<id>",
@@ -2602,11 +2602,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Sperno despecto.",
-      id: "afdfdc9e-41bf-4039-b7ce-1a581f0b043c",
+      id: "59f95ee9-7073-4a9a-8248-fbd6458c5a7f",
       instructions: "Addo vita ver auctus corrumpo substantia conscendo auctus. Astrum sulum aufero bis stella sumptus non.",
       isActive: false,
       name: "testimonial suddenly",
-      updatedAt: new Date("2025-11-14T02:26:28.087Z"),
+      updatedAt: new Date("2025-11-14T05:00:38.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2639,11 +2639,11 @@ async function run() {
     genaiAgent: {
       createdAt: new Date("2020-12-18T02:23:33.723Z"),
       description: "Sperno despecto.",
-      id: "afdfdc9e-41bf-4039-b7ce-1a581f0b043c",
+      id: "59f95ee9-7073-4a9a-8248-fbd6458c5a7f",
       instructions: "Addo vita ver auctus corrumpo substantia conscendo auctus. Astrum sulum aufero bis stella sumptus non.",
       isActive: false,
       name: "testimonial suddenly",
-      updatedAt: new Date("2025-11-14T02:26:28.087Z"),
+      updatedAt: new Date("2025-11-14T05:00:38.927Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2699,7 +2699,7 @@ async function run() {
     genaiMemory: {
       content: "Spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "9db4c02d-341c-49b4-882b-e354b152a77f",
+      id: "27be37cb-2abe-448c-9acb-1ec13f89a94b",
       metadata: [
         {
           extraData: {
@@ -2714,7 +2714,7 @@ async function run() {
       ],
       name: "tabella.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-05-06T17:24:32.478Z"),
+      updatedAt: new Date("2023-05-06T18:20:51.328Z"),
       userIdentifier: "70613433-847d-4db6-a8ea-96a2d7513dad",
     },
     connectionId: "<id>",
@@ -2748,7 +2748,7 @@ async function run() {
     genaiMemory: {
       content: "Spiculum deserunt comitatus despecto. Aveho utroque accedo vinitor repellendus tam curis corona eos vobis.",
       createdAt: new Date("2021-10-22T04:14:41.668Z"),
-      id: "9db4c02d-341c-49b4-882b-e354b152a77f",
+      id: "27be37cb-2abe-448c-9acb-1ec13f89a94b",
       metadata: [
         {
           extraData: {
@@ -2763,7 +2763,7 @@ async function run() {
       ],
       name: "tabella.md",
       type: "MEMORY",
-      updatedAt: new Date("2023-05-06T17:24:32.478Z"),
+      updatedAt: new Date("2023-05-06T18:20:51.328Z"),
       userIdentifier: "70613433-847d-4db6-a8ea-96a2d7513dad",
     },
     connectionId: "<id>",
@@ -2820,10 +2820,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Subito teneo arbor.",
-      id: "37e4befd-66cf-4936-bceb-5a4bd95bd988",
+      id: "bbf13414-cd35-4a64-8e1a-a8af786c5378",
       isActive: false,
       name: "yum yuck",
-      updatedAt: new Date("2023-02-08T22:16:16.735Z"),
+      updatedAt: new Date("2023-02-08T23:26:23.659Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2856,10 +2856,10 @@ async function run() {
     genaiOrganization: {
       createdAt: new Date("2020-10-27T16:03:47.122Z"),
       description: "Subito teneo arbor.",
-      id: "37e4befd-66cf-4936-bceb-5a4bd95bd988",
+      id: "bbf13414-cd35-4a64-8e1a-a8af786c5378",
       isActive: false,
       name: "yum yuck",
-      updatedAt: new Date("2023-02-08T22:16:16.735Z"),
+      updatedAt: new Date("2023-02-08T23:26:23.659Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2913,10 +2913,10 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.genai.updateGenaiTask({
     genaiTask: {
-      completedAt: new Date("2025-10-30T20:22:42.024Z"),
+      completedAt: new Date("2025-10-30T22:56:27.665Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "9a21ccb0-4eb9-49af-8bbc-977f9d6183fd",
+      id: "e278a4ed-17e2-486a-a0e4-5f38e97d8962",
       instructions: "Angustus cubo cupio abundans admoveo sumptus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2931,12 +2931,12 @@ async function run() {
       pullrequestUrl: "https://github.com/felicity.rowe61/eek-save/pull/383",
       repoUrl: "https://github.com/felicity.rowe61/eek-save",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-06-11T20:04:16.544Z"),
+      startedAt: new Date("2024-06-11T21:55:32.602Z"),
       status: "BLOCKED",
       summary: "Tenus via tamisium denego teres adsidue cura crur. Coma defungo magnam delicate confero amaritudo varius.",
       targetBranchIdentifier: "agent/eek-save",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-12T07:29:13.386Z"),
+      updatedAt: new Date("2023-03-12T08:42:04.173Z"),
       webUrl: "https://monstrous-honesty.net",
     },
     connectionId: "<id>",
@@ -2968,10 +2968,10 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await genaiUpdateGenaiTask(unifiedTo, {
     genaiTask: {
-      completedAt: new Date("2025-10-30T20:22:42.024Z"),
+      completedAt: new Date("2025-10-30T22:56:27.665Z"),
       createdAt: new Date("2020-10-25T20:19:33.247Z"),
       filesChanged: 19,
-      id: "9a21ccb0-4eb9-49af-8bbc-977f9d6183fd",
+      id: "e278a4ed-17e2-486a-a0e4-5f38e97d8962",
       instructions: "Angustus cubo cupio abundans admoveo sumptus.",
       linesAdded: 244,
       linesDeleted: 118,
@@ -2986,12 +2986,12 @@ async function run() {
       pullrequestUrl: "https://github.com/felicity.rowe61/eek-save/pull/383",
       repoUrl: "https://github.com/felicity.rowe61/eek-save",
       sourceBranchIdentifier: "main",
-      startedAt: new Date("2024-06-11T20:04:16.544Z"),
+      startedAt: new Date("2024-06-11T21:55:32.602Z"),
       status: "BLOCKED",
       summary: "Tenus via tamisium denego teres adsidue cura crur. Coma defungo magnam delicate confero amaritudo varius.",
       targetBranchIdentifier: "agent/eek-save",
       tokensUsed: 2165,
-      updatedAt: new Date("2023-03-12T07:29:13.386Z"),
+      updatedAt: new Date("2023-03-12T08:42:04.173Z"),
       webUrl: "https://monstrous-honesty.net",
     },
     connectionId: "<id>",

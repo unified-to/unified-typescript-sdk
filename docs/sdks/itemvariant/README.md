@@ -34,7 +34,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Our dog-friendly Bacon ensures pessimistic comfort for your pets",
       height: 54,
-      id: "815c23eb-97d3-40da-8534-edbb4263fe08",
+      id: "9227dcc7-56d5-4ced-bd37-f55ed05959a7",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -43,10 +43,10 @@ async function run() {
         {
           alt: "Calcar delibero cursim summisse.",
           height: 961,
-          id: "8ded59d1-cd82-4c97-85d9-bb1dce052e90",
+          id: "df5f2a69-9317-4c0a-a734-3f68d0dca255",
           metadata: [
             {
-              id: "28345861-4d10-4c6a-bc91-f36b03a32f1e",
+              id: "fa035d9d-32f4-401e-a1c8-b074851fbbda",
               slug: "illo",
               value: "quia",
             },
@@ -63,7 +63,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "48567cbd-d5c9-47ff-ae64-a0216aa1644d",
+          id: "17434239-3853-49f5-9c5f-a33e8104de44",
           namespace: "custom",
           slug: "custom_property",
           value: "colligo",
@@ -72,7 +72,7 @@ async function run() {
       name: "Table",
       options: [
         {
-          id: "2560b949-ede2-449f-aa2b-59cf1cfec7d9",
+          id: "2caa64b8-a1dd-443d-9df8-700b87f30102",
           name: "Color",
           position: 1,
           values: [
@@ -80,7 +80,7 @@ async function run() {
           ],
         },
         {
-          id: "e9277489-8426-4878-9d95-551dab892112",
+          id: "e6f2cc8a-10cd-4c98-b034-5b00eba27294",
           name: "Size",
           position: 2,
           values: [
@@ -103,7 +103,7 @@ async function run() {
         "labore",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-04-09T21:43:57.094Z"),
+      updatedAt: new Date("2026-04-10T00:26:18.528Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -140,7 +140,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Our dog-friendly Bacon ensures pessimistic comfort for your pets",
       height: 54,
-      id: "815c23eb-97d3-40da-8534-edbb4263fe08",
+      id: "9227dcc7-56d5-4ced-bd37-f55ed05959a7",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -149,10 +149,10 @@ async function run() {
         {
           alt: "Calcar delibero cursim summisse.",
           height: 961,
-          id: "8ded59d1-cd82-4c97-85d9-bb1dce052e90",
+          id: "df5f2a69-9317-4c0a-a734-3f68d0dca255",
           metadata: [
             {
-              id: "28345861-4d10-4c6a-bc91-f36b03a32f1e",
+              id: "fa035d9d-32f4-401e-a1c8-b074851fbbda",
               slug: "illo",
               value: "quia",
             },
@@ -169,7 +169,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "48567cbd-d5c9-47ff-ae64-a0216aa1644d",
+          id: "17434239-3853-49f5-9c5f-a33e8104de44",
           namespace: "custom",
           slug: "custom_property",
           value: "colligo",
@@ -178,7 +178,7 @@ async function run() {
       name: "Table",
       options: [
         {
-          id: "2560b949-ede2-449f-aa2b-59cf1cfec7d9",
+          id: "2caa64b8-a1dd-443d-9df8-700b87f30102",
           name: "Color",
           position: 1,
           values: [
@@ -186,7 +186,7 @@ async function run() {
           ],
         },
         {
-          id: "e9277489-8426-4878-9d95-551dab892112",
+          id: "e6f2cc8a-10cd-4c98-b034-5b00eba27294",
           name: "Size",
           position: 2,
           values: [
@@ -209,7 +209,7 @@ async function run() {
         "labore",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-04-09T21:43:57.094Z"),
+      updatedAt: new Date("2026-04-10T00:26:18.528Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -425,7 +425,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Our dog-friendly Bacon ensures pessimistic comfort for your pets",
       height: 54,
-      id: "f37f7d8a-13bc-47bf-8da9-48ed24323a96",
+      id: "74f7ba8f-3e20-4e82-9c45-8ff87b82f859",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -434,10 +434,10 @@ async function run() {
         {
           alt: "Calcar delibero cursim summisse.",
           height: 961,
-          id: "29fbf993-b147-461a-9095-299abfe52ea1",
+          id: "77a4fe3d-23c9-45ef-90b2-c181789e53b2",
           metadata: [
             {
-              id: "c3ec5c3a-b162-4eeb-9bb9-0d218c280e42",
+              id: "e35f1b34-d61d-48ae-b202-086041eb79e2",
               slug: "illo",
               value: "quia",
             },
@@ -454,7 +454,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "46fc4dcf-e6a9-4e18-b7e7-55db4a294959",
+          id: "54e7f46a-f9a3-4a3b-8214-13f05430bb5a",
           namespace: "custom",
           slug: "custom_property",
           value: "colligo",
@@ -463,7 +463,7 @@ async function run() {
       name: "Table",
       options: [
         {
-          id: "88f54f45-f476-4f60-834c-5992be401c01",
+          id: "fe3c4548-6ec0-464e-acca-c7f62c66e837",
           name: "Color",
           position: 1,
           values: [
@@ -471,7 +471,7 @@ async function run() {
           ],
         },
         {
-          id: "60ef0414-869e-4e8c-93f6-dcc9343beb1f",
+          id: "5dd28a01-1239-43b7-bc76-f682909a52e1",
           name: "Size",
           position: 2,
           values: [
@@ -494,7 +494,7 @@ async function run() {
         "labore",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-04-09T21:43:57.115Z"),
+      updatedAt: new Date("2026-04-10T00:26:18.550Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -532,7 +532,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Our dog-friendly Bacon ensures pessimistic comfort for your pets",
       height: 54,
-      id: "f37f7d8a-13bc-47bf-8da9-48ed24323a96",
+      id: "74f7ba8f-3e20-4e82-9c45-8ff87b82f859",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -541,10 +541,10 @@ async function run() {
         {
           alt: "Calcar delibero cursim summisse.",
           height: 961,
-          id: "29fbf993-b147-461a-9095-299abfe52ea1",
+          id: "77a4fe3d-23c9-45ef-90b2-c181789e53b2",
           metadata: [
             {
-              id: "c3ec5c3a-b162-4eeb-9bb9-0d218c280e42",
+              id: "e35f1b34-d61d-48ae-b202-086041eb79e2",
               slug: "illo",
               value: "quia",
             },
@@ -561,7 +561,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "46fc4dcf-e6a9-4e18-b7e7-55db4a294959",
+          id: "54e7f46a-f9a3-4a3b-8214-13f05430bb5a",
           namespace: "custom",
           slug: "custom_property",
           value: "colligo",
@@ -570,7 +570,7 @@ async function run() {
       name: "Table",
       options: [
         {
-          id: "88f54f45-f476-4f60-834c-5992be401c01",
+          id: "fe3c4548-6ec0-464e-acca-c7f62c66e837",
           name: "Color",
           position: 1,
           values: [
@@ -578,7 +578,7 @@ async function run() {
           ],
         },
         {
-          id: "60ef0414-869e-4e8c-93f6-dcc9343beb1f",
+          id: "5dd28a01-1239-43b7-bc76-f682909a52e1",
           name: "Size",
           position: 2,
           values: [
@@ -601,7 +601,7 @@ async function run() {
         "labore",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-04-09T21:43:57.115Z"),
+      updatedAt: new Date("2026-04-10T00:26:18.550Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -741,7 +741,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Our dog-friendly Bacon ensures pessimistic comfort for your pets",
       height: 54,
-      id: "f37f7d8a-13bc-47bf-8da9-48ed24323a96",
+      id: "74f7ba8f-3e20-4e82-9c45-8ff87b82f859",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -750,10 +750,10 @@ async function run() {
         {
           alt: "Calcar delibero cursim summisse.",
           height: 961,
-          id: "29fbf993-b147-461a-9095-299abfe52ea1",
+          id: "77a4fe3d-23c9-45ef-90b2-c181789e53b2",
           metadata: [
             {
-              id: "c3ec5c3a-b162-4eeb-9bb9-0d218c280e42",
+              id: "e35f1b34-d61d-48ae-b202-086041eb79e2",
               slug: "illo",
               value: "quia",
             },
@@ -770,7 +770,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "46fc4dcf-e6a9-4e18-b7e7-55db4a294959",
+          id: "54e7f46a-f9a3-4a3b-8214-13f05430bb5a",
           namespace: "custom",
           slug: "custom_property",
           value: "colligo",
@@ -779,7 +779,7 @@ async function run() {
       name: "Table",
       options: [
         {
-          id: "88f54f45-f476-4f60-834c-5992be401c01",
+          id: "fe3c4548-6ec0-464e-acca-c7f62c66e837",
           name: "Color",
           position: 1,
           values: [
@@ -787,7 +787,7 @@ async function run() {
           ],
         },
         {
-          id: "60ef0414-869e-4e8c-93f6-dcc9343beb1f",
+          id: "5dd28a01-1239-43b7-bc76-f682909a52e1",
           name: "Size",
           position: 2,
           values: [
@@ -810,7 +810,7 @@ async function run() {
         "labore",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-04-09T21:43:57.115Z"),
+      updatedAt: new Date("2026-04-10T00:26:18.550Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
@@ -848,7 +848,7 @@ async function run() {
       createdAt: new Date("2022-01-20T13:49:12.968Z"),
       description: "Our dog-friendly Bacon ensures pessimistic comfort for your pets",
       height: 54,
-      id: "f37f7d8a-13bc-47bf-8da9-48ed24323a96",
+      id: "74f7ba8f-3e20-4e82-9c45-8ff87b82f859",
       isActive: true,
       isFeatured: false,
       isVisible: false,
@@ -857,10 +857,10 @@ async function run() {
         {
           alt: "Calcar delibero cursim summisse.",
           height: 961,
-          id: "29fbf993-b147-461a-9095-299abfe52ea1",
+          id: "77a4fe3d-23c9-45ef-90b2-c181789e53b2",
           metadata: [
             {
-              id: "c3ec5c3a-b162-4eeb-9bb9-0d218c280e42",
+              id: "e35f1b34-d61d-48ae-b202-086041eb79e2",
               slug: "illo",
               value: "quia",
             },
@@ -877,7 +877,7 @@ async function run() {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "46fc4dcf-e6a9-4e18-b7e7-55db4a294959",
+          id: "54e7f46a-f9a3-4a3b-8214-13f05430bb5a",
           namespace: "custom",
           slug: "custom_property",
           value: "colligo",
@@ -886,7 +886,7 @@ async function run() {
       name: "Table",
       options: [
         {
-          id: "88f54f45-f476-4f60-834c-5992be401c01",
+          id: "fe3c4548-6ec0-464e-acca-c7f62c66e837",
           name: "Color",
           position: 1,
           values: [
@@ -894,7 +894,7 @@ async function run() {
           ],
         },
         {
-          id: "60ef0414-869e-4e8c-93f6-dcc9343beb1f",
+          id: "5dd28a01-1239-43b7-bc76-f682909a52e1",
           name: "Size",
           position: 2,
           values: [
@@ -917,7 +917,7 @@ async function run() {
         "labore",
       ],
       totalStock: 436,
-      updatedAt: new Date("2026-04-09T21:43:57.115Z"),
+      updatedAt: new Date("2026-04-10T00:26:18.550Z"),
       weight: 46,
       weightUnit: "oz",
       width: 40,
