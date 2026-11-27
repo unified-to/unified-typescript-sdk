@@ -29,13 +29,13 @@ async function run() {
     propertyConversation: {
       createdAt: new Date("2022-06-20T00:02:46.530Z"),
       guestName: "Maida Funk",
-      id: "e76e360c-5f36-4d3f-9274-76b137c4a3bf",
+      id: "694fe67e-e59a-45c5-a901-10b0cd0b83d6",
       isUnread: false,
       messages: [
         {
           attachments: [],
-          createdAt: new Date("2025-05-09T23:42:43.941Z"),
-          id: "5bc2337e-78ce-4d1c-b31b-0c261175a130",
+          createdAt: new Date("2025-05-10T15:03:17.012Z"),
+          id: "db89e176-7bca-40de-8ccd-6b8a82d9ffb7",
           isAutomatic: false,
           message: "Sophismata admitto colo.",
           senderName: "Maida Funk",
@@ -43,8 +43,8 @@ async function run() {
         },
         {
           attachments: [],
-          createdAt: new Date("2026-05-29T16:00:16.577Z"),
-          id: "35d2731c-a200-4ab5-8d8c-7093d244724f",
+          createdAt: new Date("2026-05-30T12:56:29.245Z"),
+          id: "f8d86383-fc05-4e3f-a884-ad9b288558f0",
           message: "Aufero torrens tonsor aequitas torqueo curiositas cimentarius repellendus auditor.",
           senderName: "Alysson Sanford",
           senderType: "HOST",
@@ -52,7 +52,7 @@ async function run() {
       ],
       metadata: [],
       source: "Airbnb",
-      updatedAt: new Date("2026-05-29T16:00:16.577Z"),
+      updatedAt: new Date("2026-05-30T12:56:29.245Z"),
     },
     connectionId: "<id>",
   });
@@ -84,13 +84,13 @@ async function run() {
     propertyConversation: {
       createdAt: new Date("2022-06-20T00:02:46.530Z"),
       guestName: "Maida Funk",
-      id: "e76e360c-5f36-4d3f-9274-76b137c4a3bf",
+      id: "694fe67e-e59a-45c5-a901-10b0cd0b83d6",
       isUnread: false,
       messages: [
         {
           attachments: [],
-          createdAt: new Date("2025-05-09T23:42:43.941Z"),
-          id: "5bc2337e-78ce-4d1c-b31b-0c261175a130",
+          createdAt: new Date("2025-05-10T15:03:17.012Z"),
+          id: "db89e176-7bca-40de-8ccd-6b8a82d9ffb7",
           isAutomatic: false,
           message: "Sophismata admitto colo.",
           senderName: "Maida Funk",
@@ -98,8 +98,8 @@ async function run() {
         },
         {
           attachments: [],
-          createdAt: new Date("2026-05-29T16:00:16.577Z"),
-          id: "35d2731c-a200-4ab5-8d8c-7093d244724f",
+          createdAt: new Date("2026-05-30T12:56:29.245Z"),
+          id: "f8d86383-fc05-4e3f-a884-ad9b288558f0",
           message: "Aufero torrens tonsor aequitas torqueo curiositas cimentarius repellendus auditor.",
           senderName: "Alysson Sanford",
           senderType: "HOST",
@@ -107,7 +107,7 @@ async function run() {
       ],
       metadata: [],
       source: "Airbnb",
-      updatedAt: new Date("2026-05-29T16:00:16.577Z"),
+      updatedAt: new Date("2026-05-30T12:56:29.245Z"),
     },
     connectionId: "<id>",
   });

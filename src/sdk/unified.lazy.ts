@@ -206,6 +206,24 @@ const issueGetUnifiedIssue =
       })).then((module) => module.issueGetUnifiedIssue(...args).$inspect()),
     )) as typeof import("../funcs/issueGetUnifiedIssue.js").issueGetUnifiedIssue;
 
+let personGetUnifiedPerson$module:
+  | Promise<typeof import("../funcs/personGetUnifiedPerson.js")>
+  | undefined;
+const personGetUnifiedPerson =
+  ((
+    ...args: Parameters<
+      typeof import("../funcs/personGetUnifiedPerson.js").personGetUnifiedPerson
+    >
+  ) =>
+    new APIPromise(
+      (personGetUnifiedPerson$module ??= import(
+        "../funcs/personGetUnifiedPerson.js"
+      ).catch((error: unknown) => {
+        personGetUnifiedPerson$module = undefined;
+        throw error;
+      })).then((module) => module.personGetUnifiedPerson(...args).$inspect()),
+    )) as typeof import("../funcs/personGetUnifiedPerson.js").personGetUnifiedPerson;
+
 let unifiedGetUnifiedSecretsmanager$module:
   | Promise<typeof import("../funcs/unifiedGetUnifiedSecretsmanager.js")>
   | undefined;
@@ -403,6 +421,24 @@ const unifiedListUnifiedNotifications =
         module.unifiedListUnifiedNotifications(...args).$inspect()
       ),
     )) as typeof import("../funcs/unifiedListUnifiedNotifications.js").unifiedListUnifiedNotifications;
+
+let personListUnifiedPeople$module:
+  | Promise<typeof import("../funcs/personListUnifiedPeople.js")>
+  | undefined;
+const personListUnifiedPeople =
+  ((
+    ...args: Parameters<
+      typeof import("../funcs/personListUnifiedPeople.js").personListUnifiedPeople
+    >
+  ) =>
+    new APIPromise(
+      (personListUnifiedPeople$module ??= import(
+        "../funcs/personListUnifiedPeople.js"
+      ).catch((error: unknown) => {
+        personListUnifiedPeople$module = undefined;
+        throw error;
+      })).then((module) => module.personListUnifiedPeople(...args).$inspect()),
+    )) as typeof import("../funcs/personListUnifiedPeople.js").personListUnifiedPeople;
 
 let unifiedListUnifiedSecretsmanagerInstructions$module:
   | Promise<
@@ -671,6 +707,26 @@ const unifiedRemoveUnifiedEnvironment =
         module.unifiedRemoveUnifiedEnvironment(...args).$inspect()
       ),
     )) as typeof import("../funcs/unifiedRemoveUnifiedEnvironment.js").unifiedRemoveUnifiedEnvironment;
+
+let personRemoveUnifiedPerson$module:
+  | Promise<typeof import("../funcs/personRemoveUnifiedPerson.js")>
+  | undefined;
+const personRemoveUnifiedPerson =
+  ((
+    ...args: Parameters<
+      typeof import("../funcs/personRemoveUnifiedPerson.js").personRemoveUnifiedPerson
+    >
+  ) =>
+    new APIPromise(
+      (personRemoveUnifiedPerson$module ??= import(
+        "../funcs/personRemoveUnifiedPerson.js"
+      ).catch((error: unknown) => {
+        personRemoveUnifiedPerson$module = undefined;
+        throw error;
+      })).then((module) =>
+        module.personRemoveUnifiedPerson(...args).$inspect()
+      ),
+    )) as typeof import("../funcs/personRemoveUnifiedPerson.js").personRemoveUnifiedPerson;
 
 let unifiedRemoveUnifiedSecretsmanager$module:
   | Promise<typeof import("../funcs/unifiedRemoveUnifiedSecretsmanager.js")>
@@ -1010,6 +1066,20 @@ export class Unified extends ClientSDK {
   }
 
   /**
+   * Retrieve a person by ID
+   */
+  async getUnifiedPerson(
+    request: operations.GetUnifiedPersonRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Person> {
+    return unwrapAsync(personGetUnifiedPerson(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve secrets manager
    */
   async getUnifiedSecretsmanager(
@@ -1144,6 +1214,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.Notification>> {
     return unwrapAsync(unifiedListUnifiedNotifications(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Search for persons by email addresses
+   */
+  async listUnifiedPeople(
+    request: operations.ListUnifiedPeopleRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Person>> {
+    return unwrapAsync(personListUnifiedPeople(
       this,
       request,
       options,
@@ -1327,6 +1411,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<string>> {
     return unwrapAsync(unifiedRemoveUnifiedEnvironment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Erase email addresses from the unified persons
+   */
+  async removeUnifiedPerson(
+    request: operations.RemoveUnifiedPersonRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveUnifiedPersonResponse | undefined> {
+    return unwrapAsync(personRemoveUnifiedPerson(
       this,
       request,
       options,

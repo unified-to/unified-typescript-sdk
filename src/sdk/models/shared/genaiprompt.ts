@@ -32,6 +32,14 @@ export type GenaiPrompt = {
    */
   answers?: Array<GenaiAnswer> | undefined;
   /**
+   * Ask the LLM API to keep this conversation so that a later prompt can continue it with parent_id (eg. Anthropic message threads, which are kept for about 5 minutes).
+   */
+  hasThread?: boolean | undefined;
+  /**
+   * The id of this prompt, returned by the LLM API. Send it as parent_id on the next prompt to continue the conversation.
+   */
+  id?: string | undefined;
+  /**
    * a float between 0-1
    */
   maxTokens?: number | undefined;
@@ -52,6 +60,10 @@ export type GenaiPrompt = {
    * The ID of the model to use (a GenaiModel ID)
    */
   modelId?: string | undefined;
+  /**
+   * The id of the previous prompt (genai_prompt) that this prompt continues. When set, messages holds only the new messages; the LLM API keeps the earlier ones (eg. Anthropic message threads, OpenAI previous_response_id). If the LLM API no longer has that prompt, send the full conversation again without parent_id.
+   */
+  parentId?: string | undefined;
   /**
    * Typed questions to evaluate against the messages (for decision models such as TypeSafe Jev).
    */
@@ -77,12 +89,15 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
     answers: z.array(GenaiAnswer$inboundSchema).optional(),
+    has_thread: z.boolean().optional(),
+    id: z.string().optional(),
     max_tokens: z.number().optional(),
     mcp_authorization_token: z.string().optional(),
     mcp_deferred_tools: z.array(z.string()).optional(),
     mcp_url: z.string().optional(),
     messages: z.array(GenaiContent$inboundSchema).optional(),
     model_id: z.string().optional(),
+    parent_id: z.string().optional(),
     questions: z.array(GenaiQuestion$inboundSchema).optional(),
     raw: z.record(z.any()).optional(),
     responses: z.array(z.string()).optional(),
@@ -91,11 +106,13 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
     tokens_used: z.number().optional(),
   }).transform((v) => {
     return remap$(v, {
+      "has_thread": "hasThread",
       "max_tokens": "maxTokens",
       "mcp_authorization_token": "mcpAuthorizationToken",
       "mcp_deferred_tools": "mcpDeferredTools",
       "mcp_url": "mcpUrl",
       "model_id": "modelId",
+      "parent_id": "parentId",
       "skill_ids": "skillIds",
       "tokens_used": "tokensUsed",
     });
@@ -104,12 +121,15 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
 /** @internal */
 export type GenaiPrompt$Outbound = {
   answers?: Array<GenaiAnswer$Outbound> | undefined;
+  has_thread?: boolean | undefined;
+  id?: string | undefined;
   max_tokens?: number | undefined;
   mcp_authorization_token?: string | undefined;
   mcp_deferred_tools?: Array<string> | undefined;
   mcp_url?: string | undefined;
   messages?: Array<GenaiContent$Outbound> | undefined;
   model_id?: string | undefined;
+  parent_id?: string | undefined;
   questions?: Array<GenaiQuestion$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   responses?: Array<string> | undefined;
@@ -126,12 +146,15 @@ export const GenaiPrompt$outboundSchema: z.ZodType<
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
     answers: z.array(GenaiAnswer$outboundSchema).optional(),
+    hasThread: z.boolean().optional(),
+    id: z.string().optional(),
     maxTokens: z.number().optional(),
     mcpAuthorizationToken: z.string().optional(),
     mcpDeferredTools: z.array(z.string()).optional(),
     mcpUrl: z.string().optional(),
     messages: z.array(GenaiContent$outboundSchema).optional(),
     modelId: z.string().optional(),
+    parentId: z.string().optional(),
     questions: z.array(GenaiQuestion$outboundSchema).optional(),
     raw: z.record(z.any()).optional(),
     responses: z.array(z.string()).optional(),
@@ -140,11 +163,13 @@ export const GenaiPrompt$outboundSchema: z.ZodType<
     tokensUsed: z.number().optional(),
   }).transform((v) => {
     return remap$(v, {
+      hasThread: "has_thread",
       maxTokens: "max_tokens",
       mcpAuthorizationToken: "mcp_authorization_token",
       mcpDeferredTools: "mcp_deferred_tools",
       mcpUrl: "mcp_url",
       modelId: "model_id",
+      parentId: "parent_id",
       skillIds: "skill_ids",
       tokensUsed: "tokens_used",
     });

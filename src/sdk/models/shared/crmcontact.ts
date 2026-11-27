@@ -36,6 +36,10 @@ import {
  * A contact represents a person that optionally is associated with a deal and/or a company
  */
 export type CrmContact = {
+  /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
   address?: PropertyCrmContactAddress | undefined;
   /**
    * The company/organization name  of the contact
@@ -109,6 +113,7 @@ export const CrmContact$inboundSchema: z.ZodType<
   unknown
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    __unified_person_ids: z.array(z.string()).optional(),
     address: PropertyCrmContactAddress$inboundSchema.optional(),
     company: z.string().optional(),
     company_ids: z.array(z.string()).optional(),
@@ -134,6 +139,7 @@ export const CrmContact$inboundSchema: z.ZodType<
     user_id: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
+      "__unified_person_ids": "unifiedPersonIds",
       "company_ids": "companyIds",
       "created_at": "createdAt",
       "deal_ids": "dealIds",
@@ -148,6 +154,7 @@ export const CrmContact$inboundSchema: z.ZodType<
 );
 /** @internal */
 export type CrmContact$Outbound = {
+  __unified_person_ids?: Array<string> | undefined;
   address?: PropertyCrmContactAddress$Outbound | undefined;
   company?: string | undefined;
   company_ids?: Array<string> | undefined;
@@ -176,6 +183,7 @@ export const CrmContact$outboundSchema: z.ZodType<
   CrmContact
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    unifiedPersonIds: z.array(z.string()).optional(),
     address: PropertyCrmContactAddress$outboundSchema.optional(),
     company: z.string().optional(),
     companyIds: z.array(z.string()).optional(),
@@ -197,6 +205,7 @@ export const CrmContact$outboundSchema: z.ZodType<
     userId: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
+      unifiedPersonIds: "__unified_person_ids",
       companyIds: "company_ids",
       createdAt: "created_at",
       dealIds: "deal_ids",

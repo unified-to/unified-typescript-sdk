@@ -21,6 +21,7 @@ export const PatchLmsInstructorQueryParamFields = {
   ImageUrl: "image_url",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type PatchLmsInstructorQueryParamFields = ClosedEnum<
   typeof PatchLmsInstructorQueryParamFields

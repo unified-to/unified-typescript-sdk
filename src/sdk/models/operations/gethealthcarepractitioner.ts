@@ -28,6 +28,7 @@ export const GetHealthcarePractitionerQueryParamFields = {
   IsActive: "is_active",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type GetHealthcarePractitionerQueryParamFields = ClosedEnum<
   typeof GetHealthcarePractitionerQueryParamFields

@@ -52,6 +52,10 @@ export type HealthcarePractitionerGender = OpenEnum<
 
 export type HealthcarePractitioner = {
   /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
+  /**
    * Work address of the practitioner
    */
   address?: PropertyHealthcarePractitionerAddress | undefined;
@@ -149,6 +153,7 @@ export const HealthcarePractitioner$inboundSchema: z.ZodType<
   unknown
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    __unified_person_ids: z.array(z.string()).optional(),
     address: PropertyHealthcarePractitionerAddress$inboundSchema.optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
@@ -175,6 +180,7 @@ export const HealthcarePractitioner$inboundSchema: z.ZodType<
     ).optional(),
   }).transform((v) => {
     return remap$(v, {
+      "__unified_person_ids": "unifiedPersonIds",
       "created_at": "createdAt",
       "first_name": "firstName",
       "image_url": "imageUrl",

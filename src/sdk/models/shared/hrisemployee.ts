@@ -152,6 +152,10 @@ export const PayFrequency = {
 export type PayFrequency = OpenEnum<typeof PayFrequency>;
 
 export type HrisEmployee = {
+  /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
   address?: PropertyHrisEmployeeAddress | undefined;
   bio?: string | undefined;
   /**
@@ -404,6 +408,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   unknown
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    __unified_person_ids: z.array(z.string()).optional(),
     address: PropertyHrisEmployeeAddress$inboundSchema.optional(),
     bio: z.string().optional(),
     company_id: z.string().optional(),
@@ -477,6 +482,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     ).optional(),
   }).transform((v) => {
     return remap$(v, {
+      "__unified_person_ids": "unifiedPersonIds",
       "company_id": "companyId",
       "created_at": "createdAt",
       "date_of_birth": "dateOfBirth",
@@ -515,6 +521,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
 );
 /** @internal */
 export type HrisEmployee$Outbound = {
+  __unified_person_ids?: Array<string> | undefined;
   address?: PropertyHrisEmployeeAddress$Outbound | undefined;
   bio?: string | undefined;
   company_id?: string | undefined;
@@ -575,6 +582,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   HrisEmployee
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    unifiedPersonIds: z.array(z.string()).optional(),
     address: PropertyHrisEmployeeAddress$outboundSchema.optional(),
     bio: z.string().optional(),
     companyId: z.string().optional(),
@@ -629,6 +637,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
     updatedAt: z.date().transform(v => v.toISOString()).optional(),
   }).transform((v) => {
     return remap$(v, {
+      unifiedPersonIds: "__unified_person_ids",
       companyId: "company_id",
       createdAt: "created_at",
       dateOfBirth: "date_of_birth",

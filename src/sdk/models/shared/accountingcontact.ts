@@ -85,6 +85,10 @@ export const TaxExemption = {
 export type TaxExemption = OpenEnum<typeof TaxExemption>;
 
 export type AccountingContact = {
+  /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
   associatedContacts?: Array<AccountingAssociatedContact> | undefined;
   /**
    * Outstanding AR/AP balance for this contact
@@ -177,6 +181,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
   unknown
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    __unified_person_ids: z.array(z.string()).optional(),
     associated_contacts: z.array(AccountingAssociatedContact$inboundSchema)
       .optional(),
     balance_amount: z.number().optional(),
@@ -216,6 +221,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
     website: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
+      "__unified_person_ids": "unifiedPersonIds",
       "associated_contacts": "associatedContacts",
       "balance_amount": "balanceAmount",
       "billing_address": "billingAddress",
@@ -240,6 +246,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
 );
 /** @internal */
 export type AccountingContact$Outbound = {
+  __unified_person_ids?: Array<string> | undefined;
   associated_contacts?: Array<AccountingAssociatedContact$Outbound> | undefined;
   balance_amount?: number | undefined;
   billing_address?:
@@ -282,6 +289,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
   AccountingContact
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    unifiedPersonIds: z.array(z.string()).optional(),
     associatedContacts: z.array(AccountingAssociatedContact$outboundSchema)
       .optional(),
     balanceAmount: z.number().optional(),
@@ -317,6 +325,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
     website: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
+      unifiedPersonIds: "__unified_person_ids",
       associatedContacts: "associated_contacts",
       balanceAmount: "balance_amount",
       billingAddress: "billing_address",

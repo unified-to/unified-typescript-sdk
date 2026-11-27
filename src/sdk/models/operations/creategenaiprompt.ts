@@ -21,6 +21,9 @@ export const CreateGenaiPromptQueryParamFields = {
   Questions: "questions",
   Answers: "answers",
   SkillIds: "skill_ids",
+  Id: "id",
+  ParentId: "parent_id",
+  HasThread: "has_thread",
   Raw: "raw",
 } as const;
 export type CreateGenaiPromptQueryParamFields = ClosedEnum<

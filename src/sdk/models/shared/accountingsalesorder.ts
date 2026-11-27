@@ -81,6 +81,10 @@ export type AccountingSalesorder = {
    * (reference to AccountingAccount)
    */
   accountId?: string | undefined;
+  /**
+   * amount still owed on the order (total_amount - paid_amount)
+   */
+  balanceAmount?: number | undefined;
   billingAddress?: PropertyAccountingSalesorderBillingAddress | undefined;
   categoryIds?: Array<string> | undefined;
   /**
@@ -199,6 +203,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
     account_id: z.string().optional(),
+    balance_amount: z.number().optional(),
     billing_address: PropertyAccountingSalesorderBillingAddress$inboundSchema
       .optional(),
     category_ids: z.array(z.string()).optional(),
@@ -244,6 +249,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
   }).transform((v) => {
     return remap$(v, {
       "account_id": "accountId",
+      "balance_amount": "balanceAmount",
       "billing_address": "billingAddress",
       "category_ids": "categoryIds",
       "closed_at": "closedAt",
@@ -276,6 +282,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingSalesorder$Outbound = {
   account_id?: string | undefined;
+  balance_amount?: number | undefined;
   billing_address?:
     | PropertyAccountingSalesorderBillingAddress$Outbound
     | undefined;
@@ -324,6 +331,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
     accountId: z.string().optional(),
+    balanceAmount: z.number().optional(),
     billingAddress: PropertyAccountingSalesorderBillingAddress$outboundSchema
       .optional(),
     categoryIds: z.array(z.string()).optional(),
@@ -363,6 +371,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   }).transform((v) => {
     return remap$(v, {
       accountId: "account_id",
+      balanceAmount: "balance_amount",
       billingAddress: "billing_address",
       categoryIds: "category_ids",
       closedAt: "closed_at",

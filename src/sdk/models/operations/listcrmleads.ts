@@ -30,6 +30,7 @@ export const ListCrmLeadsQueryParamFields = {
   Metadata: "metadata",
   VehicleIds: "vehicle_ids",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type ListCrmLeadsQueryParamFields = ClosedEnum<
   typeof ListCrmLeadsQueryParamFields

@@ -5,11 +5,11 @@
 ```typescript
 import { CreateLmsStudentQueryParamFields } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreateLmsStudentQueryParamFields = "telephones";
+let value: CreateLmsStudentQueryParamFields = "address";
 ```
 
 ## Values
 
 ```typescript
-"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "emails" | "telephones" | "address" | "image_url" | "metadata" | "raw"
+"id" | "created_at" | "updated_at" | "name" | "first_name" | "last_name" | "emails" | "telephones" | "address" | "image_url" | "metadata" | "raw" | "__unified_person_ids"
 ```

@@ -20,6 +20,7 @@ export const ListUcContactsQueryParamFields = {
   Telephones: "telephones",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type ListUcContactsQueryParamFields = ClosedEnum<
   typeof ListUcContactsQueryParamFields

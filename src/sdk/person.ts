@@ -3,12 +3,29 @@
  */
 
 import { enrichListEnrichPeople } from "../funcs/enrichListEnrichPeople.js";
+import { personGetUnifiedPerson } from "../funcs/personGetUnifiedPerson.js";
+import { personListUnifiedPeople } from "../funcs/personListUnifiedPeople.js";
+import { personRemoveUnifiedPerson } from "../funcs/personRemoveUnifiedPerson.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Person extends ClientSDK {
+  /**
+   * Retrieve a person by ID
+   */
+  async getUnifiedPerson(
+    request: operations.GetUnifiedPersonRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Person> {
+    return unwrapAsync(personGetUnifiedPerson(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * Retrieve enrichment information for a person
    */
@@ -17,6 +34,34 @@ export class Person extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.EnrichPerson> {
     return unwrapAsync(enrichListEnrichPeople(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Search for persons by email addresses
+   */
+  async listUnifiedPeople(
+    request: operations.ListUnifiedPeopleRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Person>> {
+    return unwrapAsync(personListUnifiedPeople(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Erase email addresses from the unified persons
+   */
+  async removeUnifiedPerson(
+    request: operations.RemoveUnifiedPersonRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveUnifiedPersonResponse | undefined> {
+    return unwrapAsync(personRemoveUnifiedPerson(
       this,
       request,
       options,

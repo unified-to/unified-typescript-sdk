@@ -40,6 +40,10 @@ export type EnrichPersonGender = OpenEnum<typeof EnrichPersonGender>;
  */
 export type EnrichPerson = {
   /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
+  /**
    * The address of the person
    */
   address?: PropertyEnrichPersonAddress | undefined;
@@ -152,6 +156,7 @@ export const EnrichPerson$inboundSchema: z.ZodType<
   unknown
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    __unified_person_ids: z.array(z.string()).optional(),
     address: PropertyEnrichPersonAddress$inboundSchema.optional(),
     bio: z.string().optional(),
     birthdate: z.string().optional(),
@@ -184,6 +189,7 @@ export const EnrichPerson$inboundSchema: z.ZodType<
     work_histories: z.array(EnrichPersonWorkHistory$inboundSchema).optional(),
   }).transform((v) => {
     return remap$(v, {
+      "__unified_person_ids": "unifiedPersonIds",
       "company_domain": "companyDomain",
       "created_at": "createdAt",
       "facebook_url": "facebookUrl",

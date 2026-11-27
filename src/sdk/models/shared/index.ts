@@ -418,6 +418,7 @@ export * from "./performancegoalmilestone.js";
 export * from "./performancemetadata.js";
 export * from "./performancereview.js";
 export * from "./performancereviewquestion.js";
+export * from "./person.js";
 export * from "./plmaffecteditem.js";
 export * from "./plmbomline.js";
 export * from "./plmcategory.js";

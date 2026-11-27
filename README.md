@@ -105,7 +105,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Comedo vilitas harum cupiditate animus quo iste.",
-      id: "0f32f5c7-6b71-4bd7-9314-3d6200b660bc",
+      id: "5344fa39-7fa0-422f-985f-fe609b0f7e60",
       isPayable: false,
       metadata: [],
       name: "Savings Account",
@@ -118,7 +118,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-16T01:24:25.576Z"),
+      updatedAt: new Date("2023-08-16T07:23:45.673Z"),
     },
     connectionId: "<id>",
   });
@@ -151,7 +151,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Comedo vilitas harum cupiditate animus quo iste.",
-      id: "0f32f5c7-6b71-4bd7-9314-3d6200b660bc",
+      id: "5344fa39-7fa0-422f-985f-fe609b0f7e60",
       isPayable: false,
       metadata: [],
       name: "Savings Account",
@@ -164,7 +164,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-16T01:24:25.576Z"),
+      updatedAt: new Date("2023-08-16T07:23:45.673Z"),
     },
     connectionId: "<id>",
   });
@@ -263,7 +263,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Comedo vilitas harum cupiditate animus quo iste.",
-      id: "0f32f5c7-6b71-4bd7-9314-3d6200b660bc",
+      id: "5344fa39-7fa0-422f-985f-fe609b0f7e60",
       isPayable: false,
       metadata: [],
       name: "Savings Account",
@@ -276,7 +276,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-16T01:24:25.576Z"),
+      updatedAt: new Date("2023-08-16T07:23:45.673Z"),
     },
     connectionId: "<id>",
   });
@@ -325,7 +325,7 @@ async function run() {
         currency: "CAD",
         customerDefinedCode: "6170",
         description: "Comedo vilitas harum cupiditate animus quo iste.",
-        id: "0f32f5c7-6b71-4bd7-9314-3d6200b660bc",
+        id: "5344fa39-7fa0-422f-985f-fe609b0f7e60",
         isPayable: false,
         metadata: [],
         name: "Savings Account",
@@ -338,7 +338,7 @@ async function run() {
           },
         ],
         type: "ACCOUNTS_RECEIVABLE",
-        updatedAt: new Date("2023-08-16T01:24:25.576Z"),
+        updatedAt: new Date("2023-08-16T07:23:45.673Z"),
       },
       connectionId: "<id>",
     });
@@ -466,7 +466,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Comedo vilitas harum cupiditate animus quo iste.",
-      id: "0f32f5c7-6b71-4bd7-9314-3d6200b660bc",
+      id: "5344fa39-7fa0-422f-985f-fe609b0f7e60",
       isPayable: false,
       metadata: [],
       name: "Savings Account",
@@ -479,7 +479,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-16T01:24:25.576Z"),
+      updatedAt: new Date("2023-08-16T07:23:45.673Z"),
     },
     connectionId: "<id>",
   }, {
@@ -530,7 +530,7 @@ async function run() {
       currency: "CAD",
       customerDefinedCode: "6170",
       description: "Comedo vilitas harum cupiditate animus quo iste.",
-      id: "0f32f5c7-6b71-4bd7-9314-3d6200b660bc",
+      id: "5344fa39-7fa0-422f-985f-fe609b0f7e60",
       isPayable: false,
       metadata: [],
       name: "Savings Account",
@@ -543,7 +543,7 @@ async function run() {
         },
       ],
       type: "ACCOUNTS_RECEIVABLE",
-      updatedAt: new Date("2023-08-16T01:24:25.576Z"),
+      updatedAt: new Date("2023-08-16T07:23:45.673Z"),
     },
     connectionId: "<id>",
   });
@@ -2496,6 +2496,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`performanceListPerformanceCycles`](docs/sdks/performance/README.md#listperformancecycles) - List all cycles
 - [`performanceListPerformanceFeedbacks`](docs/sdks/feedback/README.md#listperformancefeedbacks) - List all feedbacks
 - [`performanceListPerformanceFeedbacks`](docs/sdks/performance/README.md#listperformancefeedbacks) - List all feedbacks
+- [`personGetUnifiedPerson`](docs/sdks/person/README.md#getunifiedperson) - Retrieve a person by ID
+- [`personGetUnifiedPerson`](docs/sdks/unified/README.md#getunifiedperson) - Retrieve a person by ID
+- [`personListUnifiedPeople`](docs/sdks/person/README.md#listunifiedpeople) - Search for persons by email addresses
+- [`personListUnifiedPeople`](docs/sdks/unified/README.md#listunifiedpeople) - Search for persons by email addresses
+- [`personRemoveUnifiedPerson`](docs/sdks/person/README.md#removeunifiedperson) - Erase email addresses from the unified persons
+- [`personRemoveUnifiedPerson`](docs/sdks/unified/README.md#removeunifiedperson) - Erase email addresses from the unified persons
 - [`plmCreatePlmBomline`](docs/sdks/bomline/README.md#createplmbomline) - Create a bomline
 - [`plmCreatePlmBomline`](docs/sdks/plm/README.md#createplmbomline) - Create a bomline
 - [`plmCreatePlmChange`](docs/sdks/change/README.md#createplmchange) - Create a change

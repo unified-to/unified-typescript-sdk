@@ -38,6 +38,7 @@ export const UpdateAccountingContactQueryParamFields = {
   Notes: "notes",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type UpdateAccountingContactQueryParamFields = ClosedEnum<
   typeof UpdateAccountingContactQueryParamFields

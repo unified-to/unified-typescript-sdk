@@ -33,6 +33,10 @@ import {
 } from "./propertycrmleadaddress.js";
 
 export type CrmLead = {
+  /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
   address?: PropertyCrmLeadAddress | undefined;
   /**
    * (reference to CrmCompany)
@@ -94,6 +98,7 @@ export type CrmLead = {
 export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
   /* @__PURE__ */ lazySchema$(() =>
     z.object({
+      __unified_person_ids: z.array(z.string()).optional(),
       address: PropertyCrmLeadAddress$inboundSchema.optional(),
       company_id: z.string().optional(),
       company_name: z.string().optional(),
@@ -122,6 +127,7 @@ export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
       vehicle_ids: z.array(z.string()).optional(),
     }).transform((v) => {
       return remap$(v, {
+        "__unified_person_ids": "unifiedPersonIds",
         "company_id": "companyId",
         "company_name": "companyName",
         "contact_id": "contactId",
@@ -139,6 +145,7 @@ export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
   );
 /** @internal */
 export type CrmLead$Outbound = {
+  __unified_person_ids?: Array<string> | undefined;
   address?: PropertyCrmLeadAddress$Outbound | undefined;
   company_id?: string | undefined;
   company_name?: string | undefined;
@@ -170,6 +177,7 @@ export const CrmLead$outboundSchema: z.ZodType<
   CrmLead
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    unifiedPersonIds: z.array(z.string()).optional(),
     address: PropertyCrmLeadAddress$outboundSchema.optional(),
     companyId: z.string().optional(),
     companyName: z.string().optional(),
@@ -194,6 +202,7 @@ export const CrmLead$outboundSchema: z.ZodType<
     vehicleIds: z.array(z.string()).optional(),
   }).transform((v) => {
     return remap$(v, {
+      unifiedPersonIds: "__unified_person_ids",
       companyId: "company_id",
       companyName: "company_name",
       contactId: "contact_id",

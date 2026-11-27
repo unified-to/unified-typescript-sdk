@@ -32,6 +32,7 @@ export const UpdateHealthcarePatientQueryParamFields = {
   Contacts: "contacts",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type UpdateHealthcarePatientQueryParamFields = ClosedEnum<
   typeof UpdateHealthcarePatientQueryParamFields

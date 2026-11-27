@@ -32,6 +32,7 @@ export const PatchHealthcarePatientQueryParamFields = {
   Contacts: "contacts",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type PatchHealthcarePatientQueryParamFields = ClosedEnum<
   typeof PatchHealthcarePatientQueryParamFields

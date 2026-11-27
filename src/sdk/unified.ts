@@ -4,6 +4,9 @@
 
 import { issueGetUnifiedIssue } from "../funcs/issueGetUnifiedIssue.js";
 import { issueListUnifiedIssues } from "../funcs/issueListUnifiedIssues.js";
+import { personGetUnifiedPerson } from "../funcs/personGetUnifiedPerson.js";
+import { personListUnifiedPeople } from "../funcs/personListUnifiedPeople.js";
+import { personRemoveUnifiedPerson } from "../funcs/personRemoveUnifiedPerson.js";
 import { unifiedCreateUnifiedConnection } from "../funcs/unifiedCreateUnifiedConnection.js";
 import { unifiedCreateUnifiedConnectionReauth } from "../funcs/unifiedCreateUnifiedConnectionReauth.js";
 import { unifiedCreateUnifiedEnvironment } from "../funcs/unifiedCreateUnifiedEnvironment.js";
@@ -203,6 +206,20 @@ export class Unified extends ClientSDK {
   }
 
   /**
+   * Retrieve a person by ID
+   */
+  async getUnifiedPerson(
+    request: operations.GetUnifiedPersonRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Person> {
+    return unwrapAsync(personGetUnifiedPerson(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve secrets manager
    */
   async getUnifiedSecretsmanager(
@@ -337,6 +354,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.Notification>> {
     return unwrapAsync(unifiedListUnifiedNotifications(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Search for persons by email addresses
+   */
+  async listUnifiedPeople(
+    request: operations.ListUnifiedPeopleRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Person>> {
+    return unwrapAsync(personListUnifiedPeople(
       this,
       request,
       options,
@@ -520,6 +551,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<string>> {
     return unwrapAsync(unifiedRemoveUnifiedEnvironment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Erase email addresses from the unified persons
+   */
+  async removeUnifiedPerson(
+    request: operations.RemoveUnifiedPersonRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveUnifiedPersonResponse | undefined> {
+    return unwrapAsync(personRemoveUnifiedPerson(
       this,
       request,
       options,

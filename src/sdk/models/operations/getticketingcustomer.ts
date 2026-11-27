@@ -17,6 +17,7 @@ export const GetTicketingCustomerQueryParamFields = {
   Tags: "tags",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type GetTicketingCustomerQueryParamFields = ClosedEnum<
   typeof GetTicketingCustomerQueryParamFields

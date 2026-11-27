@@ -21,6 +21,7 @@ export const PatchUcContactQueryParamFields = {
   Telephones: "telephones",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type PatchUcContactQueryParamFields = ClosedEnum<
   typeof PatchUcContactQueryParamFields

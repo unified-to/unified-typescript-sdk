@@ -30,6 +30,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.salesorder.createAccountingSalesorder({
     accountingSalesorder: {
+      balanceAmount: 0,
       billingAddress: {
         address1: "1487 Valley Road",
         address2: "Apt. 287",
@@ -40,13 +41,13 @@ async function run() {
         regionCode: "MT",
       },
       categoryIds: [],
-      closedAt: new Date("2023-04-03T11:49:32.216Z"),
+      closedAt: new Date("2023-04-03T17:40:55.793Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "db1ebb82-cfc8-40b1-8554-4856027b5dd7",
+      id: "ef806d49-19de-414a-a6ef-5d7efb404562",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -69,7 +70,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-04-03T11:49:32.216Z"),
+      updatedAt: new Date("2023-04-03T17:40:55.793Z"),
     },
     connectionId: "<id>",
   });
@@ -99,6 +100,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingCreateAccountingSalesorder(unifiedTo, {
     accountingSalesorder: {
+      balanceAmount: 0,
       billingAddress: {
         address1: "1487 Valley Road",
         address2: "Apt. 287",
@@ -109,13 +111,13 @@ async function run() {
         regionCode: "MT",
       },
       categoryIds: [],
-      closedAt: new Date("2023-04-03T11:49:32.216Z"),
+      closedAt: new Date("2023-04-03T17:40:55.793Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "db1ebb82-cfc8-40b1-8554-4856027b5dd7",
+      id: "ef806d49-19de-414a-a6ef-5d7efb404562",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -138,7 +140,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-04-03T11:49:32.216Z"),
+      updatedAt: new Date("2023-04-03T17:40:55.793Z"),
     },
     connectionId: "<id>",
   });
@@ -347,6 +349,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.salesorder.patchAccountingSalesorder({
     accountingSalesorder: {
+      balanceAmount: 0,
       billingAddress: {
         address1: "1487 Valley Road",
         address2: "Apt. 287",
@@ -357,13 +360,13 @@ async function run() {
         regionCode: "MT",
       },
       categoryIds: [],
-      closedAt: new Date("2023-04-03T11:49:32.231Z"),
+      closedAt: new Date("2023-04-03T17:40:55.807Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "eca436d7-9ff2-4ed8-b31f-399478125b5d",
+      id: "31f8039a-ccb3-48c2-8a95-154ebb781015",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -386,7 +389,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-04-03T11:49:32.231Z"),
+      updatedAt: new Date("2023-04-03T17:40:55.807Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -417,6 +420,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingPatchAccountingSalesorder(unifiedTo, {
     accountingSalesorder: {
+      balanceAmount: 0,
       billingAddress: {
         address1: "1487 Valley Road",
         address2: "Apt. 287",
@@ -427,13 +431,13 @@ async function run() {
         regionCode: "MT",
       },
       categoryIds: [],
-      closedAt: new Date("2023-04-03T11:49:32.231Z"),
+      closedAt: new Date("2023-04-03T17:40:55.807Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "eca436d7-9ff2-4ed8-b31f-399478125b5d",
+      id: "31f8039a-ccb3-48c2-8a95-154ebb781015",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -456,7 +460,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-04-03T11:49:32.231Z"),
+      updatedAt: new Date("2023-04-03T17:40:55.807Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -589,6 +593,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.salesorder.updateAccountingSalesorder({
     accountingSalesorder: {
+      balanceAmount: 0,
       billingAddress: {
         address1: "1487 Valley Road",
         address2: "Apt. 287",
@@ -599,13 +604,13 @@ async function run() {
         regionCode: "MT",
       },
       categoryIds: [],
-      closedAt: new Date("2023-04-03T11:49:32.231Z"),
+      closedAt: new Date("2023-04-03T17:40:55.807Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "eca436d7-9ff2-4ed8-b31f-399478125b5d",
+      id: "31f8039a-ccb3-48c2-8a95-154ebb781015",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -628,7 +633,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-04-03T11:49:32.231Z"),
+      updatedAt: new Date("2023-04-03T17:40:55.807Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -659,6 +664,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await accountingUpdateAccountingSalesorder(unifiedTo, {
     accountingSalesorder: {
+      balanceAmount: 0,
       billingAddress: {
         address1: "1487 Valley Road",
         address2: "Apt. 287",
@@ -669,13 +675,13 @@ async function run() {
         regionCode: "MT",
       },
       categoryIds: [],
-      closedAt: new Date("2023-04-03T11:49:32.231Z"),
+      closedAt: new Date("2023-04-03T17:40:55.807Z"),
       createdAt: new Date("2022-01-17T16:11:50.310Z"),
       currency: "USD",
       discountAmount: 0,
       fees: [],
       fulfillmentType: "OTHER",
-      id: "eca436d7-9ff2-4ed8-b31f-399478125b5d",
+      id: "31f8039a-ccb3-48c2-8a95-154ebb781015",
       lineitems: [],
       metadata: [],
       orderNumber: "832663",
@@ -698,7 +704,7 @@ async function run() {
       taxAmount: 0,
       tipAmount: 0,
       totalAmount: 0,
-      updatedAt: new Date("2023-04-03T11:49:32.231Z"),
+      updatedAt: new Date("2023-04-03T17:40:55.807Z"),
     },
     connectionId: "<id>",
     id: "<id>",

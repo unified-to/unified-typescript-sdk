@@ -20,6 +20,7 @@ export const GetLmsStudentQueryParamFields = {
   ImageUrl: "image_url",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type GetLmsStudentQueryParamFields = ClosedEnum<
   typeof GetLmsStudentQueryParamFields

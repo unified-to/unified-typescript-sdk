@@ -31,6 +31,7 @@ export const CreateCrmLeadQueryParamFields = {
   Metadata: "metadata",
   VehicleIds: "vehicle_ids",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type CreateCrmLeadQueryParamFields = ClosedEnum<
   typeof CreateCrmLeadQueryParamFields

@@ -28,6 +28,10 @@ import {
 
 export type LmsInstructor = {
   /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
+  /**
    * (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
    */
   createdAt?: Date | undefined;
@@ -54,6 +58,7 @@ export const LmsInstructor$inboundSchema: z.ZodType<
   unknown
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    __unified_person_ids: z.array(z.string()).optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
@@ -72,6 +77,7 @@ export const LmsInstructor$inboundSchema: z.ZodType<
     ).optional(),
   }).transform((v) => {
     return remap$(v, {
+      "__unified_person_ids": "unifiedPersonIds",
       "created_at": "createdAt",
       "first_name": "firstName",
       "image_url": "imageUrl",
@@ -82,6 +88,7 @@ export const LmsInstructor$inboundSchema: z.ZodType<
 );
 /** @internal */
 export type LmsInstructor$Outbound = {
+  __unified_person_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   emails?: Array<LmsEmail$Outbound> | undefined;
   first_name?: string | undefined;
@@ -103,6 +110,7 @@ export const LmsInstructor$outboundSchema: z.ZodType<
   LmsInstructor
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    unifiedPersonIds: z.array(z.string()).optional(),
     createdAt: z.date().transform(v => v.toISOString()).optional(),
     emails: z.array(LmsEmail$outboundSchema).optional(),
     firstName: z.string().optional(),
@@ -117,6 +125,7 @@ export const LmsInstructor$outboundSchema: z.ZodType<
     updatedAt: z.date().transform(v => v.toISOString()).optional(),
   }).transform((v) => {
     return remap$(v, {
+      unifiedPersonIds: "__unified_person_ids",
       createdAt: "created_at",
       firstName: "first_name",
       imageUrl: "image_url",

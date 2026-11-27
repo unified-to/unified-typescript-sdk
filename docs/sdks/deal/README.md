@@ -31,19 +31,19 @@ async function run() {
   const result = await unifiedTo.deal.createCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-17T21:26:32.381Z"),
-      closingAt: new Date("2025-09-24T02:51:15.532Z"),
+      closedAt: new Date("2024-03-18T02:19:48.946Z"),
+      closingAt: new Date("2025-09-24T18:17:14.792Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Trans tubineus adfectus cubo causa suus.",
-      id: "566d02f1-dee3-49cf-b87a-9b9517feedb4",
+      id: "0f9bb03e-f8e1-48b9-b8b0-b97e4f60b23f",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "0d6e0c3d-9013-4b2d-852d-f0cf90f36c84",
+          id: "64207d0c-8ca4-4d2f-80e6-888c500883c6",
           namespace: "custom",
           slug: "custom_property",
           value: "tandem",
@@ -56,7 +56,7 @@ async function run() {
         "sol",
         "odit",
       ],
-      updatedAt: new Date("2024-10-25T19:10:34.005Z"),
+      updatedAt: new Date("2024-10-26T04:16:43.024Z"),
       wonReason: "Libero soleo cetera unus caterva.",
     },
     connectionId: "<id>",
@@ -88,19 +88,19 @@ async function run() {
   const res = await crmCreateCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-17T21:26:32.381Z"),
-      closingAt: new Date("2025-09-24T02:51:15.532Z"),
+      closedAt: new Date("2024-03-18T02:19:48.946Z"),
+      closingAt: new Date("2025-09-24T18:17:14.792Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Trans tubineus adfectus cubo causa suus.",
-      id: "566d02f1-dee3-49cf-b87a-9b9517feedb4",
+      id: "0f9bb03e-f8e1-48b9-b8b0-b97e4f60b23f",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "0d6e0c3d-9013-4b2d-852d-f0cf90f36c84",
+          id: "64207d0c-8ca4-4d2f-80e6-888c500883c6",
           namespace: "custom",
           slug: "custom_property",
           value: "tandem",
@@ -113,7 +113,7 @@ async function run() {
         "sol",
         "odit",
       ],
-      updatedAt: new Date("2024-10-25T19:10:34.005Z"),
+      updatedAt: new Date("2024-10-26T04:16:43.024Z"),
       wonReason: "Libero soleo cetera unus caterva.",
     },
     connectionId: "<id>",
@@ -324,19 +324,19 @@ async function run() {
   const result = await unifiedTo.deal.patchCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-17T21:26:32.384Z"),
-      closingAt: new Date("2025-09-24T02:51:15.542Z"),
+      closedAt: new Date("2024-03-18T02:19:48.950Z"),
+      closingAt: new Date("2025-09-24T18:17:14.805Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Trans tubineus adfectus cubo causa suus.",
-      id: "9b78b1c5-986f-4f88-ad8b-b5f9d71ed842",
+      id: "db24c955-946b-4ab7-b33b-b07fe287ec64",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "47d1a47c-c81e-4c2f-a8c1-bb301f499bfe",
+          id: "4706705e-9962-4242-a203-774114bf11ce",
           namespace: "custom",
           slug: "custom_property",
           value: "tandem",
@@ -349,7 +349,7 @@ async function run() {
         "sol",
         "odit",
       ],
-      updatedAt: new Date("2024-10-25T19:10:34.010Z"),
+      updatedAt: new Date("2024-10-26T04:16:43.032Z"),
       wonReason: "Libero soleo cetera unus caterva.",
     },
     connectionId: "<id>",
@@ -382,19 +382,19 @@ async function run() {
   const res = await crmPatchCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-17T21:26:32.384Z"),
-      closingAt: new Date("2025-09-24T02:51:15.542Z"),
+      closedAt: new Date("2024-03-18T02:19:48.950Z"),
+      closingAt: new Date("2025-09-24T18:17:14.805Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Trans tubineus adfectus cubo causa suus.",
-      id: "9b78b1c5-986f-4f88-ad8b-b5f9d71ed842",
+      id: "db24c955-946b-4ab7-b33b-b07fe287ec64",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "47d1a47c-c81e-4c2f-a8c1-bb301f499bfe",
+          id: "4706705e-9962-4242-a203-774114bf11ce",
           namespace: "custom",
           slug: "custom_property",
           value: "tandem",
@@ -407,7 +407,7 @@ async function run() {
         "sol",
         "odit",
       ],
-      updatedAt: new Date("2024-10-25T19:10:34.010Z"),
+      updatedAt: new Date("2024-10-26T04:16:43.032Z"),
       wonReason: "Libero soleo cetera unus caterva.",
     },
     connectionId: "<id>",
@@ -542,19 +542,19 @@ async function run() {
   const result = await unifiedTo.deal.updateCrmDeal({
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-17T21:26:32.384Z"),
-      closingAt: new Date("2025-09-24T02:51:15.542Z"),
+      closedAt: new Date("2024-03-18T02:19:48.950Z"),
+      closingAt: new Date("2025-09-24T18:17:14.805Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Trans tubineus adfectus cubo causa suus.",
-      id: "9b78b1c5-986f-4f88-ad8b-b5f9d71ed842",
+      id: "db24c955-946b-4ab7-b33b-b07fe287ec64",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "47d1a47c-c81e-4c2f-a8c1-bb301f499bfe",
+          id: "4706705e-9962-4242-a203-774114bf11ce",
           namespace: "custom",
           slug: "custom_property",
           value: "tandem",
@@ -567,7 +567,7 @@ async function run() {
         "sol",
         "odit",
       ],
-      updatedAt: new Date("2024-10-25T19:10:34.010Z"),
+      updatedAt: new Date("2024-10-26T04:16:43.032Z"),
       wonReason: "Libero soleo cetera unus caterva.",
     },
     connectionId: "<id>",
@@ -600,19 +600,19 @@ async function run() {
   const res = await crmUpdateCrmDeal(unifiedTo, {
     crmDeal: {
       amount: 98162,
-      closedAt: new Date("2024-03-17T21:26:32.384Z"),
-      closingAt: new Date("2025-09-24T02:51:15.542Z"),
+      closedAt: new Date("2024-03-18T02:19:48.950Z"),
+      closingAt: new Date("2025-09-24T18:17:14.805Z"),
       createdAt: new Date("2023-07-04T12:48:48.470Z"),
       currency: "USD",
       description: "Trans tubineus adfectus cubo causa suus.",
-      id: "9b78b1c5-986f-4f88-ad8b-b5f9d71ed842",
+      id: "db24c955-946b-4ab7-b33b-b07fe287ec64",
       metadata: [
         {
           extraData: {
             "display_name": "Custom Property",
           },
           format: "TEXT",
-          id: "47d1a47c-c81e-4c2f-a8c1-bb301f499bfe",
+          id: "4706705e-9962-4242-a203-774114bf11ce",
           namespace: "custom",
           slug: "custom_property",
           value: "tandem",
@@ -625,7 +625,7 @@ async function run() {
         "sol",
         "odit",
       ],
-      updatedAt: new Date("2024-10-25T19:10:34.010Z"),
+      updatedAt: new Date("2024-10-26T04:16:43.032Z"),
       wonReason: "Libero soleo cetera unus caterva.",
     },
     connectionId: "<id>",

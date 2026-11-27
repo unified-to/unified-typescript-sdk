@@ -31,6 +31,7 @@ export const Event = {
   WebhookUnhealthy: "WEBHOOK_UNHEALTHY",
   WebhookPaused: "WEBHOOK_PAUSED",
   WebhookUnpaused: "WEBHOOK_UNPAUSED",
+  UnifiedPersonMerged: "UNIFIED_PERSON_MERGED",
 } as const;
 export type Event = OpenEnum<typeof Event>;
 

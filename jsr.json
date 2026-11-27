@@ -2,7 +2,7 @@
 
 {
   "name": "@unified-api/typescript-sdk",
-  "version": "2.86.31",
+  "version": "2.86.32",
   "exports": {
     ".": "./src/index.ts",
     "./node": "./src/node.ts",

@@ -28,6 +28,7 @@ export const PatchCrmContactQueryParamFields = {
   Department: "department",
   ImageUrl: "image_url",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type PatchCrmContactQueryParamFields = ClosedEnum<
   typeof PatchCrmContactQueryParamFields

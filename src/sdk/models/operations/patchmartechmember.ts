@@ -22,6 +22,7 @@ export const PatchMartechMemberQueryParamFields = {
   Status: "status",
   Metadata: "metadata",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type PatchMartechMemberQueryParamFields = ClosedEnum<
   typeof PatchMartechMemberQueryParamFields

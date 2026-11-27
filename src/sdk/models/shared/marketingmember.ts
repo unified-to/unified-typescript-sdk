@@ -36,6 +36,10 @@ export type MarketingMemberStatus = OpenEnum<typeof MarketingMemberStatus>;
  */
 export type MarketingMember = {
   /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
+  /**
    * The name of the company/organization the member belongs to
    */
   company?: string | undefined;
@@ -101,6 +105,7 @@ export const MarketingMember$inboundSchema: z.ZodType<
   unknown
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    __unified_person_ids: z.array(z.string()).optional(),
     company: z.string().optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
@@ -120,6 +125,7 @@ export const MarketingMember$inboundSchema: z.ZodType<
     ).optional(),
   }).transform((v) => {
     return remap$(v, {
+      "__unified_person_ids": "unifiedPersonIds",
       "created_at": "createdAt",
       "first_name": "firstName",
       "last_name": "lastName",
@@ -130,6 +136,7 @@ export const MarketingMember$inboundSchema: z.ZodType<
 );
 /** @internal */
 export type MarketingMember$Outbound = {
+  __unified_person_ids?: Array<string> | undefined;
   company?: string | undefined;
   created_at?: string | undefined;
   emails?: Array<MarketingEmail$Outbound> | undefined;
@@ -152,6 +159,7 @@ export const MarketingMember$outboundSchema: z.ZodType<
   MarketingMember
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    unifiedPersonIds: z.array(z.string()).optional(),
     company: z.string().optional(),
     createdAt: z.date().transform(v => v.toISOString()).optional(),
     emails: z.array(MarketingEmail$outboundSchema).optional(),
@@ -167,6 +175,7 @@ export const MarketingMember$outboundSchema: z.ZodType<
     updatedAt: z.date().transform(v => v.toISOString()).optional(),
   }).transform((v) => {
     return remap$(v, {
+      unifiedPersonIds: "__unified_person_ids",
       createdAt: "created_at",
       firstName: "first_name",
       lastName: "last_name",

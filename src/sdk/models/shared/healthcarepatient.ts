@@ -87,6 +87,10 @@ export type MaritalStatus = OpenEnum<typeof MaritalStatus>;
 
 export type HealthcarePatient = {
   /**
+   * Global unified person ids: the current id first, then every id merged into it. Two records are the same person when these arrays intersect. Only returned when requested in fields
+   */
+  unifiedPersonIds?: Array<string> | undefined;
+  /**
    * Home address of the patient
    */
   address?: PropertyHealthcarePatientAddress | undefined;
@@ -217,6 +221,7 @@ export const HealthcarePatient$inboundSchema: z.ZodType<
   unknown
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    __unified_person_ids: z.array(z.string()).optional(),
     address: PropertyHealthcarePatientAddress$inboundSchema.optional(),
     birthdate: z.string().optional(),
     contacts: z.array(HealthcarePatientContact$inboundSchema).optional(),
@@ -248,6 +253,7 @@ export const HealthcarePatient$inboundSchema: z.ZodType<
     ).optional(),
   }).transform((v) => {
     return remap$(v, {
+      "__unified_person_ids": "unifiedPersonIds",
       "created_at": "createdAt",
       "deceased_at": "deceasedAt",
       "first_name": "firstName",
@@ -262,6 +268,7 @@ export const HealthcarePatient$inboundSchema: z.ZodType<
 );
 /** @internal */
 export type HealthcarePatient$Outbound = {
+  __unified_person_ids?: Array<string> | undefined;
   address?: PropertyHealthcarePatientAddress$Outbound | undefined;
   birthdate?: string | undefined;
   contacts?: Array<HealthcarePatientContact$Outbound> | undefined;
@@ -294,6 +301,7 @@ export const HealthcarePatient$outboundSchema: z.ZodType<
   HealthcarePatient
 > = /* @__PURE__ */ lazySchema$(() =>
   z.object({
+    unifiedPersonIds: z.array(z.string()).optional(),
     address: PropertyHealthcarePatientAddress$outboundSchema.optional(),
     birthdate: z.string().optional(),
     contacts: z.array(HealthcarePatientContact$outboundSchema).optional(),
@@ -319,6 +327,7 @@ export const HealthcarePatient$outboundSchema: z.ZodType<
     updatedAt: z.date().transform(v => v.toISOString()).optional(),
   }).transform((v) => {
     return remap$(v, {
+      unifiedPersonIds: "__unified_person_ids",
       createdAt: "created_at",
       deceasedAt: "deceased_at",
       firstName: "first_name",

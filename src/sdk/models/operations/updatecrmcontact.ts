@@ -28,6 +28,7 @@ export const UpdateCrmContactQueryParamFields = {
   Department: "department",
   ImageUrl: "image_url",
   Raw: "raw",
+  UnifiedPersonIds: "__unified_person_ids",
 } as const;
 export type UpdateCrmContactQueryParamFields = ClosedEnum<
   typeof UpdateCrmContactQueryParamFields
