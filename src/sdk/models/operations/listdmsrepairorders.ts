@@ -64,6 +64,10 @@ export type ListDmsRepairordersRequest = {
    */
   contactId?: string | undefined;
   /**
+   * The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  endLt?: string | undefined;
+  /**
    * Fields to return
    */
   fields?: Array<ListDmsRepairordersQueryParamFields> | undefined;
@@ -79,6 +83,10 @@ export type ListDmsRepairordersRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+   */
+  startGte?: string | undefined;
   status?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
@@ -105,6 +113,7 @@ export const ListDmsRepairordersQueryParamFields$outboundSchema:
 export type ListDmsRepairordersRequest$Outbound = {
   connection_id: string;
   contact_id?: string | undefined;
+  end_lt?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -112,6 +121,7 @@ export type ListDmsRepairordersRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   status?: string | undefined;
   updated_gte?: string | undefined;
   user_id?: string | undefined;
@@ -127,6 +137,7 @@ export const ListDmsRepairordersRequest$outboundSchema: z.ZodType<
   z.object({
     connectionId: z.string(),
     contactId: z.string().optional(),
+    endLt: z.string().optional(),
     fields: z.array(ListDmsRepairordersQueryParamFields$outboundSchema)
       .optional(),
     limit: z.number().optional(),
@@ -135,6 +146,7 @@ export const ListDmsRepairordersRequest$outboundSchema: z.ZodType<
     query: z.string().optional(),
     raw: z.string().optional(),
     sort: z.string().optional(),
+    startGte: z.string().optional(),
     status: z.string().optional(),
     updatedGte: z.string().optional(),
     userId: z.string().optional(),
@@ -143,6 +155,8 @@ export const ListDmsRepairordersRequest$outboundSchema: z.ZodType<
     return remap$(v, {
       connectionId: "connection_id",
       contactId: "contact_id",
+      endLt: "end_lt",
+      startGte: "start_gte",
       updatedGte: "updated_gte",
       userId: "user_id",
       vehicleId: "vehicle_id",

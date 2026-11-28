@@ -30,7 +30,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.createHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-26T04:31:03.981Z"),
+      approvedAt: new Date("2022-02-26T06:22:11.192Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -44,16 +44,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-21T10:10:25.513Z"),
-      id: "2294b2d6-8658-49a1-9ef0-91df967190e4",
+      endAt: new Date("2025-01-22T01:48:40.032Z"),
+      id: "8a1bd877-d18b-4a0a-b179-87f2b692d525",
       isPaid: true,
       metadata: [],
       originalType: "blandior ventus",
       reason: "tam",
-      startAt: new Date("2023-09-18T20:13:42.394Z"),
+      startAt: new Date("2023-09-19T05:29:13.889Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-18T10:21:19.314Z"),
+      updatedAt: new Date("2022-07-18T14:03:24.619Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -84,7 +84,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisCreateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-26T04:31:03.981Z"),
+      approvedAt: new Date("2022-02-26T06:22:11.192Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -98,16 +98,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-21T10:10:25.513Z"),
-      id: "2294b2d6-8658-49a1-9ef0-91df967190e4",
+      endAt: new Date("2025-01-22T01:48:40.032Z"),
+      id: "8a1bd877-d18b-4a0a-b179-87f2b692d525",
       isPaid: true,
       metadata: [],
       originalType: "blandior ventus",
       reason: "tam",
-      startAt: new Date("2023-09-18T20:13:42.394Z"),
+      startAt: new Date("2023-09-19T05:29:13.889Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-18T10:21:19.314Z"),
+      updatedAt: new Date("2022-07-18T14:03:24.619Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -317,7 +317,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.patchHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-26T04:31:03.982Z"),
+      approvedAt: new Date("2022-02-26T06:22:11.193Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -331,16 +331,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-21T10:10:25.523Z"),
-      id: "d670dc1c-001a-4a24-a6be-b2aaa24755df",
+      endAt: new Date("2025-01-22T01:48:40.044Z"),
+      id: "da201e09-9610-4132-8460-9f7cb85079c2",
       isPaid: true,
       metadata: [],
       originalType: "blandior ventus",
       reason: "tam",
-      startAt: new Date("2023-09-18T20:13:42.400Z"),
+      startAt: new Date("2023-09-19T05:29:13.896Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-18T10:21:19.316Z"),
+      updatedAt: new Date("2022-07-18T14:03:24.622Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -372,7 +372,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisPatchHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-26T04:31:03.982Z"),
+      approvedAt: new Date("2022-02-26T06:22:11.193Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -386,16 +386,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-21T10:10:25.523Z"),
-      id: "d670dc1c-001a-4a24-a6be-b2aaa24755df",
+      endAt: new Date("2025-01-22T01:48:40.044Z"),
+      id: "da201e09-9610-4132-8460-9f7cb85079c2",
       isPaid: true,
       metadata: [],
       originalType: "blandior ventus",
       reason: "tam",
-      startAt: new Date("2023-09-18T20:13:42.400Z"),
+      startAt: new Date("2023-09-19T05:29:13.896Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-18T10:21:19.316Z"),
+      updatedAt: new Date("2022-07-18T14:03:24.622Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -529,7 +529,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.timeoff.updateHrisTimeoff({
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-26T04:31:03.982Z"),
+      approvedAt: new Date("2022-02-26T06:22:11.193Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -543,16 +543,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-21T10:10:25.523Z"),
-      id: "d670dc1c-001a-4a24-a6be-b2aaa24755df",
+      endAt: new Date("2025-01-22T01:48:40.044Z"),
+      id: "da201e09-9610-4132-8460-9f7cb85079c2",
       isPaid: true,
       metadata: [],
       originalType: "blandior ventus",
       reason: "tam",
-      startAt: new Date("2023-09-18T20:13:42.400Z"),
+      startAt: new Date("2023-09-19T05:29:13.896Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-18T10:21:19.316Z"),
+      updatedAt: new Date("2022-07-18T14:03:24.622Z"),
       userId: "<id>",
     },
     connectionId: "<id>",
@@ -584,7 +584,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await hrisUpdateHrisTimeoff(unifiedTo, {
     hrisTimeoff: {
-      approvedAt: new Date("2022-02-26T04:31:03.982Z"),
+      approvedAt: new Date("2022-02-26T06:22:11.193Z"),
       attachments: [
         {
           contentType: "application/pdf",
@@ -598,16 +598,16 @@ async function run() {
       createdAt: new Date("2021-10-06T18:00:20.615Z"),
       duration: 4,
       durationType: "DAY",
-      endAt: new Date("2025-01-21T10:10:25.523Z"),
-      id: "d670dc1c-001a-4a24-a6be-b2aaa24755df",
+      endAt: new Date("2025-01-22T01:48:40.044Z"),
+      id: "da201e09-9610-4132-8460-9f7cb85079c2",
       isPaid: true,
       metadata: [],
       originalType: "blandior ventus",
       reason: "tam",
-      startAt: new Date("2023-09-18T20:13:42.400Z"),
+      startAt: new Date("2023-09-19T05:29:13.896Z"),
       status: "DENIED",
       type: "IN_LIEU",
-      updatedAt: new Date("2022-07-18T10:21:19.316Z"),
+      updatedAt: new Date("2022-07-18T14:03:24.622Z"),
       userId: "<id>",
     },
     connectionId: "<id>",

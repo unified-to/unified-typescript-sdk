@@ -102,6 +102,7 @@ async function $do(
 
   const query = encodeFormQuery({
     "contact_id": payload.contact_id,
+    "end_lt": payload.end_lt,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
@@ -109,6 +110,7 @@ async function $do(
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
+    "start_gte": payload.start_gte,
     "status": payload.status,
     "updated_gte": payload.updated_gte,
     "user_id": payload.user_id,

@@ -34,7 +34,7 @@ async function run() {
     atsScorecard: {
       comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "7064701c-999f-4878-813c-a3412725504c",
+      id: "31e17f7b-4926-4f53-84b5-2baae9b27992",
       metadata: [],
       questions: [
         {
@@ -48,7 +48,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-15T18:36:33.409Z"),
+      updatedAt: new Date("2023-06-16T01:20:32.497Z"),
     },
     connectionId: "<id>",
   });
@@ -80,7 +80,7 @@ async function run() {
     atsScorecard: {
       comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "7064701c-999f-4878-813c-a3412725504c",
+      id: "31e17f7b-4926-4f53-84b5-2baae9b27992",
       metadata: [],
       questions: [
         {
@@ -94,7 +94,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-15T18:36:33.409Z"),
+      updatedAt: new Date("2023-06-16T01:20:32.497Z"),
     },
     connectionId: "<id>",
   });
@@ -461,7 +461,7 @@ async function run() {
     atsScorecard: {
       comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "0de65b35-fb29-496d-ae81-037e122a0201",
+      id: "5417c3ba-bab9-465c-b12d-04a29e51cb35",
       metadata: [],
       questions: [
         {
@@ -475,7 +475,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-15T18:36:33.411Z"),
+      updatedAt: new Date("2023-06-16T01:20:32.500Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -508,7 +508,7 @@ async function run() {
     atsScorecard: {
       comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "0de65b35-fb29-496d-ae81-037e122a0201",
+      id: "5417c3ba-bab9-465c-b12d-04a29e51cb35",
       metadata: [],
       questions: [
         {
@@ -522,7 +522,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-15T18:36:33.411Z"),
+      updatedAt: new Date("2023-06-16T01:20:32.500Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -657,7 +657,7 @@ async function run() {
     atsScorecard: {
       comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "0de65b35-fb29-496d-ae81-037e122a0201",
+      id: "5417c3ba-bab9-465c-b12d-04a29e51cb35",
       metadata: [],
       questions: [
         {
@@ -671,7 +671,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-15T18:36:33.411Z"),
+      updatedAt: new Date("2023-06-16T01:20:32.500Z"),
     },
     connectionId: "<id>",
     id: "<id>",
@@ -704,7 +704,7 @@ async function run() {
     atsScorecard: {
       comment: "Aliquam.",
       createdAt: new Date("2022-02-20T17:09:45.498Z"),
-      id: "0de65b35-fb29-496d-ae81-037e122a0201",
+      id: "5417c3ba-bab9-465c-b12d-04a29e51cb35",
       metadata: [],
       questions: [
         {
@@ -718,7 +718,7 @@ async function run() {
         },
       ],
       recommendation: "STRONG_YES",
-      updatedAt: new Date("2023-06-15T18:36:33.411Z"),
+      updatedAt: new Date("2023-06-16T01:20:32.500Z"),
     },
     connectionId: "<id>",
     id: "<id>",
